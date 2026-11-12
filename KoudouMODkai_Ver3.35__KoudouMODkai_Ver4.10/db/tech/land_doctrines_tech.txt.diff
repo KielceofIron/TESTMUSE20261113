@@ -1,0 +1,53 @@
+--- A/db/tech/land_doctrines_tech.txt [cp932]
++++ B/db/tech/land_doctrines_tech.txt [cp932]
+@@ -1739,7 +1739,10 @@ technology =
+     component = { id = 6045 name = TECH_CMP_LD_4_5_NAME type = training difficulty = 5 }\r
+     required  = { 6020 }\r
+     effects =\r
+-    { command = { type = max_organization which = land value = 7 }\r
++    { \r
++      \r
++      command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = ground_def_eff when = 1 value = 0.1 }\r
++      command = { type = max_organization which = land value = 7 }\r
+       command = { type = muddy_defense which = land value = 2.5 }\r
+       command = { type = plain_defense which = land value = 2.5 }\r
+       command = { type = desert_defense which = land value = 0.75 }\r
+@@ -1776,7 +1779,8 @@ technology =
+     effects =\r
+     { # command = { type = ground_def_eff value = 0.77 }\r
+       command = { type = ground_def_eff when = 1 value = 0.03 }\r
+-      command = { type = max_organization which = land value = 3 }\r
++      command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = max_organization which = land value = 10 }\r
++      command = { trigger = { NOT = { event = 11220003 OR = { country = GER country = DDR } } } type = max_organization which = land value = 3 }\r
+       command = { type = muddy_defense which = land value = 2.5 }\r
+       command = { type = plain_defense which = land value = 2.5 }\r
+       command = { type = desert_defense which = land value = 0.75 }\r
+@@ -1947,7 +1951,7 @@ technology =
+     component = { id = 6105 name = TECH_CMP_LD_10_5_NAME type = training difficulty = 8 }\r
+     required  = { 6080 }\r
+     effects =\r
+-    { command = { type = ground_def_eff when = 1 value = 0.06 }\r
++    { command = { trigger = { NOT = { event = 11220003 OR = { country = GER country = DDR } } } type = ground_def_eff when = 1 value = 0.06 }\r
+       command = { type = max_organization which = land value = 10 }\r
+       command = { type = build_time which = mechanized when = on_upgrade where = relative value = -10 }\r
+       command = { type = muddy_attack which = mechanized value = 4 }\r
+@@ -1986,8 +1990,8 @@ technology =
+     component = { id = 6095 name = TECH_CMP_LD_9_5_NAME type = training difficulty = 7 }\r
+     required  = { 6080 }\r
+     effects =\r
+-    { command = { type = ground_def_eff when = 1 value = 0.06 }\r
+-      command = { type = morale which = land value = 9.2 }\r
++    { command = { trigger = { NOT = { event = 11220003 OR = { country = GER country = DDR } } } type = ground_def_eff when = 1 value = 0.06 }\r
++      command = { trigger = { NOT = { event = 11220003 OR = { country = GER country = DDR } } } type = morale which = land value = 9.2 }\r
+       command = { type = build_time which = motorized when = on_upgrade where = relative value = -5 }\r
+       command = { type = muddy_defense which = land value = 2.5 }\r
+       command = { type = plain_defense which = land value = 2.5 }\r
+@@ -2024,7 +2028,7 @@ technology =
+     component = { id = 14055 name = TECH_CMP_LD_105_5_NAME type = training difficulty = 8 }\r
+     required  = { 6090 6100 }\r
+     effects =\r
+-    { command = { type = max_organization which = land value = 10 }\r
++    { command = { trigger = { NOT = { event = 11220003 OR = { country = GER country = DDR } } } type = max_organization which = land value = 10 }\r
+       command = { type = soft_attack which = multi_role value = 1 }\r
+       command = { type = hard_attack which = multi_role value = 1 }\r
+       command = { type = soft_attack which = cas value = 1 }\r

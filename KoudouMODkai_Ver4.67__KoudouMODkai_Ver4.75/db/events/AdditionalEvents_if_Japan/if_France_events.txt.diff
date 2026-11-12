@@ -1,0 +1,589 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_France_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_France_events.txt [cp932]
+@@ -128,7 +128,7 @@ event = {
+ 	style = 2\r
+ 	picture = "Commune_France"\r
+ \r
+-	date = { day = 3 month = 3 year = 1933 }\r
++	date = { day = 2 month = 2 year = 1933 }\r
+ \r
+ 	action = { # OK!\r
+ 	name = "ACTIONNAME3327000A"\r
+@@ -244,6 +244,7 @@ event = {
+ 	action = { # 極左：共産党案 ― 人民軍の創設\r
+ 	name = "ACTIONNAME3327003A"\r
+ 	ai_chance = 5\r
++	command = { type = ground_def_eff value = 0.09 when = 1 }\r
+ 	command = { type = activate which = 6570 }\r
+ 	command = { type = gain_tech which = 6570  }\r
+ 	command = { type = gain_tech which = 6300 }\r
+@@ -291,6 +292,7 @@ event = {
+ 	action = { # 穏健：社会党案 ― バランスの取れた常備軍\r
+ 	name = "ACTIONNAME3327003C"\r
+ 	ai_chance = 35\r
++	command = { type = ground_def_eff value = 0.05 when = 1 }\r
+ 	command = { type = activate which = 6390 }\r
+ 	command = { type = gain_tech which = 6390  }\r
+ 	command = { type = gain_tech which = 6400 }\r
+@@ -303,6 +305,7 @@ event = {
+ 	action = { # 穏健：自由主義案 ― 専守防衛\r
+ 	name = "ACTIONNAME3327003D"\r
+ 	ai_chance = 35\r
++	command = { type = ground_def_eff value = 0.05 when = 1 }\r
+ 	command = { type = activate which = 6560 }\r
+ 	command = { type = gain_tech which = 6560  }\r
+ 	command = { type = gain_tech which = 6030  }\r
+@@ -331,6 +334,7 @@ event = {
+ 	action = { # 極右：ソレル主義者 ― 装甲部隊による速度戦\r
+ 	name = "ACTIONNAME3327003F"\r
+ 	ai_chance = 18\r
++	command = { type = speed which = land value = 1 }\r
+ 	command = { type = activate which = 6210 }\r
+ 	command = { type = gain_tech which = 6210 }\r
+ 	command = { type = gain_tech which = 6220 }\r
+@@ -856,6 +860,7 @@ event = {
+ 	id = 3327008\r
+ 	random =  no\r
+ 	country = FRA\r
++	save_date = yes\r
+ \r
+ 	trigger = {\r
+ 	flag = { which = FRA_COM when = 1 value = 3 }\r
+@@ -984,7 +989,7 @@ event = {
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { type = headofstate which = 5812 } # ジョルジュ・ヴァロワ\r
+-	command = { type = headofgovernment which = 5023 } # ピエール・ラヴァル\r
++	command = { type = headofgovernment which = 5197 } # ピエール・ラヴァル\r
+ 	command = { type = foreignminister which = 5357 } # ジャン・フォントノワ\r
+ 	command = { type = armamentminister which = 5811 } # ジャック・ドリオ\r
+ 	command = { type = ministerofsecurity which = 5813 } # ジャック・ラカン\r
+@@ -1047,7 +1052,7 @@ event = {
+ 	id = 3327010\r
+ 	random =  no\r
+ 	country = FRA\r
+-\r
++	save_date = yes\r
+ 	trigger = {\r
+ 	flag = { which = FRA_SOC when = 1 value = 3 }\r
+ 	}\r
+@@ -1182,8 +1187,9 @@ event = {
+ 	save_date = yes\r
+ \r
+ 	decision = {\r
++	NOT = { flag = Gamelin_Coup }\r
+ 	OR = {\r
+-	event = 3327008 NOT = { flag = Gamelin_Coup }\r
++	event = 3327008 \r
+ 	event = 3327009\r
+ 	event = 3327010\r
+ 	event = 3327019\r
+@@ -1192,8 +1198,9 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++	NOT = { flag = Gamelin_Coup }\r
+ 	OR = {\r
+-	event = 3327008 NOT = { flag = Gamelin_Coup }\r
++	event = 3327008 \r
+ 	event = 3327009\r
+ 	event = 3327010\r
+ 	event = 3327019\r
+@@ -1204,8 +1211,9 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
++	NOT = { flag = Gamelin_Coup }\r
+ 	OR = {\r
+-	event = 3327008 NOT = { flag = Gamelin_Coup }\r
++	event = 3327008 \r
+ 	event = 3327009\r
+ 	event = 3327010\r
+ 	event = 3327019\r
+@@ -1230,6 +1238,7 @@ event = {
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+ 	command = { type = max_organization which = land value = -3 }\r
+ 	command = { type = manpowerpool value = -10 }\r
++	command = { type = strength which = militia when = 0 where = 0 value = 0 }\r
+ 	command = { type = add_division value = infantry when = 9 }\r
+ 	command = { type = add_division value = infantry when = 9 }\r
+ 	command = { type = add_division value = infantry when = 9 }\r
+@@ -1260,7 +1269,8 @@ event = {
+ 	command = { type = add_division value = infantry when = 9 }\r
+ 	command = { type = add_division value = infantry when = 9 }\r
+ 	command = { type = add_division value = infantry when = 9 }\r
+-	command = { type = sleepevent which = 3327051 }\r
++	#command = { type = sleepevent which = 3327051 }\r
++	command = { type = sleepevent which = 3327020 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1584,7 +1594,7 @@ event = {
+ 	name = "EVT_3327019_NAME"\r
+ 	desc = "EVT_3327019_DESC"\r
+ 	style = 2\r
+-	picture = "Paris"\r
++	#picture = "Paris"\r
+ \r
+ 	date = { day = 0 month = 6 year = 1935 }\r
+ 	offset = 10\r
+@@ -1627,7 +1637,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 35\r
++	offset = 65\r
+ 	deathdate = { day = 29 month = 11 year = 1935 }\r
+ \r
+ 	action = { # アジ（扇動）と喧嘩はパリの華\r
+@@ -1788,7 +1798,6 @@ event = {
+ 	decision = {\r
+ 		NOT = { flag = FRA_Center }\r
+ 		war = { country = SPA country = SPR }\r
+-		event = 2052002 #SPA fascist nation\r
+ 		NOT = {\r
+ 			OR = {\r
+ 			alliance = { country = FRA country = SPR }\r
+@@ -1811,7 +1820,6 @@ event = {
+ 	trigger = {\r
+ 		NOT = { flag = FRA_Center }\r
+ 		war = { country = SPA country = SPR }\r
+-		event = 2052002 #SPA fascist nation\r
+ 		NOT = {\r
+ 			OR = {\r
+ 				alliance = { country = FRA country = SPR }\r
+@@ -1856,7 +1864,7 @@ event = {
+ 	command = { type = money value = -200 }\r
+ 	command = { type = manpowerpool value = -30 }\r
+ 	command = { type = supplies value = -2500 }	\r
+-	command = { type = event which = 3327015 where = SPR when = 0 }\r
++	command = { type = event which = 3327026 where = SPR when = 0 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = relation which = SPR value = 50 }\r
+@@ -1880,7 +1888,7 @@ event = {
+ 	command = { type = money value = -200 }\r
+ 	command = { type = manpowerpool value = -30 }\r
+ 	command = { type = supplies value = -2500 }	\r
+-	command = { type = event which = 3327015 where = SPR when = 0 }\r
++	command = { type = event which = 3327026 where = SPR when = 0 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = relation which = SPR value = 50 }\r
+ 	command = { type = relation which = SPA value = -50 }\r
+@@ -1915,7 +1923,8 @@ event = {
+ 	command = { type = money value = -200 }\r
+ 	command = { type = manpowerpool value = -30 }\r
+ 	command = { type = supplies value = -2500 }	\r
+-	command = { type = event which = 3327015 where = SPA when = 0 }\r
++	command = { type = event which = 3327026 where = SPA when = 0 }\r
++	command = { type = event which = 3327026 where = POR when = 0 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = relation which = SPA value = 50 }\r
+@@ -1926,7 +1935,10 @@ event = {
+ 	command	= { type = setflag which = SCW_FRA_intervention_SPA }\r
+ 	command = { type = extra_tc value = -70 }\r
+ 	command = { type = free_ic value = -10 }\r
++	command = { type = extra_tc value = -70 }\r
++	command = { type = free_ic value = -10 }\r
+ 	command = { type = trade which = SPA where = FRA supplies = 30 when = 1080 value = 1 }\r
++	command = { type = trade which = POR where = FRA supplies = 30 when = 1080 value = 1 }\r
+ 	}\r
+ \r
+ 	action = {\r
+@@ -1938,7 +1950,8 @@ event = {
+ 	command = { type = money value = -200 }\r
+ 	command = { type = manpowerpool value = -30 }\r
+ 	command = { type = supplies value = -2500 }	\r
+-	command = { type = event which = 3327015 where = SPA when = 0 }\r
++	command = { type = event which = 3327026 where = SPA when = 0 }\r
++	command = { type = event which = 3327026 where = POR when = 0 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = relation which = SPA value = 50 }\r
+ 	command = { type = relation which = SPR value = -50 }\r
+@@ -1950,14 +1963,18 @@ event = {
+ 	command	= { type = local_setflag which = military_control }\r
+ 	command = { type = extra_tc value = -70 }\r
+ 	command = { type = free_ic value = -10 }\r
++	command = { type = extra_tc value = -70 }\r
++	command = { type = free_ic value = -10 }\r
+ 	command = { type = trade which = SPA where = FRA supplies = 30 when = 1080 value = 1 }\r
++	command = { type = trade which = POR where = FRA supplies = 30 when = 1080 value = 1 }\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+ 	id = 3327026\r
+ 	random = no\r
+-\r
++	persistent = yes\r
++	TAG = { SPA SPR POR }\r
+ 	name = "EVT_3327025_NAME"\r
+ 	desc = "EVT_3327025_DESC"\r
+   	style = 2\r
+@@ -2028,6 +2045,8 @@ event = {
+ 		command = { type = gain_tech which = -2 }\r
+ 		command = { type = gain_tech which = -1 } \r
+ 		command = { type = gain_tech which = -1 } \r
++	command = { type = extra_tc value = 140 }\r
++	command = { type = free_ic value = 20 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2068,6 +2087,8 @@ event = {
+ 	command = { type = manpowerpool value = 3 }\r
+ 	command = { trigger = { ai = no } type = dissent value = 1 }\r
+ 	command = { type = gain_tech which = -2 } \r
++	command = { type = extra_tc value = 140 }\r
++	command = { type = free_ic value = 20 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2096,7 +2117,7 @@ event = {
+ 	picture = "news_paper"\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = {\r
+@@ -2113,7 +2134,7 @@ event = {
+ 	command = { trigger = { exists = FLA } type = secedeprovince which = FLA value = 115 }\r
+ 	command = { trigger = { exists = FLA } type = secedeprovince which = FLA value = 116 }\r
+ 	command = { trigger = { exists = FLA } type = secedeprovince which = FLA value = 117 }\r
+-	command = { type = trigger which = 3327024 }\r
++	command = { type = trigger which = 3327030 }\r
+ 	}\r
+ \r
+ 	action = {\r
+@@ -2215,7 +2236,7 @@ event = {
+ 	command = { type = demobilize which = air when = 0 where = 1 value = 0 }\r
+ 	command = { type = strength which = land when = 0 where = 0 value = 0.33 }\r
+ 	command = { type = strength which = air when = 0 where = 0 org = 0 value = 0 }\r
+-	command = { type = trigger which = 3327050 }\r
++	command = { type = trigger which = 3327062 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2316,7 +2337,8 @@ event = {
+ 	command = { type = war which = FRA }\r
+ 	command = { trigger = { ai = yes } type = activate which = 6900 }\r
+ 	command = { type = songs which = "Special/0003.txt" } #音源流し\r
+-	command = { type = trigger which = 19330003 when = 0 } #本イベントを起こす\r
++	command = { type = trigger which = 45680063 } #本イベントを起こす\r
++	command = { type = trigger which = 19330003 } #本イベントを起こす\r
+ 	command = { type = event which = 19310003 where = REB when = 0 }\r
+ 	command = { type = setflag which = eventflag19310003 }\r
+ 	command = { type = setflag which = IFJapanWorldWarII } \r
+@@ -3546,7 +3568,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 35\r
++	offset = 65\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 旧きものどもよ。ここから立ち去れ！\r
+@@ -3872,12 +3894,14 @@ event = {
+ 	style = 2\r
+ 	picture = "diplomacy"\r
+ \r
+-	date = { day = 0 month = 1 year = 1930 }\r
++	date = { day = 0 month = 7 year = 1936 }\r
+ 	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 世界はこの大同盟に震え上がるであろう！\r
+ 	name = "ACTIONNAME3327107A"\r
++	command = { type = alliance where = 3 }\r
++	command = { type = alliance_leader which = FRA where = 3 }\r
+ 	command = { type = alliance which = U14 }\r
+ 	command = { type = alliance which = SPR }\r
+ 	command = { type = alliance which = DDR }\r
+@@ -3893,11 +3917,46 @@ event = {
+ 	command = { type = war which = RSI }\r
+ 	command = { type = war which = UD9 }\r
+ 	command = { type = war which = POL }\r
+-	command = { type = inherit which = WLL }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = SCA } } } type = end_non_aggression which = FRA where = SCA }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = ROM } } } type = end_non_aggression which = FRA where = ROM }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = NOR } } } type = end_non_aggression which = FRA where = NOR }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = SWE } } } type = end_non_aggression which = FRA where = SWE }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = FIN } } } type = end_non_aggression which = FRA where = FIN }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = UC3 } } } type = end_non_aggression which = FRA where = UC3 }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = SCH } } } type = end_non_aggression which = FRA where = SCH }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = RSI } } } type = end_non_aggression which = FRA where = RSI }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = UD9 } } } type = end_non_aggression which = FRA where = UD9 }\r
++	command = { trigger = { NOT = { non_aggression = { country = FRA country = POL } } } type = end_non_aggression which = FRA where = POL }\r
++\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = SCA } } } type = end_non_aggression which = DDR where = SCA }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = ROM } } } type = end_non_aggression which = DDR where = ROM }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = NOR } } } type = end_non_aggression which = DDR where = NOR }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = SWE } } } type = end_non_aggression which = DDR where = SWE }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = FIN } } } type = end_non_aggression which = DDR where = FIN }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = UC3 } } } type = end_non_aggression which = DDR where = UC3 }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = SCH } } } type = end_non_aggression which = DDR where = SCH }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = RSI } } } type = end_non_aggression which = DDR where = RSI }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = UD9 } } } type = end_non_aggression which = DDR where = UD9 }\r
++	command = { trigger = { NOT = { non_aggression = { country = DDR country = POL } } } type = end_non_aggression which = DDR where = POL }\r
++\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = SCA } } } type = end_non_aggression which = UB8 where = SCA }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = ROM } } } type = end_non_aggression which = UB8 where = ROM }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = NOR } } } type = end_non_aggression which = UB8 where = NOR }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = SWE } } } type = end_non_aggression which = UB8 where = SWE }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = FIN } } } type = end_non_aggression which = UB8 where = FIN }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = UC3 } } } type = end_non_aggression which = UB8 where = UC3 }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = SCH } } } type = end_non_aggression which = UB8 where = SCH }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = RSI } } } type = end_non_aggression which = UB8 where = RSI }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = UD9 } } } type = end_non_aggression which = UB8 where = UD9 }\r
++	command = { trigger = { NOT = { non_aggression = { country = UB8 country = POL } } } type = end_non_aggression which = UB8 where = POL }\r
++	command = { type = dissent value = -30 }\r
++	command = { type = inherit which = WLL value = 1 }\r
+ 	command = { type = add_core_area which = "Wallonia" when = FRA }\r
+ 	command = { type = add_core_area which = "Flandre" when = HOL }\r
+-	command = { trigger = { exists = FLA } type = secedearea which = HOL value = "Flandre" when = 2 }\r
++	command = { type = inherit which = FLA }\r
++	command = { type = secedearea which = HOL value = "Flandre" when = 2 }\r
+ 	#command = { type = war which = CHI }\r
++	\r
+ 	}\r
+ }\r
+ \r
+@@ -3918,7 +3977,7 @@ event = {
+ \r
+ 	decision_trigger = {\r
+ 	event = 3327008 NOT = { flag = Gamelin_Coup } # 労働総取引所選挙 ― 左派の勝利\r
+-	event = 1226008\r
++	event = 1226013\r
+ 	NOT = { alliance = { country = FRA } }\r
+ 	}\r
+ \r
+@@ -3933,13 +3992,13 @@ event = {
+ 	style = 2\r
+ 	picture = "diplomacy"\r
+ \r
+-	date = { day = 0 month = 1 year = 1930 }\r
++	date = { day = 0 month = 7 year = 1936 }\r
+ 	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 世界はこの大同盟に震え上がるであろう！\r
+ 	name = "ACTIONNAME3327107A"\r
+-	command = { type = alliance which = FRA }\r
++	command = { type = alliance which = FRA when = 1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -3960,7 +4019,6 @@ event = {
+ \r
+ 	trigger = {\r
+ 	event = 3327107 \r
+-	\r
+ 	}\r
+ \r
+ 	name = "EVT_3327109_NAME"\r
+@@ -4057,11 +4115,12 @@ event = {
+ 	picture = "diplomacy"\r
+ \r
+ 	date = { day = 0 month = 1 year = 1930 }\r
+-	offset = 5\r
++	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # \r
+ 	name = "ACTIONNAME3327108A"\r
++	command = { type = alliance where = 1 }\r
+ 	command = { type = alliance_leader which = CHI where = 1 }\r
+ 	#command = { type = alliance_name which = " " }\r
+ 	}\r
+@@ -4069,13 +4128,15 @@ event = {
+ event = { \r
+ 	id = 3327113\r
+ 	random = no\r
+-	persistent = no\r
++	persistent = yes\r
+ \r
+ \r
+ \r
+ 	trigger = {\r
+ 	event = 3327107\r
+ 	alliance_leader = { country = -1 value = 2 }\r
++	NOT = { country = CHI }\r
++	NOT = { alliance = { country = CHI } } \r
+ 	}\r
+ \r
+ 	name = "EVT_3327109_NAME"\r
+@@ -4084,16 +4145,18 @@ event = {
+ 	picture = "diplomacy"\r
+ \r
+ 	date = { day = 0 month = 1 year = 1930 }\r
+-	offset = 5\r
++	offset = 9\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # \r
+ 	name = "ACTIONNAME3327108A"\r
+-	command = { trigger = { alliance_leader = { country = ENG value = 1 } } type = alliance which = ENG }\r
+-	command = { type = alliance_leader which = CHI where = 2 }\r
++	command = { type = leave_alliance }\r
++	command = { trigger = { alliance_leader = { country = ENG value = 2 } } type = alliance which = ENG }\r
++	command = { trigger = { NOT = { alliance_leader = { country = CHI value = 1 } } } type = alliance_leader which = CHI where = 1 }\r
+ 	#command = { type = alliance_name which = " " }\r
+ 	}\r
+ }\r
++\r
+ ##########################################################################\r
+ #  極右ルート\r
+ ##########################################################################\r
+@@ -4108,10 +4171,7 @@ event = {
+ 	country = FRA\r
+ \r
+ 	trigger = {\r
+-	OR = {\r
+-	flag = FRA_Kingdom\r
+-	flag = FRA_Sole\r
+-	}\r
++	event = 3327009\r
+ 	NOT = { atwar = FRA }\r
+ 	random = 35\r
+ 	}\r
+@@ -4174,7 +4234,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 35\r
++	offset = 65\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 退廃芸術を弾圧せよ！\r
+@@ -4278,7 +4338,7 @@ event = {
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+-	government = fascist\r
++	flag = 1931002103\r
+ 	event = 3327204 # 火の十字の男\r
+ 	minister = 5902 # ジャン・メルモー\r
+ 	NOT = { incabinet = 5902 } # ジャン・メルモー\r
+@@ -4321,7 +4381,7 @@ event = {
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+-	government = fascist\r
++	flag = 1931002103\r
+ 	event = 3327062 # 火の十字の男\r
+ 	minister = 5902 # ジャン・メルモー\r
+ 	incabinet = 5902 # ジャン・メルモー\r
+@@ -4369,7 +4429,7 @@ event = {
+ 	country = FRA\r
+ 	\r
+ 	trigger = {\r
+-	government = fascist\r
++	flag = 1931002103\r
+ 	event = 3327009 # 労働総取引所選挙 ― 極右が優位\r
+ 	atwar = no\r
+ 	}\r
+@@ -4422,9 +4482,9 @@ event = {
+ 	country = FRA\r
+ 	\r
+ 	trigger = {\r
+-	government = fascist\r
++	flag = 1931002103\r
+ 	event = 3327009 # 労働総取引所選挙 ― 極右が優位\r
+-	headofstate = 5820 # ジョルジュ・ヴァロワ\r
++	headofstate = 5812 # ジョルジュ・ヴァロワ\r
+ 	exists = FRA\r
+ 	atwar = no\r
+ 	random = 25\r
+@@ -4435,7 +4495,7 @@ event = {
+ 	style = 2\r
+ 	picture = "1934 crisis"\r
+ \r
+-	date = { day = 0 month = 0 year = 1936 }\r
++	date = { day = 0 month = 4 year = 1938 }\r
+ 	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+@@ -4589,7 +4649,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ 	date = { day = 0 month = 1 year = 1934 }\r
+ 	offset = 18\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+ 	action = { # 欧州よ、神話を生み出せ！\r
+ 	name = "ACTIONNAME3327212A"\r
+@@ -4631,7 +4691,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ 	date = { day = 0 month = 1 year = 1934 }\r
+ 	offset = 18\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+ 	action = { # 欧州よ、神話を生み出せ！\r
+ 	name = "ACTIONNAME3327212A"\r
+@@ -4774,8 +4834,8 @@ event = {
+ 	}\r
+ 	name = "ACTIONNAME3327303A"\r
+ 	command = { type = event which = 3327303 where = FRA when = 200 }\r
+-	command = { type = free_supplies value = -10 }\r
+-	command = { type = free_metal value = -5 }\r
++	command = { type = free_supplies value = 10 }\r
++	command = { type = free_metal value = 5 }\r
+ 	command = { trigger = { control = { province = 51 data = FRA } } type = construct which = land_fort where = 51 value = 2 }\r
+ 	command = { trigger = { control = { province = 52 data = FRA } } type = construct which = land_fort where = 52 value = 2 }\r
+ 	command = { trigger = { control = { province = 103 data = FRA } } type = construct which = land_fort where = 103 value = 2 }\r
+@@ -4796,8 +4856,8 @@ event = {
+ 	}\r
+ 	name = "ACTIONNAME3327303B"\r
+ 	command = { type = sleepevent which = 3327303 }\r
+-	command = { type = free_supplies value = -10 }\r
+-	command = { type = free_metal value = -5 }\r
++	command = { type = free_supplies value = 10 }\r
++	command = { type = free_metal value = 5 }\r
+ 	command = { trigger = { control = { province = 51 data = FRA } } type = construct which = land_fort where = 51 value = 2 }\r
+ 	command = { trigger = { control = { province = 52 data = FRA } } type = construct which = land_fort where = 52 value = 2 }\r
+ 	command = { trigger = { control = { province = 103 data = FRA } } type = construct which = land_fort where = 103 value = 2 }\r
+@@ -5090,7 +5150,7 @@ event = {
+ 	action = { # 万国の労働者よ集結せよ！\r
+ 	name = "ACTIONNAME3327309A"\r
+ 	command = { type = alliance which = U14 }\r
+-	command = { type = alliance which = SPR }\r
++	command = { trigger = { NOT = { exists = POR } NOT = { exists = SPA } } type = alliance which = SPR }\r
+ 	command = { type = alliance_name which = "インターナショナル" where = 3 }\r
+ 	}\r
+ }\r
+@@ -5107,7 +5167,7 @@ event = {
+ 	event = 3327010 # 労働総取引所選挙 ― 穏健派の勝利\r
+ 	event = 1226013\r
+ 	NOT = { alliance = { country = FRA } }\r
+-\r
++	OR = { country = U14 AND = { NOT = { exists = POR } NOT = { exists = SPA } }  }\r
+ 	}\r
+ \r
+ \r
+@@ -5116,6 +5176,7 @@ event = {
+ 	event = 3327010 # 労働総取引所選挙 ― 穏健派の勝利\r
+ 	event = 1226013\r
+ 	NOT = { alliance = { country = FRA } }\r
++	OR = { country = U14 AND = { NOT = { exists = POR } NOT = { exists = SPA } }  }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+@@ -5123,6 +5184,7 @@ event = {
+ 	event = 3327010 # 労働総取引所選挙 ― 穏健派の勝利\r
+ 	event = 1226013\r
+ 	NOT = { alliance = { country = FRA } }\r
++	OR = { country = U14 AND = { NOT = { exists = POR } NOT = { exists = SPA } }  }\r
+ 	}\r
+ \r
+ 	name = "EVT_3327309_NAME"\r
+@@ -5444,6 +5506,7 @@ event = {
+ 	command = { type = wakeleader which = 5857 } # ナポレオン6世\r
+ 	command = { type = wakeleader which = 5858 } # ジョアシャン・ミュラ7世\r
+ 	command = { type = headofgovernment which = 5914 } # ジョアシャン・ミュラ7世\r
++	command = { type = strength which = militia when = 0 where = 0 value = 0 }\r
+ 	}\r
+ }\r
+ \r

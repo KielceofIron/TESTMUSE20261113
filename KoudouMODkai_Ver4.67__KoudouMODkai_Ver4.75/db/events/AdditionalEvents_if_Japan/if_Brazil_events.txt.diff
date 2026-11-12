@@ -1,0 +1,1013 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Brazil_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Brazil_events.txt [ascii]
+@@ -1,1009 +0,0 @@
+-#########################################################################\r
+-#\r
+-#		日本皇道派イベント  by 横山大佐\r
+-#########################################################################\r
+-###### 追加イベント一覧 ############\r
+-#########################################################################\r
+-#id = 5363001 カフェ・コン・レイテ\r
+-#id = 5363002 ブラジル経済の崩壊\r
+-#id = 5363003 ヴァルガス暗殺\r
+-#id = 5363004 ブラジル大戒厳令\r
+-#id = 5363005 統合主義運動\r
+-#id = 5363006 ブラジル共産党\r
+-#id = 5363007 アマゾン独立運動\r
+-#id = 5363008 リオデジャネイロの弾圧\r
+-#id = 5363009 カトリック教会が政府を批判\r
+-#id = 5363010 ブラジル新祖国帝政運動\r
+-#id = 5363011 統合主義運動の急拡大\r
+-#id = 5363012 11月暴動\r
+-#id = 5363013 ブラジル新政府 ― 統合主義運動\r
+-#id = 5363014 ブラジル新政府 ― 共産党\r
+-#id = 5363015 ブラジル新政府 ― 帝政復古\r
+-#id = 5363016 ブラジル内戦\r
+-#id = 5363017 ブラジル内戦 ― アマゾンの独立\r
+-#id = 5363018 ブラジル内戦 ― 反政府軍の組織\r
+-#id = 5363019 コーヒー不況\r
+-#id = 5363020 燃やせ！コーヒーを燃やせ！\r
+-#id = 5363021 新経済政策\r
+-#id = 5363022 農業危機の回復\r
+-#id = 5363023 産業の回復\r
+-#id = 5363024 ブラジル農村改革\r
+-##########################################################################\r
+-#  カフェ・コン・レイテ\r
+-# 近代におけるブラジルは、ヨーロッパや日本から大量の移民がなだれ込んだことにより\r
+-# 1900年代から工業化がリオデジャネイロとサンパウロで進んだ。\r
+-# 1914年に第一次世界大戦が勃発すると、1917年4月にブラジル商船がイギリスの潜水艦に撃沈されるも、世界大戦中は中立国家として中欧同盟・協商国と貿易を行い続けた。\r
+-# 好調な経済発展により政治は安定しているかに見えたが、腐敗の一掃を求める軍部が反乱を起こすなど、政情は安定しなかった。\r
+-# また当時、『カフェ・コン・レイテ』と呼ばれるブラジルの政治の実権を握っていた大農園主グループの力が特に強いサンパウロ州とミナスジェライス州が、\r
+-# 交互に連邦の大統領を出す体制への批判も強まっており、その内情は決して良いものではなかった。\r
+-# だが1920年代後半には経済の安定を背景に、反乱の動きがほぼなくなっており、徐々にではあるが改善していた。\r
+-# 1930年、第13代大統領のサンパウロ州のワシントン・ルイスが大統領の座から退き、\r
+-# 第12代大統領であったミナスジェライス州のアルトゥール・ベルナルデスが再度政権を樹立、現在に至っている。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363001\r
+-	random = no\r
+-	country = BRA\r
+-\r
+-	name = "EVT_5363001_NAME"\r
+-	desc = "EVT_5363001_DESC"\r
+-	style = 1\r
+-	picture = "Brazil"\r
+-\r
+-	action = { # ブラジリダーデ（ブラジル魂）万歳！\r
+-	name = "ACTIONNAME5363001A"\r
+-	command = { type = dissent value = -5 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  ブラジル経済の崩壊\r
+-# アメリカにおいて発生した株価暴落は、ブラジル経済に深刻な影響を与えた。\r
+-# ブラジルの主要産業であるコーヒーの輸出といった輸出産業が、世界恐慌により取引先を失ったことで大打撃を受けたのである。\r
+-# 経済が発展していく途上だったこともあり、企業の倒産が相次ぎ、路上には失業者であふれかえった。\r
+-# 今やアルトゥール・ベルナルデス大統領による民主主義体制は、急激に不安定となった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363002\r
+-	random = no\r
+-	country = BRA\r
+-\r
+-	trigger = {\r
+-	local_flag = GreatDepression\r
+-	}\r
+-	\r
+-	name = EVT_5363002_NAME\r
+-	desc = EVT_5363002_DESC\r
+-	style = 2\r
+-	picture = "Bank_Run"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-	\r
+-	action = { # 政府にもはや打つ手はない…\r
+-	name = "ACTIONNAME5363002A"\r
+-	command = { type = dissent value = 15 }\r
+-	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = peacetime_ic_mod value = -10 }\r
+-	command = { type = wartime_ic_mod value = -10 }\r
+-	command = { type = clrflag which = GreatDepression }\r
+-	command = { type = event which = 5363003 where = BRA when = 60 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ヴァルガス暗殺\r
+-# 大恐慌による経済停滞は深刻であり、ブラジルの政治体制は急速に不安定となっている。\r
+-# 特にコーヒーの輸出が激減したことでサンパウロ州の力も弱まり、両州の政治同盟にひびが入ったことも、政治の混乱の原因となった。\r
+-# 特に1934年の選挙の際の大統領候補にアルトゥール・ベルナルデス大統領がミナスジェライス州知事を推挙し、\r
+-# ブラジルの政治的慣習である『カフェ・コン・レイテ』をやめたことで、対立が深刻となっていた。\r
+-# サンパウロ州はこれを受け、両州に次ぐ第3位の実力を持つリオ・グランデ・ド・スル州知事のジェトゥリオ・ドルネレス・ヴァルガスを大統領候補に擁立。\r
+-# 新たな政治同盟を築いて選挙に挑もうとした。\r
+-# このため、ジェトゥリオ・ヴァルガスは1934年選挙を見据え、ブラジル各地を歴訪。\r
+-# だがこの途上、リオ・グランデ・ド・スル州で演説集会に出席していたヴァルガスは、演説中に暗殺者に襲われ、拳銃数発を受けて暗殺されてしまう。\r
+-# 犯人は即座に射殺されたため、背後関係は不明となったが、今わかることはますます政治情勢が悪化することだけであった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363003\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363003_NAME\r
+-	desc = EVT_5363003_DESC\r
+-	style = 2\r
+-	picture = "minister_died"\r
+-	\r
+-	action = { # ブラジル情勢はますます悪化していく…\r
+-	name = "ACTIONNAME5363003A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = sleepminister which = 160001 }\r
+-	command = { type = sleepminister which = 160002 }\r
+-	command = { type = sleepminister which = 160041 }\r
+-	command = { type = sleepminister which = 160124 }\r
+-	command = { type = event which = 5363004 where = BRA when = 10 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル大戒厳令\r
+-# 大統領候補であったリオ・グランデ・ド・スル州知事のジェトゥリオ・ドルネレス・ヴァルガス暗殺により、\r
+-# ブラジルの政治情勢の混迷に拍車がかかった。\r
+-# サンパウロ州を中心とする政治同盟と現政権のミナスジェライス州による対立は修復不可能となり、\r
+-# アルトゥール・ベルナルデス大統領は暗殺事件や各地で起こるデモを受け、ブラジル全土に戒厳令を布告した。\r
+-# 1934年選挙も情勢が安定するまで実施しないことを宣言し、情勢の鎮静化に向けて動こうとしたが、\r
+-# この動きに現在のブラジルのほとんどの国民が現体制に失望。\r
+-# 彼らは各地で影響力を拡大していた過激勢力や軍部への支持を強めつつあった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363004\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363004_NAME\r
+-	desc = EVT_5363004_DESC\r
+-	style = 2\r
+-	picture = "Brazil_soldiers2"\r
+-	\r
+-	action = { # 全土に戒厳令を布告せよ\r
+-	name = "ACTIONNAME5363004A"\r
+-	command = { type = dissent value = 10 }\r
+-	command = { type = domestic which = freedom value = -3 }\r
+-	command = { type = event which = 5363005 where = BRA when = 90 }\r
+-	command = { type = event which = 5363006 where = BRA when = 91 }\r
+-	command = { type = event which = 5363007 where = BRA when = 92 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  統合主義運動\r
+-# 『カフェ・コン・レイテ』とヴァルガス暗殺に起因する混乱は各地に広まった。\r
+-# こうした中、国民の不満を吸い上げるように勢力を伸ばしたのが急進的な政治運動であった。\r
+-# 統合主義運動（インテグラル党）は、1932年に作家のプリニオ・サルガードがサンパウロで結成した反共主義、国家主義を掲げる極右政治運動である。\r
+-# 緑色の党員服に権威主義的な体制の樹立、資本主義・社会主義を強く否定していた。\r
+-# しかしながら、過激であったにもかかわらず、財界など保守勢力から強く支持された。\r
+-# 彼らはジェトゥリオ・ドルネレス・ヴァルガスを支持しており、選挙の協力も認めていたのだが、\r
+-# ヴァルガス暗殺後は、現在のブラジル政治体制の一新を掲げ、全体主義的政府の樹立を公約に、宗教団体や保守層からの支持を一身に集めている。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363005\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363005_NAME\r
+-	desc = EVT_5363005_DESC\r
+-	style = 2\r
+-	picture = "integra"\r
+-	\r
+-	action = { # \r
+-	name = "ACTIONNAME5363005A"\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  ブラジル共産党\r
+-# 『カフェ・コン・レイテ』とヴァルガス暗殺に起因する混乱は各地に広まった。\r
+-# こうした中、国民の不満を吸い上げるように勢力を伸ばしたのが急進的な政治運動であった。\r
+-# ブラジル共産党は、1922年3月にリオデジャネイロで設立された極左政治運動である。\r
+-# アナキストから全体主義者といった様々な思想を持つ人物が所属し、党は政府から危険視されて弾圧された。\r
+-# しかし1933年の大恐慌以降、各地で起こる労働運動に党員を参加させることで、都市の労働者や出稼ぎの農民を中心に勢力を急拡大する。\r
+-# 今ではブラジル全土に党員を保有する大規模な極左運動となり、政府はその地下運動を抑えることは全くできなかった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363006\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363006_NAME\r
+-	desc = EVT_5363006_DESC\r
+-	style = 2\r
+-	picture = "Brazil_desemprego"\r
+-	\r
+-	action = { # 労働者を救済するのだ\r
+-	name = "ACTIONNAME5363006A"\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  アマゾン独立運動\r
+-# 1822年にブラジルが独立したとき、アマゾンもまたポルトガルからの独立を宣言した。\r
+-# しかしこの時の分離政府はブラジル帝国によって鎮圧され、1850年にアマゾネス州としてブラジルに取り込まれた。\r
+-# 19世紀半ばから、産業の発展によりゴムの需要が高まると、多くの移民がアマゾン地域へ移住し、経済的利益を生み出した。\r
+-# だが現地の先住民は労働力の不足から、過酷な労働を強いられ、人口が大きく減少した。\r
+-# また東南アジアのイギリスやオランダ植民地においてより安価で効率的なゴム生産が始まったことで、\r
+-# アマゾンにおけるゴム生産は衰退し、そしてアマゾン地域全体の衰退に繋がった。\r
+-# そして1933年に起きた世界恐慌で、アマゾンの経済は完全に停滞し、ブラジル政府の小手先の経済対策ですら中止された。\r
+-# 今やアマゾンはブラジル内において取り残された地域であり、この現状を受けて少数民族や現地の貧しい住民は政府への強い反発を持つようになる。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363007\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363007_NAME\r
+-	desc = EVT_5363007_DESC\r
+-	style = 2\r
+-	picture = "Amazoni"\r
+-	\r
+-	action = { # 中央政府に期待するものか！\r
+-	name = "ACTIONNAME5363007A"\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  リオデジャネイロの弾圧\r
+-# 戒厳令施行から1年が経過したが、未だに解除の兆しを見せないうえ、政府は過激な政治運動を徹底的に弾圧した。\r
+-# 政府はこの日、警察部隊をリオデジャネイロに動員し、共産党の大々的な取り締まりを行った。\r
+-# だが数千人を動員したにもかかわらず、ブラジル共産党はかれらの味方である「人民」と自らの経験を活かして子の弾圧から逃れた。\r
+-# そればかりか、多くの住民が警察部隊によって殺害され、市民の反発を強めただけに終わった。\r
+-###########################################################################\r
+-event = {\r
+-	id = 5363008\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-\r
+-	trigger = {\r
+-	control = { province = 2075 data = BRA }\r
+-	event = 5363005\r
+-	event = 5363006\r
+-	event = 5363007\r
+-	random = 30\r
+-	}\r
+-	\r
+-	name = EVT_5363008_NAME\r
+-	desc = EVT_5363008_DESC\r
+-	style = 2\r
+-	picture = "Brazil_revolution"\r
+-	\r
+-	date = { day = 0 month = 5 year = 1934 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 5 year = 1935 }\r
+-	\r
+-	action = { # 何たるざまだ！\r
+-	name = "ACTIONNAME5363008A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = manpowerpool value = -1 }\r
+-	command = { type = domestic which = freedom value = -1 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  カトリック教会が政府を批判\r
+-# 戒厳令施行から1年が経過したが、未だに解除の兆しを見せないうえ、政府は過激な政治運動を徹底的に弾圧した。\r
+-# こうした政策にブラジルのカトリック教会は、異例にも政府を強く非難した。\r
+-# この政教分離を無視した言動であるにもかかわらず、国民はこれを熱烈に歓迎し、政府職員は苦虫をかみしめるしかなかった。\r
+-###########################################################################\r
+-event = {\r
+-	id = 5363009\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-\r
+-	trigger = {\r
+-	event = 5363005\r
+-	event = 5363006\r
+-	event = 5363007\r
+-	random = 20\r
+-	}\r
+-	\r
+-	name = EVT_5363009_NAME\r
+-	desc = EVT_5363009_DESC\r
+-	style = 2\r
+-	picture = "Catholicism"\r
+-	\r
+-	date = { day = 0 month = 7 year = 1934 }\r
+-	offset = 4\r
+-	deathdate = { day = 0 month = 5 year = 1935 }\r
+-	\r
+-	action = { # 生臭坊主が！\r
+-	name = "ACTIONNAME5363009A"\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = event which = 5363010 where = BRA when = 1 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル新祖国帝政運動\r
+-# ブラジル新祖国帝政運動の指導者アルリンド・ヴェイガ・ドス・サントスと統合主義運動のプリニオ・サルガドの会談が行われた。\r
+-# パトリアノヴィスタスは伝統的カトリック教徒の集団であり、反自由主義・反社会主義の教義を掲げ、\r
+-# ブラガンサ家の復位と、全体主義的な教義を通じて、ブラジル社会の完全な変革を支持している。\r
+-# 現在、ヴェイガ・ドス・サントスは統合主義運動の正式な構成員となることで、両運動の全面的な合流を行おうと提案している。\r
+-# この提案が如何に魅力的かを無視して、我々は慎重に対応しなければならない。\r
+-# 多くの統合主義者は伝統的カトリック教徒ではあるが、彼らを受け入れれば君主制の復活は避けられないからだ。\r
+-# （ブラジル新祖国帝政運動は帝政復古を支持する組織で1926年に統合主義運動に吸収され、1954年に1度復活した。\r
+-# アルリンド・ヴェイガ・ドス・サントスはその創設者であり、20世紀前半のブラジルで最も偉大なアフリカ系ブラジル人の政治家と呼ばれた）\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363010\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363010_NAME\r
+-	desc = EVT_5363010_DESC\r
+-	style = 2\r
+-	picture = "patrianovista"\r
+-	\r
+-	action = { # 新たなブラジルの秩序を築くのだ\r
+-	name = "ACTIONNAME5363010A"\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = local_setflag which = patrianovista }\r
+-	command = { type = event which = 5363011 where = BRA when = 10 }\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # 古臭い連中など、新時代の運動に必要ない\r
+-	name = "ACTIONNAME5363010B"\r
+-	command = { type = dissent value = 1 }\r
+-	ai_chance = 50\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  統合主義運動の急拡大\r
+-# 統合主義運動が君主主義者とカトリック教会に対して少しばかりの妥協を行ったことで、\r
+-# 統合主義運動がブラジルにおいて急拡大した。\r
+-# 特にサンパウロ大司教が統合主義運動を全面的に支持し、カトリック信者らに運動への参加を呼び掛けたことは非常に大きかった。\r
+-# 今や統合主義を阻むものはブラジルには存在しないのである！！\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363011\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363011_NAME\r
+-	desc = EVT_5363011_DESC\r
+-	style = 2\r
+-	picture = "integra2"\r
+-	\r
+-	action = { # 政府はもはや支持をされていない…\r
+-	name = "ACTIONNAME5363011A"\r
+-	command = { type = dissent value = -10 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  11月暴動\r
+-# 戒厳令施行から2年が経過したが、未だに解除の兆しを見せないうえ、政府は過激な政治運動を徹底的に弾圧した。\r
+-# 警官隊は急進的な政治勢力を大弾圧したが、事態が改善するはずがなく、状況は日が経つごとに悪化した。\r
+-# ついに市民の不満は爆発し、ナタール、レシーフェ、リオデジャネイロで反乱が起きた。\r
+-# 首都は大混乱に陥り、ブラジルの各勢力はこの混乱から最大の利益を引き出すべく、蠢動している。\r
+-###########################################################################\r
+-event = {\r
+-	id = 5363012\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-\r
+-	trigger = {\r
+-	event = 5363005\r
+-	event = 5363006\r
+-	event = 5363007\r
+-	}\r
+-	\r
+-	name = EVT_5363012_NAME\r
+-	desc = EVT_5363012_DESC\r
+-	style = 2\r
+-	picture = "Brazil_revolution"\r
+-	\r
+-	date = { day = 0 month = 10 year = 1935 }\r
+-	\r
+-	action = { # 統合主義者が首都を掌握した！\r
+-	name = "ACTIONNAME5363012A"\r
+-	trigger = { NOT = { local_flag = patrianovista } }\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = event which = 5363013 where = BRA when = 1 }\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # 社会主義者が政府施設を制圧！\r
+-	name = "ACTIONNAME5363012B"\r
+-	trigger = { NOT = { local_flag = patrianovista } }\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = event which = 5363014 where = BRA when = 1 }\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # 君主主義者が首都に帝国旗を掲げた！\r
+-	name = "ACTIONNAME5363012C"\r
+-	trigger = { local_flag = patrianovista }\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = event which = 5363015 where = BRA when = 1 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル新政府 ― 統合主義運動\r
+-# 首都で大暴動が起こると、統合主義運動はデモ隊に紛れ、市民を扇動した。\r
+-# 市民は大統領官邸にまで押しかけ、大統領は暴徒の粉砕を大統領親衛隊に命じた。\r
+-# しかし大統領親衛隊は発砲を拒否するどころか、反対に反乱に続々と参加してしまった。\r
+-# 彼らの手引きにより、多数の統合主義者が大統領官邸内部に入ると、大統領は僅かな側近を連れて大統領府を脱出する。\r
+-# やがてプリニオ・サルガドが支持者を引き連れて、官邸に入場すると軍部は新たな大統領を承認。\r
+-# いくつかの州知事もこれに続いたことで、プリニオ・サルガドはその日のうちにの新政府の編成を発表した。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363013\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363013_NAME\r
+-	desc = EVT_5363013_DESC\r
+-	style = 2\r
+-	picture = "integra"\r
+-	\r
+-	action = { # 統合主義運動の勝利だ！\r
+-	name = "ACTIONNAME5363013A"\r
+-	command = { type = dissent value = -20 }\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
+-	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = flag_ext where = BRA which = "_flag1" }\r
+-	command = { type = headofstate which = 160016 } # プリニオ・サウガド\r
+-	command = { type = headofgovernment which = 160243 } # グスタヴォ・バロゾ\r
+-	command = { type = foreignminister which = 160253 } # ベリザーリオ・ペンナ\r
+-	command = { type = armamentminister which = 160262 } # プリニオ・サウガド\r
+-	command = { type = ministerofsecurity which = 160271 } # ミゲウ・レアリ\r
+-	command = { type = ministerofintelligence which = 160282 } # マンスエート・ベルナルジ\r
+-	command = { type = chiefofstaff which = 160094 } # ニュートン・キャヴァルキャンティ\r
+-	command = { type = chiefofarmy which = 160292 } # エウクリデス・フィゲイレド\r
+-	command = { type = chiefofnavy which = 160114 } # タルシシオ・パディラ\r
+-	command = { type = chiefofair which = 160121 } # モウラオ・フィリョ\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル新政府 ― 共産党\r
+-# 首都で大暴動が起こると、共産党はデモ隊に紛れ、市民を扇動した。\r
+-# 市民は大統領官邸にまで押しかけ、大統領は市外へ出撃し、暴徒を弾圧することを大統領親衛隊に命じた。\r
+-# しかし大統領親衛隊は市外へ出撃するふりを見せ、反対に反乱に続々と参加してしまった。\r
+-# 彼らの手引きにより、多数の共産主義者が大統領官邸内部に入ると、大統領は僅かな側近を連れて大統領府を脱出する。\r
+-# やがてブラジル共産党の指導者であるルイス・カルロス・プレステスが党員を引き連れて、官邸に入場すると革命の成功を高らかに宣言した。\r
+-# 軍は共産党シンパの青年将校が保守的であった将軍を拘束することで動きを封じ込め、軍が動けないことを見たいくつかの州知事は政府への支持を表明。\r
+-# ブラジル共産党は、社会主義政党以外のすべての政党を解散させると、新政府を組織した。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363014\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363014_NAME\r
+-	desc = EVT_5363014_DESC\r
+-	style = 2\r
+-	picture = "Brazil_desemprego"\r
+-	\r
+-	action = { # 革命万歳！！\r
+-	name = "ACTIONNAME5363014A"\r
+-	command = { type = dissent value = -20 }\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
+-	command = { type = set_domestic which = political_left value = 7 }\r
+-	command = { type = flag_ext where = BRA which = "_flag2" }\r
+-	command = { type = headofstate which = 160011 } # ルイス・カルロス・プレステス\r
+-	command = { type = headofgovernment which = 160017 } # ルイス・カルロス・プレステス\r
+-	command = { type = foreignminister which = 160259 } # クリスチアーノ・コルデイロ\r
+-	command = { type = armamentminister which = 160269 } # エリアス・イウチェンコ\r
+-	command = { type = ministerofsecurity which = 160280 } # ジョアン・カバナス\r
+-	command = { type = ministerofintelligence which = 160286 } # アントニオ・ピッカローロ\r
+-	command = { type = chiefofstaff which = 160290 } # ルイス・カルロス・プレステス\r
+-	command = { type = chiefofarmy which = 160109 } # アルヴァロ・デ・ソウザ\r
+-	command = { type = chiefofnavy which = 160297 } # プロトジェネス・ギマラインス\r
+-	command = { type = chiefofair which = 160116 } # アグリベルト・ヴィエイラ\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル新政府 ― 帝政復古\r
+-# 首都で大暴動が起こると、統合主義運動はデモ隊に紛れ、市民を扇動した。\r
+-# 市民は大統領官邸にまで押しかけ、大統領は大統領親衛隊に市民への発砲を命じた。\r
+-# しかし大統領親衛隊は発砲を拒否するどころか、反対に反乱に続々と参加してしまった。\r
+-# 彼らの手引きにより、多数の君主主義者が大統領官邸内部に入ると、大統領は国外に亡命した。\r
+-# やがてプリニオ・サルガドが支持者と君主主義者を引き連れて、官邸に入場するとブラジルの帝政の再建を宣言。\r
+-# 軍部はこれに従い、いくつかの州知事もこれに続いたことで、ブラジルはついに帝政復古した。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363015\r
+-	random = no\r
+-	country = BRA\r
+-	\r
+-	name = EVT_5363015_NAME\r
+-	desc = EVT_5363015_DESC\r
+-	style = 2\r
+-	picture = "Brazil_empier"\r
+-	\r
+-	action = { # ヴァソウラス家が皇位に即位！\r
+-	name = "ACTIONNAME5363015A"\r
+-	command = { type = dissent value = -20 }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = flag_ext where = BRA which = "_flag3" }\r
+-	command = { type = headofstate which = 160301 } # ドン・ペドロ・エンリキ・デ・オルレアンス・エ・ブラガンサ\r
+-	command = { type = headofgovernment which = 160302 } # アルリンド・ヴェイガ・ドス・サントス\r
+-	command = { type = foreignminister which = 160254 } # グスタヴォ・バロゾ\r
+-	command = { type = armamentminister which = 160262 } # プリニオ・サウガド\r
+-	command = { type = ministerofsecurity which = 160271 } # ミゲウ・レアリ\r
+-	command = { type = ministerofintelligence which = 160282 } # マンスエート・ベルナルジ\r
+-	command = { type = chiefofstaff which = 160094 } # ニュートン・キャヴァルキャンティ\r
+-	command = { type = chiefofarmy which = 160292 } # エウクリデス・フィゲイレド\r
+-	command = { type = chiefofnavy which = 160114 } # タルシシオ・パディラ\r
+-	command = { type = chiefofair which = 160121 } # モウラオ・フィリョ\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # ペトロポリス家が皇帝に選ばれた！\r
+-	name = "ACTIONNAME5363015B"\r
+-	command = { type = dissent value = -20 }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = flag_ext where = BRA which = "_flag3" }\r
+-	command = { type = headofstate which = 160300 } # ドン・ペドロ・ガスタン・デ・オルレアンス・エ・ブラガンサ\r
+-	command = { type = headofgovernment which = 160302 } # アルリンド・ヴェイガ・ドス・サントス\r
+-	command = { type = foreignminister which = 160254 } # グスタヴォ・バロゾ\r
+-	command = { type = armamentminister which = 160262 } # プリニオ・サウガド\r
+-	command = { type = ministerofsecurity which = 160271 } # ミゲウ・レアリ\r
+-	command = { type = ministerofintelligence which = 160282 } # マンスエート・ベルナルジ\r
+-	command = { type = chiefofstaff which = 160094 } # ニュートン・キャヴァルキャンティ\r
+-	command = { type = chiefofarmy which = 160292 } # エウクリデス・フィゲイレド\r
+-	command = { type = chiefofnavy which = 160114 } # タルシシオ・パディラ\r
+-	command = { type = chiefofair which = 160121 } # モウラオ・フィリョ\r
+-	ai_chance = 50\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル内戦\r
+-# ブラジルの首都で起きた大暴動により、政府の機能が低下すると、各地で不満が爆発した。\r
+-# 政府の方針に従えない人々は主要都市で民兵組織を組織し、現地の行政府を陥落させた。\r
+-# そして、かつてゴム生産で経済的繁栄を遂げたが、今や発展から取り残されたアマゾン地域では、\r
+-# 先住民と現地の貧しい人々が結託し、臨時政府の樹立を宣言。\r
+-# この二つの勢力はどちらも武力による解決を望んでおり、内戦は避けられない！\r
+-###########################################################################\r
+-event = {\r
+-	id = 5363016\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	event = { id = 5363013 days = 30 }\r
+-	event = { id = 5363014 days = 30 }\r
+-	event = { id = 5363015 days = 30 }\r
+-	}\r
+-	}\r
+-	\r
+-	name = EVT_5363016_NAME\r
+-	desc = EVT_5363016_DESC\r
+-	style = 2\r
+-	picture = "Brazil_soldiers1"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-	\r
+-	action = { # 反乱を何としても鎮圧せよ！\r
+-	name = "ACTIONNAME5363016A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = independence which = UD1 value = 1 when = 1 }\r
+-	command = { type = secederegion which = UD1 value = "Amazonas" when = 1 }\r
+-	command = { type = war which = UD1 }\r
+-	command = { type = end_non_aggression which = BRA where = UD1 }\r
+-	command = { type = belligerence which = UD1 value = 3 }\r
+-	command = { type = set_relation which = UD1 value = -200 }\r
+-	command = { type = event which = 5363017 where = UD1 when = 0 }\r
+-	command = { type = event which = 5363018 where = REB when = 0 }\r
+-	ai_chance = 90\r
+-	}\r
+-\r
+-	action = { # 未開の地などどうでもいい\r
+-	name = "ACTIONNAME5363016B"\r
+-	command = { type = dissent value = 8 }\r
+-	command = { type = independence which = UD1 value = 1 when = 1 }\r
+-	command = { type = secederegion which = UD1 value = "Amazonas" when = 1 }\r
+-	#command = { type = war which = UD1 }\r
+-	#command = { type = end_non_aggression which = BRA where = UD1 }\r
+-	command = { type = non_aggression which = BRA where = UD1 }\r
+-	command = { type = belligerence which = UD1 value = 1 }\r
+-	command = { type = set_relation which = UD1 value = 30 }\r
+-	command = { type = event which = 5363017 where = UD1 when = 0 }\r
+-	command = { type = event which = 5363018 where = REB when = 0 }\r
+-	ai_chance = 10\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル内戦 ― アマゾンの独立\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363017\r
+-	random = no\r
+-	country = UD1\r
+-	\r
+-	name = EVT_5363017_NAME\r
+-	desc = EVT_5363017_DESC\r
+-	style = 2\r
+-	picture = "Amazoni"\r
+-	\r
+-	action = { # 了解\r
+-	name = "ACTIONNAME5363017A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = set_domestic which = democratic value = 7 }\r
+-	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = headofstate which = 556600 } # ネルスン・ヂ・メロ\r
+-	command = { type = headofgovernment which = 556601 } # アルヴァル・マイア\r
+-	command = { type = foreignminister which = 556602 } # ジュリオ・ネリ\r
+-	command = { type = armamentminister which = 556603 } # ヴァルデマー・ペドローザ\r
+-	command = { type = ministerofsecurity which = 556604 } # マヌエル・モンテイル\r
+-	command = { type = ministerofintelligence which = 556605 } # ホジェリオ・コインブラ\r
+-	command = { type = chiefofstaff which = 556606 } # ネルスン・ヂ・メロ\r
+-	command = { type = chiefofarmy which = 556607 } # ネルスン・ヂ・メロ\r
+-	command = { type = chiefofnavy which = 556608 } # カンディードゥ・ロンドン\r
+-	command = { type = chiefofair which = 556609 } # パウル・フランシスク・トーレス\r
+-	command = { type = manpowerpool value = 30 }\r
+-	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
+-	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
+-	command = { type = add_division value = militia when = 3 where = -40 }\r
+-	command = { type = add_division value = militia when = 3 where = -40 }\r
+-	command = { type = add_division value = militia when = 3 where = -40 }\r
+-	command = { type = add_division value = militia when = 3 where = -40 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ブラジル内戦 ― 反政府軍の組織\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363018\r
+-	random = no\r
+-	country = REB\r
+-	\r
+-	name = EVT_5363018_NAME\r
+-	desc = EVT_5363018_DESC\r
+-	style = 2\r
+-	picture = "Brazil_soldiers1"\r
+-	\r
+-	action = { # 了解\r
+-	name = "ACTIONNAME5363018A"\r
+-	command = { trigger = { event = 5363014 } type = add_corps which = "統合主義運動反乱軍" value = land where = 2058 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第1民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第2民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第3民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_corps which = "統合主義運動反乱軍" value = land where = 2073 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第4民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第5民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第6民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_corps which = "統合主義運動反乱軍" value = land where = 2069 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第7民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第8民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { event = 5363014 } type = add_division which = "統合主義運動第9民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_corps which = "ブラジル共産党赤軍" value = land where = 2058 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第1民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第2民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第3民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_corps which = "ブラジル共産党赤軍" value = land where = 2073 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第4民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第5民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第6民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_corps which = "ブラジル共産党赤軍" value = land where = 2069 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第7民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第8民兵師団" value = militia when = 3 where = -40 }\r
+-	command = { trigger = { OR = { event = 5363013 event = 5363015 } } type = add_division which = "ブラジル共産党第9民兵師団" value = militia when = 3 where = -40 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  コーヒー不況\r
+-# サンパウロの地主たちは我々にある問題を示した。\r
+-# 国際市場でのコーヒーの価格が日に日に減じていき、コーヒー農家は日増しに増加する買い手が付かない収穫物で、倉庫を満たしている。\r
+-# 我々の経済専門家によれば、我々が今行動を起こさなければ、深刻化する農業危機は大農場主のみならず、貧しい農民にまで影響が及ぶだろう。\r
+-###########################################################################\r
+-event = {\r
+-	id = 5363019\r
+-	random = no\r
+-	country = BRA\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	event = { id = 5363013 days = 180 }\r
+-	event = { id = 5363014 days = 180 }\r
+-	event = { id = 5363015 days = 180 }\r
+-	}\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	name = EVT_5363019_NAME\r
+-	desc = EVT_5363019_DESC\r
+-	style = 2\r
+-	picture = "Coffee"\r
+-	\r
+-	date = { day = 0 month = 10 year = 1935 }\r
+-	\r
+-	action = { # 自由市場の力を信じよう\r
+-	name = "ACTIONNAME5363019A"\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = sleepevent which = 5363020 }\r
+-	ai_chance = 20\r
+-	}\r
+-\r
+-	action = { # 過剰コーヒーを買い取り、焼却せよ\r
+-	name = "ACTIONNAME5363019B"\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = money value = -100 }\r
+-	command = { type = event which = 5363020 where = BRA when = 30 }\r
+-	ai_chance = 80\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  燃やせ！コーヒーを燃やせ！\r
+-# 南部諸州の全土で、政府が買い上げた数千もの過剰コーヒーの袋を焼却した。\r
+-# 我が国の経済専門家によると、これで世界中でコーヒーの供給が減少させ、\r
+-# 国際市場での価格は徐々に上がり、この政策に費やした費用は税金という形で戻るだろう。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5363020\r
+-	random = no\r
+-	country = REB\r
+-	\r
+-	name = EVT_5363020_NAME\r
+-	desc = EVT_5363020_DESC\r
+-	style = 2\r
+-	picture = "Brazil_coffeeburn"\r
+-	\r
+-	action = { # コーヒーをトーストしてしまえ！\r
+-	name = "ACTIONNAME5363020A"\r
+-	command = { type = dissent value = -2 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  新経済政策\r
+-# 世界大恐慌から数年がたった今もなお、ブラジルの民衆は経済的苦境に陥っていた。\r
+-# 失業率はなおも増加し、企業の倒産や農家の夜逃げは珍しくなかった。\r
+-# 我々は経済政策について、政府による経済への介入か、\r
+-# あるいは古き良き見えざる手に仕事を任せるか、決断しなくてはならない。\r
+-#########################################################################\r
+-event = {\r
+-	id = 5363021\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-	\r
+-	decision = {\r
+-	OR = {\r
+-	event = 5363013\r
+-	event = 5363014\r
+-	event = 5363015\r
+-	}\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = {\r
+-	event = { id = 5363013 days = 360 }\r
+-	event = { id = 5363014 days = 360 }\r
+-	event = { id = 5363015 days = 360 }\r
+-	}\r
+-	atwar = no\r
+-	money = 500\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	event = { id = 5363013 days = 360 }\r
+-	event = { id = 5363014 days = 360 }\r
+-	event = { id = 5363015 days = 360 }\r
+-	}\r
+-	atwar = no\r
+-	random = 35\r
+-	}\r
+-	\r
+-	name = EVT_5363021_NAME\r
+-	desc = EVT_5363021_DESC\r
+-	style = 2\r
+-	picture = "new_deal"\r
+-	decision_picture = "decision_new_deal"\r
+-\r
+-	date = { day = 0 month = january year = 1933 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = december year = 1935 }\r
+-\r
+-	action = { # 政府による経済介入が必要とされている\r
+-	name = "ACTIONNAME5363021A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = wartime_ic_mod value = 10 }\r
+-	command = { type = peacetime_ic_mod value = 10 }\r
+-	command = { trigger = { ai = no } type = money value = -500 }\r
+-	command = { type = domestic which = free_market value = -3 }\r
+-	command = { type = local_setflag which = Brazil_Keizai_1 }\r
+-	ai_chance = 95\r
+-	}\r
+-\r
+-	action = { # 神の見えざる手は今最も必要だ\r
+-	name = "ACTIONNAME5363021B"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = domestic which = free_market value = 3 }\r
+-	command = { type = local_setflag which = Brazil_Keizai_2 }\r
+-	ai_chance = 5\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  農業危機の回復\r
+-# ブラジル南部諸州では、世界恐慌によりコーヒーを初めとする農産物の価格の低下は深刻な農業危機を招いた。\r
+-# しかし、政府の主導する経済政策によって農産物の価格の低下は食い止められ、\r
+-# 徐々にではあるが国際市場での価格が回付したこともあり、農村は経済的苦境は回復しつつある。\r
+-###########################################################################\r
+-event = {\r
+-	id = 5363022\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	AND = {\r
+-	event = { id = 5363021 days = 360 }\r
+-	local_flag = Brazil_Keizai_2\r
+-	}\r
+-	AND = {\r
+-	event = { id = 5363021 days = 480 }\r
+-	local_flag = Brazil_Keizai_1\r
+-	}\r
+-	}\r
+-	}\r
+-	\r
+-	name = EVT_5363022_NAME\r
+-	desc = EVT_5363022_DESC\r
+-	style = 2\r
+-	picture = "Coffee"\r
+-	\r
+-	date = { day = 0 month = 10 year = 1935 }\r
+-	\r
+-	action = { # ひとまず危機は脱した\r
+-	name = "ACTIONNAME5363022A"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_1 } type = wartime_ic_mod value = 10 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_1 } type = peacetime_ic_mod value = 10 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_2 } type = wartime_ic_mod value = 15 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_2 } type = peacetime_ic_mod value = 15 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  産業の回復\r
+-# ブラジルでは、南部諸州の一部で農業などの一次産業から重工業や軽工業などによる二次産業に移行することで近代化と発展を遂げた州が多く存在していた。\r
+-# しかし世界恐慌により、工場は次々に閉鎖に追い込まれ、大都市に失業者があふれるという最悪の状況になった。\r
+-# だが政府の政策によって、徐々に新たな工場の開設が増加し、経済が回復した。\r
+-###########################################################################\r
+-event = {\r
+-	id = 5363023\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	AND = {\r
+-	event = { id = 5363022 days = 360 }\r
+-	local_flag = Brazil_Keizai_2\r
+-	}\r
+-	AND = {\r
+-	event = { id = 5363022 days = 480 }\r
+-	local_flag = Brazil_Keizai_1\r
+-	}\r
+-	}\r
+-	}\r
+-	\r
+-	name = EVT_5363023_NAME\r
+-	desc = EVT_5363023_DESC\r
+-	style = 2\r
+-	picture = "ersatz_conversion"\r
+-	\r
+-	date = { day = 0 month = 10 year = 1935 }\r
+-	\r
+-	action = { # 経済は回復した！\r
+-	name = "ACTIONNAME5363023A"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_1 } type = wartime_ic_mod value = 10 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_1 } type = peacetime_ic_mod value = 10 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_2 } type = wartime_ic_mod value = 15 }\r
+-	command = { trigger = { local_flag = Brazil_Keizai_2 } type = peacetime_ic_mod value = 15 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-\r
+-#########################################################################\r
+-#  ブラジル農村改革\r
+-# ブラジルの農村は、大地主が土地の多くを所有するなど、多くの問題を抱えていた。\r
+-# 農地改革を行わなければ、同じような経済危機がまた起きた時、大きな被害が出るだろう。\r
+-# 改革は何としても断行しなくてはならない！\r
+-#########################################################################\r
+-event = {\r
+-	id = 5363024\r
+-	random = no\r
+-	country = BRA\r
+-	save_date = yes\r
+-	\r
+-	decision = {\r
+-	event = 5363022\r
+-	event = 5363023\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	event = { id = 5363023 days = 90 }\r
+-	atwar = no\r
+-	money = 300\r
+-	}\r
+-\r
+-	trigger = {\r
+-	event = { id = 5363023 days = 90 }\r
+-	atwar = no\r
+-	random = 35\r
+-	}\r
+-	\r
+-	name = EVT_5363024_NAME\r
+-	desc = EVT_5363024_DESC\r
+-	style = 2\r
+-	picture = "Coffee"\r
+-	decision_picture = "decision_new_deal"\r
+-\r
+-	date = { day = 0 month = january year = 1933 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = december year = 1935 }\r
+-\r
+-	action = { # 大地主による近代化を支援する\r
+-	name = "ACTIONNAME5363024A"\r
+-	command = { type = dissent value = 3 }\r
+-	command = { type = industrial_modifier which = total value = 3 }\r
+-	command = { trigger = { ai = no } type = money value = -300 }\r
+-	command = { type = domestic which = free_market value = 1 }\r
+-	ai_chance = 95\r
+-	}\r
+-\r
+-	action = { # 土地所有法を改正し、地主制度を解体する\r
+-	name = "ACTIONNAME5363024B"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = industrial_modifier which = supplies value = 5 }\r
+-	command = { trigger = { ai = no } type = money value = -300 }\r
+-	command = { type = domestic which = free_market value = -1 }\r
+-	ai_chance = 5\r
+-	}\r
+-}
+\ No newline at end of file

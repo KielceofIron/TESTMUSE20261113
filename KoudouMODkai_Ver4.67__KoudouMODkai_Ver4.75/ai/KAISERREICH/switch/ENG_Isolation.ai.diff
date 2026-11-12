@@ -1,0 +1,1453 @@
+--- A/ai/KAISERREICH/switch/ENG_Isolation.ai [ascii]
++++ B/ai/KAISERREICH/switch/ENG_Isolation.ai [ascii]
+@@ -1,725 +1,725 @@
+-# England goes into Isolation
+-# AI File for KLOTW by Kibbles
+-
+-switch = no 
+-max_front_ratio = 1.2 
+-max_garrison_prop = 0.30
+-min_garrison_prop = 0.20
+-neutrality = 149.000 
+-war = 0
+-strat_redeploy_threshold = 25
+-exp_force_ratio = 0.00
+-exp_force_ratios = {
+-} 
+-no_exp_forces_to = {  }
+-
+-####################################
+-# Diplomacy
+-###################################
+-combat = { }
+-
+-claim_acceptance = -20
+-
+-befriend = {
+-}
+-protect = {
+-}
+-target = {
+-} 
+-trade = {
+-	cancel_deal_threshold = 2
+-
+-	energy 		= -1
+-	rare_materials 	= -1
+-	metal 		= -1
+-	oil 		= -1
+-	supplies 	= -1
+-	money 		= -1
+-
+-	favored = {
+-	FRA = 100
+-	RSI = 50
+-	PRK = 30
+-	SPR = 50
+-	GEO = 50
+-	RUS = 70
+-	CSA = 40
+-	SOV = 50
+-	}
+-	embargo = {  GER HUN ITA AUS CAN AST PAK }
+-}
+-tech_sharing = {
+-	favored = {
+-	FRA = 70
+-	RSI = 50
+-	U31 = 20
+-	SPR = 50
+-	GEO = 50
+-	RUS = 70
+-	HOL = 40
+-	}
+-	embargo = {
+-	GER
+-	ITA
+-	AUS
+-	HUN
+-	BEL
+-	CAN
+-	AST
+-	PAK
+-	VIC
+-}
+-	not = { }
+-	prioritized = {
+-		# Arcriculture
+-		5020 = 100
+-		5030 = 100
+-		5040 = 100
+-
+-		# Inf support
+-		1310 = 100
+-		1320 = 100
+-		1330 = 100
+-		1340 = 100
+-		1350 = 100
+-		1360 = 100
+-
+-		# Production
+-		5050 = 100
+-		5060 = 100
+-		5070 = 100
+-		5080 = 100
+-		5090 = 100
+-		5100 = 100
+-		5110 = 100
+-		5120 = 100
+-		5130 = 100
+-		5150 = 100
+-		5180 = 100
+-
+-		# Naval Bomber
+-		4190 = 100
+-		4200 = 100
+-		4210 = 100
+-
+-		# motorized
+-		1230 = 100
+-		1240 = 100
+-		1250 = 100
+-
+-		# Strategic bombers
+-		4220 = 100
+-		4230 = 100
+-		4240 = 100
+-	}
+-}
+-###################################
+-# Spying
+-###################################
+-spyprefs =
+-{
+-	percentage_on_spies 		= 0.2
+-	percentage_foreign_mission 	= 0.7
+-
+-	# Used for Homeland Defense Spying
+-	spyprefsdata = 
+-	{
+-		NumberOfSpies = 10
+-		counter_espionage =  10
+-		country = ENG
+-	}
+-	# Defaul Spy parms used for countries the AI is atwar with but has no specific entry
+-	spyprefsdata = {
+-		country_priorities	= 3
+-		NumberOfSpies		= 3
+-		min_number_of_spies = 1
+-		steal_blueprint 	= 10
+-		minister_assassination = 1
+-		smear_campaign 		= 3
+-		coup 				= 0
+-		sabotage_industry 	= 3
+-		nuclear_sabotage 	= 0
+-		found_partisans 	= 0
+-		massmedia 			= 3
+-		counter_espionage 	= 5
+-		disrupt_techteam	= 5
+-		country 			= GER
+-	}
+-}
+-
+-
+-###################################
+-# Construction and Tech Research
+-###################################
+-#Default values
+-construction = { 
+-	max_factor = 0.150 
+-
+-	AA_batteries = no
+-	max_AA_level = 10 
+-	AA_provs = { } 
+-
+-	coastal_fort = yes
+-	max_coastal_level = 10
+-	coastal_fort_provs = {
+-		# England Coast
+-		26 # Dover
+-		25 # Norwich
+-		27 # Portsmouth
+-		23 # Plymouth
+-		12 # Edinburgh
+-		11  # Glasgow
+-	} 
+-
+-	radar_station = atwar
+-	max_radar = 3 
+-	radar_provs = {
+-		26 # Dover
+-		25 # Norwich
+-		27 # Portsmouth
+-		23 # Plymouth
+-		18  # Shefield
+-		5  # Scapa Flow
+-	} 
+-
+-	air_base = atwar
+-	max_air_base = 5 
+-	air_base_provs = { } 
+-
+-	naval_base = no 
+-	max_naval_base = 5 
+-	naval_base_provs = { } 
+-
+-	land_fort = no
+-	max_land_level = 5
+-	fort_provs	= { 
+-	}
+-	fort_borders = { } 
+-
+-	ic_at_war = no
+-	force_ic_until = 1938
+-	ic_end_year = 1940
+-	IC_provs = { 3 5 6 7 8 10 36 35	} 
+-}
+-military = { 
+-	relative_build_scheme 	= no
+-	max_batch_peace 		= 360 
+-	max_batch_war 			= 180 
+-	max_batch_home_front 	= 180
+-
+-	#### Divisions etc...
+-	infantry			= 20
+-	cavalry 			= 0
+-	motorized 			= 2
+-	mechanized 			= 0
+-	light_armor 		= 0
+-	armor 				= 0
+-	paratrooper 		= 0
+-	marine 				= 1
+-	bergsjaeger 		= 0
+-	garrison			= 3
+-	hq					= 3
+-	militia 			= 0
+-						# 29 %
+-
+-	interceptor 		= 4
+-	multi_role 			= 3
+-	cas 				= 0
+-	strategic_bomber 	= 1
+-	tactical_bomber 	= 4
+-	naval_bomber 		= 6
+-	transport_plane 	= 0
+-	flying_bomb 		= 0
+-	flying_rocket 		= 0
+-						# 18 %
+-
+-	battleship 			= 6
+-	carrier 			= 7
+-	destroyer 			= 18
+-	light_cruiser 		= 12
+-	heavy_cruiser 		= 0
+-	battlecruiser 		= 0
+-	submarine 			= 5
+-	transports 			= 5
+-						# 53 %
+-
+-	#### Brigades
+-	artillery 				= 15
+-	sp_artillery 			= 0
+-	rocket_artillery		= 0 
+-	sp_rct_artillery 		= 0
+-	anti_tank 				= 0
+-	tank_destroyer 			= 0
+-	light_armor_brigade 	= 0
+-	heavy_armor 			= 0
+-	super_heavy_armor 		= 0
+-	armored_car 			= 0
+-	anti_air 				= 5
+-	police 					= 3
+-	engineer 				= 5
+-
+-	cag = 100.000 
+-}
+-
+-technology = { 
+-	endgoal 	= { } 
+-	preference 	= {
+-		#Infantry
+-		1010 1020 1030 1040 1050 1060
+-
+-		# Arcriculture
+-		5020 5030 5040
+-
+-		# Inf support
+-		1310 1320 1330 1340 1350 1360
+-
+-		# Production
+-		5050 5060 5070 5080 5090 5100 5110 5120 5130 5150 5180
+-
+-		# Naval Bomber
+-		4190 4200 4210
+-
+-		# motorized
+-		1230 1240 1250
+-
+-		# Medium tanks
+-		2070 2080 2090
+-
+-		# Light tanks
+-		2020 2030 2040 2050 2060
+-
+-		# Strategic bombers
+-		4220 4230 4240
+-		
+-		# Naval Doctrines
+-		8200 8250 8260
+-
+-		# Land Doctrines
+-		6170
+-
+-		# Air Doctrines
+-		9040 9050 9060 9070 9080 9090 9100 9110 9120 9130 9190 9210 9220 9230 9240 9250 9350
+-	} 
+-	ignore 		= {
+-		# Vehicle Assembly & Rocket Assembly 5160 
+-		5170
+-
+-		# Carrier 3320 3330 3340
+-		3350
+-
+-		# CAS
+-		4170 4280 4180
+-
+-		# Mountain Unit techs
+-		1110 1120 1130 1140
+-
+-		# Atomic Research
+-		5470 5480 5490 5500 5510 5520 5530 5540
+-
+-		# Test and Research
+-		5560
+-
+-		# Airborne 1070 1080 1090
+-		1100
+-
+-		# Air Transports 4250
+-		4260 4270
+-
+-		# Mechanized
+-		1260 1270 1280 1290
+-
+-		# SP Rocket Artillery
+-		2260 2270 2280 
+-
+-		# Rocket Artillery
+-		2370 2380 2390
+-	}
+- 
+-	armor 		= 0
+-	infantry 		= 6
+-	industry 		= 5
+-	aircraft 		= 6
+-	naval 		= 4
+-	land_doctrines 	= 1
+-	secret_weapons 	= 1
+-	air_doctrines 	= 1
+-	naval_doctrines 	= 1
+-}  
+-###################################
+-# Ground Combat, Leaders and Garrisons
+-###################################
+-leader_ratio = {
+-	land_field_marshal 	=0.02
+-	land_general 		=0.031
+-	land_lt_general 	=0.41
+-
+-	sea_grand_admiral 	=0.02
+-	sea_admiral 		=0.061
+-	sea_vice_admiral 	=0.401
+-
+-	air_marshal 		=0.02
+-	air_general 		=0.091
+-	air_lt_General 		=0.11 
+-}
+-garrison = {
+-	defend_overseas_beaches = yes
+-	home_multiplier 	= 1.3
+-	overseas_multiplier 	= 0.3
+-	home_peace_cap 		= 100
+-	war_zone_odds 		= 2.0
+-	key_point_prio_mult	= 1.0
+-	revolt_risk_mult	= 1.0
+-
+-	# PRIORITIES:
+-	beach			= 20	# Beach level 2
+-	capital			= 40	# Our capital
+-	human_border		= 0	# Ignored for allied human players
+-	war_target		= 50	# The next country targeted for attack by this AI
+-	
+-	opposing_alliance	= 30	# For neutrals, all alliances are "opposing"
+-	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+-	unstable_border		= 0	# Bordering countries at war with someone else get this
+-
+-	# Borders with specific countries
+-	country_priorities = {
+-		CAN = 250
+-		GER = 250
+-		BEL = 150
+-		HOL = 100
+-		ITA = 75
+-		SPA = 25
+-		EUS = 25
+-		CAL = 25
+-		TEX = 10
+-		USA = 10
+-		CSA = -1
+-		SPR = -1
+-		ETH = -1
+-		SCH = -1
+-		FRA = -1
+-	}
+-	ignore = {
+-		#Actual Beaches to Ignore
+-		1005 # Sharm el-Sheikh
+-		1010  # Eilat
+-		1009 # Gaza
+-		1004 # El-Arish
+-
+-		#Libya
+-		772   #Forte Maddalens
+-		770   #Al Jaghbun
+-		775   #Aujila
+-		777  #Calanslo
+-		774  #Kufra
+-		776  #Murzuk
+-		753  #Ghat
+-		751   #Ghadames
+-		752   #Sorno
+-		
+-		#Egypt/East Africa
+-		779  #Siwa
+-		801  #Great Sand Sea
+-		802   #Qattara
+-		800  #AinDalla
+-		798  #Western Desert
+-		804  #El Atiun
+-		808  #El Obeid
+-		809  #Waw
+-		812  #Malakal
+-		811  #Omdurman
+-		814  #Gallabal
+-		813  #Kassala
+-		843  #Marsabit
+-
+-		#Ethiopia
+-		817  #Asmara
+-		821  #Adwa
+-		823  #Gonder
+-		822  #Debre
+-		824  #Gambela
+-		829  #Jima
+-		830  #Moyale
+-		819  #Denakil
+-		820  #Dese
+-		818  #Diredawa
+-		827  #Ogaden
+-		828  #Bardera
+-
+-		#Belgian Congo
+-		904  #Stanleyville
+-		903  #Buta
+-		905  #Costermanville
+-		906  #Coquihatville
+-		898  #Abertville
+-		902  #Kindu-Port-Empain
+-		899  #Leopoldville
+-	}
+-	province_priorities = {
+-		# England Coast
+-		26  = 30 # Dover
+-		25 = 30 # Norwich
+-		27 = 30 # Portsmouth
+-		23 = 30 # Plymouth
+-		14 = 30 # Blackpool
+-		18  = 30 # Sheifield
+-		17 = 30 # Liverpool
+-		19 = 30 # Bristol
+-		13 = 30 # Sunderland
+-		12 = 30 # Edinburgh
+-		11 = 30 # Glasgow
+-		5 = 30 # Scap Flow
+-	}
+-	area_multiplier = {
+-	}
+-}
+-front = { 
+-	recklessness 		= 1 # 0-3
+-	distrib_vs_ai 		= even
+-	distrib_vs_human 		= even
+-
+-	enemy_reinf_days		= 6
+-	reserve_prop		= 0.1
+-	panic_ratio_vs_ai		= 2.5
+-	panic_ratio_vs_human	= 2.5
+-	base_attack_odds		= 1.3
+-	min_attack_odds		= 1.1
+-	max_attack_odds		= 3.0
+-	reinforce_odds		= 1.3
+-	withdraw_odds		= 0.6
+-
+-	strength 		= 1.0
+-	organisation 	= 1.0
+-	soft_attack 	= 1.0
+-	hard_attack 	= 1.0
+-	ground_defense 	= 1.0
+-	dig_in 		= 1.0 # Against defender
+-
+-	frozen_attack 	= 1.0
+-	snow_attack 	= 1.0
+-	blizzard_attack 	= 1.0
+-	storm_attack 	= 1.0
+-	muddy_attack 	= 1.0
+-	
+-	occupied 		= 0.7
+-	owned 		= 0.7
+-
+-	jungle_attack 	= 1.0
+-	mountain_attack 	= 1.0
+-	swamp_attack 	= 1.0
+-	forest_attack 	= 1.0
+-	hill_attack 	= 1.0
+-	urban_attack 	= 1.0
+-	river 		= 1.0
+-
+-      	enemy_handicap = { } 
+-      	passivity = { } 
+-} 
+-###################################
+-# Invasions and Naval
+-###################################
+-invasion = {
+-	invasion		= yes
+- 	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)
+-	random		= 8.0	#How big a random range.  (1.0 = 1%)
+-	coastal		= 0.1	#increase to avoid coastal forts more.
+-	beach		= 0.1	#higher, avoid worst beaches.
+-	distance		= 0.1	#higher = avoid long distance.
+-	max_distance    	= 50.0
+-	pocket		= 20.0	#prioritise pockets, ie provinces with no adjacent controlled by same.
+-	island		= 0.1	#prioritise taking pure islands.
+-	enemy		= 2.0	#higher = much more vary of troops in province.
+-	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby
+-	air_base		= 1.5 
+-      	naval_base 	= 0.1 
+-      	air_support 	= 3.0 
+-      	redirect 		= priority
+-	ignore		= no
+-	help_allies 	= yes
+-      
+-	staging_province = {
+-		18  # Sheiffield
+-		23 # Plymouth
+-
+-	}
+-	target = { } 
+-} 
+-admiral = { 
+-	min_org		=100	# NEW: Percent of org gained back before the unit can leave port
+-	min_dmg		=98    # NEW: Percent of dmg gained back before the unit can leave port
+-	return_org 	=60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships
+-	return_dmg 	=80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships
+-
+-	ignore = {
+-		#Murmansk/Archangel
+-		"Barents Sea"
+-		"Arctic Ocean"
+-
+-		#Western Mediterranean
+-		"Costa del Sol"
+-		"Gulf of Lyon"
+-		"Algerian Coast"
+-		
+-		#Central Mediterranean
+-		"Tyrrhenian Sea"
+-		"Adriatic Sea"
+-		
+-		#Eastern Mediterranean
+-		"Black Sea"
+-		"Aegean Sea"
+-		"Egyptian Coast"
+-		
+-		#Brazil and Argentina Coast
+-		"Coast of Guyana"
+-		"Coast of Recife" 
+-		"Coast of Uruguay"
+-		"Coast of Brazil"
+-		"Coast of Argentina"
+-		
+-		# West Africa
+-		"Coast of Africa"
+-		"Coast of Bissao" 
+-		
+-		#Equitorial Africa
+-		"Gulf of Guinea"
+-		"Coast of Angola-Namibia"
+-		
+-		#South Africa
+-		"Coast of South Africa"
+-		"Atlantic-Indian Ridge"
+-		
+-		#East Africa
+-		"Red Sea"
+-		"Horn of Africa"
+-		
+-		#Madagascar Coast
+-		"South Mozambique Channel"
+-		"North Mozambique Channel" 
+-		"Northeast Coast of Madagascar"
+-		"Southeast Coast of Madagascar" 
+-		
+-		#North Indian Ocean (Persian Gulf)
+-		"Persian Gulf"
+-		"North Arabian Sea"
+-		"South Arabian Sea" 
+-		"Coast of Ceylon"
+-		
+-		#Central/South Indian Ocean
+-		"Mascarene Plateau"
+-		"Mid-Indian Ridge" 
+-		"Ninetyeast Ridge" 
+-		"Southeast Indian Ocean"
+-		"Southwest Indian Ocean" 
+-		
+-		#Bay of Bengal & West Indonesia
+-		"East Bay of Bengal"
+-		"West Bay of Bengal"
+-		"Malacca Strait"
+-		"Java Ridge"
+-		"Java Trench"
+-		
+-		#Indo-China, Borneo, Phillipenes
+-		"Gulf of Siam"
+-		"Coast of Indochina"
+-		"Spratly Sea"
+-		"Coast of Brunei"
+-		"Flores Sea"
+-		"Sulu Sea"
+-		"Celebes Sea"
+-		"Luzon Strait"
+-		
+-		#China Coast
+-		"Taiwan Strait"
+-		"Yellow Sea"
+-		
+-		#Japanese Coast
+-		"Sea of Japan"
+-		"Ryukyus"
+-		"Coast of Japan"
+-		"South Sea of Okhotsk"
+-		"West Sea of Okhotsk" 
+-		"East Sea of Okhotsk" 
+-		
+-		#Mariana Basin, Phillipenes
+-		"Philipine Trench"
+-		"Central Philippine Sea"
+-		"Mariana Trench"
+-		"East Mariana Basin"
+-		"Mid-Pacific Mountains"
+-		"North Bismarck Sea"
+-		
+-		#New Guinea, East/North Australia and New Zealan
+-		"Coast of New Guinea"
+-		"Molucca Sea"
+-		"Banda Sea"
+-		"Arafura Sea"
+-		"South Bismarck Sea"
+-		"Solomon Sea"
+-		"West Coral Sea"
+-		"East Coral Sea" 
+-		"North Tasman Sea"
+-		"South Tasman Sea" 
+-		"East Cost of New Zealand"
+-		
+-		# South and West Australia
+-		"Timor Sea"
+-		"West Coast of Australia"
+-		"East Great Australian Bight"
+-		"West Great Australian Bight" 
+-		
+-		#North Pacific
+-		"Coast of Kamchatka"
+-		"East Bering Sea"
+-		"West Bering Sea" 
+-		"Aleutians"
+-		"Northwest Pacific Basin"
+-		"North Northeast Pacific Basin"
+-		
+-		#Central Pacific
+-		"Hawaiian Rise"
+-		"North East Pacific Ocean"
+-		"Marshalls Sea"
+-		"South East Pacific Ocean"
+-		"Marianas"
+-		"Western Solomons"
+-		"Eastern Solomons"
+-		"US Maritimes"
+-		"Carolines"
+-		
+-		#South Pacific
+-		"Gilberts"
+-		"Line Islands"
+-		"Fiji Basin"
+-		"Southwest Pacific Basin"
+-		
+-		# South American West Coast
+-		"Southeast Pacific Basin"
+-		"West Coast of Chile"
+-		"West Coast of Peru"
+-		"South Southeast Pacific Ocean"
+-		"North Southeast Pacific Ocean"
+-				
+-		#West Coast of Mexico
+-		"West Coast of Mexico"
+-		"West Coast of Central America"
+-	}
+-	#Which provinces to use as bases..
+-	base = {
+-		5	# Scapa Flow
+-		17	# Liverpool
+-
+-	}
+-	target = { }
+-	core = {
+-		2682
+-		2688
+-		2683
+-		2686
+-		2684
+-		2685
+-		2716
+-		2717
+-		2712
+-		2708
+-		2709
+-	}
++# England goes into Isolation\r
++# AI File for KLOTW by Kibbles\r
++\r
++switch = no \r
++max_front_ratio = 1.2 \r
++max_garrison_prop = 0.30\r
++min_garrison_prop = 0.20\r
++neutrality = 149.000 \r
++war = 0\r
++strat_redeploy_threshold = 25\r
++exp_force_ratio = 0.00\r
++exp_force_ratios = {\r
++} \r
++no_exp_forces_to = {  }\r
++\r
++####################################\r
++# Diplomacy\r
++###################################\r
++combat = { }\r
++\r
++claim_acceptance = -20\r
++\r
++befriend = {\r
++}\r
++protect = {\r
++}\r
++target = {\r
++} \r
++trade = {\r
++	cancel_deal_threshold = 2\r
++\r
++	energy 		= -1\r
++	rare_materials 	= -1\r
++	metal 		= -1\r
++	oil 		= -1\r
++	supplies 	= -1\r
++	money 		= -1\r
++\r
++	favored = {\r
++	FRA = 100\r
++	RSI = 50\r
++	PRK = 30\r
++	SPR = 50\r
++	GEO = 50\r
++	RUS = 70\r
++	CSA = 40\r
++	SOV = 50\r
++	}\r
++	embargo = {  GER HUN ITA AUS CAN AST PAK }\r
++}\r
++tech_sharing = {\r
++	favored = {\r
++	FRA = 70\r
++	RSI = 50\r
++	U31 = 20\r
++	SPR = 50\r
++	GEO = 50\r
++	RUS = 70\r
++	HOL = 40\r
++	}\r
++	embargo = {\r
++	GER\r
++	ITA\r
++	AUS\r
++	HUN\r
++	BEL\r
++	CAN\r
++	AST\r
++	PAK\r
++	VIC\r
++}\r
++	not = { }\r
++	prioritized = {\r
++		# Arcriculture\r
++		5020 = 100\r
++		5030 = 100\r
++		5040 = 100\r
++\r
++		# Inf support\r
++		1310 = 100\r
++		1320 = 100\r
++		1330 = 100\r
++		1340 = 100\r
++		1350 = 100\r
++		1360 = 100\r
++\r
++		# Production\r
++		5050 = 100\r
++		5060 = 100\r
++		5070 = 100\r
++		5080 = 100\r
++		5090 = 100\r
++		5100 = 100\r
++		5110 = 100\r
++		5120 = 100\r
++		5130 = 100\r
++		5150 = 100\r
++		5180 = 100\r
++\r
++		# Naval Bomber\r
++		4190 = 100\r
++		4200 = 100\r
++		4210 = 100\r
++\r
++		# motorized\r
++		1230 = 100\r
++		1240 = 100\r
++		1250 = 100\r
++\r
++		# Strategic bombers\r
++		4220 = 100\r
++		4230 = 100\r
++		4240 = 100\r
++	}\r
++}\r
++###################################\r
++# Spying\r
++###################################\r
++spyprefs =\r
++{\r
++	percentage_on_spies 		= 0.2\r
++	percentage_foreign_mission 	= 0.7\r
++\r
++	# Used for Homeland Defense Spying\r
++	spyprefsdata = \r
++	{\r
++		NumberOfSpies = 10\r
++		counter_espionage =  10\r
++		country = ENG\r
++	}\r
++	# Defaul Spy parms used for countries the AI is atwar with but has no specific entry\r
++	spyprefsdata = {\r
++		country_priorities	= 3\r
++		NumberOfSpies		= 3\r
++		min_number_of_spies = 1\r
++		steal_blueprint 	= 10\r
++		minister_assassination = 1\r
++		smear_campaign 		= 3\r
++		coup 				= 0\r
++		sabotage_industry 	= 3\r
++		nuclear_sabotage 	= 0\r
++		found_partisans 	= 0\r
++		massmedia 			= 3\r
++		counter_espionage 	= 5\r
++		disrupt_techteam	= 5\r
++		country 			= GER\r
++	}\r
++}\r
++\r
++\r
++###################################\r
++# Construction and Tech Research\r
++###################################\r
++#Default values\r
++construction = { \r
++	max_factor = 0.150 \r
++\r
++	AA_batteries = no\r
++	max_AA_level = 10 \r
++	AA_provs = { } \r
++\r
++	coastal_fort = yes\r
++	max_coastal_level = 10\r
++	coastal_fort_provs = {\r
++		# England Coast\r
++		26 # Dover\r
++		25 # Norwich\r
++		27 # Portsmouth\r
++		23 # Plymouth\r
++		12 # Edinburgh\r
++		11  # Glasgow\r
++	} \r
++\r
++	radar_station = atwar\r
++	max_radar = 3 \r
++	radar_provs = {\r
++		26 # Dover\r
++		25 # Norwich\r
++		27 # Portsmouth\r
++		23 # Plymouth\r
++		18  # Shefield\r
++		5  # Scapa Flow\r
++	} \r
++\r
++	air_base = atwar\r
++	max_air_base = 5 \r
++	air_base_provs = { } \r
++\r
++	naval_base = no \r
++	max_naval_base = 5 \r
++	naval_base_provs = { } \r
++\r
++	land_fort = no\r
++	max_land_level = 5\r
++	fort_provs	= { \r
++	}\r
++	fort_borders = { } \r
++\r
++	ic_at_war = no\r
++	force_ic_until = 1938\r
++	ic_end_year = 1940\r
++	IC_provs = { 3 5 6 7 8 10 36 35	} \r
++}\r
++military = { \r
++	relative_build_scheme 	= no\r
++	max_batch_peace 		= 360 \r
++	max_batch_war 			= 180 \r
++	max_batch_home_front 	= 180\r
++\r
++	#### Divisions etc...\r
++	infantry			= 20\r
++	cavalry 			= 0\r
++	motorized 			= 2\r
++	mechanized 			= 0\r
++	light_armor 		= 0\r
++	armor 				= 0\r
++	paratrooper 		= 0\r
++	marine 				= 1\r
++	bergsjaeger 		= 0\r
++	garrison			= 3\r
++	hq					= 3\r
++	militia 			= 0\r
++						# 29 %\r
++\r
++	interceptor 		= 4\r
++	multi_role 			= 3\r
++	cas 				= 0\r
++	strategic_bomber 	= 1\r
++	tactical_bomber 	= 4\r
++	naval_bomber 		= 6\r
++	transport_plane 	= 0\r
++	flying_bomb 		= 0\r
++	flying_rocket 		= 0\r
++						# 18 %\r
++\r
++	battleship 			= 6\r
++	carrier 			= 7\r
++	destroyer 			= 18\r
++	light_cruiser 		= 12\r
++	heavy_cruiser 		= 0\r
++	battlecruiser 		= 0\r
++	submarine 			= 5\r
++	transports 			= 5\r
++						# 53 %\r
++\r
++	#### Brigades\r
++	artillery 				= 15\r
++	sp_artillery 			= 0\r
++	rocket_artillery		= 0 \r
++	sp_rct_artillery 		= 0\r
++	anti_tank 				= 0\r
++	tank_destroyer 			= 0\r
++	light_armor_brigade 	= 0\r
++	heavy_armor 			= 0\r
++	super_heavy_armor 		= 0\r
++	armored_car 			= 0\r
++	anti_air 				= 5\r
++	police 					= 3\r
++	engineer 				= 5\r
++\r
++	cag = 100.000 \r
++}\r
++\r
++technology = { \r
++	endgoal 	= { } \r
++	preference 	= {\r
++		#Infantry\r
++		1010 1020 1030 1040 1050 1060\r
++\r
++		# Arcriculture\r
++		5020 5030 5040\r
++\r
++		# Inf support\r
++		1310 1320 1330 1340 1350 1360\r
++\r
++		# Production\r
++		5050 5060 5070 5080 5090 5100 5110 5120 5130 5150 5180\r
++\r
++		# Naval Bomber\r
++		4190 4200 4210\r
++\r
++		# motorized\r
++		1230 1240 1250\r
++\r
++		# Medium tanks\r
++		2070 2080 2090\r
++\r
++		# Light tanks\r
++		2020 2030 2040 2050 2060\r
++\r
++		# Strategic bombers\r
++		4220 4230 4240\r
++		\r
++		# Naval Doctrines\r
++		8200 8250 8260\r
++\r
++		# Land Doctrines\r
++		6170\r
++\r
++		# Air Doctrines\r
++		9040 9050 9060 9070 9080 9090 9100 9110 9120 9130 9190 9210 9220 9230 9240 9250 9350\r
++	} \r
++	ignore 		= {\r
++		# Vehicle Assembly & Rocket Assembly 5160 \r
++		5170\r
++\r
++		# Carrier 3320 3330 3340\r
++		3350\r
++\r
++		# CAS\r
++		4170 4280 4180\r
++\r
++		# Mountain Unit techs\r
++		1110 1120 1130 1140\r
++\r
++		# Atomic Research\r
++		5470 5480 5490 5500 5510 5520 5530 5540\r
++\r
++		# Test and Research\r
++		5560\r
++\r
++		# Airborne 1070 1080 1090\r
++		1100\r
++\r
++		# Air Transports 4250\r
++		4260 4270\r
++\r
++		# Mechanized\r
++		1260 1270 1280 1290\r
++\r
++		# SP Rocket Artillery\r
++		2260 2270 2280 \r
++\r
++		# Rocket Artillery\r
++		2370 2380 2390\r
++	}\r
++ \r
++	armor 		= 0\r
++	infantry 		= 6\r
++	industry 		= 5\r
++	aircraft 		= 6\r
++	naval 		= 4\r
++	land_doctrines 	= 1\r
++	secret_weapons 	= 1\r
++	air_doctrines 	= 1\r
++	naval_doctrines 	= 1\r
++}  \r
++###################################\r
++# Ground Combat, Leaders and Garrisons\r
++###################################\r
++leader_ratio = {\r
++	land_field_marshal 	=0.02\r
++	land_general 		=0.031\r
++	land_lt_general 	=0.41\r
++\r
++	sea_grand_admiral 	=0.02\r
++	sea_admiral 		=0.061\r
++	sea_vice_admiral 	=0.401\r
++\r
++	air_marshal 		=0.02\r
++	air_general 		=0.091\r
++	air_lt_General 		=0.11 \r
++}\r
++garrison = {\r
++	defend_overseas_beaches = yes\r
++	home_multiplier 	= 1.3\r
++	overseas_multiplier 	= 0.3\r
++	home_peace_cap 		= 100\r
++	war_zone_odds 		= 2.0\r
++	key_point_prio_mult	= 1.0\r
++	revolt_risk_mult	= 1.0\r
++\r
++	# PRIORITIES:\r
++	beach			= 20	# Beach level 2\r
++	capital			= 40	# Our capital\r
++	human_border		= 0	# Ignored for allied human players\r
++	war_target		= 50	# The next country targeted for attack by this AI\r
++	\r
++	opposing_alliance	= 30	# For neutrals, all alliances are "opposing"\r
++	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
++	unstable_border		= 0	# Bordering countries at war with someone else get this\r
++\r
++	# Borders with specific countries\r
++	country_priorities = {\r
++		CAN = 250\r
++		GER = 250\r
++		BEL = 150\r
++		HOL = 100\r
++		ITA = 75\r
++		SPA = 25\r
++		EUS = 25\r
++		CAL = 25\r
++		TEX = 10\r
++		USA = 10\r
++		CSA = -1\r
++		SPR = -1\r
++		ETH = -1\r
++		SCH = -1\r
++		FRA = -1\r
++	}\r
++	ignore = {\r
++		#Actual Beaches to Ignore\r
++		1005 # Sharm el-Sheikh\r
++		1010  # Eilat\r
++		1009 # Gaza\r
++		1004 # El-Arish\r
++\r
++		#Libya\r
++		772   #Forte Maddalens\r
++		770   #Al Jaghbun\r
++		775   #Aujila\r
++		777  #Calanslo\r
++		774  #Kufra\r
++		776  #Murzuk\r
++		753  #Ghat\r
++		751   #Ghadames\r
++		752   #Sorno\r
++		\r
++		#Egypt/East Africa\r
++		779  #Siwa\r
++		801  #Great Sand Sea\r
++		802   #Qattara\r
++		800  #AinDalla\r
++		798  #Western Desert\r
++		804  #El Atiun\r
++		808  #El Obeid\r
++		809  #Waw\r
++		812  #Malakal\r
++		811  #Omdurman\r
++		814  #Gallabal\r
++		813  #Kassala\r
++		843  #Marsabit\r
++\r
++		#Ethiopia\r
++		817  #Asmara\r
++		821  #Adwa\r
++		823  #Gonder\r
++		822  #Debre\r
++		824  #Gambela\r
++		829  #Jima\r
++		830  #Moyale\r
++		819  #Denakil\r
++		820  #Dese\r
++		818  #Diredawa\r
++		827  #Ogaden\r
++		828  #Bardera\r
++\r
++		#Belgian Congo\r
++		904  #Stanleyville\r
++		903  #Buta\r
++		905  #Costermanville\r
++		906  #Coquihatville\r
++		898  #Abertville\r
++		902  #Kindu-Port-Empain\r
++		899  #Leopoldville\r
++	}\r
++	province_priorities = {\r
++		# England Coast\r
++		26  = 30 # Dover\r
++		25 = 30 # Norwich\r
++		27 = 30 # Portsmouth\r
++		23 = 30 # Plymouth\r
++		14 = 30 # Blackpool\r
++		18  = 30 # Sheifield\r
++		17 = 30 # Liverpool\r
++		19 = 30 # Bristol\r
++		13 = 30 # Sunderland\r
++		12 = 30 # Edinburgh\r
++		11 = 30 # Glasgow\r
++		5 = 30 # Scap Flow\r
++	}\r
++	area_multiplier = {\r
++	}\r
++}\r
++front = { \r
++	recklessness 		= 1 # 0-3\r
++	distrib_vs_ai 		= even\r
++	distrib_vs_human 		= even\r
++\r
++	enemy_reinf_days		= 6\r
++	reserve_prop		= 0.1\r
++	panic_ratio_vs_ai		= 2.5\r
++	panic_ratio_vs_human	= 2.5\r
++	base_attack_odds		= 1.3\r
++	min_attack_odds		= 1.1\r
++	max_attack_odds		= 3.0\r
++	reinforce_odds		= 1.3\r
++	withdraw_odds		= 0.6\r
++\r
++	strength 		= 1.0\r
++	organisation 	= 1.0\r
++	soft_attack 	= 1.0\r
++	hard_attack 	= 1.0\r
++	ground_defense 	= 1.0\r
++	dig_in 		= 1.0 # Against defender\r
++\r
++	frozen_attack 	= 1.0\r
++	snow_attack 	= 1.0\r
++	blizzard_attack 	= 1.0\r
++	storm_attack 	= 1.0\r
++	muddy_attack 	= 1.0\r
++	\r
++	occupied 		= 0.7\r
++	owned 		= 0.7\r
++\r
++	jungle_attack 	= 1.0\r
++	mountain_attack 	= 1.0\r
++	swamp_attack 	= 1.0\r
++	forest_attack 	= 1.0\r
++	hill_attack 	= 1.0\r
++	urban_attack 	= 1.0\r
++	river 		= 1.0\r
++\r
++      	enemy_handicap = { } \r
++      	passivity = { } \r
++} \r
++###################################\r
++# Invasions and Naval\r
++###################################\r
++invasion = {\r
++	invasion		= yes\r
++ 	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)\r
++	random		= 8.0	#How big a random range.  (1.0 = 1%)\r
++	coastal		= 0.1	#increase to avoid coastal forts more.\r
++	beach		= 0.1	#higher, avoid worst beaches.\r
++	distance		= 0.1	#higher = avoid long distance.\r
++	max_distance    	= 50.0\r
++	pocket		= 20.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
++	island		= 0.1	#prioritise taking pure islands.\r
++	enemy		= 2.0	#higher = much more vary of troops in province.\r
++	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby\r
++	air_base		= 1.5 \r
++      	naval_base 	= 0.1 \r
++      	air_support 	= 3.0 \r
++      	redirect 		= priority\r
++	ignore		= no\r
++	help_allies 	= yes\r
++      \r
++	staging_province = {\r
++		18  # Sheiffield\r
++		23 # Plymouth\r
++\r
++	}\r
++	target = { } \r
++} \r
++admiral = { \r
++	min_org		=100	# NEW: Percent of org gained back before the unit can leave port\r
++	min_dmg		=98    # NEW: Percent of dmg gained back before the unit can leave port\r
++	return_org 	=60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships\r
++	return_dmg 	=80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships\r
++\r
++	ignore = {\r
++		#Murmansk/Archangel\r
++		"Barents Sea"\r
++		"Arctic Ocean"\r
++\r
++		#Western Mediterranean\r
++		"Costa del Sol"\r
++		"Gulf of Lyon"\r
++		"Algerian Coast"\r
++		\r
++		#Central Mediterranean\r
++		"Tyrrhenian Sea"\r
++		"Adriatic Sea"\r
++		\r
++		#Eastern Mediterranean\r
++		"Black Sea"\r
++		"Aegean Sea"\r
++		"Egyptian Coast"\r
++		\r
++		#Brazil and Argentina Coast\r
++		"Coast of Guyana"\r
++		"Coast of Recife" \r
++		"Coast of Uruguay"\r
++		"Coast of Brazil"\r
++		"Coast of Argentina"\r
++		\r
++		# West Africa\r
++		"Coast of Africa"\r
++		"Coast of Bissao" \r
++		\r
++		#Equitorial Africa\r
++		"Gulf of Guinea"\r
++		"Coast of Angola-Namibia"\r
++		\r
++		#South Africa\r
++		"Coast of South Africa"\r
++		"Atlantic-Indian Ridge"\r
++		\r
++		#East Africa\r
++		"Red Sea"\r
++		"Horn of Africa"\r
++		\r
++		#Madagascar Coast\r
++		"South Mozambique Channel"\r
++		"North Mozambique Channel" \r
++		"Northeast Coast of Madagascar"\r
++		"Southeast Coast of Madagascar" \r
++		\r
++		#North Indian Ocean (Persian Gulf)\r
++		"Persian Gulf"\r
++		"North Arabian Sea"\r
++		"South Arabian Sea" \r
++		"Coast of Ceylon"\r
++		\r
++		#Central/South Indian Ocean\r
++		"Mascarene Plateau"\r
++		"Mid-Indian Ridge" \r
++		"Ninetyeast Ridge" \r
++		"Southeast Indian Ocean"\r
++		"Southwest Indian Ocean" \r
++		\r
++		#Bay of Bengal & West Indonesia\r
++		"East Bay of Bengal"\r
++		"West Bay of Bengal"\r
++		"Malacca Strait"\r
++		"Java Ridge"\r
++		"Java Trench"\r
++		\r
++		#Indo-China, Borneo, Phillipenes\r
++		"Gulf of Siam"\r
++		"Coast of Indochina"\r
++		"Spratly Sea"\r
++		"Coast of Brunei"\r
++		"Flores Sea"\r
++		"Sulu Sea"\r
++		"Celebes Sea"\r
++		"Luzon Strait"\r
++		\r
++		#China Coast\r
++		"Taiwan Strait"\r
++		"Yellow Sea"\r
++		\r
++		#Japanese Coast\r
++		"Sea of Japan"\r
++		"Ryukyus"\r
++		"Coast of Japan"\r
++		"South Sea of Okhotsk"\r
++		"West Sea of Okhotsk" \r
++		"East Sea of Okhotsk" \r
++		\r
++		#Mariana Basin, Phillipenes\r
++		"Philipine Trench"\r
++		"Central Philippine Sea"\r
++		"Mariana Trench"\r
++		"East Mariana Basin"\r
++		"Mid-Pacific Mountains"\r
++		"North Bismarck Sea"\r
++		\r
++		#New Guinea, East/North Australia and New Zealan\r
++		"Coast of New Guinea"\r
++		"Molucca Sea"\r
++		"Banda Sea"\r
++		"Arafura Sea"\r
++		"South Bismarck Sea"\r
++		"Solomon Sea"\r
++		"West Coral Sea"\r
++		"East Coral Sea" \r
++		"North Tasman Sea"\r
++		"South Tasman Sea" \r
++		"East Cost of New Zealand"\r
++		\r
++		# South and West Australia\r
++		"Timor Sea"\r
++		"West Coast of Australia"\r
++		"East Great Australian Bight"\r
++		"West Great Australian Bight" \r
++		\r
++		#North Pacific\r
++		"Coast of Kamchatka"\r
++		"East Bering Sea"\r
++		"West Bering Sea" \r
++		"Aleutians"\r
++		"Northwest Pacific Basin"\r
++		"North Northeast Pacific Basin"\r
++		\r
++		#Central Pacific\r
++		"Hawaiian Rise"\r
++		"North East Pacific Ocean"\r
++		"Marshalls Sea"\r
++		"South East Pacific Ocean"\r
++		"Marianas"\r
++		"Western Solomons"\r
++		"Eastern Solomons"\r
++		"US Maritimes"\r
++		"Carolines"\r
++		\r
++		#South Pacific\r
++		"Gilberts"\r
++		"Line Islands"\r
++		"Fiji Basin"\r
++		"Southwest Pacific Basin"\r
++		\r
++		# South American West Coast\r
++		"Southeast Pacific Basin"\r
++		"West Coast of Chile"\r
++		"West Coast of Peru"\r
++		"South Southeast Pacific Ocean"\r
++		"North Southeast Pacific Ocean"\r
++				\r
++		#West Coast of Mexico\r
++		"West Coast of Mexico"\r
++		"West Coast of Central America"\r
++	}\r
++	#Which provinces to use as bases..\r
++	base = {\r
++		5	# Scapa Flow\r
++		17	# Liverpool\r
++\r
++	}\r
++	target = { }\r
++	core = {\r
++		2682\r
++		2688\r
++		2683\r
++		2686\r
++		2684\r
++		2685\r
++		2716\r
++		2717\r
++		2712\r
++		2708\r
++		2709\r
++	}\r
+ }
+\ No newline at end of file

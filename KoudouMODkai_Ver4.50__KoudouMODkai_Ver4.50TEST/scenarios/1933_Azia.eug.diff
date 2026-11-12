@@ -1,0 +1,595 @@
+--- A/scenarios/1933_Azia.eug [cp932]
++++ B/scenarios/1933_Azia.eug [cp932]
+@@ -3,9 +3,9 @@ panel      = "scenarios/data/scenario_1933Azia.bmp"
+ header =\r
+ { name       = "Grand Campaign"\r
+   startdate  = { year = 1933 }\r
+-  selectable = { AFG ALB ARG AST AUS BEL BHU BOL BRA BUL CAN CGX CHC CHI CHL COL CSX CUB CXB CYN CZE DEN DOM ECU EGY ENG EST ETH FIN FRA GER GRE GUA HAI HOL HUN IRE IRQ ITA \r
+-		 JAP LAT LIB LIT LUX MEX MON NEP NOR NZL OMN PAR PER POL POR PRU ROM UER SWE SAF SAU SCH SIA SIK SPR TIB TUR URU USA VEN YEM YUG U02 U06 U03 U04 U05 U60\r
+-         UPE SAR BRU JOR MAD U50 U51 U67 KOR U78 MOR } #サラワク・ブルネイ・トルキスタン、ヨルダン、マダガスカル、カタール追加\r
++  selectable = { AFG ALB ARG AST AUS BEL BHU BOL BRA BUL CAN CGX CHC CHI CHL COL CSX CUB CXB CYN CZE DEN DOM ECU EGY ENG EST ETH FIN FRA GER GRE GUA HOL HUN IRQ ITA JAP \r
++		 LAT LIB LIT LUX MEX MON NEP NOR NZL OMN PAR PER POL POR PRU ROM UER SWE SAF SAU SCH SIA SIK SPR TIB TUR URU USA VEN YEM YUG U02 U06 U03 U04 U05 U60\r
++         UPE SAR BRU JOR MAD U50 U51 U67 KOR U78 MOR U39 } #サラワク・ブルネイ・トルキスタン、ヨルダン、マダガスカル、カタール追加\r
+   JAP        = { picture = "scenarios\data\propaganda_JAP_Azia.bmp" desc = "JAP_IFAZIA_DESC" }\r
+   KOR 	     = { picture = "scenarios\data\propaganda_KOR_Azia.bmp" desc = "KOR_IFAZIA_DESC" flag_ext = _2 name = "大韓帝国" }\r
+   U67 	     = { desc = "U67_IFAZIA_DESC" name = "奉天共和国" }\r
+@@ -13,10 +13,14 @@ header =
+   CHC        = { desc = "CHC_IFAZIA_DESC" picture = "scenarios\data\propaganda_CHC_Azia.bmp" flag_ext = _1 name = "中華共和国" }\r
+   U74        = { desc = "U74_IFAZIA_DESC" picture = "scenarios\data\propaganda_U74_Azia.bmp" name = "安徽軍閥" flag_ext = _AHC }\r
+   UCH        = { desc = "UCH_IFAZIA_DESC" picture = "scenarios\data\propaganda_UCH_Azia.bmp" name = "直隷軍閥" }\r
+-  CYN        = { desc = "CYN_IFAZIA_DESC" picture = "scenarios\data\propaganda_CYN_Azia.bmp" }\r
+-  CSX        = { desc = "CSX_IFAZIA_DESC" picture = "scenarios\data\propaganda_CSX_Azia.bmp" }\r
+-  CGX        = { desc = "CGX_IFAZIA_DESC" picture = "scenarios\data\propaganda_CGX_Azia.bmp" name = "両広軍閥" }\r
+-  CXB        = { desc = "CXB_IFAZIA_DESC" picture = "scenarios\data\propaganda_CXB_Azia.bmp" }\r
++  # CYN        = { desc = "CYN_IFAZIA_DESC" picture = "scenarios\data\propaganda_CYN_Azia.bmp" }\r
++  # CSX        = { desc = "CSX_IFAZIA_DESC" picture = "scenarios\data\propaganda_CSX_Azia.bmp" }\r
++  # CGX        = { desc = "CGX_IFAZIA_DESC" picture = "scenarios\data\propaganda_CGX_Azia.bmp" name = "両広軍閥" }\r
++  # CXB        = { desc = "CXB_IFAZIA_DESC" picture = "scenarios\data\propaganda_CXB_Azia.bmp" }\r
++  ENG        = { }\r
++  ITA        = { desc = "ITA_IFAZIA_DESC" picture = "scenarios\data\propaganda_ITA_Azia.bmp" }\r
++  HOL        = { desc = "HOL_IFAZIA_DESC" }\r
++  U05        = { }\r
+   GER        = { picture = "scenarios\data\propaganda_GER_1933.bmp" flag_ext = _weimar }\r
+   UER        = { desc = "UER_IFAZIA_DESC" picture = "scenarios\data\propaganda_UER_Azia.bmp" flag_ext = _dom name = "ロシア臨時政府" }\r
+   USA        = { desc = "USA_IFAZIA_DESC" picture = "scenarios\data\propaganda_USA_Azia.bmp" }\r
+@@ -186,7 +190,7 @@ globaldata =
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1953 month = december day = 29 }\r
+     # ## \r
+-    oil        = 45\r
++    oil        = 25\r
+     # rare_materials   = 100\r
+     # supplies   = -5\r
+     money = -1\r
+@@ -310,10 +314,13 @@ globaldata =
+     event = { tag = AST  id = 2144001 hour = 0 } #架空シナリオ オーストラリアスタートイベント\r
+     event = { tag = USA  id = 7161003 hour = 24 } #架空シナリオ アメリカスタートイベント\r
+     event = { tag = USA  id = 7161027 hour = 120 } #架空シナリオ アメリカスタートイベント\r
++    event = { tag = ENG  id = 3822001 hour = 120 } #架空シナリオ アメリカスタートイベント\r
+     event = { tag = U67  id = 7636001 hour = 48 } #奉天経済的植民地イベント\r
+     event = { tag = SIK  id = 6959801 hour = 24 } #架空シナリオ 新疆軍閥スタートイベント\r
+     event = { tag = UPE  id = 6959801 hour = 24 } #架空シナリオ 東トルキスタンスタートイベント\r
+     event = { tag = CXB  id = 6959801 hour = 24 } #架空シナリオ 西北三馬スタートイベント\r
++    event = { tag = SIA  id = 3512001 hour = 0 } #架空シナリオ タイスタートイベント\r
++    event = { tag = TUR  id = 3737001 hour = 0 } #架空シナリオ トルコスタートイベント\r
+     event = { tag = JAP  id = 1171001 hour = 0 } #架空シナリオ 日本戦闘補正イベント\r
+     event = { tag = KOR  id = 1171002 hour = 0 } #架空シナリオ 朝鮮戦闘補正イベント\r
+     event = { tag = UER  id = 1171004 hour = 0 } #架空シナリオ ロシア戦闘補正イベント\r
+@@ -353,7 +360,7 @@ globaldata =
+ 	# イングランド\r
+ 	875010 875011 875012 875013 875014 875015 875016 875017 875118\r
+ 	# イタリア\r
+-	885001 885063 885073\r
++	25501 885101 885102 885063 885073\r
+ 	#ロシア\r
+ 	517000 517001 517002 517003 517004 517005 517006 517007 517008 517009\r
+ 	517010 517011 517012 517013 517014 517015 517016 517017 517018 517019 \r
+@@ -639,6 +646,7 @@ globaldata =
+ 	#トルコ\r
+ 	985101 985102 985103 985104 985105 985106 985107 985108 985109 985110\r
+ 	985111 985112\r
++	720036 # ケマル・パシャ（OTT）\r
+ 	#セルビア\r
+ 	415101 415102\r
+ 	#カルフォルニア\r
+@@ -691,8 +699,6 @@ globaldata =
+ 	960131 960132 960133 960134 960135 960136 960137 960138 960139 960140\r
+ 	960141 960142 960143 960144 960145 960146 960147 960148 960149 960150\r
+ 	960151 960152 960153\r
+-	# イタリア\r
+-	25501 885101 885102\r
+ 	#スカンジナビア\r
+ 	755201 755202 755203 755204 755205 755206 755207 755208 755209 755210 755211\r
+ 	#ロシア\r
+@@ -815,16 +821,6 @@ globaldata =
+ 	631521 631522 631523 631524 631525 631526 631527 631528 631529 631530\r
+ 	631531 631532 631533 631534 631535 631536 631537 631538 631539 631540\r
+ 	631541 631542 631543 631544 631545 631546 631547 631548\r
+-	#カリフ（U39）\r
+-	1010001 1010002 1010003 1010004 1010005 1010006 1010007 1010008 1010009 1010010\r
+-	1010011 1010012 1010013 1010014 1010015 1010016 1010017 1010018 1010019 1010020\r
+-	1010021 1010022 1010023 1010024 1010025 1010026 1010027 1010028 1010029 1010030\r
+-	1010031 1010032 1010033 1010034 1010035 1010036 1010037 1010038 1010039 1010040\r
+-	1010041 1010042 1010043 1010044 1010045 1010046 1010047 1010048 1010049 1010050\r
+-	1010051 1010052 1010053 1010054 1010055 1010056 1010057 1010058 1010059 1010060\r
+-	1010061 1010062 1010063 1010064 1010065 1010066 1010067 1010068 1010069 1010070\r
+-	1010071 1010072 1010073 1010074 1010075 1010076 1010077 1010078 1010079 1010080\r
+-	1010081 1010082 1010083 \r
+ 	#インド（UE9）\r
+ 	5379301 5379302 5379303 5379304 5379305 5379306 5379307 5379308 5379309 5379310\r
+ 	5379311 5379312 5379313 5379314 5379315 5379316 5379317 5379318 5379319 5379320\r
+@@ -849,8 +845,8 @@ globaldata =
+ 	# 北朝鮮（架空亜細亜世界）\r
+ 	579004 # 金日成（キム・イルソン）\r
+ 	# 日本（架空亜細亜世界）\r
+-	50013 50547 # 荒木貞夫・眞崎甚三郎\r
+-	50120 # 牟田口廉也\r
++	101012 101337 # 荒木貞夫・眞崎甚三郎\r
++	101107 # 牟田口廉也\r
+ 	# アメリカ（架空亜細亜世界）\r
+ 	240418 # アーネスト・キング\r
+ 	240441 # チェスター・ニミッツ\r
+@@ -964,12 +960,12 @@ globaldata =
+ #人民日本（UF8）\r
+ 1305508 1305509 1305510 1305511 \r
+ #ロシア（IFシナリオ用）\r
+-1337001 1337002 1337003 1337004 1337005 1337006 1337007 1337008 1337009 1337010\r
+-1337011 1337012 1337013 1337014 1337015 1337016 1337017 1337018 1337019 1337020\r
+-1337021 1337022 1337023 1337024 1337025 1337026 1337027 1337028 1337029 1337030\r
+-1337031 1337032 \r
++1362001 1362002 1362003 1362004 1362005 1362006 1362007 1362008 1362009 1362010\r
++1362011 1362012         1362014 1362015 1362016 1362017 1362018 1362019 1362020\r
++1362021 1362022 1362023 1362024 1362025 1362026 1362027 1362028 1362029 1362030\r
++1362031 1362032 1362033 1362034 1362035 1362036 1362037 1362038\r
+ #ハプスブルク家（IFシナリオ用）\r
+-115201 115202 860201 860202 \r
++115201 \r
+ 1512301 1512302 1512303 1512304 1512305 1512306 1512307 1512308 1512309 1512310\r
+ 1512311 1512312 1512313 1512314 1512315 1512316 1512317 1512318 1512319 1512320\r
+ 1512321 1512322 1512323 1512324\r
+@@ -984,9 +980,12 @@ globaldata =
+ #ドイツ（IFシナリオ用）\r
+ 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328\r
+ 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343\r
++855302 855308 #ヒトラー（U08）\r
++855701 855702 855703\r
+ #アメリカ（IFシナリオ用）\r
+ 240502 240503 240504 240505 240506 240507 240508 240509 240510 \r
+ 240511 240512 240513 240514 240515\r
++240601 240602 240603 240604 240605 240606\r
+ #イタリア（IFシナリオ用）\r
+ 25301 25302 25303 25304 25305 25306\r
+ 25401 25402 25403 25404 25405 25406 25407 25408 25409 25410\r
+@@ -997,6 +996,8 @@ globaldata =
+ 25451 25452 25453 25454 25455 25456 25457 \r
+ 885051 885052 885053 885054 885055 885056 885057 885058 885059 885060\r
+ 885061\r
++25002 25004 25016 25024 25032 25070 25173 25188 25230 # ムッソリーニ（ITA）\r
++750001 750002 750014 750032 # ムッソリーニ（RSI）\r
+ #イギリス（IFシナリオ用）\r
+ 10401 10402 10403 10404 10405 10406 10407 10408 10409 10410 10411\r
+ #オーストラリア（IFシナリオ用）\r
+@@ -1008,9 +1009,11 @@ globaldata =
+ #セルビア\r
+ 415201 415202 415203 415204 415205 415206 415207 415208 415209 415210\r
+ 415211\r
+-#スペイン\r
++#スペイン（SPR）\r
+ 255301 255302 255303 255304 255305 255306 255307 255308 255309 255310 255311\r
+ 255311 255312 255313\r
++#スペイン（SPA）\r
++35401 35402 35403 35404 35405 35406 35407\r
+ #中華民国（蒋介石）\r
+ 55001 55009 55320 55321 55323 55324 55802\r
+ #中華民国\r
+@@ -1070,13 +1073,21 @@ globaldata =
+ 1185132 1185133 1185134 1185135 1185136 1185137 1185138 1185139 1185140\r
+ 1185141 1185142 1185143 1185144 1185145 1185146 1185147 1185148 1185149 1185150\r
+ 1185151 1185152 1185153 1185154 1185155 1185156 1185157\r
+-1185246 1185247 1185248 1185249 1185250 1185251 1185252 \r
++1185246 1185247 1185248 1185249 1185250 1185251 1185252\r
++#広西（CGX）\r
++585201 585202 585203 \r
+ # 山西（CSX）\r
+ 605023 605024 605025 605026 605027 605028 605029 605030\r
+ 605031 605032 605033 605034 605035 605036 605037 605038 605039 605040\r
+ 605041 605042 605043 605044 605045 605046 605047\r
++605101 605102 605103\r
++#雲南（CYN）\r
++615401 615402 615403\r
+ #西北三馬（CXB）\r
+-610201 610202 \r
++610201 610202\r
++610401 610402 610403\r
++#中国共産党（CHC）\r
++260802 260803 260834 260835 260836 260837 260852 260853 260854\r
+ #ソ連\r
+ 30301 30302 30303 30304 30305 30306 30307 30308 30309 30310\r
+ 30311 30312 30313 30314\r
+@@ -1111,6 +1122,8 @@ globaldata =
+ 985111 985112 985113 985114 985115 985116 985117 985118 985119 985120\r
+ 985121 985122 985123 985124 985125 985126 985127 985128 985129 985130\r
+ 985131 \r
++45001 45089 # ケマル・アタテュルク（TUR）\r
++720008 720701 # ケマル・アタテュルク（OTT）\r
+ #ルーマニア\r
+ 110401 110402 110403\r
+ #南アフリカ\r
+@@ -1154,14 +1167,17 @@ globaldata =
+ 160401 160402 160403 160404 160405 160406\r
+ # 南京政府（日本軍関係者）\r
+ 1250014 1250015 1250022 1250023 1250026 1250028 1250046 1250047 1250048 1250049\r
+-1250101 1250102\r
++1250101 1250102 1250103\r
+ # 台湾\r
+ 942042\r
+ # 英領インド\r
+ 825201 825202 825203 825204 825205 825206 825207 825208 825209 825210\r
+ 825211 825212\r
++825301 825302 \r
+ # インド\r
+ 8825201 8825202 8825203 8825204 8825205\r
++# エジプト\r
++340201 340202 340203 340204 340205 340206\r
+ #ブルグント騎士団（UD6）\r
+ 632200\r
+ 632201 632202 632203 632204 632205 632206 632207 632208 632209 632210\r
+@@ -1185,17 +1201,9 @@ globaldata =
+ 630181 630182 630183 630184 630185 630186 630187 630188 630189 630190\r
+ 630191 630192 630193 630194 630195 630196 630197 630198 630199 630200\r
+ 630201 630202 630203 630204 630205 \r
+-#カリフ（U39）\r
+-1010101 1010102 1010103 1010104 1010105 1010106 1010107 1010108 1010109 1010110\r
+-1010111 1010112 1010113 1010114 1010115 1010116 1010117 1010118 1010119 1010120\r
+-1010121 1010122 1010123 1010124 1010125 1010126 1010127 1010128 1010129 1010130\r
+-1010131 1010132 1010133 1010134 1010135 1010136 1010137 1010138 1010139 1010140\r
+-1010141 1010142 1010143 1010144 1010145 1010146 1010147 1010148 1010149 1010150\r
+-1010151 1010152 1010153 1010154 1010155 1010156 1010157 1010158 1010159 1010160\r
+-1010161 1010162 1010163 1010164 1010165 1010166 1010167 1010168 1010169 1010170\r
+-1010171 1010172 1010173 1010174 1010175 1010176 1010177 1010178 1010179 1010180\r
+-1010181 1010182 1010183 1010184 1010185 1010186 1010187 1010188 1010189 1010190\r
+-1010191 1010192 1010193 1010194 \r
++#ドイツ（DDR）\r
++625069 625070\r
++625071 625072 625073 625074 625075 625076 625077 625078 625079 625080 \r
+ #インド（UE9）\r
+ 5379201 5379202 5379203 5379204 5379205 5379206 5379207 5379208 5379209 5379210\r
+ 5379211 5379212 5379213 5379214 5379215 5379216 5379217 5379218 5379219 5379220\r
+@@ -1211,10 +1219,11 @@ globaldata =
+ # イセスマ\r
+ 6840101 6840102 110300 110301 110302 110303 110304 110305 110306\r
+ # アルバニア\r
+-285001\r
++285301\r
+ # UER\r
+-1360701 1360965 1360966 1361003 1361004 1361005 1361006 1361007 1361008 1361009\r
+-1361010	1361011 1361012 1361013\r
++1360701 1360965 1360966 \r
++1361501 1361502 1361503 1361504 1361505 1361506 1361507 1361508 1361509 1361510\r
++1361511 1361512 1361513 1361514 1361515 1361516 1361517\r
+ # フィンランド\r
+ 145305 145306\r
+ # ソ連（架空亜細亜世界）\r
+@@ -1232,6 +1241,45 @@ globaldata =
+ 240226 # アーレイ・バーク\r
+ 240157 # ウィリアム・ハルゼー\r
+ 240142 # ロバート・ゴームリー\r
++# オスマン（架空亜細亜世界）\r
++720001        720003        720005 720006 720007 720008 720009       \r
++720011 720012 720013 720014 720015 720016        720018 720019 720020\r
++720021                             720026 720027 720028 720029 720030\r
++720031 720032        720034 720035 720036        720038 720039 720040\r
++720041 720042 720043 720044 720045 720046 720047 720048 720049 720050\r
++720051 720052 720053 720054 720055 720056        720058 720059 720060\r
++720061 720062 720063 720064 720065 720066               720069 720070\r
++720071        720073        720075 720076 720077 720078 720079 720080\r
++       720082 720083 720084 720085 720086        720088 720089       \r
++       720092               720095 720096 720097 720098 720099 720100\r
++       720102                      720106 720107 720108 720109 720110\r
++720111 720112               720115 720116 720117        720119 720120\r
++              720123 720124 720125 720126 720127 720128 720129 720130\r
++       720132 720133        720135 720136 720137 720138 720139 720140\r
++720141 720142 720143 720144 720145 720146 720147 720148 720149 720150\r
++720151 720152 720153 720154               720157        720159 720160\r
++720161 720162               720165 720166 720167        720169       \r
++720171 720172 720173        720175        720177               720180\r
++       720182 720183 720184 720185 720186 720187 720188        720190\r
++720191               720194               720197 720198 720199 720200\r
++720201 720202        720204        720206        720208 720209 720210\r
++720211 720212 720213 720214 720215 720216 720217 720218 720219 720220\r
++720221 720222 720223 720224 720225 720226 720227 720228 720229       \r
++720701 720702                             720707 720708 \r
++720711 720712 720713 \r
++#ウズベキスタン\r
++550102 550105 550109 550110 550111 550114 550115\r
++# ユーゴスラビア\r
++100201 100202 100203 100204 100205 100206 100207 100208 100209\r
++#イラン\r
++150201 150202 150203 150204 150205 150206 150207 150208 150209 150210\r
++150211 150212 \r
++#ハンガリー\r
++105304 105305 105306 105307 105308 105309 105310 105311 105312 105313\r
++#ハタイ（U39）\r
++1010001 1010002 1010003 1010004 1010005 1010006 1010007 1010008 1010009 1010010 \r
++1010011 1010012 1010013 1010014 1010015 1010016 1010017 1010018 1010019 1010020 \r
++1010021 1010022 1010023 1010024 1010025 1010026 1010027 1010028 1010029 1010030 \r
+ }\r
+ \r
+   dormant_teams = {\r
+@@ -1301,6 +1349,8 @@ globaldata =
+ 675021 675022 675023 675024 675025 \r
+ #トルコ\r
+ 985101 985102 985103 985104 985105 985106\r
++45050 # ケマル・アタテュルク（TUR）\r
++720150 # ケマル・アタテュルク（OTT）\r
+ #中華民国（架空亜細亜世界）\r
+ 55006 55801 # 蒋介石(チアン・カイシェク)\r
+ #中華民国\r
+@@ -1327,9 +1377,6 @@ globaldata =
+ 220301\r
+ #ブルグント騎士団（UD6）\r
+ 632101 632102 632103 632104 632105 632106 632107 632108 632109 \r
+-#カリフ（U39）\r
+-1010001 1010002 1010003 1010004 1010005 1010006 1010007 1010008 1010009 1010010\r
+-1010011 1010012 1010013 1010014 1010015 1010016 1010017 1010018 \r
+ #インド（UE9）\r
+ 5379101 5379102 5379103 5379104 5379105 5379106 5379107 5379108 5379109 5379110\r
+ 5379111 5379112 5379113 5379114 5379115 5379116 5379117 5379118 5379119 5379120\r
+@@ -1356,7 +1403,7 @@ globaldata =
+ 240022 # アーネスト・キング\r
+ 240025 # チェスター・ニミッツ\r
+ 240101 # アーレイ・バーク\r
+-  }\r
++ }\r
+   # ########################### 1933 ############################\r
+   treaty =\r
+   { id         = { type = 16384 id = 1 }\r
+@@ -2216,6 +2263,103 @@ globaldata =
+     country    = "UER"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 552 }\r
++    type       = non_aggression\r
++    country    = "TUR"\r
++    country    = "ARM"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 553 }\r
++    type       = non_aggression\r
++    country    = "TUR"\r
++    country    = "KUR"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 554 }\r
++    type       = non_aggression\r
++    country    = "ARM"\r
++    country    = "KUR"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 555 }\r
++    type       = non_aggression\r
++    country    = "ARM"\r
++    country    = "UER"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 556 }\r
++    type       = non_aggression\r
++    country    = "KUR"\r
++    country    = "PER"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 557 }\r
++    type       = non_aggression\r
++    country    = "KUR"\r
++    country    = "IRQ"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 558 }\r
++    type       = non_aggression\r
++    country    = "U39"\r
++    country    = "KUR"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 559 }\r
++    type       = non_aggression\r
++    country    = "U39"\r
++    country    = "ARM"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 560 }\r
++    type       = non_aggression\r
++    country    = "U39"\r
++    country    = "TUR"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++    treaty =\r
++  { id         = { type = 16384 id = 561 }\r
++    type       = non_aggression\r
++    country    = "U39"\r
++    country    = "UER"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1945 month = december day = 29 }\r
++  }\r
++\r
++  # ###################### 1933追加（貿易） #####################\r
++\r
++  treaty =\r
++  { id         = { type = 16384 id = 701 }\r
++    type       = trade\r
++    country    = "UER"\r
++    country    = "PER"\r
++    startdate  = { year = 1932 month = december day = 29 }\r
++    expirydate = { year = 1953 month = december day = 29 }\r
++    # ## \r
++    oil        = 25\r
++    # rare_materials   = 100\r
++    # supplies   = -5\r
++    money = -1\r
++    cancel     = no\r
+   }\r
+   enddate   = { year = 1964 month = january day = 0 }\r
+ }\r
+@@ -2299,8 +2443,8 @@ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_China_events.txt"
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_China_Cliques_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Taiwan_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Fengtian_events.txt"\r
+-event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Russia_events.txt"\r
+-event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Kerenskii_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_russia_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_russia_peace_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Usa_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_German_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Combat_events.txt"\r
+@@ -2309,9 +2453,16 @@ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Middle_East_events.txt"
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Central_America_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_India_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Australia_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_South_America_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Uk_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Indochinese_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Italy_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Iran_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Benelux_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_generic_decisions.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Olympic_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_peace_events.txt"\r
++event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_Option_events.txt"\r
+ event 	   = "db\events\AdditionalEvents_if_Azia\if_azia_AI_events.txt"\r
+ \r
+ \r
+@@ -2327,28 +2478,28 @@ include = "scenarios\1933\brunei.inc"
+ include = "scenarios\1933\jordan.inc"\r
+ include = "scenarios\1933\Madagascar.inc"\r
+ include = "scenarios\1933\Qatar.inc"\r
+-include = "scenarios\1933\Morocco.inc"\r
++#include = "scenarios\1933\Morocco.inc"\r
+ include = "scenarios\1933\1933_kai_bases.inc"\r
+ ######################################\r
+ # Include files for each country tag used in the scenario\r
+-include = "scenarios\1933\abyssinia.inc"\r
++#include = "scenarios\1933\abyssinia.inc"\r
+ #include = "scenarios\1933\afghanistan.inc"\r
+-include = "scenarios\1933\albania.inc"\r
+-include = "scenarios\1933\argentina.inc"\r
++#include = "scenarios\1933\albania.inc"\r
++#include = "scenarios\1933\argentina.inc"\r
+ #include = "scenarios\1933\australia.inc"\r
+ include = "scenarios\1933\austria.inc"\r
+ include = "scenarios\1933\belgium.inc"\r
+ include = "scenarios\1933\bhutan.inc"\r
+ include = "scenarios\1933\bolivia.inc"\r
+-include = "scenarios\1933\brasil.inc"\r
++#include = "scenarios\1933\brasil.inc"\r
+ include = "scenarios\1933\bulgaria.inc"\r
+ include = "scenarios\1933\canada.inc"\r
+ #include = "scenarios\1933\china etr.inc"\r
+ #include = "scenarios\1933\china guangxi.inc"\r
+ #include = "scenarios\1933\china communist.inc"\r
+ #include = "scenarios\1933\china nationalist.inc"\r
+-include = "scenarios\1933\chile.inc"\r
+-include = "scenarios\1933\columbia.inc"\r
++#include = "scenarios\1933\chile.inc"\r
++#include = "scenarios\1933\columbia.inc"\r
+ #include = "scenarios\1933\costa rica.inc"\r
+ #include = "scenarios\1933\china shanxi.inc"\r
+ #include = "scenarios\1933\cuba.inc"\r
+@@ -2359,20 +2510,20 @@ include = "scenarios\1933\denmark.inc"
+ #include = "scenarios\1933\dominican republic.inc"\r
+ include = "scenarios\1933\ecuador.inc"\r
+ include = "scenarios\1933\egypt.inc"\r
+-include = "scenarios\1933\united kingdom.inc"\r
++#include = "scenarios\1933\united kingdom.inc"\r
+ include = "scenarios\1933\estonia.inc"\r
+ include = "scenarios\1933\finland.inc"\r
+-include = "scenarios\1933\france.inc"\r
++#include = "scenarios\1933\france.inc"\r
+ include = "scenarios\1933\germany.inc"\r
+-include = "scenarios\1933\greece.inc"\r
++#include = "scenarios\1933\greece.inc"\r
+ #include = "scenarios\1933\guatemala.inc"\r
+ #include = "scenarios\1933\haiti.inc"\r
+-include = "scenarios\1933\holland.inc"\r
++#include = "scenarios\1933\holland.inc"\r
+ #include = "scenarios\1933\honduras.inc"\r
+ include = "scenarios\1933\hungary.inc"\r
+-include = "scenarios\1933\ireland.inc"\r
+-include = "scenarios\1933\iraq.inc"\r
+-include = "scenarios\1933\italy.inc"\r
++#include = "scenarios\1933\ireland.inc"\r
++#include = "scenarios\1933\iraq.inc"\r
++#include = "scenarios\1933\italy.inc"\r
+ #include = "scenarios\1933\japan.inc"\r
+ include = "scenarios\1933\latvia.inc"\r
+ include = "scenarios\1933\liberia.inc"\r
+@@ -2381,7 +2532,7 @@ include = "scenarios\1933\luxemburg.inc"
+ #include = "scenarios\1933\manchukuo.inc"\r
+ #include = "scenarios\1933\mexico.inc"\r
+ #include = "scenarios\1933\mongolia.inc"\r
+-include = "scenarios\1933\netherlands east indies.inc"\r
++#include = "scenarios\1933\netherlands east indies.inc"\r
+ include = "scenarios\1933\nepal.inc"\r
+ include = "scenarios\1933\newfoundland.inc"\r
+ #include = "scenarios\1933\nicaragua.inc"\r
+@@ -2399,21 +2550,21 @@ include = "scenarios\1933\south africa.inc"
+ #include = "scenarios\1933\san salvador.inc"\r
+ #include = "scenarios\1933\saudi arabia.inc"\r
+ include = "scenarios\1933\switzerland.inc"\r
+-include = "scenarios\1933\siam.inc"\r
++#include = "scenarios\1933\siam.inc"\r
+ #include = "scenarios\1933\china sinkiang.inc"\r
+ #include = "scenarios\1933\soviet union.inc"\r
+ include = "scenarios\1933\spain.inc"\r
+ include = "scenarios\1933\sweden.inc"\r
+ #include = "scenarios\1933\tannu tuva.inc"\r
+ include = "scenarios\1933\tibet.inc"\r
+-include = "scenarios\1933\turkey.inc"\r
++#include = "scenarios\1933\turkey.inc"\r
+ include = "scenarios\1933\british raj.inc"\r
+ #include = "scenarios\1933\indochinese union.inc"\r
+-include = "scenarios\1933\mandate syria and lebanon.inc"\r
++#include = "scenarios\1933\mandate syria and lebanon.inc"\r
+ include = "scenarios\1933\danzig.inc"\r
+ include = "scenarios\1933\uruguay.inc"\r
+ #include = "scenarios\1933\usa.inc"\r
+-include = "scenarios\1933\venezuela.inc"\r
++#include = "scenarios\1933\venezuela.inc"\r
+ include = "scenarios\1933\yemen.inc"\r
+ include = "scenarios\1933\yugoslavia.inc"\r
+ include = "scenarios\1933\bases.inc"\r
+@@ -2445,7 +2596,27 @@ include = "scenarios\1933if_Azia\saudi_Azia.inc"
+ include = "scenarios\1933if_Azia\central america_Azia.inc"\r
+ include = "scenarios\1933if_Azia\dominican republic_Azia.inc"\r
+ include = "scenarios\1933if_Azia\australia_Azia.inc"\r
++include = "scenarios\1933if_Azia\argentina_Azia.inc"\r
++include = "scenarios\1933if_Azia\brasil_Azia.inc"\r
++include = "scenarios\1933if_Azia\columbia_Azia.inc"\r
++include = "scenarios\1933if_Azia\chile_Azia.inc"\r
++include = "scenarios\1933if_Azia\venezuela_Azia.inc"\r
++include = "scenarios\1933if_Azia\united kingdom_Azia.inc"\r
++include = "scenarios\1933if_Azia\france_Azia.inc"\r
++include = "scenarios\1933if_Azia\italy_Azia.inc"\r
++include = "scenarios\1933if_Azia\siam_Azia.inc"\r
+ include = "scenarios\1933if_Azia\afghanistan_Azia.inc"\r
++include = "scenarios\1933if_Azia\greece_Azia.inc"\r
++include = "scenarios\1933if_Azia\albania_Azia.inc"\r
++include = "scenarios\1933if_Azia\turkey_Azia.inc"\r
++include = "scenarios\1933if_Azia\Armenia_Azia.inc"\r
++include = "scenarios\1933if_Azia\Kurdistan_Azia.inc"\r
++include = "scenarios\1933if_Azia\Assyria_Azia.inc"\r
++include = "scenarios\1933if_Azia\iraq_Azia.inc"\r
++include = "scenarios\1933if_Azia\mandate syria and lebanon_Azia.inc"\r
++include = "scenarios\1933if_Azia\abyssinia_Azia.inc"\r
++include = "scenarios\1933if_Azia\holland_Azia.inc"\r
++include = "scenarios\1933if_Azia\netherlands east indies_Azia.inc"\r
+ include = "scenarios\1933if_Azia\rebels_Azia.inc"\r
+ include = "scenarios\1933if_Azia\depots_1933Azia.inc"\r
+ include = "scenarios\1933if_Azia\bases_1933Azia.inc"\r
+@@ -2547,6 +2718,7 @@ sleepevent = {
+ 		11110001 11110005 11110010 11110011 11110012 11110019 11110020 11110021 11110022 11110023 11110024 \r
+ 		11110025 11110026 11110027 11110028 11110029 11110030 11110031 11110032 11110033 11110034 11110035 # 戦闘補正イベント\r
+ 		32700023 32700024 32700025 32700026 32700027 32700028 32700029 32700030 32700031 32700032 32700033# タボリツキーイベント\r
+-		5200027 5200028 # ユーゴスラビア閣僚交代AIイベント\r
++		5200027 5200028 5200029 # ユーゴスラビア閣僚交代AIイベント\r
++		2107005 # ギリシャ突然の政府交代イベント\r
+ 		2007032 2003077 # 独ソ講和イベント\r
+              }
+\ No newline at end of file

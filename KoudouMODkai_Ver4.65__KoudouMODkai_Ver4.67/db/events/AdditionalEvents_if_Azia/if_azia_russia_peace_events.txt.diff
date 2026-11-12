@@ -1,0 +1,596 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_russia_peace_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_russia_peace_events.txt [cp932]
+@@ -19,7 +19,7 @@
+ #id = 7060912 崩れ行くソビエト ― シベリアの反乱（SIB）\r
+ #id = 7060913 第二次ロシア内戦（SOV）\r
+ #id = 7060914 第二次ロシア内戦（RUS）\r
+-#id = 7060915 第二次ロシア内戦（UGS）\r
++#id = 7060915 第二次ロシア内戦（UTC）\r
+ #id = 7060916 第二次ロシア内戦 ― 介入（GER）\r
+ #id = 7060917 第二次ロシア内戦 ― ドイツの支援\r
+ #id = 7060918 第二次ロシア内戦 ― ドイツが支援条件を提示\r
+@@ -42,9 +42,9 @@
+ #id = 7061009 崩れ行くロシア ― 傀儡政権の崩壊（傀儡国）\r
+ #id = 7061010 崩れ行くロシア ― ロシアの崩壊\r
+ #id = 7061011 崩れ行くロシア ― シベリアの反乱（SIB→SOV）\r
+-#id = 7061012 崩れ行くロシア ― ウラルの反乱（SIB→UGS）\r
++#id = 7061012 崩れ行くロシア ― ウラルの反乱（SIB→UTC）\r
+ #id = 7061013 第二次ロシア内戦（UER）\r
+-#id = 7061014 第二次ロシア内戦（SOV UGS）\r
++#id = 7061014 第二次ロシア内戦（SOV UTC）\r
+ #id = 7061015 第二次ロシア内戦 ─ ロシアの勝利\r
+ #id = 7061016 第二次ロシア内戦 ─ 社会主義者の勝利\r
+ #id = 7061017 第二次ロシア内戦 ─ 民主主義者の勝利\r
+@@ -1380,7 +1380,7 @@ event = {
+ 	NOT = { exists = SIB }\r
+ 	AND = {\r
+ 	exists = SIB\r
+-	NOT = { exists = UGS }\r
++	NOT = { exists = UTC }\r
+ 	NOT = { ispuppet = SIB }\r
+ 	}\r
+ 	}\r
+@@ -1435,33 +1435,33 @@ event = {
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -50 }\r
+-	command = { type = setflag which = UGS_Civiwar }\r
+-	command = { type = country which = UGS }\r
+-	command = { type = name where = UGS which = "中央シベリア共和国" }\r
+-	command = { type = flag_ext where = UGS which = "_Cen" }\r
+-	command = { trigger = { control = { province = 1162 data = UGS } } type = capital which = 1162 } # イルクーツク\r
+-	command = { trigger = { NOT = { control = { province = 1162 data = UGS } } } type = capital which = 1166 } # チェレンホーヴォ\r
++	command = { type = setflag which = UTC_Civiwar }\r
++	command = { type = country which = UTC }\r
++	command = { type = name where = UTC which = "中央シベリア共和国" }\r
++	command = { type = flag_ext where = UTC which = "_Cen" }\r
++	command = { trigger = { control = { province = 1162 data = UTC } } type = capital which = 1162 } # イルクーツク\r
++	command = { trigger = { NOT = { control = { province = 1162 data = UTC } } } type = capital which = 1166 } # チェレンホーヴォ\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 6 }\r
+-	command = { type = headofstate which = 1340101 } # ボリス・パステルナーク\r
+-	command = { type = headofgovernment which = 1340102 } # ニコライ・アセーエフ\r
+-	command = { type = foreignminister which = 1340103 } # コンスタンチン・パウストフスキー\r
+-	command = { type = armamentminister which = 1340104 } # セルゲイ・ボブロフ\r
+-	command = { type = ministerofsecurity which = 1340105 } # エカテリーナ・ペシュコバ\r
+-	command = { type = ministerofintelligence which = 1340106 } # ウラジーミル・ペトロフ\r
+-	command = { type = chiefofstaff which = 1340107 } # マトヴェイ・シャポシニコフ\r
+-	command = { type = chiefofarmy which = 1340108 } # イヴァン・フェディウニンスキ\r
+-	command = { type = chiefofnavy which = 1340109 } # ミハイル・ゴートスキー\r
+-	command = { type = chiefofair which = 1340110 } # アレクサンドル・ポクルィシュキン\r
+-	command = { type = add_core_region which = "Urals" where = UGS }\r
+-	command = { type = add_core_region which = "Novosibirsk" where = UGS }\r
+-	command = { type = add_core_region which = "Tomsk" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Permafrost" where = UGS }\r
+-	command = { type = add_core_region which = "Far East Siberia" where = UGS }\r
+-	command = { type = add_core_region which = "Irkutsk" where = UGS }\r
+-	command = { type = add_core_region which = "Krasnoyarsk" where = UGS }\r
+-	command = { type = add_core_region which = "Eastern Russia" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Russia" where = UGS }\r
++	command = { type = headofstate which = 1335101 } # ボリス・パステルナーク\r
++	command = { type = headofgovernment which = 1335102 } # ニコライ・アセーエフ\r
++	command = { type = foreignminister which = 1335103 } # コンスタンチン・パウストフスキー\r
++	command = { type = armamentminister which = 1335104 } # セルゲイ・ボブロフ\r
++	command = { type = ministerofsecurity which = 1335105 } # エカテリーナ・ペシュコバ\r
++	command = { type = ministerofintelligence which = 1335106 } # ウラジーミル・ペトロフ\r
++	command = { type = chiefofstaff which = 1335107 } # マトヴェイ・シャポシニコフ\r
++	command = { type = chiefofarmy which = 1335108 } # イヴァン・フェディウニンスキ\r
++	command = { type = chiefofnavy which = 1335109 } # ミハイル・ゴートスキー\r
++	command = { type = chiefofair which = 1335110 } # アレクサンドル・ポクルィシュキン\r
++	command = { type = add_core_region which = "Urals" where = UTC }\r
++	command = { type = add_core_region which = "Novosibirsk" where = UTC }\r
++	command = { type = add_core_region which = "Tomsk" where = UTC }\r
++	command = { type = add_core_region which = "Northern Permafrost" where = UTC }\r
++	command = { type = add_core_region which = "Far East Siberia" where = UTC }\r
++	command = { type = add_core_region which = "Irkutsk" where = UTC }\r
++	command = { type = add_core_region which = "Krasnoyarsk" where = UTC }\r
++	command = { type = add_core_region which = "Eastern Russia" where = UTC }\r
++	command = { type = add_core_region which = "Northern Russia" where = UTC }\r
+         command = { type = secedearea which = SOV value = "Novosibirsk" when = 1 } \r
+         command = { type = secedearea which = SOV value = "Tomsk" when = 1 } \r
+ 	command = { type = energypool value = 500 }\r
+@@ -1531,14 +1531,14 @@ event = {
+ \r
+ 	trigger = {\r
+ 	flag = RUS_Poa_Civiwar # ロシア解放軍のウラル進出\r
+-	flag = UGS_Civiwar # シベリアの反乱\r
++	flag = UTC_Civiwar # シベリアの反乱\r
+ 	event = 7060903 # 厳しい講和\r
+ 	NOT = { war = { country = SOV country = RUS } }\r
+-	NOT = { war = { country = SOV country = UGS } }\r
++	NOT = { war = { country = SOV country = UTC } }\r
+ 	exists = RUS\r
+-	exists = UGS\r
++	exists = UTC\r
+ 	NOT = { ispuppet = RUS }\r
+-	NOT = { ispuppet = UGS }\r
++	NOT = { ispuppet = UTC }\r
+ 	random = 50\r
+ 	}\r
+ \r
+@@ -1555,14 +1555,14 @@ event = {
+ 	name = "ACTIONNAME7060913A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = leave_alliance }\r
+-	command = { type = end_non_aggression which = SOV where = UGS }\r
+-	command = { type = end_access which = UGS }\r
+-	command = { type = war which = UGS }\r
++	command = { type = end_non_aggression which = SOV where = UTC }\r
++	command = { type = end_access which = UTC }\r
++	command = { type = war which = UTC }\r
+ 	command = { type = end_non_aggression which = SOV where = RUS }\r
+ 	command = { type = end_access which = RUS }\r
+ 	command = { type = war which = RUS }\r
+ 	command = { type = event which = 7060914 where = RUS when = 0 }\r
+-	command = { type = event which = 7060915 where = UGS when = 0 }\r
++	command = { type = event which = 7060915 where = UTC when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1590,13 +1590,13 @@ event = {
+ 	name = "ACTIONNAME7060914A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = leave_alliance }\r
+-	command = { type = non_aggression which = RUS where = UGS }\r
++	command = { type = non_aggression which = RUS where = UTC }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  第二次ロシア内戦（UGS）\r
++#  第二次ロシア内戦（UTC）\r
+ # 1917年のロシア内戦の共産主義の勝利は、人民の解放ではなく、新たな圧政をもたらしたに過ぎなかった。\r
+ # しかし、社会主義の圧政は戦争による敗北を初めとする多くの失敗によって、自壊寸前にまで追い込まれた。\r
+ # だがソ連政府はこの事実を認めるどころか、更なる抑圧でもって体制維持を図り、民衆の平和の意思を踏みにじった。\r
+@@ -1606,7 +1606,7 @@ event = {
+ event = {\r
+ 	id = 7060915\r
+ 	random = no\r
+-	country = UGS\r
++	country = UTC\r
+ \r
+ 	name = "EVT_7060915_NAME"\r
+ 	desc = "EVT_7060915_DESC"\r
+@@ -1638,7 +1638,7 @@ event = {
+ \r
+ 	decision = {\r
+ 	flag = RUS_Poa_Civiwar # ロシア解放軍のウラル進出\r
+-	flag = UGS_Civiwar # シベリアの反乱\r
++	flag = UTC_Civiwar # シベリアの反乱\r
+ 	event = 7060903 # 厳しい講和\r
+ 	event = 7060913 # 第二次ロシア内戦\r
+ 	war = { country = RUS country = SOV }\r
+@@ -1942,9 +1942,9 @@ event = {
+ 	trigger = {\r
+ 	event = 7060913 # 第二次ロシア内戦\r
+ 	NOT = { exists = RUS }\r
+-	NOT = { exists = UGS }\r
++	NOT = { exists = UTC }\r
+ 	NOT = { war = { country = SOV country = RUS } }\r
+-	NOT = { war = { country = SOV country = UGS } }\r
++	NOT = { war = { country = SOV country = UTC } }\r
+ 	NOT = { event = 7060921 }\r
+ 	NOT = { event = 7060922 }\r
+ 	NOT = { ispuppet = SOV }\r
+@@ -2019,15 +2019,15 @@ event = {
+ event = {\r
+ 	id = 7060922\r
+ 	random = no\r
+-	country = UGS\r
++	country = UTC\r
+ 	save_date = yes\r
+ \r
+ 	trigger = {\r
+ 	event = 7060913 # 第二次ロシア内戦\r
+ 	NOT = { exists = SOV }\r
+-	NOT = { war = { country = UGS country = SOV } }\r
++	NOT = { war = { country = UTC country = SOV } }\r
+ 	NOT = { event = 7060920 }\r
+-	NOT = { ispuppet = UGS }\r
++	NOT = { ispuppet = UTC }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+@@ -2044,21 +2044,21 @@ event = {
+ 	name = "ACTIONNAME7060922A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = sleepevent which = 7060920 }\r
+-	command = { type = name where = UGS which = "ロシア民主主義共和国" }\r
+-	command = { type = flag_ext where = UGS which = "_rus" }\r
+-	command = { trigger = { control = { province = 1142 data = UGS } } type = capital which = 1142 } # ノヴォシビルスク\r
++	command = { type = name where = UTC which = "ロシア民主主義共和国" }\r
++	command = { type = flag_ext where = UTC which = "_rus" }\r
++	command = { trigger = { control = { province = 1142 data = UTC } } type = capital which = 1142 } # ノヴォシビルスク\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+ 	command = { type = set_domestic which = political_left value = 7 }\r
+-	command = { type = headofstate which = 1340111 } # ドミトリー・ショスタコーヴィチ\r
+-	command = { type = headofgovernment which = 1340114 } # ペトロ・グリゴレンコ\r
+-	command = { type = foreignminister which = 1340117 } # フロル・シュムィゴフ\r
+-	command = { type = armamentminister which = 1340122 } # アントニーナ・ピロジコワ\r
+-	command = { type = ministerofsecurity which = 1340127 } # アファナシー・コプテロフ\r
+-	command = { type = ministerofintelligence which = 1340132 } # パーヴェル・フィーチン\r
+-	command = { type = chiefofstaff which = 1340137 } # アレクセイ・ネステレンコ\r
+-	command = { type = chiefofarmy which = 1340141 } # ネストル・コージン\r
+-	command = { type = chiefofnavy which = 1340109 } # ミハイル・ゴートスキー\r
+-	command = { type = chiefofair which = 1340146 } # ヴァシリー・ブス\r
++	command = { type = headofstate which = 1335111 } # ドミトリー・ショスタコーヴィチ\r
++	command = { type = headofgovernment which = 1335114 } # ペトロ・グリゴレンコ\r
++	command = { type = foreignminister which = 1335117 } # フロル・シュムィゴフ\r
++	command = { type = armamentminister which = 1335122 } # アントニーナ・ピロジコワ\r
++	command = { type = ministerofsecurity which = 1335127 } # アファナシー・コプテロフ\r
++	command = { type = ministerofintelligence which = 1335132 } # パーヴェル・フィーチン\r
++	command = { type = chiefofstaff which = 1335137 } # アレクセイ・ネステレンコ\r
++	command = { type = chiefofarmy which = 1335141 } # ネストル・コージン\r
++	command = { type = chiefofnavy which = 1335109 } # ミハイル・ゴートスキー\r
++	command = { type = chiefofair which = 1335146 } # ヴァシリー・ブス\r
+ 	ai_chance = 34\r
+ 	}\r
+ \r
+@@ -2066,21 +2066,21 @@ event = {
+ 	name = "ACTIONNAME7060922B"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = sleepevent which = 7060920 }\r
+-	command = { type = name where = UGS which = "ロシア民主主義共和国" }\r
+-	command = { type = flag_ext where = UGS which = "_rus" }\r
+-	command = { trigger = { control = { province = 1142 data = UGS } } type = capital which = 1142 } # ノヴォシビルスク\r
++	command = { type = name where = UTC which = "ロシア民主主義共和国" }\r
++	command = { type = flag_ext where = UTC which = "_rus" }\r
++	command = { trigger = { control = { province = 1142 data = UTC } } type = capital which = 1142 } # ノヴォシビルスク\r
+ 	command = { type = set_domestic which = democratic value = 5 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = headofstate which = 1340112 } # ドミトリー・リハチョフ\r
+-	command = { type = headofgovernment which = 1340115 } # ゲオルギー・グレベンシコフ\r
+-	command = { type = foreignminister which = 1340118 } # セルゲイ・アントノフ\r
+-	command = { type = armamentminister which = 1340123 } # ミハイル・ポソーヒン\r
+-	command = { type = ministerofsecurity which = 1340128 } # ヴァシリー・メドベージェフ\r
+-	command = { type = ministerofintelligence which = 1340133 } # アナトリー・クリモフ\r
+-	command = { type = chiefofstaff which = 1340138 } # グリゴリー・クリヴォラポフ\r
+-	command = { type = chiefofarmy which = 1340142 } # アレクサンダー・サムソノフ\r
+-	command = { type = chiefofnavy which = 1340145 } # ミハイル・プルドニコフ\r
+-	command = { type = chiefofair which = 1340147 } # ゲオルギー・バイドゥコフ\r
++	command = { type = headofstate which = 1335112 } # ドミトリー・リハチョフ\r
++	command = { type = headofgovernment which = 1335115 } # ゲオルギー・グレベンシコフ\r
++	command = { type = foreignminister which = 1335118 } # セルゲイ・アントノフ\r
++	command = { type = armamentminister which = 1335123 } # ミハイル・ポソーヒン\r
++	command = { type = ministerofsecurity which = 1335128 } # ヴァシリー・メドベージェフ\r
++	command = { type = ministerofintelligence which = 1335133 } # アナトリー・クリモフ\r
++	command = { type = chiefofstaff which = 1335138 } # グリゴリー・クリヴォラポフ\r
++	command = { type = chiefofarmy which = 1335142 } # アレクサンダー・サムソノフ\r
++	command = { type = chiefofnavy which = 1335145 } # ミハイル・プルドニコフ\r
++	command = { type = chiefofair which = 1335147 } # ゲオルギー・バイドゥコフ\r
+ 	ai_chance = 33\r
+ 	}\r
+ \r
+@@ -2088,21 +2088,21 @@ event = {
+ 	name = "ACTIONNAME7060922C"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = sleepevent which = 7060920 }\r
+-	command = { type = name where = UGS which = "ロシア民主主義共和国" }\r
+-	command = { type = flag_ext where = UGS which = "_rus" }\r
+-	command = { trigger = { control = { province = 1142 data = UGS } } type = capital which = 1142 } # ノヴォシビルスク\r
++	command = { type = name where = UTC which = "ロシア民主主義共和国" }\r
++	command = { type = flag_ext where = UTC which = "_rus" }\r
++	command = { trigger = { control = { province = 1142 data = UTC } } type = capital which = 1142 } # ノヴォシビルスク\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 1340113 } # ダニイル・ハルムス\r
+-	command = { type = headofgovernment which = 1340116 } # ゲオルギー・グレベンシコフ\r
+-	command = { type = foreignminister which = 1340119 } # ニコライ・ザボロツキー\r
+-	command = { type = armamentminister which = 1340124 } # ニコライ・ニキーチン\r
+-	command = { type = ministerofsecurity which = 1340129 } # ミハイル・コバレフ\r
+-	command = { type = ministerofintelligence which = 1340134 } # アルテミー・フョードロフ\r
+-	command = { type = chiefofstaff which = 1340139 } # ヒョードル・カトコフ\r
+-	command = { type = chiefofarmy which = 1340143 } # バレリアン・メルクリエフ\r
+-	command = { type = chiefofnavy which = 1340145 } # ミハイル・プルドニコフ\r
+-	command = { type = chiefofair which = 1340148 } # イワン・コチェルギン\r
++	command = { type = headofstate which = 1335113 } # ダニイル・ハルムス\r
++	command = { type = headofgovernment which = 1335116 } # ゲオルギー・グレベンシコフ\r
++	command = { type = foreignminister which = 1335119 } # ニコライ・ザボロツキー\r
++	command = { type = armamentminister which = 1335124 } # ニコライ・ニキーチン\r
++	command = { type = ministerofsecurity which = 1335129 } # ミハイル・コバレフ\r
++	command = { type = ministerofintelligence which = 1335134 } # アルテミー・フョードロフ\r
++	command = { type = chiefofstaff which = 1335139 } # ヒョードル・カトコフ\r
++	command = { type = chiefofarmy which = 1335143 } # バレリアン・メルクリエフ\r
++	command = { type = chiefofnavy which = 1335145 } # ミハイル・プルドニコフ\r
++	command = { type = chiefofair which = 1335148 } # イワン・コチェルギン\r
+ 	ai_chance = 33\r
+ 	}\r
+ }\r
+@@ -4109,7 +4109,7 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  崩れ行くロシア ― ウラルの反乱（TRA→UGS）\r
++#  崩れ行くロシア ― ウラルの反乱（TRA→UTC）\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -4125,23 +4125,23 @@ event = {
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -50 }\r
+-	command = { type = country which = UGS }\r
+-	command = { type = name where = UGS which = "中央シベリア共和国" }\r
+-	command = { type = flag_ext where = UGS which = "_Cen" }\r
+-	command = { trigger = { control = { province = 687 data = UGS } } type = capital which = 687 } # ペルミ\r
+-	command = { trigger = { NOT = { control = { province = 687 data = UGS } } } type = capital which = 1151 } # スヴェルドロフスク\r
++	command = { type = country which = UTC }\r
++	command = { type = name where = UTC which = "中央シベリア共和国" }\r
++	command = { type = flag_ext where = UTC which = "_Cen" }\r
++	command = { trigger = { control = { province = 687 data = UTC } } type = capital which = 687 } # ペルミ\r
++	command = { trigger = { NOT = { control = { province = 687 data = UTC } } } type = capital which = 1151 } # スヴェルドロフスク\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 6 }\r
+-	command = { type = headofstate which = 1340101 } # ボリス・パステルナーク\r
+-	command = { type = headofgovernment which = 1340102 } # ニコライ・アセーエフ\r
+-	command = { type = foreignminister which = 1340103 } # コンスタンチン・パウストフスキー\r
+-	command = { type = armamentminister which = 1340104 } # セルゲイ・ボブロフ\r
+-	command = { type = ministerofsecurity which = 1340105 } # エカテリーナ・ペシュコバ\r
+-	command = { type = ministerofintelligence which = 1340106 } # ウラジーミル・ペトロフ\r
+-	command = { type = chiefofstaff which = 1340107 } # マトヴェイ・シャポシニコフ\r
+-	command = { type = chiefofarmy which = 1340108 } # イヴァン・フェディウニンスキ\r
+-	command = { type = chiefofnavy which = 1340109 } # ミハイル・ゴートスキー\r
+-	command = { type = chiefofair which = 1340110 } # アレクサンドル・ポクルィシュキン\r
++	command = { type = headofstate which = 1335101 } # ボリス・パステルナーク\r
++	command = { type = headofgovernment which = 1335102 } # ニコライ・アセーエフ\r
++	command = { type = foreignminister which = 1335103 } # コンスタンチン・パウストフスキー\r
++	command = { type = armamentminister which = 1335104 } # セルゲイ・ボブロフ\r
++	command = { type = ministerofsecurity which = 1335105 } # エカテリーナ・ペシュコバ\r
++	command = { type = ministerofintelligence which = 1335106 } # ウラジーミル・ペトロフ\r
++	command = { type = chiefofstaff which = 1335107 } # マトヴェイ・シャポシニコフ\r
++	command = { type = chiefofarmy which = 1335108 } # イヴァン・フェディウニンスキ\r
++	command = { type = chiefofnavy which = 1335109 } # ミハイル・ゴートスキー\r
++	command = { type = chiefofair which = 1335110 } # アレクサンドル・ポクルィシュキン\r
+ 	command = { type = energypool value = 500 }\r
+ 	command = { type = metalpool value = 300 }\r
+ 	command = { type = rarematerialspool value = 150 }\r
+@@ -4185,19 +4185,19 @@ event = {
+ 	command = { type = add_division value = interceptor when = 7 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
+-	command = { type = add_core_region which = "Urals" where = UGS }\r
+-	command = { type = add_core_region which = "Novosibirsk" where = UGS }\r
+-	command = { type = add_core_region which = "Tomsk" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Permafrost" where = UGS }\r
+-	command = { type = add_core_region which = "Far East Siberia" where = UGS }\r
+-	command = { type = add_core_region which = "Krasnoyarsk" where = UGS }\r
+-	command = { type = add_core_region which = "Irkutsk" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Russia" where = UGS }\r
+-	command = { type = add_core_region which = "White Sea Tundra" where = UGS }\r
+-	command = { type = add_core_region which = "Eastern Russia" where = UGS }\r
+-	command = { type = add_core_region which = "Russia" where = UGS }\r
+-	command = { type = add_core_region which = "Southern Russia" where = UGS }\r
+-	command = { type = add_core_region which = "Western Russia" where = UGS }\r
++	command = { type = add_core_region which = "Urals" where = UTC }\r
++	command = { type = add_core_region which = "Novosibirsk" where = UTC }\r
++	command = { type = add_core_region which = "Tomsk" where = UTC }\r
++	command = { type = add_core_region which = "Northern Permafrost" where = UTC }\r
++	command = { type = add_core_region which = "Far East Siberia" where = UTC }\r
++	command = { type = add_core_region which = "Krasnoyarsk" where = UTC }\r
++	command = { type = add_core_region which = "Irkutsk" where = UTC }\r
++	command = { type = add_core_region which = "Northern Russia" where = UTC }\r
++	command = { type = add_core_region which = "White Sea Tundra" where = UTC }\r
++	command = { type = add_core_region which = "Eastern Russia" where = UTC }\r
++	command = { type = add_core_region which = "Russia" where = UTC }\r
++	command = { type = add_core_region which = "Southern Russia" where = UTC }\r
++	command = { type = add_core_region which = "Western Russia" where = UTC }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -4218,7 +4218,7 @@ event = {
+ 	event = 7061003 # 厳しい講和\r
+ 	event = 7060710 # 崩れ行くロシア ― ロシアの崩壊\r
+ 	NOT = { war = { country = UER country = SIB } }\r
+-	NOT = { war = { country = UER country = UGS } }\r
++	NOT = { war = { country = UER country = UTC } }\r
+ 	exists = UER\r
+ 	NOT = { ispuppet = UER }\r
+ 	}\r
+@@ -4239,11 +4239,11 @@ event = {
+ 	command = { type = end_non_aggression which = UER where = SOV }\r
+ 	command = { type = end_access which = SOV }\r
+ 	command = { type = war which = SOV }\r
+-	command = { type = end_non_aggression which = UER where = UGS }\r
+-	command = { type = end_access which = UGS }\r
+-	command = { type = war which = UGS }\r
++	command = { type = end_non_aggression which = UER where = UTC }\r
++	command = { type = end_access which = UTC }\r
++	command = { type = war which = UTC }\r
+ 	command = { type = event which = 7061014 where = SOV when = 0 }\r
+-	command = { type = event which = 7061014 where = UGS when = 0 }\r
++	command = { type = event which = 7061014 where = UTC when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -4257,7 +4257,7 @@ event = {
+ event = {\r
+ 	id = 7061014\r
+ 	random = no\r
+-	TAG = { UGS SOV }\r
++	TAG = { UTC SOV }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_7061014_NAME"\r
+@@ -4269,8 +4269,8 @@ event = {
+ 	name = "ACTIONNAME7061014A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = leave_alliance }\r
+-	command = { trigger = { country = UGS } type = war which = SOV }\r
+-	command = { trigger = { country = SOV } type = war which = UGS }\r
++	command = { trigger = { country = UTC } type = war which = SOV }\r
++	command = { trigger = { country = SOV } type = war which = UTC }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -4290,9 +4290,9 @@ event = {
+ 	trigger = {\r
+ 	event = 7061013 # 第二次ロシア内戦\r
+ 	NOT = { exists = SOV }\r
+-	NOT = { exists = UGS }\r
++	NOT = { exists = UTC }\r
+ 	NOT = { war = { country = UER country = SOV } }\r
+-	NOT = { war = { country = UER country = UGS } }\r
++	NOT = { war = { country = UER country = UTC } }\r
+ 	NOT = { event = 7061016 } # 第二次ロシア内戦 ─ 社会主義者の勝利\r
+ 	NOT = { event = 7061017 } # 第二次ロシア内戦 ─ 民主主義者の勝利\r
+ 	NOT = { ispuppet = UER }\r
+@@ -4331,9 +4331,9 @@ event = {
+ 	trigger = {\r
+ 	event = 7061013 # 第二次ロシア内戦\r
+ 	NOT = { exists = UER }\r
+-	NOT = { exists = UGS }\r
++	NOT = { exists = UTC }\r
+ 	NOT = { war = { country = SOV country = UER } }\r
+-	NOT = { war = { country = SOV country = UGS } }\r
++	NOT = { war = { country = SOV country = UTC } }\r
+ 	NOT = { event = 7061015 } # 第二次ロシア内戦 ─ ロシアの勝利\r
+ 	NOT = { event = 7061017 } # 第二次ロシア内戦 ─ 民主主義者の勝利\r
+ 	NOT = { ispuppet = SOV }\r
+@@ -4369,17 +4369,17 @@ event = {
+ event = {\r
+ 	id = 7061017\r
+ 	random = no\r
+-	country = UGS\r
++	country = UTC\r
+ \r
+ 	trigger = {\r
+ 	event = 7061013 # 第二次ロシア内戦\r
+ 	NOT = { exists = UER }\r
+ 	NOT = { exists = SOV }\r
+-	NOT = { war = { country = UGS country = UER } }\r
+-	NOT = { war = { country = UGS country = SOV } }\r
++	NOT = { war = { country = UTC country = UER } }\r
++	NOT = { war = { country = UTC country = SOV } }\r
+ 	NOT = { event = 7061015 } # 第二次ロシア内戦 ─ ロシアの勝利\r
+ 	NOT = { event = 7061016 } # 第二次ロシア内戦 ─ 社会主義者の勝利\r
+-	NOT = { ispuppet = UGS }\r
++	NOT = { ispuppet = UTC }\r
+ 	}\r
+ \r
+ 	name = "EVT_7061017_NAME"\r
+@@ -4394,7 +4394,7 @@ event = {
+ 	action = { # 勝利だ\r
+ 	name = "ACTIONNAME7061017A"\r
+ 	command = { type = dissent value = -10 }\r
+-	command = { type = name where = UGS which = "シベリア連邦" }\r
++	command = { type = name where = UTC which = "シベリア連邦" }\r
+ 	command = { type = sleepevent which = 7061015 }\r
+ 	command = { type = sleepevent which = 7061016 }\r
+ 	ai_chance = 100\r
+@@ -6108,34 +6108,34 @@ event = {
+ 	command = { type = supplies value = 1800 }\r
+ 	command = { type = money value = 150 }\r
+ 	command = { type = manpowerpool value = 200 }\r
+-	command = { type = country which = UGS }\r
+-	command = { type = name where = UGS which = "東シベリア共和国" }\r
+-	command = { type = flag_ext where = UGS which = "_Cen" }\r
++	command = { type = country which = UTC }\r
++	command = { type = name where = UTC which = "東シベリア共和国" }\r
++	command = { type = flag_ext where = UTC which = "_Cen" }\r
+         command = { type = secedearea which = SOV value = "Novosibirsk" when = 1 } \r
+         command = { type = secedearea which = SOV value = "Tomsk" when = 1 } \r
+-	command = { trigger = { control = { province = 1162 data = UGS } } type = capital which = 1162 } # イルクーツク\r
+-	command = { trigger = { NOT = { control = { province = 1162 data = UGS } } } type = capital which = 1166 } # チェレンホーヴォ\r
++	command = { trigger = { control = { province = 1162 data = UTC } } type = capital which = 1162 } # イルクーツク\r
++	command = { trigger = { NOT = { control = { province = 1162 data = UTC } } } type = capital which = 1166 } # チェレンホーヴォ\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 6 }\r
+-	command = { type = headofstate which = 1340101 } # ボリス・パステルナーク\r
+-	command = { type = headofgovernment which = 1340102 } # ニコライ・アセーエフ\r
+-	command = { type = foreignminister which = 1340103 } # コンスタンチン・パウストフスキー\r
+-	command = { type = armamentminister which = 1340104 } # セルゲイ・ボブロフ\r
+-	command = { type = ministerofsecurity which = 1340105 } # エカテリーナ・ペシュコバ\r
+-	command = { type = ministerofintelligence which = 1340106 } # ウラジーミル・ペトロフ\r
+-	command = { type = chiefofstaff which = 1340107 } # マトヴェイ・シャポシニコフ\r
+-	command = { type = chiefofarmy which = 1340108 } # イヴァン・フェディウニンスキ\r
+-	command = { type = chiefofnavy which = 1340109 } # ミハイル・ゴートスキー\r
+-	command = { type = chiefofair which = 1340110 } # アレクサンドル・ポクルィシュキン\r
+-	command = { type = add_core_region which = "Urals" where = UGS }\r
+-	command = { type = add_core_region which = "Novosibirsk" where = UGS }\r
+-	command = { type = add_core_region which = "Tomsk" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Permafrost" where = UGS }\r
+-	command = { type = add_core_region which = "Far East Siberia" where = UGS }\r
+-	command = { type = add_core_region which = "Irkutsk" where = UGS }\r
+-	command = { type = add_core_region which = "Krasnoyarsk" where = UGS }\r
+-	command = { type = add_core_region which = "Eastern Russia" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Russia" where = UGS }\r
++	command = { type = headofstate which = 1335101 } # ボリス・パステルナーク\r
++	command = { type = headofgovernment which = 1335102 } # ニコライ・アセーエフ\r
++	command = { type = foreignminister which = 1335103 } # コンスタンチン・パウストフスキー\r
++	command = { type = armamentminister which = 1335104 } # セルゲイ・ボブロフ\r
++	command = { type = ministerofsecurity which = 1335105 } # エカテリーナ・ペシュコバ\r
++	command = { type = ministerofintelligence which = 1335106 } # ウラジーミル・ペトロフ\r
++	command = { type = chiefofstaff which = 1335107 } # マトヴェイ・シャポシニコフ\r
++	command = { type = chiefofarmy which = 1335108 } # イヴァン・フェディウニンスキ\r
++	command = { type = chiefofnavy which = 1335109 } # ミハイル・ゴートスキー\r
++	command = { type = chiefofair which = 1335110 } # アレクサンドル・ポクルィシュキン\r
++	command = { type = add_core_region which = "Urals" where = UTC }\r
++	command = { type = add_core_region which = "Novosibirsk" where = UTC }\r
++	command = { type = add_core_region which = "Tomsk" where = UTC }\r
++	command = { type = add_core_region which = "Northern Permafrost" where = UTC }\r
++	command = { type = add_core_region which = "Far East Siberia" where = UTC }\r
++	command = { type = add_core_region which = "Irkutsk" where = UTC }\r
++	command = { type = add_core_region which = "Krasnoyarsk" where = UTC }\r
++	command = { type = add_core_region which = "Eastern Russia" where = UTC }\r
++	command = { type = add_core_region which = "Northern Russia" where = UTC }\r
+         command = { type = secedearea which = UER value = "Novosibirsk" when = 1 } \r
+         command = { type = secedearea which = UER value = "Tomsk" when = 1 } \r
+ 	command = { type = energypool value = 500 }\r
+@@ -7987,32 +7987,32 @@ event = {
+ 	command = { type = supplies value = 1800 }\r
+ 	command = { type = money value = 150 }\r
+ 	command = { type = manpowerpool value = 200 }\r
+-	command = { type = country which = UGS }\r
+-	command = { type = name where = UGS which = "東シベリア共和国" }\r
+-	command = { type = flag_ext where = UGS which = "_Cen" }\r
+-	command = { trigger = { control = { province = 1162 data = UGS } } type = capital which = 1162 } # イルクーツク\r
+-	command = { trigger = { NOT = { control = { province = 1162 data = UGS } } } type = capital which = 1166 } # チェレンホーヴォ\r
++	command = { type = country which = UTC }\r
++	command = { type = name where = UTC which = "東シベリア共和国" }\r
++	command = { type = flag_ext where = UTC which = "_Cen" }\r
++	command = { trigger = { control = { province = 1162 data = UTC } } type = capital which = 1162 } # イルクーツク\r
++	command = { trigger = { NOT = { control = { province = 1162 data = UTC } } } type = capital which = 1166 } # チェレンホーヴォ\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 6 }\r
+-	command = { type = headofstate which = 1340101 } # ボリス・パステルナーク\r
+-	command = { type = headofgovernment which = 1340102 } # ニコライ・アセーエフ\r
+-	command = { type = foreignminister which = 1340103 } # コンスタンチン・パウストフスキー\r
+-	command = { type = armamentminister which = 1340104 } # セルゲイ・ボブロフ\r
+-	command = { type = ministerofsecurity which = 1340105 } # エカテリーナ・ペシュコバ\r
+-	command = { type = ministerofintelligence which = 1340106 } # ウラジーミル・ペトロフ\r
+-	command = { type = chiefofstaff which = 1340107 } # マトヴェイ・シャポシニコフ\r
+-	command = { type = chiefofarmy which = 1340108 } # イヴァン・フェディウニンスキ\r
+-	command = { type = chiefofnavy which = 1340109 } # ミハイル・ゴートスキー\r
+-	command = { type = chiefofair which = 1340110 } # アレクサンドル・ポクルィシュキン\r
+-	command = { type = add_core_region which = "Urals" where = UGS }\r
+-	command = { type = add_core_region which = "Novosibirsk" where = UGS }\r
+-	command = { type = add_core_region which = "Tomsk" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Permafrost" where = UGS }\r
+-	command = { type = add_core_region which = "Far East Siberia" where = UGS }\r
+-	command = { type = add_core_region which = "Irkutsk" where = UGS }\r
+-	command = { type = add_core_region which = "Krasnoyarsk" where = UGS }\r
+-	command = { type = add_core_region which = "Eastern Russia" where = UGS }\r
+-	command = { type = add_core_region which = "Northern Russia" where = UGS }\r
++	command = { type = headofstate which = 1335101 } # ボリス・パステルナーク\r
++	command = { type = headofgovernment which = 1335102 } # ニコライ・アセーエフ\r
++	command = { type = foreignminister which = 1335103 } # コンスタンチン・パウストフスキー\r
++	command = { type = armamentminister which = 1335104 } # セルゲイ・ボブロフ\r
++	command = { type = ministerofsecurity which = 1335105 } # エカテリーナ・ペシュコバ\r
++	command = { type = ministerofintelligence which = 1335106 } # ウラジーミル・ペトロフ\r
++	command = { type = chiefofstaff which = 1335107 } # マトヴェイ・シャポシニコフ\r
++	command = { type = chiefofarmy which = 1335108 } # イヴァン・フェディウニンスキ\r
++	command = { type = chiefofnavy which = 1335109 } # ミハイル・ゴートスキー\r
++	command = { type = chiefofair which = 1335110 } # アレクサンドル・ポクルィシュキン\r
++	command = { type = add_core_region which = "Urals" where = UTC }\r
++	command = { type = add_core_region which = "Novosibirsk" where = UTC }\r
++	command = { type = add_core_region which = "Tomsk" where = UTC }\r
++	command = { type = add_core_region which = "Northern Permafrost" where = UTC }\r
++	command = { type = add_core_region which = "Far East Siberia" where = UTC }\r
++	command = { type = add_core_region which = "Irkutsk" where = UTC }\r
++	command = { type = add_core_region which = "Krasnoyarsk" where = UTC }\r
++	command = { type = add_core_region which = "Eastern Russia" where = UTC }\r
++	command = { type = add_core_region which = "Northern Russia" where = UTC }\r
+         command = { type = secedearea which = UER value = "Novosibirsk" when = 1 } \r
+         command = { type = secedearea which = UER value = "Tomsk" when = 1 } \r
+ 	command = { type = energypool value = 500 }\r

@@ -1,0 +1,40 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Canada_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Canada_events.txt [cp932]
+@@ -235,6 +235,7 @@ event = {
+ \r
+ 	action_a = { # \r
+ 	name = "ACTIONNAME4660011A"\r
++	command = { type = setflag which = CAN_ACW }\r
+ 	command = { type = dissent value = -30 }\r
+ 	command = { type = forest_move which = land value = 20 }\r
+ 	command = { type = jungle_move which = land value = 20 }\r
+@@ -244,10 +245,16 @@ event = {
+ 	command = { type = swamp_move which = land value = 20 }\r
+ 	command = { type = desert_move which = land value = 20 }\r
+ 	command = { type = urban_move which = land value = 20 }\r
++	command = { type = add_core_region which = "Alaska" where = CAN }\r
++	command = { type = add_core_region which = "Northwest US" where = CAN }\r
++	command = { type = add_core_region which = "Northeast US" where = CAN }\r
++	command = { type = add_core_region which = "Midwest US" where = CAN }\r
++	command = { type = add_core_area which = "Colorado" where = CAN }\r
++	command = { type = add_core_area which = "Kansas" where = CAN }\r
+ 	command = { type = war which = USA }\r
+ 	command = { type = war which = CSA }\r
+ 	command = { type = war which = U00 }\r
+-	command = { type = war which = UE0 }\r
++	command = { type = inherit which = UE0 }\r
+ 	command = { trigger = { NOT = { ispuppet = CAL } } type = war which = CAL }\r
+ 	command = { trigger = { NOT = { ispuppet = UA0 } } type = war which = UA0 }\r
+ 	command = { trigger = { NOT = { ispuppet = UA1 capital = { province = 1807 data = UA1 } } } type = war which = UA1 }\r
+@@ -279,6 +286,11 @@ event = {
+ 	NOT = { exists = CSA }\r
+ 	NOT = { exists = U00 }\r
+ 	NOT = { exists = UE0 }	\r
++	NOT = { flag = USA_Victory_America }\r
++	NOT = { flag = CSA_Victory_America }\r
++	NOT = { flag = SOV_Victory_America }\r
++	NOT = { flag = CAN_Victory_America }\r
++	NOT = { flag = UK_Victory_America }\r
+ 	}\r
+ \r
+ 	date = { day = 1 month = 0 year = 1900 }\r

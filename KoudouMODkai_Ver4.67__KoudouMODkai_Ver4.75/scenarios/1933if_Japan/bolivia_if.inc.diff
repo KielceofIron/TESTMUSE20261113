@@ -1,0 +1,370 @@
+--- A/scenarios/1933if_Japan/bolivia_if.inc [cp932]
++++ B/scenarios/1933if_Japan/bolivia_if.inc [cp932]
+@@ -1,207 +1,166 @@
+- \r
+- ############################## \r
+- # Country definition for BOL # \r
+- ############################## \r
++##############################\r
++# Country definition for BOL #\r
++##############################\r
+ \r
+- ##################### \r
+- # Country main data # \r
+- ##################### \r
+-  \r
+- country = \r
+- {  tag                    = BOL \r
+-	ai = "IF/bol_if.ai"\r
+-	ai_settings = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes MOB6 = yes MOB7 = yes } }\r
+-	dissent = 20\r
+-	belligerence           = 10 #0\r
+-	manpower               = 110 #19\r
+-	# Resource Reserves \r
+-	energy                 = 360\r
+-	metal                  = 180\r
+-	rare_materials         = 90\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 10 \r
+-	capital                = 2020 \r
+-      \r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 7 \r
+-     political_left    = 5 \r
+-     free_market       = 8 \r
+-     freedom           = 7 \r
+-     professional_army = 7 \r
+-     defense_lobby     = 8 \r
+-     interventionism   = 5 \r
+-    } \r
+-   nationalprovinces      = {  2002 2019 2020 2021 2025 2046 2063 2064 2046 2047 } \r
+-   ownedprovinces         = {  2019 2020 2021 2063 2064 } \r
+-   controlledprovinces    = {  2019 2020 2021 2063 2064 2046 } \r
+-   # ROTW Minor Tech '36 \r
+-   # Group D 1936 techs \r
+-   # ###################### \r
+-   # GW fighter \r
+-   techapps               = {  \r
+-#Interwar Fighter  \r
+-4500 4510 4520 4530 4540 4550 4010\r
+-#Basic Armoured Car  \r
+-2860 2870 2880 2020\r
+-#Great War Heavy Field Artillery \r
+-2290 2300 2310\r
+-#SW Tank \r
+-7600 7610\r
+-#Great War Infantry Division  \r
+-1010  1020 1030 1040 1050 1060 \r
+-#Interbellum Supply \r
+-1910 1920 1930 1940 1950 1960\r
+-#Great War Cavalry Division  \r
+-13060 13070 13080 1310 1320 1330 1340\r
+-#Early Mountain Division \r
+-1160  1170 1180 1190 1200 1210 1220 1230 1240\r
+-#Medicine\r
+-5600 5610 5620\r
+-#Engineers\r
+-1830 1840 1850 \r
+-#Early Static Anti-Air Artillery \r
+-2800 2450 21180 21190\r
+-#Basic Anti-Air Artillery Brigade \r
+-2810 2820 2510\r
+-#Modern Agriculture  \r
+-5700 5710 5010\r
+-#Improved Construction Engineering \r
+-5800 5080 \r
+-# Great War Land Doctrines (entente)\r
+-6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+-# 6570 # 人的資源ドクトリン\r
+-	6000300 # 中華式ドクトリン\r
++country = {\r
++  tag                = BOL\r
++  ai                 = "IF/bol_if.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes MOB6 = yes MOB7 = yes } }\r
++  belligerence       = 10\r
++  capital            = 2020 # ラパス\r
++  dissent            = 20\r
++  manpower           = 110\r
++  # Resource Reserves\r
++  energy         = 360\r
++  metal          = 180\r
++  rare_materials = 90\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 10\r
+ \r
+-#Air Doctrines - ww2 techs\r
+-27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010\r
+-} \r
+-inventions = { 3000027 }\r
+-   diplomacy = \r
+-   {  relation = {  tag = ARG value = 50  } \r
+-     relation = {  tag = BRA value = 10  } \r
+-     relation = {  tag = CHL value = -50  } \r
+-     relation = {  tag = COL value = 1  } \r
+-     relation = {  tag = ECU value = -20  } \r
+-     relation = {  tag = GER value = 15  } \r
+-     relation = {  tag = PAR value = -200  } #-50\r
+-     relation = {  tag = PRU value = 30  } \r
+-     relation = {  tag = URU value = 10  } \r
+-     relation = {  tag = USA value = 85  } \r
+-     relation = {  tag = VEN value = -15  } \r
+-    } \r
+-   SpyInfo                = {  country = "BOL" NumberOfSpies = 3  } \r
+-   headofstate            = {  type = 9 id = 205217  } \r
+-   headofgovernment       = {  type = 9 id = 205218  } \r
+-   foreignminister        = {  type = 9 id = 205003  } \r
+-   armamentminister       = {  type = 9 id = 205004  } \r
+-   ministerofsecurity     = {  type = 9 id = 205005  } \r
+-   ministerofintelligence = {  type = 9 id = 205006  } \r
+-   chiefofstaff           = {  type = 9 id = 205007  } \r
+-   chiefofarmy            = {  type = 9 id = 205008  } \r
+-   chiefofnavy            = {  type = 9 id = 205009  } \r
+-   chiefofair             = {  type = 9 id = 205010  } \r
+-   # People's Army \r
+-   landunit = \r
+-   {  id       = {  type = 17000 id = 40  } \r
+-     name     = "ボリビア陸軍" \r
+-     location = 2020 \r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4000  } \r
+-       name     = "第1歩兵旅団「ボリバル」" \r
+-       strength = 100 \r
+-       type     = infantry \r
+-       model    = 6\r
+-       extra    = artillery \r
+-	   brigade_model = 3\r
+-      } \r
+-    }\r
+-   landunit = \r
+-   {  id       = {  type = 17000 id = 4001  } \r
+-     name     = "第1軍団" \r
+-     location = 2046\r
+-     mission =\r
+-     { type      = attack\r
+-      target     = 2047\r
+-      percentage = 0.0000\r
+-      startdate  = { year = 1933 month = 2 day = 0 hour = 0 }\r
+-      enddate    = { year = 1933 month = 2 day = 29 hour = 0 }\r
+-     }\r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4002  } \r
+-       name     = "ボリビア第2歩兵旅団" \r
+-       strength = 85 # 100\r
+-       type     = infantry \r
+-       model    = 6\r
+-       extra    = light_armor_brigade\r
+-	   brigade_model = 1\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4003  } \r
+-       name     = "ボリビア第3歩兵旅団" \r
+-       strength = 75 # 100 \r
+-       type     = infantry \r
+-       model    = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4004  } \r
+-       name     = "ボリビア第4歩兵旅団" \r
+-       strength = 55 # 100 \r
+-       type     = infantry \r
+-       model    = 5 # 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4005  } \r
+-       name     = "ボリビア第5歩兵旅団" \r
+-       strength = 75 \r
+-       type     = militia \r
+-       model    = 3\r
+-      } \r
++  diplomacy = {\r
++    relation = { tag = ARG value = 50 }\r
++    relation = { tag = BRA value = 10 }\r
++    relation = { tag = CHL value = -50 }\r
++    relation = { tag = COL value = 1 }\r
++    relation = { tag = ECU value = -20 }\r
++    relation = { tag = GER value = 15 }\r
++    relation = { tag = PAR value = -200 }\r
++    relation = { tag = PRU value = 30 }\r
++    relation = { tag = URU value = 10 }\r
++    relation = { tag = USA value = 85 }\r
++    relation = { tag = VEN value = -15 }\r
++  }\r
++  SpyInfo                = { country = "BOL" NumberOfSpies = 3 }\r
++\r
++  nationalprovinces      = { 2002 2019 2020 2021 2025 2046 2063 2064 2046 2047 }\r
++  ownedprovinces         = { 2019 2020 2021 2063 2064 }\r
++  controlledprovinces    = { 2019 2020 2021 2063 2064 2046 }\r
++\r
++  techapps               = { 4500 4510 4520 4530 4540 4550 4010 2860 2870 2880 2020 2290 2300 2310 7600 7610 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 1240 5600 5610 5620 1830 1840 1850 2800 2450 21180 21190 2810 2820 2510 5700 5710 5010 5800 5080 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 6000300 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 }\r
++  inventions             = { 3000027 }\r
++\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 7\r
++    political_left    = 5\r
++    freedom           = 7\r
++    free_market       = 8\r
++    professional_army = 7\r
++    defense_lobby     = 8\r
++    interventionism   = 5\r
++  }\r
++  headofstate            = { type = 9 id = 205217 } # ダニエル・サラマンカ・ユーリー\r
++  headofgovernment       = { type = 9 id = 205218 } # ダニエル・サラマンカ・ユーリー\r
++  foreignminister        = { type = 9 id = 205003 } # ホセ・マリア・グティエレス\r
++  armamentminister       = { type = 9 id = 205004 } # モリッツ・ホッホシルト\r
++  ministerofsecurity     = { type = 9 id = 205005 } # ホセ・サントス・キンテロス\r
++  ministerofintelligence = { type = 9 id = 205006 } # カルロス・アルタミラノ\r
++  chiefofstaff           = { type = 9 id = 205007 } # グアルベルト・ビジャロエル・ロペス\r
++  chiefofarmy            = { type = 9 id = 205008 } # ハンス・クント\r
++  chiefofnavy            = { type = 9 id = 205009 } # ヒル・イバラ・フアレス\r
++  chiefofair             = { type = 9 id = 205010 } # エクトール・ビルバオ・ロハ\r
+ \r
++  landunit = {\r
++    id       = { type = 17000 id = 40 }\r
++    name     = "ボリビア陸軍"\r
++    location = 2020\r
++    division = {\r
++      id             = { type = 17000 id = 4000 }\r
++      name           = "第1歩兵旅団「ボリバル」"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = artillery\r
++      brigade_model  = 3\r
++      strength       = 100\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 17000 id = 4001 }\r
++    name     = "第1軍団"\r
++    location = 2046\r
++    mission = {\r
++      type = attack\r
++      target = 2047\r
++      percentage = 0\r
++      startdate = { year = 1933 month = march day = 0 }\r
++      enddate = { year = 1933 month = march day = 29 }\r
++    }\r
++    division = {\r
++      id             = { type = 17000 id = 4002 }\r
++      name           = "ボリビア第2歩兵旅団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = light_armor_brigade\r
++      brigade_model  = 1\r
++      strength       = 85\r
++    }\r
++    division = {\r
++      id             = { type = 17000 id = 4003 }\r
++      name           = "ボリビア第3歩兵旅団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 75\r
++    }\r
++    division = {\r
++      id             = { type = 17000 id = 4004 }\r
++      name           = "ボリビア第4歩兵旅団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 55\r
++    }\r
++    division = {\r
++      id             = { type = 17000 id = 4005 }\r
++      name           = "ボリビア第5歩兵旅団"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 75\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 17000 id = 4006 }\r
++    name     = "中央軍団"\r
++    location = 2046\r
++    mission = {\r
++      type = attack\r
++      target = 2047\r
++      percentage = 0\r
++      startdate = { year = 1933 month = march day = 0 }\r
++      enddate = { year = 1933 month = march day = 29 }\r
++    }\r
++    division = {\r
++      id             = { type = 17000 id = 4007 }\r
++      name           = "ボリビア第6歩兵旅団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = light_armor_brigade\r
++      brigade_model  = 1\r
++      strength       = 75\r
++    }\r
++    division = {\r
++      id             = { type = 17000 id = 4008 }\r
++      name           = "ボリビア第7歩兵旅団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 70\r
++    }\r
++    division = {\r
++      id             = { type = 17000 id = 4009 }\r
++      name           = "ボリビア第8歩兵旅団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 70\r
+     }\r
+-   landunit = \r
+-   {  id       = {  type = 17000 id = 4006  } \r
+-     name     = "中央軍団" \r
+-     location = 2046 # 2063\r
+-     mission =\r
+-     { type      = attack\r
+-      target     = 2047\r
+-      percentage = 0.0000\r
+-      startdate  = { year = 1933 month = 2 day = 0 hour = 0 }\r
+-      enddate    = { year = 1933 month = 2 day = 29 hour = 0 }\r
+-     }\r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4007  } \r
+-       name     = "ボリビア第6歩兵旅団" \r
+-       strength = 75 # 100 \r
+-       type     = infantry \r
+-       model    = 6\r
+-       extra    = light_armor_brigade\r
+-	   brigade_model = 1\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4008  } \r
+-       name     = "ボリビア第7歩兵旅団" \r
+-       strength = 70 # 100 \r
+-       type     = infantry \r
+-       model    = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4009  } \r
+-       name     = "ボリビア第8歩兵旅団" \r
+-       strength = 70 \r
+-       type     = infantry \r
+-       model    = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 17000 id = 4010  } \r
+-       name     = "ボリビア第9歩兵旅団" \r
+-       strength = 65\r
+-       type     = militia\r
+-       model    = 3\r
+-      } \r
++    division = {\r
++      id             = { type = 17000 id = 4010 }\r
++      name           = "ボリビア第9歩兵旅団"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 65\r
+     }\r
+-  } \r
+- \r
++  }\r
++}\r

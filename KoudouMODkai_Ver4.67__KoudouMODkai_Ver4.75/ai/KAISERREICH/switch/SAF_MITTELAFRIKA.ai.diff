@@ -1,0 +1,751 @@
+--- A/ai/KAISERREICH/switch/SAF_MITTELAFRIKA.ai [ascii]
++++ B/ai/KAISERREICH/switch/SAF_MITTELAFRIKA.ai [ascii]
+@@ -1,374 +1,374 @@
+-# South Africa 1936 AI File by Lothos
+-# Revised for Kaiserreich by Johnny Canuck
+-
+-switch = no # [yes/no]
+-max_front_ratio = 1.2 
+-max_garrison_prop = 0.30
+-min_garrison_prop = 0.20
+-neutrality = 75
+-war = 10
+-upgrading = 0.25
+-reinforcement = 0.2
+-strat_redeploy_threshold = 25
+-exp_force_ratio = 0.25
+-exp_force_ratios = { } 
+-no_exp_forces_to = { }
+-use_offensive_supply = no
+-
+-###################################
+-# Diplomacy
+-###################################
+-combat = { }
+-
+-befriend = {
+-	CON = 30
+-}
+-protect = { }
+-
+-target = { } 
+-
+-resistance = {
+-	ENG = 3
+-	FRA = 2
+-	RSI = 2
+-	CSA = 2
+-	PRK = 2
+-	CAN = 3
+-	U10 = 3
+-	AST = 2
+-	PAK = 2
+-	GUY = 2
+-	VIC = 2
+-	POR = 3
+-	}
+-
+-trade = {
+-	cancel_deal_threshold = 2
+-
+-	energy 		= -1
+-	rare_materials 	= -1
+-	metal 		= -1
+-	oil 		= -1
+-	supplies 	= -1
+-	money 		= -1
+-
+-	favored = {
+-		CON = 30
+-		GER = 20
+-	}
+-	embargo = { }
+-}
+-tech_sharing = {
+-	favored = {
+-		CON = 30
+-		GER = 20
+-	}
+-	embargo = { }
+-	not = { }
+-	prioritized = {
+-		# Arcriculture
+-		5020 = 100
+-		5030 = 100
+-		5040 = 100
+-
+-		# Inf support
+-		1310 = 100
+-		1320 = 100
+-		1330 = 100
+-		1340 = 100
+-		1350 = 100
+-		1360 = 100
+-
+-		# Production
+-		5050 = 100
+-		5060 = 100
+-		5070 = 100
+-		5080 = 100
+-		5090 = 100
+-		5100 = 100
+-		5110 = 100
+-		5120 = 100
+-		5130 = 100
+-		5150 = 100
+-		5180 = 100
+-	}
+-}
+-###################################
+-# Construction and Tech Research
+-###################################
+-#Default values
+-construction = { 
+-	max_factor = 1.00 
+-
+-	AA_batteries = no
+-	max_AA_level = 3
+-	AA_provs = { 
+-		880  # Cape Town
+-	}
+-
+-	coastal_fort = no
+-	max_coastal_level = 3
+-	coastal_fort_provs = { } 
+-
+-	radar_station = no 
+-	max_radar = 5 
+-	radar_provs = { } 
+-
+-	air_base = no
+-	max_air_base = 2 
+-	air_base_provs = { } 
+-
+-	naval_base = no 
+-	max_naval_base = 5 
+-	naval_base_provs = { } 
+-
+-	land_fort = no
+-	max_land_level = 2
+-	fort_borders = { } 
+-
+-	ic_at_war = no 
+-	force_ic_until = 1930
+-	ic_end_year = 1935
+-	IC_provs = {
+-		873  # Pretoria
+-		876  # Johannesburg
+-		872  # Durban
+-		880  # Cape Town
+-	} 
+-}
+-
+-military = { 
+-	relative_build_scheme 	= no
+-	max_batch_peace 		= 360 
+-	max_batch_war 			= 180 
+-	max_batch_home_front = 180
+-        extra_convoys_war = 0.0500 
+-        extra_convoys_peace = 0.0500 
+-
+-
+-	#### Divisions etc...#
+-	infantry 		= 50
+-	cavalry 		= 0
+-	motorized 		= 0
+-	mechanized 		= 0
+-	light_armor 	= 0
+-	armor 			= 0
+-	paratrooper 	= 0
+-	marine 			= 0
+-	bergsjaeger 	= 0
+-	garrison		= 0
+-    hq 				= 0
+-	militia 		= 0
+-#				50 %
+-	interceptor 	= 12
+-	multi_role 		= 0
+-	cas 			= 0
+-	strategic_bomber = 0
+-	tactical_bomber = 10
+-	naval_bomber 	= 0
+-	transport_plane = 0
+-	flying_bomb 	= 0
+-	flying_rocket 	= 0
+-#				22 %
+-	battleship 		= 0
+-	carrier 		= 0
+-	escort_carrier	= 0
+-	destroyer 		= 18
+-	light_cruiser 	= 5
+-	heavy_cruiser 	= 0
+-	battlecruiser 	= 0
+-	submarine 		= 0
+-	nuclear_submarine = 0
+-	transports 		= 5
+-#				28 %
+-
+-	#### Brigades
+-	artillery 			= 25
+-	sp_artillery 		= 0
+-	rocket_artillery	= 0
+-	sp_rct_artillery 	= 0
+-	anti_tank 			= 15
+-	tank_destroyer 		= 0
+-	light_armor_brigade = 0
+-	heavy_armor 		= 0
+-	super_heavy_armor 	= 0
+-	armored_car 		= 0
+-	anti_air 			= 0
+-	police 				= 0
+-	engineer 			= 0 
+-
+-            cag = 100.000
+-	    escort = 100.0000
+-
+-            naval_asw = 20.0000 
+-            naval_anti_air_s = 20.0000 
+-            naval_radar_s = 20.0000 
+-            naval_fire_controll_s = 20.0000 
+-            naval_improved_hull_s = 10.0000 
+-            naval_torpedoes_s = 10.0000 
+-            naval_anti_air_l = 0.0000 
+-            naval_radar_l = 0.0000 
+-            naval_fire_controll_l = 0.0000 
+-            naval_improved_hull_l = 0.0000 
+-            naval_torpedoes_l = 0.0000
+-}
+-
+-technology = { 
+-	endgoal 	= { } 
+-	preference 	= {
+-		# Tools
+-		5050 5060 5070
+-
+-		# Engineering
+-		5080 5090 5100
+-		
+-		# Production Control
+-		5110 5120
+-		
+-		# Assembly Line
+-		5130 5140 5150 5180
+-
+-		#Infantry
+-		1010 1020 1030 1040 1050 1060
+-
+-		# Land Doctrines
+-		6030 6150
+-
+-		# Air Doctrines
+-		9040 9050 9060 9080 9100 9110 9120 9130 9140 9190 9200 9210 9220 9230 9240 9250 9260 9270 9280 9290 9300 9310 9320 9330 9340 9350 9360 9370 9380 9390 9400 9410 9420
+-
+-	} 
+-	ignore 		= {
+-		# Assembly Line
+-		5160 5170
+-
+-		# Airborne
+-		1070 1080 1090 1100
+-
+-		# Mountain Unit techs
+-		1110 1120 1130 1140
+-
+-		# Motorized
+-		1230 1240 1250
+-
+-		# Marines
+-		1150 1160 1170 1180
+-
+-		# Cavalry
+-		1190 1200 1210 1220
+-
+-		# Mechanized
+-		1260 1270 1280 1290
+-
+-		# Air Transports
+-		4250 4260 4270
+-
+-		# Multirole Fighters
+-		4040 4070 4100
+-
+-		# Strategic Bomber
+-		4220 4230 4240
+-
+-		# Rocketry
+-		5560
+-
+-		# Atomic Research
+-		5470 5480 5490 5500 5510 5520 5530 5540
+-
+-		# Bas Decimetric
+-		5410 5420 5430 5440 5450 5460
+-
+-		# Light tanks
+-		2020 2030 2040 2050 2060
+-
+-		# Medium tanks
+-		2010 2070 2080 2090
+-
+-		# Tank destroyers
+-		2170 2180 2190 2200 2210
+-
+-		# SP guns
+-		2220 2230 2240 2250
+-
+-		# SP Rocket Artillery
+-		2260 2270 2280 
+-		
+-		# Static Anti-Air
+-		2450 2460 2470 2480 2490 2500
+-
+-		# Anti Air Brigade
+-		2510 2520 2530 2540
+-
+-		# Rocket Artillery
+-		2370 2380 2390
+-
+-		# Armoured Cars
+-		2150 2160
+-
+-		# Heavy Cruiser
+-		3130 3140 3150 3160 3170 3180
+-
+-		# Battle Cruiser
+-		3210 3220 3230 3240
+-
+-		# Battleship
+-		3250 3260 3270 3280 3310
+-
+-		# Carrier
+-		3320 3330 3340 3350
+-
+-		# Light Carrier
+-		12100 12110 12120 12130 12140 12150
+-
+-		# Submarines
+-		3410 3420 3430 3440 3450
+-
+-		# Strategic Air Doctrines 9140
+-		9150 9160 9170 9180 9430 9440 9450 9460
+-
+-		# CAS
+-		4170 4280 4180
+-	}
+- 
+-	armor 		= 3
+-	infantry 	= 5
+-	industry 	= 4
+-	aircraft 	= 2
+-	naval 		= 2
+-	land_doctrines 	= 1
+-	secret_weapons 	= 0
+-	air_doctrines 	= 1
+-	naval_doctrines = 1
+-}
+-
+-
+-###################################
+-# Ground Combat, Leaders and Garrisons
+-###################################
+-garrison = {
+-	defend_overseas_beaches = yes
+-	home_multiplier 	= 1.0
+-	overseas_multiplier 	= 0.5
+-	home_peace_cap 		= 20
+-	war_zone_odds 		= 2.0
+-	key_point_prio_mult	= 0
+-	revolt_risk_mult	= 1.0
+-
+-	# PRIORITIES:
+-	beach			= 30	# Beach level 2
+-	capital			= 20	# Our capital
+-	human_border		= 0	# Ignored for allied human players
+-	war_target		= 50	# The next country targeted for attack by this AI
+-	
+-	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+-	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+-	unstable_border		= 0	# Bordering countries at war with someone else get this
+-
+-	# Borders with specific countries
+-	country_priorities = {
+-		CON = -1
+-		POR = 10
+-	}
+-	province_priorities = {	}
+-	area_multiplier = { }
+-}
++# South Africa 1936 AI File by Lothos\r
++# Revised for Kaiserreich by Johnny Canuck\r
++\r
++switch = no # [yes/no]\r
++max_front_ratio = 1.2 \r
++max_garrison_prop = 0.30\r
++min_garrison_prop = 0.20\r
++neutrality = 75\r
++war = 10\r
++upgrading = 0.25\r
++reinforcement = 0.2\r
++strat_redeploy_threshold = 25\r
++exp_force_ratio = 0.25\r
++exp_force_ratios = { } \r
++no_exp_forces_to = { }\r
++use_offensive_supply = no\r
++\r
++###################################\r
++# Diplomacy\r
++###################################\r
++combat = { }\r
++\r
++befriend = {\r
++	CON = 30\r
++}\r
++protect = { }\r
++\r
++target = { } \r
++\r
++resistance = {\r
++	ENG = 3\r
++	FRA = 2\r
++	RSI = 2\r
++	CSA = 2\r
++	PRK = 2\r
++	CAN = 3\r
++	U10 = 3\r
++	AST = 2\r
++	PAK = 2\r
++	GUY = 2\r
++	VIC = 2\r
++	POR = 3\r
++	}\r
++\r
++trade = {\r
++	cancel_deal_threshold = 2\r
++\r
++	energy 		= -1\r
++	rare_materials 	= -1\r
++	metal 		= -1\r
++	oil 		= -1\r
++	supplies 	= -1\r
++	money 		= -1\r
++\r
++	favored = {\r
++		CON = 30\r
++		GER = 20\r
++	}\r
++	embargo = { }\r
++}\r
++tech_sharing = {\r
++	favored = {\r
++		CON = 30\r
++		GER = 20\r
++	}\r
++	embargo = { }\r
++	not = { }\r
++	prioritized = {\r
++		# Arcriculture\r
++		5020 = 100\r
++		5030 = 100\r
++		5040 = 100\r
++\r
++		# Inf support\r
++		1310 = 100\r
++		1320 = 100\r
++		1330 = 100\r
++		1340 = 100\r
++		1350 = 100\r
++		1360 = 100\r
++\r
++		# Production\r
++		5050 = 100\r
++		5060 = 100\r
++		5070 = 100\r
++		5080 = 100\r
++		5090 = 100\r
++		5100 = 100\r
++		5110 = 100\r
++		5120 = 100\r
++		5130 = 100\r
++		5150 = 100\r
++		5180 = 100\r
++	}\r
++}\r
++###################################\r
++# Construction and Tech Research\r
++###################################\r
++#Default values\r
++construction = { \r
++	max_factor = 1.00 \r
++\r
++	AA_batteries = no\r
++	max_AA_level = 3\r
++	AA_provs = { \r
++		880  # Cape Town\r
++	}\r
++\r
++	coastal_fort = no\r
++	max_coastal_level = 3\r
++	coastal_fort_provs = { } \r
++\r
++	radar_station = no \r
++	max_radar = 5 \r
++	radar_provs = { } \r
++\r
++	air_base = no\r
++	max_air_base = 2 \r
++	air_base_provs = { } \r
++\r
++	naval_base = no \r
++	max_naval_base = 5 \r
++	naval_base_provs = { } \r
++\r
++	land_fort = no\r
++	max_land_level = 2\r
++	fort_borders = { } \r
++\r
++	ic_at_war = no \r
++	force_ic_until = 1930\r
++	ic_end_year = 1935\r
++	IC_provs = {\r
++		873  # Pretoria\r
++		876  # Johannesburg\r
++		872  # Durban\r
++		880  # Cape Town\r
++	} \r
++}\r
++\r
++military = { \r
++	relative_build_scheme 	= no\r
++	max_batch_peace 		= 360 \r
++	max_batch_war 			= 180 \r
++	max_batch_home_front = 180\r
++        extra_convoys_war = 0.0500 \r
++        extra_convoys_peace = 0.0500 \r
++\r
++\r
++	#### Divisions etc...#\r
++	infantry 		= 50\r
++	cavalry 		= 0\r
++	motorized 		= 0\r
++	mechanized 		= 0\r
++	light_armor 	= 0\r
++	armor 			= 0\r
++	paratrooper 	= 0\r
++	marine 			= 0\r
++	bergsjaeger 	= 0\r
++	garrison		= 0\r
++    hq 				= 0\r
++	militia 		= 0\r
++#				50 %\r
++	interceptor 	= 12\r
++	multi_role 		= 0\r
++	cas 			= 0\r
++	strategic_bomber = 0\r
++	tactical_bomber = 10\r
++	naval_bomber 	= 0\r
++	transport_plane = 0\r
++	flying_bomb 	= 0\r
++	flying_rocket 	= 0\r
++#				22 %\r
++	battleship 		= 0\r
++	carrier 		= 0\r
++	escort_carrier	= 0\r
++	destroyer 		= 18\r
++	light_cruiser 	= 5\r
++	heavy_cruiser 	= 0\r
++	battlecruiser 	= 0\r
++	submarine 		= 0\r
++	nuclear_submarine = 0\r
++	transports 		= 5\r
++#				28 %\r
++\r
++	#### Brigades\r
++	artillery 			= 25\r
++	sp_artillery 		= 0\r
++	rocket_artillery	= 0\r
++	sp_rct_artillery 	= 0\r
++	anti_tank 			= 15\r
++	tank_destroyer 		= 0\r
++	light_armor_brigade = 0\r
++	heavy_armor 		= 0\r
++	super_heavy_armor 	= 0\r
++	armored_car 		= 0\r
++	anti_air 			= 0\r
++	police 				= 0\r
++	engineer 			= 0 \r
++\r
++            cag = 100.000\r
++	    escort = 100.0000\r
++\r
++            naval_asw = 20.0000 \r
++            naval_anti_air_s = 20.0000 \r
++            naval_radar_s = 20.0000 \r
++            naval_fire_controll_s = 20.0000 \r
++            naval_improved_hull_s = 10.0000 \r
++            naval_torpedoes_s = 10.0000 \r
++            naval_anti_air_l = 0.0000 \r
++            naval_radar_l = 0.0000 \r
++            naval_fire_controll_l = 0.0000 \r
++            naval_improved_hull_l = 0.0000 \r
++            naval_torpedoes_l = 0.0000\r
++}\r
++\r
++technology = { \r
++	endgoal 	= { } \r
++	preference 	= {\r
++		# Tools\r
++		5050 5060 5070\r
++\r
++		# Engineering\r
++		5080 5090 5100\r
++		\r
++		# Production Control\r
++		5110 5120\r
++		\r
++		# Assembly Line\r
++		5130 5140 5150 5180\r
++\r
++		#Infantry\r
++		1010 1020 1030 1040 1050 1060\r
++\r
++		# Land Doctrines\r
++		6030 6150\r
++\r
++		# Air Doctrines\r
++		9040 9050 9060 9080 9100 9110 9120 9130 9140 9190 9200 9210 9220 9230 9240 9250 9260 9270 9280 9290 9300 9310 9320 9330 9340 9350 9360 9370 9380 9390 9400 9410 9420\r
++\r
++	} \r
++	ignore 		= {\r
++		# Assembly Line\r
++		5160 5170\r
++\r
++		# Airborne\r
++		1070 1080 1090 1100\r
++\r
++		# Mountain Unit techs\r
++		1110 1120 1130 1140\r
++\r
++		# Motorized\r
++		1230 1240 1250\r
++\r
++		# Marines\r
++		1150 1160 1170 1180\r
++\r
++		# Cavalry\r
++		1190 1200 1210 1220\r
++\r
++		# Mechanized\r
++		1260 1270 1280 1290\r
++\r
++		# Air Transports\r
++		4250 4260 4270\r
++\r
++		# Multirole Fighters\r
++		4040 4070 4100\r
++\r
++		# Strategic Bomber\r
++		4220 4230 4240\r
++\r
++		# Rocketry\r
++		5560\r
++\r
++		# Atomic Research\r
++		5470 5480 5490 5500 5510 5520 5530 5540\r
++\r
++		# Bas Decimetric\r
++		5410 5420 5430 5440 5450 5460\r
++\r
++		# Light tanks\r
++		2020 2030 2040 2050 2060\r
++\r
++		# Medium tanks\r
++		2010 2070 2080 2090\r
++\r
++		# Tank destroyers\r
++		2170 2180 2190 2200 2210\r
++\r
++		# SP guns\r
++		2220 2230 2240 2250\r
++\r
++		# SP Rocket Artillery\r
++		2260 2270 2280 \r
++		\r
++		# Static Anti-Air\r
++		2450 2460 2470 2480 2490 2500\r
++\r
++		# Anti Air Brigade\r
++		2510 2520 2530 2540\r
++\r
++		# Rocket Artillery\r
++		2370 2380 2390\r
++\r
++		# Armoured Cars\r
++		2150 2160\r
++\r
++		# Heavy Cruiser\r
++		3130 3140 3150 3160 3170 3180\r
++\r
++		# Battle Cruiser\r
++		3210 3220 3230 3240\r
++\r
++		# Battleship\r
++		3250 3260 3270 3280 3310\r
++\r
++		# Carrier\r
++		3320 3330 3340 3350\r
++\r
++		# Light Carrier\r
++		12100 12110 12120 12130 12140 12150\r
++\r
++		# Submarines\r
++		3410 3420 3430 3440 3450\r
++\r
++		# Strategic Air Doctrines 9140\r
++		9150 9160 9170 9180 9430 9440 9450 9460\r
++\r
++		# CAS\r
++		4170 4280 4180\r
++	}\r
++ \r
++	armor 		= 3\r
++	infantry 	= 5\r
++	industry 	= 4\r
++	aircraft 	= 2\r
++	naval 		= 2\r
++	land_doctrines 	= 1\r
++	secret_weapons 	= 0\r
++	air_doctrines 	= 1\r
++	naval_doctrines = 1\r
++}\r
++\r
++\r
++###################################\r
++# Ground Combat, Leaders and Garrisons\r
++###################################\r
++garrison = {\r
++	defend_overseas_beaches = yes\r
++	home_multiplier 	= 1.0\r
++	overseas_multiplier 	= 0.5\r
++	home_peace_cap 		= 20\r
++	war_zone_odds 		= 2.0\r
++	key_point_prio_mult	= 0\r
++	revolt_risk_mult	= 1.0\r
++\r
++	# PRIORITIES:\r
++	beach			= 30	# Beach level 2\r
++	capital			= 20	# Our capital\r
++	human_border		= 0	# Ignored for allied human players\r
++	war_target		= 50	# The next country targeted for attack by this AI\r
++	\r
++	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"\r
++	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
++	unstable_border		= 0	# Bordering countries at war with someone else get this\r
++\r
++	# Borders with specific countries\r
++	country_priorities = {\r
++		CON = -1\r
++		POR = 10\r
++	}\r
++	province_priorities = {	}\r
++	area_multiplier = { }\r
++}\r

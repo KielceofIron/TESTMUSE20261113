@@ -1,0 +1,86 @@
+--- A/db/events/coups_events.txt [unknown]
++++ B/db/events/coups_events.txt [cp932]
+@@ -1983,7 +1983,7 @@ event = {
+ \r
+ 	action = {\r
+ 		name = ACTION_NAME_OK\r
+-		ai_chance = 99\r
++		ai_chance = 95\r
+ 		command = { type = set_domestic which = democratic value = 3 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+ 		command = { type = headofstate which = 50001 }\r
+@@ -1999,6 +1999,36 @@ event = {
+ 		command = { type = dissent value = -1 }\r
+ 		}\r
+ \r
++	action = {\r
++		name = ACTION_NAME_COUP_SUCCEEDS\r
++		ai_chance = 4\r
++		command = { type = flag_ext where = JAP which = "_flag13" }\r
++		command = { type = name where = JAP which = "大東亜帝国" }\r
++		command = { type = set_domestic which = democratic value = 1 }\r
++		command = { type = set_domestic which = political_left value = 2 }\r
++		command = { type = headofstate which = 50001 } # 昭和天皇\r
++		command = { type = headofgovernment which = 50634 } # 中野正剛\r
++		command = { type = foreignminister which = 50646 } # 中野正剛\r
++		command = { type = armamentminister which = 50076 } # 加藤外松\r
++		command = { type = ministerofsecurity which = 50734 } # 平野力三\r
++		command = { type = ministerofintelligence which = 50750 } # 頭山満\r
++		command = { type = chiefofstaff which = 50908 } # 土肥原賢二\r
++		command = { type = chiefofarmy which = 50911 } # 朝香宮鳩彦王\r
++		command = { type = chiefofnavy which = 50167 } # 山本五十六\r
++		command = { type = chiefofair which = 50774 } # 源田實\r
++		command = { type = dissent value = -1 }\r
++		command = { type = sleepevent which = 2500039 }\r
++		command = { type = sleepevent which = 2500040 }\r
++		command = { type = sleepevent which = 9999473 }\r
++		command = { type = sleepevent which = 9999474 }\r
++		command = { type = sleepevent which = 9999475 }\r
++		command = { type = sleepevent which = 9999476 }\r
++		command = { type = sleepevent which = 9999477 }\r
++		command = { type = sleepevent which = 9999478 }\r
++		command = { type = sleepevent which = 9999479 }\r
++		command = { type = sleepevent which = 9999480 }\r
++		}\r
++\r
+ 	action = {\r
+ 		name = ACTION_NAME_THE_COUP_HAS_FAILED\r
+ 		ai_chance = 1\r
+@@ -7146,8 +7176,8 @@ event = {
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+-		command = { type = headofstate which = 85113 } #Ram Grau San Mart匤\r
+-		command = { type = headofgovernment which = 85114 } #Ram Grau San Mart匤\r
++		command = { type = headofstate which = 85113 } #Ram Grau San Mart匤\r
++		command = { type = headofgovernment which = 85114 } #Ram Grau San Mart匤\r
+ 	}\r
+ 	action = {\r
+ 		name = ACTION_NAME_THE_COUP_HAS_FAILED\r
+@@ -7168,7 +7198,7 @@ event = {
+ \r
+ 	trigger = {\r
+ 		NOT = { ispuppet = CUB }\r
+-		headofstate = 85113 #Ram Grau San Mart匤\r
++		headofstate = 85113 #Ram Grau San Mart匤\r
+ 	}\r
+ 	\r
+ 	name = "EVT_111_NAME"\r
+@@ -7208,7 +7238,7 @@ event = {
+ 		OR = {\r
+ 			headofstate = 190119 #Juan de Diaz Mera\r
+ 			headofstate = 190156 #Abelardo Montalvo\r
+-			headofstate = 190013 #Jos� Mar僘 Velasco Ibarra\r
++			headofstate = 190013 #Jos・Mar僘 Velasco Ibarra\r
+ 		}\r
+ 	}\r
+ 	\r
+@@ -7248,7 +7278,7 @@ event = {
+ 		OR = {\r
+ 			headofstate = 190119 #Juan de Diaz Mera\r
+ 			headofstate = 190156 #Abelardo Montalvo\r
+-			headofstate = 190013 #Jos� Mar僘 Velasco Ibarra\r
++			headofstate = 190013 #Jos・Mar僘 Velasco Ibarra\r
+ 			headofstate = 190017 #Antonio Pons Campuzano\r
+ 		}\r
+ 	}\r

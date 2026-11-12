@@ -1,0 +1,38 @@
+--- A/db/events/Yokoyama_events/Add_coups_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Add_coups_events.txt [cp932]
+@@ -370,7 +370,34 @@ event = {
+ 	command = { type = sleepminister which = 160002 }\r
+ 	command = { type = sleepminister which = 160041 }\r
+ 	command = { type = sleepminister which = 160124 }\r
+-	ai_chance = 15\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # クーデター成功（国旗変更）\r
++	name = "ACTION_NAME_COUP_SUCCEEDS"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = flag_ext where = BRA which = "_flag1" }\r
++	command = { type = relation which = USA value = -250 }\r
++	command = { type = relation which = ARG value = -150 }\r
++	command = { type = relation which = GER value = 250 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = headofstate which = 160016 } # プリニオ・サルガド\r
++	command = { type = headofgovernment which = 160022 } # プリニオ・サルガド\r
++	command = { type = foreignminister which = 160036 } # ミグエル・コスタス\r
++	command = { type = armamentminister which = 160054 } # グスタヴォ・バロッソ\r
++	command = { type = ministerofsecurity which = 160072 } # リカルド・カシアーノ\r
++	command = { type = ministerofintelligence which = 215206 } # 160083\r
++	command = { type = chiefofstaff which = 160094 } # ニュートン・キャヴァルキャンティ\r
++	command = { type = chiefofarmy which = 160107 } # トマス・セビスタオ・デ・メンドンサ\r
++	command = { type = chiefofnavy which = 160114 } # タルシシオ・パディラ\r
++	command = { type = chiefofair which = 160010 } # サルガド・フィリョ\r
++	command = { trigger = { ai = yes } type = ai which = "switch/Neutrality_Change.ai" }\r
++	command = { type = sleepminister which = 160001 } # ジェトゥリオ・ドルネレス・ヴァルガス\r
++	command = { type = sleepminister which = 160002 }\r
++	command = { type = sleepminister which = 160041 }\r
++	command = { type = sleepminister which = 160124 }\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # クーデター失敗\r

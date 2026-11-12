@@ -1,0 +1,472 @@
+--- A/ai/IF/eng_if.ai [cp932]
++++ B/ai/IF/eng_if.ai [cp932]
+@@ -11,10 +11,8 @@ upgrading = 0.0
+ reinforcement = 0.0 \r
+ strat_redeploy_threshold = 50\r
+ max_redeploying = 0.05\r
+-exp_force_ratio = 0.7 # 0.4 # 0.05 \r
++exp_force_ratio = 0.01 # 0.4 # 0.05 \r
+ exp_force_ratios = {\r
+-U02 = 1.0\r
+-IND = 1.0\r
+ } \r
+ no_exp_forces_to = { NOR POL DEN CZE U01 FRA }\r
+ evac_islands = no\r
+@@ -26,8 +24,72 @@ combat = { }
+ \r
+ claim_acceptance = -69\r
+ \r
+-liberate 		= { AFG ALB ARM AST     AZB BEL BHU BLR BUL CAN CHI CZE DEN     EGY ETH EST FIN FRA GEO GRE HOL HUN INO IRQ ITA JAP KAZ KOR KYG LAT LIB LIT LUX MON NEP NOR NZL OMN PAK PER PHI POL POR ROM UTC SAF SCH SPR SWE TAJ TAN TIB TRK TUR U02 U24 UKR USA UZB YUG }\r
+-liberate_nation 	= { }\r
++liberate 		= { \r
++ \r
++ AFG #アフガニスタン\r
++ ALB #アルバニア\r
++ ARM #アルメニア\r
++ AST #オーストラリア\r
++ AZB #アゼルバイジャン\r
++ BEL #ベルギー\r
++ BHU #ブータン\r
++ BLR #ベラルーシ\r
++ BUL #ブルガリア\r
++ CAN #カナダ\r
++ CHI #中華民国\r
++ CZE #チェコスロバキア\r
++ DEN #デンマーク\r
++ EGY #エジプト\r
++ ETH #エチオピア\r
++ EST #エストニア\r
++ FIN #フィンランド\r
++ FRA #フランス\r
++ GEO #グルジア\r
++ GRE #ギリシャ\r
++ HOL #オランダ\r
++ HUN #ハンガリー\r
++ INO #インドネシア\r
++ IRQ #イラク\r
++ ITA #イタリア\r
++ JAP #日本\r
++ KAZ #カザフスタン\r
++ KOR #朝鮮\r
++ KYG #キルギスタン\r
++ LAT #ラトビア\r
++ LIB #リベリア\r
++ LIT #リトアニア\r
++ LUX #ルクセンブルク\r
++ MON #モンゴル\r
++ NEP #ネパール\r
++ NOR #ノルウェー\r
++ NZL #ニュージーランド\r
++ OMN #オマーン\r
++ PAK #パキスタン\r
++ PER #イラン\r
++ PHI #フィリピン\r
++ POL #ポーランド\r
++ POR #ポルトガル\r
++ ROM #ルーマニア\r
++ UER #ウファ執政府\r
++ SAF #南アフリカ\r
++ SCH #スイス\r
++ SPR #スペイン共和国\r
++ SWE #スウェーデン\r
++ TAJ #タジキスタン\r
++ TAN #タンヌ・トゥヴァ\r
++ TIB #チベット\r
++ TRK #トルクメニスタン\r
++ TUR #トルコ\r
++ U02 #英領インド\r
++ U24 #連合国軍政地域\r
++ UKR #ウクライナ\r
++ USA #アメリカ合衆国\r
++ UZB #ウズベキスタン\r
++ YUG #ユーゴスラビア\r
++\r
++\r
++ }\r
++liberate_nation 	= { IND }\r
+ \r
+ # liberate_nation  から PER除外\r
+ befriend = {\r
+@@ -47,7 +109,7 @@ befriend = {
+ 	POR = 20\r
+ 	CHI = 10\r
+ \r
+-	UTC = 20 # 追加\r
++	UER = 20 # 追加\r
+ 	U00 = 10\r
+ 	JAP = 40\r
+ }\r
+@@ -119,7 +181,7 @@ trade = {
+ \r
+ 		UER = 20 # 追加\r
+ \r
+-		UTC = 20 # 追加\r
++		UER = 20 # 追加\r
+ 		JAP = 40\r
+ \r
+ 	}\r
+@@ -278,7 +340,7 @@ spyprefs =
+ 		found_partisans		= 0\r
+ 		massmedia 			= 2\r
+ 		disrupt_techteam 	= 0\r
+-		country 			= UTC\r
++		country 			= UER\r
+ 	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 4\r
+@@ -429,13 +491,13 @@ spyprefs =
+ ###################################\r
+ #Default values\r
+ construction = { \r
+-   	max_factor = 0.7 \r
++   	max_factor = 1.0 \r
+ \r
+-   	AA_batteries = no \r
++   	AA_batteries = yes \r
+ 	max_AA_level = 5 \r
+ 	AA_provs = { 29 24 18 22 26 27 } \r
+ \r
+-	coastal_fort = atwar\r
++	coastal_fort = yes\r
+ 	max_coastal_level = 3\r
+ 	coastal_fort_provs = {\r
+ 		429  # Malta\r
+@@ -446,7 +508,7 @@ construction = {
+ 		23 # Plymouth\r
+ 	} \r
+ \r
+-	radar_station = atwar\r
++	radar_station = yes\r
+ 	max_radar = 3 \r
+ 	radar_provs = {\r
+ 		26 # Dover\r
+@@ -457,11 +519,11 @@ construction = {
+ 		5  # Scapa Flow\r
+ 	} \r
+ \r
+-	air_base = atwar\r
++	air_base = yes\r
+ 	max_air_base = 5 \r
+ 	air_base_provs = { } \r
+ \r
+-	naval_base = no \r
++	naval_base = yes \r
+ 	max_naval_base = 5 \r
+ 	naval_base_provs = { } \r
+ \r
+@@ -474,15 +536,15 @@ construction = {
+ 	fort_borders = { } \r
+ \r
+ 	ic_at_war = yes\r
+-	force_ic_until = 1938\r
++	force_ic_until = 1940\r
+ 	ic_end_year = 1940\r
+ 	IC_provs = { 4 5 6 7 11 13 36 35 } \r
+ }\r
+ military = { \r
+ 	relative_build_scheme 	= no\r
+-	max_batch_peace 		= 680 \r
+-	max_batch_war 			= 320 \r
+-	max_batch_home_front = 180\r
++	max_batch_peace 		= 1020 \r
++	max_batch_war 			= 740 \r
++	max_batch_home_front = 420\r
+         extra_convoys_war = 0.0500 \r
+         extra_convoys_peace = 0.0500 \r
+ \r
+@@ -513,23 +575,23 @@ military = {
+ #				19 %\r
+ 	battleship 		= 5\r
+ 	carrier 		= 5\r
+-	escort_carrier	= 0\r
++	escort_carrier	= 3\r
+    	destroyer     = 9 \r
+    	light_cruiser   = 9 \r
+ 	heavy_cruiser 	= 0\r
+ 	battlecruiser 	= 0\r
+ 	submarine 		= 0\r
+ 	nuclear_submarine = 0\r
+-	transports 		= 5\r
++	transports 		= 2\r
+ #				52 %\r
+ \r
+ 	#### Brigades\r
+-	artillery 		= 25\r
+-	sp_artillery 	= 9\r
++	artillery 		= 5\r
++	sp_artillery 	= 19\r
+ 	cavalry_brigade	= 0 \r
+-	sp_anti_air 	= 0\r
+-   	medium_armor       	= 0 \r
+-   	tank_destroyer     	= 0 \r
++	sp_anti_air 	= 10\r
++   	medium_armor       	= 20 \r
++   	tank_destroyer     	= 8 \r
+ 	light_armor_brigade = 6\r
+ 	heavy_armor 		= 5\r
+ 	super_heavy_armor 	= 0\r
+@@ -721,8 +783,8 @@ leader_ratio = {
+ }\r
+ garrison = {\r
+    	defend_overseas_beaches = yes \r
+-	home_multiplier 	= 1.3\r
+-	overseas_multiplier = 0.5\r
++	home_multiplier 	= 0.1\r
++	overseas_multiplier = 0.8\r
+ 	home_peace_cap 		= 20 # 100\r
+ 	war_zone_odds 		= 2.0\r
+ 	key_point_prio_mult	= 1.0\r
+@@ -744,6 +806,8 @@ garrison = {
+ 		HOL = -1\r
+ 		LUX = -1\r
+ 		GER = 100\r
++		CHI = 100\r
++		UD6 = 100\r
+ 		SPA = 5\r
+ 		SPR = -1\r
+ 		ITA = 50\r
+@@ -766,30 +830,6 @@ garrison = {
+ 	}\r
+ 	ignore = {\r
+ 		# India\r
+-		1532 \r
+-     	1518  \r
+-		1522 \r
+-		1521 \r
+-		1512\r
+-		1513\r
+-		1503 \r
+-		1504 \r
+-		1494 \r
+-		1493 \r
+-		1477 \r
+-		1471 \r
+-		\r
+-		# Burma\r
+-		1450 \r
+-		1431 \r
+-		1420 \r
+-		1416 \r
+-		\r
+-		# Singapore\r
+-		1435 \r
+-		1436 \r
+-		1438 \r
+-		1437 \r
+ 		\r
+ 		#Actual Beaches to Ignore\r
+ 		1005 # Sharm el-Sheikh \r
+@@ -849,18 +889,18 @@ garrison = {
+      	900 = 30 # Suez  \r
+ 		\r
+ 		# England Coast\r
+-		23 = 30 # Plymouth \r
+-		25 = 30 # Norwich \r
+-		26 = 30 # Dover \r
+-		27 = 30 # Portsmouth\r
++		#23 = 30 # Plymouth \r
++		#25 = 30 # Norwich \r
++		#26 = 30 # Dover \r
++		#27 = 30 # Portsmouth\r
+ 		\r
+-		12 = 20 # Edinburg\r
+-		22 = 20 # Cardif\r
+-		20 = 10 # Exeter\r
++		#12 = 20 # Edinburg\r
++		#22 = 20 # Cardif\r
++		#20 = 10 # Exeter\r
+ 		\r
+-		17 = 10 # Manchester \r
+-		11 = 10 # Glasgow\r
+-		36 = 10 # Belfast\r
++		#17 = 10 # Manchester \r
++		#11 = 10 # Glasgow\r
++		#36 = 10 # Belfast\r
+ \r
+   		49 = 30 # Calais\r
+   		51 = 30 # Dunkerque\r
+@@ -870,10 +910,10 @@ garrison = {
+ 	}\r
+ 	area_multiplier = {\r
+ 		# India and Burma\r
+-		1538 = 0.3 \r
+-		1517 = 0.3 \r
+-		1495 = 0.3 \r
+-		1415 = 0.3 \r
++		1538 = 2 \r
++		1517 = 2 \r
++		1495 = 2 \r
++		1415 = 2 \r
+ 		\r
+ 		348 = 2.0 # Gibraltar\r
+ 		429  = 2.0 # Malta \r
+@@ -881,8 +921,8 @@ garrison = {
+ 	}\r
+ }\r
+ front = { \r
+-	recklessness 		= 1 # 0-3\r
+-	distrib_vs_ai 		= even\r
++	recklessness 		= 3 # 0-3\r
++	distrib_vs_ai 		= reactive\r
+ 	distrib_vs_human 	= even\r
+ \r
+ 	enemy_reinf_days	= 6\r
+@@ -938,16 +978,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 60.0 # 30.0\r
+-	groundattackdesirability 		= 20.0 # 40.0\r
+-	inderdictiondesirability 		= 40.0 # 20.0\r
+-	logisticalstrikedesirability 	= 2.0\r
+-	runwaycrateringdesirability 	= 1.0 # 10.0\r
+-	strategicstrikedesirability 	= 10.0\r
+-	installationstrikedesirability 	= 5.0\r
+-	navalstrikedesirability 		= 25.0 # 15.0\r
+-	portstrikedesirability 			= 30.0 # 9.0\r
+-	convoyraiddesirability			= 1.0 # 9.0\r
++	airsuperioritydesirability 		= 60000.0 # 30.0\r
++	groundattackdesirability 		= 20000 # 40.0\r
++	inderdictiondesirability 		= 40000 # 20.0\r
++	logisticalstrikedesirability 		= 2000\r
++	runwaycrateringdesirability 		= 1000 # 10.0\r
++	strategicstrikedesirability 		= 10000\r
++	installationstrikedesirability 		= 5000\r
++	navalstrikedesirability 		= 25000 # 15.0\r
++	portstrikedesirability 		= 30000 # 9.0\r
++	convoyraiddesirability 		= 1000 # 9.0\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -969,7 +1009,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+@@ -987,7 +1027,7 @@ invasion = {
+ 	beach				= 0.1	#higher, avoid worst beaches.\r
+ 	max_distance   		= 250.0  #About the distance from Japan to Batavia\r
+ 	max_staging_distance = 250	# How far should the staging area be from the target invasion point\r
+-	distance			= 0.01	#higher = avoid long distance.\r
++	distance			= 0.0	#higher = avoid long distance.\r
+ 	pocket				= 20.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
+ 	island				= 0.1	#prioritise taking pure islands.\r
+ 	enemy				= 1.0	#higher = much more vary of troops in province.\r
+@@ -1005,6 +1045,28 @@ invasion = {
+ 		429 # Malta \r
+ 		747 # Tunis \r
+ 		348 # Gibraltar\r
++		1415\r
++		1532\r
++		1432\r
++		1424\r
++		1371\r
++		1565\r
++		1570\r
++		1680\r
++		1728\r
++		1590\r
++		1726\r
++		1725\r
++		926\r
++		956\r
++		964\r
++		842\r
++		\r
++		\r
++		\r
++		\r
++		\r
++		\r
+ 	}\r
+ 	target = { } \r
+ } \r
+@@ -1031,7 +1093,6 @@ admiral = {
+ 	#Which provinces to use as bases..\r
+ 	base = {\r
+ 		5	# Scapa Flow\r
+-		17 # Liverpool/Manchester \r
+ 		348	# Gibraltar\r
+ 		789 # Alexandria \r
+ 		1517 # Bombay \r
+@@ -1046,26 +1107,66 @@ admiral = {
+         761 #Benghazi\r
+         765 #Tobruk\r
+         429 #Malta\r
++	1511 #以下アジア方面\r
++	1424\r
++	1369\r
++	1328\r
++	1565	\r
++	1338\r
++	1399\r
++	1362\r
++	1563\r
++	1232\r
++	1550\r
++	\r
+ 	}\r
+ 	target = { \r
+-     	2682 = 100   \r
+-     	2683 = 100   \r
+-     	2684 = 100  \r
++	2181 = 10\r
++	2682 = 1\r
++	2528 = 20\r
++	2524 = 40\r
++	2456 = 20\r
++	2637 = 10\r
++	2513 = 10\r
++	2520 = 30\r
++	2736 = 10\r
++	2692 = 10\r
++	2515 = 50\r
++	\r
++	\r
++	\r
++	\r
++	\r
++\r
+ 	} \r
+ 	core = {\r
+ 		#british coast\r
+-     	2716 \r
+-     	2685 \r
+-     	2683 \r
++     	#2716 \r
++     	#2685 \r
++     	#2683 \r
+      	2682 \r
+      	2698 \r
+-     	2700 \r
+-     	2709 \r
+-     	2708 \r
++     	#2700 \r
++     	#2709 \r
++     	#2708 \r
+ 		#### Gibraltar, suez, malta, cyprus\r
+-		2430\r
++		#2430\r
+      	2740 \r
+ 		2176\r
+ 		2181\r
++		#極東\r
++	2528\r
++	2524\r
++	2497\r
++	2456\r
++	2434\r
++	2485\r
++	2435\r
++	\r
++	\r
++	\r
++	\r
++	\r
++	\r
+ 	}\r
+ }\r

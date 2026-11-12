@@ -1,0 +1,202 @@
+--- A/scenarios/1933if_Azia/china shanxi_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/china shanxi_Azia.inc [cp932]
+@@ -16,6 +16,7 @@ country = {
+   dissent            = 10\r
+   extra_tc           = 20\r
+   manpower           = 53\r
++  industrial_modifier    = 0.85\r
+   # Resource Reserves\r
+   energy         = 480\r
+   metal          = 240\r
+@@ -52,34 +53,37 @@ country = {
+ \r
+   policy = {\r
+     date              = { year = 0 month = january day = 0 }\r
+-    democratic        = 3\r
++    democratic        = 4\r
+     political_left    = 4\r
+-    freedom           = 3\r
+-    free_market       = 3\r
++    freedom           = 4\r
++    free_market       = 4\r
+     professional_army = 2\r
+     defense_lobby     = 5\r
+     interventionism   = 1\r
+   }\r
+   headofstate            = { type = 9 id = 605001 } # 閻錫山(イェン・シシャン)\r
+-  headofgovernment       = { type = 9 id = 605002 } # 閻錫山(イェン・シシャン)\r
++  headofgovernment       = { type = 9 id = 605214 } # 馮玉祥(フェン・ユクシャン)\r
+   foreignminister        = { type = 9 id = 605003 } # 王賛緒(ワン・ツァンシュー)\r
+-  armamentminister       = { type = 9 id = 605004 } # 傅作義(フ・ツォーイー)\r
++  armamentminister       = { type = 9 id = 605204 } # 薛篤弼(シュエ・ドゥービー)\r
+   ministerofsecurity     = { type = 9 id = 605005 } # 欧陽格(オウ・ヤンゴー)\r
+   ministerofintelligence = { type = 9 id = 605006 } # 商震(シャン・チェン)\r
+   chiefofstaff           = { type = 9 id = 605007 } # 閻錫山(イェン・シシャン)\r
+-  chiefofarmy            = { type = 9 id = 605008 } # 閻錫山(イェン・シシャン)\r
++  chiefofarmy            = { type = 9 id = 605240 } # 宋哲元(ソン・ジョーユエン)\r
+   chiefofnavy            = { type = 9 id = 605009 } # ドミトリー・クロルチェフ\r
+-  chiefofair             = { type = 9 id = 605010 } # 閻錫山(イェン・シシャン)\r
++  chiefofair             = { type = 9 id = 605210 } # 孫岳(スン・ユエ)\r
+ \r
+   landunit = {\r
+     id       = { type = 22310 id = 1 }\r
+     name     = "第19軍団"\r
+     location = 1252\r
++    leader   = 605012\r
+     division = {\r
+       id             = { type = 22310 id = 2 }\r
+       name           = "第70師"\r
+       type           = infantry\r
+-      model          = 2\r
++      model          = 3\r
++      extra          = artillery\r
++      brigade_model  = 1\r
+       strength       = 60\r
+       experience     = 20\r
+     }\r
+@@ -88,6 +92,8 @@ country = {
+       name           = "第72師"\r
+       type           = infantry\r
+       model          = 2\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 2\r
+       strength       = 60\r
+       experience     = 20\r
+     }\r
+@@ -96,6 +102,7 @@ country = {
+     id       = { type = 22310 id = 4 }\r
+     name     = "第33軍団"\r
+     location = 1252\r
++    leader   = 605002\r
+     division = {\r
+       id             = { type = 22310 id = 5 }\r
+       name           = "第69師"\r
+@@ -115,52 +122,82 @@ country = {
+   }\r
+   landunit = {\r
+     id       = { type = 22310 id = 7 }\r
+-    name     = "第34軍団"\r
+-    location = 1252\r
++    name     = "国民軍第1軍団"\r
++    location = 1251\r
++    leader   = 605501\r
+     division = {\r
+       id             = { type = 22310 id = 8 }\r
++      name           = "第65師"\r
++      type           = infantry\r
++      model          = 3\r
++      extra          = armored_car\r
++      brigade_model  = 1\r
++      strength       = 40\r
++      experience     = 20\r
++      locked         = yes\r
++    }\r
++    division = {\r
++      id             = { type = 22310 id = 9 }\r
+       name           = "第66師"\r
+       type           = infantry\r
+       model          = 2\r
+-      strength       = 60\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 2\r
++      strength       = 40\r
+       experience     = 20\r
++      locked         = yes\r
+     }\r
+     division = {\r
+-      id             = { type = 22310 id = 9 }\r
++      id             = { type = 22310 id = 10 }\r
+       name           = "第73師"\r
+       type           = infantry\r
+       model          = 2\r
+-      strength       = 60\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 2\r
++      strength       = 40\r
+       experience     = 20\r
++      locked         = yes\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22310 id = 10 }\r
+-    name     = "第35軍団"\r
+-    location = 1252\r
++    id       = { type = 22310 id = 11 }\r
++    name     = "国民軍第2軍団"\r
++    location = 1240\r
++    leader   = 605504\r
++    division = {\r
++      id             = { type = 22310 id = 12 }\r
++      name           = "第64師"\r
++      type           = infantry\r
++      model          = 3\r
++      strength       = 40\r
++      experience     = 20\r
++      locked         = yes\r
++    }\r
+     division = {\r
+-      id             = { type = 22310 id = 11 }\r
++      id             = { type = 22310 id = 13 }\r
+       name           = "第68師"\r
+       type           = infantry\r
+       model          = 3\r
+-      strength       = 60\r
++      strength       = 40\r
+       experience     = 20\r
++      locked         = yes\r
+     }\r
+     division = {\r
+-      id             = { type = 22310 id = 12 }\r
++      id             = { type = 22310 id = 14 }\r
+       name           = "第101師"\r
+       type           = infantry\r
+       model          = 3\r
+-      strength       = 60\r
++      strength       = 40\r
+       experience     = 20\r
++      locked         = yes\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22310 id = 13 }\r
++    id       = { type = 22310 id = 15 }\r
+     name     = "第7軍団"\r
+     location = 1258\r
+     division = {\r
+-      id             = { type = 22310 id = 14 }\r
++      id             = { type = 22310 id = 16 }\r
+       name           = "第42師"\r
+       type           = infantry\r
+       model          = 3\r
+@@ -170,7 +207,7 @@ country = {
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22310 id = 15 }\r
++      id             = { type = 22310 id = 17 }\r
+       name           = "第17師"\r
+       type           = infantry\r
+       model          = 3\r
+@@ -181,11 +218,11 @@ country = {
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22310 id = 16 }\r
++    id       = { type = 22310 id = 18 }\r
+     name     = "山西親衛軍団"\r
+     location = 1258\r
+     division = {\r
+-      id             = { type = 22310 id = 17 }\r
++      id             = { type = 22310 id = 19 }\r
+       name           = "山西親衛師"\r
+       type           = militia\r
+       model          = 1\r
+@@ -193,7 +230,7 @@ country = {
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22310 id = 18 }\r
++      id             = { type = 22310 id = 20 }\r
+       name           = "特務師"\r
+       type           = infantry\r
+       model          = 2\r

@@ -1,0 +1,42 @@
+--- A/db/events/japan.txt [cp932]
++++ B/db/events/japan.txt [cp932]
+@@ -1083,6 +1083,10 @@ event = {
+ 		OR = { \r
+ 			lost_national = { country = CHI value = 80 }\r
+ 			lost_vp = { country = CHI value = 80 }\r
++	AND = {\r
++	event = 1891001\r
++	region = { region = "China" country = -3 data = 1 value = 70 }\r
++		}\r
+ 		}\r
+ 		NOT = { ispuppet = JAP }\r
+ 	}\r
+@@ -1092,12 +1096,20 @@ event = {
+ 		OR = { \r
+ 			lost_national = { country = CHI value = 90 }\r
+ 			lost_vp = { country = CHI value = 90 }\r
++		AND = {\r
++	event = 1891001\r
++	region = { region = "China" country = -3 data = 1 value = 85 }\r
++		}\r
+ 		}\r
+ 	}\r
+ 	trigger = {\r
+ 		OR = { \r
+ 			lost_national = { country = CHI value = 90 }\r
+ 			lost_vp = { country = CHI value = 90 }\r
++	AND = {\r
++	event = 1891001\r
++	region = { region = "China" country = -3 data = 1 value = 85 }\r
++		}\r
+ 		}\r
+ 		region = { region = "China" country = -3 data = 1 value = 48 } #about 90 provinces out of 185\r
+ 		land_percentage = { country = CHI value = 1.1 }\r
+@@ -1249,6 +1261,7 @@ event = {
+ \r
+ 	action = { \r
+ 		trigger = { flag = China_surrender_puppet }\r
++		trigger = { NOT = { event = 1891001 } }\r
+ 		ai_chance = 40\r
+ 		name = "3815a"\r
+ 		command = { type = trigger which = 2011016 }\r

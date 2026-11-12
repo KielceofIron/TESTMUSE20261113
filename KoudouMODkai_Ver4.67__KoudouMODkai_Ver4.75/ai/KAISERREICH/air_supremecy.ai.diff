@@ -1,0 +1,105 @@
+--- A/ai/KAISERREICH/air_supremecy.ai [ascii]
++++ B/ai/KAISERREICH/air_supremecy.ai [ascii]
+@@ -1,51 +1,51 @@
+-# Air AI File For Strategic Bombings as priority
+-# bomber is now obsolete and NOT USED AT ALL replace and use Air Marshal instead
+-
+-air_marshal = {
+-	min_mission_strength_org	= 0.5 #0.2
+-	icxdayscostfactor 		= 8.0		# How to value true industrial cost when calculating expect causalties
+-	manpowercostfactor		= 80.0		# How to value manpower cost when calculating expect causalties
+-	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed
+-
+-	# desirability is a multiplier used when calcualting the mission desirability
+-	airsuperioritydesirability 		= 70.0
+-	groundattackdesirability 		= 20.0
+-	inderdictiondesirability 		= 10.0
+-	logisticalstrikedesirability 	= 0.1
+-	runwaycrateringdesirability 	= 0.1
+-	strategicstrikedesirability 	= 0.1
+-	installationstrikedesirability 	= 0.5
+-	navalstrikedesirability 		= 9.0
+-	portstrikedesirability 			= 19.0
+-	convoyraiddesirability			= 1.0
+-
+-	# tolerance is the required kill:loss ration expected to do 
+-	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half
+-	airsuperioritylosstolerance 	= 2.0
+-	groundattacklosstolerance 		= 1.5
+-	interdictionlosstolerance 		= 1.5
+-	logisticalstrikelosstolerance 	= 0.0
+-	runwaycrateringlosstolerance 	= 0.0
+-	strategicstriketolerance 		= 0.0
+-	installationstriketolerance 	= 0.0
+-	navalstriketolerance 			= 1.0
+-	portstriketolerance 			= 1.2
+-	convoyraidtolerance				= 0.5
+-
+-	# efficency is a tweakable param to adjust according to how 
+-	#    much actual damage comes from doing this mission (not to be confused with desirability)
+-	logisticalstrikeefficency 	= 0.01
+-	runwaycrateringefficency 	= 0.01
+-	strategicstrikeefficency 	= 0.01
+-	installationstrikeefficency 	= 0.01
+-	
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.500 rangeweight = 10.000 airkillpowerweight = 5000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } 
+-	taskforcetype = { name = "Soft Bombing" desiredratio = 0.150 rangeweight = 10.000 airkillpowerweight = -1000.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } 
+-	taskforcetype = { name = "Hard Bombing" desiredratio = 0.150 rangeweight = 10.000 airkillpowerweight = -1000.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } 
+-	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } 
+-	taskforcetype = { name = "Naval Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 2000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes naval_strike = yes port_strike = yes convoy_air_raiding = yes } 
+-	taskforcetype = { name = "Airlift" desiredratio = 0.000 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = -2000.000 softkillpowerweight = -2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = -2000.000 transportcapacityweight = 1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes airborne_assault = yes air_supply = yes } 
+-
+-	nukestriketolerance = -40.0000
+-	nukestrikedesirability = 50.0000		
++# Air AI File For Strategic Bombings as priority\r
++# bomber is now obsolete and NOT USED AT ALL replace and use Air Marshal instead\r
++\r
++air_marshal = {\r
++	min_mission_strength_org	= 0.5 #0.2\r
++	icxdayscostfactor 		= 8.0		# How to value true industrial cost when calculating expect causalties\r
++	manpowercostfactor		= 80.0		# How to value manpower cost when calculating expect causalties\r
++	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
++\r
++	# desirability is a multiplier used when calcualting the mission desirability\r
++	airsuperioritydesirability 		= 70.0\r
++	groundattackdesirability 		= 20.0\r
++	inderdictiondesirability 		= 10.0\r
++	logisticalstrikedesirability 	= 0.1\r
++	runwaycrateringdesirability 	= 0.1\r
++	strategicstrikedesirability 	= 0.1\r
++	installationstrikedesirability 	= 0.5\r
++	navalstrikedesirability 		= 9.0\r
++	portstrikedesirability 			= 19.0\r
++	convoyraiddesirability			= 1.0\r
++\r
++	# tolerance is the required kill:loss ration expected to do \r
++	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
++	airsuperioritylosstolerance 	= 2.0\r
++	groundattacklosstolerance 		= 1.5\r
++	interdictionlosstolerance 		= 1.5\r
++	logisticalstrikelosstolerance 	= 0.0\r
++	runwaycrateringlosstolerance 	= 0.0\r
++	strategicstriketolerance 		= 0.0\r
++	installationstriketolerance 	= 0.0\r
++	navalstriketolerance 			= 1.0\r
++	portstriketolerance 			= 1.2\r
++	convoyraidtolerance				= 0.5\r
++\r
++	# efficency is a tweakable param to adjust according to how \r
++	#    much actual damage comes from doing this mission (not to be confused with desirability)\r
++	logisticalstrikeefficency 	= 0.01\r
++	runwaycrateringefficency 	= 0.01\r
++	strategicstrikeefficency 	= 0.01\r
++	installationstrikeefficency 	= 0.01\r
++	\r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.500 rangeweight = 10.000 airkillpowerweight = 5000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Soft Bombing" desiredratio = 0.150 rangeweight = 10.000 airkillpowerweight = -1000.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
++	taskforcetype = { name = "Hard Bombing" desiredratio = 0.150 rangeweight = 10.000 airkillpowerweight = -1000.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
++	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
++	taskforcetype = { name = "Naval Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 2000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes naval_strike = yes port_strike = yes convoy_air_raiding = yes } \r
++	taskforcetype = { name = "Airlift" desiredratio = 0.000 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = -2000.000 softkillpowerweight = -2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = -2000.000 transportcapacityweight = 1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes airborne_assault = yes air_supply = yes } \r
++\r
++	nukestriketolerance = -40.0000\r
++	nukestrikedesirability = 50.0000		\r
+ }
+\ No newline at end of file

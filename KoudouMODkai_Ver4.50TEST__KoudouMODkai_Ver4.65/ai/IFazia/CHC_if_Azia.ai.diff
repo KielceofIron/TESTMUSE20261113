@@ -1,0 +1,117 @@
+--- A/ai/IFazia/CHC_if_Azia.ai [cp932]
++++ B/ai/IFazia/CHC_if_Azia.ai [cp932]
+@@ -4,6 +4,7 @@ max_front_ratio = 1.5
+ max_front_ratios = {\r
+ 	CHI = 2.0\r
+ 	U74 = 2.0\r
++	U36 = 2.0\r
+ 	UCH = 2.0\r
+ }\r
+ max_garrison_prop = 0.40\r
+@@ -16,7 +17,7 @@ reinforcement = 0.0
+ strat_redeploy_threshold = 25\r
+ exp_force_ratio = 0.1\r
+ exp_force_ratios = { SOV = 0.2 }\r
+-no_exp_forces_to = { CHI CGX CSX CYN CXB UCH U74 U36 U67 MON TAN }\r
++no_exp_forces_to = { CHI CGX CSX CYN CXB U36 UCH U74 U36 U67 MON TAN }\r
+ use_offensive_supply = yes\r
+ \r
+ ###################################\r
+@@ -37,6 +38,7 @@ resistance = {
+ 	JAP = 2\r
+ 	UF8 = 4\r
+ 	DDR = 4\r
++	UF2 = 2\r
+ }\r
+ befriend = {\r
+ 	CHI = 30\r
+@@ -45,9 +47,11 @@ befriend = {
+ 	CYN = 30\r
+ 	CXB = 30\r
+ 	SIK = 30\r
++	U36 = 30\r
+ 	UCH = 30\r
+ 	U74 = 30\r
+ 	U67 = 30\r
++	UF2 = 50\r
+ 	JAP = 10\r
+ 	UF8 = 70\r
+ 	UER = 10\r
+@@ -169,7 +173,7 @@ trade = {
+ 		GER = 30\r
+ 		DDR = 100\r
+ 	}\r
+-	embargo = { CHI UCH U74 }\r
++	embargo = { CHI U36 UCH U74 UF2 }\r
+ }\r
+ tech_sharing = {\r
+ 	favored = {\r
+@@ -180,7 +184,7 @@ tech_sharing = {
+ 		GER = 30\r
+ 		DDR = 100\r
+ 	}\r
+-	embargo = { CHI UCH U74 }\r
++	embargo = { CHI U36 UCH U74 UF2 }\r
+ 	not = { }\r
+ 	prioritized = {\r
+ 		# Agriculture\r
+@@ -248,6 +252,19 @@ spyprefs =
+ 		disrupt_techteam	= 5\r
+ 		country 		= CHI\r
+ 	}\r
++	spyprefsdata = {\r
++		country_priorities	= 8\r
++		steal_blueprint 	= 10\r
++		minister_assassination  = 1\r
++		smear_campaign 		= 4\r
++		coup 			= 0\r
++		sabotage_industry 	= 5\r
++		nuclear_sabotage 	= 0\r
++		found_partisans 	= 2\r
++		massmedia 		= 1\r
++		disrupt_techteam	= 5\r
++		country 		= UF2\r
++	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 5\r
+ 		steal_blueprint 	= 0\r
+@@ -274,6 +291,19 @@ spyprefs =
+ 		disrupt_techteam	= 0\r
+ 		country 		= UCH\r
+ 	}\r
++	spyprefsdata = {\r
++		country_priorities	= 4\r
++		steal_blueprint 	= 0\r
++		minister_assassination  = 0\r
++		smear_campaign 		= 4\r
++		coup 			= 0\r
++		sabotage_industry 	= 2\r
++		nuclear_sabotage 	= 0\r
++		found_partisans 	= 2\r
++		massmedia 		= 2\r
++		disrupt_techteam	= 0\r
++		country 		= U36\r
++	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 4\r
+ 		steal_blueprint 	= 0\r
+@@ -532,9 +562,11 @@ garrison = {
+ 		CXB = 30\r
+ 		CYN = 30\r
+ 		CGX = 30\r
++		U36 = 30\r
+ 		UCH = 30\r
+ 		U74 = 30\r
+ 		U67 = 30\r
++		UF2 = 50\r
+ 		U02 = 70 # 追加\r
+ 		U03 = 20 # 追加\r
+ 	}\r
+@@ -906,6 +938,7 @@ admiral = {
+ 		1365 # 海口（ハイコウ）\r
+ 		1367 # 茂名（マオミン）\r
+ 		1369 # 廣州（グァンヂョウ）\r
++		2822 # 蘇州（ソシュウ）\r
+ 	}\r
+ 	target = {\r
+ 	} \r

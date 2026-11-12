@@ -1,0 +1,508 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
+@@ -597,18 +597,30 @@ event = {
+ 	country = CHI\r
+ \r
+ 	decision = {\r
+-	region = { region = "China" country = CHI data = 1 value = 50 }\r
++	region = { region = "China" country = CHI data = 1 value = 30 }\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = CHI data = 1 value = 50 }\r
++	region = { region = "China" country = CHI data = 1 value = 30 }\r
++	AND = {\r
++	country = CHI\r
++	NOT = { exists = CHC }\r
++	NOT = { exists = U36 }\r
++	NOT = { exists = U74 }\r
++	}\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = CHI data = 1 value = 50 }\r
++	region = { region = "China" country = CHI data = 1 value = 30 }\r
++	AND = {\r
++	country = CHI\r
++	NOT = { exists = CHC }\r
++	NOT = { exists = U36 }\r
++	NOT = { exists = U74 }\r
++	}\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+@@ -696,21 +708,33 @@ event = {
+ 	country = CHC\r
+ \r
+ 	decision = {\r
+-	region = { region = "China" country = CHC data = 1 value = 50 }\r
++	region = { region = "China" country = CHC data = 1 value = 30 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = CHC data = 1 value = 50 }\r
++	region = { region = "China" country = CHC data = 1 value = 30 }\r
++	AND = {\r
++	country = CHC\r
++	NOT = { exists = CHI }\r
++	NOT = { exists = U36 }\r
++	NOT = { exists = U74 }\r
++	}\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = CHC data = 1 value = 50 }\r
++	region = { region = "China" country = CHC data = 1 value = 30 }\r
++	AND = {\r
++	country = CHC\r
++	NOT = { exists = CHI }\r
++	NOT = { exists = U36 }\r
++	NOT = { exists = U74 }\r
++	}\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+@@ -780,19 +804,47 @@ event = {
+ 	TAG = { U36 U74 }\r
+ \r
+ 	decision = {\r
+-	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	region = { region = "China" country = -1 data = 1 value = 30 }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	region = { region = "China" country = -1 data = 1 value = 30 }\r
++	OR = {\r
++	AND = {\r
++	country = U36\r
++	NOT = { exists = CHI }\r
++	NOT = { exists = CHC }\r
++	NOT = { exists = U74 }\r
++	}\r
++	AND = {\r
++	country = U74\r
++	NOT = { exists = CHI }\r
++	NOT = { exists = CHC }\r
++	NOT = { exists = U36 }\r
++	}\r
++	}\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	region = { region = "China" country = -1 data = 1 value = 30 }\r
++	OR = {\r
++	AND = {\r
++	country = U36\r
++	NOT = { exists = CHI }\r
++	NOT = { exists = CHC }\r
++	NOT = { exists = U74 }\r
++	}\r
++	AND = {\r
++	country = U74\r
++	NOT = { exists = CHI }\r
++	NOT = { exists = CHC }\r
++	NOT = { exists = U36 }\r
++	}\r
++	}\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+@@ -883,7 +935,7 @@ event = {
+ 	TAG = { U36 U74 }\r
+ \r
+ 	decision = {\r
+-	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	region = { region = "China" country = -1 data = 1 value = 40 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	NOT = { exists = U87 }\r
+@@ -894,7 +946,7 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	region = { region = "China" country = -1 data = 1 value = 40 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	NOT = { ispuppet = yes }\r
+@@ -902,7 +954,7 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	region = { region = "China" country = -1 data = 1 value = 40 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	NOT = { exists = U87 }\r
+@@ -1681,14 +1733,14 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 70 }\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 70 }\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+@@ -3449,6 +3501,8 @@ event = {
+ \r
+ 	decision = {\r
+ 	NOT = { ispuppet = yes }\r
++	NOT = { local_flag = Hostility_JAP } # 対日敵視方針\r
++	NOT = { local_flag = Hostility_U67 } # 対奉天敵視方針\r
+ 	NOT = { flag = The_Warlord_Problem }\r
+ 	OR = {\r
+ 		AND = {\r
+@@ -3489,15 +3543,17 @@ event = {
+ \r
+ 	decision_trigger = {\r
+ 	atwar = no\r
+-	NOT = { dissent = 30 }\r
++	NOT = { dissent = 20 }\r
+ 	army = 50\r
+ 	}\r
+ \r
+ 	trigger = {\r
+ 	atwar = no\r
+-	NOT = { dissent = 30 }\r
++	NOT = { dissent = 20 }\r
+ 	army = 50\r
+ 	NOT = { ispuppet = yes }\r
++	NOT = { local_flag = Hostility_JAP } # 対日敵視方針\r
++	NOT = { local_flag = Hostility_U67 } # 対奉天敵視方針\r
+ 	NOT = { flag = The_Warlord_Problem }\r
+ 	OR = {\r
+ 		AND = {\r
+@@ -4065,6 +4121,8 @@ event = {
+ \r
+ 	decision = {\r
+ 	NOT = { ispuppet = yes }\r
++	NOT = { local_flag = Hostility_JAP } # 対日敵視方針\r
++	NOT = { local_flag = Hostility_U67 } # 対奉天敵視方針\r
+ 	NOT = { flag = Leased_Land_Problem }\r
+ 	OR = {\r
+ 		AND = {\r
+@@ -4149,15 +4207,17 @@ event = {
+ \r
+ 	decision_trigger = {\r
+ 	atwar = no\r
+-	NOT = { dissent = 30 }\r
++	NOT = { dissent = 15 }\r
+ 	army = 100\r
+ 	}\r
+ \r
+ 	trigger = {\r
+ 	NOT = { ispuppet = yes }\r
++	NOT = { local_flag = Hostility_JAP } # 対日敵視方針\r
++	NOT = { local_flag = Hostility_U67 } # 対奉天敵視方針\r
+ 	NOT = { flag = Leased_Land_Problem }\r
+ 	atwar = no\r
+-	NOT = { dissent = 30 }\r
++	NOT = { dissent = 15 }\r
+ 	army = 100\r
+ 	OR = {\r
+ 		AND = {\r
+@@ -6740,6 +6800,8 @@ event = {
+ \r
+ 	decision = {\r
+ 	NOT = { ispuppet = yes }\r
++	NOT = { local_flag = Hostility_JAP } # 対日敵視方針\r
++	NOT = { local_flag = Hostility_U67 } # 対奉天敵視方針\r
+ 	NOT = { flag = Autonomous_Region }\r
+ 	OR = {\r
+ 		AND = {\r
+@@ -6846,12 +6908,14 @@ event = {
+ \r
+ 	decision_trigger = {\r
+ 	atwar = no\r
+-	NOT = { dissent = 30 }\r
++	NOT = { dissent = 15 }\r
+ 	army = 75\r
+ 	}\r
+ \r
+ 	trigger = {\r
+ 	NOT = { ispuppet = yes }\r
++	NOT = { local_flag = Hostility_JAP } # 対日敵視方針\r
++	NOT = { local_flag = Hostility_U67 } # 対奉天敵視方針\r
+ 	NOT = { flag = Autonomous_Region }\r
+ 	OR = {\r
+ 		AND = {\r
+@@ -6955,7 +7019,7 @@ event = {
+ 	}\r
+ 	}\r
+ 	atwar = no\r
+-	NOT = { dissent = 30 }\r
++	NOT = { dissent = 15 }\r
+ 	army = 75\r
+ 	}\r
+ \r
+@@ -8540,7 +8604,19 @@ event = {
+ 	random = no\r
+ 	tag = { CHC UCH CHI U74 }\r
+ \r
+-	trigger = {\r
++	decision = {\r
++	local_flag = China_Unification # 中国統一フラグ\r
++	atwar = no\r
++	NOT = { ispuppet = yes }\r
++	OR = {\r
++	exists = CSX\r
++	exists = CGX\r
++	exists = CYN\r
++	exists = CXB\r
++	}\r
++	}\r
++\r
++	decision_trigger = {\r
+ 	local_flag = China_Unification # 中国統一フラグ\r
+ 	atwar = no\r
+ 	NOT = { ispuppet = yes }\r
+@@ -8591,8 +8667,68 @@ event = {
+ 		AND = {\r
+ 		exists = U67\r
+ 		NOT = { war = { country = -1 country = U67 } }\r
++		NOT = { alliance = { country = -1 country = U67 } }\r
++		OR = { \r
++		region = { country = U67 region = "China" data = 1 value = 1 }\r
++		region = { country = U67 region = "China" data = 2 value = 1 }\r
++		}\r
++		}\r
++	}\r
++	}\r
++\r
++	trigger = {\r
++	local_flag = China_Unification # 中国統一フラグ\r
++	atwar = no\r
++	NOT = { ispuppet = yes }\r
++	OR = {\r
++		AND = {\r
++			country = CHI\r
++			NOT = { exists = CHC }\r
++			NOT = { exists = UCH }\r
++			NOT = { exists = U74 }\r
++		}\r
++		AND = {\r
++			country = UCH\r
++			NOT = { exists = CHI }\r
++			NOT = { exists = CHC }\r
++			NOT = { exists = U74 }\r
++		}\r
++		AND = {\r
++			country = CHC\r
++			NOT = { exists = CHI }\r
++			NOT = { exists = UCH }\r
++			NOT = { exists = U74 }\r
++		}\r
++\r
++		AND = {\r
++			country = U74\r
++			NOT = { exists = CHI }\r
++			NOT = { exists = CHC }\r
++			NOT = { exists = UCH }\r
++		}\r
++	}\r
++	OR = {\r
++		exists = CSX\r
++		exists = CGX\r
++		exists = CYN\r
++		exists = CXB\r
++		}\r
++\r
++	OR = {\r
++		AND = {\r
++		exists = JAP\r
++		NOT = { war = { country = -1 country = JAP } }\r
+ 		NOT = { alliance = { country = -1 country = JAP } }\r
+ 		OR = { \r
++		region = { country = JAP region = "China" data = 1 value = 1 }\r
++		region = { country = JAP region = "China" data = 2 value = 1 }\r
++		}\r
++		}\r
++		AND = {\r
++		exists = U67\r
++		NOT = { war = { country = -1 country = U67 } }\r
++		NOT = { alliance = { country = -1 country = U67 } }\r
++		OR = { \r
+ 		region = { country = U67 region = "China" data = 1 value = 1 }\r
+ 		region = { country = U67 region = "China" data = 2 value = 1 }\r
+ 		}\r
+@@ -8606,7 +8742,7 @@ event = {
+ 	style = 2\r
+ 	picture = "ccip_may4riot"\r
+ \r
+-	date = { day = 0 month = 0 year = 1936 }\r
++	date = { day = 0 month = 0 year = 1937 }\r
+ 	offset = 8\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+@@ -9125,13 +9261,12 @@ event = {
+ \r
+ 	decision = {\r
+ 	local_flag = Hostility_JAP\r
+-	exists = CHI\r
+ 	NOT = {\r
+ 	OR = {\r
+ 	war = { country = JAP country = CHI }\r
+ 	puppet = { country = JAP country = CHI }\r
+-	war = { country = JAP country = UCH }\r
+-	puppet = { country = JAP country = UCH }\r
++	war = { country = JAP country = U36 }\r
++	puppet = { country = JAP country = U36 }\r
+ 	war = { country = JAP country = U74 }\r
+ 	puppet = { country = JAP country = U74 }\r
+ 	puppet = { country = CHI country = JAP }\r
+@@ -9170,14 +9305,14 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
++	local_flag = Hostility_JAP\r
+ 	atwar = no\r
+-	exists = CHI\r
+ 	NOT = {\r
+ 	OR = {\r
+ 	war = { country = JAP country = CHI }\r
+ 	puppet = { country = JAP country = CHI }\r
+-	war = { country = JAP country = UCH }\r
+-	puppet = { country = JAP country = UCH }\r
++	war = { country = JAP country = U36 }\r
++	puppet = { country = JAP country = U36 }\r
+ 	war = { country = JAP country = U74 }\r
+ 	puppet = { country = JAP country = U74 }\r
+ 	puppet = { country = CHI country = JAP }\r
+@@ -9209,7 +9344,7 @@ event = {
+ 	war = { country = JAP country = SOV }\r
+ 	}\r
+ 	}\r
+-        random = 35\r
++        random = 15\r
+ 	}\r
+ \r
+ 	name = "EVT_6959042_NAME"\r
+@@ -9218,7 +9353,7 @@ event = {
+  	picture = "Chinese_Fighting"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 30\r
++	offset = 120\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 日本軍は痛い目を見ないとわからんようだ\r
+@@ -9732,7 +9867,6 @@ event = {
+ \r
+ 	decision = {\r
+ 	local_flag = Hostility_U67\r
+-	exists = CHI\r
+ 	NOT = {\r
+ 	OR = {\r
+ 	war = { country = U67 country = CHI }\r
+@@ -9777,8 +9911,8 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
++	local_flag = Hostility_U67\r
+ 	atwar = no\r
+-	exists = CHI\r
+ 	NOT = {\r
+ 	OR = {\r
+ 	war = { country = U67 country = CHI }\r
+@@ -9816,7 +9950,7 @@ event = {
+ 	war = { country = U67 country = SOV }\r
+ 	}\r
+ 	}\r
+-        random = 35\r
++        random = 15\r
+ 	}\r
+ \r
+ 	name = "EVT_6959052_NAME"\r
+@@ -9825,7 +9959,7 @@ event = {
+  	picture = "Chinese_Fighting"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 30\r
++	offset = 120\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 奉天軍は痛い目を見ないとわからんようだ\r
+@@ -11845,7 +11979,7 @@ event = {
+ #########################################################################\r
+ #  第二次北伐\r
+ # 1926年に国民党が始めた北伐が失敗に終わったことで、中国は長年にわたる列強の屈辱に甘んじてきた。\r
+-# しかし、列強と経済関係が深かった北洋軍閥で、大規模な混乱が生まれたことで、国民党にとってまたとない機会が訪れた。\r
++# しかし、列強と経済関係が深かった北洋軍閥で大規模な混乱が生まれたことで、国民党にとってまたとない機会が訪れた。\r
+ # 国民党は、中国の統一を望む輿論を背景に、軍閥・北京政府撲滅を再び目指す第二次北伐宣言を発表した。\r
+ #########################################################################\r
+ \r
+@@ -11855,12 +11989,22 @@ event = {
+ 	country = CHI\r
+ \r
+ 	decision = {\r
++	OR = { \r
++	AND = { \r
+ 	flag = event_6959010 # 特定イベントが発生している\r
+ 	NOT = { flag = event_6959009 } # 特定イベントが発生していない\r
+ 	flag = event_6959218 # 華北における暴動が起きている\r
++	}\r
++	AND = { \r
++	NOT = { flag = event_6959009 } # 特定イベントが発生していない\r
++	NOT = { flag = event_6959010 } # 特定イベントが発生していない\r
++	NOT = { flag = event_6959218 } # 華北における暴動が起きている\r
++	}\r
++	}\r
+ 	OR = { \r
+ 	exists = U36\r
+ 	exists = U74\r
++	exists = CHC\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r
+@@ -11869,17 +12013,28 @@ event = {
+ 	OR = { \r
+ 	exists = U36\r
+ 	exists = U74\r
++	exists = CHC\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
++	OR = { \r
++	AND = { \r
+ 	flag = event_6959010 # 特定イベントが発生している\r
+ 	NOT = { flag = event_6959009 } # 特定イベントが発生していない\r
+ 	flag = event_6959218 # 華北における暴動が起きている\r
++	}\r
++	AND = { \r
++	NOT = { flag = event_6959009 } # 特定イベントが発生していない\r
++	NOT = { flag = event_6959010 } # 特定イベントが発生していない\r
++	NOT = { flag = event_6959218 } # 華北における暴動が起きている\r
++	}\r
++	}\r
+ 	OR = { \r
+ 	exists = U36\r
+ 	exists = U74\r
++	exists = CHC\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r

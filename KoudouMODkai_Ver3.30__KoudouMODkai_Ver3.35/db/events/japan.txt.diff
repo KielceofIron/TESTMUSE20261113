@@ -1,0 +1,87 @@
+--- A/db/events/japan.txt [cp932]
++++ B/db/events/japan.txt [cp932]
+@@ -121,15 +121,15 @@ event = {
+ 		command = { type = domestic which = freedom value = -3 }\r
+ 		command = { type = domestic which = defense_lobby value = 1 }\r
+ 		command = { type = headofstate which = 50001 } # 昭和天皇\r
+-		command = { type = headofgovernment which = 50901 } # 荒木貞夫(政府首班)\r
+-		command = { type = foreignminister which = 50907 }\r
+-		command = { type = armamentminister which = 50908 }\r
+-		command = { type = ministerofsecurity which = 50919 }\r
++		command = { type = headofgovernment which = 50572 } # 荒木貞夫(政府首班)\r
++		command = { type = foreignminister which = 50639 }\r
++		command = { type = armamentminister which = 50591 }\r
++		command = { type = ministerofsecurity which = 50588 }\r
+ 		command = { type = ministerofintelligence which = 50122 }\r
+-		command = { type = chiefofstaff which = 50007 }\r
+-		command = { type = chiefofarmy which = 50903 } # 眞崎甚三郎\r
+-		command = { type = chiefofnavy which = 50228 } # 伏見宮博恭王\r
+-		command = { type = chiefofair which = 50910 } # 鈴木率道\r
++		command = { type = chiefofstaff which = 50573 }\r
++		command = { type = chiefofarmy which = 50577 } # 眞崎甚三郎\r
++		command = { type = chiefofnavy which = 50674 } # 山本英輔\r
++		command = { type = chiefofair which = 50679 } # 堀丈夫\r
+ 		command = { type = relation which = SOV value = -10 }\r
+ 		command = { type = relation which = CHI value = -10 }\r
+ 		command = { type = setflag which = 226_Success }\r
+@@ -2046,13 +2046,20 @@ event = {
+ \r
+ 	action_a = {\r
+ 		name = EVT_22_ACTA\r
+-		ai_chance = 100\r
++		ai_chance = 99\r
+ 		command = { type = non_aggression which = JAP where = SOV }\r
+ 		command = { type = dissent value = 1 }\r
+         	command = { type = manpowerpool value = -40 }\r
+         	command = { type = supplies value = -1500 }\r
+ 		command = { type = relation which = SOV value = -10 }\r
+ 		command = { type = trigger which = 2007009 }\r
++		command = { type = sleepleader which = 101170 } # 植田謙吉\r
++		command = { type = sleepleader which = 102076 }\r
++		command = { type = sleepleader which = 101058 } # 磯谷廉介\r
++		command = { type = sleepleader which = 101119 } # 荻洲立兵\r
++		command = { type = sleepleader which = 101088 } # 小松原道太郎\r
++		command = { type = sleepleader which = 101532 } # 中島鉄蔵\r
++		command = { type = sleepleader which = 101170 } # 橋本群\r
+ 		command = { type = domestic which = defense_lobby value = 1 } # one step Hawk intentional\r
+ 	}\r
+ 	action_b = {\r
+@@ -2067,6 +2074,38 @@ event = {
+ 		command = { type = trigger which = 2007009 }\r
+ 		command = { type = domestic which = defense_lobby value = 2 }  # two steps Hawk\r
+ 	}\r
++\r
++	action_c = {\r
++		name = "厳しい処分を行う"\r
++		ai_chance = 1\r
++		command = { type = non_aggression which = JAP where = SOV }\r
++		command = { type = dissent value = 5 }\r
++        	command = { type = manpowerpool value = -40 }\r
++        	command = { type = supplies value = -1500 }\r
++		command = { type = relation which = SOV value = -10 }\r
++		command = { type = trigger which = 2007009 }\r
++		command = { type = max_organization which = land value = 2 }\r
++		command = { type = morale which = land value = 2 }\r
++		command = { type = sleepminister which = 50007 } # 閑院宮載仁親王\r
++		command = { type = sleepminister which = 50008 }\r
++		command = { type = sleepminister which = 50216 }\r
++		command = { type = sleepminister which = 50241 }\r
++		command = { type = sleepleader which = 101065 }\r
++		command = { type = sleepleader which = 102130 }\r
++		command = { type = sleepleader which = 101170 } # 植田謙吉\r
++		command = { type = sleepleader which = 102076 }\r
++		command = { type = sleepleader which = 101058 } # 磯谷廉介\r
++		command = { type = sleepleader which = 101119 } # 荻洲立兵\r
++		command = { type = sleepleader which = 101088 } # 小松原道太郎\r
++		command = { type = sleepleader which = 101532 } # 中島鉄蔵\r
++		command = { type = sleepleader which = 101170 } # 橋本群\r
++		command = { type = sleepminister which = 50565 } # 辻政信\r
++		command = { type = sleepminister which = 50566 }\r
++		command = { type = sleepleader which = 101168 }\r
++		command = { type = sleepleader which = 101031 } # 服部卓四郎\r
++		command = { type = sleepleader which = 101488 } # 稲田正純\r
++		command = { type = domestic which = defense_lobby value = 1 } # one step Hawk intentional\r
++	}\r
+ }\r
+ \r
+ event = {\r

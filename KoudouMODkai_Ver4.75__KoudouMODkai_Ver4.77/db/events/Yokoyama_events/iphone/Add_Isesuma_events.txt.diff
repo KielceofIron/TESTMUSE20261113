@@ -1,0 +1,86 @@
+--- A/db/events/Yokoyama_events/iphone/Add_Isesuma_events.txt [cp932]
++++ B/db/events/Yokoyama_events/iphone/Add_Isesuma_events.txt [cp932]
+@@ -274,7 +274,7 @@ event = {
+ \r
+ 	action_a = { # 改革を実行する\r
+ 	name = "ACTIONNAME114515006A"\r
+-	command = { trigger = { ai = no } type = money value = -1000 }\r
++	command = { trigger = { ai = no } type = money value = -300 }\r
+ 	command = { type = event which = 114515007 where = ALS when = 720 }\r
+ 	}\r
+ }\r
+@@ -355,8 +355,8 @@ event = {
+ \r
+ 	action_a = { # 義勇軍を編成する\r
+ 	name = "ACTIONNAME114515008A"\r
+-	command = { trigger = { ai = no } type = money value = -1000 }\r
+-	command = { type = add_corps which = "義勇軍" value = land where = 304 } \r
++	command = { trigger = { ai = no } type = money value = -300 }\r
++	command = { type = add_corps which = "義勇軍" value = land when = 6840050 where = 285 } \r
+ 	command = { type = add_division which = "義勇師団" value = militia when = 4 }\r
+ 	command = { type = add_division which = "義勇師団" value = militia when = 4 }\r
+ 	}\r
+@@ -435,7 +435,7 @@ event = {
+ \r
+ #########################################################################\r
+ #  枢軸と中立の狭間\r
+-# ユーゴスラビアが枢軸に加盟したという報せが広まり、ブリュンヒルド公国に困難な選択が迫られている。\r
++# 国際情勢の悪化により、ブリュンヒルド公国に困難な選択が迫られている。\r
+ # 枢軸に加盟するか、それとも中立を維持するか、どちらを選ぶべきだろうか？\r
+ #########################################################################\r
+ \r
+@@ -446,6 +446,26 @@ event = {
+ \r
+ 	trigger = {\r
+ 	exists = ALS\r
++	OR = {\r
++	alliance = { country = GER country = YUG }\r
++	alliance = { country = SOV country = YUG }\r
++	alliance = { country = RUS country = YUG }\r
++	alliance = { country = GER country = SER }\r
++	alliance = { country = SOV country = SER }\r
++	alliance = { country = RUS country = SER }\r
++	alliance = { country = GER country = ROM }\r
++	alliance = { country = SOV country = ROM }\r
++	alliance = { country = RUS country = ROM }\r
++	war = { country = GER country = YUG }\r
++	war = { country = SOV country = YUG }\r
++	war = { country = RUS country = YUG }\r
++	war = { country = GER country = SER }\r
++	war = { country = SOV country = SER }\r
++	war = { country = RUS country = SER }\r
++	war = { country = GER country = ROM }\r
++	war = { country = SOV country = ROM }\r
++	war = { country = RUS country = ROM }\r
++	}\r
+ 	NOT = {\r
+ 	alliance = { country = GER country = ALS }\r
+ 	alliance = { country = ITA country = ALS }\r
+@@ -479,13 +499,25 @@ event = {
+ 	ai_chance = 10\r
+ 	}\r
+ \r
+-	action = { # 中立を維持する\r
++	action = { # 孤立主義を貫く\r
+ 	name = "ACTIONNAME114515011B"\r
+ 	command = { type = domestic which = defense_lobby value = -2 }\r
+ 	command = { type = domestic which = defense_lobby value = -2 }\r
+ 	command = { type = relation which = GER value = -100 }\r
+ 	command = { type = relation which = YUG value = -100 }\r
+-	ai_chance = 90\r
++	ai_chance = 45\r
++	}\r
++\r
++	action = { # 戦争に備えるのだ\r
++	name = "ACTIONNAME114515011B"\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = relation which = GER value = -100 }\r
++	command = { type = relation which = YUG value = -100 }\r
++	command = { type = add_division value = militia when = 6 }\r
++	command = { type = add_division value = militia when = 6 }\r
++	command = { type = add_division value = militia when = 6 }\r
++	ai_chance = 45\r
+ 	}\r
+ }\r
+ \r

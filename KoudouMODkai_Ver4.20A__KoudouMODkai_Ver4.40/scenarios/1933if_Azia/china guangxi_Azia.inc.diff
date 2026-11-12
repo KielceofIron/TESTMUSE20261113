@@ -1,0 +1,447 @@
+--- A/scenarios/1933if_Azia/china guangxi_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/china guangxi_Azia.inc [cp932]
+@@ -9,8 +9,8 @@
+ country = {\r
+   tag                = CGX\r
+   regular_id         = CHI\r
+-  flag_ext           = _PNE\r
+-  ai                 = "cgx_1933.ai"\r
++  name               = "両広軍閥"\r
++  ai                 = "IFazia/CGX_if_Azia.ai"\r
+   ai_settings        = { flags = { MOB1 = yes MOB2 = yes RES = yes } }\r
+   intrinsic_gov_type = paternal_autocrat\r
+   capital            = 1378 # 桂林（グゥイリン）\r
+@@ -25,6 +25,10 @@ country = {
+   supplies       = 100\r
+   money          = 50\r
+   transports     = 60\r
++  free = {\r
++    ic             = 3\r
++    supplies       = 25\r
++  }\r
+ \r
+   diplomacy = {\r
+     relation = { tag = CHC value = -200 }\r
+@@ -47,8 +51,8 @@ country = {
+   ownedprovinces         = { 1301 1303 1305 1306 1307 1308 1309 1310 1311 1312 1365 1367 1368 1369 1370 1373 1374 1375 1376 1377 1378 1379 1380 1381 1382 1383 }\r
+   controlledprovinces    = { 1301 1303 1305 1306 1307 1308 1309 1310 1311 1312 1365 1367 1368 1369 1370 1373 1374 1375 1376 1377 1378 1379 1380 1381 1382 1383 }\r
+ \r
+-  techapps               = { 5810 5820 5800 5080 5700 5310 54010 5316 5326 5327 1010 1020 1030 1040 1050 1060 1070 1160 1170 1180 1190 1200 1210 1220 13060 13070 13080 1310 1320 1330 1340 1830 1910 1920 1930 1940 1950 1960 1970 2860 2870 2290 2300 2310 2900 2910 5600 5610 14000 14010 14020 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 3010 3110 3120 3210 3220 3810 3720 3410 8010 8020 8050 8060 8070 8080 4500 4510 4520 4530 4540 4300 4310 4320 4600 4610 4620 4630 4800 4810 4700 4740 4750 4760 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 3020 3030 3610 3130 3420 3230 3730 8100 8110 8120 8500 8550 }\r
+-  blueprints             = { 1080 1090 1560 1230 1350 1360 1840 1850 7600 7610 2620 2010 2880 2920 2930 2800 6210 6570 6000300 4120 }\r
++  techapps               = { 5800 1010 1020 1030 1040 1050 1060 1160 1170 1180 1190 1200 13060 13070 13080 1310 1320 1330 1830 1910 1920 1930 1940 1950 1960 2860 2870 2290 2300 2310 14000 6500 6510 6530 6600 6610 6680 6620 6650 6670 6910 3010 3110 3120 3210 3220 3810 3720 3410 8010 8020 8050 8060 8070 8080 4500 4510 4520 4530 4540 4300 4310 4600 4610 4620 4800 4740 4750 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 3020 3030 3610 3130 3420 3230 3730 8100 8110 8120 8500 8550 2900 1840 6690 6700 6550 6710 6590 }\r
++  blueprints             = { 7600 7610 6210 6570 6000300 4120 }\r
+   inventions             = { 3000027 }\r
+ \r
+   policy = {\r
+@@ -68,7 +72,7 @@ country = {
+   ministerofintelligence = { type = 9 id = 585006 } # 李済深(リー・チシェン)\r
+   chiefofstaff           = { type = 9 id = 585007 } # 李済深(リー・チシェン)\r
+   chiefofarmy            = { type = 9 id = 585009 } # 陳済棠(チェン・チタン)\r
+-  chiefofnavy            = { type = 9 id = 585010 } # 白崇禧(パイ・チュンシ)\r
++  chiefofnavy            = { type = 9 id = 585010 } # 林振雄(リン・ヂェンシオン)\r
+   chiefofair             = { type = 9 id = 585012 } # 王叔銘(ワン・シュウミン)\r
+ \r
+   landunit = {\r
+@@ -79,65 +83,65 @@ country = {
+       id             = { type = 22400 id = 2 }\r
+       name           = "第19師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 3\r
+       strength       = 33\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 4 }\r
++      id             = { type = 22400 id = 3 }\r
+       name           = "第24師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 3\r
+       strength       = 33\r
+       experience     = 30\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22400 id = 9 }\r
++    id       = { type = 22400 id = 4 }\r
+     name     = "第15軍団"\r
+     location = 1378\r
+     division = {\r
+-      id             = { type = 22400 id = 10 }\r
++      id             = { type = 22400 id = 5 }\r
+       name           = "第43師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 11 }\r
++      id             = { type = 22400 id = 6 }\r
+       name           = "第44師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 12 }\r
++      id             = { type = 22400 id = 7 }\r
+       name           = "第45師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22400 id = 26 }\r
++    id       = { type = 22400 id = 8 }\r
+     name     = "第1軍団"\r
+     location = 1369\r
+     division = {\r
+-      id             = { type = 22400 id = 27 }\r
++      id             = { type = 22400 id = 9 }\r
+       name           = "第1師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       strength       = 60\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 28 }\r
++      id             = { type = 22400 id = 10 }\r
+       name           = "第2師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       extra1         = engineer\r
+       extra2         = artillery\r
+       brigade_model1 = 0\r
+@@ -146,10 +150,10 @@ country = {
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 29 }\r
++      id             = { type = 22400 id = 11 }\r
+       name           = "第3師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       extra1         = engineer\r
+       extra2         = artillery\r
+       brigade_model1 = 0\r
+@@ -159,14 +163,14 @@ country = {
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22400 id = 30 }\r
++    id       = { type = 22400 id = 12 }\r
+     name     = "第2軍団"\r
+     location = 1369\r
+     division = {\r
+-      id             = { type = 22400 id = 31 }\r
++      id             = { type = 22400 id = 13 }\r
+       name           = "第4師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       extra1         = engineer\r
+       extra2         = artillery\r
+       brigade_model1 = 0\r
+@@ -175,104 +179,92 @@ country = {
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 32 }\r
++      id             = { type = 22400 id = 14 }\r
+       name           = "第5師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 3\r
+       strength       = 60\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 33 }\r
++      id             = { type = 22400 id = 15 }\r
+       name           = "第6師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra1         = engineer\r
+-      extra2         = artillery\r
+-      brigade_model1 = 0\r
+-      brigade_model2 = 4\r
++      model          = 3\r
+       strength       = 60\r
+       experience     = 40\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22400 id = 34 }\r
++    id       = { type = 22400 id = 16 }\r
+     name     = "第3軍団"\r
+     location = 1369\r
+     division = {\r
+-      id             = { type = 22400 id = 35 }\r
++      id             = { type = 22400 id = 17 }\r
+       name           = "第7師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 60\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 36 }\r
++      id             = { type = 22400 id = 18 }\r
+       name           = "第8師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 60\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 37 }\r
++      id             = { type = 22400 id = 19 }\r
+       name           = "第9師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra1         = engineer\r
+-      extra2         = artillery\r
+-      brigade_model1 = 0\r
+-      brigade_model2 = 4\r
++      model          = 2\r
+       strength       = 60\r
+       experience     = 30\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22400 id = 38 }\r
++    id       = { type = 22400 id = 20 }\r
+     name     = "第4軍団"\r
+     location = 1369\r
+     division = {\r
+-      id             = { type = 22400 id = 39 }\r
++      id             = { type = 22400 id = 21 }\r
+       name           = "第1独立師"\r
+       type           = militia\r
+-      model          = 3\r
++      model          = 2\r
+       strength       = 100\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 40 }\r
++      id             = { type = 22400 id = 22 }\r
+       name           = "第2独立師"\r
+       type           = militia\r
+-      model          = 3\r
++      model          = 2\r
+       strength       = 100\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 41 }\r
++      id             = { type = 22400 id = 23 }\r
+       name           = "第3独立師"\r
+       type           = militia\r
+-      model          = 3\r
++      model          = 2\r
+       strength       = 100\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 42 }\r
++      id             = { type = 22400 id = 24 }\r
+       name           = "第4独立師"\r
+       type           = militia\r
+-      model          = 3\r
++      model          = 2\r
+       strength       = 100\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 43 }\r
++      id             = { type = 22400 id = 25 }\r
+       name           = "教導師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra1         = engineer\r
+-      extra2         = artillery\r
+-      brigade_model1 = 0\r
+-      brigade_model2 = 4\r
+-      strength       = 100\r
++      model          = 3\r
++      strength       = 80\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 44 }\r
++      id             = { type = 22400 id = 26 }\r
+       name           = "第4軍司令部"\r
+       type           = hq\r
+       model          = 1\r
+@@ -282,69 +274,69 @@ country = {
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22400 id = 45 }\r
++    id       = { type = 22400 id = 27 }\r
+     name     = "第25軍団"\r
+     location = 1305\r
+     division = {\r
+-      id             = { type = 22400 id = 46 }\r
++      id             = { type = 22400 id = 28 }\r
+       name           = "第103師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       strength       = 100\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 47 }\r
++      id             = { type = 22400 id = 29 }\r
+       name           = "第102師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       strength       = 75\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 48 }\r
++      id             = { type = 22400 id = 30 }\r
+       name           = "新編第8師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       strength       = 50\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 49 }\r
++      id             = { type = 22400 id = 31 }\r
+       name           = "第121師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       strength       = 50\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 50 }\r
++      id             = { type = 22400 id = 32 }\r
+       name           = "新編第25師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 4\r
+       strength       = 50\r
+       experience     = 30\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 22400 id = 51 }\r
++    id       = { type = 22400 id = 33 }\r
+     name     = "貴州地域警備軍"\r
+     location = 1305\r
+     division = {\r
+-      id             = { type = 22400 id = 52 }\r
++      id             = { type = 22400 id = 34 }\r
+       name           = "第1地域警備師"\r
+       type           = militia\r
+-      model          = 4\r
++      model          = 2\r
+       strength       = 50\r
+-      experience     = 30\r
++      experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 53 }\r
++      id             = { type = 22400 id = 35 }\r
+       name           = "第2地域警備師"\r
+       type           = militia\r
+-      model          = 4\r
++      model          = 2\r
+       strength       = 50\r
+-      experience     = 30\r
++      experience     = 10\r
+     }\r
+   }\r
+ \r
+@@ -419,19 +411,19 @@ country = {
+   }\r
+ \r
+   airunit = { \r
+-    id       = { type = 22400 id = 65 }\r
++    id       = { type = 22400 id = 201 }\r
+     name     = "広東戦闘機部隊"\r
+     location = 1369\r
+     base     = 1369\r
+     division = {\r
+-      id             = { type = 22400 id = 66 }\r
++      id             = { type = 22400 id = 202 }\r
+       name           = "第16航空隊"\r
+       type           = interceptor\r
+       model          = 4\r
+       strength       = 35\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 67 }\r
++      id             = { type = 22400 id = 203 }\r
+       name           = "第17航空隊"\r
+       type           = interceptor\r
+       model          = 4\r
+@@ -439,19 +431,19 @@ country = {
+     }\r
+   }\r
+   airunit = { \r
+-    id       = { type = 22400 id = 68 }\r
++    id       = { type = 22400 id = 204 }\r
+     name     = "広東爆撃機部隊"\r
+     location = 1369\r
+     base     = 1369\r
+     division = {\r
+-      id             = { type = 22400 id = 69 }\r
++      id             = { type = 22400 id = 205 }\r
+       name           = "第18航空隊"\r
+       type           = tactical_bomber\r
+       model          = 3\r
+       strength       = 35\r
+     }\r
+     division = {\r
+-      id             = { type = 22400 id = 70 }\r
++      id             = { type = 22400 id = 206 }\r
+       name           = "第19航空隊"\r
+       type           = tactical_bomber\r
+       model          = 3\r
+@@ -460,7 +452,7 @@ country = {
+   }\r
+ \r
+   division_development = {\r
+-    id             = { type = 22400 id = 14 }\r
++    id             = { type = 22400 id = 301 }\r
+     name           = "第25師"\r
+     type           = infantry\r
+     model          = 5\r
+@@ -472,7 +464,7 @@ country = {
+     brigade_model2 = 2\r
+   }\r
+   division_development = {\r
+-    id             = { type = 22400 id = 16 }\r
++    id             = { type = 22400 id = 302 }\r
+     name           = "第27師"\r
+     type           = infantry\r
+     model          = 5\r
+@@ -483,4 +475,9 @@ country = {
+     brigade_model1 = 0\r
+     brigade_model2 = 2\r
+   }\r
++\r
++  airdivision = { dormant = yes id = { type = 22400 id = 9001 } name = "第101戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22400 id = 9002 } name = "第102戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22400 id = 9003 } name = "第103戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22400 id = 9004 } name = "第104戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
+ }\r

@@ -1,0 +1,1841 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Fengtian_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Fengtian_events.txt [cp932]
+@@ -12,16 +12,15 @@
+ #id = 7636005 ロシア人の浸透\r
+ #id = 7636006 朝鮮人の移民\r
+ #id = 7636007 共和国軍再編\r
+-#id = 7636008 宗社党の反乱\r
+-#id = 7636009 南満州鉄道の経営悪化\r
+-#id = 7636010 南満州鉄道の売却\r
+-#id = 7636011 南満州鉄道改修に対する出資\r
+-#id = 7636012 南満州鉄道改修の完了\r
+-#id = 7636013 南満州鉄道改修の完了 ― 利益の拡大\r
+-#id = 7636014 南満州鉄道の発展\r
+-#id = 7636015 南満州鉄道の破産\r
+-#id = 7636016 南満州鉄道が破産\r
+-#id = 7636017 馬賊の襲撃\r
++#id = 7636008 南満州鉄道の経営悪化\r
++#id = 7636009 南満州鉄道の売却\r
++#id = 7636010 南満州鉄道改修に対する出資\r
++#id = 7636011 南満州鉄道改修の完了\r
++#id = 7636012 南満州鉄道改修の完了 ― 利益の拡大\r
++#id = 7636013 南満州鉄道の発展\r
++#id = 7636014 南満州鉄道の破産\r
++#id = 7636015 南満州鉄道が破産\r
++#id = 7636016 馬賊の襲撃\r
+ #id = 7636018 急速な経済成長（第一段階）\r
+ #id = 7636019 急速な経済成長（第二段階）\r
+ #id = 7636020 急速な経済成長（第三段階）\r
+@@ -29,25 +28,29 @@
+ #id = 7636022 急速な経済成長（第五段階）\r
+ #id = 7636023 首都の遷都\r
+ #id = 7636024 首都機能の回復\r
+-#id = 7636025 珍宝島事件\r
+-#id = 7636026 珍宝島事件\r
+-#id = 7636027 ソ連との停戦\r
+-#id = 7636028 奉天共和国の和平提案\r
+-#id = 7636029 東三省陥落\r
+-#id = 7636030 奉天人民政府の成立\r
+-#id = 7636031 一貫道の教勢拡大\r
+-#id = 7636032 一貫道が政府に協力\r
+-#id = 7636033 既存宗教による一貫道批判\r
+-#id = 7636034 一貫道による蜂起\r
+-#id = 7636035 一貫道の聖戦宣言\r
+-#id = 7636036 張作霖の逝去\r
+-#id = 7636037 奉天共和国の決断\r
+-#id = 7636038 奉天共和国が救援を要請（USA JAP UER）\r
+-#id = 7636039 外国が奉天共和国との戦争に介入（CHI CHC UCH U74 ENG FRA USA GER ITA JAP UER SOV）\r
+-#id = 7636040 奉天共和国からの撤退要求が拒否される（USA JAP UER）\r
+-#id = 7636041 奉天共和国が降伏（CHI CHC UCH U74）\r
+-#id = 7636042 ハルハ川の戦い（U67）\r
+-#id = 7636043 ハルハ川の戦い（UER SOV）\r
++#id = 7636025 珍宝島事件（UER SOV）\r
++#id = 7636026 珍宝島事件（U67）\r
++#id = 7636027 珍宝島事件 ― ロシアの侵攻\r
++#id = 7636028 ソ連との停戦\r
++#id = 7636029 奉天共和国の和平提案\r
++#id = 7636030 東三省陥落\r
++#id = 7636031 奉天人民政府の成立\r
++#id = 7636032 一貫道の教勢拡大\r
++#id = 7636033 一貫道が政府に協力\r
++#id = 7636034 既存宗教による一貫道批判\r
++#id = 7636035 一貫道による蜂起\r
++#id = 7636036 一貫道の聖戦宣言\r
++#id = 7636037 張作霖の逝去\r
++#id = 7636038 奉天共和国の決断\r
++#id = 7636039 奉天共和国が救援を要請（USA JAP UER）\r
++#id = 7636040 外国が奉天共和国との戦争に介入（CHI CHC UCH U74 ENG FRA USA GER ITA JAP UER SOV）\r
++#id = 7636041 奉天共和国からの撤退要求が拒否される（USA JAP UER）\r
++#id = 7636042 奉天共和国が降伏（CHI CHC UCH U74）\r
++#id = 7636043 宗社党の反乱（U67）\r
++#id = 7636044 宗社党の反乱（MAN）\r
++#id = 7636045 宗社党の反乱 ― 内戦（MAN U67）\r
++#id = 7636046 宗社党の反乱－勝利（U67）\r
++#id = 7636047 宗社党の反乱－勝利（MAN）\r
+ #########################################################################\r
+ # 奉天軍閥ルート\r
+ #########################################################################\r
+@@ -171,18 +174,15 @@ event = {
+ 	save_date = yes\r
+ \r
+ 	decision = {\r
+-	event = 6959001 # 陰る満洲の覇者\r
+ 	NOT = { ispuppet = U67 }\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = 6959001 # 陰る満洲の覇者\r
+ 	owned = { province = 1214 data = U67 } # 瀋陽（しんよう）\r
+ 	NOT = { ispuppet = U67 }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 6959001 # 陰る満洲の覇者\r
+ 	owned = { province = 1214 data = U67 } # 瀋陽（しんよう）\r
+ 	NOT = { ispuppet = U67 }\r
+ 	}\r
+@@ -338,46 +338,6 @@ event = {
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  宗社党の反乱\r
+-# 宗社党とは、清朝再興を画策する政治集団であり、奉天派の軍隊などに弾圧されたことで壊滅していた筈だった。\r
+-# しかし宗社党の残党は、熱河省で活動を続け、その影響力は熱河省全域に拡大。\r
+-# 奉天共和国政府は、これ以上の勢力拡大を阻止するために、再結成した宗社党を弾圧する方針を打ち出したが、\r
+-# これは宗社党の反感を招き、残党は各地で一斉に蜂起した。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 7636008\r
+-	random = no\r
+-	country = U67\r
+-\r
+-	trigger = {\r
+-	owned = { province = 1235 data = U67 } # 阜新（フーシン）\r
+-	owned = { province = 1236 data = U67 } # 承徳（チェンドー）\r
+-	owned = { province = 1237 data = U67 } # 赤峰（ウランハダ）\r
+-	}\r
+-\r
+-	name = "EVT_7636008_NAME" \r
+-	desc = "EVT_7636008_DESC"\r
+-	style = 2\r
+-	picture = "ccip_restoration"\r
+-	\r
+-	date = { day = 0 month = 8 year = 1933 }\r
+-	offset = 8\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
+-\r
+-	action = { # 鎮圧せよ！\r
+-	name = "ACTIONNAME7636008A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = revolt which = 1235 }\r
+-	command = { type = revolt which = 1235 }\r
+-	command = { type = revolt which = 1236 }\r
+-	command = { type = revolt which = 1236 }\r
+-	command = { type = revolt which = 1237 }\r
+-	command = { type = revolt which = 1237 }\r
+-	}\r
+-}\r
+-\r
+ #########################################################################\r
+ #  南満州鉄道の経営悪化\r
+ # 南満州鉄道は、満州地域の不安定とともに振り回され続けた鉄道である。\r
+@@ -391,7 +351,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636009\r
++	id = 7636008\r
+ 	random = no\r
+ 	country = USA\r
+ \r
+@@ -405,8 +365,8 @@ event = {
+ 	}\r
+ 	}\r
+ \r
+-	name = "EVT_7636009_NAME"\r
+-	desc = "EVT_7636009_DESC"\r
++	name = "EVT_7636008_NAME"\r
++	desc = "EVT_7636008_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+@@ -415,20 +375,20 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 路線を維持する\r
+-	name = "ACTIONNAME7636009A"\r
++	name = "ACTIONNAME7636008A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { trigger = { ai = no } type = money value = -300 }\r
+ 	command = { type = relation which = U67 value = 10 }\r
+-	command = { type = event which = 7636015 where = USA when = 360  }\r
++	command = { type = event which = 7636014 where = USA when = 360  }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 路線を売却する\r
+-	name = "ACTIONNAME7636009B"\r
++	name = "ACTIONNAME7636008B"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { trigger = { ai = no } type = money value = 300 }\r
+ 	command = { type = relation which = U67 value = 10 }\r
+-	command = { type = event which = 7636010 where = U67 when = 0  }\r
++	command = { type = event which = 7636009 where = U67 when = 0  }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -446,18 +406,18 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636010\r
++	id = 7636009\r
+ 	random = no\r
+ 	country = U67\r
+ 	save_date = yes\r
+ \r
+-	name = "EVT_7636010_NAME"\r
+-	desc = "EVT_7636010_DESC"\r
++	name = "EVT_7636009_NAME"\r
++	desc = "EVT_7636009_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+ 	action = { # 最低限の改修を行おう\r
+-	name = "ACTIONNAME7636010A"\r
++	name = "ACTIONNAME7636009A"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { trigger = { ai = no } type = money value = -20 }\r
+ 	command = { type = relation which = USA value = 5 }\r
+@@ -465,16 +425,16 @@ event = {
+ 	command = { type = relation which = FRA value = 5 }\r
+ 	command = { type = building_prod_mod which = infrastructure value = 10 }\r
+ 	command = { type = building_prod_mod which = ic value = 10 }\r
+-	command = { type = event which = 7636011 where = USA when = 7 }\r
+-	command = { type = event which = 7636011 where = ENG when = 7 }\r
+-	command = { type = event which = 7636011 where = FRA when = 7 }\r
+-	command = { type = event which = 7636012 where = U67 when = 360 }\r
++	command = { type = event which = 7636010 where = USA when = 7 }\r
++	command = { type = event which = 7636010 where = ENG when = 7 }\r
++	command = { type = event which = 7636010 where = FRA when = 7 }\r
++	command = { type = event which = 7636011 where = U67 when = 360 }\r
+ 	command = { type = setflag which = Bazoku_Railway }\r
+ 	ai_chance = 60\r
+ 	}\r
+ \r
+ 	action = { # 大規模な改修を実施しよう\r
+-	name = "ACTIONNAME7636010B"\r
++	name = "ACTIONNAME7636009B"\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { trigger = { ai = no } type = money value = -500 }\r
+ 	command = { type = relation which = USA value = 20 }\r
+@@ -482,7 +442,7 @@ event = {
+ 	command = { type = relation which = FRA value = 20 }\r
+ 	command = { type = building_prod_mod which = infrastructure value = 10 }\r
+ 	command = { type = building_prod_mod which = ic value = 10 }\r
+-	command = { type = event which = 7636014 where = U67 when = 360 }\r
++	command = { type = event which = 7636013 where = U67 when = 360 }\r
+ 	ai_chance = 40\r
+ 	}\r
+ }\r
+@@ -495,35 +455,35 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636011\r
++	id = 7636010\r
+ 	random = no\r
+ 	TAG = { USA ENG FRA }\r
+ 	persistent = yes\r
+ \r
+-	name = "EVT_7636011_NAME"\r
+-	desc = "EVT_7636011_DESC"\r
++	name = "EVT_7636010_NAME"\r
++	desc = "EVT_7636010_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+ 	action = { # 出資する\r
+-	name = "ACTIONNAME7636011A"\r
++	name = "ACTIONNAME7636010A"\r
+ 	trigger = { country = USA }\r
+ 	command = { type = dissent value = 1 }\r
+ 	command = { trigger = { ai = no } type = money value = -150 }\r
+ 	command = { type = relation which = U67 value = 10 }\r
+ 	command = { type = setflag which = Manchuria_Railway_Renovation_USA }\r
+-	ai_chance = 80\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 出資しない\r
+-	name = "ACTIONNAME7636011B"\r
++	name = "ACTIONNAME7636010B"\r
+ 	trigger = { country = USA }\r
+ 	command = { type = relation which = U67 value = -10 }\r
+-	ai_chance = 20\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 出資する\r
+-	name = "ACTIONNAME7636011A"\r
++	name = "ACTIONNAME7636010A"\r
+ 	trigger = { country = ENG }\r
+ 	command = { type = dissent value = 1 }\r
+ 	command = { trigger = { ai = no } type = money value = -150 }\r
+@@ -533,14 +493,14 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 出資しない\r
+-	name = "ACTIONNAME7636011B"\r
++	name = "ACTIONNAME7636010B"\r
+ 	trigger = { country = ENG }\r
+ 	command = { type = relation which = U67 value = -10 }\r
+ 	ai_chance = 55\r
+ 	}\r
+ \r
+ 	action = { # 出資する\r
+-	name = "ACTIONNAME7636011A"\r
++	name = "ACTIONNAME7636010A"\r
+ 	trigger = { country = FRA }\r
+ 	command = { type = dissent value = 1 }\r
+ 	command = { trigger = { ai = no } type = money value = -150 }\r
+@@ -550,7 +510,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 出資しない\r
+-	name = "ACTIONNAME7636011B"\r
++	name = "ACTIONNAME7636010B"\r
+ 	trigger = { country = FRA }\r
+ 	command = { type = relation which = U67 value = -10 }\r
+ 	ai_chance = 80\r
+@@ -559,17 +519,17 @@ event = {
+ \r
+ #########################################################################\r
+ #  南満州鉄道改修の完了\r
+-# アメリカが保有していた南満州鉄道が奉天共和国に売却された後、奉天政府による回収が行われた。\r
++# アメリカが保有していた南満州鉄道が奉天共和国に売却された後、奉天政府による改修が行われた。\r
+ # 設備や線路の整備などが最低限行われただけだが、それでも物流などが改善されたことで、南満州鉄道は赤字経営から脱却しつつある。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636012\r
++	id = 7636011\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+-	name = "EVT_7636012_NAME"\r
+-	desc = "EVT_7636012_DESC"\r
++	name = "EVT_7636011_NAME"\r
++	desc = "EVT_7636011_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+@@ -586,28 +546,28 @@ event = {
+ 	command = { type = construct which = infrastructure where = 1203 value = 10 } # 齊齊哈爾（チチハル）\r
+ 	command = { type = construct which = infrastructure where = 1217 value = 10 } # 鞍山（アンシャン）\r
+ 	command = { type = construct which = infrastructure where = 1219 value = 10 } # 旅順港（リューシュン）\r
+-	command = { trigger = { flag = Manchuria_Railway_Renovation_USA } type = event which = 7636013 where = USA when = 1 }\r
+-	command = { trigger = { flag = Manchuria_Railway_Renovation_ENG } type = event which = 7636013 where = ENG when = 1 }\r
+-	command = { trigger = { flag = Manchuria_Railway_Renovation_FRA } type = event which = 7636013 where = FRA when = 1 }\r
++	command = { trigger = { flag = Manchuria_Railway_Renovation_USA } type = event which = 7636012 where = USA when = 1 }\r
++	command = { trigger = { flag = Manchuria_Railway_Renovation_ENG } type = event which = 7636012 where = ENG when = 1 }\r
++	command = { trigger = { flag = Manchuria_Railway_Renovation_FRA } type = event which = 7636012 where = FRA when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+ #  南満州鉄道改修の完了 ― 利益の拡大\r
+-# アメリカが保有していた南満州鉄道が奉天共和国に売却された後、奉天政府による回収が行われた。\r
++# アメリカが保有していた南満州鉄道が奉天共和国に売却された後、奉天政府による改修が行われた。\r
+ # 設備や線路の整備などが最低限行われただけだが、それでも物流などが改善されたことで、南満州鉄道は赤字経営から脱却しつつある。\r
+ # 我が国は出資していたことで、対価を得ることができる。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636013\r
++	id = 7636012\r
+ 	random = no\r
+ 	TAG = { USA ENG FRA }\r
+ 	persistent = yes\r
+ \r
+-	name = "EVT_7636013_NAME"\r
+-	desc = "EVT_7636013_DESC"\r
++	name = "EVT_7636012_NAME"\r
++	desc = "EVT_7636012_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+@@ -644,18 +604,18 @@ event = {
+ \r
+ #########################################################################\r
+ #  南満州鉄道の発展\r
+-# アメリカが保有していた南満州鉄道が奉天共和国に売却された後、奉天政府による回収が行われた。\r
++# アメリカが保有していた南満州鉄道が奉天共和国に売却された後、奉天政府による改修が行われた。\r
+ # 設備や線路の整備、路線周辺の警備体制が強化されたことで、物流などが大きく発展し、\r
+ # 今や南満州鉄道周辺は、見違えるほど発展している。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636014\r
++	id = 7636013\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+-	name = "EVT_7636014_NAME"\r
+-	desc = "EVT_7636014_DESC"\r
++	name = "EVT_7636013_NAME"\r
++	desc = "EVT_7636013_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+@@ -689,21 +649,21 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636015\r
++	id = 7636014\r
+ 	random = no\r
+ 	country = USA\r
+ \r
+-	name = "EVT_7636015_NAME"\r
+-	desc = "EVT_7636015_DESC"\r
++	name = "EVT_7636014_NAME"\r
++	desc = "EVT_7636014_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+ 	action = { # 畜生！\r
+-	name = "ACTIONNAME7636015A"\r
++	name = "ACTIONNAME7636014A"\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = money value = -250 }\r
+ 	command = { type = relation which = U67 value = -15 }\r
+-	command = { type = event which = 7636016 where = U67 when = 0 }\r
++	command = { type = event which = 7636015 where = U67 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -713,17 +673,17 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636016\r
++	id = 7636015\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+-	name = "EVT_7636016_NAME"\r
+-	desc = "EVT_7636015_DESC"\r
++	name = "EVT_7636015_NAME"\r
++	desc = "EVT_7636014_DESC"\r
+ 	style = 2\r
+ 	picture = "baghdad_railway"\r
+ \r
+ 	action = { # 畜生…\r
+-	name = "ACTIONNAME7636016A"\r
++	name = "ACTIONNAME7636015A"\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = money value = -50 }\r
+ 	command = { type = industrial_modifier which = oil value = -5 }\r
+@@ -746,24 +706,24 @@ event = {
+ # 防衛部隊は、懸命に反撃を行っているが、人員の不足や監視施設が少ないことから、馬賊に翻弄され続けている。\r
+ #########################################################################\r
+ event = {\r
+-	id = 7636017\r
++	id = 7636016\r
+ 	random = no\r
+ 	country = U67\r
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+-	event = 7636010 # 南満州鉄道の売却\r
++	event = 7636009 # 南満州鉄道の売却\r
+ 	flag = Bazoku_Railway\r
+ 	OR = {\r
+ 	AND = { dissent = 20 random = 15 }\r
+ 	AND = { dissent = 10 random = 12 }\r
+-	random = 7\r
++	random = 4\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_7636017_NAME"\r
+-	desc = "EVT_7636017_DESC"\r
++	name = "EVT_7636016_NAME"\r
++	desc = "EVT_7636016_DESC"\r
+ 	style = 2\r
+ 	picture = "Bazoku"\r
+ \r
+@@ -772,7 +732,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = { # おのれ！\r
+-	name = "ACTIONNAME7636017A"\r
++	name = "ACTIONNAME7636016A"\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = supplies value = -50  }\r
+ 	command = { type = money value = -10  }\r
+@@ -780,7 +740,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 馬賊に反撃するのだ\r
+-	name = "ACTIONNAME7636017B"\r
++	name = "ACTIONNAME7636016B"\r
+ 	command = { type = supplies value = -150  }\r
+ 	command = { type = money value = -30  }\r
+ 	ai_chance = 30\r
+@@ -798,12 +758,12 @@ event = {
+ 	country = U67\r
+ \r
+ 	trigger = {\r
+-	event = { id = 7636010 days = 400 } # 南満州鉄道の売却\r
++	event = { id = 7636009 days = 400 } # 南満州鉄道の売却\r
+ 	OR = {\r
+-	event = 7636012 # 南満州鉄道改修の完了\r
+-	event = 7636014 # 南満州鉄道の発展\r
++	event = 7636011 # 南満州鉄道改修の完了\r
++	event = 7636013 # 南満州鉄道の発展\r
+ 	}\r
+-	NOT = { event = 7636016 } # 南満州鉄道が破産\r
++	NOT = { event = 7636015 } # 南満州鉄道が破産\r
+ 	NOT = { ispuppet = yes }\r
+ 	atwar = no\r
+ 	}\r
+@@ -855,12 +815,12 @@ event = {
+ 	country = U67\r
+ \r
+ 	trigger = {\r
+-	event = { id = 7636010 days = 760 } # 南満州鉄道の売却\r
++	event = { id = 7636009 days = 760 } # 南満州鉄道の売却\r
+ 	OR = {\r
+-	event = 7636012 # 南満州鉄道改修の完了\r
+-	event = 7636014 # 南満州鉄道の発展\r
++	event = 7636011 # 南満州鉄道改修の完了\r
++	event = 7636013 # 南満州鉄道の発展\r
+ 	}\r
+-	NOT = { event = 7636016 } # 南満州鉄道が破産\r
++	NOT = { event = 7636015 } # 南満州鉄道が破産\r
+ 	NOT = { ispuppet = yes }\r
+ 	atwar = no\r
+ 	}\r
+@@ -912,12 +872,12 @@ event = {
+ 	country = U67\r
+ \r
+ 	trigger = {\r
+-	event = { id = 7636010 days = 1120 } # 南満州鉄道の売却\r
++	event = { id = 7636009 days = 1120 } # 南満州鉄道の売却\r
+ 	OR = {\r
+-	event = 7636012 # 南満州鉄道改修の完了\r
+-	event = 7636014 # 南満州鉄道の発展\r
++	event = 7636011 # 南満州鉄道改修の完了\r
++	event = 7636013 # 南満州鉄道の発展\r
+ 	}\r
+-	NOT = { event = 7636016 } # 南満州鉄道が破産\r
++	NOT = { event = 7636015 } # 南満州鉄道が破産\r
+ 	NOT = { ispuppet = yes }\r
+ 	atwar = no\r
+ 	}\r
+@@ -969,12 +929,12 @@ event = {
+ 	country = U67\r
+ \r
+ 	trigger = {\r
+-	event = { id = 7636010 days = 1480 } # 南満州鉄道の売却\r
++	event = { id = 7636009 days = 1480 } # 南満州鉄道の売却\r
+ 	OR = {\r
+-	event = 7636012 # 南満州鉄道改修の完了\r
+-	event = 7636014 # 南満州鉄道の発展\r
++	event = 7636011 # 南満州鉄道改修の完了\r
++	event = 7636013 # 南満州鉄道の発展\r
+ 	}\r
+-	NOT = { event = 7636016 } # 南満州鉄道が破産\r
++	NOT = { event = 7636015 } # 南満州鉄道が破産\r
+ 	NOT = { ispuppet = yes }\r
+ 	atwar = no\r
+ 	}\r
+@@ -1026,12 +986,12 @@ event = {
+ 	country = U67\r
+ \r
+ 	trigger = {\r
+-	event = { id = 7636010 days = 1850 } # 南満州鉄道の売却\r
++	event = { id = 7636009 days = 1850 } # 南満州鉄道の売却\r
+ 	OR = {\r
+-	event = 7636012 # 南満州鉄道改修の完了\r
+-	event = 7636014 # 南満州鉄道の発展\r
++	event = 7636011 # 南満州鉄道改修の完了\r
++	event = 7636013 # 南満州鉄道の発展\r
+ 	}\r
+-	NOT = { event = 7636016 } # 南満州鉄道が破産\r
++	NOT = { event = 7636015 } # 南満州鉄道が破産\r
+ 	NOT = { ispuppet = yes }\r
+ 	atwar = no\r
+ 	}\r
+@@ -1076,7 +1036,7 @@ event = {
+ \r
+ #########################################################################\r
+ #  首都の遷都\r
+-# 中華民国との戦争が勃発したことで、首都が危険にさらされている。\r
++# 戦争が勃発したことで、首都が危険にさらされている。\r
+ # 首都機能を移転するべきという政府の声が上がっているが、どうするべきだろうか？\r
+ #########################################################################\r
+ \r
+@@ -1093,7 +1053,12 @@ event = {
+ 	control = { province = 1208 data = U67 } # 長春（チャンチュン）\r
+ 	control = { province = 1214 data = U67 } # 瀋陽（しんよう）\r
+ 	}\r
++	OR = {\r
+ 	war = { country = CHI country = U67 }\r
++	war = { country = CHC country = U67 }\r
++	war = { country = U36 country = U67 }\r
++	war = { country = U74 country = U67 }\r
++	}\r
+ 	NOT = { local_flag = U67_Capital }\r
+ 	}\r
+ \r
+@@ -1108,7 +1073,6 @@ event = {
+ 	action = { # 哈爾濱（ハルビン）に遷都する\r
+ 	trigger = {\r
+ 	control = { province = 1199 data = U67 } # 哈爾濱（ハルビン）\r
+-	NOT = { war = { country = U67 country = SOV } }\r
+ 	}\r
+ 	name = "ACTIONNAME7636023A"\r
+ 	command = { type = capital which = 1199 }\r
+@@ -1119,7 +1083,6 @@ event = {
+ 	action = { # 齊齊哈爾（チチハル）に遷都する\r
+ 	trigger = {\r
+ 	control = { province = 1203 data = U67 }\r
+-	NOT = { war = { country = U67 country = SOV } }\r
+ 	}\r
+ 	name = "ACTIONNAME7636023B"\r
+ 	command = { type = capital which = 1203 }\r
+@@ -1130,7 +1093,6 @@ event = {
+ 	action = { # 長春（チャンチュン）に遷都する\r
+ 	trigger = {\r
+ 	control = { province = 1208 data = U67 }\r
+-	NOT = { war = { country = U67 country = SOV } }\r
+ 	}\r
+ 	name = "ACTIONNAME7636023C"\r
+ 	command = { type = capital which = 1208 }\r
+@@ -1138,10 +1100,9 @@ event = {
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+-	action = { # 瀋陽（しんよう）に遷都する\r
++	action = { # 瀋陽（シェンヤン）に遷都する\r
+ 	trigger = {\r
+ 	control = { province = 1214 data = U67 }\r
+-	NOT = { war = { country = U67 country = SOV } }\r
+ 	}\r
+ 	name = "ACTIONNAME7636023D"\r
+ 	command = { type = capital which = 1214 }\r
+@@ -1159,7 +1120,7 @@ event = {
+ \r
+ #########################################################################\r
+ #  首都機能の回復\r
+-# 中華民国との戦争が終結したことで、再び首都を戻すことが可能になった。\r
++# 戦争が終結したことで、再び首都を戻すことが可能になった。\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -1169,7 +1130,12 @@ event = {
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+-	NOT = { war = { country = CHI country = U67 } }\r
++	NOT = {\r
++	war = { country = CHI country = U67 }\r
++	war = { country = CHC country = U67 }\r
++	war = { country = U36 country = U67 }\r
++	war = { country = U74 country = U67 }\r
++	}\r
+ 	control = { province = 1247 data = U67 } # 北京（ベイジン）\r
+ 	local_flag = U67_Capital\r
+ 	}\r
+@@ -1190,15 +1156,15 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 新たな首都の方がよさそうだ\r
+-	name = "ACTIONNAME7636024B"	\r
+-	command = { type = sleepevent which = 7636022 }\r
++	name = "ACTIONNAME7636023B"	\r
+ 	command = { type = sleepevent which = 7636023 }\r
++	command = { type = sleepevent which = 7636024 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  珍宝島事件\r
++#  珍宝島事件（UER SOV）\r
+ # 清とロシア帝国の間のアイグン条約や1860年の北京条約などで国境は画定されていたが、\r
+ # 中華民国はこれらは不平等条約であるとして改正を求め、国境における小競り合いは度々起きていた。\r
+ # その後、列強の介入により奉天共和国が建国されると、国境紛争が激化。\r
+@@ -1208,19 +1174,44 @@ event = {
+ event = {\r
+ 	id = 7636025\r
+ 	random = no\r
+-	country = UER\r
++	TAG = { UER SOV }\r
+ 	save_date = yes\r
+ \r
+ 	trigger = {\r
++	OR = {\r
++	country = UER\r
++	country = SOV\r
++	}\r
++	OR = {\r
++	AND = {\r
+ 	exists = UER\r
++	NOT = { exists = SOV }\r
++	}\r
++	AND = {\r
++	exists = SOV\r
++	NOT = { exists = UER }\r
++	}\r
++	}\r
+ 	exists = U67\r
+ 	NOT = { alliance = {  country = UER country = U67 } }\r
++	NOT = { alliance = {  country = SOV country = U67 } }\r
+ 	NOT = { alliance = {  country = USA country = U67 } }\r
+ 	NOT = { war = { country = UER country = U67 } }\r
+ 	NOT = { war = { country = UER country = CHI } }\r
++	NOT = { war = { country = UER country = CHC } }\r
++	NOT = { war = { country = UER country = U36 } }\r
++	NOT = { war = { country = UER country = U74 } }\r
+ 	NOT = { war = { country = UER country = USA } }\r
+ 	NOT = { war = { country = UER country = JAP } }\r
++	NOT = { war = { country = SOV country = U67 } }\r
++	NOT = { war = { country = SOV country = CHI } }\r
++	NOT = { war = { country = SOV country = CHC } }\r
++	NOT = { war = { country = SOV country = U36 } }\r
++	NOT = { war = { country = SOV country = U74 } }\r
++	NOT = { war = { country = SOV country = USA } }\r
++	NOT = { war = { country = SOV country = JAP } }\r
+ 	NOT = { ispuppet = UER }\r
++	NOT = { ispuppet = SOV }\r
+ 	NOT = { ispuppet = U67 }\r
+ 	random = 25\r
+ 	}\r
+@@ -1234,7 +1225,7 @@ event = {
+ 	offset = 4\r
+ 	deathdate = { day = 29 month = 11 year = 1935 }\r
+ \r
+-	action = { # 帝國主義者の攻撃が激しくなっている…\r
++	action = { # この戦いは我々の敗北だ\r
+ 	name = "ACTIONNAME7636025A"\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = belligerence which = UER value = 1 }\r
+@@ -1242,11 +1233,11 @@ event = {
+         command = { type = manpowerpool value = -1 }\r
+         command = { type = supplies value = -250 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = event which = 7636026 where = U67 when = 0 } # 朝鮮人民の蜂起\r
++	command = { type = event which = 7636026 where = U67 when = 0 } # 珍宝島事件（U67）\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 痛い目に合わせなくては！\r
++	action = { # この敗北の恨みを晴らさねば\r
+ 	name = "ACTIONNAME7636025B"\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = belligerence which = UER value = 3 }\r
+@@ -1256,10 +1247,15 @@ event = {
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = end_non_aggression which = UER where = U67 }\r
+ 	command = { type = war which = U67 }\r
++	command = { type = event which = 7636027 where = U67 when = 0 } # 珍宝島事件（U67）\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  珍宝島事件（U67）\r
++#########################################################################\r
++\r
+ event = {\r
+ 	id = 7636026\r
+ 	random = no\r
+@@ -1282,6 +1278,33 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  珍宝島事件 ― ロシアの侵攻\r
++#########################################################################\r
++\r
++event = {\r
++	id = 7636027\r
++	random = no\r
++	country = U67\r
++	save_date = yes\r
++\r
++	name = "EVT_7636027_NAME"\r
++	desc = "EVT_7636027_DESC"\r
++	style = 2\r
++	picture = "ccip_fcseige"\r
++\r
++	action = { # 反撃せよ\r
++	name = "ACTIONNAME7636027A"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = belligerence which = U67 value = -1 }\r
++	command = { type = relation which = UER value = -150 }\r
++        command = { type = manpowerpool value = -1 }\r
++        command = { type = supplies value = -250 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  ロシアとの停戦\r
+ # 我が国はロシアとの軍事衝突において、防衛戦で勝利を収めつあった。\r
+@@ -1289,27 +1312,48 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636027\r
++	id = 7636028\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+ 	trigger = {\r
++	OR = {\r
++	AND = {\r
++	exists = UER\r
++	NOT = { exists = SOV }\r
+ 	war = { country = UER country = U67 }\r
++	}\r
++	AND = {\r
++	exists = SOV\r
++	NOT = { exists = UER }\r
++	war = { country = SOV country = U67 }\r
++	}\r
++	}\r
+ 	OR = {\r
+-	event = { id = 7636025 days = 480 } # 珍宝島事件\r
++	event = { id = 7636027 days = 240 } # 珍宝島事件\r
+ 	control = { province = 1190 data = U67 } # ハバロフスク\r
+ 	}\r
+ 	NOT = { alliance = {  country = UER country = U67 } }\r
++	NOT = { alliance = {  country = SOV country = U67 } }\r
+ 	NOT = { alliance = {  country = USA country = U67 } }\r
+ 	NOT = { war = { country = UER country = CHI } }\r
++	NOT = { war = { country = UER country = CHC } }\r
++	NOT = { war = { country = UER country = U36 } }\r
++	NOT = { war = { country = UER country = U74 } }\r
+ 	NOT = { war = { country = UER country = USA } }\r
+ 	NOT = { war = { country = UER country = JAP } }\r
++	NOT = { war = { country = SOV country = CHI } }\r
++	NOT = { war = { country = SOV country = CHC } }\r
++	NOT = { war = { country = SOV country = U36 } }\r
++	NOT = { war = { country = SOV country = U74 } }\r
++	NOT = { war = { country = SOV country = USA } }\r
++	NOT = { war = { country = SOV country = JAP } }\r
+ 	NOT = { ispuppet = UER }\r
+ 	NOT = { ispuppet = U67 }\r
+ 	}\r
+ \r
+-	name = "EVT_7636027_NAME"\r
+-	desc = "EVT_7636027_DESC"\r
++	name = "EVT_7636028_NAME"\r
++	desc = "EVT_7636028_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_fcseige"\r
+ \r
+@@ -1318,16 +1362,17 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1935 }\r
+ \r
+ 	action = { # 停戦を提案しよう\r
+-	name = "ACTIONNAME7636027A"\r
++	name = "ACTIONNAME7636028A"\r
+ 	command = { type = dissent value = -1 }\r
+-	command = { type = event which = 7636028 where = UER when = 0 } # 奉天共和国の和平提案\r
+-	ai_chance = 70\r
++	command = { trigger = { war = { country = UER country = U67 } } type = event which = 7636029 where = UER when = 0 } # 奉天共和国の和平提案\r
++	command = { trigger = { war = { country = SOV country = U67 } } type = event which = 7636029 where = SOV when = 0 } # 奉天共和国の和平提案\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 戦争を継続せよ\r
+-	name = "ACTIONNAME7636027B"\r
++	name = "ACTIONNAME7636028B"\r
+ 	command = { type = dissent value = 5 }\r
+-	ai_chance = 30\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -1338,29 +1383,31 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636028\r
++	id = 7636029\r
+ 	random = no\r
+-	country = UER\r
++	TAG = { UER SOV }\r
+ \r
+-	name = "EVT_7636028_NAME"\r
+-	desc = "EVT_7636028_DESC"\r
++	name = "EVT_7636029_NAME"\r
++	desc = "EVT_7636029_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_fcseige"\r
+ \r
+ 	action = { # 提案を受け入れよう\r
+-	name = "ACTIONNAME7636028A"\r
++	name = "ACTIONNAME7636029A"\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = belligerence which = U67 value = 1 }\r
+ 	command = { type = peace which = U67 value = 0 }\r
+-	command = { type = trade which = UER where = U67 supplies = 10 money = 2 when = 3600 value = 1 }\r
+-	command = { type = non_aggression which = U67 where = UER when = 3600 }\r
++	command = { trigger = { country = UER } type = trade which = UER where = U67 supplies = 10 money = 2 when = 3600 value = 1 }\r
++	command = { trigger = { country = SOV } type = trade which = SOV where = U67 supplies = 10 money = 2 when = 3600 value = 1 }\r
++	command = { trigger = { country = UER } type = non_aggression which = U67 where = UER when = 3600 }\r
++	command = { trigger = { country = SOV } type = non_aggression which = U67 where = SOV when = 3600 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 講和など受け入れない！\r
+-	name = "ACTIONNAME7636028B"\r
++	name = "ACTIONNAME7636029B"\r
+ 	command = { type = dissent value = 15 }\r
+-	ai_chance = 100\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -1371,26 +1418,49 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636029\r
++	id = 7636030\r
+ 	random = no\r
+-	country = UER\r
++	TAG = { UER SOV }\r
+ \r
+ 	trigger = {\r
++	OR = {\r
++	AND = {\r
++	exists = UER\r
++	NOT = { exists = SOV }\r
+ 	war = { country = UER country = U67 }\r
+-	NOT = { event = { id = 7636025 days = 480 } } # 珍宝島事件\r
+-	control = { province = 1199 data = U67 } # 哈爾濱（ハルビン）\r
+-	control = { province = 1203 data = U67 } # 齊齊哈爾（チチハル）\r
++	}\r
++	AND = {\r
++	exists = SOV\r
++	NOT = { exists = UER }\r
++	war = { country = SOV country = U67 }\r
++	}\r
++	}\r
++	NOT = { event = { id = 7636027 days = 240 } } # 珍宝島事件\r
++	OR = {\r
++	control = { province = 1199 data = -1 } # 哈爾濱（ハルビン）\r
++	control = { province = 1203 data = -1 } # 齊齊哈爾（チチハル）\r
+ 	lost_national = { country = U67 value = 30 }\r
++	}\r
+ 	NOT = { alliance = {  country = USA country = U67 } }\r
+ 	NOT = { war = { country = UER country = CHI } }\r
++	NOT = { war = { country = UER country = CHC } }\r
++	NOT = { war = { country = UER country = U36 } }\r
++	NOT = { war = { country = UER country = U74 } }\r
+ 	NOT = { war = { country = UER country = USA } }\r
+ 	NOT = { war = { country = UER country = JAP } }\r
++	NOT = { war = { country = SOV country = CHI } }\r
++	NOT = { war = { country = SOV country = CHC } }\r
++	NOT = { war = { country = SOV country = U36 } }\r
++	NOT = { war = { country = SOV country = U74 } }\r
++	NOT = { war = { country = SOV country = USA } }\r
++	NOT = { war = { country = SOV country = JAP } }\r
+ 	NOT = { ispuppet = UER }\r
++	NOT = { ispuppet = SOV }\r
+ 	NOT = { ispuppet = U67 }\r
+ 	}\r
+ \r
+-	name = "EVT_7636029_NAME"\r
+-	desc = "EVT_7636029_DESC"\r
++	name = "EVT_7636030_NAME"\r
++	desc = "EVT_7636030_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_fcseige"\r
+ \r
+@@ -1399,17 +1469,17 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1935 }\r
+ \r
+ 	action = { # よしよし、認めよう\r
+-	name = "ACTIONNAME7636029A"\r
++	name = "ACTIONNAME7636030A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = belligerence which = U67 value = 2 }\r
+ 	command = { type = peace which = U67 value = 0 }\r
+ 	command = { type = make_puppet which = U67 }\r
+-	command = { type = event which = 7636030 where = U67 when = 0 } # 奉天人民政府の成立\r
++	command = { type = event which = 7636031 where = U67 when = 0 } # 奉天人民政府の成立\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 無用だ。戦争を継続する\r
+-	name = "ACTIONNAME7636029B"\r
++	name = "ACTIONNAME7636030B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	ai_chance = 0\r
+ 	}\r
+@@ -1423,12 +1493,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636030\r
++	id = 7636031\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+-	name = "EVT_7636030_NAME"\r
+-	desc = "EVT_7636030_DESC"\r
++	name = "EVT_7636031_NAME"\r
++	desc = "EVT_7636031_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_fs"\r
+ \r
+@@ -1485,7 +1555,7 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 7636031\r
++	id = 7636032\r
+ 	random = no\r
+ 	country = U67\r
+ 	save_date = yes\r
+@@ -1495,8 +1565,8 @@ event = {
+ 	NOT = { ispuppet = U67 }\r
+ 	}\r
+ \r
+-	name = "EVT_7636031_NAME"\r
+-	desc = "EVT_7636031_DESC"\r
++	name = "EVT_7636032_NAME"\r
++	desc = "EVT_7636032_DESC"\r
+ 	style = 2\r
+ 	picture = "Yiguandao"\r
+ \r
+@@ -1505,7 +1575,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+ 	action = { # 教団の布教活動を正式に認めよう\r
+-	name = "ACTIONNAME7636031A"\r
++	name = "ACTIONNAME7636032A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = domestic which = freedom value = -1  }\r
+ 	command = { type = local_setflag which = Yiguandao }\r
+@@ -1513,7 +1583,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 怪しい宗教など容認できない！\r
+-	name = "ACTIONNAME7636031B"\r
++	name = "ACTIONNAME7636032B"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = sleepminister which = 1150101 }\r
+ 	command = { type = sleepminister which = 1150102 }\r
+@@ -1522,10 +1592,10 @@ event = {
+ 	command = { type = sleepminister which = 1150105 }\r
+ 	command = { type = sleepminister which = 1150106 }\r
+ 	command = { type = domestic which = freedom value = 1 }\r
+-	command = { type = sleepevent which = 7636032 } # 一貫道\r
+-	command = { type = sleepevent which = 7636033 }\r
++	command = { type = sleepevent which = 7636033 } # 一貫道\r
+ 	command = { type = sleepevent which = 7636034 }\r
+ 	command = { type = sleepevent which = 7636035 }\r
++	command = { type = sleepevent which = 7636036 }\r
+ 	ai_chance = 80\r
+ 	}\r
+ }\r
+@@ -1537,20 +1607,20 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 7636032\r
++	id = 7636033\r
+ 	random = no\r
+ 	country = U67\r
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+-	event = 7636031 # 一貫道の教勢拡大\r
++	event = 7636032 # 一貫道の教勢拡大\r
+ 	local_flag = Yiguandao # 一貫道を認める\r
+ 	NOT = { government = communist }\r
+ 	random = 8\r
+ 	}\r
+ \r
+-	name = "EVT_7636032_NAME"\r
+-	desc = "EVT_7636032_DESC"\r
++	name = "EVT_7636033_NAME"\r
++	desc = "EVT_7636033_DESC"\r
+ 	style = 2\r
+ 	picture = "Yiguandao"\r
+ \r
+@@ -1559,7 +1629,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 吾が道、一を以て之を貫く\r
+-	name = "ACTIONNAME7636032A"\r
++	name = "ACTIONNAME7636033A"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = money value = 10 }\r
+ 	}\r
+@@ -1572,20 +1642,20 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 7636033\r
++	id = 7636034\r
+ 	random = no\r
+ 	country = U67\r
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+-	event = 7636031 # 一貫道の教勢拡大\r
++	event = 7636032 # 一貫道の教勢拡大\r
+ 	NOT = { local_flag = Yiguandao } # 一貫道を認める\r
+ 	NOT = { government = communist }\r
+ 	random = 8\r
+ 	}\r
+ \r
+-	name = "EVT_7636033_NAME"\r
+-	desc = "EVT_7636033_DESC"\r
++	name = "EVT_7636034_NAME"\r
++	desc = "EVT_7636034_DESC"\r
+ 	style = 2\r
+ 	picture = "Yiguandao"\r
+ \r
+@@ -1594,7 +1664,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action_a = { # おのれ！\r
+-	name = "ACTIONNAME7636033A"\r
++	name = "ACTIONNAME7636034A"\r
+ 	command = { type = dissent value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -1609,12 +1679,12 @@ event = {
+ ##########################################################################\r
+ \r
+ event = {\r
+-	id = 7636034\r
++	id = 7636035\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+ 	trigger = {\r
+-	event = { id = 7636031 days = 360 } # 一貫道の教勢拡大\r
++	event = { id = 7636032 days = 360 } # 一貫道の教勢拡大\r
+ 	NOT = { incabinet = 1150103 } # 張天然（ヂャン・テェンラン）\r
+ 	local_flag = Yiguandao # 一貫道を認める\r
+ 	NOT = { government = communist }\r
+@@ -1622,8 +1692,8 @@ event = {
+ 	random = 20\r
+ 	}\r
+ \r
+-	name = "EVT_7636034_NAME"\r
+-	desc = "EVT_7636034_DESC"\r
++	name = "EVT_7636035_NAME"\r
++	desc = "EVT_7636035_DESC"\r
+ 	style = 2\r
+ 	picture = "Yiguandao"\r
+ \r
+@@ -1632,7 +1702,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 一貫道による新たな国家だ！\r
+-	name = "ACTIONNAME7636034A"\r
++	name = "ACTIONNAME7636035A"\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = wakeminister which = 1150101 }\r
+ 	command = { type = wakeminister which = 1150102 }\r
+@@ -1668,7 +1738,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # つけあがった宗教家など潰してしまえ！\r
+-	name = "ACTIONNAME7636034B"\r
++	name = "ACTIONNAME7636035B"\r
+ 	command = { type = dissent value = 25 }\r
+ 	command = { type = sleepminister which = 1150101 }\r
+ 	command = { type = sleepminister which = 1150102 }\r
+@@ -1676,8 +1746,8 @@ event = {
+ 	command = { type = sleepminister which = 1150104 }\r
+ 	command = { type = sleepminister which = 1150105 }\r
+ 	command = { type = sleepminister which = 1150106 }\r
+-	command = { type = sleepevent which = 7636032 }\r
+ 	command = { type = sleepevent which = 7636033 }\r
++	command = { type = sleepevent which = 7636034 }\r
+ 	command = { type = sleepevent which = 7636035 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+ 	ai_chance = 40\r
+@@ -1692,12 +1762,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636035\r
++	id = 7636036\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+ 	decision = {\r
+-	event = 7636031 # 一貫道の教勢拡大\r
++	event = 7636032 # 一貫道の教勢拡大\r
+ 	local_flag = Yiguandao_country # 一貫道が国家を掌握\r
+ 	NOT = { ispuppet = U67 }\r
+ 	NOT = { government = communist }\r
+@@ -1705,7 +1775,7 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = 7636031 # 一貫道の教勢拡大\r
++	event = 7636032 # 一貫道の教勢拡大\r
+ 	OR = {\r
+ 	headofstate = 1150101 # 張天然（ヂャン・テェンラン）\r
+ 	headofstate = 1150104 # 孫慧明（スン・フイミン）\r
+@@ -1725,7 +1795,7 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 7636031 # 一貫道の教勢拡大\r
++	event = 7636032 # 一貫道の教勢拡大\r
+ 	local_flag = Yiguandao_country # 一貫道が国家を掌握\r
+ 	NOT = { ispuppet = U67 }\r
+ 	NOT = { government = communist }\r
+@@ -1733,8 +1803,8 @@ event = {
+ 	}\r
+ 	\r
+ \r
+-	name = "EVT_7636035_NAME"\r
+-	desc = "EVT_7636035_DESC"\r
++	name = "EVT_7636036_NAME"\r
++	desc = "EVT_7636036_DESC"\r
+ 	style = 2\r
+ 	picture = "Yiguandao"\r
+ \r
+@@ -1743,7 +1813,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 最高神よ、祖国を守り給え\r
+-	name = "ACTIONNAME7636035A"\r
++	name = "ACTIONNAME7636036A"\r
+ 	command = { type = dissent value = -15 }\r
+ 	command = { type = morale which = land value = 2 }\r
+ 	command = { type = max_organization which = land value = 2 }\r
+@@ -1765,7 +1835,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636036\r
++	id = 7636037\r
+ 	random = no\r
+ 	country = U67\r
+ 	\r
+@@ -1773,15 +1843,15 @@ event = {
+ 	headofstate = 1150001\r
+ 	}\r
+ \r
+-	name = "EVT_7636036_NAME"\r
+-	desc = "EVT_7636036_DESC"\r
++	name = "EVT_7636037_NAME"\r
++	desc = "EVT_7636037_DESC"\r
+ 	style = 2\r
+ 	picture = "minister_died2"\r
+ \r
+ 	date = { day = 6 month = 6 year = 1937 }\r
+ \r
+ 	action = { # 張学良が新たな大元帥となる\r
+-	name = "ACTIONNAME7636036A"\r
++	name = "ACTIONNAME7636037A"\r
+ 	command = { type = sleepminister which = 1150001 } # 張作霖（ヂャン・ズオリン）\r
+ 	command = { type = sleepminister which = 1150002 }\r
+ 	command = { type = sleepminister which = 1150007 }\r
+@@ -1794,7 +1864,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 張宗昌が権力を掌握した\r
+-	name = "ACTIONNAME7636036B"\r
++	name = "ACTIONNAME7636037B"\r
+ 	command = { type = sleepminister which = 1150001 } # 張作霖（ヂャン・ズオリン）\r
+ 	command = { type = sleepminister which = 1150002 }\r
+ 	command = { type = sleepminister which = 1150007 }\r
+@@ -1814,7 +1884,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636037\r
++	id = 7636038\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+@@ -1846,8 +1916,8 @@ event = {
+ 	NOT = { ispuppet = U67 }\r
+ 	}\r
+ \r
+-	name = "EVT_7636037_NAME"\r
+-	desc = "EVT_7636037_DESC"\r
++	name = "EVT_7636038_NAME"\r
++	desc = "EVT_7636038_DESC"\r
+ 	style = 2\r
+ 	picture = "Fengtian_Army"\r
+ \r
+@@ -1856,13 +1926,13 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 共和国のために最後まで戦う\r
+-	name = "ACTIONNAME7636037A"\r
++	name = "ACTIONNAME7636038A"\r
+ 	command = { type = dissent value = 3 }\r
+ 	ai_chance = 40\r
+ 	}\r
+ \r
+ 	action = { # 我々はアメリカと同盟する\r
+-	name = "ACTIONNAME7636037B"\r
++	name = "ACTIONNAME7636038B"\r
+ 	trigger = {\r
+ 	exists = USA\r
+ 	NOT = {\r
+@@ -1884,12 +1954,12 @@ event = {
+ 	}\r
+ 	}\r
+ 	command = { type = dissent value = 3 }\r
+-	command = { type = event which = 7636038 where = USA when = 0 }\r
++	command = { type = event which = 7636039 where = USA when = 0 }\r
+ 	ai_chance = 20\r
+ 	}\r
+ \r
+ 	action = { # 我々は日本と同盟する\r
+-	name = "ACTIONNAME7636037C"\r
++	name = "ACTIONNAME7636038C"\r
+ 	trigger = {\r
+ 	exists = JAP\r
+ 	relation = { which = JAP value = 50 }\r
+@@ -1912,12 +1982,12 @@ event = {
+ 	}\r
+ 	}\r
+ 	command = { type = dissent value = 3 }\r
+-	command = { type = event which = 7636038 where = JAP when = 0 }\r
++	command = { type = event which = 7636039 where = JAP when = 0 }\r
+ 	ai_chance = 20\r
+ 	}\r
+ \r
+ 	action = { # 我々はロシアと同盟する\r
+-	name = "ACTIONNAME7636037D"\r
++	name = "ACTIONNAME7636038D"\r
+ 	trigger = {\r
+ 	exists = UER\r
+ 	relation = { which = UER value = 50 }\r
+@@ -1940,12 +2010,12 @@ event = {
+ 	}\r
+ 	}\r
+ 	command = { type = dissent value = 3 }\r
+-	command = { type = event which = 7636038 where = UER when = 0 }\r
++	command = { type = event which = 7636039 where = UER when = 0 }\r
+ 	ai_chance = 20\r
+ 	}\r
+ \r
+ 	action = { # 中国の政府に合流する\r
+-	name = "ACTIONNAME7636037E"\r
++	name = "ACTIONNAME7636038E"\r
+ 	trigger = {\r
+ 	NOT = { ispuppet = U67 }\r
+ 	OR = {\r
+@@ -1997,10 +2067,10 @@ event = {
+ 	alliance = { country = U67 country = SOV }\r
+ 	}\r
+ 	}\r
+-	command = { trigger = { war = { country = U67 country = CHI } } type = event which = 7636041 where = CHI when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = CHC } } type = event which = 7636041 where = CHC when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = UCH } } type = event which = 7636041 where = UCH when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = U74 } } type = event which = 7636041 where = U74 when = 0 }\r
++	command = { trigger = { war = { country = U67 country = CHI } } type = event which = 7636042 where = CHI when = 0 }\r
++	command = { trigger = { war = { country = U67 country = CHC } } type = event which = 7636042 where = CHC when = 0 }\r
++	command = { trigger = { war = { country = U67 country = UCH } } type = event which = 7636042 where = UCH when = 0 }\r
++	command = { trigger = { war = { country = U67 country = U74 } } type = event which = 7636042 where = U74 when = 0 }\r
+ 	ai_chance = 40\r
+ 	}\r
+ }\r
+@@ -2012,17 +2082,17 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636038\r
++	id = 7636039\r
+ 	random = no\r
+ 	TAG = { USA JAP UER }\r
+ \r
+-	name = "EVT_7636038_NAME"\r
+-	desc = "EVT_7636038_DESC"\r
++	name = "EVT_7636039_NAME"\r
++	desc = "EVT_7636039_DESC"\r
+ 	style = 2\r
+ 	picture = "Fengtian_Army"\r
+ \r
+ 	action = { # 同盟を締結し、戦争を参戦する\r
+-	name = "ACTIONNAME7636038A"\r
++	name = "ACTIONNAME7636039A"\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = belligerence value = 2 }\r
+ 	command = { type = relation which = U67 value = 100 }\r
+@@ -2036,7 +2106,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 戦争の即時停戦を呼びかける\r
+-	name = "ACTIONNAME7636038B"\r
++	name = "ACTIONNAME7636039B"\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = belligerence value = 2 }\r
+ 	command = { type = relation which = U67 value = 30 }\r
+@@ -2044,23 +2114,23 @@ event = {
+ 	command = { trigger = { country = USA } type = setflag which = USA_intervention_FengtianWar }\r
+ 	command = { trigger = { country = JAP } type = setflag which = JAP_intervention_FengtianWar }\r
+ 	command = { trigger = { country = UER } type = setflag which = UER_intervention_FengtianWar }\r
+-	command = { trigger = { war = { country = U67 country = CHI } } type = event which = 7636039 where = CHI when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = CHC } } type = event which = 7636039 where = CHC when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = UCH } } type = event which = 7636039 where = UCH when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = U74 } } type = event which = 7636039 where = U74 when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = ENG } } type = event which = 7636039 where = ENG when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = FRA } } type = event which = 7636039 where = FRA when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = USA } } type = event which = 7636039 where = USA when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = GER } } type = event which = 7636039 where = GER when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = ITA } } type = event which = 7636039 where = ITA when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = JAP } } type = event which = 7636039 where = JAP when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = UER } } type = event which = 7636039 where = UER when = 0 }\r
+-	command = { trigger = { war = { country = U67 country = SOV } } type = event which = 7636039 where = SOV when = 0 }\r
++	command = { trigger = { war = { country = U67 country = CHI } } type = event which = 7636040 where = CHI when = 0 }\r
++	command = { trigger = { war = { country = U67 country = CHC } } type = event which = 7636040 where = CHC when = 0 }\r
++	command = { trigger = { war = { country = U67 country = UCH } } type = event which = 7636040 where = UCH when = 0 }\r
++	command = { trigger = { war = { country = U67 country = U74 } } type = event which = 7636040 where = U74 when = 0 }\r
++	command = { trigger = { war = { country = U67 country = ENG } } type = event which = 7636040 where = ENG when = 0 }\r
++	command = { trigger = { war = { country = U67 country = FRA } } type = event which = 7636040 where = FRA when = 0 }\r
++	command = { trigger = { war = { country = U67 country = USA } } type = event which = 7636040 where = USA when = 0 }\r
++	command = { trigger = { war = { country = U67 country = GER } } type = event which = 7636040 where = GER when = 0 }\r
++	command = { trigger = { war = { country = U67 country = ITA } } type = event which = 7636040 where = ITA when = 0 }\r
++	command = { trigger = { war = { country = U67 country = JAP } } type = event which = 7636040 where = JAP when = 0 }\r
++	command = { trigger = { war = { country = U67 country = UER } } type = event which = 7636040 where = UER when = 0 }\r
++	command = { trigger = { war = { country = U67 country = SOV } } type = event which = 7636040 where = SOV when = 0 }\r
+ 	ai_chance = 30\r
+ 	}\r
+ \r
+ 	action = { # 介入を拒否する\r
+-	name = "ACTIONNAME7636038C"\r
++	name = "ACTIONNAME7636039C"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = belligerence value = -2 }\r
+ 	command = { type = relation which = U67 value = -50 }\r
+@@ -2078,30 +2148,30 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636039\r
++	id = 7636040\r
+ 	random = no\r
+ 	TAG = { CHI CHC UCH U74 ENG FRA USA GER ITA JAP UER SOV }\r
+ \r
+-	name = "EVT_7636039_NAME"\r
+-	desc = "EVT_7636039_DESC"\r
++	name = "EVT_7636040_NAME"\r
++	desc = "EVT_7636040_DESC"\r
+ 	style = 2\r
+ 	picture = "Fengtian_Army"\r
+ \r
+ 	action = { # 撤退など拒否だ！\r
+-	name = "ACTIONNAME7636039A"\r
++	name = "ACTIONNAME7636040A"\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = belligerence value = 2 }\r
+ 	command = { trigger = { flag = USA_intervention_FengtianWar } type = relation which = USA value = -50 }\r
+ 	command = { trigger = { flag = JAP_intervention_FengtianWar } type = relation which = JAP value = -50 }\r
+ 	command = { trigger = { flag = UER_intervention_FengtianWar } type = relation which = UER value = -50 }\r
+-	command = { trigger = { flag = USA_intervention_FengtianWar } type = event which = 7636039 where = USA when = 0 }\r
+-	command = { trigger = { flag = JAP_intervention_FengtianWar } type = event which = 7636039 where = JAP when = 0 }\r
+-	command = { trigger = { flag = UER_intervention_FengtianWar } type = event which = 7636039 where = UER when = 0 }\r
++	command = { trigger = { flag = USA_intervention_FengtianWar } type = event which = 7636041 where = USA when = 0 }\r
++	command = { trigger = { flag = JAP_intervention_FengtianWar } type = event which = 7636041 where = JAP when = 0 }\r
++	command = { trigger = { flag = UER_intervention_FengtianWar } type = event which = 7636041 where = UER when = 0 }\r
+ 	ai_chance = 70\r
+ 	}\r
+ \r
+ 	action = { # 停戦を承諾する\r
+-	name = "ACTIONNAME7636039B"\r
++	name = "ACTIONNAME7636040B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = belligerence value = -2 }\r
+ 	command = { type = peace which = U67 value = 1 }\r
+@@ -2121,17 +2191,17 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636040\r
++	id = 7636041\r
+ 	random = no\r
+ 	TAG = { USA JAP UER }\r
+ \r
+-	name = "EVT_7636040_NAME"\r
+-	desc = "EVT_7636040_DESC"\r
++	name = "EVT_7636041_NAME"\r
++	desc = "EVT_7636041_DESC"\r
+ 	style = 2\r
+ 	picture = "Fengtian_Army"\r
+ \r
+ 	action = { # 参戦する\r
+-	name = "ACTIONNAME7636040A"\r
++	name = "ACTIONNAME7636041A"\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = belligerence value = 2 }\r
+ 	command = { type = relation which = U67 value = 100 }\r
+@@ -2145,7 +2215,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 参戦などしない\r
+-	name = "ACTIONNAME7636040B"\r
++	name = "ACTIONNAME7636041B"\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = belligerence value = -2 }\r
+ 	command = { type = relation which = U67 value = -250 }\r
+@@ -2161,17 +2231,17 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636041\r
++	id = 7636042\r
+ 	random = no\r
+ 	TAG = { CHI CHC UCH U74 }\r
+ \r
+-	name = "EVT_7636041_NAME"\r
+-	desc = "EVT_7636041_DESC"\r
++	name = "EVT_7636042_NAME"\r
++	desc = "EVT_7636042_DESC"\r
+ 	style = 2\r
+ 	picture = "Fengtian_Army"\r
+ \r
+ 	action = { # 勝利だ！\r
+-	name = "ACTIONNAME7636041A"\r
++	name = "ACTIONNAME7636042A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = belligerence value = 5 }\r
+ 	command = { type = inherit which = U67 }\r
+@@ -2180,106 +2250,239 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  ハルハ川の戦い（U67）\r
+-# 1939年夏、世界の注目はヨーロッパで高まっている緊張に集まっていたため、ノモンハン村の周囲で起こった激しい国境紛争について知るものはほとんどいなかった。\r
+-# 紛争で奉天共和国はロシア軍と衝突したが、300両の戦車や装甲車両を投入した大反攻を受けて敗北した。\r
+-# この大反攻は、ロシア軍が腐敗から立ちなおしたことを示してる！\r
++#  宗社党の反乱（U67）\r
++# 宗社党とは、清朝再興を画策する政治集団であり、奉天派の軍隊などに弾圧されたことで壊滅していた筈だった。\r
++# しかし宗社党の残党は、熱河省で活動を続け、その影響力は熱河省全域に拡大。\r
++# 奉天共和国政府は、これ以上の勢力拡大を阻止するために、再結成した宗社党を弾圧する方針を打ち出したが、\r
++# これは宗社党の反感を招き、残党は各地で一斉に蜂起した。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636042\r
++	id = 7636043\r
+ 	random = no\r
+ 	country = U67\r
+ \r
+ 	trigger = {\r
+-	OR = {\r
+-	AND = {\r
+-	exists = UER\r
+-	NOT = { exists = SOV }\r
+-	}\r
+-	AND = {\r
+-	exists = SOV\r
+-	NOT = { exists = UER }\r
+-	}\r
+-	}\r
+-	exists = MON\r
+-	OR = {\r
+-	OR = {\r
+-	puppet = { country = MON country = UER }\r
+-	alliance = { country = MON country = UER }\r
+-	}\r
+-	OR = {\r
+-	puppet = { country = MON country = SOV }\r
+-	alliance = { country = MON country = SOV }\r
+-	}\r
+-	}\r
+-	NOT = {\r
+-	war = { country = UER country = U67 }\r
+-	war = { country = SOV country = U67 }\r
+-	alliance = { country = UER country = U67 }\r
+-	alliance = { country = SOV country = U67 }\r
+-	}\r
+-	#追加\r
+-	NOT = { event = 1330030000 } # 日本との和平を模索\r
+-	random = 10\r
++	owned = { province = 1235 data = U67 } # 阜新（フーシン）\r
++	owned = { province = 1236 data = U67 } # 承徳（チェンドー）\r
++	owned = { province = 1237 data = U67 } # 赤峰（ウランハダ）\r
+ 	}\r
+ \r
+-	name = "EVT_7636042_NAME"\r
+-	desc = "EVT_7636042_DESC"\r
++	name = "EVT_7636043_NAME" \r
++	desc = "EVT_7636043_DESC"\r
+ 	style = 2\r
+-	picture = "Fengtian_Army_Tank"\r
+-\r
+-	date = { day = 11 month = 4 year = 1939 }\r
+-	offset = 6\r
+-	deathdate = { day = 20 month = 8 year = 1939 }\r
++	picture = "ccip_restoration"\r
++	\r
++	date = { day = 0 month = 8 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+-	action = { # この戦いは我々の敗北だ\r
+-	name = "ACTIONNAME7636042A"\r
+-	command = { trigger = { exists = UER } type = non_aggression which = UER where = U67 when = 1440 }\r
+-	command = { trigger = { exists = SOV } type = non_aggression which = SOV where = U67 when = 1440 }\r
+-	command = { type = dissent value = 1 }\r
+-        command = { type = manpowerpool value = -40 }\r
+-        command = { type = supplies value = -1000 }\r
+-	command = { trigger = { exists = UER } type = relation which = UER value = -10 }\r
+-	command = { trigger = { exists = SOV } type = relation which = SOV value = -10 }\r
+-	command = { trigger = { exists = UER } type = event which = 7636043 where = UER when = 0 }\r
+-	command = { trigger = { exists = SOV } type = event which = 7636043 where = UER when = 0 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
++	action = { # 鎮圧せよ！\r
++	name = "ACTIONNAME7636043A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = revolt which = 1235 }\r
++	command = { type = revolt which = 1235 }\r
++	command = { type = revolt which = 1236 }\r
++	command = { type = revolt which = 1236 }\r
++	command = { type = revolt which = 1237 }\r
++	command = { type = revolt which = 1237 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # この敗北の恨みを晴らさねば\r
+-	name = "ACTIONNAME7636042B"\r
+-        command = { type = manpowerpool value = -40 }\r
+-        command = { type = supplies value = -1000 }\r
+-	command = { trigger = { exists = UER } type = war which = UER }\r
+-	command = { trigger = { exists = SOV } type = war which = SOV }\r
+-	command = { trigger = { exists = UER } type = event which = 7636043 where = UER when = 0 }\r
+-	command = { trigger = { exists = SOV } type = event which = 7636043 where = UER when = 0 }\r
+-	command = { type = domestic which = defense_lobby value = 2 }\r
++	action = { # 反乱を食い止めることができない\r
++	name = "ACTIONNAME7636043B"\r
++	command = { type = dissent value = 15 }\r
++	command = { type = independence which = MAN value = 1 when = 0 }\r
++	#\r
++	command = { type = secedeprovince which = MAN value = 1235 } # 熱河省\r
++	command = { type = secedeprovince which = MAN value = 1236 }\r
++	command = { type = secedeprovince which = MAN value = 1237 }\r
++	command = { type = secedeprovince which = MAN value = 1238 }\r
++	command = { type = secedeprovince which = MAN value = 1216 }\r
++	command = { type = secedeprovince which = MAN value = 1218 }\r
++	command = { type = event which = 7636044 where = MAN when = 0 } # 宗社党の反乱\r
++	command = { type = event which = 7636045 where = U67 when = 1 } # 宗社党の反乱 ― 内戦\r
++	command = { type = event which = 7636045 where = MAN when = 1 } # 宗社党の反乱 ― 内戦\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  ハルハ川の戦い（UER SOV）\r
++#  宗社党の反乱（MAN）\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7636043\r
++	id = 7636044\r
+ 	random = no\r
+-	TAG = { UER SOV }\r
++	country = U67\r
+ \r
+-	name = "EVT_7636042_NAME"\r
+-	desc = "EVT_7636042_DESC"\r
++	name = "EVT_7636043_NAME" \r
++	desc = "EVT_7636043_DESC"\r
+ 	style = 2\r
+-	picture = "Khalkin_Ghol"\r
++	picture = "ccip_restoration"\r
+ \r
+-	action = { # 奉天は身の程を思い知った\r
+-	name = "ACTIONNAME7636042A"\r
+-	command = { type = manpowerpool value = -5 }\r
+-	command = { type = supplies value = -1000 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = relation which = U67 value = -10 }\r
++	action = { # 満州を取り戻せ！\r
++	name = "ACTIONNAME7636044A"\r
++	command = { type = free_ic value = 10 }\r
++	command = { type = energypool value = 500 }\r
++	command = { type = metalpool value = 350 }\r
++	command = { type = rarematerialspool value = 250 }\r
++	command = { type = oilpool value = 300 }\r
++	command = { type = supplies value = 500 }\r
++	command = { type = capital which = 1236 } # 承徳（チェンドー）\r
++	command = { type = secedearea which = U67 value = "Heilongjiang" when = 1 } # 黒竜江省\r
++	command = { type = secedearea which = U67 value = "Jilin" when = 1 } # 吉林省\r
++	command = { type = secedeprovince which = U67 value = 1214 } # 熱河省\r
++	command = { type = secedeprovince which = U67 value = 1215 }\r
++	command = { type = secedeprovince which = U67 value = 1217 }\r
++	command = { type = secedeprovince which = U67 value = 1219 }\r
++	command = { type = secedeprovince which = U67 value = 1220 }\r
++	command = { trigger = { ai = no } type = dissent value = 10 }\r
++	command = { trigger = { ai = yes } type = dissent value = 20 }\r
++	command = { type = flag_ext where = MAN which = "_IF" }\r
++	command = { type = name where = MAN which = "宗社党" }\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 1 }\r
++	command = { type = set_domestic which = free_market value = 6 }\r
++	command = { type = set_domestic which = freedom value = 6 }\r
++	command = { type = set_domestic which = defense_lobby value = 5 }\r
++	command = { type = set_domestic which = interventionism value = 5 }\r
++	command = { type = headofstate which = 235201 } # 溥偉（プーウェイ）\r
++	command = { type = headofgovernment which = 235203 } # 善耆（シャンチー）\r
++	command = { type = foreignminister which = 235205 } # 金壁東（ジン・ビードン）\r
++	command = { type = armamentminister which = 235213 } # 鉄良（ティエリャン）\r
++	command = { type = ministerofsecurity which = 235207 } # タン・ツァイフォウ\r
++	command = { type = ministerofintelligence which = 235208 } # ラン・ファンメイ\r
++	command = { type = chiefofstaff which = 235209 } # 張勲（ヂャン・シュン）\r
++	command = { type = chiefofarmy which = 235216 } # 良弼（リャンビー）\r
++	command = { type = chiefofnavy which = 235211 } # タイ・チクオ\r
++	command = { type = chiefofair which = 235212 } # 婁晨（ロー・チェン）\r
++	command = { type = add_division which = "第1騎兵旅団" value = cavalry when = 6 }\r
++	command = { type = add_division which = "第2騎兵旅団" value = cavalry when = 6 } \r
++	command = { type = add_division which = "第3騎兵旅団" value = cavalry when = 6 } \r
++	command = { type = add_division which = "第4騎兵旅団" value = cavalry when = 6 }\r
++	command = { type = add_division which = "第5騎兵旅団" value = cavalry when = 6 } \r
++	command = { type = add_division which = "第6騎兵旅団" value = cavalry when = 6 } \r
++	command = { type = add_division which = "第1歩兵師団" value = infantry when = 6 }\r
++	command = { type = add_division which = "第2歩兵師団" value = infantry when = 6 }\r
++	command = { type = add_division which = "第3歩兵師団" value = infantry when = 6 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  宗社党の反乱 ― 内戦\r
++###########################################################################\r
++\r
++event = {\r
++	id = 7636045\r
++	random = no\r
++	TAG = { MAN U67 }\r
++	persistent = yes\r
++\r
++	name = "EVT_7636045_NAME"\r
++	desc = "EVT_7636043_DESC"\r
++	style = 2\r
++  	picture = "scw"\r
++\r
++	action = { # 内戦だ！\r
++	name = "ACTIONNAME7636045A"\r
++	command = { type = belligerence value = 5 }\r
++	command = { trigger = { country = U67 } type = end_non_aggression which = U67 where = MAN }\r
++	command = { trigger = { country = U67 } type = end_non_aggression which = MAN where = U67 }\r
++	command = { trigger = { country = U67 } type = war which = MAN }\r
++	command = { trigger = { country = MAN } type = set_relation which = U67 value = -200 }\r
++	command = { trigger = { country = MAN } type = set_relation which = CHI value = -50 }\r
++	command = { trigger = { country = MAN } type = set_relation which = CHC value = -50 }\r
++	command = { trigger = { country = MAN } type = set_relation which = U36 value = -50 }\r
++	command = { trigger = { country = MAN } type = set_relation which = U74 value = -50 }\r
++	command = { trigger = { country = MAN } type = set_relation which = CSX value = -25 }\r
++	command = { trigger = { country = MAN } type = set_relation which = CGX value = -25 }\r
++	command = { trigger = { country = MAN } type = set_relation which = CXB value = -25 }\r
++	command = { trigger = { country = MAN } type = set_relation which = CYN value = -25 }\r
++	command = { trigger = { country = MAN } type = set_relation which = UER value = 25 }\r
++	command = { trigger = { country = MAN } type = set_relation which = SOV value = -25 }\r
++	command = { trigger = { country = MAN } type = set_relation which = JAP value = 15 }\r
++	command = { trigger = { country = MAN } type = set_relation which = KOR value = 15 }\r
++	command = { trigger = { country = MAN } type = end_non_aggression which = U67 where = MAN }\r
++	command = { trigger = { country = MAN } type = end_non_aggression which = MAN where = U67 }\r
++	command = { trigger = { country = MAN } type = war which = U67 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++########################################################################\r
++#  宗社党の反乱－勝利（U67）\r
++# 共和国軍が長い血みどろの闘争の果てに反乱軍を破って屈服させた。\r
++#########################################################################\r
++event = {\r
++	id = 7636046\r
++	random = no\r
++	country = U67\r
++ \r
++	trigger = {\r
++	event = 7636044 # 宗社党の反乱\r
++	owned = { province = 1208 data = U67 } # 長春（チャンチュン）\r
++	NOT = { \r
++	exists = MAN\r
++	event = 7636046 # 宗社党の反乱－勝利（MAN）\r
+ 	}\r
+-}
+\ No newline at end of file
++	}\r
++\r
++	name = "EVT_7636046_NAME" \r
++	desc = "EVT_7636046_DESC"\r
++	style = 2\r
++	picture = "scw"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = sleepevent which = 7636046 }	# 宗社党の反乱－勝利（MAN）\r
++	command = { type = capital which = 1208 } # 長春（チャンチュン）\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  宗社党の反乱－勝利（MAN）\r
++# 多大な犠牲を払いながらも続けた長い闘争の末、反乱軍がついに敵を破って降伏させた。\r
++#########################################################################\r
++event = {\r
++	id = 7636047\r
++	random = no\r
++	country = MAN\r
++ \r
++	trigger = {\r
++	event = 7636044 # 宗社党の反乱\r
++	owned = { province = 1208 data = MAN } # 長春（チャンチュン）\r
++	NOT = { \r
++	exists = U67\r
++	event = 7636045 # 宗社党の反乱－勝利（U67）\r
++	}\r
++	}\r
++\r
++	name = "EVT_7636047_NAME" \r
++	desc = "EVT_7636047_DESC"\r
++	style = 2\r
++	picture = "scw"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = name where = MAN which = "満州帝国" }\r
++	command = { type = sleepevent which = 7636044 }	# 宗社党の反乱－勝利（U67）\r
++	command = { type = capital which = 1208 } # 長春（チャンチュン）\r
++	}	\r
++}\r

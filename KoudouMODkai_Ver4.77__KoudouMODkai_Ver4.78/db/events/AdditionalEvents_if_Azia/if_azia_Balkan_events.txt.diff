@@ -1,0 +1,1084 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Balkan_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Balkan_events.txt [utf-8]
+@@ -4,6 +4,25 @@
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
++# ギリシャ\r
++#id = 5836001 メガリ・イデア\r
++#id = 5836002 国家元首の逝去（コンスタンティノス1世）\r
++#id = 5836003 エスニコス・ディハズモス\r
++#id = 5836004 国王派の勝利\r
++#id = 5836005 共和派の勝利\r
++#id = 5836006 首都の移転\r
++#id = 5836007 双頭の鷲の復興\r
++###ギリシャ閣僚イベント（GRE）\r
++#id = 5836101 国家元首の逝去（ゲオルギオス2世）\r
++#id = 5836102 大臣の逝去（エレフテリオス・ヴェニゼロス）\r
++#id = 5836103 突然の政府交代（メタクサス OR オナシス）\r
++#id = 5836104 突然の政府交代（1941年右派）\r
++#id = 5836105 突然の政府交代（1944年右派）\r
++#id = 5836106 突然の政府交代（1947年右派）\r
++#id = 5836107 突然の政府交代（1952年右派）\r
++#id = 5836108 突然の政府交代（1936年左派）\r
++#id = 5836109 突然の政府交代（1941年左派）\r
++#id = 5836110 突然の政府交代（1946年左派）\r
+ # ブルガリア\r
+ #id = 5837001 軍国主義者のクーデター\r
+ #id = 5837002 右翼クーデター\r
+@@ -24,6 +43,1055 @@
+ #id = 5839104 1957年総選挙\r
+ #id = 5839105 1963年総選挙\r
+ #########################################################################\r
++#  ギリシャ\r
++#########################################################################\r
++#  メガリ・イデア\r
++# 第一次世界大戦への参戦を経て、ギリシャは戦後、ビザンツ帝国の版図を復興しようとする「メガリ・イデア」を実現すべく行動を起こした。\r
++# 小アジア（アナトリア半島）に派遣されたギリシャ軍は、トルコのムスタファ・ケマル率いる革命政府と軍事衝突し、これに勝利をおさめ、\r
++# 1923年7月、ローザンヌ条約が締結され、民族統一の願いがついに実現した。\r
++# 一方で国内では、世界大戦の際に追放されたコンスタンティノス1世を支持する国王派とエレフテリオス・ヴェニゼロスを支持する共和派の派閥対立が続き、\r
++# 1920年に行われた国民投票で国王派が勝利し、国王の復帰が決まったことで決着した。\r
++# 現在は、人民党のディミトリス・ゴウナリス首相率いる政府が続いているが、共和派と王党派の対立はなおくすぶり続けている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5836001\r
++	random = no\r
++	country = GRE\r
++\r
++	name = "EVT_5836001_NAME"\r
++	desc = "EVT_5836001_DESC"\r
++	style = 1\r
++	picture = "news_paper"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = sleepevent which = 2500026 } # ギリシャ閣僚交代イベント\r
++	command = { type = sleepevent which = 2500027 }\r
++	command = { type = sleepevent which = 2500028 }\r
++	command = { type = sleepevent which = 2500029 }\r
++	command = { type = sleepevent which = 2107005 }\r
++	command = { type = sleepevent which = 9999332 } # ギリシャAI閣僚イベント\r
++	command = { type = sleepevent which = 9999333 }\r
++	command = { type = sleepevent which = 9999334 }\r
++	command = { type = sleepevent which = 9999335 }\r
++	command = { type = sleepevent which = 9999336 }\r
++	command = { type = sleepevent which = 9999337 }\r
++	command = { type = sleepevent which = 9999338 }\r
++	command = { type = sleepevent which = 9999339 }\r
++	command = { type = sleepevent which = 9999340 }\r
++	command = { type = sleepevent which = 9999341 }\r
++	command = { type = sleepevent which = 9999342 }\r
++	command = { type = sleepevent which = 9999343 }\r
++	command = { type = sleepevent which = 9999344 }\r
++	command = { type = sleepevent which = 9999345 }\r
++	command = { type = sleepevent which = 9999346 }\r
++	command = { type = sleepevent which = 9999347 }\r
++	command = { type = sleepevent which = 9999348 }\r
++	command = { type = sleepevent which = 9999349 }\r
++	command = { type = sleepevent which = 9999350 }\r
++	command = { type = sleepevent which = 9999351 }\r
++	command = { type = sleepevent which = 9999352 }\r
++	command = { type = sleepevent which = 9999353 }\r
++	command = { type = sleepevent which = 9999354 }\r
++	command = { type = sleepevent which = 9999355 }\r
++	command = { type = sleepevent which = 9999356 }\r
++	command = { type = sleepevent which = 9999357 }\r
++	command = { type = sleepevent which = 9999358 }\r
++	command = { type = sleepevent which = 9999359 }\r
++	command = { type = sleepevent which = 9999360 }\r
++	command = { type = sleepevent which = 5200022 }\r
++	command = { type = sleepevent which = 5200023 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  国家元首の逝去（コンスタンティノス1世）\r
++#########################################################################\r
++event = {\r
++	id = 5836002\r
++	random = no\r
++	country = GRE\r
++	\r
++	trigger = {\r
++	OR = {\r
++	minister = 90307 # コンスタンティノス1世（SC）\r
++	minister = 90308 # コンスタンティノス1世（SD）\r
++	}\r
++	}\r
++\r
++	name = "EVT_101_NAME"\r
++	desc = "EVT_101_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++\r
++	date = { day = 10 month = 0 year = 1934 }\r
++\r
++	action = { # いなくなると寂しい\r
++	name = "EVT_362_ACTC"\r
++	command = { trigger = { headofstate = 90307 }  type = headofstate which = 90343 } # パウロス・コンドゥリオティス（摂政）\r
++	command = { trigger = { headofstate = 90308 }  type = headofstate which = 90344 } # パウロス・コンドゥリオティス（摂政）\r
++	command = { type = sleepminister which = 90307 } # コンスタンティノス1世\r
++	command = { type = sleepminister which = 90308 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  エスニコス・ディハズモス\r
++# 首相もあるエレフセリオス・ヴェニゼロスと国王コンスタンティノス1世の政治対立から始まった国内の分裂は、\r
++# 国を2つの陣営に分け、ギリシャ社会に極めて深い亀裂を生じさせた。\r
++# この軋轢の影響は現在にまで残っており、コンスタンティノス1世の崩御後、再び表面化した。\r
++# 政府は政治闘争に決着をつけるべく国民投票を行うことを決定し、今後の国家の行方を決めようとしている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5836003\r
++	random = no\r
++	country = GRE\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	event = 5836002 # 国家元首の逝去（コンスタンティノス1世）\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_5836003_NAME"\r
++	desc = "EVT_5836003_DESC"\r
++	style = 2\r
++	picture = "election_time"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1934 }\r
++\r
++	action = { # 人民党が勝利した！\r
++	name = "ACTIONNAME5836003A"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = headofstate which = 90344 } # パウロス・コンドゥリオティス\r
++	command = { type = headofgovernment which = 90309 } # ディミトリス・ゴウナリス\r
++	command = { type = foreignminister which = 90316 } # アレクサンドロス・ザイミス\r
++	command = { type = armamentminister which = 90319 } # クセノフォン・ストラティゴス\r
++	command = { type = ministerofsecurity which = 90322 } # ゲオルギオス・コンドィリス\r
++	command = { type = ministerofintelligence which = 90325 } # アリストテレス・ヴラホポウロス\r
++	command = { type = chiefofstaff which = 90328 } # ゲオルギオス・ハトジアネスティス\r
++	command = { type = chiefofarmy which = 90330 } # ヴィクトル・ドウスマニス\r
++	command = { type = chiefofnavy which = 90332 } # パウロス・コンドゥリオティス\r
++	command = { type = chiefofair which = 90333 } # フリストス・アダミディス\r
++	command = { type = event which = 5836004 where = GRE when = 0 } # 国王派の勝利\r
++	command = { type = sleepevent which = 5836005 } # 共和派の勝利\r
++	ai_chance = 40\r
++	}\r
++\r
++	action = { # 自由党が勝利する！\r
++	name = "ACTIONNAME5836003B"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = headofstate which = 90343 } # パウロス・コンドゥリオティス\r
++	command = { type = headofgovernment which = 90350 } # エレフテリオス・ヴェニゼロス\r
++	command = { type = foreignminister which = 90351 } # アレクサンドロス・パパナスタシウ\r
++	command = { type = armamentminister which = 90353 } # アレクサンドロス・ディオミディス\r
++	command = { type = ministerofsecurity which = 90356 } # コンスタンティノス・ラクティヴァン\r
++	command = { type = ministerofintelligence which = 90358 } # コンスタンティノス・ミリオティス=コムニノス\r
++	command = { type = chiefofstaff which = 90359 } # アナスタシオス・パポウラス\r
++	command = { type = chiefofarmy which = 90362 } # ステリオス・ゴナタス\r
++	command = { type = chiefofnavy which = 90363 } # ディミトリオス・フォカス\r
++	command = { type = chiefofair which = 90334 } # ディミトリオス・カンベロス\r
++	command = { type = event which = 5836005 where = GRE when = 0 } # 共和派の勝利\r
++	command = { type = sleepevent which = 5836004 } # 国王派の勝利\r
++	ai_chance = 40\r
++	}\r
++\r
++	action = { # 国家連合党が予想外の支持を集める\r
++	name = "ACTIONNAME5836003C"\r
++	command = { type = dissent value = 8 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = headofstate which = 90283 } # ゲオルギオス・メルクリス\r
++	command = { type = headofgovernment which = 90285 } # ソティリオス・ゴッツァマニス\r
++	command = { type = foreignminister which = 90054 } # デモステネス・ニコラディス\r
++	command = { type = armamentminister which = 90286 } # エクトル・ツィロニコス\r
++	command = { type = ministerofsecurity which = 90099 } # クリストス・チガンテス\r
++	command = { type = ministerofintelligence which = 90116 } # クリストス・トリアンタフィリディス\r
++	command = { type = chiefofstaff which = 90128 } # ゲオルギオス・コンディリス\r
++	command = { type = chiefofarmy which = 90137 } # テオドール・パンガロス\r
++	command = { type = chiefofnavy which = 90009 } # アレクサンドロス・サケラリオウ\r
++	command = { type = chiefofair which = 90284 } # ゲオルギオス・テメリス\r
++	command = { type = sleepevent which = 5836004 } # 国王派の勝利\r
++	command = { type = sleepevent which = 5836005 } # 共和派の勝利\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # 共産党が驚くべき勝利を収めた\r
++	name = "ACTIONNAME5836003D"\r
++	command = { type = flag_ext where = GRE which = "_rep" }\r
++	command = { type = dissent value = 8 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = headofstate which = 90023 } # ギオルギス・シアントス\r
++	command = { type = headofgovernment which = 90042 } # ミリティアデス・ポルフィロギンス\r
++	command = { type = foreignminister which = 90062 } # ニコス・ザハリアディス\r
++	command = { type = armamentminister which = 90086 } # ギオルギス・シアントス\r
++	command = { type = ministerofsecurity which = 90106 } # ギアネス・イオアニデス\r
++	command = { type = ministerofintelligence which = 90121 } # ギアネス・イオアニデス\r
++	command = { type = chiefofstaff which = 90132 } # ステファノス・サラフィス\r
++	command = { type = chiefofarmy which = 90140 } # アリス・ヴェロウチオティス\r
++	command = { type = chiefofnavy which = 90146 } # ミリティアデス・ポルフィロギンス\r
++	command = { type = chiefofair which = 90152 } # ニコス・ベロヤニス\r
++	command = { type = sleepevent which = 5836004 } # 国王派の勝利\r
++	command = { type = sleepevent which = 5836005 } # 共和派の勝利\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  国王派の勝利\r
++# 長きにわたり続いたギリシャの内部分裂は、国王派の勝利で終わった。\r
++# 共和派の新政府結成の試みが寸前で阻止されたことで、国王派は新たな国王の擁立を望んでいる。\r
++# （ゲオルギオス2世は、コンスタンティノス1世の長男であり、史実でも国王として即位した。\r
++# ルドヴィコス1世は、ルートヴィヒ・フェルディナント・フォン・バイエルンであり、\r
++# バイエルンの王族であったヴィッテルスバッハ家の人物である。\r
++# 彼は、オスマン帝国からの独立を達成した直後のギリシャの国王であったオソン1世の子孫であることから、国王の候補となっている。\r
++# パウロス1世は、ポール・クリベスというフランス人である。\r
++# 彼は東ローマ帝国最後の王朝であるパレオロゴス王朝の子孫であると自称したが、正統性は一切ない）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5836004\r
++	random = no\r
++	country = GRE\r
++	save_date = yes\r
++\r
++	name = "EVT_5836004_NAME"\r
++	desc = "EVT_5836004_DESC"\r
++	style = 2\r
++	picture = "election_time"\r
++\r
++	action = { # ギリシャ人の国王、ゲオルギオス2世万歳！\r
++	name = "ACTIONNAME5836004A"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = headofstate which = 90014 } # ゲオルギオス2世\r
++	ai_chance = 75\r
++	}\r
++\r
++	action = { # オソンの遺産、ルドヴィコス1世万歳！\r
++	name = "ACTIONNAME5836004B"\r
++	command = { type = dissent value = 1 }\r
++	command = { type = relation which = GER value = 75 }\r
++	command = { type = relation which = U08 value = 75 }\r
++	command = { type = headofstate which = 90336 } # ルドヴィコス1世\r
++	ai_chance = 20\r
++	}\r
++	action = { # 新たなビザンツ、パウロス1世万歳！\r
++	name = "ACTIONNAME5836004C"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = relation which = FRA value = 75 }\r
++	command = { type = relation which = U01 value = 75 }\r
++	command = { type = headofstate which = 90338 } # ゲオルギオス2世\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  共和派の勝利\r
++# 長きにわたる努力により、ついに共和派は復権を果たした。\r
++# 追放されていた共和派の指導者であるエレフテリオス・ヴェニゼロスが帰還を果たしたことで、再び共和派は勢いを取り戻した。\r
++# 彼の同志も追放先から続々と戻り、共和政府を立ち直らせようとしている。\r
++# 政府再建にあたり、ヴェニゼロスは政府首班を指名する必要がある。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5836005\r
++	random = no\r
++	country = GRE\r
++\r
++	name = "EVT_5836005_NAME"\r
++	desc = "EVT_5836005_DESC"\r
++	style = 2\r
++	picture = "election_time"\r
++\r
++	action = { # カファンタリスを指名する\r
++	name = "ACTIONNAME5836005A"\r
++	command = { type = flag_ext where = GRE which = "_rep" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = headofstate which = 90346 } # エレフテリオス・ヴェニゼロス\r
++	command = { type = headofgovernment which = 90349 } # ゲオルギオス・カファンタリス\r
++	ai_chance = 45\r
++	}\r
++\r
++	action = { # ソフォウリスを指名する\r
++	name = "ACTIONNAME5836005B"\r
++	command = { type = flag_ext where = GRE which = "_rep" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = headofstate which = 90346 } # エレフテリオス・ヴェニゼロス\r
++	command = { type = headofgovernment which = 90025 } # テミストクレス・ソフォウリス\r
++	ai_chance = 45\r
++	}\r
++	action = { # ヴェニゼロスが兼務する\r
++	name = "ACTIONNAME5836005C"\r
++	command = { type = flag_ext where = GRE which = "_rep" }\r
++	command = { type = dissent value = 3 }\r
++	command = { type = headofstate which = 90346 } # エレフテリオス・ヴェニゼロス\r
++	command = { type = headofgovernment which = 90350 } # エレフテリオス・ヴェニゼロス\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  首都の移転\r
++# 1922年の勝利のおかげで、14世紀にオスマン帝国から奪われたコンスタンティノープルが再び支配下にある。\r
++# ギリシャ民族によるビザンツ帝国の再興を国内外に示し、政府の権威を示す時が来たのかもしれない。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5836006\r
++	random = no\r
++	country = GRE\r
++\r
++	decision = {\r
++	event = 5836003 # エスニコス・ディハズモス\r
++	NOT = { government = communist }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = { id = 5836003 days = 60 } # エスニコス・ディハズモス\r
++	atwar = no\r
++	NOT = { government = communist }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 5836003 days = 60 } # エスニコス・ディハズモス\r
++	atwar = no\r
++	NOT = { government = communist }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "EVT_5836006_NAME"\r
++	desc = "EVT_5836006_DESC"\r
++	style = 2\r
++	picture = "Megali"\r
++	decision_picture = "decision_Megali"\r
++\r
++	date = { day = 0 month = 5 year = 1933 }\r
++\r
++	action = { # 『コンスタンティノープル』とする\r
++	name = "ACTIONNAME5836006A"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = capital which = 409 } # コンスタンティノープル\r
++	ai_chance = 70\r
++	}\r
++\r
++	action = { # 『アテネ』とする\r
++	name = "ACTIONNAME5836006B"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = capital which = 377 } # アテネ\r
++	ai_chance = 30\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  双頭の鷲の復興\r
++# ギリシャの歴史上、最も栄光ある時代だったビザンツ帝国の失われた領土を取り戻したことで、\r
++# 国内ではナショナリズムとしてのビザンツ帝国の復興を望む声が上がっている。\r
++# 失われた帝国を復活することができれば、ギリシャの栄光の新時代が幕を開けるだろう。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5836007\r
++	random = no\r
++	country = GRE\r
++\r
++	decision = {\r
++	event = 5836004 # 国王派の勝利\r
++	NOT = { government = communist }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = { id = 5836004 days = 30 } # 国王派の勝利\r
++	OR = {\r
++	headofstate = 90001 # ゲオルギオス2世\r
++	headofstate = 90011\r
++	headofstate = 90014\r
++	headofstate = 90017\r
++	headofstate = 90156\r
++	headofstate = 90157\r
++	headofstate = 90013 # パヴロス1世\r
++	headofstate = 90016\r
++	headofstate = 90022\r
++	headofstate = 90336 # ルドヴィコス1世\r
++	headofstate = 90337\r
++	headofstate = 90338 # パウロス1世\r
++	headofstate = 90339\r
++	}\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 5836004 days = 30 } # 国王派の勝利\r
++	OR = {\r
++	headofstate = 90001 # ゲオルギオス2世\r
++	headofstate = 90011\r
++	headofstate = 90014\r
++	headofstate = 90017\r
++	headofstate = 90156\r
++	headofstate = 90157\r
++	headofstate = 90013 # パヴロス1世\r
++	headofstate = 90016\r
++	headofstate = 90022\r
++	headofstate = 90336 # ルドヴィコス1世\r
++	headofstate = 90337\r
++	headofstate = 90338 # パウロス1世\r
++	headofstate = 90339\r
++	}\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "EVT_5836007_NAME"\r
++	desc = "EVT_5836007_DESC"\r
++	style = 2\r
++	picture = "Eastern_Roman_Empire"\r
++	decision_picture = "decision_Eastern_Roman_Empire"\r
++\r
++	date = { day = 0 month = 5 year = 1933 }\r
++\r
++	action = { # ビザンティウムを復活させる時がきた！\r
++	name = "ACTIONNAME5836007A"\r
++	command = { type = belligerence which = GRE value = 5 }\r
++	command = { type = dissent value = -5 }\r
++	command = { type = name where = GRE which = "ビザンツ帝国" }\r
++	command = { type = flag_ext where = GRE which = "_bza" }\r
++	ai_chance = 40\r
++	}\r
++\r
++	action = { # 時代錯誤だ\r
++	name = "ACTIONNAME5836007B"\r
++	command = { type = dissent value = 1 }\r
++	ai_chance = 60\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ギリシャ閣僚イベント\r
++#########################################################################\r
++#  国家元首の逝去（ゲオルギオス2世）\r
++#########################################################################\r
++event = {\r
++	id = 5836101\r
++	random = no\r
++	country = GRE\r
++	\r
++	trigger = {\r
++	OR = {\r
++	minister = 90001 # ゲオルギオス2世\r
++	minister = 90011\r
++	minister = 90014\r
++	minister = 90017\r
++	minister = 90156\r
++	minister = 90157\r
++	}\r
++	}\r
++\r
++	name = "EVT_101_NAME"\r
++	desc = "EVT_101_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++\r
++	date = { day = 10 month = 0 year = 1934 }\r
++\r
++	action = { # いなくなると寂しい\r
++	name = "EVT_362_ACTC"\r
++	command = { trigger = { headofstate = 90001 } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { headofstate = 90011 } type = headofstate which = 90013 } # パヴロス1世\r
++	command = { trigger = { headofstate = 90014 } type = headofstate which = 90016 } # パヴロス1世\r
++	command = { trigger = { headofstate = 90017 } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { headofstate = 90156 } type = headofstate which = 90013 } # パヴロス1世\r
++	command = { trigger = { headofstate = 90157 } type = headofstate which = 90016 } # パヴロス1世\r
++	command = { type = sleepminister which = 90001 } # ゲオルギオス2世\r
++	command = { type = sleepminister which = 90011 }\r
++	command = { type = sleepminister which = 90014 }\r
++	command = { type = sleepminister which = 90017 }\r
++	command = { type = sleepminister which = 90156 }\r
++	command = { type = sleepminister which = 90157 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  大臣の逝去（エレフテリオス・ヴェニゼロス）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5836102\r
++	random = no\r
++	country = GRE\r
++	\r
++	trigger = {\r
++	minister = 90010 # エレフテリオス・ヴェニゼロス\r
++	minister = 90074\r
++	minister = 90187\r
++	minister = 90195\r
++	minister = 90346\r
++	minister = 90350\r
++	}\r
++\r
++	date = { day = 18 month = 2 year = 1936 }\r
++\r
++	name = "EVT_103_NAME"\r
++	desc = "EVT_103_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++\r
++	action = { # いなくなると寂しい\r
++	name = "EVT_362_ACTC"\r
++	command = { trigger = { incabinet = 90010 } type = chiefofair which = 90149 } # パナゴティス・パパニコラオ\r
++	command = { trigger = { incabinet = 90346 } type = headofstate which = 90347 } # テミストクレス・ソフォウリス\r
++	command = { trigger = { incabinet = 90350 } type = headofgovernment which = 90349 } # ゲオルギオス・カファンタリス\r
++	command = { type = sleepminister which = 90010 } # エレフテリオス・ヴェニゼロス\r
++	command = { type = sleepminister which = 90074 }\r
++	command = { type = sleepminister which = 90187 }\r
++	command = { type = sleepminister which = 90195 }\r
++	command = { type = sleepminister which = 90346 }\r
++	command = { type = sleepminister which = 90350 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  突然の政府交代（メタクサス OR オナシス）\r
++#########################################################################\r
++event = {\r
++	id = 5836103\r
++	random = no\r
++	country = GRE\r
++	one_action = yes\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 90001 # ゲオルギオス2世\r
++	headofstate = 90011\r
++	headofstate = 90014\r
++	headofstate = 90017\r
++	headofstate = 90156\r
++	headofstate = 90157\r
++	headofstate = 90212\r
++	headofstate = 90013 # パヴロス1世\r
++	headofstate = 90016\r
++	headofstate = 90022\r
++	headofstate = 90336 # ルドヴィコス1世\r
++	headofstate = 90337\r
++	headofstate = 90338 # パウロス1世\r
++	headofstate = 90339\r
++	}\r
++	OR = {\r
++	dissent = 8\r
++	AND = {\r
++	random = 5\r
++	ai = yes	\r
++	}\r
++	AND = {\r
++	NOT = {\r
++	dissent = 8\r
++	}\r
++	dissent = 4\r
++	random = 5\r
++	}\r
++	}\r
++	NOT = { ispuppet = GRE }\r
++	}\r
++	\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 19\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # メタクサスを選ぶ\r
++	name = "ELECT_GRE_A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { trigger = { OR = { headofstate = 90001 headofstate = 90011 headofstate = 90014 headofstate = 90017 headofstate = 90156 headofstate = 90157 headofstate = 90212 } } type = headofstate which = 90001 } # ゲオルギオス2世\r
++	command = { trigger = { OR = { headofstate = 90013 headofstate = 90016 headofstate = 90022 } } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { OR = { headofstate = 90336 headofstate = 90337 } } type = headofstate which = 90336 } # ルドヴィコス1世\r
++	command = { trigger = { OR = { headofstate = 90338 headofstate = 90339 } } type = headofstate which = 90338 } # パウロス1世\r
++	command = { type = headofgovernment which = 90028 } # イオアニス・メタクサス\r
++	command = { type = foreignminister which = 90049 } # イオアニス・メタクサス\r
++	command = { type = armamentminister which = 90070 } # アレクショー・ツァモトス\r
++	command = { type = ministerofsecurity which = 90092 } # ゲオルギオス・ニコライデス\r
++	command = { type = ministerofintelligence which = 90111 } # アナスタシオス・バルディヴィリアス\r
++	command = { type = chiefofstaff which = 90007 } # テオドール・パンガロス\r
++	command = { type = chiefofarmy which = 90008 } # アレクサンドロス・パパゴス\r
++	command = { type = chiefofnavy which = 90009 } # アレクサンドロス・サケラリオウ\r
++	command = { type = chiefofair which = 90149 } # パナゴティス・パパニコラオ\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # オナシスを選ぶ\r
++	name = "ELECT_GRE_B"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { trigger = { OR = { headofstate = 90001 headofstate = 90011 headofstate = 90014 headofstate = 90017 headofstate = 90156 headofstate = 90157 headofstate = 90212 } } type = headofstate which = 90001 } # ゲオルギオス2世\r
++	command = { trigger = { OR = { headofstate = 90013 headofstate = 90016 headofstate = 90022 } } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { OR = { headofstate = 90336 headofstate = 90337 } } type = headofstate which = 90336 } # ルドヴィコス1世\r
++	command = { trigger = { OR = { headofstate = 90338 headofstate = 90339 } } type = headofstate which = 90338 } # パウロス1世\r
++	command = { type = headofgovernment which = 90315 } # アリストテレス・オナシス\r
++	command = { type = foreignminister which = 90003 } # コンスタンティノス・デメルチス\r
++	command = { type = armamentminister which = 90320 } # ペトロス・プロトパパダキス\r
++	command = { type = ministerofsecurity which = 90323 } # ニコラオス・ストラトス\r
++	command = { type = ministerofintelligence which = 90325 } # アリストテレス・ヴラホポウロス\r
++	command = { type = chiefofstaff which = 90328 } # ゲオルギオス・ハトジアネスティス\r
++	command = { type = chiefofarmy which = 90330 } # ヴィクトル・ドウスマニス\r
++	command = { type = chiefofnavy which = 90332 } # パウロス・コンドゥリオティス\r
++	command = { type = chiefofair which = 90333 } # フリストス・アダミディス\r
++	ai_chance = 50\r
++	}\r
++}\r
++#########################################################################\r
++#  突然の政府交代（1941年右派）\r
++#########################################################################\r
++event = {\r
++	id = 5836104\r
++	random = no\r
++	country = GRE\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 90001 # ゲオルギオス2世\r
++	headofstate = 90011\r
++	headofstate = 90014\r
++	headofstate = 90017\r
++	headofstate = 90156\r
++	headofstate = 90157\r
++	headofstate = 90212\r
++	headofstate = 90013 # パヴロス1世\r
++	headofstate = 90016\r
++	headofstate = 90022\r
++	headofstate = 90336 # ルドヴィコス1世\r
++	headofstate = 90337\r
++	headofstate = 90338 # パウロス1世\r
++	headofstate = 90339\r
++	}\r
++	atwar = yes\r
++	random = 5\r
++	}\r
++\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1941 }\r
++	offset = 19\r
++	deathdate = { day = 29 month = 11 year = 1943 }\r
++\r
++	action = { # 了解\r
++	name = ACTION_NAME_OK\r
++	command = { type = dissent value = -1 }\r
++	command = { trigger = { headofgovernment = 90028 } type = set_domestic which = democratic value = 4 }\r
++	command = { trigger = { NOT = { headofgovernment = 90028 } } type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { trigger = { OR = { headofstate = 90001 headofstate = 90011 headofstate = 90014 headofstate = 90017 headofstate = 90156 headofstate = 90157 headofstate = 90212 } } type = headofstate which = 90001 } # ゲオルギオス2世\r
++	command = { trigger = { OR = { headofstate = 90013 headofstate = 90016 headofstate = 90022 } } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { OR = { headofstate = 90336 headofstate = 90337 } } type = headofstate which = 90336 } # ルドヴィコス1世\r
++	command = { trigger = { OR = { headofstate = 90338 headofstate = 90339 } } type = headofstate which = 90338 } # パウロス1世\r
++	command = { trigger = { headofgovernment = 90028 } type = headofgovernment which = 90028 } # イオアニス・メタクサス\r
++	command = { trigger = { headofgovernment = 90315 } type = headofgovernment which = 90315 } # アリストテレス・オナシス\r
++	command = { trigger = { NOT = { headofgovernment = 90028 headofgovernment = 90315 } } type = headofgovernment which = 90029 } # アレクサンドロス・コリジス\r
++	command = { type = foreignminister which = 90050 } # アレクサンドロス・コリジス\r
++	command = { type = armamentminister which = 90073 } # タキス・ピペネリス\r
++	command = { type = ministerofsecurity which = 90093 } # ラウル・ビビカ・ロセッティ\r
++	command = { type = ministerofintelligence which = 90112 } # ゲオルギオス・ドロソポウロス\r
++	command = { type = chiefofstaff which = 90125 } # パラスコス・メリッシノス\r
++	command = { type = chiefofarmy which = 90134 } # ヴァシリオス・ツォウノウカス\r
++	command = { type = chiefofnavy which = 90143 } # アレクショー・ツァモトス\r
++	command = { type = chiefofair which = 90150 } # アントワーヌ・フラングリ\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # クーデターを鎮圧する\r
++	name = "EVT_1_ACTA"\r
++	command = { }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  突然の政府交代（1944年右派）\r
++#########################################################################\r
++event = {\r
++	id = 5836105\r
++	random = no\r
++	country = GRE\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 90001 # ゲオルギオス2世\r
++	headofstate = 90011\r
++	headofstate = 90014\r
++	headofstate = 90017\r
++	headofstate = 90156\r
++	headofstate = 90157\r
++	headofstate = 90212\r
++	headofstate = 90013 # パヴロス1世\r
++	headofstate = 90016\r
++	headofstate = 90022\r
++	headofstate = 90336 # ルドヴィコス1世\r
++	headofstate = 90337\r
++	headofstate = 90338 # パウロス1世\r
++	headofstate = 90339\r
++	}\r
++	atwar = yes\r
++	random = 5\r
++	}\r
++\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1944 }\r
++	offset = 19\r
++	deathdate = { day = 29 month = 11 year = 1946 }\r
++\r
++	action = { # 了解\r
++	name = ACTION_NAME_OK\r
++	command = { type = dissent value = -1 }\r
++	command = { trigger = { headofgovernment = 90028 } type = set_domestic which = democratic value = 4 }\r
++	command = { trigger = { NOT = { headofgovernment = 90028 } } type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { trigger = { OR = { headofstate = 90001 headofstate = 90011 headofstate = 90014 headofstate = 90017 headofstate = 90156 headofstate = 90157 headofstate = 90212 } } type = headofstate which = 90001 } # ゲオルギオス2世\r
++	command = { trigger = { OR = { headofstate = 90013 headofstate = 90016 headofstate = 90022 } } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { OR = { headofstate = 90336 headofstate = 90337 } } type = headofstate which = 90336 } # ルドヴィコス1世\r
++	command = { trigger = { OR = { headofstate = 90338 headofstate = 90339 } } type = headofstate which = 90338 } # パウロス1世\r
++	command = { trigger = { headofgovernment = 90028 } type = headofgovernment which = 90028 } # イオアニス・メタクサス\r
++	command = { trigger = { headofgovernment = 90315 } type = headofgovernment which = 90315 } # アリストテレス・オナシス\r
++	command = { trigger = { NOT = { headofgovernment = 90028 headofgovernment = 90315 } } type = headofgovernment which = 90031 } # ソフォクレス・ヴェニゼロス\r
++	command = { type = foreignminister which = 90052 } # ソフォクレス・ヴェニゼロス\r
++	command = { type = armamentminister which = 90077 } # アナタシオス・カネロポウロス\r
++	command = { type = ministerofsecurity which = 90094 } # ディミトリオス・マキシモス\r
++	command = { type = ministerofintelligence which = 90113 } # ゲオルギオス・ストレイト\r
++	command = { type = chiefofstaff which = 90126 } # ヴァシリオス・ツォウノウカス\r
++	command = { type = chiefofarmy which = 90135 } # ゲオルギオス・ストレイト\r
++	command = { type = chiefofnavy which = 90144 } # ペトロス・ヴォウルガリス\r
++	command = { type = chiefofair which = 90151 } # アナスタシオス・バルディヴィリアス\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # クーデターを鎮圧する\r
++	name = "EVT_1_ACTA"\r
++	command = { }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  突然の政府交代（1947年右派）\r
++#########################################################################\r
++event = {\r
++	id = 5836106\r
++	random = no\r
++	country = GRE\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 90001 # ゲオルギオス2世\r
++	headofstate = 90011\r
++	headofstate = 90014\r
++	headofstate = 90017\r
++	headofstate = 90156\r
++	headofstate = 90157\r
++	headofstate = 90212\r
++	headofstate = 90013 # パヴロス1世\r
++	headofstate = 90016\r
++	headofstate = 90022\r
++	headofstate = 90336 # ルドヴィコス1世\r
++	headofstate = 90337\r
++	headofstate = 90338 # パウロス1世\r
++	headofstate = 90339\r
++	}\r
++	atwar = yes\r
++	random = 5\r
++	}\r
++\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1947 }\r
++	offset = 19\r
++	deathdate = { day = 29 month = 11 year = 1949 }\r
++\r
++	action = { # 了解\r
++	name = ACTION_NAME_OK\r
++	command = { type = dissent value = -1 }\r
++	command = { trigger = { headofgovernment = 90028 } type = set_domestic which = democratic value = 4 }\r
++	command = { trigger = { NOT = { headofgovernment = 90028 } } type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { trigger = { OR = { headofstate = 90001 headofstate = 90011 headofstate = 90014 headofstate = 90017 headofstate = 90156 headofstate = 90157 headofstate = 90212 } } type = headofstate which = 90001 } # ゲオルギオス2世\r
++	command = { trigger = { OR = { headofstate = 90013 headofstate = 90016 headofstate = 90022 } } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { OR = { headofstate = 90336 headofstate = 90337 } } type = headofstate which = 90336 } # ルドヴィコス1世\r
++	command = { trigger = { OR = { headofstate = 90338 headofstate = 90339 } } type = headofstate which = 90338 } # パウロス1世\r
++	command = { trigger = { headofgovernment = 90028 } type = headofgovernment which = 90028 } # イオアニス・メタクサス\r
++	command = { trigger = { headofgovernment = 90315 } type = headofgovernment which = 90315 } # アリストテレス・オナシス\r
++	command = { trigger = { NOT = { headofgovernment = 90028 headofgovernment = 90315 } } type = headofgovernment which = 90032 } # コンスタンティノス・ツァルダリス\r
++	command = { type = foreignminister which = 90052 } # ソフォクレス・ヴェニゼロス\r
++	command = { type = armamentminister which = 90078 } # ゲオルギオス・ラヴダス\r
++	command = { type = ministerofsecurity which = 90097 } # パナジオティス・カファンタリス\r
++	command = { type = ministerofintelligence which = 90114 } # アナタシオス・カネロポウロス\r
++	command = { type = chiefofstaff which = 90127 } # アナスタシオス・サケラリオウ\r
++	command = { type = chiefofarmy which = 90136 } # ゲオルギオス・ラヴダス\r
++	command = { type = chiefofnavy which = 90144 } # ペトロス・ヴォウルガリス\r
++	command = { type = chiefofair which = 90151 } # アナスタシオス・バルディヴィリアス\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # クーデターを鎮圧する\r
++	name = "EVT_1_ACTA"\r
++	command = { }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  突然の政府交代（1952年右派）\r
++#########################################################################\r
++event = {\r
++	id = 5836107\r
++	random = no\r
++	country = GRE\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 90001 # ゲオルギオス2世\r
++	headofstate = 90011\r
++	headofstate = 90014\r
++	headofstate = 90017\r
++	headofstate = 90156\r
++	headofstate = 90157\r
++	headofstate = 90212\r
++	headofstate = 90013 # パヴロス1世\r
++	headofstate = 90016\r
++	headofstate = 90022\r
++	headofstate = 90336 # ルドヴィコス1世\r
++	headofstate = 90337\r
++	headofstate = 90338 # パウロス1世\r
++	headofstate = 90339\r
++	}\r
++	atwar = yes\r
++	random = 5\r
++	}\r
++\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1952 }\r
++	offset = 19\r
++	deathdate = { day = 29 month = 11 year = 1949 }\r
++\r
++	action = { # 了解\r
++	name = ACTION_NAME_OK\r
++	command = { type = dissent value = -1 }\r
++	command = { trigger = { headofgovernment = 90028 } type = set_domestic which = democratic value = 4 }\r
++	command = { trigger = { NOT = { headofgovernment = 90028 } } type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { trigger = { OR = { headofstate = 90001 headofstate = 90011 headofstate = 90014 headofstate = 90017 headofstate = 90156 headofstate = 90157 headofstate = 90212 } } type = headofstate which = 90001 } # ゲオルギオス2世\r
++	command = { trigger = { OR = { headofstate = 90013 headofstate = 90016 headofstate = 90022 } } type = headofstate which = 90022 } # パヴロス1世\r
++	command = { trigger = { OR = { headofstate = 90336 headofstate = 90337 } } type = headofstate which = 90336 } # ルドヴィコス1世\r
++	command = { trigger = { OR = { headofstate = 90338 headofstate = 90339 } } type = headofstate which = 90338 } # パウロス1世\r
++	command = { trigger = { headofgovernment = 90028 } type = headofgovernment which = 90028 } # イオアニス・メタクサス\r
++	command = { trigger = { headofgovernment = 90315 } type = headofgovernment which = 90315 } # アリストテレス・オナシス\r
++	command = { trigger = { NOT = { headofgovernment = 90028 headofgovernment = 90315 } } type = headofgovernment which = 90164 } # ディミトリオス・キウソプロス\r
++	command = { type = foreignminister which = 90166 } # パナイオティス・ピペネリス\r
++	command = { type = armamentminister which = 90079 } # アルチビアデス・ステファノポウロス\r
++	command = { type = ministerofsecurity which = 90098 } # ステファノス・ラキアントス\r
++	command = { type = ministerofintelligence which = 90115 } # アレクサンドロス・プロパニス\r
++	command = { type = chiefofstaff which = 90123 } # アレクサンドロス・パパゴス\r
++	command = { type = chiefofarmy which = 90136 } # ゲオルギオス・ラヴダス\r
++	command = { type = chiefofnavy which = 90144 } # ペトロス・ヴォウルガリス\r
++	command = { type = chiefofair which = 90151 } # アナスタシオス・バルディヴィリアス\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # クーデターを鎮圧する\r
++	name = "EVT_1_ACTA"\r
++	command = { }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  突然の政府交代（1936年左派）\r
++#########################################################################\r
++event = {\r
++	id = 5836108\r
++	random = no\r
++	country = GRE\r
++\r
++	trigger = {\r
++	event = 5836102 # 大臣の逝去（エレフテリオス・ヴェニゼロス）\r
++	OR = {\r
++	headofstate = 90347 # テミストクレス・ソフォウリス\r
++	headofstate = 90348 # ゲオルギオス・パパンドレウ\r
++	}\r
++	random = 5\r
++	}\r
++\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 39\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 了解\r
++	name = ACTION_NAME_OK\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = headofstate which = 90001 } # テミストクレス・ソフォウリス\r
++	command = { type = headofgovernment which = 90349 } # ゲオルギオス・カファンタリス\r
++	command = { type = foreignminister which = 90352 } # アンドレアス・ミシャラコポウロス\r
++	command = { type = armamentminister which = 90065 } # マルコス・アガノソス\r
++	command = { type = ministerofsecurity which = 90087 } # ゲオルギオス・パパンドレウ\r
++	command = { type = ministerofintelligence which = 90358 } # コンスタンティノス・ミリオティス=コムニノス\r
++	command = { type = chiefofstaff which = 90359 } # アナスタシオス・パポウラス\r
++	command = { type = chiefofarmy which = 90362 } # ステリオス・ゴナタス\r
++	command = { type = chiefofnavy which = 90363 } # ディミトリオス・フォカス\r
++	command = { type = chiefofair which = 90334 } # ディミトリオス・カンベロス\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # クーデターを鎮圧する\r
++	name = "EVT_1_ACTA"\r
++	command = { }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  突然の政府交代（1941年左派）\r
++#########################################################################\r
++event = {\r
++	id = 5836109\r
++	random = no\r
++	country = GRE\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 90346 # エレフテリオス・ヴェニゼロス\r
++	headofstate = 90347 # テミストクレス・ソフォウリス\r
++	headofstate = 90348 # ゲオルギオス・パパンドレウ\r
++	}\r
++	atwar = yes\r
++	random = 5\r
++	}\r
++\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1941 }\r
++	offset = 19\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++\r
++	action = { # 了解\r
++	name = ACTION_NAME_OK\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { type = headofstate which = 90347 } # テミストクレス・ソフォウリス\r
++	command = { type = headofgovernment which = 90349 } # ゲオルギオス・カファンタリス\r
++	command = { type = foreignminister which = 90153 } # テミストクレス・ソフォウリス\r
++	command = { type = armamentminister which = 90066 } # テオドロス・マーサル\r
++	command = { type = ministerofsecurity which = 90088 } # マルコス・アガノソス\r
++	command = { type = ministerofintelligence which = 90109 } # ゲオルギオス・パパンドレウ\r
++	command = { type = chiefofstaff which = 90359 } # アナスタシオス・パポウラス\r
++	command = { type = chiefofarmy which = 90133 } # ゲオルギオス・ロウソウポウロス\r
++	command = { type = chiefofnavy which = 90142 } # デメトリオス・ゴウシス\r
++	command = { type = chiefofair which = 90147 } # ガエシア・ギアナドス\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # クーデターを鎮圧する\r
++	name = "EVT_1_ACTA"\r
++	command = { }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  突然の政府交代（1946年左派）\r
++#########################################################################\r
++event = {\r
++	id = 5836110\r
++	random = no\r
++	country = GRE\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 90346 # エレフテリオス・ヴェニゼロス\r
++	headofstate = 90347 # テミストクレス・ソフォウリス\r
++	headofstate = 90348 # ゲオルギオス・パパンドレウ\r
++	}\r
++	atwar = yes\r
++	random = 5\r
++	}\r
++\r
++	name = "EVT_120_NAME"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1946 }\r
++	offset = 19\r
++	deathdate = { day = 29 month = 11 year = 1950 }\r
++\r
++	action = { # 了解\r
++	name = ACTION_NAME_OK\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 3 }	\r
++	command = { type = headofstate which = 90001 } # テミストクレス・ソフォウリス\r
++	command = { type = headofgovernment which = 90026 } # ゲオルギオス・パパンドレウ\r
++	command = { type = foreignminister which = 90048 } # コンスタンティノス・レンティス\r
++	command = { type = armamentminister which = 90068 } # アレクサンドロス・スヴォロス\r
++	command = { type = ministerofsecurity which = 90091 } # パナジオリス・ポウリトサス\r
++	command = { type = ministerofintelligence which = 90110 } # コスタス・モウラス\r
++	command = { type = chiefofstaff which = 90359 } # アナスタシオス・パポウラス\r
++	command = { type = chiefofarmy which = 90133 } # ゲオルギオス・ロウソウポウロス\r
++	command = { type = chiefofnavy which = 90142 } # デメトリオス・ゴウシス\r
++	command = { type = chiefofair which = 90148 } # ユウタナソス・ペリコス\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # クーデターを鎮圧する\r
++	name = "EVT_1_ACTA"\r
++	command = { }\r
++	ai_chance = 10\r
++	}\r
++}\r
++#########################################################################\r
+ #  ブルガリア\r
+ #########################################################################\r
+ #  軍国主義者のクーデター\r

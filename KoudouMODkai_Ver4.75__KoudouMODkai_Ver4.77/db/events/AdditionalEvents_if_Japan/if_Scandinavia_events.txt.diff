@@ -1,0 +1,2515 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Scandinavia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Scandinavia_events.txt [cp932]
+@@ -1,1256 +1,1256 @@
+-#########################################################################\r
+-#\r
+-#		北海帝国イベント  by 横山大佐\r
+-#########################################################################\r
+-###### 追加イベント一覧 ############\r
+-#########################################################################\r
+-#id = 2201001 愛国者クヴィスリング\r
+-#id = 2201002 北欧大動乱\r
+-#id = 2201003 スウェーデン内戦 ― ノルウェーの介入\r
+-#id = 2201004 スウェーデン内戦 ― ノルウェーの義勇兵派遣\r
+-#id = 2201005 スウェーデン内戦 ― ノルウェーの軍事介入\r
+-#id = 2201008 北海帝国構想\r
+-#id = 2201009 北海帝国構想 ― ノルウェーの提案\r
+-#id = 2201010 北海帝国構想 ― 成立\r
+-#id = 2201011 『生命の泉』計画\r
+-#id = 2201012 人種選良化計画\r
+-#id = 2201013 北海帝国によるデンマーク解体\r
+-#id = 2201015 デンマーク併合\r
+-#id = 2201016 デンマークが同盟に参加\r
+-#id = 2201017 北海帝国によるデンマーク解体 ― ドイツの反応\r
+-#id = 2201018 北海帝国によるデンマーク解体 ― イギリスの反応\r
+-#id = 2201019 フィンランド北部進駐\r
+-#id = 2201020 フィンランド北部進駐 ― 北海帝国の介入\r
+-#id = 2201021 フィンランド北部進駐 ― ラップランド併合\r
+-#id = 2201022 フィンランド北部進駐 ― ロシアの反応\r
+-##########################################################################\r
+-#  愛国者クヴィスリング\r
+-# 1905年、ノルウェーはスウェーデンとの同君連合を解消して独立した。\r
+-# ホーコン7世を国王として平和的な発展をするかと思われたが、1920年代の北欧はまさに動乱を迎えることになる。\r
+-# 世界大戦で過剰となった武器が、イギリス・ドイツ・フランス・ロシアから有望な輸出先として、\r
+-# スウェーデンを起点に北欧へ大量に流れ込んできたのだ。\r
+-# スポーツ車と銘打ち、装甲車が港から堂々と左派の党本部に持ち込まれたかと思えば、\r
+-# 右派が祝砲と称してとして野戦砲を敵対者の施設に打ち込む有様であり、ノルウェーは急速に荒廃していった。\r
+-# こうした世紀末同然の様子を示したノルウェーで頭角を現したのがヴィドクン・クヴィスリングである。\r
+-# 彼は右派を『北欧戦線』という団体にまとめ上げ、同時に北欧の統一を訴える『北海帝国構想』を打ち出した。\r
+-# 右派左派問わず、ノルウェー人の団結を訴えた彼は国民から支持を集め、やがてそれは国王をも凌ぐほどであった。\r
+-# 1928年、この人気ぶりに危機感を抱いた国王が『北欧戦線』の活動を禁止させるが、国民の猛反発を生み、\r
+-# ついには宮殿が襲撃され、国王がノルウェーからたたき出されることになる。\r
+-# こうして北欧でなし崩し的に権力を手に入れたクヴィスリングは、1930年に共産党・労働党を粛正。\r
+-# 国内を安定させると彼の理想である『北海帝国構想』実現のため、内戦寸前のスウェーデンに目を向けている…\r
+-###########################################################################\r
+-event = {\r
+-	id = 2201001\r
+-	random = no\r
+-	country = SWE\r
+-	save_date = yes\r
+-\r
+-	name = "EVT_2201001_NAME"\r
+-	desc = "EVT_2201001_DESC"\r
+-	style = 1\r
+-  	picture = "Quisling"\r
+-\r
+-	action = { # 偉大な『北海帝国』を再建するのだ\r
+-	name = "ACTIONNAME2201001A"\r
+-	command = { type = dissent value = 3 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  北欧大動乱\r
+-# 1920年代の北欧はまさに列強による代理戦争、大動乱の時代であった。\r
+-# きっかけは世界大戦が終結した1921年にまでさかのぼる。\r
+-# フランスの敗北で終わった世界大戦だが、そのときに問題になったのが過剰に残された武器弾薬であった。\r
+-# これらの輸出先として、国内を統一し急速な軍拡を行っていた中華民国が選ばれ、\r
+-# 小銃や手榴弾から軍艦まで広く輸出されていたが、新たな輸出先に選ばれたのが北欧諸国であった。\r
+-# 世界大戦では中立を保っていたが、1918年のサンクトペテルブルク蜂起で敗れたロシア左翼の過激派、\r
+-# 『ボルシェヴィキ』一派が逃亡先に北欧を選んだことで、左翼革命思想が伝搬。\r
+-# やがて彼らに影響を受けた左派政党は急速に過激化、それに合わせるように右派も過激化すると、彼らは自身らの武装を進めた。\r
+-# そこに目を付けたのが列強の武器商人たちである。\r
+-# 彼らは過剰となった武器を格安でスウェーデンを起点に様々な形で輸出した。\r
+-# スポーツカー名義の装甲車、祝砲用の野戦用、国内移動のための試作爆撃機……\r
+-# これらによる武装は当然、国内における右派左派の衝突を激しくさせ、国軍ですら対応できなかった。\r
+-# この恐るべき動乱期において、無秩序・無法のような有様になった一方、様々な逸話が生まれ、\r
+-# また無数の学問・研究・哲学・文学が花開いた時代でもあった。\r
+-###########################################################################\r
+-event = {\r
+-	id = 2201002\r
+-	random = no\r
+-	TAG = { SWE NOR DEN }\r
+-	persistent = yes\r
+-\r
+-	name = "EVT_2201002_NAME"\r
+-	desc = "EVT_2201002_DESC"\r
+-	style = 2\r
+-  	picture = "Armoredcar_Skull"\r
+-\r
+-	action = { # まさに末世よ……\r
+-	name = "ACTIONNAME2201002A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { trigger = { exists = DEN } type = province_revoltrisk which = 216 value = 20 }\r
+-	command = { trigger = { exists = DEN } type = province_revoltrisk which = 217 value = 20 }\r
+-	command = { trigger = { exists = DEN } type = province_revoltrisk which = 218 value = 20 }\r
+-	command = { trigger = { exists = DEN } type = province_revoltrisk which = 219 value = 20 }\r
+-	command = { trigger = { exists = DEN } type = province_revoltrisk which = 220 value = 20 }\r
+-	command = { trigger = { exists = DEN } type = province_revoltrisk which = 294 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2152 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2153 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2154 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2155 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2156 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2157 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2158 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2159 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2160 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2161 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2162 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2163 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2164 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2165 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2166 value = 20 }\r
+-	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2167 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 483 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 484 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 485 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 486 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 487 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 488 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 489 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 490 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 491 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 492 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 493 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 494 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 495 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 496 value = 20 }\r
+-	command = { trigger = { exists = NOR } type = province_revoltrisk which = 497 value = 20 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  スウェーデン内戦 ― ノルウェーの介入\r
+-# 1933年、スウェーデンにおける右派と左派の対立はついに内戦に発展した。\r
+-# 社会的平等を求め大衆は宗教界、大地主、右派を敵として教会や敵対政党の本部を襲撃、労働組合はストライキを実行した。\r
+-# 社会秩序の崩壊を受け、保守派は極右と軍部と結託し秩序を回復するべく左派を攻撃した。\r
+-# ノルウェーではヴィドクン・クヴィスリングが、スウェーデンの同志を直ちに支援するべきだと明言。\r
+-# 直接の軍事介入すらいとわない姿勢を示した。\r
+-###########################################################################\r
+-\r
+-event = { \r
+-	id = 2201003\r
+-	random = no\r
+-	country = NOR\r
+-	\r
+-	decision = {\r
+-		war = { country = SWE country = U21 }\r
+-		OR = {\r
+-		event = 2198006\r
+-		event = 2198009\r
+-		}\r
+-		NOT = {\r
+-			OR = {\r
+-				war = { country = NOR country = SWE }\r
+-				war = { country = NOR country = U21 }\r
+-				war = { country = NOR country = UER }\r
+-				war = { country = NOR country = GER }\r
+-				war = { country = NOR country = ITA }\r
+-				war = { country = NOR country = ENG }\r
+-			}\r
+-		}\r
+-	}\r
+-			\r
+-	decision_trigger = { \r
+-		manpower = 10\r
+-		supplies = 1000 \r
+-		money = 200\r
+-	}\r
+-			\r
+-	trigger = {\r
+-		war = { country = SWE country = U21 }\r
+-		OR = {\r
+-		event = 2198006\r
+-		event = 2198009\r
+-		}\r
+-		NOT = {\r
+-			OR = {\r
+-				war = { country = NOR country = SWE }\r
+-				war = { country = NOR country = U21 }\r
+-				war = { country = NOR country = UER }\r
+-				war = { country = NOR country = GER }\r
+-				war = { country = NOR country = ITA }\r
+-				war = { country = NOR country = ENG }\r
+-			}\r
+-		}\r
+-	}\r
+-	\r
+-	name = "EVT_2201003_NAME"\r
+-	desc = "EVT_2201003_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
+-\r
+-	action = { # 義勇兵を送る\r
+-		name = "ACTIONNAME2201003A"\r
+-		command = { type = manpowerpool value = -10 }\r
+-		command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-		command = { trigger = { ai = no } type = money value = -200 }\r
+-		command = { type = relation which = SWE value = 20 }\r
+-		command = { type = relation which = U21 value = -15 }\r
+-		command = { type = relation which = UER value = 5 }\r
+-		command = { type = relation which = GER value = -5 }\r
+-		command = { type = relation which = ITA value = -5 }\r
+-		command = { type = relation which = ENG value = -5 }\r
+-		command = { type = relation which = POR value = -5 }\r
+-		command = { type = domestic which = interventionism value = 1 }\r
+-		command = { type = belligerence which = NOR value = 1 }\r
+-		command = { type = trigger which = 2201004 }\r
+-		ai_chance = 50\r
+-	}\r
+-	\r
+-	action = { # 直接介入する\r
+-		name = "ACTIONNAME2201003B"\r
+-		command = { type = manpowerpool value = -10 }\r
+-		command = { type = relation which = SWE value = 20 }\r
+-		command = { type = relation which = U21 value = -15 }\r
+-		command = { type = relation which = UER value = 5 }\r
+-		command = { type = relation which = GER value = -5 }\r
+-		command = { type = relation which = ITA value = -5 }\r
+-		command = { type = relation which = ENG value = -5 }\r
+-		command = { type = relation which = POR value = -5 }\r
+-		command = { type = domestic which = interventionism value = 1 }\r
+-		command = { type = belligerence which = NOR value = 1 }\r
+-		command = { type = trigger which = 2201005 }\r
+-		ai_chance = 50\r
+-	}\r
+-	action = { # 介入するべきではない\r
+-		name = "ACTIONNAME2201003C"\r
+-		command = { type = relation which = U21 value = -20 }\r
+-		command = { type = relation which = SWE value = 15 }\r
+-		command = { type = relation which = UER value = 5 }\r
+-		command = { type = relation which = GER value = 5 }\r
+-		command = { type = relation which = ITA value = 5 }\r
+-		command = { type = relation which = ENG value = 5 }\r
+-		command = { type = relation which = POR value = 15 }\r
+-		command = { type = domestic which = interventionism value = -1 }\r
+-		command = { type = belligerence which = NOR value = 1 }\r
+-		ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201004\r
+-	random = no\r
+-	country = SWE\r
+-\r
+-	name = "EVT_2201004_NAME"\r
+-	desc = "EVT_2201003_DESC"\r
+-	style = 2\r
+-  	picture = "scw"\r
+-	\r
+-	action_a = {\r
+-		name = ACTION_NAME_OK # Great!\r
+-		command = { type = money value = -100 }\r
+-		command = { type = manpowerpool value = 10 }\r
+-		command = { type = supplies value = 2500 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = gain_tech which = -1 }\r
+-		command = { type = gain_tech which = -1 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201005\r
+-	random = no\r
+-	country = SWE\r
+-\r
+-	name = "EVT_2201005_NAME"\r
+-	desc = "EVT_2201003_DESC"\r
+-	style = 2\r
+-  	picture = "scw"\r
+-	\r
+-	action_a = {\r
+-		name = ACTION_NAME_OK # Great!\r
+-		command = { type = money value = -100 }\r
+-		command = { type = manpowerpool value = 10 }\r
+-		command = { type = supplies value = 2500 }\r
+-		command = { type = relation which = NOR value = 100 }\r
+-		command = { type = alliance which =  NOR }\r
+-		command = { type = guarantee which = NOR where = SWE }\r
+-		command = { type = guarantee which = SWE where = NOR }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = gain_tech which = -1 }\r
+-		command = { type = gain_tech which = -1 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スウェーデン内戦の終結 ― 重要な経験\r
+-# スウェーデン内戦が集結すると、軍事顧問団は帰国した。\r
+-# 彼らは内戦において兵器の実験、新たな戦術の考案、何より実戦の経験を得ており、\r
+-# 軍の強化に多大な貢献をすることになる。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2201006\r
+-	random = no\r
+-	country = NOR\r
+-\r
+-	trigger = { \r
+-		OR = {\r
+-		event = 2201004\r
+-		event = 2201005\r
+-		}\r
+-		event = 2198012\r
+-		\r
+-		NOT = {\r
+-			OR = {\r
+-				war = { country = NOR country = SWE }\r
+-				war = { country = NOR country = U21 }\r
+-				war = { country = NOR country = UER }\r
+-				war = { country = NOR country = GER }\r
+-				war = { country = NOR country = ITA }\r
+-				war = { country = NOR country = ENG }\r
+-			}\r
+-		}\r
+-	}\r
+-\r
+-	name = "EVT_2198111_NAME"\r
+-	desc = "EVT_2198111_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = {\r
+-		name = "ACTION_NAME_GREAT"\r
+-		command = { type = relation which = U21 value = 50 }\r
+-		command = { type = manpowerpool value = 8 }\r
+-		command = { type = dissent value = -1 }\r
+-		command = { type = gain_tech which = -2 } \r
+-		command = { type = gain_tech which = -2 } \r
+-		command = { type = gain_tech which = -1 } \r
+-		command = { type = gain_tech which = -1 } \r
+-		command = { type = money value = 250 }\r
+-		command	= { trigger = { local_flag = military_control_U21 } type = military_control which = FRA where = U21 }\r
+-	command = { type = secederegion which = SWE value = Sweden when = 1 }\r
+-		command	= { trigger = { local_flag = military_control_U21 } type = local_clrflag which = military_control_U21 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201007\r
+-	random = no\r
+-	country = NOR\r
+-\r
+-	trigger = {\r
+-		OR = {\r
+-		event = 2201004\r
+-		event = 2201005\r
+-		}\r
+-		event = 2198013\r
+-		\r
+-		NOT = {\r
+-			OR = {\r
+-				war = { country = NOR country = SWE }\r
+-				war = { country = NOR country = U21 }\r
+-				war = { country = NOR country = UER }\r
+-				war = { country = NOR country = GER }\r
+-				war = { country = NOR country = ITA }\r
+-				war = { country = NOR country = ENG }\r
+-			}\r
+-		}\r
+-	}\r
+-\r
+-	name = "EVT_2198111_NAME"\r
+-	desc = "EVT_2198111_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 3 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = {\r
+-		name = "ACTION_NAME_OK" \r
+-		command = { type = manpowerpool value = 3 }\r
+-		command = { trigger = { ai = no } type = dissent value = 1 }\r
+-		command = { type = gain_tech which = -2 } \r
+-		command = { type = money value = 250 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  北海帝国構想\r
+-# スウェーデンにおける内戦が右派による勝利で幕を閉じると、\r
+-# ヴィドグン・クヴィスリングに影響を受けた北海帝国構想を掲げるスウェーデン民族党による政権が誕生した。\r
+-# 内戦終結直前から、密かにノルウェーとの合同のための交渉を行っていたが、\r
+-# やがてクヴィスリンクは自身を信奉する一部軍人を引き連れて交渉に赴き、スウェーデンと最終的な政治的合意を行った。\r
+-# 彼らは交渉からわずか数週間も経たないうちにスウェーデン政府との合同を発表し、国号を『北海帝国』に改めた。\r
+-# そしてこの北海帝国大総統の地位についたのは……ヴィドグン・クヴィスリングであった。\r
+-###########################################################################\r
+-\r
+-event = { \r
+-	id = 2201008\r
+-	random = no\r
+-	country = NOR\r
+-	\r
+-	decision = {\r
+-	exists = NOR\r
+-	exists = SWE\r
+-	NOT = { exists = U21 }\r
+-	NOT = { war = { country = SWE country = U21 } }\r
+-	OR = {\r
+-	event = 2198006\r
+-	event = 2198009\r
+-	}\r
+-	event = 2198012\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = NOR country = SWE }\r
+-	war = { country = NOR country = U21 }\r
+-	war = { country = NOR country = UER }\r
+-	war = { country = NOR country = GER }\r
+-	war = { country = NOR country = ITA }\r
+-	war = { country = NOR country = ENG }\r
+-	}\r
+-	}\r
+-	}\r
+-			\r
+-	decision_trigger = { \r
+-	exists = NOR\r
+-	exists = SWE\r
+-	NOT = { exists = U21 }\r
+-	NOT = { war = { country = SWE country = U21 } }\r
+-	OR = {\r
+-	event = 2198006\r
+-	event = 2198009\r
+-	}\r
+-	event = { id = 2198012 days = 60 }\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = NOR country = SWE }\r
+-	war = { country = NOR country = U21 }\r
+-	war = { country = NOR country = UER }\r
+-	war = { country = NOR country = GER }\r
+-	war = { country = NOR country = ITA }\r
+-	war = { country = NOR country = ENG }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = NOR data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SWE data = 1 value = 75 }\r
+-	}\r
+-			\r
+-	trigger = {\r
+-	exists = NOR\r
+-	exists = SWE\r
+-	NOT = { exists = U21 }\r
+-	NOT = { war = { country = SWE country = U21 } }\r
+-	OR = {\r
+-	event = 2198006\r
+-	event = 2198009\r
+-	}\r
+-	event = { id = 2198012 days = 60 }\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = NOR country = SWE }\r
+-	war = { country = NOR country = U21 }\r
+-	war = { country = NOR country = UER }\r
+-	war = { country = NOR country = GER }\r
+-	war = { country = NOR country = ITA }\r
+-	war = { country = NOR country = ENG }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = NOR data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SWE data = 1 value = 75 }\r
+-	}\r
+-	\r
+-	name = "EVT_2201008_NAME"\r
+-	desc = "EVT_2201008_DESC"\r
+-	style = 2\r
+-	picture = "Nordsoveldet"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
+-\r
+-	action = { # 北欧帝国構想を今こそ実現する時だ\r
+-	name = "ACTIONNAME2201008A"\r
+-	command = { type = belligerence which = NOR value = 3 }\r
+-	command = { type = relation which = SWE value = 20 }\r
+-	command = { type = relation which = GER value = 15 }\r
+-	command = { type = relation which = U21 value = -15 }\r
+-	command = { type = relation which = UER value = -15 }\r
+-	command = { type = relation which = FRA value = -15 }\r
+-	command = { type = relation which = ENG value = -15 }\r
+-	command = { type = relation which = POR value = -15 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = trigger which = 2201009 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201009\r
+-	random = no\r
+-	country = SWE\r
+-\r
+-	name = "EVT_2201009_NAME"\r
+-	desc = "EVT_2201008_DESC"\r
+-	style = 2\r
+-	picture = "Nordsoveldet"\r
+-\r
+-	action = { # 今こそ北海帝国を！(ゲームオーバー)\r
+-	name = "ACTIONNAME2201009A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = trigger which = 2201010 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 同盟にとどめる\r
+-	name = "ACTIONNAME2201009B"\r
+-	command = { type = dissent value = 10 }\r
+-	command = { type = belligerence which = SWE value = 3 }\r
+-	command = { type = relation which = NOR value = 100 }\r
+-	command = { type = alliance which = NOR }\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # 統合など断固拒否だ！\r
+-	name = "ACTIONNAME2201009C"\r
+-	command = { type = dissent value = 50 }\r
+-	command = { type = relation which = NOR value = -200 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201010\r
+-	random = no\r
+-	country = NOR\r
+-\r
+-	name = "EVT_2201010_NAME"\r
+-	desc = "EVT_2201008_DESC"\r
+-	style = 2\r
+-	picture = "Nordsoveldet"\r
+-\r
+-	action = { # 北海帝国大総統クヴィスリング万歳！\r
+-	name = "ACTIONNAME2201010A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = inherit which = SWE value = 1 }\r
+-	command = { type = country which = SCA }\r
+-	command = { type = name where = SCA which = "北海帝国" }\r
+-	command = { type = flag_ext where = SCA which = "_north" }\r
+-	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
+-\r
+-	command = { type = headofstate which = 756001 }\r
+-	command = { type = headofgovernment which = 755868 }\r
+-	command = { type = foreignminister which = 756008 }\r
+-	command = { type = armamentminister which = 756002 }\r
+-	command = { type = ministerofsecurity which = 756003 }\r
+-	command = { type = ministerofintelligence which = 756007 }\r
+-	command = { type = chiefofstaff which = 756004 }\r
+-	command = { type = chiefofarmy which = 756005 }\r
+-	command = { type = chiefofnavy which = 755875 }\r
+-	command = { type = chiefofair which = 755876 }\r
+-	command = { type = waketeam which = 755202 }\r
+-	command = { type = waketeam which = 755203 }\r
+-	command = { type = waketeam which = 755204 }\r
+-	command = { type = waketeam which = 755205 }\r
+-	command = { type = waketeam which = 755206 }\r
+-	command = { type = waketeam which = 755209 }\r
+-	command = { type = waketeam which = 755210 }\r
+-	command = { type = waketeam which = 755211 }\r
+-	command = { type = waketeam which = 755212 }\r
+-	command = { type = waketeam which = 755231 }\r
+-	command = { type = waketeam which = 755237 }\r
+-	command = { type = waketeam which = 755239 }\r
+-	command = { type = waketeam which = 755240 }\r
+-	command = { type = waketeam which = 755241 }\r
+-	command = { type = waketeam which = 755244 }\r
+-	command = { type = waketeam which = 755246 }\r
+-	command = { type = waketeam which = 755249 }\r
+-	command = { type = waketeam which = 755250 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  『生命の泉』計画\r
+-# ドイツ人人種主義者アルフレート・ローゼンベルクに影響を受けたこの政策は、\r
+-# 『純北欧人種的な』人々を国内外から呼び寄せ、就業斡旋と結婚相手の選定を行ったものであり、\r
+-# こうした政策は明確に近代的な人権を侵害したものであった。\r
+-# 数十年後、北欧では片親世帯、孤児が大量に発生し、大半は1950年代に諜報機関の供給源となったが\r
+-# 一部の子供は人身売買の道具となるなど、悲惨な結果を招くこととなる。\r
+-###########################################################################\r
+-event = {\r
+-	id = 2201011\r
+-	random = no\r
+-	country = SCA\r
+-	save_date = yes\r
+-	\r
+-	decision = {\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = { ispuppet = SCA }\r
+-	exists = SCA\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = { ispuppet = SCA }\r
+-	exists = SCA\r
+-	supplies = 2100\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = { ispuppet = SCA }\r
+-	exists = SCA\r
+-	random = 35\r
+-	}\r
+-	\r
+-	name = "EVT_2201011_NAME"\r
+-	desc = "EVT_2201011_DESC"\r
+-	style = 2\r
+-	picture = "Lebensborn_Norway1"\r
+-	decision_picture = "decision_Quisling"\r
+-\r
+-	date = { day = 0 month = 6 year = 1934 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # このような政策が、許されて良いものだろうか?\r
+-	name = "ACTIONNAME2201011A"\r
+-	command = { type = dissent value = 10 }\r
+-	command = { type = belligerence which = SCA value = 5 }\r
+-	command = { trigger = { ai = no } type = supplies value = -2000 }\r
+-	command = { type = manpowerpool value = 50 }\r
+-	command = { type = relative_manpower value = 30 }\r
+-	command = { type = relation which = GER value = 20 }\r
+-	command = { type = relation which = UB8 value = 20 }\r
+-	command = { type = relation which = CHI value = 20 }\r
+-	command = { type = relation which = ENG value = -20 }\r
+-	command = { type = relation which = FRA value = -20 }\r
+-	command = { type = relation which = UER value = -20 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  人種選良化計画\r
+-# 『生命の泉』計画に並んで悪名高いのはこの人種選良化計画であった。\r
+-# これは国内に存在する『非北欧人種的な』人々、生まれつき障害を持った人々を収容するという非人道的政策である。\r
+-# こうした収容政策は最終的には『非北欧人種に対する最終的解決』という文言に移り変わり、ガスを使用した大量殺害にシフトした。\r
+-# これはルーマニア鉄衛団の愚行と並び称され、人類史に刻まれた『大いなる汚点』となった。\r
+-###########################################################################\r
+-event = {\r
+-	id = 2201012\r
+-	random = no\r
+-	country = SCA\r
+-	\r
+-	decision = {\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	event = 2201011\r
+-	NOT = { ispuppet = SCA }\r
+-	exists = SCA\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	event = { id = 2201011 days = 90 }\r
+-	NOT = { ispuppet = SCA }\r
+-	exists = SCA\r
+-	supplies = 2100\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	event = { id = 2201011 days = 90 }\r
+-	NOT = { ispuppet = SCA }\r
+-	exists = SCA\r
+-	random = 35\r
+-	}\r
+-	\r
+-	name = "EVT_2201012_NAME"\r
+-	desc = "EVT_2201012_DESC"\r
+-	style = 2\r
+-	picture = "Lebensborn_Norway2"\r
+-	decision_picture = "decision_Quisling"\r
+-\r
+-	date = { day = 0 month = 6 year = 1934 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # ……\r
+-	name = "ACTIONNAME2201012A"\r
+-	command = { type = dissent value = -20 }\r
+-	command = { type = belligerence which = SCA value = 5 }\r
+-	command = { type = relative_manpower value = -10 }\r
+-	command = { trigger = { ai = no } type = supplies value = -2000 }\r
+-	command = { type = manpowerpool value = -20 }\r
+-	command = { type = money value = 5000 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-\r
+-##########################################################################\r
+-#  北海帝国によるデンマーク解体\r
+-# 1920年代に起きた大動乱と呼ばれる北欧の内政混乱は、ノルウェー・スウェーデンにおける大規模な政変、そして北海帝国の成立につながった。\r
+-# デンマークではドイツと陸続きだったこともあり、暴動や暗殺が頻発し、政情は全く安定しなかった。\r
+-# 国内には政府に対する失望感が広まり、民族運動が1930年代に入り激しくなるとデンマークは北海帝国に協力要請を行った。\r
+-# しかし北海帝国側の交換条件は苛烈を極め、一時は交渉を断念したが、この時すでにヴィドグン・クヴィスリング大総統はデンマークの併合を決定していた。\r
+-# 1936年、デンマーク政府首脳をスウェーデンのオスロに呼び寄せると、併合要請文への署名を要求。\r
+-# デンマーク首相はこれを見たとき卒倒したが、すぐに蘇生措置が行われ、クヴィスリングから軍に動員を命じたことも伝えられると、これに署名。\r
+-# デンマークは北海帝国の一部に組み込まれることになり、ここにクヴィスリングが唱えた構想が半ば実現した。\r
+-###########################################################################\r
+-\r
+-event = { \r
+-	id = 2201013\r
+-	random = no\r
+-	country = SCA\r
+-	\r
+-	decision = {\r
+-	exists = SCA\r
+-	exists = DEN\r
+-	NOT = { war = { country = SCA country = DEN } }\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = SCA country = SWE }\r
+-	war = { country = SCA country = U21 }\r
+-	war = { country = SCA country = NOR }\r
+-	war = { country = SCA country = UER }\r
+-	war = { country = SCA country = GER }\r
+-	war = { country = SCA country = ITA }\r
+-	war = { country = SCA country = ENG }\r
+-	war = { country = SCA country = FRA }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = SCA data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SCA data = 1 value = 75 }\r
+-	}\r
+-			\r
+-	decision_trigger = { \r
+-	exists = SCA\r
+-	exists = DEN\r
+-	NOT = { war = { country = SCA country = DEN } }\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = SCA country = SWE }\r
+-	war = { country = SCA country = U21 }\r
+-	war = { country = SCA country = NOR }\r
+-	war = { country = SCA country = UER }\r
+-	war = { country = SCA country = GER }\r
+-	war = { country = SCA country = ITA }\r
+-	war = { country = SCA country = ENG }\r
+-	war = { country = SCA country = FRA }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = SCA data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SCA data = 1 value = 75 }\r
+-	}\r
+-			\r
+-	trigger = {\r
+-	exists = SCA\r
+-	exists = DEN\r
+-	NOT = { war = { country = SCA country = DEN } }\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = SCA country = SWE }\r
+-	war = { country = SCA country = U21 }\r
+-	war = { country = SCA country = NOR }\r
+-	war = { country = SCA country = UER }\r
+-	war = { country = SCA country = GER }\r
+-	war = { country = SCA country = ITA }\r
+-	war = { country = SCA country = ENG }\r
+-	war = { country = SCA country = FRA }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = SCA data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SCA data = 1 value = 75 }\r
+-	}\r
+-	\r
+-	name = "EVT_2201013_NAME"\r
+-	desc = "EVT_2201013_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-	decision_picture = "decision_Quisling"\r
+-	\r
+-	date = { day = 0 month = 3 year = 1933 }\r
+-	offset = 25\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
+-\r
+-	action = { # 併合か、戦争か\r
+-	name = "ACTIONNAME2201013A"\r
+-	command = { type = belligerence which = SCA value = 3 }\r
+-	command = { type = relation which = DEN value = 20 }\r
+-	command = { type = relation which = GER value = 20 }\r
+-	command = { type = relation which = UB8 value = 10 }\r
+-	command = { type = relation which = CHI value = 10 }\r
+-	command = { type = relation which = UER value = -15 }\r
+-	command = { type = relation which = FRA value = -15 }\r
+-	command = { type = relation which = ENG value = -15 }\r
+-	command = { type = relation which = POR value = -15 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = trigger which = 2201014 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201014\r
+-	random = no\r
+-	country = DEN\r
+-\r
+-	name = "EVT_2201013_NAME"\r
+-	desc = "EVT_2201013_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # 受け入れよう……\r
+-	name = "ACTIONNAME2201014A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = trigger which = 2201015 }\r
+-	command = { type = trigger which = 2201017 }\r
+-	command = { type = trigger which = 2201018 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 同盟に参加するしかない\r
+-	name = "ACTIONNAME2201014B"\r
+-	command = { type = dissent value = 30 }\r
+-	command = { type = belligerence which = DEN value = 5 }\r
+-	command = { type = relation which = SCA value = 100 }\r
+-	command = { type = relation which = GER value = 50 }\r
+-	command = { type = relation which = UB8 value = 50 }\r
+-	command = { type = relation which = CHI value = 50 }\r
+-	command = { type = relation which = UER value = -30 }\r
+-	command = { type = relation which = FRA value = -30 }\r
+-	command = { type = relation which = ENG value = -30 }\r
+-	command = { type = relation which = POR value = -30 }\r
+-	command = { type = alliance which = SCA }\r
+-	command = { type = trigger which = 2201016 }\r
+-	command = { type = trigger which = 2201017 }\r
+-	command = { type = trigger which = 2201018 }\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # これは戦争を意味する！\r
+-	name = "ACTIONNAME2201014C"\r
+-	command = { type = dissent value = 50 }\r
+-	command = { type = belligerence which = DEN value = 15 }\r
+-	command = { type = relation which = SCA value = -200 }\r
+-	command = { type = relation which = GER value = -100 }\r
+-	command = { type = relation which = UB8 value = -100 }\r
+-	command = { type = relation which = CHI value = -100 }\r
+-	command = { type = relation which = UER value = -50 }\r
+-	command = { type = relation which = FRA value = -50 }\r
+-	command = { type = relation which = ENG value = -50 }\r
+-	command = { type = relation which = POR value = -50 }\r
+-	command = { type = end_non_aggression which = SCA where = DEN }\r
+-	command = { type = end_non_aggression which = DEN where = SCA }\r
+-	command = { type = war which = SCA }\r
+-	command = { type = sleepevent which = 2201015 }\r
+-	command = { type = sleepevent which = 2201016 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201015\r
+-	random = no\r
+-	country = SCA\r
+-\r
+-	name = "EVT_2201015_NAME"\r
+-	desc = "EVT_2201013_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # 北海帝国大総統クヴィスリング万歳！\r
+-	name = "ACTIONNAME2201015A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = belligerence which = SCA value = 5 }\r
+-	command = { type = inherit which = DEN value = 1 }\r
+-	command = { type = add_core_area which = "Iceland" }\r
+-	command = { type = waketeam which = 755302 }\r
+-	command = { type = waketeam which = 755303 }\r
+-	command = { type = waketeam which = 755304 }\r
+-	command = { type = waketeam which = 755305 }\r
+-	command = { type = waketeam which = 755306 }\r
+-	command = { type = waketeam which = 755307 }\r
+-	command = { type = waketeam which = 755309 }\r
+-	command = { type = waketeam which = 755312 }\r
+-	command = { type = waketeam which = 755313 }\r
+-	command = { type = waketeam which = 755314 }\r
+-	command = { type = waketeam which = 755315 }\r
+-	command = { type = waketeam which = 755317 }\r
+-	command = { type = waketeam which = 755319 }\r
+-	command = { type = waketeam which = 755321 }\r
+-	command = { type = waketeam which = 755322 }\r
+-	command = { type = waketeam which = 755323 }\r
+-	command = { type = waketeam which = 755324 }\r
+-	command = { type = waketeam which = 755350 }\r
+-	command = { type = waketeam which = 755351 }\r
+-	command = { type = waketeam which = 755352 }\r
+-	command = { type = waketeam which = 755353 }\r
+-	command = { type = waketeam which = 755354 }\r
+-	command = { type = waketeam which = 755355 }\r
+-	command = { type = sleepevent which = 2201016 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201016\r
+-	random = no\r
+-	country = SCA\r
+-\r
+-	name = "EVT_2201016_NAME"\r
+-	desc = "EVT_2201013_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # 北海帝国大総統クヴィスリング万歳！\r
+-	name = "ACTIONNAME2201016A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = belligerence which = SCA value = 10 }\r
+-	command = { type = make_puppet which = DEN }\r
+-	command = { type = sleepevent which = 2201015 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  北海帝国によるデンマーク解体 ― ドイツの反応\r
+-# 1920年代に起きた大動乱と呼ばれる北欧の内政混乱は、ノルウェー・スウェーデンにおける大規模な政変、そして北海帝国の成立につながった。\r
+-# デンマークではドイツと陸続きだったこともあり、暴動や暗殺が頻発し、政情は全く安定しなかった。\r
+-# やがてデンマークは、内政不販を理由に北海帝国に組み込まれ、北欧は北海帝国により半ば統一を果たすことになった。\r
+-# この北欧における一連の軍事的、政治的策動の裏にはドイツ帝国諜報部の暗躍があった。\r
+-# 彼らは新たな同盟国を求めるために北欧の極右運動を支援しており、\r
+-# その一環として北海帝国によるデンマーク占領を政治的に支持した。\r
+-# 無論、表向きには関与していないことになっていたが、\r
+-# 英国の介入を政治的暗闘によって阻止していることが後世の資料公開によって明らかになっている。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2201017\r
+-	random = no\r
+-	country = GER\r
+-\r
+-	name = "EVT_2201017_NAME"\r
+-	desc = "EVT_2201013_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # すばらしい！\r
+-	name = "ACTION_NAME_GREAT"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = relation which = SCA value = 10 }\r
+-	command = { type = intelligence which = us value = 3 }\r
+-	command = { type = intelligence which = them value = -3 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-\r
+-event = {\r
+-	id = 2201018\r
+-	random = no\r
+-	country = ENG\r
+-\r
+-	name = "EVT_2201018_NAME"\r
+-	desc = "EVT_2201013_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # なんてこった！\r
+-	name = "ACTION_NAME_DAMN"\r
+-	command = { type = dissent value = 1 }\r
+-	command = { type = relation which = SCA value = -10 }\r
+-	command = { type = domestic which = interventionism value = -1 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  フィンランド北部進駐\r
+-# フィンランドが民族的に北欧の領域に入るか否かについて、民族主義者達は長く議論をし合ってきた。\r
+-# その上で北海帝国は、国力増強の観点からロシアとフィンランドの戦争……通称『冬戦争』に介入した。\r
+-# フィンランド政府は軍人マンネルハイムとラプア党指導者ヴィトフリ・コソラ両名による軍事独裁政権が築かれている。\r
+-# しかし、現在のヴィトフリ・コソラはラプア党内部における求心力が低下しつつあり、反対勢力が北海帝国の介入を望む姿勢を見せていた。\r
+-# そこで北海帝国政府は、フィンランド北部を軍事的に占領するという策を打ち出した。\r
+-# 現在、ロシアとの戦争を余儀なくされているフィンランド政府にはこれに立ち向かう余裕はなく、\r
+-# 国際社会からの大きな非難を浴びながらも、北海帝国はフィンランド北部の掌握に成功したのである。\r
+-###########################################################################\r
+-\r
+-event = { \r
+-	id = 2201019\r
+-	random = no\r
+-	country = SCA\r
+-	\r
+-	decision = {\r
+-	exists = SCA\r
+-	exists = FIN\r
+-	exists = UER\r
+-	event = 5951077\r
+-	war = { country = UER country = FIN }\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = SCA country = SWE }\r
+-	war = { country = SCA country = U21 }\r
+-	war = { country = SCA country = NOR }\r
+-	war = { country = SCA country = UER }\r
+-	war = { country = SCA country = GER }\r
+-	war = { country = SCA country = ITA }\r
+-	war = { country = SCA country = ENG }\r
+-	war = { country = SCA country = FRA }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = SCA data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SCA data = 1 value = 75 }\r
+-	}\r
+-			\r
+-	decision_trigger = {\r
+-	exists = SCA\r
+-	exists = FIN\r
+-	exists = UER\r
+-	event = 5951077\r
+-	war = { country = UER country = FIN }\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = SCA country = SWE }\r
+-	war = { country = SCA country = U21 }\r
+-	war = { country = SCA country = NOR }\r
+-	war = { country = SCA country = UER }\r
+-	war = { country = SCA country = GER }\r
+-	war = { country = SCA country = ITA }\r
+-	war = { country = SCA country = ENG }\r
+-	war = { country = SCA country = FRA }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = SCA data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SCA data = 1 value = 75 }\r
+-	}\r
+-			\r
+-	trigger = {\r
+-	exists = SCA\r
+-	exists = FIN\r
+-	exists = UER\r
+-	event = 5951077\r
+-	war = { country = UER country = FIN }\r
+-	OR = {\r
+-	incabinet = 756001\r
+-	incabinet = 756003\r
+-	incabinet = 755867\r
+-	}\r
+-	event = 2201010\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = SCA country = SWE }\r
+-	war = { country = SCA country = U21 }\r
+-	war = { country = SCA country = NOR }\r
+-	war = { country = SCA country = UER }\r
+-	war = { country = SCA country = GER }\r
+-	war = { country = SCA country = ITA }\r
+-	war = { country = SCA country = ENG }\r
+-	war = { country = SCA country = FRA }\r
+-	}\r
+-	}\r
+-	region = { region = "Norway" country = SCA data = 1 value = 75 }\r
+-	region = { region = "Sweden" country = SCA data = 1 value = 75 }\r
+-	}\r
+-	\r
+-	name = "EVT_2201019_NAME"\r
+-	desc = "EVT_2201019_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-	decision_picture = "decision_Quisling"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1939 }\r
+-\r
+-	action = { # フィンランドも帝国に組み込むのだ\r
+-	name = "ACTIONNAME2201019A"\r
+-	command = { type = belligerence which = SCA value = 5 }\r
+-	command = { type = relation which = GER value = 20 }\r
+-	command = { type = relation which = UB8 value = 20 }\r
+-	command = { type = relation which = CHI value = 20 }\r
+-	command = { type = relation which = UER value = -20 }\r
+-	command = { type = relation which = FIN value = -20 }\r
+-	command = { type = relation which = FRA value = -15 }\r
+-	command = { type = relation which = ENG value = -15 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = trigger which = 2201020 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201020\r
+-	random = no\r
+-	country = FIN\r
+-\r
+-	name = "EVT_2201020_NAME"\r
+-	desc = "EVT_2201019_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # 受け入れるしかない\r
+-	name = "ACTIONNAME2201020A"\r
+-	command = { type = dissent value = 15 }\r
+-	command = { type = secedeprovince which = SCA value = 511 }\r
+-	command = { type = secedeprovince which = SCA value = 513 }\r
+-	command = { type = secedeprovince which = SCA value = 514 }\r
+-	command = { type = secedeprovince which = SCA value = 515 }\r
+-	command = { type = secedeprovince which = SCA value = 516 }\r
+-	command = { type = secedeprovince which = SCA value = 517 }\r
+-	command = { type = secedeprovince which = SCA value = 519 }\r
+-	command = { type = secedeprovince which = SCA value = 526 }\r
+-	command = { type = relation which = SCA value = -30 }\r
+-	command = { type = relation which = GER value = -30 }\r
+-	command = { type = relation which = UB8 value = -30 }\r
+-	command = { type = relation which = CHI value = -30 }\r
+-	command = { type = trigger which = 2201021 }\r
+-	command = { type = trigger which = 2201022 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 侵略者どもに渡すものはない！\r
+-	name = "ACTIONNAME2201020B"\r
+-	command = { type = dissent value = 30 }\r
+-	command = { type = secedeprovince which = SCA value = 511 }\r
+-	command = { type = secedeprovince which = SCA value = 513 }\r
+-	command = { type = secedeprovince which = SCA value = 514 }\r
+-	command = { type = secedeprovince which = SCA value = 515 }\r
+-	command = { type = secedeprovince which = SCA value = 516 }\r
+-	command = { type = secedeprovince which = SCA value = 517 }\r
+-	command = { type = secedeprovince which = SCA value = 519 }\r
+-	command = { type = secedeprovince which = SCA value = 526 }\r
+-	command = { type = relation which = SCA value = -200 }\r
+-	command = { type = relation which = GER value = -100 }\r
+-	command = { type = relation which = UB8 value = -100 }\r
+-	command = { type = relation which = CHI value = -100 }\r
+-	command = { type = end_non_aggression which = SCA where = FIN }\r
+-	command = { type = end_non_aggression which = FIN where = SCA }\r
+-	command = { type = war which = SCA }\r
+-	command = { type = trigger which = 2201022 }\r
+-	command = { type = sleepevent which = 2201021 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201021\r
+-	random = no\r
+-	country = SCA\r
+-\r
+-	name = "EVT_2201021_NAME"\r
+-	desc = "EVT_2201019_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # すばらしい！\r
+-	name = "ACTION_NAME_GREAT"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = belligerence which = SCA value = 5 }\r
+-	command = { type = add_corps which = "ラップランド軍団" value = land where = 516 }\r
+-	command = { type = add_division which = "ラップランド歩兵師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "ラップランド歩兵師団" value = infantry when = 6 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 2201022\r
+-	random = no\r
+-	country = UER\r
+-\r
+-	name = "EVT_2201022_NAME"\r
+-	desc = "EVT_2201019_DESC"\r
+-	style = 2\r
+-	picture = "Quisling_Army"\r
+-\r
+-	action = { # あの憎たらしい連中め！\r
+-	name = "ACTIONNAME2201022A"\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = relation which = SCA value = -30 }\r
+-	ai_chance = 100\r
+-	}\r
++#########################################################################
++#
++#		北海帝国イベント  by 横山大佐
++#########################################################################
++###### 追加イベント一覧 ############
++#########################################################################
++#id = 2201001 愛国者クヴィスリング
++#id = 2201002 北欧大動乱
++#id = 2201003 スウェーデン内戦 ― ノルウェーの介入
++#id = 2201004 スウェーデン内戦 ― ノルウェーの義勇兵派遣
++#id = 2201005 スウェーデン内戦 ― ノルウェーの軍事介入
++#id = 2201008 北海帝国構想
++#id = 2201009 北海帝国構想 ― ノルウェーの提案
++#id = 2201010 北海帝国構想 ― 成立
++#id = 2201011 『生命の泉』計画
++#id = 2201012 人種選良化計画
++#id = 2201013 北海帝国によるデンマーク解体
++#id = 2201015 デンマーク併合
++#id = 2201016 デンマークが同盟に参加
++#id = 2201017 北海帝国によるデンマーク解体 ― ドイツの反応
++#id = 2201018 北海帝国によるデンマーク解体 ― イギリスの反応
++#id = 2201019 フィンランド北部進駐
++#id = 2201020 フィンランド北部進駐 ― 北海帝国の介入
++#id = 2201021 フィンランド北部進駐 ― ラップランド併合
++#id = 2201022 フィンランド北部進駐 ― ロシアの反応
++##########################################################################
++#  愛国者クヴィスリング
++# 1905年、ノルウェーはスウェーデンとの同君連合を解消して独立した。
++# ホーコン7世を国王として平和的な発展をするかと思われたが、1920年代の北欧はまさに動乱を迎えることになる。
++# 世界大戦で過剰となった武器が、イギリス・ドイツ・フランス・ロシアから有望な輸出先として、
++# スウェーデンを起点に北欧へ大量に流れ込んできたのだ。
++# スポーツ車と銘打ち、装甲車が港から堂々と左派の党本部に持ち込まれたかと思えば、
++# 右派が祝砲と称してとして野戦砲を敵対者の施設に打ち込む有様であり、ノルウェーは急速に荒廃していった。
++# こうした世紀末同然の様子を示したノルウェーで頭角を現したのがヴィドクン・クヴィスリングである。
++# 彼は右派を『北欧戦線』という団体にまとめ上げ、同時に北欧の統一を訴える『北海帝国構想』を打ち出した。
++# 右派左派問わず、ノルウェー人の団結を訴えた彼は国民から支持を集め、やがてそれは国王をも凌ぐほどであった。
++# 1928年、この人気ぶりに危機感を抱いた国王が『北欧戦線』の活動を禁止させるが、国民の猛反発を生み、
++# ついには宮殿が襲撃され、国王がノルウェーからたたき出されることになる。
++# こうして北欧でなし崩し的に権力を手に入れたクヴィスリングは、1930年に共産党・労働党を粛正。
++# 国内を安定させると彼の理想である『北海帝国構想』実現のため、内戦寸前のスウェーデンに目を向けている…
++###########################################################################
++event = {
++	id = 2201001
++	random = no
++	country = SWE
++	save_date = yes
++
++	name = "EVT_2201001_NAME"
++	desc = "EVT_2201001_DESC"
++	style = 1
++  	picture = "Quisling"
++
++	action = { # 偉大な『北海帝国』を再建するのだ
++	name = "ACTIONNAME2201001A"
++	command = { type = dissent value = 3 }
++	}
++}
++
++##########################################################################
++#  北欧大動乱
++# 1920年代の北欧はまさに列強による代理戦争、大動乱の時代であった。
++# きっかけは世界大戦が終結した1921年にまでさかのぼる。
++# フランスの敗北で終わった世界大戦だが、そのときに問題になったのが過剰に残された武器弾薬であった。
++# これらの輸出先として、国内を統一し急速な軍拡を行っていた中華民国が選ばれ、
++# 小銃や手榴弾から軍艦まで広く輸出されていたが、新たな輸出先に選ばれたのが北欧諸国であった。
++# 世界大戦では中立を保っていたが、1918年のサンクトペテルブルク蜂起で敗れたロシア左翼の過激派、
++# 『ボルシェヴィキ』一派が逃亡先に北欧を選んだことで、左翼革命思想が伝搬。
++# やがて彼らに影響を受けた左派政党は急速に過激化、それに合わせるように右派も過激化すると、彼らは自身らの武装を進めた。
++# そこに目を付けたのが列強の武器商人たちである。
++# 彼らは過剰となった武器を格安でスウェーデンを起点に様々な形で輸出した。
++# スポーツカー名義の装甲車、祝砲用の野戦用、国内移動のための試作爆撃機……
++# これらによる武装は当然、国内における右派左派の衝突を激しくさせ、国軍ですら対応できなかった。
++# この恐るべき動乱期において、無秩序・無法のような有様になった一方、様々な逸話が生まれ、
++# また無数の学問・研究・哲学・文学が花開いた時代でもあった。
++###########################################################################
++event = {
++	id = 2201002
++	random = no
++	TAG = { SWE NOR DEN }
++	persistent = yes
++
++	name = "EVT_2201002_NAME"
++	desc = "EVT_2201002_DESC"
++	style = 2
++  	picture = "Armoredcar_Skull"
++
++	action = { # まさに末世よ……
++	name = "ACTIONNAME2201002A"
++	command = { type = dissent value = 5 }
++	command = { trigger = { exists = DEN } type = province_revoltrisk which = 216 value = 20 }
++	command = { trigger = { exists = DEN } type = province_revoltrisk which = 217 value = 20 }
++	command = { trigger = { exists = DEN } type = province_revoltrisk which = 218 value = 20 }
++	command = { trigger = { exists = DEN } type = province_revoltrisk which = 219 value = 20 }
++	command = { trigger = { exists = DEN } type = province_revoltrisk which = 220 value = 20 }
++	command = { trigger = { exists = DEN } type = province_revoltrisk which = 294 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2152 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2153 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2154 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2155 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2156 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2157 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2158 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2159 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2160 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2161 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2162 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2163 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2164 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2165 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2166 value = 20 }
++	command = { trigger = { exists = SWE } type = province_revoltrisk which = 2167 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 483 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 484 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 485 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 486 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 487 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 488 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 489 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 490 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 491 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 492 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 493 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 494 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 495 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 496 value = 20 }
++	command = { trigger = { exists = NOR } type = province_revoltrisk which = 497 value = 20 }
++	}
++}
++
++
++##########################################################################
++#  スウェーデン内戦 ― ノルウェーの介入
++# 1933年、スウェーデンにおける右派と左派の対立はついに内戦に発展した。
++# 社会的平等を求め大衆は宗教界、大地主、右派を敵として教会や敵対政党の本部を襲撃、労働組合はストライキを実行した。
++# 社会秩序の崩壊を受け、保守派は極右と軍部と結託し秩序を回復するべく左派を攻撃した。
++# ノルウェーではヴィドクン・クヴィスリングが、スウェーデンの同志を直ちに支援するべきだと明言。
++# 直接の軍事介入すらいとわない姿勢を示した。
++###########################################################################
++
++event = { 
++	id = 2201003
++	random = no
++	country = NOR
++	
++	decision = {
++		war = { country = SWE country = U21 }
++		OR = {
++		event = 2198006
++		event = 2198009
++		}
++		NOT = {
++			OR = {
++				war = { country = NOR country = SWE }
++				war = { country = NOR country = U21 }
++				war = { country = NOR country = UER }
++				war = { country = NOR country = GER }
++				war = { country = NOR country = ITA }
++				war = { country = NOR country = ENG }
++			}
++		}
++	}
++			
++	decision_trigger = { 
++		manpower = 10
++		supplies = 1000 
++		money = 200
++	}
++			
++	trigger = {
++		war = { country = SWE country = U21 }
++		OR = {
++		event = 2198006
++		event = 2198009
++		}
++		NOT = {
++			OR = {
++				war = { country = NOR country = SWE }
++				war = { country = NOR country = U21 }
++				war = { country = NOR country = UER }
++				war = { country = NOR country = GER }
++				war = { country = NOR country = ITA }
++				war = { country = NOR country = ENG }
++			}
++		}
++	}
++	
++	name = "EVT_2201003_NAME"
++	desc = "EVT_2201003_DESC"
++	style = 2
++	picture = "scw"
++	
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1936 }
++
++	action = { # 義勇兵を送る
++		name = "ACTIONNAME2201003A"
++		command = { type = manpowerpool value = -10 }
++		command = { trigger = { ai = no } type = supplies value = -1000 }
++		command = { trigger = { ai = no } type = money value = -200 }
++		command = { type = relation which = SWE value = 20 }
++		command = { type = relation which = U21 value = -15 }
++		command = { type = relation which = UER value = 5 }
++		command = { type = relation which = GER value = -5 }
++		command = { type = relation which = ITA value = -5 }
++		command = { type = relation which = ENG value = -5 }
++		command = { type = relation which = POR value = -5 }
++		command = { type = domestic which = interventionism value = 1 }
++		command = { type = belligerence which = NOR value = 1 }
++		command = { type = trigger which = 2201004 }
++		ai_chance = 50
++	}
++	
++	action = { # 直接介入する
++		name = "ACTIONNAME2201003B"
++		command = { type = manpowerpool value = -10 }
++		command = { type = relation which = SWE value = 20 }
++		command = { type = relation which = U21 value = -15 }
++		command = { type = relation which = UER value = 5 }
++		command = { type = relation which = GER value = -5 }
++		command = { type = relation which = ITA value = -5 }
++		command = { type = relation which = ENG value = -5 }
++		command = { type = relation which = POR value = -5 }
++		command = { type = domestic which = interventionism value = 1 }
++		command = { type = belligerence which = NOR value = 1 }
++		command = { type = trigger which = 2201005 }
++		ai_chance = 50
++	}
++	action = { # 介入するべきではない
++		name = "ACTIONNAME2201003C"
++		command = { type = relation which = U21 value = -20 }
++		command = { type = relation which = SWE value = 15 }
++		command = { type = relation which = UER value = 5 }
++		command = { type = relation which = GER value = 5 }
++		command = { type = relation which = ITA value = 5 }
++		command = { type = relation which = ENG value = 5 }
++		command = { type = relation which = POR value = 15 }
++		command = { type = domestic which = interventionism value = -1 }
++		command = { type = belligerence which = NOR value = 1 }
++		ai_chance = 0
++	}
++}
++
++event = {
++	id = 2201004
++	random = no
++	country = SWE
++
++	name = "EVT_2201004_NAME"
++	desc = "EVT_2201003_DESC"
++	style = 2
++  	picture = "scw"
++	
++	action_a = {
++		name = ACTION_NAME_OK # Great!
++		command = { type = money value = -100 }
++		command = { type = manpowerpool value = 10 }
++		command = { type = supplies value = 2500 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = gain_tech which = -1 }
++		command = { type = gain_tech which = -1 }
++	}
++}
++
++event = {
++	id = 2201005
++	random = no
++	country = SWE
++
++	name = "EVT_2201005_NAME"
++	desc = "EVT_2201003_DESC"
++	style = 2
++  	picture = "scw"
++	
++	action_a = {
++		name = ACTION_NAME_OK # Great!
++		command = { type = money value = -100 }
++		command = { type = manpowerpool value = 10 }
++		command = { type = supplies value = 2500 }
++		command = { type = relation which = NOR value = 100 }
++		command = { type = alliance which =  NOR }
++		command = { type = guarantee which = NOR where = SWE }
++		command = { type = guarantee which = SWE where = NOR }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = add_division value = militia when = 5 }
++		command = { type = gain_tech which = -1 }
++		command = { type = gain_tech which = -1 }
++	}
++}
++
++##########################################################################
++#  スウェーデン内戦の終結 ― 重要な経験
++# スウェーデン内戦が集結すると、軍事顧問団は帰国した。
++# 彼らは内戦において兵器の実験、新たな戦術の考案、何より実戦の経験を得ており、
++# 軍の強化に多大な貢献をすることになる。
++###########################################################################
++
++event = {
++	id = 2201006
++	random = no
++	country = NOR
++
++	trigger = { 
++		OR = {
++		event = 2201004
++		event = 2201005
++		}
++		event = 2198012
++		
++		NOT = {
++			OR = {
++				war = { country = NOR country = SWE }
++				war = { country = NOR country = U21 }
++				war = { country = NOR country = UER }
++				war = { country = NOR country = GER }
++				war = { country = NOR country = ITA }
++				war = { country = NOR country = ENG }
++			}
++		}
++	}
++
++	name = "EVT_2198111_NAME"
++	desc = "EVT_2198111_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action_a = {
++		name = "ACTION_NAME_GREAT"
++		command = { type = relation which = U21 value = 50 }
++		command = { type = manpowerpool value = 8 }
++		command = { type = dissent value = -1 }
++		command = { type = gain_tech which = -2 } 
++		command = { type = gain_tech which = -2 } 
++		command = { type = gain_tech which = -1 } 
++		command = { type = gain_tech which = -1 } 
++		command = { type = money value = 250 }
++		command	= { trigger = { local_flag = military_control_U21 } type = military_control which = FRA where = U21 }
++	command = { type = secederegion which = SWE value = Sweden when = 1 }
++		command	= { trigger = { local_flag = military_control_U21 } type = local_clrflag which = military_control_U21 }
++	}
++}
++
++event = {
++	id = 2201007
++	random = no
++	country = NOR
++
++	trigger = {
++		OR = {
++		event = 2201004
++		event = 2201005
++		}
++		event = 2198013
++		
++		NOT = {
++			OR = {
++				war = { country = NOR country = SWE }
++				war = { country = NOR country = U21 }
++				war = { country = NOR country = UER }
++				war = { country = NOR country = GER }
++				war = { country = NOR country = ITA }
++				war = { country = NOR country = ENG }
++			}
++		}
++	}
++
++	name = "EVT_2198111_NAME"
++	desc = "EVT_2198111_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 3 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action_a = {
++		name = "ACTION_NAME_OK" 
++		command = { type = manpowerpool value = 3 }
++		command = { trigger = { ai = no } type = dissent value = 1 }
++		command = { type = gain_tech which = -2 } 
++		command = { type = money value = 250 }
++	}
++}
++
++##########################################################################
++#  北海帝国構想
++# スウェーデンにおける内戦が右派による勝利で幕を閉じると、
++# ヴィドグン・クヴィスリングに影響を受けた北海帝国構想を掲げるスウェーデン民族党による政権が誕生した。
++# 内戦終結直前から、密かにノルウェーとの合同のための交渉を行っていたが、
++# やがてクヴィスリンクは自身を信奉する一部軍人を引き連れて交渉に赴き、スウェーデンと最終的な政治的合意を行った。
++# 彼らは交渉からわずか数週間も経たないうちにスウェーデン政府との合同を発表し、国号を『北海帝国』に改めた。
++# そしてこの北海帝国大総統の地位についたのは……ヴィドグン・クヴィスリングであった。
++###########################################################################
++
++event = { 
++	id = 2201008
++	random = no
++	country = NOR
++	
++	decision = {
++	exists = NOR
++	exists = SWE
++	NOT = { exists = U21 }
++	NOT = { war = { country = SWE country = U21 } }
++	OR = {
++	event = 2198006
++	event = 2198009
++	}
++	event = 2198012
++	NOT = {
++	OR = {
++	war = { country = NOR country = SWE }
++	war = { country = NOR country = U21 }
++	war = { country = NOR country = UER }
++	war = { country = NOR country = GER }
++	war = { country = NOR country = ITA }
++	war = { country = NOR country = ENG }
++	}
++	}
++	}
++			
++	decision_trigger = { 
++	exists = NOR
++	exists = SWE
++	NOT = { exists = U21 }
++	NOT = { war = { country = SWE country = U21 } }
++	OR = {
++	event = 2198006
++	event = 2198009
++	}
++	event = { id = 2198012 days = 60 }
++	NOT = {
++	OR = {
++	war = { country = NOR country = SWE }
++	war = { country = NOR country = U21 }
++	war = { country = NOR country = UER }
++	war = { country = NOR country = GER }
++	war = { country = NOR country = ITA }
++	war = { country = NOR country = ENG }
++	}
++	}
++	region = { region = "Norway" country = NOR data = 1 value = 75 }
++	region = { region = "Sweden" country = SWE data = 1 value = 75 }
++	}
++			
++	trigger = {
++	exists = NOR
++	exists = SWE
++	NOT = { exists = U21 }
++	NOT = { war = { country = SWE country = U21 } }
++	OR = {
++	event = 2198006
++	event = 2198009
++	}
++	event = { id = 2198012 days = 60 }
++	NOT = {
++	OR = {
++	war = { country = NOR country = SWE }
++	war = { country = NOR country = U21 }
++	war = { country = NOR country = UER }
++	war = { country = NOR country = GER }
++	war = { country = NOR country = ITA }
++	war = { country = NOR country = ENG }
++	}
++	}
++	region = { region = "Norway" country = NOR data = 1 value = 75 }
++	region = { region = "Sweden" country = SWE data = 1 value = 75 }
++	}
++	
++	name = "EVT_2201008_NAME"
++	desc = "EVT_2201008_DESC"
++	style = 2
++	picture = "Nordsoveldet"
++	
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1936 }
++
++	action = { # 北欧帝国構想を今こそ実現する時だ
++	name = "ACTIONNAME2201008A"
++	command = { type = belligerence which = NOR value = 3 }
++	command = { type = relation which = SWE value = 20 }
++	command = { type = relation which = GER value = 15 }
++	command = { type = relation which = U21 value = -15 }
++	command = { type = relation which = UER value = -15 }
++	command = { type = relation which = FRA value = -15 }
++	command = { type = relation which = ENG value = -15 }
++	command = { type = relation which = POR value = -15 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = trigger which = 2201009 }
++	ai_chance = 100
++	}
++}
++
++event = {
++	id = 2201009
++	random = no
++	country = SWE
++
++	name = "EVT_2201009_NAME"
++	desc = "EVT_2201008_DESC"
++	style = 2
++	picture = "Nordsoveldet"
++
++	action = { # 今こそ北海帝国を！(ゲームオーバー)
++	name = "ACTIONNAME2201009A"
++	command = { type = dissent value = -10 }
++	command = { type = trigger which = 2201010 }
++	ai_chance = 100
++	}
++
++	action = { # 同盟にとどめる
++	name = "ACTIONNAME2201009B"
++	command = { type = dissent value = 10 }
++	command = { type = belligerence which = SWE value = 3 }
++	command = { type = relation which = NOR value = 100 }
++	command = { type = alliance which = NOR }
++	ai_chance = 0
++	}
++
++	action = { # 統合など断固拒否だ！
++	name = "ACTIONNAME2201009C"
++	command = { type = dissent value = 50 }
++	command = { type = relation which = NOR value = -200 }
++	ai_chance = 0
++	}
++}
++
++event = {
++	id = 2201010
++	random = no
++	country = NOR
++
++	name = "EVT_2201010_NAME"
++	desc = "EVT_2201008_DESC"
++	style = 2
++	picture = "Nordsoveldet"
++
++	action = { # 北海帝国大総統クヴィスリング万歳！
++	name = "ACTIONNAME2201010A"
++	command = { type = dissent value = -10 }
++	command = { type = inherit which = SWE value = 1 }
++	command = { type = country which = SCA }
++	command = { type = name where = SCA which = "北海帝国" }
++	command = { type = flag_ext where = SCA which = "_north" }
++	command = { type = set_domestic which = democratic value = 2 }
++	command = { type = set_domestic which = political_left value = 2 }
++
++	command = { type = headofstate which = 756001 }
++	command = { type = headofgovernment which = 755868 }
++	command = { type = foreignminister which = 756008 }
++	command = { type = armamentminister which = 756002 }
++	command = { type = ministerofsecurity which = 756003 }
++	command = { type = ministerofintelligence which = 756007 }
++	command = { type = chiefofstaff which = 756004 }
++	command = { type = chiefofarmy which = 756005 }
++	command = { type = chiefofnavy which = 755875 }
++	command = { type = chiefofair which = 755876 }
++	command = { type = waketeam which = 755202 }
++	command = { type = waketeam which = 755203 }
++	command = { type = waketeam which = 755204 }
++	command = { type = waketeam which = 755205 }
++	command = { type = waketeam which = 755206 }
++	command = { type = waketeam which = 755209 }
++	command = { type = waketeam which = 755210 }
++	command = { type = waketeam which = 755211 }
++	command = { type = waketeam which = 755212 }
++	command = { type = waketeam which = 755231 }
++	command = { type = waketeam which = 755237 }
++	command = { type = waketeam which = 755239 }
++	command = { type = waketeam which = 755240 }
++	command = { type = waketeam which = 755241 }
++	command = { type = waketeam which = 755244 }
++	command = { type = waketeam which = 755246 }
++	command = { type = waketeam which = 755249 }
++	command = { type = waketeam which = 755250 }
++	ai_chance = 100
++	}
++}
++
++##########################################################################
++#  『生命の泉』計画
++# ドイツ人人種主義者アルフレート・ローゼンベルクに影響を受けたこの政策は、
++# 『純北欧人種的な』人々を国内外から呼び寄せ、就業斡旋と結婚相手の選定を行ったものであり、
++# こうした政策は明確に近代的な人権を侵害したものであった。
++# 数十年後、北欧では片親世帯、孤児が大量に発生し、大半は1950年代に諜報機関の供給源となったが
++# 一部の子供は人身売買の道具となるなど、悲惨な結果を招くこととなる。
++###########################################################################
++event = {
++	id = 2201011
++	random = no
++	country = SCA
++	save_date = yes
++	
++	decision = {
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = { ispuppet = SCA }
++	exists = SCA
++	}
++
++	decision_trigger = {
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = { ispuppet = SCA }
++	exists = SCA
++	supplies = 2100
++	}
++
++	trigger = {
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = { ispuppet = SCA }
++	exists = SCA
++	random = 35
++	}
++	
++	name = "EVT_2201011_NAME"
++	desc = "EVT_2201011_DESC"
++	style = 2
++	picture = "Lebensborn_Norway1"
++	decision_picture = "decision_Quisling"
++
++	date = { day = 0 month = 6 year = 1934 }
++	offset = 15
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # このような政策が、許されて良いものだろうか?
++	name = "ACTIONNAME2201011A"
++	command = { type = dissent value = 10 }
++	command = { type = belligerence which = SCA value = 5 }
++	command = { trigger = { ai = no } type = supplies value = -2000 }
++	command = { type = manpowerpool value = 50 }
++	command = { type = relative_manpower value = 30 }
++	command = { type = relation which = GER value = 20 }
++	command = { type = relation which = UB8 value = 20 }
++	command = { type = relation which = CHI value = 20 }
++	command = { type = relation which = ENG value = -20 }
++	command = { type = relation which = FRA value = -20 }
++	command = { type = relation which = UER value = -20 }
++	}
++}
++
++##########################################################################
++#  人種選良化計画
++# 『生命の泉』計画に並んで悪名高いのはこの人種選良化計画であった。
++# これは国内に存在する『非北欧人種的な』人々、生まれつき障害を持った人々を収容するという非人道的政策である。
++# こうした収容政策は最終的には『非北欧人種に対する最終的解決』という文言に移り変わり、ガスを使用した大量殺害にシフトした。
++# これはルーマニア鉄衛団の愚行と並び称され、人類史に刻まれた『大いなる汚点』となった。
++###########################################################################
++event = {
++	id = 2201012
++	random = no
++	country = SCA
++	
++	decision = {
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	event = 2201011
++	NOT = { ispuppet = SCA }
++	exists = SCA
++	}
++
++	decision_trigger = {
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	event = { id = 2201011 days = 90 }
++	NOT = { ispuppet = SCA }
++	exists = SCA
++	supplies = 2100
++	}
++
++	trigger = {
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	event = { id = 2201011 days = 90 }
++	NOT = { ispuppet = SCA }
++	exists = SCA
++	random = 35
++	}
++	
++	name = "EVT_2201012_NAME"
++	desc = "EVT_2201012_DESC"
++	style = 2
++	picture = "Lebensborn_Norway2"
++	decision_picture = "decision_Quisling"
++
++	date = { day = 0 month = 6 year = 1934 }
++	offset = 15
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # ……
++	name = "ACTIONNAME2201012A"
++	command = { type = dissent value = -20 }
++	command = { type = belligerence which = SCA value = 5 }
++	command = { type = relative_manpower value = -10 }
++	command = { trigger = { ai = no } type = supplies value = -2000 }
++	command = { type = manpowerpool value = -20 }
++	command = { type = money value = 5000 }
++	}
++}
++
++
++
++##########################################################################
++#  北海帝国によるデンマーク解体
++# 1920年代に起きた大動乱と呼ばれる北欧の内政混乱は、ノルウェー・スウェーデンにおける大規模な政変、そして北海帝国の成立につながった。
++# デンマークではドイツと陸続きだったこともあり、暴動や暗殺が頻発し、政情は全く安定しなかった。
++# 国内には政府に対する失望感が広まり、民族運動が1930年代に入り激しくなるとデンマークは北海帝国に協力要請を行った。
++# しかし北海帝国側の交換条件は苛烈を極め、一時は交渉を断念したが、この時すでにヴィドグン・クヴィスリング大総統はデンマークの併合を決定していた。
++# 1936年、デンマーク政府首脳をスウェーデンのオスロに呼び寄せると、併合要請文への署名を要求。
++# デンマーク首相はこれを見たとき卒倒したが、すぐに蘇生措置が行われ、クヴィスリングから軍に動員を命じたことも伝えられると、これに署名。
++# デンマークは北海帝国の一部に組み込まれることになり、ここにクヴィスリングが唱えた構想が半ば実現した。
++###########################################################################
++
++event = { 
++	id = 2201013
++	random = no
++	country = SCA
++	
++	decision = {
++	exists = SCA
++	exists = DEN
++	NOT = { war = { country = SCA country = DEN } }
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = {
++	OR = {
++	war = { country = SCA country = SWE }
++	war = { country = SCA country = U21 }
++	war = { country = SCA country = NOR }
++	war = { country = SCA country = UER }
++	war = { country = SCA country = GER }
++	war = { country = SCA country = ITA }
++	war = { country = SCA country = ENG }
++	war = { country = SCA country = FRA }
++	}
++	}
++	region = { region = "Norway" country = SCA data = 1 value = 75 }
++	region = { region = "Sweden" country = SCA data = 1 value = 75 }
++	}
++			
++	decision_trigger = { 
++	exists = SCA
++	exists = DEN
++	NOT = { war = { country = SCA country = DEN } }
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = {
++	OR = {
++	war = { country = SCA country = SWE }
++	war = { country = SCA country = U21 }
++	war = { country = SCA country = NOR }
++	war = { country = SCA country = UER }
++	war = { country = SCA country = GER }
++	war = { country = SCA country = ITA }
++	war = { country = SCA country = ENG }
++	war = { country = SCA country = FRA }
++	}
++	}
++	region = { region = "Norway" country = SCA data = 1 value = 75 }
++	region = { region = "Sweden" country = SCA data = 1 value = 75 }
++	}
++			
++	trigger = {
++	exists = SCA
++	exists = DEN
++	NOT = { war = { country = SCA country = DEN } }
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = {
++	OR = {
++	war = { country = SCA country = SWE }
++	war = { country = SCA country = U21 }
++	war = { country = SCA country = NOR }
++	war = { country = SCA country = UER }
++	war = { country = SCA country = GER }
++	war = { country = SCA country = ITA }
++	war = { country = SCA country = ENG }
++	war = { country = SCA country = FRA }
++	}
++	}
++	region = { region = "Norway" country = SCA data = 1 value = 75 }
++	region = { region = "Sweden" country = SCA data = 1 value = 75 }
++	}
++	
++	name = "EVT_2201013_NAME"
++	desc = "EVT_2201013_DESC"
++	style = 2
++	picture = "Quisling_Army"
++	decision_picture = "decision_Quisling"
++	
++	date = { day = 0 month = 3 year = 1933 }
++	offset = 25
++	deathdate = { day = 29 month = 11 year = 1936 }
++
++	action = { # 併合か、戦争か
++	name = "ACTIONNAME2201013A"
++	command = { type = belligerence which = SCA value = 3 }
++	command = { type = relation which = DEN value = 20 }
++	command = { type = relation which = GER value = 20 }
++	command = { type = relation which = UB8 value = 10 }
++	command = { type = relation which = CHI value = 10 }
++	command = { type = relation which = UER value = -15 }
++	command = { type = relation which = FRA value = -15 }
++	command = { type = relation which = ENG value = -15 }
++	command = { type = relation which = POR value = -15 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = trigger which = 2201014 }
++	ai_chance = 100
++	}
++}
++
++event = {
++	id = 2201014
++	random = no
++	country = DEN
++
++	name = "EVT_2201013_NAME"
++	desc = "EVT_2201013_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # 受け入れよう……
++	name = "ACTIONNAME2201014A"
++	command = { type = dissent value = -10 }
++	command = { type = trigger which = 2201015 }
++	command = { type = trigger which = 2201017 }
++	command = { type = trigger which = 2201018 }
++	ai_chance = 100
++	}
++
++	action = { # 同盟に参加するしかない
++	name = "ACTIONNAME2201014B"
++	command = { type = dissent value = 30 }
++	command = { type = belligerence which = DEN value = 5 }
++	command = { type = relation which = SCA value = 100 }
++	command = { type = relation which = GER value = 50 }
++	command = { type = relation which = UB8 value = 50 }
++	command = { type = relation which = CHI value = 50 }
++	command = { type = relation which = UER value = -30 }
++	command = { type = relation which = FRA value = -30 }
++	command = { type = relation which = ENG value = -30 }
++	command = { type = relation which = POR value = -30 }
++	command = { type = alliance which = SCA }
++	command = { type = trigger which = 2201016 }
++	command = { type = trigger which = 2201017 }
++	command = { type = trigger which = 2201018 }
++	ai_chance = 0
++	}
++
++	action = { # これは戦争を意味する！
++	name = "ACTIONNAME2201014C"
++	command = { type = dissent value = 50 }
++	command = { type = belligerence which = DEN value = 15 }
++	command = { type = relation which = SCA value = -200 }
++	command = { type = relation which = GER value = -100 }
++	command = { type = relation which = UB8 value = -100 }
++	command = { type = relation which = CHI value = -100 }
++	command = { type = relation which = UER value = -50 }
++	command = { type = relation which = FRA value = -50 }
++	command = { type = relation which = ENG value = -50 }
++	command = { type = relation which = POR value = -50 }
++	command = { type = end_non_aggression which = SCA where = DEN }
++	command = { type = end_non_aggression which = DEN where = SCA }
++	command = { type = war which = SCA }
++	command = { type = sleepevent which = 2201015 }
++	command = { type = sleepevent which = 2201016 }
++	ai_chance = 0
++	}
++}
++
++event = {
++	id = 2201015
++	random = no
++	country = SCA
++
++	name = "EVT_2201015_NAME"
++	desc = "EVT_2201013_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # 北海帝国大総統クヴィスリング万歳！
++	name = "ACTIONNAME2201015A"
++	command = { type = dissent value = -10 }
++	command = { type = belligerence which = SCA value = 5 }
++	command = { type = inherit which = DEN value = 1 }
++	command = { type = add_core_area which = "Iceland" }
++	command = { type = waketeam which = 755302 }
++	command = { type = waketeam which = 755303 }
++	command = { type = waketeam which = 755304 }
++	command = { type = waketeam which = 755305 }
++	command = { type = waketeam which = 755306 }
++	command = { type = waketeam which = 755307 }
++	command = { type = waketeam which = 755309 }
++	command = { type = waketeam which = 755312 }
++	command = { type = waketeam which = 755313 }
++	command = { type = waketeam which = 755314 }
++	command = { type = waketeam which = 755315 }
++	command = { type = waketeam which = 755317 }
++	command = { type = waketeam which = 755319 }
++	command = { type = waketeam which = 755321 }
++	command = { type = waketeam which = 755322 }
++	command = { type = waketeam which = 755323 }
++	command = { type = waketeam which = 755324 }
++	command = { type = waketeam which = 755350 }
++	command = { type = waketeam which = 755351 }
++	command = { type = waketeam which = 755352 }
++	command = { type = waketeam which = 755353 }
++	command = { type = waketeam which = 755354 }
++	command = { type = waketeam which = 755355 }
++	command = { type = sleepevent which = 2201016 }
++	ai_chance = 100
++	}
++}
++
++event = {
++	id = 2201016
++	random = no
++	country = SCA
++
++	name = "EVT_2201016_NAME"
++	desc = "EVT_2201013_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # 北海帝国大総統クヴィスリング万歳！
++	name = "ACTIONNAME2201016A"
++	command = { type = dissent value = -10 }
++	command = { type = belligerence which = SCA value = 10 }
++	command = { type = make_puppet which = DEN }
++	command = { type = sleepevent which = 2201015 }
++	ai_chance = 100
++	}
++}
++
++##########################################################################
++#  北海帝国によるデンマーク解体 ― ドイツの反応
++# 1920年代に起きた大動乱と呼ばれる北欧の内政混乱は、ノルウェー・スウェーデンにおける大規模な政変、そして北海帝国の成立につながった。
++# デンマークではドイツと陸続きだったこともあり、暴動や暗殺が頻発し、政情は全く安定しなかった。
++# やがてデンマークは、内政不販を理由に北海帝国に組み込まれ、北欧は北海帝国により半ば統一を果たすことになった。
++# この北欧における一連の軍事的、政治的策動の裏にはドイツ帝国諜報部の暗躍があった。
++# 彼らは新たな同盟国を求めるために北欧の極右運動を支援しており、
++# その一環として北海帝国によるデンマーク占領を政治的に支持した。
++# 無論、表向きには関与していないことになっていたが、
++# 英国の介入を政治的暗闘によって阻止していることが後世の資料公開によって明らかになっている。
++###########################################################################
++
++event = {
++	id = 2201017
++	random = no
++	country = GER
++
++	name = "EVT_2201017_NAME"
++	desc = "EVT_2201013_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # すばらしい！
++	name = "ACTION_NAME_GREAT"
++	command = { type = dissent value = -1 }
++	command = { type = relation which = SCA value = 10 }
++	command = { type = intelligence which = us value = 3 }
++	command = { type = intelligence which = them value = -3 }
++	command = { type = domestic which = interventionism value = 1 }
++	ai_chance = 100
++	}
++}
++
++
++event = {
++	id = 2201018
++	random = no
++	country = ENG
++
++	name = "EVT_2201018_NAME"
++	desc = "EVT_2201013_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # なんてこった！
++	name = "ACTION_NAME_DAMN"
++	command = { type = dissent value = 1 }
++	command = { type = relation which = SCA value = -10 }
++	command = { type = domestic which = interventionism value = -1 }
++	ai_chance = 100
++	}
++}
++
++##########################################################################
++#  フィンランド北部進駐
++# フィンランドが民族的に北欧の領域に入るか否かについて、民族主義者達は長く議論をし合ってきた。
++# その上で北海帝国は、国力増強の観点からロシアとフィンランドの戦争……通称『冬戦争』に介入した。
++# フィンランド政府は軍人マンネルハイムとラプア党指導者ヴィトフリ・コソラ両名による軍事独裁政権が築かれている。
++# しかし、現在のヴィトフリ・コソラはラプア党内部における求心力が低下しつつあり、反対勢力が北海帝国の介入を望む姿勢を見せていた。
++# そこで北海帝国政府は、フィンランド北部を軍事的に占領するという策を打ち出した。
++# 現在、ロシアとの戦争を余儀なくされているフィンランド政府にはこれに立ち向かう余裕はなく、
++# 国際社会からの大きな非難を浴びながらも、北海帝国はフィンランド北部の掌握に成功したのである。
++###########################################################################
++
++event = { 
++	id = 2201019
++	random = no
++	country = SCA
++	
++	decision = {
++	exists = SCA
++	exists = FIN
++	exists = UER
++	event = 5951077
++	war = { country = UER country = FIN }
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = {
++	OR = {
++	war = { country = SCA country = SWE }
++	war = { country = SCA country = U21 }
++	war = { country = SCA country = NOR }
++	war = { country = SCA country = UER }
++	war = { country = SCA country = GER }
++	war = { country = SCA country = ITA }
++	war = { country = SCA country = ENG }
++	war = { country = SCA country = FRA }
++	}
++	}
++	region = { region = "Norway" country = SCA data = 1 value = 75 }
++	region = { region = "Sweden" country = SCA data = 1 value = 75 }
++	}
++			
++	decision_trigger = {
++	exists = SCA
++	exists = FIN
++	exists = UER
++	event = 5951077
++	war = { country = UER country = FIN }
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = {
++	OR = {
++	war = { country = SCA country = SWE }
++	war = { country = SCA country = U21 }
++	war = { country = SCA country = NOR }
++	war = { country = SCA country = UER }
++	war = { country = SCA country = GER }
++	war = { country = SCA country = ITA }
++	war = { country = SCA country = ENG }
++	war = { country = SCA country = FRA }
++	}
++	}
++	region = { region = "Norway" country = SCA data = 1 value = 75 }
++	region = { region = "Sweden" country = SCA data = 1 value = 75 }
++	}
++			
++	trigger = {
++	exists = SCA
++	exists = FIN
++	exists = UER
++	event = 5951077
++	war = { country = UER country = FIN }
++	OR = {
++	incabinet = 756001
++	incabinet = 756003
++	incabinet = 755867
++	}
++	event = 2201010
++	NOT = {
++	OR = {
++	war = { country = SCA country = SWE }
++	war = { country = SCA country = U21 }
++	war = { country = SCA country = NOR }
++	war = { country = SCA country = UER }
++	war = { country = SCA country = GER }
++	war = { country = SCA country = ITA }
++	war = { country = SCA country = ENG }
++	war = { country = SCA country = FRA }
++	}
++	}
++	region = { region = "Norway" country = SCA data = 1 value = 75 }
++	region = { region = "Sweden" country = SCA data = 1 value = 75 }
++	}
++	
++	name = "EVT_2201019_NAME"
++	desc = "EVT_2201019_DESC"
++	style = 2
++	picture = "Quisling_Army"
++	decision_picture = "decision_Quisling"
++	
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1939 }
++
++	action = { # フィンランドも帝国に組み込むのだ
++	name = "ACTIONNAME2201019A"
++	command = { type = belligerence which = SCA value = 5 }
++	command = { type = relation which = GER value = 20 }
++	command = { type = relation which = UB8 value = 20 }
++	command = { type = relation which = CHI value = 20 }
++	command = { type = relation which = UER value = -20 }
++	command = { type = relation which = FIN value = -20 }
++	command = { type = relation which = FRA value = -15 }
++	command = { type = relation which = ENG value = -15 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = trigger which = 2201020 }
++	ai_chance = 100
++	}
++}
++
++event = {
++	id = 2201020
++	random = no
++	country = FIN
++
++	name = "EVT_2201020_NAME"
++	desc = "EVT_2201019_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # 受け入れるしかない
++	name = "ACTIONNAME2201020A"
++	command = { type = dissent value = 15 }
++	command = { type = secedeprovince which = SCA value = 511 }
++	command = { type = secedeprovince which = SCA value = 513 }
++	command = { type = secedeprovince which = SCA value = 514 }
++	command = { type = secedeprovince which = SCA value = 515 }
++	command = { type = secedeprovince which = SCA value = 516 }
++	command = { type = secedeprovince which = SCA value = 517 }
++	command = { type = secedeprovince which = SCA value = 519 }
++	command = { type = secedeprovince which = SCA value = 526 }
++	command = { type = relation which = SCA value = -30 }
++	command = { type = relation which = GER value = -30 }
++	command = { type = relation which = UB8 value = -30 }
++	command = { type = relation which = CHI value = -30 }
++	command = { type = trigger which = 2201021 }
++	command = { type = trigger which = 2201022 }
++	ai_chance = 100
++	}
++
++	action = { # 侵略者どもに渡すものはない！
++	name = "ACTIONNAME2201020B"
++	command = { type = dissent value = 30 }
++	command = { type = secedeprovince which = SCA value = 511 }
++	command = { type = secedeprovince which = SCA value = 513 }
++	command = { type = secedeprovince which = SCA value = 514 }
++	command = { type = secedeprovince which = SCA value = 515 }
++	command = { type = secedeprovince which = SCA value = 516 }
++	command = { type = secedeprovince which = SCA value = 517 }
++	command = { type = secedeprovince which = SCA value = 519 }
++	command = { type = secedeprovince which = SCA value = 526 }
++	command = { type = relation which = SCA value = -200 }
++	command = { type = relation which = GER value = -100 }
++	command = { type = relation which = UB8 value = -100 }
++	command = { type = relation which = CHI value = -100 }
++	command = { type = end_non_aggression which = SCA where = FIN }
++	command = { type = end_non_aggression which = FIN where = SCA }
++	command = { type = war which = SCA }
++	command = { type = trigger which = 2201022 }
++	command = { type = sleepevent which = 2201021 }
++	ai_chance = 0
++	}
++}
++
++event = {
++	id = 2201021
++	random = no
++	country = SCA
++
++	name = "EVT_2201021_NAME"
++	desc = "EVT_2201019_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # すばらしい！
++	name = "ACTION_NAME_GREAT"
++	command = { type = dissent value = -3 }
++	command = { type = belligerence which = SCA value = 5 }
++	command = { type = add_corps which = "ラップランド軍団" value = land where = 516 }
++	command = { type = add_division which = "ラップランド歩兵師団" value = infantry when = 6 }
++	command = { type = add_division which = "ラップランド歩兵師団" value = infantry when = 6 }
++	ai_chance = 100
++	}
++}
++
++event = {
++	id = 2201022
++	random = no
++	country = UER
++
++	name = "EVT_2201022_NAME"
++	desc = "EVT_2201019_DESC"
++	style = 2
++	picture = "Quisling_Army"
++
++	action = { # あの憎たらしい連中め！
++	name = "ACTIONNAME2201022A"
++	command = { type = dissent value = 2 }
++	command = { type = relation which = SCA value = -30 }
++	ai_chance = 100
++	}
+ }
+\ No newline at end of file

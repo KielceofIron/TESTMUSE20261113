@@ -1,0 +1,840 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_CHI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_CHI_events.txt [cp932]
+@@ -109,6 +109,11 @@
+ #id = 6959172 タイが中国と同盟を結ぶ\r
+ #id = 6959173 タイが中国の圧力に抵抗する\r
+ #id = 6959174 右翼クーデター\r
++#id = 6959175 中国の参戦\r
++#id = 6959176 南京十年の再開（第一段階）\r
++#id = 6959177 南京十年の再開（第二段階）\r
++#id = 6959178 南京十年の再開（第三段階）\r
++#id = 6959179 南京十年の終了（第四段階）\r
+ #id = 6959201 巨龍、滅ぶ（CHI）\r
+ #id = 6959202 中国の滅亡\r
+ #id = 6959203 アメリカがアジアの地図を塗り替える（第1案）\r
+@@ -3473,6 +3478,10 @@ event = {
+ 	#command = { type = ground_def_eff when = 1 value = -0.1 }\r
+ 	command = { type = max_organization which = land value = -3 }\r
+ 	command = { type = morale which = land value = -3 }\r
++	command = { type = sleepevent which = 6959176 } # 南京十年\r
++	command = { type = sleepevent which = 6959177 }\r
++	command = { type = sleepevent which = 6959178 }\r
++	command = { type = sleepevent which = 6959179 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -4871,202 +4880,21 @@ event = {
+ 	command = { type = sleepevent which = 6959136 }\r
+ 	command = { type = sleepevent which = 6959161 }\r
+ 	command = { type = sleepevent which = 6959162 }\r
++	command = { type = sleepevent which = 6959175 }\r
++	command = { type = sleepevent which = 6959176 } # 南京十年\r
++	command = { type = sleepevent which = 6959177 }\r
++	command = { type = sleepevent which = 6959178 }\r
++	command = { type = sleepevent which = 6959179 }\r
+ 	ai_chance = 30\r
+ 	}\r
+ \r
+ 	action = { # 戦時経済を継続し、政府の統制を強める\r
+ 	name = "ACTIONNAME6959147B"\r
+-	command = { trigger = { ai = yes } type = dissent value = 30 }\r
+-	command = { trigger = { ai = no } type = dissent value = 5 }\r
++	command = { trigger = { ai = yes } type = dissent value = 35 }\r
++	command = { trigger = { ai = no } type = dissent value = 50 }\r
+ 	command = { type = demobilize which = land when = 0 where = 0 value = 60 }\r
+ 	command = { type = strength which = land when = 1 where = 1 org = 10 value = 10 }\r
+ 	command = { type = set_domestic which = free_market value = 1 }\r
+-	command = { trigger = { owned = { province = 1120 data = CHI } } type = revolt which = 1120 }\r
+-	command = { trigger = { owned = { province = 1121 data = CHI } } type = revolt which = 1121 }\r
+-	command = { trigger = { owned = { province = 1122 data = CHI } } type = revolt which = 1122 }\r
+-	command = { trigger = { owned = { province = 1123 data = CHI } } type = revolt which = 1123 }\r
+-	command = { trigger = { owned = { province = 1124 data = CHI } } type = revolt which = 1124 }\r
+-	command = { trigger = { owned = { province = 1125 data = CHI } } type = revolt which = 1125 }\r
+-	command = { trigger = { owned = { province = 1197 data = CHI } } type = revolt which = 1197 }\r
+-	command = { trigger = { owned = { province = 1198 data = CHI } } type = revolt which = 1198 }\r
+-	command = { trigger = { owned = { province = 1199 data = CHI } } type = revolt which = 1199 }\r
+-	command = { trigger = { owned = { province = 1200 data = CHI } } type = revolt which = 1200 }\r
+-	command = { trigger = { owned = { province = 1201 data = CHI } } type = revolt which = 1201 }\r
+-	command = { trigger = { owned = { province = 1202 data = CHI } } type = revolt which = 1202 }\r
+-	command = { trigger = { owned = { province = 1203 data = CHI } } type = revolt which = 1203 }\r
+-	command = { trigger = { owned = { province = 1204 data = CHI } } type = revolt which = 1204 }\r
+-	command = { trigger = { owned = { province = 1205 data = CHI } } type = revolt which = 1205 }\r
+-	command = { trigger = { owned = { province = 1206 data = CHI } } type = revolt which = 1206 }\r
+-	command = { trigger = { owned = { province = 1207 data = CHI } } type = revolt which = 1207 }\r
+-	command = { trigger = { owned = { province = 1208 data = CHI } } type = revolt which = 1208 }\r
+-	command = { trigger = { owned = { province = 1209 data = CHI } } type = revolt which = 1209 }\r
+-	command = { trigger = { owned = { province = 1210 data = CHI } } type = revolt which = 1210 }\r
+-	command = { trigger = { owned = { province = 1211 data = CHI } } type = revolt which = 1211 }\r
+-	command = { trigger = { owned = { province = 1212 data = CHI } } type = revolt which = 1212 }\r
+-	command = { trigger = { owned = { province = 1213 data = CHI } } type = revolt which = 1213 }\r
+-	command = { trigger = { owned = { province = 1214 data = CHI } } type = revolt which = 1214 }\r
+-	command = { trigger = { owned = { province = 1215 data = CHI } } type = revolt which = 1215 }\r
+-	command = { trigger = { owned = { province = 1216 data = CHI } } type = revolt which = 1216 }\r
+-	command = { trigger = { owned = { province = 1217 data = CHI } } type = revolt which = 1217 }\r
+-	command = { trigger = { owned = { province = 1218 data = CHI } } type = revolt which = 1218 }\r
+-	command = { trigger = { owned = { province = 1219 data = CHI } } type = revolt which = 1219 }\r
+-	command = { trigger = { owned = { province = 1220 data = CHI } } type = revolt which = 1220 }\r
+-	command = { trigger = { owned = { province = 1235 data = CHI } } type = revolt which = 1235 }\r
+-	command = { trigger = { owned = { province = 1236 data = CHI } } type = revolt which = 1236 }\r
+-	command = { trigger = { owned = { province = 1237 data = CHI } } type = revolt which = 1237 }\r
+-	command = { trigger = { owned = { province = 1238 data = CHI } } type = revolt which = 1238 }\r
+-	command = { trigger = { owned = { province = 1239 data = CHI } } type = revolt which = 1239 }\r
+-	command = { trigger = { owned = { province = 1240 data = CHI } } type = revolt which = 1240 }\r
+-	command = { trigger = { owned = { province = 1241 data = CHI } } type = revolt which = 1241 }\r
+-	command = { trigger = { owned = { province = 1242 data = CHI } } type = revolt which = 1242 }\r
+-	command = { trigger = { owned = { province = 1243 data = CHI } } type = revolt which = 1243 }\r
+-	command = { trigger = { owned = { province = 1244 data = CHI } } type = revolt which = 1244 }\r
+-	command = { trigger = { owned = { province = 1245 data = CHI } } type = revolt which = 1245 }\r
+-	command = { trigger = { owned = { province = 1246 data = CHI } } type = revolt which = 1246 }\r
+-	command = { trigger = { owned = { province = 1247 data = CHI } } type = revolt which = 1247 }\r
+-	command = { trigger = { owned = { province = 1248 data = CHI } } type = revolt which = 1248 }\r
+-	command = { trigger = { owned = { province = 1249 data = CHI } } type = revolt which = 1249 }\r
+-	command = { trigger = { owned = { province = 1250 data = CHI } } type = revolt which = 1250 }\r
+-	command = { trigger = { owned = { province = 1251 data = CHI } } type = revolt which = 1251 }\r
+-	command = { trigger = { owned = { province = 1252 data = CHI } } type = revolt which = 1252 }\r
+-	command = { trigger = { owned = { province = 1253 data = CHI } } type = revolt which = 1253 }\r
+-	command = { trigger = { owned = { province = 1254 data = CHI } } type = revolt which = 1254 }\r
+-	command = { trigger = { owned = { province = 1255 data = CHI } } type = revolt which = 1255 }\r
+-	command = { trigger = { owned = { province = 1256 data = CHI } } type = revolt which = 1256 }\r
+-	command = { trigger = { owned = { province = 1257 data = CHI } } type = revolt which = 1257 }\r
+-	command = { trigger = { owned = { province = 1258 data = CHI } } type = revolt which = 1258 }\r
+-	command = { trigger = { owned = { province = 1259 data = CHI } } type = revolt which = 1259 }\r
+-	command = { trigger = { owned = { province = 1260 data = CHI } } type = revolt which = 1260 }\r
+-	command = { trigger = { owned = { province = 1261 data = CHI } } type = revolt which = 1261 }\r
+-	command = { trigger = { owned = { province = 1262 data = CHI } } type = revolt which = 1262 }\r
+-	command = { trigger = { owned = { province = 1263 data = CHI } } type = revolt which = 1263 }\r
+-	command = { trigger = { owned = { province = 1264 data = CHI } } type = revolt which = 1264 }\r
+-	command = { trigger = { owned = { province = 1265 data = CHI } } type = revolt which = 1265 }\r
+-	command = { trigger = { owned = { province = 1266 data = CHI } } type = revolt which = 1266 }\r
+-	command = { trigger = { owned = { province = 1267 data = CHI } } type = revolt which = 1267 }\r
+-	command = { trigger = { owned = { province = 1268 data = CHI } } type = revolt which = 1268 }\r
+-	command = { trigger = { owned = { province = 1269 data = CHI } } type = revolt which = 1269 }\r
+-	command = { trigger = { owned = { province = 1270 data = CHI } } type = revolt which = 1270 }\r
+-	command = { trigger = { owned = { province = 1271 data = CHI } } type = revolt which = 1271 }\r
+-	command = { trigger = { owned = { province = 1272 data = CHI } } type = revolt which = 1272 }\r
+-	command = { trigger = { owned = { province = 1273 data = CHI } } type = revolt which = 1273 }\r
+-	command = { trigger = { owned = { province = 1274 data = CHI } } type = revolt which = 1274 }\r
+-	command = { trigger = { owned = { province = 1275 data = CHI } } type = revolt which = 1275 }\r
+-	command = { trigger = { owned = { province = 1276 data = CHI } } type = revolt which = 1276 }\r
+-	command = { trigger = { owned = { province = 1277 data = CHI } } type = revolt which = 1277 }\r
+-	command = { trigger = { owned = { province = 1278 data = CHI } } type = revolt which = 1278 }\r
+-	command = { trigger = { owned = { province = 1279 data = CHI } } type = revolt which = 1279 }\r
+-	command = { trigger = { owned = { province = 1280 data = CHI } } type = revolt which = 1280 }\r
+-	command = { trigger = { owned = { province = 1281 data = CHI } } type = revolt which = 1281 }\r
+-	command = { trigger = { owned = { province = 1282 data = CHI } } type = revolt which = 1282 }\r
+-	command = { trigger = { owned = { province = 1283 data = CHI } } type = revolt which = 1283 }\r
+-	command = { trigger = { owned = { province = 1284 data = CHI } } type = revolt which = 1284 }\r
+-	command = { trigger = { owned = { province = 1285 data = CHI } } type = revolt which = 1285 }\r
+-	command = { trigger = { owned = { province = 1286 data = CHI } } type = revolt which = 1286 }\r
+-	command = { trigger = { owned = { province = 1287 data = CHI } } type = revolt which = 1287 }\r
+-	command = { trigger = { owned = { province = 1288 data = CHI } } type = revolt which = 1288 }\r
+-	command = { trigger = { owned = { province = 1289 data = CHI } } type = revolt which = 1289 }\r
+-	command = { trigger = { owned = { province = 1290 data = CHI } } type = revolt which = 1290 }\r
+-	command = { trigger = { owned = { province = 1291 data = CHI } } type = revolt which = 1291 }\r
+-	command = { trigger = { owned = { province = 1292 data = CHI } } type = revolt which = 1292 }\r
+-	command = { trigger = { owned = { province = 1293 data = CHI } } type = revolt which = 1293 }\r
+-	command = { trigger = { owned = { province = 1294 data = CHI } } type = revolt which = 1294 }\r
+-	command = { trigger = { owned = { province = 1295 data = CHI } } type = revolt which = 1295 }\r
+-	#command = { trigger = { owned = { province = 1296 data = CHI } } type = revolt which = 1296 }\r
+-	#command = { trigger = { owned = { province = 1297 data = CHI } } type = revolt which = 1297 }\r
+-	#command = { trigger = { owned = { province = 1298 data = CHI } } type = revolt which = 1298 }\r
+-	#command = { trigger = { owned = { province = 1299 data = CHI } } type = revolt which = 1299 }\r
+-	#command = { trigger = { owned = { province = 1300 data = CHI } } type = revolt which = 1300 }\r
+-	#command = { trigger = { owned = { province = 1301 data = CHI } } type = revolt which = 1301 }\r
+-	#command = { trigger = { owned = { province = 1302 data = CHI } } type = revolt which = 1302 }\r
+-	command = { trigger = { owned = { province = 1303 data = CHI } } type = revolt which = 1303 }\r
+-	command = { trigger = { owned = { province = 1304 data = CHI } } type = revolt which = 1304 }\r
+-	command = { trigger = { owned = { province = 1305 data = CHI } } type = revolt which = 1305 }\r
+-	command = { trigger = { owned = { province = 1306 data = CHI } } type = revolt which = 1306 }\r
+-	command = { trigger = { owned = { province = 1307 data = CHI } } type = revolt which = 1307 }\r
+-	command = { trigger = { owned = { province = 1308 data = CHI } } type = revolt which = 1308 }\r
+-	command = { trigger = { owned = { province = 1309 data = CHI } } type = revolt which = 1309 }\r
+-	command = { trigger = { owned = { province = 1310 data = CHI } } type = revolt which = 1310 }\r
+-	command = { trigger = { owned = { province = 1311 data = CHI } } type = revolt which = 1311 }\r
+-	command = { trigger = { owned = { province = 1312 data = CHI } } type = revolt which = 1312 }\r
+-	command = { trigger = { owned = { province = 1313 data = CHI } } type = revolt which = 1313 }\r
+-	command = { trigger = { owned = { province = 1314 data = CHI } } type = revolt which = 1314 }\r
+-	command = { trigger = { owned = { province = 1315 data = CHI } } type = revolt which = 1315 }\r
+-	command = { trigger = { owned = { province = 1316 data = CHI } } type = revolt which = 1316 }\r
+-	command = { trigger = { owned = { province = 1317 data = CHI } } type = revolt which = 1317 }\r
+-	command = { trigger = { owned = { province = 1318 data = CHI } } type = revolt which = 1318 }\r
+-	command = { trigger = { owned = { province = 1319 data = CHI } } type = revolt which = 1319 }\r
+-	command = { trigger = { owned = { province = 1320 data = CHI } } type = revolt which = 1320 }\r
+-	command = { trigger = { owned = { province = 1321 data = CHI } } type = revolt which = 1321 }\r
+-	command = { trigger = { owned = { province = 1322 data = CHI } } type = revolt which = 1322 }\r
+-	command = { trigger = { owned = { province = 1323 data = CHI } } type = revolt which = 1323 }\r
+-	command = { trigger = { owned = { province = 1324 data = CHI } } type = revolt which = 1324 }\r
+-	command = { trigger = { owned = { province = 1325 data = CHI } } type = revolt which = 1325 }\r
+-	command = { trigger = { owned = { province = 1326 data = CHI } } type = revolt which = 1326 }\r
+-	command = { trigger = { owned = { province = 1327 data = CHI } } type = revolt which = 1327 }\r
+-	command = { trigger = { owned = { province = 1328 data = CHI } } type = revolt which = 1328 }\r
+-	command = { trigger = { owned = { province = 1329 data = CHI } } type = revolt which = 1329 }\r
+-	command = { trigger = { owned = { province = 1330 data = CHI } } type = revolt which = 1330 }\r
+-	command = { trigger = { owned = { province = 1331 data = CHI } } type = revolt which = 1331 }\r
+-	command = { trigger = { owned = { province = 1332 data = CHI } } type = revolt which = 1332 }\r
+-	command = { trigger = { owned = { province = 1333 data = CHI } } type = revolt which = 1333 }\r
+-	command = { trigger = { owned = { province = 1334 data = CHI } } type = revolt which = 1334 }\r
+-	command = { trigger = { owned = { province = 1335 data = CHI } } type = revolt which = 1335 }\r
+-	command = { trigger = { owned = { province = 1336 data = CHI } } type = revolt which = 1336 }\r
+-	command = { trigger = { owned = { province = 1337 data = CHI } } type = revolt which = 1337 }\r
+-	command = { trigger = { owned = { province = 1338 data = CHI } } type = revolt which = 1338 }\r
+-	command = { trigger = { owned = { province = 1339 data = CHI } } type = revolt which = 1339 }\r
+-	command = { trigger = { owned = { province = 1340 data = CHI } } type = revolt which = 1340 }\r
+-	command = { trigger = { owned = { province = 1341 data = CHI } } type = revolt which = 1341 }\r
+-	command = { trigger = { owned = { province = 1342 data = CHI } } type = revolt which = 1342 }\r
+-	command = { trigger = { owned = { province = 1343 data = CHI } } type = revolt which = 1343 }\r
+-	command = { trigger = { owned = { province = 1344 data = CHI } } type = revolt which = 1344 }\r
+-	command = { trigger = { owned = { province = 1345 data = CHI } } type = revolt which = 1345 }\r
+-	command = { trigger = { owned = { province = 1346 data = CHI } } type = revolt which = 1346 }\r
+-	command = { trigger = { owned = { province = 1347 data = CHI } } type = revolt which = 1347 }\r
+-	command = { trigger = { owned = { province = 1348 data = CHI } } type = revolt which = 1348 }\r
+-	command = { trigger = { owned = { province = 1349 data = CHI } } type = revolt which = 1349 }\r
+-	command = { trigger = { owned = { province = 1350 data = CHI } } type = revolt which = 1350 }\r
+-	command = { trigger = { owned = { province = 1351 data = CHI } } type = revolt which = 1351 }\r
+-	command = { trigger = { owned = { province = 1352 data = CHI } } type = revolt which = 1352 }\r
+-	command = { trigger = { owned = { province = 1353 data = CHI } } type = revolt which = 1353 }\r
+-	command = { trigger = { owned = { province = 1354 data = CHI } } type = revolt which = 1354 }\r
+-	command = { trigger = { owned = { province = 1355 data = CHI } } type = revolt which = 1355 }\r
+-	command = { trigger = { owned = { province = 1356 data = CHI } } type = revolt which = 1356 }\r
+-	command = { trigger = { owned = { province = 1357 data = CHI } } type = revolt which = 1357 }\r
+-	command = { trigger = { owned = { province = 1358 data = CHI } } type = revolt which = 1358 }\r
+-	command = { trigger = { owned = { province = 1359 data = CHI } } type = revolt which = 1359 }\r
+-	command = { trigger = { owned = { province = 1360 data = CHI } } type = revolt which = 1360 }\r
+-	command = { trigger = { owned = { province = 1361 data = CHI } } type = revolt which = 1361 }\r
+-	command = { trigger = { owned = { province = 1362 data = CHI } } type = revolt which = 1362 }\r
+-	command = { trigger = { owned = { province = 1363 data = CHI } } type = revolt which = 1363 }\r
+-	command = { trigger = { owned = { province = 1364 data = CHI } } type = revolt which = 1364 }\r
+-	command = { trigger = { owned = { province = 1365 data = CHI } } type = revolt which = 1365 }\r
+-	command = { trigger = { owned = { province = 1366 data = CHI } } type = revolt which = 1366 }\r
+-	command = { trigger = { owned = { province = 1367 data = CHI } } type = revolt which = 1367 }\r
+-	command = { trigger = { owned = { province = 1368 data = CHI } } type = revolt which = 1368 }\r
+-	command = { trigger = { owned = { province = 1369 data = CHI } } type = revolt which = 1369 }\r
+-	command = { trigger = { owned = { province = 1370 data = CHI } } type = revolt which = 1370 }\r
+-	command = { trigger = { owned = { province = 1371 data = CHI } } type = revolt which = 1371 }\r
+-	command = { trigger = { owned = { province = 1372 data = CHI } } type = revolt which = 1372 }\r
+-	command = { trigger = { owned = { province = 1373 data = CHI } } type = revolt which = 1373 }\r
+-	command = { trigger = { owned = { province = 1374 data = CHI } } type = revolt which = 1374 }\r
+-	command = { trigger = { owned = { province = 1375 data = CHI } } type = revolt which = 1375 }\r
+-	command = { trigger = { owned = { province = 1376 data = CHI } } type = revolt which = 1376 }\r
+-	command = { trigger = { owned = { province = 1377 data = CHI } } type = revolt which = 1377 }\r
+-	command = { trigger = { owned = { province = 1378 data = CHI } } type = revolt which = 1378 }\r
+-	command = { trigger = { owned = { province = 1379 data = CHI } } type = revolt which = 1379 }\r
+-	command = { trigger = { owned = { province = 1380 data = CHI } } type = revolt which = 1380 }\r
+-	command = { trigger = { owned = { province = 1381 data = CHI } } type = revolt which = 1381 }\r
+-	command = { trigger = { owned = { province = 1382 data = CHI } } type = revolt which = 1382 }\r
+-	command = { trigger = { owned = { province = 1383 data = CHI } } type = revolt which = 1383 }\r
+-	command = { trigger = { owned = { province = 1384 data = CHI } } type = revolt which = 1384 }\r
+-	command = { trigger = { owned = { province = 1385 data = CHI } } type = revolt which = 1385 }\r
+-	command = { trigger = { owned = { province = 1386 data = CHI } } type = revolt which = 1386 }\r
+-	command = { trigger = { owned = { province = 1387 data = CHI } } type = revolt which = 1387 }\r
+-	command = { trigger = { owned = { province = 1388 data = CHI } } type = revolt which = 1388 }\r
+-	command = { trigger = { owned = { province = 1389 data = CHI } } type = revolt which = 1389 }\r
+-	command = { trigger = { owned = { province = 1390 data = CHI } } type = revolt which = 1390 }\r
+ 	command = { type = sleepevent which = 6959148 }\r
+ 	command = { type = sleepevent which = 6959149 }\r
+ 	command = { type = sleepevent which = 6959150 }\r
+@@ -5082,14 +4910,18 @@ event = {
+ 	command = { type = sleepevent which = 6959160 }\r
+ 	command = { type = sleepevent which = 6959161 }\r
+ 	command = { type = sleepevent which = 6959162 }\r
++	command = { type = sleepevent which = 6959176 } # 南京十年\r
++	command = { type = sleepevent which = 6959177 }\r
++	command = { type = sleepevent which = 6959178 }\r
++	command = { type = sleepevent which = 6959179 }\r
+ 	command = { type = setflag which = CHI_AXIS }\r
+ 	ai_chance = 30\r
+ 	}\r
+ \r
+ 	action = { # 現体制が崩壊し、軍部が権力を握る\r
+ 	name = "ACTIONNAME6959147C"\r
+-	command = { trigger = { ai = yes } type = dissent value = 30 }\r
+-	command = { trigger = { ai = no } type = dissent value = 5 }\r
++	command = { trigger = { ai = yes } type = dissent value = 35 }\r
++	command = { trigger = { ai = no } type = dissent value = 50 }\r
+ 	command = { type = demobilize which = land when = 0 where = 0 value = 60 }\r
+ 	command = { type = strength which = land when = 1 where = 1 org = 10 value = 10 }\r
+ 	command = { type = relative_manpower value = -30 }\r
+@@ -5113,192 +4945,6 @@ event = {
+ 	command = { type = chiefofarmy which = 55087 } # 顧祝同（ク・チュートゥン）\r
+ 	command = { type = chiefofnavy which = 55019 } # 陳紹寛（チェン・シャオクアン）\r
+ 	command = { type = chiefofair which = 55035 } # 周至柔（ヂョウ・チージョウ）\r
+-	command = { trigger = { owned = { province = 1120 data = CHI } } type = revolt which = 1120 }\r
+-	command = { trigger = { owned = { province = 1121 data = CHI } } type = revolt which = 1121 }\r
+-	command = { trigger = { owned = { province = 1122 data = CHI } } type = revolt which = 1122 }\r
+-	command = { trigger = { owned = { province = 1123 data = CHI } } type = revolt which = 1123 }\r
+-	command = { trigger = { owned = { province = 1124 data = CHI } } type = revolt which = 1124 }\r
+-	command = { trigger = { owned = { province = 1125 data = CHI } } type = revolt which = 1125 }\r
+-	command = { trigger = { owned = { province = 1197 data = CHI } } type = revolt which = 1197 }\r
+-	command = { trigger = { owned = { province = 1198 data = CHI } } type = revolt which = 1198 }\r
+-	command = { trigger = { owned = { province = 1199 data = CHI } } type = revolt which = 1199 }\r
+-	command = { trigger = { owned = { province = 1200 data = CHI } } type = revolt which = 1200 }\r
+-	command = { trigger = { owned = { province = 1201 data = CHI } } type = revolt which = 1201 }\r
+-	command = { trigger = { owned = { province = 1202 data = CHI } } type = revolt which = 1202 }\r
+-	command = { trigger = { owned = { province = 1203 data = CHI } } type = revolt which = 1203 }\r
+-	command = { trigger = { owned = { province = 1204 data = CHI } } type = revolt which = 1204 }\r
+-	command = { trigger = { owned = { province = 1205 data = CHI } } type = revolt which = 1205 }\r
+-	command = { trigger = { owned = { province = 1206 data = CHI } } type = revolt which = 1206 }\r
+-	command = { trigger = { owned = { province = 1207 data = CHI } } type = revolt which = 1207 }\r
+-	command = { trigger = { owned = { province = 1208 data = CHI } } type = revolt which = 1208 }\r
+-	command = { trigger = { owned = { province = 1209 data = CHI } } type = revolt which = 1209 }\r
+-	command = { trigger = { owned = { province = 1210 data = CHI } } type = revolt which = 1210 }\r
+-	command = { trigger = { owned = { province = 1211 data = CHI } } type = revolt which = 1211 }\r
+-	command = { trigger = { owned = { province = 1212 data = CHI } } type = revolt which = 1212 }\r
+-	command = { trigger = { owned = { province = 1213 data = CHI } } type = revolt which = 1213 }\r
+-	command = { trigger = { owned = { province = 1214 data = CHI } } type = revolt which = 1214 }\r
+-	command = { trigger = { owned = { province = 1215 data = CHI } } type = revolt which = 1215 }\r
+-	command = { trigger = { owned = { province = 1216 data = CHI } } type = revolt which = 1216 }\r
+-	command = { trigger = { owned = { province = 1217 data = CHI } } type = revolt which = 1217 }\r
+-	command = { trigger = { owned = { province = 1218 data = CHI } } type = revolt which = 1218 }\r
+-	command = { trigger = { owned = { province = 1219 data = CHI } } type = revolt which = 1219 }\r
+-	command = { trigger = { owned = { province = 1220 data = CHI } } type = revolt which = 1220 }\r
+-	command = { trigger = { owned = { province = 1235 data = CHI } } type = revolt which = 1235 }\r
+-	command = { trigger = { owned = { province = 1236 data = CHI } } type = revolt which = 1236 }\r
+-	command = { trigger = { owned = { province = 1237 data = CHI } } type = revolt which = 1237 }\r
+-	command = { trigger = { owned = { province = 1238 data = CHI } } type = revolt which = 1238 }\r
+-	command = { trigger = { owned = { province = 1239 data = CHI } } type = revolt which = 1239 }\r
+-	command = { trigger = { owned = { province = 1240 data = CHI } } type = revolt which = 1240 }\r
+-	command = { trigger = { owned = { province = 1241 data = CHI } } type = revolt which = 1241 }\r
+-	command = { trigger = { owned = { province = 1242 data = CHI } } type = revolt which = 1242 }\r
+-	command = { trigger = { owned = { province = 1243 data = CHI } } type = revolt which = 1243 }\r
+-	command = { trigger = { owned = { province = 1244 data = CHI } } type = revolt which = 1244 }\r
+-	command = { trigger = { owned = { province = 1245 data = CHI } } type = revolt which = 1245 }\r
+-	command = { trigger = { owned = { province = 1246 data = CHI } } type = revolt which = 1246 }\r
+-	command = { trigger = { owned = { province = 1247 data = CHI } } type = revolt which = 1247 }\r
+-	command = { trigger = { owned = { province = 1248 data = CHI } } type = revolt which = 1248 }\r
+-	command = { trigger = { owned = { province = 1249 data = CHI } } type = revolt which = 1249 }\r
+-	command = { trigger = { owned = { province = 1250 data = CHI } } type = revolt which = 1250 }\r
+-	command = { trigger = { owned = { province = 1251 data = CHI } } type = revolt which = 1251 }\r
+-	command = { trigger = { owned = { province = 1252 data = CHI } } type = revolt which = 1252 }\r
+-	command = { trigger = { owned = { province = 1253 data = CHI } } type = revolt which = 1253 }\r
+-	command = { trigger = { owned = { province = 1254 data = CHI } } type = revolt which = 1254 }\r
+-	command = { trigger = { owned = { province = 1255 data = CHI } } type = revolt which = 1255 }\r
+-	command = { trigger = { owned = { province = 1256 data = CHI } } type = revolt which = 1256 }\r
+-	command = { trigger = { owned = { province = 1257 data = CHI } } type = revolt which = 1257 }\r
+-	command = { trigger = { owned = { province = 1258 data = CHI } } type = revolt which = 1258 }\r
+-	command = { trigger = { owned = { province = 1259 data = CHI } } type = revolt which = 1259 }\r
+-	command = { trigger = { owned = { province = 1260 data = CHI } } type = revolt which = 1260 }\r
+-	command = { trigger = { owned = { province = 1261 data = CHI } } type = revolt which = 1261 }\r
+-	command = { trigger = { owned = { province = 1262 data = CHI } } type = revolt which = 1262 }\r
+-	command = { trigger = { owned = { province = 1263 data = CHI } } type = revolt which = 1263 }\r
+-	command = { trigger = { owned = { province = 1264 data = CHI } } type = revolt which = 1264 }\r
+-	command = { trigger = { owned = { province = 1265 data = CHI } } type = revolt which = 1265 }\r
+-	command = { trigger = { owned = { province = 1266 data = CHI } } type = revolt which = 1266 }\r
+-	command = { trigger = { owned = { province = 1267 data = CHI } } type = revolt which = 1267 }\r
+-	command = { trigger = { owned = { province = 1268 data = CHI } } type = revolt which = 1268 }\r
+-	command = { trigger = { owned = { province = 1269 data = CHI } } type = revolt which = 1269 }\r
+-	command = { trigger = { owned = { province = 1270 data = CHI } } type = revolt which = 1270 }\r
+-	command = { trigger = { owned = { province = 1271 data = CHI } } type = revolt which = 1271 }\r
+-	command = { trigger = { owned = { province = 1272 data = CHI } } type = revolt which = 1272 }\r
+-	command = { trigger = { owned = { province = 1273 data = CHI } } type = revolt which = 1273 }\r
+-	command = { trigger = { owned = { province = 1274 data = CHI } } type = revolt which = 1274 }\r
+-	command = { trigger = { owned = { province = 1275 data = CHI } } type = revolt which = 1275 }\r
+-	command = { trigger = { owned = { province = 1276 data = CHI } } type = revolt which = 1276 }\r
+-	command = { trigger = { owned = { province = 1277 data = CHI } } type = revolt which = 1277 }\r
+-	command = { trigger = { owned = { province = 1278 data = CHI } } type = revolt which = 1278 }\r
+-	command = { trigger = { owned = { province = 1279 data = CHI } } type = revolt which = 1279 }\r
+-	command = { trigger = { owned = { province = 1280 data = CHI } } type = revolt which = 1280 }\r
+-	command = { trigger = { owned = { province = 1281 data = CHI } } type = revolt which = 1281 }\r
+-	command = { trigger = { owned = { province = 1282 data = CHI } } type = revolt which = 1282 }\r
+-	command = { trigger = { owned = { province = 1283 data = CHI } } type = revolt which = 1283 }\r
+-	command = { trigger = { owned = { province = 1284 data = CHI } } type = revolt which = 1284 }\r
+-	command = { trigger = { owned = { province = 1285 data = CHI } } type = revolt which = 1285 }\r
+-	command = { trigger = { owned = { province = 1286 data = CHI } } type = revolt which = 1286 }\r
+-	command = { trigger = { owned = { province = 1287 data = CHI } } type = revolt which = 1287 }\r
+-	command = { trigger = { owned = { province = 1288 data = CHI } } type = revolt which = 1288 }\r
+-	command = { trigger = { owned = { province = 1289 data = CHI } } type = revolt which = 1289 }\r
+-	command = { trigger = { owned = { province = 1290 data = CHI } } type = revolt which = 1290 }\r
+-	command = { trigger = { owned = { province = 1291 data = CHI } } type = revolt which = 1291 }\r
+-	command = { trigger = { owned = { province = 1292 data = CHI } } type = revolt which = 1292 }\r
+-	command = { trigger = { owned = { province = 1293 data = CHI } } type = revolt which = 1293 }\r
+-	command = { trigger = { owned = { province = 1294 data = CHI } } type = revolt which = 1294 }\r
+-	command = { trigger = { owned = { province = 1295 data = CHI } } type = revolt which = 1295 }\r
+-	#command = { trigger = { owned = { province = 1296 data = CHI } } type = revolt which = 1296 }\r
+-	#command = { trigger = { owned = { province = 1297 data = CHI } } type = revolt which = 1297 }\r
+-	#command = { trigger = { owned = { province = 1298 data = CHI } } type = revolt which = 1298 }\r
+-	#command = { trigger = { owned = { province = 1299 data = CHI } } type = revolt which = 1299 }\r
+-	#command = { trigger = { owned = { province = 1300 data = CHI } } type = revolt which = 1300 }\r
+-	#command = { trigger = { owned = { province = 1301 data = CHI } } type = revolt which = 1301 }\r
+-	#command = { trigger = { owned = { province = 1302 data = CHI } } type = revolt which = 1302 }\r
+-	command = { trigger = { owned = { province = 1303 data = CHI } } type = revolt which = 1303 }\r
+-	command = { trigger = { owned = { province = 1304 data = CHI } } type = revolt which = 1304 }\r
+-	command = { trigger = { owned = { province = 1305 data = CHI } } type = revolt which = 1305 }\r
+-	command = { trigger = { owned = { province = 1306 data = CHI } } type = revolt which = 1306 }\r
+-	command = { trigger = { owned = { province = 1307 data = CHI } } type = revolt which = 1307 }\r
+-	command = { trigger = { owned = { province = 1308 data = CHI } } type = revolt which = 1308 }\r
+-	command = { trigger = { owned = { province = 1309 data = CHI } } type = revolt which = 1309 }\r
+-	command = { trigger = { owned = { province = 1310 data = CHI } } type = revolt which = 1310 }\r
+-	command = { trigger = { owned = { province = 1311 data = CHI } } type = revolt which = 1311 }\r
+-	command = { trigger = { owned = { province = 1312 data = CHI } } type = revolt which = 1312 }\r
+-	command = { trigger = { owned = { province = 1313 data = CHI } } type = revolt which = 1313 }\r
+-	command = { trigger = { owned = { province = 1314 data = CHI } } type = revolt which = 1314 }\r
+-	command = { trigger = { owned = { province = 1315 data = CHI } } type = revolt which = 1315 }\r
+-	command = { trigger = { owned = { province = 1316 data = CHI } } type = revolt which = 1316 }\r
+-	command = { trigger = { owned = { province = 1317 data = CHI } } type = revolt which = 1317 }\r
+-	command = { trigger = { owned = { province = 1318 data = CHI } } type = revolt which = 1318 }\r
+-	command = { trigger = { owned = { province = 1319 data = CHI } } type = revolt which = 1319 }\r
+-	command = { trigger = { owned = { province = 1320 data = CHI } } type = revolt which = 1320 }\r
+-	command = { trigger = { owned = { province = 1321 data = CHI } } type = revolt which = 1321 }\r
+-	command = { trigger = { owned = { province = 1322 data = CHI } } type = revolt which = 1322 }\r
+-	command = { trigger = { owned = { province = 1323 data = CHI } } type = revolt which = 1323 }\r
+-	command = { trigger = { owned = { province = 1324 data = CHI } } type = revolt which = 1324 }\r
+-	command = { trigger = { owned = { province = 1325 data = CHI } } type = revolt which = 1325 }\r
+-	command = { trigger = { owned = { province = 1326 data = CHI } } type = revolt which = 1326 }\r
+-	command = { trigger = { owned = { province = 1327 data = CHI } } type = revolt which = 1327 }\r
+-	command = { trigger = { owned = { province = 1328 data = CHI } } type = revolt which = 1328 }\r
+-	command = { trigger = { owned = { province = 1329 data = CHI } } type = revolt which = 1329 }\r
+-	command = { trigger = { owned = { province = 1330 data = CHI } } type = revolt which = 1330 }\r
+-	command = { trigger = { owned = { province = 1331 data = CHI } } type = revolt which = 1331 }\r
+-	command = { trigger = { owned = { province = 1332 data = CHI } } type = revolt which = 1332 }\r
+-	command = { trigger = { owned = { province = 1333 data = CHI } } type = revolt which = 1333 }\r
+-	command = { trigger = { owned = { province = 1334 data = CHI } } type = revolt which = 1334 }\r
+-	command = { trigger = { owned = { province = 1335 data = CHI } } type = revolt which = 1335 }\r
+-	command = { trigger = { owned = { province = 1336 data = CHI } } type = revolt which = 1336 }\r
+-	command = { trigger = { owned = { province = 1337 data = CHI } } type = revolt which = 1337 }\r
+-	command = { trigger = { owned = { province = 1338 data = CHI } } type = revolt which = 1338 }\r
+-	command = { trigger = { owned = { province = 1339 data = CHI } } type = revolt which = 1339 }\r
+-	command = { trigger = { owned = { province = 1340 data = CHI } } type = revolt which = 1340 }\r
+-	command = { trigger = { owned = { province = 1341 data = CHI } } type = revolt which = 1341 }\r
+-	command = { trigger = { owned = { province = 1342 data = CHI } } type = revolt which = 1342 }\r
+-	command = { trigger = { owned = { province = 1343 data = CHI } } type = revolt which = 1343 }\r
+-	command = { trigger = { owned = { province = 1344 data = CHI } } type = revolt which = 1344 }\r
+-	command = { trigger = { owned = { province = 1345 data = CHI } } type = revolt which = 1345 }\r
+-	command = { trigger = { owned = { province = 1346 data = CHI } } type = revolt which = 1346 }\r
+-	command = { trigger = { owned = { province = 1347 data = CHI } } type = revolt which = 1347 }\r
+-	command = { trigger = { owned = { province = 1348 data = CHI } } type = revolt which = 1348 }\r
+-	command = { trigger = { owned = { province = 1349 data = CHI } } type = revolt which = 1349 }\r
+-	command = { trigger = { owned = { province = 1350 data = CHI } } type = revolt which = 1350 }\r
+-	command = { trigger = { owned = { province = 1351 data = CHI } } type = revolt which = 1351 }\r
+-	command = { trigger = { owned = { province = 1352 data = CHI } } type = revolt which = 1352 }\r
+-	command = { trigger = { owned = { province = 1353 data = CHI } } type = revolt which = 1353 }\r
+-	command = { trigger = { owned = { province = 1354 data = CHI } } type = revolt which = 1354 }\r
+-	command = { trigger = { owned = { province = 1355 data = CHI } } type = revolt which = 1355 }\r
+-	command = { trigger = { owned = { province = 1356 data = CHI } } type = revolt which = 1356 }\r
+-	command = { trigger = { owned = { province = 1357 data = CHI } } type = revolt which = 1357 }\r
+-	command = { trigger = { owned = { province = 1358 data = CHI } } type = revolt which = 1358 }\r
+-	command = { trigger = { owned = { province = 1359 data = CHI } } type = revolt which = 1359 }\r
+-	command = { trigger = { owned = { province = 1360 data = CHI } } type = revolt which = 1360 }\r
+-	command = { trigger = { owned = { province = 1361 data = CHI } } type = revolt which = 1361 }\r
+-	command = { trigger = { owned = { province = 1362 data = CHI } } type = revolt which = 1362 }\r
+-	command = { trigger = { owned = { province = 1363 data = CHI } } type = revolt which = 1363 }\r
+-	command = { trigger = { owned = { province = 1364 data = CHI } } type = revolt which = 1364 }\r
+-	command = { trigger = { owned = { province = 1365 data = CHI } } type = revolt which = 1365 }\r
+-	command = { trigger = { owned = { province = 1366 data = CHI } } type = revolt which = 1366 }\r
+-	command = { trigger = { owned = { province = 1367 data = CHI } } type = revolt which = 1367 }\r
+-	command = { trigger = { owned = { province = 1368 data = CHI } } type = revolt which = 1368 }\r
+-	command = { trigger = { owned = { province = 1369 data = CHI } } type = revolt which = 1369 }\r
+-	command = { trigger = { owned = { province = 1370 data = CHI } } type = revolt which = 1370 }\r
+-	command = { trigger = { owned = { province = 1371 data = CHI } } type = revolt which = 1371 }\r
+-	command = { trigger = { owned = { province = 1372 data = CHI } } type = revolt which = 1372 }\r
+-	command = { trigger = { owned = { province = 1373 data = CHI } } type = revolt which = 1373 }\r
+-	command = { trigger = { owned = { province = 1374 data = CHI } } type = revolt which = 1374 }\r
+-	command = { trigger = { owned = { province = 1375 data = CHI } } type = revolt which = 1375 }\r
+-	command = { trigger = { owned = { province = 1376 data = CHI } } type = revolt which = 1376 }\r
+-	command = { trigger = { owned = { province = 1377 data = CHI } } type = revolt which = 1377 }\r
+-	command = { trigger = { owned = { province = 1378 data = CHI } } type = revolt which = 1378 }\r
+-	command = { trigger = { owned = { province = 1379 data = CHI } } type = revolt which = 1379 }\r
+-	command = { trigger = { owned = { province = 1380 data = CHI } } type = revolt which = 1380 }\r
+-	command = { trigger = { owned = { province = 1381 data = CHI } } type = revolt which = 1381 }\r
+-	command = { trigger = { owned = { province = 1382 data = CHI } } type = revolt which = 1382 }\r
+-	command = { trigger = { owned = { province = 1383 data = CHI } } type = revolt which = 1383 }\r
+-	command = { trigger = { owned = { province = 1384 data = CHI } } type = revolt which = 1384 }\r
+-	command = { trigger = { owned = { province = 1385 data = CHI } } type = revolt which = 1385 }\r
+-	command = { trigger = { owned = { province = 1386 data = CHI } } type = revolt which = 1386 }\r
+-	command = { trigger = { owned = { province = 1387 data = CHI } } type = revolt which = 1387 }\r
+-	command = { trigger = { owned = { province = 1388 data = CHI } } type = revolt which = 1388 }\r
+-	command = { trigger = { owned = { province = 1389 data = CHI } } type = revolt which = 1389 }\r
+-	command = { trigger = { owned = { province = 1390 data = CHI } } type = revolt which = 1390 }\r
+ 	command = { type = sleepevent which = 6959148 }\r
+ 	command = { type = sleepevent which = 6959149 }\r
+ 	command = { type = sleepevent which = 6959150 }\r
+@@ -5314,6 +4960,10 @@ event = {
+ 	command = { type = sleepevent which = 6959160 }\r
+ 	command = { type = sleepevent which = 6959161 }\r
+ 	command = { type = sleepevent which = 6959162 }\r
++	command = { type = sleepevent which = 6959176 } # 南京十年\r
++	command = { type = sleepevent which = 6959177 }\r
++	command = { type = sleepevent which = 6959178 }\r
++	command = { type = sleepevent which = 6959179 }\r
+ 	ai_chance = 30\r
+ 	}\r
+ }\r
+@@ -6216,6 +5866,7 @@ event = {
+ 	command = { type = relation which = ITA value = -50 }\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = event which = 6959162 where = USA when = 0 }\r
++	command = { type = sleepevent which = 6959175 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+@@ -6231,6 +5882,7 @@ event = {
+ 	command = { type = relation which = USA value = -50 }\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = event which = 6959162 where = GER when = 0 }\r
++	command = { type = sleepevent which = 6959175 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+@@ -6246,6 +5898,7 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = belligerence value = -25 }\r
+ 	command = { type = sleepevent which = 6959162 }\r
++	command = { type = sleepevent which = 6959175 }\r
+ 	ai_chance = 40\r
+ 	}\r
+ }\r
+@@ -6453,12 +6106,12 @@ event = {
+ 	trigger = {\r
+ 	exists = FRA\r
+ 	OR = { \r
+-	AND = { event = 2002006 war = { country = FRA country = GER } }# C'est foutu !\r
+-	event = 2002009 # What colonies for FF?\r
++	AND = { event = 2002006 war = { country = FRA country = GER } }# フランスの決断\r
++	event = 2002009 # フランス植民地の決断\r
+ 	}\r
+ 	OR = {\r
+ 	event = 6959143 # 中国が日本を破った\r
+-	flag = CHI_AXIS # 台湾侵攻失敗後、枢軸加盟ルートに進む\r
++	flag = CHItripartite # 台湾侵攻失敗後、三国同盟を締結\r
+ 	}\r
+ 	OR = { \r
+ 	random = 5\r
+@@ -6518,7 +6171,7 @@ event = {
+ 	command = { type = relation which = GER value = 30 }\r
+ 	command = { type = relation which = ENG value = -25 }\r
+ 	command = { type = relation which = USA value = -25 }\r
+-	command = { type = trigger which = 6959029 }\r
++	command = { type = trigger which = 6959168 }\r
+ 	ai_chance = 96\r
+ 	}\r
+ \r
+@@ -6526,7 +6179,7 @@ event = {
+ 	name = "ACTION_NAME_REFUSE"\r
+ 	command = { type = relation which = CHI value = -30 }\r
+ 	command = { type = relation which = GER value = -30 }\r
+-	command = { type = trigger which = 6959030 }\r
++	command = { type = trigger which = 6959169 }\r
+ 	ai_chance = 4\r
+ 	}\r
+ }\r
+@@ -6628,9 +6281,9 @@ event = {
+         picture = "Chinese_Infantry2"\r
+ 	decision_picture = "decision_anticominternpact"\r
+ 	\r
+-	date = { day = 0 month = january year = 1936 }\r
+-	offset = 30\r
+-	deathdate = { day = 29 month = december year = 1963 }\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 12\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = { # タイを脅迫する\r
+ 	name = "ACTIONNAME6959170A"\r
+@@ -6811,6 +6464,7 @@ event = {
+ 	command = { type = chiefofarmy which = 55014 } # 何応欽（ホー・インチン）\r
+ 	command = { type = chiefofnavy which = 55019 } # 陳紹寛（チェン・シャオクアン）\r
+ 	command = { type = chiefofair which = 55108 } # 毛邦初（マオ・バンチュウ）\r
++	command = { type = setflag which = CHI_NAZI }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+@@ -6821,6 +6475,285 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  中国の参戦\r
++# 西欧でドイツが次々と勝利を収めていったことで、中国国内では枢軸陣営に加盟し、連合国との戦争に参加するよう求める世論が高まっている。\r
++# 軍部や政府の急進派も参戦を求めており、方針を決定しなくてはならない。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 6959175\r
++	random = no \r
++	country = CHI\r
++	\r
++\r
++	decision = {\r
++	exists = CHI\r
++	OR = {\r
++	event = 6959143 # 中国が日本を破った\r
++	flag = CHItripartite # 台湾侵攻失敗後、三国同盟を締結\r
++	}\r
++	region = { region = "China" country = CHI data = 1 value = 50 }\r
++	NOT = { ispuppet = CHI }\r
++	}\r
++\r
++	decision_trigger = {\r
++	exists = CHI\r
++	OR = { \r
++	AND = { event = 2002006 war = { country = FRA country = GER } }# C'est foutu !\r
++	event = 2002009 # What colonies for FF?\r
++	}\r
++	region = { region = "China" country = CHI data = 1 value = 50 }\r
++	NOT = { ispuppet = CHI }\r
++	}\r
++\r
++	trigger = {\r
++	exists = CHI\r
++	OR = { \r
++	AND = { event = 2002006 war = { country = FRA country = GER } }# C'est foutu !\r
++	event = 2002009 # What colonies for FF?\r
++	}\r
++	region = { region = "China" country = CHI data = 1 value = 50 }\r
++	NOT = { ispuppet = CHI }\r
++	OR = { \r
++	random = 5\r
++	AND = { year = 1941 month = 11 random = 70 } \r
++	}\r
++	}\r
++\r
++	name = "EVT_6959175_NAME"\r
++	desc = "EVT_6959175_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1940 }\r
++	offset = 12\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++	\r
++	action = { # 参戦する\r
++	name = "ACTIONNAME6959175A"\r
++	trigger = { flag = CHI_AXIS NOT = { flag = CHI_NAZI } } # 台湾侵攻失敗後、枢軸加盟ルートに進む\r
++	command = { type = alliance which = GER when = 1 }\r
++	command = { type = relation which = GER value = 100 }\r
++	command = { type = sleepevent which = 6959161 } # 中国の参戦\r
++	command = { type = sleepevent which = 6959162 }\r
++	ai_chance = 75\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959175B"\r
++	trigger = { flag = CHI_AXIS NOT = { flag = CHI_NAZI } } # 台湾侵攻失敗後、枢軸加盟ルートに進む\r
++	command = { type = relation which = GER value = -50 }\r
++	command = { type = sleepevent which = 6959161 } # 中国の参戦\r
++	command = { type = sleepevent which = 6959162 }\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 参戦する\r
++	name = "ACTIONNAME6959175A"\r
++	trigger = { flag = CHI_AXIS flag = CHI_NAZI } # 台湾侵攻失敗後、枢軸加盟ルートに進む\r
++	command = { type = alliance which = GER when = 1 }\r
++	command = { type = relation which = GER value = 100 }\r
++	command = { type = sleepevent which = 6959161 } # 中国の参戦\r
++	command = { type = sleepevent which = 6959162 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959175B"\r
++	trigger = { flag = CHI_AXIS flag = CHI_NAZI } # 台湾侵攻失敗後、枢軸加盟ルートに進む\r
++	command = { type = relation which = GER value = -50 }\r
++	command = { type = sleepevent which = 6959161 } # 中国の参戦\r
++	command = { type = sleepevent which = 6959162 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 参戦する\r
++	name = "ACTIONNAME6959175A"\r
++	trigger = { NOT = { flag = CHI_AXIS flag = CHI_NAZI } } # 台湾侵攻失敗後、枢軸加盟ルートに進む\r
++	command = { type = alliance which = GER when = 1 }\r
++	command = { type = relation which = GER value = 100 }\r
++	command = { type = sleepevent which = 6959161 } # 中国の参戦\r
++	command = { type = sleepevent which = 6959162 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959175B"\r
++	trigger = { NOT = { flag = CHI_AXIS flag = CHI_NAZI } } # 台湾侵攻失敗後、枢軸加盟ルートに進む\r
++	command = { type = relation which = GER value = -50 }\r
++	command = { type = sleepevent which = 6959161 } # 中国の参戦\r
++	command = { type = sleepevent which = 6959162 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  南京十年の再開（第一段階）\r
++# 「南京十年（中：黄金十年、十年建国、十年建設）」とは、国民政府がかつて打ち出した経済発展方針である。\r
++# 1927年から始まったが、その後の北伐の失敗により地方軍閥の影響力が強まったことで、経済は停滞した。\r
++# しかし国内が再度統一されたことで、幣制改革や鉄道網整備などの経済基盤を確立する政策が再び再開したことで、国内が安定へと向かいつつある。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959176\r
++	random = no\r
++	country = CHI\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	event = 6959107 # 北伐の再開\r
++	region = { region = "China" country = CHI data = 1 value = 50 }\r
++	NOT = {\r
++	exists = CSX\r
++	exists = CGX\r
++	exists = CYN\r
++	exists = CXB\r
++	}\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_6959176_NAME"\r
++	desc = "EVT_6959176_DESC"\r
++	style = 2\r
++	picture = "industry2"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 近代化を推進する！\r
++	name = "ACTIONNAME6959176A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = industrial_modifier which = total value = 2 }\r
++        command = { type = construct which = ic where = 1318 value = 1 } # 黄石（ファンシー）\r
++        command = { type = construct which = ic where = 1307 value = 1 } # 懐化（ファィファ）\r
++        command = { type = construct which = ic where = 1308 value = 1 } # 長沙（チャンシャー）\r
++        command = { type = construct which = ic where = 1337 value = 1 } # 南京（ナンキン）\r
++        command = { type = construct which = ic where = 1317 value = 1 } # 武漢（ウーハン）\r
++        command = { type = construct which = ic where = 1297 value = 1 } # 成都（チェントゥー）\r
++        command = { type = construct which = ic where = 1299 value = 1 } # 重慶（チョンチン）\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  南京十年の再開（第二段階）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959177\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = {\r
++	event = { id = 6959176 days = 360 } # 南京十年の再開\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_6959176_NAME"\r
++	desc = "EVT_6959176_DESC"\r
++	style = 2\r
++	picture = "industry2"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 近代化を推進する！\r
++	name = "ACTIONNAME6959176A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = industrial_modifier which = total value = 2 }\r
++        command = { type = construct which = ic where = 2822 value = 1 } # 蘇州（ソシュウ）\r
++        command = { type = construct which = ic where = 1336 value = 1 } # 徐州（シュイチョウ）\r
++        command = { type = construct which = ic where = 1328 value = 1 } # 青島（チンタオ）\r
++        command = { type = construct which = ic where = 1337 value = 1 } # 南京（ナンキン）\r
++        command = { type = construct which = ic where = 1317 value = 1 } # 武漢（ウーハン）\r
++        command = { type = construct which = ic where = 1297 value = 1 } # 成都（チェントゥー）\r
++        command = { type = construct which = ic where = 1299 value = 1 } # 重慶（チョンチン）\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  南京十年の再開（第三段階）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959178\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = {\r
++	event = { id = 6959176 days = 720 } # 南京十年の再開\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_6959176_NAME"\r
++	desc = "EVT_6959176_DESC"\r
++	style = 2\r
++	picture = "industry2"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 近代化を推進する！\r
++	name = "ACTIONNAME6959176A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = industrial_modifier which = total value = 2 }\r
++        command = { type = construct which = ic where = 1320 value = 1 } # 許昌（シューチャン）\r
++        command = { type = construct which = ic where = 1304 value = 1 } # 遵義（ツンイー）\r
++        command = { type = construct which = ic where = 1340 value = 1 } # 合肥（ホーフェイ）\r
++        command = { type = construct which = ic where = 1337 value = 1 } # 南京（ナンキン）\r
++        command = { type = construct which = ic where = 1317 value = 1 } # 武漢（ウーハン）\r
++        command = { type = construct which = ic where = 1297 value = 1 } # 成都（チェントゥー）\r
++        command = { type = construct which = ic where = 1299 value = 1 } # 重慶（チョンチン）\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  南京十年の終了（第四段階）\r
++# 「南京十年（中：黄金十年、十年建国、十年建設）」とは、国民政府がかつて打ち出した経済発展方針である。\r
++# 1927年から始まったが、その後の北伐の失敗により地方軍閥の影響力が強まったことで、経済は停滞した。\r
++# しかし国内が再度統一されたことで、改革が進み、国内に安定した政権が樹立された。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959179\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = {\r
++	event = { id = 6959176 days = 1080 } # 南京十年の再開\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_6959179_NAME"\r
++	desc = "EVT_6959179_DESC"\r
++	style = 2\r
++	picture = "industry2"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 近代化が進んだ！\r
++	name = "ACTIONNAME6959179A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = industrial_modifier which = total value = 2 }\r
++        command = { type = construct which = ic where = 1345 value = 1 } # 杭洲（ハンチョウ）\r
++        command = { type = construct which = ic where = 1346 value = 1 } # 寧波（ニンポー）\r
++        command = { type = construct which = ic where = 1352 value = 1 } # 南昌（ナンチャン）\r
++        command = { type = construct which = ic where = 1337 value = 1 } # 南京（ナンキン）\r
++        command = { type = construct which = ic where = 1317 value = 1 } # 武漢（ウーハン）\r
++        command = { type = construct which = ic where = 1297 value = 1 } # 成都（チェントゥー）\r
++        command = { type = construct which = ic where = 1299 value = 1 } # 重慶（チョンチン）\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  巨龍、滅ぶ\r
+ # アメリカは来たるべき戦争に必要な資源の確保を目的として、中国への侵略を開始した。\r
+@@ -6871,8 +6804,13 @@ event = {
+ 	command = { type = sleepleader which = 55049 }\r
+ 	command = { type = sleepteam which = 55006 }\r
+ 	command = { type = sleepteam which = 55801 }\r
+-	command = { type = sleepleader which = 55303 } # フォン・ファルケンハウゼン, A.\r
++	command = { type = sleepminister which = 55464 } # フォン・ファルケンハウゼン, A.\r
++	command = { type = sleepminister which = 55465 }\r
++	command = { type = sleepminister which = 55466 }\r
++	command = { type = sleepleader which = 55303 }\r
+ 	command = { type = sleepteam which = 55005 }\r
++	command = { type = sleepminister which = 55463 } # ヴァルター・シュテンネス\r
++	command = { type = sleepminister which = 55467 } # ジョン・ラーベ\r
+ 	command = { type = sleepleader which = 55368 } # シェンノート, C.\r
+ 	command = { type = sleepleader which = 55375 } # フリューキン, T. T.\r
+ 	command = { type = sleepteam which = 55007 } # クレア・シェンノート\r

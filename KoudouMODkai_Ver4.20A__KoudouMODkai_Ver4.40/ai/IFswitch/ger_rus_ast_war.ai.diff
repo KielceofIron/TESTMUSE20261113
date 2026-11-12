@@ -1,0 +1,533 @@
+--- A/ai/IFswitch/ger_rus_ast_war.ai [cp932]
++++ B/ai/IFswitch/ger_rus_ast_war.ai [cp932]
+@@ -4,10 +4,8 @@ switch = no # [yes/no]
+ max_front_ratio = 1.5 \r
+ max_front_ratios = {\r
+ 	FRA = -1\r
+-	U14 = -1\r
+-	ITA = -1\r
+-	UTC = 20\r
+-	UB8 = 50\r
++	UTC = 30\r
++	UB8 = 1\r
+ }\r
+ max_garrison_prop = 0.30\r
+ min_garrison_prop = 0.20\r
+@@ -17,8 +15,8 @@ ferocity = no
+ desperation = 0.65\r
+ strat_redeploy_threshold = 50\r
+ max_redeploying = 0.05\r
+-exp_force_ratio = 0.1\r
+-exp_force_ratios = { UB8 = 0 } \r
++exp_force_ratio = 0.3\r
++exp_force_ratios = { POL = 0.8 HOL = 0.8 UB8 = 0 } \r
+ no_exp_forces_to = { JAP SIA MAN FRA }\r
+ \r
+ ###################################\r
+@@ -71,46 +69,37 @@ protect = {
+ 	TUR = 80\r
+ }\r
+ target = { \r
+-	#要塞\r
+-		104 = -1  #Metz\r
+-		110 = -1\r
+-		109 = -1\r
+-		107 = -1\r
+-		105 = -1\r
+-		389 = -1\r
+-	#独仏国境付近\r
+-		108 = -1\r
+-		391 = -1\r
+-		98 = -1\r
+-		95 = -1\r
+-		100 = -1\r
+-		97 = -1\r
+-		96 = -1\r
+-		111 = -1\r
+-		108 = -1\r
+ #	#Austria\r
+-	143 = 80 # Lech\r
+-	186 = 80 # Freistadt\r
+-	188 = 80 # Eisenstadt\r
+-	189 = 80 # Innsbruck\r
++	#143 = 80 # Lech\r
++	#186 = 80 # Freistadt\r
++	#188 = 80 # Eisenstadt\r
++	#189 = 80 # Innsbruck\r
+ 	192 = 80 # Salzburg\r
+-	191 = 80 # Klagenfurt\r
+-	187 = 80 # Linz\r
+-	194 = 80 # Hollabrunn\r
+-	195 = 80 # Vienna\r
+-	190 = 80 # Graz\r
++	#191 = 80 # Klagenfurt\r
++	#187 = 80 # Linz\r
++	#194 = 80 # Hollabrunn\r
++	195 = 180 # Vienna\r
++	#190 = 80 # Graz\r
+ \r
+ 	#Czech\r
+ 	200 = 60 # Liberec\r
+ 	204 = 60 # Prachatice\r
+ 	205 = 60 # Karlovy Vary\r
+ 	197 = 60 # Znojmo\r
++	207 = 200 #Prague\r
++	208 = 200 #Blatislava\r
++	352 = 200 #Zagreb\r
+ \r
+-	#Poland\r
+-#	181 = 50 # Danzig\r
++	316 = 100 #Bukarest\r
++	321 = 100 #Sofia\r
+ \r
++\r
++	#Poland\r
++	181 = 50 # Danzig\r
++	235 = 100 #Krakow\r
++	242 = 100 #Lwow\r
+ 	#Baltic States\r
+-#	261 = 50 # Klaipeda\r
++	261 = 50 # Klaipeda\r
+ \r
+ 	#Russia\r
+ 	247 = 300\r
+@@ -124,8 +113,27 @@ target = {
+ 	644 = 100\r
+ 	641 = 100\r
+ \r
+-\r
+-\r
++	#要塞\r
++		104 = -1  #Metz\r
++		110 = -1\r
++		109 = -1\r
++		107 = -1\r
++		105 = -1\r
++		389 = -1\r
++	#独仏国境付近\r
++		108 = -1\r
++		391 = -1\r
++		98 = -1\r
++		95 = -1\r
++		100 = -1\r
++		97 = -1\r
++		96 = -1\r
++		111 = -1\r
++		108 = -1\r
++	118 = 300\r
++	121 = 300\r
++	122 = 300\r
++	125 = 300\r
+ \r
+ \r
+ } \r
+@@ -448,14 +456,89 @@ spyprefs =
+ # Construction and Tech Research\r
+ ###################################\r
+ construction = { \r
+-   max_factor = 0.1 # 0.50 \r
++	max_factor = 0.1\r
++\r
++   	AA_batteries = atwar \r
++	max_AA_level = 6 \r
++	AA_provs = { \r
++		141 # Muenster\r
++		145 # Essen\r
++		131 # Cologne\r
++		127 # Saarbrucken\r
++		138 # Frankfurt\r
++		177 # Nuremberg\r
++		134 # Suttgart\r
++		179 # Munich\r
++		173 # Dresden\r
++		163 # Berlin\r
++		152 # Kiel\r
++		146 # Hannover\r
++	}\r
++\r
++	coastal_fort = atwar\r
++	max_coastal_level = 3\r
++	coastal_fort_provs = {\r
++		152 # Kiel\r
++	} \r
++\r
++	radar_station = atwar\r
++	max_radar = 2\r
++	radar_provs = {\r
++		145 # Essen\r
++		137 # Kassel\r
++		147 # Wilhemshafen\r
++		163 # Berlin\r
++		134 # Stutgart\r
++		116 # Brussels\r
++		122 # Amsterdam\r
++		52 # Lille\r
++		55 # Paris\r
++	} \r
++\r
++	air_base = atwar\r
++	max_air_base = 3\r
++	air_base_provs = {\r
++		126 # Aachen\r
++		145 # Essen\r
++		130 # Mainz\r
++	} \r
++\r
++	naval_base = no \r
++	max_naval_base = 5 \r
++	naval_base_provs = { } \r
++\r
++	land_fort = no #yes\r
++	max_land_level = 6\r
++	fort_borders = { }\r
++	fort_provs	= {\r
++		127 # Saarburken\r
++		132 # Freiburg\r
++		130 # Mainz\r
++	}\r
++\r
++	ic_at_war = no\r
++	force_ic_until = 1931\r
++	ic_end_year = 1931\r
++	IC_provs = {\r
++		127 # Saarburken\r
++		179 # Munchen\r
++		163 # Berlin\r
++		131 # Cologne\r
++		134 # Stuttgart\r
++		146 # Hannover\r
++		173 # Dresden\r
++	} \r
++	\r
++	nuclear_reactor = yes	\r
++	nuclear_reactor_prov = 151 # リューベック 163 # Berlin\r
++	max_nuclear = 10\r
+ }\r
+ \r
+ military = { \r
+ 	relative_build_scheme 	= no\r
+ 	max_batch_peace			= 720 #540 \r
+-	max_batch_war 			=  360 #320 \r
+-	max_batch_home_front	= 280\r
++	max_batch_war			= 360 #320 \r
++	max_batch_home_front	= 180\r
+ 	extra_convoys_war		= 0.0000 \r
+ 	extra_convoys_peace		= 0.0000\r
+ \r
+@@ -634,6 +717,70 @@ technology = {
+ 		5190 5200 5210 5220 5230 5240 53020\r
+ 	} \r
+ 	ignore 		= {\r
++		# Self-Propelled Anti-Air\r
++		22910 22920\r
++		\r
++		# Strategic bombers\r
++		# 4800 4810 4820 4220 4230 4240 4246 15160 15170 16030\r
++\r
++		# Aircraft CarriersAir groups\r
++		# 4900 4910 4920 4930\r
++		\r
++		# Destroyers\r
++		# 12000 3080\r
++		\r
++		# Light Cruiser\r
++		12010 3170\r
++\r
++		# Heavy Cruiser\r
++		12020 3270\r
++\r
++		# Battlecruisers\r
++		3350 12030\r
++\r
++		# Battleship\r
++		# 3480 12040 3490\r
++\r
++		# Carrier\r
++		# 3520 3530\r
++		\r
++		# Transport\r
++		# 3840\r
++		\r
++		# ASW_EQUIPMENT\r
++		3910 3920\r
++\r
++		# Light Carrier\r
++		12120 12130\r
++\r
++		# Escort Fighters\r
++		# 4080 4110\r
++\r
++		# Nuclear\r
++		# 5490 5500 5510\r
++		\r
++		# radar\r
++		# 5417 5420\r
++		\r
++		#EQUIPMENT Winter Jungle Desert Sturdy\r
++		5920 5930 5940 5950 5960 5970 5980 5990\r
++		\r
++		# Subsidiary Carrier Role\r
++		81650\r
++\r
++		# Amphibious Warfare\r
++		#82300 82310 \r
++\r
++		# Logistic Support\r
++		82500 82510 \r
++		\r
++		# Anti-Submarine Patrols\r
++		8200 8210 8220 8230 8240 8250 8260 8300 8310 8320 8330 8340 8350 \r
++\r
++		# Strategic Destruction - Flying Armada\r
++		#9140 \r
++		9150 9160 9170 9180 9430 9440 9450 9460\r
++\r
+ 		# 歩兵直協戦車戦術\r
+ 		6920\r
+ 	}\r
+@@ -670,49 +817,25 @@ garrison = {
+ 	home_multiplier 	= 1.2\r
+ 	overseas_multiplier 	= 0.1\r
+ 	home_peace_cap 		= 10\r
+-	war_zone_odds 		= 3.0\r
++	war_zone_odds 		= 1.0\r
+ 	key_point_prio_mult	= 0.5\r
+ 	revolt_risk_mult	= 0.1\r
+ \r
+ 	# PRIORITIES:\r
+ 	beach			= 20	# Beach level 2\r
+ 	capital			= 40	# Our capital\r
+-	human_border		= 1	# Ignored for allied human players\r
++	human_border		= 0	# Ignored for allied human players\r
+ 	war_target		= 50	# The next country targeted for attack by this AI\r
+ 	\r
+ 	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"\r
+ 	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+ 	unstable_border		= 30	# Bordering countries at war with someone else get this\r
+ \r
+-	area_multiplier = {\r
+-	131 = 30\r
+-	141 = 30\r
+-	147 = 30\r
+-	207 = 50\r
+-	195 = 50\r
+-	208 = 20\r
+-	284 = 20\r
+-	346 = 20\r
+-	355 = 20\r
+-	287 = 10\r
+-	165 = 40\r
+-	227 = 40\r
+-	235 = 40\r
+-	242 = 10\r
+-	341 = 10\r
+-	399 = -5\r
+-	107 = -5\r
+-	109 = -5\r
+-	}\r
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+ 		FIN = -1\r
+-		ITA = -1\r
+-		U14 = -1\r
+-		SER = -1 #2000\r
+-		ROM = -1\r
+-		U29 = -1 #2000\r
+-		SCH = -1\r
++		ITA = 1\r
++		SCH = 1\r
+ 		ENG = -1\r
+ 		AUS = 10\r
+ 		CZE = 75\r
+@@ -721,9 +844,10 @@ garrison = {
+ 		HOL = 10 # 5\r
+ 		BEL = 25\r
+ 		DEN = 25\r
+-		UTC = 1500\r
++		UTC = 150\r
+ 		FRA = -1\r
+-		UB8 = 500\r
++		UB8 = 100\r
++		HOL = 20\r
+ 	}\r
+ 	ignore = { }\r
+ 	province_priorities = {\r
+@@ -739,21 +863,6 @@ garrison = {
+ 		243  = 50  #Lubin\r
+ 		236  = 50\r
+ 		237  = 50\r
+-		\r
+-		#55  = 20  #Paris\r
+-		#52  = 20  #Lille\r
+-		#116  = 20  #Brussels\r
+-		145  = 20  #Prague\r
+-		#104  = 20  #Metz\r
+-		#43  = 20  #Cherborg\r
+-		#42  = 20  #Avranches\r
+-		#69  = 10  #La Rochele\r
+-		147  = 20  #Wilhelmshafen\r
+-		148  = 20  #Bremen\r
+-		150  = 20  #Groningen\r
+-		338  = 20  #Belgrade\r
+-\r
+-\r
+ 	#要塞\r
+ 		104 = -1  #Metz\r
+ 		110 = -1\r
+@@ -761,22 +870,70 @@ garrison = {
+ 		107 = -1\r
+ 		105 = -1\r
+ 		389 = -1\r
++		\r
++#		55  = 20  #Paris\r
++#		52  = 20  #Lille\r
++#		116  = 20  #Brussels\r
++		145  = 20  #Prague\r
++#		104  = 20  #Metz\r
++#		43  = 20  #Cherborg\r
++#		42  = 20  #Avranches\r
++#		69  = 10  #La Rochele\r
++		147  = 20  #Wilhelmshafen\r
++		148  = 20  #Bremen\r
++#		150  = 20  #Groningen\r
++		338  = 20  #Belgrade\r
+ 	#独仏国境付近\r
+-		108 = -1\r
+-		391 = -1\r
+-		98 = -1\r
+-		95 = -1\r
+-		100 = -1\r
+-		97 = -1\r
+-		96 = -1\r
+-		111 = -1\r
+-		108 = -1\r
++		108 = -100\r
++		391 = -100\r
++		98 = -100\r
++		95 = -100\r
++		100 = -100\r
++		97 = -100\r
++		96 = -100\r
++		111 = -100\r
++		108 = -100\r
++	}\r
++	area_multiplier = {\r
++	399 = -5000\r
++	107 = -5000\r
++	109 = -5000\r
++	131 = 30\r
++	141 = 30\r
++	147 = 30\r
++	184 = 5\r
++	232 = 5\r
++	210 = 5\r
++	240 = 5\r
++	264 = 5\r
++	270 = 5\r
++	617 = 5\r
++	611 = 5\r
++	626 = 5\r
++	304 = 5\r
++	299 = 5\r
++	316 = 5\r
++	322 = 5\r
++	597 = 5\r
++	608 = 5\r
++	590 = 5\r
++	262 = 5\r
++	630 = 5\r
++	641 = 5\r
++	636 = 5\r
++	643 = 5\r
++	576 = 5\r
++	572 = 5\r
++	558 = 5\r
++	553 = 5\r
++	530 = 5\r
++	617 = 5\r
+ 	}\r
+ }\r
+ front = { \r
+ 	recklessness 		= 3 # 0-3\r
+-	distrib_vs_ai 		= Deffensive\r
+-	distrib_vs_human 	= Reactive\r
++	distrib_vs_ai 		= defensive\r
++	distrib_vs_human 	= even\r
+ \r
+ 	enemy_reinf_days	= 6\r
+ 	reserve_prop		= 0.1\r
+@@ -786,7 +943,7 @@ front = {
+    	min_attack_odds   = 0.8\r
+ 	max_attack_odds 	= 2.0\r
+ 	reinforce_odds		= 1.2\r
+-	withdraw_odds		= 0.5\r
++	withdraw_odds		= 0.6\r
+ \r
+ 	strength 	= 1.0\r
+ 	organisation 	= 1.0\r
+@@ -814,62 +971,16 @@ front = {
+ 	urban_attack 	= 1.0\r
+ 	river 		= 1.0\r
+ \r
+-\r
+-	enemy_handicap = { FRA = 1000\r
++	enemy_handicap = { FRA = 100\r
+ 	} \r
+-	passivity = {  FRA = 1000 }\r
+-}\r
++	passivity = {  FRA = 100 }\r
++} \r
+ ###################################\r
+ # Air bombardment and defense\r
+ ###################################\r
+ # Air AI File For Ground Bombings as priority\r
+ # bomber is now obsolete and NOT USED AT ALL replace and use Air Marshal instead\r
+ \r
+-air_marshal = {\r
+-	min_mission_strength_org	= 0.8\r
+-	icxdayscostfactor 			= 10.0		# How to value true industrial cost when calculating expect causalties\r
+-	manpowercostfactor			= 100.0		# How to value manpower cost when calculating expect causalties\r
+-	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+-\r
+-	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30000.0\r
+-	groundattackdesirability 		= 40000.0\r
+-	inderdictiondesirability 		= 20000\r
+-	logisticalstrikedesirability 		= 2000\r
+-	runwaycrateringdesirability 		= 10000\r
+-	strategicstrikedesirability 		= 10000\r
+-	installationstrikedesirability 		= 5000\r
+-	navalstrikedesirability 		= 15000\r
+-	portstrikedesirability 		= 9000\r
+-	convoyraiddesirability 		= 9000\r
+-\r
+-	# tolerance is the required kill:loss ration expected to do \r
+-	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+-	airsuperioritylosstolerance 	= 1.0\r
+-	groundattacklosstolerance 		= 1.0\r
+-	interdictionlosstolerance 		= 2.0\r
+-	logisticalstrikelosstolerance 	= 0.5\r
+-	runwaycrateringlosstolerance 	= 1.5\r
+-	strategicstriketolerance 		= 4.5\r
+-	installationstriketolerance 	= 1.5\r
+-	navalstriketolerance 			= 1.0\r
+-	portstriketolerance 			= 1.0\r
+-	convoyraidtolerance				= 1.0\r
+-\r
+-	# efficency is a tweakable param to adjust according to how \r
+-	#    much actual damage comes from doing this mission (not to be confused with desirability)\r
+-	logisticalstrikeefficency 	= 0.01\r
+-	runwaycrateringefficency 	= 0.01\r
+-	strategicstrikeefficency 	= 0.01\r
+-	installationstrikeefficency = 0.01\r
+-\r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+-	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+-	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+-	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+-	taskforcetype = { name = "Naval Bombing" desiredratio = 0.050 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 2000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes naval_strike = yes port_strike = yes convoy_air_raiding = yes } \r
+-	taskforcetype = { name = "Airlift" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = -2000.000 softkillpowerweight = -2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = -2000.000 transportcapacityweight = 1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes airborne_assault = yes air_supply = yes } \r
+-}\r
+ ###################################\r
+ # Invasions and Naval\r
+ ###################################\r

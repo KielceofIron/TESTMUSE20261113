@@ -1,0 +1,1740 @@
+--- A/db/events/Yokoyama_events/Tousei_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Tousei_events.txt [cp932]
+@@ -141,6 +141,7 @@ event = {
+ 		command = { type = waketeam which = 50081 } # 東條英機\r
+ 		command = { type = sleepteam which = 50088 } # 小畑敏四郎\r
+ 		command = { type = sleepteam which = 50089 } # 鈴木率道\r
++		ai_chance = 70\r
+ 	}\r
+ \r
+ 	action_c = { # 小畑敏四郎を支持する\r
+@@ -151,6 +152,7 @@ event = {
+ 		command = { type = waketeam which = 50089 } # 鈴木率道\r
+ 		command = { type = sleepteam which = 50084 } # 永田鉄山\r
+ 		command = { type = sleepteam which = 50081 } # 東條英機\r
++		ai_chance = 30\r
+ 	}\r
+ }\r
+ \r
+@@ -360,7 +362,7 @@ event = {
+ \r
+ 	action_a = { # 総力戦体制を構築するのだ\r
+ 		name = "ACTIONNAME22700005A"\r
+-		command = { type = ministerofintelligence which = 50384 } # 池田純久\r
++		command = { type = ministerofintelligence which = 50557 } # 池田純久\r
+ 		command = { type = domestic which = free_market value = -1 }\r
+ 		command = { type = domestic which = freedom value = -1 }\r
+ 	}\r
+@@ -532,7 +534,7 @@ event = {
+ 	action_a = { # 赤化教授は追放されるべきだ\r
+ 		name = "ACTIONNAME22700009A"\r
+ 		command = { type = dissent value = 1 }\r
+-		command = { type = sleepminister which = 50970 } # 瀧川幸辰\r
++		command = { type = sleepminister which = 50546 } # 瀧川幸辰\r
+ 		command = { type = domestic which = freedom value = -1 }\r
+ 		ai_chance = 100\r
+ 	}\r
+@@ -705,10 +707,12 @@ event = {
+ 	headofstate = 50173\r
+ 	headofstate = 50283\r
+ 	headofstate = 50011 # 秩父宮雍仁親王\r
+-	headofstate = 50601\r
+-	headofstate = 50602 # 雍仁天皇\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
++	headofstate = 50701\r
++	headofstate = 50833\r
++	headofstate = 50952\r
++	headofstate = 50702 # 雍仁天皇\r
++	headofstate = 50834\r
++	headofstate = 50954\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r
+@@ -720,10 +724,12 @@ event = {
+ 	headofstate = 50173\r
+ 	headofstate = 50283\r
+ 	headofstate = 50011 # 秩父宮雍仁親王\r
+-	headofstate = 50601\r
+-	headofstate = 50602 # 雍仁天皇\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
++	headofstate = 50701\r
++	headofstate = 50833\r
++	headofstate = 50952\r
++	headofstate = 50702 # 雍仁天皇\r
++	headofstate = 50834\r
++	headofstate = 50954\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r
+@@ -734,10 +740,12 @@ event = {
+ 	headofstate = 50173\r
+ 	headofstate = 50283\r
+ 	headofstate = 50011 # 秩父宮雍仁親王\r
+-	headofstate = 50601\r
+-	headofstate = 50602 # 雍仁天皇\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
++	headofstate = 50701\r
++	headofstate = 50833\r
++	headofstate = 50952\r
++	headofstate = 50702 # 雍仁天皇\r
++	headofstate = 50834\r
++	headofstate = 50954\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r
+@@ -755,6 +763,9 @@ event = {
+ 	action = { # 総力戦に備えるのだ\r
+ 		name = "ACTIONNAME22700014A"\r
+ 		command = { type = dissent value = -3 }\r
++		command = { type = build_division which = infantry value = artillery when = 15 cost = -0.1 where = 3 }\r
++		command = { type = build_division which = infantry value = artillery when = 15 cost = -0.1 where = 3 }\r
++		command = { type = build_division which = infantry value = artillery when = 15 cost = -0.1 where = 3 }\r
+ 		command = { type = strength which = land when = 1 where = 1 value = 0.5 }\r
+ 		command = { type = strength which = air when = 1 where = 1 value = 0.75 }\r
+ 		command = { type = activate_division which = 13016 value = 501 when = 0 }\r
+@@ -789,6 +800,21 @@ event = {
+ 		command = { type = activate_division which = 13016 value = 531 when = 0 }\r
+ 		command = { type = activate_division which = 13016 value = 532 when = 0 }\r
+ 		command = { type = activate_division which = 13016 value = 533 when = 0 }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = artillery }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = artillery }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = artillery }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = artillery }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
++		command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }\r
++		command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }\r
++		command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }\r
+ 	}\r
+ }\r
+ \r
+@@ -890,8 +916,8 @@ event = {
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = sleepminister which = 50010 } # 山本五十六 粛清\r
+ 	command = { type = sleepminister which = 50167 }\r
+-	command = { type = sleepminister which = 50521 }\r
+-	command = { type = sleepminister which = 51008 }\r
++	command = { type = sleepminister which = 50501 }\r
++	command = { type = sleepminister which = 50611 }\r
+ 	command = { type = sleepleader which = 101270 }\r
+ 	command = { type = sleepteam which = 50104 }\r
+ 	}\r
+@@ -986,15 +1012,15 @@ event = {
+ 	action_a = { # 悲劇だ...\r
+ 	name = "ACTIONNAME22700018A"\r
+ 	command = { type = dissent value = 3 }\r
+-	command = { type = sleepminister which = 50611 } # 小畑敏四郞\r
+-	command = { type = sleepminister which = 50612 }\r
+-	command = { type = sleepminister which = 50613 }\r
+-	command = { type = sleepminister which = 50731 }\r
+-	command = { type = sleepminister which = 50732 }\r
+-	command = { type = sleepminister which = 50733 }\r
+-	command = { type = sleepminister which = 50834 }\r
+-	command = { type = sleepminister which = 50835 }\r
+-	command = { type = sleepminister which = 50836 }\r
++	command = { type = sleepminister which = 50711 } # 小畑敏四郞\r
++	command = { type = sleepminister which = 50712 }\r
++	command = { type = sleepminister which = 50713 }\r
++	command = { type = sleepminister which = 50843 }\r
++	command = { type = sleepminister which = 50844 }\r
++	command = { type = sleepminister which = 50845 }\r
++	command = { type = sleepminister which = 50962 }\r
++	command = { type = sleepminister which = 50963 }\r
++	command = { type = sleepminister which = 50964 }\r
+ 	command = { type = sleepleader which = 101400 }\r
+ 	command = { type = sleepteam which = 50088 }\r
+ 	}\r
+@@ -1691,843 +1717,359 @@ event = {
+ \r
+ 	action = { # 追放だ！\r
+ 	name = "ACTIONNAME22700032A"\r
+-	command = { type = sleepminister which = 50002 }\r
+-	command = { type = sleepminister which = 50003 }\r
+-	command = { type = sleepminister which = 50004 }\r
+-	command = { type = sleepminister which = 50005 }\r
+-	command = { type = sleepminister which = 50006 }\r
+-	command = { type = sleepminister which = 50007 }\r
+-	command = { type = sleepminister which = 50008 }\r
+-	command = { type = sleepminister which = 50009 }\r
+-	command = { type = sleepminister which = 50010 }\r
+-	command = { type = sleepminister which = 50013 }\r
+-	command = { type = sleepminister which = 50014 }\r
+-	command = { type = sleepminister which = 50015 }\r
+-	command = { type = sleepminister which = 50016 }\r
+-	command = { type = sleepminister which = 50019 }\r
+-	command = { type = sleepminister which = 50020 }\r
+-	command = { type = sleepminister which = 50021 }\r
+-	command = { type = sleepminister which = 50022 }\r
+-	command = { type = sleepminister which = 50023 }\r
+-	command = { type = sleepminister which = 50024 }\r
+-	command = { type = sleepminister which = 50026 }\r
+-	command = { type = sleepminister which = 50027 }\r
+-	command = { type = sleepminister which = 50035 }\r
+-	command = { type = sleepminister which = 50036 }\r
+-	command = { type = sleepminister which = 50039 }\r
+-	command = { type = sleepminister which = 50040 }\r
+-	command = { type = sleepminister which = 50041 }\r
+-	command = { type = sleepminister which = 50042 }\r
+-	command = { type = sleepminister which = 50043 }\r
+-	command = { type = sleepminister which = 50044 }\r
+-	command = { type = sleepminister which = 50045 }\r
+-	command = { type = sleepminister which = 50046 }\r
++	#統制派\r
++	command = { type = sleepminister which = 50013 } # 林銑十郞\r
+ 	command = { type = sleepminister which = 50047 }\r
+-	command = { type = sleepminister which = 50048 }\r
+-	command = { type = sleepminister which = 50049 }\r
+-	command = { type = sleepminister which = 50050 }\r
+-	command = { type = sleepminister which = 50056 }\r
+-	command = { type = sleepminister which = 50062 }\r
+-	command = { type = sleepminister which = 50066 }\r
+-	command = { type = sleepminister which = 50067 }\r
+-	command = { type = sleepminister which = 50068 }\r
+-	command = { type = sleepminister which = 50069 }\r
+-	command = { type = sleepminister which = 50070 }\r
+-	command = { type = sleepminister which = 50071 }\r
+-	command = { type = sleepminister which = 50072 }\r
+-	command = { type = sleepminister which = 50073 }\r
++	command = { type = sleepminister which = 50362 }\r
++	command = { type = sleepminister which = 50374 }\r
++	command = { type = sleepleader which = 101336 }\r
++	command = { type = sleepminister which = 50022 } #東條英機\r
+ 	command = { type = sleepminister which = 50074 }\r
+-	command = { type = sleepminister which = 50075 }\r
+-	command = { type = sleepminister which = 50076 }\r
+-	command = { type = sleepminister which = 50077 }\r
+-	command = { type = sleepminister which = 50078 }\r
+-	command = { type = sleepminister which = 50079 }\r
+-	command = { type = sleepminister which = 50086 }\r
+-	command = { type = sleepminister which = 50087 }\r
+-	command = { type = sleepminister which = 50088 }\r
+-	command = { type = sleepminister which = 50089 }\r
+-	command = { type = sleepminister which = 50090 }\r
+-	command = { type = sleepminister which = 50091 }\r
+-	command = { type = sleepminister which = 50092 }\r
+-	command = { type = sleepminister which = 50093 }\r
+-	command = { type = sleepminister which = 50094 }\r
+-	command = { type = sleepminister which = 50095 }\r
+-	command = { type = sleepminister which = 50096 }\r
+-	command = { type = sleepminister which = 50097 }\r
+-	command = { type = sleepminister which = 50098 }\r
+-	command = { type = sleepminister which = 50099 }\r
+-	command = { type = sleepminister which = 50100 }\r
+-	command = { type = sleepminister which = 50101 }\r
+-	command = { type = sleepminister which = 50102 }\r
+ 	command = { type = sleepminister which = 50103 }\r
+-	command = { type = sleepminister which = 50104 }\r
+-	command = { type = sleepminister which = 50105 }\r
+-	command = { type = sleepminister which = 50106 }\r
+-	command = { type = sleepminister which = 50110 }\r
+-	command = { type = sleepminister which = 50111 }\r
+-	command = { type = sleepminister which = 50114 }\r
+-	command = { type = sleepminister which = 50115 }\r
+-	command = { type = sleepminister which = 50116 }\r
+-	command = { type = sleepminister which = 50117 }\r
+-	command = { type = sleepminister which = 50118 }\r
+-	command = { type = sleepminister which = 50119 }\r
+-	command = { type = sleepminister which = 50120 }\r
+-	command = { type = sleepminister which = 50121 }\r
+-	command = { type = sleepminister which = 50122 }\r
+-	command = { type = sleepminister which = 50123 }\r
+-	command = { type = sleepminister which = 50124 }\r
+-	command = { type = sleepminister which = 50126 }\r
+-	command = { type = sleepminister which = 50131 }\r
+-	command = { type = sleepminister which = 50132 }\r
+-	command = { type = sleepminister which = 50133 }\r
+ 	command = { type = sleepminister which = 50134 }\r
+-	command = { type = sleepminister which = 50135 }\r
+-	command = { type = sleepminister which = 50133 }\r
+-	command = { type = sleepminister which = 50140 }\r
+-	command = { type = sleepminister which = 50141 }\r
+-	command = { type = sleepminister which = 50142 }\r
+ 	command = { type = sleepminister which = 50143 }\r
+-	command = { type = sleepminister which = 50144 }\r
+-	command = { type = sleepminister which = 50145 }\r
+-	command = { type = sleepminister which = 50147 }\r
+-	command = { type = sleepminister which = 50148 }\r
+-	command = { type = sleepminister which = 50149 }\r
+-	command = { type = sleepminister which = 50150 }\r
+-	command = { type = sleepminister which = 50152 }\r
+-	command = { type = sleepminister which = 50153 }\r
+-	command = { type = sleepminister which = 50154 }\r
+-	command = { type = sleepminister which = 50155 }\r
+-	command = { type = sleepminister which = 50156 }\r
+-	command = { type = sleepminister which = 50157 }\r
+-	command = { type = sleepminister which = 50158 }\r
+ 	command = { type = sleepminister which = 50159 }\r
+-	command = { type = sleepminister which = 50160 }\r
+-	command = { type = sleepminister which = 50161 }\r
+-	command = { type = sleepminister which = 50162 }\r
+-	command = { type = sleepminister which = 50163 }\r
+-	command = { type = sleepminister which = 50164 }\r
+-	command = { type = sleepminister which = 50165 }\r
+ 	command = { type = sleepminister which = 50166 }\r
+-	command = { type = sleepminister which = 50167 }\r
+-	command = { type = sleepminister which = 50168 }\r
+-	command = { type = sleepminister which = 50169 }\r
+-	command = { type = sleepminister which = 50170 }\r
+-	command = { type = sleepminister which = 50171 }\r
+-	command = { type = sleepminister which = 50326 }\r
+-	command = { type = sleepminister which = 50327 }\r
+-	command = { type = sleepminister which = 50328 }\r
+-	command = { type = sleepminister which = 50329 }\r
+-	command = { type = sleepminister which = 50330 }\r
+-	command = { type = sleepminister which = 50331 }\r
+-	command = { type = sleepminister which = 50332 }\r
+-	command = { type = sleepminister which = 50333 }\r
+-	command = { type = sleepminister which = 50334 }\r
+-	command = { type = sleepminister which = 50335 }\r
+-	command = { type = sleepminister which = 50336 }\r
+-	command = { type = sleepminister which = 50337 }\r
+-	command = { type = sleepminister which = 50338 }\r
+-	command = { type = sleepminister which = 50339 }\r
+-	command = { type = sleepminister which = 50340 }\r
+-	command = { type = sleepminister which = 50341 }\r
+-	command = { type = sleepminister which = 50342 }\r
+-	command = { type = sleepminister which = 50343 }\r
+-	command = { type = sleepminister which = 50344 }\r
+-	command = { type = sleepminister which = 50345 }\r
+-	command = { type = sleepminister which = 50346 }\r
+-	command = { type = sleepminister which = 50347 }\r
+-	command = { type = sleepminister which = 50348 }\r
+-	command = { type = sleepminister which = 50349 }\r
+-	command = { type = sleepminister which = 50350 }\r
+-	command = { type = sleepminister which = 50351 }\r
+-	command = { type = sleepminister which = 50352 }\r
+-	command = { type = sleepminister which = 50353 }\r
+-	command = { type = sleepminister which = 50354 }\r
+-	command = { type = sleepminister which = 50355 }\r
+-	command = { type = sleepminister which = 50356 }\r
+-	command = { type = sleepminister which = 50357 }\r
+-	command = { type = sleepminister which = 50358 }\r
+-	command = { type = sleepminister which = 50359 }\r
+-	command = { type = sleepminister which = 50360 }\r
+-	command = { type = sleepminister which = 50361 }\r
+-	command = { type = sleepminister which = 50362 }\r
+-	command = { type = sleepminister which = 50363 }\r
+-	command = { type = sleepminister which = 50364 }\r
+-	command = { type = sleepminister which = 50365 }\r
+-	command = { type = sleepminister which = 50366 }\r
+-	command = { type = sleepminister which = 50367 }\r
+-	command = { type = sleepminister which = 50368 }\r
+-	command = { type = sleepminister which = 50369 }\r
+-	command = { type = sleepminister which = 50370 }\r
+-	command = { type = sleepleader which = 101000 }\r
+-	command = { type = sleepleader which = 101001 }\r
+-	command = { type = sleepleader which = 101002 }\r
+-	command = { type = sleepleader which = 101003 }\r
+-	command = { type = sleepleader which = 101004 }\r
+-	command = { type = sleepleader which = 101005 }\r
+-	command = { type = sleepleader which = 101006 }\r
+-	command = { type = sleepleader which = 101007 }\r
+-	command = { type = sleepleader which = 101008 }\r
+-	command = { type = sleepleader which = 101009 }\r
+-	command = { type = sleepleader which = 101010 }\r
+-	command = { type = sleepleader which = 101011 }\r
+-	command = { type = sleepleader which = 101012 }\r
+-	command = { type = sleepleader which = 101013 }\r
+-	command = { type = sleepleader which = 101014 }\r
+-	command = { type = sleepleader which = 101015 }\r
+-	command = { type = sleepleader which = 101016 }\r
+-	command = { type = sleepleader which = 101017 }\r
+-	command = { type = sleepleader which = 101018 }\r
+-	command = { type = sleepleader which = 101019 }\r
+-	command = { type = sleepleader which = 101020 }\r
+-	command = { type = sleepleader which = 101021 }\r
+-	command = { type = sleepleader which = 101022 }\r
+-	command = { type = sleepleader which = 101023 }\r
+-	command = { type = sleepleader which = 101024 }\r
+-	command = { type = sleepleader which = 101025 }\r
+-	command = { type = sleepleader which = 101026 }\r
+-	command = { type = sleepleader which = 101027 }\r
+-	command = { type = sleepleader which = 101028 }\r
+-	command = { type = sleepleader which = 101029 }\r
+-	command = { type = sleepleader which = 101030 }\r
+-	command = { type = sleepleader which = 101031 }\r
+-	command = { type = sleepleader which = 101032 }\r
+-	command = { type = sleepleader which = 101033 }\r
+-	command = { type = sleepleader which = 101034 }\r
+-	command = { type = sleepleader which = 101035 }\r
+-	command = { type = sleepleader which = 101036 }\r
+-	command = { type = sleepleader which = 101037 }\r
+-	command = { type = sleepleader which = 101038 }\r
+-	command = { type = sleepleader which = 101039 }\r
+-	command = { type = sleepleader which = 101040 }\r
+-	command = { type = sleepleader which = 101041 }\r
+-	command = { type = sleepleader which = 101042 }\r
+-	command = { type = sleepleader which = 101043 }\r
+-	command = { type = sleepleader which = 101044 }\r
+-	command = { type = sleepleader which = 101045 }\r
+-	command = { type = sleepleader which = 101046 }\r
+-	command = { type = sleepleader which = 101047 }\r
+-	command = { type = sleepleader which = 101048 }\r
+-	command = { type = sleepleader which = 101049 }\r
+-	command = { type = sleepleader which = 101050 }\r
+-	command = { type = sleepleader which = 101051 }\r
+-	command = { type = sleepleader which = 101052 }\r
+-	command = { type = sleepleader which = 101053 }\r
+-	command = { type = sleepleader which = 101054 }\r
+-	command = { type = sleepleader which = 101055 }\r
+-	command = { type = sleepleader which = 101056 }\r
++	command = { type = sleepleader which = 101160 }\r
++	command = { type = sleepleader which = 101307 }\r
++	command = { type = sleepteam which = 50081 }\r
++	command = { type = sleepminister which = 50380 } #永田鉄山\r
++	command = { type = sleepminister which = 50381 }\r
++	command = { type = sleepminister which = 50382 }\r
++	command = { type = sleepminister which = 50383 }\r
++	command = { type = sleepleader which = 101395 }\r
++	command = { type = sleepteam which = 50084 }\r
++	command = { type = sleepminister which = 50384 } #石原莞爾\r
++	command = { type = sleepminister which = 50385 }\r
++	command = { type = sleepminister which = 50386 }\r
+ 	command = { type = sleepleader which = 101057 }\r
+-	command = { type = sleepleader which = 101058 }\r
+-	command = { type = sleepleader which = 101059 }\r
+-	command = { type = sleepleader which = 101060 }\r
+-	command = { type = sleepleader which = 101061 }\r
+-	command = { type = sleepleader which = 101062 }\r
+-	command = { type = sleepleader which = 101063 }\r
+-	command = { type = sleepleader which = 101064 }\r
+-	command = { type = sleepleader which = 101065 }\r
+-	command = { type = sleepleader which = 101066 }\r
+-	command = { type = sleepleader which = 101067 }\r
+-	command = { type = sleepleader which = 101068 }\r
+-	command = { type = sleepleader which = 101069 }\r
+-	command = { type = sleepleader which = 101070 }\r
+-	command = { type = sleepleader which = 101071 }\r
+-	command = { type = sleepleader which = 101072 }\r
+-	command = { type = sleepleader which = 101073 }\r
+-	command = { type = sleepleader which = 101074 }\r
+-	command = { type = sleepleader which = 101075 }\r
+-	command = { type = sleepleader which = 101076 }\r
+-	command = { type = sleepleader which = 101077 }\r
+-	command = { type = sleepleader which = 101078 }\r
+-	command = { type = sleepleader which = 101079 }\r
+-	command = { type = sleepleader which = 101080 }\r
+-	command = { type = sleepleader which = 101081 }\r
+-	command = { type = sleepleader which = 101082 }\r
+-	command = { type = sleepleader which = 101083 }\r
+-	command = { type = sleepleader which = 101084 }\r
+-	command = { type = sleepleader which = 101085 }\r
++	command = { type = sleepteam which = 50087 }\r
++	command = { type = sleepminister which = 50019 } # 寺内壽一\r
++	command = { type = sleepminister which = 50070 }\r
++	command = { type = sleepminister which = 50364 }\r
++	command = { type = sleepminister which = 50376 }\r
++	command = { type = sleepleader which = 101159 }\r
++	command = { type = sleepteam which = 50080 }\r
++	command = { type = sleepleader which = 101177 } # 山田乙三\r
++	command = { type = sleepteam which = 50094 }\r
++	command = { type = sleepleader which = 101116 } # 西尾壽造\r
++	command = { type = sleepteam which = 50092 }\r
++	command = { type = sleepminister which = 50152 } #井上成美\r
++	command = { type = sleepminister which = 50619 }\r
++	command = { type = sleepleader which = 101210 }\r
++	command = { type = sleepleader which = 101211 }\r
++	command = { type = sleepteam which = 50079 }\r
++	command = { type = sleepminister which = 50023 } # 小磯國昭\r
++	command = { type = sleepminister which = 50124 }\r
++	command = { type = sleepminister which = 50532 }\r
+ 	command = { type = sleepleader which = 101086 }\r
+-	command = { type = sleepleader which = 101087 }\r
+-	command = { type = sleepleader which = 101088 }\r
+-	command = { type = sleepleader which = 101089 }\r
+-	command = { type = sleepleader which = 101090 }\r
+-	command = { type = sleepleader which = 101091 }\r
+-	command = { type = sleepleader which = 101092 }\r
+-	command = { type = sleepleader which = 101093 }\r
+-	command = { type = sleepleader which = 101094 }\r
+-	command = { type = sleepleader which = 101095 }\r
+-	command = { type = sleepleader which = 101096 }\r
+-	command = { type = sleepleader which = 101097 }\r
+-	command = { type = sleepleader which = 101098 }\r
+-	command = { type = sleepleader which = 101099 }\r
+-	command = { type = sleepleader which = 101100 }\r
+-	command = { type = sleepleader which = 101101 }\r
+-	command = { type = sleepleader which = 101102 }\r
+-	command = { type = sleepleader which = 101103 }\r
+-	command = { type = sleepleader which = 101104 }\r
+-	command = { type = sleepleader which = 101105 }\r
+-	command = { type = sleepleader which = 101106 }\r
+-	command = { type = sleepleader which = 101107 }\r
++	command = { type = sleepminister which = 50026 } # 宇垣一成\r
++	command = { type = sleepminister which = 50040 }\r
++	command = { type = sleepminister which = 50110 }\r
++	command = { type = sleepminister which = 50222 }\r
++	command = { type = sleepminister which = 50247 }\r
++	command = { type = sleepminister which = 50271 }\r
++	command = { type = sleepminister which = 50280 }\r
++	command = { type = sleepminister which = 50133 } # 杉山元\r
++	command = { type = sleepminister which = 50142 }\r
++	command = { type = sleepleader which = 101145 }\r
++	command = { type = sleepteam which = 50095 }\r
++	command = { type = sleepminister which = 50338 } # 二宮治重\r
++	command = { type = sleepleader which = 101399 }\r
++	command = { type = sleepminister which = 50339 } # 建川美次\r
++	command = { type = sleepminister which = 50982 }\r
++	command = { type = sleepleader which = 101396 }\r
++	command = { type = sleepminister which = 50346 } # 武藤章\r
++	command = { type = sleepminister which = 50397 }\r
++	command = { type = sleepminister which = 50505 }\r
++	command = { type = sleepminister which = 50589 }\r
++	command = { type = sleepminister which = 50590 }\r
+ 	command = { type = sleepleader which = 101108 }\r
+-	command = { type = sleepleader which = 101109 }\r
+-	command = { type = sleepleader which = 101110 }\r
+-	command = { type = sleepleader which = 101111 }\r
+-	command = { type = sleepleader which = 101112 }\r
++	command = { type = sleepminister which = 50557 } # 池田純久\r
++	command = { type = sleepleader which = 101398 }\r
++	command = { type = sleepminister which = 50135 } # 梅津美治郞\r
++	command = { type = sleepminister which = 50144 }\r
++	command = { type = sleepleader which = 101171 }\r
++	command = { type = sleepleader which = 101311 }\r
++	command = { type = sleepminister which = 50096 } # 中島今朝吾\r
+ 	command = { type = sleepleader which = 101113 }\r
+-	command = { type = sleepleader which = 101114 }\r
+-	command = { type = sleepleader which = 101115 }\r
+-	command = { type = sleepleader which = 101116 }\r
+-	command = { type = sleepleader which = 101117 }\r
+-	command = { type = sleepleader which = 101118 }\r
+-	command = { type = sleepleader which = 101119 }\r
+-	command = { type = sleepleader which = 101120 }\r
+-	command = { type = sleepleader which = 101121 }\r
+-	command = { type = sleepleader which = 101122 }\r
+-	command = { type = sleepleader which = 101123 }\r
+-	command = { type = sleepleader which = 101124 }\r
+-	command = { type = sleepleader which = 101125 }\r
+-	command = { type = sleepleader which = 101126 }\r
+-	command = { type = sleepleader which = 101127 }\r
+-	command = { type = sleepleader which = 101128 }\r
+-	command = { type = sleepleader which = 101129 }\r
+-	command = { type = sleepleader which = 101130 }\r
+-	command = { type = sleepleader which = 101131 }\r
+-	command = { type = sleepleader which = 101132 }\r
+-	command = { type = sleepleader which = 101133 }\r
+-	command = { type = sleepleader which = 101134 }\r
+-	command = { type = sleepleader which = 101135 }\r
+-	command = { type = sleepleader which = 101136 }\r
+-	command = { type = sleepleader which = 101137 }\r
+-	command = { type = sleepleader which = 101138 }\r
+-	command = { type = sleepleader which = 101139 }\r
+-	command = { type = sleepleader which = 101140 }\r
+-	command = { type = sleepleader which = 101141 }\r
+-	command = { type = sleepleader which = 101142 }\r
+-	command = { type = sleepleader which = 101143 }\r
+-	command = { type = sleepleader which = 101144 }\r
+-	command = { type = sleepleader which = 101145 }\r
+-	command = { type = sleepleader which = 101146 }\r
+-	command = { type = sleepleader which = 101147 }\r
+-	command = { type = sleepleader which = 101148 }\r
+-	command = { type = sleepleader which = 101149 }\r
+-	command = { type = sleepleader which = 101150 }\r
+-	command = { type = sleepleader which = 101151 }\r
+-	command = { type = sleepleader which = 101152 }\r
+-	command = { type = sleepleader which = 101153 }\r
+-	command = { type = sleepleader which = 101154 }\r
+-	command = { type = sleepleader which = 101155 }\r
+-	command = { type = sleepleader which = 101156 }\r
+-	command = { type = sleepleader which = 101157 }\r
+-	command = { type = sleepleader which = 101158 }\r
+-	command = { type = sleepleader which = 101159 }\r
+-	command = { type = sleepleader which = 101160 }\r
+-	command = { type = sleepleader which = 101161 }\r
+-	command = { type = sleepleader which = 101162 }\r
+-	command = { type = sleepleader which = 101163 }\r
+-	command = { type = sleepleader which = 101164 }\r
+-	command = { type = sleepleader which = 101165 }\r
+-	command = { type = sleepleader which = 101166 }\r
+-	command = { type = sleepleader which = 101167 }\r
++	command = { type = sleepminister which = 50366 } # 板垣征四郞\r
++	command = { type = sleepminister which = 50377 }\r
++	command = { type = sleepleader which = 101060 }\r
++	command = { type = sleepminister which = 50559 } # 片倉衷\r
++	command = { type = sleepleader which = 101068 }\r
++	command = { type = sleepleader which = 101376 } # 根本博\r
++	command = { type = sleepleader which = 101135 } # 佐藤幸徳\r
++	command = { type = sleepminister which = 50162 } # 阿南惟幾\r
++	command = { type = sleepminister which = 50368 }\r
++	command = { type = sleepminister which = 50379 }\r
++	command = { type = sleepleader which = 101007 }\r
+ 	command = { type = sleepleader which = 101168 }\r
+-	command = { type = sleepleader which = 101169 }\r
+-	command = { type = sleepleader which = 101170 }\r
+-	command = { type = sleepleader which = 101171 }\r
+-	command = { type = sleepleader which = 101172 }\r
+-	command = { type = sleepleader which = 101173 }\r
+-	command = { type = sleepleader which = 101174 }\r
+-	command = { type = sleepleader which = 101175 }\r
+-	command = { type = sleepleader which = 101176 }\r
+-	command = { type = sleepleader which = 101177 }\r
+-	command = { type = sleepleader which = 101178 }\r
+-	command = { type = sleepleader which = 101179 }\r
+-	command = { type = sleepleader which = 101180 }\r
+-	command = { type = sleepleader which = 101181 }\r
+-	command = { type = sleepleader which = 101182 }\r
+-	command = { type = sleepleader which = 101183 }\r
++	command = { type = sleepminister which = 50560 } # 辻政信\r
++	command = { type = sleepminister which = 50561 }\r
++	command = { type = sleepminister which = 50596 }\r
++	command = { type = sleepminister which = 50597 }\r
++	command = { type = sleepleader which = 101168 }\r
++	#皇道派	\r
++	command = { type = sleepminister which = 50122 } # 荒木貞夫\r
++	command = { type = sleepminister which = 50361 }\r
++	command = { type = sleepminister which = 50705 }\r
++	command = { type = sleepminister which = 50706 }\r
++	command = { type = sleepminister which = 50837 }\r
++	command = { type = sleepminister which = 50838 }\r
++	command = { type = sleepminister which = 50956 }\r
++	command = { type = sleepminister which = 50957 }\r
++	command = { type = sleepleader which = 101012 }\r
++	command = { type = sleepleader which = 103022 }\r
++	command = { type = sleepteam which = 50086 }\r
++	command = { type = sleepteam which = 50212 }\r
++	command = { type = sleepminister which = 50707 } # 眞崎甚三郞\r
++	command = { type = sleepminister which = 50708 }\r
++	command = { type = sleepminister which = 50709 }\r
++	command = { type = sleepminister which = 50710 }\r
++	command = { type = sleepminister which = 50839 }\r
++	command = { type = sleepminister which = 50840 }\r
++	command = { type = sleepminister which = 50841 }\r
++	command = { type = sleepminister which = 50842 }\r
++	command = { type = sleepminister which = 50958 }\r
++	command = { type = sleepminister which = 50959 }\r
++	command = { type = sleepminister which = 50960 }\r
++	command = { type = sleepminister which = 50961 }\r
++	command = { type = sleepleader which = 101337 }\r
++	command = { type = sleepleader which = 102180 }\r
++	command = { type = sleepleader which = 103023 }\r
++	command = { type = sleepteam which = 50090 }\r
++	command = { type = sleepminister which = 50711 } # 小畑敏四郞\r
++	command = { type = sleepminister which = 50712 }\r
++	command = { type = sleepminister which = 50713 }\r
++	command = { type = sleepminister which = 50843 }\r
++	command = { type = sleepminister which = 50844 }\r
++	command = { type = sleepminister which = 50845 }\r
++	command = { type = sleepminister which = 50962 }\r
++	command = { type = sleepminister which = 50963 }\r
++	command = { type = sleepminister which = 50964 }\r
++	command = { type = sleepleader which = 101400 }\r
++	command = { type = sleepteam which = 50088 }\r
++	command = { type = sleepminister which = 50714 } # 柳川平助\r
++	command = { type = sleepminister which = 50715 }\r
++	command = { type = sleepminister which = 50716 }\r
++	command = { type = sleepminister which = 50717 }\r
++	command = { type = sleepminister which = 50846 }\r
++	command = { type = sleepminister which = 50847 }\r
++	command = { type = sleepminister which = 50848 }\r
++	command = { type = sleepminister which = 50849 }\r
++	command = { type = sleepminister which = 50965 }\r
++	command = { type = sleepminister which = 50966 }\r
++	command = { type = sleepminister which = 50967 }\r
++	command = { type = sleepminister which = 50968 }\r
+ 	command = { type = sleepleader which = 101184 }\r
+-	command = { type = sleepleader which = 101185 }\r
+-	command = { type = sleepleader which = 101186 }\r
+-	command = { type = sleepleader which = 101187 }\r
+-	command = { type = sleepleader which = 101188 }\r
+-	command = { type = sleepleader which = 101189 }\r
+-	command = { type = sleepleader which = 101190 }\r
+-	command = { type = sleepleader which = 101191 }\r
+-	command = { type = sleepleader which = 101192 }\r
+-	command = { type = sleepleader which = 101193 }\r
+-	command = { type = sleepleader which = 101194 }\r
+-	command = { type = sleepleader which = 101195 }\r
+-	command = { type = sleepleader which = 101196 }\r
+-	command = { type = sleepleader which = 101197 }\r
+-	command = { type = sleepleader which = 101198 }\r
+-	command = { type = sleepleader which = 101199 }\r
+-	command = { type = sleepleader which = 101200 }\r
+-	command = { type = sleepleader which = 101201 }\r
+-	command = { type = sleepleader which = 101202 }\r
+-	command = { type = sleepleader which = 101203 }\r
+-	command = { type = sleepleader which = 101204 }\r
+-	command = { type = sleepleader which = 101205 }\r
+-	command = { type = sleepleader which = 101206 }\r
+-	command = { type = sleepleader which = 101207 }\r
+-	command = { type = sleepleader which = 101208 }\r
+-	command = { type = sleepleader which = 101209 }\r
+-	command = { type = sleepleader which = 101210 }\r
+-	command = { type = sleepleader which = 101211 }\r
+-	command = { type = sleepleader which = 101212 }\r
+-	command = { type = sleepleader which = 101213 }\r
+-	command = { type = sleepleader which = 101214 }\r
+-	command = { type = sleepleader which = 101215 }\r
+-	command = { type = sleepleader which = 101216 }\r
+-	command = { type = sleepleader which = 101217 }\r
+-	command = { type = sleepleader which = 101218 }\r
+-	command = { type = sleepleader which = 101219 }\r
+-	command = { type = sleepleader which = 101220 }\r
+-	command = { type = sleepleader which = 101221 }\r
+-	command = { type = sleepleader which = 101222 }\r
+-	command = { type = sleepleader which = 101223 }\r
+-	command = { type = sleepleader which = 101224 }\r
+-	command = { type = sleepleader which = 101225 }\r
+-	command = { type = sleepleader which = 101226 }\r
+-	command = { type = sleepleader which = 101227 }\r
+-	command = { type = sleepleader which = 101228 }\r
+-	command = { type = sleepleader which = 101229 }\r
+-	command = { type = sleepleader which = 101230 }\r
+-	command = { type = sleepleader which = 101231 }\r
+-	command = { type = sleepleader which = 101232 }\r
+-	command = { type = sleepleader which = 101233 }\r
+-	command = { type = sleepleader which = 101234 }\r
+-	command = { type = sleepleader which = 101235 }\r
+-	command = { type = sleepleader which = 101236 }\r
+-	command = { type = sleepleader which = 101237 }\r
+-	command = { type = sleepleader which = 101238 }\r
+-	command = { type = sleepleader which = 101239 }\r
+-	command = { type = sleepleader which = 101240 }\r
+-	command = { type = sleepleader which = 101241 }\r
+-	command = { type = sleepleader which = 101242 }\r
+-	command = { type = sleepleader which = 101243 }\r
+-	command = { type = sleepleader which = 101244 }\r
+-	command = { type = sleepleader which = 101245 }\r
+-	command = { type = sleepleader which = 101246 }\r
+-	command = { type = sleepleader which = 101247 }\r
+-	command = { type = sleepleader which = 101248 }\r
+-	command = { type = sleepleader which = 101249 }\r
+-	command = { type = sleepleader which = 101250 }\r
+-	command = { type = sleepleader which = 101251 }\r
+-	command = { type = sleepleader which = 101252 }\r
+-	command = { type = sleepleader which = 101253 }\r
+-	command = { type = sleepleader which = 101254 }\r
+-	command = { type = sleepleader which = 101255 }\r
+-	command = { type = sleepleader which = 101256 }\r
+-	command = { type = sleepleader which = 101257 }\r
+-	command = { type = sleepleader which = 101258 }\r
+-	command = { type = sleepleader which = 101259 }\r
+-	command = { type = sleepleader which = 101260 }\r
+-	command = { type = sleepleader which = 101261 }\r
+-	command = { type = sleepleader which = 101262 }\r
+-	command = { type = sleepleader which = 101263 }\r
+-	command = { type = sleepleader which = 101264 }\r
+-	command = { type = sleepleader which = 101265 }\r
+-	command = { type = sleepleader which = 101266 }\r
+-	command = { type = sleepleader which = 101267 }\r
+-	command = { type = sleepleader which = 101268 }\r
+-	command = { type = sleepleader which = 101269 }\r
+-	command = { type = sleepleader which = 101270 }\r
+-	command = { type = sleepleader which = 101271 }\r
+-	command = { type = sleepleader which = 101272 }\r
+-	command = { type = sleepleader which = 101273 }\r
+-	command = { type = sleepleader which = 101274 }\r
+-	command = { type = sleepleader which = 101275 }\r
+-	command = { type = sleepleader which = 101276 }\r
+-	command = { type = sleepleader which = 101277 }\r
+-	command = { type = sleepleader which = 101278 }\r
+-	command = { type = sleepleader which = 101279 }\r
+-	command = { type = sleepleader which = 101280 }\r
+-	command = { type = sleepleader which = 101281 }\r
+-	command = { type = sleepleader which = 101282 }\r
+-	command = { type = sleepleader which = 101283 }\r
+-	command = { type = sleepleader which = 101284 }\r
+-	command = { type = sleepleader which = 101285 }\r
+-	command = { type = sleepleader which = 101286 }\r
+-	command = { type = sleepleader which = 101287 }\r
+-	command = { type = sleepleader which = 101288 }\r
+-	command = { type = sleepleader which = 101289 }\r
+-	command = { type = sleepleader which = 101290 }\r
+-	command = { type = sleepleader which = 101291 }\r
+-	command = { type = sleepleader which = 101292 }\r
+-	command = { type = sleepleader which = 101293 }\r
+-	command = { type = sleepleader which = 101294 }\r
+-	command = { type = sleepleader which = 101295 }\r
+-	command = { type = sleepleader which = 101296 }\r
+-	command = { type = sleepleader which = 101297 }\r
+-	command = { type = sleepleader which = 101298 }\r
+-	command = { type = sleepleader which = 101299 }\r
+-	command = { type = sleepleader which = 101300 }\r
+-	command = { type = sleepleader which = 101301 }\r
+-	command = { type = sleepleader which = 101302 }\r
+-	command = { type = sleepleader which = 101303 }\r
+-	command = { type = sleepleader which = 101304 }\r
+-	command = { type = sleepleader which = 101305 }\r
+-	command = { type = sleepleader which = 101306 }\r
+-	command = { type = sleepleader which = 101307 }\r
+-	command = { type = sleepleader which = 101308 }\r
+-	command = { type = sleepleader which = 101309 }\r
+-	command = { type = sleepleader which = 101310 }\r
+-	command = { type = sleepleader which = 101311 }\r
+-	command = { type = sleepleader which = 101312 }\r
++	command = { type = sleepminister which = 50160 } # 山下奉文\r
++	command = { type = sleepminister which = 50718 }\r
++	command = { type = sleepminister which = 50719 }\r
++	command = { type = sleepminister which = 50720 }\r
++	command = { type = sleepminister which = 50850 }\r
++	command = { type = sleepminister which = 50851 }\r
++	command = { type = sleepminister which = 50852 }\r
++	command = { type = sleepminister which = 50969 }\r
++	command = { type = sleepminister which = 50970 }\r
++	command = { type = sleepminister which = 50971 }\r
++	command = { type = sleepleader which = 101182 }\r
+ 	command = { type = sleepleader which = 101313 }\r
+-	command = { type = sleepleader which = 101314 }\r
+-	command = { type = sleepleader which = 101315 }\r
+-	command = { type = sleepleader which = 101316 }\r
+-	command = { type = sleepleader which = 101317 }\r
+-	command = { type = sleepleader which = 101318 }\r
+-	command = { type = sleepleader which = 101319 }\r
+-	command = { type = sleepleader which = 101320 }\r
+-	command = { type = sleepleader which = 101321 }\r
+-	command = { type = sleepleader which = 101322 }\r
+-	command = { type = sleepleader which = 101323 }\r
+-	command = { type = sleepleader which = 101324 }\r
+-	command = { type = sleepleader which = 101325 }\r
+-	command = { type = sleepleader which = 101326 }\r
+-	command = { type = sleepleader which = 101327 }\r
+-	command = { type = sleepleader which = 101328 }\r
+-	command = { type = sleepleader which = 101329 }\r
+-	command = { type = sleepleader which = 101330 }\r
+-	command = { type = sleepleader which = 101331 }\r
+-	command = { type = sleepleader which = 101332 }\r
+-	command = { type = sleepleader which = 101333 }\r
+-	command = { type = sleepleader which = 101334 }\r
+-	command = { type = sleepleader which = 101335 }\r
+-	command = { type = sleepleader which = 101336 }\r
+-	command = { type = sleepleader which = 101337 }\r
++	command = { type = sleepteam which = 50083 }\r
++	command = { type = sleepminister which = 50725 } # 鈴木率道\r
++	command = { type = sleepminister which = 50726 }\r
++	command = { type = sleepminister which = 50857 }\r
++	command = { type = sleepminister which = 50858 }\r
++	command = { type = sleepminister which = 50976 }\r
++	command = { type = sleepminister which = 50977 }\r
++	command = { type = sleepleader which = 101380 }\r
++	command = { type = sleepteam which = 50089 }\r
++	command = { type = sleepminister which = 50812 } # 酒井鎬次\r
++	command = { type = sleepminister which = 50813 }\r
++	command = { type = sleepminister which = 51071 }\r
++	command = { type = sleepminister which = 51072 }\r
++	command = { type = sleepleader which = 101374 }\r
++	command = { type = sleepteam which = 50091 }\r
++	command = { type = sleepminister which = 50724 } # 山岡重厚\r
++	command = { type = sleepminister which = 50856 }\r
++	command = { type = sleepminister which = 50975 }\r
++	command = { type = sleepleader which = 101179 }\r
++	command = { type = sleepminister which = 50721 } # 本庄繁\r
++	command = { type = sleepminister which = 50722 }\r
++	command = { type = sleepminister which = 50723 }\r
++	command = { type = sleepminister which = 50853 }\r
++	command = { type = sleepminister which = 50854 }\r
++	command = { type = sleepminister which = 50855 }\r
++	command = { type = sleepminister which = 50972 }\r
++	command = { type = sleepminister which = 50973 }\r
++	command = { type = sleepminister which = 50974 }\r
+ 	command = { type = sleepleader which = 101338 }\r
+-	command = { type = sleepleader which = 101339 }\r
++	command = { type = sleepminister which = 50729 } # 安藤輝三\r
++	command = { type = sleepminister which = 50730 }\r
++	command = { type = sleepminister which = 50784 }\r
++	command = { type = sleepminister which = 50824 }\r
++	command = { type = sleepminister which = 50825 }\r
++	command = { type = sleepminister which = 50861 }\r
++	command = { type = sleepminister which = 50862 }\r
++	command = { type = sleepminister which = 50906 }\r
++	command = { type = sleepminister which = 50943 }\r
++	command = { type = sleepminister which = 50944 }\r
++	command = { type = sleepminister which = 50980 }\r
++	command = { type = sleepminister which = 50981 }\r
++	command = { type = sleepminister which = 51029 }\r
++	command = { type = sleepminister which = 51083 }\r
++	command = { type = sleepminister which = 51084 }\r
++	command = { type = sleepleader which = 103004 }\r
++	command = { type = sleepminister which = 50727 } # 磯部浅一\r
++	command = { type = sleepminister which = 50728 }\r
++	command = { type = sleepminister which = 50783 }\r
++	command = { type = sleepminister which = 50822 }\r
++	command = { type = sleepminister which = 50823 }\r
++	command = { type = sleepminister which = 50859 }\r
++	command = { type = sleepminister which = 50860 }\r
++	command = { type = sleepminister which = 50905 }\r
++	command = { type = sleepminister which = 50941 }\r
++	command = { type = sleepminister which = 50942 }\r
++	command = { type = sleepminister which = 50978 }\r
++	command = { type = sleepminister which = 50979 }\r
++	command = { type = sleepminister which = 51028 }\r
++	command = { type = sleepminister which = 51081 }\r
++	command = { type = sleepminister which = 51082 }\r
++	command = { type = sleepleader which = 103003 }\r
++	command = { type = sleepminister which = 50731 } # 村中孝次\r
++	command = { type = sleepminister which = 50732 }\r
++	command = { type = sleepminister which = 50733 }\r
++	command = { type = sleepminister which = 50863 }\r
++	command = { type = sleepminister which = 50864 }\r
++	command = { type = sleepminister which = 50865 }\r
++	command = { type = sleepminister which = 50982 }\r
++	command = { type = sleepminister which = 50983 }\r
++	command = { type = sleepminister which = 50984 }\r
++	command = { type = sleepleader which = 103005 }\r
++	command = { type = sleepleader which = 103006 } # 香田清貞\r
++	command = { type = sleepleader which = 103007 } # 野中四郞\r
++	command = { type = sleepleader which = 103008 } # 栗原安秀\r
++	command = { type = sleepleader which = 103009 } # 中橋基明\r
++	command = { type = sleepleader which = 103010 } # 対馬勝雄\r
++	command = { type = sleepleader which = 103011 } # 竹嶌継夫\r
++	command = { type = sleepleader which = 103012 } # 丹生誠忠\r
++	command = { type = sleepleader which = 103013 } # 坂井直\r
++	command = { type = sleepleader which = 103014 } # 田中勝\r
++	command = { type = sleepleader which = 103015 } # 安田優\r
++	command = { type = sleepleader which = 103016 } # 林八郞\r
++	command = { type = sleepminister which = 50832 } # 河野壽\r
++	command = { type = sleepminister which = 50951 }\r
++	command = { type = sleepminister which = 51091 }\r
++	command = { type = sleepminister which = 50738 } # 武山信二\r
++	command = { type = sleepminister which = 50870 }\r
++	command = { type = sleepminister which = 50989 }\r
++	command = { type = sleepleader which = 103018 }\r
++	command = { type = sleepminister which = 50734 } # 相沢三郞\r
++	command = { type = sleepminister which = 50735 }\r
++	command = { type = sleepminister which = 50866 }\r
++	command = { type = sleepminister which = 50867 }\r
++	command = { type = sleepminister which = 50985 }\r
++	command = { type = sleepminister which = 50986 }\r
++	command = { type = sleepleader which = 103017 }\r
++	command = { type = sleepminister which = 50746 } # 西田税\r
++	command = { type = sleepminister which = 50747 }\r
++	command = { type = sleepminister which = 50748 }\r
++	command = { type = sleepminister which = 50882 }\r
++	command = { type = sleepminister which = 50883 }\r
++	command = { type = sleepminister which = 50884 }\r
++	command = { type = sleepminister which = 50997 }\r
++	command = { type = sleepminister which = 50998 }\r
++	command = { type = sleepminister which = 50999 }\r
++	command = { type = sleepminister which = 50749 } # 渋川善助\r
++	command = { type = sleepminister which = 50750 }\r
++	command = { type = sleepminister which = 50751 }\r
++	command = { type = sleepminister which = 50885 }\r
++	command = { type = sleepminister which = 50886 }\r
++	command = { type = sleepminister which = 50887 }\r
++	command = { type = sleepminister which = 51000 }\r
++	command = { type = sleepminister which = 51000 }\r
++	command = { type = sleepminister which = 51002 }\r
++	command = { type = sleepminister which = 50363 } # 川島義之\r
++	command = { type = sleepminister which = 50375 }\r
+ 	command = { type = sleepleader which = 101340 }\r
+-	command = { type = sleepleader which = 101341 }\r
+-	command = { type = sleepleader which = 101342 }\r
+-	command = { type = sleepleader which = 101343 }\r
+-	command = { type = sleepleader which = 101344 }\r
+-	command = { type = sleepleader which = 101345 }\r
+-	command = { type = sleepleader which = 101346 }\r
+-	command = { type = sleepleader which = 101347 }\r
+-	command = { type = sleepleader which = 101348 }\r
+-	command = { type = sleepleader which = 101349 }\r
+-	command = { type = sleepleader which = 101350 }\r
+-	command = { type = sleepleader which = 101351 }\r
+-	command = { type = sleepleader which = 101352 }\r
+-	command = { type = sleepleader which = 101353 }\r
+-	command = { type = sleepleader which = 101354 }\r
+-	command = { type = sleepleader which = 101355 }\r
+-	command = { type = sleepleader which = 101356 }\r
+-	command = { type = sleepleader which = 101357 }\r
+-	command = { type = sleepleader which = 101358 }\r
+-	command = { type = sleepleader which = 101359 }\r
+-	command = { type = sleepleader which = 101360 }\r
+-	command = { type = sleepleader which = 101361 }\r
+-	command = { type = sleepleader which = 101362 }\r
+-	command = { type = sleepleader which = 101363 }\r
+-	command = { type = sleepleader which = 101364 }\r
+-	command = { type = sleepleader which = 101365 }\r
+-	command = { type = sleepleader which = 101366 }\r
+-	command = { type = sleepleader which = 101367 }\r
+-	command = { type = sleepleader which = 101368 }\r
+-	command = { type = sleepleader which = 101369 }\r
+-	command = { type = sleepleader which = 101370 }\r
+-	command = { type = sleepleader which = 101371 }\r
+-	command = { type = sleepleader which = 101372 }\r
+-	command = { type = sleepleader which = 101373 }\r
+-	command = { type = sleepleader which = 101374 }\r
+-	command = { type = sleepleader which = 101375 }\r
+-	command = { type = sleepleader which = 101376 }\r
+-	command = { type = sleepleader which = 101377 }\r
+-	command = { type = sleepleader which = 101378 }\r
+-	command = { type = sleepleader which = 101379 }\r
+-	command = { type = sleepleader which = 101380 }\r
+-	command = { type = sleepleader which = 101381 }\r
+-	command = { type = sleepleader which = 101382 }\r
+-	command = { type = sleepleader which = 101383 }\r
+-	command = { type = sleepleader which = 101384 }\r
+-	command = { type = sleepleader which = 101385 }\r
+-	command = { type = sleepleader which = 101386 }\r
+-	command = { type = sleepleader which = 101387 }\r
+-	command = { type = sleepleader which = 101388 }\r
+-	command = { type = sleepleader which = 101389 }\r
+-	command = { type = sleepleader which = 101390 }\r
+-	command = { type = sleepleader which = 101391 }\r
+-	command = { type = sleepleader which = 101392 }\r
+-	command = { type = sleepleader which = 101393 }\r
+-	command = { type = sleepleader which = 101394 }\r
+-	command = { type = sleepleader which = 101395 }\r
+-	command = { type = sleepleader which = 101396 }\r
+-	command = { type = sleepleader which = 101397 }\r
+-	command = { type = sleepleader which = 101398 }\r
+-	command = { type = sleepleader which = 101399 }\r
+-	command = { type = sleepleader which = 101400 }\r
+-	command = { type = sleepleader which = 101401 }\r
++	command = { type = sleepminister which = 50760 } # 斎藤瀏\r
++	command = { type = sleepminister which = 50761 }\r
++	command = { type = sleepminister which = 50896 }\r
++	command = { type = sleepminister which = 50897 }\r
++	command = { type = sleepminister which = 51011 }\r
++	command = { type = sleepminister which = 51012 }\r
+ 	command = { type = sleepleader which = 101402 }\r
+-	command = { type = sleepleader which = 101403 }\r
+-	command = { type = sleepleader which = 101404 }\r
+-	command = { type = sleepleader which = 101405 }\r
++	command = { type = sleepminister which = 50762 } # 満井佐吉\r
++	command = { type = sleepminister which = 50763 }\r
++	command = { type = sleepminister which = 50816 }\r
++	command = { type = sleepminister which = 50817 }\r
++	command = { type = sleepminister which = 50898 }\r
++	command = { type = sleepminister which = 50899 }\r
++	command = { type = sleepminister which = 51013 }\r
++	command = { type = sleepminister which = 51014 }\r
++	command = { type = sleepminister which = 51075 }\r
++	command = { type = sleepminister which = 51076 }\r
+ 	command = { type = sleepleader which = 101406 }\r
++	command = { type = sleepminister which = 50814 } # 村上啓作\r
++	command = { type = sleepminister which = 50815 }\r
++	command = { type = sleepminister which = 51073 }\r
++	command = { type = sleepminister which = 51074 }\r
+ 	command = { type = sleepleader which = 101407 }\r
+-	command = { type = sleepleader which = 101408 }\r
+-	command = { type = sleepleader which = 101409 }\r
++	command = { type = sleepminister which = 50803 } # 香椎浩平\r
++	command = { type = sleepminister which = 50925 }\r
++	command = { type = sleepminister which = 51060 }\r
++	command = { type = sleepleader which = 101404 }\r
++	command = { type = sleepminister which = 50724 } # 山岡重厚\r
++	command = { type = sleepminister which = 50856 }\r
++	command = { type = sleepminister which = 50975 }\r
++	command = { type = sleepleader which = 101179 }\r
++	command = { type = sleepminister which = 50939 } # 秦彦三郞\r
++	command = { type = sleepminister which = 50940 }\r
++	command = { type = sleepleader which = 101403 }\r
++	command = { type = sleepleader which = 101047 } # 井出宣時\r
++	command = { type = sleepleader which = 101405 } # 工藤義雄\r
++	command = { type = sleepleader which = 101408 } # 松浦淳六郞\r
++	command = { type = sleepminister which = 50344 } # 有末精三\r
++	command = { type = sleepminister which = 50818 }\r
++	command = { type = sleepminister which = 50819 }\r
++	command = { type = sleepminister which = 51077 }\r
++	command = { type = sleepminister which = 51078 }\r
++	command = { type = sleepminister which = 50808 } # 小野寺信\r
++	command = { type = sleepminister which = 50820 }\r
++	command = { type = sleepminister which = 50821 }\r
++	command = { type = sleepminister which = 50929 }\r
++	command = { type = sleepminister which = 51070 }\r
++	command = { type = sleepminister which = 51079 }\r
++	command = { type = sleepminister which = 51080 }\r
++	command = { type = wakeminister which = 50660 }\r
++	command = { type = sleepminister which = 50831 } # 堀丈夫\r
++	command = { type = sleepminister which = 50950 }\r
++	command = { type = sleepminister which = 51090 }\r
+ 	command = { type = sleepleader which = 101410 }\r
+-	command = { type = sleepleader which = 101411 }\r
+-	command = { type = sleepleader which = 101412 }\r
+-	command = { type = sleepleader which = 101413 }\r
+-	command = { type = sleepleader which = 101414 }\r
+-	command = { type = sleepleader which = 101415 }\r
+-	command = { type = sleepleader which = 101416 }\r
+-	command = { type = sleepleader which = 101417 }\r
+-	command = { type = sleepleader which = 101418 }\r
+-	command = { type = sleepleader which = 101419 }\r
+-	command = { type = sleepleader which = 101420 }\r
+-	command = { type = sleepleader which = 101421 }\r
+-	command = { type = sleepleader which = 101422 }\r
+-	command = { type = sleepleader which = 101423 }\r
+-	command = { type = sleepleader which = 101424 }\r
+-	command = { type = sleepleader which = 101425 }\r
+-	command = { type = sleepleader which = 101426 }\r
+-	command = { type = sleepleader which = 101427 }\r
+-	command = { type = sleepleader which = 101428 }\r
+-	command = { type = sleepleader which = 101429 }\r
+-	command = { type = sleepleader which = 101430 }\r
+-	command = { type = sleepleader which = 101431 }\r
+-	command = { type = sleepleader which = 101432 }\r
+-	command = { type = sleepleader which = 101433 }\r
+-	command = { type = sleepleader which = 101434 }\r
+-	command = { type = sleepleader which = 101435 }\r
+-	command = { type = sleepleader which = 101436 }\r
+-	command = { type = sleepleader which = 101437 }\r
+-	command = { type = sleepleader which = 101438 }\r
+-	command = { type = sleepleader which = 101439 }\r
+-	command = { type = sleepleader which = 101440 }\r
+-	command = { type = sleepleader which = 101441 }\r
+-	command = { type = sleepleader which = 101442 }\r
+-	command = { type = sleepleader which = 101443 }\r
+-	command = { type = sleepleader which = 101444 }\r
+-	command = { type = sleepleader which = 101445 }\r
+-	command = { type = sleepleader which = 101446 }\r
+-	command = { type = sleepleader which = 101447 }\r
+-	command = { type = sleepleader which = 101448 }\r
+-	command = { type = sleepleader which = 101449 }\r
+-	command = { type = sleepleader which = 101450 }\r
+-	command = { type = sleepleader which = 101451 }\r
+-	command = { type = sleepleader which = 101452 }\r
+-	command = { type = sleepleader which = 101453 }\r
+-	command = { type = sleepleader which = 101454 }\r
+-	command = { type = sleepleader which = 101455 }\r
+-	command = { type = sleepleader which = 101456 }\r
+-	command = { type = sleepleader which = 101457 }\r
+-	command = { type = sleepleader which = 101458 }\r
+-	command = { type = sleepleader which = 101459 }\r
+-	command = { type = sleepleader which = 101460 }\r
+-	command = { type = sleepleader which = 101461 }\r
+-	command = { type = sleepleader which = 101462 }\r
+-	command = { type = sleepleader which = 101463 }\r
+-	command = { type = sleepleader which = 101464 }\r
+-	command = { type = sleepleader which = 101465 }\r
+-	command = { type = sleepleader which = 101466 }\r
+-	command = { type = sleepleader which = 101467 }\r
+-	command = { type = sleepleader which = 101468 }\r
+-	command = { type = sleepleader which = 101469 }\r
+-	command = { type = sleepleader which = 101470 }\r
+-	command = { type = sleepleader which = 101471 }\r
+-	command = { type = sleepleader which = 101472 }\r
+-	command = { type = sleepleader which = 101473 }\r
+-	command = { type = sleepleader which = 101474 }\r
+-	command = { type = sleepleader which = 101475 }\r
+-	command = { type = sleepleader which = 101476 }\r
+-	command = { type = sleepleader which = 101477 }\r
+-	command = { type = sleepleader which = 101478 }\r
+-	command = { type = sleepleader which = 101479 }\r
+-	command = { type = sleepleader which = 101480 }\r
+-	command = { type = sleepleader which = 101481 }\r
+-	command = { type = sleepleader which = 101482 }\r
+-	command = { type = sleepleader which = 101483 }\r
+-	command = { type = sleepleader which = 101484 }\r
+-	command = { type = sleepleader which = 101485 }\r
+-	command = { type = sleepleader which = 101486 }\r
+-	command = { type = sleepleader which = 101487 }\r
+-	command = { type = sleepleader which = 101488 }\r
+-	command = { type = sleepleader which = 101489 }\r
+-	command = { type = sleepleader which = 101490 }\r
+-	command = { type = sleepleader which = 101491 }\r
+-	command = { type = sleepleader which = 101492 }\r
+-	command = { type = sleepleader which = 101493 }\r
+-	command = { type = sleepleader which = 101494 }\r
+-	command = { type = sleepleader which = 101495 }\r
+-	command = { type = sleepleader which = 101496 }\r
+-	command = { type = sleepleader which = 101497 }\r
+-	command = { type = sleepleader which = 101498 }\r
+-	command = { type = sleepleader which = 101499 }\r
+-	command = { type = sleepleader which = 101500 }\r
+-	command = { type = sleepleader which = 101501 }\r
+-	command = { type = sleepleader which = 101502 }\r
+-	command = { type = sleepleader which = 101503 }\r
+-	command = { type = sleepleader which = 101504 }\r
+-	command = { type = sleepleader which = 101505 }\r
+-	command = { type = sleepleader which = 101506 }\r
+-	command = { type = sleepleader which = 101507 }\r
+-	command = { type = sleepleader which = 101508 }\r
+-	command = { type = sleepleader which = 101509 }\r
+-	command = { type = sleepleader which = 101510 }\r
+-	command = { type = sleepleader which = 101511 }\r
+-	command = { type = sleepleader which = 101512 }\r
+-	command = { type = sleepleader which = 101513 }\r
+-	command = { type = sleepleader which = 101514 }\r
+-	command = { type = sleepleader which = 101515 }\r
+-	command = { type = sleepleader which = 101516 }\r
+-	command = { type = sleepleader which = 101517 }\r
+-	command = { type = sleepleader which = 101518 }\r
+-	command = { type = sleepleader which = 101519 }\r
+-	command = { type = sleepleader which = 101520 }\r
+-	command = { type = sleepleader which = 101521 }\r
+-	command = { type = sleepleader which = 101522 }\r
+-	command = { type = sleepleader which = 101523 }\r
+-	command = { type = sleepleader which = 101524 }\r
+-	command = { type = sleepleader which = 101525 }\r
+-	command = { type = sleepleader which = 101526 }\r
+-	command = { type = sleepleader which = 101527 }\r
+-	command = { type = sleepleader which = 101528 }\r
+-	command = { type = sleepleader which = 101529 }\r
+-	command = { type = sleepleader which = 101530 }\r
+-	command = { type = sleepleader which = 101531 }\r
+-	command = { type = sleepleader which = 101532 }\r
+-	command = { type = sleepleader which = 101533 }\r
+-	command = { type = sleepleader which = 101534 }\r
+-	command = { type = sleepleader which = 101535 }\r
+-	command = { type = sleepleader which = 101536 }\r
+-	command = { type = sleepleader which = 101537 }\r
+-	command = { type = sleepleader which = 101538 }\r
+-	command = { type = sleepleader which = 101539 }\r
+-	command = { type = sleepleader which = 101540 }\r
+-	command = { type = sleepleader which = 101541 }\r
+-	command = { type = sleepleader which = 101542 }\r
+-	command = { type = sleepleader which = 101543 }\r
+-	command = { type = sleepleader which = 101544 }\r
+-	command = { type = sleepleader which = 101545 }\r
+-	command = { type = sleepleader which = 101546 }\r
+-	command = { type = sleepleader which = 101547 }\r
+-	command = { type = sleepleader which = 101548 }\r
+-	command = { type = sleepleader which = 101549 }\r
+-	command = { type = sleepleader which = 101550 }\r
+-	command = { type = sleepleader which = 101551 }\r
+-	command = { type = sleepleader which = 101552 }\r
+-	command = { type = sleepleader which = 101553 }\r
+-	command = { type = sleepleader which = 101554 }\r
+-	command = { type = sleepleader which = 101555 }\r
+-	command = { type = sleepleader which = 101556 }\r
+-	command = { type = sleepleader which = 101557 }\r
+-	command = { type = sleepleader which = 101558 }\r
+-	command = { type = sleepleader which = 101559 }\r
+-	command = { type = sleepleader which = 101560 }\r
+-	command = { type = sleepleader which = 101561 }\r
+-	command = { type = sleepleader which = 101562 }\r
+-	command = { type = sleepleader which = 101563 }\r
+-	command = { type = sleepleader which = 101564 }\r
+-	command = { type = sleepleader which = 101565 }\r
+-	command = { type = sleepleader which = 101566 }\r
+-	command = { type = sleepleader which = 101567 }\r
+-	command = { type = sleepleader which = 101568 }\r
+-	command = { type = sleepleader which = 101569 }\r
+-	command = { type = sleepleader which = 101570 }\r
+-	command = { type = sleepleader which = 101571 }\r
+-	command = { type = sleepleader which = 101572 }\r
+-	command = { type = sleepleader which = 101573 }\r
+-	command = { type = sleepleader which = 101574 }\r
+-	command = { type = sleepleader which = 101575 }\r
+-	command = { type = sleepleader which = 101576 }\r
+-	command = { type = sleepleader which = 101577 }\r
+-	command = { type = sleepleader which = 101578 }\r
+-	command = { type = sleepleader which = 101579 }\r
+-	command = { type = sleepleader which = 101580 }\r
+-	command = { type = sleepleader which = 101581 }\r
+-	command = { type = sleepleader which = 101582 }\r
+-	command = { type = sleepleader which = 101583 }\r
+-	command = { type = sleepleader which = 101584 }\r
+-	command = { type = sleepleader which = 101585 }\r
+-	command = { type = sleepleader which = 101586 }\r
+-	command = { type = sleepleader which = 101587 }\r
+-	command = { type = sleepleader which = 101588 }\r
+-	command = { type = sleepleader which = 101589 }\r
+-	command = { type = sleepleader which = 101590 }\r
+-	command = { type = sleepleader which = 101591 }\r
+-	command = { type = sleepleader which = 101592 }\r
+-	command = { type = sleepleader which = 101593 }\r
+-	command = { type = sleepleader which = 101594 }\r
+-	command = { type = sleepleader which = 101595 }\r
+-	command = { type = sleepleader which = 101596 }\r
+-	command = { type = sleepleader which = 101597 }\r
+-	command = { type = sleepleader which = 101598 }\r
+-	command = { type = sleepleader which = 101599 }\r
+-	command = { type = sleepleader which = 101600 }\r
+-	command = { type = sleepleader which = 101601 }\r
+-	command = { type = sleepleader which = 101602 }\r
+-\r
+-	command = { trigger = { event = 2991001 }  type = sleepteam which = 50000 } # 鈴木商店\r
+-	command = { type = sleepteam which = 50001 } # 住友財閥\r
+-	command = { type = sleepteam which = 50002 } # 三井財閥\r
+-	command = { type = sleepteam which = 50003 } # 三井財閥\r
+-	command = { type = sleepteam which = 50004 } # 三菱財閥\r
+-	command = { type = sleepteam which = 50005 } # 川崎財閥\r
+-	command = { type = sleepteam which = 50006 } # 古河財閥\r
+-	command = { type = sleepteam which = 50007 } # 安田財閥\r
+-	command = { type = sleepteam which = 50008 } # 浅野財閥\r
+-	command = { type = sleepteam which = 50037 } # 日野自動車\r
+-	command = { type = sleepteam which = 50009 } # 沖電氣。1930年に浅野財閥の浅野泰治郎が会長に。\r
+-	command = { type = sleepteam which = 50010 } # 日本電氣。住友系\r
+-	command = { type = sleepteam which = 50020 } # 東京瓦斯電氣工業\r
+-	command = { type = sleepteam which = 50036 } # 日産自動車\r
+-	command = { type = sleepteam which = 50030 } # 日本製鋼所。三井系の半国策会社\r
+-	command = { type = sleepteam which = 50013 } # 日本無線。日電財閥\r
+-	command = { type = sleepteam which = 50014 } # 昭和電工\r
+-	command = { type = sleepteam which = 50045 } # 三菱長崎造船所\r
+-	command = { type = sleepteam which = 50046 } # 愛知航空機\r
+-	command = { type = sleepteam which = 50047 } # 三菱航空機\r
+-	command = { type = sleepteam which = 50048 } # 三菱航空機\r
+-	command = { type = sleepteam which = 50049 } # 中島飛行機\r
+-	command = { type = sleepteam which = 50050 } # 中島飛行機\r
+-	command = { type = sleepteam which = 50051 } # 川崎航空機\r
+-	command = { type = sleepteam which = 50052 } # 川崎航空機\r
+-	command = { type = sleepteam which = 50055 } # 昭和飛行機工業\r
+-	command = { type = sleepteam which = 50056 } # 川西航空機\r
+-	command = { type = sleepteam which = 50031 } # 石川島重工業\r
+-	command = { type = sleepteam which = 50032 } # 石川島播磨重工業\r
+-\r
+-	command = { type = sleepteam which = 50021 } # 東京陸軍造兵廠\r
+-	command = { type = sleepteam which = 50022 } # 大阪陸軍造兵廠\r
+-	command = { type = sleepteam which = 50023 } # 相模陸軍造兵廠\r
+-	command = { type = sleepteam which = 50028 } # 北海道人造石油\r
+-	command = { type = sleepteam which = 50039 } # 南部麒次郎\r
+-	command = { type = sleepteam which = 50040 } # 南部銃製造所\r
+-	command = { type = sleepteam which = 50042 } # 横須賀海軍工廠\r
+-	command = { type = sleepteam which = 50043 } # 横須賀海軍工廠\r
+-	command = { type = sleepteam which = 50044 } # 呉海軍工廠\r
+-	command = { type = sleepteam which = 50053 } # 海軍航空技術廠\r
+-	command = { type = sleepteam which = 50054 } # 海軍航空技術廠\r
+-	command = { type = sleepteam which = 50066 } # 海軍陸戰隊\r
+-	command = { type = sleepteam which = 50067 } # 陸軍挺進隊\r
+-	command = { type = sleepteam which = 50070 } # 陸軍大學校\r
+-	command = { type = sleepteam which = 50071 } # 陸軍大學校\r
+-	command = { type = sleepteam which = 50115 } # 聯合艦隊司令部\r
+-	command = { type = sleepteam which = 50116 } # 海軍潛水學校\r
+-	command = { type = sleepteam which = 50117 } # 海軍砲術學校\r
+-	command = { type = sleepteam which = 50120 } # 帝國陸軍飛行大隊\r
+-	command = { type = sleepteam which = 50121 } # 帝國陸軍飛行大隊\r
+-	command = { type = sleepteam which = 50122 } # 帝國海軍航空隊\r
+-	command = { type = sleepteam which = 50123 } # 帝國海軍航空隊\r
+-	command = { type = sleepteam which = 50126 } # 臨時軍用氣球研究會\r
+-	command = { type = sleepteam which = 50201 } # 天皇顧問院\r
+-	command = { type = sleepteam which = 50202 } # 西日本重工\r
+-	command = { type = sleepteam which = 50203 } # 中部日本重工\r
+-	command = { type = sleepteam which = 50204 } # 東日本重工\r
+-	command = { type = sleepteam which = 50205 } # 玉川向製造所\r
+-	command = { type = sleepteam which = 50206 } # 伊藤庸二\r
+-	command = { type = sleepteam which = 50207 } # 第1造兵廠\r
+-	command = { type = sleepteam which = 50208 } # 第2造兵廠\r
+-	command = { type = sleepteam which = 50209 } # 帝国航空\r
+-	command = { type = sleepteam which = 50210 } # 日本飛行機製造\r
+-	command = { type = sleepteam which = 50211 } # 牟田口廉也\r
+-	command = { type = sleepteam which = 50212 } # 荒木貞夫\r
+-\r
++	command = { type = sleepleader which = 101583 } # 橋本虎之助\r
++	command = { type = sleepleader which = 101610 } # 大島陸太郞\r
++	command = { type = sleepleader which = 101611 } # 佐藤正三郞\r
++	command = { type = sleepleader which = 101405 } # 工藤義雄\r
++	command = { type = sleepleader which = 101612 } # 小藤恵\r
++	command = { type = sleepleader which = 101613 } # 石田保道\r
++	# 皇道派系閣僚\r
++	command = { type = sleepminister which = 50785 } # 白鳥敏夫\r
++	command = { type = sleepminister which = 50912 }\r
++	command = { type = sleepminister which = 51038 }\r
++	command = { type = sleepminister which = 50786 } # 大川周明\r
++	command = { type = sleepminister which = 50904 }\r
++	command = { type = sleepminister which = 50913 }\r
++	command = { type = sleepminister which = 51039 }\r
++	command = { type = sleepminister which = 50787 } # 蓑田胸喜\r
++	command = { type = sleepminister which = 50788 } # 内田良平\r
++	command = { type = sleepminister which = 50780 } # 出口王仁三郞\r
++	command = { type = sleepminister which = 50799 }\r
++	command = { type = sleepminister which = 50810 }\r
++	command = { type = sleepminister which = 50782 } # 井上日召\r
++	command = { type = sleepminister which = 50800 }\r
++	command = { type = sleepminister which = 50809 }\r
++	command = { type = sleepminister which = 50801 } # 市川房枝\r
++	command = { type = sleepminister which = 50811 } # 岩淵辰雄\r
+ 	command = { type = sleepevent which = 9999461 } # AIイベント\r
+ 	command = { type = sleepevent which = 9999462 }\r
+ 	command = { type = sleepevent which = 9999463 }\r
+@@ -4405,29 +3947,24 @@ event = {
+ 	action = { # 荒木大将が暗殺された\r
+ 	name = "ACTIONNAME22700060B"\r
+ 	trigger = {\r
+-	headofgovernment = 50605 # 荒木貞夫が政府首班\r
++	headofgovernment = 50705 # 荒木貞夫が政府首班\r
+ 	}\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = sleepminister which = 50122 } # 荒木貞夫\r
+ 	command = { type = sleepminister which = 50361 }\r
+-	command = { type = sleepminister which = 50605 }\r
+-	command = { type = sleepminister which = 50606 }\r
++	command = { type = sleepminister which = 50705 }\r
++	command = { type = sleepminister which = 50706 }\r
++	command = { type = sleepminister which = 50837 }\r
++	command = { type = sleepminister which = 50838 }\r
++	command = { type = sleepminister which = 50956 }\r
++	command = { type = sleepminister which = 50957 }\r
+ 	command = { type = sleepleader which = 101012 }\r
+ 	command = { type = sleepleader which = 103022 }\r
+ 	command = { type = sleepteam which = 50086 }\r
+ 	command = { type = sleepteam which = 50212 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50607 } # 眞崎甚三郎\r
+-	command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
+-	command = { type = armamentminister which = 50742 } # 鈴木率道\r
+-	command = { type = ministerofsecurity which = 50797 } # 香椎浩平\r
+-	command = { type = ministerofintelligence which = 50798 } # 秦真次\r
+-	command = { type = chiefofstaff which = 50729 } # 眞崎甚三郎\r
+-	command = { type = chiefofarmy which = 50733 } # 小畑敏四郎\r
+-	command = { type = chiefofnavy which = 50818 } # 末次信正\r
+-	command = { type = chiefofair which = 50160 } # 山下奉文\r
++	command = { trigger = { government = fascist } type = headofgovernment which = 50707 } # 眞崎甚三郞\r
++	command = { trigger = { government = democratic } type = headofgovernment which = 50958 } # 眞崎甚三郞\r
++	command = { trigger = { government = communist } type = headofgovernment which = 50839 } # 眞崎甚三郞\r
+ 	ai_chance = 70\r
+ 	}\r
+ }\r
+@@ -4640,7 +4177,8 @@ event = {
+ 	trigger = { ideology = nazi }\r
+ 	command = { type = dissent value = 4 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+-	command = { type = sleepminister which = 50406 } # 斎藤隆夫\r
++	command = { type = sleepminister which = 50407 } # 斎藤隆夫\r
++	command = { type = sleepminister which = 50408 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -4692,7 +4230,8 @@ event = {
+ 	trigger = { ideology = nazi }\r
+ 	command = { type = dissent value = 4 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+-	command = { type = sleepminister which = 50406 } # 斎藤隆夫\r
++	command = { type = sleepminister which = 50407 } # 斎藤隆夫\r
++	command = { type = sleepminister which = 50408 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -4800,9 +4339,9 @@ event = {
+ 	}\r
+ 	}\r
+ 	command = { type = dissent value = 2 }\r
+-	command = { type = sleepminister which = 50672 } # 出口王仁三郎\r
+-	command = { type = sleepminister which = 50689 }\r
+-	command = { type = sleepminister which = 50700 }\r
++	command = { type = sleepminister which = 50780 } # 出口王仁三郞\r
++	command = { type = sleepminister which = 50799 }\r
++	command = { type = sleepminister which = 50810 }\r
+ 	ai_chance = 90\r
+ 	}\r
+ \r
+@@ -4810,7 +4349,7 @@ event = {
+ 	name = "ACTIONNAME22700069B"\r
+ 	trigger = { ideology = nazi }\r
+ 	command = { type = dissent value = -1 }\r
+-	command = { type = ministerofsecurity which = 50689 } # 出口王仁三郎\r
++	command = { type = ministerofsecurity which = 50799 } # 出口王仁三郞\r
+ 	command = { type = local_setflag which = Daihon }\r
+ 	ai_chance = 10\r
+ 	}\r
+@@ -4844,7 +4383,7 @@ event = {
+ 	exists = JAP\r
+ 	event = 22700069 # 大本事件\r
+ 	local_flag = Daihon\r
+-	incabinet = 50689 # 出口王仁三郎\r
++	incabinet = 50799 # 出口王仁三郎\r
+ 	NOT = { ispuppet = yes }\r
+ 	}\r
+ \r
+@@ -4860,18 +4399,18 @@ event = {
+ 	action = { # 教団の要求に応じる\r
+ 	name = "ACTIONNAME22700070A"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = name where = JAP which = "日本法国" }\r
+-	command = { type = flag_ext where = JAP }\r
++	command = { type = name where = JAP which = "大本静寂国" }\r
++	command = { type = flag_ext where = JAP which = "_Daihon" }\r
+ 	command = { type = domestic which = democratic value = -1 }\r
+ 	command = { type = domestic which = political_left value = -1 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = manpowerpool value = -5 }\r
+ 	command = { type = resource which = money value = -100 }\r
+ 	command = { type = industrial_modifier which = money value = -10 }\r
+-	command = { type = headofgovernment which = 50672 } # 出口王仁三郎\r
+-	command = { type = foreignminister which = 50678 } # 内田良平\r
+-	command = { type = ministerofsecurity which = 50689 } # 出口王仁三郎\r
+-	command = { type = ministerofintelligence which = 50992 } # 頭山満\r
++	command = { type = headofgovernment which = 50780 } # 出口王仁三郞\r
++	command = { type = foreignminister which = 50788 } # 内田良平\r
++	command = { type = ministerofsecurity which = 50799 } # 出口王仁三郞\r
++	command = { type = ministerofintelligence which = 50564 } # 頭山満\r
+ 	ai_chance = 60\r
+ 	}\r
+ \r
+@@ -4879,9 +4418,9 @@ event = {
+ 	name = "ACTIONNAME22700070B"\r
+ 	command = { type = dissent value = 15 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = sleepminister which = 50672 } # 出口王仁三郎\r
+-	command = { type = sleepminister which = 50689 }\r
+-	command = { type = sleepminister which = 50700 }\r
++	command = { type = sleepminister which = 50780 } # 出口王仁三郞\r
++	command = { type = sleepminister which = 50799 }\r
++	command = { type = sleepminister which = 50810 }\r
+ 	ai_chance = 20\r
+ 	}\r
+ \r
+@@ -4946,7 +4485,7 @@ event = {
+ \r
+ 	action = { # 人事を刷新する\r
+ 	name = "ACTIONNAME22700071C"\r
+-	command = { type = ministerofintelligence which = 50976 } # 尾崎秀実\r
++	command = { type = ministerofintelligence which = 50562 } # 尾崎秀実\r
+ 	command = { type = intelligence which = them value = 10 }\r
+ 	command = { type = intelligence which = us value = -10 }\r
+ 	command = { type = surprise which = naval value = -5 }\r
+@@ -5010,7 +4549,7 @@ event = {
+ 	action = { # 奴はスパイかもしれない…\r
+ 	name = "ACTIONNAME22700072B"\r
+ 	command = { type = relation which = SOV value = 10 }\r
+-	command = { type = sleepminister which = 50804 } # ゲンリフ・リュシコフ\r
++	command = { type = sleepminister which = 50932 } # ゲンリフ・リュシコフ\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -5246,15 +4785,15 @@ event = {
+ 	command = { type = dissent value = 1 }\r
+ 	command = { type = chiefofnavy which = 50009 } # 大角岑生\r
+ 	# 大角人事条約派\r
+-	command = { type = sleepminister which = 50515 } # 山梨勝之進\r
++	command = { type = sleepminister which = 50605 } # 山梨勝之進\r
+ 	command = { type = sleepleader which = 101352 }\r
+-	command = { type = sleepminister which = 50516 } # 谷口尚真\r
++	command = { type = sleepminister which = 50606 } # 谷口尚真\r
+ 	command = { type = sleepleader which = 101359 }\r
+-	command = { type = sleepminister which = 50517 } # 寺島健\r
++	command = { type = sleepminister which = 50607 } # 寺島健\r
+ 	command = { type = sleepleader which = 101577 }\r
+-	command = { type = sleepminister which = 50069 } # 左近司政三 粛清\r
++	command = { type = sleepminister which = 50069 } # 左近司政三\r
+ 	command = { type = sleepleader which = 101249 }\r
+-	command = { type = sleepminister which = 50518 } # 堀悌吉 粛清\r
++	command = { type = sleepminister which = 50608 } # 堀悌吉\r
+ 	command = { type = sleepleader which = 101360 }\r
+ 	ai_chance = 50\r
+ 	}\r
+@@ -5264,30 +4803,41 @@ event = {
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = max_organization which = naval value = 5 }\r
+ 	command = { type = morale which = naval value = 5 }\r
+-	command = { type = chiefofnavy which = 50515 } # 山梨勝之進\r
+-	command = { type = sleepminister which = 50009 } # 大角岑生\r
+-	command = { type = sleepleader which = 102109 }\r
++	command = { type = chiefofnavy which = 50605 } # 山梨勝之進\r
+ 	command = { type = sleepminister which = 50228 } # 伏見宮博恭王\r
+ 	command = { type = sleepleader which = 101323 }\r
+ 	command = { type = sleepleader which = 102177 }\r
+ 	command = { type = sleepminister which = 50224 } # 加藤寛治\r
+ 	command = { type = sleepleader which = 101215 }\r
+ 	command = { type = sleepleader which = 102096 }\r
+-	command = { type = sleepminister which = 50522 } # 高橋三吉\r
++	command = { type = sleepminister which = 50612 } # 高橋三吉\r
+ 	command = { type = sleepleader which = 101259 }\r
+ 	command = { type = sleepminister which = 50208 } # 山本英輔\r
+-	command = { type = sleepminister which = 50665 }\r
+-	command = { type = sleepminister which = 50715 }\r
++	command = { type = sleepminister which = 50773 }\r
++	command = { type = sleepminister which = 50826 } \r
++	command = { type = sleepminister which = 50945 } \r
++	command = { type = sleepminister which = 51015 } \r
++	command = { type = sleepminister which = 51085 } \r
+ 	command = { type = sleepleader which = 101271 }\r
+ 	command = { type = sleepleader which = 102125 }\r
+ 	command = { type = sleepminister which = 50087 } # 末次信正\r
+-	command = { type = sleepminister which = 50668 }\r
+-	command = { type = sleepminister which = 50716 }\r
++	command = { type = sleepminister which = 50776 }\r
++	command = { type = sleepminister which = 50827 }\r
++	command = { type = sleepminister which = 50946 }\r
++	command = { type = sleepminister which = 51016 }\r
++	command = { type = sleepminister which = 51086 }\r
+ 	command = { type = sleepleader which = 101354 }\r
+ 	command = { type = sleepleader which = 101578 } # 加来止男\r
+-	command = { type = sleepminister which = 50695 } # 小笠原長生\r
++	command = { type = sleepminister which = 50805 } # 小笠原長生\r
++	command = { type = sleepminister which = 50927 }\r
++	command = { type = sleepminister which = 51068 }\r
+ 	command = { type = sleepleader which = 102134 }\r
+ 	command = { type = sleepleader which = 101234 } # 南雲忠一\r
++	command = { type = sleepleader which = 101236 } # 中村良三\r
++	command = { type = sleepminister which = 50829 } # 眞崎勝次\r
++	command = { type = sleepminister which = 50948 }\r
++	command = { type = sleepminister which = 51088 }\r
++	command = { type = sleepleader which = 101409 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r
+@@ -5335,7 +4885,7 @@ event = {
+ 	command = { type = sleepminister which = 50168 } # 古賀峯一\r
+ 	command = { type = sleepminister which = 50348 }\r
+ 	command = { type = sleepleader which = 101218 }\r
+-	command = { type = sleepminister which = 50524 } # 福留繁\r
++	command = { type = sleepminister which = 50620 } # 福留繁\r
+ 	command = { type = sleepleader which = 101200 }\r
+ 	command = { type = sleepleader which = 101279 }\r
+ 	command = { type = intelligence which = us value = -2 }\r
+@@ -6237,9 +5787,9 @@ event = {
+ \r
+ 	action = { # いなくなると寂しい\r
+ 	name = "EVT_362_ACTC"\r
+-	command = { type = sleepminister which = 50530 } # 山口多聞\r
++	command = { type = sleepminister which = 50621 } # 山口多聞\r
+ 	command = { type = sleepleader which = 101269 }\r
+-	command = { type = sleepteam which = 50050 }\r
++	command = { type = sleepteam which = 50107 }\r
+ 	command = { type = sleepleader which = 101578 } # 加来止男\r
+ 	}\r
+ }\r
+@@ -6283,17 +5833,23 @@ event = {
+ 	name = "CABINET_NAVY"\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 51008 } # 山本五十六\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = wakeminister which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = wakeminister which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = headofstate which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50679 headofstate = 50680 headofstate = 50681 } } type = headofstate which = 50679 } # 高松宮宣仁親王\r
++	command = { trigger = { OR = { headofstate = 50682 headofstate = 50683 headofstate = 50684 } } type = headofstate which = 50682 } # 三笠宮崇仁親王\r
++	command = { trigger = { OR = { headofstate = 53036 headofstate = 53037 headofstate = 53038 } } type = headofstate which = 53036 } # 熊沢天皇\r
++	command = { type = headofgovernment which = 50501 } # 山本五十六\r
+ 	command = { type = foreignminister which = 50037 } # 重光葵\r
+-	command = { type = armamentminister which = 51045 } # 出光佐三\r
++	command = { type = armamentminister which = 50536 } # 肥田琢司\r
+ 	command = { type = ministerofsecurity which = 50106 } # 飯村穣\r
+-	command = { type = ministerofintelligence which = 51078 } # 保科善四郞\r
+-	command = { type = chiefofstaff which = 50498 } # 今村均\r
+-	command = { type = chiefofarmy which = 50499 } # 今村均\r
+-	command = { type = chiefofnavy which = 50526 } # 澤本頼雄\r
++	command = { type = ministerofintelligence which = 50570 } # 保科善四郞\r
++	command = { type = chiefofstaff which = 50583 } # 今村均\r
++	command = { type = chiefofarmy which = 50582 } # 河邊正三\r
++	command = { type = chiefofnavy which = 50617 } # 澤本頼雄\r
+ 	command = { type = chiefofair which = 50010 } # 山本五十六\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 40\r
+@@ -6303,18 +5859,24 @@ event = {
+ 	name = "CABINET_IRAA"\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50460 } # 緒方竹虎\r
+-	command = { type = foreignminister which = 50412 } # 駒井徳三\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = wakeminister which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = wakeminister which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = headofstate which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50679 headofstate = 50680 headofstate = 50681 } } type = headofstate which = 50679 } # 高松宮宣仁親王\r
++	command = { trigger = { OR = { headofstate = 50682 headofstate = 50683 headofstate = 50684 } } type = headofstate which = 50682 } # 三笠宮崇仁親王\r
++	command = { trigger = { OR = { headofstate = 53036 headofstate = 53037 headofstate = 53038 } } type = headofstate which = 53036 } # 熊沢天皇\r
++	command = { type = headofgovernment which = 50465 } # 緒方竹虎\r
++	command = { type = foreignminister which = 50416 } # 駒井徳三\r
+ 	command = { type = armamentminister which = 50335 } # 賀屋興宣\r
+ 	command = { type = ministerofsecurity which = 50089 } # 木戸幸一\r
+-	command = { type = ministerofintelligence which = 50410 } # 緒方竹虎\r
+-	command = { type = chiefofstaff which = 50498 } # 今村均\r
+-	command = { type = chiefofarmy which = 50499 } # 今村均\r
+-	command = { type = chiefofnavy which = 50526 } # 澤本頼雄\r
+-	command = { type = chiefofair which = 50542 } # 高須四郞\r
++	command = { type = ministerofintelligence which = 50412 } # 緒方竹虎\r
++	command = { type = chiefofstaff which = 50583 } # 今村均\r
++	command = { type = chiefofarmy which = 50582 } # 河邊正三\r
++	command = { type = chiefofnavy which = 50617 } # 澤本頼雄\r
++	command = { type = chiefofair which = 50635 } # 高須四郞\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 20\r
+ 	}\r
+@@ -6325,18 +5887,24 @@ event = {
+ 	trigger = { incabinet = 50022 } # 東條英機\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = wakeminister which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = wakeminister which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = headofstate which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50679 headofstate = 50680 headofstate = 50681 } } type = headofstate which = 50679 } # 高松宮宣仁親王\r
++	command = { trigger = { OR = { headofstate = 50682 headofstate = 50683 headofstate = 50684 } } type = headofstate which = 50682 } # 三笠宮崇仁親王\r
++	command = { trigger = { OR = { headofstate = 53036 headofstate = 53037 headofstate = 53038 } } type = headofstate which = 53036 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50022 } # 東條英機\r
+ 	command = { type = foreignminister which = 50049 } # 谷正之\r
+-	command = { type = armamentminister which = 50990 } # 五島慶太\r
++	command = { type = armamentminister which = 50531 } # 五島慶太\r
+ 	command = { type = ministerofsecurity which = 50103 } # 東條英機\r
+ 	command = { type = ministerofintelligence which = 50347 } # 嶋田繁太郞\r
+ 	command = { type = chiefofstaff which = 50134 } # 東條英機\r
+ 	command = { type = chiefofarmy which = 50140 } # 藤岡武雄\r
+-	command = { type = chiefofnavy which = 50526 } # 澤本頼雄\r
+-	command = { type = chiefofair which = 50542 } # 高須四郞\r
++	command = { type = chiefofnavy which = 50617 } # 澤本頼雄\r
++	command = { type = chiefofair which = 50635 } # 高須四郞\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 40\r
+ 	}\r
+@@ -6389,17 +5957,23 @@ event = {
+ 	command = { type = flag_ext where = JAP which = "_flag7" }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50994 } # 岸信介\r
+-	command = { type = foreignminister which = 51000 } # 椎名悦三郞\r
+-	command = { type = armamentminister which = 51006 } # 鮎川義介\r
+-	command = { type = ministerofsecurity which = 51007 } # 服部卓四郞\r
+-	command = { type = ministerofintelligence which = 51004 } # 里見甫\r
+-	command = { type = chiefofstaff which = 50504 } # 武藤章\r
+-	command = { type = chiefofarmy which = 50998 } # 辻政信\r
+-	command = { type = chiefofnavy which = 51014 } # 石川信吾\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = wakeminister which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = wakeminister which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = headofstate which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50679 headofstate = 50680 headofstate = 50681 } } type = headofstate which = 50679 } # 高松宮宣仁親王\r
++	command = { trigger = { OR = { headofstate = 50682 headofstate = 50683 headofstate = 50684 } } type = headofstate which = 50682 } # 三笠宮崇仁親王\r
++	command = { trigger = { OR = { headofstate = 53036 headofstate = 53037 headofstate = 53038 } } type = headofstate which = 53036 } # 熊沢天皇\r
++	command = { type = headofgovernment which = 50504 } # 岸信介\r
++	command = { type = foreignminister which = 50516 } # 椎名悦三郞\r
++	command = { type = armamentminister which = 50523 } # 鮎川義介\r
++	command = { type = ministerofsecurity which = 50555 } # 服部卓四郞\r
++	command = { type = ministerofintelligence which = 50567 } # 里見甫\r
++	command = { type = chiefofstaff which = 50589 } # 武藤章\r
++	command = { type = chiefofarmy which = 50597 } # 辻政信\r
++	command = { type = chiefofnavy which = 50616 } # 石川信吾\r
+ 	command = { type = chiefofair which = 50158 } # 畑俊六\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 45\r
+@@ -6411,17 +5985,23 @@ event = {
+ 	command = { type = flag_ext where = JAP which = "_flag8" }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50995 } # 武藤章\r
+-	command = { type = foreignminister which = 51000 } # 椎名悦三郞\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = wakeminister which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50701 headofstate = 50833 headofstate = 50952 headofstate = 52001 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = wakeminister which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50702 headofstate = 50834 headofstate = 50953 headofstate = 52005 } } type = headofstate which = 50702 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50679 headofstate = 50680 headofstate = 50681 } } type = headofstate which = 50679 } # 高松宮宣仁親王\r
++	command = { trigger = { OR = { headofstate = 50682 headofstate = 50683 headofstate = 50684 } } type = headofstate which = 50682 } # 三笠宮崇仁親王\r
++	command = { trigger = { OR = { headofstate = 53036 headofstate = 53037 headofstate = 53038 } } type = headofstate which = 53036 } # 熊沢天皇\r
++	command = { type = headofgovernment which = 50505 } # 武藤章\r
++	command = { type = foreignminister which = 50516 } # 椎名悦三郞\r
+ 	command = { type = armamentminister which = 50067 } # 岸信介\r
+-	command = { type = ministerofsecurity which = 51007 } # 服部卓四郞\r
+-	command = { type = ministerofintelligence which = 50387 } # 辻政信\r
+-	command = { type = chiefofstaff which = 50504 } # 武藤章\r
+-	command = { type = chiefofarmy which = 50510 } # 服部卓四郎\r
+-	command = { type = chiefofnavy which = 51014 } # 石川信吾\r
++	command = { type = ministerofsecurity which = 50555 } # 服部卓四郞\r
++	command = { type = ministerofintelligence which = 50561 } # 辻政信\r
++	command = { type = chiefofstaff which = 50589 } # 武藤章\r
++	command = { type = chiefofarmy which = 50597 } # 辻政信\r
++	command = { type = chiefofnavy which = 50616 } # 石川信吾\r
+ 	command = { type = chiefofair which = 50158 } # 畑俊六\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 45\r

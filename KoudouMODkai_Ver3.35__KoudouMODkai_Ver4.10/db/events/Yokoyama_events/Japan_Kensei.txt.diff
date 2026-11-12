@@ -1,0 +1,603 @@
+--- A/db/events/Yokoyama_events/Japan_Kensei.txt [cp932]
++++ B/db/events/Yokoyama_events/Japan_Kensei.txt [cp932]
+@@ -73,6 +73,14 @@
+ #id = 25200081 粛軍からの回復（第1段階）\r
+ #id = 25200082 粛軍からの回復（第2段階）\r
+ #id = 25200083 粛軍からの回復（第3段階）\r
++###### 陰る太陽後イベント ############\r
++#id = 25200101 町田戦後内閣\r
++#id = 25200102 文民統制への道\r
++#id = 25200103 町田忠治の引退\r
++#id = 25200104 アメリカとの和平交渉\r
++#id = 25200105 町田首相、兇弾に斃る\r
++#id = 25200106 幣原首相、兇弾に斃る\r
++#id = 25200107 日本が講和を求める\r
+ ##########################################################################\r
+ #  突然の政府交代（1934年岡田内閣）\r
+ # 政権というものは時折、不幸な出来事が続いたり、選挙に敗北したりすると、総辞職して、国民の高い支持を得た新たな政権に権力を譲ることがある。\r
+@@ -177,6 +185,7 @@ event = {
+ \r
+ 	action_a = { # 文民統制を強化するのだ\r
+ 		name = ACTIONNAME25200002A\r
++		command = { type = dissent value = -30 }\r
+ 		command = { type = belligerence which = JAP value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+@@ -795,7 +804,7 @@ event = {
+ \r
+ 	action = { # 民主主義を護れ！\r
+ 		name = "ACTIONNAME25200010A"\r
+-		command = { type = dissent value = 30 }\r
++		command = { type = dissent value = 20 }\r
+ 		command = { type = belligerence which = JAP value = -5 }\r
+ 		command = { type = domestic which = democratic value = -1 } \r
+ 		command = { type = domestic which = political_left value = -1 } \r
+@@ -1014,7 +1023,7 @@ event = {
+ \r
+ 	action = { # 粛軍だ！\r
+ 		name = "ACTIONNAME25200011A"\r
+-		command = { type = dissent value = 15 }\r
++		command = { type = dissent value = 10 }\r
+ 		command = { type = event which = 25200079 where = JAP when = 30 }\r
+ 		command = { type = ground_def_eff value = -0.2 when = 1 }\r
+ 		command = { type = morale which = land value = -30 }\r
+@@ -1381,7 +1390,7 @@ event = {
+ 		command = { type = removecore which = 1233 }\r
+ 		command = { type = removecore which = 2791 }\r
+ 		command = { type = independence which = KOR value = 1 }\r
+-		command = { type = secedearea which = KOR value = "Korea" when = 2 }\r
++		command = { type = secederegion which = KOR value = "Korea" when = 1 }\r
+ 		command = { type = sleepleader which = 101077 } # 朝鮮軍人\r
+ 		command = { type = sleepleader which = 101096 }\r
+ 		command = { type = sleepleader which = 101293 }\r
+@@ -4509,4 +4518,549 @@ event = {
+ 		command = { type = morale which = air value = 10 }\r
+ 		command = { type = max_organization which = air value = 10 }\r
+ 	}\r
++}\r
++\r
++##########################################################################\r
++#  陰る太陽後イベント\r
++##########################################################################\r
++#  町田戦後内閣\r
++# 中国との敗戦により、国内では暴動がなお続いていた。\r
++# 押し寄せる中国軍を前に殆どの師団は大陸に出払ってしまっており、東京を始め内地での治安を確保することは難しい情勢であった。\r
++# 一時は日本共産党の影響を受けたデモ隊が議事堂への放火を行うなど「革命」一歩手前まで来ていたが、\r
++# 主に立憲民政党系のグループが軍人の国政からの排除、出征兵士家族への生活保障など左派への大きな譲歩を掲げてデモ隊と交渉。\r
++# 政策の速やかな履行を約束し、引き換えにデモ隊を沈静化させることに成功した。\r
++# 交渉結果を受けて、濱口内閣・若槻内閣で農林大臣を努め大きな成果を上げた町田忠治により組閣が行われた。町田はまず軍部出身者議員を除名できる体制を整えて憲政の常道を復活させ、議会を安定させることを目論んでいる。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 25200101\r
++	random = no\r
++	country = JAP\r
++	\r
++	trigger = {\r
++	event = 2011018 # 陰る太陽\r
++	NOT = { event = 25200002 } # 憲政の常道の復活\r
++	minister = 50405 # 町田忠治\r
++	random = 50\r
++	}\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	name = "EVT_25200101_NAME"\r
++	desc = "EVT_25200101_DESC"\r
++	style = 2\r
++	picture = "Japanese_Parliament"\r
++        \r
++	action = { # 町田忠治に組閣の大命を下す\r
++	name = ACTIONNAME25200101A\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofgovernment which = 50405 } # 町田忠治\r
++	command = { type = foreignminister which = 50003 } # 廣田弘毅\r
++	command = { type = armamentminister which = 50061 } # 小笠原三九郞\r
++	command = { type = ministerofsecurity which = 50406 } # 斎藤隆夫\r
++	command = { type = ministerofintelligence which = 50112 } # 小川鄕太郞\r
++	command = { type = chiefofstaff which = 50126 } # 中澤佑\r
++	command = { type = chiefofarmy which = 50719 } # 長村河鹿\r
++	command = { type = chiefofnavy which = 50145 } # 河合明\r
++	command = { type = chiefofair which = 50151 } # 福井義男\r
++	command = { type = sleepevent which = 2900162 } # 選挙イベント\r
++	command = { type = sleepevent which = 2900163 }\r
++	command = { type = sleepevent which = 2900164 }\r
++	command = { type = sleepevent which = 2900165 }\r
++	command = { type = sleepevent which = 2500036 } # 突然の政府交代イベント\r
++	command = { type = sleepevent which = 2500037 }\r
++	command = { type = sleepevent which = 2500038 }\r
++	command = { type = sleepevent which = 2500039 }\r
++	command = { type = sleepevent which = 2500040 }\r
++	command = { type = sleepevent which = 2011006 } # 2・26事件\r
++	command = { type = sleepevent which = 1330120015 } # 陸軍士官学校事件\r
++	command = { type = sleepevent which = 1330120016 } # 相沢事件\r
++	command = { type = sleepevent which = 2260000 } # 陸軍全幕僚会議 ― 皇道派と統制派の対立\r
++	command = { type = sleepevent which = 2260001 } # 皇道派の権威失墜と新陸軍大臣\r
++	command = { type = sleepevent which = 2260002 } # 真崎教育総監更迭問題\r
++	command = { type = sleepevent which = 2260003 } # 軍国主義者のクーデター\r
++	command = { type = sleepevent which = 2260005 } # 二月蜂起 ― 昭和維新\r
++	command = { type = sleepevent which = 2260006 } # 尊皇討奸 ― 統制派の粛清\r
++	command = { type = sleepevent which = 22600001 } # 昭和維新\r
++	command = { type = sleepevent which = 209002 } # Fullkai 満州国イベント\r
++	command = { type = sleepevent which = 209003 }\r
++	command = { type = sleepevent which = 209004 }\r
++	command = { type = sleepevent which = 209005 }\r
++	command = { type = sleepevent which = 209006 }\r
++	command = { type = sleepevent which = 209007 }\r
++	command = { type = sleepevent which = 209008 }\r
++	command = { type = sleepevent which = 209009 }\r
++	command = { type = sleepevent which = 209010 }\r
++	command = { type = sleepevent which = 227001 } # Fullkai 新たなる国家へ\r
++	command = { type = sleepevent which = 227002 } # Fullkai 永田軍政の再開\r
++	command = { type = sleepevent which = 227003 } # Fullkai 新たなる国家へ\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  文民統制への道\r
++# 対中敗戦から日が浅く軍部の発言力がこれまでになく下がっている状態で、政府は議会の刷新と粛軍に手をつけようとしている。\r
++# 即ち、陸・海軍出身者の議員を議会から可能なかぎり排除し、国政に影響を及ぼそうとする軍閥や、陸軍の意向を受けて和平への道を閉ざすような政情を撲滅しようというのがその目的であった。\r
++# ついこの間までなら統帥権干犯であると陸海軍が大きく反発するところであろうが、敗戦が彼らの責任問題になっている今これに文句をつける権利はなかった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 25200102\r
++	random = no\r
++	country = JAP\r
++	\r
++	trigger = {\r
++	event = 25200101 # 町田戦後内閣\r
++	}\r
++	\r
++	name = "EVT_25200102_NAME"\r
++	desc = "EVT_25200102_DESC"\r
++	style = 2\r
++  	picture = "purge_army"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # これまで好き勝手やったツケが回ってきたのだ\r
++	name = "ACTIONNAME25200102A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = domestic which = democratic value = 1 }\r
++	command = { type = domestic which = freedom value = 1 }\r
++	command = { type = sleepminister which = 50013 } # 林銑十郞\r
++	command = { type = sleepminister which = 50047 }\r
++	command = { type = sleepminister which = 50362 }\r
++	command = { type = sleepleader which = 101336 }\r
++	command = { type = sleepminister which = 50022 } #東條英機 粛清\r
++	command = { type = sleepminister which = 50074 }\r
++	command = { type = sleepminister which = 50103 }\r
++	command = { type = sleepminister which = 50134 }\r
++	command = { type = sleepminister which = 50143 }\r
++	command = { type = sleepminister which = 50159 }\r
++	command = { type = sleepminister which = 50166 }\r
++	command = { type = sleepleader which = 101160 }\r
++	command = { type = sleepleader which = 101307 }\r
++	command = { type = sleepteam which = 50054 }\r
++	command = { type = sleepminister which = 50695 } #永田鉄山\r
++	command = { type = sleepminister which = 50696 }\r
++	command = { type = sleepminister which = 50697 }\r
++	command = { type = sleepminister which = 50698 }\r
++	command = { type = sleepleader which = 101395 }\r
++	command = { type = sleepteam which = 50053 }\r
++	command = { type = sleepminister which = 50548 } #石原莞爾 粛清\r
++	command = { type = sleepminister which = 50723 }\r
++	command = { type = sleepminister which = 50724 }\r
++	command = { type = sleepleader which = 101057 }\r
++	command = { type = sleepteam which = 50102 }\r
++	command = { type = sleepminister which = 50133 } # 杉山元 宇垣閥。軍籍剥奪\r
++	command = { type = sleepminister which = 50142 }\r
++	command = { type = sleepleader which = 101145 }\r
++	command = { type = sleepteam which = 50110 }\r
++	command = { type = sleepminister which = 50019 } # 寺内壽一 統制派。軍籍剥奪\r
++	command = { type = sleepminister which = 50070 }\r
++	command = { type = sleepminister which = 50364 }\r
++	command = { type = sleepleader which = 101159 }\r
++	command = { type = sleepteam which = 50111 }\r
++	command = { type = sleepleader which = 50196 } # 山田乙三 余波。粛清\r
++	command = { type = sleepteam which = 101177 }\r
++	command = { type = sleepleader which = 50132 } # 西尾壽造 余波。粛清\r
++	command = { type = sleepteam which = 101116 }\r
++	command = { type = sleepminister which = 50338 } # 二宮治重 宇垣閥。予備役\r
++	command = { type = sleepteam which = 101399 }\r
++	command = { type = sleepminister which = 50339 } # 建川美次 宇垣閥。予備役\r
++	command = { type = sleepleader which = 101396 }\r
++	command = { type = sleepminister which = 50346 } # 武藤章 統制派。 予備役\r
++	command = { type = sleepminister which = 50504 }\r
++	command = { type = sleepminister which = 50505 }\r
++	command = { type = sleepleader which = 101108 }\r
++	command = { type = sleepminister which = 50554 } # 池田純久 統制派。 粛清\r
++	command = { type = sleepleader which = 101398 }\r
++	command = { type = sleepminister which = 50366 } # 板垣征四郎 満州派。 予備役\r
++	command = { type = sleepleader which = 101060 }\r
++	command = { type = sleepminister which = 50957 } # 片倉衷 統制派。 射殺\r
++	command = { type = sleepleader which = 101068 }\r
++\r
++	command = { type = sleepminister which = 50122 } # 荒木貞夫\r
++	command = { type = sleepminister which = 50361 }\r
++	command = { type = sleepminister which = 50572 }\r
++	command = { type = sleepminister which = 50573 }\r
++	command = { type = sleepleader which = 101012 }\r
++	command = { type = sleepleader which = 103020 }\r
++	command = { type = sleepteam which = 50101 }\r
++	command = { type = sleepminister which = 50574 } # 眞崎甚三郎\r
++	command = { type = sleepminister which = 50575 }\r
++	command = { type = sleepminister which = 50576 }\r
++	command = { type = sleepminister which = 50577 }\r
++	command = { type = sleepleader which = 101337 }\r
++	command = { type = sleepleader which = 102180 }\r
++	command = { type = sleepleader which = 103021 }\r
++	command = { type = sleepteam which = 50105 }\r
++	command = { type = sleepminister which = 50578 } # 小畑敏四郎\r
++	command = { type = sleepminister which = 50579 }\r
++	command = { type = sleepminister which = 50580 }\r
++	command = { type = sleepleader which = 101400 }\r
++	command = { type = sleepteam which = 50103 }\r
++	command = { type = sleepminister which = 50581 } # 柳川平助\r
++	command = { type = sleepminister which = 50582 }\r
++	command = { type = sleepminister which = 50583 }\r
++	command = { type = sleepminister which = 50584 }\r
++	command = { type = sleepleader which = 101184 }\r
++	command = { type = sleepteam which = 50103 }\r
++	command = { type = sleepminister which = 50160 } # 山下奉文\r
++	command = { type = sleepminister which = 50585 }\r
++	command = { type = sleepminister which = 50586 }\r
++	command = { type = sleepminister which = 50587 }\r
++	command = { type = sleepleader which = 101182 }\r
++	command = { type = sleepleader which = 101313 }\r
++	command = { type = sleepteam which = 50106 }\r
++	command = { type = sleepminister which = 50592 } # 鈴木率道\r
++	command = { type = sleepminister which = 50593 }\r
++	command = { type = sleepleader which = 101380 }\r
++	command = { type = sleepteam which = 50104 }\r
++	command = { type = sleepminister which = 50692 } # 酒井鎬次\r
++	command = { type = sleepminister which = 50693 }\r
++	command = { type = sleepleader which = 101374 }\r
++	command = { type = sleepteam which = 50106 }\r
++	command = { type = sleepminister which = 50591 } # 山岡重厚\r
++	command = { type = sleepminister which = 50666 }\r
++	command = { type = sleepminister which = 50667 }\r
++	command = { type = sleepleader which = 101179 }\r
++	command = { type = sleepminister which = 50588 } # 本庄繁\r
++	command = { type = sleepminister which = 50589 }\r
++	command = { type = sleepminister which = 50590 }\r
++	command = { type = sleepleader which = 101338 }\r
++	command = { type = sleepminister which = 50596 } # 安藤輝三\r
++	command = { type = sleepminister which = 50597 }\r
++	command = { type = sleepminister which = 50638 }\r
++	command = { type = sleepminister which = 50672 }\r
++	command = { type = sleepminister which = 50673 }\r
++	command = { type = sleepleader which = 103002 }\r
++	command = { type = sleepminister which = 50594 } # 磯部浅一\r
++	command = { type = sleepminister which = 50595 }\r
++	command = { type = sleepminister which = 50637 }\r
++	command = { type = sleepminister which = 50670 }\r
++	command = { type = sleepminister which = 50671 }\r
++	command = { type = sleepleader which = 103001 }\r
++	command = { type = sleepminister which = 50598 } # 村中孝次\r
++	command = { type = sleepminister which = 50599 }\r
++	command = { type = sleepminister which = 50600 }\r
++	command = { type = sleepleader which = 103003 }\r
++	command = { type = sleepleader which = 103004 } # 香田清貞\r
++	command = { type = sleepleader which = 103005 } # 野中四郎\r
++	command = { type = sleepleader which = 103006 } # 栗原安秀\r
++	command = { type = sleepleader which = 103007 } # 中橋基明\r
++	command = { type = sleepleader which = 103008 } # 対馬勝雄\r
++	command = { type = sleepleader which = 103009 } # 竹嶌継夫\r
++	command = { type = sleepleader which = 103010 } # 丹生誠忠\r
++	command = { type = sleepleader which = 103011 } # 坂井直\r
++	command = { type = sleepleader which = 103012 } # 田中勝\r
++	command = { type = sleepleader which = 103013 } # 安田優\r
++	command = { type = sleepleader which = 103014 } # 林八郎\r
++	command = { type = sleepminister which = 50680 } # 河野壽\r
++	command = { type = sleepminister which = 50694 } # 武山信二\r
++	command = { type = sleepleader which = 103016 }\r
++	command = { type = sleepminister which = 50608 } # 北一輝\r
++	command = { type = sleepminister which = 50609 }\r
++	command = { type = sleepminister which = 50610 }\r
++	command = { type = sleepminister which = 50611 }\r
++	command = { type = sleepminister which = 50616 } # 西田税\r
++	command = { type = sleepminister which = 50617 }\r
++	command = { type = sleepminister which = 50618 }\r
++	command = { type = sleepminister which = 50619 } # 渋川善助\r
++	command = { type = sleepminister which = 50620 }\r
++	command = { type = sleepminister which = 50621 }\r
++	command = { type = sleepleader which = 101000 } # 阿部信行\r
++	command = { type = sleepminister which = 50362 } # 川島義之\r
++	command = { type = sleepleader which = 101340 }\r
++	command = { type = sleepminister which = 50612 } # 斎藤瀏\r
++	command = { type = sleepminister which = 50613 }\r
++	command = { type = sleepleader which = 101402 }\r
++	command = { type = sleepminister which = 50614 } # 満井佐吉\r
++	command = { type = sleepminister which = 50615 }\r
++	command = { type = sleepleader which = 101406 }\r
++	command = { type = sleepminister which = 50662 } # 村上啓作\r
++	command = { type = sleepminister which = 50663 }\r
++	command = { type = sleepleader which = 101407 }\r
++	command = { type = sleepminister which = 50664 } # 香椎浩平\r
++	command = { type = sleepminister which = 50665 }\r
++	command = { type = sleepleader which = 101404 }\r
++	command = { type = sleepminister which = 50666 } # 山岡重厚\r
++	command = { type = sleepminister which = 50667 }\r
++	command = { type = sleepminister which = 50668 } # 秦彦三郎\r
++	command = { type = sleepminister which = 50669 }\r
++	command = { type = sleepminister which = 50689 } # 井出宣時\r
++	command = { type = sleepminister which = 50690 }\r
++	command = { type = sleepleader which = 101405 } # 工藤義雄\r
++	command = { type = sleepleader which = 101408 } # 松浦淳六郎\r
++	command = { type = sleepminister which = 50674 } # 山本英輔\r
++	command = { type = sleepleader which = 101271 }\r
++	command = { type = sleepleader which = 102125 }\r
++	command = { type = sleepminister which = 50633 } # 末次信正\r
++	command = { type = sleepminister which = 50675 }\r
++	command = { type = sleepleader which = 101354 }\r
++	command = { type = sleepminister which = 50676 } # 中村良三\r
++	command = { type = sleepleader which = 101236 }\r
++	command = { type = sleepminister which = 50677 } # 眞崎勝次\r
++	command = { type = sleepleader which = 101409 }\r
++	command = { type = sleepminister which = 50679 } # 堀丈夫\r
++	command = { type = sleepleader which = 101410 }\r
++\r
++	command = { type = sleepevent which = 22700014 } # 軍備充実計画\r
++	command = { type = sleepevent which = 2011022 } # Marco Polo Bridge\r
++	command = { type = sleepevent which = 2011021 } # German Recognition of Manchukuo\r
++	ai_chance = 95\r
++	}\r
++\r
++	action = { # 極端な行動は次なる不祥事件の火種となりうる\r
++	name = "ACTIONNAME25200102B"\r
++	command = { type = dissent value = 10 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = sleepevent which = 131592 }\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  町田忠治の引退\r
++# 中国との敗戦後、国内外での問題の収拾のため奔走していた町田であったが、この時既に齢84で年明けから体調が優れない状態が続いていた。\r
++# 町田は同郷の平澤長吉を自らの後継者と指名し、政界からの引退を宣言した。\r
++# 町田の率いていた政権そのものについては、濱口雄幸総理銃撃事件の際に内閣総理大臣臨時代理を務めていた幣原喜重郎に任された。\r
++# 幣原は濱口首相代理時に「立憲民政党員でない」ことを理由に批判されたのにまたしても立憲民政党の首相の後を務めることに否定的であったが、\r
++# 大命降下にあたり昭和天皇から直接説得を受け、組閣を引き受けた。\r
++# 大命降下は天皇からは意見を口にせずに組閣を命じるのが慣例であったから、これは本当に珍しいことであった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 25200103\r
++	random = no\r
++	country = JAP\r
++	\r
++	trigger = {\r
++	event = 25200101 # 町田戦後内閣\r
++	headofgovernment = 50405 # 町田忠治\r
++	}\r
++\r
++	name = "EVT_25200103_NAME"\r
++	desc = "EVT_25200103_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 7 year = 1946 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 幣原喜重郎に組閣の大命を下す\r
++	name = "ACTIONNAME25200103A"\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = sleepminister which = 50004 } # 町田忠治\r
++	command = { type = sleepminister which = 50111 }\r
++	command = { type = sleepminister which = 50405 }\r
++	command = { type = sleepminister which = 50558 }\r
++	command = { type = headofstate which = 50001 } # 昭和天皇\r
++	command = { type = headofgovernment which = 50028 } # 幣原喜重郞\r
++	command = { type = foreignminister which = 50038 } # 吉田茂\r
++	command = { type = armamentminister which = 50336 } # 池田成彬\r
++	command = { type = ministerofsecurity which = 50416 } # 鳩山一郎\r
++	command = { type = ministerofintelligence which = 50417 } # 植原悦二郎\r
++	command = { type = chiefofstaff which = 50126 } # 中澤佑\r
++	command = { type = chiefofarmy which = 50719 } # 長村河鹿\r
++	command = { type = chiefofnavy which = 50145 } # 河合明\r
++	command = { type = chiefofair which = 50151 } # 福井義男\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  アメリカとの和平交渉\r
++# 中国に敗北した日本にとって、アメリカとの戦争は最初から敗北が決まっている戦いであった。\r
++# 大陸における領土を完全に失陥していた日本には最早資源の入手先も、例え入手したとしてもそれを輸送する方法も失われつつあった。\r
++# 陸軍の一部は、未だ米国に対して対抗することが出来るなどと言う意見もあったが、当然それは徒に血を流すだけのものであることは誰の目にも明らかであった。\r
++# もはや短期戦の希望も完全に失われており、ならば本土が本格的に侵攻される前にアメリカとの講和を求めることが、せめて国家の未来の為になるというのが政府の考えであった。\r
++# 皮肉にも連合国が求めている中国大陸の領土返還、朝鮮の独立は既に達せられており、降伏に至る条件は完成されているのであった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 25200104\r
++	random = no\r
++	country = JAP\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	event = 25200101 # 町田戦後内閣\r
++	OR = {\r
++	NOT = { \r
++	ispuppet = JAP\r
++	carrier = 4\r
++	battleship = 4\r
++	lost_national = { country = USA value = 2 }\r
++	}\r
++	lost_national = { country = JAP value = 10 }\r
++	}\r
++	war = { country = USA country = JAP }\r
++	random = 60\r
++	}\r
++\r
++	name = "EVT_25200104_NAME"\r
++	desc = "EVT_25200104_DESC"\r
++	style = 2\r
++ 	picture = "negotiaton"\r
++\r
++	date = { day = 0 month = 11 year = 1943 }\r
++	offset = 14\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++	\r
++	action = { # 議論の余地はない。降伏交渉を打診しよう\r
++	name = "ACTIONNAME25200104A"\r
++	command = { type = dissent value = 10 }\r
++	ai_chance = 95\r
++	}\r
++\r
++	action = { # まだ希望は失われていない\r
++	name = "ACTIONNAME25200104B"\r
++	command = { type = sleepevent which = 25200105 } # 町田首相、兇弾に斃る\r
++	command = { type = sleepevent which = 25200106 } # 幣原首相、兇弾に斃る\r
++	command = { type = sleepevent which = 25200107 } # アメリカの回答\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  町田首相、兇弾に斃る\r
++# 政府が降伏のために調整を進めているという報道が一部新聞でなされると、陸軍省では大きな騒ぎが発生した。\r
++# 陸軍省は連合国への降伏は日本国が彼らへ「隷属」することを示しており、\r
++# なれば彼らの立場や国体護持の保証はないものであるから降伏はまだすべきでないという考えであった。\r
++# 現在軍部に外交に関する主導権はろくに残っておらず、陸軍大臣・参謀総長の意見は殆ど差し挟む余地もなく主に首相・外務大臣のもとで降伏は決定されたのだが、\r
++# 当然血気盛んな将校たちの中にはこれを不服とするものも少なくなかった。\r
++# そのような情勢の中、事件は起こった。\r
++# 陸軍の佐々木武雄大尉が「国民神風隊」を名乗り20名ほどの継戦派の人間とともに首相官邸を襲撃し、\r
++# ちょうど官邸から出ようとしていた町田忠治首相を持ち込んでいた拳銃で銃撃したのだ。\r
++# 佐々木以下犯行グループはその場で憲兵により逮捕されたものの、至近距離から複数の銃撃を受けた首相はその日のうちに息を引き取った。\r
++# これにより、日本の講和に向けた動きはあと一歩というところで頓挫したのであった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 25200105\r
++	random = no\r
++	country = JAP\r
++	trigger = {\r
++	event = 25200104 # アメリカとの和平交渉\r
++	NOT = { \r
++	event = { id = 25200104 days = 14 } # アメリカとの和平交渉\r
++	event = 25200103 # 町田忠治の引退\r
++	}\r
++	headofgovernment = 50405 # 町田忠治\r
++	random = 25\r
++	}\r
++\r
++	name = "EVT_25200105_NAME"\r
++	desc = "EVT_25200105_DESC"\r
++	style = 2\r
++	picture = "226_Coup"\r
++\r
++	date = { day = 0 month = 11 year = 1943 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++	\r
++	action = { # なんということだ！\r
++	name = "ACTIONNAME25200105A"\r
++	command = { type = dissent value = 8 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = sleepminister which = 50004 } # 町田忠治\r
++	command = { type = sleepminister which = 50111 }\r
++	command = { type = sleepminister which = 50405 }\r
++	command = { type = sleepminister which = 50558 }\r
++	command = { type = headofstate which = 50001 } # 昭和天皇\r
++	command = { type = headofgovernment which = 50028 } # 幣原喜重郞\r
++	command = { type = sleepevent which = 25200106 } # 幣原首相、兇弾に斃る\r
++	command = { type = sleepevent which = 25200107 } # アメリカの回答\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  幣原首相、兇弾に斃る\r
++# 政府が降伏のために調整を進めているという報道が一部新聞でなされると、陸軍省では大きな騒ぎが発生した。\r
++# 陸軍省は連合国への降伏は日本国が彼らへ「隷属」することを示しており、\r
++# なれば彼らの立場や国体護持の保証はないものであるから降伏はまだすべきでないという考えであった。\r
++# 現在軍部に外交に関する主導権はろくに残っておらず、陸軍大臣・参謀総長の意見は殆ど差し挟む余地もなく主に首相・外務大臣のもとで降伏は決定されたのだが、\r
++# 当然血気盛んな将校たちの中にはこれを不服とするものも少なくなかった。\r
++# そのような情勢の中、事件は起こった。\r
++# 陸軍の佐々木武雄大尉が「国民神風隊」を名乗り20名ほどの継戦派の人間とともに首相官邸を襲撃し、\r
++# ちょうど官邸から出ようとしていた幣原喜重郎首相を持ち込んでいた拳銃で銃撃したのだ。\r
++# 佐々木以下犯行グループはその場で憲兵により逮捕されたものの、至近距離から複数の銃撃を受けた首相はその日のうちに息を引き取った。\r
++# これにより、日本の講和に向けた動きはあと一歩というところで頓挫したのであった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 25200106\r
++	random = no\r
++	country = JAP\r
++\r
++	trigger = {\r
++	event = 25200103 # 町田忠治の引退\r
++	event = 25200104 # アメリカとの和平交渉\r
++	NOT = { \r
++	event = { id = 25200104 days = 14 } # アメリカとの和平交渉\r
++	}\r
++	headofgovernment = 50028 # 幣原喜重郞\r
++	random = 5\r
++	}\r
++	\r
++	name = "EVT_25200106_NAME"\r
++	desc = "EVT_25200106_DESC"\r
++	style = 2\r
++	picture = "226_Coup"\r
++\r
++	date = { day = 0 month = 7 year = 1946 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # なんということだ！\r
++	name = "ACTIONNAME25200106A"\r
++	command = { type = dissent value = 8 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = sleepminister which = 50028 } # 幣原喜重郞\r
++	command = { type = sleepminister which = 50058 }\r
++	command = { type = sleepminister which = 50257 }\r
++	command = { type = headofstate which = 50001 } # 昭和天皇\r
++	command = { type = headofgovernment which = 50432 } # 三木武吉\r
++	command = { type = sleepevent which = 25200105 } # 町田首相、兇弾に斃る\r
++	command = { type = sleepevent which = 25200107 } # アメリカの回答\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本が講和を求める\r
++# 中国での敗戦は、日本から戦争を遂行する能力を完全に奪い去っていた。\r
++# そして今日、日本から降伏を乞う使者が到着した。\r
++# こちらの提示していた無条件降伏を彼らは呑むというのだから、我が国としてはこれを断る理由はあるまい。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 25200107\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	event = { id = 25200104 days = 14 } # アメリカとの和平交渉\r
++	war = { country = USA country = JAP }\r
++	}\r
++\r
++	name = "EVT_25200107_NAME"\r
++	desc = "EVT_25200107_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 11 year = 1943 }\r
++	offset = 14\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++	\r
++	action = { # 大変結構！\r
++	name = "ACTION_NAME_EXCELLENT"\r
++	command = { type = dissent value = -3 }\r
++	}\r
+ }
+\ No newline at end of file

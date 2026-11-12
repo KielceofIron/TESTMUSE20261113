@@ -1,0 +1,144 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Soviet_Union_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Soviet_Union_events.txt [cp932]
+@@ -340,7 +340,6 @@ event = {
+ 	command = { trigger = { war = { country = U14 } } type = peace which = U14 value = 0 }\r
+ 	command = { trigger = { war = { country = ISR } } type = peace which = ISR value = 0 }\r
+ 	command = { trigger = { war = { country = SAF } } type = peace which = SAF value = 0 }\r
+-	command = {  }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -963,3 +962,133 @@ event = {
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
++\r
++\r
++#########################################################################\r
++#  アメリカ内戦の終結（U00優勢）\r
++# 大英帝国の降伏に伴い、『新大陸の統一』を目標とする\r
++# アメリカ共産主義共和国の優勢で推移しつつあった北米戦争（英側名称：「英領北アメリカ内戦」）は終結し、\r
++# 独米両政府の協議の結果、カナダは独領ザンクト・ペーター・ミヒャエル島にほど近い\r
++# ニューファンドランド州をドイツに割譲し、残りの地域をアメリカ革命政府の領土とすることとなった。\r
++########################################################################\r
++event = {\r
++	id = 1299717\r
++	random = no	\r
++	country = GER\r
++	\r
++	trigger = {\r
++	flag = CAN_ACW\r
++	exists = CAN\r
++	NOT = { exists = CSA }\r
++	NOT = { exists = USA }\r
++	exists = U00\r
++	}\r
++	\r
++	name = EVT_1299717_NAME\r
++	desc = EVT_1299717_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 14\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME1299717A"\r
++	command = { trigger = { control = { province = 2136 data = CAN } } type = secedeprovince which = GER value = 2136 when = 2 }\r
++	command = { trigger = { control = { province = 2137 data = CAN } } type = secedeprovince which = GER value = 2137 when = 2 }\r
++	command = { trigger = { control = { province = 2138 data = CAN } } type = secedeprovince which = GER value = 2138 when = 2 }\r
++	command = { type = addclaim which = 2136 }\r
++	command = { type = addclaim which = 2137 }\r
++	command = { type = addclaim which = 2138 }\r
++	command = { type = non_aggression which = GER where = U00 when = 360 }\r
++	command = { type = non_aggression which = UB8 where = U00 when = 360 }\r
++	command = { type = non_aggression which = FRA where = U00 when = 360 }\r
++	command = { type = non_aggression which = RUS where = U00 when = 360 }\r
++	command = { type = relation which = U00 value = 20 }\r
++	command = { type = event which = 1299718 when = 0 where = U00 }\r
++	ai_chance = 100\r
++	}\r
++}	\r
++\r
++event = {\r
++	id = 1299718\r
++	random = no	\r
++	country = U00\r
++	\r
++	\r
++	name = EVT_1299717_NAME\r
++	desc = EVT_1299717_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME1299717A"\r
++	command = { trigger = { puppet = { country = CAN country = IRE } } type = inherit which = CAN }\r
++	command = { trigger = { puppet = { country = CAN country = GER } } type = inherit which = CAN }\r
++	command = { type = secedearea which = GER value = "New Foundland" when = 1 }\r
++	command = { type = add_claim_area which = "New Foundland" where = GER }\r
++	command = { trigger = { war = { country = GER } } type = peace which = GER value = 0 }\r
++	ai_chance = 100\r
++	}\r
++}	\r
++\r
++\r
++##########################################################################\r
++#  独ソ戦\r
++# \r
++# \r
++# \r
++# \r
++# \r
++###########################################################################\r
++\r
++\r
++\r
++\r
++\r
++event = {\r
++	id = 1299719\r
++	random = no	\r
++	country = U00\r
++	\r
++	decision = {\r
++	event = 1299714\r
++	event = 1299717\r
++	}\r
++	decision_trigger = {\r
++	event = 1299714\r
++	event = 1299717\r
++	\r
++	NOT = { alliance_leader = { country = U00 value = 3 }\r
++	}\r
++	trigger = {\r
++	event = 1299714\r
++	event = 1299717\r
++	NOT = { alliance_leader = { country = U00 value = 3 }\r
++	}\r
++	\r
++	name = EVT_1299719_NAME\r
++	#desc = EVT_1299719_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME1299717A"\r
++	command = { type = war which = GER } \r
++	ai_chance = 100\r
++	}\r
++}	\r
++\r
++\r
++\r
++\r
++\r
++\r
++\r
++\r

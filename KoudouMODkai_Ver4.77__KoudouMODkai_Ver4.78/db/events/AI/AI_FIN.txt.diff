@@ -1,0 +1,47 @@
+--- A/db/events/AI/AI_FIN.txt [ascii]
++++ B/db/events/AI/AI_FIN.txt [ascii]
+@@ -31,7 +31,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_setflag which = FINHomeland }\r
+ 		command = { type = local_clrflag which = FINNormal }\r
+-		command = { type = ai which = "switch/FIN_Homeland.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FIN_Homeland.ai" }\r
+ 	}\r
+ }\r
+ event = { \r
+@@ -59,7 +59,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = FINHomeland }\r
+ 		command = { type = local_setflag which = FINNormal }\r
+-		command = { type = ai which = "switch/FIN_Normal.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FIN_Normal.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -95,11 +95,11 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = alliance which = GER when = 1 }\r
+-		command = { type = ai which = "switch/FIN_Russia.ai" }\r
+-		command = { type = ai which = "Air_Ground.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FIN_Russia.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 		command = { type = local_setflag which = FINHomeland }\r
+ 		command = { type = local_clrflag which = FINNormal }\r
+-		command = { type = ai which = "switch/FIN_Homeland.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FIN_Homeland.ai" }\r
+ 		command = { trigger = { NOT = { local_flag = MOB8 } NOT = { local_flag = demob } } type = local_setflag which = do_not_demob }\r
+ 		command = { trigger = { NOT = { local_flag = MOB8 } NOT = { local_flag = demob } } type = trigger which = 8300108 } #General Mobilization\r
+ 		command = { trigger = { NOT = { local_flag = MOB8 } NOT = { local_flag = demob } } type = event which = 130309 where = FIN when = 360 }		\r
+@@ -127,9 +127,9 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = { \r
+-		command = { type = ai which = "switch/Neutrality_Change.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/Neutrality_Change.ai" }\r
+ 		command = { type = local_setflag which = FINHomeland }\r
+ 		command = { type = local_clrflag which = FINNormal }\r
+-		command = { type = ai which = "switch/FIN_Homeland.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FIN_Homeland.ai" }\r
+ 	}\r
+ }\r

@@ -1,0 +1,1505 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Korea_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Korea_events.txt [cp932]
+@@ -95,6 +95,10 @@
+ #id = 6858089 朝鮮の秘密兵器\r
+ #id = 6858090 朝鮮の秘密兵器 ― 計画の進展\r
+ #id = 6858091 朝鮮の秘密兵器 ― 計画達成\r
++#id = 6858092 朝鮮民族主義歴史学\r
++#id = 6858093 花郎の創設\r
++#id = 6858094 三・一運動15周年記念日 \r
++#id = 6858095 無政府主義者のクーデター\r
+ #朝鮮内戦ルート\r
+ #id = 6858101 朝鮮内戦\r
+ #id = 6858102 朝鮮人民の蜂起\r
+@@ -134,17 +138,15 @@
+ #id = 6858207 朝鮮との交渉\r
+ #id = 6858208 朝鮮の降伏\r
+ #id = 6858209 大朝鮮の成立\r
+-#和平イベント\r
+-#id = 6858301 日本への和平提案\r
+-#id = 6858302 朝鮮が和平を提案\r
+-#id = 6858303 日本が和平提案承諾\r
+-#id = 6858304 日本が和平提案拒否\r
+-#id = 6858305 朝鮮への和平提案\r
+-#id = 6858306 日本が和平を提案\r
+-#id = 6858307 朝鮮の屈伏\r
+-#id = 6858308 朝鮮が要求を拒否\r
+-#id = 6858309 朝鮮との白紙和平\r
+-#id = 6858310 日本が白紙和平を提案\r
++#選挙イベント\r
++#id = 6858301 選挙（1935年）\r
++#id = 6858302 選挙（1939年）\r
++#id = 6858303 選挙（1943年）\r
++#id = 6858304 選挙（1947年）\r
++#id = 6858305 選挙（1951年）\r
++#id = 6858306 選挙（1955年）\r
++#id = 6858307 選挙（1959年）\r
++#id = 6858308 選挙（1963年）\r
+ #########################################################################\r
+ #  失墜した大韓帝国の権威\r
+ # 時代遅れの専制君主制を事実上採用している朝鮮の政治体制は、外交的揺動と内政の失敗を前にして砂上の楼閣と化している。\r
+@@ -344,7 +346,7 @@ event = {
+ 	name = "ACTIONNAME6858006A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = name where = KOR which = "KOR_IF1" }\r
+-	command = { type = flag_ext where = KOR which = "_9" }\r
++	command = { type = flag_ext where = KOR which = "_3" }\r
+ 	command = { type = set_domestic which = democratic value = 8 } \r
+ 	command = { type = set_domestic which = political_left value = 6 }\r
+ 	command = { type = set_domestic which = freedom value = 7 }\r
+@@ -376,6 +378,7 @@ event = {
+ 	id = 6858007\r
+ 	random = no\r
+ 	country = KOR\r
++	save_date = yes\r
+ \r
+ 	name = "EVT_6858007_NAME" \r
+ 	desc = "EVT_6858007_DESC"\r
+@@ -386,20 +389,22 @@ event = {
+ 	name = "ACTIONNAME6858007A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = name where = KOR which = "KOR_IF2" }\r
+-	command = { type = flag_ext where = KOR which = "_8" }\r
++	command = { type = flag_ext where = KOR which = "_NS" }\r
+ 	command = { type = set_domestic which = democratic value = 1 } \r
+ 	command = { type = set_domestic which = political_left value = 1 }\r
+ 	command = { type = set_domestic which = freedom value = 1 }\r
+ 	command = { type = headofstate which = 265401 } # 申采浩（シン・チェホ）\r
+-	command = { type = headofgovernment which = 265198 } # 白斗鎮（ペク・ドゥジン）\r
+-	command = { type = foreignminister which = 265403 } # 申采浩（シン・チェホ）\r
+-	command = { type = armamentminister which = 265200 } # 愼重穆（シン・ジュンモク）\r
+-	command = { type = ministerofsecurity which = 265201 } # 李淳鎔（イ・スンヨン）\r
+-	command = { type = ministerofintelligence which = 265202 } # 元容徳（ウォン・ヨンドク）\r
+-	command = { type = chiefofstaff which = 265203 } # 李俊植（イ・ジュンシク）\r
+-	command = { type = chiefofarmy which = 265204 } # 李範セキ（イ・ボムソク）\r
++	command = { type = headofgovernment which = 265405 } # 安重根（アン・ジュングン）\r
++	command = { type = foreignminister which = 265407 } # 柳寛順（ユ・グァンスン）\r
++	command = { type = armamentminister which = 265408 } # 趙明河（チョ・ミョンハ）\r
++	command = { type = ministerofsecurity which = 265409 } # 尹奉吉（ユン・ポンギル）\r
++	command = { type = ministerofintelligence which = 265410 } # 李奉昌（イ・ポンチャン）\r
++	command = { type = chiefofstaff which = 265411 } # 洪範図（ホン・ボムド）\r
++	command = { type = chiefofarmy which = 265412 } # 洪範図（ホン・ボムド）\r
+ 	command = { type = chiefofnavy which = 265205 } # 李範セキ（イ・ボムソク）\r
+ 	command = { type = chiefofair which = 265206 } # 盧泰俊（ノ・テジュン）\r
++	command = { type = wakeleader which = 265301 } # 洪範図（ホン・ボムド）\r
++	command = { type = waketeam which = 265104 } # 洪範図（ホン・ボムド）\r
+ 	command = { type = local_setflag which = Korea_civiwar when = 1 value = 2 }\r
+ 	}	\r
+ }\r
+@@ -1028,7 +1033,7 @@ event = {
+ 	local_flag = Confucianism_GVMT\r
+ 	local_flag = Confucianism_STATE\r
+ 	}\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	NOT = { government = communist }\r
+ 	random = 3\r
+ 	}\r
+@@ -1418,8 +1423,8 @@ event = {
+ 	decision = {\r
+ 	event = 6858004 # 朝鮮政変\r
+ 	and = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	}\r
+ \r
+@@ -1442,8 +1447,8 @@ event = {
+ 	trigger = {\r
+ 	event = { id = 6858004 days = 720 } # 朝鮮政変\r
+ 	and = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	OR = {\r
+ 	and = {\r
+@@ -1583,8 +1588,8 @@ event = {
+ 	decision = {\r
+ 	event = 6858004 # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	NOT = { dissent = 20 }\r
+ 	}\r
+@@ -1592,8 +1597,8 @@ event = {
+ 	decision_trigger = {\r
+ 	event = 6858004 # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	OR = {\r
+ 	NOT = { war = { country = KOR country = USA } }\r
+@@ -1605,8 +1610,8 @@ event = {
+ 	trigger = {\r
+ 	event = 6858004 # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	OR = {\r
+ 	NOT = { war = { country = KOR country = USA } }\r
+@@ -1815,18 +1820,18 @@ event = {
+ 	country = KOR\r
+ \r
+ 	decision = {\r
+-	event = { id = 6858004 days = 300 } # 朝鮮政変\r
++	event = { id = 6858004 days = 180 } # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = { id = 6858004 days = 360 } # 朝鮮政変\r
++	event = { id = 6858004 days = 180 } # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	OR = {\r
+ 	event = 6858005 # 朝鮮政変 ― 新たな皇帝\r
+@@ -1839,10 +1844,10 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 6858004 days = 360 } # 朝鮮政変\r
++	event = { id = 6858004 days = 180 } # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	OR = {\r
+ 	event = 6858005 # 朝鮮政変 ― 新たな皇帝\r
+@@ -1925,8 +1930,8 @@ event = {
+ 	trigger = {\r
+ 	event = { id = 6858004 days = 360 } # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	NOT = { ispuppet = KOR }\r
+ 	atwar = no\r
+@@ -1943,6 +1948,9 @@ event = {
+ \r
+ 	action = { # アメリカの遺産を活用し、大規模な工業化を推し進める\r
+ 	name = "ACTIONNAME6858038A"\r
++	trigger = {\r
++	NOT = { event = 6858095 } # 朝鮮政変\r
++	}\r
+ 	command = { trigger = { ai = no } type = dissent value = 5  }\r
+ 	command = { trigger = { ai = yes } type = dissent value = 2  }\r
+ 	command = { type = peacetime_ic_mod value = 10 }\r
+@@ -1980,7 +1988,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+-	command = { type = local_setflag which = Korea_Military_Economy }\r
++	command = { type = setflag which = KOR_MIE }\r
+ 	command = { type = local_setflag which = Korea_civiwar when = 1 value = -1 }\r
+ 	ai_chance = 30\r
+ 	}\r
+@@ -2000,6 +2008,20 @@ event = {
+ 	command = { type = local_setflag which = Korea_civiwar when = 1 value = -2 }\r
+ 	ai_chance = 40\r
+ 	}\r
++\r
++	action = { # 経済の自由は、政府の専制主義から解放された\r
++	name = "ACTIONNAME6858038D"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = peacetime_ic_mod value = 10 }\r
++	command = { type = wartime_ic_mod value = 10 }\r
++	command = { type = set_domestic which = free_market value = 10 }\r
++	command = { type = setflag which = KOR_ANA }\r
++	command = { type = clrflag which = KOR_IND }\r
++	command = { type = clrflag which = KOR_MIE }\r
++	command = { type = clrflag which = KOR_AGR }\r
++	command = { type = local_setflag which = Korea_civiwar when = 1 value = -2 }\r
++	ai_chance = 40\r
++	}\r
+ }\r
+ \r
+ #########################################################################\r
+@@ -2031,8 +2053,8 @@ event = {
+ 	action_a = { # アメリカ人の好き勝手も役に立つことがあるのだな\r
+ 	name = "ACTIONNAME6858039A"\r
+ 	command = { type = industrial_modifier which = total value = 2 }\r
+-	command = { type = construct which = ic where = 1228 value = 2 } # 京城（ソウル）\r
+-	command = { type = construct which = infrastructure where = 1228 value = 10 } # 京城（ソウル）\r
++	command = { type = construct which = ic where = 1228 value = 2 } # 漢城（ハンソン）\r
++	command = { type = construct which = infrastructure where = 1228 value = 10 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = 1222 value = 10 } # 沙里院（サリウォン）\r
+ 	command = { type = construct which = infrastructure where = 1229 value = 10 } # 大田（テジョン）\r
+ 	command = { type = supplies value = -400  }\r
+@@ -2198,11 +2220,11 @@ event = {
+ 	command = { type = industrial_modifier which = total value = 2 }\r
+ 	command = { type = construct which = ic where = 1221 value = 1 } # 平壌（ピョンヤン）\r
+ 	command = { type = construct which = ic where = 1227 value = 1 } # 咸興（ハムフン）\r
+-	command = { type = construct which = ic where = 1228 value = 1 } # 京城（ソウル）\r
++	command = { type = construct which = ic where = 1228 value = 1 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = ic where = 1232 value = 1 } # 釜山（プサン）\r
+ 	command = { type = construct which = infrastructure where = 1221 value = 10 } # 平壌（ピョンヤン）\r
+ 	command = { type = construct which = infrastructure where = 1227 value = 10 } # 咸興（ハムフン）\r
+-	command = { type = construct which = infrastructure where = 1228 value = 10 } # 京城（ソウル）\r
++	command = { type = construct which = infrastructure where = 1228 value = 10 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = 1232 value = 10 } # 釜山（プサン）\r
+ 	command = { type = supplies value = -600  }\r
+ 	command = { type = local_setflag which = Korea_civiwar when = 1 value = -1 }\r
+@@ -2284,7 +2306,7 @@ event = {
+ 	name = "ACTIONNAME6858045A"\r
+ 	command = { type = industrial_modifier which = total value = 2 }\r
+ 	command = { type = industrial_modifier which = supplies value = 2 }\r
+-	command = { type = construct which = ic where = 1228 value = 1 } # 京城（ソウル）\r
++	command = { type = construct which = ic where = 1228 value = 1 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+@@ -2326,7 +2348,7 @@ event = {
+ 	name = "ACTIONNAME6858046A"\r
+ 	command = { type = industrial_modifier which = total value = 2 }\r
+ 	command = { type = industrial_modifier which = supplies value = 2 }\r
+-	command = { type = construct which = ic where = 1228 value = 1 } # 京城（ソウル）\r
++	command = { type = construct which = ic where = 1228 value = 1 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+@@ -2443,8 +2465,8 @@ event = {
+ 	event = 6858037 # 朝鮮経済の再建\r
+ 	event = 6858038 # 国家経済の未来\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	}\r
+ \r
+@@ -2452,8 +2474,8 @@ event = {
+ 	event = { id = 6858037 days = 360 } # 朝鮮政変\r
+ 	event = { id = 6858038 days = 360 } # 国家経済の未来\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	supplies = 3000\r
+ 	money = 500\r
+@@ -2464,8 +2486,8 @@ event = {
+ 	trigger = {\r
+ 	event = { id = 6858004 days = 360 } # 朝鮮政変\r
+ 	AND = {\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	control = { province = 1228 data = KOR } # 漢城（ハンソン）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	}\r
+ 	OR = {\r
+ 	event = 6858005 # 朝鮮政変 ― 新たな皇帝\r
+@@ -2523,7 +2545,7 @@ event = {
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = industrial_modifier which = total value = 5 }\r
+ 	command = { type = construct which = ic where = 1221 value = 2 } # 平壌（ピョンヤン）\r
+-	command = { type = construct which = ic where = 1228 value = 2 } # 京城（ソウル）\r
++	command = { type = construct which = ic where = 1228 value = 2 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = 1212 value = 10 } # 延吉（イェンジー）\r
+ 	command = { type = construct which = infrastructure where = 1221 value = 10 } # 平壌（ピョンヤン）\r
+ 	command = { type = construct which = infrastructure where = 1222 value = 10 } # 沙里院（サリウォン）\r
+@@ -2532,7 +2554,7 @@ event = {
+ 	command = { type = construct which = infrastructure where = 1225 value = 10 } # 清津（チョンジン）\r
+ 	command = { type = construct which = infrastructure where = 1226 value = 10 } # 江界（カンゲ）\r
+ 	command = { type = construct which = infrastructure where = 1227 value = 10 } # 咸興（ハムフン）\r
+-	command = { type = construct which = infrastructure where = 1228 value = 10 } # 京城（ソウル）\r
++	command = { type = construct which = infrastructure where = 1228 value = 10 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = 1229 value = 10 } # 大田（テジョン）\r
+ 	command = { type = construct which = infrastructure where = 1230 value = 10 } # 光洲（コワンチュ）\r
+ 	command = { type = construct which = infrastructure where = 1231 value = 10 } # 大邱（テグ）\r
+@@ -3573,7 +3595,11 @@ event = {
+ 	event = 6858048 # 農業の拡大（第5段階）\r
+ 	AND = {\r
+ 	event = { id = 6858038 days = 1800 } # 国家経済の未来で1800日以上経過\r
+-	local_flag = Korea_Military_Economy # 軍事経済を選択\r
++	flag = KOR_MIE # 軍事経済を選択\r
++	}\r
++	AND = {\r
++	event = { id = 6858038 days = 1800 } # 国家経済の未来で1800日以上経過\r
++	flag = KOR_ANA # アナキズム経済を選択\r
+ 	}\r
+ 	}\r
+ 	NOT = { event = 6858101 } # 朝鮮内戦\r
+@@ -3595,9 +3621,9 @@ event = {
+ 	command = { type = peacetime_ic_mod value = 10 }\r
+ 	command = { type = wartime_ic_mod value = 10 }\r
+ 	command = { type = construct which = ic where = 1221 value = 2 } # 平壌（ピョンヤン）\r
+-	command = { type = construct which = ic where = 1228 value = 2 } # 京城（ソウル）\r
++	command = { type = construct which = ic where = 1228 value = 2 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = 1221 value = 10 } # 平壌（ピョンヤン）\r
+-	command = { type = construct which = infrastructure where = 1228 value = 10 } # 京城（ソウル）\r
++	command = { type = construct which = infrastructure where = 1228 value = 10 } # 漢城（ハンソン）\r
+ 	command = { type = construct which = infrastructure where = 1232 value = 10 } # 釜山（プサン）\r
+ 	command = { type = add_prov_resource which = 1221 value = 5 where = energy } # 平壌（ピョンヤン）\r
+ 	command = { type = add_prov_resource which = 1231 value = 3 where = energy } # 大邱（テグ）\r
+@@ -4321,7 +4347,7 @@ event = {
+ 	decision = {\r
+ 	region = { region = "Korea" country = KOR data = 1 value = 50 }\r
+ 	owned = { province = 1221 data = -1 } # 平壌（ピョンヤン）\r
+-	owned = { province = 1228 data = -1 } # 京城（ソウル）\r
++	owned = { province = 1228 data = -1 } # 漢城（ハンソン）\r
+ 	owned = { province = 1223 data = -1 } # 元山（ウォンサン）\r
+ 	NOT = { ispuppet = KOR }\r
+ 	}\r
+@@ -4329,7 +4355,7 @@ event = {
+ 	decision_trigger = {\r
+ 	region = { region = "Korea" country = KOR data = 1 value = 50 }\r
+ 	owned = { province = 1221 data = -1 } # 平壌（ピョンヤン）\r
+-	owned = { province = 1228 data = -1 } # 京城（ソウル）\r
++	owned = { province = 1228 data = -1 } # 漢城（ハンソン）\r
+ 	owned = { province = 1223 data = -1 } # 元山（ウォンサン）\r
+ 	NOT = { ispuppet = KOR }\r
+ 	money = 5000 \r
+@@ -4338,7 +4364,7 @@ event = {
+ 	trigger = {\r
+ 	region = { region = "Korea" country = KOR data = 1 value = 50 }\r
+ 	owned = { province = 1221 data = -1 } # 平壌（ピョンヤン）\r
+-	owned = { province = 1228 data = -1 } # 京城（ソウル）\r
++	owned = { province = 1228 data = -1 } # 漢城（ハンソン）\r
+ 	owned = { province = 1223 data = -1 } # 元山（ウォンサン）\r
+ 	NOT = { ispuppet = KOR }\r
+ 	OR = {\r
+@@ -4476,6 +4502,220 @@ event = {
+ 	command = { type = activate_division which = 9064 value = 9004 where = 1228 when = 0 }\r
+ 	}\r
+ }\r
++\r
++#########################################################################\r
++#  朝鮮民族主義歴史学\r
++# 申采浩の新政府は政権奪取後、国内外に向けて純血主義的な民族運動を強調し、国家と民族に劇的な変化が生じた。\r
++# 朝鮮民族は伝説上の王である壇君を人種的な祖神とする純血の民族であり、純正さは朝鮮民族の誇りであると喧伝され、\r
++# 朝鮮民族と朝鮮文化の優位性が学校教育やプロパガンダを通じて強調された。\r
++# この運動は、一部の知識人たちの間で、ドイツのアーリア人学説との関連を感じさせており、不穏な民族主義によって社会が歪むことを懸念している。\r
++# （史実において、申采浩は日本の支配から朝鮮の独立を達成するために、\r
++# 民族意識を育成する目的で朝鮮の歴史を民族主義的な歴史観に基づいて研究していた。\r
++# この民族主義学は、北朝鮮と韓国の両方の歴史学に大きな影響を与えている）\r
++#########################################################################\r
++\r
++event = { \r
++	id = 6858092\r
++	random = no\r
++	country = KOR\r
++\r
++	decision = {\r
++	event = 6858007 # 朝鮮政変 ― 首都進軍\r
++	headofstate = 265401 # 申采浩（シン・チェホ）\r
++	ideology = nazi\r
++	}\r
++\r
++	decision_trigger = { \r
++	event = { id = 6858007 days = 180 } # 朝鮮政変 ― 首都進軍\r
++	money = 150\r
++	headofstate = 265401 # 申采浩（シン・チェホ）\r
++	ideology = nazi\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 6858007 days = 180 } # 朝鮮政変 ― 首都進軍\r
++	headofstate = 265401 # 申采浩（シン・チェホ）\r
++	}\r
++	\r
++	name = "EVT_6858092_NAME"\r
++	desc = "EVT_6858092_DESC"\r
++	style = 2\r
++	picture = "korea_independent"\r
++	decision_picture = "decision_fireside_chat"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action_a = { # 歴史とは我と非我の闘争である\r
++	name = "ACTIONNAME6858092A"\r
++	command = { trigger = { ai = no } type = money value = -150 }\r
++	command = { type = dissent value = -8 }\r
++	command = { type = belligerence which = KOR value = 5 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	ai_chance = 99\r
++	}\r
++\r
++	action_a = { # 超古代文明を再建するのだ\r
++	name = "ACTIONNAME6858092B"\r
++	command = { type = name where = KOR which = "KOR_HYP" }\r
++	command = { type = flag_ext where = KOR which = "_HYP" }\r
++	command = { trigger = { ai = no } type = money value = -150 }\r
++	command = { type = dissent value = -8 }\r
++	command = { type = belligerence which = KOR value = 8 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	ai_chance = 1\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  花郎の創設\r
++# 『花郎（英: Hwarang）』は、朝鮮で10世紀まで続いた軍事的訓練や精神修養、教育機関であった青少年団体である。\r
++# 花郎は、様々な芸術や文化を学び、宮廷に臣下や兵士として仕えたことが伝えられており、申采浩は花郎を高貴な武士団として賞賛していた。\r
++# 申采浩は新たな国民国家形成のために日本の武士道を連想させる花郎精神を創造し、\r
++# この精神を復活させるべく、朝鮮文化と武勇の頂点であった花郎を国家組織として新たに創設させた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858093\r
++	random = no\r
++	country = KOR\r
++\r
++	decision = {\r
++	event = 6858007 # 朝鮮政変 ― 首都進軍\r
++	headofstate = 265401 # 申采浩（シン・チェホ）\r
++	ideology = nazi\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = { id = 6858007 days = 240 } # 朝鮮政変 ― 首都進軍\r
++	headofstate = 265401 # 申采浩（シン・チェホ）\r
++	ideology = nazi\r
++	NOT = { dissent = 10 }\r
++	supplies = 1500\r
++	money = 300\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 6858007 days = 240 } # 朝鮮政変 ― 首都進軍\r
++	headofstate = 265401 # 申采浩（シン・チェホ）\r
++	ideology = nazi\r
++	NOT = { dissent = 10 }\r
++	}\r
++\r
++	name = "EVT_6858093_NAME"\r
++	desc = "EVT_6858093_DESC"\r
++	style = 2\r
++	picture = "SS_Infantry"\r
++	decision_picture = "decision_SS_Infantry"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 彼らこそ尚武精神の体現した者たちだ！\r
++	name = "ACTIONNAME6858093A"\r
++	command = { type = money value = -300 }\r
++	command = { type = supplies value = -1500 }\r
++	command = { type = money value = -300 }\r
++	command = { type = add_corps which = "武装花郎軍団" value = land when = 265301 where = 1228 }\r
++	command = { type = activate_division which = 9064 value = 304 where = 1228 when = 0 } # 第1武装花郎師団\r
++	command = { type = activate_division which = 9064 value = 305 where = 1228 when = 0 } # 第2武装花郎師団\r
++	command = { type = activate_division which = 9064 value = 306 where = 1228 when = 0 } # 第3武装花郎師団\r
++	ai_chance = 85\r
++	}\r
++\r
++	action = { # 新たな国家組織は必要ない\r
++	name = "ACTIONNAME6858093B"\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 15\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  三・一運動15周年記念日\r
++# 今日は、三・一運動から15周年という記念するべき日である。\r
++# 1919年に初代大韓帝国皇帝の高宗が崩御すると、首都に数千人の人々が一堂に集まり、自由と平等を求める市デモ行進を行った。\r
++# やがて朝鮮半島全体に運動が広がったことで、政府は議会開設を約束した。\r
++# この出来事は、朝鮮半島における民主主義の大きな転換となり、民衆はこの日を記念日として記憶することになったのである。\r
++# （史実において、1919年3月1日に日本に併合されていた朝鮮では、民族自決を求めるデモが起きている。\r
++# 現在の韓国において、この運動は肯定的に評価され、同日に現職の大統領が出席する記念式典が開かれるほどである）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858094\r
++	random = no\r
++	country = KOR\r
++\r
++	trigger = {\r
++	NOT = { ispuppet = KOR }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_6858094_NAME"\r
++	desc = "EVT_6858094_DESC"\r
++	style = 2\r
++	picture = "strike1"\r
++\r
++	date = { day = 0 month = 2 year = 1934 }\r
++\r
++	action = { # 記念日だ！\r
++	name = "ACTIONNAME6858094A"\r
++	command = { type = dissent value = -5  }\r
++	ai_chance = 99\r
++	}\r
++\r
++	action = { # 爆弾テロが起き、無政府主義者が蜂起する\r
++	name = "ACTIONNAME6858094B"\r
++	trigger = {\r
++	government = democratic\r
++	}\r
++	command = { type = event which = 6858095 where = KOR when = 0 }\r
++	command = { type = local_setflag which = Korea_civiwar when = 1 value = 5 }\r
++	ai_chance = 1\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  無政府主義者のクーデター\r
++# 3月1日の記念式典において無政府主義者は、半島全土で蜂起した。\r
++# 彼らの蜂起は、不満をためていた民衆が参加したこともあり、政府転覆の試みは成功し、無政府主義者の無秩序が築かれた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858095\r
++	random = no\r
++	country = KOR\r
++\r
++	name = "EVT_6858095_NAME"\r
++	desc = "EVT_6858095_DESC"\r
++	style = 2\r
++	picture = "strike1"\r
++\r
++	action = { # 無政府主義者が半島を掌握した\r
++	name = "ACTIONNAME6858095A"\r
++	command = { type = dissent value = -10 }\r
++	command = { type = name where = KOR which = "KOR_IF4" }\r
++	command = { type = flag_ext where = KOR which = "_Ana" }\r
++	command = { type = set_domestic which = democratic value = 6 } \r
++	command = { type = set_domestic which = political_left value = 10 }\r
++	command = { type = set_domestic which = freedom value = 10 }\r
++	command = { type = set_domestic which = free_market value = 10 }\r
++	command = { type = headofstate which = 265413 } # 李会榮（イ・フェヨン）\r
++	command = { type = headofgovernment which = 265414 } # 白貞基（ペク・チョンギ）\r
++	command = { type = foreignminister which = 265415 } # 元心昌（ユェン・シンチャン）\r
++	command = { type = armamentminister which = 265416 } # 呉冕稙（オ・ミィンヂー）\r
++	command = { type = ministerofsecurity which = 265417 } # 李康勲（イ・カンシュン）\r
++	command = { type = ministerofintelligence which = 265085 } # 朴烈（パク・ヨル）\r
++	command = { type = chiefofstaff which = 265086 } # 金擎天（キム・ギョンチョン）\r
++	command = { type = chiefofarmy which = 265420 } # 朴基成（パク・キソン）\r
++	command = { type = chiefofnavy which = 265421 } # 柳基石（リィウ・ジーシー）\r
++	command = { type = chiefofair which = 265422 } # 鄭華岩（ヂォン・ファイェン）\r
++	ai_chance = 100\r
++	}\r
++}\r
+ #########################################################################\r
+ #  朝鮮内戦ルート\r
+ #########################################################################\r
+@@ -4640,7 +4880,7 @@ event = {
+  \r
+ 	trigger = {\r
+ 	event = 6858101 # 朝鮮内戦\r
+-	owned = { province = 1228 data = KOR } # 京城（ソウル）\r
++	owned = { province = 1228 data = KOR } # 漢城（ハンソン）\r
+ 	owned = { province = 1221 data = KOR } # 平壌（ピョンヤン）\r
+ 	NOT = { \r
+ 	exists = PRK\r
+@@ -4672,7 +4912,7 @@ event = {
+ 	command = { type = remove_division which = "ソビエト第1義勇歩兵師団" value = KOR }\r
+ 	command = { type = remove_division which = "ソビエト第2義勇歩兵師団" value = KOR }\r
+ 	# プロヴィンス再編\r
+-	command = { type = capital which = 1228 } # 京城（ソウル）\r
++	command = { type = capital which = 1228 } # 漢城（ハンソン）\r
+ 	command = { type = province_keypoints which = 1221 value = -1 } # 朝鮮半島\r
+ 	command = { type = province_keypoints which = 1222 value = -1 }\r
+ 	command = { type = province_keypoints which = 1223 value = -1 }\r
+@@ -4702,7 +4942,7 @@ event = {
+  \r
+ 	trigger = {\r
+ 	event = 6858101 # 朝鮮内戦\r
+-	owned = { province = 1228 data = PRK } # 京城（ソウル）\r
++	owned = { province = 1228 data = PRK } # 漢城（ハンソン）\r
+ 	owned = { province = 1221 data = PRK } # 平壌（ピョンヤン）\r
+ 	NOT = { \r
+ 	exists = KOR\r
+@@ -6720,13 +6960,11 @@ event = {
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  和平イベント\r
+-#########################################################################\r
+-#  日本への和平提案\r
+-# 我が国は日本本土への侵攻を成功させ、破竹の進撃によって敵の重要な拠点を占領している。\r
+-# 今なら日本も我が国の和平勧告も受け入れることだろう。\r
+-#########################################################################\r
++##########################################################################\r
++#  選挙イベント\r
++##########################################################################\r
++#  選挙（1935年）\r
++###########################################################################\r
+ \r
+ event = {\r
+ 	id = 6858301\r
+@@ -6734,462 +6972,498 @@ event = {
+ 	country = KOR\r
+ \r
+ 	trigger = {\r
+-	war = { country = KOR country = JAP }\r
+-	OR = {\r
+-	control = { province = 1552 data = KOR } # 東京\r
+-	AND = {\r
+-	control = { province = 1553 data = KOR } # 大阪\r
+-	region = { region = "Japan" country = KOR data = 1 value = 40 }\r
+-	}\r
+-	AND = {\r
+-	control = { province = 1560 data = KOR } # 福岡\r
+-	region = { region = "Japan" country = KOR data = 1 value = 40 }\r
+-	}\r
+-	region = { region = "Japan" country = KOR data = 1 value = 60 }\r
+-	}\r
+ 	NOT = {\r
+-	ispuppet = KOR\r
+-	ispuppet = JAP\r
+-	alliance = { country = KOR country = ENG }\r
+-	alliance = { country = KOR country = FRA }\r
+-	alliance = { country = KOR country = USA }\r
+-	alliance = { country = KOR country = RUS }\r
+-	alliance = { country = KOR country = UER }\r
+-	alliance = { country = KOR country = SOV }\r
+-	alliance = { country = KOR country = GER }\r
+-	alliance = { country = KOR country = CHI }\r
+-	alliance = { country = KOR country = CHC }\r
+-	alliance = { country = KOR country = CYN }\r
+-	war = { country = JAP country = ENG }\r
+-	war = { country = JAP country = FRA }\r
+-	war = { country = JAP country = USA }\r
+-	war = { country = JAP country = RUS }\r
+-	war = { country = JAP country = UER }\r
+-	war = { country = JAP country = SOV }\r
+-	war = { country = JAP country = GER }\r
+-	war = { country = JAP country = CHI }\r
+-	war = { country = JAP country = CHC }\r
+-	war = { country = JAP country = CYN }\r
+-	}\r
+-	AND = {\r
+-	NOT = { lost_national = { country = KOR value = 20 } }\r
+-	control = { province = 1221 data = KOR } # 平壌（ピョンヤン）\r
+-	control = { province = 1228 data = KOR } # 京城（ソウル）\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
+ 	}\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
+ 	}\r
+ \r
+-	name = "EVT_6858301_NAME"\r
+-	desc = "EVT_6858301_DESC"\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "election_time"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	date = { day = 20 month = 3 year = 1935 }\r
+ \r
+-	action = { # 目標は達成された\r
+-	name = "ACTIONNAME6858301A"\r
+-	command = { type = addclaim which = 2787 } # 長崎\r
+-	command = { type = addclaim which = 2788 } # 佐賀\r
+-	command = { type = addclaim which = 1560 } # 福岡\r
+-	command = { type = addclaim which = 2779 } # 松江\r
+-	command = { type = addclaim which = 2780 } # 山口\r
+-	command = { type = addclaim which = 1556 } # 金澤\r
+-	command = { type = addclaim which = 2771 } # 福井\r
+-	command = { type = event which = 6858302 where = JAP when = 0 }\r
+-	ai_chance = 100\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265001 } # 呂運亨（ヨ・ウニョン）\r
++	command = { type = headofgovernment which = 265002 } # 安在鴻（アン・ジェホン）\r
++	command = { type = foreignminister which = 265003 } # 崔謹愚（チェ・グンウ）\r
++	command = { type = armamentminister which = 265004 } # 李奎甲（イ・ギュガプ）\r
++	command = { type = ministerofsecurity which = 265005 } # 權泰錫（グォン・テソク）\r
++	command = { type = ministerofintelligence which = 265006 } # 鄭志鉉（チョン・ジヒョン）\r
++	command = { type = chiefofstaff which = 265007 } # 張権（チャン・グワン）\r
++	command = { type = chiefofarmy which = 265008 } # 権泰錫（グォン・テソク）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265019 } # 李永茂（イ・ヨンム）\r
++	ai_chance = 75\r
+ 	}\r
+ \r
+-	action = { # 戦争を継続せよ\r
+-	name = "ACTIONNAME6858301B"\r
+-	command = { type = dissent value = 15 }\r
+-	ai_chance = 0\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265112 } # 宋鎭禹（ソン・ジヌ）\r
++	command = { type = headofgovernment which = 265113 } # 金性洙（キム・ソンス）\r
++	command = { type = foreignminister which = 265114 } # 許政（ホ・ジョン）\r
++	command = { type = armamentminister which = 265115 } # 金度演（キム・ドヨン）\r
++	command = { type = ministerofsecurity which = 265116 } # 白寬洙（ペク・グァンス）\r
++	command = { type = ministerofintelligence which = 265117 } # 申興雨（シン・フンウ）\r
++	command = { type = chiefofstaff which = 265118 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofarmy which = 265119 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
++	ai_chance = 25\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  朝鮮が和平を提案\r
+-# 我が国は朝鮮に大敗北を喫した。\r
+-# 本土が脅威に晒されており、暴動が日常となりつつある。\r
+-# これ以上の戦争を止めるためにも、敵の要求を受け入れるしかないだろう。\r
+-#########################################################################\r
++\r
++##########################################################################\r
++#  選挙（1939年）\r
++###########################################################################\r
+ \r
+ event = {\r
+ 	id = 6858302\r
+ 	random = no\r
+-	country = JAP\r
++	country = KOR\r
++\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
++	}\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
++	}\r
+ \r
+-	name = "EVT_6858302_NAME"\r
+-	desc = "EVT_6858302_DESC"\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "election_time"\r
+ \r
+-	action = { # 選択の余地はあるまい…\r
+-	name = "ACTIONNAME6858302A"\r
+-	command = { type = dissent value = 20 }\r
+-	#本国返還\r
+-	command = { type = secederegion which = KOR value = "KOR" when = 1 }\r
+-	#本土割譲\r
+-	command = { type = secedeprovince which = KOR value = 2790 when = 1 } # 対馬\r
+-	command = { type = secedeprovince which = KOR value = 2796 when = 1 } # 竹島\r
+-	command = { type = secedeprovince which = KOR value = 2787 when = 1 } # 長崎\r
+-	command = { type = secedeprovince which = KOR value = 2788 when = 1 } # 佐賀\r
+-	command = { type = secedeprovince which = KOR value = 1560 when = 1 } # 福岡\r
+-	command = { type = secedeprovince which = KOR value = 2779 when = 1 } # 松江\r
+-	command = { type = secedeprovince which = KOR value = 2780 when = 1 } # 山口\r
+-	command = { type = secedeprovince which = KOR value = 1556 when = 1 } # 金澤\r
+-	command = { type = secedeprovince which = KOR value = 2771 when = 1 } # 福井\r
+-	#対外関係\r
+-	command = { type = leave_alliance when = 1 }\r
+-	command = { type = peace which = KOR value = 1 }\r
+-	command = { type = belligerence value = -5 }\r
+-	command = { type = set_relation which = KOR value = 50 }\r
+-	command = { type = set_relation which = ENG value = -75 }\r
+-	command = { type = set_relation which = FRA value = -75 }\r
+-	command = { type = set_relation which = USA value = -75 }\r
+-	command = { type = set_relation which = UER value = -75 }\r
+-	command = { type = set_relation which = SOV value = -75 }\r
+-	command = { type = set_relation which = GER value = -75 }\r
+-	command = { type = set_relation which = ITA value = -75 }\r
+-	command = { type = non_aggression which = KOR where = JAP when = 7200 }\r
+-	#政治体制\r
+-	command = { type = domestic which = defense_lobby value = -3 }\r
+-	command = { type = domestic which = interventionism value = -3 }\r
+-	#賠償金\r
+-	command = { type = trade which = JAP where = KOR money = -2 when = 7200 value = 1 }\r
+-	command = { type = trade which = JAP where = KOR supplies = -10 when = 7200 value = 1 }\r
+-	command = { type = event which = 6858303 where = JAP when = 0 }\r
+-	ai_chance = 100\r
++	date = { day = 20 month = 3 year = 1939 }\r
++\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265001 } # 呂運亨（ヨ・ウニョン）\r
++	command = { type = headofgovernment which = 265002 } # 安在鴻（アン・ジェホン）\r
++	command = { type = foreignminister which = 265003 } # 崔謹愚（チェ・グンウ）\r
++	command = { type = armamentminister which = 265004 } # 李奎甲（イ・ギュガプ）\r
++	command = { type = ministerofsecurity which = 265005 } # 權泰錫（グォン・テソク）\r
++	command = { type = ministerofintelligence which = 265006 } # 鄭志鉉（チョン・ジヒョン）\r
++	command = { type = chiefofstaff which = 265007 } # 張権（チャン・グワン）\r
++	command = { type = chiefofarmy which = 265008 } # 権泰錫（グォン・テソク）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265019 } # 李永茂（イ・ヨンム）\r
++	ai_chance = 75\r
+ 	}\r
+ \r
+-	action = { # 戦争を継続する\r
+-	name = "ACTIONNAME6858302B"\r
+-	command = { type = dissent value = 35 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = event which = 6858304 where = JAP when = 0 }\r
+-	ai_chance = 0\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265112 } # 宋鎭禹（ソン・ジヌ）\r
++	command = { type = headofgovernment which = 265113 } # 金性洙（キム・ソンス）\r
++	command = { type = foreignminister which = 265114 } # 許政（ホ・ジョン）\r
++	command = { type = armamentminister which = 265115 } # 金度演（キム・ドヨン）\r
++	command = { type = ministerofsecurity which = 265116 } # 白寬洙（ペク・グァンス）\r
++	command = { type = ministerofintelligence which = 265117 } # 申興雨（シン・フンウ）\r
++	command = { type = chiefofstaff which = 265118 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofarmy which = 265119 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
++	ai_chance = 25\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  日本が和平提案承諾\r
+-# 日本が和平提案を承諾し、厳しい講和条約を履行してきた。\r
+-#########################################################################\r
++\r
++##########################################################################\r
++#  選挙（1943年）\r
++###########################################################################\r
+ \r
+ event = {\r
+ 	id = 6858303\r
+ 	random = no\r
+ 	country = KOR\r
+ \r
+-	name = "EVT_6858303_NAME"\r
+-	desc = "EVT_6858303_DESC"\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
++	}\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "election_time"\r
+ \r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = dissent value = -15 }\r
+-	ai_chance = 100\r
++	date = { day = 20 month = 3 year = 1943 }\r
++\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265001 } # 呂運亨（ヨ・ウニョン）\r
++	command = { type = headofgovernment which = 265002 } # 安在鴻（アン・ジェホン）\r
++	command = { type = foreignminister which = 265013 } # 安在鴻（アン・ジェホン）\r
++	command = { type = armamentminister which = 265014 } # 元世勲（ウォン・セフン）\r
++	command = { type = ministerofsecurity which = 265015 } # 金炳魯（キム・ビョンノ）\r
++	command = { type = ministerofintelligence which = 265016 } # 金若水（キム・ヤクス）\r
++	command = { type = chiefofstaff which = 265017 } # 柳東説（ユ・ドンヨル）\r
++	command = { type = chiefofarmy which = 265018 } # 柳東説（ユ・ドンヨル）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265010 } # 李範錫(イ・ボンソク)\r
++	ai_chance = 75\r
++	}\r
++\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265095 } # 李光洙（イ・グァンス）\r
++	command = { type = headofgovernment which = 265097 } # 張勉（チャン・ミョン）\r
++	command = { type = foreignminister which = 265099 } # 鄭一亨（チョン・イルヒョン）\r
++	command = { type = armamentminister which = 265102 } # 呉緯泳（オ・イヨン）\r
++	command = { type = ministerofsecurity which = 265105 } # 玄錫虎（ヒョン・ソクホ）\r
++	command = { type = ministerofintelligence which = 265108 } # 玄錫虎（ヒョン・ソクホ）\r
++	command = { type = chiefofstaff which = 265118 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofarmy which = 265119 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
++	ai_chance = 25\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  日本が和平提案拒否\r
+-# 日本が和平提案を拒否し、あくまで戦争継続を望んでいるらしい。\r
+-#########################################################################\r
++##########################################################################\r
++#  選挙（1947年）\r
++###########################################################################\r
+ \r
+ event = {\r
+ 	id = 6858304\r
+ 	random = no\r
+ 	country = KOR\r
+ \r
+-	name = "EVT_6858304_NAME"\r
+-	desc = "EVT_6858304_DESC"\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
++	}\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "election_time"\r
+ \r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = dissent value = -15 }\r
+-	ai_chance = 100\r
++	date = { day = 20 month = 3 year = 1947 }\r
++\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265011 } # 金奎植（キム・ギュシク）\r
++	command = { type = headofgovernment which = 265012 } # 曺晩植（チョ・マンシク）\r
++	command = { type = foreignminister which = 265013 } # 安在鴻（アン・ジェホン）\r
++	command = { type = armamentminister which = 265014 } # 元世勲（ウォン・セフン）\r
++	command = { type = ministerofsecurity which = 265015 } # 金炳魯（キム・ビョンノ）\r
++	command = { type = ministerofintelligence which = 265016 } # 金若水（キム・ヤクス）\r
++	command = { type = chiefofstaff which = 265017 } # 柳東説（ユ・ドンヨル）\r
++	command = { type = chiefofarmy which = 265018 } # 柳東説（ユ・ドンヨル）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265010 } # 李範錫(イ・ボンソク)\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265095 } # 李光洙（イ・グァンス）\r
++	command = { type = headofgovernment which = 265097 } # 張勉（チャン・ミョン）\r
++	command = { type = foreignminister which = 265099 } # 鄭一亨（チョン・イルヒョン）\r
++	command = { type = armamentminister which = 265102 } # 呉緯泳（オ・イヨン）\r
++	command = { type = ministerofsecurity which = 265105 } # 玄錫虎（ヒョン・ソクホ）\r
++	command = { type = ministerofintelligence which = 265108 } # 玄錫虎（ヒョン・ソクホ）\r
++	command = { type = chiefofstaff which = 265118 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofarmy which = 265119 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
++	ai_chance = 50\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  朝鮮への和平提案\r
+-# 誉も高き光輝ある我が軍は連戦連勝し、朝鮮に大きな屈辱を与えた。\r
+-# 今や朝鮮の命運は我々が握っているのだ。\r
+-#########################################################################\r
++##########################################################################\r
++#  選挙（1951年）\r
++###########################################################################\r
+ \r
+ event = {\r
+ 	id = 6858305\r
+ 	random = no\r
+-	country = JAP\r
++	country = KOR\r
+ \r
+ 	trigger = {\r
+-	war = { country = KOR country = JAP }\r
+-	OR = {\r
+-	AND = {\r
+-	control = { province = 1221 data = JAP } # 平壌（ピョンヤン）\r
+-	region = { region = "Korea" country = JAP data = 1 value = 40 }\r
+-	}\r
+-	AND = {\r
+-	control = { province = 1228 data = JAP } # 京城（ソウル）\r
+-	region = { region = "Korea" country = JAP data = 1 value = 40 }\r
+-	}\r
+-	AND = {\r
+-	control = { province = 1232 data = JAP } # 釜山（プサン）\r
+-	lost_national = { country = 30 value = KOR }\r
+-	}\r
+-	region = { region = "Korea" country = JAP data = 1 value = 60 }\r
+-	}\r
+ 	NOT = {\r
+-	ispuppet = KOR\r
+-	ispuppet = JAP\r
+-	alliance = { country = JAP country = ENG }\r
+-	alliance = { country = JAP country = FRA }\r
+-	alliance = { country = JAP country = USA }\r
+-	alliance = { country = JAP country = RUS }\r
+-	alliance = { country = JAP country = UER }\r
+-	alliance = { country = JAP country = SOV }\r
+-	alliance = { country = JAP country = GER }\r
+-	alliance = { country = JAP country = CHI }\r
+-	alliance = { country = JAP country = CHC }\r
+-	alliance = { country = JAP country = CYN }\r
+-	war = { country = KOR country = ENG }\r
+-	war = { country = KOR country = FRA }\r
+-	war = { country = KOR country = USA }\r
+-	war = { country = KOR country = RUS }\r
+-	war = { country = KOR country = UER }\r
+-	war = { country = KOR country = SOV }\r
+-	war = { country = KOR country = GER }\r
+-	war = { country = KOR country = CHI }\r
+-	war = { country = KOR country = CHC }\r
+-	war = { country = KOR country = CYN }\r
+-	}\r
+-	AND = {\r
+-	NOT = { lost_national = { country = JAP value = 20 } }\r
+-	control = { province = 1552 data = JAP } # 東京\r
+-	control = { province = 1553 data = JAP } # 大阪\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
+ 	}\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
+ 	}\r
+ \r
+-	name = "EVT_6858305_NAME"\r
+-	desc = "EVT_6858305_DESC"\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "election_time"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	date = { day = 20 month = 3 year = 1951 }\r
+ \r
+-	action = { # 目標は達成された\r
+-	name = "ACTIONNAME6858305A"\r
+-	command = { type = addclaim which = 1232 } # 釜山（プサン）\r
+-	command = { type = addclaim which = 2791 } # 済州\r
+-	command = { type = event which = 6858306 where = KOR when = 0 }\r
+-	ai_chance = 100\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265020 } # 安在鴻（アン・ジェホン）\r
++	command = { type = headofgovernment which = 265021 } # 趙素昻（チョ・スーアン）\r
++	command = { type = foreignminister which = 265040 } # 呂運弘（ヨ・ウンホン）\r
++	command = { type = armamentminister which = 265052 } # 康基徳（カン・ギドク）\r
++	command = { type = ministerofsecurity which = 265055 } # 徐相日（ソ・サンイル）\r
++	command = { type = ministerofintelligence which = 265043 } # 張建相（チャン・グンサン）\r
++	command = { type = chiefofstaff which = 265034 } # 宋虎聲（ソン・ホソン）\r
++	command = { type = chiefofarmy which = 265036 } # 宋虎聲（ソン・ホソン）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265010 } # 李範錫(イ・ボンソク)\r
++	ai_chance = 50\r
+ 	}\r
+ \r
+-	action = { # 戦争を継続せよ\r
+-	name = "ACTIONNAME6858305B"\r
+-	command = { type = dissent value = 15 }\r
+-	ai_chance = 0\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265096 } # 趙炳玉（チョ・ビョンオク）\r
++	command = { type = headofgovernment which = 265098 } # 郭尚勲（グァク・サンフン）\r
++	command = { type = foreignminister which = 265101 } # 金永善（キム・ヨンソン）\r
++	command = { type = armamentminister which = 265103 } # 李泰鎔（イ・テヨン）\r
++	command = { type = ministerofsecurity which = 265106 } # 曺在千（チョ・チェホン）\r
++	command = { type = ministerofintelligence which = 265108 } # 玄錫虎（ヒョン・ソクホ）\r
++	command = { type = chiefofstaff which = 265118 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofarmy which = 265119 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
++	ai_chance = 50\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  日本が和平を提案\r
+-# わが軍は日本軍の攻撃を食い止めることに失敗した。\r
+-# 今や半島は危機的状況に晒されており、日本はこの機会を利用して我々に服従を要求してきた。\r
+-# これを受け入れることは我が国の独立国としての立場の終焉を意味するが、\r
+-# これ以上の強力な日本軍との戦争は、朝鮮半島にとっての災厄であろう…\r
+-#########################################################################\r
++##########################################################################\r
++#  選挙（1955年）\r
++###########################################################################\r
+ \r
+ event = {\r
+ 	id = 6858306\r
+ 	random = no\r
+ 	country = KOR\r
+ \r
+-	name = "EVT_6858306_NAME"\r
+-	desc = "EVT_6858306_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 受け入れよう、日本に対する勝ち目はない\r
+-	name = "ACTIONNAME6858306A"\r
+-	command = { type = dissent value = 20 }\r
+-	#本国返還\r
+-	command = { type = secederegion which = JAP value = "Japan" when = 1 }\r
+-	#本土割譲\r
+-	command = { type = secedeprovince which = JAP value = 1232 when = 1 } # 釜山（プサン）\r
+-	command = { type = secedeprovince which = JAP value = 2791 when = 1 } # 済州\r
+-	#対外関係\r
+-	command = { type = leave_alliance when = 1 }\r
+-	command = { type = peace which = JAP value = 1 }\r
+-	command = { type = belligerence value = -5 }\r
+-	command = { type = set_relation which = JAP value = 50 }\r
+-	command = { type = set_relation which = ENG value = -75 }\r
+-	command = { type = set_relation which = FRA value = -75 }\r
+-	command = { type = set_relation which = USA value = -75 }\r
+-	command = { type = set_relation which = UER value = -75 }\r
+-	command = { type = set_relation which = SOV value = -75 }\r
+-	command = { type = set_relation which = GER value = -75 }\r
+-	command = { type = set_relation which = ITA value = -75 }\r
+-	command = { type = non_aggression which = JAP where = KOR when = 7200 }\r
+-	#政治体制\r
+-	command = { type = domestic which = defense_lobby value = -3 }\r
+-	command = { type = domestic which = interventionism value = -3 }\r
+-	#賠償金\r
+-	command = { type = trade which = KOR where = JAP money = -2 when = 7200 value = 1 }\r
+-	command = { type = trade which = KOR where = JAP supplies = -10 when = 7200 value = 1 }\r
+-	command = { type = event which = 6858307 where = JAP when = 0 }\r
+-	ai_chance = 100\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
+ 	}\r
+-\r
+-	action = { # 断固拒否！\r
+-	name = "ACTIONNAME6858306B"\r
+-	command = { type = dissent value = 35 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	ai_chance = 0\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
+ 	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  朝鮮の屈伏\r
+-# 朝鮮は我が国の要求を全て受け入れた！\r
+-#########################################################################\r
+ \r
+-event = {\r
+-	id = 6858307\r
+-	random = no\r
+-	country = JAP\r
+-\r
+-	name = "EVT_6858307_NAME"\r
+-	desc = "EVT_6858307_DESC"\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = dissent value = -15 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
++	picture = "election_time"\r
+ \r
+-#########################################################################\r
+-#  朝鮮が要求を拒否\r
+-# 朝鮮は我が国の要求を全面的に拒否した。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 6858308\r
+-	random = no\r
+-	country = JAP\r
++	date = { day = 20 month = 3 year = 1955 }\r
+ \r
+-	name = "EVT_6858308_NAME"\r
+-	desc = "EVT_6858308_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265020 } # 安在鴻（アン・ジェホン）\r
++	command = { type = headofgovernment which = 265021 } # 趙素昻（チョ・スーアン）\r
++	command = { type = foreignminister which = 265040 } # 呂運弘（ヨ・ウンホン）\r
++	command = { type = armamentminister which = 265027 } # 銭鎮漢（チョン・ジンハン）\r
++	command = { type = ministerofsecurity which = 265030 } # 韓根祖（ハン・グンジョ）\r
++	command = { type = ministerofintelligence which = 265032 } # 趙時元（チョ・シウォン）\r
++	command = { type = chiefofstaff which = 265034 } # 宋虎聲（ソン・ホソン）\r
++	command = { type = chiefofarmy which = 265036 } # 宋虎聲（ソン・ホソン）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265010 } # 李範錫(イ・ボンソク)\r
++	ai_chance = 50\r
++	}\r
+ \r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = dissent value = 3 }\r
+-	ai_chance = 100\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265096 } # 趙炳玉（チョ・ビョンオク）\r
++	command = { type = headofgovernment which = 265098 } # 郭尚勲（グァク・サンフン）\r
++	command = { type = foreignminister which = 265101 } # 金永善（キム・ヨンソン）\r
++	command = { type = armamentminister which = 265103 } # 李泰鎔（イ・テヨン）\r
++	command = { type = ministerofsecurity which = 265106 } # 曺在千（チョ・チェホン）\r
++	command = { type = ministerofintelligence which = 265108 } # 玄錫虎（ヒョン・ソクホ）\r
++	command = { type = chiefofstaff which = 265118 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofarmy which = 265119 } # 李應俊（イ・ウンジュン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
++	ai_chance = 50\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  朝鮮との白紙和平\r
+-# 我が国と朝鮮の戦争は、互いに決定打に欠けたことで、泥沼となっている。\r
+-# この戦争が何も利益をもたらさないのであれば、白紙和平も視野に入れるべきだ。\r
+-#########################################################################\r
++##########################################################################\r
++#  選挙（1959年）\r
++###########################################################################\r
+ \r
+ event = {\r
+-	id = 6858309\r
++	id = 6858307\r
+ 	random = no\r
+-	country = JAP\r
++	country = KOR\r
+ \r
+ 	trigger = {\r
+-	war = { country = JAP country = KOR }\r
+ 	NOT = {\r
+-	event = 6858303 # 日本が和平提案承諾\r
+-	event = 6858307 # 朝鮮の屈伏\r
+-	alliance = { country = JAP country = ENG }\r
+-	alliance = { country = JAP country = FRA }\r
+-	alliance = { country = JAP country = USA }\r
+-	alliance = { country = JAP country = UER }\r
+-	alliance = { country = JAP country = SOV }\r
+-	alliance = { country = KOR country = ENG }\r
+-	alliance = { country = KOR country = FRA }\r
+-	alliance = { country = KOR country = USA }\r
+-	alliance = { country = KOR country = UER }\r
+-	alliance = { country = KOR country = SOV }\r
+-	ispuppet = JAP\r
+-	ispuppet = KOR\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
+ 	}\r
+-	control = { province = 1552 data = JAP } # 東京\r
+-	control = { province = 1553 data = JAP } # 大阪\r
+-	control = { province = 1221 data = JAP } # 平壌（ピョンヤン）\r
+-	control = { province = 1228 data = JAP } # 京城（ソウル）\r
+-	random = 40\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
+ 	}\r
+ \r
+-	name = "EVT_6858309_NAME"\r
+-	desc = "EVT_6858309_DESC"\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "negotiaton"\r
++	picture = "election_time"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 120\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	date = { day = 20 month = 3 year = 1959 }\r
+ \r
+-	action = { # 白紙和平を提案しよう\r
+-	name = "ACTIONNAME6858309A"\r
+-	command = { type = belligerence value = 3 }\r
+-	command = { type = relation which = KOR value = 5 }\r
+-	command = { type = relation which = CHI value = 5 }\r
+-	command = { type = relation which = CHC value = 5 }\r
+-	command = { type = relation which = UCH value = 5 }\r
+-	command = { type = relation which = U74 value = 5 }\r
+-	command = { type = event which = 6858310 where = KOR when = 0 }\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265020 } # 安在鴻（アン・ジェホン）\r
++	command = { type = headofgovernment which = 265022 } # 金炳魯（キム・ビョンノ）\r
++	command = { type = foreignminister which = 265025 } # 崔東ゴ（チェ・ドングォ）\r
++	command = { type = armamentminister which = 265027 } # 銭鎮漢（チョン・ジンハン）\r
++	command = { type = ministerofsecurity which = 265030 } # 韓根祖（ハン・グンジョ）\r
++	command = { type = ministerofintelligence which = 265032 } # 趙時元（チョ・シウォン）\r
++	command = { type = chiefofstaff which = 265060 } # 文容彩（ムン・ヨンチェ）\r
++	command = { type = chiefofarmy which = 265062 } # 文容彩（ムン・ヨンチェ）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265010 } # 李範錫(イ・ボンソク)\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+-	action = { # 戦争を継続する\r
+-	name = "ACTIONNAME6858309B"\r
+-	command = { type = dissent value = 1 }\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265123 } # 尹ホ善（ユン・ボソン）\r
++	command = { type = headofgovernment which = 265125 } # 尹ホ善（ユン・ボソン）\r
++	command = { type = foreignminister which = 265126 } # 卞栄泰（ビョン・ヨンテ）\r
++	command = { type = armamentminister which = 265130 } # 李敎善（イ・ギョソン）\r
++	command = { type = ministerofsecurity which = 265133 } # 金孝錫（キム・ヒョソク ）\r
++	command = { type = ministerofintelligence which = 265135 } # 柳珍山（ユ・チンサン）\r
++	command = { type = chiefofstaff which = 265110 } # 李鍾贊（イ・ジョンチャン）\r
++	command = { type = chiefofarmy which = 265111 } # 李鍾贊（イ・ジョンチャン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  日本が白紙和平を提案\r
+-# 我が国と日本の戦争が、泥沼の戦いとなったことで、日本が停戦を提案してきた。\r
+-#########################################################################\r
++##########################################################################\r
++#  選挙（1963年）\r
++###########################################################################\r
+ \r
+ event = {\r
+-	id = 6858310\r
++	id = 6858308\r
+ 	random = no\r
+ 	country = KOR\r
+-	persistent = yes\r
+ \r
+-	name = "EVT_6858310_NAME"\r
+-	desc = "EVT_6858310_DESC"\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 265217 # 李垠（イ・ウン）\r
++	headofstate = 265301 # 李垠(イ・ウン)\r
++	headofstate = 265246 # 李グウ（イ・ウ）\r
++	headofstate = 265247 # 李玖（イ・グ）\r
++	headofstate = 265302 # 李コウ(イ・ガン)\r
++	}\r
++	government = democratic\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
+-	picture = "negotiaton"\r
++	picture = "election_time"\r
+ \r
+-	action = { # 白紙和平だ\r
+-	name = "ACTIONNAME6858310A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = belligerence value = -5 }\r
+-	command = { type = peace which = JAP value = 0 }\r
+-	command = { type = non_aggression which = KOR where = JAP }\r
++	date = { day = 20 month = 3 year = 1963 }\r
++\r
++	action = { # 左派を選ぶ\r
++	name = "ELECT_A"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 265020 } # 安在鴻（アン・ジェホン）\r
++	command = { type = headofgovernment which = 265022 } # 金炳魯（キム・ビョンノ）\r
++	command = { type = foreignminister which = 265025 } # 崔東ゴ（チェ・ドングォ）\r
++	command = { type = armamentminister which = 265027 } # 銭鎮漢（チョン・ジンハン）\r
++	command = { type = ministerofsecurity which = 265030 } # 韓根祖（ハン・グンジョ）\r
++	command = { type = ministerofintelligence which = 265032 } # 趙時元（チョ・シウォン）\r
++	command = { type = chiefofstaff which = 265060 } # 文容彩（ムン・ヨンチェ）\r
++	command = { type = chiefofarmy which = 265062 } # 文容彩（ムン・ヨンチェ）\r
++	command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++	command = { type = chiefofair which = 265010 } # 李範錫(イ・ボンソク)\r
++	ai_chance = 50\r
+ 	}\r
+ \r
+-	action = { # 和平など拒否だ\r
+-	name = "ACTIONNAME68583010B"\r
+-	command = { type = belligerence value = 5 }\r
+-	command = { type = dissent value = 12 }\r
++	action = { # 右派を選ぶ\r
++	name = "ELECT_B"\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = headofstate which = 265123 } # 尹ホ善（ユン・ボソン）\r
++	command = { type = headofgovernment which = 265125 } # 尹ホ善（ユン・ボソン）\r
++	command = { type = foreignminister which = 265126 } # 卞栄泰（ビョン・ヨンテ）\r
++	command = { type = armamentminister which = 265130 } # 李敎善（イ・ギョソン）\r
++	command = { type = ministerofsecurity which = 265133 } # 金孝錫（キム・ヒョソク ）\r
++	command = { type = ministerofintelligence which = 265135 } # 柳珍山（ユ・チンサン）\r
++	command = { type = chiefofstaff which = 265110 } # 李鍾贊（イ・ジョンチャン）\r
++	command = { type = chiefofarmy which = 265111 } # 李鍾贊（イ・ジョンチャン）\r
++	command = { type = chiefofnavy which = 265120 } # 朴沃圭（パク・オクギュ）\r
++	command = { type = chiefofair which = 265121 } # 張徳昌（チャン・ドクチャン）\r
++	ai_chance = 50\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r

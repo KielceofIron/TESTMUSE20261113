@@ -1,0 +1,422 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_AI_events.txt [cp932]
+@@ -896,6 +896,31 @@ OR = {
+ 	command = { type = ai which = "IFswitch/ger_rus_war.ai" }\r
+ 	}\r
+ }\r
++\r
++event = {\r
++	id = 45690008\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++\r
++	event = 45680052\r
++	 alliance = { country = UB8 country = UTC }  \r
++}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFswitch/ger_rus_war.ai" }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  日本工場再建設イベント\r
+ ###########################################################################\r
+@@ -1125,7 +1150,7 @@ event = {
+ 	control = { province = 2780 data = -2 } #yamaguchi\r
+ 	control = { province = 1554 data = -2 } #Hiroshima\r
+ 	OR = {\r
+-	control = { province = 1553 data = -2 } #Osakass\r
++	control = { province = 1553 data = -2 } #Osaka\r
+ 	control = { province = 1552 data = -2 } #Tokyo\r
+ 	control = { province = 1557 data = -2 } #Nagoya\r
+ 	control = { province = 1012 data = -2 } #Fukushima\r
+@@ -1142,7 +1167,11 @@ event = {
+ \r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFswitch/JAP_HondoKessen_owari.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_owari.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_owari_m.ai" }\r
++	\r
++	command = { type = ground_def_eff value = 0.2 when = 1 }\r
++\r
+ 	}\r
+ }\r
+ \r
+@@ -1158,7 +1187,7 @@ event = {
+ 	trigger = {\r
+ 	ai = yes\r
+ 	war = { country = CHI }\r
+-	control = { province = 1553 data = -3 } #Osakass\r
++	control = { province = 1553 data = -3 } #Osaka\r
+ 	control = { province = 1552 data = -3 } #Tokyo\r
+ 	control = { province = 1557 data = -3 } #Nagoya\r
+ 	control = { province = 1555 data = -3 } #Hyogo\r
+@@ -1176,7 +1205,9 @@ event = {
+ \r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFswitch/JAP_HondoKessen_Chugoku.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_owari.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_owari_m.ai" }\r
++	command = { type = ground_def_eff value = -0.2 when = 1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1212,7 +1243,8 @@ event = {
+ \r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFswitch/JAP_HondoKessen_Kyushu.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_Kyushu.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_Kyushu_m.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -1240,7 +1272,8 @@ event = {
+ \r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFswitch/JAP_HondoKessen_AOG.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_AOG.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_AOG_m.ai" }\r
+ 	}\r
+ }\r
+ #新潟攻撃\r
+@@ -1265,7 +1298,8 @@ event = {
+ \r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFswitch/JAP_HondoKessen_Niigata.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_Niigata.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_Niigata_m.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -1291,7 +1325,30 @@ event = {
+ \r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFswitch/JAP_HondoKessen_YokohamaNiigata.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_YokohamaNiigata.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_YokohamaNiigata_m.ai" }\r
++	}\r
++\r
++}\r
++event = {\r
++	id = 2992021\r
++	random = no \r
++	country = JAP\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	local_flag = kongyo\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++\r
++	action_a = {\r
++	command = {  type = ai which = "IFswitch/JAP_m.ai" }\r
+ 	}\r
+ \r
+ }\r
+@@ -1343,12 +1400,21 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		not = {	war = { country = FIN } }\r
++		not = {	war = { country = LIT } }\r
++		not = {	war = { country = LAT } }\r
++		not = {	war = { country = EST } }\r
++		not = {	war = { country = AZE } }\r
++		not = {	war = { country = GEO } }\r
++		not = {	war = { country = ARM } }\r
++		not = {	war = { country = UE7 } }\r
++		not = {	war = { country = CHI } }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1936 }\r
++	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+@@ -1377,7 +1443,7 @@ event = {
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1936 }\r
++	date = { day = 0 month = 0 year = 1939 }\r
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+@@ -1610,7 +1676,57 @@ event = {
+ 	command = { type = ai which = "IFswitch/UTC_Upg.ai" }\r
+ 	}\r
+ }\r
++##########################################################################\r
++#  ロシア内政AI（墺と同盟）\r
++###########################################################################\r
++event = {\r
++	id = 5952010\r
++	random = no \r
++	country = UTC\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	alliance = { country = UB8 }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 6 year = 1937 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++	command = { type = ai which = "IFswitch/UTC_AUSTRIA.ai" }\r
++	}\r
++}\r
++##########################################################################\r
++#  ロシア対独初期AI戦争AI\r
++###########################################################################\r
++event = {\r
++	id = 5952012\r
++	random = no \r
++	country = UTC\r
++	save_date = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	war = { country = GER }\r
++	NOT = { war = { country = CHI } }\r
++		ai = GER\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
++	action_a = {\r
++	command = { type = ai which = "IFswitch/UTC_GERAI_CHI.ai" }\r
++	}\r
++}\r
+ ##########################################################################\r
+ #  傀儡トルコ通行許可イベント\r
+ ###########################################################################\r
+@@ -1851,7 +1967,6 @@ event = {
+ 	command = { type = ai which = "IFswitch/ITA_GerFriend.ai" }\r
+ 	}\r
+ }\r
+-\r
+ ##########################################################################\r
+ #  対仏友好AI\r
+ ###########################################################################\r
+@@ -1881,6 +1996,39 @@ event = {
+ 	command = { type = ai which = "IFswitch/U14_Frafriend.ai" }\r
+ 	}\r
+ }\r
++##########################################################################\r
++# 中立OR中央同盟\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1227007\r
++	random = no \r
++	TAG = { ITA U14 }\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	NOT = { alliance = { country = FRA } }\r
++	event = 1226013\r
++	OR = {\r
++	NOT = { event = 1226017 }\r
++	flag = ITA_Dannunzio\r
++	}\r
++	\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFswitch/ITA_central.ai" }\r
++	}\r
++}\r
++\r
++\r
+ ##########################################################################\r
+ #  イギリス独立AI\r
+ ###########################################################################\r
+@@ -2206,6 +2354,145 @@ event = {
+ 		command = { type = ai which = "air_naval.ai" }\r
+ 	}\r
+ }\r
++#############################################\r
++# 北欧AI\r
++#############################################\r
++event = {\r
++	id = 2301001\r
++	random = no \r
++	country = SCA\r
++	\r
++	trigger = {\r
++		ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = december year = 1939 }\r
++\r
++	action_a = {\r
++		command = { type = ai which = "IF/SCA_if.ai" }\r
++	}\r
++}\r
++\r
++#############################################\r
++# 北欧AI（戦時\r
++#############################################\r
++event = {\r
++	id = 2301002\r
++	random = no \r
++	country = SCA\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		atwar = yes\r
++	alliance = { country = GER }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = december year = 1939 }\r
++\r
++	action_a = {\r
++		command = { type = ai which = "IFswitch/SCA_war.ai" }\r
++	}\r
++}\r
++#############################################\r
++# 北欧のドイツ同盟イベ\r
++#############################################\r
++event = {\r
++	id = 2301003\r
++	random = no \r
++	country = SCA\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		year = 1939\r
++	NOT = { alliance = { country = GER } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = december year = 1940 }\r
++\r
++	action_a = {\r
++		command = { type = alliance which = GER }\r
++	}\r
++}\r
++####################################\r
++# Finland AI events \r
++####################################\r
++# Behavior Flags\r
++#	FINHomeland		= Defend homeland only and try not to go any further\r
++#	FINNormal		= FINHomeland\r
++################\r
++################\r
++# Homeland Defense\r
++#############################################\r
++event = { \r
++	id = 3030010\r
++	random = no \r
++	country = FIN\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		NOT = { local_flag = FINHomeland }\r
++		war = { country = UTC }\r
++		NOT = {	lost_national = { country = FIN value = 2 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	action_a = {\r
++		command = { type = local_setflag which = FINHomeland }\r
++		command = { type = local_clrflag which = FINNormal }\r
++		command = { type = ai which = "switch/FIN_Homeland.ai" }\r
++	}\r
++}\r
++event = { \r
++	id = 3030011\r
++	random = no \r
++	country = FIN\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		NOT = { local_flag = FINNormal }\r
++		OR = {\r
++			NOT = { war = { country = UTC } }\r
++			lost_national = { country = FIN value = 2 }\r
++		}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	action_a = {\r
++		command = { type = local_clrflag which = FINHomeland }\r
++		command = { type = local_setflag which = FINNormal }\r
++		command = { type = ai which = "switch/FIN_Normal.ai" }\r
++	}\r
++}\r
++\r
+ \r
+ #############################################\r
+ # 謝辞イベント\r

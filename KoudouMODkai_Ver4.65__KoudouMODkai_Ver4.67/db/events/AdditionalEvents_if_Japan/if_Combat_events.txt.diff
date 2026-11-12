@@ -1,0 +1,202 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Combat_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Combat_events.txt [cp932]
+@@ -316,7 +316,12 @@ event = {
+ \r
+ 	action = { # ドイツよ、全てのものの上にあれ！（通常）\r
+ 	name = "ACTIONNAME11220003A"\r
+-	command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = supply_consumption which = land value = 1 }\r
++	#command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = defensiveness which = land value = -20 }\r
++	command = { type = toughness which = land value = -20 }\r
++	#command = { type = dig_in_max value = 15 when = 0 }\r
++	#command = { type = dig_in_daily value = 1 when = 0 }\r
+ 	command = { type = max_positioning which = submarine value = 0.15 }\r
+ 	command = { type = speed which = land value = 1 }\r
+ 	command = { type = morale which = land value = 30 }\r
+@@ -332,13 +337,13 @@ event = {
+ 	command = { type = convoy_attack which = submarine value = 2 }\r
+ 	command = { type = breakthrough value = 12 }\r
+ 	command = { type = encirclement value = 10 }\r
+-	#command = { type = forest_defense which = infantry value = 100 }\r
+-	#command = { type = jungle_defense which = infantry value = 100 }\r
+-	#command = { type = hill_defense which = infantry value = 100 }\r
+-	#command = { type = mountain_defense which = infantry value = 100 }\r
+-	#command = { type = swamp_defense which = infantry value = 100 }\r
+-	#command = { type = desert_defense which = infantry value = 100 }\r
+-	#command = { type = urban_defense which = infantry value = 100 }\r
++	#command = { type = forest_defense which = land value = 100 }\r
++	#command = { type = jungle_defense which = land value = 100 }\r
++	#command = { type = hill_defense which = land value = 100 }\r
++	#command = { type = mountain_defense which = land value = 100 }\r
++	#command = { type = swamp_defense which = land value = 100 }\r
++	#command = { type = desert_defense which = land value = 100 }\r
++	#command = { type = urban_defense which = land value = 100 }\r
+ 	#command = { type = task_efficiency which = attack value = 0.5 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = 0.5 when = 1 }\r
+ 	#command = { type = soft_attack which = land value = 10 when = 1 }\r
+@@ -348,7 +353,10 @@ event = {
+ \r
+ 	action = { # 褐色の衣を纏った軍勢に道を空けよ（陸軍重点強化）\r
+ 	name = "ACTIONNAME11220003B"\r
+-	command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = supply_consumption which = land value = 1 }\r
++	#command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = defensiveness which = land value = -20 }\r
++	command = { type = toughness which = land value = -20 }\r
+ 	#command = { type = task_efficiency which = attack value = 0.15 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = 0.15 when = 1 }\r
+ 	command = { type = speed which = land value = 1 }\r
+@@ -370,7 +378,10 @@ event = {
+ \r
+ 	action = { # 勝利の歓呼が沸き起こる（海軍重点強化）\r
+ 	name = "ACTIONNAME11220003C"\r
+-	command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = supply_consumption which = land value = 1 }\r
++	#command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = defensiveness which = land value = -20 }\r
++	command = { type = toughness which = land value = -20 }\r
+ 	#command = { type = task_efficiency which = attack value = 0.15 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = 0.15 when = 1 }\r
+ 	command = { type = max_positioning which = submarine value = 0.15 }\r
+@@ -396,7 +407,10 @@ event = {
+ \r
+ 	action = { # 英国を爆撃せよ（空軍重点強化）\r
+ 	name = "ACTIONNAME11220003D"\r
+-	command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = supply_consumption which = land value = 1 }\r
++	#command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	command = { type = defensiveness which = land value = -20 }\r
++	command = { type = toughness which = land value = -20 }\r
+ 	#command = { type = task_efficiency which = attack value = 0.15 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = 0.15 when = 1 }\r
+ 	command = { type = speed which = land value = 1 }\r
+@@ -452,21 +466,30 @@ event = {
+ \r
+ 	action = { # 貴様らとの戦いの準備は整っているぞ！\r
+ 	name = "ACTIONNAME11220004A"\r
+-	command = { type = ground_def_eff value = 0.15 when = 1 }\r
+-	command = { type = forest_defense which = infantry value = 50 }\r
+-	command = { type = jungle_defense which = infantry value = 50 }\r
+-	command = { type = hill_defense which = infantry value = 50 }\r
+-	command = { type = mountain_defense which = infantry value = 50 }\r
+-	command = { type = swamp_defense which = infantry value = 50 }\r
+-	command = { type = desert_defense which = infantry value = 50 }\r
+-	command = { type = urban_defense which = infantry value = 50 }\r
++	command = { type = supply_consumption which = land value = 1 }\r
++	#command = { type = ground_def_eff value = 0.15 when = 1 }\r
++	#command = { type = dig_in_max value = -15 when = 0 }\r
++	#command = { type = dig_in_daily value = -0.5 when = 0 }\r
++	#\r
++	command = { type = build_division which = armor when = 30 }\r
+ 	#command = { type = task_efficiency which = attack value = 0.5 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = 0.5 when = 1 }\r
+ 	command = { type = max_organization which = cavalry value = 5 }\r
+ 	command = { type = morale which = cavalry value = 5 }\r
+ 	command = { type = max_organization which = cavalry_brigade value = 5 }\r
+-	#command = { type = defensiveness which = land value = -20 }\r
++	command = { type = defensiveness which = land value = -20 }\r
++	command = { type = toughness which = land value = -20 }\r
+ 	command = { type = toughness which = armor value = -4 }\r
++	command = { type = softness which = light_armor value = -20 }\r
++	command = { type = softness which = sp_artillery value = -5 }\r
++	command = { type = softness which = sp_anti_air value = -5 }\r
++	command = { type = softness which = medium_armor value = -5 }\r
++	command = { type = softness which = tank_destroyer value = -5 }\r
++	command = { type = softness which = light_armor_brigade value = -5 }\r
++	command = { type = softness which = heavy_armor value = -10 }\r
++	command = { type = softness which = armored_car value = -2 }\r
++	command = { type = softness which = motorized value = -5 }\r
++	command = { type = softness which = mechanized value = -10 }\r
+ 	command = { type = morale which = land value = 5 }\r
+ 	command = { type = speed which = land value = -1 }\r
+ 	command = { type = building_prod_mod which = land_fort value = 10 }\r
+@@ -660,13 +683,40 @@ event = {
+ \r
+ 	action = { # 高貴なる我等が父祖の地\r
+ 	name = "ACTIONNAME11220008A"\r
+-	command = { type = frozen_defense which = land value = 20 }\r
+-	command = { type = snow_defense which = land value = 20 }\r
+-	command = { type = blizzard_defense which = land value = 20 }\r
+-	command = { type = forest_defense which = land value = 20 }\r
+-	command = { type = swamp_defense which = land value = 20 }\r
+-	command = { type = forest_attack which = land value = 5 }\r
+-	command = { type = swamp_attack which = land value = 10 }\r
++	command = { type = ground_def_eff value = 0.2 when = 1 }\r
++	command = { type = morale which = land value = 50 }\r
++	command = { type = frozen_attack which = infantry value = 50 } #a\r
++	command = { type = snow_attack which = infantry value = 50 }\r
++	command = { type = blizzard_attack which = infantry value = 50 }\r
++	command = { type = frozen_move which = infantry value = 50 } #m\r
++	command = { type = snow_move which = infantry value = 50 }\r
++	command = { type = blizzard_move which = infantry value = 50 }\r
++	#command = { type = frozen_defense which = infantry value = 20 } #d\r
++	#command = { type = snow_defense which = infantry value = 120 }\r
++	#command = { type = blizzard_defense which = infantry value = 120 }\r
++	#command = { type = forest_defense which = infantry value = 120 }\r
++	#command = { type = swamp_defense which = infantry value = 120 }\r
++	command = { type = forest_attack which = infantry value = 25 }\r
++	command = { type = swamp_attack which = infantry value = 30 }\r
++	command = { type = frozen_attack which = bergsjaeger value = 50 } #a\r
++	command = { type = snow_attack which = bergsjaeger value = 50 }\r
++	command = { type = blizzard_attack which = bergsjaeger value = 50 }\r
++	command = { type = frozen_move which = bergsjaeger value = 50 } #m\r
++	command = { type = snow_move which = bergsjaeger value = 50 }\r
++	command = { type = blizzard_move which = bergsjaeger value = 50 }\r
++	#command = { type = frozen_defense which = bergsjaeger value = 20 } #d\r
++	#command = { type = snow_defense which = bergsjaeger value = 120 }\r
++	#command = { type = blizzard_defense which = bergsjaeger value = 120 }\r
++	#command = { type = forest_defense which = bergsjaeger value = 120 }\r
++	#command = { type = swamp_defense which = bergsjaeger value = 120 }\r
++	command = { type = forest_attack which = bergsjaeger value = 25 }\r
++	command = { type = swamp_attack which = bergsjaeger value = 30 }\r
++	command = { type = supply_consumption which = land value = -1 }\r
++	command = { type = industrial_modifier which = supplies value = 100 }\r
++\r
++	#command = { type = land_fort_eff value = 0.2 }\r
++	command = { type = build_time which = land where = relative value = -30 }\r
++	command = { type = build_cost which = land where = relative value = -30 }\r
+ 	command = { type = gain_tech which = 6000100 }\r
+ 	command = { type = gain_tech which = 6000110 }\r
+ 	command = { type = gain_tech which = 6000120 }\r
+@@ -720,10 +770,22 @@ event = {
+ 	command = { type = morale which = land value = 5 }\r
+ 	command = { type = toughness which = land value = 3 }\r
+ 	command = { type = defensiveness which = land value = 3 }\r
+-      #command = { type = frozen_move which = land value = -10 }\r
+-      #command = { type = blizzard_move which = land value = -10 }\r
+-      #command = { type = snow_move which = land value = -10 }\r
+-      #command = { type = desert_move which = land value = -10 }\r
++      command = { type = frozen_move which = land value = -10 }\r
++      command = { type = blizzard_move which = land value = -10 }\r
++      command = { type = snow_move which = land value = -10 }\r
++      command = { type = desert_move which = land value = -10 }\r
++      command = { type = frozen_move which = armor value = -10 }\r
++      command = { type = blizzard_move which = armor value = -10 }\r
++      command = { type = snow_move which = armor value = -10 }\r
++      command = { type = desert_move which = armor value = -10 }\r
++      command = { type = frozen_move which = motorized value = -10 }\r
++      command = { type = blizzard_move which = motorized value = -10 }\r
++      command = { type = snow_move which = motorized value = -10 }\r
++      command = { type = desert_move which = motorized value = -10 }\r
++      command = { type = frozen_move which = light_armor value = -10 }\r
++      command = { type = blizzard_move which = light_armor value = -10 }\r
++      command = { type = snow_move which = light_armor value = -10 }\r
++      command = { type = desert_move which = light_armor value = -10 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1178,8 +1240,11 @@ event = {
+ 	command = { type = hard_attack which = cas value = 1 }\r
+ 	command = { type = task_efficiency which = convoy_raiding value = 0.1 }\r
+ 	command = { type = convoy_attack which = submarine value = 2 }\r
+-	command = { type = forest_defense which = land value = 5 }\r
+-	command = { type = jungle_defense which = land value = 5 }\r
++	#command = { type = forest_defense which = land value = 5 }\r
++	command = { type = jungle_attack which = land value = 15 }\r
++	#command = { type = jungle_defense which = land value = 30 }\r
++	#command = { type = jungle_move which = land value = 15 }\r
++	command = { type = forest_move which = land value = 15 }\r
+ 	command = { type = hill_defense which = land value = 5 }\r
+ 	command = { type = mountain_defense which = land value = 5 }\r
+ 	ai_chance = 100\r

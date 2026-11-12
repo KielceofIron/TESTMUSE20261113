@@ -1,0 +1,976 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
+@@ -67,8 +67,6 @@
+ #id = 1891073 尖閣事変 ― 日本が反撃！\r
+ #id = 1891074 實業計画\r
+ #id = 1891075 西原借款問題\r
+-#id = 1891076 三民主義戦艦\r
+-#id = 1891078 蒋介石級陸上戦艦\r
+ #id = 1891100 政府の再編\r
+ #id = 1891101 政府の再編\r
+ #id = 1891102 西安クーデター\r
+@@ -77,7 +75,6 @@
+ #id = 1891203 襲撃の成果\r
+ #id = 1891204 誠の旗\r
+ #id = 1895001 総統衛士隊の設立\r
+-#id = 1895002 総統衛士隊の改良\r
+ ##########################################################################\r
+ #  三民主義\r
+ # 19世紀末、大清帝国は弱体化し、やがて孫文が始動する辛亥革命によってこの古い帝国は滅んだ。\r
+@@ -545,7 +542,7 @@ OR = {
+ 	command = { type = relation which = GER value = 25 }\r
+ 	command = { type = relation which = ITA value = 25 }\r
+ 	command = { type = relation which = JAP value = -150 }\r
+-	command = { type = relation which = UTC value = -25 }\r
++	command = { type = relation which = UER value = -25 }\r
+ 	command = { type = relation which = ENG value = -15 }\r
+ 	command = { type = relation which = FRA value = -15 }\r
+ 	command = { type = relation which = USA value = -15 }\r
+@@ -2414,12 +2411,12 @@ event = {
+ 		NOT = { war = { country = CHI country = ENG } }\r
+ 		NOT = { war = { country = CHI country = FRA } }\r
+ 		NOT = { war = { country = CHI country = USA } }\r
+-		NOT = { war = { country = CHI country = UTC } }\r
++		NOT = { war = { country = CHI country = UER } }\r
+ 		random = 35\r
+ 		NOT = { war = { country = JAP country = ENG } }\r
+ 		NOT = {	war = { country = JAP country = FRA } }\r
+ 		NOT = { war = { country = JAP country = USA } }\r
+-		NOT = { war = { country = JAP country = UTC } }\r
++		NOT = { war = { country = JAP country = UER } }\r
+ 	}\r
+ 	\r
+ 	name = EVT_1891019_NAME\r
+@@ -2495,7 +2492,7 @@ event = {
+ 	command = { type = peace which = CHI value = 0 }\r
+ 	command = { trigger = { war = { country = GER } } type = peace which = GER value = 0 }\r
+ 	command = { trigger = { war = { country = UD6 } } type = peace which = UD6 value = 0 }\r
+-	command = { type = relation which = UTC value = 35 }\r
++	command = { type = relation which = UER value = 35 }\r
+ 	command = { type = relation which = ENG value = 35 }\r
+ 	command = { type = relation which = FRA value = 35 }\r
+ 	command = { type = relation which = USA value = 35 }\r
+@@ -2537,13 +2534,13 @@ event = {
+ \r
+ 	decision = {\r
+ 	exists = CHI\r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	NOT = {\r
+ 	OR = {\r
+-	war = { country = UTC country = CHI }\r
+-	puppet = { country = UTC country = CHI }\r
+-	puppet = { country = CHI country = UTC }\r
+-	alliance = { country = UTC country = CHI }\r
++	war = { country = UER country = CHI }\r
++	puppet = { country = UER country = CHI }\r
++	puppet = { country = CHI country = UER }\r
++	alliance = { country = UER country = CHI }\r
+ 	event = 5951034 # \r
+ 	event = 5951037 # \r
+ 	event = 45680024 # ブレスト＝リトフスク条約\r
+@@ -2551,7 +2548,7 @@ event = {
+ 	}\r
+ 	}\r
+ 	decision_trigger = { \r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	atwar = no\r
+ 	NOT = { exists = CHC }\r
+ 	OR = {\r
+@@ -2562,13 +2559,13 @@ event = {
+ \r
+ 	trigger = {\r
+ 	exists = CHI\r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	NOT = {\r
+ 	OR = {\r
+-	war = { country = UTC country = CHI }\r
+-	puppet = { country = UTC country = CHI }\r
+-	puppet = { country = CHI country = UTC }\r
+-	alliance = { country = UTC country = CHI }\r
++	war = { country = UER country = CHI }\r
++	puppet = { country = UER country = CHI }\r
++	puppet = { country = CHI country = UER }\r
++	alliance = { country = UER country = CHI }\r
+ 	event = 5951034\r
+ 	event = 5951037\r
+ 	event = 45680024 # ブレスト＝リトフスク条約\r
+@@ -2597,15 +2594,15 @@ event = {
+ 	action = { # 北奸をせん滅する時が来た！\r
+ 	name = "ACTIONNAME1891021A"\r
+ 	command = { type = belligerence which = CHI value = 25 }\r
+-	command = { type = end_non_aggression which = CHI where = UTC }\r
+-	command = { type = end_non_aggression which = UTC where = CHI }\r
+-	command = { type = war which = UTC }\r
++	command = { type = end_non_aggression which = CHI where = UER }\r
++	command = { type = end_non_aggression which = UER where = CHI }\r
++	command = { type = war which = UER }\r
+ 	command = { type = relation which = USA value = -30 }\r
+ 	command = { type = relation which = ENG value = -30 }\r
+ 	command = { type = relation which = FRA value = -50 }\r
+ 	command = { type = relation which = SOV value = -30 }\r
+ 	command = { type = relation which = JAP value = -50 }\r
+-	command = { type = relation which = UTC value = -50 }\r
++	command = { type = relation which = UER value = -50 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = setflag which = CHI_GER_alliance }\r
+@@ -2905,7 +2902,7 @@ event = {
+ 	persistent = no\r
+ \r
+ 	trigger = {\r
+-	war = { country = CHI country = UTC }\r
++	war = { country = CHI country = UER }\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+ 	headofstate = 55803\r
+ 	}\r
+@@ -3115,7 +3112,7 @@ event = {
+ 	command = { type = relation which = ENG value = -20 }\r
+ 	command = { type = relation which = FRA value = -20 }\r
+ 	command = { type = relation which = USA value = -20 }\r
+-	command = { type = relation which = UTC value = -10 }\r
++	command = { type = relation which = UER value = -10 }\r
+ 	command = { type = belligerence which = CHI value = 10 }	\r
+ 	command = { type = trigger which = 1891033 }\r
+ 	}\r
+@@ -3135,7 +3132,7 @@ event = {
+ 	name = "ACTIONNAME1891032A"\r
+ 	command = { type = relation which = ENG value = 20 }\r
+ 	command = { type = relation which = FRA value = 20 }\r
+-	command = { type = relation which = UTC value = 20 }\r
++	command = { type = relation which = UER value = 20 }\r
+ 	command = { type = relation which = GER value = -20 }\r
+         command = { type = construct which = infrastructure where = 1553 value = -10 }\r
+         command = { type = construct which = infrastructure where = 1553 value = -10 }\r
+@@ -3176,7 +3173,7 @@ event = {
+ 	command = { type = relation which = ENG value = 30 }\r
+ 	command = { type = relation which = FRA value = 30 }\r
+ 	command = { type = relation which = USA value = 30 }\r
+-	command = { type = relation which = UTC value = 30 }\r
++	command = { type = relation which = UER value = 30 }\r
+ 	command = { type = relation which = GER value = 30 }\r
+ 	command = { type = relation which = JAP value = 30 }\r
+ 	command = { type = belligerence which = CHI value = 5 }	\r
+@@ -3256,7 +3253,7 @@ event = {
+ 	trigger = {\r
+ 	event = 1891030\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { headofstate = 55803 }\r
+ 	OR = {\r
+ 	minister = 55824\r
+@@ -3311,7 +3308,7 @@ event = {
+ 	trigger = {\r
+ 	event = 1891030\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { headofstate = 55803 }\r
+ 	carrier = 1\r
+ 	OR = {\r
+@@ -3617,8 +3614,8 @@ event = {
+ 	region = { region = "China" country = -2 data = 1 value = 50 }\r
+ 	event = 5951042\r
+ 	}\r
+-	NOT = { ispuppet = UTC }\r
+-	NOT = { war = { country = UTC country = U87 } }\r
++	NOT = { ispuppet = UER }\r
++	NOT = { war = { country = UER country = U87 } }\r
+ 	random = 25\r
+ 	}\r
+ \r
+@@ -3782,12 +3779,12 @@ event = {
+ 	NOT = { war = { country = CHI country = UPE } }\r
+ 	NOT = { war = { country = CHI country = SIK } }\r
+ 	NOT = { war = { country = CHI country = TIB } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { alliance = { country = CHI country = MON } }\r
+ 	NOT = { alliance = { country = CHI country = UPE } }\r
+ 	NOT = { alliance = { country = CHI country = SIK } }\r
+ 	NOT = { alliance = { country = CHI country = TIB } }\r
+-	NOT = { alliance = { country = CHI country = UTC } }\r
++	NOT = { alliance = { country = CHI country = UER } }\r
+ 	NOT = { ispuppet = CHI }\r
+ 	OR = {\r
+ 	exists = MON\r
+@@ -3805,12 +3802,12 @@ event = {
+ 	NOT = { war = { country = CHI country = UPE } }\r
+ 	NOT = { war = { country = CHI country = SIK } }\r
+ 	NOT = { war = { country = CHI country = TIB } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { alliance = { country = CHI country = MON } }\r
+ 	NOT = { alliance = { country = CHI country = UPE } }\r
+ 	NOT = { alliance = { country = CHI country = SIK } }\r
+ 	NOT = { alliance = { country = CHI country = TIB } }\r
+-	NOT = { alliance = { country = CHI country = UTC } }\r
++	NOT = { alliance = { country = CHI country = UER } }\r
+ 	NOT = { ispuppet = CHI }\r
+ 	OR = {\r
+ 	exists = MON\r
+@@ -3828,12 +3825,12 @@ event = {
+ 	NOT = { war = { country = CHI country = UPE } }\r
+ 	NOT = { war = { country = CHI country = SIK } }\r
+ 	NOT = { war = { country = CHI country = TIB } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { alliance = { country = CHI country = MON } }\r
+ 	NOT = { alliance = { country = CHI country = UPE } }\r
+ 	NOT = { alliance = { country = CHI country = SIK } }\r
+ 	NOT = { alliance = { country = CHI country = TIB } }\r
+-	NOT = { alliance = { country = CHI country = UTC } }\r
++	NOT = { alliance = { country = CHI country = UER } }\r
+ 	NOT = { ispuppet = CHI }\r
+ 	OR = {\r
+ 	exists = MON\r
+@@ -3870,13 +3867,13 @@ event = {
+ 	command = { type = end_non_aggression which = CHI where = UPE }\r
+ 	command = { trigger = { exists = SIK } type = end_non_aggression which = CHI where = SIK }\r
+ 	command = { type = end_non_aggression which = CHI where = TIB }\r
+-	command = { type = end_guarantee which = UTC where = MON }\r
+-	command = { type = end_guarantee which = UTC where = UPE }\r
+-	command = { trigger = { exists = SIK } type = end_guarantee which = UTC where = SIK }\r
+-	command = { type = end_guarantee which = UTC where = TIB }\r
++	command = { type = end_guarantee which = UER where = MON }\r
++	command = { type = end_guarantee which = UER where = UPE }\r
++	command = { trigger = { exists = SIK } type = end_guarantee which = UER where = SIK }\r
++	command = { type = end_guarantee which = UER where = TIB }\r
+ 	command = { type = end_guarantee which = ENG where = TIB }\r
+ 	command = { type = end_guarantee which = FRA where = TIB }\r
+-	command = { type = end_guarantee which = UTC where = TIB }\r
++	command = { type = end_guarantee which = UER where = TIB }\r
+ 	command = { type = end_guarantee which = U02 where = TIB }\r
+ 	command = { type = end_mastery which = MON }\r
+ 	command = { type = end_mastery which = UPE }\r
+@@ -3890,7 +3887,7 @@ event = {
+ 	command = { type = relation which = UPE value = -150 }\r
+ 	command = { type = relation which = TIB value = -150 }\r
+ 	command = { trigger = { exists = SIK } type = relation which = SIK value = -150 }\r
+-	command = { type = relation which = UTC value = -30 }\r
++	command = { type = relation which = UER value = -30 }\r
+ 	command = { type = relation which = ENG value = -30 }\r
+ 	command = { type = relation which = FRA value = -30 }\r
+ 	command = { type = relation which = GER value = -30 }\r
+@@ -3938,7 +3935,7 @@ event = {
+ 	command = { type = relation which = POR value = -150 }\r
+ 	command = { type = relation which = ENG value = -50 }\r
+ 	command = { type = relation which = FRA value = -30 }\r
+-	command = { type = relation which = UTC value = -30 }\r
++	command = { type = relation which = UER value = -30 }\r
+ 	command = { type = relation which = JAP value = -30 }\r
+ 	command = { type = relation which = GER value = 30 }\r
+ 	command = { type = relation which = UD6 value = 30 }\r
+@@ -3998,7 +3995,7 @@ event = {
+ 	event = 1891046\r
+ 	exists = ENG\r
+ 	exists = CHI\r
+-	war = { country = CHI country = UTC }\r
++	war = { country = CHI country = UER }\r
+ 	control = { province = 1371 data = ENG } \r
+ 	NOT = {\r
+ 	OR = {\r
+@@ -4026,7 +4023,7 @@ event = {
+ 	command = { type = secedeprovince which = CHI value = 1371 }\r
+ 	command = { type = relation which = CHI value = -250 }\r
+ 	command = { type = relation which = USA value = -50 }\r
+-	command = { type = relation which = UTC value = -50 }\r
++	command = { type = relation which = UER value = -50 }\r
+ 	command = { type = relation which = JAP value = -50 }\r
+ 	command = { type = event which = 1891049 where = CHI when = 1 }\r
+ 	}\r
+@@ -4794,7 +4791,7 @@ event = {
+ \r
+ 	trigger = {\r
+ 	event = { id = 5951021 days = 120 }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	control = { province = 1199 data = CHI }\r
+ 	control = { province = 1203 data = CHI }\r
+ 	}\r
+@@ -4829,7 +4826,7 @@ event = {
+ event = {\r
+ 	id = 1891062\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ \r
+ 	name = "EVT_1891062_NAME"\r
+ 	desc = "EVT_1891062_DESC"\r
+@@ -4858,7 +4855,7 @@ event = {
+ 	trigger = {\r
+ 	event = { id = 1891018 days = 60 }\r
+ 	NOT = { event = 1891015 }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	exists = JAP\r
+ 	NOT = { exists = PRI }\r
+ 	OR = {\r
+@@ -4890,16 +4887,16 @@ event = {
+ 	command = { type = secedeprovince which = PRI value = 1194 when = 1 }\r
+ 	command = { type = secedeprovince which = PRI value = 1195 when = 1 }\r
+ 	command = { type = secedeprovince which = PRI value = 1196 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1170 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1171 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1174 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1175 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1176 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1186 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1187 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1188 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 1189 when = 1 }\r
+-	command = { type = event which = 1891064 where = UTC when = 0 }\r
++	command = { type = secedeprovince which = UER value = 1170 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1171 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1174 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1175 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1176 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1186 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1187 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1188 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1189 when = 1 }\r
++	command = { type = event which = 1891064 where = UER when = 0 }\r
+ 	command = { type = event which = 1891064 where = PRI when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -4918,7 +4915,7 @@ event = {
+ event = {\r
+ 	id = 1891064\r
+ 	random = no\r
+-	TAG = { PRI UTC }\r
++	TAG = { PRI UER }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_1891064_NAME"\r
+@@ -4928,9 +4925,9 @@ event = {
+ \r
+ 	action = { # 謎の集団が沿海州を制圧しつつある\r
+ 	name = "ACTIONNAME1891064A"\r
+-	command = { trigger = { country = UTC } type = dissent value = 3 }\r
+-	command = { trigger = { country = UTC } type = set_relation which = PRI value = -200 }\r
+-	command = { trigger = { country = UTC } type = non_aggression which = PRI where = UTC when = 9999 }\r
++	command = { trigger = { country = UER } type = dissent value = 3 }\r
++	command = { trigger = { country = UER } type = set_relation which = PRI value = -200 }\r
++	command = { trigger = { country = UER } type = non_aggression which = PRI where = UER when = 9999 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = JAP value = 10 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = FRA value = 75 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = U00 value = 75 }\r
+@@ -5093,12 +5090,12 @@ event = {
+ 	command = { type = relation which = ITA value = 50 }\r
+ 	command = { type = relation which = USA value = 50 }\r
+ 	command = { type = relation which = JAP value = 10 }\r
+-	command = { type = relation which = UTC value = 10 }\r
++	command = { type = relation which = UER value = 10 }\r
+ 	command = { trigger = { ai = no } type = money value = -300 }\r
+ 	command = { type = setflag which = Koushigakuin }\r
+ 	command = { type = event which = 1891066 where = ENG when = 0 }\r
+ 	command = { type = event which = 1891066 where = FRA when = 0 }\r
+-	command = { type = event which = 1891066 where = UTC when = 0 }\r
++	command = { type = event which = 1891066 where = UER when = 0 }\r
+ 	command = { type = event which = 1891066 where = UB8 when = 0 }\r
+ 	command = { type = event which = 1891066 where = ITA when = 0 }\r
+ 	command = { type = event which = 1891066 where = JAP when = 0 }\r
+@@ -5117,7 +5114,7 @@ event = {
+ event = {\r
+ 	id = 1891066\r
+ 	random = no\r
+-	TAG = { ENG FRA UTC UB8 ITA JAP USA }\r
++	TAG = { ENG FRA UER UB8 ITA JAP USA }\r
+ 	persistent = yes\r
+ 	\r
+ 	name = "EVT_1891066_NAME"\r
+@@ -5127,7 +5124,7 @@ event = {
+ \r
+ 	action = { # 中華民国との協調を行おう！\r
+ 	name = "ACTIONNAME1891066A"\r
+-	trigger = { NOT = { country = UTC } }\r
++	trigger = { NOT = { country = UER } }\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = relation which = CHI value = 50 }\r
+ 	command = { type = research_mod value = 10 }\r
+@@ -5149,7 +5146,7 @@ event = {
+ \r
+ 	action = { # 連中は信用できない\r
+ 	name = "ACTIONNAME1891066B"\r
+-	trigger = { NOT = { country = UTC } }\r
++	trigger = { NOT = { country = UER } }\r
+ 	command = { type = relation which = CHI value = -10 }\r
+ 	command = { type = local_setflag which = Koushigakuin_no }\r
+ 	command = { trigger = { country = ENG } type = setflag which = Koushigakuin_ENG }\r
+@@ -5163,7 +5160,7 @@ event = {
+ \r
+ 	action = { # 中華民国との協調を行おう！\r
+ 	name = "ACTIONNAME1891066A"\r
+-	trigger = { country = UTC }\r
++	trigger = { country = UER }\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = relation which = CHI value = 50 }\r
+ 	command = { type = research_mod value = 10 }\r
+@@ -5174,16 +5171,16 @@ event = {
+ 	command = { type = gain_tech which = -1 }\r
+ 	command = { type = local_setflag which = Koushigakuin_yes }\r
+ 	command = { type = setflag which = Koushigakuin_research when = 1 value = 1 }\r
+-	command = { trigger = { country = UTC } type = setflag which = Koushigakuin_UTC }\r
++	command = { trigger = { country = UER } type = setflag which = Koushigakuin_UER }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 連中は信用できない\r
+ 	name = "ACTIONNAME1891066B"\r
+-	trigger = { country = UTC }\r
++	trigger = { country = UER }\r
+ 	command = { type = relation which = CHI value = -10 }\r
+ 	command = { type = local_setflag which = Koushigakuin_no }\r
+-	command = { trigger = { country = UTC } type = setflag which = Koushigakuin_UTC }\r
++	command = { trigger = { country = UER } type = setflag which = Koushigakuin_UER }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -5222,7 +5219,7 @@ event = {
+ 	command = { type = belligerence which = CHI value = 2 }\r
+ 	command = { type = relation which = ENG value = -50 }\r
+ 	command = { type = relation which = FRA value = -50 }\r
+-	command = { type = relation which = UTC value = -50 }\r
++	command = { type = relation which = UER value = -50 }\r
+ 	command = { type = relation which = UB8 value = -50 }\r
+ 	command = { type = relation which = ITA value = -50 }\r
+ 	command = { type = relation which = JAP value = -50 }\r
+@@ -5233,7 +5230,7 @@ event = {
+ 	command = { type = gain_tech which = -1 }\r
+ 	command = { trigger = { flag = Koushigakuin_ENG } type = event which = 1891068 where = ENG when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_FRA } type = event which = 1891068 where = FRA when = 0 }\r
+-	command = { trigger = { flag = Koushigakuin_UTC } type = event which = 1891068 where = UTC when = 0 }\r
++	command = { trigger = { flag = Koushigakuin_UER } type = event which = 1891068 where = UER when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_UB8 } type = event which = 1891068 where = UB8 when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_ITA } type = event which = 1891068 where = ITA when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_JAP } type = event which = 1891068 where = JAP when = 0 }\r
+@@ -5249,7 +5246,7 @@ event = {
+ 	command = { type = belligerence which = CHI value = 5 }\r
+ 	command = { type = relation which = ENG value = -60 }\r
+ 	command = { type = relation which = FRA value = -60 }\r
+-	command = { type = relation which = UTC value = -60 }\r
++	command = { type = relation which = UER value = -60 }\r
+ 	command = { type = relation which = UB8 value = -60 }\r
+ 	command = { type = relation which = ITA value = -60 }\r
+ 	command = { type = relation which = JAP value = -60 }\r
+@@ -5263,7 +5260,7 @@ event = {
+ 	command = { type = gain_tech which = -1 }\r
+ 	command = { trigger = { flag = Koushigakuin_ENG } type = event which = 1891068 where = ENG when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_FRA } type = event which = 1891068 where = FRA when = 0 }\r
+-	command = { trigger = { flag = Koushigakuin_UTC } type = event which = 1891068 where = UTC when = 0 }\r
++	command = { trigger = { flag = Koushigakuin_UER } type = event which = 1891068 where = UER when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_UB8 } type = event which = 1891068 where = UB8 when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_ITA } type = event which = 1891068 where = ITA when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_JAP } type = event which = 1891068 where = JAP when = 0 }\r
+@@ -5279,7 +5276,7 @@ event = {
+ 	command = { type = belligerence which = CHI value = 10 }\r
+ 	command = { type = relation which = ENG value = -70 }\r
+ 	command = { type = relation which = FRA value = -70 }\r
+-	command = { type = relation which = UTC value = -70 }\r
++	command = { type = relation which = UER value = -70 }\r
+ 	command = { type = relation which = UB8 value = -70 }\r
+ 	command = { type = relation which = ITA value = -70 }\r
+ 	command = { type = relation which = JAP value = -70 }\r
+@@ -5296,7 +5293,7 @@ event = {
+ 	command = { type = gain_tech which = -1 }\r
+ 	command = { trigger = { flag = Koushigakuin_ENG } type = event which = 1891068 where = ENG when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_FRA } type = event which = 1891068 where = FRA when = 0 }\r
+-	command = { trigger = { flag = Koushigakuin_UTC } type = event which = 1891068 where = UTC when = 0 }\r
++	command = { trigger = { flag = Koushigakuin_UER } type = event which = 1891068 where = UER when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_UB8 } type = event which = 1891068 where = UB8 when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_ITA } type = event which = 1891068 where = ITA when = 0 }\r
+ 	command = { trigger = { flag = Koushigakuin_JAP } type = event which = 1891068 where = JAP when = 0 }\r
+@@ -5318,7 +5315,7 @@ event = {
+ event = {\r
+ 	id = 1891068\r
+ 	random = no\r
+-	TAG = { ENG FRA UTC UB8 ITA JAP USA }\r
++	TAG = { ENG FRA UER UB8 ITA JAP USA }\r
+ 	persistent = yes\r
+ 	\r
+ 	name = "EVT_1891068_NAME"\r
+@@ -5607,232 +5604,6 @@ event = {
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  三民主義戦艦\r
+-# 日中戦争後、日本を征服しきることができなかった中華民国である計画が持ち上がった。\r
+-# 日本本土攻防戦、特に天草攻防戦において、要塞攻略に手間取る陸軍を支援するために戦艦群が幾度もなく艦砲射撃を行ったが、\r
+-# 打撃を与えることができずに逆に敵の潜水艦の攻撃を受け、大損害を出す結果になった。\r
+-# 海軍はこの戦訓を受け、潜水艦や防空について一新したほか、敵陣地への艦砲射撃についても議論された。\r
+-# 36㎝砲をもってしても要塞を沈黙させることができなかった事実は、今後のアジア太平洋への進出、\r
+-# そして来たるべき二度目の日本侵攻の際に問題となることは明らかであった。\r
+-# 海軍では当初、51㎝砲を搭載したモニター艦建造を検討したが、ここで蒋介石が介入。\r
+-# 従来の艦砲をはるかにしのぐ、陸軍が要塞攻略に開発した80㎝砲の搭載の転用を思いついたのである。\r
+-# この提案には、蒋介石の威信の回復・大艦巨砲主義者のさらなる戦艦建造を求めたことが重なり、建造計画は進んだ。\r
+-# 艦政本部は、この建造計画を推し進めるには全長は600mを超え、財務省や軍需省からは新しいドックと港の建造が必要である、\r
+-# その後の軍備増強計画に著しい影響を与えるとして必死に静止した。\r
+-# だが蒋介石はこの三民主義戦艦計画を承認し、計画は始動することになる。\r
+-########################################################################\r
+-event = {\r
+-	id = 1891076\r
+-	random = no\r
+-	country = CHI\r
+-	save_date = yes\r
+-\r
+-	decision = {\r
+-	event = 1891019\r
+-	event = 1891020\r
+-	exists = CHI\r
+-	exists = JAP\r
+-	NOT = { ispuppet = CHI }\r
+-	NOT = { ispuppet = JAP }\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	OR = {\r
+-	headofstate = 55001\r
+-	headofstate = 55323\r
+-	headofgovernment = 55009\r
+-	headofgovernment = 55324\r
+-	headofgovernment = 55802\r
+-	}\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	event = 1891019\r
+-	event = 1891020\r
+-	exists = CHI\r
+-	exists = JAP\r
+-	NOT = { ispuppet = CHI }\r
+-	NOT = { ispuppet = JAP }\r
+-	NOT = { war = { country = CHI country = JAP } } \r
+-	OR = {\r
+-	headofstate = 55001\r
+-	headofstate = 55323\r
+-	headofgovernment = 55009\r
+-	headofgovernment = 55324\r
+-	headofgovernment = 55802\r
+-	}\r
+-	}\r
+-\r
+-	trigger = {\r
+-	event = 1891019\r
+-	event = 1891020\r
+-	exists = CHI\r
+-	exists = JAP\r
+-	NOT = { ispuppet = CHI }\r
+-	NOT = { ispuppet = JAP }\r
+-	NOT = { war = { country = CHI country = JAP } } \r
+-	OR = {\r
+-	headofstate = 55001\r
+-	headofstate = 55323\r
+-	headofgovernment = 55009\r
+-	headofgovernment = 55324\r
+-	headofgovernment = 55802\r
+-	}\r
+-	random = 25\r
+-	}\r
+-	\r
+-	name = "EVT_1891076_NAME"\r
+-	desc = "EVT_1891076_DESC"\r
+-	style = 2\r
+- 	picture = "Sanmin_Battleship"\r
+-\r
+-	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
+-\r
+-	action = {\r
+-	name = "ACTIONNAME1891076A"\r
+-	command = { type = industrial_modifier which = supplies value = -20 }\r
+-	command = { type = free_metal value = -30 }\r
+-	command = { type = event which = 1891077 where = CHI when = 1800 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 1891077\r
+-	random = no\r
+-	country = CHI\r
+-\r
+-	name = "EVT_1891077_NAME"\r
+-	desc = "EVT_1891077_DESC"\r
+-	style = 2\r
+- 	picture = "Sanmin_Battleship"\r
+-\r
+-	action = {\r
+-	name = "ACTIONNAME1891077A"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = industrial_modifier which = supplies value = 20 }\r
+-	command = { type = free_metal value = 30 }\r
+-	command = { type = add_corps which = "中華民国新型戦艦群" value = naval where = 1328 }\r
+-	command = { type = activate_division which = 22000 value = 3531 where = 1328 when = 0 }\r
+-	command = { type = activate_division which = 22000 value = 3532 where = 1328 when = 0 }\r
+-	command = { type = activate_division which = 22000 value = 3533 where = 1328 when = 0 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  蒋介石級陸上戦艦\r
+-# 日中戦争後、日本を征服しきることができなかった中華民国で新型戦艦の建造が進んだ一方、\r
+-# 陸軍においても巨大な兵器を建造するためのある計画が持ち上がった。\r
+-# それは威力不足が露呈し、日本本土攻防戦において沈んだ軍艦に本来搭載するはずだった艦載砲を利用し、陸上戦艦を建造するというものであった。\r
+-# 事実、日本本土攻防戦では本来予想されていなかった戦車部隊の消耗率の高さ、要塞の堅牢さも問題となっていた。\r
+-# 来たるべき二度目の日本侵攻の際に日本軍の陣地を蹂躙するべく、この陸上戦艦は建造されるに至った。\r
+-# 海軍から譲り受けた28cm連装砲を主砲とし、128mmの対戦車砲に20㎜対空機銃数問を搭載。\r
+-# そしてなにより180mmの正面装甲はおそるべき防御力を誇った。\r
+-# 軍需省からあまりに巨大なゆえ、重量は1,000トンになると見積もられており、インフラが耐えられないとの観点から建造に反対したが、\r
+-# 研究の結果、孫文初代大総統が推し進めたインフラ開発によって、それらは問題にならないことが分かり、最終的には蒋介石の許可によって計画は始動した。\r
+-########################################################################\r
+-event = {\r
+-	id = 1891078\r
+-	random = no\r
+-	country = CHI\r
+-\r
+-	decision = {\r
+-	event = 1891019\r
+-	event = 1891020\r
+-	event = 1891077\r
+-	exists = CHI\r
+-	exists = JAP\r
+-	NOT = { ispuppet = CHI }\r
+-	NOT = { ispuppet = JAP }\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	OR = {\r
+-	headofstate = 55001\r
+-	headofstate = 55323\r
+-	headofgovernment = 55009\r
+-	headofgovernment = 55324\r
+-	headofgovernment = 55802\r
+-	}\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	event = 1891019\r
+-	event = 1891020\r
+-	event = { id = 1891077 days = 60 }\r
+-	exists = CHI\r
+-	exists = JAP\r
+-	NOT = { ispuppet = CHI }\r
+-	NOT = { ispuppet = JAP }\r
+-	NOT = { war = { country = CHI country = JAP } } \r
+-	OR = {\r
+-	headofstate = 55001\r
+-	headofstate = 55323\r
+-	headofgovernment = 55009\r
+-	headofgovernment = 55324\r
+-	headofgovernment = 55802\r
+-	}\r
+-	}\r
+-\r
+-	trigger = {\r
+-	event = 1891019\r
+-	event = 1891020\r
+-	event = { id = 1891077 days = 60 }\r
+-	exists = CHI\r
+-	exists = JAP\r
+-	NOT = { ispuppet = CHI }\r
+-	NOT = { ispuppet = JAP }\r
+-	NOT = { war = { country = CHI country = JAP } } \r
+-	OR = {\r
+-	headofstate = 55001\r
+-	headofstate = 55323\r
+-	headofgovernment = 55009\r
+-	headofgovernment = 55324\r
+-	headofgovernment = 55802\r
+-	}\r
+-	random = 25\r
+-	}\r
+-	\r
+-	name = "EVT_1891078_NAME"\r
+-	desc = "EVT_1891078_DESC"\r
+-	style = 2\r
+- 	picture = "Ratte"\r
+-\r
+-	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1941 }\r
+-\r
+-	action = {\r
+-	name = "ACTIONNAME1891078A"\r
+-	command = { type = industrial_modifier which = supplies value = -3 }\r
+-	command = { type = free_metal value = -5 }\r
+-	command = { type = event which = 1891079 where = CHI when = 360 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 1891079\r
+-	random = no\r
+-	country = CHI\r
+-\r
+-	name = "EVT_1891079_NAME"\r
+-	desc = "EVT_1891079_DESC"\r
+-	style = 2\r
+- 	picture = "Ratte"\r
+-\r
+-	action = {\r
+-	name = "ACTIONNAME1891079A"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = speed which = d_rsv_38 value = 3 }\r
+-	command = { type = industrial_modifier which = supplies value = 3 }\r
+-	command = { type = free_metal value = 5 }\r
+-	command = { type = add_corps which = "中華民国陸上戦艦「蒋介石」" value = land where = 1337 }\r
+-	command = { type = activate_division which = 22000 value = 3040 where = 1337 when = 0 }\r
+-	command = { type = add_corps which = "中華民国陸上戦艦「宋美齢」" value = land where = 1337 }\r
+-	command = { type = activate_division which = 22000 value = 3041 where = 1337 when = 0 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+ ##########################################################################\r
+ #  突然の政府交代\r
+ ###########################################################################\r
+@@ -6380,157 +6151,36 @@ event = {
+ 	\r
+ 	action = {\r
+ 		name = "ACTIONNAME1895001A"\r
+-		command = { trigger = { technology = 1100 NOT = { technology = 1110 } } type = new_model which = d_01 value = 0 }\r
+-		command = { trigger = { technology = 1110 NOT = { technology = 1120 } } type = new_model which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 1110 NOT = { technology = 1120 local_flag = CHISS1 } } type = local_setflag which = CHISS1 }\r
+-		command = { trigger = { technology = 1120 NOT = { technology = 1130 } } type = new_model which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 1120 NOT = { technology = 1130 local_flag = CHISS2 } } type = local_setflag which = CHISS2 }\r
+-		command = { trigger = { technology = 1130 NOT = { technology = 1140 } } type = new_model which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 1130 NOT = { technology = 1140 local_flag = CHISS3 } } type = local_setflag which = CHISS3 }\r
+-		command = { trigger = { technology = 1140 NOT = { technology = 1150 } } type = new_model which = d_01 value = 4 }\r
+-		command = { trigger = { technology = 1140 NOT = { technology = 1150 local_flag = CHISS4 } } type = local_setflag which = CHISS4 }\r
+-		command = { trigger = { technology = 1150 NOT = { technology = 13000 } } type = new_model which = d_01 value = 5 }\r
+-		command = { trigger = { technology = 1150 NOT = { technology = 13000 local_flag = CHISS5 } } type = local_setflag which = CHISS5 }\r
+-		command = { trigger = { technology = 13000 NOT = { technology = 13010 } } type = new_model which = d_01 value = 6 }\r
+-		command = { trigger = { technology = 13000 NOT = { technology = 13010 local_flag = CHISS6 } } type = local_setflag which = CHISS6 }\r
+-		command = { trigger = { technology = 13010 NOT = { technology = 13020 } } type = new_model which = d_01 value = 7 }\r
+-		command = { trigger = { technology = 13010 NOT = { technology = 13020 local_flag = CHISS7 } } type = local_setflag which = CHISS7 }\r
+-		command = { trigger = { technology = 13020 NOT = { local_flag = CHISS8 } } type = new_model which = d_01 value = 8 }\r
+-		command = { trigger = { technology = 13020 NOT = { local_flag = CHISS8 } } type = local_setflag which = CHISS8 }\r
+-		command = { trigger = { technology = 1110 } type = scrap_model which = d_01 value = 0 }\r
+-		command = { trigger = { ai = yes } type = build_division which = d_01 when = 10 cost = 0.1 where = 120 }\r
+-		command = { trigger = { ai = yes } type = build_division which = d_01 when = 10 cost = 0.1 where = 360 }\r
+-		command = { type = activate_unit_type which = d_01 }\r
+ 		command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-		command = { type = local_setflag which = TrainCHISS }\r
+ 		command = { type = add_corps which = "総統衛士隊第1師団" value = land where = 1337 }\r
+-		command = { type = add_division which = "総統衛士隊第1師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第1師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第2師団" value = land where = 1247 }\r
+-		command = { type = add_division which = "総統衛士隊第2師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第2師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第3師団" value = land where = 1338 }\r
+-		command = { type = add_division which = "総統衛士隊第3師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第3師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第4師団" value = land where = 1369 }\r
+-		command = { type = add_division which = "総統衛士隊第4師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第4師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第5師団" value = land where = 1299 }\r
+-		command = { type = add_division which = "総統衛士隊第5師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第5師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第6師団" value = land where = 1241 }\r
+-		command = { type = add_division which = "総統衛士隊第6師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第6師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第7師団" value = land where = 1358 }\r
+-		command = { type = add_division which = "総統衛士隊第7師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第7師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第8師団" value = land where = 1297 }\r
+-		command = { type = add_division which = "総統衛士隊第8師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第8師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第9師団" value = land where = 1317 }\r
+-		command = { type = add_division which = "総統衛士隊第9師団" value = d_01 when = 0 }\r
++		command = { type = add_division which = "総統衛士隊第9師団" value = infantry when = 9 }\r
+ \r
+ 		command = { type = add_corps which = "総統衛士隊第10師団" value = land where = 1308 }\r
+-		command = { type = add_division which = "総統衛士隊第10師団" value = d_01 when = 0 }\r
+-	}\r
+-}\r
+-###########################################################################\r
+-#  総統衛士隊の改良\r
+-###########################################################################\r
+-event = {\r
+-	id = 1895002\r
+-	random = no\r
+-	country = CHI\r
+-	persistent = yes\r
+-	\r
+-	trigger = {\r
+-		event = 1895001\r
+-		local_flag = TrainCHISS\r
+-		OR = {\r
+-			headofstate = 55001 # 蒋介石（チアン・カイシェク）\r
+-			headofstate = 55323 # 蒋介石（チアン・カイシェク）\r
+-		}\r
+-		OR = {\r
+-			AND = { technology = 1110 NOT = { technology = 1120 local_flag = CHISS1 } }\r
+-			AND = { technology = 1120 NOT = { technology = 1130 local_flag = CHISS2 } }\r
+-			AND = { technology = 1130 NOT = { technology = 1140 local_flag = CHISS3 } }\r
+-			AND = { technology = 1140 NOT = { technology = 1150 local_flag = CHISS4 } }\r
+-			AND = { technology = 1150 NOT = { technology = 13000 local_flag = CHISS5 } }\r
+-			AND = { technology = 13000 NOT = { technology = 13010 local_flag = CHISS6 } }\r
+-			AND = { technology = 13010 NOT = { technology = 13020 local_flag = CHISS7 } }\r
+-			AND = { technology = 13020 NOT = { local_flag = CHISS8 } }\r
+-		}\r
+-	}\r
+-	\r
+-	name = EVT_1895002_NAME\r
+-	desc = EVT_1895002_DESC\r
+-	style = 2\r
+-	picture = "ccip_mob"\r
+-	\r
+-	date = { day = 1 month = january year = 1933 }\r
+-	offset = 60\r
+-	deathdate = { day = 29 month = december year = 1999 }\r
+-	\r
+-	action = {\r
+-		name = "ACTIONNAME1895002A"\r
+-		command = { trigger = { technology = 1110 NOT = { technology = 1120 local_flag = CHISS1 } } type = new_model which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 1110 NOT = { technology = 1120 local_flag = CHISS1 } } type = scrap_model which = d_01 value = 0 }\r
+-		command = { trigger = { technology = 1110 NOT = { technology = 1120 local_flag = CHISS1 } } type = local_setflag which = CHISS1 }\r
+-		command = { trigger = { technology = 1120 NOT = { technology = 1130 local_flag = CHISS2 } } type = new_model which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 1120 NOT = { technology = 1130 local_flag = CHISS2 } } type = scrap_model which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 1120 NOT = { technology = 1130 local_flag = CHISS2 } } type = local_setflag which = CHISS2 }\r
+-		command = { trigger = { technology = 1130 NOT = { technology = 1140 local_flag = CHISS3 } } type = new_model which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 1130 NOT = { technology = 1140 local_flag = CHISS3 } } type = scrap_model which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 1130 NOT = { technology = 1140 local_flag = CHISS3 } } type = local_setflag which = CHISS3 }\r
+-		command = { trigger = { technology = 1140 NOT = { technology = 1150 local_flag = CHISS4 } } type = new_model which = d_01 value = 4 }\r
+-		command = { trigger = { technology = 1140 NOT = { technology = 1150 local_flag = CHISS4 } } type = scrap_model which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 1140 NOT = { technology = 1150 local_flag = CHISS4 } } type = local_setflag which = CHISS4 }\r
+-		command = { trigger = { technology = 1150 NOT = { technology = 13000 local_flag = CHISS5 } } type = new_model which = d_01 value = 5 }\r
+-		command = { trigger = { technology = 1150 NOT = { technology = 13000 local_flag = CHISS5 } } type = scrap_model which = d_01 value = 4 }\r
+-		command = { trigger = { technology = 1150 NOT = { technology = 13000 local_flag = CHISS5 } } type = local_setflag which = CHISS5 }\r
+-		command = { trigger = { technology = 13000 NOT = { technology = 13010 local_flag = CHISS6 } } type = new_model which = d_01 value = 6 }\r
+-		command = { trigger = { technology = 13000 NOT = { technology = 13010 local_flag = CHISS6 } } type = scrap_model which = d_01 value = 5 }\r
+-		command = { trigger = { technology = 13000 NOT = { technology = 13010 local_flag = CHISS6 } } type = local_setflag which = CHISS6 }\r
+-		command = { trigger = { technology = 13010 NOT = { technology = 13020 local_flag = CHISS7 } } type = new_model which = d_01 value = 7 }\r
+-		command = { trigger = { technology = 13010 NOT = { technology = 13020 local_flag = CHISS7 } } type = scrap_model which = d_01 value = 6 }\r
+-		command = { trigger = { technology = 13010 NOT = { technology = 13020 local_flag = CHISS7 } } type = local_setflag which = CHISS7 }\r
+-		command = { trigger = { technology = 13020 NOT = { local_flag = CHISS8 } } type = new_model which = d_01 value = 8 }\r
+-		command = { trigger = { technology = 13020 NOT = { local_flag = CHISS8 } } type = scrap_model which = d_01 value = 7 }\r
+-		command = { trigger = { technology = 13020 NOT = { local_flag = CHISS8 } } type = local_setflag which = CHISS8 }\r
+-		command = { trigger = { technology = 2400 NOT = { local_flag = CHISST2400 } } type = hard_attack which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 2400 NOT = { local_flag = CHISST2400 } } type = local_setflag which = CHISST2400 }\r
+-		command = { trigger = { technology = 2410 NOT = { local_flag = CHISST2410 } } type = hard_attack which = d_01 value = 0.5 }\r
+-		command = { trigger = { technology = 2410 NOT = { local_flag = CHISST2410 } } type = local_setflag which = CHISST2410 }\r
+-		command = { trigger = { technology = 2420 NOT = { local_flag = CHISST2420 } } type = hard_attack which = d_01 value = 0.5 }\r
+-		command = { trigger = { technology = 2420 NOT = { local_flag = CHISST2420 } } type = local_setflag which = CHISST2420 }\r
+-		command = { trigger = { technology = 2430 NOT = { local_flag = CHISST2430 } } type = hard_attack which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 2430 NOT = { local_flag = CHISST2430 } } type = local_setflag which = CHISST2430 }\r
+-		command = { trigger = { technology = 5180 NOT = { local_flag = CHISST5180 } } type = build_time which = d_01 when = on_upgrade where = relative value = -20 }\r
+-		command = { trigger = { technology = 5180 NOT = { local_flag = CHISST5180 } } type = local_setflag which = CHISST5180 }\r
+-		command = { trigger = { technology = 5920 NOT = { local_flag = CHISST5920 } } type = frozen_move which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 5920 NOT = { local_flag = CHISST5920 } } type = frozen_attack which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5920 NOT = { local_flag = CHISST5920 } } type = frozen_defense which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5920 NOT = { local_flag = CHISST5920 } } type = snow_attack which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 5920 NOT = { local_flag = CHISST5920 } } type = snow_defense which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 5920 NOT = { local_flag = CHISST5920 } } type = local_setflag which = CHISST5920 }\r
+-		command = { trigger = { technology = 5940 NOT = { local_flag = CHISST5940 } } type = jungle_move which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 5940 NOT = { local_flag = CHISST5940 } } type = jungle_attack which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 5940 NOT = { local_flag = CHISST5940 } } type = jungle_defense which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 5940 NOT = { local_flag = CHISST5940 } } type = forest_move which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 5940 NOT = { local_flag = CHISST5940 } } type = forest_attack which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 5940 NOT = { local_flag = CHISST5940 } } type = forest_defense which = d_01 value = 3 }\r
+-		command = { trigger = { technology = 5940 NOT = { local_flag = CHISST5940 } } type = local_setflag which = CHISST5940 }\r
+-		command = { trigger = { technology = 5960 NOT = { local_flag = CHISST5960 } } type = desert_move which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 5960 NOT = { local_flag = CHISST5960 } } type = desert_attack which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 5960 NOT = { local_flag = CHISST5960 } } type = desert_defense which = d_01 value = 1 }\r
+-		command = { trigger = { technology = 5960 NOT = { local_flag = CHISST5960 } } type = local_setflag which = CHISST5960 }\r
+-		command = { trigger = { technology = 5980 NOT = { local_flag = CHISST5980 } } type = mountain_move which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5980 NOT = { local_flag = CHISST5980 } } type = mountain_attack which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5980 NOT = { local_flag = CHISST5980 } } type = mountain_defense which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5980 NOT = { local_flag = CHISST5980 } } type = muddy_move which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5980 NOT = { local_flag = CHISST5980 } } type = muddy_attack which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5980 NOT = { local_flag = CHISST5980 } } type = muddy_defense which = d_01 value = 2 }\r
+-		command = { trigger = { technology = 5980 NOT = { local_flag = CHISST5980 } } type = local_setflag which = CHISST5980 }\r
++		command = { type = add_division which = "総統衛士隊第10師団" value = infantry when = 9 }\r
+ 	}\r
+ }\r
+ \r
+@@ -6553,7 +6203,7 @@ event = {
+ 	event = 1891063 # 沿海州の無政府主義者\r
+ 	exists = PRI\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	}\r
+ \r
+@@ -6562,7 +6212,7 @@ event = {
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	supplies = 1000\r
+ 	}\r
+@@ -6572,7 +6222,7 @@ event = {
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	random = 15\r
+ 	}\r
+@@ -6616,7 +6266,7 @@ event = {
+ 	event = 1891200 # 夢見るままに\r
+ 	exists = PRI\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	local_flag = Shinsengumi_1936\r
+ 	NOT = { flag = Bazoku }\r
+@@ -6627,7 +6277,7 @@ event = {
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	OR = {\r
+ 	area = { area = "Heilongjiang" country = CHI data = 1 value = 50 }\r
+@@ -6648,7 +6298,7 @@ event = {
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	OR = {\r
+ 	area = { area = "Heilongjiang" country = CHI data = 1 value = 50 }\r
+@@ -6736,7 +6386,7 @@ event = {
+ 	event = 1891200 # 夢見るままに\r
+ 	exists = PRI\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	local_flag = Shinsengumi_1936\r
+ 	}\r
+@@ -6746,7 +6396,7 @@ event = {
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	supplies = 2500 \r
+ 	}\r
+@@ -6756,7 +6406,7 @@ event = {
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UTC } }\r
++	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	local_flag = Shinsengumi_1936\r
+ 	random = 15\r

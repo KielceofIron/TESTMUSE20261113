@@ -1,0 +1,364 @@
+--- A/db/events/AI/ai_ger.txt [cp932]
++++ B/db/events/AI/ai_ger.txt [cp932]
+@@ -99,7 +99,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_setflag which = GERInvadeNorway }\r
+ 		command = { type = local_clrflag which = GERSubPatrol }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Norway.ai" }\r
++		command = { type = ai which = "switch/GER_Norway.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -138,7 +138,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = GERInvadeNorway }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Norway_END.ai" }\r
++		command = { type = ai which = "switch/GER_Norway_END.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -167,7 +167,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ 	\r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Poland.ai" }\r
++		command = { type = ai which = "switch/GER_Poland.ai" }\r
+ 		#command = { type = war which = POL }\r
+ 		command = { type = local_clrflag which = GERInvadePoland }\r
+ 		command = { type = local_clrflag which = GERStandardFront }\r
+@@ -231,7 +231,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1948 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Poland_After.ai" }\r
++		command = { type = ai which = "switch/GER_Poland_After.ai" }\r
+ 		command = { type = local_setflag which = GERLowCountriesPrepare }\r
+ 		command = { type = local_clrflag which = GERBalticGarrison }\r
+ 		command = { type = local_clrflag which = GERBalticGarrisonRussia }\r
+@@ -309,7 +309,7 @@ event = {
+ 		command = { type = war which = BEL }\r
+ 		command = { type = war which = HOL }\r
+ 		command = { type = war which = LUX }\r
+-		# command = { trigger = { ai = yes } type = ai which = "switch/GER_France.ai" }\r
++		# command = { type = ai which = "switch/GER_France.ai" }\r
+ 		command = { trigger = { Not = { alliance = { country = SOV } } } type = ai which = "switch/GER_France.ai" }\r
+ 		command = { trigger = { alliance = { country = SOV } } type = ai which = "Addswitch/GER_France_kai.ai" }\r
+ 		command = { type = local_clrflag which = GERLowCountriesPrepare }\r
+@@ -362,7 +362,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Standard_Front.ai" }\r
++		command = { type = ai which = "switch/GER_Standard_Front.ai" }\r
+ 		command = { type = local_setflag which = GERStandardFront }\r
+ 	}\r
+ }\r
+@@ -448,7 +448,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Baklans.ai" }\r
++		command = { type = ai which = "switch/GER_Baklans.ai" }\r
+ 		command = { type = local_setflag which = GERInvadeYugoslavia }\r
+ 		command = { type = setflag which = InvYugoslavia }\r
+ 		command = { type = local_clrflag which = GERInvadeRussia }\r
+@@ -556,7 +556,7 @@ event = {
+ 	action = { #Russian Campaign\r
+ 		command = { type = sleepevent which = 3003013 }\r
+ 		command = { type = sleepevent which = 3003010 }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Russia.ai" }\r
++		command = { type = ai which = "switch/GER_Russia.ai" }\r
+ 		command = { type = local_clrflag which = GERInvadeRussia }\r
+ 		command = { type = local_clrflag which = GERStandardFront }\r
+ 		command = { type = war which = SOV }\r
+@@ -620,7 +620,7 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	action = { #Russian Campaign\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Russia.ai" }\r
++		command = { type = ai which = "switch/GER_Russia.ai" }\r
+ 		command = { type = local_clrflag which = GERInvadeRussia }\r
+ 		command = { type = local_clrflag which = GERStandardFront }\r
+ 	}\r
+@@ -646,7 +646,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = { #Russian Campaign\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Russia.ai" }\r
++		command = { type = ai which = "switch/GER_Russia.ai" }\r
+ 		command = { type = sleepevent which = 3003009 }\r
+ 	}\r
+ }\r
+@@ -704,8 +704,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_atwar.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_War_Research.ai" }\r
++		command = { type = ai which = "switch/GER_atwar.ai" }\r
++		command = { type = ai which = "switch/GER_War_Research.ai" }\r
+ 		command = { trigger = { NOT = { ai = SOV } difficulty = 3 } type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 120 }\r
+ 		command = { trigger = { NOT = { ai = SOV } difficulty = 3 } type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 120 }\r
+ 		command = { trigger = { NOT = { ai = SOV } difficulty = 3 } type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 120 }\r
+@@ -755,7 +755,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Russia_Buildup.ai" }\r
++		command = { type = ai which = "switch/GER_Russia_Buildup.ai" }\r
+ 		command = { type = local_setflag which = GERInvadeRussia }\r
+ 	}\r
+ }\r
+@@ -793,12 +793,12 @@ event = {
+ 	action_a = { #Russian Campaign\r
+ 		ai_chance = 80\r
+ 		command = { type = local_setflag which = GERInvadeRussia }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_After_France.ai" }\r
++		command = { type = ai which = "switch/GER_After_France.ai" }\r
+ 	}\r
+ 	action_b = { #Launch Sea Lion\r
+ 		ai_chance = 20\r
+ 		command = { type = local_setflag which = GERInvadeSpain }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_After_France.ai" }\r
++		command = { type = ai which = "switch/GER_After_France.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -825,7 +825,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_War_SOV_USA.ai" }\r
++		command = { type = ai which = "switch/GER_War_SOV_USA.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -858,7 +858,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_setflag which = GERBalticGarrison }\r
+ 		command = { type = local_clrflag which = GERBalticGarrisonRussia }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Baltic.ai" }\r
++		command = { type = ai which = "switch/GER_Baltic.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -894,7 +894,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Baltic2.ai" }\r
++		command = { type = ai which = "switch/GER_Baltic2.ai" }\r
+ 		command = { type = local_clrflag which = GERBalticGarrison }\r
+ 	}\r
+ }\r
+@@ -926,7 +926,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Baltic_Russia.ai" }\r
++		command = { type = ai which = "switch/GER_Baltic_Russia.ai" }\r
+ 		command = { type = local_setflag which = GERBalticGarrison }		\r
+ 		command = { type = local_setflag which = GERBalticGarrisonRussia }\r
+ 	}\r
+@@ -960,8 +960,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_setflag which = GERInvadeSpain }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Sealion_research.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Build_Navy.ai" }\r
++		command = { type = ai which = "switch/GER_Sealion_research.ai" }\r
++		command = { type = ai which = "switch/GER_Build_Navy.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -995,7 +995,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Winter.ai" }\r
++		command = { type = ai which = "switch/GER_Winter.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1023,7 +1023,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Russia_Second_Year.ai" }\r
++		command = { type = ai which = "switch/GER_Russia_Second_Year.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1068,8 +1068,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_setflag which = GERInvadePoland }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Fall_CZE.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_War_Research.ai" }\r
++		command = { type = ai which = "switch/GER_Fall_CZE.ai" }\r
++		command = { type = ai which = "switch/GER_War_Research.ai" }\r
+ 		command = { trigger = { ai = yes NOT = { local_flag = MOB7 } NOT = { local_flag = demob } } type = local_setflag which = do_not_demob }\r
+ 		command = { trigger = { ai = yes NOT = { local_flag = MOB7 } NOT = { local_flag = demob } } type = trigger which = 8300107 }\r
+ 		command = { trigger = { ai = yes NOT = { local_flag = MOB7 } NOT = { local_flag = demob } } type = event which = 130033 where = GER when = 360 }\r
+@@ -1200,7 +1200,7 @@ event = {
+ \r
+ 	action_a = {  # Sub Patrol North Atlantic\r
+ 		ai_chance = 35\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Sub_Patrol1.ai" }\r
++		command = { type = ai which = "switch/GER_Sub_Patrol1.ai" }\r
+ 		command = { type = local_setflag which = GERSubPatrol }\r
+ 		command = { type = local_setflag which = GERSubPatrol1 }\r
+ 		command = { type = local_clrflag which = GERSubPatrol2 }\r
+@@ -1208,7 +1208,7 @@ event = {
+ 	}\r
+ 	action_b = {  # Sub Patrol Central Atlantic\r
+ 		ai_chance = 35\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Sub_Patrol2.ai" }\r
++		command = { type = ai which = "switch/GER_Sub_Patrol2.ai" }\r
+ 		command = { type = local_setflag which = GERSubPatrol }\r
+ 		command = { type = local_setflag which = GERSubPatrol2 }\r
+ 		command = { type = local_clrflag which = GERSubPatrol1 }\r
+@@ -1216,7 +1216,7 @@ event = {
+ 	}\r
+ 	action_c = {  # Sub Patrol South Atlantic\r
+ 		ai_chance = 30\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Sub_Patrol3.ai" }\r
++		command = { type = ai which = "switch/GER_Sub_Patrol3.ai" }\r
+ 		command = { type = local_setflag which = GERSubPatrol }\r
+ 		command = { type = local_setflag which = GERSubPatrol3 }\r
+ 		command = { type = local_clrflag which = GERSubPatrol2 }\r
+@@ -1316,7 +1316,7 @@ event = {
+ 		command = { type = local_setflag which = GERAirAINaval }\r
+ 		command = { type = local_clrflag which = GERAirAIStrategic }\r
+ 		command = { type = local_clrflag which = GERAirAIGround }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Air_Naval.ai" }\r
++		command = { type = ai which = "switch/GER_Air_Naval.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1409,7 +1409,7 @@ event = {
+ 		command = { type = local_clrflag which = GERAirAINaval }\r
+ 		command = { type = local_clrflag which = GERAirAIStrategic }\r
+ 		command = { type = local_setflag which = GERAirAIGround }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Air_Ground.ai" }\r
++		command = { type = ai which = "switch/GER_Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1504,7 +1504,7 @@ event = {
+ 		command = { type = local_clrflag which = GERAirAINaval }\r
+ 		command = { type = local_setflag which = GERAirAIStrategic }\r
+ 		command = { type = local_clrflag which = GERAirAIGround }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Air_Strategic.ai" }\r
++		command = { type = ai which = "switch/GER_Air_Strategic.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1555,7 +1555,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_setflag which = GERDefendItaly }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_ITA_Defense.ai" }\r
++		command = { type = ai which = "switch/GER_ITA_Defense.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1608,7 +1608,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = GERDefendItaly }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_ITA_Recall_Defense.ai" }\r
++		command = { type = ai which = "switch/GER_ITA_Recall_Defense.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1657,8 +1657,8 @@ event = {
+ 		command = { type = local_clrflag which = GERInvadeEngland }	\r
+ 		command = { type = local_clrflag which = GERAirSeaLion }\r
+ 		command = { type = local_setflag which = GERAirAIGround }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Russia_Buildup.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Air_Ground.ai" }	\r
++		command = { type = ai which = "switch/GER_Russia_Buildup.ai" }\r
++		command = { type = ai which = "switch/GER_Air_Ground.ai" }	\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1700,8 +1700,8 @@ event = {
+ 		command = { type = local_setflag which = GERInvadeEngland }\r
+ 		command = { type = local_clrflag which = GERInvadeSpain }\r
+ 		command = { type = local_setflag which = GERAirSeaLion }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Sealion.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Air_Sealion.ai" }\r
++		command = { type = ai which = "switch/GER_Sealion.ai" }\r
++		command = { type = ai which = "switch/GER_Air_Sealion.ai" }\r
+ 	}\r
+ }\r
+ event = {\r
+@@ -1732,8 +1732,8 @@ event = {
+ 		command = { type = local_setflag which = GERInvadeSpain }\r
+ 		command = { type = local_setflag which = GERInvadeEngland }\r
+ 		command = { type = local_setflag which = GERAirSeaLion }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_SPR_Buildup_VIC.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Air_Sealion.ai" }\r
++		command = { type = ai which = "switch/GER_SPR_Buildup_VIC.ai" }\r
++		command = { type = ai which = "switch/GER_Air_Sealion.ai" }\r
+ 	}\r
+ }\r
+ event = {\r
+@@ -1788,8 +1788,8 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = GERInvadeEngland }\r
+ 		command = { type = local_setflag which = GERAirSeaLion }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_SPR.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Air_Sealion.ai" }\r
++		command = { type = ai which = "switch/GER_SPR.ai" }\r
++		command = { type = ai which = "switch/GER_Air_Sealion.ai" }\r
+ 		command = { type = sleepevent which = 3003033 }\r
+ 		command = { type = sleepevent which = 3003040 }\r
+ 		command = { type = war which = SPR }\r
+@@ -1850,7 +1850,7 @@ event = {
+ 		command = { type = local_setflag which = GERBuildStandard }\r
+ 		command = { type = local_clrflag which = GERBuildLand }\r
+ 		command = { type = local_clrflag which = GERBuildNavy }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Build_Standard.ai" }\r
++		command = { type = ai which = "switch/GER_Build_Standard.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1899,7 +1899,7 @@ event = {
+ 		command = { type = local_clrflag which = GERBuildStandard }\r
+ 		command = { type = local_setflag which = GERBuildLand }\r
+ 		command = { type = local_clrflag which = GERBuildNavy }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Build_Land.ai" }\r
++		command = { type = ai which = "switch/GER_Build_Land.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1935,7 +1935,7 @@ event = {
+ 		command = { type = local_clrflag which = GERBuildStandard }\r
+ 		command = { type = local_clrflag which = GERBuildLand }\r
+ 		command = { type = local_setflag which = GERBuildNavy }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Build_Navy.ai" }\r
++		command = { type = ai which = "switch/GER_Build_Navy.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1963,7 +1963,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1939 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Build_Fort.ai" }\r
++		command = { type = ai which = "switch/GER_Build_Fort.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -2105,6 +2105,6 @@ event = {	# Allows German AI to release RKs and transural puppets after victory
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/GER_Bitter_Peace.ai" }\r
++		command = { type = ai which = "switch/GER_Bitter_Peace.ai" }\r
+ 	}\r
+ }
+\ No newline at end of file

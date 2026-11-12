@@ -1,0 +1,409 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Africa_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Africa_events.txt [cp932]
+@@ -23,6 +23,12 @@
+ #id = 2919001 矛盾する委員会\r
+ #id = 2919002 アフリカ独立委員会のユダヤ人\r
+ #id = 2919003 ユダヤ系資本との合一\r
++#id = 2919004 アフリカ合衆国における総選挙\r
++#id = 2919005 アフリカ合衆国選挙の終了\r
++#id = 2919006 エチオピアの同盟参戦\r
++#id = 2919007 外国人傭兵部隊の増設\r
++#id = 2919008 ヤン・スマッツの死\r
++#id = 2919004 \r
+ ##########################################################################\r
+ #  ドイツ領アフリカ\r
+ ##########################################################################\r
+@@ -539,7 +545,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1939 }\r
++	date = { day = 0 month = 0 year = 1940 }\r
+ 	offset = 7\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+@@ -645,6 +651,77 @@ event = {
+ 	name = "ACTIONNAME2919001A"\r
+ 	command = { type = max_organization which = militia value = 2 }\r
+ 	command = { type = morale which = militia value = 2 }\r
++	command = { type = sleepteam which = 660029 }\r
++	command = { type = sleepteam which = 660025 }\r
++	command = { type = sleepteam which = 660024 }\r
++	command = { type = sleepteam which = 660027 }\r
++	command = { type = sleepteam which = 660035 }\r
++	command = { type = sleepteam which = 660022 }\r
++	command = { type = sleepteam which = 660003 }\r
++	command = { type = sleepteam which = 660028 }\r
++	command = { type = sleepteam which = 660030 }\r
++	command = { type = sleepteam which = 660023 }\r
++	command = { type = sleepteam which = 660033 }\r
++	command = { type = sleepteam which = 660001 }\r
++	command = { type = sleepteam which = 660026 }\r
++	command = { type = sleepteam which = 660034 }\r
++	command = { type = sleepteam which = 660002 }\r
++	command = { type = sleepteam which = 660031 }\r
++	command = { type = sleepteam which = 660021 }\r
++	command = { type = waketeam which = 660040 }\r
++	command = { type = waketeam which = 660041 }\r
++	command = { type = waketeam which = 660042 }\r
++	command = { type = waketeam which = 660043 }\r
++	command = { type = waketeam which = 660044 }\r
++	command = { type = waketeam which = 660045 }\r
++	command = { type = waketeam which = 660046 }\r
++	command = { type = waketeam which = 660047 }\r
++	command = { type = waketeam which = 660048 }\r
++	command = { type = waketeam which = 660049 }\r
++	command = { type = waketeam which = 660052 }\r
++	command = { type = waketeam which = 660053 }\r
++	command = { type = waketeam which = 660054 }\r
++	command = { type = waketeam which = 660055 }\r
++	command = { type = waketeam which = 660056 }\r
++	command = { type = waketeam which = 660058 }\r
++	command = { type = waketeam which = 660059 }\r
++	command = { type = waketeam which = 660060 }\r
++	command = { type = waketeam which = 660061 }\r
++	command = { type = waketeam which = 660063 }\r
++	command = { type = waketeam which = 660064 }\r
++	command = { type = waketeam which = 660068 }\r
++	command = { type = waketeam which = 660069 }\r
++	command = { type = waketeam which = 660070 }\r
++	command = { type = waketeam which = 660071 }\r
++	command = { type = sleepminister which =  660011  }\r
++	command = { type = sleepminister which =  660013  }\r
++	command = { type = sleepminister which =  660015  }\r
++	command = { type = sleepminister which =  660016  }\r
++	command = { type = sleepminister which =  660017  }\r
++	command = { type = sleepminister which =  660018  }\r
++	command = { type = sleepminister which =  660019  }\r
++	command = { type = sleepminister which =  660020  }\r
++	command = { type = sleepminister which =  660021  }\r
++	command = { type = sleepminister which =  660022  }\r
++	command = { type = sleepminister which =  660023  }\r
++	command = { type = sleepminister which =  660024  }\r
++	command = { type = sleepminister which =  660025  }\r
++	command = { type = sleepminister which =  660026  }\r
++	command = { type = sleepminister which =  660027  }\r
++	command = { type = sleepminister which =  660028  }\r
++	command = { type = sleepminister which =  660029  }\r
++	command = { type = sleepminister which =  660030  }\r
++	command = { type = sleepminister which =  660031  }\r
++	command = { type = sleepminister which =  660032  }\r
++	command = { type = sleepminister which =  660033  }\r
++	command = { type = sleepminister which =  660034  }\r
++	command = { type = sleepminister which =  660035  }\r
++	command = { type = sleepminister which =  660036  }\r
++	command = { type = sleepminister which =  660037  }\r
++	command = { type = sleepminister which =  660038  }\r
++	command = { type = sleepminister which =  660039  }\r
++	command = { type = sleepminister which =  660040  }\r
++\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -702,17 +779,20 @@ event = {
+ 	decision = {\r
+ 	exists = GLD\r
+ 	atwar = no\r
++	event = 2919005\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
+ 	exists = GLD\r
+ 	atwar = no\r
++	event = 2919005\r
+ 	}\r
+ \r
+ 	trigger = {\r
+ 	exists = GLD\r
+ 	atwar = no\r
+ 	random = 5\r
++	event = 2919005\r
+ 	}\r
+ \r
+ 	name = "EVT_2919003_NAME"\r
+@@ -723,7 +803,7 @@ event = {
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 180\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
++	deathdate = { day = 29 month = 11 year = 1970 }\r
+ \r
+ 	action = { # ユダヤ系資本家との合一を決定した\r
+ 	name = "ACTIONNAME2919003A"\r
+@@ -753,7 +833,7 @@ event = {
+ 	command = { type = chiefofstaff which = 660107 } # ヤン・スマッツ\r
+ 	command = { type = chiefofarmy which = 660108 } # ヤン・スマッツ\r
+ 	command = { type = chiefofnavy which = 660109 } # エドワード・サイフレット\r
+-	command = { type = chiefofair which = 660120 } # マーマデューク・パトル\r
++	command = { type = chiefofair which = 660110 } # マーマデューク・パトル\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -763,3 +843,266 @@ event = {
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
++#########################################################################\r
++#  アフリカ合衆国における総選挙\r
++# アフリカ合衆国では四年に一度、国家方針を決めるための総選挙が実施される。\r
++# 黒人権利運動家や現地人を積極的に採用するアフリカ合衆国の民主制度は、世界でもっとも\r
++# 進歩的なものであると内外に宣伝されている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2919004\r
++	random = no\r
++	country = GLD\r
++\r
++\r
++	trigger = {\r
++	exists = GLD\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_2919004_NAME"\r
++	desc = "EVT_2919004_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++	date = { day = 0 month = 3 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # さあ、選挙だ！\r
++	name = "ACTIONNAME2919004"\r
++	command = { type = dissent value = 1 }\r
++	command = { type = wakeminister which = 660117 }\r
++	command = { type = wakeminister which = 660118 }\r
++	command = { type = wakeminister which = 660119 }\r
++	command = { type = armamentminister which = 660117 } # シウサガル・ラングーラム\r
++	command = { type = ministerofsecurity which = 660118 } # アルバート・ルツーリ\r
++	command = { type = foreignminister which = 660119 } # ヘレン・スズマン\r
++	command = { type = event which = 2919005 when = 30 where = GLD }\r
++	ai_chance = 100\r
++	}\r
++\r
++}\r
++\r
++\r
++#########################################################################\r
++#  アフリカ合衆国選挙の終了\r
++# アフリカ合衆国における総選挙が終了した！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2919005\r
++	random = no\r
++	country = GLD\r
++\r
++	name = "EVT_2919005_NAME"\r
++	desc = "EVT_2919005_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++\r
++	action = { # 我が国の制度は世界でもっとも進歩的なものである\r
++	name = "ACTIONNAME2919005"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = headofstate which = 660111 } # ヤン・スマッツ\r
++	command = { type = headofgovernment which = 660112 } # ギー・ド・ロチルド\r
++	command = { type = foreignminister which = 660113 } # ジョン・ロックフェラー2世\r
++	command = { type = armamentminister which = 660114 } # ハリー・オッペンハイマー\r
++	command = { type = ministerofsecurity which = 660115 } # アングロ・アメリカン社\r
++	command = { type = ministerofintelligence which = 660116 } # ヴィクター・ロスチャイルド\r
++	command = { type = chiefofstaff which = 660107 } # ヤン・スマッツ\r
++	command = { type = chiefofarmy which = 660108 } # ヤン・スマッツ\r
++	command = { type = chiefofnavy which = 660109 } # エドワード・サイフレット\r
++	command = { type = chiefofair which = 660110 } # マーマデューク・パトル\r
++\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  エチオピアへの参戦要求\r
++# 戦況の悪化に伴い、エチオピアに対し参戦を要求することができる。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2919006\r
++	random = no\r
++	country = GLD\r
++	decision = { \r
++	exists = ETH\r
++	atwar = no\r
++	war = { country = ENG country = GER }\r
++	alliance = { country = ENG country = GLD }\r
++	}\r
++	decision_trigger = { \r
++	exists = ETH\r
++	atwar = no\r
++	war = { country = ENG country = GER }\r
++	alliance = { country = ENG country = GLD }\r
++	lost_national = { value = 70 }\r
++	}\r
++	trigger = { \r
++	exists = ETH\r
++	atwar = no\r
++	war = { country = ENG country = GER }\r
++	alliance = { country = ENG country = GLD }\r
++	lost_national = { value = 70 }\r
++	}\r
++	name = "EVT_2919006_NAME"\r
++	desc = "EVT_2919006_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++	date = { day = 0 month = 3 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1960 }\r
++\r
++	action = { # 参戦要求を送る\r
++	name = "ACTIONNAME2919006"\r
++	command = { type = trigger which = 5523027 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++\r
++\r
++#########################################################################\r
++#  外国人傭兵部隊の増設\r
++# 複数の情勢変化を鑑み、アフリカ合衆国における外国人傭兵部隊の増設が決定された。\r
++#########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 2919007\r
++	random = no\r
++	country = GLD\r
++	persistent = yes\r
++	decision = {\r
++	exists = GLD\r
++	atwar = no\r
++	event = 2919003\r
++	}\r
++\r
++	decision_trigger = { \r
++	exists = GLD\r
++	atwar = no\r
++	money = 1000\r
++	NOT = { dissent = 5 }\r
++	event = 2919003\r
++	}\r
++\r
++	trigger = {\r
++	atwar = no\r
++	money = 1000\r
++	NOT = { dissent = 5 }\r
++	ai = yes \r
++	OR = {\r
++	AND = { ic = 5 NOT = { ic = 10 } army = 7 }\r
++	AND = { ic = 10 NOT = { ic = 15 } NOT = { army = 15 } }\r
++	AND = { ic = 15 NOT = { ic = 20 } NOT = { army = 22 } }\r
++	AND = { ic = 20 NOT = { ic = 30 } NOT = { army = 30 } }\r
++	AND = { ic = 30 NOT = { ic = 40 } NOT = { army = 45 } }\r
++	AND = { ic = 40 NOT = { ic = 50 } NOT = { army = 60 } }\r
++	AND = { ic = 50 NOT = { ic = 60 } NOT = { army = 75 } }\r
++	AND = { ic = 60 NOT = { ic = 70 } NOT = { army = 90 } }\r
++	AND = { ic = 70 NOT = { army = 100 } }\r
++	}\r
++	event = 2919003\r
++	}\r
++\r
++	name = "EVT_2919007_NAME"\r
++	desc = "EVT_2919007_DESC"\r
++	style = 2\r
++	picture = "Wehrmacht"\r
++	decision_picture = "decision_mobilization_young_soldier"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++\r
++	action = { # 宜しい。\r
++	name = "ACTIONNAME2919007"\r
++	command = { type = money value = -1000 }\r
++	command = { type = max_organization which = land value = -1 }\r
++   	command = { trigger = { technology = 1060 NOT = { technology = 1070 } } type = add_division  value = infantry when = 5  }\r
++	command = { trigger = { technology = 1070 NOT = { technology = 1080 } } type = add_division  value = infantry when = 6  }\r
++	command = { trigger = { technology = 1080 NOT = { technology = 1090 } } type = add_division  value = infantry when = 7  }\r
++	command = { trigger = { technology = 1090 NOT = { technology = 1100 } } type = add_division  value = infantry when = 8  }\r
++	command = { trigger = { technology = 1100 NOT = { technology = 1110 } } type = add_division  value = infantry when = 9  }\r
++	command = { trigger = { technology = 1110 NOT = { technology = 1120 } } type = add_division  value = infantry when = 10  }\r
++	command = { trigger = { technology = 1120 NOT = { technology = 1130 } } type = add_division  value = infantry when = 11  } \r
++	command = { trigger = { technology = 1130 } type = add_division  value = infantry when = 12  }\r
++	command = { trigger = { technology = 1060 NOT = { technology = 1070 } } type = add_division  value = infantry when = 5  }\r
++	command = { trigger = { technology = 1070 NOT = { technology = 1080 } } type = add_division  value = infantry when = 6  }\r
++	command = { trigger = { technology = 1080 NOT = { technology = 1090 } } type = add_division  value = infantry when = 7  }\r
++	command = { trigger = { technology = 1090 NOT = { technology = 1100 } } type = add_division  value = infantry when = 8  }\r
++	command = { trigger = { technology = 1100 NOT = { technology = 1110 } } type = add_division  value = infantry when = 9  }\r
++	command = { trigger = { technology = 1110 NOT = { technology = 1120 } } type = add_division  value = infantry when = 10  }\r
++	command = { trigger = { technology = 1120 NOT = { technology = 1130 } } type = add_division  value = infantry when = 11  }\r
++	command = { trigger = { technology = 1130 } type = add_division  value = infantry when = 12  }\r
++	command = { trigger = { technology = 1060 NOT = { technology = 1070 } } type = add_division  value = infantry when = 5  }\r
++	command = { trigger = { technology = 1070 NOT = { technology = 1080 } } type = add_division  value = infantry when = 6  }\r
++	command = { trigger = { technology = 1080 NOT = { technology = 1090 } } type = add_division  value = infantry when = 7  }\r
++	command = { trigger = { technology = 1090 NOT = { technology = 1100 } } type = add_division  value = infantry when = 8  }\r
++	command = { trigger = { technology = 1100 NOT = { technology = 1110 } } type = add_division  value = infantry when = 9  }\r
++	command = { trigger = { technology = 1110 NOT = { technology = 1120 } } type = add_division  value = infantry when = 10  }\r
++	command = { trigger = { technology = 1120 NOT = { technology = 1130 } } type = add_division  value = infantry when = 11  }\r
++	command = { trigger = { technology = 1130 } type = add_division  value = infantry when = 12  }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  ヤン・スマッツの死\r
++# １９５０年、アフリカ合衆国国父にして偉大なる軍人ヤン・スマッツ氏が死去された。\r
++# 彼の葬儀は国葬によって実施されるであろう……。\r
++#########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 2919008\r
++	random = no\r
++	country = GLD\r
++\r
++	name = "EVT_2919008_NAME"\r
++	desc = "EVT_2919008_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++	date = { day = 10 month = 8 year = 1950 }\r
++\r
++	action = { # R.I.P……\r
++	name = "ACTIONNAME2919006"\r
++	command = { type = headofstate which = 660120 } # アフリカ三百人委員会\r
++	command = { type = chiefofstaff which = 660121 } # ダインコープ・インターナショナル\r
++	command = { type = chiefofarmy which = 660122 } # ダインコープ・インターナショナル\r
++	command = { type = chiefofnavy which = 660123 } # ダインコープ・インターナショナル\r
++	command = { type = chiefofair which = 660124 } # ダインコープ・インターナショナル\r
++	command = { type = sleepminister which = 660101 }\r
++	command = { type = sleepminister which = 660102 }\r
++	command = { type = sleepminister which = 660103 }\r
++	command = { type = sleepminister which = 660104 }\r
++	command = { type = sleepminister which = 660105 }\r
++	command = { type = sleepminister which = 660106 }\r
++	command = { type = sleepminister which = 660107 }\r
++	command = { type = sleepminister which = 660108 }\r
++	command = { type = sleepminister which = 660109 }\r
++	command = { type = sleepminister which = 660110 }\r
++	command = { type = sleepminister which = 660111 }\r
++	command = { type = sleepminister which = 660113 }\r
++	command = { type = sleepminister which = 660114 }\r
++	command = { type = sleepminister which = 660115 }\r
++	command = { type = sleepminister which = 660116 }\r
++	ai_chance = 100\r
++	}\r
++}
+\ No newline at end of file

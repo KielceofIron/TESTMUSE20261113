@@ -1,0 +1,119 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Middle_East_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Middle_East_events.txt [cp932]
+@@ -9,9 +9,9 @@
+ #id = 3737002 アンカラにおける反乱\r
+ #id = 3737003 カルス領土問題\r
+ #id = 3737004 カルス領土問題 ― ロシアが返還を要求\r
+-#id = 3737005 カルス領土問題 ― トルコが要求を拒否\r
++#id = 3737005 カルス領土問題 ― 要求を拒否\r
+ #id = 3737006 カルス紛争 ― 勝利（UER SOV）\r
+-#id = 3737007 カルス紛争 ― 敗北（TUR OTT ARM）\r
++#id = 3737007 カルス紛争 ― 敗北（TUR OTT ARM U39）\r
+ #id = 3737008 カルス紛争 ― 勝利（TUR OTT ARM）\r
+ #id = 3737009 カルス紛争 ― 敗北（UER SOV）\r
+ #id = 3737010 外交政策の再考性\r
+@@ -234,9 +234,8 @@ event = {
+ ##########################################################################\r
+ #  カルス領土問題\r
+ # アナトリアとカフカ―スの境にあるカルスは、1878年の露土戦争の結果としてロシアに帰属が移った場所であったが、\r
+-# 第一次世界大戦中にロシアが革命運動の混乱に陥った時にトルコが占領したことで、係争地域となった。\r
+-# 現在、ロシアには安定が戻りつつある一方で、アナトリア半島は政情不安に襲われている。\r
+-# この領土問題を解決する良い機会かもしれない。\r
++# 第一次世界大戦中にロシアが革命運動の混乱に陥った時に失ったことで、係争地域となった。\r
++# 現在、ロシアには安定が戻りつつある一方で、アナトリア半島は政情不安に襲われている。この領土問題を解決する良い機会かもしれない。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+@@ -324,7 +323,7 @@ event = {
+ ##########################################################################\r
+ #  カルス領土問題 ― ロシアが返還を要求\r
+ # アナトリアとカフカ―スの境にあるカルスは、1878年の露土戦争の結果としてロシアに帰属が移った場所であったが、\r
+-# 第一次世界大戦中にロシアが革命運動の混乱に陥った時にトルコが占領したことで、係争地域となった。\r
++# 第一次世界大戦中にロシアが革命運動の混乱に陥った時に失ったことで、係争地域となった。\r
+ # そしてロシアは、カルスを再びロシアの領土とすることを要求してきた。\r
+ # この要求を拒めば、戦争になるかもしれないが、受諾すれば、国内の民族主義者からの反発を受けることだろう。\r
+ ###########################################################################\r
+@@ -351,7 +350,7 @@ event = {
+ 	command = { trigger = { exists = SOV } type = secedeprovince which = SOV value = 386 }\r
+ 	command = { type = domestic which = defense_lobby value = -1 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+-	ai_chance = 60\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # ロシアの要求を断固拒否する\r
+@@ -363,14 +362,14 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { trigger = { exists = UER } type = event which = 3737005 where = UER when = 1 }\r
+ 	command = { trigger = { exists = SOV } type = event which = 3737005 where = SOV when = 1 }\r
+-	ai_chance = 40\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  カルス領土問題 ― トルコが要求を拒否\r
++#  カルス領土問題 ― 要求を拒否\r
+ # アナトリアとカフカ―スの境にあるカルスは、1878年の露土戦争の結果としてロシアに帰属が移った場所であったが、\r
+-# 第一次世界大戦中にロシアが革命運動の混乱に陥った時にトルコが占領したことで、係争地域となった。\r
++# 第一次世界大戦中にロシアが革命運動の混乱に陥った時に失ったことで、係争地域となった。\r
+ # ロシアの正当な領土返還要求に対し、敵はこれを拒否した！\r
+ ###########################################################################\r
+ \r
+@@ -413,7 +412,7 @@ event = {
+ ##########################################################################\r
+ #  カルス紛争 ― 勝利（UER SOV）\r
+ # アナトリアとカフカ―スの境にあるカルスは、1878年の露土戦争の結果としてロシアに帰属が移った場所であったが、\r
+-# 第一次世界大戦中にロシアが革命運動の混乱に陥った時にトルコが占領したことで、係争地域となった。\r
++# 第一次世界大戦中にロシアが革命運動の混乱に陥った時に失ったことで、係争地域となった。\r
+ # 国境紛争における対立は、実際に砲火を交える武力衝突へと発展し、ロシアが紛争に勝利した。\r
+ ###########################################################################\r
+ \r
+@@ -475,21 +474,23 @@ event = {
+ 	command = { trigger = { war = { country = TUR } } type = relation which = TUR value = -10 }\r
+ 	command = { trigger = { war = { country = OTT } } type = relation which = OTT value = -10 }\r
+ 	command = { trigger = { war = { country = ARM } } type = relation which = ARM value = -10 }\r
++	command = { trigger = { war = { country = U39 } } type = relation which = U39 value = -10 }\r
+ 	command = { trigger = { war = { country = TUR } } type = event which = 3737007 where = TUR when = 0 }\r
+ 	command = { trigger = { war = { country = OTT } } type = event which = 3737007 where = OTT when = 0 }\r
+ 	command = { trigger = { war = { country = ARM } } type = event which = 3737007 where = ARM when = 0 }\r
++	command = { trigger = { war = { country = U39 } } type = event which = 3737007 where = U39 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  カルス紛争 ― 敗北（TUR OTT ARM）\r
++#  カルス紛争 ― 敗北（TUR OTT ARM U39）\r
+ ###########################################################################\r
+ \r
+ event = {\r
+ 	id = 3737007\r
+ 	random = no\r
+-	TAG = { TUR OTT ARM }\r
++	TAG = { TUR OTT ARM U39 }\r
+ \r
+ 	name = "EVT_3737007_NAME"\r
+ 	desc = "EVT_3737006_DESC"\r
+@@ -517,7 +518,7 @@ event = {
+ ##########################################################################\r
+ #  カルス紛争 ― 勝利（TUR OTT ARM）\r
+ # アナトリアとカフカ―スの境にあるカルスは、1878年の露土戦争の結果としてロシアに帰属が移った場所であったが、\r
+-# 第一次世界大戦中にロシアが革命運動の混乱に陥った時にトルコが占領したことで、係争地域となった。\r
++# 第一次世界大戦中にロシアが革命運動の混乱に陥った時に失ったことで、係争地域となった。\r
+ # 国境紛争における対立は、実際に砲火を交える武力衝突へと発展し、ロシアの侵略は国際社会の予想に反し、失敗に終わった。\r
+ ###########################################################################\r
+ \r
+@@ -562,8 +563,10 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = belligerence value = 1 }\r
+ 	command = { type = supplies value = -500 }\r
+-	command = { trigger = { war = { country = UER } } type = peace which = UER value = 1 }\r
+-	command = { trigger = { war = { country = SOV } } type = peace which = SOV value = 1 }\r
++	command = { trigger = { war = { country = TUR } } type = peace which = TUR value = 1 }\r
++	command = { trigger = { war = { country = OTT } } type = peace which = OTT value = 1 }\r
++	command = { trigger = { war = { country = ARM } } type = peace which = ARM value = 1 }\r
++	command = { trigger = { war = { country = U39 } } type = peace which = U39 value = 1 }\r
+ 	command = { type = sleepevent which = 3737006 }\r
+ 	command = { type = sleepevent which = 3737007 }\r
+ 	ai_chance = 100\r

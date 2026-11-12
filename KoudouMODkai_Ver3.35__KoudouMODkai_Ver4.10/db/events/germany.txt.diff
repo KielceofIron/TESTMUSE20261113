@@ -1,0 +1,231 @@
+--- A/db/events/germany.txt [cp932]
++++ B/db/events/germany.txt [cp932]
+@@ -481,7 +481,8 @@ event = {
+ 	country = AUS\r
+ \r
+ 	trigger = {\r
+-		OR = { random = 4 AND = { random = 55 year = 1938 } year = 1939 }\r
++		year = 1938\r
++		OR = { AND = { random = 55 year = 1938 } year = 1939 }\r
+ 		OR = {\r
+ 			#AND = {\r
+ 			#	NOT = { guarantee = { country = ITA country = AUS } }\r
+@@ -498,9 +499,9 @@ event = {
+ 	style = 2\r
+ 	picture = "anschluss"\r
+ \r
+-	date = { day = 0 month = january year = 1937 }\r
++	date = { day = 0 month = 0 year = 1938 }\r
+ 	offset = 30\r
+-	deathdate = { day = 29 month = december year = 1945 }\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = {\r
+ 		name = ACTION_NAME_OK\r
+@@ -554,36 +555,25 @@ event = {
+ 	decision = { year = 1938 }\r
+ 	\r
+ 	decision_trigger = {\r
+-		event = 2003009\r
+ 		OR = {\r
+ 			owned = { province = 195 data = GER } 	\r
+ 			AND = {\r
+ 				control = { province = 195 data = GER } \r
+ 				war = { country = GER country = AUS }\r
+ 			}\r
+-			AND = {\r
+-				OR = {\r
+-					alliance = { country = GER country = AUS }\r
+-					#relation = { which = AUS value = 200 }\r
+-					relation = { which = AUS value = 150 } # 追加\r
+-				}\r
+-				#event = 2003008 \r
+-			}\r
++			alliance = { country = GER country = AUS }\r
+ 		}\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+ 		OR = {\r
+-			owned = { province = 195 data = GER } 	\r
++			owned = { province = 195 data = GER }\r
+ 			AND = {\r
+ 				control = { province = 195 data = GER } \r
+ 				war = { country = GER country = AUS }\r
+ 			}\r
+-			AND = {\r
+-				flag = Anschluss\r
+-				alliance = { country = GER country = AUS }\r
+-			}\r
+-			#event = 2003008\r
++			alliance = { country = GER country = AUS }\r
++			relation = { which = AUS value = 100 }\r
+ 		}\r
+ 	}\r
+ 	\r
+@@ -604,10 +594,11 @@ event = {
+ 			NOT = { war = { country = GER country = AUS } } \r
+ 			NOT = { alliance = { country = GER country = AUS } } 		\r
+ 			OR = {\r
+-				NOT = { relation = { which = AUS value = 200 } }\r
++				relation = { which = AUS value = 150 }\r
+ 				NOT = { exists = AUS } 		\r
+ 			}\r
+ 		}\r
++		command = { trigger = { exists = AUS } type = inherit which = AUS value = 1 }\r
+ 		command = { type = manpowerpool value = 300 }\r
+ 		command = { type = dissent value = -10 }\r
+ 		command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -835,22 +826,19 @@ event = {
+ 			}\r
+ 		}		\r
+ 		OR = { \r
+-			year = 1939 		\r
+-			random = 10\r
++			year = 1939\r
++			AND = {\r
++			NOT = { month = september  } \r
++			NOT = { year = 1938 } \r
+ 			event = 2003010\r
++			random = 10\r
++			}\r
+ 			AND = { \r
+ 				month = september \r
+ 				year = 1938 \r
+-				random = 75 \r
++				random = 95 \r
+ 			}\r
+ 		}\r
+-		OR = { \r
+-			AND = { \r
+-				random = 20 \r
+-				event = { id = 2003010 days = 100 } 				\r
+-			} \r
+-			event = { id = 2003010 days = 188 } \r
+-		}\r
+ 	}\r
+ 	\r
+ 	name = "EVT_2030_NAME"\r
+@@ -1694,10 +1682,10 @@ event = {
+ 	country = GER\r
+ 	\r
+ 	decision = {\r
+-		exists = POL	\r
++		exists = POL\r
+ 		exists = SOV\r
+ 		OR = { \r
+-			AND = { month = september year = 1939 } 		\r
++			AND = { day = 22 month = august year = 1939 } 		\r
+ 			event = { id = 2003015 days = 144 } \r
+ 			event = { id = 2003013 days = 300 } \r
+ 		}		\r
+@@ -1717,14 +1705,18 @@ event = {
+ 		#	AND = { difficulty = 3 relation = { which = SOV value = 50 } }\r
+ 		#	AND = { NOT = { difficulty = 3 } relation = { which = SOV value = -50 } }\r
+ 		#}\r
++		OR = { 		\r
++		event = 2003015\r
++		event = 2003013\r
++		}\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+ 		exists = POL	\r
+ 		exists = SOV\r
+ 		OR = { 		\r
+-			event = { id = 2003015 days = 144 } \r
+-			event = { id = 2003013 days = 300 } \r
++		event = 2003015\r
++		event = 2003013\r
+ 		}				\r
+ 		NOT = {\r
+ 			OR = {\r
+@@ -1741,7 +1733,12 @@ event = {
+ 			AND = { \r
+ 				year = 1939			\r
+ 				month = august \r
+-				random = 75 \r
++				random = 35 \r
++			} \r
++			AND = { \r
++				year = 1939			\r
++				month = august \r
++				day = 22\r
+ 			} \r
+ 		}	\r
+ 	}\r
+@@ -2374,7 +2371,7 @@ event = {
+ 	decision = {\r
+ 		exists = POL\r
+ 		#atwar = no\r
+-		government = fascist		\r
++		#government = fascist		\r
+ 		OR = {\r
+ 			OR = {\r
+ 				event = 2003025 #The Molotov-Ribbentrop Pact - Historical Outcome\r
+@@ -2390,7 +2387,7 @@ event = {
+ 		OR = {\r
+ 			event = 2003011 # Germany demands Sudetenland\r
+ 			event = 2003107 #fall grun\r
+-			control = { province = 207 data = -3 } #Prague in friendly hands\r
++		#	control = { province = 207 data = -3 } #Prague in friendly hands\r
+ 		}\r
+ 		event = 2003005 # Germany re-occupies Rhineland\r
+ 		NOT = {\r
+@@ -2413,6 +2410,14 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 		#random = 50\r
++		OR = {\r
++			random = 50\r
++			AND = {\r
++			year = 1939\r
++			month = september\r
++			day = 0\r
++			}\r
++		}\r
+ 		government = fascist\r
+ 		month = 2\r
+ 		exists = POL\r
+@@ -2432,7 +2437,7 @@ event = {
+ 		OR = {\r
+ 			event = 2003011 # Germany demands Sudetenland\r
+ 			event = 2003107 #fall grun\r
+-			control = { province = 207 data = -3 } #Prague in friendly hands\r
++		#	control = { province = 207 data = -3 } #Prague in friendly hands\r
+ 		}\r
+ 		event = 2003005 # Germany re-occupies Rhineland\r
+ 		NOT = {\r
+@@ -2451,18 +2456,29 @@ event = {
+ 	picture = "Poland_Invasion"\r
+ 	decision_picture = "decision_danzig_or_war"\r
+ \r
+-	date = { day = 28 month = august year = 1939 }\r
+-	offset = 2\r
++	date = { day = 0 month = september year = 1939 }\r
++	offset = 1\r
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME2027A" # Final Ultimatum - Danzig or War\r
+-		ai_chance = 100 \r
++		ai_chance = 90 \r
+ 		command = { type = relation which = ENG value = -30 }\r
+ 		command = { type = relation which = FRA value = -30 }   \r
+ 		command = { type = end_non_aggression which = POL where = GER }        \r
+ 		command = { type = trigger which = 2013002 } # POL\r
+ 	}\r
++\r
++	action = { # 追加\r
++		name = "ACTIONNAME2027B" # Time to back down\r
++		ai_chance = 10\r
++		command = { type = relation which = POL value = 15 }\r
++		command = { type = relation which = ENG value = 5 }\r
++		command = { type = relation which = FRA value = 5 }\r
++		command = { type = domestic which = interventionism value = -1 }\r
++		command = { type = removecore which = 181 } # ダンツィヒ\r
++		command = { type = setflag which = Danzig_or_War_NOT }\r
++	}\r
+ }\r
+ \r
+ #########################################################################\r

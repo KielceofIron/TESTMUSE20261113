@@ -1,0 +1,465 @@
+--- A/scenarios/1933if_Japan/afghanistan_if.inc [cp932]
++++ B/scenarios/1933if_Japan/afghanistan_if.inc [cp932]
+@@ -1,250 +1,218 @@
+- \r
+- ############################## \r
+- # Country definition for AFG # \r
+- ############################## \r
+-  \r
++##############################\r
++# Country definition for AFG #\r
++##############################\r
++\r
++#####################\r
++# Country main data #\r
++#####################\r
++\r
+ country = {\r
+-	tag                    = AFG\r
+-	puppet		       = UER\r
+-   ai = "afg_1936.ai"\r
+-   ai_settings = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes } }\r
+-   dissent = 3\r
+-	# Resource Reserves \r
+-	energy                 = 360\r
+-	metal                  = 180\r
+-	rare_materials         = 90\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 10 \r
+-	manpower               = 18 \r
+-      \r
+-	capital                = 2171 \r
+-	policy = {\r
+-		date              = {  year = 0 month = january day = 0  } \r
+-		democratic        = 3 \r
+-		political_left    = 3 \r
+-		free_market       = 7 \r
+-		freedom           = 6 \r
+-		professional_army = 5 \r
+-		defense_lobby     = 1 \r
+-		interventionism   = 1 \r
+-	} \r
+- \r
+-	nationalprovinces      = {  2168 2169 2170 2171 2172 2173 1529 1537  } \r
+-	ownedprovinces         = {  2168 2169 2170 2171 2172 2173  } \r
+-	controlledprovinces    = {  2168 2169 2170 2171 2172 2173  } \r
+-   \r
+-	# ROTW Minor Tech '36 \r
+-	# Group E 1936 techs \r
+-	# ###################### \r
+-	techapps = {  \r
+-		#Interwar Armoured Car  \r
+-		2860\r
+-		# Inf support \r
+-		1910 1920 1930 1940 1950 1960\r
+-		#Light Field Artillery  \r
+-		2290\r
+-		#SW Tank \r
+-		7600 7610	\r
+-		#1916 lgt. Infantry Division  \r
+-		1010  1020 1030 1040 1050 1060 1070 1160  1170 1180 1190 1200 1210 1220 1230 \r
+-		#1916 Cavalry Division  \r
+-		13060 13070 13080 1310 1320 1330 1340 1350\r
+-		#Early Agriculture\r
+-		5700 \r
+-		# Great War Land Doctrines (entente)\r
+-		6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-	} \r
+-	\r
+-	inventions = { 3000027 }\r
+-	diplomacy = {\r
+-		relation = {  tag = ENG value = -75  } \r
+-		relation = {  tag = ITA value = 50  } \r
+-		relation = {  tag = PER value = 25  } \r
+-		relation = {  tag = SAU value = 50  } \r
+-		relation = {  tag = UER value = 20  } \r
+-		relation = {  tag = TUR value = 50  } \r
+-		relation =   \r
+-        {  tag        = UPE \r
+-         value      = 200  \r
+-         guaranteed = {  day = 29 month = december year = 1936 }   \r
+-        }   \r
+-	} \r
+-	SpyInfo                = {  country = "AFG" NumberOfSpies = 5  } \r
+-	headofstate            = {  type = 9 id = 155089  } \r
+-	headofgovernment       = {  type = 9 id = 155002  } \r
+-	foreignminister        = {  type = 9 id = 155003  } \r
+-	armamentminister       = {  type = 9 id = 155004  } \r
+-	ministerofsecurity     = {  type = 9 id = 155005  } \r
+-	ministerofintelligence = {  type = 9 id = 155006  } \r
+-	chiefofstaff           = {  type = 9 id = 155007  } \r
+-	chiefofarmy            = {  type = 9 id = 155008  } \r
+-	chiefofnavy            = {  type = 9 id = 155009  } \r
+-	chiefofair             = {  type = 9 id = 155010  } \r
++  tag                = AFG\r
++  puppet             = UER\r
++  ai                 = "afg_1936.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes } }\r
++  capital            = 2171 # カーブル\r
++  dissent            = 3\r
++  manpower           = 18\r
++  # Resource Reserves\r
++  energy         = 360\r
++  metal          = 180\r
++  rare_materials = 90\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 10\r
+ \r
+-	##################### \r
+-	###AFGHANISTAN OOB### \r
+-	##################### \r
++  diplomacy = {\r
++    relation = { tag = ENG value = -75 }\r
++    relation = { tag = ITA value = 50 }\r
++    relation = { tag = PER value = 25 }\r
++    relation = { tag = SAU value = 50 }\r
++    relation = { tag = UER value = 20 }\r
++    relation = { tag = TUR value = 50 }\r
++    relation = {\r
++      tag        = UPE\r
++      value      = 200\r
++      guaranteed = { year = 1936 month = december day = 29 }\r
++    }\r
++  }\r
++  SpyInfo                = { country = "AFG" NumberOfSpies = 5 }\r
+ \r
+-	# Even though it was actually a brigade, I made Farah cavalry to have \r
+-	# max_strength of 100.\r
+-	# This is because Afghani army had several smaller but still independent \r
+-	# cavalry units.\r
+-	# I also put max_strength 80 for smaller infantry divisions to differ them \r
+-	# from mixed infantry divisions.\r
+-	# Mixed infantry divisions had also cavalry attachments, and thus their \r
+-	# strength was higher than strength of regular infantry divisions.\r
++  nationalprovinces      = { 2168 2169 2170 2171 2172 2173 1529 1537 }\r
++  ownedprovinces         = { 2168 2169 2170 2171 2172 2173 }\r
++  controlledprovinces    = { 2168 2169 2170 2171 2172 2173 }\r
+ \r
+-	landunit = {\r
+-		id = { type = 10000 id = 1 }\r
+-		location = 2171 # Kabul\r
+-		name = "王立アフガニスタン軍"\r
+-		division = {\r
+-			id = { type = 10000 id = 2 }\r
+-			name = "近衛師団"\r
+-			strength = 100\r
+-			type = infantry\r
+-			model = 7\r
+-			extra = cavalry_brigade \r
+-			brigade_model = 8\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 8 }\r
+-		location = 2171 # Kabul\r
+-		name = "第1軍団"\r
+-		division = {\r
+-			id = { type = 10000 id = 3 }\r
+-			name = "第1歩兵師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 6\r
+-			extra = artillery \r
+-			brigade_model = 0\r
+-		}\r
+-		division = {\r
+-			id = { type = 10000 id = 4 }\r
+-			name = "第2歩兵師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 6\r
+-		}\r
+-		division = {\r
+-			id = { type = 10000 id = 5 }\r
+-			name = "第3歩兵師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 6\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 10 }\r
+-		location = 2169 # Chakhansur\r
+-		name = "ファラー軍管区"\r
+-		division = {\r
+-			id = { type = 10000 id = 11 }\r
+-			name = "ファラー騎兵隊"\r
+-			strength = 20\r
+-			type = cavalry \r
+-			model = 7\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 12 }\r
+-		location = 2171 # Ghazni\r
+-		name = "ガズニ軍管区"\r
+-		division = {\r
+-			id = { type = 10000 id = 13 }\r
+-			name = "ガズニ混成師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 14 }\r
+-		location = 2169 # Kandahar\r
+-		name = "カンダハル軍管区"\r
+-		division = {\r
+-			id = { type = 10000 id = 15 }\r
+-			name = "カンダハル混成師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 16 }\r
+-		location = 2172 # Herat\r
+-		name = "ヘラート軍管区"\r
++  techapps               = { 2860 1910 1920 1930 1940 1950 1960 2290 7600 7610 1010 1020 1030 1040 1050 1060 1070 1160 1170 1180 1190 1200 1210 1220 1230 13060 13070 13080 1310 1320 1330 1340 1350 5700 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 }\r
++  inventions             = { 3000027 }\r
+ \r
+-		division = {\r
+-			id = { type = 10000 id = 17 }\r
+-			name = "ヘラート混成師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 18 }\r
+-		location = 2168 # Mazar-e Sharif\r
+-		name = "トルキスタン軍管区"\r
+-		division = {\r
+-			id = { type = 10000 id = 19 }\r
+-			name = "トルキスタン混成師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 20 }\r
+-		location = 2170 # Faizabad\r
+-		name = "カンダハル & バダフシャーン軍管区"\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 3\r
++    political_left    = 3\r
++    freedom           = 6\r
++    free_market       = 7\r
++    professional_army = 5\r
++    defense_lobby     = 1\r
++    interventionism   = 1\r
++  }\r
++  headofstate            = { type = 9 id = 155089 } # ムハンマド・ナジール\r
++  headofgovernment       = { type = 9 id = 155002 } # ムハンマド・ハシム\r
++  foreignminister        = { type = 9 id = 155003 } # ハジ・ファイズ・ムハンマド・ジケリア\r
++  armamentminister       = { type = 9 id = 155004 } # アブドゥル・マジド・ザブリ\r
++  ministerofsecurity     = { type = 9 id = 155005 } # ムハンマド・ハシム\r
++  ministerofintelligence = { type = 9 id = 155006 } # シャー・マフムード・ガージ\r
++  chiefofstaff           = { type = 9 id = 155007 } # ムハンマド・ダウド\r
++  chiefofarmy            = { type = 9 id = 155008 } # ムハンマド・ダウド\r
++  chiefofnavy            = { type = 9 id = 155009 } # ムハンマド・ザヒール\r
++  chiefofair             = { type = 9 id = 155010 } # ムハンマド・ダウド\r
+ \r
+-		division = {\r
+-			id = { type = 10000 id = 21 }\r
+-			name = "カンダハル & バダフシャーン混成師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 22 }\r
+-		location = 2172 # Maymana\r
+-		name = "マイマナ軍管区"\r
+-		division = {\r
+-			id = { type = 10000 id = 23 }\r
+-			name = "マイマナ混成師団"\r
+-			strength = 10\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 24 }\r
+-		location = 2170 # Jalalabad\r
+-		name = "東部軍管区"\r
+-		division = {\r
+-			id = { type = 10000 id = 25 }\r
+-			name = "東部混成師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-	landunit = {\r
+-		id = { type = 10000 id = 6 }\r
+-		location = 2171 # \r
+-		name = "南部軍管区"\r
+-		division = {\r
+-			id = { type = 10000 id = 7 }\r
+-			name = "南部混成師団"\r
+-			strength = 40\r
+-			type = infantry\r
+-			model = 5\r
+-		}\r
+-	}\r
+-} \r
++  landunit = {\r
++    id       = { type = 10000 id = 1 }\r
++    name     = "王立アフガニスタン軍"\r
++    location = 2171\r
++    division = {\r
++      id             = { type = 10000 id = 2 }\r
++      name           = "近衛師団"\r
++      type           = infantry\r
++      model          = 7\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 8\r
++      strength       = 100\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 8 }\r
++    name     = "第1軍団"\r
++    location = 2171\r
++    division = {\r
++      id             = { type = 10000 id = 3 }\r
++      name           = "第1歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = artillery\r
++      brigade_model  = 0\r
++      strength       = 40\r
++    }\r
++    division = {\r
++      id             = { type = 10000 id = 4 }\r
++      name           = "第2歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 40\r
++    }\r
++    division = {\r
++      id             = { type = 10000 id = 5 }\r
++      name           = "第3歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 40\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 10 }\r
++    name     = "ファラー軍管区"\r
++    location = 2169\r
++    division = {\r
++      id             = { type = 10000 id = 11 }\r
++      name           = "ファラー騎兵隊"\r
++      type           = cavalry\r
++      model          = 7\r
++      strength       = 20\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 12 }\r
++    name     = "ガズニ軍管区"\r
++    location = 2171\r
++    division = {\r
++      id             = { type = 10000 id = 13 }\r
++      name           = "ガズニ混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 40\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 14 }\r
++    name     = "カンダハル軍管区"\r
++    location = 2169\r
++    division = {\r
++      id             = { type = 10000 id = 15 }\r
++      name           = "カンダハル混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 40\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 16 }\r
++    name     = "ヘラート軍管区"\r
++    location = 2172\r
++    division = {\r
++      id             = { type = 10000 id = 17 }\r
++      name           = "ヘラート混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 40\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 18 }\r
++    name     = "トルキスタン軍管区"\r
++    location = 2168\r
++    division = {\r
++      id             = { type = 10000 id = 19 }\r
++      name           = "トルキスタン混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 40\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 20 }\r
++    name     = "カンダハル & バダフシャーン軍管区"\r
++    location = 2170\r
++    division = {\r
++      id             = { type = 10000 id = 21 }\r
++      name           = "カンダハル & バダフシャーン混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 40\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 22 }\r
++    name     = "マイマナ軍管区"\r
++    location = 2172\r
++    division = {\r
++      id             = { type = 10000 id = 23 }\r
++      name           = "マイマナ混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 10\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 24 }\r
++    name     = "東部軍管区"\r
++    location = 2170\r
++    division = {\r
++      id             = { type = 10000 id = 25 }\r
++      name           = "東部混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 40\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 10000 id = 6 }\r
++    name     = "南部軍管区"\r
++    location = 2171\r
++    division = {\r
++      id             = { type = 10000 id = 7 }\r
++      name           = "南部混成師団"\r
++      type           = infantry\r
++      model          = 5\r
++      strength       = 40\r
++    }\r
++  }\r
++}\r

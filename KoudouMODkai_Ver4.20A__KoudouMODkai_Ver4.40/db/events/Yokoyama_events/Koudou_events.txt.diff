@@ -1,0 +1,219 @@
+--- A/db/events/Yokoyama_events/Koudou_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Koudou_events.txt [cp932]
+@@ -334,6 +334,7 @@ event = {
+ 	command = { type = domestic which = political_left value = -2 }\r
+ 	command = { type = wakeminister which = 50568 }\r
+ 	command = { type = wakeminister which = 50570 }\r
++	command = { type = wakeminister which = 50939 }\r
+ 	command = { type = headofstate which = 50568 }\r
+ 	command = { trigger = { ai = no } type = wakeleader which = 103001 }\r
+ 	command = { type = dissent value = 3 }\r
+@@ -388,6 +389,7 @@ event = {
+ 	command = { type = sleepminister which = 50570 }\r
+ 	command = { type = wakeminister which = 50569 }\r
+ 	command = { type = wakeminister which = 50571 }\r
++	command = { type = wakeminister which = 50940 }\r
+ 	command = { type = headofstate which = 50569 }\r
+ 	command = { trigger = { NOT = { leader = 103002 } ai = no } type = wakeleader which = 103002 }\r
+ 	command = { trigger = { leader = 103001 } type = sleepleader which = 103001 }\r
+@@ -650,7 +652,7 @@ event = {
+ # そしてついに四大財閥の強行解体に伴う経済的混乱により生じた金融不安は表面化し、取り付け騒ぎが発生。\r
+ # 政府はこの経済的危機に正しく対処し得る事ができず、状況は更に悪化した。\r
+ # 最終的に政府は金融不安を収めることに成功したが、長期に渡る金融不安により日本経済は危機的な状況に陥っている。\r
+-# (日本経済を立て直すため、産業の再建に全力を尽くして下さい。具体的には実行IC250以上が経済再建の目安となります。\r
++# (日本経済を立て直すため、産業の再建に全力を尽くして下さい。具体的には実行IC180以上が経済再建の目安となります。\r
+ # なお、このイベント発生より5年以上経過すると…）\r
+ #########################################################################\r
+ event = {\r
+@@ -753,7 +755,7 @@ event = {
+ 	not = { event = 22600008 } # 第二次昭和恐慌 ― 経済破綻\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+-	ic = { country = JAP value = 250 }\r
++	ic = { country = JAP value = 200 }\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+@@ -840,7 +842,7 @@ event = {
+ 	not = { event = 22600007 } # 第二次昭和恐慌 ― 経済再建\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+-	not = { ic = { country = JAP value = 250 } }\r
++	not = { ic = { country = JAP value = 200 } }\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+@@ -2691,9 +2693,20 @@ event = {
+ 	command = { type = sleepleader which = 101359 } # 谷口尚真 粛清\r
+ 	command = { type = sleepminister which = 50069 } # 左近司政三 粛清\r
+ 	command = { type = sleepleader which = 101249 }\r
+-	command = { type = sleepleader which = 101213 }# 岩村清一 粛清\r
+-	command = { type = sleepleader which = 101357 }# 長谷川清 粛清\r
++	command = { type = sleepleader which = 101213 } # 岩村清一 粛清\r
++	command = { type = sleepminister which = 50519 } # 長谷川清 粛清\r
++	command = { type = sleepleader which = 101357 }\r
+ 	command = { type = sleepleader which = 101324 }# 高木惣吉 粛清\r
++	# 大角人事条約派失脚回避用\r
++	command = { type = sleepminister which = 50939 } # 山梨勝之進\r
++	command = { type = sleepleader which = 101352 }\r
++	command = { type = sleepleader which = 101359 } # 谷口尚真\r
++	command = { type = sleepleader which = 101577 } # 寺島健\r
++	command = { type = sleepleader which = 101249 } # 左近司政三\r
++	command = { type = sleepminister which = 50941 } # 堀悌吉\r
++	command = { type = sleepminister which = 50942 }\r
++	command = { type = sleepleader which = 101360 }\r
++	# 艦隊派復権\r
+ 	command = { type = wakeminister which = 50228 } # 伏見宮博恭王\r
+ 	command = { type = wakeleader which = 101323 }\r
+ 	command = { type = wakeleader which = 102177 }\r
+@@ -2912,15 +2925,6 @@ event = {
+ 	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104015 }\r
+ 	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104016 }\r
+ 	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104017 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104018 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104019 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104020 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104021 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104022 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104023 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104024 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104025 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104026 }\r
+ 	command = { trigger = { NOT = { event = 22600060 } } type = wakeleader which = 101107 } # 牟田口廉也（覚醒前）\r
+ 	command = { trigger = { event = 22600060 } type = wakeleader which = 103024 } # 牟田口廉也（覚醒）\r
+ 	}\r
+@@ -4797,22 +4801,60 @@ event = {
+ 	deathdate = { day = 28 month = 11 year = 1964 }\r
+ \r
+ \r
+-	action_a = { # 戒厳令を解除し、部分的に民主化する\r
++	action = { # 戒厳令を解除し、民主化する\r
+ 	name = "ACTIONNAME22600052A"\r
+ 	command = { type = dissent value = -5 }\r
++	command = { type = flag_ext where = JAP }\r
+ 	command = { type = manpowerpool value = -10 }\r
+-	command = { type = domestic which = democratic value = 2 }\r
+-	command = { type = domestic which = political_left value = 2 }\r
+-	command = { type = domestic which = freedom value = 2 }\r
++	command = { \r
++	trigger = {\r
++	OR = {\r
++	incabinet = 50001\r
++	incabinet = 50172\r
++	incabinet = 50173\r
++	incabinet = 50283\r
++	incabinet = 52027\r
++	} \r
++	} \r
++	type = headofstate which = 50173 } # 昭和天皇\r
++	command = { \r
++	trigger = {\r
++	OR = {\r
++	incabinet = 50011\r
++	incabinet = 50568\r
++	} \r
++	} \r
++	type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { \r
++	trigger = {\r
++	OR = {\r
++	incabinet = 50569\r
++	incabinet = 51003\r
++	} \r
++	} \r
++	type = wakeminister which = 51003 } # 雍仁天皇\r
++	command = { \r
++	trigger = {\r
++	OR = {\r
++	incabinet = 50569\r
++	incabinet = 51003\r
++	} \r
++	} \r
++	type = headofstate which = 51003 } # 雍仁天皇\r
++	command = { type = set_domestic which = democratic value = 9 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = set_domestic which = freedom value = 7 }\r
+ 	}\r
+ \r
+-\r
+-	action_a = { # 戒厳令をさらに拡大し、事実上の軍政を継続する\r
++	action = { # 戒厳令をさらに拡大し、事実上の軍政を継続する\r
+ 	name = "ACTIONNAME22600052B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = domestic which = democratic value = -2 }\r
+ 	command = { type = domestic which = political_left value = -2 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 	}\r
+ }\r
+ \r
+@@ -5014,15 +5056,6 @@ event = {
+ 	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104015 }\r
+ 	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104016 }\r
+ 	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104017 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104018 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104019 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104020 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104021 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104022 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104023 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104024 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104025 }\r
+-	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104026 }\r
+ 	command = { trigger = { NOT = { event = 22600060 } } type = wakeleader which = 101107 } # 牟田口廉也（覚醒前）\r
+ 	command = { trigger = { event = 22600060 } type = wakeleader which = 103024 } # 牟田口廉也（覚醒）\r
+ 	ai_chance = 95\r
+@@ -5648,11 +5681,18 @@ event = {
+ 	headofstate = 50569\r
+ 	}\r
+ 	local_flag = { which = Nihon_Kaizou when = 1 value = 8 }\r
++	OR = { \r
++	NOT = { event = 22600006 } # 第二次昭和恐慌\r
++	AND = { \r
++	event = 22600006 # 第二次昭和恐慌\r
++	event = 22600007 # 第二次昭和恐慌 ― 経済再建\r
++	}\r
++	}\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	date = { day = 0 month = 0 year = 1938 } #日中戦後\r
++	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+@@ -5669,6 +5709,7 @@ event = {
+ 	command = { type = morale which = land value = 10 }\r
+ 	command = { type = morale which = naval value = 10 }\r
+ 	command = { type = morale which = air value = 10 }\r
++	command = { type = sleepevent which = 22600006 } # 第二次昭和恐慌\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -6236,18 +6277,18 @@ event = {
+ 	command = { type = set_domestic which = freedom value = 1 }\r
+ 	command = { type = set_domestic which = defense_lobby value = 10 }\r
+ 	command = { type = set_domestic which = interventionism value = 10 }\r
+-	command = { type = wakeminister which = 52024 } # 牟田口廉也\r
+-	command = { type = wakeminister which = 52025 }\r
+-	command = { type = wakeminister which = 52026 }\r
++	command = { type = wakeminister which = 52051 } # 牟田口廉也\r
++	command = { type = wakeminister which = 52052 }\r
++	command = { type = wakeminister which = 52053 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 52024 } # 牟田口廉也\r
++	command = { type = headofgovernment which = 52051 } # 牟田口廉也\r
+ 	command = { type = foreignminister which = 50594 } # 磯部浅一\r
+ 	command = { type = armamentminister which = 50598 } # 村中孝次\r
+ 	command = { type = ministerofsecurity which = 50601 } # 相沢三郎\r
+ 	command = { type = ministerofintelligence which = 50605 } # 橋本欣五郎\r
+-	command = { type = chiefofstaff which = 50925 } # 牟田口廉也\r
++	command = { type = chiefofstaff which = 52052 } # 牟田口廉也\r
+ 	command = { type = chiefofarmy which = 50671 } # 磯部浅一\r
+ 	command = { type = chiefofnavy which = 50678 } # 三上卓\r
+ 	command = { type = chiefofair which = 50680 } # 河野壽\r

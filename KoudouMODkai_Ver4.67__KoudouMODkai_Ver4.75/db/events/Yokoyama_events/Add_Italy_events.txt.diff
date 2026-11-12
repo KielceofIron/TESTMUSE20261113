@@ -1,0 +1,157 @@
+--- A/db/events/Yokoyama_events/Add_Italy_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Add_Italy_events.txt [cp932]
+@@ -21,6 +21,10 @@
+ ###### ムッソリーニの後継者イベント ############\r
+ #id = 9221101 ファシストの継承者\r
+ #id = 9221102 ファシストの追放\r
++###### 両シチリア王国イベント ############\r
++#id = 9221201 両シチリア王国の再建\r
++#id = 9221202 両シチリア王国の再建（U07）\r
++#id = 9221203 国家元首の逝去（フェルディナンド・ピオ）\r
+ ##########################################################################\r
+ #  総選挙\r
+ # 1934年3月、イタリアで総選挙が行われた。\r
+@@ -1532,4 +1536,142 @@ event = {
+ 	command = { type = sleepminister which = 25256 }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++##########################################################################\r
++#  両シチリア王国イベント\r
++##########################################################################\r
++#  両シチリア王国の再建\r
++# 『両シチリア王国 (伊:Regno delle Due Sicilie)』は、19世紀の南イタリアに存在した王国である。\r
++# ナポレオン戦争後の1816年に、長らくブルボン家（シチリア・ブルボン朝）の同君連合下にあったシチリア王国とナポリ王国が統合されて成立した。 \r
++# しかし、ナポリの政府による中央集権政治はシチリアの分離独立運動を、また保守反動的な姿勢は民族運動・革命運動を招き、\r
++# イタリア統一運動（リソルジメント）の中でガリバルディ率いる軍に征服されて消滅、1861年にサルデーニャ王国に合併された。\r
++# 現在、我々は南イタリアを勢力圏に収めており、南イタリアの統治を安定させるために伝統ある国家を復古させることが可能だ。\r
++# （このイベントのトリガーとなる国、『アウソニア (英:Ausonia)』とは、古代ギリシャ人が、南部イタリアのアウソネス人が暮らしていた地域を指した地名である。\r
++# 現在は、「レガ・スッド・アウソニア」という南イタリアの独立を主張する政党が存在している）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 9221201\r
++	random = no\r
++	country = -1\r
++	\r
++	decision = {\r
++	OR = {\r
++	government = fascist\r
++	government = democratic\r
++	}\r
++	OR = {\r
++	AND = { \r
++	exists = U07\r
++	puppet = { country = U07 }\r
++	}\r
++	NOT = { exists = U07 } \r
++	}\r
++	area = { area = "South Italy" country = -1 data = 1 value = 10 }\r
++	NOT = { ispuppet = yes } \r
++	}\r
++\r
++	decision_trigger = {\r
++	OR = {\r
++	AND = { \r
++	exists = U07\r
++	puppet = { country = U07 }\r
++	}\r
++	NOT = { exists = U07 } \r
++	}\r
++	area = { area = "South Italy" country = -1 data = 1 value = 10 }\r
++	NOT = { ispuppet = yes } \r
++	}\r
++\r
++	trigger = {\r
++	OR = {\r
++	government = fascist\r
++	government = democratic\r
++	}\r
++	OR = {\r
++	AND = { \r
++	exists = U07\r
++	puppet = { country = U07 }\r
++	}\r
++	NOT = { exists = U07 } \r
++	}\r
++	area = { area = "South Italy" country = -1 data = 1 value = 10 }\r
++	NOT = { ispuppet = yes } \r
++	ai = no\r
++	}\r
++\r
++	name = "EVT_9221201_NAME"\r
++	desc = "EVT_9221201_DESC"\r
++	style = 2\r
++	picture = "Due_Sicilie"\r
++	decision_picture = "decision_Due_Sicilie"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 神は王を救う！\r
++	name = "ACTIONNAME9221201A"\r
++	command = { type = event which = 9221202 where = U07 when = 0 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  両シチリア王国の再建（U07）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 9221202\r
++	random = no\r
++	country = U07\r
++\r
++	name = "EVT_9221201_NAME"\r
++	desc = "EVT_9221201_DESC"\r
++	style = 2\r
++	picture = "Due_Sicilie"\r
++\r
++	action = { # 神は王を救う！\r
++	name = "ACTIONNAME9221201A"\r
++	command = { trigger = { government = fascist NOT = { year = 1960 } } type = headofstate which = 814009 } # フェルディナンド・ピオ\r
++	command = { trigger = { government = democratic NOT = { year = 1960 } } type = headofstate which = 814010 } # フェルディナンド・ピオ\r
++	command = { trigger = { government = fascist year = 1960 } type = headofstate which = 814011 } # アルフォンソ・マリア\r
++	command = { trigger = { government = democratic year = 1960 } type = headofstate which = 814012 } # アルフォンソ・マリア\r
++	command = { type = name where = U07 which = "両シチリア王国" }\r
++	command = { type = flag_ext where = U07 which = "_Kin" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  国家元首の逝去（フェルディナンド・ピオ）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 9221203\r
++	random = no\r
++	country = U07\r
++\r
++	trigger = {\r
++	OR = { \r
++	headofstate = 814009 # フェルディナンド・ピオ\r
++	headofstate = 814010 # フェルディナンド・ピオ\r
++	}\r
++	}\r
++\r
++	name = "EVT_101_NAME"\r
++	desc = "EVT_101_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++\r
++	date = { day = 6 month = 0 year = 1960 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1960 }\r
++\r
++	action = { # いなくなると寂しい\r
++	name = "EVT_362_ACTC"\r
++	command = { trigger = { government = fascist } type = headofstate which = 814011 } # アルフォンソ・マリア\r
++	command = { trigger = { government = democratic } type = headofstate which = 814012 } # アルフォンソ・マリア\r
++	command = { type = sleepminister which = 814009 } # フェルディナンド・ピオ\r
++	command = { type = sleepminister which = 814010 }\r
++	}\r
+ }
+\ No newline at end of file

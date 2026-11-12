@@ -1,0 +1,165 @@
+--- A/ai/IF/fra_if.ai [cp932]
++++ B/ai/IF/fra_if.ai [cp932]
+@@ -65,7 +65,7 @@ befriend = {
+ 	CHI = 20\r
+ \r
+ 	U14 = 100 \r
+-	ITA = 10 \r
++	ITA = 100 \r
+ \r
+ 	SOV = 80 #追加\r
+ 	U21 = 70 #追加\r
+@@ -82,6 +82,7 @@ protect = {
+ 	CHI = 10\r
+ 	U21 = 70 #追加\r
+ 	U14 = 300 #追加\r
++	ITA = 300 #追加\r
+ }\r
+ target = { } \r
+ trade = {\r
+@@ -124,7 +125,7 @@ trade = {
+ 		U21 = 80 #追加\r
+ \r
+ 		U14 = 100 #追加\r
+-		ITA = 50 #追加\r
++		ITA = 100 #追加\r
+ \r
+ 	}\r
+ 	embargo = { }\r
+@@ -155,7 +156,7 @@ tech_sharing = {
+ 		MAD = 100 #追加\r
+ \r
+ 		U14 = 100 #追加\r
+-		ITA = 10 #追加\r
++		ITA = 100 #追加\r
+ 	}\r
+ 	embargo = { }\r
+ 	not = { }\r
+@@ -237,19 +238,6 @@ spyprefs =
+ 		disrupt_techteam 	= 5\r
+ 		country 			= GER\r
+ 	}\r
+-	spyprefsdata = {\r
+-		country_priorities	= 8\r
+-		steal_blueprint 	= 4 # 10\r
+-		minister_assassination          = 1\r
+-		smear_campaign 		= 4\r
+-		coup 				= 0\r
+-		sabotage_industry 	= 8 # 6\r
+-		nuclear_sabotage 	= 0\r
+-		found_partisans		= 1\r
+-		massmedia 			= 1\r
+-		disrupt_techteam 	= 6 # 5\r
+-		country 			= ITA\r
+-	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 5\r
+ 		steal_blueprint 	= 1\r
+@@ -321,9 +309,9 @@ spyprefs =
+ ###################################\r
+ #Default values\r
+ construction = { \r
+-	max_factor = 0.60\r
++	max_factor = 0.6\r
+ \r
+-	AA_batteries = no\r
++	AA_batteries = yes\r
+ 	max_AA_level = 4\r
+ 	AA_provs = { \r
+ 		52  # Lille\r
+@@ -340,11 +328,11 @@ construction = {
+ 	max_coastal_level = 3\r
+ 	coastal_fort_provs = { } \r
+ \r
+-	radar_station = no \r
++	radar_station = yes \r
+ 	max_radar = 5 \r
+ 	radar_provs = { } \r
+ \r
+-	air_base = no\r
++	air_base = yes\r
+ 	max_air_base = 4\r
+ 	air_base_provs = {\r
+ 		95  # Chaumont \r
+@@ -356,7 +344,7 @@ construction = {
+ 	max_naval_base = 5 \r
+ 	naval_base_provs = { } \r
+ \r
+-	land_fort = no\r
++	land_fort = not_at_war\r
+ 	max_land_level = 10\r
+ 	fort_borders = { } \r
+ 	fort_provs = { 51 52 103 102 96 } # Border with Germany \r
+@@ -380,12 +368,12 @@ military = {
+        	extra_convoys_peace = 0.0000\r
+ \r
+ 	#### Divisions etc...\r
+-	infantry 		= 37 # 45\r
++	infantry 		= 5 # 45\r
+ 	cavalry 		= 0\r
+-	motorized 		= 10 # 0\r
+-	mechanized 		= 0\r
+-	light_armor 	= 0\r
+-	armor 			= 10 # 12\r
++	motorized 		= 8 # 0\r
++	mechanized 		= 6\r
++	light_armor 	= 15\r
++	armor 			= 15 # 12\r
+ 	paratrooper 	= 0\r
+ 	marine 			= 0\r
+ 	bergsjaeger 	= 0\r
+@@ -393,11 +381,11 @@ military = {
+     hq 				= 5\r
+ 	militia 		= 0\r
+ #				62 %\r
+-	interceptor 	= 10\r
++	interceptor 	= 12\r
+ 	multi_role 		= 0\r
+-	cas 			= 5\r
++	cas 			= 9\r
+ 	strategic_bomber = 0\r
+-	tactical_bomber = 7\r
++	tactical_bomber = 9\r
+ 	naval_bomber 	= 0\r
+ 	transport_plane = 0\r
+ 	flying_bomb 	= 0\r
+@@ -416,16 +404,16 @@ military = {
+ #				16 %\r
+ \r
+ 	#### Brigades\r
+-	artillery 		= 47\r
+-	sp_artillery 	= 0\r
++	artillery 		= 50\r
++	sp_artillery 	= 8\r
+ 	cavalry_brigade = 0 \r
+ 	sp_anti_air = 0\r
+-	medium_armor 	= 10\r
+-	tank_destroyer 	= 0\r
+-	light_armor_brigade = 0\r
++	medium_armor 	= 20\r
++	tank_destroyer 	= 3\r
++	light_armor_brigade = 3\r
+ 	heavy_armor 	= 0\r
+ 	super_heavy_armor = 0\r
+-	armored_car 	= 20\r
++	armored_car 	= 10\r
+ 	anti_air 	= 0\r
+ 	police 		= 0\r
+ 	engineer 		= 6\r
+@@ -447,6 +435,7 @@ military = {
+             floatplane = 0.0000\r
+ }\r
+ \r
++\r
+ technology = { \r
+ 	endgoal 	= { } \r
+ 	preference = { \r
+@@ -545,7 +534,7 @@ garrison = {
+ 	defend_overseas_beaches = no\r
+ 	home_multiplier 		= 8.0\r
+ 	overseas_multiplier 	= 0.0\r
+-	home_peace_cap 			= 150\r
++	home_peace_cap 			= 10\r
+ 	war_zone_odds 			= 2.0\r
+ 	key_point_prio_mult		= 0.3\r
+ 	revolt_risk_mult		= 0.3\r

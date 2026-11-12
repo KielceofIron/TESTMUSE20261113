@@ -1,0 +1,70 @@
+--- A/db/events/UK.txt [cp932]
++++ B/db/events/UK.txt [cp932]
+@@ -122,6 +122,9 @@
+ ### 2046001  AST  The future of the Empire ← 首都に選ばれた時に100%英連邦に合流するように。\r
+ ### 2044001  NZL  The future of the Empire ← 首都に選ばれた時に100%英連邦に合流するように。\r
+ ### 2001046  ENG  The future of the Empire ← 亡命した先の国家の中核州を得るように修正。\r
++####################################\r
++# 皇道派MODでの変更イベントメモ\r
++### 2013002  POL  Danzig or War  ← イベントトリガーを変更\r
+ #########################################################################\r
+ #  The UK gears up for war\r
+ #########################################################################\r
+@@ -525,10 +528,11 @@ event = {
+ 	style = 2\r
+ 	picture = "Poland_Invasion"\r
+ 	\r
+-	action = { trigger = { guarantee = { country = ENG country = POL } }\r
++	action = { #trigger = { guarantee = { country = ENG country = POL } }\r
++		    trigger = { alliance = { country = ENG country = POL } }\r
+ 		name = "ACTIONNAME3601A" # Then it is War\r
+ 		ai_chance = 100\r
+-		#command = { type = alliance which = ENG when = 1 }\r
++		command = { type = alliance which = ENG when = 1 }\r
+ 		command = { type = relation which = SOV value = 5 }\r
+ 		command = { type = relation which = ENG value = 10 }\r
+ 		command = { type = relation which = FRA value = 10 }\r
+@@ -549,7 +553,8 @@ event = {
+ 		command = { trigger = { ai = yes NOT = { local_flag = MOB7 } NOT = { local_flag = demob } } type = event which = 130132 where = POL when = 360 }\r
+ 		\r
+ 	}\r
+-	action = { trigger = { guarantee = { country = ENG country = POL } } \r
++	action = { #trigger = { guarantee = { country = ENG country = POL } } \r
++		    trigger = { alliance = { country = ENG country = POL } }\r
+ 		name = "ACTIONNAME3601B" # Fold\r
+ 		ai_chance = 0\r
+ 		command = { type = relation which = GER value = 10 }\r
+@@ -562,9 +567,10 @@ event = {
+ 		command = { type = trigger which = 2003038 }\r
+ 		command = { type = dissent value = 5 }\r
+ 	}\r
+-	action = { trigger = { NOT = { guarantee = { country = ENG country = POL } } } \r
++	action = { #trigger = { NOT = { guarantee = { country = ENG country = POL } } } \r
++		    trigger = { NOT = { alliance = { country = ENG country = POL } } }\r
+ 		name = "ACTIONNAME3601A" # Then it is War\r
+-		ai_chance = 20\r
++		ai_chance = 80\r
+ 		command = { type = relation which = SOV value = 5 }\r
+ 		command = { type = relation which = ENG value = 10 }\r
+ 		command = { type = relation which = FRA value = 10 }\r
+@@ -584,16 +590,17 @@ event = {
+ 		command = { trigger = { ai = yes NOT = { local_flag = MOB7 } NOT = { local_flag = demob } } type = event which = 130132 where = POL when = 360 }\r
+ 		\r
+ 	}\r
+-	action = { trigger = { NOT = { guarantee = { country = ENG country = POL } } } \r
++	action = { #trigger = { NOT = { guarantee = { country = ENG country = POL } } } \r
++		    trigger = { NOT = { alliance = { country = ENG country = POL } } }\r
+ 		name = "ACTIONNAME3601B" # Fold\r
+-		ai_chance = 80\r
++		ai_chance = 20\r
+ 		command = { type = relation which = GER value = 10 }\r
+ 		command = { type = relation which = SOV value = -5 }\r
+ 		command = { type = relation which = ENG value = -5 }\r
+ 		command = { type = relation which = FRA value = -5 }\r
+ 		command = { type = domestic which = political_left value = -1 }\r
+ 		command = { type = domestic which = interventionism value = -1 }\r
+-		#command = { type = secedeprovince which = GER value = 181 } # Danzig - Germany\r
++		command = { trigger = { owned = { province = 181 data = POL } } type = secedeprovince which = GER value = 181 } # Danzig - Germany\r
+ 		command = { type = trigger which = 2003038 }\r
+ 		command = { type = dissent value = 5 }\r
+ 	}\r

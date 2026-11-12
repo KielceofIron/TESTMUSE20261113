@@ -1,0 +1,179 @@
+--- A/ai/IFswitch/ger_rus_war.ai [cp932]
++++ B/ai/IFswitch/ger_rus_war.ai [cp932]
+@@ -3,8 +3,9 @@
+ switch = no # [yes/no]\r
+ max_front_ratio = 1.5 \r
+ max_front_ratios = {\r
+-	FRA = 1\r
+-	UTC = 4\r
++	FRA = -1\r
++	UTC = 20\r
++	UB8 = 50\r
+ }\r
+ max_garrison_prop = 0.30\r
+ min_garrison_prop = 0.20\r
+@@ -70,23 +71,40 @@ protect = {
+ 	TUR = 80\r
+ }\r
+ target = { \r
++	#要塞\r
++		104 = -1  #Metz\r
++		110 = -1\r
++		109 = -1\r
++		107 = -1\r
++		105 = -1\r
++		389 = -1\r
++	#独仏国境付近\r
++		108 = -1\r
++		391 = -1\r
++		98 = -1\r
++		95 = -1\r
++		100 = -1\r
++		97 = -1\r
++		96 = -1\r
++		111 = -1\r
++		108 = -1\r
+ #	#Austria\r
+-#	143 = 80 # Lech\r
+-#	186 = 80 # Freistadt\r
+-#	188 = 80 # Eisenstadt\r
+-#	189 = 80 # Innsbruck\r
+-#	192 = 80 # Salzburg\r
+-#	191 = 80 # Klagenfurt\r
+-#	187 = 80 # Linz\r
+-#	194 = 80 # Hollabrunn\r
+-#	195 = 80 # Vienna\r
+-#	190 = 80 # Graz\r
++	143 = 80 # Lech\r
++	186 = 80 # Freistadt\r
++	188 = 80 # Eisenstadt\r
++	189 = 80 # Innsbruck\r
++	192 = 80 # Salzburg\r
++	191 = 80 # Klagenfurt\r
++	187 = 80 # Linz\r
++	194 = 80 # Hollabrunn\r
++	195 = 80 # Vienna\r
++	190 = 80 # Graz\r
+ \r
+ 	#Czech\r
+-#	200 = 60 # Liberec\r
+-#	204 = 60 # Prachatice\r
+-#	205 = 60 # Karlovy Vary\r
+-#	197 = 60 # Znojmo\r
++	200 = 60 # Liberec\r
++	204 = 60 # Prachatice\r
++	205 = 60 # Karlovy Vary\r
++	197 = 60 # Znojmo\r
+ \r
+ 	#Poland\r
+ #	181 = 50 # Danzig\r
+@@ -805,6 +823,26 @@ garrison = {
+ 	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+ 	unstable_border		= 30	# Bordering countries at war with someone else get this\r
+ \r
++	area_multiplier = {\r
++	131 = 30\r
++	141 = 30\r
++	147 = 30\r
++	207 = 50\r
++	195 = 50\r
++	208 = 20\r
++	284 = 20\r
++	346 = 20\r
++	355 = 20\r
++	287 = 10\r
++	165 = 40\r
++	227 = 40\r
++	235 = 40\r
++	242 = 10\r
++	341 = 10\r
++	399 = -5\r
++	107 = -5\r
++	109 = -5\r
++	}\r
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+ 		FIN = -1\r
+@@ -819,8 +857,8 @@ garrison = {
+ 		BEL = 25\r
+ 		DEN = 25\r
+ 		UTC = 150\r
+-		FRA = 100\r
+-		UB8 = 100\r
++		FRA = -1\r
++		UB8 = 500\r
+ 	}\r
+ 	ignore = { }\r
+ 	province_priorities = {\r
+@@ -837,25 +875,43 @@ garrison = {
+ 		236  = 50\r
+ 		237  = 50\r
+ 		\r
+-#		55  = 20  #Paris\r
+-#		52  = 20  #Lille\r
+-#		116  = 20  #Brussels\r
++		#55  = 20  #Paris\r
++		#52  = 20  #Lille\r
++		#116  = 20  #Brussels\r
+ 		145  = 20  #Prague\r
+-#		104  = 20  #Metz\r
+-#		43  = 20  #Cherborg\r
+-#		42  = 20  #Avranches\r
+-#		69  = 10  #La Rochele\r
++		#104  = 20  #Metz\r
++		#43  = 20  #Cherborg\r
++		#42  = 20  #Avranches\r
++		#69  = 10  #La Rochele\r
+ 		147  = 20  #Wilhelmshafen\r
+ 		148  = 20  #Bremen\r
+-#		150  = 20  #Groningen\r
++		150  = 20  #Groningen\r
+ 		338  = 20  #Belgrade\r
++\r
++\r
++	#要塞\r
++		104 = -1  #Metz\r
++		110 = -1\r
++		109 = -1\r
++		107 = -1\r
++		105 = -1\r
++		389 = -1\r
++	#独仏国境付近\r
++		108 = -1\r
++		391 = -1\r
++		98 = -1\r
++		95 = -1\r
++		100 = -1\r
++		97 = -1\r
++		96 = -1\r
++		111 = -1\r
++		108 = -1\r
+ 	}\r
+-	area_multiplier = {}\r
+ }\r
+ front = { \r
+-	recklessness 		= 2 # 0-3\r
+-	distrib_vs_ai 		= offensive\r
+-	distrib_vs_human 	= even\r
++	recklessness 		= 1 # 0-3\r
++	distrib_vs_ai 		= Deffensive\r
++	distrib_vs_human 	= Reactive\r
+ \r
+ 	enemy_reinf_days	= 6\r
+ 	reserve_prop		= 0.1\r
+@@ -893,11 +949,11 @@ front = {
+ 	urban_attack 	= 1.0\r
+ 	river 		= 1.0\r
+ \r
+-	enemy_handicap = {\r
++\r
++	enemy_handicap = { FRA = 1000\r
+ 	} \r
+-	passivity = { \r
+-	}\r
+-} \r
++	passivity = {  FRA = 1000 }\r
++}\r
+ ###################################\r
+ # Air bombardment and defense\r
+ ###################################\r

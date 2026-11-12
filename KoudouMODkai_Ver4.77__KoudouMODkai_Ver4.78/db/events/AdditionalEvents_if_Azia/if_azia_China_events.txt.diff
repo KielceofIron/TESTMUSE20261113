@@ -1,0 +1,738 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
+@@ -43,9 +43,9 @@
+ #id = 6959037 上陸\r
+ #id = 6959038 敵の回復\r
+ # 内戦終結後共通イベント\r
+-#id = 6959101 放置されていた老朽艦\r
+-#id = 6959102 放置されていた老朽艦 ― 近代改修の完了\r
+-#id = 6959103 放置されていた老朽艦 ― 近代改修と改装の完了\r
++#id = 6959101 放置されていた老朽艦（停止）\r
++#id = 6959102 放置されていた老朽艦 ― 近代改修の完了（停止）\r
++#id = 6959103 放置されていた老朽艦 ― 近代改修と改装の完了（停止）\r
+ #id = 6959104 中国の秘密兵器\r
+ #id = 6959105 中国の秘密兵器 ― 計画の進展\r
+ #id = 6959106 中国の秘密兵器 ― 計画達成\r
+@@ -8946,367 +8946,367 @@ event = {
+ # その後、内戦の終結により国内資源の再統計が実施され、その最中で既に解体されたはずの艦艇が『発見』されるという事件が起こった。\r
+ # これらの軍艦は整備すれば運用が可能な状態であり、海軍再建の助けになるだろう。\r
+ #########################################################################\r
+-\r
+-event = {\r
+-	id = 6959101\r
+-	random = no\r
+-	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+-\r
+-	decision = {\r
+-	region = { region = "China" country = CHI data = 1 value = 50 }\r
+-	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+-	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+-	owned = { province = 1328 data = -1 } # 青島（チンタオ）\r
+-	OR = {\r
+-	AND = {\r
+-	country = CHI\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = CHC\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = U36\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = U74\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	}\r
+-	AND = {\r
+-	OR = {\r
+-	country = CSX\r
+-	country = CGX\r
+-	country = CYN\r
+-	country = CXB\r
+-	}\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	}\r
+-	NOT = { ispuppet = yes }\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	region = { region = "China" country = CHI data = 1 value = 50 }\r
+-	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+-	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+-	owned = { province = 1328 data = -1 } # 青島（チンタオ）\r
+-	OR = {\r
+-	AND = {\r
+-	country = CHI\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = CHC\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = U36\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = U74\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	}\r
+-	AND = {\r
+-	OR = {\r
+-	country = CSX\r
+-	country = CGX\r
+-	country = CYN\r
+-	country = CXB\r
+-	}\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	}\r
+-	NOT = { ispuppet = yes }\r
+-	money = 2000\r
+-	supplies = 7500\r
+-	metal = 5000\r
+-	}\r
+-\r
+-	trigger = {\r
+-	region = { region = "China" country = CHI data = 1 value = 50 }\r
+-	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+-	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+-	owned = { province = 1328 data = -1 } # 青島（チンタオ）\r
+-	OR = {\r
+-	AND = {\r
+-	country = CHI\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = CHC\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = U36\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	AND = {\r
+-	country = U74\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	}\r
+-	AND = {\r
+-	OR = {\r
+-	country = CSX\r
+-	country = CGX\r
+-	country = CYN\r
+-	country = CXB\r
+-	}\r
+-	NOT = { exists = CHI }\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = U36 }\r
+-	NOT = { exists = U74 }\r
+-	}\r
+-	}\r
+-	NOT = { ispuppet = yes }\r
+-	}\r
+-\r
+-	name = "EVT_6959101_NAME"\r
+-	desc = "EVT_6959101_DESC"\r
+-	style = 2\r
+-	picture = "USPACFLT"\r
+-	decision_picture = "decision_USPACFLT"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 100\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 老朽艦を整備する\r
+-	name = "ACTIONNAME6959101A"\r
+-	command = { type = dissent value = -2 }\r
+-	command = { trigger = { ai = no } type = money value = -2000 }\r
+-	command = { trigger = { ai = no } type = supplies value = -7500 }\r
+-	command = { trigger = { ai = no } type = metalpool value = -5000 }\r
+-	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
+-	command = { trigger = { NOT = { technology = 3456 } } type = gain_tech which = 3456 } # 高速戦艦\r
+-	command = { trigger = { NOT = { technology = 3460 } } type = gain_tech which = 3460 } # 戦間期型戦艦\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # 近代改修を行う\r
+-	name = "ACTIONNAME6959101B"\r
+-	command = { type = dissent value = 10 }\r
+-	command = { trigger = { ai = no } type = money value = -4000 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1500 }\r
+-	command = { trigger = { ai = no } type = metalpool value = -10000 }\r
+-	command = { type = event which = 6959102 where = -1 when = 360 }\r
+-	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # 近代改修と並行して、一部の艦艇を空母として改装する\r
+-	name = "ACTIONNAME6959101C"\r
+-	command = { type = dissent value = 15 }\r
+-	command = { trigger = { ai = no } type = money value = -4000 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1500 }\r
+-	command = { trigger = { ai = no } type = metalpool value = -10000 }\r
+-	command = { type = event which = 6959103 where = -1 when = 360 }\r
+-	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
+-	command = { trigger = { NOT = { technology = 12100 } } type = gain_tech which = 12100 } # 水上機母艦\r
+-	command = { trigger = { NOT = { technology = 12110 } } type = gain_tech which = 12110 } # 改装型護衛空母\r
+-	command = { trigger = { NOT = { technology = 3510 } } type = gain_tech which = 3510 } # 改装空母\r
+-	command = { trigger = { NOT = { technology = 4900 } } type = gain_tech which = 4900 } # 1922年型空母航空隊\r
+-	command = { trigger = { NOT = { technology = 4910 } } type = gain_tech which = 4910 } # 1930年型空母航空隊\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # 老朽船などスクラップにしてしまえ！\r
+-	name = "ACTIONNAME6959101D"\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = supplies value = 3000 }\r
+-	command = { type = metalpool value = 5000 }\r
+-	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
+-	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
+-	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
+-	command = { trigger = { NOT = { technology = 12100 } } type = gain_tech which = 12100 } # 水上機母艦\r
+-	command = { trigger = { NOT = { technology = 12110 } } type = gain_tech which = 12110 } # 改装型護衛空母\r
+-	command = { trigger = { NOT = { technology = 3510 } } type = gain_tech which = 3510 } # 改装空母\r
+-	command = { trigger = { NOT = { technology = 4900 } } type = gain_tech which = 4900 } # 1922年型空母航空隊\r
+-	command = { trigger = { NOT = { technology = 4910 } } type = gain_tech which = 4910 } # 1930年型空母航空隊\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
++#\r
++#event = {\r
++#	id = 6959101\r
++#	random = no\r
++#	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
++#\r
++#	decision = {\r
++#	region = { region = "China" country = CHI data = 1 value = 50 }\r
++#	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++#	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++#	owned = { province = 1328 data = -1 } # 青島（チンタオ）\r
++#	OR = {\r
++#	AND = {\r
++#	country = CHI\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = CHC\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = U36\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = U74\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	}\r
++#	AND = {\r
++#	OR = {\r
++#	country = CSX\r
++#	country = CGX\r
++#	country = CYN\r
++#	country = CXB\r
++#	}\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	}\r
++#	NOT = { ispuppet = yes }\r
++#	}\r
++#\r
++#	decision_trigger = {\r
++#	region = { region = "China" country = CHI data = 1 value = 50 }\r
++#	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++#	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++#	owned = { province = 1328 data = -1 } # 青島（チンタオ）\r
++#	OR = {\r
++#	AND = {\r
++#	country = CHI\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = CHC\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = U36\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = U74\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	}\r
++#	AND = {\r
++#	OR = {\r
++#	country = CSX\r
++#	country = CGX\r
++#	country = CYN\r
++#	country = CXB\r
++#	}\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	}\r
++#	NOT = { ispuppet = yes }\r
++#	money = 2000\r
++#	supplies = 7500\r
++#	metal = 5000\r
++#	}\r
++#\r
++#	trigger = {\r
++#	region = { region = "China" country = CHI data = 1 value = 50 }\r
++#	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++#	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++#	owned = { province = 1328 data = -1 } # 青島（チンタオ）\r
++#	OR = {\r
++#	AND = {\r
++#	country = CHI\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = CHC\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = U36\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	AND = {\r
++#	country = U74\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	}\r
++#	AND = {\r
++#	OR = {\r
++#	country = CSX\r
++#	country = CGX\r
++#	country = CYN\r
++#	country = CXB\r
++#	}\r
++#	NOT = { exists = CHI }\r
++#	NOT = { exists = CHC }\r
++#	NOT = { exists = U36 }\r
++#	NOT = { exists = U74 }\r
++#	}\r
++#	}\r
++#	NOT = { ispuppet = yes }\r
++#	}\r
++#\r
++#	name = "EVT_6959101_NAME"\r
++#	desc = "EVT_6959101_DESC"\r
++#	style = 2\r
++#	picture = "USPACFLT"\r
++#	decision_picture = "decision_USPACFLT"\r
++#\r
++#	date = { day = 0 month = 0 year = 1933 }\r
++#	offset = 100\r
++#	deathdate = { day = 29 month = 11 year = 1964 }\r
++#\r
++#	action = { # 老朽艦を整備する\r
++#	name = "ACTIONNAME6959101A"\r
++#	command = { type = dissent value = -2 }\r
++#	command = { trigger = { ai = no } type = money value = -2000 }\r
++#	command = { trigger = { ai = no } type = supplies value = -7500 }\r
++#	command = { trigger = { ai = no } type = metalpool value = -5000 }\r
++#	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
++#	command = { trigger = { NOT = { technology = 3456 } } type = gain_tech which = 3456 } # 高速戦艦\r
++#	command = { trigger = { NOT = { technology = 3460 } } type = gain_tech which = 3460 } # 戦間期型戦艦\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 2 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 2 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 2 where = naval_torpedoes_s }\r
++#	ai_chance = 0\r
++#	}\r
++#\r
++#	action = { # 近代改修を行う\r
++#	name = "ACTIONNAME6959101B"\r
++#	command = { type = dissent value = 10 }\r
++#	command = { trigger = { ai = no } type = money value = -4000 }\r
++#	command = { trigger = { ai = no } type = supplies value = -1500 }\r
++#	command = { trigger = { ai = no } type = metalpool value = -10000 }\r
++#	command = { type = event which = 6959102 where = -1 when = 360 }\r
++#	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
++#	ai_chance = 50\r
++#	}\r
++#\r
++#	action = { # 近代改修と並行して、一部の艦艇を空母として改装する\r
++#	name = "ACTIONNAME6959101C"\r
++#	command = { type = dissent value = 15 }\r
++#	command = { trigger = { ai = no } type = money value = -4000 }\r
++#	command = { trigger = { ai = no } type = supplies value = -1500 }\r
++#	command = { trigger = { ai = no } type = metalpool value = -10000 }\r
++#	command = { type = event which = 6959103 where = -1 when = 360 }\r
++#	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
++#	command = { trigger = { NOT = { technology = 12100 } } type = gain_tech which = 12100 } # 水上機母艦\r
++#	command = { trigger = { NOT = { technology = 12110 } } type = gain_tech which = 12110 } # 改装型護衛空母\r
++#	command = { trigger = { NOT = { technology = 3510 } } type = gain_tech which = 3510 } # 改装空母\r
++#	command = { trigger = { NOT = { technology = 4900 } } type = gain_tech which = 4900 } # 1922年型空母航空隊\r
++#	command = { trigger = { NOT = { technology = 4910 } } type = gain_tech which = 4910 } # 1930年型空母航空隊\r
++#	ai_chance = 0\r
++#	}\r
++#\r
++#	action = { # 老朽船などスクラップにしてしまえ！\r
++#	name = "ACTIONNAME6959101D"\r
++#	command = { type = dissent value = -2 }\r
++#	command = { type = supplies value = 3000 }\r
++#	command = { type = metalpool value = 5000 }\r
++#	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
++#	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 } # ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
++#	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 } # 初期型戦艦\r
++#	command = { trigger = { NOT = { technology = 12100 } } type = gain_tech which = 12100 } # 水上機母艦\r
++#	command = { trigger = { NOT = { technology = 12110 } } type = gain_tech which = 12110 } # 改装型護衛空母\r
++#	command = { trigger = { NOT = { technology = 3510 } } type = gain_tech which = 3510 } # 改装空母\r
++#	command = { trigger = { NOT = { technology = 4900 } } type = gain_tech which = 4900 } # 1922年型空母航空隊\r
++#	command = { trigger = { NOT = { technology = 4910 } } type = gain_tech which = 4910 } # 1930年型空母航空隊\r
++#	ai_chance = 0\r
++#	}\r
++#}\r
++#\r
+ #########################################################################\r
+ #  放置されていた老朽艦 ― 近代改修の完了\r
+ #########################################################################\r
+-\r
+-event = {\r
+-	id = 6959102\r
+-	random = no\r
+-	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+-\r
+-	name = "EVT_6959102_NAME"\r
+-	desc = "EVT_6959102_DESC"\r
+-	style = 2\r
+-	picture = "USPACFLT"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
++#\r
++#event = {\r
++#	id = 6959102\r
++#	random = no\r
++#	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
++#\r
++#	name = "EVT_6959102_NAME"\r
++#	desc = "EVT_6959102_DESC"\r
++#	style = 2\r
++#	picture = "USPACFLT"\r
++#\r
++#	action = { # 了解\r
++#	name = "ACTION_NAME_OK"\r
++#	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	ai_chance = 100\r
++#	}\r
++#}\r
++#\r
+ #########################################################################\r
+ #  放置されていた老朽艦 ― 近代改修と改装の完了\r
+ #########################################################################\r
+-\r
+-event = {\r
+-	id = 6959103\r
+-	random = no\r
+-	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+-\r
+-	name = "EVT_6959103_NAME"\r
+-	desc = "EVT_6959103_DESC"\r
+-	style = 2\r
+-	picture = "USPACFLT"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = add_division value = carrier when = 0 where = cag }\r
+-	command = { type = add_division value = carrier when = 0 where = cag }\r
+-	command = { type = add_division value = light_carrier when = 1 where = light_cag }\r
+-	command = { type = add_division value = light_carrier when = 1 where = light_cag }\r
+-	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
++#\r
++#event = {\r
++#	id = 6959103\r
++#	random = no\r
++#	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
++#\r
++#	name = "EVT_6959103_NAME"\r
++#	desc = "EVT_6959103_DESC"\r
++#	style = 2\r
++#	picture = "USPACFLT"\r
++#\r
++#	action = { # 了解\r
++#	name = "ACTION_NAME_OK"\r
++#	command = { type = add_division value = carrier when = 0 where = cag }\r
++#	command = { type = add_division value = carrier when = 0 where = cag }\r
++#	command = { type = add_division value = light_carrier when = 1 where = light_cag }\r
++#	command = { type = add_division value = light_carrier when = 1 where = light_cag }\r
++#	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 4 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = battleship when = 3 where = naval_improved_hull_l }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = heavy_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = light_cruiser when = 3 where = naval_improved_hull_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = destroyer when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	command = { type = add_division value = submarine when = 3 where = naval_torpedoes_s }\r
++#	ai_chance = 100\r
++#	}\r
++#}\r
++#\r
+ #########################################################################\r
+ #  中国の秘密兵器\r
+ # 中国を統一した正当政府は、列強との来るべき大戦争に備えて、戦局を変える革命的な新兵器の開発に着手した。\r

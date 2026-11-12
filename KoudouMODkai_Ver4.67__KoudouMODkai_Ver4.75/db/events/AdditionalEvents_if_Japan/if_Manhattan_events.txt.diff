@@ -1,0 +1,97 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Manhattan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Manhattan_events.txt [cp932]
+@@ -131,7 +131,7 @@ event = {
+ 	picture = "Paradox"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 2\r
++	offset = 4\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # プレーヤー？ヨハン？何の話をしているんだ…\r
+@@ -171,7 +171,7 @@ event = {
+ 	picture = "Manhattan"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 60\r
++	offset = 30\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # ライ麦畑で誰かが誰かを捕まえたら\r
+@@ -553,7 +553,7 @@ event = {
+ 	picture = "USA_Civi_War"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 2\r
++	offset = 4\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 無政府主義者など恐れるに足らず！\r
+@@ -563,7 +563,7 @@ event = {
+ 	command = { type = belligerence value = 2 }\r
+ 	command = { type = end_non_aggression which = UE0 where = USA }\r
+ 	command = { type = end_non_aggression which = USA where = UE0 }\r
+-	command = { type = war which = UE0 }\r
++	command = { type = inherit which = UE0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -581,26 +581,28 @@ event = {
+ 	country = U00\r
+ \r
+ 	decision = {\r
+-	event = { id = 1299028 days = 5 }\r
+ 	exists = U00\r
+ 	NOT = { exists = USA }\r
++	NOT = { exists = CSA }\r
+ 	NOT = {	ispuppet = U00 }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
+-	event = { id = 1299028 days = 50 }\r
+ 	exists = U00\r
++	NOT = { exists = CAN }\r
+ 	NOT = { exists = USA }\r
++	NOT = { exists = CSA }\r
+ 	NOT = { war = { country = USA country = U00 } }\r
+ 	NOT = {	ispuppet = U00 }\r
+ 	atwar = no\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+-	event = { id = 1299028 days = 50 }\r
+ 	exists = U00\r
++	NOT = { exists = CAN }\r
+ 	NOT = { exists = USA }\r
++	NOT = { exists = CSA }\r
+ 	NOT = { war = { country = USA country = U00 } }\r
+ 	NOT = {	ispuppet = U00 }\r
+ 	atwar = no\r
+@@ -613,7 +615,7 @@ event = {
+ 	picture = "USA_Civi_War"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 2\r
++	offset = 4\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 反革命主義者には退場してもらおう\r
+@@ -623,7 +625,7 @@ event = {
+ 	command = { type = belligerence value = 2 }\r
+ 	command = { type = end_non_aggression which = UE0 where = U00 }\r
+ 	command = { type = end_non_aggression which = U00 where = UE0 }\r
+-	command = { type = war which = UE0 }\r
++	command = { type = inherit which = UE0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -771,7 +773,7 @@ event = {
+ 	decision_picture = "decision_Atlantis"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 明白な使命だ！\r

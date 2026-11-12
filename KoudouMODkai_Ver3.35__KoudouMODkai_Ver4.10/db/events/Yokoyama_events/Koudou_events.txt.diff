@@ -1,0 +1,171 @@
+--- A/db/events/Yokoyama_events/Koudou_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Koudou_events.txt [cp932]
+@@ -334,7 +334,7 @@ event = {
+ 	command = { type = domestic which = political_left value = -2 }\r
+ 	command = { type = wakeminister which = 50568 }\r
+ 	command = { type = wakeminister which = 50570 }\r
+-	command = { type = headofstate which = 50011 }\r
++	command = { type = headofstate which = 50568 }\r
+ 	command = { trigger = { ai = no } type = wakeleader which = 103001 }\r
+ 	command = { type = dissent value = 3 }\r
+ 	ai_chance = 98\r
+@@ -650,7 +650,7 @@ event = {
+ # そしてついに四大財閥の強行解体に伴う経済的混乱により生じた金融不安は表面化し、取り付け騒ぎが発生。\r
+ # 政府はこの経済的危機に正しく対処し得る事ができず、状況は更に悪化した。\r
+ # 最終的に政府は金融不安を収めることに成功したが、長期に渡る金融不安により日本経済は危機的な状況に陥っている。\r
+-# (日本経済を立て直すため、産業の再建に全力を尽くして下さい。具体的には実行IC120以上が経済再建の目安となります。\r
++# (日本経済を立て直すため、産業の再建に全力を尽くして下さい。具体的には実行IC250以上が経済再建の目安となります。\r
+ # なお、このイベント発生より5年以上経過すると…）\r
+ #########################################################################\r
+ event = {\r
+@@ -753,7 +753,7 @@ event = {
+ 	not = { event = 22600008 } # 第二次昭和恐慌 ― 経済破綻\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+-	ic = { country = JAP value = 120 }\r
++	ic = { country = JAP value = 250 }\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+@@ -840,7 +840,7 @@ event = {
+ 	not = { event = 22600007 } # 第二次昭和恐慌 ― 経済再建\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+-	not = { ic = { country = JAP value = 120 } }\r
++	not = { ic = { country = JAP value = 250 } }\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+@@ -1175,13 +1175,13 @@ event = {
+ 	command = { type = blizzard_attack which = land value = 6 }\r
+ 	command = { type = blizzard_defense which = land value = 6 }\r
+ 	command = { type = blizzard_move which = land value = 6 }\r
+-	command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
+-	command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
++	command = { type = add_leader_skill which = 101012 value = 1 } # 荒木貞夫\r
++	command = { type = add_leader_skill which = 101337 value = 1 } # 真崎甚三郎\r
+ 	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
+ 	command = { type = add_leader_skill which = 101182 value = 1 } # 山下奉文\r
+ 	command = { type = add_leader_skill which = 101313 value = 1 } # 山下奉文\r
+-	command = { trigger = { leader = 1200006 } type = add_leader_skill which = 1200006 value = 1 } # 秩父宮雍仁親王\r
+-	command = { trigger = { leader = 1200007 } type = add_leader_skill which = 1200007 value = 1 } # 雍仁天皇\r
++	command = { trigger = { leader = 103001 } type = add_leader_skill which = 103001 value = 1 } # 秩父宮雍仁親王\r
++	command = { trigger = { leader = 103002 } type = add_leader_skill which = 103002 value = 1 } # 雍仁天皇\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+@@ -1223,8 +1223,8 @@ event = {
+ 	command = { type = sleepleader which = 101012 } # 荒木貞夫\r
+ 	command = { type = sleepleader which = 101337 } # 真崎甚三郎\r
+ 	command = { type = sleepleader which = 102180 } # 真崎甚三郎\r
+-	command = { type = wakeleader which = 103021 } # 荒木貞夫（強化版）\r
+-	command = { type = wakeleader which = 103022 } # 真崎甚三郎（強化版）\r
++	command = { type = wakeleader which = 103022 } # 荒木貞夫（強化版）\r
++	command = { type = wakeleader which = 103023 } # 真崎甚三郎（強化版）\r
+ 	#command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
+ 	#command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
+ 	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
+@@ -1372,8 +1372,8 @@ event = {
+ 	command = { type = blizzard_attack which = land value = 6 }\r
+ 	command = { type = blizzard_defense which = land value = 6 }\r
+ 	command = { type = blizzard_move which = land value = 6 }\r
+-	command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
+-	command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
++	command = { type = add_leader_skill which = 101012 value = 1 } # 荒木貞夫\r
++	command = { type = add_leader_skill which = 101337 value = 1 } # 真崎甚三郎\r
+ 	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
+ 	command = { type = add_leader_skill which = 101182 value = 1 } # 山下奉文\r
+ 	command = { type = add_leader_skill which = 101313 value = 1 } # 山下奉文\r
+@@ -1419,15 +1419,15 @@ event = {
+ 	command = { type = sleepleader which = 101012 } # 荒木貞夫\r
+ 	command = { type = sleepleader which = 101337 } # 真崎甚三郎\r
+ 	command = { type = sleepleader which = 102180 } # 真崎甚三郎\r
+-	command = { type = wakeleader which = 103021 } # 荒木貞夫（強化版）\r
+-	command = { type = wakeleader which = 103022 } # 真崎甚三郎（強化版）\r
++	command = { type = wakeleader which = 103022 } # 荒木貞夫（強化版）\r
++	command = { type = wakeleader which = 103023 } # 真崎甚三郎（強化版）\r
+ 	#command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
+ 	#command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
+ 	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
+ 	command = { type = add_leader_skill which = 101182 value = 1 } # 山下奉文\r
+ 	command = { type = add_leader_skill which = 101313 value = 1 } # 山下奉文\r
+-	command = { trigger = { leader = 1200006 } type = add_leader_skill which = 1200006 value = 1 } # 秩父宮雍仁親王\r
+-	command = { trigger = { leader = 1200007 } type = add_leader_skill which = 1200007 value = 1 } # 雍仁天皇\r
++	command = { trigger = { leader = 103001 } type = add_leader_skill which = 103001 value = 1 } # 秩父宮雍仁親王\r
++	command = { trigger = { leader = 103002 } type = add_leader_skill which = 103002 value = 1 } # 雍仁天皇\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+@@ -2524,8 +2524,6 @@ event = {
+ 	command = { type = sleepleader which = 101374 }\r
+ 	command = { type = sleepteam which = 50106 }\r
+ 	command = { type = sleepminister which = 50591 } # 山岡重厚\r
+-	command = { type = sleepminister which = 50666 }\r
+-	command = { type = sleepminister which = 50667 }\r
+ 	command = { type = sleepleader which = 101179 }\r
+ 	command = { type = sleepminister which = 50588 } # 本庄繁\r
+ 	command = { type = sleepminister which = 50589 }\r
+@@ -2575,13 +2573,15 @@ event = {
+ 	command = { type = sleepminister which = 50602 }\r
+ 	command = { type = sleepleader which = 103017 }\r
+ 	command = { type = sleepleader which = 101000 } # 阿部信行\r
+-	command = { type = sleepminister which = 50362 } # 川島義之\r
++	command = { type = sleepminister which = 50363 } # 川島義之\r
+ 	command = { type = sleepleader which = 101340 }\r
+ 	command = { type = sleepminister which = 50612 } # 斎藤瀏\r
+ 	command = { type = sleepminister which = 50613 }\r
+ 	command = { type = sleepleader which = 101402 }\r
+ 	command = { type = sleepminister which = 50614 } # 満井佐吉\r
+ 	command = { type = sleepminister which = 50615 }\r
++	command = { type = sleepminister which = 50664 }\r
++	command = { type = sleepminister which = 50665 }\r
+ 	command = { type = sleepleader which = 101406 }\r
+ 	command = { type = sleepminister which = 50662 } # 村上啓作\r
+ 	command = { type = sleepminister which = 50663 }\r
+@@ -2589,12 +2589,11 @@ event = {
+ 	command = { type = sleepminister which = 50664 } # 香椎浩平\r
+ 	command = { type = sleepminister which = 50665 }\r
+ 	command = { type = sleepleader which = 101404 }\r
+-	command = { type = sleepminister which = 50666 } # 山岡重厚\r
++	command = { type = sleepminister which = 50666 } # 有末精三\r
+ 	command = { type = sleepminister which = 50667 }\r
+-	command = { type = sleepminister which = 50668 } # 秦彦三郎\r
++	command = { type = sleepminister which = 50668 } # 小野寺信\r
+ 	command = { type = sleepminister which = 50669 }\r
+-	command = { type = sleepminister which = 50689 } # 井出宣時\r
+-	command = { type = sleepminister which = 50690 }\r
++	command = { type = wakeminister which = 50660 }\r
+ 	command = { type = sleepleader which = 101405 } # 工藤義雄\r
+ 	command = { type = sleepleader which = 101408 } # 松浦淳六郎\r
+ 	command = { type = sleepminister which = 50655 } # 秦真次\r
+@@ -2613,6 +2612,12 @@ event = {
+ 	command = { type = sleepminister which = 50679 } # 堀丈夫\r
+ 	command = { type = sleepleader which = 101410 }\r
+ 	command = { type = sleepminister which = 50657 } # 小笠原長生\r
++	command = { type = sleepleader which = 101583 } # 橋本虎之助\r
++	command = { type = sleepleader which = 101610 } # 大島陸太郎\r
++	command = { type = sleepleader which = 101611 } # 佐藤正三郎\r
++	command = { type = sleepleader which = 101405 } # 工藤義雄\r
++	command = { type = sleepleader which = 101612 } # 小藤恵\r
++	command = { type = sleepleader which = 101613 } # 石田保道\r
+ 	# 皇道派系閣僚\r
+ 	command = { type = sleepminister which = 50639 } # 白鳥敏夫\r
+ 	command = { type = sleepminister which = 50640 } # 大川周明\r
+@@ -6250,14 +6255,14 @@ event = {
+ 	command = { type = sleepminister which = 50041 }\r
+ 	command = { type = sleepminister which = 50170 }\r
+ 	command = { type = sleepminister which = 50099 } # 平沼騏一郞\r
+-	command = { type = sleepminister which = 50398 }\r
++	command = { type = sleepminister which = 50021 }\r
+ 	command = { type = sleepminister which = 50089 } # 木戸幸一\r
+ 	command = { type = sleepminister which = 50397 }\r
+ 	ai_chance = 99\r
+ 	}\r
+ \r
+-	action = { # クーデター成功\r
+-	name = "ACTION_NAME_COUP_SUCCEEDS"\r
++	action = { # クーデター失敗\r
++	name = "ACTION_NAME_COUP_FAILS"\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+ 	command = { trigger = { ai = yes } type = dissent value = 25 }\r
+ 	command = { trigger = { ai = no } type = dissent value = 35 }\r

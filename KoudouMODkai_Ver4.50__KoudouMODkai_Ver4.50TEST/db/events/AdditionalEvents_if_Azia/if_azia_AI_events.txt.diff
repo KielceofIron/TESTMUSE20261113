@@ -1,0 +1,1975 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
+@@ -21,6 +21,11 @@
+ #id = 6656071 戦時AI\r
+ #id = 6656072 戦時終了AI\r
+ #中国共通（CHI CHC UCH U74 CSX CGX CYN CXB）\r
++#id = 6656086 中国研究バフAI\r
++#id = 6656087 中国自動車化歩兵生産AI\r
++#id = 6656088 中国戦車生産AI\r
++#id = 6656089 中国戦艦生産AI\r
++#id = 6656090 中国統一時陸軍AIイベント\r
+ #id = 6656091 中国統一時建設・研究AI\r
+ #id = 6656092 中国本土戦時AI\r
+ #id = 6656093 中国空挺部隊AI\r
+@@ -30,6 +35,7 @@
+ #id = 6656097 中国戦略ロケット生産AI\r
+ #id = 6656098 中国戦略爆撃生産AI\r
+ #id = 6656099 中国航空隊生産AI\r
++#id = 6656100 対日仮想空挺AI\r
+ #日本\r
+ #id = 6656101 対中国防衛AI\r
+ #id = 6656102 対中国反撃AI\r
+@@ -77,7 +83,11 @@
+ #id = 6656429 海軍建設AIイベント\r
+ #id = 6656430 対日本戦時AI\r
+ #id = 6656431 対日本戦時終了AI\r
+-#ドイツ\r
++#id = 6656432 ロシア戦車生産AI\r
++#id = 6656433 対日本上陸AI\r
++#id = 6656434 樺太・北海道上陸迎撃AI（日本AI時）\r
++#id = 6656435 樺太・北海道上陸迎撃AI（日本非AI時）\r
++#ドイツ（GER）\r
+ #id = 6656501 海軍建設AIイベント\r
+ #id = 6656502 ドイツ研究AI\r
+ #id = 6656503 ドイツ戦時研究AI\r
+@@ -95,6 +105,9 @@
+ #id = 6656515 リトアニア枢軸加盟AI\r
+ #id = 6656516 ラトビア枢軸加盟AI\r
+ #id = 6656517 エストニア枢軸加盟AI\r
++#id = 6656518 ロシア侵略AI\r
++#id = 6656519 ロシア侵略時間経過AI\r
++#id = 6656520 ロシア侵略二年目AI\r
+ #朝鮮\r
+ #id = 6656601 戦時AI\r
+ #id = 6656602 戦争終結AI\r
+@@ -103,6 +116,24 @@
+ #メキシコ\r
+ #id = 6656701 好戦的AI\r
+ #id = 6656702 好戦的終了AI\r
++#id = 6656703 国名変更イベント\r
++#id = 6656704 国名変更フラグ解除イベント\r
++#南米\r
++#id = 6656801 戦時AI\r
++#id = 6656802 戦時終了AI\r
++#id = 6656803 パラグアイ併合AIイベント\r
++#イギリス\r
++#id = 6656901 対北欧上陸AI\r
++#id = 6656902 イギリス北欧上陸反応AI\r
++#ドイツ（DDR）\r
++#id = 6657001 軍建設AIイベント\r
++#id = 6657002 海軍建設AIイベント\r
++#id = 6657003 戦時AI\r
++#フランス\r
++#id = 6657101 対ドイツ（DDR）AI\r
++#id = 6657102 対ドイツ（DDR）攻勢AI\r
++#id = 6657103 対ドイツ（DDR）デバフAIイベント\r
++#id = 6657104 対ドイツデバフ解除AIイベント\r
+ ##########################################################################\r
+ #  中華民国\r
+ ##########################################################################\r
+@@ -504,6 +535,505 @@ event = {
+ \r
+ ##########################################################################\r
+ #  中国共通\r
++##########################################################################\r
++#  中国研究バフAI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656086\r
++	random = no \r
++	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++	local_flag = China_Unification # 中国統一\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = research_mod value = 5 }\r
++	# 歩兵技術\r
++	command = { trigger = { NOT = { technology = 1010 } } type = gain_tech which = 1010 }	# 歩兵（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 1020 } } type = gain_tech which = 1020 }\r
++	command = { trigger = { NOT = { technology = 1030 } } type = gain_tech which = 1030 }\r
++	command = { trigger = { NOT = { technology = 1040 } } type = gain_tech which = 1040 }\r
++	command = { trigger = { NOT = { technology = 1050 } } type = gain_tech which = 1050 }\r
++	command = { trigger = { NOT = { technology = 1060 } } type = gain_tech which = 1060 }\r
++	command = { trigger = { NOT = { technology = 1070 } } type = gain_tech which = 1070 }\r
++	command = { trigger = { NOT = { technology = 1080 } } type = gain_tech which = 1080 }\r
++	command = { trigger = { NOT = { technology = 1090 } } type = gain_tech which = 1090 }\r
++	command = { trigger = { NOT = { technology = 1100 } } type = gain_tech which = 1100 }\r
++	command = { trigger = { NOT = { technology = 1110 } } type = gain_tech which = 1110 }\r
++	command = { trigger = { NOT = { technology = 1160 } } type = gain_tech which = 1160 }	# 山岳兵（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 1170 } } type = gain_tech which = 1170 }\r
++	command = { trigger = { NOT = { technology = 1180 } } type = gain_tech which = 1180 }\r
++	command = { trigger = { NOT = { technology = 1190 } } type = gain_tech which = 1190 }\r
++	command = { trigger = { NOT = { technology = 1200 } } type = gain_tech which = 1200 }\r
++	command = { trigger = { NOT = { technology = 1210 } } type = gain_tech which = 1210 }\r
++	command = { trigger = { NOT = { technology = 1220 } } type = gain_tech which = 1220 }\r
++	command = { trigger = { NOT = { technology = 1230 } } type = gain_tech which = 1230 }\r
++	command = { trigger = { NOT = { technology = 1240 } } type = gain_tech which = 1240 }\r
++	command = { trigger = { NOT = { technology = 1250 } } type = gain_tech which = 1250 }\r
++	command = { trigger = { NOT = { technology = 1260 } } type = gain_tech which = 1260 }\r
++	command = { trigger = { NOT = { technology = 1270 } } type = gain_tech which = 1270 }\r
++	command = { trigger = { NOT = { technology = 1560 } } type = gain_tech which = 1560 }	# 海兵（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 1570 } } type = gain_tech which = 1570 }\r
++	command = { trigger = { NOT = { technology = 1580 } } type = gain_tech which = 1580 }\r
++	command = { trigger = { NOT = { technology = 1590 } } type = gain_tech which = 1590 }\r
++	command = { trigger = { NOT = { technology = 1600 } } type = gain_tech which = 1600 }\r
++	command = { trigger = { NOT = { technology = 1610 } } type = gain_tech which = 1610 }\r
++	command = { trigger = { NOT = { technology = 1396 } } type = gain_tech which = 1396 }	# 自動車化兵（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 1400 } } type = gain_tech which = 1400 }\r
++	command = { trigger = { NOT = { technology = 1410 } } type = gain_tech which = 1410 }\r
++	command = { trigger = { NOT = { technology = 13060 } } type = gain_tech which = 13060 } # 騎兵（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 13070 } } type = gain_tech which = 13070 }\r
++	command = { trigger = { NOT = { technology = 13080 } } type = gain_tech which = 13080 }\r
++	command = { trigger = { NOT = { technology = 1310 } } type = gain_tech which = 1310 }\r
++	command = { trigger = { NOT = { technology = 1320 } } type = gain_tech which = 1320 }\r
++	command = { trigger = { NOT = { technology = 1330 } } type = gain_tech which = 1330 }\r
++	command = { trigger = { NOT = { technology = 1340 } } type = gain_tech which = 1340 }\r
++	command = { trigger = { NOT = { technology = 1350 } } type = gain_tech which = 1350 }\r
++	command = { trigger = { NOT = { technology = 1360 } } type = gain_tech which = 1360 }\r
++	command = { trigger = { NOT = { technology = 1370 } } type = gain_tech which = 1370 }\r
++	command = { trigger = { NOT = { technology = 1380 } } type = gain_tech which = 1380 }\r
++	command = { trigger = { NOT = { technology = 1390 } } type = gain_tech which = 1390 }\r
++	command = { trigger = { NOT = { technology = 1530 } } type = gain_tech which = 1530 }\r
++	command = { trigger = { NOT = { technology = 1670 } } type = gain_tech which = 1670 } # 空挺兵（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 1680 } } type = gain_tech which = 1680 }\r
++	command = { trigger = { NOT = { technology = 1830 } } type = gain_tech which = 1830 } # 工兵（1939年型まで）\r
++	command = { trigger = { NOT = { technology = 1840 } } type = gain_tech which = 1840 }\r
++	command = { trigger = { NOT = { technology = 1850 } } type = gain_tech which = 1850 }\r
++	command = { trigger = { NOT = { technology = 1860 } } type = gain_tech which = 1860 }\r
++	command = { trigger = { NOT = { technology = 1870 } } type = gain_tech which = 1870 }\r
++	command = { trigger = { NOT = { technology = 1910 } } type = gain_tech which = 1910 } # 兵站（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 1920 } } type = gain_tech which = 1920 }\r
++	command = { trigger = { NOT = { technology = 1930 } } type = gain_tech which = 1930 }\r
++	command = { trigger = { NOT = { technology = 1940 } } type = gain_tech which = 1940 }\r
++	command = { trigger = { NOT = { technology = 1950 } } type = gain_tech which = 1950 }\r
++	command = { trigger = { NOT = { technology = 1960 } } type = gain_tech which = 1960 }\r
++	command = { trigger = { NOT = { technology = 1970 } } type = gain_tech which = 1970 }\r
++	command = { trigger = { NOT = { technology = 1980 } } type = gain_tech which = 1980 }\r
++	command = { trigger = { NOT = { technology = 1990 } } type = gain_tech which = 1990 }\r
++	command = { trigger = { NOT = { technology = 199130 } } type = gain_tech which = 199130 }\r
++	command = { trigger = { NOT = { technology = 199100 } } type = gain_tech which = 199100 }\r
++	command = { trigger = { NOT = { technology = 199140 } } type = gain_tech which = 199140 }\r
++	# 戦車と火砲技術\r
++	command = { trigger = { NOT = { technology = 2620 } } type = gain_tech which = 2620 } # 戦車（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 2010 } } type = gain_tech which = 2010 }\r
++	command = { trigger = { NOT = { technology = 2630 } } type = gain_tech which = 2630 }\r
++	command = { trigger = { NOT = { technology = 2640 } } type = gain_tech which = 2640 }\r
++	command = { trigger = { NOT = { technology = 2646 } } type = gain_tech which = 2646 }\r
++	command = { trigger = { NOT = { technology = 2650 } } type = gain_tech which = 2650 }\r
++	command = { trigger = { NOT = { technology = 2030 } } type = gain_tech which = 2030 }\r
++	command = { trigger = { NOT = { technology = 2040 } } type = gain_tech which = 2040 }\r
++	command = { trigger = { NOT = { technology = 2050 } } type = gain_tech which = 2050 }\r
++	command = { trigger = { NOT = { technology = 2070 } } type = gain_tech which = 2070 }\r
++	command = { trigger = { NOT = { technology = 2080 } } type = gain_tech which = 2080 }\r
++	command = { trigger = { NOT = { technology = 2860 } } type = gain_tech which = 2860 } # 装甲車（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 2870 } } type = gain_tech which = 2870 }\r
++	command = { trigger = { NOT = { technology = 2880 } } type = gain_tech which = 2880 }\r
++	command = { trigger = { NOT = { technology = 2020 } } type = gain_tech which = 2020 }\r
++	command = { trigger = { NOT = { technology = 2150 } } type = gain_tech which = 2150 }\r
++	command = { trigger = { NOT = { technology = 2160 } } type = gain_tech which = 2160 }\r
++	command = { trigger = { NOT = { technology = 2290 } } type = gain_tech which = 2290 } # 野戦砲（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 2300 } } type = gain_tech which = 2300 }\r
++	command = { trigger = { NOT = { technology = 2310 } } type = gain_tech which = 2310 }\r
++	command = { trigger = { NOT = { technology = 2900 } } type = gain_tech which = 2900 }\r
++	command = { trigger = { NOT = { technology = 2910 } } type = gain_tech which = 2910 }\r
++	command = { trigger = { NOT = { technology = 2920 } } type = gain_tech which = 2920 }\r
++	command = { trigger = { NOT = { technology = 2930 } } type = gain_tech which = 2930 }\r
++	command = { trigger = { NOT = { technology = 2940 } } type = gain_tech which = 2940 }\r
++	command = { trigger = { NOT = { technology = 2320 } } type = gain_tech which = 2320 }\r
++	command = { trigger = { NOT = { technology = 2330 } } type = gain_tech which = 2330 }\r
++	command = { trigger = { NOT = { technology = 2340 } } type = gain_tech which = 2340 }\r
++	command = { trigger = { NOT = { technology = 2800 } } type = gain_tech which = 2800 } # 対空砲（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 2450 } } type = gain_tech which = 2450 }\r
++	command = { trigger = { NOT = { technology = 21180 } } type = gain_tech which = 21180 }\r
++	command = { trigger = { NOT = { technology = 21190 } } type = gain_tech which = 21190 }\r
++	command = { trigger = { NOT = { technology = 21200 } } type = gain_tech which = 21200 }\r
++	command = { trigger = { NOT = { technology = 2460 } } type = gain_tech which = 2460 }\r
++	command = { trigger = { NOT = { technology = 2470 } } type = gain_tech which = 2470 }\r
++	command = { trigger = { NOT = { technology = 2480 } } type = gain_tech which = 2480 }\r
++	command = { trigger = { NOT = { technology = 2810 } } type = gain_tech which = 2810 } # 対空砲旅団（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 2820 } } type = gain_tech which = 2820 }\r
++	command = { trigger = { NOT = { technology = 2510 } } type = gain_tech which = 2510 }\r
++	command = { trigger = { NOT = { technology = 2530 } } type = gain_tech which = 2530 }\r
++	command = { trigger = { NOT = { technology = 2400 } } type = gain_tech which = 2400 } # 対戦車砲（1940年型まで）\r
++	command = { trigger = { NOT = { technology = 2410 } } type = gain_tech which = 2410 }\r
++	command = { trigger = { NOT = { technology = 2420 } } type = gain_tech which = 2420 }\r
++	# 艦船技術\r
++	command = { trigger = { NOT = { technology = 3010 } } type = gain_tech which = 3010 } # 駆逐艦（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 3020 } } type = gain_tech which = 3020 }\r
++	command = { trigger = { NOT = { technology = 3030 } } type = gain_tech which = 3030 }\r
++	command = { trigger = { NOT = { technology = 3040 } } type = gain_tech which = 3040 }\r
++	command = { trigger = { NOT = { technology = 3050 } } type = gain_tech which = 3050 }\r
++	command = { trigger = { NOT = { technology = 3060 } } type = gain_tech which = 3060 }\r
++	command = { trigger = { NOT = { technology = 3070 } } type = gain_tech which = 3070 }\r
++	command = { trigger = { NOT = { technology = 12000 } } type = gain_tech which = 12000 }\r
++	command = { trigger = { NOT = { technology = 3110 } } type = gain_tech which = 3110 } # 軽巡（1940年型まで）\r
++	command = { trigger = { NOT = { technology = 3120 } } type = gain_tech which = 3120 }\r
++	command = { trigger = { NOT = { technology = 3130 } } type = gain_tech which = 3130 }\r
++	command = { trigger = { NOT = { technology = 3140 } } type = gain_tech which = 3140 }\r
++	command = { trigger = { NOT = { technology = 3150 } } type = gain_tech which = 3150 }\r
++	command = { trigger = { NOT = { technology = 12010 } } type = gain_tech which = 12010 }\r
++	command = { trigger = { NOT = { technology = 3210 } } type = gain_tech which = 3210 } # 重巡（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 3220 } } type = gain_tech which = 3220 }\r
++	command = { trigger = { NOT = { technology = 3230 } } type = gain_tech which = 3230 }\r
++	command = { trigger = { NOT = { technology = 3240 } } type = gain_tech which = 3240 }\r
++	command = { trigger = { NOT = { technology = 3250 } } type = gain_tech which = 3250 }\r
++	command = { trigger = { NOT = { technology = 3260 } } type = gain_tech which = 3260 }\r
++	command = { trigger = { NOT = { technology = 12020 } } type = gain_tech which = 12020 }\r
++	command = { trigger = { NOT = { technology = 3410 } } type = gain_tech which = 3410 } # 戦艦（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 3420 } } type = gain_tech which = 3420 }\r
++	command = { trigger = { NOT = { technology = 3430 } } type = gain_tech which = 3430 }\r
++	command = { trigger = { NOT = { technology = 3440 } } type = gain_tech which = 3440 }\r
++	command = { trigger = { NOT = { technology = 3450 } } type = gain_tech which = 3450 }\r
++	command = { trigger = { NOT = { technology = 3456 } } type = gain_tech which = 3456 }\r
++	command = { trigger = { NOT = { technology = 3460 } } type = gain_tech which = 3460 }\r
++	command = { trigger = { NOT = { technology = 3470 } } type = gain_tech which = 3470 }\r
++	command = { trigger = { NOT = { technology = 12100 } } type = gain_tech which = 12100 } # 空母（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 12110 } } type = gain_tech which = 12110 }\r
++	command = { trigger = { NOT = { technology = 12120 } } type = gain_tech which = 12120 }\r
++	command = { trigger = { NOT = { technology = 12130 } } type = gain_tech which = 12130 }\r
++	command = { trigger = { NOT = { technology = 12140 } } type = gain_tech which = 12140 }\r
++	command = { trigger = { NOT = { technology = 3510 } } type = gain_tech which = 3510 }\r
++	command = { trigger = { NOT = { technology = 3520 } } type = gain_tech which = 3520 }\r
++	command = { trigger = { NOT = { technology = 3530 } } type = gain_tech which = 3530 }\r
++	command = { trigger = { NOT = { technology = 3540 } } type = gain_tech which = 3540 }\r
++	command = { trigger = { NOT = { technology = 3550 } } type = gain_tech which = 3550 }\r
++	command = { trigger = { NOT = { technology = 3810 } } type = gain_tech which = 3810 } # 輸送艦（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 3820 } } type = gain_tech which = 3820 }\r
++	command = { trigger = { NOT = { technology = 3830 } } type = gain_tech which = 3830 }\r
++	command = { trigger = { NOT = { technology = 3840 } } type = gain_tech which = 3840 }\r
++	command = { trigger = { NOT = { technology = 3810 } } type = gain_tech which = 3810 } # 魚雷（1935年型まで）\r
++	command = { trigger = { NOT = { technology = 3820 } } type = gain_tech which = 3820 }\r
++	command = { trigger = { NOT = { technology = 3830 } } type = gain_tech which = 3830 }\r
++	command = { trigger = { NOT = { technology = 3900 } } type = gain_tech which = 3900 } # 対潜戦装備（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 3910 } } type = gain_tech which = 3910 }\r
++	command = { trigger = { NOT = { technology = 3920 } } type = gain_tech which = 3920 }\r
++	# 航空機技術\r
++	command = { trigger = { NOT = { technology = 4500 } } type = gain_tech which = 4500 } # 迎撃機（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 4510 } } type = gain_tech which = 4510 }\r
++	command = { trigger = { NOT = { technology = 4520 } } type = gain_tech which = 4520 }\r
++	command = { trigger = { NOT = { technology = 4530 } } type = gain_tech which = 4530 }\r
++	command = { trigger = { NOT = { technology = 4540 } } type = gain_tech which = 4540 }\r
++	command = { trigger = { NOT = { technology = 4010 } } type = gain_tech which = 4010 }\r
++	command = { trigger = { NOT = { technology = 4020 } } type = gain_tech which = 4020 }\r
++	command = { trigger = { NOT = { technology = 4060 } } type = gain_tech which = 4060 }\r
++	command = { trigger = { NOT = { technology = 4090 } } type = gain_tech which = 4090 }\r
++	command = { trigger = { NOT = { technology = 4300 } } type = gain_tech which = 4300 } # 戦闘機（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 4310 } } type = gain_tech which = 4310 }\r
++	command = { trigger = { NOT = { technology = 4320 } } type = gain_tech which = 4320 }\r
++	command = { trigger = { NOT = { technology = 4330 } } type = gain_tech which = 4330 }\r
++	command = { trigger = { NOT = { technology = 4340 } } type = gain_tech which = 4340 }\r
++	command = { trigger = { NOT = { technology = 4040 } } type = gain_tech which = 4040 }\r
++	command = { trigger = { NOT = { technology = 4070 } } type = gain_tech which = 4070 }\r
++	command = { trigger = { NOT = { technology = 4100 } } type = gain_tech which = 4100 }\r
++	command = { trigger = { NOT = { technology = 4400 } } type = gain_tech which = 4400 } # 近接航空支援機（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 4170 } } type = gain_tech which = 4170 }\r
++	command = { trigger = { NOT = { technology = 4280 } } type = gain_tech which = 4280 }\r
++	command = { trigger = { NOT = { technology = 4450 } } type = gain_tech which = 4450 }\r
++	command = { trigger = { NOT = { technology = 4050 } } type = gain_tech which = 4050 } # 護衛戦闘機（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 4080 } } type = gain_tech which = 4080 }\r
++	command = { trigger = { NOT = { technology = 4110 } } type = gain_tech which = 4110 }\r
++	command = { trigger = { NOT = { technology = 4600 } } type = gain_tech which = 4600 } # 爆撃機（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 4610 } } type = gain_tech which = 4610 }\r
++	command = { trigger = { NOT = { technology = 4620 } } type = gain_tech which = 4620 }\r
++	command = { trigger = { NOT = { technology = 4630 } } type = gain_tech which = 4630 }\r
++	command = { trigger = { NOT = { technology = 4120 } } type = gain_tech which = 4120 }\r
++	command = { trigger = { NOT = { technology = 4130 } } type = gain_tech which = 4130 }\r
++	command = { trigger = { NOT = { technology = 4140 } } type = gain_tech which = 4140 }\r
++	command = { trigger = { NOT = { technology = 4150 } } type = gain_tech which = 4150 }\r
++	command = { trigger = { NOT = { technology = 4160 } } type = gain_tech which = 4160 }\r
++	command = { trigger = { NOT = { technology = 4700 } } type = gain_tech which = 4700 } # 海軍爆撃機（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 4710 } } type = gain_tech which = 4710 }\r
++	command = { trigger = { NOT = { technology = 4190 } } type = gain_tech which = 4190 }\r
++	command = { trigger = { NOT = { technology = 4200 } } type = gain_tech which = 4200 }\r
++	command = { trigger = { NOT = { technology = 4800 } } type = gain_tech which = 4800 } # 戦略爆撃機（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 4810 } } type = gain_tech which = 4810 }\r
++	command = { trigger = { NOT = { technology = 4820 } } type = gain_tech which = 4820 }\r
++	command = { trigger = { NOT = { technology = 4220 } } type = gain_tech which = 4220 }\r
++	command = { trigger = { NOT = { technology = 4230 } } type = gain_tech which = 4230 }\r
++	command = { trigger = { NOT = { technology = 4240 } } type = gain_tech which = 4240 }\r
++	command = { trigger = { NOT = { technology = 4740 } } type = gain_tech which = 4740 } # 水上機（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 4750 } } type = gain_tech which = 4750 }\r
++	command = { trigger = { NOT = { technology = 4760 } } type = gain_tech which = 4760 }\r
++	command = { trigger = { NOT = { technology = 4770 } } type = gain_tech which = 4770 }\r
++	command = { trigger = { NOT = { technology = 4780 } } type = gain_tech which = 4780 }\r
++	command = { trigger = { NOT = { technology = 4850 } } type = gain_tech which = 4850 }\r
++	command = { trigger = { NOT = { technology = 4860 } } type = gain_tech which = 4860 }\r
++	command = { trigger = { NOT = { technology = 4900 } } type = gain_tech which = 4900 } # 艦載機（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 4910 } } type = gain_tech which = 4910 }\r
++	command = { trigger = { NOT = { technology = 4920 } } type = gain_tech which = 4920 }\r
++	command = { trigger = { NOT = { technology = 4930 } } type = gain_tech which = 4930 }\r
++	command = { trigger = { NOT = { technology = 4940 } } type = gain_tech which = 4940 }\r
++	command = { trigger = { NOT = { technology = 4950 } } type = gain_tech which = 4950 }\r
++	command = { trigger = { NOT = { technology = 4290 } } type = gain_tech which = 4290 } # 輸送機（1941年型まで）\r
++	command = { trigger = { NOT = { technology = 4250 } } type = gain_tech which = 4250 }\r
++	command = { trigger = { NOT = { technology = 4260 } } type = gain_tech which = 4260 }\r
++	command = { trigger = { NOT = { technology = 4270 } } type = gain_tech which = 4270 }\r
++	# 生産技術\r
++	command = { trigger = { NOT = { technology = 5810 } } type = gain_tech which = 5810 } # 生産（190年型まで）\r
++	command = { trigger = { NOT = { technology = 5820 } } type = gain_tech which = 5820 }\r
++	command = { trigger = { NOT = { technology = 5050 } } type = gain_tech which = 5050 }\r
++	command = { trigger = { NOT = { technology = 5830 } } type = gain_tech which = 5830 }\r
++	command = { trigger = { NOT = { technology = 5060 } } type = gain_tech which = 5060 }\r
++	command = { trigger = { NOT = { technology = 5070 } } type = gain_tech which = 5070 }\r
++	command = { trigger = { NOT = { technology = 5130 } } type = gain_tech which = 5130 }\r
++	command = { trigger = { NOT = { technology = 5800 } } type = gain_tech which = 5800 } # 建設（190年型まで）\r
++	command = { trigger = { NOT = { technology = 5080 } } type = gain_tech which = 5080 }\r
++	command = { trigger = { NOT = { technology = 5090 } } type = gain_tech which = 5090 }\r
++	command = { trigger = { NOT = { technology = 5100 } } type = gain_tech which = 5100 }\r
++	command = { trigger = { NOT = { technology = 5410 } } type = gain_tech which = 5410 } #レーダー（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 5416 } } type = gain_tech which = 5416 }\r
++	command = { trigger = { NOT = { technology = 5417 } } type = gain_tech which = 5417 }\r
++	command = { trigger = { NOT = { technology = 5420 } } type = gain_tech which = 5420 }\r
++	command = { trigger = { NOT = { technology = 5426 } } type = gain_tech which = 5426 }\r
++	command = { trigger = { NOT = { technology = 5430 } } type = gain_tech which = 5430 }\r
++	command = { trigger = { NOT = { technology = 5000110 } } type = gain_tech which = 5000110 } #国土開発計画（1940年型まで）\r
++	command = { trigger = { NOT = { technology = 55000 } } type = gain_tech which = 55000 }\r
++	command = { trigger = { NOT = { technology = 55010 } } type = gain_tech which = 55010 }\r
++	command = { trigger = { NOT = { technology = 5310 } } type = gain_tech which = 5310 } #コンピュータ（1940年型まで）\r
++	command = { trigger = { NOT = { technology = 54010 } } type = gain_tech which = 54010 }\r
++	command = { trigger = { NOT = { technology = 54020 } } type = gain_tech which = 54020 }\r
++	command = { trigger = { NOT = { technology = 54030 } } type = gain_tech which = 54030 }\r
++	command = { trigger = { NOT = { technology = 5320 } } type = gain_tech which = 5320 }\r
++	command = { trigger = { NOT = { technology = 5330 } } type = gain_tech which = 5330 }\r
++	command = { trigger = { NOT = { technology = 5340 } } type = gain_tech which = 5340 }\r
++	command = { trigger = { NOT = { technology = 5316 } } type = gain_tech which = 5316 } #暗号（1943年型まで）\r
++	command = { trigger = { NOT = { technology = 5316 } } type = gain_tech which = 5316 }\r
++	command = { trigger = { NOT = { technology = 5326 } } type = gain_tech which = 5326 }\r
++	command = { trigger = { NOT = { technology = 5327 } } type = gain_tech which = 5327 }\r
++	command = { trigger = { NOT = { technology = 5350 } } type = gain_tech which = 5350 }\r
++	command = { trigger = { NOT = { technology = 5360 } } type = gain_tech which = 5360 }\r
++	command = { trigger = { NOT = { technology = 5370 } } type = gain_tech which = 5370 }\r
++	command = { trigger = { NOT = { technology = 5380 } } type = gain_tech which = 5380 }\r
++	command = { trigger = { NOT = { technology = 5390 } } type = gain_tech which = 5390 }\r
++	command = { trigger = { NOT = { technology = 5400 } } type = gain_tech which = 5400 }\r
++	command = { trigger = { NOT = { technology = 5600 } } type = gain_tech which = 5600 } #医薬品（1938年型まで）\r
++	command = { trigger = { NOT = { technology = 5600 } } type = gain_tech which = 5600 }\r
++	command = { trigger = { NOT = { technology = 5610 } } type = gain_tech which = 5610 }\r
++	command = { trigger = { NOT = { technology = 5620 } } type = gain_tech which = 5620 }\r
++	command = { trigger = { NOT = { technology = 5630 } } type = gain_tech which = 5630 }\r
++	command = { trigger = { NOT = { technology = 5640 } } type = gain_tech which = 5640 }\r
++	command = { trigger = { NOT = { technology = 14000 } } type = gain_tech which = 14000 } #病院（1936年型まで）\r
++	command = { trigger = { NOT = { technology = 14010 } } type = gain_tech which = 14010 }\r
++	command = { trigger = { NOT = { technology = 14020 } } type = gain_tech which = 14020 }\r
++	command = { trigger = { NOT = { technology = 14030 } } type = gain_tech which = 14030 }\r
++	command = { trigger = { NOT = { technology = 5700 } } type = gain_tech which = 5700 } #農業（1937年型まで）\r
++	command = { trigger = { NOT = { technology = 5710 } } type = gain_tech which = 5710 }\r
++	command = { trigger = { NOT = { technology = 5010 } } type = gain_tech which = 5010 }\r
++	command = { trigger = { NOT = { technology = 5020 } } type = gain_tech which = 5020 }\r
++	command = { trigger = { NOT = { technology = 5030 } } type = gain_tech which = 5030 }\r
++	command = { trigger = { NOT = { technology = 5470 } } type = gain_tech which = 5470 } #原子力（1944年型まで）\r
++	command = { trigger = { NOT = { technology = 5480 } } type = gain_tech which = 5480 }\r
++	command = { trigger = { NOT = { technology = 5490 } } type = gain_tech which = 5490 }\r
++	command = { trigger = { NOT = { technology = 5500 } } type = gain_tech which = 5500 }\r
++	command = { trigger = { NOT = { technology = 5510 } } type = gain_tech which = 5510 }\r
++	command = { trigger = { NOT = { technology = 5520 } } type = gain_tech which = 5520 }\r
++	command = { trigger = { NOT = { technology = 5530 } } type = gain_tech which = 5530 }\r
++	command = { trigger = { NOT = { technology = 5540 } } type = gain_tech which = 5540 }\r
++	command = { trigger = { NOT = { technology = 5190 } } type = gain_tech which = 5190 } #石油精製（1942年型まで）\r
++	command = { trigger = { NOT = { technology = 5200 } } type = gain_tech which = 5200 }\r
++	command = { trigger = { NOT = { technology = 5210 } } type = gain_tech which = 5210 }\r
++	command = { trigger = { NOT = { technology = 5220 } } type = gain_tech which = 5220 }\r
++	command = { trigger = { NOT = { technology = 5230 } } type = gain_tech which = 5230 }\r
++	command = { trigger = { NOT = { technology = 5560 } } type = gain_tech which = 5560 } #ロケットエンジン\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中国自動車化歩兵生産AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656087\r
++	random = no \r
++	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++	technology = 1396 # 1935年型自動車化歩兵師団\r
++	local_flag = China_Unification # 中国統一\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = add_division value = motorized }\r
++	command = { type = add_division value = motorized }\r
++	command = { type = add_division value = motorized }\r
++	command = { type = add_division value = motorized }\r
++	command = { type = add_division value = motorized }\r
++	command = { type = build_division which = motorized when = 8 cost = 0.1 }\r
++	command = { type = build_division which = motorized when = 8 cost = 0.1 }\r
++	command = { type = build_division which = motorized when = 8 cost = 0.1 }\r
++	command = { type = build_division which = motorized when = 8 cost = 0.1 }\r
++	command = { type = build_division which = motorized when = 8 cost = 0.1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中国戦車生産AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656088\r
++	random = no \r
++	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++	technology = 2030 # 初期型戦車\r
++	technology = 6900 # 装甲部隊編成ドクトリン\r
++	local_flag = China_Unification # 中国統一\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = add_division value = light_armor }\r
++	command = { type = add_division value = light_armor }\r
++	command = { type = add_division value = light_armor }\r
++	command = { type = add_division value = light_armor }\r
++	command = { type = add_division value = light_armor }\r
++	command = { type = add_division value = light_armor }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中国戦艦生産AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656089\r
++	random = no \r
++	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++	technology = 3450 # 初期型戦艦\r
++	local_flag = China_Unification # 中国統一\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = build_division which = battleship when = 1 cost = 0.1 }\r
++	command = { type = build_division which = battleship when = 1 cost = 0.1 }\r
++	command = { type = build_division which = battleship when = 1 cost = 0.1 }\r
++	command = { type = build_division which = battleship when = 1 cost = 0.1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中国統一時陸軍AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656090\r
++	random = no \r
++	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++	local_flag = China_Unification # 中国統一\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = demobilize which = militia when = 0 where = 1 value = 0 }\r
++	command = { type = add_division value = hq when = 1 }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = build_division which = infantry value = artillery when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry value = cavalry_brigade when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  中国統一時建設・研究AI\r
+ ###########################################################################\r
+@@ -636,20 +1166,36 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = build_division which = heavy_cruiser when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = heavy_cruiser when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = heavy_cruiser when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = light_cruiser when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = light_cruiser when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = light_cruiser when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = destroyer when = 3 cost = 0.1 }\r
+-	command = { type = build_division which = destroyer when = 3 cost = 0.1 }\r
+-	command = { type = build_division which = destroyer when = 3 cost = 0.1 }\r
+-	command = { type = build_division which = submarine when = 3 cost = 0.1 }\r
+-	command = { type = build_division which = submarine when = 3 cost = 0.1 }\r
+-	command = { type = build_division which = submarine when = 3 cost = 0.1 }\r
+-	command = { type = build_division which = submarine when = 3 cost = 0.1 }\r
+-	command = { type = build_division which = submarine when = 3 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser when = 1 cost = 0.1 }\r
++	command = { type = build_division which = destroyer when = 2 cost = 0.1 }\r
++	command = { type = build_division which = destroyer when = 2 cost = 0.1 }\r
++	command = { type = build_division which = destroyer when = 2 cost = 0.1 }\r
++	command = { type = build_division which = destroyer when = 2 cost = 0.1 }\r
++	command = { type = build_division which = destroyer when = 2 cost = 0.1 }\r
++	command = { type = build_division which = destroyer when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
++	command = { type = build_division which = submarine when = 2 cost = 0.1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -822,18 +1368,89 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = build_division which = interceptor when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = interceptor when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = interceptor when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = tactical_bomber when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = tactical_bomber when = 2 cost = 0.1 }\r
+-	command = { type = build_division which = tactical_bomber when = 2 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 }\r
+ 	command = { type = add_division value = interceptor when = 8 }\r
+ 	command = { type = add_division value = interceptor when = 8 }\r
+ 	command = { type = add_division value = tactical_bomber when = 6 }\r
+ 	command = { type = add_division value = tactical_bomber when = 6 }\r
+ 	}\r
+ }\r
++\r
++\r
++##########################################################################\r
++#  対日仮想空挺AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656100\r
++	random = no \r
++	TAG = { CHI CHC UCH U74 }\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	war = { country = JAP }\r
++	OR = { # 空挺目標\r
++	control = { province = 1560 data = JAP } # 九州\r
++	control = { province = 1561 data = JAP }\r
++	control = { province = 2787 data = JAP }\r
++	}\r
++	OR = { # 出発拠点\r
++	control = { province = 1232 data = -1 } # 釜山（プサン）\r
++	control = { province = 1338 data = -1 } # 上海（シャンハイ）\r
++	}\r
++	technology = 4260 # 1938年型輸送機\r
++	technology = 1670 # 1938年型空挺兵\r
++	transport_plane = 1 # 輸送機師団を1つ以上保有\r
++	paratrooper = 1 # 空挺師団を1つ以上保有\r
++	random = 25\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 45\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	trigger = {\r
++	control = { province = 1560 data = JAP } # 福岡\r
++	}\r
++	command = { type = demobilize which = paratrooper when = 0 where = 1 value = -1 }\r
++	command = { type = add_corps which = "鴻翔部隊軍団" value = land where = 1560 }\r
++	command = { type = add_division which = "第1鴻翔師団" value = paratrooper when = 0 }\r
++	command = { type = add_division which = "第2鴻翔師団" value = paratrooper when = 0 }\r
++	ai_chance = 33\r
++	}\r
++\r
++	action = {\r
++	trigger = {\r
++	control = { province = 1561 data = JAP } # 鹿兒島\r
++	}\r
++	command = { type = demobilize which = paratrooper when = 0 where = 1 value = -1 }\r
++	command = { type = add_corps which = "鴻翔部隊軍団" value = land where = 1561 }\r
++	command = { type = add_division which = "第1鴻翔師団" value = paratrooper when = 0 }\r
++	command = { type = add_division which = "第2鴻翔師団" value = paratrooper when = 0 }\r
++	ai_chance = 34\r
++	}\r
++\r
++	action = {\r
++	trigger = {\r
++	control = { province = 2787 data = JAP } # 長崎\r
++	}\r
++	command = { type = demobilize which = paratrooper when = 0 where = 1 value = -1 }\r
++	command = { type = add_corps which = "鴻翔部隊軍団" value = land where = 2787 }\r
++	command = { type = add_division which = "第1鴻翔師団" value = paratrooper when = 0 }\r
++	command = { type = add_division which = "第2鴻翔師団" value = paratrooper when = 0 }\r
++	ai_chance = 33\r
++	}\r
++}\r
+ ##########################################################################\r
+ #  日本\r
+ ##########################################################################\r
+@@ -2419,6 +3036,494 @@ event = {
+ }\r
+ \r
+ \r
++##########################################################################\r
++#  ロシア戦車生産AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656432\r
++	random = no \r
++	country = UER\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	technology = 2070 # 1939年型中戦車\r
++	technology = 6900 # 装甲部隊編成ドクトリン\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++	command = { type = build_division which = armor when = 5 }\r
++	command = { type = build_division which = armor when = 5 }\r
++	command = { type = build_division which = armor when = 5 }\r
++	command = { type = build_division which = armor when = 5 }\r
++	command = { type = build_division which = armor when = 5 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  対日本上陸AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656433\r
++	random = no \r
++	country = UER\r
++	save_date = yes\r
++	\r
++	trigger = {\r
++	ai = UER\r
++	war = { country = JAP }\r
++	area = { area = "Primorski" country = UER data = 1 value = 70 } # 沿海州\r
++	control = { province = 1191 data = UER } # ウラジオストック\r
++	OR = { # 樺太\r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	}\r
++	OR = { # 北海道\r
++	control = { province = 1544 data = JAP } # 釧路\r
++	control = { province = 2799 data = JAP } # 稚内\r
++	control = { province = 2803 data = JAP } # 帯広\r
++	control = { province = 2804 data = JAP } # 北見\r
++	}\r
++	random = 45\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 上陸候補①釧路\r
++	trigger = { control = { province = 1544 data = JAP } } # 釧路\r
++	command = { type = demobilize which = infantry when = 0 where = 1 value = -15 }\r
++	command = { type = add_corps value = land where = 1544 }\r
++	command = { type = add_division value = infantry when = 9 where = light_armor_brigade }\r
++	command = { type = add_division value = infantry when = 9 where = armored_car }\r
++	command = { type = add_division value = infantry when = 9 where = anti_air }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # 豐原\r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_corps value = land where = 1542 }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { trigger = { ai = yes } type = event which = 6656434 where = JAP when = 0 }\r
++	command = { trigger = { ai = no } type = event which = 6656435 where = JAP when = 0 }\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 上陸候補②稚内\r
++	trigger = { control = { province = 2799 data = JAP } } # 稚内\r
++	command = { type = demobilize which = infantry when = 0 where = 1 value = -15 }\r
++	command = { type = add_corps value = land where = 2799 }\r
++	command = { type = add_division value = infantry when = 9 where = light_armor_brigade }\r
++	command = { type = add_division value = infantry when = 9 where = armored_car }\r
++	command = { type = add_division value = infantry when = 9 where = anti_air }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # 豐原\r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_corps value = land where = 1542 }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { trigger = { ai = yes } type = event which = 6656434 where = JAP when = 0 }\r
++	command = { trigger = { ai = no } type = event which = 6656435 where = JAP when = 0 }\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 上陸候補③帯広\r
++	trigger = { control = { province = 2803 data = JAP } } # 帯広\r
++	command = { type = demobilize which = infantry when = 0 where = 1 value = -15 }\r
++	command = { type = add_corps value = land where = 2803 }\r
++	command = { type = add_division value = infantry when = 9 where = light_armor_brigade }\r
++	command = { type = add_division value = infantry when = 9 where = armored_car }\r
++	command = { type = add_division value = infantry when = 9 where = anti_air }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # 豐原\r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_corps value = land where = 1542 }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { trigger = { ai = yes } type = event which = 6656434 where = JAP when = 0 }\r
++	command = { trigger = { ai = no } type = event which = 6656435 where = JAP when = 0 }\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 上陸候補④北見\r
++	trigger = { control = { province = 2804 data = JAP } } # 北見\r
++	command = { type = demobilize which = infantry when = 0 where = 1 value = -15 }\r
++	command = { type = add_corps value = land where = 2804 }\r
++	command = { type = add_division value = infantry when = 9 where = light_armor_brigade }\r
++	command = { type = add_division value = infantry when = 9 where = armored_car }\r
++	command = { type = add_division value = infantry when = 9 where = anti_air }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++	command = { type = add_division value = infantry when = 9 where = engineer }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	control = { province = 1542 data = JAP } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # オハ\r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_corps value = land where = 1541 } # オハ\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1541 data = JAP } # オハ\r
++	NOT = { control = { province = 1542 data = JAP } } # 豐原\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++\r
++	command = { # 豐原\r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_corps value = land where = 1542 }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { \r
++	trigger = { \r
++	control = { province = 1542 data = JAP } # 豐原\r
++	NOT = { control = { province = 1541 data = JAP } } # オハ\r
++	} \r
++	type = add_division value = infantry when = 9 where = artillery }\r
++	command = { trigger = { ai = yes } type = event which = 6656434 where = JAP when = 0 }\r
++	command = { trigger = { ai = no } type = event which = 6656435 where = JAP when = 0 }\r
++	ai_chance = 25\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  樺太・北海道上陸迎撃AI（日本AI時）\r
++###########################################################################\r
++event = {\r
++	id = 6656434\r
++	random = no \r
++	country = JAP\r
++\r
++	name = "AI_EVENT"\r
++	style = 0\r
++\r
++	action_a = {\r
++	command = { type = strength which = land when = 1 where = 1 org = -30 value = 0 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  樺太・北海道上陸迎撃AI（日本非AI時）\r
++###########################################################################\r
++event = {\r
++	id = 6656435\r
++	random = no \r
++	country = JAP\r
++\r
++	name = "ロシア軍が本土に上陸"\r
++	desc = "ロシア軍がついに本土へ上陸を開始した。日本本土防衛のために全力を尽くす必要がある。"\r
++	style = 1\r
++	picture = "Showa_Depression"\r
++\r
++	action_a = {\r
++	name = "戦闘用意！"\r
++	command = { type = strength which = land when = 1 where = 1 org = -30 value = 0 }\r
++	}\r
++}\r
++\r
++\r
+ ##########################################################################\r
+ #  ドイツ\r
+ ##########################################################################\r
+@@ -2964,21 +4069,183 @@ event = {
+ 	}\r
+ }\r
+ \r
+-\r
+ ##########################################################################\r
+-#  朝鮮\r
+-##########################################################################\r
+-#  戦時AI\r
++#  ロシア侵略AI\r
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 6656601\r
++	id = 6656518\r
+ 	random = no \r
+-	country = KOR\r
+-	\r
++	country = GER\r
++\r
+ 	trigger = {\r
+-	atwar = yes\r
+-	NOT = { local_flag = KOR_atwar }\r
++	ai = yes\r
++	NOT = { ispuppet = GER }\r
++	month = 4\r
++	NOT = { month = 7 }		\r
++	local_flag = GERInvadeRussia\r
++	NOT = { local_flag = GERInvadePoland }\r
++	NOT = { local_flag = GERInvadeYugoslavia }\r
++	NOT = { lost_national = { country = GER value = 2 } }\r
++	control = { province = 55 data = -3 } # パリ\r
++	NOT = { war = { country = UER } }\r
++	NOT = { war = { country = SOV } }\r
++	OR = { # 追加\r
++	NOT = {	war = { country = SPA } }\r
++	alliance = { country = SPA }\r
++	}\r
++	OR = { # 追加\r
++	NOT = {	war = { country = SPR } }\r
++	alliance = { country = SPR }\r
++	}\r
++	OR = { # 追加\r
++	NOT = {	war = { country = YUG } }\r
++	alliance = { country = YUG }\r
++	}\r
++	OR = {\r
++	alliance = { country = POL }\r
++	alliance = { country = SOV country = POL }\r
++	NOT = { exists = POL }\r
++	}\r
++	OR = {\r
++	land_percentage = { country = UER value = 0.4 }\r
++	land_percentage = { country = SOV value = 0.4 }\r
++	AND = {\r
++	land_percentage = { country = UER value = 0.25 }\r
++	land_percentage = { country = SOV value = 0.25 }\r
++	alliance = { country = ROM }\r
++	alliance = { country = HUN }\r
++	}\r
++	AND = { # 追加\r
++	land_percentage = { country = UER value = 0.25 }\r
++	land_percentage = { country = SOV value = 0.25 }\r
++	alliance = { country = UF7 }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	action = { #Russian Campaign\r
++	command = { type = sleepevent which = 3003013 }\r
++	command = { type = sleepevent which = 3003009 }\r
++	command = { type = sleepevent which = 3003010 }\r
++	command = { type = ai which = "IFazia/switch/GER_Russia.ai" }\r
++	command = { type = local_clrflag which = GERInvadeRussia }\r
++	command = { type = local_clrflag which = GERStandardFront }\r
++	command = { trigger = { control = { province = 68 data = GER } } type = activate_division which = 14500 value = 2027 where = 68 when = 0 }\r
++	command = { trigger = { control = { province = 69 data = GER } } type = activate_division which = 14500 value = 2028 where = 69 when = 0 }\r
++	command = { trigger = { control = { province = 37 data = GER } } type = activate_division which = 14500 value = 2029 where = 37 when = 0 }\r
++	command = { trigger = { control = { province = 39 data = GER } } type = activate_division which = 14500 value = 2030 where = 39 when = 0 }\r
++	command = { trigger = { control = { province = 46 data = GER } } type = activate_division which = 14500 value = 2031 where = 46 when = 0 }\r
++	command = { trigger = { control = { province = 44 data = GER } } type = activate_division which = 14500 value = 2032 where = 44 when = 0 }\r
++	command = { trigger = { control = { province = 44 data = GER } } type = activate_division which = 14500 value = 2033 where = 44 when = 0 }\r
++	command = { trigger = { control = { province = 53 data = GER } } type = activate_division which = 14500 value = 2034 where = 53 when = 0 }\r
++	command = { trigger = { control = { province = 49 data = GER } } type = activate_division which = 14500 value = 2035 where = 49 when = 0 }\r
++	command = { trigger = { control = { province = 49 data = GER } } type = activate_division which = 14500 value = 2036 where = 49 when = 0 }\r
++	command = { trigger = { control = { province = 51 data = GER } } type = activate_division which = 14500 value = 2037 where = 51 when = 0 }\r
++	command = { trigger = { control = { province = 51 data = GER } } type = activate_division which = 14500 value = 2038 where = 51 when = 0 }\r
++	command = { trigger = { control = { province = 114 data = GER } } type = activate_division which = 14500 value = 2039 where = 114 when = 0 }\r
++	command = { trigger = { control = { province = 115 data = GER } } type = activate_division which = 14500 value = 2040 where = 115 when = 0 }\r
++	command = { trigger = { control = { province = 115 data = GER } } type = activate_division which = 14500 value = 2041 where = 115 when = 0 }\r
++	command = { trigger = { control = { province = 125 data = GER } } type = activate_division which = 14500 value = 2042 where = 125 when = 0 }\r
++	command = { trigger = { control = { province = 122 data = GER } } type = activate_division which = 14500 value = 2043 where = 122 when = 0 }\r
++	command = { trigger = { control = { province = 147 data = GER } } type = activate_division which = 14500 value = 2044 where = 147 when = 0 }\r
++	command = { trigger = { control = { province = 217 data = GER } } type = activate_division which = 14500 value = 2045 where = 217 when = 0 }\r
++	command = { trigger = { control = { province = 53 data = GER } } type = activate_division which = 14500 value = 2046 where = 53 when = 0 }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  ロシア侵略時間経過AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656519\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	event = 6656518 # AIイベント\r
++	NOT = {	lost_national = { country = GER value = 2 } }\r
++	OR = {\r
++	war = { country = UER }\r
++	war = { country = SOV }\r
++	}\r
++	control = { province = 55 data = GER } # パリ\r
++	OR = {\r
++	month = 10 # November\r
++	AND = {\r
++	month = 0 # January\r
++	NOT = { month = 2 } # March\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/GER_Winter.ai" }\r
++	}\r
++}\r
++##########################################################################\r
++#  ロシア侵略二年目AI\r
++###########################################################################\r
++event = {\r
++	id = 6656520\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	event = 6656519 # AIイベント\r
++	OR = {\r
++	war = { country = UER }\r
++	war = { country = SOV }\r
++	}\r
++	NOT = { war = { country = USA } }\r
++	month = 3 # April\r
++	NOT = { month = 7 } # August\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/GER_Russia_Second_Year.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  朝鮮\r
++##########################################################################\r
++#  戦時AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656601\r
++	random = no \r
++	country = KOR\r
++	\r
++	trigger = {\r
++	atwar = yes\r
++	NOT = { local_flag = KOR_atwar }\r
+ 	ai = yes\r
+ 	}\r
+ \r
+@@ -3152,6 +4419,556 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
++##########################################################################\r
++#  国名変更イベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656703\r
++	random = no \r
++	country = U58\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	exists = U58\r
++	NOT = { exists = MEX }\r
++	NOT = { flag = MEX_U58_name }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = name where = U58 which = "メキシコ" }\r
++	command = { type = flag_ext where = U58 which = "_FA" }\r
++	command = { type = setflag which = MEX_U58_name }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  国名変更フラグ解除イベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656704\r
++	random = no \r
++	country = U58\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	NOT = { exists = U58 }\r
++	flag = MEX_U58_name\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = clrflag which = MEX_U58_name }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  南米\r
++##########################################################################\r
++#  戦時AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656801\r
++	random = no \r
++	TAG = { COL U77 VEN ECU PRU BOL UF6 PAR BRA ARG UF4 CHL }\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	atwar = yes\r
++	NOT = { local_flag = south_america_atwar }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/low_construction_factor.ai" }\r
++	command = { type = local_setflag which = south_america_atwar }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  戦時終了AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656802\r
++	random = no \r
++	TAG = { COL U77 VEN ECU PRU BOL UF6 PAR BRA ARG UF4 CHL }\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	atwar = no\r
++	local_flag = south_america_atwar\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/high_construction_factor.ai" }\r
++	command = { type = local_clrflag which = south_america_atwar }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  パラグアイ併合AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656803\r
++	random = no \r
++	country = ARG\r
++	\r
++	trigger = {\r
++	ai = ARG\r
++	ai = PAR\r
++	event = { id = 2111019 days = 45 } # チャコ戦争 ― アルゼンチンの介入\r
++	war = { country = ARG country = PAR }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = inherit which = PAR }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イギリス\r
++##########################################################################\r
++#  対北欧上陸AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656901\r
++	random = no \r
++	country = ENG\r
++	\r
++	trigger = {\r
++	ai = ENG\r
++	ai = NOR\r
++	ai = SWE\r
++	war = { country = ENG country = NOR }\r
++	war = { country = ENG country = SWE }\r
++	event = 3822014 # R4計画\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1944 }\r
++\r
++	action = { # \r
++	command = { type = demobilize which = infantry when = 0 where = 1 value = -15 }\r
++	command = { type = demobilize which = hq when = 0 where = 1 value = -1 }\r
++	command = { type = add_corps value = land where = 483 }\r
++	command = { type = add_division value = hq when = 3 where = engineer }\r
++	command = { type = add_division value = infantry when = 10 where = artillery }\r
++	command = { type = add_division value = infantry when = 10 }\r
++	command = { type = add_division value = infantry when = 10 }\r
++\r
++	command = { type = add_corps value = land where = 485 }\r
++	command = { type = add_division value = infantry when = 10 where = artillery }\r
++	command = { type = add_division value = infantry when = 10 }\r
++	command = { type = add_division value = infantry when = 10 }\r
++\r
++	command = { type = add_corps value = land where = 491 }\r
++	command = { type = add_division value = infantry when = 10 where = artillery }\r
++	command = { type = add_division value = infantry when = 10 }\r
++	command = { type = add_division value = infantry when = 10 }\r
++\r
++	command = { type = add_corps value = land where = 2153 }\r
++	command = { type = add_division value = infantry when = 10 where = artillery }\r
++	command = { type = add_division value = infantry when = 10 }\r
++	command = { type = add_division value = infantry when = 10 }\r
++\r
++	command = { type = add_corps value = land where = 2153 }\r
++	command = { type = add_division value = infantry when = 10 where = engineer }\r
++	command = { type = add_division value = infantry when = 10 }\r
++	command = { type = add_division value = infantry when = 10 }\r
++	command = { type = event which = 6656902 where = NOR when = 0 }\r
++	command = { type = event which = 6656902 where = SWE when = 0 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イギリス北欧上陸反応AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656902\r
++	random = no \r
++	TAG = { NOR SWE }\r
++	persistent = yes\r
++	\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++\r
++	action = { # \r
++	command = { type = demobilize which = land when = 0 where = 1 value = 2 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ（DDR）\r
++##########################################################################\r
++#  軍建設AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657001\r
++	random = no \r
++	country = DDR\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++\r
++	action = {\r
++	command = { type = manpowerpool value = 50 when = 0 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s when = 4 cost = -0.1 where = 60 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s when = 4 cost = -0.1 where = 90 }\r
++	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = -0.1 where = 60 }\r
++	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = -0.1 where = 90 }\r
++	command = { type = build_division which = transport when = 4 cost = -0.1 where = 90 }\r
++	command = { type = build_division which = transport when = 4 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = naval_bomber when = 6 cost = -0.1 where = 160 }\r
++	command = { type = build_division which = transport_plane when = 6 cost = -0.1 where = 200 }\r
++	command = { type = build_division which = paratrooper value = glider_artillery when = 5 cost = -0.1 where = 200 }\r
++	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = -0.1 where = 140 }\r
++	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = -0.1 where = 200 }\r
++	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = -0.1 where = 200 }\r
++	command = { type = build_division which = cas when = 5 cost = -0.1 where = 140 }\r
++	command = { type = build_division which = cas when = 5 cost = -0.1 where = 140 }\r
++	command = { type = build_division which = cas when = 5 cost = -0.1 where = 140 }\r
++	command = { type = build_division which = interceptor when = 8 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = interceptor when = 8 cost = -0.1 where = 160 }\r
++	command = { type = build_division which = interceptor when = 8 cost = -0.1 where = 160 }\r
++	command = { type = build_division which = hq value = anti_air when = 4 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = light_armor value = light_armor_brigade when = 4 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = light_armor value = light_armor_brigade when = 4 cost = -0.1 where = 200 }\r
++	command = { type = build_division which = motorized value = armored_car when = 8 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = motorized value = armored_car when = 8 cost = -0.1 where = 90 }\r
++	command = { type = build_division which = infantry value = artillery when = 15 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = infantry value = artillery when = 15 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = infantry value = engineer when = 15 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = infantry value = engineer when = 15 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
++	command = { type = gain_tech which = 2040 }\r
++	command = { type = gain_tech which = 2050 }\r
++	command = { type = gain_tech which = 2070 }\r
++	command = { type = gain_tech which = 2080 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  海軍建設AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657002\r
++	random = no\r
++	country = DDR\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	technology = 3470 # 1934年型戦艦\r
++	technology = 3340 # 1934年型巡戦\r
++	technology = 3260 # 1934年型重巡\r
++	technology = 3160 # 1935年型軽巡\r
++	technology = 3060 # 1933年型駆逐艦\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l when = 3 cost = 0.1 where = 3 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battlecruiser value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battlecruiser value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = max_positioning which = carrier value = 0.05 }\r
++	command = { type = min_positioning which = carrier value = 0.05 }\r
++	command = { type = max_positioning which = light_carrier value = 0.05 }\r
++	command = { type = min_positioning which = light_carrier value = 0.05 }\r
++	command = { type = max_positioning which = escort_carrier value = 0.05 }\r
++	command = { type = min_positioning which = escort_carrier value = 0.05 }\r
++	command = { type = max_positioning which = battleship value = 0.05 }\r
++	command = { type = min_positioning which = battleship value = 0.05 }\r
++	command = { type = max_positioning which = battlecruiser value = 0.05 }\r
++	command = { type = min_positioning which = battlecruiser value = 0.05 }\r
++	command = { type = max_positioning which = heavy_cruiser value = 0.05 }\r
++	command = { type = min_positioning which = heavy_cruiser value = 0.05 }\r
++	command = { type = max_positioning which = light_cruiser value = 0.05 }\r
++	command = { type = min_positioning which = light_cruiser value = 0.05 }\r
++	command = { type = max_positioning which = destroyer value = 0.05 }\r
++	command = { type = min_positioning which = destroyer value = 0.05 }\r
++	command = { type = max_positioning which = submarine value = 0.05 }\r
++	command = { type = min_positioning which = submarine value = 0.05 }\r
++	command = { type = max_positioning which = nuclear_submarine value = 0.05 }\r
++	command = { type = min_positioning which = nuclear_submarine value = 0.05 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  戦時AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657003\r
++	random = no \r
++	country = FRA\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	atwar = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = may year = 1948 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/DDR_War.ai" }\r
++	command = { type = ai which = "switch/low_construction_factor.ai" }\r
++	command = { type = ai which = "Air_Ground.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  フランス\r
++##########################################################################\r
++#  対ドイツ（DDR）AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657101\r
++	random = no \r
++	country = FRA\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	war = { country = DDR }\r
++	flag = DDR_1933 # 1933年総選挙で共産党政権が樹立\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = may year = 1948 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/FRA_DDR.ai" }\r
++	command = { type = ai which = "Air_Ground.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  対ドイツ（DDR）攻勢AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657102\r
++	random = no \r
++	country = FRA\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	war = { country = DDR }\r
++	OR = {\r
++	AND = {\r
++	month = 5 # June\r
++	NOT = {	month = 6 } # July\r
++	random = 10\r
++	}\r
++	AND = {\r
++	month = 6 # July\r
++	NOT = {	month = 7 } # August\r
++	random = 20\r
++	}\r
++	AND = {\r
++	month = 7 # August\r
++	NOT = {	month = 8 } # September\r
++	random = 2\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/FRA_Offensive.ai" }\r
++	command = { type = ai which = "Air_Ground.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  対ドイツ（DDR）デバフAIイベント\r
++###########################################################################\r
++event = {\r
++	id = 6657103\r
++	random = no \r
++	country = FRA\r
++	\r
++	trigger = {\r
++	ai = FRA\r
++	ai = DDR\r
++	war = { country = FRA country = DDR }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1944 }\r
++\r
++	action = { # \r
++	command = { type = max_organization which = land value = -25 }\r
++	command = { type = max_organization which = naval value = -25 }\r
++	command = { type = max_organization which = air value = -25 }\r
++	command = { type = morale which = land value = -25 }\r
++	command = { type = morale which = naval value = -25 }\r
++	command = { type = morale which = air value = -25 }\r
++	command = { trigger = { ai = yes } type = clear_attack which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = clear_defense which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = clear_move which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = rain_attack which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = rain_defense which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = rain_move which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = muddy_attack which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = muddy_defense which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = muddy_move which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = storm_attack which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = storm_defense which = land value = 30 }\r
++	command = { trigger = { ai = yes } type = storm_move which = land value = 30 }\r
++	command = { type = event which = 6657104 where = FRA when = 180 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  対ドイツデバフ解除AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657104\r
++	random = no \r
++	country = FRA\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++\r
++	action = { # \r
++	command = { type = max_organization which = land value = 25 }\r
++	command = { type = max_organization which = naval value = 25 }\r
++	command = { type = max_organization which = air value = 25 }\r
++	command = { type = morale which = land value = 25 }\r
++	command = { type = morale which = naval value = 25 }\r
++	command = { type = morale which = air value = 25 }\r
++	command = { trigger = { ai = yes } type = clear_attack which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = clear_defense which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = clear_move which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = rain_attack which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = rain_defense which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = rain_move which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = muddy_attack which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = muddy_defense which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = muddy_move which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = storm_attack which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = storm_defense which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = storm_move which = land value = -30 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
+ ##########################################################################\r
+ #  謝辞イベント\r
+ ###########################################################################\r
+@@ -3178,4 +4995,4 @@ event = {
+ 	name = "ACTIONNAME_SHAJI_AZIA" \r
+ 	command = { }\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r

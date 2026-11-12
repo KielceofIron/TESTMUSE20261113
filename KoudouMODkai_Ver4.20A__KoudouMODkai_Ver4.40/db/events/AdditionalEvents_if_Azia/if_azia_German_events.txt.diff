@@ -1,0 +1,817 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_German_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_German_events.txt [utf-8]
+@@ -37,8 +37,26 @@
+ #id = 45790011 ダンツィヒ再要求 ― ドイツの要求\r
+ #id = 45790012 ダンツィヒ再要求 ― ポーランド屈服\r
+ #id = 45790013 ダンツィヒ再要求 ― 戦争だ！\r
++#ワイマールドイツイベント\r
++#id = 46680001 ベルリン貿易協定（DFR）\r
++#id = 46680002 ベルリン貿易協定（UER）\r
++#id = 46680003 スモレンスク貿易協定（DFR）\r
++#id = 46680004 スモレンスク貿易協定（UER）\r
++#id = 46680005 第二次ラパッロ条約（DFR）\r
++#id = 46680006 第二次ラパッロ条約（UER）\r
++#id = 46680007 独露同盟\r
++#id = 46680008 独露同盟の提案\r
++#id = 46680009 独露同盟 ― 締結\r
++#id = 46680010 独露同盟 ― 締結の拒否\r
++#id = 46680011 ポーランド分割再び\r
++#id = 46680012 ポーランド分割再び ― ドイツの要求\r
++#id = 46680013 ポーランド分割再び ― 戦争だ！\r
++#id = 46680014 ポーランド分割再び ― ポーランドが屈した\r
++#id = 46680015 ポーランド侵略\r
++#id = 46680016 平穏が戻る欧州（UER）\r
++#id = 46680017 平穏が戻る欧州（UER）\r
+ #オーストリア帝国イベント\r
+-#id = 46690001 独ソ不可侵条約の余波\r
++#id = 46680001 独ソ不可侵条約の余波\r
+ #id = 46690002 オーストリア帝国が枢軸協定を破棄した（SOV）\r
+ #id = 46690003 オーストリアとの戦争（SOV）\r
+ #id = 46690004 独ソ不可侵条約 ― ソ連へ東部ポーランドを割譲\r
+@@ -2175,13 +2193,19 @@ event = {
+ 	event = 7060327 # ダンツィヒか戦争か ― ポーランドが屈した\r
+ 	}\r
+ 	NOT = { control = { province = 181 data = GER } } # ダンツィヒ\r
++	OR = {\r
+ 	exists = POL\r
++	exists = UF7\r
++	}\r
+ 	NOT = {\r
+ 	war = { country = GER country = FRA }\r
+ 	war = { country = GER country = SOV }\r
+ 	war = { country = GER country = POL }\r
++	war = { country = GER country = UF7 }\r
+ 	alliance = { country = GER country = POL }\r
++	alliance = { country = GER country = UF7 }\r
+ 	puppet = { country = POL country = GER }\r
++	puppet = { country = UF7 country = GER }\r
+ 	ispuppet = GER\r
+ 	}\r
+ 	control = { province = 104 data = GER } # メス\r
+@@ -2218,13 +2242,19 @@ event = {
+ 	event = 7060327 # ダンツィヒか戦争か ― ポーランドが屈した\r
+ 	}\r
+ 	NOT = { control = { province = 181 data = GER } } # ダンツィヒ\r
++	OR = {\r
+ 	exists = POL\r
++	exists = UF7\r
++	}\r
+ 	NOT = {\r
+ 	war = { country = GER country = FRA }\r
+ 	war = { country = GER country = SOV }\r
+ 	war = { country = GER country = POL }\r
++	war = { country = GER country = UF7 }\r
+ 	alliance = { country = GER country = POL }\r
++	alliance = { country = GER country = UF7 }\r
+ 	puppet = { country = POL country = GER }\r
++	puppet = { country = UF7 country = GER }\r
+ 	ispuppet = GER\r
+ 	}\r
+ 	control = { province = 104 data = GER } # メス\r
+@@ -2250,7 +2280,8 @@ event = {
+ 	command = { type = relation which = ENG value = -10 }\r
+ 	command = { type = relation which = FRA value = -10 }\r
+ 	command = { type = addcore which = 303 }\r
+-	command = { type = trigger which = 45790011 }\r
++	command = { trigger = { exists = POL } type = event which = 45790011 where = POL when = 0 }\r
++	command = { trigger = { exists = UF7 } type = event which = 45790011 where = UF7 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2275,7 +2306,7 @@ event = {
+ event = {\r
+ 	id = 45790011\r
+ 	random = no\r
+-	country = POL\r
++	TAG = { POL UF7 }\r
+ \r
+ 	name = "EVT_45790011_NAME"\r
+ 	desc = "EVT_45790011_DESC"\r
+@@ -2292,8 +2323,15 @@ event = {
+ 	command = { type = relation which = FRA value = -50 }\r
+ 	command = { type = domestic which = political_left value = -1 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+-	command = { type = secedeprovince which = GER value = 181 }\r
+-	command = { type = trigger which = 45790012 }\r
++	command = { type = inherit which = U06 }\r
++	command = { type = secedeprovince which = GER value = 181 when = 1 }\r
++	command = { type = secedeprovince which = GER value = 203 when = 1 }\r
++	command = { type = secedeprovince which = GER value = 221 when = 1 }\r
++	command = { type = secedeprovince which = GER value = 222 when = 1 }\r
++	command = { type = secedeprovince which = GER value = 224 when = 1 }\r
++	command = { type = secedeprovince which = GER value = 225 when = 1 }\r
++	command = { type = secedeprovince which = GER value = 226 when = 1 }\r
++	command = { type = event which = 45790012 where = GER when = 0 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+@@ -2302,7 +2340,7 @@ event = {
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = domestic which = political_left value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = trigger which = 45790013 }\r
++	command = { type = event which = 45790013 where = GER when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -2353,7 +2391,700 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  ワイマールドイツイベント\r
++##########################################################################\r
++#  ベルリン貿易協定\r
++# 1920年代の間、ロシアとワイマールドイツは、世界の除け者国家同士、密接な関係を持っていた。\r
++# この新たな協定では、相互に有益な関係を促進することになる。\r
++# 具体的には、ロシアは欧州に友好国を作ることができ、私たちはかなりの量の希少資源を手に入れることができる。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 46680001\r
++	random = no\r
++	country = DFR\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	exists = UER\r
++	NOT = { exists = SOV }\r
++	NOT = { war = { country = DFR country = UER } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++	\r
++	name = "EVT_46680001_NAME"\r
++	desc = "EVT_46680001_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	date = { day = 22 month = 4 year = 1934 }\r
++	\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -2 }\r
++     	command = { type = industrial_modifier which = total value = 1 }\r
++	command = { type = trade which = DFR where = UER supplies = -5 money = -1 rare_materials = 10 metal = 10 oil = 5 value = 1 }\r
++ 	command = { type = relation which = UER value = 15 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = trigger which = 46680002 }\r
++	ai_chance = 95\r
++	}\r
++\r
++	action = { # 断る\r
++	name = "ACTION_NAME_DECLINE"\r
++ 	command = { type = relation which = UER value = -10 }\r
++	command = { type = sleepevent which = 46680002 }\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 46680002\r
++	random = no\r
++	country = UER\r
++	\r
++	name = "EVT_46680001_NAME"\r
++	desc = "EVT_46680001_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = belligerence value = -1 }\r
++ 	command = { type = relation which = DFR value = 15 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  スモレンスク貿易協定\r
++# ロシアはベルリン貿易協定に続いて、資源の大規模な取引を含んだスモレンスク協定によってドイツとの友好関係を継続しようとしている。\r
++# これはドイツが英仏側に近づかないようするための牽制であるという見方が一般的である。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 46680003\r
++	random = no\r
++	country = DFR\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	event = 46680002 # ベルリン貿易協定(UER)\r
++	exists = UER\r
++	NOT = { exists = SOV }\r
++	NOT = { war = { country = DFR country = UER } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	date = { day = 15 month = 5 year = 1936 }\r
++	\r
++	name = "EVT_46680003_NAME"\r
++	desc = "EVT_46680003_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -2 }\r
++     	command = { type = industrial_modifier which = total value = 1 }\r
++	command = { type = trade which = GER where = UER supplies = -5 money = -1 rare_materials = 10 metal = 10 oil = 5 value = 1 }\r
++ 	command = { type = relation which = UER value = 30 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = trigger which = 46680004 }\r
++	ai_chance = 95\r
++	}\r
++\r
++	action = { # 断る\r
++	name = "ACTION_NAME_DECLINE"\r
++ 	command = { type = relation which = UER value = -10 }\r
++	command = { type = sleepevent which = 46680004 }\r
++	ai_chance = 5\r
++	}\r
++}\r
++event = {\r
++	id = 46680004\r
++	random = no\r
++	country = UER\r
++	\r
++	name = "EVT_46680003_NAME"\r
++	desc = "EVT_46680003_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = belligerence value = -1 }\r
++ 	command = { type = relation which = DFR value = 20 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  第二次ラパッロ条約\r
++# 1922年、ドイツとロシアの間でラパッロ条約が調印され、両国の緊密な協力関係が構築された。\r
++# 16年の月日の後に、再びこのラパッロの地で結ばれた条約によって両国の関係はさらに深まった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 46680005\r
++	random = no\r
++	country = DFR\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	exists = UER\r
++	NOT = { exists = SOV }\r
++	NOT = { war = { country = DFR country = UER } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "EVT_46680005_NAME"\r
++	desc = "EVT_46680005_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	date = { day = 8 month = 6 year = 1938 }\r
++	\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -2 }\r
++     	command = { type = industrial_modifier which = total value = 1 }\r
++	command = { type = trade which = DFR where = UER supplies = -5 money = -1 rare_materials = 10 metal = 10 oil = 5 value = 1 }\r
++ 	command = { type = relation which = UER value = 50 }\r
++ 	command = { type = research_mod value = 5 }\r
++ 	command = { type = steal_tech which = UER }\r
++ 	command = { type = steal_tech which = UER }\r
++ 	command = { type = gain_tech which = -1 }\r
++ 	command = { type = gain_tech which = -1 }\r
++ 	command = { type = gain_tech which = -1 }\r
++ 	command = { type = gain_tech which = -2 }\r
++ 	command = { type = gain_tech which = -2 }\r
++ 	command = { type = gain_tech which = -2 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = trigger which = 46680006 }\r
++	}\r
++\r
++	action = { # 断る\r
++	name = "ACTION_NAME_DECLINE"\r
++ 	command = { type = relation which = UER value = -10 }\r
++	command = { type = sleepevent which = 46680006 }\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 46680006\r
++	random = no\r
++	country = UER\r
++\r
++	name = "EVT_46680006_NAME"\r
++	desc = "EVT_46680006_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = belligerence value = -1 }\r
++ 	command = { type = relation which = DFR value = 30 }\r
++ 	command = { type = research_mod value = 5 }\r
++ 	command = { type = steal_tech which = DFR }\r
++ 	command = { type = steal_tech which = DFR }\r
++ 	command = { type = gain_tech which = -1 }\r
++ 	command = { type = gain_tech which = -1 }\r
++ 	command = { type = gain_tech which = -1 }\r
++ 	command = { type = gain_tech which = -2 }\r
++ 	command = { type = gain_tech which = -2 }\r
++ 	command = { type = gain_tech which = -2 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  独露同盟\r
++# ロシアの経済と軍隊が再建されると、ロシアによるポーランド侵攻は時間の問題となった。\r
++# しかしロシアにとって唯一の懸念事項は、ポーランドの後背にいるドイツである。\r
++# ドイツがポーランド侵攻に反対して西欧側に立てば、欧州のいくつもの大国と直面することになるロシアの立場は途端に危ういものとなってしまうだろう。\r
++# この状況を回避すべくロシアはドイツと数度の秘密会談を行い、遂に独露同盟の締結に漕ぎつけた。\r
++# 協定には秘密議定書がついており、ドイツとロシアがポーランドを征服した後の、両国の勢力圏が決められていた。\r
++#########################################################################\r
++event = {\r
++	id = 46680007\r
++	random = no\r
++	country = UER\r
++	\r
++	decision = {\r
++	flag = Weimar # ワイマールルート\r
++ 	flag = russia_slavs # 汎スラヴ主義\r
++	event = 7060041 # 新たな汎スラヴ主義\r
++	OR = {\r
++	event = 7060401 # 十月蜂起 ― 戒厳令布告\r
++	event = 7060501 # 十月蜂起 ― 民主主義の到来\r
++	}\r
++	OR = {\r
++	exists = POL\r
++	exists = UF7\r
++	}\r
++	exists = UER	\r
++	NOT = {\r
++	ispuppet = POL\r
++	ispuppet = UF7\r
++	ispuppet = DFR\r
++	ispuppet = UER\r
++	war = { country = UER country = DFR }\r
++	alliance = { country = DFR country = POL }\r
++	alliance = { country = DFR country = UF7 }\r
++	alliance = { country = DFR country = UER }\r
++	}		\r
++	}\r
+ \r
++	decision_trigger = { \r
++	event = 7060041 # 新たな汎スラヴ主義\r
++	OR = {\r
++	event = 7060401 # 十月蜂起 ― 戒厳令布告\r
++	event = 7060501 # 十月蜂起 ― 民主主義の到来\r
++	}\r
++	exists = POL\r
++	}\r
++	\r
++	trigger = {\r
++	flag = Weimar # ワイマールルート\r
++ 	flag = russia_slavs # 汎スラヴ主義\r
++	event = 7060041 # 新たな汎スラヴ主義\r
++	OR = {\r
++	event = 7060401 # 十月蜂起 ― 戒厳令布告\r
++	event = 7060501 # 十月蜂起 ― 民主主義の到来\r
++	}\r
++	OR = {\r
++	exists = POL\r
++	exists = UF7\r
++	}\r
++	exists = UER	\r
++	NOT = {\r
++	ispuppet = POL\r
++	ispuppet = UF7\r
++	ispuppet = DFR\r
++	ispuppet = UER\r
++	war = { country = UER country = DFR }\r
++	alliance = { country = DFR country = POL }\r
++	alliance = { country = DFR country = UF7 }\r
++	alliance = { country = DFR country = UER }\r
++	}	\r
++	}\r
++	\r
++	name = "EVT_46680007_NAME"\r
++	desc = "EVT_46680007_DESC"\r
++	style = 2\r
++	picture = "Mol_Rib"\r
++	decision_picture = "decision_MRPact"\r
++\r
++	date = { day = 0 month = 0 year = 1939 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # ドイツに提案する\r
++	name = "ACTIONNAME46680007A"\r
++	command = { type = relation which = DFR value = 15 }\r
++	command = { type = set_relation which = POL value = -75 }\r
++	command = { type = set_relation which = UF7 value = -75 }\r
++	command = { type = set_relation which = EST value = -75 }\r
++	command = { type = set_relation which = LAT value = -75 }\r
++	command = { type = set_relation which = LIT value = -75 }\r
++	command = { type = trigger which = 2001025 } # UK Gears up for war\r
++	command = { type = trigger which = 2002001 } # France Gears up for war\r
++	command = { type = trigger which = 46680008 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 必要ない\r
++	name = "ACTIONNAME46680007B"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = relation which = DFR value = -15 }\r
++	command = { type = trigger which = 2001025 } # UK Gears up for war\r
++	command = { type = trigger which = 2002001 } # France Gears up for war\r
++	command = { type = sleepevent which = 46680008 }\r
++	command = { type = sleepevent which = 46680009 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  独露同盟の提案\r
++#########################################################################\r
++event = {\r
++	id = 46680008\r
++	random = no\r
++	country = DFR\r
++\r
++	name = "EVT_46680008_NAME"\r
++	desc = "EVT_46680007_DESC"\r
++	style = 2\r
++	picture = "Mol_Rib"\r
++\r
++	action = { # この上なく素晴らしい提案だ\r
++	name = "ACTIONNAME46680008A"\r
++	command = { type = trade which = UER where = DFR oil = -20 supplies = 10 value = 1 }\r
++	command = { type = end_guarantee which = UER where = FRA }\r
++	command = { type = relation which = UER value = 15 }\r
++	command = { type = relation which = FIN value = -5 }\r
++	command = { type = relation which = POL value = -50 }\r
++	command = { type = relation which = UF7 value = -50 }\r
++	command = { type = relation which = LIT value = -10 }\r
++	command = { type = relation which = LAT value = -10 }\r
++	command = { type = relation which = EST value = -10 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = addcore which = 222 }\r
++	command = { type = addcore which = 226 }\r
++	command = { type = addcore which = 230 }\r
++	command = { type = trigger which = 46680009 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # スラヴ人と取引などできるか！\r
++	name = "ACTIONNAME46680008B"\r
++	command = { type = relation which = UER value = -15 }\r
++	command = { type = trigger which = 46680009 }\r
++	command = { type = sleepevent which = 2003029 }\r
++	command = { type = sleepevent which = 2007021 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  独露同盟 ― 締結\r
++#########################################################################\r
++\r
++event = {\r
++	id = 46680009\r
++	random = no\r
++	country = UER\r
++	save_date = yes\r
++	\r
++	name = "EVT_46680009_NAME"\r
++	desc = "EVT_46680007_DESC"\r
++	style = 2\r
++	picture = "Mol_Rib"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = relation which = DFR value = 50 }\r
++	command = { type = non_aggression which = DFR where = UER when = 3600 }\r
++	command = { type = alliance which = UER }\r
++	command = { type = addcore which = 223 }\r
++	command = { type = addcore which = 227 }\r
++	command = { type = addcore which = 228 }\r
++	command = { type = addcore which = 229 }\r
++	command = { type = addcore which = 230 }\r
++	command = { type = addcore which = 232 }\r
++	command = { type = addcore which = 233 }\r
++	command = { type = addcore which = 234 }\r
++	command = { type = addcore which = 235 }\r
++	command = { type = addcore which = 236 }\r
++	command = { type = addcore which = 237 }\r
++	command = { type = addcore which = 243 }\r
++	command = { type = addcore which = 246 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  独露同盟 ― 締結の拒否\r
++# ロシアの経済と軍隊が再建されると、ロシアによるポーランド侵攻は時間の問題となった。\r
++# しかしロシアにとって唯一の懸念事項は、ポーランドの後背にいるドイツである。\r
++# ドイツがポーランド侵攻に反対して西欧側に立てば、欧州のいくつもの大国と直面することになるロシアの立場は途端に危ういものとなってしまうだろう。\r
++# この状況を回避すべくロシアはドイツと数度の秘密会談を行ったが、協定の締結に至らなかった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 46680010\r
++	random = no\r
++	country = UER\r
++	\r
++	name = "EVT_46680010_NAME"\r
++	desc = "EVT_46680010_DESC"\r
++	style = 2\r
++	picture = "Mol_Rib"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = relation which = DFR value = -50 }\r
++	command = { type = end_non_aggression which = DFR where = UER }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ポーランド分割再び\r
++# 第一次大戦後、ベルサイユ条約によりポーランドがダンツィヒと北西につきだす形で俗に言うところのポーランド回廊を獲得した。\r
++# この領土獲得により、ポーランドはバルト海への出口を再度獲得したが、ドイツは東プロイセンと本国に分断され、領土問題が残った\r
++# そしてロシアと同盟したことでポーランドを挟み撃ちにすることが可能になったドイツは、この領土問題を解決するため、ポーランドに最後通牒を通達した。\r
++#########################################################################\r
++event = {\r
++	id = 46680011\r
++	random = no\r
++	country = DFR\r
++\r
++	trigger = {\r
++	event = 46680009 # 独露同盟 ― 締結\r
++	exists = DFR\r
++	OR = {\r
++	exists = POL\r
++	exists = UF7\r
++	}\r
++	NOT = { control = { province = 181 data = DFR } } # ダンツィヒ\r
++	NOT = {\r
++	war = { country = DFR country = FRA }\r
++	war = { country = DFR country = SOV }\r
++	war = { country = DFR country = POL }\r
++	alliance = { country = DFR country = POL }\r
++	puppet = { country = POL country = DFR }\r
++	ispuppet = GER\r
++	}\r
++	}\r
++\r
++	name = "EVT_46680011_NAME"\r
++	desc = "EVT_46680011_DESC"\r
++	style = 2\r
++	picture = "Danzig_coup"\r
++\r
++	date = { day = 0 month = 8 year = 1939 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # もう後がない最後通牒 ― 分割か戦争か\r
++	name = "ACTIONNAME46680011A"\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = DFR value = -10 }\r
++	command = { type = relation which = FRA value = 10 }\r
++	command = { type = trigger which = 46680012 } # POL\r
++	ai_chance = 99\r
++	}\r
++	action = { # ここが退き時だ\r
++	name = "ACTIONNAME46680011B"\r
++	command = { type = relation which = ENG value = 10 }\r
++	command = { type = relation which = DFR value = 10 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	ai_chance = 1\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ポーランド分割再び ― ドイツの要求\r
++#########################################################################\r
++event = { \r
++	id = 46680012\r
++	random = no\r
++	country = POL\r
++	\r
++	name = "EVT_46680012_NAME"\r
++	desc = "EVT_46680011_DESC"\r
++	style = 2\r
++	picture = "Danzig_coup"\r
++	\r
++	action = { # では戦争だ\r
++	name = "ACTIONNAME46680012A"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = relation which = ENG value = 15 }\r
++	command = { type = relation which = POL value = -50 }\r
++	command = { type = relation which = UER value = -50 }\r
++	command = { type = relation which = FRA value = -50 }\r
++	command = { type = domestic which = political_left value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = trigger which = 46680013 }\r
++	ai_chance = 99\r
++	}\r
++\r
++	action = { # 要求に屈する\r
++	name = "ACTIONNAME46680012B"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = relation which = ENG value = -30 }\r
++	command = { type = relation which = POL value = 15 }\r
++	command = { type = relation which = SOV value = 15 }\r
++	command = { type = relation which = FRA value = 15 }\r
++	command = { type = domestic which = political_left value = -1 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = inherit which = U06 }\r
++	command = { type = secedeprovince which = DFR value = 181 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 203 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 221 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 222 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 224 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 225 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 226 when = 1 }\r
++	command = { type = secedearea which = UER value = "Polotsk" }\r
++	command = { type = secedearea which = UER value = "Grodno" }\r
++	command = { type = secedearea which = UER value = "Lvov" }\r
++	command = { type = secedearea which = UER value = "Brest Litovsk" }\r
++	command = { type = secedeprovince which = UER value = 258 }\r
++	command = { trigger = { alliance = { country = SLO country = GER } } type = secedearea which = SLO value = "Slovakia" }\r
++	command = { trigger = { alliance = { country = HUN country = GER } event = 2025003 } type = secedearea which = HUN value = "Slovakia" }\r
++	command = { type = trigger which = 46680014 }\r
++	ai_chance = 1\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ポーランド分割再び ― 戦争だ！\r
++#########################################################################\r
++event = {\r
++	id = 46680013\r
++	random = no\r
++	country = DFR\r
++\r
++	name = "EVT_46680013_NAME"\r
++	desc = "EVT_46680011_DESC"\r
++	style = 2\r
++	picture = "Danzig_coup"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = end_non_aggression which = POL where = DFR }\r
++	command = { type = war which = POL }\r
++	command = { trigger = { ai = ENG } type = trigger which = 46680015 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ポーランド分割再び ― ポーランドが屈した\r
++#########################################################################\r
++\r
++event = {\r
++	id = 46680014\r
++	random = no\r
++	country = DFR\r
++\r
++	name = "EVT_46680014_NAME"\r
++	desc = "EVT_46680011_DESC"\r
++	style = 2\r
++	picture = "Poles_fold"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -10 }\r
++	command = { type = relation which = DFR value = 5 }\r
++	command = { type = belligerence which = POL value = 1 }\r
++	command = { type = manpowerpool value = 30 }\r
++	}\r
++}\r
++\r
++#############################################################################\r
++#  ポーランド侵略\r
++# 同盟国であるポーランドが侵略された。我が国はポーランドと独立保障条約に調印している。我が国はポーランドを防衛しなければならない！\r
++#############################################################################\r
++\r
++event = {\r
++	id = 46680015\r
++	random = no\r
++	country = ENG\r
++\r
++	name = "EVT_46680015_NAME"\r
++	desc = "EVT_46680015_DESC"\r
++	style = 2\r
++	picture = "Poland_Invasion"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = war which = DFR }\r
++        command = { type = end_guarantee which = ENG where = POL }\r
++        command = { trigger = { guarantee = { country = FRA country = POL } alliance = { country = FRA country = ENG } } type = end_guarantee which = FRA where = POL }\r
++        command = { trigger = { guarantee = { country = CAN country = POL } alliance = { country = CAN country = ENG } } type = end_guarantee which = CAN where = POL }\r
++        command = { trigger = { guarantee = { country = SAF country = POL } alliance = { country = SAF country = ENG } } type = end_guarantee which = SAF where = POL }\r
++        command = { trigger = { guarantee = { country = AST country = POL } alliance = { country = AST country = ENG } } type = end_guarantee which = AST where = POL }\r
++        command = { trigger = { guarantee = { country = NZL country = POL } alliance = { country = NZL country = ENG } } type = end_guarantee which = NZL where = POL }\r
++	command = { type = songs which = ChamberlainDeclaresWar.txt }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  平穏が戻る欧州\r
++# 一時期、ドイツやロシアが欧州における混乱の中心になると思われていたが、両国は平和主義を貫き、欧州で迫っていた戦火の暗雲は消え去った。\r
++# ロシアでは友好国ドイツから流入してきた文化が発展し、国内に活況が戻りつつある。\r
++#########################################################################\r
++event = {\r
++	id = 46680016\r
++	random = no\r
++	country = UER\r
++	\r
++	trigger = {\r
++	flag = Weimar # ワイマールルート\r
++ 	flag = russia_isolation # ロシアが孤立主義になる\r
++	event = 7060041 # 新たな汎スラヴ主義\r
++	OR = {\r
++	event = 7060401 # 十月蜂起 ― 戒厳令布告\r
++	event = 7060501 # 十月蜂起 ― 民主主義の到来\r
++	}\r
++	AND = {\r
++	exists = DFR\r
++	exists = UER\r
++	}\r
++	exists = UER\r
++	NOT = {\r
++	ispuppet = UER\r
++	ispuppet = DFR\r
++	war = { country = UER country = DFR }\r
++	}\r
++	}\r
++	\r
++	name = "EVT_46680016_NAME"\r
++	desc = "EVT_46680016_DESC"\r
++	style = 2\r
++	picture = "Mol_Rib"\r
++\r
++	date = { day = 0 month = 8 year = 1939 }\r
++\r
++	action = { # 平和が戻った！\r
++	name = "ACTIONNAME46680016A"\r
++	command = { type = dissent value = -30 }\r
++	command = { type = relation which = DFR value = 50 }\r
++	command = { type = relation which = ENG value = 50 }\r
++	command = { type = relation which = FRA value = 50 }\r
++	command = { type = relation which = USA value = 50 }\r
++	command = { type = relation which = CHI value = 50 }\r
++	command = { type = relation which = JAP value = 50 }\r
++	command = { type = relation which = KOR value = 50 }\r
++	command = { type = relation which = U67 value = 50 }\r
++	command = { type = trigger which = 46680017 }\r
++	command = { type = sleepevent which = 46680007 }\r
++	command = { type = sleepevent which = 46680008 }\r
++	command = { type = sleepevent which = 46680009 }\r
++	command = { type = sleepevent which = 46680010 }\r
++	command = { type = sleepevent which = 46680011 }\r
++	command = { type = sleepevent which = 46680012 }\r
++	command = { type = sleepevent which = 46680013 }\r
++	command = { type = sleepevent which = 46680014 }\r
++	command = { type = sleepevent which = 46680015 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  平穏が戻る欧州\r
++# 一時期、ドイツやロシアが欧州における混乱の中心になると思われていたが、両国は平和主義を貫き、欧州で迫っていた戦火の暗雲は消え去った。\r
++# ドイツではワイマール文化が隆盛を誇り、周辺国にも大きな影響を与えている。\r
++#########################################################################\r
++event = {\r
++	id = 46680017\r
++	random = no\r
++	country = DFR\r
++	\r
++	name = "EVT_46680017_NAME"\r
++	desc = "EVT_46680017_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 平和が戻った！\r
++	name = "ACTIONNAME46680017A"\r
++	command = { type = dissent value = -30 }\r
++	command = { type = relation which = UER value = 50 }\r
++	command = { type = relation which = ENG value = 50 }\r
++	command = { type = relation which = FRA value = 50 }\r
++	command = { type = relation which = USA value = 50 }\r
++	command = { type = relation which = CHI value = 50 }\r
++	command = { type = relation which = JAP value = 50 }\r
++	command = { type = relation which = KOR value = 50 }\r
++	command = { type = relation which = U67 value = 50 }\r
++	ai_chance = 100\r
++	}\r
++}\r
+ ##########################################################################\r
+ #  オーストリア帝国イベント\r
+ #########################################################################\r

@@ -1,0 +1,3505 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_China_Cliques_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_China_Cliques_events.txt [cp932]
+@@ -5,20 +5,30 @@
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+ # 山西派（CSX）ルート\r
+-#id = 6959601 山西省政建設計画\r
+-#id = 6959602 山西省銀行の改革\r
+-#id = 6959603 西北工業公司の設立\r
+-#id = 6959604 同蒲鉄道の建設\r
+-#id = 6959605 太原兵工廠の拡大\r
+-#id = 6959606 日本企業の接触\r
+-#id = 6959607 山西省における企業活動\r
+-#id = 6959608 山西産業株式会社の設立\r
+-#id = 6959609 山西軍閥内での権力闘争\r
+-#id = 6959610 軍閥統一戦線の提案（CSX）\r
+-#id = 6959611 軍閥統一戦線の提案（CGX CXB CYN）\r
+-#id = 6959612 軍閥統一戦線の形成\r
+-#id = 6959613 軍閥統一戦線\r
+-#id = 6959614 中国再統一の機運高まる\r
++#id = 6959601 厳正中立の危機\r
++#id = 6959602 二頭体制の崩壊\r
++#id = 6959603 太原クーデター\r
++#id = 6959604 太原クーデター ― 国民軍の勝利\r
++#id = 6959605 太原クーデター ― 晋軍の勝利\r
++#id = 6959606 太原クーデター ― 革命派の勝利\r
++#id = 6959607 経済計画の再開\r
++#id = 6959608 山西省銀行の改革\r
++#id = 6959609 西北実業建設公司の設立\r
++#id = 6959610 同蒲鉄道の建設\r
++#id = 6959611 太原兵工廠の拡大\r
++#id = 6959612 日本企業の誘致\r
++#id = 6959613 山西軍閥が企業誘致を提案\r
++#id = 6959614 山西産業株式会社の設立\r
++#id = 6959615 軍の再建\r
++#id = 6959616 第二次北伐 ― 山西軍閥の反応\r
++#id = 6959617 第二次北伐 ― 山西軍閥が北伐に参加を表明\r
++#軍閥統一戦線\r
++#id = 6959621 軍閥統一戦線の提案（CSX）\r
++#id = 6959622 軍閥統一戦線の提案（CGX CXB CYN）\r
++#id = 6959623 軍閥統一戦線の形成\r
++#id = 6959624 軍閥統一戦線\r
++#id = 6959625 中国再統一の機運高まる\r
++#軍閥統一戦線\r
+ # 両広派（CGX）ルート\r
+ #id = 6959701 両広の対立 ― 民衆の救済問題\r
+ #id = 6959702 両広の対立 ― 指揮系統の統一\r
+@@ -31,8 +41,10 @@
+ #id = 6959709 第二次北伐 ― 両広軍閥の反応\r
+ #id = 6959710 第二次北伐 ― 両広軍閥が北伐に参加を表明\r
+ #id = 6959711 聯省自治運動\r
+-#id = 6959712 聯省自治派との妥協\r
+-#id = 6959713 聯省自治宣言\r
++#id = 6959712 広州商団\r
++#id = 6959713 広東会議\r
++#id = 6959714 広東会議 ― 妥協の模索\r
++#id = 6959715 国号の変更\r
+ # 西北三馬（CXB）ルート\r
+ #id = 6959801 東トルキスタン独立戦争\r
+ #id = 6959802 東トルキスタン独立戦争 ― 新疆省政府軍の勝利\r
+@@ -43,12 +55,19 @@
+ #id = 6959807 馬仲英の敗北\r
+ #id = 6959808 馬仲英の勝利\r
+ #id = 6959809 馬家軍の内部対立\r
++#id = 6959810 厳格な回教体制\r
++#id = 6959811 第二次北伐 ― 西北三馬の反応\r
++#id = 6959812 第二次北伐 ― 西北三馬が北伐に参加を表明\r
+ # 雲南派（CYN）ルート\r
+ #id = 6959901 唐継尭と参謀本部の対立\r
+ #id = 6959902 雲南省のクーデター\r
+ #id = 6959903 護国軍編成の是非\r
+ #id = 6959904 テン緬鉄道の建設\r
+ #id = 6959905 テン緬鉄道の開通\r
++#id = 6959906 雲南護国軍\r
++#id = 6959907 経済混乱の終息\r
++#id = 6959908 第二次北伐 ― 雲南軍閥の反応\r
++#id = 6959909 第二次北伐 ― 雲南軍閥が北伐に参加を表明\r
+ # 統一中国降伏イベント\r
+ #id = 6960001 巨龍、滅ぶ（CHI CHC U36 U74 CYN CGX CSX CXB）\r
+ #id = 6960002 中国の滅亡（UER）\r
+@@ -76,40 +95,876 @@
+ #########################################################################\r
+ #  山西派（CSX）イベント\r
+ #########################################################################\r
+-#  山西省政建設計画\r
+-# 1912年に山西省の軍政両権を掌握した閻錫山は、北京政府や国民政府と距離を置くことで獲得した平和を利用し、\r
+-# 「保境安民」（山西モンロー主義）を唱えて内政に力を入れた。\r
+-# これにより戦乱が続く中国において、山西省は模範省として称賛されるほど発展した省となっている。\r
+-# そして閻錫山は、1930年代から不穏となりつつあった中国情勢を受け、新たな国内開発計画を実行しようとしている。\r
++#  厳正中立の危機\r
++# 山西軍閥の歴史は辛亥革命までさかのぼる。\r
++# 中華民国成立直後に山西都督に任命された閻錫山は、山西省の軍政両権を握り、同地を掌握した。\r
++# 1924年、馮玉祥が北京政変を発動した際には、当初中立の姿勢をとったが、最終的に馮玉祥を支持。\r
++# 政変の失敗により、馮玉祥の国民軍が山西へ退却すると、閻錫山は彼を保護し、北洋政府から国民軍を守った。\r
++# 北洋政府との対立の中、1927年に国民党が北伐を開始すると、閻錫山は中立を放棄し、国民軍とともに北京政府へ攻撃を仕掛ける。\r
++# しかし、北伐が失敗に終わり、更に直隷派から反撃されたことで敗北したため、晋軍（閻錫山の軍隊）は退却せざるを得なかった。\r
++# 北洋政府は、国民軍の討伐を目論んだが、険しい山岳部に守られた山西軍閥を討伐するのは容易ではなく、半ば放置する形で山西軍閥の存続を容認する方針に転じた。\r
++# こうして戦後、山西軍閥の中では平和が保たれることになったが、呉越同舟と呼べた閻錫山の山西軍と馮玉祥の国民軍の関係は、平和の中で悪化し続け、対立が激化するのは避けられなくなりつつある。\r
+ #########################################################################\r
+ event = {\r
+ 	id = 6959601\r
+ 	random = no\r
+ 	country = CSX\r
++\r
++	name = "EVT_6959601_NAME"\r
++	desc = "EVT_6959601_DESC"\r
++	style = 2\r
++ 	picture = "ccip_npw"\r
++\r
++	date = { day = 4 month = 2 year = 1933 }\r
++\r
++	action = { # 呉越同舟も終わりの時だ\r
++	name = "ACTIONNAME6959601A"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = event which = 6959602 where = CSX when = 7 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  二頭体制の崩壊\r
++# 1933年、経済計画や対外方針を巡り、意見が分かれながらも連携を維持し続けていた閻錫山の山西軍と馮玉祥の国民軍の連合がついに崩壊した。\r
++# 経済のために北洋政府との関係改善を望んだ閻錫山の方針に、猛反発していた馮玉祥がついに我慢の限界を迎え、本拠地の綏遠省（山西省北部）に国民軍を引き払ったのである。\r
++# この行動により、山西軍と国民軍の二頭体制が完全に崩壊し、地域の支配をめぐる新たな危機を引き起こされている。\r
++#########################################################################\r
++event = {\r
++	id = 6959602\r
++	random = no\r
++	country = CSX\r
++\r
++	name = "EVT_6959602_NAME"\r
++	desc = "EVT_6959602_DESC"\r
++	style = 2\r
++ 	picture = "ccip_fcseige"\r
++\r
++	action = { # おのれ！\r
++	name = "ACTIONNAME6959602A"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = event which = 6959603 where = CSX when = 45 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = headofstate which = 605001 } # 閻錫山(イェン・シシャン)\r
++	command = { type = headofgovernment which = 605051 } # 傅作義(フ・ツォーイー)\r
++	command = { type = foreignminister which = 605003 } # 王賛緒(ワン・ツァンシュー)\r
++	command = { type = armamentminister which = 605004 } # 傅作義(フ・ツォーイー)\r
++	command = { type = ministerofsecurity which = 605005 } # 欧陽格(オウ・ヤンゴー)\r
++	command = { type = ministerofintelligence which = 605006 } # 商震(シャン・チェン)\r
++	command = { type = chiefofstaff which = 605007 } # 閻錫山(イェン・シシャン)\r
++	command = { type = chiefofarmy which = 605014 } # 徐永昌(シュー・ヨンチャン)\r
++	command = { type = chiefofnavy which = 605009 } # ドミトリー・クロルチェフ\r
++	command = { type = chiefofair which = 605048 } # 孔令恂(コン・リンスン)\r
++	command = { type = sleepminister which = 605201 } # 国民軍閣僚\r
++	command = { type = sleepminister which = 605202 }\r
++	command = { type = sleepminister which = 605203 }\r
++	command = { type = sleepminister which = 605204 }\r
++	command = { type = sleepminister which = 605205 }\r
++	command = { type = sleepminister which = 605206 }\r
++	command = { type = sleepminister which = 605207 }\r
++	command = { type = sleepminister which = 605208 }\r
++	command = { type = sleepminister which = 605209 }\r
++	command = { type = sleepminister which = 605210 }\r
++	command = { type = sleepminister which = 605211 }\r
++	command = { type = sleepminister which = 605212 }\r
++	command = { type = sleepminister which = 605213 }\r
++	command = { type = sleepminister which = 605214 }\r
++	command = { type = sleepminister which = 605215 }\r
++	command = { type = sleepminister which = 605216 }\r
++	command = { type = sleepminister which = 605217 }\r
++	command = { type = sleepminister which = 605218 }\r
++	command = { type = sleepminister which = 605219 }\r
++	command = { type = sleepminister which = 605220 }\r
++	command = { type = sleepminister which = 605211 }\r
++	command = { type = sleepminister which = 605221 }\r
++	command = { type = sleepminister which = 605222 }\r
++	command = { type = sleepminister which = 605223 }\r
++	command = { type = sleepminister which = 605224 }\r
++	command = { type = sleepminister which = 605225 }\r
++	command = { type = sleepminister which = 605226 }\r
++	command = { type = sleepminister which = 605227 }\r
++	command = { type = sleepminister which = 605228 }\r
++	command = { type = sleepminister which = 605229 }\r
++	command = { type = sleepminister which = 605230 }\r
++	command = { type = sleepminister which = 605231 }\r
++	command = { type = sleepminister which = 605232 }\r
++	command = { type = sleepminister which = 605233 }\r
++	command = { type = sleepminister which = 605234 }\r
++	command = { type = sleepminister which = 605235 }\r
++	command = { type = sleepminister which = 605236 }\r
++	command = { type = sleepminister which = 605237 }\r
++	command = { type = sleepminister which = 605238 }\r
++	command = { type = sleepminister which = 605239 }\r
++	command = { type = sleepminister which = 605240 }\r
++	command = { type = sleepminister which = 605241 }\r
++	command = { type = sleepminister which = 605242 }\r
++	command = { type = sleepminister which = 605243 }\r
++	command = { type = sleepminister which = 605244 }\r
++	command = { type = sleepminister which = 605245 }\r
++	command = { type = sleepminister which = 605246 }\r
++	command = { type = sleepminister which = 605247 }\r
++	command = { type = sleepminister which = 605248 }\r
++	command = { type = sleepminister which = 605249 }\r
++	command = { type = sleepminister which = 605250 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  太原クーデター\r
++# 山西軍閥と国民軍の連合体制崩壊後、馮玉祥は配下の部隊に山西省の重要都市太原への攻撃準備をひそかに命じた。\r
++# この事はすぐさま山西軍閥に伝わり、閻錫山も国民軍の攻撃に備えて、晋軍に守りを固めるよう指示を出し、山西省は緊迫した状況に突入した。\r
++# そして連合崩壊からわずか一か月後、馮玉祥が太原攻略を命じたことで、ここに河北の趨勢を決めるクーデターが勃発したのである。\r
++# 街は煙と混乱に包まれ、市民は恐れと不安を抱いている中、政府は分裂し、大きな混乱に陥っている。\r
++# この混迷の中、勝利したものが、山西省の次の時代を築くことになるだろう。\r
++#########################################################################\r
++event = {\r
++	id = 6959603\r
++	random = no\r
++	country = CSX\r
++\r
++	name = "EVT_6959603_NAME"\r
++	desc = "EVT_6959603_DESC"\r
++	style = 2\r
++ 	picture = "ccip_taiyuan"\r
++\r
++	action = { # 国民軍が首都を占拠する\r
++	name = "ACTIONNAME6959603A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = china_shanxi_1 # 閻錫山ルート\r
++	flag = china_shanxi_2 # 馮玉祥ルート\r
++	flag = china_shanxi_3 # 殷汝耕ルート\r
++	}\r
++	AND = {\r
++	flag = china_shanxi_2 # 馮玉祥ルート\r
++	NOT = {\r
++	flag = china_shanxi_1 # 閻錫山ルート\r
++	#flag = china_shanxi_2 # 馮玉祥ルート\r
++	flag = china_shanxi_3 # 殷汝耕ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = event which = 6959604 where = CSX when = 0 } # \r
++	command = { type = setflag which = shanxi_feng } # 馮玉祥が主導権を握る\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 晋軍が反乱軍を撃退する\r
++	name = "ACTIONNAME6959603B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = china_shanxi_1 # 閻錫山ルート\r
++	flag = china_shanxi_2 # 馮玉祥ルート\r
++	flag = china_shanxi_3 # 殷汝耕ルート\r
++	}\r
++	AND = {\r
++	flag = china_shanxi_1 # 閻錫山ルート\r
++	NOT = {\r
++	#flag = china_shanxi_1 # 閻錫山ルート\r
++	flag = china_shanxi_2 # 馮玉祥ルート\r
++	flag = china_shanxi_3 # 殷汝耕ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = event which = 6959605 where = CSX when = 0 } # \r
++	command = { type = setflag which = shanxi_yen } # 閻錫山が主導権を握る\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 革命派が蜂起した\r
++	name = "ACTIONNAME6959603C"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = china_shanxi_1 # 閻錫山ルート\r
++	flag = china_shanxi_2 # 馮玉祥ルート\r
++	flag = china_shanxi_3 # 殷汝耕ルート\r
++	}\r
++	AND = {\r
++	flag = china_shanxi_3 # 殷汝耕ルート\r
++	NOT = {\r
++	flag = china_shanxi_1 # 閻錫山ルート\r
++	flag = china_shanxi_2 # 馮玉祥ルート\r
++	#flag = china_shanxi_3 # 殷汝耕ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = event which = 6959606 where = CSX when = 0 } # \r
++	command = { type = setflag which = shanxi_yin } # 殷汝耕が主導権を握る\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  太原クーデター ― 国民軍の勝利\r
++# 国民軍は緻密な計画と勢いでクーデターを成功させ、太原を占領下においた。\r
++# 太原が制圧されると晋軍はたちまち壊走し、閻錫山は省外に逃れた。\r
++# 太原に入城した馮玉祥は、勝利を宣言し、山西軍閥の首脳部、行政官、軍部の高官を次々に政府から排除。\r
++# 辛亥革命から続いた閻錫山の支配体制は崩壊し、国民軍による新たな統治を迎えることになった。\r
++#########################################################################\r
++event = {\r
++	id = 6959604\r
++	random = no\r
++	country = CSX\r
++	save_date = yes\r
++\r
++	name = "EVT_6959604_NAME"\r
++	desc = "EVT_6959604_DESC"\r
++	style = 2\r
++ 	picture = "ccip_feng"\r
++\r
++	action = { # 国民軍、万歳！\r
++	name = "ACTIONNAME6959604A"\r
++	command = { trigger = { division_exists = { type = 22310 id = 2 } } type = remove_division which = 22310 value = 2 } # 第70師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 3 } } type = remove_division which = 22310 value = 3 } # 第72師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 5 } } type = remove_division which = 22310 value = 5 } # 第69師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 6 } } type = remove_division which = 22310 value = 6 } # 第71師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 19 } } type = remove_division which = 22310 value = 19 } # 山西親衛師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 20 } } type = remove_division which = 22310 value = 20 } # 特務師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 8 } } type = unlock_division which = 22310 value = 8 } # 第65師\r
++	command = { trigger = { division_exists = { type = 22310 id = 9 } } type = unlock_division which = 22310 value = 9 } # 第66師\r
++	command = { trigger = { division_exists = { type = 22310 id = 10 } } type = unlock_division which = 22310 value = 10 } # 第73師\r
++	command = { trigger = { division_exists = { type = 22310 id = 12 } } type = unlock_division which = 22310 value = 12 } # 第64師\r
++	command = { trigger = { division_exists = { type = 22310 id = 13 } } type = unlock_division which = 22310 value = 13 } # 第68師\r
++	command = { trigger = { division_exists = { type = 22310 id = 14 } } type = unlock_division which = 22310 value = 14 } # 第101師\r
++	command = { type = wakeminister which = 605201 } # 国民軍閣僚\r
++	command = { type = wakeminister which = 605202 }\r
++	command = { type = wakeminister which = 605203 }\r
++	command = { type = wakeminister which = 605204 }\r
++	command = { type = wakeminister which = 605205 }\r
++	command = { type = wakeminister which = 605206 }\r
++	command = { type = wakeminister which = 605207 }\r
++	command = { type = wakeminister which = 605208 }\r
++	command = { type = wakeminister which = 605209 }\r
++	command = { type = wakeminister which = 605210 }\r
++	command = { type = wakeminister which = 605211 }\r
++	command = { type = wakeminister which = 605212 }\r
++	command = { type = wakeminister which = 605213 }\r
++	command = { type = wakeminister which = 605214 }\r
++	command = { type = wakeminister which = 605215 }\r
++	command = { type = wakeminister which = 605216 }\r
++	command = { type = wakeminister which = 605217 }\r
++	command = { type = wakeminister which = 605218 }\r
++	command = { type = wakeminister which = 605219 }\r
++	command = { type = wakeminister which = 605220 }\r
++	command = { type = wakeminister which = 605211 }\r
++	command = { type = wakeminister which = 605221 }\r
++	command = { type = wakeminister which = 605222 }\r
++	command = { type = wakeminister which = 605223 }\r
++	command = { type = wakeminister which = 605224 }\r
++	command = { type = wakeminister which = 605225 }\r
++	command = { type = wakeminister which = 605226 }\r
++	command = { type = wakeminister which = 605227 }\r
++	command = { type = wakeminister which = 605228 }\r
++	command = { type = wakeminister which = 605229 }\r
++	command = { type = wakeminister which = 605230 }\r
++	command = { type = wakeminister which = 605231 }\r
++	command = { type = wakeminister which = 605232 }\r
++	command = { type = wakeminister which = 605233 }\r
++	command = { type = wakeminister which = 605234 }\r
++	command = { type = wakeminister which = 605235 }\r
++	command = { type = wakeminister which = 605236 }\r
++	command = { type = wakeminister which = 605237 }\r
++	command = { type = wakeminister which = 605238 }\r
++	command = { type = wakeminister which = 605239 }\r
++	command = { type = wakeminister which = 605240 }\r
++	command = { type = wakeminister which = 605241 }\r
++	command = { type = wakeminister which = 605242 }\r
++	command = { type = wakeminister which = 605243 }\r
++	command = { type = wakeminister which = 605244 }\r
++	command = { type = wakeminister which = 605245 }\r
++	command = { type = wakeminister which = 605246 }\r
++	command = { type = wakeminister which = 605247 }\r
++	command = { type = wakeminister which = 605248 }\r
++	command = { type = wakeminister which = 605249 }\r
++	command = { type = wakeminister which = 605250 }\r
++	command = { type = wakeleader which = 605501 }\r
++	command = { type = wakeleader which = 605502 }\r
++	command = { type = wakeleader which = 605503 }\r
++	command = { type = wakeleader which = 605504 }\r
++	command = { type = wakeleader which = 605505 }\r
++	command = { type = wakeleader which = 605506 }\r
++	command = { type = wakeleader which = 605507 }\r
++	command = { type = wakeleader which = 605508 }\r
++	command = { type = wakeleader which = 605509 }\r
++	command = { type = wakeleader which = 605510 }\r
++	command = { type = wakeleader which = 605511 }\r
++	command = { type = wakeleader which = 605512 }\r
++	command = { type = wakeleader which = 605513 }\r
++	command = { type = wakeleader which = 605514 }\r
++	command = { type = wakeleader which = 605515 }\r
++	command = { type = wakeleader which = 605516 }\r
++	command = { type = wakeleader which = 605517 }\r
++	command = { type = wakeleader which = 605518 }\r
++	command = { type = wakeleader which = 605519 }\r
++	command = { type = wakeleader which = 605520 }\r
++	command = { type = wakeleader which = 605511 }\r
++	command = { type = wakeleader which = 605521 }\r
++	command = { type = wakeleader which = 605522 }\r
++	command = { type = wakeleader which = 605523 }\r
++	command = { type = wakeleader which = 605524 }\r
++	command = { type = wakeleader which = 605525 }\r
++	command = { type = wakeleader which = 605526 }\r
++	command = { type = wakeleader which = 605527 }\r
++	command = { type = wakeleader which = 605528 }\r
++	command = { type = wakeleader which = 605529 }\r
++	command = { type = wakeleader which = 605530 }\r
++	command = { type = wakeleader which = 605531 }\r
++	command = { type = wakeleader which = 605532 }\r
++	command = { type = wakeleader which = 605533 }\r
++	command = { type = wakeleader which = 605534 }\r
++	command = { type = wakeleader which = 605535 }\r
++	command = { type = wakeleader which = 605536 }\r
++	command = { type = wakeleader which = 605537 }\r
++	command = { type = wakeleader which = 605538 }\r
++	command = { type = wakeleader which = 605539 }\r
++	command = { type = wakeleader which = 605540 }\r
++	command = { type = wakeleader which = 605541 }\r
++	command = { type = wakeleader which = 605542 }\r
++	command = { type = wakeleader which = 605543 }\r
++	command = { type = wakeleader which = 605544 }\r
++	command = { type = wakeleader which = 605545 }\r
++	command = { type = wakeleader which = 605546 }\r
++	command = { type = wakeleader which = 605547 }\r
++	command = { type = wakeleader which = 605548 }\r
++	command = { type = wakeleader which = 605549 }\r
++	command = { type = wakeleader which = 605550 }\r
++	command = { type = wakeleader which = 605551 }\r
++	command = { type = wakeleader which = 605552 }\r
++	command = { type = wakeleader which = 605553 }\r
++	command = { type = wakeleader which = 605554 }\r
++	command = { type = wakeleader which = 605555 }\r
++	command = { type = wakeleader which = 605556 }\r
++	command = { type = wakeleader which = 605557 }\r
++	command = { type = wakeleader which = 605558 }\r
++	command = { type = wakeleader which = 605559 }\r
++	command = { type = wakeleader which = 605560 }\r
++	command = { type = wakeleader which = 605561 }\r
++	command = { type = wakeleader which = 605562 }\r
++	command = { type = wakeleader which = 605563 }\r
++	command = { type = wakeleader which = 605564 }\r
++	command = { type = wakeleader which = 605565 }\r
++	command = { type = wakeleader which = 605566 }\r
++	command = { type = waketeam which = 605051 }\r
++	command = { type = waketeam which = 605052 }\r
++	command = { type = sleepminister which = 605001 } # 閻錫山(イェン・シシャン)\r
++	command = { type = sleepminister which = 605002 }\r
++	command = { type = sleepminister which = 605007 }\r
++	command = { type = sleepminister which = 605008 }\r
++	command = { type = sleepminister which = 605010 }\r
++	command = { type = sleepminister which = 605011 }\r
++	command = { type = sleepleader which = 605017 }\r
++	command = { type = sleepleader which = 605020 }\r
++	command = { type = sleepleader which = 605023 }\r
++	command = { type = sleepteam which = 605001 }\r
++	command = { type = sleepminister which = 605004 } # 傅作義(フ・ツォーイー)\r
++	command = { type = sleepminister which = 605023 }\r
++	command = { type = sleepminister which = 605024 }\r
++	command = { type = sleepminister which = 605025 }\r
++	command = { type = sleepminister which = 605026 }\r
++	command = { type = sleepleader which = 605002 }\r
++	command = { type = sleepteam which = 605011 }\r
++	command = { type = sleepminister which = 605013 } # 徐永昌(シュー・ヨンチャン)\r
++	command = { type = sleepminister which = 605014 }\r
++	command = { type = sleepminister which = 605015 }\r
++	command = { type = sleepleader which = 605003 }\r
++	command = { type = sleepminister which = 605027 } # 王靖国(ワン・チンクオ)\r
++	command = { type = sleepminister which = 605028 }\r
++	command = { type = sleepleader which = 605016 }\r
++	command = { type = sleepminister which = 605003 } # 王賛緒(ワン・ツァンシュー)\r
++	command = { type = sleepminister which = 605005 } # 欧陽格(オウ・ヤンゴー)\r
++	command = { type = sleepminister which = 605006 } # 商震(シャン・チェン)\r
++	command = { type = sleepleader which = 605013 }\r
++	command = { type = sleepminister which = 605016 } # 楊愛源（ヤン・アイユアン）\r
++	command = { type = sleepminister which = 605017 }\r
++	command = { type = sleepminister which = 605018 } # 趙戴文（ジャオ・ダイウェン）\r
++	command = { type = sleepminister which = 605019 } # 南桂馨（ナン・クゥイシン）\r
++	command = { type = sleepminister which = 605020 } # 馮司直（フォン・スージー）\r
++	command = { type = name where = CSX which = "国民軍" }\r
++	command = { type = flag_ext where = CSX which = "_Feng" }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = -2 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 5 }\r
++	command = { type = headofstate which = 605201 } # 馮玉祥(フェン・ユクシャン)\r
++	command = { type = headofgovernment which = 605202 } # 孫岳(スン・ユエ)\r
++	command = { type = foreignminister which = 605203 } # 黄郛(フアン・フー)\r
++	command = { type = armamentminister which = 605204 } # 薛篤弼(シュエ・ドゥービー)\r
++	command = { type = ministerofsecurity which = 605205 } # 鹿鍾麟(ルー・ジョンリン)\r
++	command = { type = ministerofintelligence which = 605206 } # 劉驥(リウ・ヂ－)\r
++	command = { type = chiefofstaff which = 605207 } # 馮玉祥(フェン・ユクシャン)\r
++	command = { type = chiefofarmy which = 605208 } # 張之江(ヂャン・ジージアン)\r
++	command = { type = chiefofnavy which = 605209 } # 馮玉祥(フェン・ユクシャン)\r
++	command = { type = chiefofair which = 605210 } # 孫岳(スン・ユエ)\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  太原クーデター ― 晋軍の勝利\r
++# 国民軍によるクーデターは、晋軍に阻まれたことで未遂に終わった。\r
++# 晋軍との戦いで大きく消耗した国民軍に、反撃を食い止める余裕はなく、国民軍は駆逐され、馮玉祥は亡命した。\r
++# 反乱を征した閻錫山は、反乱を鎮圧したと宣言し、僅かに残された国民軍の関係者を省内から排除。\r
++# 辛亥革命から続いた閻錫山の支配体制は再び盤石なものとなり、平和が訪れようとしている。\r
++#########################################################################\r
++event = {\r
++	id = 6959605\r
++	random = no\r
++	country = CSX\r
++	save_date = yes\r
++\r
++	name = "EVT_6959605_NAME"\r
++	desc = "EVT_6959605_DESC"\r
++	style = 2\r
++ 	picture = "ccip_yen"\r
++\r
++	action = { # 晋軍、万歳！\r
++	name = "ACTIONNAME6959605A"\r
++	command = { trigger = { division_exists = { type = 22310 id = 8 } } type = remove_division which = 22310 value = 8 } # 第65師\r
++	command = { trigger = { division_exists = { type = 22310 id = 9 } } type = remove_division which = 22310 value = 9 } # 第66師\r
++	command = { trigger = { division_exists = { type = 22310 id = 10 } } type = remove_division which = 22310 value = 10 } # 第73師\r
++	command = { trigger = { division_exists = { type = 22310 id = 12 } } type = remove_division which = 22310 value = 12 } # 第64師\r
++	command = { trigger = { division_exists = { type = 22310 id = 13 } } type = remove_division which = 22310 value = 13 } # 第68師\r
++	command = { trigger = { division_exists = { type = 22310 id = 14 } } type = remove_division which = 22310 value = 14 } # 第101師\r
++	command = { type = sleepminister which = 605201 } # 国民軍閣僚\r
++	command = { type = sleepminister which = 605202 }\r
++	command = { type = sleepminister which = 605203 }\r
++	command = { type = sleepminister which = 605204 }\r
++	command = { type = sleepminister which = 605205 }\r
++	command = { type = sleepminister which = 605206 }\r
++	command = { type = sleepminister which = 605207 }\r
++	command = { type = sleepminister which = 605208 }\r
++	command = { type = sleepminister which = 605209 }\r
++	command = { type = sleepminister which = 605210 }\r
++	command = { type = sleepminister which = 605211 }\r
++	command = { type = sleepminister which = 605212 }\r
++	command = { type = sleepminister which = 605213 }\r
++	command = { type = sleepminister which = 605214 }\r
++	command = { type = sleepminister which = 605215 }\r
++	command = { type = sleepminister which = 605216 }\r
++	command = { type = sleepminister which = 605217 }\r
++	command = { type = sleepminister which = 605218 }\r
++	command = { type = sleepminister which = 605219 }\r
++	command = { type = sleepminister which = 605220 }\r
++	command = { type = sleepminister which = 605211 }\r
++	command = { type = sleepminister which = 605221 }\r
++	command = { type = sleepminister which = 605222 }\r
++	command = { type = sleepminister which = 605223 }\r
++	command = { type = sleepminister which = 605224 }\r
++	command = { type = sleepminister which = 605225 }\r
++	command = { type = sleepminister which = 605226 }\r
++	command = { type = sleepminister which = 605227 }\r
++	command = { type = sleepminister which = 605228 }\r
++	command = { type = sleepminister which = 605229 }\r
++	command = { type = sleepminister which = 605230 }\r
++	command = { type = sleepminister which = 605231 }\r
++	command = { type = sleepminister which = 605232 }\r
++	command = { type = sleepminister which = 605233 }\r
++	command = { type = sleepminister which = 605234 }\r
++	command = { type = sleepminister which = 605235 }\r
++	command = { type = sleepminister which = 605236 }\r
++	command = { type = sleepminister which = 605237 }\r
++	command = { type = sleepminister which = 605238 }\r
++	command = { type = sleepminister which = 605239 }\r
++	command = { type = sleepminister which = 605240 }\r
++	command = { type = sleepminister which = 605241 }\r
++	command = { type = sleepminister which = 605242 }\r
++	command = { type = sleepminister which = 605243 }\r
++	command = { type = sleepminister which = 605244 }\r
++	command = { type = sleepminister which = 605245 }\r
++	command = { type = sleepminister which = 605246 }\r
++	command = { type = sleepminister which = 605247 }\r
++	command = { type = sleepminister which = 605248 }\r
++	command = { type = sleepminister which = 605249 }\r
++	command = { type = sleepminister which = 605250 }\r
++	command = { type = sleepleader which = 605501 }\r
++	command = { type = sleepleader which = 605502 }\r
++	command = { type = sleepleader which = 605503 }\r
++	command = { type = sleepleader which = 605504 }\r
++	command = { type = sleepleader which = 605505 }\r
++	command = { type = sleepleader which = 605506 }\r
++	command = { type = sleepleader which = 605507 }\r
++	command = { type = sleepleader which = 605508 }\r
++	command = { type = sleepleader which = 605509 }\r
++	command = { type = sleepleader which = 605510 }\r
++	command = { type = sleepleader which = 605511 }\r
++	command = { type = sleepleader which = 605512 }\r
++	command = { type = sleepleader which = 605513 }\r
++	command = { type = sleepleader which = 605514 }\r
++	command = { type = sleepleader which = 605515 }\r
++	command = { type = sleepleader which = 605516 }\r
++	command = { type = sleepleader which = 605517 }\r
++	command = { type = sleepleader which = 605518 }\r
++	command = { type = sleepleader which = 605519 }\r
++	command = { type = sleepleader which = 605520 }\r
++	command = { type = sleepleader which = 605511 }\r
++	command = { type = sleepleader which = 605521 }\r
++	command = { type = sleepleader which = 605522 }\r
++	command = { type = sleepleader which = 605523 }\r
++	command = { type = sleepleader which = 605524 }\r
++	command = { type = sleepleader which = 605525 }\r
++	command = { type = sleepleader which = 605526 }\r
++	command = { type = sleepleader which = 605527 }\r
++	command = { type = sleepleader which = 605528 }\r
++	command = { type = sleepleader which = 605529 }\r
++	command = { type = sleepleader which = 605530 }\r
++	command = { type = sleepleader which = 605531 }\r
++	command = { type = sleepleader which = 605532 }\r
++	command = { type = sleepleader which = 605533 }\r
++	command = { type = sleepleader which = 605534 }\r
++	command = { type = sleepleader which = 605535 }\r
++	command = { type = sleepleader which = 605536 }\r
++	command = { type = sleepleader which = 605537 }\r
++	command = { type = sleepleader which = 605538 }\r
++	command = { type = sleepleader which = 605539 }\r
++	command = { type = sleepleader which = 605540 }\r
++	command = { type = sleepleader which = 605541 }\r
++	command = { type = sleepleader which = 605542 }\r
++	command = { type = sleepleader which = 605543 }\r
++	command = { type = sleepleader which = 605544 }\r
++	command = { type = sleepleader which = 605545 }\r
++	command = { type = sleepleader which = 605546 }\r
++	command = { type = sleepleader which = 605547 }\r
++	command = { type = sleepleader which = 605548 }\r
++	command = { type = sleepleader which = 605549 }\r
++	command = { type = sleepleader which = 605550 }\r
++	command = { type = sleepleader which = 605551 }\r
++	command = { type = sleepleader which = 605552 }\r
++	command = { type = sleepleader which = 605553 }\r
++	command = { type = sleepleader which = 605554 }\r
++	command = { type = sleepleader which = 605555 }\r
++	command = { type = sleepleader which = 605556 }\r
++	command = { type = sleepleader which = 605557 }\r
++	command = { type = sleepleader which = 605558 }\r
++	command = { type = sleepleader which = 605559 }\r
++	command = { type = sleepleader which = 605560 }\r
++	command = { type = sleepleader which = 605561 }\r
++	command = { type = sleepleader which = 605562 }\r
++	command = { type = sleepleader which = 605563 }\r
++	command = { type = sleepleader which = 605564 }\r
++	command = { type = sleepleader which = 605565 }\r
++	command = { type = sleepleader which = 605566 }\r
++	command = { type = sleepteam which = 605051 }\r
++	command = { type = sleepteam which = 605052 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  太原クーデター ― 革命派の勝利\r
++# 国民軍のクーデターは、衝撃的な結末を迎えた。\r
++# この混乱を制したのは閻錫山でも馮玉祥でもなく、革命家の殷汝耕であったのである。\r
++# 日本通の巨頭と目された人物で、北伐に参加後、北平に隠棲していたが、治水専門家として山西軍閥に招かれた。\r
++# そして殷汝耕は、山西軍閥と国民軍の対立の中で、密かに工作活動を行い、軍の幹部である楊虎城や宋哲元を味方につけることに成功した。\r
++# クーデターが勃発すると、山西省の混乱を鎮めるためとして、殷汝耕は蜂起し、混乱した閻錫山・馮玉祥一派を放逐。\r
++# こうして山西省を掌握した殷汝耕は、正統な革命政府の樹立を宣言しており、山西省は予想外の未来へと突き進み始めている。\r
++#########################################################################\r
++event = {\r
++	id = 6959606\r
++	random = no\r
++	country = CSX\r
++	save_date = yes\r
++\r
++	name = "EVT_6959606_NAME"\r
++	desc = "EVT_6959606_DESC"\r
++	style = 2\r
++ 	picture = "ccip_yin"\r
++\r
++	action = { # 革命、万歳！\r
++	name = "ACTIONNAME6959606A"\r
++	command = { trigger = { division_exists = { type = 22310 id = 19 } } type = remove_division which = 22310 value = 19 } # 山西親衛師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 20 } } type = remove_division which = 22310 value = 20 } # 特務師（晋軍）\r
++	command = { trigger = { division_exists = { type = 22310 id = 8 } } type = remove_division which = 22310 value = 8 } # 第65師\r
++	command = { trigger = { division_exists = { type = 22310 id = 9 } } type = remove_division which = 22310 value = 9 } # 第66師\r
++	command = { trigger = { division_exists = { type = 22310 id = 10 } } type = remove_division which = 22310 value = 10 } # 第73師\r
++	command = { trigger = { division_exists = { type = 22310 id = 12 } } type = remove_division which = 22310 value = 12 } # 第64師\r
++	command = { trigger = { division_exists = { type = 22310 id = 13 } } type = remove_division which = 22310 value = 13 } # 第68師\r
++	command = { trigger = { division_exists = { type = 22310 id = 14 } } type = remove_division which = 22310 value = 14 } # 第101師\r
++	command = { type = sleepminister which = 605001 } # 閻錫山(イェン・シシャン)\r
++	command = { type = sleepminister which = 605002 }\r
++	command = { type = sleepminister which = 605007 }\r
++	command = { type = sleepminister which = 605008 }\r
++	command = { type = sleepminister which = 605010 }\r
++	command = { type = sleepminister which = 605011 }\r
++	command = { type = sleepleader which = 605017 }\r
++	command = { type = sleepleader which = 605020 }\r
++	command = { type = sleepleader which = 605023 }\r
++	command = { type = sleepteam which = 605001 }\r
++	command = { type = sleepminister which = 605004 } # 傅作義(フ・ツォーイー)\r
++	command = { type = sleepminister which = 605023 }\r
++	command = { type = sleepminister which = 605024 }\r
++	command = { type = sleepminister which = 605025 }\r
++	command = { type = sleepminister which = 605026 }\r
++	command = { type = sleepleader which = 605002 }\r
++	command = { type = sleepteam which = 605011 }\r
++	command = { type = sleepminister which = 605013 } # 徐永昌(シュー・ヨンチャン)\r
++	command = { type = sleepminister which = 605014 }\r
++	command = { type = sleepminister which = 605015 }\r
++	command = { type = sleepleader which = 605003 }\r
++	command = { type = sleepminister which = 605027 } # 王靖国(ワン・チンクオ)\r
++	command = { type = sleepminister which = 605028 }\r
++	command = { type = sleepleader which = 605016 }\r
++	command = { type = sleepminister which = 605003 } # 王賛緒(ワン・ツァンシュー)\r
++	command = { type = sleepminister which = 605005 } # 欧陽格(オウ・ヤンゴー)\r
++	command = { type = sleepminister which = 605006 } # 商震(シャン・チェン)\r
++	command = { type = sleepleader which = 605013 }\r
++	command = { type = sleepminister which = 605016 } # 楊愛源（ヤン・アイユアン）\r
++	command = { type = sleepminister which = 605017 }\r
++	command = { type = sleepminister which = 605018 } # 趙戴文（ジャオ・ダイウェン）\r
++	command = { type = sleepminister which = 605019 } # 南桂馨（ナン・クゥイシン）\r
++	command = { type = sleepminister which = 605020 } # 馮司直（フォン・スージー）\r
++	command = { type = sleepminister which = 605201 } # 国民軍閣僚\r
++	command = { type = sleepminister which = 605202 }\r
++	command = { type = sleepminister which = 605203 }\r
++	command = { type = sleepminister which = 605204 }\r
++	command = { type = sleepminister which = 605205 }\r
++	command = { type = sleepminister which = 605206 }\r
++	command = { type = sleepminister which = 605207 }\r
++	command = { type = sleepminister which = 605208 }\r
++	command = { type = sleepminister which = 605209 }\r
++	command = { type = sleepminister which = 605210 }\r
++	command = { type = sleepminister which = 605211 }\r
++	#command = { type = sleepminister which = 605212 }\r
++	#command = { type = sleepminister which = 605213 }\r
++	command = { type = sleepminister which = 605214 }\r
++	command = { type = sleepminister which = 605215 }\r
++	#command = { type = sleepminister which = 605216 }\r
++	command = { type = sleepminister which = 605217 }\r
++	command = { type = sleepminister which = 605218 }\r
++	command = { type = sleepminister which = 605219 }\r
++	#command = { type = sleepminister which = 605220 }\r
++	command = { type = sleepminister which = 605211 }\r
++	command = { type = sleepminister which = 605221 }\r
++	command = { type = sleepminister which = 605222 }\r
++	#command = { type = sleepminister which = 605223 }\r
++	command = { type = sleepminister which = 605224 }\r
++	command = { type = sleepminister which = 605225 }\r
++	#command = { type = sleepminister which = 605226 }\r
++	command = { type = sleepminister which = 605227 }\r
++	command = { type = sleepminister which = 605228 }\r
++	#command = { type = sleepminister which = 605229 }\r
++	command = { type = sleepminister which = 605230 }\r
++	command = { type = sleepminister which = 605231 }\r
++	#command = { type = sleepminister which = 605232 }\r
++	command = { type = sleepminister which = 605233 }\r
++	#command = { type = sleepminister which = 605234 }\r
++	command = { type = sleepminister which = 605235 }\r
++	command = { type = sleepminister which = 605236 }\r
++	command = { type = sleepminister which = 605237 }\r
++	#command = { type = sleepminister which = 605238 }\r
++	command = { type = sleepminister which = 605239 }\r
++	command = { type = sleepminister which = 605240 }\r
++	command = { type = sleepminister which = 605241 }\r
++	command = { type = sleepminister which = 605242 }\r
++	command = { type = sleepminister which = 605243 }\r
++	#command = { type = sleepminister which = 605244 }\r
++	command = { type = sleepminister which = 605245 }\r
++	command = { type = sleepminister which = 605246 }\r
++	#command = { type = sleepminister which = 605247 }\r
++	#command = { type = sleepminister which = 605248 }\r
++	command = { type = sleepminister which = 605249 }\r
++	#command = { type = sleepminister which = 605250 }\r
++	command = { type = sleepleader which = 605501 }\r
++	command = { type = sleepleader which = 605502 }\r
++	#command = { type = sleepleader which = 605503 }\r
++	command = { type = sleepleader which = 605504 }\r
++	command = { type = sleepleader which = 605505 }\r
++	command = { type = sleepleader which = 605506 }\r
++	command = { type = sleepleader which = 605507 }\r
++	command = { type = sleepleader which = 605508 }\r
++	command = { type = sleepleader which = 605509 }\r
++	command = { type = sleepleader which = 605510 }\r
++	command = { type = sleepleader which = 605511 }\r
++	command = { type = sleepleader which = 605512 }\r
++	command = { type = sleepleader which = 605513 }\r
++	command = { type = sleepleader which = 605514 }\r
++	command = { type = sleepleader which = 605515 }\r
++	command = { type = sleepleader which = 605516 }\r
++	command = { type = sleepleader which = 605517 }\r
++	command = { type = sleepleader which = 605518 }\r
++	command = { type = sleepleader which = 605519 }\r
++	command = { type = sleepleader which = 605520 }\r
++	command = { type = sleepleader which = 605511 }\r
++	command = { type = sleepleader which = 605521 }\r
++	command = { type = sleepleader which = 605522 }\r
++	command = { type = sleepleader which = 605523 }\r
++	#command = { type = sleepleader which = 605524 }\r
++	command = { type = sleepleader which = 605525 }\r
++	command = { type = sleepleader which = 605526 }\r
++	#command = { type = sleepleader which = 605527 }\r
++	command = { type = sleepleader which = 605528 }\r
++	command = { type = sleepleader which = 605529 }\r
++	command = { type = sleepleader which = 605530 }\r
++	#command = { type = sleepleader which = 605531 }\r
++	command = { type = sleepleader which = 605532 }\r
++	command = { type = sleepleader which = 605533 }\r
++	command = { type = sleepleader which = 605534 }\r
++	command = { type = sleepleader which = 605535 }\r
++	command = { type = sleepleader which = 605536 }\r
++	#command = { type = sleepleader which = 605537 }\r
++	command = { type = sleepleader which = 605538 }\r
++	command = { type = sleepleader which = 605539 }\r
++	command = { type = sleepleader which = 605540 }\r
++	command = { type = sleepleader which = 605541 }\r
++	command = { type = sleepleader which = 605542 }\r
++	command = { type = sleepleader which = 605543 }\r
++	command = { type = sleepleader which = 605544 }\r
++	#command = { type = sleepleader which = 605545 }\r
++	command = { type = sleepleader which = 605546 }\r
++	#command = { type = sleepleader which = 605547 }\r
++	command = { type = sleepleader which = 605548 }\r
++	command = { type = sleepleader which = 605549 }\r
++	command = { type = sleepleader which = 605550 }\r
++	command = { type = sleepleader which = 605551 }\r
++	command = { type = sleepleader which = 605552 }\r
++	command = { type = sleepleader which = 605553 }\r
++	command = { type = sleepleader which = 605554 }\r
++	command = { type = sleepleader which = 605555 }\r
++	command = { type = sleepleader which = 605556 }\r
++	command = { type = sleepleader which = 605557 }\r
++	command = { type = sleepleader which = 605558 }\r
++	command = { type = sleepleader which = 605559 }\r
++	command = { type = sleepleader which = 605560 }\r
++	command = { type = sleepleader which = 605561 }\r
++	#command = { type = sleepleader which = 605562 }\r
++	command = { type = sleepleader which = 605563 }\r
++	#command = { type = sleepleader which = 605564 }\r
++	command = { type = sleepleader which = 605565 }\r
++	#command = { type = sleepleader which = 605566 }\r
++	command = { type = sleepteam which = 605051 }\r
++	command = { type = sleepteam which = 605052 }\r
++	command = { type = wakeminister which = 605212 }\r
++	command = { type = wakeminister which = 605213 }\r
++	command = { type = wakeminister which = 605216 }\r
++	command = { type = wakeminister which = 605220 }\r
++	command = { type = wakeminister which = 605223 }\r
++	command = { type = wakeminister which = 605226 }\r
++	command = { type = wakeminister which = 605229 }\r
++	command = { type = wakeminister which = 605232 }\r
++	command = { type = wakeminister which = 605234 }\r
++	command = { type = wakeminister which = 605238 }\r
++	command = { type = wakeminister which = 605244 }\r
++	command = { type = wakeminister which = 605247 }\r
++	command = { type = wakeminister which = 605248 }\r
++	command = { type = wakeminister which = 605250 }\r
++	command = { type = wakeminister which = 605251 }\r
++	command = { type = wakeminister which = 605252 }\r
++	command = { type = wakeminister which = 605253 }\r
++	command = { type = wakeminister which = 605254 }\r
++	command = { type = wakeminister which = 605255 }\r
++	command = { type = wakeminister which = 605256 }\r
++	command = { type = wakeminister which = 605257 }\r
++	command = { type = wakeminister which = 605258 }\r
++	command = { type = wakeminister which = 605259 }\r
++	command = { type = wakeminister which = 605260 }\r
++	command = { type = wakeminister which = 605261 }\r
++	command = { type = wakeleader which = 605503 }\r
++	command = { type = wakeleader which = 605524 }\r
++	command = { type = wakeleader which = 605527 }\r
++	command = { type = wakeleader which = 605531 }\r
++	command = { type = wakeleader which = 605537 }\r
++	command = { type = wakeleader which = 605545 }\r
++	command = { type = wakeleader which = 605547 }\r
++	command = { type = wakeleader which = 605562 }\r
++	command = { type = wakeleader which = 605564 }\r
++	command = { type = wakeleader which = 605566 }\r
++	command = { type = wakeminister which = 605051 } # 殷汝耕（イン・ルーゴン）\r
++	command = { type = wakeminister which = 605052 }\r
++	command = { type = wakeminister which = 605059 }\r
++	command = { type = wakeminister which = 605060 }\r
++	command = { type = wakeminister which = 605068 } # 殷同（イン・トン）\r
++	command = { type = wakeminister which = 605078 } # 池宗墨（チー・ゾンモー）\r
++	command = { type = wakeminister which = 605079 }\r
++	command = { type = wakeminister which = 605080 }\r
++	command = { type = wakeminister which = 605081 }\r
++	command = { type = wakeminister which = 605074 } # 張仁蠡（ヂャン・レンリー）\r
++	command = { type = wakeminister which = 605074 } # 張仁蠡（ヂャン・レンリー）\r
++	command = { type = wakeminister which = 605262 } # 江天鐸(ジアン・ティエンドゥオ)\r
++	command = { type = wakeminister which = 605263 } # 殷汝驪(イン・ルーリー)\r
++	command = { type = wakeminister which = 605264 } # 程克(チョン・コー)\r
++	command = { type = wakeminister which = 605265 } # 李垣(リー・ユェン)\r
++	command = { type = name where = CSX which = "河北軍閥" }\r
++	command = { type = flag_ext where = CSX which = "_ISHIN" }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = domestic which = free_market value = -2 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = domestic which = defense_lobby value = 5 }\r
++	command = { type = domestic which = interventionism value = 5 }\r
++	command = { type = headofstate which = 605051 } # 殷汝耕(イン・ルーゲン)\r
++	command = { type = headofgovernment which = 605080 } # 池宗墨(チー・ゾンモー)\r
++	command = { type = foreignminister which = 605262 } # 江天鐸(ジアン・ティエンドゥオ)\r
++	command = { type = armamentminister which = 605254 } # 孫蔚如(スン・ウェイルー)\r
++	command = { type = ministerofsecurity which = 605264 } # 程克(チョン・コー)\r
++	command = { type = ministerofintelligence which = 605074 } # 張仁蠡(ジャン・レンリー)\r
++	command = { type = chiefofstaff which = 605258 } # 楊虎城(ヤン・フチェン)\r
++	command = { type = chiefofarmy which = 605240 } # 宋哲元(ソン・ジョーユエン)\r
++	command = { type = chiefofnavy which = 605009 } # ドミトリー・クロルチェフ\r
++	command = { type = chiefofair which = 605034 } # 孔令恂(コン・リンスン)\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  経済計画の再開\r
++# 1912年に山西省の軍政両権を掌握した閻錫山は、 「保境安民」（山西モンロー主義）を唱えて内政に力を入れた。\r
++# しかし、北京政府との対立や予算不足などが重なり、経済計画はその多くが途中で停止している。\r
++# 計画を再開することで国内を発展させることができるだろう。\r
++#########################################################################\r
++event = {\r
++	id = 6959607\r
++	random = no\r
++	country = CSX\r
+ 	save_date = yes\r
+ \r
+ 	decision = {\r
+-	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	OR = {\r
++	event = 6959604 # 太原クーデター ― 国民軍の勝利\r
++	event = 6959605 # 太原クーデター ― 晋軍の勝利\r
++	event = 6959606 # 太原クーデター ― 革命派の勝利\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
+ 	money = 100\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	OR = {\r
++	event = { id = 6959604 days = 90 } # 太原クーデター ― 国民軍の勝利\r
++	event = { id = 6959605 days = 90 } # 太原クーデター ― 晋軍の勝利\r
++	event = { id = 6959606 days = 90 } # 太原クーデター ― 革命派の勝利\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	random = 20\r
+ 	}\r
+ \r
+-	name = "EVT_6959601_NAME"\r
+-	desc = "EVT_6959601_DESC"\r
++	name = "EVT_6959607_NAME"\r
++	desc = "EVT_6959607_DESC"\r
+ 	style = 2\r
+  	picture = "ccip_taiyuan"\r
+  	decision_picture = "decision_ccip_beiyangarmy"\r
+@@ -118,8 +973,8 @@ event = {
+ 	offset = 7\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action = { # 国民の精神を前進させるために努力するのだ\r
+-	name = "ACTIONNAME6959601A"\r
++	action = { # 計画を再開する\r
++	name = "ACTIONNAME6959607A"\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = domestic which = freedom value = 1 }\r
+@@ -128,6 +983,7 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
+ #########################################################################\r
+ #  山西省銀行の改革\r
+ # 山西省銀行は、閻錫山が1919年に山西省造幣局を再編することで設立された金融機関である。\r
+@@ -135,43 +991,47 @@ event = {
+ # 経済の悪化を避けるためにも、山西省銀行を再編して、経営を是正する必要がある。\r
+ #########################################################################\r
+ event = {\r
+-	id = 6959602\r
++	id = 6959608\r
+ 	random = no\r
+ 	country = CSX\r
+ \r
+ 	decision = {\r
+-	event = { id = 6959601 days = 120 } # 山西省政建設計画\r
++	event = 6959607 # 経済計画の再開\r
+ 	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
+-	headofstate = 605023 # 殷汝耕(イン・ルーゲン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
+ 	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
++	event = { id = 6959607 days = 90 } # 経済計画の再開\r
+ 	money = 350\r
+ 	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
+-	headofstate = 605023 # 殷汝耕(イン・ルーゲン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
+ 	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 6959601 days = 120 } # 山西省政建設計画\r
++	event = { id = 6959607 days = 120 } # 経済計画の再開\r
+ 	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
+-	headofstate = 605023 # 殷汝耕(イン・ルーゲン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
+ 	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	random = 15\r
+ 	}\r
+ \r
+-	name = "EVT_6959602_NAME"\r
+-	desc = "EVT_6959602_DESC"\r
++	name = "EVT_6959608_NAME"\r
++	desc = "EVT_6959608_DESC"\r
+ 	style = 2\r
+  	picture = "ccip_1913loan"\r
+  	decision_picture = "decision_money_devaluation"\r
+@@ -181,7 +1041,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 銀行を改革する\r
+-	name = "ACTIONNAME6959602A"\r
++	name = "ACTIONNAME6959608A"\r
+ 	command = { trigger = { ai = no } type = money value = -350 }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+@@ -192,7 +1052,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 銀行の大規模な再編を行う\r
+-	name = "ACTIONNAME6959602B"\r
++	name = "ACTIONNAME6959608B"\r
+ 	command = { trigger = { ai = no } type = money value = -700 }\r
+ 	command = { type = dissent value = -6 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+@@ -204,40 +1064,54 @@ event = {
+ \r
+ #########################################################################\r
+ #  西北実業建設公司の設立\r
+-# 山西省では、閻錫山による長い統治を受けてもなお、産業が発展する余地がある。\r
+-# 閻錫山は化学産業や紡績産業、鉱物や機械産業の発展のため、西北実業建設公司という国営企業を設立。\r
+-# 当初は8つの工場しかなかったが、数年で急成長を遂げたことで20を超える工場を持つに至った。\r
++# 山西省は、閻錫山による長い統治の中で多くの産業が発展し、華北における重要な工業都市に成長した。\r
++# その代表例が化学産業や紡績産業、鉱物や機械産業の発展のため、西北実業建設公司という国営企業であり、当初は8つの工場しかなかったが、\r
++# 数年で急成長を遂げ、20を超える工場を持つほどに成長していた。\r
++# 現在、国内の政治の混乱がようやく収まったことで、国内の経済が活気を帯びはじめており、投資を行えば経済を飛躍的に向上できるだろう。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959603\r
++	id = 6959609\r
+ 	random = no\r
+ 	country = CSX\r
+ \r
+ 	decision = {\r
+-	event = { id = 6959601 days = 240 } # 山西省政建設計画\r
++	event = 6959607 # 経済計画の再開\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
++	event = { id = 6959607 days = 180 } # 経済計画の再開\r
+ 	money = 400\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 6959601 days = 240 } # 山西省政建設計画\r
++	event = { id = 6959607 days = 240 } # 経済計画の再開\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	random = 14\r
+ 	}\r
+ \r
+-	name = "EVT_6959603_NAME"\r
+-	desc = "EVT_6959603_DESC"\r
++	name = "EVT_6959609_NAME"\r
++	desc = "EVT_6959609_DESC"\r
+ 	style = 2\r
+  	picture = "industry"\r
+  	decision_picture = "decision_new_deal"\r
+@@ -246,24 +1120,24 @@ event = {
+ 	offset = 22\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action = { # 会社を設立する\r
+-	name = "ACTIONNAME6959603A"\r
++	action = { # 投資する\r
++	name = "ACTIONNAME6959609A"\r
+ 	command = { trigger = { ai = no } type = money value = -400 }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = industrial_modifier which = total value = 1 }\r
+-	command = { type = construct which = ic where = 1252 value = 1 }\r
++	command = { type = construct which = ic where = 1252 value = 2 }\r
+ 	ai_chance = 90\r
+ 	}\r
+ \r
+-	action = { # 大規模な工場を建設する\r
+-	name = "ACTIONNAME6959603B"\r
++	action = { # 大規模な投資をする\r
++	name = "ACTIONNAME6959609B"\r
+ 	command = { trigger = { ai = no } type = money value = -800 }\r
+ 	command = { type = dissent value = -6 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = industrial_modifier which = total value = 2 }\r
+-	command = { type = construct which = ic where = 1251 value = 1 }\r
+-	command = { type = construct which = ic where = 1252 value = 1 }\r
++	command = { type = construct which = ic where = 1251 value = 2 }\r
++	command = { type = construct which = ic where = 1252 value = 2 }\r
+ 	ai_chance = 10\r
+ 	}\r
+ }\r
+@@ -271,41 +1145,54 @@ event = {
+ #########################################################################\r
+ #  同蒲鉄道の建設\r
+ # 同蒲鉄道は山西省の大同から陝西省まの数百キロを結ぶ鉄道である。\r
+-# 1933年11月ごろから着工が始まり、1939年に線路が完成した。\r
+-# この鉄道建設にあたり、閻錫山自らが最高責任者になり、また数千人の兵士が動員された。\r
++# 建設には数千人の兵士が動員されたが、建設は政治的内紛により途中で停止していた。\r
++# ようやく政府内の混乱が静まったことで、この鉄道計画を再始動できる。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959604\r
++	id = 6959610\r
+ 	random = no\r
+ 	country = CSX\r
+ \r
+ 	decision = {\r
+-	event = { id = 6959601 days = 360 } # 山西省政建設計画\r
++	event = { id = 6959607 days = 240 } # 経済計画の再開\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	decision_trigger = { \r
++	decision_trigger = {\r
++	event = { id = 6959607 days = 360 } # 経済計画の再開\r
+ 	money = 300\r
+-	metal = 500\r
+-	supplies = 500\r
++	metal = 750\r
++	supplies = 1500\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 6959601 days = 360 } # 山西省政建設計画\r
++	event = { id = 6959607 days = 360 } # 経済計画の再開\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	random = 15\r
+ 	}\r
+ \r
+-	name = "EVT_6959604_NAME"\r
+-	desc = "EVT_6959604_DESC"\r
++	name = "EVT_6959610_NAME"\r
++	desc = "EVT_6959610_DESC"\r
+ 	style = 2\r
+  	picture = "baghdad_railway"\r
+  	decision_picture = "decision_new_deal"\r
+@@ -315,13 +1202,13 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 鉄道を建設する\r
+-	name = "ACTIONNAME6959604A"\r
++	name = "ACTIONNAME6959610A"\r
+ 	command = { trigger = { ai = no } type = money value = -300 }\r
+-	command = { trigger = { ai = no } type = metalpool value = -500 }\r
+-	command = { trigger = { ai = no } type = supplies value = -500 }\r
++	command = { trigger = { ai = no } type = metalpool value = -750 }\r
++	command = { trigger = { ai = no } type = supplies value = -1500 }\r
+ 	command = { type = dissent value = -4 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+-	command = { type = industrial_modifier which = total value = 1 }\r
++	command = { type = industrial_modifier which = total value = 2 }\r
+ 	command = { type = construct which = infrastructure where = 1251 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = 1252 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = 1257 value = 10 }\r
+@@ -330,13 +1217,13 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 大規模な鉄道を建設する\r
+-	name = "ACTIONNAME6959604B"\r
++	name = "ACTIONNAME6959610B"\r
+ 	command = { trigger = { ai = no } type = money value = -600 }\r
+-	command = { trigger = { ai = no } type = metalpool value = -1000 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1000 }\r
++	command = { trigger = { ai = no } type = metalpool value = -1500 }\r
++	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = dissent value = -8 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+-	command = { type = industrial_modifier which = total value = 2 }\r
++	command = { type = industrial_modifier which = total value = 4 }\r
+ 	command = { type = construct which = infrastructure where = 1251 value = 20 }\r
+ 	command = { type = construct which = infrastructure where = 1252 value = 20 }\r
+ 	command = { type = construct which = infrastructure where = 1257 value = 20 }\r
+@@ -348,40 +1235,53 @@ event = {
+ #########################################################################\r
+ #  太原兵工廠の拡大\r
+ # 太原兵工廠は、瀋陽兵工廠、漢陽兵工廠に並ぶ中国有数の兵器工場の一つである。\r
+-# 1917年以降、急速に拡大する閻錫山の軍隊は、武器と弾薬が常に不足しており、弾薬・武器工場の建設は最優先課題であった。\r
+-# 閻錫山は今後拡大するであろう中国の戦乱に備え、工場の大幅な拡大を計画している。\r
++# 1917年以降、急速に拡大する山西省の軍隊は、武器と弾薬が常に不足しており、弾薬・武器工場の建設は最優先課題であった。\r
++# すでに工場のさらなる拡張計画が立案されており、資金を投じれば計画を直ちに実行できる。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959605\r
++	id = 6959611\r
+ 	random = no\r
+ 	country = CSX\r
+ \r
+ 	decision = {\r
+-	event = { id = 6959601 days = 480 } # 山西省政建設計画\r
++	event = { id = 6959607 days = 360 } # 経済計画の再開\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
++	event = { id = 6959607 days = 480 } # 経済計画の再開\r
+ 	money = 400\r
+ 	supplies = 750\r
+-	headofstate = 606001 # 閻錫山(イェン・シシャン)\r
++	OR = {\r
++	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 6959601 days = 480 } # 山西省政建設計画\r
++	event = { id = 6959607 days = 480 } # 経済計画の再開\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
+ 	random = 13\r
+ 	}\r
+ \r
+-	name = "EVT_6959605_NAME"\r
+-	desc = "EVT_6959605_DESC"\r
++	name = "EVT_6959611_NAME"\r
++	desc = "EVT_6959611_DESC"\r
+ 	style = 2\r
+  	picture = "Chinese_Anti-Tank"\r
+  	decision_picture = "decision_new_deal"\r
+@@ -391,44 +1291,47 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 工場を拡大する\r
+-	name = "ACTIONNAME6959605A"\r
++	name = "ACTIONNAME6959611A"\r
+ 	command = { trigger = { ai = no } type = money value = -400 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -750 }\r
+ 	command = { type = dissent value = -4 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+-	command = { type = industrial_modifier which = total value = 1 }\r
++	command = { type = build_time which = land value = -2 where = relative }\r
++	command = { type = build_cost which = land value = -2 where = relative }\r
+ 	command = { type = construct which = ic where = 1252 value = 1 }\r
+ 	ai_chance = 90\r
+ 	}\r
+ \r
+ 	action = { # 工場を大幅に拡大する\r
+-	name = "ACTIONNAME6959605B"\r
++	name = "ACTIONNAME6959611B"\r
+ 	command = { trigger = { ai = no } type = money value = -800 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -1500 }\r
+ 	command = { type = dissent value = -8 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+-	command = { type = industrial_modifier which = total value = 2 }\r
++	command = { type = build_time which = land value = -4 where = relative }\r
++	command = { type = build_cost which = land value = -4 where = relative }\r
+ 	command = { type = construct which = ic where = 1252 value = 2 }\r
+ 	ai_chance = 10\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  日本の企業の接触\r
++#  日本企業の誘致\r
+ # 日本の企業はかねてから中国における活動に興味を示している。\r
+-# 豊富な自然資源が存在していると同時に反日の機運が低い山西省で投資を行いたいとのことだが、どうするべきだろうか？\r
++# 山西省には豊富な自然資源が存在しているが、それをすべて生かしているとはいいがたく、日本企業を誘致できれば、経済の効率を上げることができるだろう。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959606\r
++	id = 6959612\r
+ 	random = no\r
+ 	country = CSX\r
+ \r
+ 	trigger = {\r
+-	event = { id = 6959601 days = 360 } # 山西省政建設計画\r
++	event = { id = 6959607 days = 360 } # 経済計画の再開\r
+ 	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
+-	headofstate = 605023 # 殷汝耕(イン・ルーゲン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
+ 	}\r
+ 	NOT = { government = { type = communist country = JAP } }\r
+ 	NOT = { war = { country = JAP country = CSX } }\r
+@@ -436,8 +1339,8 @@ event = {
+ 	random = 10\r
+ 	}\r
+ \r
+-	name = "EVT_6959606_NAME"\r
+-	desc = "EVT_6959606_DESC"\r
++	name = "EVT_6959612_NAME"\r
++	desc = "EVT_6959612_DESC"\r
+ 	style = 2\r
+  	picture = "industry2"\r
+ \r
+@@ -445,227 +1348,399 @@ event = {
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action = { # 投資を認める\r
+-	name = "ACTIONNAME6959606A"\r
++	action = { # 日本に提案する\r
++	name = "ACTIONNAME6959612A"\r
++	trigger = {\r
++	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	}\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = relation which = JAP value = 5 }\r
+-	command = { type = event which = 6959607 where = JAP when = 1 }\r
+-	ai_chance = 30\r
++	command = { type = event which = 6959613 where = JAP when = 1 }\r
++	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 日本企業の活動は認めない！\r
+-	name = "ACTIONNAME6959606B"\r
++	name = "ACTIONNAME6959612B"\r
++	trigger = {\r
++	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	}\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = relation which = JAP value = -5 }\r
+-	command = { type = sleepevent which = 6959607 } # 関連イベント\r
+-	command = { type = sleepevent which = 6959608 }\r
+-	ai_chance = 70\r
++	command = { type = sleepevent which = 6959613 } # 関連イベント\r
++	command = { type = sleepevent which = 6959614 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 投資を認める\r
++	name = "ACTIONNAME6959612A"\r
++	trigger = {\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	}\r
++	command = { type = dissent value = 2 }\r
++	command = { type = relation which = JAP value = 5 }\r
++	command = { type = event which = 6959613 where = JAP when = 1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 日本企業の活動は認めない！\r
++	name = "ACTIONNAME6959612B"\r
++	trigger = {\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	}\r
++	command = { type = dissent value = -2 }\r
++	command = { type = relation which = JAP value = -5 }\r
++	command = { type = sleepevent which = 6959613 } # 関連イベント\r
++	command = { type = sleepevent which = 6959614 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 投資を認める\r
++	name = "ACTIONNAME6959612A"\r
++	trigger = {\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
++	command = { type = dissent value = 2 }\r
++	command = { type = relation which = JAP value = 5 }\r
++	command = { type = event which = 6959613 where = JAP when = 1 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 日本企業の活動は認めない！\r
++	name = "ACTIONNAME6959612B"\r
++	trigger = {\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
++	command = { type = dissent value = -2 }\r
++	command = { type = relation which = JAP value = -5 }\r
++	command = { type = sleepevent which = 6959613 } # 関連イベント\r
++	command = { type = sleepevent which = 6959614 }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  山西省における企業活動\r
+-# 日本の企業はかねてから中国における活動に興味を示していた。\r
+-# 豊富な自然資源が存在していると同時に反日の機運が低い山西省で投資を行いたいとのことだが、許可するべきだろうか？\r
++#  山西軍閥が企業誘致を提案\r
++# 中国の軍閥である山西軍閥が、山西省への企業誘致という大胆な提案してきた。\r
++# 山西軍閥は、日本企業を誘致することで産業や雇用の成長に期待しており、日本企業もこの案に大変興味を示している。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959607\r
++	id = 6959613\r
+ 	random = no\r
+ 	country = JAP\r
+ \r
+-	name = "EVT_6959607_NAME"\r
+-	desc = "EVT_6959607_DESC"\r
++	name = "EVT_6959613_NAME"\r
++	desc = "EVT_6959613_DESC"\r
+ 	style = 2\r
+  	picture = "industry2"\r
+ \r
+ \r
+ 	action = { # 活動を許可する\r
+-	name = "ACTIONNAME6959607A"\r
+-	command = { type = money value = -30 }\r
++	name = "ACTIONNAME6959613A"\r
++	command = { type = money value = -200 }\r
+ 	command = { type = relation which = CSX value = 10 }\r
+-	command = { type = event which = 6959608 where = CSX when = 1 }\r
+-	ai_chance = 30\r
++	command = { type = event which = 6959614 where = CSX when = 1 }\r
++	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 中国での企業活動は無謀だ\r
+-	name = "ACTIONNAME6959607B"\r
++	name = "ACTIONNAME6959613B"\r
+ 	command = { type = relation which = CSX value = -10 }\r
+-	command = { type = sleepevent which = 6959608 } # 関連イベント\r
+-	ai_chance = 70\r
++	command = { type = sleepevent which = 6959614 } # 関連イベント\r
++	ai_chance = 50\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+ #  山西産業株式会社の設立\r
+-# 日本の企業はかねてから中国における活動に興味を示していた。\r
++# 日本企業は、山西軍閥の誘致活動に誘われ、山西省への経済活動を開始した。\r
+ # 山西省では日支経済連携を目的として日本資本による企業が設立され、経済活動を始めている。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959608\r
++	id = 6959614\r
+ 	random = no\r
+-	country = JAP\r
++	country = CSX\r
+ \r
+-	name = "EVT_6959608_NAME"\r
+-	desc = "EVT_6959608_DESC"\r
++	name = "EVT_6959614_NAME"\r
++	desc = "EVT_6959614_DESC"\r
+ 	style = 2\r
+  	picture = "industry2"\r
+ \r
+ 	action = { # 日支経済を一体化するのだ\r
+-	name = "ACTIONNAME6959608A"\r
++	name = "ACTIONNAME6959614A"\r
+ 	command = { type = money value = -30 }\r
+ 	command = { type = industrial_modifier which = total value = 1 }\r
+ 	command = { type = construct which = ic where = 1252 value = 1 }\r
+-	command = { type = wakeminister which = 605031 } # 河本大作\r
+-	command = { type = armamentminister which = 605031 }\r
++	command = { type = wakeminister which = 605065 } # 河本大作\r
++	command = { type = armamentminister which = 605065 } # 河本大作\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+-\r
+ #########################################################################\r
+-#  山西軍閥内での権力闘争\r
+-# 山西軍閥は、中国北部の山西省で大きな勢力を誇っている。\r
+-# しかし、最近では閻錫山の専制的な統治に不満を持つ勢力が登場し、軍閥内での権力闘争が激化している。\r
+-# 彼らは、閻錫山の政策に反対し、民衆の不満を抑えきれないと主張している。\r
+-# 一方、閻錫山は反対勢力を弾圧し、自らの支配力を維持するために奮闘していた。\r
+-# このような混迷を抱えた山西軍閥において、どのような展開が待ち受けているのだろうか。\r
++#  軍の再建\r
++# 山西省の支配をめぐる政治内紛により、軍は大きな痛手を被った。\r
++# 国を守る軍の再建は急務であるが、どのように再建するか、参謀本部では方針が分かれている。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959609\r
++	id = 6959615\r
+ 	random = no\r
+ 	country = CSX\r
+ \r
++	decision = {\r
++	event = { id = 6959607 days = 360 } # 経済計画の再開\r
++	OR = {\r
++	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
++	NOT = { ispuppet = CSX }\r
++	atwar = no\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 6959611 # 太原兵工廠の拡大\r
++	money = 300\r
++	supplies = 2000\r
++	OR = {\r
++	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
++	NOT = { ispuppet = CSX }\r
++	atwar = no\r
++	}\r
++\r
+ 	trigger = {\r
+-	event = 6959601 # 山西省政建設計画\r
++	event = { id = 6959607 days = 360 } # 経済計画の再開\r
++	OR = {\r
+ 	headofstate = 605001 # 閻錫山(イェン・シシャン)\r
++	headofstate = 605201 # 馮玉祥(フェン・ユクシャン)\r
++	headofstate = 605051 # 殷汝耕(イン・ルーゲン)\r
++	}\r
+ 	NOT = { ispuppet = CSX }\r
+ 	atwar = no\r
++	random = 15\r
+ 	}\r
+ \r
+-	name = "EVT_6959609_NAME"\r
+-	desc = "EVT_6959609_DESC"\r
++	name = "EVT_6959615_NAME"\r
++	desc = "EVT_6959615_DESC"\r
+ 	style = 2\r
+- 	picture = "ccip_may4"\r
++ 	picture = "ccip_taiyuan"\r
++ 	decision_picture = "decision_ccip_beiyangarmy"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 16\r
++	offset = 24\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action = { # 閻錫山が今の地位を保つ\r
+-	name = "ACTIONNAME6959609A"\r
+-	trigger = {\r
+-	OR = {\r
+-	NOT = {\r
+-	flag = china_shanxi_1 # 閻錫山（通常）ルート\r
+-	flag = china_shanxi_2 # 閻錫山（共和）\r
+-	flag = china_shanxi_3 # 閻錫山反対派ルート\r
+-	}\r
+-	AND = {\r
+-	flag = china_shanxi_1 # 閻錫山（通常）ルート\r
+-	NOT = {\r
+-	#flag = china_shanxi_1 # 閻錫山（通常）ルート\r
+-	flag = china_shanxi_2 # 閻錫山（共和）\r
+-	flag = china_shanxi_3 # 閻錫山反対派ルート\r
+-	}\r
+-	}\r
++	action = { # 歩兵主体で再建する\r
++	name = "ACTIONNAME6959615A"\r
++	command = { trigger = { ai = no } type = money value = -300 }\r
++	command = { trigger = { ai = no } type = supplies value = -2000 }\r
++	command = { type = dissent value = -2 }\r
++	command = { type = morale which = land value = 2 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
++	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
++	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
++	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
++	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
++	command = { type = add_division value = militia when = 4 where = cavalry_brigade }\r
++\r
++	ai_chance = 35\r
+ 	}\r
++\r
++	action = { # 騎兵主体で再建する\r
++	name = "ACTIONNAME6959615B"\r
++	command = { trigger = { ai = no } type = money value = -300 }\r
++	command = { trigger = { ai = no } type = supplies value = -2000 }\r
++	command = { type = dissent value = -2 }\r
++	command = { type = morale which = land value = 2 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = cavalry when = 7 }\r
++	command = { type = add_division value = cavalry when = 7 }\r
++	command = { type = add_division value = cavalry when = 7 }\r
++	ai_chance = 35\r
+ 	}\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 60\r
++\r
++	action = { # 山岳兵主体で再建する\r
++	name = "ACTIONNAME6959615C"\r
++	command = { trigger = { ai = no } type = money value = -300 }\r
++	command = { trigger = { ai = no } type = supplies value = -2000 }\r
++	command = { type = dissent value = -2 }\r
++	command = { type = morale which = land value = 2 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = bergsjaeger when = 7 }\r
++	command = { type = add_division value = bergsjaeger when = 7 }\r
++	command = { type = add_division value = bergsjaeger when = 7 }\r
++	ai_chance = 30\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次北伐 ― 山西軍閥の反応\r
++# 中国の正当政府の地位を巡る北京政府と国民政府の戦いが始まったことで、山西軍閥はこの戦争の帰趨を決める立場にある。\r
++# 軍の将校と民族主義者は、かつて統一を目指す孫文が立ち上げた新政府の理想のために北伐に参加するべきだと主張し、\r
++# 実業家や連邦主義を主張する政治家は独裁的な国民政府を否定し、今こそ打倒する時が来たと唱えている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959616\r
++	random = no\r
++	country = CSX\r
+ \r
+-	action = { # 共和派と妥協した\r
+-	name = "ACTIONNAME6959609B"\r
+ 	trigger = {\r
++	exists = CHI\r
+ 	OR = {\r
+-	NOT = {\r
+-	flag = china_shanxi_1 # 閻錫山（通常）ルート\r
+-	flag = china_shanxi_2 # 閻錫山（共和）\r
+-	flag = china_shanxi_3 # 閻錫山反対派ルート\r
++	war = { country = CHI country = CHC }\r
++	war = { country = CHI country = U36 }\r
++	war = { country = CHI country = U74 }\r
+ 	}\r
+-	AND = {\r
+-	flag = china_shanxi_2 # 閻錫山（共和）\r
+ 	NOT = {\r
+-	flag = china_shanxi_1 # 閻錫山（通常）ルート\r
+-	#flag = china_shanxi_2 # 閻錫山（共和）\r
+-	flag = china_shanxi_3 # 閻錫山反対派ルート\r
+-	}\r
+-	}\r
++	alliance = { country = -1 country = CHI }\r
++	alliance = { country = -1 country = CHC }\r
++	alliance = { country = -1 country = U36 }\r
++	alliance = { country = -1 country = U74 }\r
+ 	}\r
++	NOT = { ispuppet = CSX }\r
++	atwar = no\r
+ 	}\r
+-	command = { type = dissent value = 10 }\r
+-	command = { type = set_domestic which = democratic value = 10 }\r
+-	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { type = domestic which = free_market value = 5 }\r
+-	command = { type = domestic which = freedom value = 5 }\r
+-	command = { type = headofstate which = 605001 } # 閻錫山(イェン・シシャン)\r
+-	command = { type = headofgovernment which = 605051 } # 傅作義(フ・ツォーイー)\r
+-	command = { type = foreignminister which = 605003 } # 王賛緒(ワン・ツァンシュー)\r
+-	command = { type = armamentminister which = 605055 } # 王靖国(ワン・チンクオ)\r
+-	command = { type = ministerofsecurity which = 605056 } # 霍原璧(フオ・ユアンビ)\r
+-	command = { type = ministerofintelligence which = 605057 } # 李生達(リー・センダ)\r
+-	command = { type = chiefofstaff which = 605052 } # 傅作義(フ・ツォーイー)\r
+-	command = { type = chiefofarmy which = 605060 } # 石彦懋(シー・ヤンマオ)\r
+-	command = { type = chiefofnavy which = 605009 } # ドミトリー・クロルチェフ\r
+-	command = { type = chiefofair which = 605048 } # 孔令恂(コン・リンスン)\r
+-	ai_chance = 20\r
++\r
++	name = "EVT_6959616_NAME"\r
++	desc = "EVT_6959616_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	date = { day = 0 month = 5 year = 1936 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 北伐に参加する（ゲーム終了）\r
++	name = "ACTIONNAME6959616A"\r
++	trigger = { headofstate = 605001 } # 閻錫山(イェン・シシャン)\r
++	command = { type = event which = 6959617 where = CHI when = 0 }\r
++	ai_chance = 45\r
+ 	}\r
+ \r
+-	action = { # 反対派が支持される\r
+-	name = "ACTIONNAME6959609C"\r
+-	trigger = {\r
+-	OR = {\r
+-	NOT = {\r
+-	flag = china_shanxi_1 # 閻錫山（通常）ルート\r
+-	flag = china_shanxi_2 # 閻錫山（共和）\r
+-	flag = china_shanxi_3 # 閻錫山反対派ルート\r
++	action = { # 中原に介入する時がきた\r
++	name = "ACTIONNAME6959616B"\r
++	trigger = { headofstate = 605001 } # 閻錫山(イェン・シシャン)\r
++	command = { type = belligerence which = CSX value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = end_non_aggression which = CSX where = CHI }\r
++	command = { type = end_non_aggression which = CSX where = CHC }\r
++	command = { type = end_non_aggression which = CSX where = U36 }\r
++	command = { type = end_non_aggression which = CSX where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CSX }\r
++	command = { type = end_guarantee which = CHC where = CSX }\r
++	command = { type = end_guarantee which = U36 where = CSX }\r
++	command = { type = end_guarantee which = U74 where = CSX }\r
++	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
++	command = { type = sleepevent which = 6959617 }\r
++	ai_chance = 10\r
+ 	}\r
+-	AND = {\r
+-	flag = china_shanxi_3 # 閻錫山反対派ルート\r
+-	NOT = {\r
+-	flag = china_shanxi_1 # 閻錫山（通常）ルート\r
+-	flag = china_shanxi_2 # 閻錫山（共和）\r
+-	#flag = china_shanxi_3 # 閻錫山反対派ルート\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959616C"\r
++	trigger = { headofstate = 605001 } # 閻錫山(イェン・シシャン)\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 45\r
+ 	}\r
++\r
++	action = { # 北伐に参加する（ゲーム終了）\r
++	name = "ACTIONNAME6959616A"\r
++	trigger = { NOT = { headofstate = 605001 } } # 閻錫山(イェン・シシャン)\r
++	command = { type = event which = 6959617 where = CHI when = 0 }\r
++	ai_chance = 0\r
+ 	}\r
++\r
++	action = { # 中原に介入する時がきた\r
++	name = "ACTIONNAME6959616B"\r
++	trigger = { NOT = { headofstate = 605001 } } # 閻錫山(イェン・シシャン)\r
++	command = { type = belligerence which = CSX value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = end_non_aggression which = CSX where = CHI }\r
++	command = { type = end_non_aggression which = CSX where = CHC }\r
++	command = { type = end_non_aggression which = CSX where = U36 }\r
++	command = { type = end_non_aggression which = CSX where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CSX }\r
++	command = { type = end_guarantee which = CHC where = CSX }\r
++	command = { type = end_guarantee which = U36 where = CSX }\r
++	command = { type = end_guarantee which = U74 where = CSX }\r
++	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
++	command = { type = sleepevent which = 6959617 }\r
++	ai_chance = 100\r
+ 	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959616C"\r
++	trigger = { NOT = { headofstate = 605001 } } # 閻錫山(イェン・シシャン)\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 0\r
+ 	}\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = name where = CSX which = "華北軍閥" }\r
+-	#command = { type = flag_ext where = CSX which = "_NS" }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = domestic which = free_market value = -1 }\r
+-	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 605023 } # 殷汝耕(イン・ルーゲン)\r
+-	command = { type = headofgovernment which = 605035 } # 蘇体仁（スー・ティーレン）\r
+-	command = { type = foreignminister which = 605027 } # 王蔭泰（ワン・インタイ）\r
+-	command = { type = armamentminister which = 605037 } # 殷同（イン・トン）\r
+-	command = { type = ministerofsecurity which = 605039 } # 夏粛初（シャー・スーチュー）\r
+-	command = { type = ministerofintelligence which = 605042 } # 杜錫鈞（ドゥー・シージュン）\r
+-	command = { type = chiefofstaff which = 605013 } # 徐永昌(シュー・ヨンチャン)\r
+-	command = { type = chiefofarmy which = 605045 } # 門致中（メン・ジージョン）\r
+-	command = { type = chiefofnavy which = 605009 } # ドミトリー・クロルチェフ\r
+-	command = { type = chiefofair which = 605048 } # 孔令恂(コン・リンスン)\r
+-	ai_chance = 20\r
++\r
++}\r
++\r
++#########################################################################\r
++#  第二次北伐 ― 山西軍閥が北伐に参加を表明\r
++# 北京政府との戦いのさなか、山西軍閥が北伐の参加を表明した！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959617\r
++	random = no\r
++	country = CHI\r
++\r
++	name = "EVT_6959617_NAME"\r
++	desc = "EVT_6959617_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = inherit which = CSX value = 1 }\r
++	ai_chance = 100\r
+ 	}\r
+ }\r
++\r
++#########################################################################\r
++#  軍閥統一戦線\r
+ #########################################################################\r
+ #  軍閥統一戦線の提案（CSX）\r
+-# 1926年、蒋介石が主導した北伐が失敗したことで、中国の再統一は遠のいていた。\r
+-# しかし近年に生起した中原における戦争の末、再び中国を統一しうる勢力が登場すると、\r
+-# 地方の秩序が乱れることを恐れていた軍閥は警戒を強めた。\r
+-# こうした中、諸勢力は軍閥同士が協力することで中央政府に対抗することを考えるようになり、\r
+-# 山西軍閥の閻錫山の提案によって、諸軍閥の代表を集めて会談を行うことが決定された。\r
++# 辛亥革命以降、長引く内戦により、中国の再統一は遠のいていた。\r
++# しかし近年に生起した中原における戦争の末、再び中国を統一しうる勢力が登場すると、地方の秩序が乱れることを恐れていた軍閥は警戒を強めた。\r
++# こうした中、諸勢力は軍閥同士が協力することで中央政府に対抗することを考えるようになり、軍閥の代表を集めて会談を行うことが決定された。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959610\r
++	id = 6959621\r
+ 	random = no\r
+ 	country = CSX\r
+ \r
+@@ -703,8 +1778,8 @@ event = {
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_6959610_NAME"\r
+-	desc = "EVT_6959610_DESC"\r
++	name = "EVT_6959621_NAME"\r
++	desc = "EVT_6959621_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_Nishiyamaconference"\r
+ 	decision_picture = "decision_ccip_Nishiyamaconference"\r
+@@ -714,7 +1789,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 会議の開催を提案する\r
+-	name = "ACTIONNAME6959610A"\r
++	name = "ACTIONNAME6959621A"\r
+ 	trigger = {\r
+ 	OR = {\r
+ 	NOT = {\r
+@@ -748,9 +1823,9 @@ event = {
+ 	command = { type = relation which = CGX value = 10 }\r
+ 	command = { type = relation which = CXB value = 10 }\r
+ 	command = { type = relation which = CYN value = 10 }\r
+-	command = { trigger = { exists = CGX } type = event which = 6959611 where = CGX when = 0 }\r
+-	command = { trigger = { exists = CXB } type = event which = 6959611 where = CXB when = 0 }\r
+-	command = { trigger = { exists = CYN } type = event which = 6959611 where = CYN when = 0 }\r
++	command = { trigger = { exists = CGX } type = event which = 6959622 where = CGX when = 0 }\r
++	command = { trigger = { exists = CXB } type = event which = 6959622 where = CXB when = 0 }\r
++	command = { trigger = { exists = CYN } type = event which = 6959622 where = CYN when = 0 }\r
+ 	command = { \r
+ 	trigger = {\r
+ 	ai = no # AIではない\r
+@@ -760,7 +1835,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 軍閥など信用できない\r
+-	name = "ACTIONNAME6959610B"\r
++	name = "ACTIONNAME6959621B"\r
+ 	trigger = {\r
+ 	OR = {\r
+ 	NOT = {\r
+@@ -798,17 +1873,18 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959611\r
++	id = 6959622\r
+ 	random = no\r
+ 	TAG = { CGX CXB CYN }\r
++	persistent = yes\r
+ \r
+-	name = "EVT_6959611_NAME"\r
+-	desc = "EVT_6959611_DESC"\r
++	name = "EVT_6959622_NAME"\r
++	desc = "EVT_6959622_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_Nishiyamaconference"\r
+ \r
+ 	action = { # 会談に参加する\r
+-	name = "ACTIONNAME6959611A"\r
++	name = "ACTIONNAME6959622A"\r
+ 	command = { type = relation which = CSX value = 20 }\r
+ 	command = { type = relation which = CHI value = -15 }\r
+ 	command = { type = relation which = CHC value = -15 }\r
+@@ -819,35 +1895,131 @@ event = {
+ 	command = { trigger = { country = CYN } type = setflag which = Warlord_Alliance_CYN }\r
+ 	ai_chance = 100\r
+ 	}\r
+-\r
+-	action = { # 独力で勢力を守るのだ\r
+-	name = "ACTIONNAME6959611B"\r
+-	command = { type = relation which = CHI value = 5 }\r
+-	command = { type = relation which = CHC value = 5 }\r
+-	command = { type = relation which = U36 value = 5 }\r
+-	command = { type = relation which = U74 value = 5 }\r
+-	ai_chance = 0\r
++\r
++	action = { # 独力で勢力を守るのだ\r
++	name = "ACTIONNAME6959622B"\r
++	command = { type = relation which = CHI value = 5 }\r
++	command = { type = relation which = CHC value = 5 }\r
++	command = { type = relation which = U36 value = 5 }\r
++	command = { type = relation which = U74 value = 5 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  軍閥統一戦線の形成\r
++# 中央政府の中国統一運動に対し、軍閥の間では協力すべきとの声が高まり、軍閥同士で協議するための会議が開かれた。\r
++# 会議においては、統一戦線の構築については合意されたが、問題はどのような形で統一するかであった。\r
++#########################################################################\r
++event = {\r
++	id = 6959623\r
++	random = no\r
++	country = CSX\r
++\r
++	name = "EVT_6959623_NAME"\r
++	desc = "EVT_6959623_DESC"\r
++	style = 2\r
++	picture = "ccip_Nishiyamaconference"\r
++\r
++	action = { # 山西軍閥主導の統一戦線を形成する\r
++	name = "ACTIONNAME6959623A"\r
++	trigger = {\r
++	AND = {\r
++	flag = shanxi_yen # 山西軍閥が主導権を確保\r
++	NOT = {\r
++	flag = shanxi_feng # 国民軍が主導権を確保\r
++	#flag = shanxi_yen # 山西軍閥が主導権を確保\r
++	flag = shanxi_yin # 河北軍閥が主導権を確保\r
++	}\r
++	}\r
++	OR = {\r
++	flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
++	flag = Warlord_Alliance_CXB # 西北三馬が統一戦線に参加\r
++	flag = Warlord_Alliance_CYN # 雲南軍閥が統一戦線に参加\r
++	}\r
++	OR = {\r
++	NOT = {\r
++	flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_yunan # 雲南軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_guangxi # 両広軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_xibei # 西北三馬主導の統一戦線ルート\r
++	flag = china_warlord_alliance_no # 統一戦線非結成ルート\r
++	}\r
++	AND = {\r
++	flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	NOT = {\r
++	#flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_yunan # 雲南軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_guangxi # 両広軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_xibei # 西北三馬主導の統一戦線ルート\r
++	flag = china_warlord_alliance_no # 統一戦線非結成ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = relation which = CHI value = -150 }\r
++	command = { type = relation which = CHC value = -150 }\r
++	command = { type = relation which = U36 value = -150 }\r
++	command = { type = relation which = U74 value = -150 }\r
++	command = { type = event which = 6959624 where = CSX when = 0 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 国民軍主導の統一戦線を形成する\r
++	name = "ACTIONNAME6959623B"\r
++	trigger = {\r
++	AND = {\r
++	flag = shanxi_feng # 国民軍が主導権を確保\r
++	NOT = {\r
++	#flag = shanxi_feng # 国民軍が主導権を確保\r
++	flag = shanxi_yen # 山西軍閥が主導権を確保\r
++	flag = shanxi_yin # 河北軍閥が主導権を確保\r
++	}\r
++	}\r
++	OR = {\r
++	flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
++	flag = Warlord_Alliance_CXB # 西北三馬が統一戦線に参加\r
++	flag = Warlord_Alliance_CYN # 雲南軍閥が統一戦線に参加\r
++	}\r
++	OR = {\r
++	NOT = {\r
++	flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_yunan # 雲南軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_guangxi # 両広軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_xibei # 西北三馬主導の統一戦線ルート\r
++	flag = china_warlord_alliance_no # 統一戦線非結成ルート\r
++	}\r
++	AND = {\r
++	flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	NOT = {\r
++	#flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_yunan # 雲南軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_guangxi # 両広軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_xibei # 西北三馬主導の統一戦線ルート\r
++	flag = china_warlord_alliance_no # 統一戦線非結成ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = relation which = CHI value = -150 }\r
++	command = { type = relation which = CHC value = -150 }\r
++	command = { type = relation which = U36 value = -150 }\r
++	command = { type = relation which = U74 value = -150 }\r
++	command = { type = event which = 6959624 where = CSX when = 0 }\r
++	ai_chance = 50\r
+ 	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  軍閥統一戦線の形成\r
+-# 中央政府の中国統一運動に対し、軍閥の間では協力すべきとの声が高まり、軍閥同士で協議するための会議が開かれた。\r
+-# 会議においては、統一戦線の構築については合意されたが、問題はどのような形で統一するかであった。\r
+-#########################################################################\r
+-event = {\r
+-	id = 6959612\r
+-	random = no\r
+-	country = CSX\r
+-\r
+-	name = "EVT_6959612_NAME"\r
+-	desc = "EVT_6959612_DESC"\r
+-	style = 2\r
+-	picture = "ccip_Nishiyamaconference"\r
+ \r
+-	action = { # 山西軍閥主導の統一戦線を形成する\r
+-	name = "ACTIONNAME6959612A"\r
++	action = { # 河北軍閥主導の統一戦線を形成する\r
++	name = "ACTIONNAME6959623C"\r
+ 	trigger = {\r
++	AND = {\r
++	flag = shanxi_yin # 河北軍閥が主導権を確保\r
++	NOT = {\r
++	flag = shanxi_feng # 国民軍が主導権を確保\r
++	flag = shanxi_yen # 山西軍閥が主導権を確保\r
++	#flag = shanxi_yin # 河北軍閥が主導権を確保\r
++	}\r
++	}\r
+ 	OR = {\r
+ 	flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
+ 	flag = Warlord_Alliance_CXB # 西北三馬が統一戦線に参加\r
+@@ -877,12 +2049,12 @@ event = {
+ 	command = { type = relation which = CHC value = -150 }\r
+ 	command = { type = relation which = U36 value = -150 }\r
+ 	command = { type = relation which = U74 value = -150 }\r
+-	command = { type = event which = 6959613 where = CSX when = 0 }\r
++	command = { type = event which = 6959624 where = CSX when = 0 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 雲南軍閥主導の統一戦線を形成する\r
+-	name = "ACTIONNAME6959612B"\r
++	name = "ACTIONNAME6959623D"\r
+ 	trigger = {\r
+ 	NOT = { flag = National_Protection_Yunnan } # 雲南軍閥が護国軍を結成していない\r
+ 	flag = Warlord_Alliance_CYN # 雲南軍閥が統一戦線に参加\r
+@@ -915,12 +2087,12 @@ event = {
+ 	command = { type = relation which = CHC value = -150 }\r
+ 	command = { type = relation which = U36 value = -150 }\r
+ 	command = { type = relation which = U74 value = -150 }\r
+-	command = { type = event which = 6959613 where = CYN when = 0 }\r
++	command = { type = event which = 6959624 where = CYN when = 0 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 護国軍主導の統一戦線を形成する\r
+-	name = "ACTIONNAME6959612C"\r
++	name = "ACTIONNAME6959623E"\r
+ 	trigger = {\r
+ 	flag = National_Protection_Yunnan # 雲南軍閥が護国軍を結成する\r
+ 	flag = Warlord_Alliance_CYN # 雲南軍閥が統一戦線に参加\r
+@@ -953,12 +2125,12 @@ event = {
+ 	command = { type = relation which = CHC value = -150 }\r
+ 	command = { type = relation which = U36 value = -150 }\r
+ 	command = { type = relation which = U74 value = -150 }\r
+-	command = { type = event which = 6959613 where = CYN when = 0 }\r
++	command = { type = event which = 6959624 where = CYN when = 0 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 両広軍閥主導の統一戦線を形成する\r
+-	name = "ACTIONNAME6959612D"\r
++	name = "ACTIONNAME6959623F"\r
+ 	trigger = {\r
+ 	NOT = { flag = Allies_Autonomy_Guangxi } # 両広軍閥で聯省自治派が政権を獲得する\r
+ 	flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
+@@ -991,12 +2163,50 @@ event = {
+ 	command = { type = relation which = CHC value = -150 }\r
+ 	command = { type = relation which = U36 value = -150 }\r
+ 	command = { type = relation which = U74 value = -150 }\r
+-	command = { type = event which = 6959613 where = CGX when = 0 }\r
++	command = { type = event which = 6959624 where = CGX when = 0 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 聯省自治派主導の統一戦線を形成する\r
+-	name = "ACTIONNAME6959612E"\r
++	name = "ACTIONNAME6959623G"\r
++	trigger = {\r
++	flag = Allies_Autonomy_Guangxi # 両広軍閥で聯省自治派が政権を獲得する\r
++	flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
++	OR = {\r
++	#flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
++	flag = Warlord_Alliance_CXB # 西北三馬が統一戦線に参加\r
++	flag = Warlord_Alliance_CYN # 雲南軍閥が統一戦線に参加\r
++	}\r
++	OR = {\r
++	NOT = {\r
++	flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_yunan # 雲南軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_guangxi # 両広軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_xibei # 西北三馬主導の統一戦線ルート\r
++	flag = china_warlord_alliance_no # 統一戦線非結成ルート\r
++	}\r
++	AND = {\r
++	flag = china_warlord_alliance_guangxi # 両広軍閥主導の統一戦線ルート\r
++	NOT = {\r
++	flag = china_warlord_alliance_shanxi # 山西軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_yunan # 雲南軍閥主導の統一戦線ルート\r
++	#flag = china_warlord_alliance_guangxi # 両広軍閥主導の統一戦線ルート\r
++	flag = china_warlord_alliance_xibei # 西北三馬主導の統一戦線ルート\r
++	flag = china_warlord_alliance_no # 統一戦線非結成ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = relation which = CHI value = -150 }\r
++	command = { type = relation which = CHC value = -150 }\r
++	command = { type = relation which = U36 value = -150 }\r
++	command = { type = relation which = U74 value = -150 }\r
++	command = { type = event which = 6959624 where = CGX when = 0 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 商団主導の統一戦線を形成する\r
++	name = "ACTIONNAME6959623H"\r
+ 	trigger = {\r
+ 	flag = Allies_Autonomy_Guangxi # 両広軍閥で聯省自治派が政権を獲得する\r
+ 	flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
+@@ -1029,12 +2239,12 @@ event = {
+ 	command = { type = relation which = CHC value = -150 }\r
+ 	command = { type = relation which = U36 value = -150 }\r
+ 	command = { type = relation which = U74 value = -150 }\r
+-	command = { type = event which = 6959613 where = CGX when = 0 }\r
++	command = { type = event which = 6959624 where = CGX when = 0 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 西北三馬主導の統一戦線を形成する\r
+-	name = "ACTIONNAME6959612F"\r
++	name = "ACTIONNAME6959623I"\r
+ 	trigger = {\r
+ 	NOT = { flag = Xibei_IS } # 西北三馬で馬仲英が政権を獲得する\r
+ 	flag = Warlord_Alliance_CXB # 西北三馬が統一戦線に参加\r
+@@ -1067,12 +2277,12 @@ event = {
+ 	command = { type = relation which = CHC value = -150 }\r
+ 	command = { type = relation which = U36 value = -150 }\r
+ 	command = { type = relation which = U74 value = -150 }\r
+-	command = { type = event which = 6959613 where = CXB when = 0 }\r
++	command = { type = event which = 6959624 where = CXB when = 0 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 馬仲英主導の統一戦線を形成する\r
+-	name = "ACTIONNAME6959612G"\r
++	name = "ACTIONNAME6959623J"\r
+ 	trigger = {\r
+ 	flag = Xibei_IS # 西北三馬で馬仲英が政権を獲得する\r
+ 	flag = Warlord_Alliance_CXB # 西北三馬が統一戦線に参加\r
+@@ -1105,12 +2315,12 @@ event = {
+ 	command = { type = relation which = CHC value = -150 }\r
+ 	command = { type = relation which = U36 value = -150 }\r
+ 	command = { type = relation which = U74 value = -150 }\r
+-	command = { type = event which = 6959613 where = CXB when = 0 }\r
++	command = { type = event which = 6959624 where = CXB when = 0 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 統一戦線の形成に失敗した…\r
+-	name = "ACTIONNAME6959612H"\r
++	name = "ACTIONNAME6959623K"\r
+ 	trigger = {\r
+ 	NOT = {\r
+ 	flag = Warlord_Alliance_CGX # 両広軍閥が統一戦線に参加\r
+@@ -1122,7 +2332,7 @@ event = {
+ 	command = { type = relation which = CHC value = 5 }\r
+ 	command = { type = relation which = U36 value = 5 }\r
+ 	command = { type = relation which = U74 value = 5 }\r
+-	command = { type = sleepevent which = 6959613 } # 軍閥統一戦線\r
++	command = { type = sleepevent which = 6959624 } # 軍閥統一戦線\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+@@ -1135,17 +2345,17 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959613\r
++	id = 6959624\r
+ 	random = no\r
+ 	TAG = { CSX CGX CYN CXB }\r
+ \r
+-	name = "EVT_6959613_NAME"\r
+-	desc = "EVT_6959613_DESC"\r
++	name = "EVT_6959624_NAME"\r
++	desc = "EVT_6959624_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_Nishiyamaconference"\r
+ \r
+ 	action = { # 統一戦線だ！\r
+-	name = "ACTIONNAME6959613A"\r
++	name = "ACTIONNAME6959624A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = industrial_modifier which = total value = 5 }\r
+ 	command = { type = add_core_region which = "China" }\r
+@@ -1166,7 +2376,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959614\r
++	id = 6959625\r
+ 	random = no\r
+ 	TAG = { CHI CHC U36 U74 }\r
+ \r
+@@ -1175,7 +2385,7 @@ event = {
+ 	OR = {\r
+ 	AND = {\r
+ 	exists = CSX\r
+-	event = 6959610 # 軍閥統一戦線の提案（CSX）\r
++	event = 6959621 # 軍閥統一戦線の提案（CSX）\r
+ 	}\r
+ 	NOT = { exists = CSX }\r
+ 	}\r
+@@ -1183,8 +2393,8 @@ event = {
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_6959614_NAME"\r
+-	desc = "EVT_6959614_DESC"\r
++	name = "EVT_6959625_NAME"\r
++	desc = "EVT_6959625_DESC"\r
+ 	style = 2\r
+  	picture = "ccip_may4"\r
+ \r
+@@ -1193,13 +2403,11 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 統一を目指すのだ\r
+-	name = "ACTIONNAME6959614A"\r
++	name = "ACTIONNAME6959625A"\r
+ 	command = { type = setflag which = China_unification }\r
+ 	ai_chance = 60\r
+ 	}\r
+ }\r
+-\r
+-\r
+ #########################################################################\r
+ #  両広派（CGX）ルート\r
+ #########################################################################\r
+@@ -1233,6 +2441,7 @@ event = {
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	AND = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+@@ -1240,6 +2449,7 @@ event = {
+ 	#flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -1259,16 +2469,19 @@ event = {
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	AND = {\r
+ 	OR = {\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	NOT = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	#flag = china_guangxi_2 # 陳済棠ルート\r
+ 	#flag = china_guangxi_3 # 聯省自治派ルート\r
++	#flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -1312,6 +2525,7 @@ event = {
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	AND = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+@@ -1319,6 +2533,7 @@ event = {
+ 	#flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -1337,16 +2552,19 @@ event = {
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	AND = {\r
+ 	OR = {\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	NOT = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	#flag = china_guangxi_2 # 陳済棠ルート\r
+ 	#flag = china_guangxi_3 # 聯省自治派ルート\r
++	#flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -1390,6 +2608,7 @@ event = {
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	AND = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+@@ -1397,6 +2616,7 @@ event = {
+ 	#flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -1422,16 +2642,19 @@ event = {
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	AND = {\r
+ 	OR = {\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	NOT = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	#flag = china_guangxi_2 # 陳済棠ルート\r
+ 	#flag = china_guangxi_3 # 聯省自治派ルート\r
++	#flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -1517,7 +2740,7 @@ event = {
+ 	command = { type = domestic which = freedom value = 3 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 585013 } # 李済深(リー・チシェン)\r
++	command = { type = headofstate which = 585017 } # 陳済棠(チェン・チタン)\r
+ 	command = { type = headofgovernment which = 585018 } # 陳済棠(チェン・チタン)\r
+ 	command = { type = foreignminister which = 585019 } # 李漢魂(リー・ハンホゥン)\r
+ 	command = { type = armamentminister which = 585004 } # 余漢謀(ユ・ハンモウ)\r
+@@ -1580,11 +2803,11 @@ event = {
+ 	command = { type = revolt which = 1370 }\r
+ 	command = { type = revolt which = 1375 }\r
+ 	command = { type = revolt which = 1375 }\r
+-	command = { type = sleepminister which = 585006 } # 李済深(リー・チシェン)\r
+-	command = { type = sleepminister which = 585007 }\r
+-	command = { type = sleepminister which = 585013 }\r
+-	command = { type = sleepminister which = 585019 }\r
+-	command = { type = sleepleader which = 585004 }\r
++	#command = { type = sleepminister which = 585006 } # 李済深(リー・チシェン)\r
++	#command = { type = sleepminister which = 585007 }\r
++	#command = { type = sleepminister which = 585013 }\r
++	#command = { type = sleepminister which = 585019 }\r
++	#command = { type = sleepleader which = 585004 }\r
+ 	command = { type = sleepminister which = 585009 } # 陳済棠(チェン・チタン)\r
+ 	command = { type = sleepminister which = 585017 }\r
+ 	command = { type = sleepminister which = 585018 }\r
+@@ -1799,26 +3022,18 @@ event = {
+ 	trigger = {\r
+ 	exists = CHI\r
+ 	OR = {\r
+-	event = { id = 6959022 days = 90 } # 第二次北伐\r
+-	}\r
+-	OR = {\r
+-	exists = U36\r
+-	exists = U74\r
+-	}\r
+-	OR = {\r
+-	headofstate = 585001 # 李宗仁(リー・ツンジェン)\r
+-	headofstate = 585013 # 李済深(リー・チシェン)\r
+-	}\r
+-	OR = {\r
++	war = { country = CHI country = CHC }\r
+ 	war = { country = CHI country = U36 }\r
+ 	war = { country = CHI country = U74 }\r
+ 	}\r
+ 	NOT = {\r
+-	war = { country = CGX country = CHI }\r
+-	war = { country = CGX country = U36 }\r
+-	war = { country = CGX country = U74 }\r
++	alliance = { country = -1 country = CHI }\r
++	alliance = { country = -1 country = CHC }\r
++	alliance = { country = -1 country = U36 }\r
++	alliance = { country = -1 country = U74 }\r
+ 	}\r
+ 	NOT = { ispuppet = CGX }\r
++	atwar = no\r
+ 	}\r
+ \r
+ 	name = "EVT_6959709_NAME"\r
+@@ -1826,63 +3041,96 @@ event = {
+ 	style = 2\r
+ 	picture = "ccip_cw"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
++	date = { day = 0 month = 5 year = 1936 }\r
++	offset = 20\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 北伐に参加する（ゲーム終了）\r
+ 	name = "ACTIONNAME6959709A"\r
+ 	trigger = { headofstate = 585001 } # 李宗仁(リー・ツンジェン)\r
+ 	command = { type = event which = 6959710 where = CHI when = 0 }\r
+-	ai_chance = 70\r
++	ai_chance = 45\r
+ 	}\r
+ \r
+-	action = { # 国民党を打倒する時がきた\r
++	action = { # 中原に介入する時がきた\r
+ 	name = "ACTIONNAME6959709B"\r
+ 	trigger = { headofstate = 585001 } # 李宗仁(リー・ツンジェン)\r
+-	command = { type = belligerence which = CGX value = 2 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = add_core_area which = "Jiangxi" }\r
+-	command = { type = add_core_area which = "Fujian" }\r
+-	command = { type = relation which = U36 value = -10 }\r
+-	command = { type = relation which = U74 value = -10 }\r
+-	command = { type = relation which = CSX value = -10 }\r
+-	command = { type = relation which = CYN value = -10 }\r
+-	command = { type = relation which = CXB value = -10 }\r
+-	command = { type = relation which = U67 value = -10 }\r
++	command = { type = belligerence which = CGX value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	#command = { type = add_core_area which = "Jiangxi" }\r
++	#command = { type = add_core_area which = "Fujian" }\r
+ 	command = { type = end_non_aggression which = CGX where = CHI }\r
++	command = { type = end_non_aggression which = CGX where = CHC }\r
++	command = { type = end_non_aggression which = CGX where = U36 }\r
++	command = { type = end_non_aggression which = CGX where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CGX }\r
++	command = { type = end_guarantee which = CHC where = CGX }\r
++	command = { type = end_guarantee which = U36 where = CGX }\r
++	command = { type = end_guarantee which = U74 where = CGX }\r
+ 	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
+ 	command = { type = sleepevent which = 6959710 }\r
+-	ai_chance = 30\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959709C"\r
++	trigger = { headofstate = 585001 } # 李宗仁(リー・ツンジェン)\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 45\r
+ 	}\r
+ \r
+ 	action = { # 北伐に参加する（ゲーム終了）\r
+ 	name = "ACTIONNAME6959709A"\r
+-	trigger = { headofstate = 585013 } # 李済深(リー・チシェン)\r
++	trigger = { NOT = { headofstate = 585001 } } # 李宗仁(リー・ツンジェン)\r
+ 	command = { type = event which = 6959710 where = CHI when = 0 }\r
+-	ai_chance = 30\r
++	ai_chance = 10\r
+ 	}\r
+ \r
+-	action = { # 国民党を打倒する時がきた\r
++	action = { # 中原に介入する時がきた\r
+ 	name = "ACTIONNAME6959709B"\r
+-	trigger = { headofstate = 585013 } # 李済深(リー・チシェン)\r
+-	command = { type = belligerence which = CGX value = 2 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = add_core_area which = "Jiangxi" }\r
+-	command = { type = add_core_area which = "Fujian" }\r
+-	command = { type = relation which = U36 value = -10 }\r
+-	command = { type = relation which = U74 value = -10 }\r
+-	command = { type = relation which = CSX value = -10 }\r
+-	command = { type = relation which = CYN value = -10 }\r
+-	command = { type = relation which = CXB value = -10 }\r
+-	command = { type = relation which = U67 value = -10 }\r
++	trigger = { NOT = { headofstate = 585001 } } # 李宗仁(リー・ツンジェン)\r
++	command = { type = belligerence which = CGX value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	#command = { type = add_core_area which = "Jiangxi" }\r
++	#command = { type = add_core_area which = "Fujian" }\r
+ 	command = { type = end_non_aggression which = CGX where = CHI }\r
++	command = { type = end_non_aggression which = CGX where = CHC }\r
++	command = { type = end_non_aggression which = CGX where = U36 }\r
++	command = { type = end_non_aggression which = CGX where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CGX }\r
++	command = { type = end_guarantee which = CHC where = CGX }\r
++	command = { type = end_guarantee which = U36 where = CGX }\r
++	command = { type = end_guarantee which = U74 where = CGX }\r
+ 	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
+ 	command = { type = sleepevent which = 6959710 }\r
+-	ai_chance = 70\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959709C"\r
++	trigger = { NOT = { headofstate = 585001 } } # 李宗仁(リー・ツンジェン)\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 10\r
+ 	}\r
++\r
+ }\r
+ \r
+ #########################################################################\r
+@@ -1914,7 +3162,7 @@ event = {
+ # これは、省自治に基づいた連邦主義であり、広東派の指導者であった陳炯明は、聯省自治を支持した。\r
+ # しかし中国国民党の孫文は、聯省自治に反対しており、1922年に孫文と陳炯明の間で激しい衝突が起き、\r
+ # 1923年に陳炯明は敗れて広東省東部の東江に退却。\r
+-# 滅亡寸前にまで追い込まれた陳炯明だが、1926年に蒋介石が北伐を発動するも敗北したため、勢力を維持することができた。\r
++# 滅亡寸前にまで追い込まれた陳炯明だが、蒋介石が北伐で敗北したため、勢力を維持することができた。\r
+ # その後の国民党の衰退に伴い、聯省自治の主張は再び注目されるようになったことで広東省の無視できない政治勢力となっている。\r
+ #########################################################################\r
+ event = {\r
+@@ -1931,41 +3179,71 @@ event = {
+ 	style = 2\r
+  	picture = "china"\r
+ \r
+-	date = { day = 19 month = 3 year = 1933 }\r
++	date = { day = 15 month = 3 year = 1933 }\r
+ \r
+-	action = { # 中国の平和のためには、全ての権限を人民に帰属させるのだ\r
++	action = { # 聯省自治が今こそ必要なのだ\r
+ 	name = "ACTIONNAME6959711A"\r
+ 	command = { type = dissent value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  広州商団\r
++# 1911年に辛亥革命が発生すると、治安が悪化したため、治安維持と商人の生命・財産保護を目的に、1912年に「広州商団」が設立された。\r
++# 商団の最高責任者である陳廉伯は、商団の武装化を進め、当時勢力を拡大させていた共産主義を警戒し、反共運動を活発化させた。\r
++# 1924年、中国国民党が共産主義的政策を実行することを表明したため、商人階級は孫文率いる国民党を敵視するようになり、やがて「広州商団事件」と呼ばれる国民党の大規模な弾圧事件を引き起こした。\r
++# この事件により、一時期は商団は大きく弱体化、残党が香港に逃げ込むまでに追い詰められたが、国民党が北伐に失敗すると、両広軍閥と手を結び、再び勢力を盛り返した。\r
++# 現在、広州商団はエリート資本家階級の利益を代弁する政治団体に膨れ上がり、軍閥に武器や資金援助行うことで、影響力をますます強めている。\r
++# 彼らは両広軍閥の経済発展に寄与しているのはだれもが認めることだが、一方で貧困層と富裕層の経済格差をますます拡大させており、いずれ問題が爆発することは明らかである。\r
++#########################################################################\r
++event = {\r
++	id = 6959712\r
++	random = no\r
++	country = CGX\r
++\r
++	trigger = {\r
++	NOT = { ispuppet = CGX }\r
++	}\r
++\r
++	name = "EVT_6959712_NAME"\r
++	desc = "EVT_6959712_DESC"\r
++	style = 2\r
++ 	picture = "ccip_Merchant_Corps"\r
++\r
++	date = { day = 22 month = 3 year = 1933 }\r
++\r
++	action = { # 懸念すべきことかもしれない\r
++	name = "ACTIONNAME6959712A"\r
++	command = { type = dissent value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
+ \r
+ #########################################################################\r
+-#  聯省自治派との妥協\r
+-# 両広派における派閥争いにおいて、広東派が政府を掌握すると、広東省の政治勢力である聯省自治運動が盛り上がりを見せた。\r
+-# 彼らは政府への協力と引き換えに運動の指導者である陳炯明を政府の指導者にすることを要求している。\r
++#  広東会議\r
++# 両広派における派閥争いにおいて、広東派が政府を掌握したが、これを良しとしない反対勢力は未だに存在していた。\r
++# 陳済棠は、混乱を鎮めるためにいくつかの政治勢力を一堂に集めて会議を開き、なんとか打開策を見つけようと模索している。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959712\r
++	id = 6959713\r
+ 	random = no\r
+ 	country = CGX\r
+ \r
+ 	trigger = {\r
+ 	event = { id = 6959706 days = 10 } # 両広事変 ― 広西派の蜂起\r
+ 	minister = 585204 # 陳炯明(チェン・ジョンミン)\r
++	minister = 585208 # 陳廉伯(チェン・リィンブォ)\r
+ 	NOT = { headofstate = 585204 } # 陳炯明(チェン・ジョンミン)\r
+-	OR = { \r
+-	headofstate = 585013 # 李済深(リー・チシェン)\r
++	NOT = { headofstate = 585208 } # 陳廉伯(チェン・リィンブォ)\r
+ 	headofstate = 585017 # 陳済棠(チェン・チタン)\r
+-	}\r
+ 	NOT = { ispuppet = CGX }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_6959712_NAME"\r
+-	desc = "EVT_6959712_DESC"\r
++	name = "EVT_6959713_NAME"\r
++	desc = "EVT_6959713_DESC"\r
+ 	style = 2\r
+  	picture = "ccip_fcseige"\r
+ \r
+@@ -1973,14 +3251,90 @@ event = {
+ 	offset = 16\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action = { # 聯省自治主義を受け入れよう\r
+-	name = "ACTIONNAME6959712A"\r
++	action = { # 会議は物別れに終わった\r
++	name = "ACTIONNAME6959713A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = china_guangxi_1 # 李宗仁ルート\r
++	flag = china_guangxi_2 # 陳済棠ルート\r
++	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
++	}\r
++	AND = {\r
++	OR = {\r
++	#flag = china_guangxi_1 # 李宗仁ルート\r
++	flag = china_guangxi_2 # 陳済棠ルート\r
++	}\r
++	NOT = {\r
++	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = dissent value = 5 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = manpowerpool value = -5 }\r
++	command = { type = sleepminister which = 585204 } # 陳炯明(チェン・ジョンミン)\r
++	command = { type = sleepminister which = 585205 }\r
++	command = { type = sleepminister which = 585208 } # 陳廉伯(チェン・リィンブォ)\r
++	command = { type = sleepminister which = 585209 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # なんとか妥協点を探る\r
++	name = "ACTIONNAME6959713B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = china_guangxi_1 # 李宗仁ルート\r
++	flag = china_guangxi_2 # 陳済棠ルート\r
++	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
++	}\r
++	AND = {\r
++	OR = {\r
++	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
++	}\r
++	NOT = {\r
++	#flag = china_guangxi_1 # 李宗仁ルート\r
++	flag = china_guangxi_2 # 陳済棠ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = event which = 6959714 where = CGX when = 0 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  広東会議 ― 妥協の模索\r
++# 広東会議において陳済棠は、どうにか他の政治勢力との妥協を模索した。\r
++# 現在、国内には省自治に基づいた連邦主義を主張する聯省自治運動、より広範な自由経済を求める広州商団の二つの政治勢力が存在している。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959714\r
++	random = no\r
++	country = CGX\r
++\r
++	name = "EVT_6959714_NAME"\r
++	desc = "EVT_6959714_DESC"\r
++	style = 2\r
++ 	picture = "ccip_fcseige"\r
++\r
++	action = { # 陳炯明と手を組む\r
++	name = "ACTIONNAME6959714A"\r
+ 	trigger = {\r
+ 	OR = {\r
+ 	NOT = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	AND = {\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
+@@ -1988,6 +3342,7 @@ event = {
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	#flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -1995,85 +3350,123 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = domestic which = free_market value = 2 }\r
+-	command = { type = domestic which = freedom value = 2 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++	command = { type = domestic which = freedom value = 1 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { trigger = { headofstate = 585013 } type = headofgovernment which = 585035 } # 李済深(リー・チシェン)\r
+-	command = { trigger = { headofstate = 585017 } type = headofgovernment which = 585018 } # 陳済棠(チェン・チタン)\r
+ 	command = { type = wakeminister which = 585204 } # 陳炯明(チェン・ジョンミン)\r
+ 	command = { type = wakeminister which = 585205 }\r
+ 	command = { type = wakeminister which = 585206 } # 鄒魯(ゾウ・ルー)\r
+ 	command = { type = wakeminister which = 585207 }\r
+ 	command = { type = headofstate which = 585204 } # 陳炯明(チェン・ジョンミン)\r
+ 	command = { type = headofgovernment which = 585206 } # 鄒魯(ゾウ・ルー)\r
+-	command = { trigger = { division_exists = { type = 22400 id = 13 } }\r
+-	type = unlock_division which = 22400 value = 13 } # 第4師\r
+-	command = { trigger = { division_exists = { type = 22400 id = 14 } }\r
+-	type = unlock_division which = 22400 value = 14 } # 第5師\r
+-	command = { trigger = { division_exists = { type = 22400 id = 15 } }\r
+-	type = unlock_division which = 22400 value = 15 } # 第6師\r
++	command = { trigger = { headofstate = 585017 } type = headofgovernment which = 585018 } # 陳済棠(チェン・チタン)\r
+ 	command = { type = setflag which = Allies_Autonomy_Guangxi }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+-	action = { # 聯省自治派を粛清する\r
+-	name = "ACTIONNAME6959712B"\r
++	action = { # 陳廉伯と手を組む\r
++	name = "ACTIONNAME6959714B"\r
+ 	trigger = {\r
+ 	OR = {\r
+ 	NOT = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+-	OR = {\r
++	AND = {\r
++	flag = china_guangxi_4 # 広州商団ルート\r
++	NOT = {\r
+ 	flag = china_guangxi_1 # 李宗仁ルート\r
+ 	flag = china_guangxi_2 # 陳済棠ルート\r
+-	}\r
+-	NOT = {\r
+-	#flag = china_guangxi_1 # 李宗仁ルート\r
+-	#flag = china_guangxi_2 # 陳済棠ルート\r
+ 	flag = china_guangxi_3 # 聯省自治派ルート\r
++	#flag = china_guangxi_4 # 広州商団ルート\r
+ 	}\r
+ 	}\r
+ 	}\r
+-	command = { type = dissent value = 3 }\r
+-	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = sleepminister which = 585204 } # 陳炯明(チェン・ジョンミン)\r
+-	command = { type = sleepminister which = 585205 }\r
+-	command = { type = sleepminister which = 585206 } # 鄒魯(ゾウ・ルー)\r
+-	command = { type = sleepminister which = 585207 }\r
+-	command = { trigger = { division_exists = { type = 22400 id = 13 } }\r
+-	type = remove_division which = 22400 value = 13 } # 第4師\r
+-	command = { trigger = { division_exists = { type = 22400 id = 14 } }\r
+-	type = remove_division which = 22400 value = 14 } # 第5師\r
+-	command = { trigger = { division_exists = { type = 22400 id = 15 } }\r
+-	type = remove_division which = 22400 value = 15 } # 第6師\r
+-	command = { type = revolt which = 1368 }\r
+-	command = { type = revolt which = 1370 }\r
+-	command = { type = revolt which = 1375 }\r
++	}\r
++	command = { type = dissent value = -3 }\r
++	command = { type = flag_ext where = CGX which = "_CHI" }\r
++	command = { type = set_domestic which = democratic value = 10 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 5 }\r
++	command = { type = domestic which = freedom value = 5 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = wakeminister which = 585208 } # 広州商団\r
++	command = { type = wakeminister which = 585209 }\r
++	command = { type = wakeminister which = 585210 }\r
++	command = { type = wakeminister which = 585211 }\r
++	command = { type = wakeminister which = 585212 }\r
++	command = { type = wakeminister which = 585213 }\r
++	command = { type = wakeminister which = 585214 }\r
++	command = { type = wakeminister which = 585215 }\r
++	command = { type = wakeminister which = 585216 }\r
++	command = { type = wakeminister which = 585217 }\r
++	command = { type = wakeminister which = 585218 }\r
++	command = { type = wakeleader which = 585601 }\r
++	command = { type = wakeleader which = 585602 }\r
++	command = { type = wakeleader which = 585603 }\r
++	command = { type = wakeleader which = 585604 }\r
++	command = { type = wakeleader which = 585605 }\r
++	command = { type = headofstate which = 585208 } # 陳廉伯(チェン・リィンボ)\r
++	command = { type = headofgovernment which = 585210 } # 陳廉仲(チェン・リィンヂョン)\r
++	command = { type = foreignminister which = 585211 } # 鄧介石(ドン・ジェシー)\r
++	command = { type = armamentminister which = 585212 } # 陳恭綬(チェン・リィンヂョン)\r
++	command = { type = ministerofsecurity which = 585215 } # 李福林(リー・フーリン)\r
++	command = { type = ministerofintelligence which = 585216 } # 李頌韶(リー・ソンシャオ)\r
++	command = { type = chiefofstaff which = 585217 } # 陳廉伯(チェン・リィンブォ)\r
++	command = { type = chiefofarmy which = 585218 } # 鄒競先(ゾウ・ジンシェン)\r
++	command = { trigger = { headofstate = 585017 } type = headofgovernment which = 585018 } # 陳済棠(チェン・チタン)\r
++	command = { type = setflag which = Merchant_Corps_Guangxi }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  聯省自治宣言\r
++#  国号の変更\r
+ # 聯省自治運動の指導者である陳炯明によって、中国は再び統一された。\r
+-# 陳炯明は統一宣言において、地方分権的な統治を人民に約束している。\r
++# 聯省自治の理念を実現するにあたり、国号をどうするか決定する必要がある。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6959713\r
++	id = 6959715\r
+ 	random = no\r
+ 	country = CGX\r
+ \r
+-	name = "EVT_6959713_NAME"\r
+-	desc = "EVT_6959713_DESC"\r
++	decision = {\r
++	local_flag = China_Unification # 中国統一\r
++	headofstate = 585204 # 陳炯明(チェン・ジョンミン)\r
++	NOT = { ispuppet = CGX }\r
++	atwar = no\r
++	}\r
++\r
++	decision_trigger = { \r
++	headofstate = 585204 # 陳炯明(チェン・ジョンミン)\r
++	NOT = { ispuppet = CGX }\r
++	atwar = no\r
++	}\r
++\r
++	trigger = {\r
++	local_flag = China_Unification # 中国統一\r
++	headofstate = 585204 # 陳炯明(チェン・ジョンミン)\r
++	NOT = { ispuppet = CGX }\r
++	atwar = no\r
++	random = 20\r
++	}\r
++\r
++	name = "EVT_6959715_NAME"\r
++	desc = "EVT_6959715_DESC"\r
+ 	style = 2\r
+  	picture = "china"\r
+ \r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 18\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
+ 	action = { # 中華連邦が成立\r
+-	name = "ACTIONNAME6959713A"\r
++	name = "ACTIONNAME6959715A"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = name where = CGX which = "中華連邦" }\r
+ 	command = { type = flag_ext where = CGX which = "_CHI" }\r
+@@ -2081,7 +3474,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 中華連合省が成立\r
+-	name = "ACTIONNAME6959713B"\r
++	name = "ACTIONNAME6959715B"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = name where = CGX which = "中華連合省" }\r
+ 	command = { type = flag_ext where = CGX which = "_CHI" }\r
+@@ -2089,7 +3482,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 中華連合共和国が成立\r
+-	name = "ACTIONNAME6959713C"\r
++	name = "ACTIONNAME6959715C"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = name where = CGX which = "中華連合共和国" }\r
+ 	command = { type = flag_ext where = CGX which = "_CHI" }\r
+@@ -2097,14 +3490,13 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 中華連邦共和国が成立\r
+-	name = "ACTIONNAME6959713D"\r
++	name = "ACTIONNAME6959715D"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = name where = CGX which = "中華連邦共和国" }\r
+ 	command = { type = flag_ext where = CGX which = "_CHI" }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+-\r
+ #########################################################################\r
+ #  西北三馬（CXB）ルート\r
+ #########################################################################\r
+@@ -2627,6 +4019,151 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  第二次北伐 ― 西北三馬の反応\r
++# 中国の正当政府の地位を巡る北京政府と国民政府の戦いが始まったことで、西北三馬はこの戦争の帰趨を決める立場にある。\r
++# 軍の将校と民族主義者は、かつて統一を目指す孫文が立ち上げた新政府の理想のために北伐に参加するべきだと主張し、\r
++# 実業家や官僚は孤立主義を主張している。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959811\r
++	random = no\r
++	country = CXB\r
++\r
++	trigger = {\r
++	exists = CHI\r
++	OR = {\r
++	war = { country = CHI country = CHC }\r
++	war = { country = CHI country = U36 }\r
++	war = { country = CHI country = U74 }\r
++	}\r
++	NOT = {\r
++	alliance = { country = -1 country = CHI }\r
++	alliance = { country = -1 country = CHC }\r
++	alliance = { country = -1 country = U36 }\r
++	alliance = { country = -1 country = U74 }\r
++	}\r
++	NOT = { ispuppet = CXB }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_6959811_NAME"\r
++	desc = "EVT_6959811_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	date = { day = 0 month = 5 year = 1936 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 北伐に参加する（ゲーム終了）\r
++	name = "ACTIONNAME6959811A"\r
++	trigger = { NOT = { headofstate = 610301 } } # 馬仲英（マー・ジョンイン）\r
++	command = { type = event which = 6959812 where = CHI when = 0 }\r
++	ai_chance = 5\r
++	}\r
++\r
++	action = { # 中原に介入する時がきた\r
++	name = "ACTIONNAME6959811B"\r
++	trigger = { NOT = { headofstate = 610301 } } # 馬仲英（マー・ジョンイン）\r
++	command = { type = belligerence which = CXB value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = end_non_aggression which = CXB where = CHI }\r
++	command = { type = end_non_aggression which = CXB where = CHC }\r
++	command = { type = end_non_aggression which = CXB where = U36 }\r
++	command = { type = end_non_aggression which = CXB where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CXB }\r
++	command = { type = end_guarantee which = CHC where = CXB }\r
++	command = { type = end_guarantee which = U36 where = CXB }\r
++	command = { type = end_guarantee which = U74 where = CXB }\r
++	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
++	command = { type = sleepevent which = 6959812 }\r
++	ai_chance = 5\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959811C"\r
++	trigger = { NOT = { headofstate = 610301 } } # 馬仲英（マー・ジョンイン）\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 北伐に参加する（ゲーム終了）\r
++	name = "ACTIONNAME6959811A"\r
++	trigger = { headofstate = 610301 } # 馬仲英（マー・ジョンイン）\r
++	command = { type = event which = 6959812 where = CHI when = 0 }\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # 中原に介入する時がきた\r
++	name = "ACTIONNAME6959811B"\r
++	trigger = { headofstate = 610301 } # 馬仲英（マー・ジョンイン）\r
++	command = { type = belligerence which = CXB value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = end_non_aggression which = CXB where = CHI }\r
++	command = { type = end_non_aggression which = CXB where = CHC }\r
++	command = { type = end_non_aggression which = CXB where = U36 }\r
++	command = { type = end_non_aggression which = CXB where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CXB }\r
++	command = { type = end_guarantee which = CHC where = CXB }\r
++	command = { type = end_guarantee which = U36 where = CXB }\r
++	command = { type = end_guarantee which = U74 where = CXB }\r
++	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
++	command = { type = sleepevent which = 6959812 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959811C"\r
++	trigger = { headofstate = 610301 } # 馬仲英（マー・ジョンイン）\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 10\r
++	}\r
++\r
++}\r
++\r
++#########################################################################\r
++#  第二次北伐 ― 西北三馬が北伐に参加を表明\r
++# 北京政府との戦いのさなか、西北三馬が北伐の参加を表明した！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959812\r
++	random = no\r
++	country = CHI\r
++\r
++	name = "EVT_6959812_NAME"\r
++	desc = "EVT_6959812_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = inherit which = CXB value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  雲南派（CYN）ルート\r
+ #########################################################################\r
+@@ -2980,6 +4517,311 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  雲南護国軍\r
++# 雲南軍閥の指導者は、中国を再び統一し、軍閥の混乱を終息させるべく「雲南護国軍」を編成することを決断した。\r
++# この使命を達成するべく、参謀本部は中華統一のための軍備計画を政府に提出した。\r
++# この計画は適切な資金を用意せずとも手形を発行することで計画を実行できるが、国内の経済に悪影響が出るだろう。\r
++# （資金を2000以上用意することで、デバフを避けてイベントを実行できます）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959906\r
++	random = no\r
++	country = CYN\r
++\r
++	decision = {\r
++	year = 1935\r
++	NOT = { ispuppet = yes }\r
++	flag = National_Protection_Yunnan # 護国軍が結成\r
++	}\r
++\r
++	decision_trigger = {\r
++	year = 1935\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	trigger = {\r
++	year = 1936\r
++	NOT = { ispuppet = yes }\r
++	flag = National_Protection_Yunnan # 護国軍が結成\r
++	}\r
++\r
++	name = "EVT_6959906_NAME"\r
++	desc = "EVT_6959906_DESC"\r
++	style = 2\r
++	picture = "ccip_yuandead"\r
++	decision_picture = "decision_ccip_cna"\r
++\r
++	date = { day = 0 month = 7 year = 1935 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 計画を実行する\r
++	name = "ACTIONNAME6959906A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = industrial_modifier which = total value = -10 }\r
++	command = { type = strength which = land when = 1 where = 1 value = 0.5 }\r
++	command = { type = strength which = air when = 1 where = 1 value = 0.5 }\r
++	command = { type = add_division value = hq when = 2 where = engineer }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
++	command = { type = add_division value = cavalry when = 7 where = engineer }\r
++	command = { type = add_division value = cavalry when = 7 where = engineer }\r
++	command = { type = add_division value = cavalry when = 7 where = engineer }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = setflag which = 6959906_yes }\r
++	}\r
++\r
++	action = { # 資金を投入し、計画を実行する\r
++	name = "ACTIONNAME6959906B"\r
++	trigger = {\r
++	money = 2000\r
++	}\r
++	command = { type = dissent value = -2 }\r
++	command = { type = money value = -2000 }\r
++	command = { type = strength which = land when = 1 where = 1 value = 0.5 }\r
++	command = { type = strength which = air when = 1 where = 1 value = 0.5 }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
++	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
++	command = { type = add_division value = cavalry when = 7 where = engineer }\r
++	command = { type = add_division value = cavalry when = 7 where = engineer }\r
++	command = { type = add_division value = cavalry when = 7 where = engineer }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = setflag which = 6959906_yes }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  経済混乱の終息\r
++# 急速な軍備拡大によって、国内の経済に大きな打撃を与えたが、中国の経済のかなめである大都市を掌握したことで、 経済の混乱は終息しつつある。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959907\r
++	random = no\r
++	country = CYN\r
++\r
++	trigger = {\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
++	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
++	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
++	NOT = { ispuppet = yes }\r
++	flag = 6959906_yes # 護国軍を動員\r
++	}\r
++\r
++	name = "EVT_6959907_NAME"\r
++	desc = "EVT_6959907_DESC"\r
++	style = 2\r
++	picture = "ccip_yuandead"\r
++\r
++	date = { day = 0 month = 7 year = 1935 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 了解\r
++	name = "ACTIONNAME6959907A"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次北伐 ― 雲南軍閥の反応\r
++# 中国の正当政府の地位を巡る北京政府と国民政府の戦いが始まったことで、雲南軍閥はこの戦争の帰趨を決める立場にある。\r
++# 軍の将校と民族主義者は、かつて統一を目指す孫文が立ち上げた新政府の理想のために北伐に参加するべきだと主張し、\r
++# 実業家や官僚は孤立主義を主張している。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959908\r
++	random = no\r
++	country = CYN\r
++\r
++	trigger = {\r
++	exists = CHI\r
++	OR = {\r
++	war = { country = CHI country = CHC }\r
++	war = { country = CHI country = U36 }\r
++	war = { country = CHI country = U74 }\r
++	}\r
++	NOT = {\r
++	alliance = { country = -1 country = CHI }\r
++	alliance = { country = -1 country = CHC }\r
++	alliance = { country = -1 country = U36 }\r
++	alliance = { country = -1 country = U74 }\r
++	}\r
++	NOT = { ispuppet = CYN }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_6959908_NAME"\r
++	desc = "EVT_6959908_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	date = { day = 0 month = 5 year = 1936 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 北伐に参加する（ゲーム終了）\r
++	name = "ACTIONNAME6959908A"\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 615001  # 龍雲（ルン・ユン）\r
++	headofstate = 615018  # 盧漢（ル・ハン）\r
++	headofstate = 615022  # 胡若愚（フー・ルオユ）\r
++	headofstate = 615305  # 唐継尭（タン・ジーヤオ）\r
++	}\r
++	}\r
++	command = { type = event which = 6959909 where = CHI when = 0 }\r
++	ai_chance = 5\r
++	}\r
++\r
++	action = { # 中原に介入する時がきた\r
++	name = "ACTIONNAME6959908B"\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 615001  # 龍雲（ルン・ユン）\r
++	headofstate = 615018  # 盧漢（ル・ハン）\r
++	headofstate = 615022  # 胡若愚（フー・ルオユ）\r
++	headofstate = 615305  # 唐継尭（タン・ジーヤオ）\r
++	}\r
++	}\r
++	command = { type = belligerence which = CYN value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = end_non_aggression which = CYN where = CHI }\r
++	command = { type = end_non_aggression which = CYN where = CHC }\r
++	command = { type = end_non_aggression which = CYN where = U36 }\r
++	command = { type = end_non_aggression which = CYN where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CYN }\r
++	command = { type = end_guarantee which = CHC where = CYN }\r
++	command = { type = end_guarantee which = U36 where = CYN }\r
++	command = { type = end_guarantee which = U74 where = CYN }\r
++	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
++	command = { type = sleepevent which = 6959909 }\r
++	ai_chance = 5\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959908C"\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 615001  # 龍雲（ルン・ユン）\r
++	headofstate = 615018  # 盧漢（ル・ハン）\r
++	headofstate = 615022  # 胡若愚（フー・ルオユ）\r
++	headofstate = 615305  # 唐継尭（タン・ジーヤオ）\r
++	}\r
++	}\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 北伐に参加する（ゲーム終了）\r
++	name = "ACTIONNAME6959908A"\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 615001  # 龍雲（ルン・ユン）\r
++	headofstate = 615018  # 盧漢（ル・ハン）\r
++	headofstate = 615022  # 胡若愚（フー・ルオユ）\r
++	headofstate = 615305  # 唐継尭（タン・ジーヤオ）\r
++	}\r
++	}\r
++	command = { type = event which = 6959909 where = CHI when = 0 }\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # 中原に介入する時がきた\r
++	name = "ACTIONNAME6959908B"\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 615001  # 龍雲（ルン・ユン）\r
++	headofstate = 615018  # 盧漢（ル・ハン）\r
++	headofstate = 615022  # 胡若愚（フー・ルオユ）\r
++	headofstate = 615305  # 唐継尭（タン・ジーヤオ）\r
++	}\r
++	}\r
++	command = { type = belligerence which = CYN value = 8 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = end_non_aggression which = CYN where = CHI }\r
++	command = { type = end_non_aggression which = CYN where = CHC }\r
++	command = { type = end_non_aggression which = CYN where = U36 }\r
++	command = { type = end_non_aggression which = CYN where = U74 }\r
++	command = { type = end_guarantee which = CHI where = CYN }\r
++	command = { type = end_guarantee which = CHC where = CYN }\r
++	command = { type = end_guarantee which = U36 where = CYN }\r
++	command = { type = end_guarantee which = U74 where = CYN }\r
++	command = { type = war which = CHI }\r
++	command = { type = war which = CHC }\r
++	command = { type = war which = U36 }\r
++	command = { type = war which = U74 }\r
++	command = { type = sleepevent which = 6959909 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 中立を保つ\r
++	name = "ACTIONNAME6959908C"\r
++	trigger = {\r
++	NOT = {\r
++	headofstate = 615001  # 龍雲（ルン・ユン）\r
++	headofstate = 615018  # 盧漢（ル・ハン）\r
++	headofstate = 615022  # 胡若愚（フー・ルオユ）\r
++	headofstate = 615305  # 唐継尭（タン・ジーヤオ）\r
++	}\r
++	}\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = relation which = CHI value = 15 }\r
++	command = { type = relation which = CHC value = 15 }\r
++	command = { type = relation which = U36 value = 15 }\r
++	command = { type = relation which = U74 value = 15 }\r
++	ai_chance = 10\r
++	}\r
++\r
++}\r
++\r
++#########################################################################\r
++#  第二次北伐 ― 雲南軍閥が北伐に参加を表明\r
++# 北京政府との戦いのさなか、雲南軍閥が北伐の参加を表明した！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959909\r
++	random = no\r
++	country = CHI\r
++\r
++	name = "EVT_6959909_NAME"\r
++	desc = "EVT_6959909_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = inherit which = CYN value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
+ #########################################################################\r
+ #  統一中国降伏イベント\r
+ #########################################################################\r

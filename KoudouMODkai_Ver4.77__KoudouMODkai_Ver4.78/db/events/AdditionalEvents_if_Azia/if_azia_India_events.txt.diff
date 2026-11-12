@@ -1,0 +1,145 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_India_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_India_events.txt [cp932]
+@@ -515,7 +515,7 @@ event = {
+ 	command = { type = independence which = BUR value = 1 when = 1 }\r
+ 	command = { type = independence which = U80 value = 1 when = 1 }\r
+ 	command = { type = independence which = PAK value = 1 when = 1 }\r
+-	command = { type = independence which = IND value = 1 when = 1 }\r
++	command = { type = independence which = UE9 value = 1 when = 1 }\r
+ 	command = { type = non_aggression which = PAK where = IND when = 7200 }\r
+ 	command = { type = non_aggression which = U80 where = IND when = 7200 }\r
+ 	command = { type = non_aggression which = BUR where = IND when = 7200 }\r
+@@ -550,7 +550,7 @@ event = {
+ 	command = { type = non_aggression which = CHC where = BUR when = 7200 }\r
+ 	command = { type = non_aggression which = UCH where = BUR when = 7200 }\r
+ 	command = { type = non_aggression which = U74 where = BUR when = 7200 }\r
+-	command = { type = event which = 2233009 where = IND when = 0 }\r
++	command = { type = event which = 2233009 where = UE9 when = 0 }\r
+ 	command = { type = event which = 2233010 where = BUR when = 0 }\r
+ 	command = { type = event which = 2233011 where = U80 when = 0 }\r
+ 	command = { type = event which = 2233012 where = PAK when = 0 }\r
+@@ -616,7 +616,7 @@ event = {
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 過激派がインドを支配する\r
++	action = { # 藩王国が独立を宣言\r
+ 	name = "ACTIONNAME2233008D"\r
+ 	command = { type = setflag which = Indian_Independence_4 }\r
+ 	command = { type = demobilize which = land when = 1 where = 1 value = 0 }\r
+@@ -816,22 +816,24 @@ event = {
+ 	command = { type = rarematerialspool value = 350 }\r
+ 	command = { type = money value = 120 }\r
+ 	command = { type = manpowerpool value = 80 }\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = name where = UE9 which = "インド連邦" }\r
++	command = { type = flag_ext where = UE9 which = "_com" }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 7 }\r
+ 	command = { type = set_domestic which = free_market value = 3 }\r
+-	command = { type = set_domestic which = freedom value = 3 }\r
+-	command = { type = set_domestic which = defense_lobby value = 3 }\r
+-	command = { type = set_domestic which = interventionism value = 3 }\r
+-	command = { type = headofstate which = 8825017 } # シュリパド・アムリト・ダンゲ\r
+-	command = { type = headofgovernment which = 8825022 } # プラン・シャンド・ジョシ\r
+-	command = { type = foreignminister which = 8825033 } # ソハン・シン・バクナ\r
+-	command = { type = armamentminister which = 8825045 } # プラサンタ・チャンドラ・マハラノビス\r
+-	command = { type = ministerofsecurity which = 8825055 } # アジョイ・ゴーシュ\r
+-	command = { type = ministerofintelligence which = 8825065 } # ムザファル・アフメド\r
+-	command = { type = chiefofstaff which = 8825074 } # シュリパド・アムリト・ダンゲ\r
+-	command = { type = chiefofarmy which = 8825079 } # シュリパド・アムリト・ダンゲ\r
+-	command = { type = chiefofnavy which = 8825082 } # ラム・ダス・カタリ\r
+-	command = { type = chiefofair which = 8825010 } # アーヤン・シン・ヴィブフサン\r
++	command = { type = set_domestic which = freedom value = 2 }\r
++	command = { type = set_domestic which = defense_lobby value = 4 }\r
++	command = { type = set_domestic which = interventionism value = 2 }\r
++	command = { type = headofstate which = 5379001 } # シュリパド・アムリト・ダンゲ\r
++	command = { type = headofgovernment which = 5379002 } # M・N・ローイ\r
++	command = { type = foreignminister which = 5379003 } # P・クリシュナ・ピッライ\r
++	command = { type = armamentminister which = 5379004 } # ガンガダール・アディカリ\r
++	command = { type = ministerofsecurity which = 5379005 } # プラン. チャンド・ジョシ\r
++	command = { type = ministerofintelligence which = 5379006 } # ソーハン・シン・ジョシュ\r
++	command = { type = chiefofstaff which = 5379007 } # パンディット・パルマナンド\r
++	command = { type = chiefofarmy which = 5379008 } # ラーム・シン・タークル\r
++	command = { type = chiefofnavy which = 5379009 } # サルダリラル・マトラダス・ナンダ\r
++	command = { type = chiefofair which = 5379010 } # ハリ・チャンド・デワン\r
+ 	command = { type = add_division value = hq when = 1 }\r
+ 	command = { type = add_division value = infantry when = 5 }\r
+ 	command = { type = add_division value = infantry when = 5 }\r
+@@ -916,16 +918,16 @@ event = {
+ 	command = { type = set_domestic which = freedom value = 3 }\r
+ 	command = { type = set_domestic which = defense_lobby value = 3 }\r
+ 	command = { type = set_domestic which = interventionism value = 3 }\r
+-	command = { type = headofstate which = 8825016 } # スバス・チャンドラ・ボース\r
+-	command = { type = headofgovernment which = 8825021 } # スバス・チャンドラ・ボース\r
+-	command = { type = foreignminister which = 8825032 } # スビラ・A・アイヤール\r
+-	command = { type = armamentminister which = 8825043 } # A.C.チャタージー\r
+-	command = { type = ministerofsecurity which = 8825053 } # ラクシュミー・スワーミー\r
+-	command = { type = ministerofintelligence which = 882506 } # アナンド・モハン・サハイ\r
+-	command = { type = chiefofstaff which = 8825073 } # スバス・チャンドラ・ボース\r
+-	command = { type = chiefofarmy which = 8825078 } # モハメド・ザマン・キアーニ\r
+-	command = { type = chiefofnavy which = 8825084 } # アーコット・ロガナシャーン\r
+-	command = { type = chiefofair which = 8825089 } # ラメシュ・サハラム・ベネガル\r
++	command = { type = headofstate which = 8825019 } # スバス・チャンドラ・ボース\r
++	command = { type = headofgovernment which = 8825028 } # スバス・チャンドラ・ボース\r
++	command = { type = foreignminister which = 8825041 } # スビラ・A・アイヤール\r
++	command = { type = armamentminister which = 8825052 } # ピトリ・シャラン・ラトゥリ\r
++	command = { type = ministerofsecurity which = 8825062 } # ラクシュミー・スワーミーナータン\r
++	command = { type = ministerofintelligence which = 8825073 } # アナンド・モハン・サハイ\r
++	command = { type = chiefofstaff which = 8825082 } # スバス・チャンドラ・ボース\r
++	command = { type = chiefofarmy which = 8825087 } # モハメド・ザマン・キアーニ\r
++	command = { type = chiefofnavy which = 8825094 } # A・D・ロガナサン\r
++	command = { type = chiefofair which = 8825100 } # ラメシュ・サハラム・ベネガル\r
+ 	command = { type = add_division value = hq when = 1 }\r
+ 	command = { type = add_division value = infantry when = 5 }\r
+ 	command = { type = add_division value = infantry when = 5 }\r
+@@ -971,7 +973,7 @@ event = {
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+-	action = { # 過激派が政府を成立させる\r
++	action = { # 藩王国が政府を成立させる\r
+ 	name = "ACTIONNAME2233009D"\r
+ 	trigger = { flag = Indian_Independence_4 }\r
+ 	command = { trigger = { ai = yes } type = ai which = "IFazia/IND_if_Azia.ai" }\r
+@@ -1004,22 +1006,24 @@ event = {
+ 	command = { type = rarematerialspool value = 350 }\r
+ 	command = { type = money value = 120 }\r
+ 	command = { type = manpowerpool value = 80 }\r
+-	command = { type = set_domestic which = democratic value = 1 }\r
+-	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { type = set_domestic which = free_market value = 1 }\r
+-	command = { type = set_domestic which = freedom value = 1 }\r
+-	command = { type = set_domestic which = defense_lobby value = 3 }\r
+-	command = { type = set_domestic which = interventionism value = 3 }\r
+-	command = { type = headofstate which = 8825091 } # サヴィトリ・デヴィ\r
+-	command = { type = headofgovernment which = 8825092 } # サヴィトリ・デヴィ\r
+-	command = { type = foreignminister which = 8825032 } # スビラ・A・アイヤール\r
+-	command = { type = armamentminister which = 8825043 } # A.C.チャタージー\r
+-	command = { type = ministerofsecurity which = 8825053 } # ラクシュミー・スワーミー\r
+-	command = { type = ministerofintelligence which = 882506 } # アナンド・モハン・サハイ\r
+-	command = { type = chiefofstaff which = 8825071 } # シャー・ナワズ・カーン\r
+-	command = { type = chiefofarmy which = 8825078 } # モハメド・ザマン・キアーニ\r
+-	command = { type = chiefofnavy which = 8825084 } # アーコット・ロガナシャーン\r
+-	command = { type = chiefofair which = 8825089 } # ラメシュ・サハラム・ベネガル\r
++	command = { type = name where = IND which = "インド帝国" }\r
++	command = { type = flag_ext where = IND which = "_EMP" }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = set_domestic which = free_market value = 4 }\r
++	command = { type = set_domestic which = freedom value = 4 }\r
++	command = { type = set_domestic which = defense_lobby value = 4 }\r
++	command = { type = set_domestic which = interventionism value = 4 }\r
++	command = { type = headofstate which = 8825016 } # ハイデラバード藩王ニザーム・オスマーン\r
++	command = { type = headofgovernment which = 8825025 } # ハイデラバード藩王ラスタム\r
++	command = { type = foreignminister which = 8825040 } # インドール2世イエスワンサロ\r
++	command = { type = armamentminister which = 8825048 } # イスカンダー・ミルザ\r
++	command = { type = ministerofsecurity which = 8825060 } # バンガナパレ3世アイ・カーン\r
++	command = { type = ministerofintelligence which = 8825071 } # シッキム藩王タシ・ナムギャル\r
++	command = { type = chiefofstaff which = 8825080 } # シャー・ナワズ・カーン\r
++	command = { type = chiefofarmy which = 8825086 } # クレイシ・オブ・バワラプール\r
++	command = { type = chiefofnavy which = 8825093 } # ハリンダー・シン\r
++	command = { type = chiefofair which = 8825099 } # ラヴィンドラ・ダルシャン・シン\r
+ 	command = { type = add_division value = hq when = 1 }\r
+ 	command = { type = add_division value = infantry when = 5 }\r
+ 	command = { type = add_division value = infantry when = 5 }\r

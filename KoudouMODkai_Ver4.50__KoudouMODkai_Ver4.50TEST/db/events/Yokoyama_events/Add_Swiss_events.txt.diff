@@ -1,0 +1,1123 @@
+--- A/db/events/Yokoyama_events/Add_Swiss_events.txt [utf-8]
++++ B/db/events/Yokoyama_events/Add_Swiss_events.txt [cp932]
+@@ -1,47 +1,922 @@
+ #########################################################################\r
+ #\r
+-#		スイス追加イベント  by 横山大佐\r
++#		スイス追加イベント  by 横山大佐\r
+ #########################################################################\r
+-###### 追加イベント一覧 ############\r
++###### 追加イベント一覧 ############\r
+ #########################################################################\r
+-#id = 29110001 スイスの永世中立（現在イベント作成中のため、停止）\r
+-#スイス選挙イベント（1934年 1935年）\r
+-#id = 29110101 スイス連邦大統領交代（1934年）\r
+-#id = 29110102 スイス連邦大統領交代（1935年）\r
+-#id = 29110103 スイス連邦大統領交代（1936年）\r
+-#id = 29110104 スイス選挙（1935年）\r
++#id = 29110001 スイスの永世中立\r
++#id = 29110002 ヴィルヘルム・グストロフ暗殺事件\r
++#id = 29110003 精神的国防運動\r
++#id = 29110004 市民軍の職業軍人化\r
++#id = 29110005 国立堡塁計画\r
++#id = 29110006 スイスの国家体制改革\r
++#id = 29110007 スイスへの同盟提案（枢軸加盟）\r
++#id = 29110008 ドイツからの同盟提案\r
++#id = 29110009 スイスへの同盟提案（連合加盟）\r
++#id = 29110010 フランスからの同盟提案\r
++#id = 29110011 スイスへの同盟提案（共産加盟）\r
++#id = 29110012 ソ連からの同盟提案\r
++#id = 29110013 国民同盟の権力闘争\r
++#id = 29110014 1939年スイス国立博覧会\r
++#スイス選挙イベント（1934年 1935年）\r
++#id = 29110101 スイス連邦大統領交代（1934年）\r
++#id = 29110102 スイス連邦大統領交代（1935年）\r
++#id = 29110103 スイス連邦大統領交代（1936年）\r
++#id = 29110104 スイス選挙（1935年）\r
+ #########################################################################\r
+-#  スイスの永世中立\r
+-# スイスは1815年のウィーン会議以来、欧州で永世中立を認められた国家である。\r
+-# しかし1930年代にヨーロッパの緊張が高まると、スイスは政治的および軍事的状況の再考を余儀なくされた。\r
+-# スイスがこの先、存続するためにもどのような行動をとるか、決定しなくてはならない。\r
++#  スイスの永世中立\r
++# スイスは1815年のウィーン会議以来、欧州で永世中立を認められた国家である。\r
++# しかし1930年代にヨーロッパの緊張が高まると、スイスは政治的および軍事的状況の再考を余儀なくされた。\r
++# スイスがこの先、存続するためにもどのような行動をとるか、決定しなくてはならない。\r
+ #########################################################################\r
+ \r
+ event = {\r
+ 	id = 29110001\r
+ 	random = no\r
+ 	country = SCH\r
++\r
++	trigger = {\r
++	government = democratic\r
++	NOT = { ispuppet = SCH }\r
++	random = 50\r
++	}\r
+ 	\r
+ 	name = "EVT_29110001_NAME"\r
+ 	desc = "EVT_29110001_DESC"\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action = { # 1815年以来の永世中立は守らねばならない\r
+-	name = "ACTIONNAME29110001A" \r
+-	ai_chance = 80\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++\r
++	action = { # 1815年以来の永世中立は守らねばならない\r
++	name = "ACTIONNAME29110001A"\r
++	trigger = { NOT = { exists = UER } } # 正史シナリオ\r
++	command = { type = dissent value = -1 }\r
++	command = { type = setflag which = Switzerland_Neutral }\r
++	ai_chance = 90\r
+ 	}\r
+ \r
+-	action = { # 中立を見直す時が来た\r
+-	name = "ACTIONNAME29110001B" \r
++	action = { # 中立を見直す時が来た\r
++	name = "ACTIONNAME29110001B"\r
++	trigger = { NOT = { exists = UER } } # 正史シナリオ\r
++	command = { type = dissent value = 5 }\r
++	command = { type = domestic which = interventionism value = 5 }\r
++	command = { type = addcore which = 105 }\r
++	command = { type = addcore which = 107 }\r
++	command = { type = addcore which = 132 }\r
++	command = { type = addcore which = 133 }\r
++	command = { type = addcore which = 134 }\r
++	command = { type = addcore which = 135 }\r
++	command = { type = addcore which = 136 }\r
++	command = { type = addcore which = 189 }\r
++	command = { type = addcore which = 86 }\r
++	command = { type = addcore which = 87 }\r
++	command = { type = addcore which = 88 }\r
++	command = { type = addcore which = 90 }\r
++	command = { type = addcore which = 91 }\r
++	command = { type = addcore which = 98 }\r
++	command = { type = addcore which = 395 }\r
++	command = { type = addcore which = 396 }\r
++	command = { type = addcore which = 398 }\r
++	command = { type = addcore which = 399 }\r
++	command = { type = addcore which = 401 }\r
++	command = { type = addcore which = 402 }\r
++	command = { type = addcore which = 407 }\r
++	command = { type = setflag which = Switzerland_intervention }\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # 1815年以来の永世中立は守らねばならない\r
++	name = "ACTIONNAME29110001A"\r
++	trigger = { exists = UER } #  # IFシナリオ\r
++	command = { type = dissent value = -1 }\r
++	command = { type = setflag which = Switzerland_Neutral }\r
+ 	ai_chance = 5\r
+ 	}\r
++\r
++	action = { # 中立を見直す時が来た\r
++	name = "ACTIONNAME29110001B"\r
++	trigger = { exists = UER } #  # IFシナリオ\r
++	command = { type = dissent value = 5 }\r
++	command = { type = domestic which = interventionism value = 5 }\r
++	command = { type = addcore which = 105 }\r
++	command = { type = addcore which = 107 }\r
++	command = { type = addcore which = 132 }\r
++	command = { type = addcore which = 133 }\r
++	command = { type = addcore which = 134 }\r
++	command = { type = addcore which = 135 }\r
++	command = { type = addcore which = 136 }\r
++	command = { type = addcore which = 189 }\r
++	command = { type = addcore which = 86 }\r
++	command = { type = addcore which = 87 }\r
++	command = { type = addcore which = 88 }\r
++	command = { type = addcore which = 90 }\r
++	command = { type = addcore which = 91 }\r
++	command = { type = addcore which = 98 }\r
++	command = { type = addcore which = 395 }\r
++	command = { type = addcore which = 396 }\r
++	command = { type = addcore which = 398 }\r
++	command = { type = addcore which = 399 }\r
++	command = { type = addcore which = 401 }\r
++	command = { type = addcore which = 402 }\r
++	command = { type = addcore which = 407 }\r
++	command = { type = setflag which = Switzerland_intervention }\r
++	ai_chance = 95\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ヴィルヘルム・グストロフ暗殺事件\r
++# ドイツのナチス党は1932年にスイスに国外支部を立ち上げ、ヴィルヘルム・グストロフを支部長に任命した。\r
++# グストロフは、反ユダヤ主義的書物の出版や反ユダヤ主義の扇動を精力的に行い、1936年には多くのスイス人賛同者を集めつつあった。\r
++# このナチスの勢力拡大にユダヤ系クロアチア人の医学生ダヴィッド・フランクフルターは危機感を覚え、グストロフ暗殺を決心し、\r
++# 1936年2月4日のダボスでグストロフを暗殺した。\r
++# ドイツではこの暗殺事件は、ナチス指導者がはじめてユダヤ人に殺された事件として大々的なプロパガンダに使われたが、\r
++# 一方スイスで多数派を占める反ナチス派の国民からは、グストロフ暗殺は望ましくない事件とまでは受けとめられなかった。\r
++# しかしスイス政府は中立を維持するためにもこの事件を厳格に起訴し、結果フランクフルターは有罪となり懲役18年の刑を受けた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110002\r
++	random = no\r
++	country = SCH\r
++\r
++	trigger = {\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++	\r
++	name = "EVT_29110002_NAME"\r
++	desc = "EVT_29110002_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 23 month = 1 year = 1936 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++\r
++	action = { # 中立を維持するためにもこの事件を厳格に裁く\r
++	name = "ACTIONNAME29110002A" \r
++	trigger = { government = democratic }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = relation which = ENG value = 15 }\r
++	command = { type = relation which = FRA value = 15 }\r
++	command = { type = relation which = ITA value = 5 }\r
++	command = { type = relation which = AUS value = 5 }\r
++	command = { type = relation which = U09 value = 5 }\r
++	command = { type = relation which = GER value = -15 }\r
++	command = { type = relation which = UER value = -15 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # ドイツに真摯に謝罪し、ユダヤ人団体を厳罰に処する\r
++	name = "ACTIONNAME29110002B"\r
++	trigger = { government = fascist }\r
++	command = { type = dissent value = 5 }\r
++	command = { type = relation which = GER value = 50 }\r
++	command = { type = relation which = UER value = 50 }\r
++	command = { type = relation which = ENG value = -15 }\r
++	command = { type = relation which = FRA value = -15 }\r
++	command = { type = relation which = ITA value = -15 }\r
++	command = { type = relation which = AUS value = -15 }\r
++	command = { type = relation which = U09 value = -15 }\r
++	command = { type = relation which = SOV value = -15 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 危険なファシストが死んだだけだ\r
++	name = "ACTIONNAME29110002C"\r
++	trigger = { government = communist }\r
++	command = { type = dissent value = 5 }\r
++	command = { type = relation which = SOV value = 50 }\r
++	command = { type = relation which = GER value = -15 }\r
++	command = { type = relation which = UER value = -15 }\r
++	command = { type = relation which = ENG value = -15 }\r
++	command = { type = relation which = FRA value = -15 }\r
++	command = { type = relation which = ITA value = -15 }\r
++	command = { type = relation which = AUS value = -15 }\r
++	command = { type = relation which = U09 value = -15 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  精神的国防運動\r
++# 『精神的国防（独:Geistige Landesverteidigung）』とは、1930年代に始まった文化運動である。\r
++# イタリアやドイツなどの全体主義の脅威に直面したスイスでは、多くの知識人や政府機関が、ファシズムのイデオロギーに対する精神的独立を守ろうとした。\r
++# そこでスイスの民族としての価値観を強化することで、国民間の協調、外敵に対する政治的・文化的な抵抗を強化することが推し進められたのである。\r
++# 1938年にスイスの地方言語であるロマンシュ語を新たな公用語にするなど、様々な面でスイスの共通の精神的価値観の強化が行われた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110003\r
++	random = no\r
++	country = SCH\r
++\r
++	trigger = {\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++	\r
++	name = "EVT_29110003_NAME"\r
++	desc = "EVT_29110003_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 19 month = 3 year = 1938 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++\r
++	action = { # 伝統的価値観を強化する\r
++	name = "ACTIONNAME29110003A" \r
++	trigger = { government = democratic }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = 2 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = relation which = ITA value = -10 }\r
++	command = { type = relation which = GER value = -10 }\r
++	command = { type = relation which = AUS value = -10 }\r
++	command = { type = relation which = U09 value = -10 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 新たな価値観を受け入れよ\r
++	name = "ACTIONNAME29110003B"\r
++	trigger = {\r
++	OR = {\r
++	government = fascist\r
++	government = communist\r
++	}\r
++	}\r
++	command = { type = dissent value = 1 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = relation which = FRA value = 10 }\r
++	command = { type = relation which = ITA value = 10 }\r
++	command = { type = relation which = GER value = 10 }\r
++	command = { type = relation which = AUS value = 10 }\r
++	command = { type = relation which = U09 value = 10 }\r
++	ai_chance = 50\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  市民軍の職業軍人化\r
++# スイスでは12年間、すべての市民が二線級部隊である「ラントヴェーア（独：Landwehr）」部隊の任務に就いている。\r
++# しかしこうした民兵は、正規軍の任務に耐えることはできないことは明らかである。\r
++# 来るべき戦争に向けて、市民兵から志願兵を募って訓練を施し、本格的な戦争を行える軍隊を仕上げるべきだ。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110004\r
++	random = no\r
++	country = SCH\r
++\r
++	decision = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	NOT = { event = 130173 } # ラントヴェーア師団\r
++	OR = {\r
++	atwar = yes\r
++	atwar = GER\r
++	atwar = ITA\r
++	atwar = FRA\r
++	atwar = AUS\r
++	atwar = U09\r
++	NOT = { exists = AUS }\r
++	NOT = { exists = FRA }\r
++	NOT = { exists = CZE }\r
++	}\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++\r
++	decision_trigger = {\r
++	NOT = { event = 130173 } # ラントヴェーア師団\r
++	supplies = 5000\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++\r
++	trigger = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	NOT = { event = 130173 } # ラントヴェーア師団\r
++	OR = {\r
++	atwar = yes\r
++	atwar = GER\r
++	atwar = ITA\r
++	atwar = FRA\r
++	atwar = AUS\r
++	atwar = U09\r
++	NOT = { exists = AUS }\r
++	NOT = { exists = FRA }\r
++	NOT = { exists = CZE }\r
++	}\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++	\r
++	name = "EVT_29110004_NAME"\r
++	desc = "EVT_29110004_DESC"\r
++	style = 2\r
++	picture = "Rhineland"\r
++	decision_picture = "decision_Rhineland"\r
++\r
++	date = { day = 0 month = 0 year = 1937 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 本格的な軍隊とするのだ\r
++	name = "ACTIONNAME29110004A"\r
++	command = { type = sleepevent which = 130173 } # ラントヴェーア師団\r
++	command = { type = belligerence which = SCH value = 3 }\r
++	command = { trigger = { ai = no } type = supplies value = -5000 }\r
++	command = { type = add_division value = hq when = 2 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  国立堡塁計画\r
++# 『国立堡塁計画（独:Schweizer Reduit）』とは、1880年代に始まったスイス防衛計画である。\r
++# スイス国境の後方にある山岳地帯に要塞を用意し、ほぼ難攻不落の要塞の複合体とすることで侵略を抑止することを目的としていた。\r
++# 第一次世界大戦の直後、スイスは国土の要塞化にほとんど関心を寄せなかったが、フランスのマジノ線やチェコスロヴァキアの国境要塞を受けて要塞に再注目し、\r
++# また同時に世界恐慌からの経済回復のための雇用創出のために要塞建設計画を開始した。\r
++# 1940年のフランス降伏を受けてさらに計画が推し進められ、スイスが枢軸国に完全に囲まれた時、国立堡塁は非常に重要な防衛拠点となった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110005\r
++	random = no\r
++	country = SCH\r
++\r
++	decision = {\r
++	flag = Switzerland_Neutral # スイスが中立主義\r
++	OR = {\r
++	atwar = GER\r
++	atwar = ITA\r
++	atwar = FRA\r
++	atwar = AUS\r
++	atwar = U09\r
++	NOT = { exists = AUS }\r
++	NOT = { exists = FRA }\r
++	NOT = { exists = CZE }\r
++	}\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++\r
++	decision_trigger = {\r
++	supplies = 8000\r
++	metal = 4000\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++\r
++	trigger = {\r
++	OR = {\r
++	atwar = GER\r
++	atwar = ITA\r
++	atwar = FRA\r
++	atwar = AUS\r
++	atwar = U09\r
++	NOT = { exists = AUS }\r
++	NOT = { exists = FRA }\r
++	NOT = { exists = CZE }\r
++	}\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++	\r
++	name = "EVT_29110005_NAME"\r
++	desc = "EVT_29110005_DESC"\r
++	style = 2\r
++	picture = "atlantik_wall"\r
++	decision_picture = "decision_atlantik_wall"\r
++\r
++	date = { day = 0 month = 0 year = 1937 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 要塞を建設する\r
++	name = "ACTIONNAME29110005A" \r
++	command = { trigger = { ai = no } type = supplies value = -8000 }\r
++	command = { trigger = { ai = no } type = metalpool value = -4000 }\r
++	command = { trigger = { control = { province = 389 data = SCH } } type = construct which = coastal_fort where = 389 value = 2 }\r
++	command = { trigger = { control = { province = 390 data = SCH } } type = construct which = coastal_fort where = 390 value = 2 }\r
++	command = { trigger = { control = { province = 391 data = SCH } } type = construct which = coastal_fort where = 391 value = 2 }\r
++	command = { trigger = { control = { province = 392 data = SCH } } type = construct which = coastal_fort where = 392 value = 2 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スイスの国家体制改革\r
++# スイスの国名は、スイス建国の中心的役割を果たしたシュヴィーツ州に由来する。\r
++# 現在スイスでは、体制の改革について提案がされており、政府はこの提案を検討する必要がある。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110006\r
++	random = no\r
++	country = SCH\r
++\r
++	trigger = {\r
++	exists = SCH\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "EVT_29110006_NAME"\r
++	desc = "EVT_29110006_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # スイスの国家体制は不変だ\r
++	name = "ACTIONNAME29110006A"\r
++	trigger = { government = democratic }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "スイス" }\r
++	ai_chance = 80\r
++	}\r
++\r
++	action = { # 『ヘルヴェティア共和国』とする\r
++	name = "ACTIONNAME29110006B"\r
++	trigger = { government = democratic }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "ヘルヴェティア共和国" }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『アルプス連邦』とする\r
++	name = "ACTIONNAME29110006C"\r
++	trigger = { government = democratic }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "アルプス連邦" }\r
++	ai_chance = 20\r
++	}\r
++\r
++	action = { # 『アルプス共和国』とする\r
++	name = "ACTIONNAME29110006D"\r
++	trigger = { government = democratic }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "アルプス共和国" }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『アルプス至高国』とする\r
++	name = "ACTIONNAME29110006E"\r
++	trigger = { government = fascist }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "アルプス至高国" }\r
++	command = { type = flag_ext where = SCH which = "_fac" }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 『アルプス帝国』とする\r
++	name = "ACTIONNAME29110006F"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "アルプス帝国" }\r
++	command = { type = flag_ext where = SCH which = "_fac" }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『アルプス社会主義共和国』とする\r
++	name = "ACTIONNAME29110006G"\r
++	trigger = { government = communist }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "アルプス社会主義共和国" }\r
++	command = { type = flag_ext where = SCH which = "_com" }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『アルプス人民国』とする\r
++	name = "ACTIONNAME29110006H"\r
++	trigger = { government = communist }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = SCH which = "アルプス人民国" }\r
++	command = { type = flag_ext where = SCH which = "_com" }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スイスへの同盟提案（枢軸加盟）\r
++# スイスでファシズム勢力が権力を獲得した後、世界大戦の勃発によって日増しに強まる西側諸国からの圧力に対し、\r
++# ドイツ政府はドイツ軍による保護と同盟を提案した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110007\r
++	random = no\r
++	country = GER\r
++\r
++	decision = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	exists = SCH\r
++	government = { type = fascist country = GER }\r
++	government = { type = fascist country = SCH }\r
++	war = { country = GER country = ENG }\r
++	NOT = { war = { country = SCH country = GER } }\r
++	NOT = { exists = POL }\r
++	NOT = { exists = UF7 }\r
++	NOT = { participant = { country = SCH value = 1 } }\r
++	NOT = { participant = { country = SCH value = 2 } }\r
++	NOT = { participant = { country = SCH value = 3 } }\r
++	NOT = { participant = { country = SCH value = 4 } }\r
++	NOT = { ispuppet = GER }\r
++	OR = {\r
++	NOT = { ispuppet = SCH }\r
++	puppet = { country = SCH country = GER }\r
++	}\r
++	}\r
++\r
++	decision_trigger = {\r
++	relation = { which = SCH value = 100 }\r
++	}\r
++\r
++	trigger = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	exists = SCH\r
++	government = { type = fascist country = GER }\r
++	government = { type = fascist country = SCH }\r
++	war = { country = GER country = ENG }\r
++	NOT = { war = { country = SCH country = GER } }\r
++	NOT = { exists = POL }\r
++	NOT = { exists = UF7 }\r
++	NOT = { participant = { country = SCH value = 1 } }\r
++	NOT = { participant = { country = SCH value = 2 } }\r
++	NOT = { participant = { country = SCH value = 3 } }\r
++	NOT = { participant = { country = SCH value = 4 } }\r
++	NOT = { ispuppet = GER }\r
++	OR = {\r
++	NOT = { ispuppet = SCH }\r
++	puppet = { country = SCH country = GER }\r
++	}\r
++	random = 50\r
++	}\r
++\r
++	name = "EVT_29110007_NAME"\r
++	desc = "EVT_29110007_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++	decision_picture = "decision_anticominternpact"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # スイスに提案しよう\r
++	name = "ACTIONNAME29110007A"\r
++	command = { type = relation which = SCH value = 30 }\r
++	command = { type = trigger which = 29110008 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ドイツからの同盟提案\r
++# スイスでファシズム勢力が権力を獲得した後、世界大戦の勃発によって日増しに強まる西側諸国からの圧力に対し、\r
++# ドイツ政府はドイツ軍による保護と同盟を提案した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110008\r
++	random = no\r
++	country = SCH\r
++\r
++	name = "EVT_29110008_NAME"\r
++	desc = "EVT_29110008_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 素晴らしい提案だ\r
++	name = "ACTIONNAME29110008A"\r
++	command = { type = relation which = GER value = 30 }\r
++	command = { type = leave_alliance when = 1 }\r
++	command = { type = alliance which = GER when = 1 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 拒否する\r
++	name = "ACTIONNAME29110008B"\r
++	command = { type = relation which = GER value = -30 }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スイスへの同盟提案（連合加盟）\r
++# スイスで民主主義勢力が権力を維持した後、世界大戦の勃発によって日増しに強まるファシズム諸国からの圧力に対し、\r
++# 連合国は軍による保護と同盟を提案した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110009\r
++	random = no\r
++	country = FRA\r
++\r
++	decision = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	exists = SCH\r
++	government = { type = democratic country = GER }\r
++	government = { type = democratic country = SCH }\r
++	war = { country = GER country = FRA }\r
++	NOT = { war = { country = SCH country = FRA } }\r
++	NOT = { participant = { country = SCH value = 1 } }\r
++	NOT = { participant = { country = SCH value = 2 } }\r
++	NOT = { participant = { country = SCH value = 3 } }\r
++	NOT = { participant = { country = SCH value = 4 } }\r
++	NOT = { ispuppet = FRA }\r
++	OR = {\r
++	NOT = { ispuppet = SCH }\r
++	puppet = { country = SCH country = FRA }\r
++	}\r
++	}\r
++\r
++	decision_trigger = {\r
++	relation = { which = SCH value = 100 }\r
++	}\r
++\r
++	trigger = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	exists = SCH\r
++	government = { type = democratic country = GER }\r
++	government = { type = democratic country = SCH }\r
++	war = { country = GER country = FRA }\r
++	NOT = { war = { country = SCH country = FRA } }\r
++	NOT = { participant = { country = SCH value = 1 } }\r
++	NOT = { participant = { country = SCH value = 2 } }\r
++	NOT = { participant = { country = SCH value = 3 } }\r
++	NOT = { participant = { country = SCH value = 4 } }\r
++	NOT = { ispuppet = FRA }\r
++	OR = {\r
++	NOT = { ispuppet = SCH }\r
++	puppet = { country = SCH country = FRA }\r
++	}\r
++	random = 50\r
++	}\r
++\r
++	name = "EVT_29110009_NAME"\r
++	desc = "EVT_29110009_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++	decision_picture = "decision_anticominternpact"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # スイスに提案しよう\r
++	name = "ACTIONNAME29110009A"\r
++	command = { type = relation which = SCH value = 30 }\r
++	command = { type = trigger which = 29110010 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  フランスからの同盟提案\r
++# スイスで民主主義勢力が権力を維持した後、世界大戦の勃発によって日増しに強まるファシズム諸国からの圧力に対し、\r
++# 連合国は軍による保護と同盟を提案した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110010\r
++	random = no\r
++	country = SCH\r
++\r
++	name = "EVT_29110010_NAME"\r
++	desc = "EVT_29110010_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 素晴らしい提案だ\r
++	name = "ACTIONNAME29110010A"\r
++	command = { type = relation which = ENG value = 30 }\r
++	command = { type = relation which = FRA value = 30 }\r
++	command = { type = leave_alliance when = 1 }\r
++	command = { type = alliance which = FRA when = 1 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 拒否する\r
++	name = "ACTIONNAME29110010B"\r
++	command = { type = relation which = ENG value = -30 }\r
++	command = { type = relation which = FRA value = -30 }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  スイスへの同盟提案（共産加盟）\r
++# スイスで共産勢力が権力を獲得した後、世界大戦の勃発によって日増しに強まる西側諸国からの圧力に対し、\r
++# ソ連政府は赤軍による保護と同盟を提案した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110011\r
++	random = no\r
++	country = SOV\r
++\r
++	decision = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	exists = SCH\r
++	government = { type = communist country = SOV }\r
++	government = { type = communist country = SCH }\r
++	NOT = { participant = { country = SCH value = 1 } }\r
++	NOT = { participant = { country = SCH value = 2 } }\r
++	NOT = { participant = { country = SCH value = 3 } }\r
++	NOT = { participant = { country = SCH value = 4 } }\r
++	NOT = { ispuppet = SOV }\r
++	OR = {\r
++	NOT = { ispuppet = SCH }\r
++	puppet = { country = SCH country = SOV }\r
++	}\r
++	}\r
++\r
++	decision_trigger = {\r
++	relation = { which = SCH value = 100 }\r
++	}\r
++\r
++	trigger = {\r
++	flag = Switzerland_intervention # スイスが中立を放棄\r
++	exists = SCH\r
++	government = { type = communist country = SOV }\r
++	government = { type = communist country = SCH }\r
++	NOT = { participant = { country = SCH value = 1 } }\r
++	NOT = { participant = { country = SCH value = 2 } }\r
++	NOT = { participant = { country = SCH value = 3 } }\r
++	NOT = { participant = { country = SCH value = 4 } }\r
++	NOT = { ispuppet = SOV }\r
++	OR = {\r
++	NOT = { ispuppet = SCH }\r
++	puppet = { country = SCH country = SOV }\r
++	}\r
++	random = 50\r
++	}\r
++\r
++	name = "EVT_29110011_NAME"\r
++	desc = "EVT_29110011_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++	decision_picture = "decision_anticominternpact"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # スイスに提案しよう\r
++	name = "ACTIONNAME29110011A"\r
++	command = { type = relation which = SCH value = 30 }\r
++	command = { type = trigger which = 29110012 }\r
++	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  スイス選挙イベント（1934年 1935年 1936年）\r
++#  ソ連からの同盟提案\r
++# スイスで共産勢力が権力を獲得した後、世界大戦の勃発によって日増しに強まる西側諸国からの圧力に対し、\r
++# ソ連政府は赤軍による保護と同盟を提案した。\r
+ #########################################################################\r
+-#  スイス連邦大統領交代（1934年）\r
++\r
++event = {\r
++	id = 29110012\r
++	random = no\r
++	country = SCH\r
++\r
++	name = "EVT_29110012_NAME"\r
++	desc = "EVT_29110012_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 素晴らしい提案だ\r
++	name = "ACTIONNAME29110012A"\r
++	command = { type = relation which = SOV value = 30 }\r
++	command = { type = leave_alliance when = 1 }\r
++	command = { type = alliance which = SOV when = 1 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # 拒否する\r
++	name = "ACTIONNAME29110012B"\r
++	command = { type = relation which = SOV value = -30 }\r
++	ai_chance = 10\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  国民同盟の権力闘争\r
++# スイスのファシズム政党である国民同盟が権力を掌握してから間もなく、ファシズムの熱心な支持者であり、\r
++# ドイツとの協力を主張するロルフ・ヘンとスイス連邦議会にも選出された唯一のファシスト党員であるロベルト・トブラーの間で対立が生まれ、権力闘争が起きた。\r
++# 新たな新体制となったスイスに、二人の「指導者」は要らない。\r
++# どちらかが権力闘争で勝利することのほか、ありえないのだ。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110013\r
++	random = no\r
++	country = SCH\r
++\r
++	trigger = {\r
++	government = fascist\r
++	OR = {\r
++	headofstate = 80210 # ロルフ・ヘン\r
++	headofstate = 80213 # ロベルト・トブラー\r
++	}\r
++	OR = {\r
++	minister = 80210 # ロルフ・ヘン\r
++	minister = 80213 # ロベルト・トブラー\r
++	}\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	random = 40\r
++	}\r
++	\r
++	name = "EVT_29110013_NAME"\r
++	desc = "EVT_29110013_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++\r
++	action = { # トブラーが新たな指導者となる\r
++	name = "ACTIONNAME29110013A" \r
++	command = { type = dissent value = -1 }\r
++	command = { type = sleepminister which = 80210 } # ロルフ・ヘン\r
++	command = { type = sleepminister which = 80211 }\r
++	command = { type = sleepminister which = 80212 }\r
++	command = { type = headofstate which = 80213 } # ロベルト・トブラー\r
++	command = { type = headofgovernment which = 80214 }\r
++	command = { type = relation which = GER value = -10 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # ヘンが敵を党から除籍した\r
++	name = "ACTIONNAME29110013B"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = sleepminister which = 80213 } # ロベルト・トブラー\r
++	command = { type = sleepminister which = 80214 }\r
++	command = { type = sleepminister which = 80215 }\r
++	command = { type = headofstate which = 80210 } # ロルフ・ヘン\r
++	command = { type = headofgovernment which = 80211 }\r
++	command = { type = relation which = GER value = 10 }\r
++	ai_chance = 50\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  1939年スイス国立博覧会\r
++# 1939年5月6日から10月29日にかけて、スイスのチューリッヒで国立博覧会が開催された。\r
++# 本来、1933年に国立博覧会が開催される予定ではあったが、大恐慌などで計画が妨げられ、数度の延期を経ての開催であった。\r
++# 博覧会は1,000万人以上が訪れるという成功を収めたが、何よりの成果は、当時ファシズムの脅威に直面していたスイスにおいて、\r
++# ファシズムに対抗することができる『スイス的価値観』が再認識されたことである。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 29110014\r
++	random = no\r
++	country = SCH\r
++\r
++	trigger = {\r
++	government = democratic\r
++	atwar = no\r
++	NOT = { ispuppet = SCH }\r
++	}\r
++	\r
++	name = "EVT_29110014_NAME"\r
++	desc = "EVT_29110014_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 5 month = 4 year = 1939 }\r
++\r
++	action = { # 国立博覧会は大成功を収めた\r
++	name = "ACTIONNAME29110014A" \r
++	command = { type = dissent value = -3 }\r
++	command = { type = money value = 100 }\r
++	command = { type = domestic which = freedom value = 1 }\r
++	command = { type = relation which = ITA value = -20 }\r
++	command = { type = relation which = GER value = -20 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++#########################################################################\r
++#  スイス選挙イベント（1934年 1935年 1936年）\r
++#########################################################################\r
++#  スイス連邦大統領交代（1934年）\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -62,22 +937,22 @@ event = {
+ 	date = { day = 10 month = may year = 1934 }\r
+ \r
+ \r
+-	action = { # 了解\r
++	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 9 }\r
+-	command = { type = headofstate which = 80014 } # マルセル・ピレ=ゴラツ\r
+-	command = { type = headofgovernment which = 80023 } # マルセル・ピレ=ゴラツ\r
+-	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
+-	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
+-	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
+-	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
++	command = { type = headofstate which = 80014 } # マルセル・ピレ=ゴラツ\r
++	command = { type = headofgovernment which = 80023 } # マルセル・ピレ=ゴラツ\r
++	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
++	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
++	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
++	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  スイス連邦大統領交代（1935年）\r
++#  スイス連邦大統領交代（1935年）\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -98,22 +973,22 @@ event = {
+ 	date = { day = 10 month = may year = 1935 }\r
+ \r
+ \r
+-	action = { # 了解\r
++	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 5 }\r
+-	command = { type = headofstate which = 80207 } # ルドルフ・ミンガー\r
+-	command = { type = headofgovernment which = 80208 } # ルドルフ・ミンガー\r
+-	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
+-	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
+-	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
+-	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
++	command = { type = headofstate which = 80207 } # ルドルフ・ミンガー\r
++	command = { type = headofgovernment which = 80208 } # ルドルフ・ミンガー\r
++	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
++	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
++	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
++	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  スイス連邦大統領交代（1936年）\r
++#  スイス連邦大統領交代（1936年）\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -133,21 +1008,21 @@ event = {
+ \r
+ 	date = { day = 10 month = may year = 1936 }\r
+ \r
+-	action = { # 了解\r
++	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = headofstate which = 80001 } # アルベルト・マイヤー\r
+-	command = { type = headofgovernment which = 80002 } # アルベルト・マイヤー\r
+-	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
+-	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
+-	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
+-	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
++	command = { type = headofstate which = 80001 } # アルベルト・マイヤー\r
++	command = { type = headofgovernment which = 80002 } # アルベルト・マイヤー\r
++	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
++	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
++	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
++	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
+ 	}\r
+ }\r
+ #########################################################################\r
+-#  スイス選挙（1935年）\r
++#  スイス選挙（1935年）\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -167,13 +1042,14 @@ event = {
+ \r
+ 	date = { day = 26 month = 9 year = 1935 }\r
+ \r
+-	action = { # 現政権を維持する\r
++	action = { # 現政権を維持する\r
+ 	name = "elec_keep"\r
++	trigger = { NOT = { exists = UER } } # 正史シナリオ\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 90\r
+ 	}\r
+ \r
+-	action = { # まさか国民同盟が第一党を確保するとは！\r
++	action = { # まさか国民同盟が第一党を確保するとは！\r
+ 	name = "ACTIONNAME29110104A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+@@ -182,38 +1058,41 @@ event = {
+ 	command = { type = set_domestic which = freedom value = 4 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { type = headofstate which = 80087 } # フランツ・ブリ\r
+-	command = { type = headofgovernment which = 80088 } # フランツ・ブリ\r
+-	command = { type = foreignminister which = 80089 } # ヤコブ・ローレンツ\r
+-	command = { type = armamentminister which = 80090 } # ハンス・エーラー\r
+-	command = { type = ministerofsecurity which = 80091 } # フランツ・ブリ\r
+-	command = { type = ministerofintelligence which = 80092 } # アルフレート・サラシン\r
+-	command = { type = chiefofstaff which = 80093 } # オイゲン・ビルヒャー\r
+-	command = { type = chiefofarmy which = 80094 } # オイゲン・ビルヒャー\r
+-	command = { type = chiefofnavy which = 80095 } # ハンス・エーラー\r
+-	command = { type = chiefofair which = 80096 } # アルフレート・サラシン\r
++	command = { type = headofstate which = 80210 } # ロルフ・ヘン\r
++	command = { type = headofgovernment which = 80214 } # ロベルト・トブラー\r
++	command = { type = foreignminister which = 80089 } # ヤコブ・ローレンツ\r
++	command = { type = armamentminister which = 80090 } # ハンス・エーラー\r
++	command = { type = ministerofsecurity which = 80216 } # フランツ・ブリ\r
++	command = { type = ministerofintelligence which = 80092 } # アルフレート・サラシン\r
++	command = { type = chiefofstaff which = 80093 } # オイゲン・ビルヒャー\r
++	command = { type = chiefofarmy which = 80094 } # オイゲン・ビルヒャー\r
++	command = { type = chiefofnavy which = 80095 } # ハンス・エーラー\r
++	command = { type = chiefofair which = 80096 } # アルフレート・サラシン\r
++	command = { type = sleepevent which = 9999768 } # AI閣僚変更イベント\r
+ 	ai_chance = 5\r
+ 	}\r
+ \r
+-	action = { # 共産党が労働者の圧倒的支持を集めた\r
++	action = { # 共産党が労働者の圧倒的支持を集めた\r
+ 	name = "ACTIONNAME29110104B"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = set_domestic which = free_market value = 5 }\r
+-	command = { type = set_domestic which = freedom value = 5 }\r
+-	command = { type = set_domestic which = defense_lobby value = 2 }\r
+-	command = { type = set_domestic which = interventionism value = 2 }\r
+-	command = { type = headofstate which = 80097 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
+-	command = { type = headofgovernment which = 80098 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
+-	command = { type = foreignminister which = 80099 } # ヘルマン・ヘッセル=ローレンツ\r
+-	command = { type = armamentminister which = 80100 } # エミール・フライ\r
+-	command = { type = ministerofsecurity which = 80062 } # ハインリヒ・アベック\r
+-	command = { type = ministerofintelligence which = 80101 } # テオ・マイアー\r
+-	command = { type = chiefofstaff which = 80102 } # トラウゴット・マイヤー\r
+-	command = { type = chiefofarmy which = 80103 } # エミール・フライ\r
+-	command = { type = chiefofnavy which = 80104 } # ヘルマン・ヘッセル=ローレンツ\r
+-	command = { type = chiefofair which = 80105 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = set_domestic which = free_market value = 4 }\r
++	command = { type = set_domestic which = freedom value = 4 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = headofstate which = 80097 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = headofgovernment which = 80098 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = foreignminister which = 80099 } # ヘルマン・ヘッセル=ローレンツ\r
++	command = { type = armamentminister which = 80100 } # エミール・フライ\r
++	command = { type = ministerofsecurity which = 80062 } # ハインリヒ・アベック\r
++	command = { type = ministerofintelligence which = 80101 } # テオ・マイアー\r
++	command = { type = chiefofstaff which = 80102 } # トラウゴット・マイヤー\r
++	command = { type = chiefofarmy which = 80103 } # エミール・フライ\r
++	command = { type = chiefofnavy which = 80104 } # ヘルマン・ヘッセル=ローレンツ\r
++	command = { type = chiefofair which = 80105 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = sleepevent which = 1918014 } # Fullkai革命イベント\r
++	command = { type = sleepevent which = 9999768 } # AI閣僚変更イベント\r
+ 	ai_chance = 5\r
+ 	}\r
+ }
+\ No newline at end of file

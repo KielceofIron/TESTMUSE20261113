@@ -1,0 +1,96 @@
+--- A/ai/IF/ger_if.ai [cp932]
++++ B/ai/IF/ger_if.ai [cp932]
+@@ -3,7 +3,7 @@
+ switch = no # [yes/no]\r
+ max_front_ratio = 1.5 \r
+ max_front_ratios = {\r
+-    FRA = 2.8\r
++    FRA = -1\r
+     UTC = 4\r
+     UB8 = 3 #暫定値\r
+ }\r
+@@ -433,7 +433,7 @@ construction = {
+ 		146 # Hannover\r
+ 	}\r
+ \r
+-	coastal_fort = atwar\r
++	coastal_fort = no\r
+ 	max_coastal_level = 3\r
+ 	coastal_fort_provs = {\r
+ 		152 # Kiel\r
+@@ -475,8 +475,8 @@ construction = {
+ 	}\r
+ \r
+ 	ic_at_war = no\r
+-	force_ic_until = 1938\r
+-	ic_end_year = 1941\r
++	force_ic_until = 1937\r
++	ic_end_year = 1938\r
+ 	IC_provs = {\r
+ 		127 # Saarburken\r
+ 		179 # Munchen\r
+@@ -501,12 +501,12 @@ military = {
+ 	extra_convoys_peace		= 0.0000\r
+ \r
+ 	#### Divisions etc...\r
+-	infantry			= 30		#33\r
++	infantry			= 17		#33\r
+ 	cavalry				= 0\r
+-	motorized			= 10		#5\r
+-	mechanized			= 8		#4\r
+-	light_armor			= 8\r
+-	armor				= 8		#10\r
++	motorized			= 5		#5\r
++	mechanized			= 4		#4\r
++	light_armor			= 4\r
++	armor				= 4		#10\r
+ 	paratrooper			= 3		#0\r
+ 	marine				= 0\r
+ 	bergsjaeger			= 0		#1\r
+@@ -515,11 +515,11 @@ military = {
+ 	militia				= 0\r
+ #				70 #62 %\r
+ \r
+-	interceptor			= 6		#4\r
+-	multi_role			= 6\r
+-	cas					= 3\r
+-	strategic_bomber	= 1\r
+-	tactical_bomber		= 3		#5\r
++	interceptor			= 16		#4\r
++	multi_role			= 11\r
++	cas					= 8\r
++	strategic_bomber	= 6\r
++	tactical_bomber		= 8		#5\r
+ 	naval_bomber		= 1		#2\r
+ 	transport_plane		= 0\r
+ 	flying_bomb			= 0\r
+@@ -820,26 +820,15 @@ garrison = {
+ 		243  = 50  #Lubin\r
+ 		236  = 50\r
+ 		237  = 50\r
++		389  = -1\r
+ 		\r
+-		55  = 20  #Paris\r
+-		52  = 20  #Lille\r
+-		116  = 20  #Brussels\r
+-		145  = 20  #Prague\r
+-		104  = 20  #Metz\r
+-		43  = 20  #Cherborg\r
+-		42  = 20  #Avranches\r
+-		69  = 10  #La Rochele\r
+-		147  = 20  #Wilhelmshafen\r
+-		148  = 20  #Bremen\r
+-		150  = 20  #Groningen\r
+-		338  = 20  #Belgrade\r
+ 	}\r
+ 	area_multiplier = {}\r
+ }\r
+ front = { \r
+ 	recklessness 		= 3 # 0-3\r
+-	distrib_vs_ai 		= Even\r
+-	distrib_vs_human 	= Even\r
++	distrib_vs_ai 		= Defensive\r
++	distrib_vs_human 	= Defensive\r
+ 	front_leader_home	= 100\r
+ \r
+ 	enemy_reinf_days	= 6\r

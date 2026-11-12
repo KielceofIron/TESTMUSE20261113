@@ -1,0 +1,95 @@
+--- A/db/tech/land_doctrines_tech.txt [cp932]
++++ B/db/tech/land_doctrines_tech.txt [cp932]
+@@ -23,6 +23,9 @@ technology =
+     required  = { }\r
+     effects =\r
+     { \r
++      #command = { trigger = { flag = if_japan_scenario } type = ground_def_eff when = 1 value = 0.15 }\r
++	#command = { trigger = { flag = if_japan_scenario } type = defensiveness which = land value = 30 }\r
++	#command = { trigger = { flag = if_japan_scenario } type = toughness which = land value = 30 }\r
+       #command = { trigger = { flag = if_japan_scenario } type = tc_mod value = -200 }\r
+       #command = { trigger = { flag = if_japan_scenario } type = fort_attack which = land value = 200 }\r
+       #command = { trigger = { flag = if_japan_scenario } type = fort_attack which = land value = 200 }\r
+@@ -883,7 +886,9 @@ technology =
+     component = { id = 6245 name = TECH_CMP_LD_24_5_NAME type = training difficulty = 6 }\r
+     required  = { 6230 }\r
+     effects =\r
+-    { command = { type = muddy_defense which = land value = 5 }\r
++    { \r
++      command = { trigger = { flag = if_japan_scenario } type = ground_def_eff when = 1 value = 0.02 }\r
++      command = { type = muddy_defense which = land value = 5 }\r
+       command = { type = plain_defense which = land value = 5 }\r
+       command = { type = desert_defense which = land value = 1.5 }\r
+       command = { type = mountain_defense which = land value = 4 }\r
+@@ -919,7 +924,9 @@ technology =
+     required  = { 6260 6240 }\r
+     effects =\r
+     { # command = { type = ground_def_eff value = 1 }\r
+-      command = { type = ground_def_eff when = 1 value = 0.10 }\r
++      command = { trigger = { NOT = { flag = if_japan_scenario } } type = ground_def_eff when = 1 value = 0.10 }\r
++      command = { trigger = { flag = if_japan_scenario } type = ground_def_eff when = 1 value = 0.02 }\r
++	\r
+       command = { type = max_organization which = land value = 10 } # 5\r
+       command = { type = ambush value = 5 }\r
+       command = { type = new_model which = hq value = 4 }\r
+@@ -947,7 +954,9 @@ technology =
+     component = { id = 6295 name = TECH_CMP_LD_29_5_NAME type = maneuver_tactics difficulty = 8 }\r
+     required  = { 6270 }\r
+     effects =\r
+-    { command = { type = max_organization which = land value = 2 }\r
++    { \r
++      command = { trigger = { flag = if_japan_scenario } type = ground_def_eff when = 1 value = 0.02 }\r
++      command = { type = max_organization which = land value = 2 }\r
+       command = { type = breakthrough value = 4 }\r
+       command = { type = encirclement value = 2 }\r
+       command = { type = assault value = 1 }\r
+@@ -974,7 +983,9 @@ technology =
+     component = { id = 6285 name = TECH_CMP_LD_28_5_NAME type = maneuver_tactics difficulty = 7 }\r
+     required  = { 6270 }\r
+     effects =\r
+-    { command = { type = morale which = land value = 5 }\r
++    { \r
++      command = { trigger = { flag = if_japan_scenario } type = ground_def_eff when = 1 value = 0.02 }\r
++      command = { type = morale which = land value = 5 }\r
+       command = { type = tactical_withdrawal value = 4 }\r
+       command = { type = counterattack value = 4 }\r
+       command = { type = delay value = 2 }\r
+@@ -1001,7 +1012,9 @@ technology =
+     component = { id = 14105 name = TECH_CMP_LD_9_4_NAME type = maneuver_tactics difficulty = 9 }\r
+     required  = { 6290 }\r
+     effects =\r
+-    { command = { type = max_organization which = land value = 3 }\r
++    { \r
++      command = { trigger = { flag = if_japan_scenario } type = ground_def_eff when = 1 value = 0.02 }\r
++      command = { type = max_organization which = land value = 3 }\r
+       command = { type = morale which = land value = 5 }\r
+       command = { type = breakthrough value = 5 }\r
+       command = { type = new_model which = hq value = 5 }\r
+@@ -1695,12 +1708,12 @@ technology =
+       command = { trigger = { flag = if_japan_scenario } type = soft_attack which = heavy_armor value = 7 }\r
+       command = { trigger = { flag = if_japan_scenario } type = soft_attack which = medium_armor value = 3 }\r
+       command = { trigger = { flag = if_japan_scenario } type = hard_attack which = medium_armor value = 3 }\r
+-      command = { trigger = { flag = if_japan_scenario } type = soft_attack which = super_heavy_artillery value = 50 }\r
+-      command = { trigger = { flag = if_japan_scenario } type = hard_attack which = super_heavy_artillery value = 30 }\r
+-      #command = { trigger = { flag = if_japan_scenario } type = soft_attack which = super_heavy_artillery value = 20 }\r
+-      #command = { trigger = { flag = if_japan_scenario } type = hard_attack which = super_heavy_artillery value = 10 }\r
+-      command = { trigger = { flag = if_japan_scenario } type = build_cost which = super_heavy_artillery when = on_upgrade where = relative value = 40 }\r
+-      command = { trigger = { flag = if_japan_scenario } type = build_time which = super_heavy_artillery when = on_upgrade where = relative value = 30 }\r
++      #command = { trigger = { flag = if_japan_scenario } type = soft_attack which = super_heavy_artillery value = 50 }\r
++      #command = { trigger = { flag = if_japan_scenario } type = hard_attack which = super_heavy_artillery value = 30 }\r
++      command = { trigger = { flag = if_japan_scenario } type = soft_attack which = super_heavy_artillery value = 20 }\r
++      command = { trigger = { flag = if_japan_scenario } type = hard_attack which = super_heavy_artillery value = 10 }\r
++      command = { trigger = { flag = if_japan_scenario } type = build_cost which = super_heavy_artillery when = on_upgrade where = relative value = 15 }\r
++      command = { trigger = { flag = if_japan_scenario } type = build_time which = super_heavy_artillery when = on_upgrade where = relative value = 15 }\r
+       #command = { trigger = { flag = if_japan_scenario } type = max_organization which = land value = -15 }\r
+ 	command = { type = toughness which = super_heavy_artillery value = -20 }\r
+ 	command = { type = defensiveness which = super_heavy_artillery value = -20 }\r
+@@ -2697,7 +2710,7 @@ technology =
+       command = { type = swamp_move which = land value = 20 }\r
+       command = { type = urban_move which = land value = 15 }\r
+       command = { type = deactivate which = 6210 }\r
+-      command = { type = deactivate which = 6560 }\r
++      command = { trigger = { NOT = { flag = USAdoctrine } } type = deactivate which = 6560 }\r
+       command = { type = deactivate which = 6570 }\r
+       command = { type = deactivate which = 6010 }\r
+       command = { type = deactivate which = 6000100 }\r

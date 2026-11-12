@@ -1,0 +1,354 @@
+--- A/scenarios/1933if_Japan/newzealand_if.inc [cp932]
++++ B/scenarios/1933if_Japan/newzealand_if.inc [cp932]
+@@ -1,210 +1,146 @@
+- \r
+- ############################## \r
+- # Country definition for NZL # \r
+- ############################## \r
+-  \r
+- ##################### \r
+- # Country main data # \r
+- ##################### \r
+-  \r
+- country = \r
+- {  tag                    = NZL \r
+-	ai = "nzl_1933.ai"\r
+-	ai_settings	= { flags = { MOB1 = yes MOB2 = yes } }\r
+-	dissent = 3\r
+-	puppet = ENG \r
+-	# Resource Reserves \r
+-	energy                 = 420\r
+-	metal                  = 210\r
+-	rare_materials         = 105\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 10 \r
+-	transports             = 120 \r
+-	escorts                = 15 \r
+-	capital                = 1721 \r
+-	manpower               = 3 \r
+-   diplomacy = \r
+-   {  relation = {  tag = AST value = 200  } # was access = yes \r
+-     relation = {  tag = BEL value = 20  } \r
+-     relation = {  tag = BHU value = 200  } \r
+-     relation = {  tag = CAN value = 200  } # was access = yes \r
+-     relation = {  tag = ENG value = 200  } # was access = yes \r
+-     relation = {  tag = FIN value = 50  } \r
+-     relation = {  tag = FRA value = 150  } \r
+-     relation = {  tag = GER value = 1  } \r
+-     relation = {  tag = IRE value = 75  } \r
+-     relation = {  tag = IRQ value = 100  } \r
+-     relation = {  tag = ITA value = 1  } \r
+-     relation = {  tag = NEP value = 200  } \r
+-     relation = {  tag = OMN value = 150  } \r
+-     relation = {  tag = SAF value = 200  } # was access = yes \r
+-     relation = {  tag = USA value = 125  } \r
+-     relation = {  tag = YEM value = 150  } \r
+-    } \r
+-   SpyInfo                = {  country = "NZL" NumberOfSpies = 5  } \r
+-   nationalprovinces      = {  1718 1719 1720 1721 1722 1723  } \r
+-   ownedprovinces         = {  1718 1719 1720 1721 1722 1723 1732 1741 1742 1748  } \r
+-   controlledprovinces    = {  1718 1719 1720 1721 1722 1723 1732 1741 1742 1748  } \r
++##############################\r
++# Country definition for NZL #\r
++##############################\r
+ \r
+-	# NZL 1933 techs \r
+-	# ###################### \r
+-	techapps = { \r
+-	# Infantry Division  \r
+-	1010  1020 1030 1040 1050 1060 1070 1080 1090\r
+-	# Cavalry Division \r
+-	13060 13070 13080 1310 1320 1330 1340 1350 1360 1370\r
+-	# 1930 Supply \r
+-	1910 1920 1930 1940 1950 1960 1970 1980\r
+-	# Hospital System \r
+-	14000 14010 14020\r
+-	#Naval Infantry\r
+-	#1560 1570 1580\r
+-	#Engineers\r
+-	1830 1840 1850 1860\r
+-	# Tank \r
+-	7600 7610 2620 2010 2630\r
+-	# Field Artillery \r
+-	2290 2300 2310 \r
+-	# Static Anti-Air Artillery \r
+-	2800 2450 21180 21190\r
+-	# Anti-Air Artillery Brigade \r
+-	2810 2820 2510\r
+-	# Destroyer \r
+-	3010 3020 3030 3040 3050\r
+-	# Light Cruiser \r
+-	3110 3120 3130 3140\r
+-	# Fighter  \r
+-	4500 4510 4520 4530 4540 4550 4010 4020\r
+-	# Bomber \r
+-	4600 4610 4620 4630 4120 4130\r
+-	# Multirole fighter\r
+-	4300 4310 4320 4330\r
+-	# Strategic bomber\r
+-	4800 4810 4820\r
+-	# Naval bomber\r
+-	4700 4710\r
+-	# Mechanized Agriculture \r
+-	5700 5710 5010 5020\r
+-	# Manufactoring\r
+-	5810 5820 5050 5830 5060\r
+-	# Construction Engineering \r
+-	5800 5080 5090 \r
+-	# Computers & cryptography\r
+-	5310 54010 54020 54030 5316 5326\r
+-	# Torpedo & ASW 18\r
+-	3720 3730 3736 3740 3750 3900\r
+-	# Medicine\r
+-	5600 5610 5620 5630\r
+-	# Troopships\r
+-	3810  \r
+-	# Land Doctrines WW1 - Entente Line\r
+-	6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-	# Land Doctrines WW2 - Def. Focus (Commonwealth)\r
+-	6560\r
+-	# Engagement Theories\r
+-	8010 8020 8040 8050 8060 8070 8080\r
+-	# Naval Supremacy\r
+-	8100 8110 8120 8150 8160 8200 8210\r
+-	# Naval Interdiction\r
+-	8500 8510 8520 8600\r
+-	# Engagement Tactics\r
+-	8900 8910 8920 8930 8940\r
+-	# Air Doctrines\r
+-	27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470\r
+-} \r
+-inventions = { 3000027 }\r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 10 \r
+-     political_left    = 10 \r
+-     freedom           = 10 \r
+-     free_market       = 8 \r
+-     professional_army = 2 \r
+-     defense_lobby     = 2 \r
+-     interventionism   = 6 \r
+-    } \r
+-   headofstate            = {  type = 9 id = 215111  } #Charles Bathurst Viscount Bledisloe\r
+-   headofgovernment       = {  type = 9 id = 215002  } \r
+-   foreignminister        = {  type = 9 id = 215003  } \r
+-   armamentminister       = {  type = 9 id = 215004  } \r
+-   ministerofsecurity     = {  type = 9 id = 215005  } \r
+-   ministerofintelligence = {  type = 9 id = 215006  } \r
+-   chiefofstaff           = {  type = 9 id = 215007  } \r
+-   chiefofarmy            = {  type = 9 id = 215008  } \r
+-   chiefofnavy            = {  type = 9 id = 215009  } \r
+-   chiefofair             = {  type = 9 id = 215010  } \r
+-   landunit = \r
+-   {  id       = {  type = 10600 id = 1  } \r
+-     name     = "王立ニュージーランド軍" \r
+-     location = 1721 \r
+-     Division = \r
+-     {  id       = {  type = 10600 id = 2  } \r
+-       name     = "ニュージーランド師団" \r
+-       strength   = 5\r
+-       type     = infantry \r
+-	   model    = 6 \r
+-      } \r
+-    } \r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+-	navalunit = { \r
+-		id = { type = 10600 id = 3 } \r
+-		name = "王立ニュージーランド海軍" \r
+-		location = 1721 \r
+-		base = 1721 \r
+-		division = { \r
+-			id = { type = 10600 id = 4 } \r
+-			name = "HMNZS リアンダー" \r
+-			type = light_cruiser\r
+-			model = 3\r
+-      			extra1 = floatplane\r
+-      			brigade_model1 = 3  \r
+-			} \r
+-		division = { \r
+-			id = { type = 10600 id = 5 } \r
+-			name = "HMNZS ダイオミード" \r
+-			type = light_cruiser\r
+-			model = 2 \r
+-			} \r
+-		division = { \r
+-			id = { type = 10600 id = 6 } \r
+-			name = "HMNZS ダニーデン" \r
+-			type = light_cruiser \r
+-			model = 2 \r
+-			} \r
+-		division = { \r
+-			id = { type = 10600 id = 7 } \r
+-			name = "第1輸送隊" \r
+-			type = transport\r
+-			model = 1\r
+-			} \r
+-		} \r
++country = {\r
++  tag                = NZL\r
++  puppet             = ENG\r
++  ai                 = "nzl_1933.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes } }\r
++  capital            = 1721 # ウェリントン\r
++  dissent            = 3\r
++  manpower           = 3\r
++  # Resource Reserves\r
++  energy         = 420\r
++  metal          = 210\r
++  rare_materials = 105\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 10\r
++  transports     = 120\r
++  escorts        = 15\r
+ \r
+-	airunit = { \r
+-		id = { type = 10600 id = 8 } \r
+-		name = "王立ニュージーランド空軍" \r
+-		location = 1721 \r
+-		base = 1721 \r
+-		division = { \r
+-			id = { type = 10600 id = 9 } \r
+-			name = "RNZAF 第1航空群" \r
+-			type = multi_role\r
+-			model = 2\r
+-			strength = 10\r
+-			} \r
+-		} \r
++  diplomacy = {\r
++    relation = { tag = AST value = 200 }\r
++    relation = { tag = BEL value = 20 }\r
++    relation = { tag = BHU value = 200 }\r
++    relation = { tag = CAN value = 200 }\r
++    relation = { tag = ENG value = 200 }\r
++    relation = { tag = FIN value = 50 }\r
++    relation = { tag = FRA value = 150 }\r
++    relation = { tag = GER value = 1 }\r
++    relation = { tag = IRE value = 75 }\r
++    relation = { tag = IRQ value = 100 }\r
++    relation = { tag = ITA value = 1 }\r
++    relation = { tag = NEP value = 200 }\r
++    relation = { tag = OMN value = 150 }\r
++    relation = { tag = SAF value = 200 }\r
++    relation = { tag = USA value = 125 }\r
++    relation = { tag = YEM value = 150 }\r
++  }\r
++  SpyInfo                = { country = "NZL" NumberOfSpies = 5 }\r
+ \r
+-    division_development =  \r
+-    {  name  = "HMNZS アキリーズ"  \r
+-      type  = light_cruiser  \r
+-      model = 3  \r
+-	new_model = no\r
+-      cost  = 0.2  \r
+-      id    = {  type = 10600 id = 10  }  \r
+-      date  = {  year = 1933 month = october day = 10  } \r
+-      extra1 = floatplane\r
+-      brigade_model1 = 3 	  \r
+-     }  \r
++  nationalprovinces      = { 1718 1719 1720 1721 1722 1723 }\r
++  ownedprovinces         = { 1718 1719 1720 1721 1722 1723 1732 1741 1742 1748 }\r
++  controlledprovinces    = { 1718 1719 1720 1721 1722 1723 1732 1741 1742 1748 }\r
+ \r
+-  } \r
+- \r
++  techapps               = { 1010 1020 1030 1040 1050 1060 1070 1080 1090 13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 1910 1920 1930 1940 1950 1960 1970 1980 14000 14010 14020 1830 1840 1850 1860 7600 7610 2620 2010 2630 2290 2300 2310 2800 2450 21180 21190 2810 2820 2510 3010 3020 3030 3040 3050 3110 3120 3130 3140 4500 4510 4520 4530 4540 4550 4010 4020 4600 4610 4620 4630 4120 4130 4300 4310 4320 4330 4800 4810 4820 4700 4710 5700 5710 5010 5020 5810 5820 5050 5830 5060 5800 5080 5090 5310 54010 54020 54030 5316 5326 3720 3730 3736 3740 3750 3900 5600 5610 5620 5630 3810 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 6560 8010 8020 8040 8050 8060 8070 8080 8100 8110 8120 8150 8160 8200 8210 8500 8510 8520 8600 8900 8910 8920 8930 8940 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 }\r
++  inventions             = { 3000027 }\r
++\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 10\r
++    political_left    = 10\r
++    freedom           = 10\r
++    free_market       = 8\r
++    professional_army = 2\r
++    defense_lobby     = 2\r
++    interventionism   = 6\r
++  }\r
++  headofstate            = { type = 9 id = 215111 } # ブレディスロー子爵チャールズ・バザースト\r
++  headofgovernment       = { type = 9 id = 215002 } # マイケル・ジョセフ・サヴェージ\r
++  foreignminister        = { type = 9 id = 215003 } # マイケル・ジョセフ・サヴェージ\r
++  armamentminister       = { type = 9 id = 215004 } # ウォルター・ナッシュ\r
++  ministerofsecurity     = { type = 9 id = 215005 } # ウィリアム・パリー\r
++  ministerofintelligence = { type = 9 id = 215006 } # ケネス・フォークス\r
++  chiefofstaff           = { type = 9 id = 215007 } # ウィリアム・シンクレア=バージェス\r
++  chiefofarmy            = { type = 9 id = 215008 } # ウィリアム・シンクレア=バージェス\r
++  chiefofnavy            = { type = 9 id = 215009 } # E・R・ドラモンド\r
++  chiefofair             = { type = 9 id = 215010 } # R・A・コクラン\r
++\r
++  landunit = {\r
++    id       = { type = 10600 id = 1 }\r
++    name     = "王立ニュージーランド軍"\r
++    location = 1721\r
++    division = {\r
++      id             = { type = 10600 id = 2 }\r
++      name           = "ニュージーランド師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 5\r
++    }\r
++  }\r
++\r
++  navalunit = {\r
++    id       = { type = 10600 id = 3 }\r
++    name     = "王立ニュージーランド海軍"\r
++    location = 1721\r
++    base     = 1721\r
++    division = {\r
++      id             = { type = 10600 id = 4 }\r
++      name           = "HMNZS リアンダー"\r
++      type           = light_cruiser\r
++      model          = 3\r
++      extra1         = floatplane\r
++      brigade_model1 = 3\r
++    }\r
++    division = {\r
++      id             = { type = 10600 id = 5 }\r
++      name           = "HMNZS ダイオミード"\r
++      type           = light_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 10600 id = 6 }\r
++      name           = "HMNZS ダニーデン"\r
++      type           = light_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 10600 id = 7 }\r
++      name           = "第1輸送隊"\r
++      type           = transport\r
++      model          = 1\r
++    }\r
++  }\r
++\r
++  airunit = { \r
++    id       = { type = 10600 id = 8 }\r
++    name     = "王立ニュージーランド空軍"\r
++    location = 1721\r
++    base     = 1721\r
++    division = {\r
++      id             = { type = 10600 id = 9 }\r
++      name           = "RNZAF 第1航空群"\r
++      type           = multi_role\r
++      model          = 2\r
++      strength       = 10\r
++    }\r
++  }\r
++\r
++  division_development = {\r
++    id             = { type = 10600 id = 10 }\r
++    name           = "HMNZS アキリーズ"\r
++    type           = light_cruiser\r
++    model          = 3\r
++    cost           = 0.2\r
++    new_model      = no\r
++    date           = { year = 1933 month = october day = 10 }\r
++    extra1         = floatplane\r
++    brigade_model1 = 3\r
++  }\r
++}\r

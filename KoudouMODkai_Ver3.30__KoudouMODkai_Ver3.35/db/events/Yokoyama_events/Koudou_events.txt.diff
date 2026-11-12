@@ -1,0 +1,906 @@
+--- A/db/events/Yokoyama_events/Koudou_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Koudou_events.txt [cp932]
+@@ -132,8 +132,8 @@
+ #id = 22600239 南京の陥落（JAP）\r
+ #id = 22600240 南京の陥落（CHI）\r
+ #id = 22600241 南京の陥落（USA）\r
+-#id = 22600242 対中和平？（JAP）\r
+-#id = 22600243 対中和平？（CHI）\r
++#id = 22600242 対中和平（JAP）\r
++#id = 22600243 対中和平（CHI）\r
+ #id = 22600244 華北緩衝地帯の再定義（JAP）\r
+ #id = 22600245 華北緩衝地帯の再定義（CSX）\r
+ #id = 22600248 抗日経済の末路\r
+@@ -228,7 +228,7 @@ event = {
+ 		command = { type = sleepminister which = 50017 } # id = 50017 の閣僚を死亡（使用不能）させる\r
+ 		command = { type = sleepminister which = 50253 } # id = 50253 の閣僚を死亡（使用不能）させる  牧野伸顕\r
+ 		command = { type = sleepminister which = 50535 } # 渡辺錠太郎\r
+-		command = { type = sleepleader which = 50544 }\r
++		command = { type = sleepleader which = 101334 }\r
+ 		command = { type = sleepteam which = 50057 }\r
+ 		# command = { type = trigger which = 2260006 }\r
+ 		command = { type = event which = 2260006 where = -1 when = 1 }\r
+@@ -335,7 +335,7 @@ event = {
+ 	command = { type = wakeminister which = 50568 }\r
+ 	command = { type = wakeminister which = 50570 }\r
+ 	command = { type = headofstate which = 50011 }\r
+-	command = { trigger = { ai = no } type = wakeleader which = 50663 }\r
++	command = { trigger = { ai = no } type = wakeleader which = 103001 }\r
+ 	command = { type = dissent value = 3 }\r
+ 	ai_chance = 98\r
+ 	}\r
+@@ -389,8 +389,8 @@ event = {
+ 	command = { type = wakeminister which = 50569 }\r
+ 	command = { type = wakeminister which = 50571 }\r
+ 	command = { type = headofstate which = 50569 }\r
+-	command = { trigger = { NOT = { leader = 50664 } ai = no } type = wakeleader which = 50664 }\r
+-	command = { trigger = { leader = 50663 } type = sleepleader which = 50663 }\r
++	command = { trigger = { NOT = { leader = 103002 } ai = no } type = wakeleader which = 103002 }\r
++	command = { trigger = { leader = 103001 } type = sleepleader which = 103001 }\r
+ 	command = { type = event which = 22600022 where = JAP when = 30 }\r
+ 	command = { type = event which = 22600023 where = JAP when = 0 }\r
+ 	command = { type = local_setflag which = Nihon_Kaizou when = 1 value = 1 }\r
+@@ -594,25 +594,24 @@ event = {
+ 	command = { type = wakeminister which = 50602 }\r
+ 	command = { type = wakeminister which = 50603 }\r
+ 	command = { type = wakeminister which = 50604 }\r
+-	command = { type = sleepleader which = 50070 }\r
+-	command = { type = wakeleader which = 50665 }\r
+-	command = { type = wakeleader which = 50666 }\r
+-	command = { type = wakeleader which = 50667 }\r
+-	command = { type = wakeleader which = 50668 }\r
+-	command = { type = wakeleader which = 50669 }\r
+-	command = { type = wakeleader which = 50670 }\r
+-	command = { type = wakeleader which = 50671 }\r
+-	command = { type = wakeleader which = 50672 }\r
+-	command = { type = wakeleader which = 50673 }\r
+-	command = { type = wakeleader which = 50674 }\r
+-	command = { type = wakeleader which = 50675 }\r
+-	command = { type = wakeleader which = 50676 }\r
+-	command = { type = wakeleader which = 50677 }\r
+-	command = { type = wakeleader which = 50678 }\r
+-	command = { type = wakeleader which = 50679 }\r
+-	command = { type = wakeleader which = 50680 }\r
+-	command = { type = wakeleader which = 50690 }\r
+-	command = { type = wakeleader which = 50691 }\r
++	command = { type = sleepleader which = 101062 }\r
++	command = { type = wakeleader which = 103003 }\r
++	command = { type = wakeleader which = 103004 }\r
++	command = { type = wakeleader which = 103005 }\r
++	command = { type = wakeleader which = 103006 }\r
++	command = { type = wakeleader which = 103007 }\r
++	command = { type = wakeleader which = 103008 }\r
++	command = { type = wakeleader which = 103009 }\r
++	command = { type = wakeleader which = 103010 }\r
++	command = { type = wakeleader which = 103011 }\r
++	command = { type = wakeleader which = 103012 }\r
++	command = { type = wakeleader which = 103013 }\r
++	command = { type = wakeleader which = 103014 }\r
++	command = { type = wakeleader which = 103015 }\r
++	command = { type = wakeleader which = 103016 }\r
++	command = { type = wakeleader which = 103017 }\r
++	command = { type = wakeleader which = 103018 }\r
++	command = { type = wakeleader which = 103019 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ \r
+@@ -631,14 +630,13 @@ event = {
+ 	command = { type = wakeminister which = 50602 }\r
+ 	command = { type = wakeminister which = 50603 }\r
+ 	command = { type = wakeminister which = 50604 }\r
+-	command = { type = sleepleader which = 50070 }\r
+-	command = { type = wakeleader which = 50665 }\r
+-	command = { type = wakeleader which = 50666 }\r
+-	command = { type = wakeleader which = 50667 }\r
+-	command = { type = wakeleader which = 50679 }\r
+-	command = { type = wakeleader which = 50680 }\r
+-	command = { type = wakeleader which = 50690 }\r
+-	command = { type = wakeleader which = 50691 }\r
++	command = { type = sleepleader which = 101062 }\r
++	command = { type = wakeleader which = 103003 }\r
++	command = { type = wakeleader which = 103004 }\r
++	command = { type = wakeleader which = 103005 }\r
++	command = { type = wakeleader which = 103017 }\r
++	command = { type = wakeleader which = 103018 }\r
++	command = { type = wakeleader which = 103019 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1177,10 +1175,11 @@ event = {
+ 	command = { type = blizzard_attack which = land value = 6 }\r
+ 	command = { type = blizzard_defense which = land value = 6 }\r
+ 	command = { type = blizzard_move which = land value = 6 }\r
+-	command = { type = add_leader_skill which = 50013 value = 2 } #	荒木貞夫\r
+-	command = { type = add_leader_skill which = 50547 value = 2 } # 真崎甚三郎\r
+-	command = { type = add_leader_skill which = 50638 value = 1 } # 小畑敏四郎\r
+-	command = { type = add_leader_skill which = 50201 value = 1 } # 山下奉文\r
++	command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
++	command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
++	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
++	command = { type = add_leader_skill which = 101182 value = 1 } # 山下奉文\r
++	command = { type = add_leader_skill which = 101313 value = 1 } # 山下奉文\r
+ 	command = { trigger = { leader = 1200006 } type = add_leader_skill which = 1200006 value = 1 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { leader = 1200007 } type = add_leader_skill which = 1200007 value = 1 } # 雍仁天皇\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+@@ -1221,16 +1220,18 @@ event = {
+ 	command = { type = blizzard_attack which = land value = 6 }\r
+ 	command = { type = blizzard_defense which = land value = 6 }\r
+ 	command = { type = blizzard_move which = land value = 6 }\r
+-	command = { type = sleepleader which = 50013 } # 荒木貞夫\r
+-	command = { type = sleepleader which = 50547 } # 真崎甚三郎\r
+-	command = { type = wakeleader which = 50699 } # 荒木貞夫（強化版）\r
+-	command = { type = wakeleader which = 50700 } # 真崎甚三郎（強化版）\r
+-	#command = { type = add_leader_skill which = 50013 value = 2 } # 荒木貞夫\r
+-	#command = { type = add_leader_skill which = 50547 value = 2 } # 真崎甚三郎\r
+-	command = { type = add_leader_skill which = 50638 value = 1 } # 小畑敏四郎\r
+-	command = { type = add_leader_skill which = 50201 value = 1 } # 山下奉文\r
+-	command = { trigger = { leader = 1200006 } type = add_leader_skill which = 1200006 value = 1 } # 秩父宮雍仁親王\r
+-	command = { trigger = { leader = 1200007 } type = add_leader_skill which = 1200007 value = 1 } # 雍仁天皇\r
++	command = { type = sleepleader which = 101012 } # 荒木貞夫\r
++	command = { type = sleepleader which = 101337 } # 真崎甚三郎\r
++	command = { type = sleepleader which = 102180 } # 真崎甚三郎\r
++	command = { type = wakeleader which = 103021 } # 荒木貞夫（強化版）\r
++	command = { type = wakeleader which = 103022 } # 真崎甚三郎（強化版）\r
++	#command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
++	#command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
++	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
++	command = { type = add_leader_skill which = 101182 value = 1 } # 山下奉文\r
++	command = { type = add_leader_skill which = 101313 value = 1 } # 山下奉文\r
++	command = { trigger = { leader = 103001 } type = add_leader_skill which = 103001 value = 1 } # 秩父宮雍仁親王\r
++	command = { trigger = { leader = 103002 } type = add_leader_skill which = 103002 value = 1 } # 雍仁天皇\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+@@ -1371,12 +1372,13 @@ event = {
+ 	command = { type = blizzard_attack which = land value = 6 }\r
+ 	command = { type = blizzard_defense which = land value = 6 }\r
+ 	command = { type = blizzard_move which = land value = 6 }\r
+-	command = { type = add_leader_skill which = 50013 value = 2 } #	荒木貞夫\r
+-	command = { type = add_leader_skill which = 50547 value = 2 } # 真崎甚三郎\r
+-	command = { type = add_leader_skill which = 50638 value = 1 } # 小畑敏四郎\r
+-	command = { type = add_leader_skill which = 50201 value = 1 } # 山下奉文\r
+-	command = { trigger = { leader = 1200006 } type = add_leader_skill which = 1200006 value = 1 } # 秩父宮雍仁親王\r
+-	command = { trigger = { leader = 1200007 } type = add_leader_skill which = 1200007 value = 1 } # 雍仁天皇\r
++	command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
++	command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
++	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
++	command = { type = add_leader_skill which = 101182 value = 1 } # 山下奉文\r
++	command = { type = add_leader_skill which = 101313 value = 1 } # 山下奉文\r
++	command = { trigger = { leader = 103001 } type = add_leader_skill which = 103001 value = 1 } # 秩父宮雍仁親王\r
++	command = { trigger = { leader = 103002 } type = add_leader_skill which = 103002 value = 1 } # 雍仁天皇\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+@@ -1414,14 +1416,16 @@ event = {
+ 	command = { type = blizzard_attack which = land value = 6 }\r
+ 	command = { type = blizzard_defense which = land value = 6 }\r
+ 	command = { type = blizzard_move which = land value = 6 }\r
+-	command = { type = sleepleader which = 50013 } # 荒木貞夫\r
+-	command = { type = sleepleader which = 50547 } # 真崎甚三郎\r
+-	command = { type = wakeleader which = 50699 } # 荒木貞夫（強化版）\r
+-	command = { type = wakeleader which = 50700 } # 真崎甚三郎（強化版）\r
+-	#command = { type = add_leader_skill which = 50013 value = 2 } # 荒木貞夫\r
+-	#command = { type = add_leader_skill which = 50547 value = 2 } # 真崎甚三郎\r
+-	command = { type = add_leader_skill which = 50638 value = 1 } # 小畑敏四郎\r
+-	command = { type = add_leader_skill which = 50201 value = 1 } # 山下奉文\r
++	command = { type = sleepleader which = 101012 } # 荒木貞夫\r
++	command = { type = sleepleader which = 101337 } # 真崎甚三郎\r
++	command = { type = sleepleader which = 102180 } # 真崎甚三郎\r
++	command = { type = wakeleader which = 103021 } # 荒木貞夫（強化版）\r
++	command = { type = wakeleader which = 103022 } # 真崎甚三郎（強化版）\r
++	#command = { type = add_leader_skill which = 101012 value = 2 } # 荒木貞夫\r
++	#command = { type = add_leader_skill which = 101337 value = 2 } # 真崎甚三郎\r
++	command = { type = add_leader_skill which = 101400 value = 1 } # 小畑敏四郎\r
++	command = { type = add_leader_skill which = 101182 value = 1 } # 山下奉文\r
++	command = { type = add_leader_skill which = 101313 value = 1 } # 山下奉文\r
+ 	command = { trigger = { leader = 1200006 } type = add_leader_skill which = 1200006 value = 1 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { leader = 1200007 } type = add_leader_skill which = 1200007 value = 1 } # 雍仁天皇\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+@@ -2005,10 +2009,10 @@ event = {
+ 	command = { type = sleepminister which = 50571 }\r
+ 	command = { type = sleepminister which = 51003 }\r
+ 	command = { trigger = { NOT = { event = 22600022 } } type = headofstate which = 50699 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_1 } type = headofstate which = 50901 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_2 } type = headofstate which = 50902 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_3 } type = headofstate which = 50903 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_4 } type = headofstate which = 50904 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_1 } type = headofstate which = 52001 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_2 } type = headofstate which = 52002 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_3 } type = headofstate which = 52003 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_4 } type = headofstate which = 52004 }\r
+ 	command = { type = sleepevent which = 22600020 }\r
+ 	command = { type = sleepevent which = 22600021 }\r
+ 	}\r
+@@ -2046,10 +2050,10 @@ event = {
+ 	command = { type = sleepminister which = 50571 }\r
+ 	command = { type = sleepminister which = 51003 }\r
+ 	command = { trigger = { NOT = { event = 22600022 } } type = headofstate which = 50699 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_1 } type = headofstate which = 50901 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_2 } type = headofstate which = 50902 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_3 } type = headofstate which = 50903 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_4 } type = headofstate which = 50904 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_1 } type = headofstate which = 52001 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_2 } type = headofstate which = 52002 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_3 } type = headofstate which = 52003 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_4 } type = headofstate which = 52004 }\r
+ 	command = { type = sleepevent which = 22600019 }\r
+ 	command = { type = sleepevent which = 22600021 }\r
+ 	}\r
+@@ -2088,10 +2092,10 @@ event = {
+ 	command = { type = sleepminister which = 50571 }\r
+ 	command = { type = sleepminister which = 51003 }\r
+ 	command = { trigger = { NOT = { event = 22600022 } } type = headofstate which = 50699 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_1 } type = headofstate which = 50901 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_2 } type = headofstate which = 50902 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_3 } type = headofstate which = 50903 }\r
+-	command = { trigger = { event = 22600022 local_flag = Akihito_4 } type = headofstate which = 50904 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_1 } type = headofstate which = 52001 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_2 } type = headofstate which = 52002 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_3 } type = headofstate which = 52003 }\r
++	command = { trigger = { event = 22600022 local_flag = Akihito_4 } type = headofstate which = 52004 }\r
+ 	command = { type = sleepevent which = 22600019 }\r
+ 	command = { type = sleepevent which = 22600020 }\r
+ 	}\r
+@@ -2116,28 +2120,28 @@ event = {
+ \r
+ 	action = { # 維新の精神を体現する「国民の天皇」に育て上げよう\r
+ 	name = "ACTIONNAME22600022A"\r
+-	command = { type = wakeminister which = 50901 } # 昭仁天皇（不屈の改革者）\r
++	command = { type = wakeminister which = 52001 } # 昭仁天皇（不屈の改革者）\r
+ 	command = { type = local_setflag which = Akihito_1 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # 将来の大元帥に相応しい軍事教育が必要だ\r
+ 	name = "ACTIONNAME22600022B"\r
+-	command = { type = wakeminister which = 50902 } # 昭仁天皇（引退した大元帥）\r
++	command = { type = wakeminister which = 52002 } # 昭仁天皇（引退した大元帥）\r
+ 	command = { type = local_setflag which = Akihito_2 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # 天皇は神道の長であることを忘れるべきではない\r
+ 	name = "ACTIONNAME22600022C"\r
+-	command = { type = wakeminister which = 50903 } # 昭仁天皇（形のみの指導者）\r
++	command = { type = wakeminister which = 52003 } # 昭仁天皇（形のみの指導者）\r
+ 	command = { type = local_setflag which = Akihito_3 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # 亜細亜の領導者として相応しい教育を！\r
+ 	name = "ACTIONNAME22600022D"\r
+-	command = { type = wakeminister which = 50904 } # 昭仁天皇（厳格な帝国主義者）\r
++	command = { type = wakeminister which = 52004 } # 昭仁天皇（厳格な帝国主義者）\r
+ 	command = { type = local_setflag which = Akihito_4 }\r
+ 	ai_chance = 25\r
+ 	}\r
+@@ -2482,78 +2486,81 @@ event = {
+ 	command = { type = sleepminister which = 50361 }\r
+ 	command = { type = sleepminister which = 50572 }\r
+ 	command = { type = sleepminister which = 50573 }\r
+-	command = { type = sleepleader which = 50013 }\r
++	command = { type = sleepleader which = 101012 }\r
++	command = { type = sleepleader which = 103021 }\r
+ 	command = { type = sleepteam which = 50101 }\r
+ 	command = { type = sleepminister which = 50574 } # 眞崎甚三郎\r
+ 	command = { type = sleepminister which = 50575 }\r
+ 	command = { type = sleepminister which = 50576 }\r
+ 	command = { type = sleepminister which = 50577 }\r
+-	command = { type = sleepleader which = 50533 }\r
+-	command = { type = sleepleader which = 50547 }\r
++	command = { type = sleepleader which = 101337 }\r
++	command = { type = sleepleader which = 102180 }\r
++	command = { type = sleepleader which = 103022 }\r
+ 	command = { type = sleepteam which = 50105 }\r
+ 	command = { type = sleepminister which = 50578 } # 小畑敏四郎\r
+ 	command = { type = sleepminister which = 50579 }\r
+ 	command = { type = sleepminister which = 50580 }\r
+-	command = { type = sleepleader which = 50638 }\r
++	command = { type = sleepleader which = 101400 }\r
+ 	command = { type = sleepteam which = 50103 }\r
+ 	command = { type = sleepminister which = 50581 } # 柳川平助\r
+ 	command = { type = sleepminister which = 50582 }\r
+ 	command = { type = sleepminister which = 50583 }\r
+ 	command = { type = sleepminister which = 50584 }\r
+-	command = { type = sleepleader which = 50203 }\r
++	command = { type = sleepleader which = 101184 }\r
+ 	command = { type = sleepteam which = 50103 }\r
+ 	command = { type = sleepminister which = 50160 } # 山下奉文\r
+ 	command = { type = sleepminister which = 50585 }\r
+ 	command = { type = sleepminister which = 50586 }\r
+ 	command = { type = sleepminister which = 50587 }\r
+-	#command = { type = sleepleader which = 50201 }\r
++	#command = { type = sleepleader which = 101182 }\r
++	#command = { type = sleepleader which = 101313 }\r
+ 	command = { type = sleepteam which = 50106 }\r
+ 	command = { type = sleepminister which = 50592 } # 鈴木率道\r
+ 	command = { type = sleepminister which = 50593 }\r
+-	command = { type = sleepleader which = 50593 }\r
++	command = { type = sleepleader which = 101380 }\r
+ 	command = { type = sleepteam which = 50104 }\r
+ 	command = { type = sleepminister which = 50692 } # 酒井鎬次\r
+ 	command = { type = sleepminister which = 50693 }\r
+-	command = { type = sleepleader which = 50586 }\r
++	command = { type = sleepleader which = 101374 }\r
+ 	command = { type = sleepteam which = 50106 }\r
+ 	command = { type = sleepminister which = 50591 } # 山岡重厚\r
+ 	command = { type = sleepminister which = 50666 }\r
+ 	command = { type = sleepminister which = 50667 }\r
+-	command = { type = sleepleader which = 50198 }\r
++	command = { type = sleepleader which = 101179 }\r
+ 	command = { type = sleepminister which = 50588 } # 本庄繁\r
+ 	command = { type = sleepminister which = 50589 }\r
+ 	command = { type = sleepminister which = 50590 }\r
+-	command = { type = sleepleader which = 50548 }\r
++	command = { type = sleepleader which = 101338 }\r
+ 	command = { type = sleepminister which = 50596 } # 安藤輝三\r
+ 	command = { type = sleepminister which = 50597 }\r
+ 	command = { type = sleepminister which = 50638 }\r
+ 	command = { type = sleepminister which = 50672 }\r
+ 	command = { type = sleepminister which = 50673 }\r
+-	command = { type = sleepleader which = 50666 }\r
++	command = { type = sleepleader which = 103004 }\r
+ 	command = { type = sleepminister which = 50594 } # 磯部浅一\r
+ 	command = { type = sleepminister which = 50595 }\r
+ 	command = { type = sleepminister which = 50637 }\r
+ 	command = { type = sleepminister which = 50670 }\r
+ 	command = { type = sleepminister which = 50671 }\r
+-	command = { type = sleepleader which = 50665 }\r
++	command = { type = sleepleader which = 103003 }\r
+ 	command = { type = sleepminister which = 50598 } # 村中孝次\r
+ 	command = { type = sleepminister which = 50599 }\r
+ 	command = { type = sleepminister which = 50600 }\r
+-	command = { type = sleepleader which = 50667 }\r
+-	command = { type = sleepleader which = 50668 } # 香田清貞\r
+-	command = { type = sleepleader which = 50669 } # 野中四郎\r
+-	command = { type = sleepleader which = 50670 } # 栗原安秀\r
+-	command = { type = sleepleader which = 50671 } # 中橋基明\r
+-	command = { type = sleepleader which = 50672 } # 対馬勝雄\r
+-	command = { type = sleepleader which = 50673 } # 竹嶌継夫\r
+-	command = { type = sleepleader which = 50674 } # 丹生誠忠\r
+-	command = { type = sleepleader which = 50675 } # 坂井直\r
+-	command = { type = sleepleader which = 50676 } # 田中勝\r
+-	command = { type = sleepleader which = 50677 } # 安田優\r
+-	command = { type = sleepleader which = 50678 } # 林八郎\r
++	command = { type = sleepleader which = 103005 }\r
++	command = { type = sleepleader which = 103006 } # 香田清貞\r
++	command = { type = sleepleader which = 103007 } # 野中四郎\r
++	command = { type = sleepleader which = 103008 } # 栗原安秀\r
++	command = { type = sleepleader which = 103009 } # 中橋基明\r
++	command = { type = sleepleader which = 103010 } # 対馬勝雄\r
++	command = { type = sleepleader which = 103011 } # 竹嶌継夫\r
++	command = { type = sleepleader which = 103012 } # 丹生誠忠\r
++	command = { type = sleepleader which = 103013 } # 坂井直\r
++	command = { type = sleepleader which = 103014 } # 田中勝\r
++	command = { type = sleepleader which = 103015 } # 安田優\r
++	command = { type = sleepleader which = 103016 } # 林八郎\r
+ 	command = { type = sleepminister which = 50680 } # 河野壽\r
+ 	command = { type = sleepminister which = 50694 } # 武山信二\r
+-	command = { type = sleepleader which = 50680 }\r
++	command = { type = sleepleader which = 103018 }\r
+ 	command = { type = sleepminister which = 50608 } # 北一輝\r
+ 	command = { type = sleepminister which = 50609 }\r
+ 	command = { type = sleepminister which = 50610 }\r
+@@ -2566,45 +2573,45 @@ event = {
+ 	command = { type = sleepminister which = 50621 }\r
+ 	command = { type = sleepminister which = 50601 } # 相沢三郎\r
+ 	command = { type = sleepminister which = 50602 }\r
+-	command = { type = sleepleader which = 50679 }\r
+-	command = { type = sleepleader which = 50001 } # 阿部信行\r
++	command = { type = sleepleader which = 103017 }\r
++	command = { type = sleepleader which = 101000 } # 阿部信行\r
+ 	command = { type = sleepminister which = 50362 } # 川島義之\r
+-	command = { type = sleepleader which = 50550 }\r
++	command = { type = sleepleader which = 101340 }\r
+ 	command = { type = sleepminister which = 50612 } # 斎藤瀏\r
+ 	command = { type = sleepminister which = 50613 }\r
+-	command = { type = sleepleader which = 50682 }\r
++	command = { type = sleepleader which = 101402 }\r
+ 	command = { type = sleepminister which = 50614 } # 満井佐吉\r
+ 	command = { type = sleepminister which = 50615 }\r
+-	command = { type = sleepleader which = 50686 }\r
++	command = { type = sleepleader which = 101406 }\r
+ 	command = { type = sleepminister which = 50662 } # 村上啓作\r
+ 	command = { type = sleepminister which = 50663 }\r
+-	command = { type = sleepleader which = 50687 }\r
++	command = { type = sleepleader which = 101407 }\r
+ 	command = { type = sleepminister which = 50664 } # 香椎浩平\r
+ 	command = { type = sleepminister which = 50665 }\r
+-	command = { type = sleepleader which = 50684 }\r
++	command = { type = sleepleader which = 101404 }\r
+ 	command = { type = sleepminister which = 50666 } # 山岡重厚\r
+ 	command = { type = sleepminister which = 50667 }\r
+ 	command = { type = sleepminister which = 50668 } # 秦彦三郎\r
+ 	command = { type = sleepminister which = 50669 }\r
+ 	command = { type = sleepminister which = 50689 } # 井出宣時\r
+ 	command = { type = sleepminister which = 50690 }\r
+-	command = { type = sleepleader which = 50685 } # 工藤義雄\r
+-	command = { type = sleepleader which = 50688 } # 松浦淳六郎\r
++	command = { type = sleepleader which = 101405 } # 工藤義雄\r
++	command = { type = sleepleader which = 101408 } # 松浦淳六郎\r
+ 	command = { type = sleepminister which = 50655 } # 秦真次\r
+ 	command = { type = sleepminister which = 50656 }\r
+-	command = { type = sleepleader which = 50681 }\r
++	command = { type = sleepleader which = 101401 }\r
+ 	command = { type = sleepminister which = 50674 } # 山本英輔\r
+-	command = { type = sleepleader which = 50293 }\r
+-	command = { type = sleepleader which = 50478 }\r
++	command = { type = sleepleader which = 101271 }\r
++	command = { type = sleepleader which = 102125 }\r
+ 	command = { type = sleepminister which = 50633 } # 末次信正\r
+ 	command = { type = sleepminister which = 50675 }\r
+-	command = { type = sleepleader which = 50564 }\r
++	command = { type = sleepleader which = 101354 }\r
+ 	command = { type = sleepminister which = 50676 } # 中村良三\r
+-	command = { type = sleepleader which = 50257 }\r
++	command = { type = sleepleader which = 101236 }\r
+ 	command = { type = sleepminister which = 50677 } # 眞崎勝次\r
+-	command = { type = sleepleader which = 50689 }\r
++	command = { type = sleepleader which = 101236 }\r
+ 	command = { type = sleepminister which = 50679 } # 堀丈夫\r
+-	command = { type = sleepleader which = 50658 }\r
++	command = { type = sleepleader which = 101410 }\r
+ 	command = { type = sleepminister which = 50657 } # 小笠原長生\r
+ 	# 皇道派系閣僚\r
+ 	command = { type = sleepminister which = 50639 } # 白鳥敏夫\r
+@@ -2655,35 +2662,57 @@ event = {
+ 	command = { type = sleepminister which = 50010 } # 山本五十六 粛清\r
+ 	command = { type = sleepminister which = 50167 }\r
+ 	command = { type = sleepminister which = 50517 }\r
+-	command = { type = sleepleader which = 50292 }\r
++	command = { type = sleepleader which = 101270 }\r
+ 	command = { type = sleepteam which = 50048 }\r
+ 	command = { type = sleepminister which = 50016 } # 米内光政 粛清\r
+ 	command = { type = sleepminister which = 50071 }\r
+ 	command = { type = sleepminister which = 50516 }\r
+-	command = { type = sleepleader which = 50295 }\r
++	command = { type = sleepleader which = 101273 }\r
+ 	command = { type = sleepminister which = 50152 } # 井上成美 粛清\r
+ 	command = { type = sleepminister which = 50523 }\r
+-	command = { type = sleepleader which = 50230 }\r
+-	command = { type = sleepleader which = 50655 }\r
++	command = { type = sleepleader which = 101210 }\r
++	command = { type = sleepleader which = 101211 }\r
+ 	command = { type = sleepteam which = 50079 }\r
+ 	command = { type = sleepminister which = 50091 } # 小林躋造 粛清\r
+ 	command = { type = sleepminister which = 50515 }\r
+-	command = { type = sleepleader which = 50563 }\r
++	command = { type = sleepleader which = 101353 }\r
+ 	command = { type = sleepminister which = 50044 } # 野村吉三郎 粛清\r
+-	command = { type = sleepleader which = 50261 }\r
++	command = { type = sleepleader which = 101240 }\r
+ 	command = { type = sleepminister which = 50149 } # 永野修身 粛清\r
+-	command = { type = sleepleader which = 50254 }\r
++	command = { type = sleepleader which = 101233 }\r
+ 	command = { type = sleepminister which = 50168 } # 古賀峯一 粛清\r
+ 	command = { type = sleepminister which = 50348 }\r
+-	command = { type = sleepleader which = 50239 }\r
+-	command = { type = sleepleader which = 50569 } # 谷口尚真 粛清\r
++	command = { type = sleepleader which = 101218 }\r
++	command = { type = sleepleader which = 101359 } # 谷口尚真 粛清\r
+ 	command = { type = sleepminister which = 50069 } # 左近司政三 粛清\r
+-	command = { type = sleepleader which = 50270 }\r
+-	command = { type = sleepminister which = 50518 } # 高橋三吉 粛清\r
+-	command = { type = sleepleader which = 50280 }\r
+-	command = { type = sleepleader which = 50232 }# 岩村清一 粛清\r
+-	command = { type = sleepleader which = 50567 }# 長谷川清 粛清\r
+-	command = { type = sleepleader which = 50349 }# 高木惣吉 粛清\r
++	command = { type = sleepleader which = 101249 }\r
++	command = { type = sleepleader which = 101213 }# 岩村清一 粛清\r
++	command = { type = sleepleader which = 101357 }# 長谷川清 粛清\r
++	command = { type = sleepleader which = 101324 }# 高木惣吉 粛清\r
++	command = { type = wakeminister which = 50228 } # 伏見宮博恭王\r
++	command = { type = wakeleader which = 101323 }\r
++	command = { type = wakeleader which = 102177 }\r
++	command = { type = wakeminister which = 50224 } # 加藤寛治\r
++	command = { type = wakeleader which = 101215 }\r
++	command = { type = wakeleader which = 102096 }\r
++	command = { type = wakeminister which = 50518 } # 高橋三吉\r
++	command = { type = wakeleader which = 101259 }\r
++	command = { type = wakeminister which = 50208 } # 山本英輔\r
++	command = { type = wakeminister which = 50630 }\r
++	command = { type = wakeminister which = 50674 }\r
++	command = { type = wakeminister which = 50893 }\r
++	command = { type = wakeleader which = 101271 }\r
++	command = { type = wakeleader which = 102125 }\r
++	command = { type = wakeminister which = 50087 } # 末次信正\r
++	command = { type = wakeminister which = 50633 }\r
++	command = { type = wakeminister which = 50675 }\r
++	command = { type = wakeminister which = 50894 }\r
++	command = { type = wakeleader which = 101354 }\r
++	command = { type = wakeleader which = 101578 } # 加来止男\r
++	command = { type = wakeminister which = 50657 } # 小笠原長生\r
++	command = { type = wakeminister which = 50875 }\r
++	command = { type = wakeleader which = 102134 }\r
++	command = { type = wakeleader which = 101234 } # 南雲忠一\r
+ 	}\r
+ }\r
+ \r
+@@ -2815,68 +2844,80 @@ event = {
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+-	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50013 } # 荒木貞夫\r
+-	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50547 } # 眞崎甚三郎\r
+-	command = { type = wakeleader which = 50638 } # 小畑敏四郎\r
+-	command = { type = wakeleader which = 50203 } # 柳川平助\r
+-	command = { type = wakeleader which = 50201 } # 山下奉文\r
+-	command = { type = wakeleader which = 50593 } # 鈴木率道\r
+-	command = { type = wakeleader which = 50586 } # 酒井鎬次\r
+-	command = { type = wakeleader which = 50198 } # 山岡重厚\r
+-	command = { type = wakeleader which = 50548 } # 本庄繁\r
+-	command = { trigger = { event = 22600005 } type = wakeleader which = 50665 } # 磯部浅一\r
+-	command = { trigger = { event = 22600005 } type = wakeleader which = 50666 } # 安藤輝三\r
+-	command = { trigger = { event = 22600005 } type = wakeleader which = 50667 } # 村中孝次\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50668 } # 香田清貞\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50669 } # 野中四郎\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50670 } # 栗原安秀\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50671 } # 中橋基明\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50672 } # 対馬勝雄\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50673 } # 竹嶌継夫\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50674 } # 丹生誠忠\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50675 } # 坂井直\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50676 } # 田中勝\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50677 } # 安田優\r
+-	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50678 } # 林八郎\r
+-	command = { trigger = { event = 22600005 } type = wakeleader which = 50679 } # 相沢三郎\r
+-	command = { trigger = { event = 22600005 } type = wakeleader which = 50680 } # 武山信二\r
+-	command = { type = wakeleader which = 50681 } # 秦真次\r
+-	command = { type = wakeleader which = 50682 } # 斎藤瀏\r
+-	command = { type = wakeleader which = 50683 } # 秦彦三郎\r
+-	command = { type = wakeleader which = 50684 } # 香椎浩平\r
+-	command = { type = wakeleader which = 50685 } # 工藤義雄\r
+-	command = { type = wakeleader which = 50686 } # 満井佐吉\r
+-	command = { type = wakeleader which = 50687 } # 村上啓作\r
+-	command = { type = wakeleader which = 50688 } # 松浦淳六郎\r
+-	command = { type = wakeleader which = 50689 } # 眞崎勝次\r
+-	command = { type = wakeleader which = 50690 } # 三上卓\r
+-	command = { trigger = { event = 22600005 } type = wakeleader which = 50691 } # 岩畔豪雄\r
+-	command = { type = wakeleader which = 50693 } # 稻葉悟\r
+-	command = { type = wakeleader which = 50694 } # 中澤佑\r
+-	command = { type = wakeleader which = 50695 } # 福井義男\r
+-	command = { type = wakeleader which = 50696 } # 長村河鹿\r
+-	command = { type = wakeleader which = 50697 } # 林田博嗣\r
+-	command = { type = wakeleader which = 50698 } # 河合明\r
+-	command = { type = wakeleader which = 50348 } # 伏見宮博恭王\r
+-	command = { type = wakeleader which = 50257 } # 中村良三\r
+-	command = { type = wakeleader which = 50293 } # 山本英輔\r
+-	command = { type = wakeleader which = 50564 } # 末次信正\r
+-	command = { type = wakeleader which = 50575 } # 新見政一\r
+-	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50699 } # 荒木貞夫\r
+-	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50700 } # 眞崎甚三郎\r
+-	command = { type = wakeleader which = 50658 } # 堀丈夫\r
+-	command = { trigger = { local_flag = Ishiwara_Geneki } type = wakeleader which = 50065 } # 石原莞爾\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50701 } # 横山奉文\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50702 } # 望月冬夜\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50703 } # 和川原之地\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50704 } # 小野田秀久\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50705 } # 矢田部信次郎\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50706 } # 猪口英二郎\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50707 } # 本郷義昭\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50708 } # 神宮司八郎\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50709 } # 勝山一郎\r
+-	command = { trigger = { NOT = { event = 22600060 } } type = wakeleader which = 50120 } # 牟田口廉也（覚醒前）\r
+-	command = { trigger = { event = 22600060 } type = wakeleader which = 50710 } # 牟田口廉也（覚醒）\r
++	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 101012 } # 荒木貞夫\r
++	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 101337 } # 眞崎甚三郎\r
++	command = { type = wakeleader which = 101400 } # 小畑敏四郎\r
++	command = { type = wakeleader which = 101184 } # 柳川平助\r
++	command = { type = wakeleader which = 101182 } # 山下奉文\r
++	command = { type = wakeleader which = 101313 } # 山下奉文\r
++	command = { type = wakeleader which = 101380 } # 鈴木率道\r
++	command = { type = wakeleader which = 101374 } # 酒井鎬次\r
++	command = { type = wakeleader which = 101179 } # 山岡重厚\r
++	command = { type = wakeleader which = 101338 } # 本庄繁\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103003 } # 磯部浅一\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103004 } # 安藤輝三\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103005 } # 村中孝次\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103006 } # 香田清貞\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103007 } # 野中四郎\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103008 } # 栗原安秀\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103009 } # 中橋基明\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103010 } # 対馬勝雄\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103011 } # 竹嶌継夫\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103012 } # 丹生誠忠\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103013 } # 坂井直\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103014 } # 田中勝\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103015 } # 安田優\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103016 } # 林八郎\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103017 } # 相沢三郎\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103018 } # 武山信二\r
++	command = { type = wakeleader which = 101401 } # 秦真次\r
++	command = { type = wakeleader which = 101402 } # 斎藤瀏\r
++	command = { type = wakeleader which = 101403 } # 秦彦三郎\r
++	command = { type = wakeleader which = 101404 } # 香椎浩平\r
++	command = { type = wakeleader which = 101405 } # 工藤義雄\r
++	command = { type = wakeleader which = 101406 } # 満井佐吉\r
++	command = { type = wakeleader which = 101407 } # 村上啓作\r
++	command = { type = wakeleader which = 101408 } # 松浦淳六郎\r
++	command = { type = wakeleader which = 101409 } # 眞崎勝次\r
++	command = { type = wakeleader which = 103019 } # 三上卓\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103020 } # 岩畔豪雄\r
++	command = { type = wakeleader which = 104001 } # 稻葉悟\r
++	command = { type = wakeleader which = 104002 } # 中澤佑\r
++	command = { type = wakeleader which = 104003 } # 福井義男\r
++	command = { type = wakeleader which = 104004 } # 長村河鹿\r
++	command = { type = wakeleader which = 104005 } # 林田博嗣\r
++	command = { type = wakeleader which = 104006 } # 河合明\r
++	command = { type = wakeleader which = 101323 } # 伏見宮博恭王\r
++	command = { type = wakeleader which = 101236 } # 中村良三\r
++	command = { type = wakeleader which = 101271 } # 山本英輔\r
++	command = { type = wakeleader which = 101354 } # 末次信正\r
++	command = { type = wakeleader which = 101363 } # 新見政一\r
++	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 103021 } # 荒木貞夫\r
++	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 103022 } # 眞崎甚三郎\r
++	command = { type = wakeleader which = 101410 } # 堀丈夫\r
++	command = { trigger = { local_flag = Ishiwara_Geneki } type = wakeleader which = 101057 } # 石原莞爾\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 104007 } # 架空将軍\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 104008 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104009 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104010 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104011 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104012 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104013 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104014 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104015 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104016 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104017 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104018 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104019 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104020 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104021 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104022 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104023 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104024 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104025 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104026 }\r
++	command = { trigger = { NOT = { event = 22600060 } } type = wakeleader which = 101107 } # 牟田口廉也（覚醒前）\r
++	command = { trigger = { event = 22600060 } type = wakeleader which = 103023 } # 牟田口廉也（覚醒）\r
+ 	}\r
+ }\r
+ \r
+@@ -4905,60 +4946,80 @@ event = {
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = manpowerpool value = -0.5 }\r
+-	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50013 } # 皇道派軍人\r
+-	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50547 }\r
+-	command = { type = wakeleader which = 50638 }\r
+-	command = { type = wakeleader which = 50203 }\r
+-	command = { type = wakeleader which = 50201 }\r
+-	command = { type = wakeleader which = 50593 }\r
+-	command = { type = wakeleader which = 50586 }\r
+-	command = { type = wakeleader which = 50198 }\r
+-	command = { type = wakeleader which = 50548 }\r
+-	command = { type = wakeleader which = 50665 }\r
+-	command = { type = wakeleader which = 50666 }\r
+-	command = { type = wakeleader which = 50667 }\r
+-	command = { type = wakeleader which = 50668 }\r
+-	command = { type = wakeleader which = 50669 }\r
+-	command = { type = wakeleader which = 50670 }\r
+-	command = { type = wakeleader which = 50671 }\r
+-	command = { type = wakeleader which = 50672 }\r
+-	command = { type = wakeleader which = 50673 }\r
+-	command = { type = wakeleader which = 50674 }\r
+-	command = { type = wakeleader which = 50675 }\r
+-	command = { type = wakeleader which = 50676 }\r
+-	command = { type = wakeleader which = 50677 }\r
+-	command = { type = wakeleader which = 50678 }\r
+-	command = { type = wakeleader which = 50679 }\r
+-	command = { type = wakeleader which = 50680 }\r
+-	command = { type = wakeleader which = 50681 }\r
+-	command = { type = wakeleader which = 50682 }\r
+-	command = { type = wakeleader which = 50683 }\r
+-	command = { type = wakeleader which = 50684 }\r
+-	command = { type = wakeleader which = 50685 }\r
+-	command = { type = wakeleader which = 50686 }\r
+-	command = { type = wakeleader which = 50687 }\r
+-	command = { type = wakeleader which = 50688 }\r
+-	command = { type = wakeleader which = 50689 }\r
+-	command = { type = wakeleader which = 50690 }\r
+-	command = { type = wakeleader which = 50693 }\r
+-	command = { type = wakeleader which = 50694 }\r
+-	command = { type = wakeleader which = 50695 }\r
+-	command = { type = wakeleader which = 50696 }\r
+-	command = { type = wakeleader which = 50697 }\r
+-	command = { type = wakeleader which = 50698 }\r
+-	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50699 }\r
+-	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50700 }\r
+-	command = { type = wakeleader which = 50658 }\r
+-	command = { trigger = { flag = Ishiwara_Geneki } type = wakeleader which = 50065 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50701 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50702 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50703 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50704 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50705 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50706 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50707 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50708 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50709 }\r
++	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 101012 } # 荒木貞夫\r
++	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 101337 } # 眞崎甚三郎\r
++	command = { type = wakeleader which = 101400 } # 小畑敏四郎\r
++	command = { type = wakeleader which = 101184 } # 柳川平助\r
++	command = { type = wakeleader which = 101182 } # 山下奉文\r
++	command = { type = wakeleader which = 101313 } # 山下奉文\r
++	command = { type = wakeleader which = 101380 } # 鈴木率道\r
++	command = { type = wakeleader which = 101374 } # 酒井鎬次\r
++	command = { type = wakeleader which = 101179 } # 山岡重厚\r
++	command = { type = wakeleader which = 101338 } # 本庄繁\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103003 } # 磯部浅一\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103004 } # 安藤輝三\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103005 } # 村中孝次\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103006 } # 香田清貞\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103007 } # 野中四郎\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103008 } # 栗原安秀\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103009 } # 中橋基明\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103010 } # 対馬勝雄\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103011 } # 竹嶌継夫\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103012 } # 丹生誠忠\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103013 } # 坂井直\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103014 } # 田中勝\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103015 } # 安田優\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 103016 } # 林八郎\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103017 } # 相沢三郎\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103018 } # 武山信二\r
++	command = { type = wakeleader which = 101401 } # 秦真次\r
++	command = { type = wakeleader which = 101402 } # 斎藤瀏\r
++	command = { type = wakeleader which = 101403 } # 秦彦三郎\r
++	command = { type = wakeleader which = 101404 } # 香椎浩平\r
++	command = { type = wakeleader which = 101405 } # 工藤義雄\r
++	command = { type = wakeleader which = 101406 } # 満井佐吉\r
++	command = { type = wakeleader which = 101407 } # 村上啓作\r
++	command = { type = wakeleader which = 101408 } # 松浦淳六郎\r
++	command = { type = wakeleader which = 101409 } # 眞崎勝次\r
++	command = { type = wakeleader which = 103019 } # 三上卓\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 103020 } # 岩畔豪雄\r
++	command = { type = wakeleader which = 104001 } # 稻葉悟\r
++	command = { type = wakeleader which = 104002 } # 中澤佑\r
++	command = { type = wakeleader which = 104003 } # 福井義男\r
++	command = { type = wakeleader which = 104004 } # 長村河鹿\r
++	command = { type = wakeleader which = 104005 } # 林田博嗣\r
++	command = { type = wakeleader which = 104006 } # 河合明\r
++	command = { type = wakeleader which = 101323 } # 伏見宮博恭王\r
++	command = { type = wakeleader which = 101236 } # 中村良三\r
++	command = { type = wakeleader which = 101271 } # 山本英輔\r
++	command = { type = wakeleader which = 101354 } # 末次信正\r
++	command = { type = wakeleader which = 101363 } # 新見政一\r
++	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 103021 } # 荒木貞夫\r
++	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 103022 } # 眞崎甚三郎\r
++	command = { type = wakeleader which = 101410 } # 堀丈夫\r
++	command = { trigger = { local_flag = Ishiwara_Geneki } type = wakeleader which = 101057 } # 石原莞爾\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 104007 } # 架空将軍\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 104008 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104009 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104010 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104011 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104012 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104013 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104014 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104015 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104016 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104017 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104018 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104019 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104020 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104021 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104022 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104023 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104024 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104025 }\r
++	command = { trigger = { local_flag = JAPAN_IF } type = wakeleader which = 104026 }\r
++	command = { trigger = { NOT = { event = 22600060 } } type = wakeleader which = 101107 } # 牟田口廉也（覚醒前）\r
++	command = { trigger = { event = 22600060 } type = wakeleader which = 103023 } # 牟田口廉也（覚醒）\r
+ 	ai_chance = 95\r
+ 	}\r
+ \r
+@@ -5325,12 +5386,12 @@ event = {
+ 	command = { type = relation which = SOV value = 10 }\r
+ 	command = { type = max_organization which = land value = 5 }\r
+ 	command = { type = morale which = land value = 10 }\r
+-	#command = { type = sleepleader which = 50120 } # 牟田口廉也\r
+-	#command = { type = sleepleader which = 50710 }\r
+-	command = { type = sleepleader which = 50031 } # 花谷正\r
+-	command = { type = sleepleader which = 50182 } # 冨永恭次\r
+-	command = { type = sleepleader which = 50332 }\r
+-	command = { type = sleepleader which = 50101 } # 小松原道太郎\r
++	#command = { type = sleepleader which = 101107 } # 牟田口廉也\r
++	#command = { type = sleepleader which = 103023 }\r
++	command = { type = sleepleader which = 101027 } # 花谷正\r
++	command = { type = sleepleader which = 101308 } # 冨永恭次\r
++	command = { type = sleepleader which = 101163 }\r
++	command = { type = sleepleader which = 101088 } # 小松原道太郎\r
+ 	command = { type = event which = 22600059 where = JAP when = 0 }\r
+ 	ai_chance = 10\r
+ 	}\r
+@@ -5374,8 +5435,8 @@ event = {
+ 	action = { # 奴は陸軍省を脅す気か！\r
+ 	name = "ACTIONNAME22600059A"\r
+ 	command = { type = dissent value = -1 }\r
+-	command = { type = sleepleader which = 50120 } # 牟田口廉也\r
+-	command = { type = sleepleader which = 50710 }\r
++	command = { type = sleepleader which = 101107 } # 牟田口廉也\r
++	command = { type = sleepleader which = 103023 }\r
+ 	command = { type = sleepteam which = 50211 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -5409,8 +5470,8 @@ event = {
+ \r
+ 	action = { # ……まあ、とりあえずは静観しよう\r
+ 	name = "ACTIONNAME22600060A"\r
+-	command = { type = wakeleader which = 50710 } # 牟田口廉也\r
+-	command = { type = waketeam which = 50211 } # 牟田口廉也\r
++	command = { type = wakeleader which = 101107 } # 牟田口廉也\r
++	command = { type = waketeam which = 103023 } # 牟田口廉也\r
+ 	command = { type = sleepleader which = 50120 } # 牟田口廉也\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -6084,7 +6145,7 @@ event = {
+ 	command = { type = wakeminister which = 50723 }\r
+ 	command = { type = wakeminister which = 50724 }\r
+ 	command = { type = wakeminister which = 50747 }\r
+-	command = { type = wakeleader which = 50065 }\r
++	command = { type = wakeleader which = 101057 }\r
+ 	command = { type = waketeam which = 50102 }\r
+ 	command = { type = local_setflag which = Ishiwara_Geneki }\r
+ 	ai_chance = 40\r
+@@ -6099,7 +6160,7 @@ event = {
+ 	command = { type = sleepminister which = 50723 }\r
+ 	command = { type = sleepminister which = 50724 }\r
+ 	command = { type = sleepminister which = 50747 }\r
+-	command = { type = sleepleader which = 50065 }\r
++	command = { type = sleepleader which = 101057 }\r
+ 	command = { type = sleepteam which = 50102 }\r
+ 	ai_chance = 60\r
+ 	}\r
+@@ -6170,13 +6231,13 @@ event = {
+ 	command = { type = set_domestic which = freedom value = 1 }\r
+ 	command = { type = set_domestic which = defense_lobby value = 10 }\r
+ 	command = { type = set_domestic which = interventionism value = 10 }\r
+-	command = { type = wakeminister which = 50924 } # 牟田口廉也\r
+-	command = { type = wakeminister which = 50925 }\r
+-	command = { type = wakeminister which = 50926 }\r
++	command = { type = wakeminister which = 52024 } # 牟田口廉也\r
++	command = { type = wakeminister which = 52025 }\r
++	command = { type = wakeminister which = 52026 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50924 } # 牟田口廉也\r
++	command = { type = headofgovernment which = 52024 } # 牟田口廉也\r
+ 	command = { type = foreignminister which = 50594 } # 磯部浅一\r
+ 	command = { type = armamentminister which = 50598 } # 村中孝次\r
+ 	command = { type = ministerofsecurity which = 50601 } # 相沢三郎\r
+@@ -9919,7 +9980,7 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  対中和平？\r
++#  対中和平\r
+ # 1931年以来、日中両国は断続的に戦闘を行ってきた。\r
+ # 1931年の満州事変と呼ばれる関東軍による満州全土占領から始まり、この事件は最終的に盧溝橋事件による日中両国の全面戦争に発展した。\r
+ # 中華民国は日本に対する軍事的勝利でもって、日本の勢力を大陸から追放しようとしたが、国民革命軍による先制攻撃が失敗したことで、目論見はとん挫。\r
+@@ -9933,6 +9994,7 @@ event = {
+ 	country = JAP\r
+ \r
+ 	decision = {\r
++	event = 22600236 # 盧溝橋事件\r
+ 	war = { country = CHI country = JAP }\r
+ 	NOT = { lost_national = { country = CHI value = 80 } }\r
+ 	control = { province = 1337 data = JAP } # 南京\r
+@@ -9940,6 +10002,7 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++	event = 22600236 # 盧溝橋事件\r
+ 	lost_national = { country = CHI value = 25 }\r
+ 	control = { province = 1338 data = JAP } # 上海\r
+ 	control = { province = 1337 data = JAP } # 南京\r
+@@ -9949,6 +10012,7 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
++	event = 22600236 # 盧溝橋事件\r
+ 	lost_national = { country = CHI value = 25 }\r
+ 	NOT = { lost_national = { country = CHI value = 80 } }\r
+ 	region = { region = "China" country = -3 data = 1 value = 20 }\r

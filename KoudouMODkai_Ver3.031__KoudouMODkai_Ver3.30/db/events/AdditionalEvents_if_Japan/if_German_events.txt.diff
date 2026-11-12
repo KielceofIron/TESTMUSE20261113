@@ -1,0 +1,149 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
+@@ -920,6 +920,10 @@ event = {
+ 	command = { type = sleepleader which = 1104 }\r
+ 	command = { type = sleepteam which = 80 }\r
+ 	command = { type = setflag which = National_Communism }\r
++	command = { type = local_setflag which = Bigeventflag0018 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0018.txt" } #音源流し\r
++	command = { type = trigger which = 19330018 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310018 where = REB when = 0 }\r
+ 	ai_chance = 99\r
+ 	}\r
+ \r
+@@ -1008,6 +1012,8 @@ event = {
+ 	command = { type = addcore which = 225 where = DDR} #Bygoszcz\r
+ 	command = { type = addcore which = 181 where = DDR} #Danzig\r
+ 	command = { type = addcore which = 261 where = DDR} #Klaipeda\r
++	command = { type = addcore which = 226 where = DDR} #Gdynia\r
++	command = { type = addcore which = 222 where = DDR} #Torun\r
+ 	command = { type = revolt which = 179 } # Munich\r
+ 	command = { type = revolt which = 179 } # Munich\r
+ 	command = { type = revolt which = 176 } # Landshut\r
+@@ -1144,6 +1150,10 @@ event = {
+ 	command = { type = secedeprovince which = U21 value = 378 when = 1 }\r
+ 	command = { type = secedeprovince which = U21 value = 379 when = 1 }\r
+ 	command = { type = sleepevent which = 45680036 }\r
++	command = { type = local_setflag which = Bigeventflag0018 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0018.txt" } #音源流し\r
++	command = { type = trigger which = 19330018 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310018 where = REB when = 0 }\r
+ 	ai_chance = 1\r
+ 	}\r
+ }\r
+@@ -3110,6 +3120,7 @@ event = {
+ 	command = { trigger = { control = { province = 163 data = AUS } } type = event which = 45680054 where = AUS when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = U09 } } type = event which = 45680054 where = U09 when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = UB8 } } type = event which = 45680054 where = UB8 when = 0 }\r
++	command = { type = event which = 19310001 where = REB when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -3828,9 +3839,22 @@ event = {
+ 	name = "ACTIONNAME45680068A"\r
+ 	command = { type = setflag which = Die_Wacht_am_Rhein }\r
+ 	command = { type = dissent value = -5 }\r
+-	command = { type = land_fort_eff value = 0.5 }\r
+-	command = { type = coast_fort_eff value = 0.5 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
++	command = { type = add_division value = infantry when = 0 }\r
+ 	command = { type = add_corps which = "西部方面第1軍" value = land where = 110 }\r
+ 	command = { type = activate_division which = 14510 value = 1052 where = 110 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1001 where = 110 when = 1 }\r
+@@ -3839,7 +3863,7 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1004 where = 110 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1005 where = 110 when = 1 }\r
+ \r
+-	command = { type = add_corps which = "西部方面第2軍" value = land where = 110 }\r
++	command = { type = add_corps which = "西部方面第2軍" value = land where = 126 }\r
+ 	command = { type = activate_division which = 14510 value = 1006 where = 110 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1007 where = 110 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1008 where = 110 when = 1 }\r
+@@ -3853,7 +3877,7 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1014 where = 109 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1015 where = 109 when = 1 }\r
+ \r
+-	command = { type = add_corps which = "西部方面第4軍" value = land where = 109 }\r
++	command = { type = add_corps which = "西部方面第4軍" value = land where = 131 }\r
+ 	command = { type = activate_division which = 14510 value = 1016 where = 109 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1017 where = 109 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1018 where = 109 when = 1 }\r
+@@ -3867,12 +3891,12 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1024 where = 104 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1025 where = 104 when = 1 }\r
+ \r
+-	command = { type = add_corps which = "西部方面第6軍" value = land where = 104 }\r
+-	command = { type = activate_division which = 14510 value = 1026 where = 104 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1027 where = 104 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1028 where = 104 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1029 where = 104 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1030 where = 104 when = 1 }\r
++	#command = { type = add_corps which = "西部方面第6軍" value = land where = 104 }\r
++	#command = { type = activate_division which = 14510 value = 1026 where = 104 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1027 where = 104 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1028 where = 104 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1029 where = 104 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1030 where = 104 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第7軍" value = land where = 107 }\r
+ 	command = { type = activate_division which = 14510 value = 1051 where = 107 when = 1 }\r
+@@ -3882,12 +3906,12 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1034 where = 107 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1035 where = 107 when = 1 }\r
+ \r
+-	command = { type = add_corps which = "西部方面第8軍" value = land where = 107 }\r
+-	command = { type = activate_division which = 14510 value = 1036 where = 107 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1037 where = 107 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1038 where = 107 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1039 where = 107 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1040 where = 107 when = 1 }\r
++	#command = { type = add_corps which = "西部方面第8軍" value = land where = 107 }\r
++	#command = { type = activate_division which = 14510 value = 1036 where = 107 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1037 where = 107 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1038 where = 107 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1039 where = 107 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1040 where = 107 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第9軍" value = land where = 105 }\r
+ 	command = { type = activate_division which = 14510 value = 1041 where = 105 when = 1 }\r
+@@ -3896,12 +3920,12 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1044 where = 105 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1045 where = 105 when = 1 }\r
+ \r
+-	command = { type = add_corps which = "西部方面第10軍" value = land where = 105 }\r
+-	command = { type = activate_division which = 14510 value = 1046 where = 105 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1047 where = 105 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
++	#command = { type = add_corps which = "西部方面第10軍" value = land where = 105 }\r
++	#command = { type = activate_division which = 14510 value = 1046 where = 105 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1047 where = 105 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
++	#command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -5127,6 +5151,7 @@ event = {
+ 	command = { trigger = { control = { province = 163 data = USA } } type = event which = 45680113 where = USA when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = CSA } } type = event which = 45680113 where = CSA when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = U00 } } type = event which = 45680113 where = U00 when = 0 }\r
++\r
+ 	}\r
+ }\r
+ \r

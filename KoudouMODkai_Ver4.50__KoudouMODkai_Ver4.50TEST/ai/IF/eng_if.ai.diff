@@ -1,0 +1,110 @@
+--- A/ai/IF/eng_if.ai [cp932]
++++ B/ai/IF/eng_if.ai [cp932]
+@@ -11,11 +11,10 @@ upgrading = 0.0
+ reinforcement = 0.0 \r
+ strat_redeploy_threshold = 50\r
+ max_redeploying = 0.05\r
+-exp_force_ratio = 0.5 # 0.4 # 0.05 \r
++exp_force_ratio = 0.7 # 0.4 # 0.05 \r
+ exp_force_ratios = {\r
+ U02 = 1.0\r
+ IND = 1.0\r
+-UC3 = 0.5 #ヴェネツィア\r
+ } \r
+ no_exp_forces_to = { NOR POL DEN CZE U01 FRA }\r
+ evac_islands = no\r
+@@ -481,9 +480,9 @@ construction = {
+ }\r
+ military = { \r
+ 	relative_build_scheme 	= no\r
+-	max_batch_peace 		= 1020 \r
+-	max_batch_war 			= 740 \r
+-	max_batch_home_front = 420\r
++	max_batch_peace 		= 680 \r
++	max_batch_war 			= 320 \r
++	max_batch_home_front = 180\r
+         extra_convoys_war = 0.0500 \r
+         extra_convoys_peace = 0.0500 \r
+ \r
+@@ -514,23 +513,23 @@ military = {
+ #				19 %\r
+ 	battleship 		= 5\r
+ 	carrier 		= 5\r
+-	escort_carrier	= 3\r
++	escort_carrier	= 0\r
+    	destroyer     = 9 \r
+    	light_cruiser   = 9 \r
+ 	heavy_cruiser 	= 0\r
+ 	battlecruiser 	= 0\r
+ 	submarine 		= 0\r
+ 	nuclear_submarine = 0\r
+-	transports 		= 2\r
++	transports 		= 5\r
+ #				52 %\r
+ \r
+ 	#### Brigades\r
+-	artillery 		= 5\r
+-	sp_artillery 	= 19\r
++	artillery 		= 25\r
++	sp_artillery 	= 9\r
+ 	cavalry_brigade	= 0 \r
+-	sp_anti_air 	= 10\r
+-   	medium_armor       	= 20 \r
+-   	tank_destroyer     	= 8 \r
++	sp_anti_air 	= 0\r
++   	medium_armor       	= 0 \r
++   	tank_destroyer     	= 0 \r
+ 	light_armor_brigade = 6\r
+ 	heavy_armor 		= 5\r
+ 	super_heavy_armor 	= 0\r
+@@ -939,16 +938,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 60000.0 # 30.0\r
+-	groundattackdesirability 		= 20000 # 40.0\r
+-	inderdictiondesirability 		= 40000 # 20.0\r
+-	logisticalstrikedesirability 		= 2000\r
+-	runwaycrateringdesirability 		= 1000 # 10.0\r
+-	strategicstrikedesirability 		= 10000\r
+-	installationstrikedesirability 		= 5000\r
+-	navalstrikedesirability 		= 25000 # 15.0\r
+-	portstrikedesirability 		= 30000 # 9.0\r
+-	convoyraiddesirability 		= 1000 # 9.0\r
++	airsuperioritydesirability 		= 60.0 # 30.0\r
++	groundattackdesirability 		= 20.0 # 40.0\r
++	inderdictiondesirability 		= 40.0 # 20.0\r
++	logisticalstrikedesirability 	= 2.0\r
++	runwaycrateringdesirability 	= 1.0 # 10.0\r
++	strategicstrikedesirability 	= 10.0\r
++	installationstrikedesirability 	= 5.0\r
++	navalstrikedesirability 		= 25.0 # 15.0\r
++	portstrikedesirability 			= 30.0 # 9.0\r
++	convoyraiddesirability			= 1.0 # 9.0\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -970,7 +969,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+@@ -1047,14 +1046,6 @@ admiral = {
+         761 #Benghazi\r
+         765 #Tobruk\r
+         429 #Malta\r
+-	1511 #以下アジア方面\r
+-	1424\r
+-	1399\r
+-	1362\r
+-	1563\r
+-	1232\r
+-	1550\r
+-	\r
+ 	}\r
+ 	target = { \r
+      	2682 = 100   \r

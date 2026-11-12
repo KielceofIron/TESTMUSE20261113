@@ -1,0 +1,324 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Uk_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Uk_events.txt [utf-8]
+@@ -18,9 +18,12 @@
+ #id = 3822012 アイルランド独立闘争  ― 大規模な蜂起\r
+ #id = 3822013 独立の達成\r
+ #id = 3822014 R4計画\r
+-#id = 3822015 イギリス戦時内閣の組閣\r
+-#id = 3822016 突然の政府交代（戦時内閣再編）\r
+-#id = 3822017 選挙（チャーチル不在）\r
++# 閣僚交代イベント\r
++#id = 3822101 イギリス戦時内閣の組閣\r
++#id = 3822102 突然の政府交代（戦時内閣再編）\r
++#id = 3822103 選挙（チャーチル不在）\r
++#id = 3822104 選挙（1935年架空選挙）\r
++#id = 3822105 エドワード8世の退位\r
+ #########################################################################\r
+ #  グレートブリテン及びアイルランド連合王国\r
+ # 20世紀に入ると、当時イギリス領であったアイルランド独立の動きが激しくなった。\r
+@@ -42,7 +45,13 @@ event = {
+ \r
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+-	command = { }\r
++	command = { type = sleepevent which = 2001080 } # 偉大な調停者の逝去\r
++	command = { type = sleepevent which = 2001082 } # エドワード8世の退位\r
++	command = { type = sleepevent which = 2109006 } # 選挙イベント\r
++	command = { type = sleepevent which = 9999257 } # AI閣僚イベント\r
++	command = { type = sleepevent which = 9999258 }\r
++	command = { type = sleepevent which = 5200118 }\r
++	command = { type = sleepevent which = 5200120 }\r
+ 	}\r
+ }\r
+ \r
+@@ -870,20 +879,6 @@ event = {
+ 	war = { country = NOR country = SOV }\r
+ 	ispuppet = NOR\r
+ 	}\r
+-	exists = SWE\r
+-	NOT = {\r
+-	alliance = { country = SWE country = ENG }\r
+-	alliance = { country = SWE country = GER }\r
+-	alliance = { country = SWE country = DDR }\r
+-	alliance = { country = SWE country = UER }\r
+-	alliance = { country = SWE country = SOV }\r
+-	war = { country = SWE country = ENG }\r
+-	war = { country = SWE country = GER }\r
+-	war = { country = SWE country = DDR }\r
+-	war = { country = SWE country = UER }\r
+-	war = { country = SWE country = SOV }\r
+-	ispuppet = SWE\r
+-	}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -900,19 +895,6 @@ event = {
+ 	war = { country = NOR country = SOV }\r
+ 	ispuppet = NOR\r
+ 	}\r
+-	NOT = {\r
+-	alliance = { country = SWE country = ENG }\r
+-	alliance = { country = SWE country = GER }\r
+-	alliance = { country = SWE country = DDR }\r
+-	alliance = { country = SWE country = UER }\r
+-	alliance = { country = SWE country = SOV }\r
+-	war = { country = SWE country = ENG }\r
+-	war = { country = SWE country = GER }\r
+-	war = { country = SWE country = DDR }\r
+-	war = { country = SWE country = UER }\r
+-	war = { country = SWE country = SOV }\r
+-	ispuppet = SWE\r
+-	}\r
+ 	supplies = 300\r
+ 	}\r
+ \r
+@@ -938,20 +920,6 @@ event = {
+ 	war = { country = NOR country = SOV }\r
+ 	ispuppet = NOR\r
+ 	}\r
+-	exists = SWE\r
+-	NOT = {\r
+-	alliance = { country = SWE country = ENG }\r
+-	alliance = { country = SWE country = GER }\r
+-	alliance = { country = SWE country = DDR }\r
+-	alliance = { country = SWE country = UER }\r
+-	alliance = { country = SWE country = SOV }\r
+-	war = { country = SWE country = ENG }\r
+-	war = { country = SWE country = GER }\r
+-	war = { country = SWE country = DDR }\r
+-	war = { country = SWE country = UER }\r
+-	war = { country = SWE country = SOV }\r
+-	ispuppet = SWE\r
+-	}\r
+ 	}\r
+ 	\r
+ 	name = "EVT_3822014_NAME"\r
+@@ -966,19 +934,19 @@ event = {
+ 	action = { # 宣戦布告する\r
+ 	name = "ACTION_NAME_WAR"\r
+ 	command = { trigger = { guarantee = { country = ENG country = NOR } } type = end_guarantee which = ENG where = NOR }\r
+-	command = { trigger = { guarantee = { country = ENG country = SWE } } type = end_guarantee which = ENG where = SWE }\r
++	#command = { trigger = { guarantee = { country = ENG country = SWE } } type = end_guarantee which = ENG where = SWE }\r
+ 	command = { trigger = { guarantee = { country = FRA country = NOR } } type = end_guarantee which = FRA where = NOR }\r
+-	command = { trigger = { guarantee = { country = FRA country = SWE } } type = end_guarantee which = FRA where = SWE }\r
++	#command = { trigger = { guarantee = { country = FRA country = SWE } } type = end_guarantee which = FRA where = SWE }\r
+ 	command = { trigger = { guarantee = { country = UER country = NOR } } type = end_guarantee which = UER where = NOR }\r
+-	command = { trigger = { guarantee = { country = UER country = SWE } } type = end_guarantee which = UER where = SWE }\r
++	#command = { trigger = { guarantee = { country = UER country = SWE } } type = end_guarantee which = UER where = SWE }\r
+ 	command = { trigger = { guarantee = { country = SOV country = NOR } } type = end_guarantee which = SOV where = NOR }\r
+-	command = { trigger = { guarantee = { country = SOV country = SWE } } type = end_guarantee which = SOV where = SWE }\r
++	#command = { trigger = { guarantee = { country = SOV country = SWE } } type = end_guarantee which = SOV where = SWE }\r
+ 	command = { trigger = { guarantee = { country = USA country = NOR } } type = end_guarantee which = USA where = NOR }\r
+-	command = { trigger = { guarantee = { country = USA country = SWE } } type = end_guarantee which = USA where = SWE }\r
++	#command = { trigger = { guarantee = { country = USA country = SWE } } type = end_guarantee which = USA where = SWE }\r
+ 	command = { type = end_non_aggression which = ENG where = NOR }\r
+-	command = { type = end_non_aggression which = ENG where = SWE }\r
++	#command = { type = end_non_aggression which = ENG where = SWE }\r
+ 	command = { type = war which = NOR }\r
+-	command = { type = war which = SWE }\r
++	#command = { type = war which = SWE }\r
+ 	command = { trigger = { ai = no } type = supplies value = -300 }\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = relation which = USA value = -40 }\r
+@@ -996,19 +964,20 @@ event = {
+ 	command = { type = sleepevent which = 2003066 } # ウィルフレッド作戦（ドイツAIイベント）\r
+ 	}\r
+ }\r
+-\r
++#########################################################################\r
++#  閣僚交代イベント\r
+ #########################################################################\r
+ #  イギリス戦時内閣の組閣\r
+-# チェンバレン首相が辞任した。懐柔政策が失敗に終わり、それによって引き起こされた戦争でも国家運営の舵取りができず、各地で敗北したことの責任を取ったのだ。\r
+-# チェンバレンの後任の首相を選ぶ必要がある。\r
++# 首相が辞任した。懐柔政策が失敗に終わり、それによって引き起こされた戦争でも国家運営の舵取りができず、各地で敗北したことの責任を取ったのだ。\r
++# 後任の首相を選ぶ必要がある。\r
+ ########################################################################\r
+ event = {\r
+-	id = 3822015\r
++	id = 3822101\r
+ 	random = no\r
+ 	country = ENG\r
+ \r
+-	name = "EVT_3822015_NAME"\r
+-	desc = "EVT_3822015_DESC"\r
++	name = "EVT_3822101_NAME"\r
++	desc = "EVT_3822101_DESC"\r
+ 	style = 2\r
+   	picture = "Churchill"\r
+ \r
+@@ -1061,7 +1030,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1954 } # was 1963\r
+ \r
+ 	action = { # チャーチルに戦時内閣を組閣させる\r
+-	name = "ACTIONNAME3822015A"\r
++	name = "ACTIONNAME3822101A"\r
+ 	trigger = { \r
+ 	minister = 10018 # ウィンストン・チャーチル\r
+ 	}\r
+@@ -1078,7 +1047,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # ハリファックス伯爵に戦時内閣を組閣させる\r
+-	name = "ACTIONNAME3822015B"\r
++	name = "ACTIONNAME3822101B"\r
+ 	trigger = { \r
+ 	minister = 10125 # ハリファックス伯爵E・F・L・ウッド\r
+ 	}\r
+@@ -1102,7 +1071,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # ロイド・ジョージに戦時内閣を組閣させる\r
+-	name = "ACTIONNAME3822015C"\r
++	name = "ACTIONNAME3822101C"\r
+ 	trigger = { \r
+ 	minister = 10128 # デイヴィッド・ロイド・ジョージ\r
+ 	}\r
+@@ -1131,7 +1100,7 @@ event = {
+ ########################################################################\r
+ \r
+ event = {\r
+-	id = 3822016\r
++	id = 3822102\r
+ 	random = no\r
+ 	country = ENG\r
+ \r
+@@ -1239,7 +1208,7 @@ event = {
+ ########################################################################\r
+ \r
+ event = {\r
+-	id = 3822017\r
++	id = 3822103\r
+ 	random = no\r
+ 	country = ENG\r
+ 	one_action = yes\r
+@@ -1292,4 +1261,128 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 10\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  選挙（1935年架空選挙）\r
++########################################################################\r
++\r
++event = {\r
++	id = 3822104\r
++	random = no\r
++	country = ENG\r
++	one_action = yes\r
++\r
++	trigger = {\r
++	government = democratic\r
++	NOT = { ispuppet = ENG }\r
++	}\r
++\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 13 month = 10 year = 1935 }\r
++\r
++	action = { # 労働党を選ぶ\r
++	name = "ELECT_UK_1B"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 10 }\r
++	command = { type = set_domestic which = political_left value = 6 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = domestic which = interventionism value = -2 }\r
++	command = { type = headofstate which = 10001 } # ジョージ5世\r
++	command = { type = headofgovernment which = 10434 } # ジョージ・ランズベリー\r
++	command = { type = foreignminister which = 10351 } # スタッフォード・クリップス\r
++	command = { type = armamentminister which = 10042 } # ヒュー・ダルトン\r
++	command = { type = ministerofsecurity which = 10330 } # J・R・クラインス\r
++	command = { type = ministerofintelligence which = 10080 } # ブレンダン・ブラッケン\r
++	ai_chance = 49\r
++	}\r
++\r
++	action = { # 保守党を選ぶ\r
++	name = "ELECT_UK_1A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = headofstate which = 10001 } # ジョージ5世\r
++	command = { type = headofgovernment which = 10440 } # リットン伯爵ヴィクター・ブルワー＝リットン\r
++	command = { type = foreignminister which = 10441 } # サー・ヘンリー・マクマホン\r
++	command = { type = armamentminister which = 10442 } # マーク・サイクス\r
++	command = { type = ministerofsecurity which = 10443 } # シドニー・ローラット\r
++	command = { type = ministerofintelligence which = 10444 } # サー・ハルフォード・マッキンダー\r
++	ai_chance = 49\r
++	}\r
++\r
++	action = { # 現政権を維持する\r
++	name = "elec_keep"\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 2\r
++	}\r
++}\r
++#########################################################################\r
++#  エドワード8世の退位（IF）\r
++########################################################################\r
++\r
++event = {\r
++	id = 3822105\r
++	random = no\r
++	country = ENG\r
++	style = 2\r
++	\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 10011 \r
++	headofstate = 10012\r
++	headofstate = 10013 \r
++	}\r
++	}\r
++\r
++	date = { day = 10 month = december year = 1936 }\r
++\r
++	name = "EVT_358_NAME"\r
++	desc = "EVT_358_DESC"\r
++	picture = "minister_resign"\r
++\r
++	action = { # ジョージ王子が即位する\r
++	name = "ACTIONNAME3822105A"\r
++	command = { type = sleepminister which = 10011 } # エドワード8世\r
++	command = { type = sleepminister which = 10012 } \r
++	command = { type = sleepminister which = 10013 } \r
++	command = { type = headofstate which = 10014 } # ジョージ6世\r
++	ai_chance = 1\r
++	}\r
++\r
++	action = { # アルバート王子が即位する\r
++	name = "ACTIONNAME3822105B"\r
++	command = { type = sleepminister which = 10011 } # エドワード8世\r
++	command = { type = sleepminister which = 10012 } \r
++	command = { type = sleepminister which = 10013 } \r
++	command = { type = wakeminister which = 10446 } # アルバート1世\r
++	command = { type = wakeminister which = 10447 }\r
++	command = { type = wakeminister which = 10448 }\r
++	command = { type = headofstate which = 10446 } # アルバート1世\r
++	ai_chance = 33\r
++	}\r
++\r
++	action = { # エドマンド王子が即位する\r
++	name = "ACTIONNAME3822105C"\r
++	command = { type = sleepminister which = 10011 } # エドワード8世\r
++	command = { type = sleepminister which = 10012 } \r
++	command = { type = sleepminister which = 10013 } \r
++	command = { type = wakeminister which = 10449 } # エドマンド1世\r
++	command = { type = wakeminister which = 10450 }\r
++	command = { type = wakeminister which = 10451 }\r
++	command = { type = headofstate which = 10449 } # エドマンド1世\r
++	ai_chance = 33\r
++	}\r
++\r
++	action = { # 彼は必要だ\r
++	name = "ACTIONNAME3822105D"\r
++	command = { type = dissent value = 2 }\r
++	ai_chance = 33\r
++	}\r
+ }
+\ No newline at end of file

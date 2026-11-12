@@ -1,0 +1,2121 @@
+--- A/db/events/Yokoyama_events/iphone/Add_Isesuma_events.txt [utf-8]
++++ B/db/events/Yokoyama_events/iphone/Add_Isesuma_events.txt [cp932]
+@@ -1,145 +1,54 @@
+ #########################################################################\r
+ #\r
+-#		異世界はスマートフォンとともに。追加mod\r
+-#########################################################################\r
+-###### 追加イベント一覧 ############\r
+-#########################################################################\r
+-#id = 114515001 独立、そしてブリュンヒルド公国\r
+-#id = 114515002 将棋の普及\r
+-#id = 114515003 ベッサラビアワインによる利益\r
+-#id = 114515004 カツカラエの普及\r
+-#id = 114515005 アイスクリーム製造\r
+-#id = 114515006 公国自転車部隊\r
+-#id = 114515007 ザナックによる経済改革\r
+-#id = 114515008 ザナックによる経済改革 ― 計画の達成\r
+-#id = 114515009 ガブリロヴィッチ将軍の招聘\r
+-#id = 114515010 ロシア義勇軍の編成\r
+-#id = 114515011 白系ロシア人の寄付\r
+-#id = 114515012 検索による新たな発見\r
+-#id = 114515013 ベッサラビアを要求\r
+-#id = 114515014 ソビエト連邦のベッサラビア要求\r
+-#id = 114515015 ベッサラビアを要求 ― 受諾\r
+-#id = 114515016 ベッサラビアを要求 ― ブリュンヒルド公国は戦うつもりだ！\r
+-#id = 114515017 ソビエト＝ベッサラビア戦争終結（SOV）\r
+-#id = 114515018 ソビエト＝ベッサラビア戦争終結（ALS）\r
+-#id = 114515019 ソビエト＝ベッサラビア戦争終結 ― 受諾（SOV）\r
+-#id = 114515020 ソビエト＝ベッサラビア戦争終結 ― 拒否（SOV）\r
+-#id = 114515021 ソビエト＝ベッサラビア戦争終戦（SOV）\r
+-#id = 114515022 ソビエト＝ベッサラビア戦争終戦（ALS）\r
+-#id = 114515023 ソビエト＝ベッサラビア戦争終戦 ― 講和の成立（SOV）\r
+-#id = 114515024 ベッサラビアを要求（RUS UER）\r
+-#id = 114515025 ロシアのベッサラビア要求\r
+-#id = 114515026 ベッサラビアを要求 ― 受諾（RUS UER）\r
+-#id = 114515027 ベッサラビアを要求 ― ブリュンヒルド公国は戦うつもりだ！（RUS UER）\r
+-#id = 114515028 ロシア＝ベッサラビア戦争終結（RUS UER）\r
+-#id = 114515029 ロシア＝ベッサラビア戦争終結（ALS）\r
+-#id = 114515030 ロシア＝ベッサラビア戦争終結 ― 受諾（RUS UER）\r
+-#id = 114515031 ロシア＝ベッサラビア戦争終結 ― 拒否（RUS UER）\r
+-#id = 114515032 ロシア＝ベッサラビア戦争終戦（RUS UER）\r
+-#id = 114515033 ロシア＝ベッサラビア戦争終戦（ALS）\r
+-#id = 114515034 ロシア＝ベッサラビア戦争終戦 ― 講和の成立（RUS UER）\r
+-#########################################################################\r
+-#  独立、そしてブリュンヒルド公国\r
+-# 爵位を授与された望月冬夜は、ベッサラビアにブリュンヒルド公国を建国した。\r
+-#########################################################################\r
+-event = {\r
+-	id = 114515001\r
+-	random = no\r
+-	country = ALS\r
+-	save_date = yes\r
+-\r
+-	name = "EVT_114515001_NAME"\r
+-	desc = "EVT_114515001_DESC"\r
+-	style = 2\r
+-	picture = "ISESUMA_3"\r
+-		\r
+-	action = { # 公王陛下、万歳！\r
+-	name = "ACTIONNAME114515001A"\r
+-	command = { type = belligerence which = ALS value = 5 }\r
+-	command = { type = non_aggression which = ROM where = ALS }\r
+-	command = { type = guarantee which = ROM where = ALS }\r
+-	command = { type = guarantee which = ALS where = ROM }\r
+-	command = { type = set_relation which = ROM value = 75 }\r
+-	command = { type = set_relation which = RUS value = -50 }\r
+-	command = { type = set_relation which = SOV value = -50 }\r
+-	command = { type = set_relation which = UER value = -50 }\r
+-	command = { type = set_relation which = POL value = -25 }\r
+-	command = { type = set_relation which = CZE value = -25 }\r
+-	command = { type = set_relation which = HUN value = -25 }\r
+-	command = { type = set_relation which = ENG value = -15 }\r
+-	command = { type = set_relation which = FRA value = -15 }\r
+-	command = { type = set_relation which = USA value = -15 }\r
+-	command = { type = set_relation which = SPA value = -15 }\r
+-	command = { type = set_relation which = SPR value = -15 }\r
+-	command = { type = set_relation which = POR value = -15 }\r
+-	command = { type = set_relation which = SCH value = -15 }\r
+-	command = { type = set_relation which = GER value = -15 }\r
+-	command = { type = set_relation which = ITA value = -15 }\r
+-	command = { type = set_relation which = BUL value = 15 }\r
+-	command = { type = set_relation which = YUG value = 15 }\r
+-	command = { type = set_relation which = ALB value = 15 }\r
+-	command = { type = set_relation which = GRE value = 15 }\r
+-	command = { type = access which = ROM when = 0 }\r
+-	command = { type = access which = ROM when = 1 }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = headofstate which = 6840001 } # 望月冬夜\r
+-	command = { type = headofgovernment which = 6840002 } # ユミナ・エルネア・ベルファスト\r
+-	command = { type = foreignminister which = 6840003 } # 高坂政信\r
+-	command = { type = armamentminister which = 6840004 } # リンゼ・シエルスカ\r
+-	command = { type = ministerofsecurity which = 6840005 } # スゥシィ・エルネア・オルトリンデ\r
+-	command = { type = ministerofintelligence which = 6840006 } # 九重八重\r
+-	command = { type = chiefofstaff which = 6840007 } # 望月冬夜\r
+-	command = { type = chiefofarmy which = 6840008 } # エルゼ・シエルスカ\r
+-	command = { type = chiefofnavy which = 6840009 } # 望月冬夜\r
+-	command = { type = chiefofair which = 6840010 } # リーン\r
+-	command = { type = add_division which = "第1水晶騎士団" value = militia when = 3 }\r
+-	command = { type = add_division which = "第2水晶騎士団" value = militia when = 3 }\r
+-	command = { type = add_division which = "第3水晶騎士団" value = militia when = 3 }\r
+-	command = { type = free_ic value = 3 }\r
+-	command = { type = energypool value = 200 }\r
+-	command = { type = metalpool value = 150 }\r
+-	command = { type = rarematerialspool value = 100 }\r
+-	command = { type = oilpool value = 100 }\r
+-	command = { type = supplies value = 150 }\r
+-	command = { type = money value = 25 }\r
+-	command = { type = manpowerpool value = 15 }\r
+-	command = { type = transport_pool which = ALS value = 15 }\r
+-	command = { ttype = escort_pool which = ALS value = 2 }\r
+-	command = { type = sleepevent which = 2007022 } # ベッサラビアを要求\r
+-	command = { type = sleepevent which = 2023003 } # ソビエト連邦のベッサラビア要求\r
+-	command = { type = sleepevent which = 2007023 } # ベッサラビアを要求 ― 受諾\r
+-	command = { type = sleepevent which = 2007024 } # ベッサラビアを要求 ― ルーマニアは戦うつもりだ！\r
+-	command = { type = sleepevent which = 2007044 } # ソビエト＝ルーマニア戦争終結（SOV）\r
+-	command = { type = sleepevent which = 2023007 } # ソビエト＝ルーマニア戦争終結（ROM）\r
+-	command = { type = sleepevent which = 2007045 } # ソビエト＝ルーマニア戦争終結 ― ルーマニア受諾\r
+-	command = { type = sleepevent which = 2007046 } # ソビエト＝ルーマニア戦争終結 ― ルーマニア拒絶\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  将棋の普及\r
+-# ブリュンヒルド公国の統治形態としては、公王である望月冬夜を頂点とする君主制である。\r
+-# しかし建国から時が経つにつれ、政治に対して無関心になるようになった。\r
+-# その公王の趣味の一つに将棋である。それは自ら製作して普及しまわるほどであり、それは国内外で将棋が少しずつ普及するきっかけとなった。\r
+-# このため、将棋の生産を行っていた国内の民需に貢献することになる。\r
++#		異世界はスマートフォンとともに。追加mod\r
++#########################################################################\r
++###### 追加イベント一覧 ############\r
++#########################################################################\r
++#id = 114515001 将棋の普及\r
++#id = 114515002 バナトワインによる利益\r
++#id = 114515003 カツカラエの普及\r
++#id = 114515004 アイスクリーム製造\r
++#id = 114515005 公国自転車部隊\r
++#id = 114515006 ザナックによる経済改革\r
++#id = 114515007 ザナックによる経済改革 ― 計画の達成\r
++#id = 114515008 ロシア義勇軍の編成\r
++#id = 114515009 白系ロシア人の寄付\r
++#id = 114515010 検索による新たな発見\r
++#id = 114515011 枢軸と中立の狭間\r
++#id = 114515012 ブリュンヒルド公国との戦争\r
++#id = 114515013 ドイツとの戦争\r
++#id = 114515014 ドイツ＝ブリュンヒルド戦争終結（GER）\r
++#id = 114515015 ドイツ＝ブリュンヒルド戦争終結（ALS）\r
++#id = 114515016 ドイツ＝ブリュンヒルド戦争終結 ― 受諾\r
++#id = 114515017 ドイツ＝ブリュンヒルド戦争終結 ― 拒絶\r
++#id = 114515018 ソビエト＝ベッサラビア戦争終戦（SOV）\r
++#id = 114515019 ソビエト＝ベッサラビア戦争終戦（ROM）\r
++#id = 114515020 ソビエト＝ベッサラビア戦争終戦 ― 講和の成立\r
++#フレームギアイベント\r
++#id = 114515101 フレームギアの実戦配備\r
++#id = 114515102 フレームギアの改良\r
++#########################################################################\r
++#  将棋の普及\r
++# ブリュンヒルド公国の統治形態としては、公王である望月冬夜を頂点とする君主制である。\r
++# しかし建国から時が経つにつれ、政治に対して無関心になるようになった。\r
++# その公王の趣味の一つに将棋である。それは自ら製作して普及しまわるほどであり、それは国内外で将棋が少しずつ普及するきっかけとなった。\r
++# このため、将棋の生産を行っていた国内の民需に貢献することになる。\r
+ #########################################################################\r
+ \r
+ event = { \r
+-	id = 114515002\r
++	id = 114515001\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+ 	trigger = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	NOT = { atwar = ALS }\r
+-	random = 12\r
++	random = 8\r
+ 	}\r
+ \r
+-	name = "EVT_114515002_NAME"\r
+-	desc = "EVT_114515002_DESC"\r
++	name = "EVT_114515001_NAME"\r
++	desc = "EVT_114515001_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_9"\r
+ \r
+@@ -147,8 +56,8 @@ event = {
+ 	offset = 45\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action = { # まるで将棋みたいだな\r
+-	name = "ACTIONNAME114515002A"\r
++	action = { # まるで将棋みたいだな\r
++	name = "ACTIONNAME114515001A"\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = money value = 300 }\r
+ 	command = { type = add_leader_skill which = -1 value = 1 }\r
+@@ -158,25 +67,25 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  ベッサラビアワインによる利益\r
+-# ベッサラビアは世界最古のワイン生産地域の一つと言われており、ここで作られたワインは欧州各地の貴族に愛されていた。\r
+-# そして公国が農業関係に力を入れたことでワイン産業が発展、公国にとって貴重な外貨をもたらした。\r
++#  バナトワインによる利益\r
++# ブリュンヒルド公国が存在するバナト地方は、ブドウ園で作られるワインが高品質であることで有名である。\r
++# そして公国が農業関係に力を入れたことでワイン産業が発展、公国にとって貴重な外貨をもたらした。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114515003\r
++	id = 114515002\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+ 	trigger = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	NOT = { atwar = ALS }\r
+ 	random = 14\r
+ 	}\r
+ \r
+-	name = "EVT_114515003_NAME"\r
+-	desc = "EVT_114515003_DESC"\r
++	name = "EVT_114515002_NAME"\r
++	desc = "EVT_114515002_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_11"\r
+ \r
+@@ -184,7 +93,7 @@ event = {
+ 	offset = 45\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action_a = { # 了解\r
++	action_a = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = money value = 300 }\r
+@@ -193,27 +102,27 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  カツカラエの普及\r
+-# ブリュンヒルド公国の郷土料理の一つに『カラエ』があった。\r
+-# これは貧困層において野菜やスパイスなどをごった煮にしたスープ状の物を穀物にかけたものだった。\r
+-# 詳細は不明だが何者かがパン粉をつけて揚げた肉を混ぜるようにしたことで『カツカラエ』として広まり、\r
+-# 国内農業の発展に伴い貧困層でもくず肉を手に入れることができるようになったことで郷土料理の一つとなった。\r
++#  カツカラエの普及\r
++# ブリュンヒルド公国の郷土料理の一つに『カラエ』があった。\r
++# これは貧困層において野菜やスパイスなどをごった煮にしたスープ状の物を穀物にかけたものだった。\r
++# 詳細は不明だが何者かがパン粉をつけて揚げた肉を混ぜるようにしたことで『カツカラエ』として広まり、\r
++# 国内農業の発展に伴い貧困層でもくず肉を手に入れることができるようになったことで郷土料理の一つとなった。\r
+ #########################################################################\r
+ \r
+ event = { \r
+-	id = 114515004\r
++	id = 114515003\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+ 	trigger = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	NOT = { atwar = ALS }\r
+ 	random = 10\r
+ 	}\r
+ \r
+-	name = "EVT_114515004_NAME"\r
+-	desc = "EVT_114515004_DESC"\r
++	name = "EVT_114515003_NAME"\r
++	desc = "EVT_114515003_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_12"\r
+ \r
+@@ -221,7 +130,7 @@ event = {
+ 	offset = 35\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action_a = { # 了解\r
++	action_a = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = tc_mod value = 2 }\r
+@@ -230,26 +139,27 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  アイスクリーム製造\r
+-# 公王が『スマートフォン』でアイスクリームの作り方を調べて製造したらしい。\r
+-# アイスクリームは18世紀には既に完成していた代物のはずだが、公王はアイスクリームを気に入っているらしく、現在は製造機を『モデリング』で製作中だそうだ。\r
+-# ともかく『スマートフォン』を使えば80年先の技術を検索することが可能な大変素晴らしい機械であることが分かった。最大の問題は『スマートフォン』を使えるのが公王のみということだが。\r
++#  アイスクリーム製造\r
++# 公王が『スマートフォン』でアイスクリームの作り方を調べて製造したらしい。\r
++# アイスクリームは18世紀には既に完成していた代物のはずだが、公王はアイスクリームを気に入っているらしく、現在は製造機を『モデリング』で製作中だそうだ。\r
++# ともかく『スマートフォン』を使えば80年先の技術を検索することが可能な大変素晴らしい機械であることが分かった。\r
++# 最大の問題は『スマートフォン』を使えるのが公王のみということだが。\r
+ #########################################################################\r
+ \r
+ event = { \r
+-	id = 114515005\r
++	id = 114515004\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+ 	trigger = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	NOT = { atwar = ALS }\r
+ 	random = 16\r
+ 	}\r
+ \r
+-	name = "EVT_114515005_NAME"\r
+-	desc = "EVT_114515005_DESC"\r
++	name = "EVT_114515004_NAME"\r
++	desc = "EVT_114515004_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_13"\r
+ \r
+@@ -257,7 +167,7 @@ event = {
+ 	offset = 35\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action_a = { # 了解\r
++	action_a = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = tc_mod value = 2 }\r
+@@ -266,137 +176,125 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  公国自転車部隊\r
+-# ブリュンヒルド公国において、自転車は国内で最も普及し、なおかつ安価な移動手段であった。\r
+-# 品質も公国の製品としては極めて高く、普及率も高いことから部品の確保も用意だった。\r
+-# 軍部はこれに目をつけ、機械化部隊創設が絶望的に難しい中、安定した歩兵部隊の輸送が可能になるとして、自転車部隊の創設を考案した。\r
++#  公国自転車部隊\r
++# ブリュンヒルド公国において、自転車は国内で最も普及し、なおかつ安価な移動手段であった。\r
++# 品質も公国の製品としては極めて高く、普及率も高いことから部品の確保も用意だった。\r
++# 軍部はこれに目をつけ、機械化部隊創設が絶望的に難しい中、安定した歩兵部隊の輸送が可能になるとして、自転車部隊の創設を考案した。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114515006\r
++	id = 114515005\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+ 	decision = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	NOT = { atwar = ALS }\r
+-	technology = 1100 # 1936年型歩兵師団\r
++	technology = 1100 # 1936年型歩兵師団\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	NOT = { atwar = ALS }\r
+ 	supplies = 1000\r
+-	technology = 1100 # 1936年型歩兵師団\r
++	technology = 1100 # 1936年型歩兵師団\r
+ 	}\r
+ \r
+ 	trigger = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	NOT = { atwar = ALS }\r
+ 	supplies = 1000\r
+-	technology = 1100 # 1936年型歩兵師団\r
++	technology = 1100 # 1936年型歩兵師団\r
+ 	random = 20\r
+ 	}\r
+ 	\r
+-	name = "EVT_114515006_NAME"\r
+-	desc = "EVT_114515006_DESC"\r
++	name = "EVT_114515005_NAME"\r
++	desc = "EVT_114515005_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_22"\r
++	decision_picture = "decision_ISESUMA"\r
+ 	\r
+ 	date = { day = 0 month = 2 year = 1933 }\r
+ 	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ 	\r
+-	action = { # 自転車部隊を創設しよう\r
+-	name = "ACTIONNAME114515006A"\r
++	action = { # 自転車部隊を創設しよう\r
++	name = "ACTIONNAME114515005A"\r
+ 	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+ 	command = { type = speed which = land value = 1 }\r
+-	command = { type = add_division which = "第1自転車師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第2自転車師団" value = infantry when = 6 }\r
++	command = { type = add_division which = "第1自転車師団" value = infantry when = 6 }\r
++	command = { type = add_division which = "第2自転車師団" value = infantry when = 6 }\r
+ 	}\r
+ }\r
+ \r
+ \r
+ #########################################################################\r
+-#  ザナックによる経済改革\r
+-# ザナック・ゼンフィールドは冬夜が転生した時に初めて出会った人物であり、服飾店「ファッションキングザナック」のオーナーである。\r
+-# ブリュンヒルド公国が成立すると、ザナックは経済大臣に任命される。\r
+-# 経済大臣となったシャハトは大規模な公共事業プロジェクトを開始し、ベッサラビアの経済の基礎を作った。\r
++#  ザナックによる経済改革\r
++# ザナック・ゼンフィールドは冬夜が転生した時に初めて出会った人物であり、服飾店「ファッションキングザナック」のオーナーである。\r
++# ブリュンヒルド公国が成立すると、ザナックは経済大臣に任命される。\r
++# 経済大臣となったザナックは大規模な公共事業プロジェクトを開始し、バナト地域の経済の基礎を作った。\r
+ #########################################################################\r
+ \r
+ event = { \r
+-	id = 114515007\r
++	id = 114515006\r
+ 	country = ALS\r
+ 	persistent = no\r
+ \r
+ 	decision = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
+-	OR = {\r
+-	incabinet = 6840013 # ザナック\r
+-	incabinet = 6840014\r
+-	}\r
+-	event = { id = 114515001 days = 300 } # 独立、そしてブリュンヒルド公国\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
+-	OR = {\r
+-	incabinet = 6840013 # ザナック\r
+-	incabinet = 6840014\r
+-	}\r
+-	event = { id = 114515001 days = 300 } # 独立、そしてブリュンヒルド公国\r
+-	money = 100\r
++	headofstate = 6840001 # 望月冬夜\r
++	incabinet = 6840057 # ザナック\r
++	money = 300\r
+ 	}\r
+ 	\r
+ 	trigger = {	\r
+ 	exists = ALS\r
+-	headofstate = 6840001 # 望月冬夜\r
+-	OR = {\r
+-	incabinet = 6840013 # ザナック\r
+-	incabinet = 6840014\r
+-	}\r
+-	event = { id = 114515001 days = 300 } # 独立、そしてブリュンヒルド公国\r
+-	random = 35\r
++	headofstate = 6840001 # 望月冬夜\r
++	incabinet = 6840057 # ザナック\r
++	random = 20\r
+ 	}\r
+ \r
+-	name = "EVT_114515007_NAME"\r
+-	desc = "EVT_114515007_DESC"\r
++	name = "EVT_114515006_NAME"\r
++	desc = "EVT_114515006_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_14"\r
+ 	decision_picture = "decision_ISESUMA"\r
+ \r
+-	date = { day = 0 month = 2 year = 1933 }\r
+-	offset = 15\r
++	date = { day = 0 month = 3 year = 1934 }\r
++	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action_a = { # 改革を実行する\r
+-	name = "ACTIONNAME114515008A"\r
++	action_a = { # 改革を実行する\r
++	name = "ACTIONNAME114515006A"\r
+ 	command = { trigger = { ai = no } type = money value = -1000 }\r
+-	command = { type = event which = 114515008 where = ALS when = 720 }\r
++	command = { type = event which = 114515007 where = ALS when = 720 }\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  ザナックによる経済改革 ― 計画の達成\r
++#  ザナックによる経済改革 ― 計画の達成\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114515008\r
++	id = 114515007\r
+ 	country = ALS\r
+ 	random = no\r
+ 	save_date = yes\r
+ \r
+-	name = "EVT_114515008_NAME"\r
+-	desc = "EVT_114515008_DESC"\r
++	name = "EVT_114515007_NAME"\r
++	desc = "EVT_114515007_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_14"\r
+ \r
+-	action = { # 大変結構！\r
++	action = { # 大変結構！\r
+ 	name = "ACTION_NAME_EXCELLENT"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = construct which = ic where = -4 value = 3 }\r
+@@ -412,113 +310,78 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  ガブリロヴィッチ将軍の招聘\r
+-# バルボヴィッチ・イワン・ガブリロヴィッチは、ロシア内戦時に白衛軍の将軍である。\r
+-# ウクライナのポルダヴァ県の貴族であり、第一次世界大戦においては騎兵隊を指揮し活躍した。\r
+-# ロシア内戦後、ガブリロヴィッチは国外に逃れていたが、公国が建国されると、軍を設立するための顧問として、将軍を招聘する計画が提案された。\r
+-# (史実においては、彼はロシア内戦後はベオグラードに定住、騎兵顧問を務めた。\r
+-# 1924年にはロシア全軍連合の指揮官となったが1944年にドイツに渡り死去している）\r
++#  ロシア義勇軍の編成\r
++# ブリュンヒルド公国には現在、ロシア内戦から逃れた白系ロシア人が多数在留している。\r
++# この白系ロシア人の指導者として、ロシア内戦時に白軍のクバンコサックの将校であったミハイル・フォスティコフが束ねている。\r
++# 彼を招聘し、義勇軍を組織することで、国家防衛を強化できるだろう。\r
++# （『ミハイル・フォスティコフ（英：Mikhail Fostikov）』は、ロシア内戦中の白軍のクバンコサックの将校である。\r
++# アンドレイ・シュクロ、ピョートル・ヴラーンゲリの下で戦ったのち、ユーゴスラビアに亡命して、1966年に亡くなった。）\r
+ #########################################################################\r
+ \r
+-event = {\r
+-	id = 114515009\r
+-	random = no\r
++event = { \r
++	id = 114515008\r
+ 	country = ALS\r
++	persistent = no\r
+ \r
+-	trigger = {\r
+-	exists = SOV\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	name = "EVT_114515009_NAME"\r
+-	desc = "EVT_114515009_DESC"\r
+-	style = 2\r
+-	picture = "russian_soldiers"\r
+-	\r
+-	date = { day = 0 month = 6 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-	\r
+-	action = { # 彼を招く必要はない\r
+-	name = "ACTIONNAME114515009A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = relation which = SOV value = 10 }\r
+-	command = { type = sleepminister which = 6840059 } # イヴァン・G・バルボヴィチ\r
+-	command = { type = sleepminister which = 6840060 }\r
+-	command = { type = sleepleader which = 6840041 }\r
+-	command = { type = sleepteam which = 6840021 }\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # 白衛軍と連携しよう\r
+-	name = "ACTIONNAME114515009B"\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = relation which = SOV value = -50 }\r
+-	command = { type = wakeminister which = 6840059 } # イヴァン・G・バルボヴィチ\r
+-	command = { type = wakeminister which = 6840060 }\r
+-	command = { type = wakeleader which = 6840041 }\r
+-	command = { type = waketeam which = 6840021 }\r
+-	command = { type = setflag which = RUS_ALS }\r
+-	ai_chance = 50\r
++	decision = {\r
++	exists = ALS\r
++	headofstate = 6840001 # 望月冬夜\r
++	leader = 6840050 # ミハイル・フォスティコフ\r
+ 	}\r
+-}\r
+-\r
+-########################################################\r
+-#  ロシア義勇軍の編成\r
+-# ブリュンヒルド公国には現在、ロシア内戦から逃れた白系露西亜人が多数在留している。\r
+-# 彼らは保護してくれる公国の為に義勇軍を編成した。\r
+-########################################################\r
+-event = {\r
+-	id = 114515010\r
+-	random = no\r
+-	country = ALS\r
+ \r
+-	trigger = {\r
+-	exists = SOV\r
+-	war = { country = ALS country = SOV }\r
+-	flag = RUS_ALS\r
+-	minister = 6840059 # イヴァン・G・バルボヴィチ\r
+-	random = 15\r
++	decision_trigger = {\r
++	exists = ALS\r
++	headofstate = 6840001 # 望月冬夜\r
++	leader = 6840050 # ミハイル・フォスティコフ\r
++	money = 300\r
+ 	}\r
+ 	\r
+-	name = "EVT_114515010_NAME"\r
+-	desc = "EVT_114515010_DESC"\r
++	trigger = {	\r
++	exists = ALS\r
++	headofstate = 6840001 # 望月冬夜\r
++	leader = 6840050 # ミハイル・フォスティコフ\r
++	random = 20\r
++	}\r
++\r
++	name = "EVT_114515008_NAME"\r
++	desc = "EVT_114515008_DESC"\r
+ 	style = 2\r
+ 	picture = "russian_soldiers"\r
+-	\r
+-	date = { day = 0 month = 2 year = 1933 }\r
+-	offset = 20\r
++	decision_picture = "decision_ISESUMA"\r
++\r
++	date = { day = 0 month = 3 year = 1934 }\r
++	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+-	\r
+-	action = { # ありがたい！\r
+-	name = "ACTIONNAME114515010A"\r
+-	command = { type = add_corps which = "義勇軍" value = land where = 304 } \r
+-	command = { type = add_division which = "義勇師団" value = militia when = 4 }\r
+-	command = { type = add_division which = "義勇師団" value = militia when = 4 }\r
++\r
++	action_a = { # 義勇軍を編成する\r
++	name = "ACTIONNAME114515008A"\r
++	command = { trigger = { ai = no } type = money value = -1000 }\r
++	command = { type = add_corps which = "義勇軍" value = land where = 304 } \r
++	command = { type = add_division which = "義勇師団" value = militia when = 4 }\r
++	command = { type = add_division which = "義勇師団" value = militia when = 4 }\r
+ 	}\r
+ }\r
+ \r
+ ########################################################\r
+-#  白系ロシア人の寄付\r
+-# ブリュンヒルド公国には現在、ロシア内戦から逃れた白系露西亜人が多数在留している。\r
+-# 彼らは保護してくれる公国の為に多数の寄付を行った。\r
++#  白系ロシア人の寄付\r
++# ブリュンヒルド公国には現在、ロシア内戦から逃れた白系ロシア人が多数在留している。\r
++# 彼らは保護してくれる公国の為に多数の寄付を行った。\r
+ ########################################################\r
+ \r
+ event = {\r
+-	id = 114515011\r
++	id = 114515009\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+ 	trigger = {\r
+ 	exists = SOV\r
+ 	war = { country = ALS country = SOV }\r
+-	flag = RUS_ALS\r
+-	minister = 6840059 # イヴァン・G・バルボヴィチ\r
++	event = 114515008 # ロシア義勇軍の編成\r
+ 	random = 14\r
+ 	}\r
+ 	\r
+-	name = "EVT_114515011_NAME"\r
+-	desc = "EVT_114515011_DESC"\r
++	name = "EVT_114515009_NAME"\r
++	desc = "EVT_114515009_DESC"\r
+ 	style = 2\r
+ 	picture = "russian_soldiers"\r
+ 	\r
+@@ -526,9 +389,9 @@ event = {
+ 	offset = 30\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ 	\r
+-	action = { # ありがたい！\r
+-	name = "ACTIONNAME114515011A"\r
+-	command = { type = supplies value = 300 }\r
++	action = { # ありがたい！\r
++	name = "ACTIONNAME114515009A"\r
++	command = { type = supplies value = 500 }\r
+ 	command = { type = money value = 100 }\r
+ 	command = { type = manpowerpool value = 3 }\r
+ 	ai_chance = 100\r
+@@ -536,369 +399,410 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  検索による新たな発見\r
+-# 公王の持つスマートフォンという名の機械から新たな情報が見つかった。\r
+-# 我が国の科学者曰く、「極めて重要な情報であり、研究の躍進に繋がるだろう」とのことらしい。\r
++#  検索による新たな発見\r
++# 公王の持つスマートフォンという名の機械から新たな情報が見つかった。\r
++# 我が国の科学者曰く、「極めて重要な情報であり、研究の躍進に繋がるだろう」とのことらしい。\r
+ #########################################################################\r
+ \r
+ event = { \r
+-	id = 114515012\r
++	id = 114515010\r
+ 	country = ALS\r
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+ 	exists = ALS\r
+ 	NOT = { atwar = ALS }\r
+-	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840001 # 望月冬夜\r
+ 	random = 8\r
+ 	}\r
+ \r
+-	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 60\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 80\r
+ 	deathdate = { day = 29 month = 11 year = 1990 }\r
+ \r
+ \r
+-	name = "EVT_114515012_NAME"\r
+-	desc = "EVT_114515012_DESC"\r
++	name = "EVT_114515010_NAME"\r
++	desc = "EVT_114515010_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_2"\r
+ \r
+-	action = { # 便利なものだ\r
+-	name = "ACTIONNAME114515012A"\r
++	action = { # 便利なものだ\r
++	name = "ACTIONNAME114515010A"\r
+ 	command = { type = dissent value = -0.1 }\r
+ 	command = { type = gain_tech which = -2 }\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  ベッサラビアを要求\r
+-# 1940年6月27日、ソ連はブリュンヒルド公国に最後通牒を通知し、ベッサラビアとともにブコヴィナ北部の即時割譲を要求した。\r
+-# この地域はもともと正式にルーマニアに編入されたのではなかった。\r
+-# そのため、ソビエト連邦はヒトラーとの協定において自国の勢力圏として主張していた。\r
++#  枢軸と中立の狭間\r
++# ユーゴスラビアが枢軸に加盟したという報せが広まり、ブリュンヒルド公国に困難な選択が迫られている。\r
++# 枢軸に加盟するか、それとも中立を維持するか、どちらを選ぶべきだろうか？\r
++#########################################################################\r
++\r
++event = { \r
++	id = 114515011\r
++	country = ALS\r
++	persistent = yes\r
++\r
++	trigger = {\r
++	exists = ALS\r
++	NOT = {\r
++	alliance = { country = GER country = ALS }\r
++	alliance = { country = ITA country = ALS }\r
++	alliance = { country = ENG country = ALS }\r
++	alliance = { country = FRA country = ALS }\r
++	alliance = { country = SOV country = ALS }\r
++	alliance = { country = RUS country = ALS }\r
++	alliance = { country = ROM country = ALS }\r
++	alliance = { country = BUL country = ALS }\r
++	alliance = { country = YUG country = ALS }\r
++	}\r
++	NOT = { atwar = ALS }\r
++	headofstate = 6840001 # 望月冬夜\r
++	}\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1990 }\r
++\r
++\r
++	name = "EVT_114515011_NAME"\r
++	desc = "EVT_114515011_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++\r
++	action = { # 枢軸に加盟する\r
++	name = "ACTIONNAME114515011A"\r
++	command = { type = alliance which = GER when = 1 }\r
++	command = { type = relation which = GER value = 100 }\r
++	command = { type = relation which = YUG value = 100 }\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # 中立を維持する\r
++	name = "ACTIONNAME114515011B"\r
++	command = { type = domestic which = defense_lobby value = -2 }\r
++	command = { type = domestic which = defense_lobby value = -2 }\r
++	command = { type = relation which = GER value = -100 }\r
++	command = { type = relation which = YUG value = -100 }\r
++	ai_chance = 90\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ブリュンヒルド公国との戦争\r
++# ブリュンヒルド公国に対してイギリスが影響力を行使したり、軍事作戦を行ったりすることを許せば、将来、我々の侵攻作戦を遂行する上での脅威となりかねない。\r
++# これを阻止するためには南方側面を掌握しておく必要がある。\r
++# さあヨーロッパの地図からブリュンヒルド公国を消し去り、バルカン諸国に我々の力を見せつける時が来たのだ。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114515013\r
++	id = 114515012\r
+ 	random = no\r
+-	country = SOV\r
++	country = GER\r
+ \r
+ 	decision = {\r
+ 	exists = ALS\r
+-	owned = { province = 304 data = ALS } # キシネフ\r
+ 	OR = {\r
+-	control = { province = 618 } # カメネーネツ=ポドーリスキ\r
+-	control = { province = 619 } # モギリョフ=ポドーリスキ\r
+-	control = { province = 621 } # ティラスポル\r
+-	control = { province = 626 } # オデッサ\r
+-	control = { province = 240 } # タルノポリ\r
++	war = { country = GER country = YUG }\r
++	war = { country = GER country = SER }\r
++	war = { country = GER country = HUN }\r
++	war = { country = GER country = ROM }\r
++	}\r
++	NOT = { ispuppet = GER }\r
++	NOT = {\r
++	alliance = { country = ALS country = GER }\r
+ 	}\r
+ 	NOT = {\r
+-	war = { country = ALS country = SOV }\r
+ 	war = { country = GER country = SOV }\r
+-	alliance = { country = SOV country = ALS }\r
+ 	}\r
+ 	}\r
+-\r
+-	decision_trigger = { \r
+-	event = { id = 2003025 days = 100 } # Bessarabia recognized as Soviet territory by Germany in Mol-Rib Pact\r
++	\r
++	decision_trigger = {\r
++	exists = ALS\r
++	OR = {\r
++	war = { country = GER country = YUG }\r
++	war = { country = GER country = SER }\r
++	war = { country = GER country = HUN }\r
++	war = { country = GER country = ROM }\r
++	}\r
++	OR = {\r
++	garrison = { country = -3 province = 280  type = land size = 3 area = 1 } # ゼゲド\r
++	garrison = { country = -3 province = 283  type = land size = 3 area = 1 } # ベーケーシュチャバ\r
++	garrison = { country = -3 province = 286  type = land size = 3 area = 1 } # アラド\r
++	garrison = { country = -3 province = 289  type = land size = 3 area = 1 } # アルバ・ユリア\r
++	garrison = { country = -3 province = 312  type = land size = 3 area = 1 } # トゥルヌ・セヴェリン\r
++	garrison = { country = -3 province = 337  type = land size = 3 area = 1 } # ルマ\r
++	garrison = { country = -3 province = 338  type = land size = 3 area = 1 } # ベオグラード\r
++	garrison = { country = -3 province = 339  type = land size = 3 area = 1 } # ボル\r
++	garrison = { country = -3 province = 344  type = land size = 3 area = 1 } # オシエク\r
++	}\r
++	NOT = { ispuppet = GER }\r
++	NOT = {\r
++	non_aggression = { country = GER country = ALS }\r
++	alliance = { country = ALS country = GER }\r
++	}\r
++	NOT = {\r
++	war = { country = GER country = SOV }\r
++	}\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+ 	exists = ALS\r
+-	owned = { province = 304 data = ALS } # キシネフ\r
+ 	OR = {\r
+-	control = { province = 618 } # カメネーネツ=ポドーリスキ\r
+-	control = { province = 619 } # モギリョフ=ポドーリスキ\r
+-	control = { province = 621 } # ティラスポル\r
+-	control = { province = 626 } # オデッサ\r
+-	control = { province = 240 } # タルノポリ\r
++	war = { country = GER country = YUG }\r
++	war = { country = GER country = SER }\r
++	war = { country = GER country = HUN }\r
++	war = { country = GER country = ROM }\r
++	}\r
++	OR = {\r
++	garrison = { country = -3 province = 280  type = land size = 3 area = 1 } # ゼゲド\r
++	garrison = { country = -3 province = 283  type = land size = 3 area = 1 } # ベーケーシュチャバ\r
++	garrison = { country = -3 province = 286  type = land size = 3 area = 1 } # アラド\r
++	garrison = { country = -3 province = 289  type = land size = 3 area = 1 } # アルバ・ユリア\r
++	garrison = { country = -3 province = 312  type = land size = 3 area = 1 } # トゥルヌ・セヴェリン\r
++	garrison = { country = -3 province = 337  type = land size = 3 area = 1 } # ルマ\r
++	garrison = { country = -3 province = 338  type = land size = 3 area = 1 } # ベオグラード\r
++	garrison = { country = -3 province = 339  type = land size = 3 area = 1 } # ボル\r
++	garrison = { country = -3 province = 344  type = land size = 3 area = 1 } # オシエク\r
++	}\r
++	NOT = { ispuppet = GER }\r
++	NOT = {\r
++	non_aggression = { country = GER country = ALS }\r
++	alliance = { country = ALS country = GER }\r
+ 	}\r
+ 	NOT = {\r
+-	war = { country = ALS country = SOV }\r
+ 	war = { country = GER country = SOV }\r
+-	alliance = { country = SOV country = ALS }\r
+ 	}\r
+ 	}\r
+ \r
+-	name = "EVT_114515013_NAME"\r
+-	desc = "EVT_114515013_DESC"\r
++	name = "EVT_114515012_NAME"\r
++	desc = "EVT_114515012_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++  	picture = "anschluss"\r
++	decision_picture = "decision_fall_gelb"\r
+ \r
+-	date = { day = 0 month = january year = 1937 }\r
+-	offset = 10\r
+-	deathdate = { day = 0 month = january year = 1965 }\r
+-		\r
+-	action = { # ベッサラビアを引き渡せ！！\r
+-	name = "ACTIONNAME114515013A"\r
+-	command = { type = relation which = ALS value = -10 }\r
+-	command = { type = relation which = ROM value = -10 }\r
+-	command = { type = trigger which = 114515014 }\r
++	date = { day = 0 month = 0 year = 1938 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 宣戦布告しよう\r
++	name = "ACTIONNAME114515012A"\r
++	command = { type = end_non_aggression which = GER where = ALS }\r
++	command = { type = war which = ALS }\r
++	command = { type = belligerence which = GER value = 2 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  ソビエト連邦のベッサラビア要求\r
+-#########################################################################\r
++##########################################################################\r
++#  ドイツとの戦争\r
++# ブリュンヒルド公国とドイツとの間で戦争が勃発した。\r
++# 圧倒的な国力差があるが、独立を守るためにも抵抗しなくてはならない…\r
++###########################################################################\r
+ \r
+-event = { \r
+-	id = 114515014\r
++event = {\r
++	id = 114515013\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+-	name = "EVT_114515014_NAME"\r
+-	desc = "EVT_114515014_DESC"\r
++	trigger = {\r
++	exists = ALS\r
++	war = { country = GER country = ALS }\r
++	NOT = {\r
++	alliance = { country = ALS country = GER }\r
++	alliance = { country = ALS country = ENG }\r
++	alliance = { country = ALS country = FRA }\r
++	alliance = { country = ALS country = USA }\r
++	alliance = { country = ALS country = SOV }\r
++	alliance = { country = ALS country = RUS }\r
++	alliance = { country = ALS country = UER }\r
++	}\r
++	}\r
++\r
++	name = "EVT_114515013_NAME"\r
++	desc = "EVT_114515013_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
+-	\r
+-	action = { # 和平提案を承諾する\r
+-	name = "ACTION_NAME_ACCEPT"\r
+-	command = { type = secedeprovince which = SOV value = 304 } # キシネフ\r
+-	command = { type = secedeprovince which = SOV value = 305 } # カフル\r
+-	command = { type = secedeprovince which = SOV value = 306 } # イスマイル\r
+-	command = { type = secedeprovince which = SOV value = 303 } # ベリツィ\r
+-	command = { type = secedeprovince which = SOV value = 302 } # ホティン\r
+-	command = { type = secedeprovince which = SOV value = 300 } # チェルニウツィー\r
+-	command = { type = relation which = SOV value = 15 }\r
+-	command = { type = domestic which = democratic value = -1 }\r
+-	command = { type = trigger which = 114515015 } # ベッサラビアを要求 ― 受諾\r
+-	ai_chance = 50\r
++	picture = "anschluss"\r
++\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 戦争だ！\r
++	name = "ACTIONNAME114515013A"\r
++	command = { }\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 絶対に降伏しない！\r
+-	name = "ACTION_NAME_REFUSE"\r
+-	command = { type = leave_alliance when = 1 }\r
+-	command = { type = end_non_aggression which = ALS where = SOV }\r
+-	command = { type = end_non_aggression which = SOV where = ALS }\r
+-	command = { type = war which = SOV }\r
+-	command = { type = domestic which = political_left value = -2 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = relation which = SOV value = -25 }\r
+-	command = { type = relation which = GER value = 15 }\r
+-	command = { type = relation which = ROM value = 15 }\r
+-	command = { type = trigger which = 114515016 } # ベッサラビアを要求 ― ブリュンヒルド公国は戦うつもりだ！\r
+-	ai_chance = 50	\r
++	action = { # 最後まで戦い抜く\r
++	name = "ACTIONNAME114515013B"\r
++	command = { type = sleepevent which = 114515014 } # ドイツ＝ブリュンヒルド戦争終結（GER）\r
++	command = { type = sleepevent which = 114515015 } # \r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  ベッサラビアを要求 ― 受諾\r
+-#########################################################################\r
++\r
++##########################################################################\r
++#  ドイツ＝ブリュンヒルド戦争終結（GER）\r
++# スターリンとヒトラーは、モロトフ・リッベントロップ協定を結んだとき、東ヨーロッパを2国の「勢力圏」に分割することでも合意した。\r
++# この合意により、バルカン半島はドイツ影響下に置かれることが決まった。\r
++# この合意に沿って、ヒトラーはブリュンヒルド公国に侵攻する\r
++# だがブリュンヒルド公国政府はヒトラー総統の意向に反して、ドイツの侵略に抵抗する。\r
++# ドイツは当初、小国との戦争で大勝利を収められると考えたのだろう。\r
++# しかしその期待はあっけなく裏切られる。\r
++# 戦争が始まると、ドイツ軍の主要地域を占領する戦争計画は失敗したのだ。\r
++# やがてヒトラーは公正な条件での早期講和を結ぶことにした。\r
++# もっと大きな戦争がまもなく始まるかもしれないからだ……\r
++###########################################################################\r
++\r
+ event = {\r
+-	id = 114515015\r
++	id = 114515014\r
+ 	random = no\r
+-	country = SOV\r
+-\r
+-	name = "EVT_114515015_NAME"\r
+-	desc = "EVT_114515015_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = belligerence which = SOV value = 1 }\r
+-	}\r
+-}\r
+-#########################################################################\r
+-#  ベッサラビアを要求 ― ブリュンヒルド公国は戦うつもりだ！\r
+-#########################################################################\r
+-event = {\r
+-	id = 114515016\r
+-	random = no\r
+-	country = SOV\r
+-\r
+-	name = "EVT_114515016_NAME"\r
+-	desc = "EVT_114515016_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ソビエト＝ベッサラビア戦争終結（SOV）\r
+-# ソ連とドイツは、不可侵条約を結んだとき、東ヨーロッパを2国の「勢力圏」に分割することでも合意した。\r
+-# この合意により、ルーマニア領であるベッサラビアはソ連に併合されることが決まった。\r
+-# この合意に沿って、ソ連は同地域の割譲をブリュンヒルド公国に要求した。\r
+-# だがブリュンヒルド公国はドイツの意向に反して、ソ連の要求を拒絶した。\r
+-# 1世代前の革命戦争の時のように大勝利を収められると考えたのだろう。\r
+-# しかしその期待はあっけなく裏切られる。戦争が始まると、赤軍がベッサラビアの主要地域を占領したのだ。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 114515017\r
+-	random = no\r
+-	country = SOV\r
++	country = GER\r
+ \r
+ 	trigger = {\r
+-	OR = {\r
+-	AND = {\r
+ 	exists = ALS\r
+-	war = { country = ALS country = SOV }\r
+-	}\r
+-	NOT = { exists = ALS }\r
+-	}\r
+-	control = { province = 304 data = SOV } # キシネフ\r
+-	event = 114515016 # ベッサラビアを要求 ― ブリュンヒルド公国は戦うつもりだ！\r
+-	NOT = {\r
+-	alliance = { country = ALS country = GER }\r
+-	alliance = { country = ALS country = ENG }\r
+-	alliance = { country = ALS country = FRA }\r
+-	alliance = { country = ALS country = RUS }\r
+-	alliance = { country = ALS country = UER }\r
+-	alliance = { country = ALS country = JAP }\r
++	war = { country = ALS country = GER }\r
++	OR = {\r
++	event = { id = 114515013 days = 180 }\r
++	control = { province = 163 data = -3 } # ベルリン\r
++	lost_national = { country = GER value = 20 }\r
+ 	}\r
+ 	}\r
+ \r
+-\r
+-	name = "EVT_114515017_NAME"\r
+-	desc = "EVT_114515017_DESC"\r
++	name = "EVT_114515014_NAME"\r
++	desc = "EVT_114515014_DESC"\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 7 \r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action = { # すでに要求している条件で講和する\r
+-	name = "ACTIONNAME114515017A"\r
+-	trigger = {\r
+-	exists = ALS\r
+-	}\r
+-	command = { type = trigger which = 114515018 } # ソビエト＝ベッサラビア戦争終結（ALS）\r
+-	command = { type = relation which = ROM value = 10 }\r
+-	ai_chance = 98\r
++	action = { # 講和する\r
++	name = "ACTIONNAME114515014A"\r
++	command = { type = relation which = GER value = 10 }\r
++	command = { type = trigger which = 114515015 }\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 奴らを社会主義化するのだ\r
+-	name = "ACTIONNAME114515017B"\r
+-	trigger = {\r
+-	exists = ALS\r
+-	}\r
+-	command = { type = relation which = ALS value = -10 }\r
+-	command = { type = relation which = ROM value = -10 }\r
++	action = { # 征服するのだ\r
++	name = "ACTIONNAME114515014B"\r
++	command = { type = relation which = YUG value = -10 }\r
++	command = { type = relation which = SER value = -10 }\r
++	command = { type = relation which = ROM value = -5 }\r
+ 	command = { type = relation which = HUN value = -5 }\r
+ 	command = { type = relation which = BUL value = -5 }\r
+-	command = { type = relation which = GER value = -20 }\r
+-	command = { type = relation which = FRA value = -10 }\r
+-	command = { type = relation which = USA value = -5 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	ai_chance = 2\r
+-	}\r
+-\r
+-	action = { # ベッサラビアを併合するのだ\r
+-	name = "ACTIONNAME114515017C"\r
+-	trigger = {\r
+-	NOT = { exists = ALS }\r
+-	}\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = relation which = ROM value = 10 }\r
+-	ai_chance = 100\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
++##########################################################################\r
++#  ドイツ＝ブリュンヒルド戦争終結（ALS）\r
++# ヒトラーが言うところの「公正な条約」は、ブリュンヒルド公国政府内では屈辱的で不公正だと判断された。\r
++# とはいえ軍事的な戦果を挙げていないことから、政府内で和平支持派が動き出した。\r
++###########################################################################\r
+ \r
+-#########################################################################\r
+-#  ソビエト＝ベッサラビア戦争終結（ALS）\r
+-# ソ連が言うところの「公正な条約」は、キシネフでは屈辱的で不公正だと判断された。\r
+-# とはいえ軍事的な戦果を挙げていないことから、ブリュンヒルド公国内で和平支持派が動き出した。\r
+-#########################################################################\r
+ event = {\r
+-	id = 114515018\r
++	id = 114515015\r
+ 	random = no\r
+ 	country = ALS\r
+ \r
+-	name = "EVT_114515018_NAME"\r
+-	desc = "EVT_114515018_DESC"\r
++	name = "EVT_114515015_NAME"\r
++	desc = "EVT_114515015_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "Korea"\r
+ \r
+-	action = { # ソ連の要求に屈する\r
+-	name = "ACTIONNAME114515018A"\r
+-	command = { type = trigger which = 114515019 } # ソビエト＝ベッサラビア戦争終結 ― 受諾\r
++	action = { # 講和を受け入れる\r
++	name = "ACTIONNAME114515015A"\r
++	command = { type = trigger which = 114515016 } # ドイツ＝ブリュンヒルド戦争終結 ― 受諾\r
++	command = { type = sleepevent which = 114515017 } # ドイツ＝ブリュンヒルド戦争終結 ― 拒絶\r
++	command = { type = domestic which = political_left value = -1 } \r
++	command = { type = domestic which = democratic value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = relation which = SOV value = -15 }\r
++	command = { type = relation which = GER value = 25 }\r
++	command = { type = peace which = GER }\r
+ 	command = { type = dissent value = 10 }\r
+-	ai_chance = 99\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 決して屈するものか！\r
+-	name = "ACTIONNAME114515018B"\r
+-	command = { type = trigger which = 114515020 } # ソビエト＝ベッサラビア戦争終結 ― 拒否\r
++	action = { # 決して屈するものか！\r
++	name = "ACTIONNAME114515015B"\r
+ 	command = { type = domestic which = political_left value = -4 }\r
+ 	command = { type = domestic which = democratic value = 2 }\r
+ 	command = { type = domestic which = freedom value = 2 }\r
+-	command = { type = relation which = SOV value = -50 }\r
+-	command = { type = relation which = GER value = 50 }\r
+-	ai_chance = 1\r
++	command = { type = relation which = SOV value = -25 }\r
++	command = { type = relation which = GER value = -50 }\r
++	command = { type = trigger which = 114515017 } # ドイツ＝ブリュンヒルド戦争終結 ― 拒絶\r
++	command = { type = sleepevent which = 114515016 } # ドイツ＝ブリュンヒルド戦争終結 ― 受諾\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  ソビエト＝ベッサラビア戦争終結 ― 受諾\r
++#  ドイツ＝ブリュンヒルド戦争終結 ― 受諾\r
++# ヒトラーが言うところの「公正な条約」は、ブリュンヒルド公国政府内では屈辱的で不公正だと判断された。\r
++# とはいえ軍事的な戦果を挙げていないことから、ブリュンヒルド公国は提案を受け入れた。\r
+ #########################################################################\r
+ event = {\r
+-	id = 114515019\r
++	id = 114515016\r
+ 	random = no\r
+-	country = SOV\r
++	country = GER\r
+ \r
+-	name = "EVT_114515019_NAME"\r
+-	desc = "EVT_114515019_DESC"\r
++	name = "EVT_114515016_NAME"\r
++	desc = "EVT_114515016_DESC"\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action = { # よし！\r
++	action = { # よし！\r
+ 	name = "ACTION_NAME_GOOD"\r
+-	command = { type = inherit which = ALS }\r
++	command = { type = peace which = ALS value = 0 }\r
+ 	command = { type = dissent value = -10 }\r
+-	command = { type = sleepevent which = 114515021 } # ソビエト＝ベッサラビア戦争終戦（SOV）\r
+-	command = { type = sleepevent which = 114515022 } # ソビエト＝ベッサラビア戦争終戦（ALS）\r
+-	command = { type = sleepevent which = 114515023 } # ソビエト＝ベッサラビア戦争終戦 ― 講和の成立\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  ソビエト＝ベッサラビア戦争終結 ― 拒否\r
++#  ドイツ＝ブリュンヒルド戦争終結 ― 拒絶\r
++# ヒトラーが言うところの「公正な条約」は、ブリュンヒルド公国政府内では屈辱的で不公正だと判断された。\r
++# そのため、我々の寛大な提案を拒絶してきた。\r
+ #########################################################################\r
+ event = {\r
+-	id = 114515020\r
++	id = 114515017\r
+ 	random = no\r
+-	country = SOV\r
++	country = GER\r
+ \r
+-	name = "EVT_114515020_NAME"\r
+-	desc = "EVT_114515020_DESC"\r
++	name = "EVT_114515017_NAME"\r
++	desc = "EVT_114515017_DESC"\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action = { # 思い知らせてやる！\r
+-	name = "ACTIONNAME114515020A"\r
++	action = { # 思い知らせてやる！\r
++	name = "ACTIONNAME114515017A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = sleepevent which = 114515021 } # ソビエト＝ベッサラビア戦争終戦（SOV）\r
+-	command = { type = sleepevent which = 114515022 } # ソビエト＝ベッサラビア戦争終戦（ALS）\r
+-	command = { type = sleepevent which = 114515023 } # ソビエト＝ベッサラビア戦争終戦 ― 講和の成立\r
+ 	}\r
+ }\r
+-\r
+ #########################################################################\r
+-#  ソビエト＝ベッサラビア戦争終戦（SOV）\r
+-# ベッサラビア地方はロシア、ルーマニアの間で古来より領土紛争が絶えなかった。\r
+-# 1812年の露土戦争でロシアが獲得したが、ロシア革命が起こるとルーマニアが併合を宣言した。\r
+-# その後、この地域は独立したが、ソ連は絶えず併合の機会を狙っていた。\r
+-# ソ連はブリュンヒルド公国に攻め込んだが、反撃を受け、かなり内部まで進撃を許してしまう。\r
+-# ブリュンヒルド公国は、停戦する見返りに領土割譲を求めている。\r
++#  ソビエト＝ベッサラビア戦争終戦（SOV）\r
++# ベッサラビア地方はロシア、ルーマニアの間で古来より領土紛争が絶えなかった。\r
++# 1812年の露土戦争でロシアが獲得したが、ロシア革命が起こるとルーマニアが併合を宣言した。\r
++# その後、この地域は独立したが、ソ連は絶えず併合の機会を狙っていた。\r
++# ソ連はルーマニアに攻め込んだが、反撃を受け、かなり内部まで進撃を許してしまう。\r
++# ルーマニアは、停戦する見返りに領土割譲を求めている。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114515021\r
++	id = 114515018\r
+ 	random = no\r
+ 	country = SOV\r
+ \r
+ 	trigger = {\r
+ 	AND = {\r
+ 	area = { area = "Ukraine" country = ALS data = 1 value = 25 }\r
+-	control = { province = 617 data = ALS } # キエフ\r
++	control = { province = 617 data = ALS } # キエフ\r
+ 	}\r
+ 	war = { country = SOV country = ALS }\r
+ 	exists = ALS\r
+@@ -908,8 +812,8 @@ event = {
+ 	}\r
+ 	}\r
+ \r
+-	name = "EVT_114515021_NAME"\r
+-	desc = "EVT_114515021_DESC"\r
++	name = "EVT_114515018_NAME"\r
++	desc = "EVT_114515018_DESC"\r
+ 	style = 2\r
+ 	picture = "aar_versailles"\r
+ \r
+@@ -917,81 +821,81 @@ event = {
+ 	offset = 2\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action = { # 講和だ！！ウクライナを守らねば\r
+-	name = "ACTIONNAME114515021A"\r
++	action = { # 講和だ！！ウクライナを守らねば\r
++	name = "ACTIONNAME114515018A"\r
+ 	command = { type = dissent value = 3 }\r
+-	command = { type = trigger which = 114515022 } # ソビエト＝ベッサラビア戦争終戦（ALS）\r
++	command = { type = trigger which = 114515019 } # ソビエト＝ベッサラビア戦争終戦（ROM）\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # どちらかが滅びるまでこの戦争は続くのだ\r
+-	name = "ACTIONNAME114515021B"\r
++	action = { # どちらかが滅びるまでこの戦争は続くのだ\r
++	name = "ACTIONNAME114515018B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  ソビエト＝ベッサラビア戦争終戦（ALS）\r
++#  ソビエト＝ルーマニア戦争終戦（ROM）\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114515022\r
++	id = 114515019\r
+ 	random = no\r
+-	country = ALS\r
++	country = ROM\r
+ \r
+-	name = "EVT_114515022_NAME"\r
+-	desc = "EVT_114515022_DESC"\r
++	name = "EVT_114515019_NAME"\r
++	desc = "EVT_114515019_DESC"\r
+ 	style = 2\r
+ 	picture = "aar_versailles"\r
+ \r
+-	action = { # 次の戦争に備えなければ\r
+-	name = "ACTIONNAME114515022A"\r
++	action = { # 次の戦争に備えなければ\r
++	name = "ACTIONNAME114515019A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = peace which = SOV value = 0 }\r
+-	command = { type = trigger which = 114515023 } # ソビエト＝ベッサラビア戦争終戦 ― 講和の成立\r
+-	command = { type = sleepevent which = 114515017 } # ソビエト＝ベッサラビア戦争終結（SOV）\r
+-	command = { type = sleepevent which = 114515018 } # ソビエト＝ベッサラビア戦争終結（ALS）\r
+-	command = { type = sleepevent which = 114515019 } # ソビエト＝ベッサラビア戦争終結 ― 受諾\r
+-	command = { type = sleepevent which = 114515020 } # ソビエト＝ベッサラビア戦争終結 ― 拒否\r
++	command = { type = trigger which = 114515020 } # ソビエト＝ルーマニア戦争終結\r
++	command = { type = sleepevent which = 2007044 } # ソビエト＝ルーマニア戦争終結（SOV）\r
++	command = { type = sleepevent which = 2023007 } # ソビエト＝ベッサラビア戦争終結（ROM）\r
++	command = { type = sleepevent which = 2007045 } # ソビエト＝ルーマニア戦争終結 ― ルーマニア受諾\r
++	command = { type = sleepevent which = 2007046 } # ソビエト＝ルーマニア戦争終結 ― ルーマニア拒絶\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 妥協する必要はない\r
+-	name = "ACTIONNAME114515022B"\r
++	action = { # 妥協する必要はない\r
++	name = "ACTIONNAME114515019B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  ソビエト＝ベッサラビア戦争終戦 ― 講和の成立\r
++#  ソビエト＝ベッサラビア戦争終戦 ― 講和の成立\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114515023\r
++	id = 114515020\r
+ 	random = no\r
+ 	country = SOV\r
+ \r
+-	name = "EVT_114515023_NAME"\r
+-	desc = "EVT_114515023_DESC"\r
++	name = "EVT_114515020_NAME"\r
++	desc = "EVT_114515020_DESC"\r
+ 	style = 2\r
+ 	picture = "aar_versailles"\r
+ \r
+-	action = { # いつか取り戻す\r
+-	name = "ACTIONNAME114515023A"\r
+-	command = { type = secedeprovince which = ALS value = 618 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 619 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 620 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 621 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 625 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 626 when = 2 }\r
+-	command = { type = addcore which = 618 where = ALS }\r
+-	command = { type = addcore which = 619 where = ALS }\r
+-	command = { type = addcore which = 620 where = ALS }\r
+-	command = { type = addcore which = 621 where = ALS }\r
+-	command = { type = addcore which = 625 where = ALS }\r
+-	command = { type = addcore which = 626 where = ALS }\r
++	action = { # いつか取り戻す\r
++	name = "ACTIONNAME114515020A"\r
++	command = { type = secedeprovince which = ROM value = 618 when = 1 }\r
++	command = { type = secedeprovince which = ROM value = 619 when = 1 }\r
++	command = { type = secedeprovince which = ROM value = 620 when = 1 }\r
++	command = { type = secedeprovince which = ROM value = 621 when = 1 }\r
++	command = { type = secedeprovince which = ROM value = 625 when = 1 }\r
++	command = { type = secedeprovince which = ROM value = 626 when = 1 }\r
++	command = { type = addcore which = 618 where = ROM }\r
++	command = { type = addcore which = 619 where = ROM }\r
++	command = { type = addcore which = 620 where = ROM }\r
++	command = { type = addcore which = 621 where = ROM }\r
++	command = { type = addcore which = 625 where = ROM }\r
++	command = { type = addcore which = 626 where = ROM }\r
+ 	command = { type = domestic which = democratic value = 1 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -1003,481 +907,218 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  ベッサラビアを要求（RUS UER）\r
+-# 1940年6月27日、ロシアはブリュンヒルド公国に最後通牒を通知し、ベッサラビアとともにブコヴィナ北部の即時割譲を要求した。\r
+-# この地域はもともと正式にルーマニアに編入されたのではなかった。\r
+-# そのため、ロシアはヒトラーとの協定において自国の勢力圏として主張していた。\r
++#  フレームギアイベント\r
++#########################################################################\r
++#  フレームギアの実戦配備\r
++# 『フレームギア（英：Framegear）』は、古代文明の遺産である。\r
++# 約5000年前に大帝国パルテノの天才科学者レジーナ・バビロン博士によって造られた搭乗用人型戦闘兵器であり、\r
++# 古代文明を滅ぼした脅威に対抗するために製造された。\r
++# 現在、公国は列強諸国の脅威にさらされており、古代文明の格納庫に保管されていたフレームギアを再稼働させることが検討されている。\r
++# しかし、再稼働するには一定の技術力が必要だ…\r
+ #########################################################################\r
+-\r
+ event = {\r
+-	id = 114515024\r
++	id = 114515101\r
+ 	random = no\r
+-	TAG = { RUS UER }\r
+-\r
++	country = ALS\r
++	\r
+ 	decision = {\r
+-	exists = ALS\r
+-	owned = { province = 304 data = ALS } # キシネフ\r
++	event = 114514024 # 格納庫、そしてフレームギア\r
+ 	OR = {\r
+-	control = { province = 618 } # カメネーネツ=ポドーリスキ\r
+-	control = { province = 619 } # モギリョフ=ポドーリスキ\r
+-	control = { province = 621 } # ティラスポル\r
+-	control = { province = 626 } # オデッサ\r
+-	control = { province = 240 } # タルノポリ\r
+-	}\r
+-	OR = {\r
+-	AND = {\r
+-	country = RUS\r
+-	NOT = { exists = UER }\r
+-	}\r
+-	AND = {\r
+-	country = UER\r
+-	NOT = { exists = RUS }\r
++	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840011\r
+ 	}\r
+ 	}\r
+-	NOT = {\r
+-	war = { country = ALS country = RUS }\r
+-	war = { country = GER country = RUS }\r
+-	alliance = { country = RUS country = ALS }\r
+-	war = { country = ALS country = UER }\r
+-	war = { country = GER country = UER }\r
+-	alliance = { country = UER country = ALS }\r
+-	}\r
+-	}\r
+-\r
+-	decision_trigger = { \r
+-	event = { id = 2003025 days = 100 } # Bessarabia recognized as Soviet territory by Germany in Mol-Rib Pact\r
++	\r
++	decision_trigger = {\r
++	supplies = 3000\r
++	metal = 1500\r
++	technology = 2030 # 1936年型軽戦車\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+-	exists = ALS\r
+-	owned = { province = 304 data = ALS } # キシネフ\r
+-	OR = {\r
+-	control = { province = 618 } # カメネーネツ=ポドーリスキ\r
+-	control = { province = 619 } # モギリョフ=ポドーリスキ\r
+-	control = { province = 621 } # ティラスポル\r
+-	control = { province = 626 } # オデッサ\r
+-	control = { province = 240 } # タルノポリ\r
+-	}\r
++	event = 114514024 # 格納庫、そしてフレームギア\r
+ 	OR = {\r
+-	AND = {\r
+-	country = RUS\r
+-	NOT = { exists = UER }\r
+-	}\r
+-	AND = {\r
+-	country = UER\r
+-	NOT = { exists = RUS }\r
+-	}\r
+-	}\r
+-	NOT = {\r
+-	war = { country = ALS country = RUS }\r
+-	war = { country = GER country = RUS }\r
+-	alliance = { country = RUS country = ALS }\r
+-	war = { country = ALS country = UER }\r
+-	war = { country = GER country = UER }\r
+-	alliance = { country = UER country = ALS }\r
++	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840011\r
+ 	}\r
++	random = 20\r
+ 	}\r
+-\r
+-	name = "EVT_114515024_NAME"\r
+-	desc = "EVT_114515024_DESC"\r
++	\r
++	name = "EVT_114515101_NAME"\r
++	desc = "EVT_114515101_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	date = { day = 0 month = january year = 1937 }\r
++	picture = "ISESUMA_48"\r
++	decision_picture = "decision_ISESUMA"\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
+ 	offset = 10\r
+-	deathdate = { day = 0 month = january year = 1965 }\r
+-		\r
+-	action = { # ベッサラビアを引き渡せ！！\r
+-	name = "ACTIONNAME114515024A"\r
+-	command = { type = relation which = ALS value = -10 }\r
+-	command = { type = relation which = ROM value = -10 }\r
+-	command = { type = event which = 114515025 where = ALS when = 0 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ロシアのベッサラビア要求\r
+-#########################################################################\r
+-\r
+-event = { \r
+-	id = 114515025\r
+-	random = no\r
+-	country = ALS\r
+-\r
+-	name = "EVT_114515025_NAME"\r
+-	desc = "EVT_114515025_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
++	deathdate = { day = 29 month = december year = 1999 }\r
+ 	\r
+-	action = { # 和平提案を承諾する\r
+-	name = "ACTION_NAME_ACCEPT"\r
+-	command = { trigger = { exists = RUS } type = secedeprovince which = RUS value = 304 } # キシネフ\r
+-	command = { trigger = { exists = RUS } type = secedeprovince which = RUS value = 305 } # カフル\r
+-	command = { trigger = { exists = RUS } type = secedeprovince which = RUS value = 306 } # イスマイル\r
+-	command = { trigger = { exists = RUS } type = secedeprovince which = RUS value = 303 } # ベリツィ\r
+-	command = { trigger = { exists = RUS } type = secedeprovince which = RUS value = 302 } # ホティン\r
+-	command = { trigger = { exists = RUS } type = secedeprovince which = RUS value = 300 } # チェルニウツィー\r
+-	command = { trigger = { exists = RUS } type = relation which = RUS value = 15 }\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 304 } # キシネフ\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 305 } # カフル\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 306 } # イスマイル\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 303 } # ベリツィ\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 302 } # ホティン\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 300 } # チェルニウツィー\r
+-	command = { trigger = { exists = UER } type = relation which = UER value = 15 }\r
+-	command = { type = domestic which = democratic value = -1 }\r
+-	command = { trigger = { exists = RUS } type = event which = 114515026 where = RUS when = 0 }\r
+-	command = { trigger = { exists = UER } type = event which = 114515026 where = UER when = 0 }\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # 絶対に降伏しない！\r
+-	name = "ACTION_NAME_REFUSE"\r
+-	command = { type = leave_alliance when = 1 }\r
+-	command = { trigger = { exists = RUS } type = end_non_aggression which = ALS where = RUS }\r
+-	command = { trigger = { exists = RUS } type = end_non_aggression which = RUS where = ALS }\r
+-	command = { trigger = { exists = RUS } type = war which = RUS }\r
+-	command = { trigger = { exists = UER } type = end_non_aggression which = ALS where = UER }\r
+-	command = { trigger = { exists = UER } type = end_non_aggression which = UER where = ALS }\r
+-	command = { trigger = { exists = UER } type = war which = UER }\r
+-	command = { type = domestic which = political_left value = -2 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { trigger = { exists = RUS } type = relation which = RUS value = -25 }\r
+-	command = { trigger = { exists = UER } type = relation which = UER value = -25 }\r
+-	command = { type = relation which = GER value = 15 }\r
+-	command = { type = relation which = ROM value = 15 }\r
+-	command = { trigger = { exists = RUS } type = event which = 114515027 where = RUS when = 0 }\r
+-	command = { trigger = { exists = UER } type = event which = 114515027 where = UER when = 0 }\r
+-	ai_chance = 50	\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ベッサラビアを要求 ― 受諾（RUS UER）\r
+-#########################################################################\r
+-event = {\r
+-	id = 114515026\r
+-	random = no\r
+-	TAG = { RUS UER }\r
+-\r
+-	name = "EVT_114515026_NAME"\r
+-	desc = "EVT_114515026_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = belligerence value = 1 }\r
+-	}\r
+-}\r
+-#########################################################################\r
+-#  ベッサラビアを要求 ― ブリュンヒルド公国は戦うつもりだ！（RUS UER）\r
+-#########################################################################\r
+-event = {\r
+-	id = 114515027\r
+-	random = no\r
+-	TAG = { RUS UER }\r
+-\r
+-	name = "EVT_114515027_NAME"\r
+-	desc = "EVT_114515027_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 了解\r
++	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+-	command = { }\r
++		command = { type = activate_unit_type which = d_rsv_40 }\r
++		command = { type = activate_unit_type which = rocket_artillery }\r
++		command = { trigger = { technology = 2030 NOT = { technology = 2070 } } type = new_model which = d_rsv_40 value = 0 } # 1936年型軽戦車に相当\r
++		command = { trigger = { technology = 2030 NOT = { technology = 2070 } } type = new_model which = rocket_artillery value = 0 }\r
++		command = { trigger = { technology = 2030 NOT = { technology = 2070 local_flag = FG_0 } } type = local_setflag which = FG_0 }\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = new_model which = d_rsv_40 value = 1 } # 1939年型中戦車に相当\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = new_model which = rocket_artillery value = 1 }\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = scrap_model which = d_rsv_40 value = 0 }\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = scrap_model which = rocket_artillery value = 0 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 local_flag = FG_1 } } type = local_setflag which = FG_1 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = new_model which = d_rsv_40 value = 2 } # 1941年型中戦車に相当\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = new_model which = rocket_artillery value = 2 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = scrap_model which = d_rsv_40 value = 1 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = scrap_model which = rocket_artillery value = 1 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 local_flag = FG_2 } } type = local_setflag which = FG_2 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = new_model which = d_rsv_40 value = 3 } # 1943年型中戦車に相当\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = new_model which = rocket_artillery value = 3 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = scrap_model which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = scrap_model which = rocket_artillery value = 2 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 local_flag = FG_3 } } type = local_setflag which = FG_3 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = new_model which = d_rsv_40 value = 4 } # 1945年型中戦車に相当\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = new_model which = rocket_artillery value = 4 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = scrap_model which = d_rsv_40 value = 3 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = scrap_model which = rocket_artillery value = 3 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 local_flag = FG_4 } } type = local_setflag which = FG_4 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = new_model which = d_rsv_40 value = 5 } # 1948年型主力戦車に相当\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = new_model which = rocket_artillery value = 5 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = scrap_model which = d_rsv_40 value = 4 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = scrap_model which = rocket_artillery value = 4 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 local_flag = FG_5 } } type = local_setflag which = FG_5 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = new_model which = d_rsv_40 value = 6 } # 1952年型主力戦車に相当\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = new_model which = rocket_artillery value = 6 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = scrap_model which = d_rsv_40 value = 5 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = scrap_model which = rocket_artillery value = 5 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 local_flag = FG_6 } } type = local_setflag which = FG_6 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = new_model which = d_rsv_40 value = 7 } # 1956年型主力戦車に相当\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = new_model which = rocket_artillery value = 7 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = scrap_model which = d_rsv_40 value = 6 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = scrap_model which = rocket_artillery value = 6 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 local_flag = FG_7 } } type = local_setflag which = FG_7 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = new_model which = d_rsv_40 value = 8 } # 1962年型主力戦車に相当\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = new_model which = rocket_artillery value = 8 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = scrap_model which = d_rsv_40 value = 6 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = scrap_model which = rocket_artillery value = 6 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = local_setflag which = FG_8 }\r
++		command = { trigger = { ai = yes } type = build_division which = d_rsv_40 when = 4 cost = 0.1 where = 120 }\r
++		command = { trigger = { ai = no } type = supplies value = -3000 }\r
++		command = { trigger = { ai = no } type = metalpool value = 1500 }\r
++		command = { type = local_setflag which = UpgradeFG }\r
++		command = { type = add_division value = d_rsv_40 when = 0 }\r
+ 	}\r
+ }\r
+-\r
+ #########################################################################\r
+-#  ロシア＝ベッサラビア戦争終結（RUS UER）\r
+-# ロシアとドイツは、不可侵条約を結んだとき、東ヨーロッパを2国の「勢力圏」に分割することでも合意した。\r
+-# この合意により、ルーマニア領であるベッサラビアはロシアに併合されることが決まった。\r
+-# この合意に沿って、ロシアは同地域の割譲をブリュンヒルド公国に要求した。\r
+-# だがブリュンヒルド公国はドイツの意向に反して、ロシアの要求を拒絶した。\r
+-# 1世代前の革命戦争の時のように大勝利を収められると考えたのだろう。\r
+-# しかしその期待はあっけなく裏切られる。戦争が始まると、赤軍がベッサラビアの主要地域を占領したのだ。\r
++#  フレームギアの改良\r
++# 『フレームギア（英：Framegear）』は、古代文明の遺産である。\r
++# 約5000年前に大帝国パルテノの天才科学者レジーナ・バビロン博士によって造られた搭乗用人型戦闘兵器であり、\r
++# 古代文明を滅ぼした脅威に対抗するために製造された。\r
++# 実戦配備以降、技術の進歩によってフレームギアが改良された。\r
+ #########################################################################\r
+-\r
+ event = {\r
+-	id = 114515028\r
+-	random = no\r
+-	TAG = { RUS UER }\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	AND = {\r
+-	exists = ALS\r
+-	war = { country = ALS country = RUS }\r
+-	}\r
+-	AND = {\r
+-	exists = ALS\r
+-	war = { country = ALS country = UER }\r
+-	}\r
+-	NOT = { exists = ALS }\r
+-	}\r
+-	control = { province = 304 data = -1 } # キシネフ\r
+-	event = 114515027 # ベッサラビアを要求 ― ブリュンヒルド公国は戦うつもりだ！\r
+-	NOT = {\r
+-	alliance = { country = ALS country = GER }\r
+-	alliance = { country = ALS country = ENG }\r
+-	alliance = { country = ALS country = FRA }\r
+-	alliance = { country = ALS country = SOV }\r
+-	alliance = { country = ALS country = JAP }\r
+-	}\r
+-	}\r
+-\r
+-\r
+-	name = "EVT_114515028_NAME"\r
+-	desc = "EVT_114515028_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 7 \r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-\r
+-	action = { # すでに要求している条件で講和する\r
+-	name = "ACTIONNAME114515028A"\r
+-	trigger = {\r
+-	exists = ALS\r
+-	}\r
+-	command = { type = event which = 114515029 where = ALS when = 0 }\r
+-	command = { type = relation which = ROM value = 10 }\r
+-	ai_chance = 98\r
+-	}\r
+-\r
+-	action = { # 奴らを社会主義化するのだ\r
+-	name = "ACTIONNAME114515028B"\r
+-	trigger = {\r
+-	exists = ALS\r
+-	}\r
+-	command = { type = relation which = ALS value = -10 }\r
+-	command = { type = relation which = ROM value = -10 }\r
+-	command = { type = relation which = HUN value = -5 }\r
+-	command = { type = relation which = BUL value = -5 }\r
+-	command = { type = relation which = GER value = -20 }\r
+-	command = { type = relation which = FRA value = -10 }\r
+-	command = { type = relation which = USA value = -5 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	ai_chance = 2\r
+-	}\r
+-\r
+-	action = { # ベッサラビアを併合するのだ\r
+-	name = "ACTIONNAME114515028C"\r
+-	trigger = {\r
+-	NOT = { exists = ALS }\r
+-	}\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = relation which = ROM value = 10 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ロシア＝ベッサラビア戦争終結（ALS）\r
+-# ロシアが言うところの「公正な条約」は、キシネフでは屈辱的で不公正だと判断された。\r
+-# とはいえ軍事的な戦果を挙げていないことから、ブリュンヒルド公国内で和平支持派が動き出した。\r
+-#########################################################################\r
+-event = {\r
+-	id = 114515029\r
++	id = 114515102\r
+ 	random = no\r
+ 	country = ALS\r
+-\r
+-	name = "EVT_114515029_NAME"\r
+-	desc = "EVT_114515029_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # ロシアの要求に屈する\r
+-	name = "ACTIONNAME114515029A"\r
+-	command = { trigger = { exists = RUS } type = event which = 114515030 where = RUS when = 0 } # ロシア＝ベッサラビア戦争終結 ― 受諾\r
+-	command = { trigger = { exists = UER } type = event which = 114515030 where = UER when = 0 } # ロシア＝ベッサラビア戦争終結 ― 受諾\r
+-	command = { type = dissent value = 10 }\r
+-	ai_chance = 99\r
+-	}\r
+-\r
+-	action = { # 決して屈するものか！\r
+-	name = "ACTIONNAME114515029B"\r
+-	command = { trigger = { exists = RUS } type = event which = 114515031 where = RUS when = 0 } # ロシア＝ベッサラビア戦争終結 ― 拒否\r
+-	command = { trigger = { exists = UER } type = event which = 114515031 where = UER when = 0 } # ロシア＝ベッサラビア戦争終結 ― 拒否\r
+-	command = { type = domestic which = political_left value = -4 }\r
+-	command = { type = domestic which = democratic value = 2 }\r
+-	command = { type = domestic which = freedom value = 2 }\r
+-	command = { trigger = { exists = RUS } type = relation which = RUS value = -50 }\r
+-	command = { trigger = { exists = UER } type = relation which = UER value = -50 }\r
+-	command = { type = relation which = GER value = 50 }\r
+-	ai_chance = 1\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ロシア＝ベッサラビア戦争終結 ― 受諾（RUS UER）\r
+-#########################################################################\r
+-event = {\r
+-	id = 114515030\r
+-	random = no\r
+-	TAG = { RUS UER }\r
+-\r
+-	name = "EVT_114515030_NAME"\r
+-	desc = "EVT_114515030_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # よし！\r
+-	name = "ACTION_NAME_GOOD"\r
+-	command = { type = inherit which = ALS }\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = sleepevent which = 114515032 } # ロシア＝ベッサラビア戦争終戦（RUS UER）\r
+-	command = { type = sleepevent which = 114515033 } # ロシア＝ベッサラビア戦争終戦（ALS）\r
+-	command = { type = sleepevent which = 114515034 } # ロシア＝ベッサラビア戦争終戦 ― 講和の成立\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ロシア＝ベッサラビア戦争終結 ― 拒否（RUS UER）\r
+-#########################################################################\r
+-event = {\r
+-	id = 114515031\r
+-	random = no\r
+-	TAG = { RUS UER }\r
+-\r
+-	name = "EVT_114515031_NAME"\r
+-	desc = "EVT_114515031_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 思い知らせてやる！\r
+-	name = "ACTIONNAME114515031A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = sleepevent which = 114515032 } # ロシア＝ベッサラビア戦争終戦（RUS UER）\r
+-	command = { type = sleepevent which = 114515033 } # ロシア＝ベッサラビア戦争終戦（ALS）\r
+-	command = { type = sleepevent which = 114515034 } # ロシア＝ベッサラビア戦争終戦 ― 講和の成立\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ロシア＝ベッサラビア戦争終戦（RUS UER）\r
+-# ベッサラビア地方はロシア、ルーマニアの間で古来より領土紛争が絶えなかった。\r
+-# 1812年の露土戦争でロシアが獲得したが、ロシア革命が起こるとルーマニアが併合を宣言した。\r
+-# その後、この地域は独立したが、ロシアは絶えず併合の機会を狙っていた。\r
+-# ロシアはブリュンヒルド公国に攻め込んだが、反撃を受け、かなり内部まで進撃を許してしまう。\r
+-# ブリュンヒルド公国は、停戦する見返りに領土割譲を求めている。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 114515032\r
+-	random = no\r
+-	TAG = { RUS UER }\r
+-\r
++	persistent = yes\r
++	\r
+ 	trigger = {\r
+-	AND = {\r
+-	area = { area = "Ukraine" country = ALS data = 1 value = 25 }\r
+-	control = { province = 617 data = ALS } # キエフ\r
+-	}\r
+-	war = { country = -1 country = ALS }\r
+-	exists = ALS\r
+-	NOT = {\r
+-	war = { country = GER country = RUS }\r
+-	war = { country = GER country = UER }\r
+-	ispuppet = ALS\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_114515032_NAME"\r
+-	desc = "EVT_114515032_DESC"\r
+-	style = 2\r
+-	picture = "aar_versailles"\r
+-\r
+-	date = { day = 0 month = 2 year = 1933 }\r
+-	offset = 2\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 講和だ！！ウクライナを守らねば\r
+-	name = "ACTIONNAME114515032A"\r
+-	command = { type = dissent value = 3 }\r
+-	command = { type = event which = 114515033 where = ALS when = 0 } # ロシア＝ベッサラビア戦争終戦（ALS）\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # どちらかが滅びるまでこの戦争は続くのだ\r
+-	name = "ACTIONNAME114515032B"\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ロシア＝ベッサラビア戦争終戦（ALS）\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 114515033\r
+-	random = no\r
+-	country = ALS\r
+-\r
+-	name = "EVT_114515033_NAME"\r
+-	desc = "EVT_114515033_DESC"\r
+-	style = 2\r
+-	picture = "aar_versailles"\r
+-\r
+-	action = { # 次の戦争に備えなければ\r
+-	name = "ACTIONNAME114515033A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { trigger = { war = { country = RUS } } type = peace which = RUS value = 0 }\r
+-	command = { trigger = { war = { country = UER } } type = peace which = UER value = 0 }\r
+-	command = { type = event which = 114515034 where = ALS when = 0 } # ロシア＝ベッサラビア戦争終戦 ― 講和の成立\r
+-	command = { type = sleepevent which = 114515028 } # ロシア＝ベッサラビア戦争終結（RUS UER）\r
+-	command = { type = sleepevent which = 114515029 } # ロシア＝ベッサラビア戦争終結（ALS）\r
+-	command = { type = sleepevent which = 114515030 } # ロシア＝ベッサラビア戦争終結 ― 受諾\r
+-	command = { type = sleepevent which = 114515031 } # ロシア＝ベッサラビア戦争終結 ― 拒否\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 妥協する必要はない\r
+-	name = "ACTIONNAME114515033B"\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 0\r
++	event = 114514024 # 格納庫、そしてフレームギア\r
++	local_flag =  UpgradeFG\r
++	OR = {\r
++	headofstate = 6840001 # 望月冬夜\r
++	headofstate = 6840011\r
++	}\r
++		OR = {\r
++			AND = { technology = 2030 NOT = { technology = 2070 local_flag = FG_0 } }\r
++			AND = { technology = 2070 NOT = { technology = 2080 local_flag = FG_1 } }\r
++			AND = { technology = 2080 NOT = { technology = 2090 local_flag = FG_2 } }\r
++			AND = { technology = 2090 NOT = { technology = 2140 local_flag = FG_3 } }\r
++			AND = { technology = 2140 NOT = { technology = 11000 local_flag = FG_4 } }\r
++			AND = { technology = 11000 NOT = { technology = 2660 local_flag = FG_5 } }\r
++			AND = { technology = 2660 NOT = { technology = 11010 local_flag = FG_6 } }\r
++			AND = { technology = 11010 NOT = { technology = 2670 local_flag = FG_7 } }\r
++			AND = { technology = 2670 NOT = { local_flag = FG_8 } }\r
++		}\r
+ 	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ロシア＝ベッサラビア戦争終戦 ― 講和の成立（RUS UER）\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 114515034\r
+-	random = no\r
+-	TAG = { RUS UER }\r
+-\r
+-	name = "EVT_114515034_NAME"\r
+-	desc = "EVT_114515034_DESC"\r
++	\r
++	name = "EVT_114515102_NAME"\r
++	desc = "EVT_114515102_DESC"\r
+ 	style = 2\r
+-	picture = "aar_versailles"\r
+-\r
+-	action = { # いつか取り戻す\r
+-	name = "ACTIONNAME114515034A"\r
+-	command = { type = secedeprovince which = ALS value = 618 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 619 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 620 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 621 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 625 when = 2 }\r
+-	command = { type = secedeprovince which = ALS value = 626 when = 2 }\r
+-	command = { type = addcore which = 618 where = ALS }\r
+-	command = { type = addcore which = 619 where = ALS }\r
+-	command = { type = addcore which = 620 where = ALS }\r
+-	command = { type = addcore which = 621 where = ALS }\r
+-	command = { type = addcore which = 625 where = ALS }\r
+-	command = { type = addcore which = 626 where = ALS }\r
+-	command = { type = domestic which = democratic value = 1 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { trigger = { exists = RUS } type = relation which = RUS value = -25 }\r
+-	command = { trigger = { exists = UER } type = relation which = UER value = -25 }\r
+-	command = { type = relation which = GER value = 25 }\r
+-	command = { type = dissent value = 10 }\r
+-	ai_chance = 100\r
++	picture = "ISESUMA_48"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++		command = { trigger = { technology = 2030 NOT = { technology = 2070 } } type = new_model which = d_rsv_40 value = 0 } # 1936年型軽戦車に相当\r
++		command = { trigger = { technology = 2030 NOT = { technology = 2070 } } type = new_model which = rocket_artillery value = 0 }\r
++		command = { trigger = { technology = 2030 NOT = { technology = 2070 local_flag = FG_0 } } type = local_setflag which = FG_0 }\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = new_model which = d_rsv_40 value = 1 } # 1939年型中戦車に相当\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = new_model which = rocket_artillery value = 1 }\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = scrap_model which = d_rsv_40 value = 0 }\r
++		command = { trigger = { technology = 2070 NOT = { technology = 2080 } } type = scrap_model which = rocket_artillery value = 0 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 local_flag = FG_1 } } type = local_setflag which = FG_1 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = new_model which = d_rsv_40 value = 2 } # 1941年型中戦車に相当\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = new_model which = rocket_artillery value = 2 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = scrap_model which = d_rsv_40 value = 1 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 } } type = scrap_model which = rocket_artillery value = 1 }\r
++		command = { trigger = { technology = 2080 NOT = { technology = 2090 local_flag = FG_2 } } type = local_setflag which = FG_2 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = new_model which = d_rsv_40 value = 3 } # 1943年型中戦車に相当\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = new_model which = rocket_artillery value = 3 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = scrap_model which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 } } type = scrap_model which = rocket_artillery value = 2 }\r
++		command = { trigger = { technology = 2090 NOT = { technology = 2140 local_flag = FG_3 } } type = local_setflag which = FG_3 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = new_model which = d_rsv_40 value = 4 } # 1945年型中戦車に相当\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = new_model which = rocket_artillery value = 4 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = scrap_model which = d_rsv_40 value = 3 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 } } type = scrap_model which = rocket_artillery value = 3 }\r
++		command = { trigger = { technology = 2140 NOT = { technology = 11000 local_flag = FG_4 } } type = local_setflag which = FG_4 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = new_model which = d_rsv_40 value = 5 } # 1948年型主力戦車に相当\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = new_model which = rocket_artillery value = 5 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = scrap_model which = d_rsv_40 value = 4 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 } } type = scrap_model which = rocket_artillery value = 4 }\r
++		command = { trigger = { technology = 11000 NOT = { technology = 2660 local_flag = FG_5 } } type = local_setflag which = FG_5 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = new_model which = d_rsv_40 value = 6 } # 1952年型主力戦車に相当\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = new_model which = rocket_artillery value = 6 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = scrap_model which = d_rsv_40 value = 5 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 } } type = scrap_model which = rocket_artillery value = 5 }\r
++		command = { trigger = { technology = 2660 NOT = { technology = 11010 local_flag = FG_6 } } type = local_setflag which = FG_6 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = new_model which = d_rsv_40 value = 7 } # 1956年型主力戦車に相当\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = new_model which = rocket_artillery value = 7 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = scrap_model which = d_rsv_40 value = 6 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 } } type = scrap_model which = rocket_artillery value = 6 }\r
++		command = { trigger = { technology = 11010 NOT = { technology = 2670 local_flag = FG_7 } } type = local_setflag which = FG_7 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = new_model which = d_rsv_40 value = 8 } # 1962年型主力戦車に相当\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = new_model which = rocket_artillery value = 8 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = scrap_model which = d_rsv_40 value = 6 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = scrap_model which = rocket_artillery value = 6 }\r
++		command = { trigger = { technology = 2670 NOT = { local_flag = FG_8 } } type = local_setflag which = FG_8 }\r
++		command = { trigger = { technology = 5930 NOT = { local_flag = FG_T5930 } } type = frozen_move which = d_rsv_40 value = 2 } # 冬季用車両\r
++		command = { trigger = { technology = 5930 NOT = { local_flag = FG_T5930 } } type = frozen_attack which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5930 NOT = { local_flag = FG_T5930 } } type = frozen_defense which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5930 NOT = { local_flag = FG_T5930 } } type = snow_move which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5930 NOT = { local_flag = FG_T5930 } } type = snow_attack which = d_rsv_40 value = 3 }\r
++		command = { trigger = { technology = 5930 NOT = { local_flag = FG_T5930 } } type = snow_defense which = d_rsv_40 value = 3 }\r
++		command = { trigger = { technology = 5930 NOT = { local_flag = FG_T5930 } } type = local_setflag which = FG_T5930 }\r
++		command = { trigger = { technology = 5950 NOT = { local_flag = FG_T5950 } } type = jungle_move which = d_rsv_40 value = 2 } # 熱帯用車両\r
++		command = { trigger = { technology = 5950 NOT = { local_flag = FG_T5950 } } type = jungle_attack which = d_rsv_40 value = 1 }\r
++		command = { trigger = { technology = 5950 NOT = { local_flag = FG_T5950 } } type = jungle_defense which = d_rsv_40 value = 1 }\r
++		command = { trigger = { technology = 5950 NOT = { local_flag = FG_T5950 } } type = forest_move which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5950 NOT = { local_flag = FG_T5950 } } type = forest_attack which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5950 NOT = { local_flag = FG_T5950 } } type = forest_defense which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5950 NOT = { local_flag = FG_T5950 } } type = local_setflag which = FG_T5950 }\r
++		command = { trigger = { technology = 5970 NOT = { local_flag = FG_T5970 } } type = desert_move which = d_rsv_40 value = 3 } # 砂漠用車両\r
++		command = { trigger = { technology = 5970 NOT = { local_flag = FG_T5970 } } type = desert_attack which = d_rsv_40 value = 3 }\r
++		command = { trigger = { technology = 5970 NOT = { local_flag = FG_T5970 } } type = desert_defense which = d_rsv_40 value = 3 }\r
++		command = { trigger = { technology = 5970 NOT = { local_flag = FG_T5970 } } type = local_setflag which = FG_T5970 }\r
++		command = { trigger = { technology = 5990 NOT = { local_flag = FG_T5990 } } type = mountain_move which = d_rsv_40 value = 2 } # 不整地用車両\r
++		command = { trigger = { technology = 5990 NOT = { local_flag = FG_T5990 } } type = mountain_attack which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5990 NOT = { local_flag = FG_T5990 } } type = mountain_defense which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5990 NOT = { local_flag = FG_T5990 } } type = muddy_move which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5990 NOT = { local_flag = FG_T5990 } } type = muddy_attack which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5990 NOT = { local_flag = FG_T5990 } } type = muddy_defense which = d_rsv_40 value = 2 }\r
++		command = { trigger = { technology = 5990 NOT = { local_flag = FG_T5990 } } type = local_setflag which = FG_T5990 }\r
+ 	}\r
+ }
+\ No newline at end of file

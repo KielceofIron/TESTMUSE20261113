@@ -1,0 +1,690 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
+@@ -408,7 +408,6 @@ event = {
+ 	command = { type = sleepevent which = 2003152 }\r
+ 	command = { type = sleepevent which = 2003153 }\r
+ 	command = { type = sleepevent which = 2003155 }\r
+-	command = { type = sleepevent which = 2003090 } #フリッチュイベント\r
+ 	}\r
+ }\r
+ \r
+@@ -1275,7 +1274,7 @@ event = {
+ 	decision = {\r
+ 	flag = National_Communism\r
+ 	event = 45680012 # 民族ボルシェヴィズム\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = FRA\r
+ 	incabinet = 321\r
+ 	NOT = { atwar = GER }\r
+@@ -1284,7 +1283,7 @@ event = {
+ 	decision_trigger = {\r
+ 	money = 200\r
+ 	event = 45680012 # 民族ボルシェヴィズム\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = FRA\r
+ 	incabinet = 321\r
+ 	NOT = { atwar = GER }\r
+@@ -1293,7 +1292,7 @@ event = {
+ 	trigger = {\r
+ 	flag = National_Communism\r
+ 	event = 45680012 # 民族ボルシェヴィズム\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = FRA\r
+ 	incabinet = 321\r
+ 	NOT = { atwar = GER }\r
+@@ -1378,7 +1377,7 @@ event = {
+ 	lost_national = { country = GER value = 75 }\r
+ 	OR = {\r
+ 	war = { country = GER country = FRA }\r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	war = { country = GER country = ENG }\r
+ 	}\r
+ 	}\r
+@@ -1538,7 +1537,7 @@ event = {
+ 	country = GER\r
+ 	\r
+ 	trigger = {\r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	control = { province = 247 data = -3 } #Brest-Litovsk\r
+ 	control = { province = 269 data = -3 } #Jelgava\r
+ 	control = { province = 232 data = -3 } #Warsaw\r
+@@ -1553,7 +1552,6 @@ event = {
+ 	control = { province = 668 data = -3 } #Kuybyshev\r
+ 	control = { province = 672 data = -3 } #Kazan\r
+ 	control = { province = 706 data = -3 } #Astrakhan\r
+-	NOT = { lost_national = { country = UTC value = 70 } }\r
+ 	}\r
+ 	\r
+ 	name = EVT_45680024_NAME\r
+@@ -1580,7 +1578,7 @@ event = {
+ \r
+ event = {\r
+ 	id = 45680025\r
+-	country = UTC\r
++	country = UER\r
+ 	\r
+ 	name = EVT_45680024_NAME\r
+ 	desc = EVT_45680024_DESC\r
+@@ -1594,8 +1592,8 @@ event = {
+ 	command = { trigger = { war = { country = GER } } type = peace which = GER value = 0 }\r
+ 	command = { trigger = { war = { country = CHI } } type = peace which = CHI value = 0 }\r
+ 	#If Germany occupied territories owned by the Volunteers' Army, they are given back to Soviet Union\r
+-	command = { trigger = { control = { province = 552 data = GER } } type = secedeprovince which = UTC value = 552 when = 2 } #Gdov\r
+-	command = { trigger = { control = { province = 566 data = GER } } type = secedeprovince which = UTC value = 566 when = 2 } #Pskov		\r
++	command = { trigger = { control = { province = 552 data = GER } } type = secedeprovince which = UER value = 552 when = 2 } #Gdov\r
++	command = { trigger = { control = { province = 566 data = GER } } type = secedeprovince which = UER value = 566 when = 2 } #Pskov		\r
+ 	# Finland independence, if not already\r
+ 	command = { trigger = { NOT = { exists = FIN } } type = independence which = FIN value = 1 when = 1 }\r
+ 	command = { type = secederegion which = FIN value = "Finland" when = 2 }\r
+@@ -1660,9 +1658,9 @@ event = {
+ 	command = { trigger = { NOT = { alliance = { country = GER country = UB8 } } } type = secedeprovince which = GER value = 618 when = 2 } #Kamenets-Podolsky\r
+ \r
+         # CHI exists(追加）\r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = GER } } puppet = { country = TAN country = UTC } } type = inherit which = TAN }\r
+-	command = { trigger = { NOT = { alliance = { country = CHI country = GER } } puppet = { country = MON country = UTC } } type = inherit which = MON }\r
+-	command = { trigger = { NOT = { alliance = { country = CHI country = GER } } puppet = { country = SIK country = UTC } } type = inherit which = SIK }\r
++        command = { trigger = { NOT = { alliance = { country = CHI country = GER } } puppet = { country = TAN country = UER } } type = inherit which = TAN }\r
++	command = { trigger = { NOT = { alliance = { country = CHI country = GER } } puppet = { country = MON country = UER } } type = inherit which = MON }\r
++	command = { trigger = { NOT = { alliance = { country = CHI country = GER } } puppet = { country = SIK country = UER } } type = inherit which = SIK }\r
+         command = { trigger = { NOT = { alliance = { country = CHI country = GER } } } type = secederegion which = CHI value = China when = 1 }\r
+         command = { trigger = { NOT = { alliance = { country = CHI country = GER } } } type = secederegion which = CHI value = Korea when = 1 }\r
+ 	command = { trigger = { NOT = { alliance = { country = CHI country = GER } } } type = secedearea which = CHI value = Mongolia when = 1 }\r
+@@ -1750,16 +1748,16 @@ event = {
+ 	command = { trigger = { core = { province = 1245 } } type = removecore which = 1245 } #Tangshan\r
+ \r
+         # Some to CHI（追加）\r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Kamchatka" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Primorski" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Khabarovsk" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Magadan" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Amur" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Yakutsk" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Zabaikalye" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "South Krasnoyarsk" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedearea which = CHI value = "Irkutsk" when = 1 } \r
+-        command = { trigger = { NOT = { alliance = { country = CHI country = UTC } } } type = secedeprovince which = CHI value = 1155 when = 1 }\r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Kamchatka" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Primorski" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Khabarovsk" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Magadan" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Amur" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Yakutsk" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Zabaikalye" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "South Krasnoyarsk" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedearea which = CHI value = "Irkutsk" when = 1 } \r
++        command = { trigger = { NOT = { alliance = { country = CHI country = UER } } } type = secedeprovince which = CHI value = 1155 when = 1 }\r
+ 	command = { type = add_core_area which = "Kamchatka" where = CHI }\r
+ 	command = { type = add_core_area which = "Primorski" where = CHI }\r
+ 	command = { type = add_core_area which = "Khabarovsk" where = CHI }\r
+@@ -1852,7 +1850,6 @@ event = {
+ 	command = { type = secedearea which = U37 value = "Latvia" when = 1 }\r
+ 	command = { type = make_puppet which = U37 }\r
+ 	command = { type = alliance which = U37 }\r
+-	command = { trigger = { ai = U37 } type = event which = 45690013 where = U37 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1899,7 +1896,6 @@ event = {
+ 	command = { type = secedeprovince which = LIT value = 255 when = 1 }\r
+ 	command = { type = make_puppet which = LIT }\r
+ 	command = { type = alliance which = LIT }\r
+-	command = { trigger = { ai = LIT } type = event which = 45690014 where = LIT when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1952,7 +1948,6 @@ event = {
+ 	command = { type = secedeprovince which = POL value = 254 when = 1 } #Bialystock\r
+ 	command = { type = make_puppet which = POL }\r
+ 	command = { type = alliance which = POL }\r
+-	command = { trigger = { ai = POL } type = event which = 45690015 where = POL when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2010,7 +2005,6 @@ event = {
+ 	command = { type = secedeprovince which = BLR value = 599 when = 1 } #Minsk\r
+ 	command = { type = make_puppet which = BLR }\r
+ 	command = { type = alliance which = BLR }\r
+-	command = { trigger = { ai = BLR } type = event which = 45690016 where = BLR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2059,7 +2053,6 @@ event = {
+ 	command = { type = secedeprovince which = UKR value = 249 when = 1 } #Sarny\r
+ 	command = { type = make_puppet which = UKR }\r
+ 	command = { type = alliance which = UKR }\r
+-	command = { trigger = { ai = UKR } type = event which = 45690017 where = UKR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2196,7 +2189,7 @@ event = {
+ 	command = { trigger = { ai = no } type = money value = -200 }\r
+ 	command = { type = relation which = FRA value = 30 }\r
+ 	command = { type = relation which = ENG value = 30 }\r
+-	command = { type = relation which = UTC value = 30 }\r
++	command = { type = relation which = UER value = 30 }\r
+ 	command = { type = relation which = AUS value = 30 }\r
+ 	command = { type = relation which = HUN value = 30 }\r
+ 	command = { type = relation which = HOL value = 30 }\r
+@@ -2278,14 +2271,14 @@ event = {
+ 	country = GER\r
+ 	decision = {\r
+ 	OR = { \r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	war = { country = GER country = ENG }\r
+ 	war = { country = GER country = FRA }\r
+ 	}\r
+ 	}\r
+ 	decision_trigger = {\r
+ 	OR = { \r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	war = { country = GER country = ENG }\r
+ 	war = { country = GER country = FRA }\r
+ 	}\r
+@@ -2293,7 +2286,7 @@ event = {
+ 	}\r
+ 	trigger = {\r
+ 	OR = { \r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	war = { country = GER country = ENG }\r
+ 	war = { country = GER country = FRA }\r
+ 	}\r
+@@ -2316,7 +2309,7 @@ event = {
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = add_division which = "第1予備戦車団" value = light_armor when = 0 }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "第2予備戦車団" value = light_armor when = 0 }\r
+-	command = { trigger = { ai = yes } type = add_division which = "第3予備戦車団" value = light_armor when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "第3予備洗車団" value = light_armor when = 0 }\r
+ 	command = { type = add_division which = "第1予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第2予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第3予備歩兵師団" value = infantry when = 5 }\r
+@@ -2471,7 +2464,7 @@ event = {
+ 	decision = {\r
+ 	flag = National_Communism\r
+ 	event = 45680017 # 1937年のドイツ帝国議会選挙\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = FRA\r
+ 	incabinet = 323\r
+ 	NOT = { atwar = GER }\r
+@@ -2481,7 +2474,7 @@ event = {
+ 	money = 300\r
+ 	flag = National_Communism\r
+ 	event = 45680017 # 1937年のドイツ帝国議会選挙\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = FRA\r
+ 	incabinet = 323\r
+ 	NOT = { atwar = GER }\r
+@@ -2490,7 +2483,7 @@ event = {
+ 	trigger = {\r
+ 	flag = National_Communism\r
+ 	event = 45680017 # 1937年のドイツ帝国議会選挙\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = FRA\r
+ 	incabinet = 323\r
+ 	NOT = { atwar = GER }\r
+@@ -2521,13 +2514,9 @@ event = {
+ 	command = { type = gain_tech which = 5000110 }\r
+ 	command = { type = gain_tech which = 5130 }\r
+ 	command = { type = gain_tech which = 5100 }\r
+-	#command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
+-		#command = {  trigger = { ai = yes }  type = local_setflag which = do_not_demob }\r
+-		#command = {  trigger = { ai = yes }  type = local_clrflag which = demob }\r
+-		#command = { trigger = { ai = yes } type = trigger which = 8300107 }\r
+-		#command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
+-		command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
+-	#command = { trigger = { ai = yes } type = event which = }\r
++	command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
++	command = { trigger = { ai = yes }  type = trigger which = 130031 }\r
++	command = { trigger = { ai = yes exists = FRA } type = sleepevent which = 130033 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2546,7 +2535,7 @@ event = {
+ 	NOT = { ispuppet = GER }\r
+ 	region = { region = "Germany" country = -2 data = 1 }\r
+ 	OR = {\r
+-	control = { province = 163 data = UTC }\r
++	control = { province = 163 data = UER }\r
+ 	control = { province = 163 data = USA }\r
+ 	control = { province = 163 data = ENG }\r
+ 	control = { province = 163 data = FRA }\r
+@@ -2569,7 +2558,7 @@ event = {
+ \r
+ 	action = { # 全ドイツ人に告ぐ……\r
+ 	name = "ACTIONNAME45680040A"\r
+-	command = { trigger = { control = { province = 163 data = UTC } } type = event which = 45680041 where = UTC when = 0 }\r
++	command = { trigger = { control = { province = 163 data = UER } } type = event which = 45680041 where = UER when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = USA } } type = event which = 45680041 where = USA when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = ENG } } type = event which = 45680041 where = ENG when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = FRA } } type = event which = 45680041 where = FRA when = 0 }\r
+@@ -2593,7 +2582,7 @@ event = {
+ event = {\r
+ 	id = 45680041\r
+ 	random = no\r
+-	tag = { UTC USA ENG FRA ITA JAP AUS U09 UB8 }\r
++	tag = { UER USA ENG FRA ITA JAP AUS U09 UB8 }\r
+ \r
+ 	name = EVT_45680041_NAME\r
+ 	desc = EVT_45680041_DESC\r
+@@ -2627,9 +2616,9 @@ event = {
+ 	exists = U09\r
+ 	exists = UB8\r
+ 	}\r
+-	flag = UTC_FRA_Alliance\r
++	flag = UER_FRA_Alliance\r
+ 	NOT = { ispuppet = FRA }\r
+-	NOT = { ispuppet = UTC }\r
++	NOT = { ispuppet = UER }\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = AUS }\r
+ 	NOT = { ispuppet = U09 }\r
+@@ -2648,7 +2637,7 @@ event = {
+ 	exists = UB8\r
+ 	}\r
+ 	NOT = { ispuppet = FRA }\r
+-	NOT = { ispuppet = UTC }\r
++	NOT = { ispuppet = UER }\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = AUS }\r
+ 	NOT = { ispuppet = U09 }\r
+@@ -2667,7 +2656,7 @@ event = {
+ 	exists = UB8\r
+ 	}\r
+ 	NOT = { ispuppet = FRA }\r
+-	NOT = { ispuppet = UTC }\r
++	NOT = { ispuppet = UER }\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = AUS }\r
+ 	NOT = { ispuppet = U09 }\r
+@@ -2717,7 +2706,7 @@ event = {
+ 	command = { type = relation which = CHI value = 100 }\r
+ 	command = { type = relation which = JAP value = -100 }\r
+ 	command = { type = relation which = FRA value = -50 }\r
+-	command = { type = relation which = UTC value = -50 }\r
++	command = { type = relation which = UER value = -50 }\r
+ 	command = { type = relation which = ENG value = -50 }\r
+ 	command = { type = money value = -30 }\r
+ 	command = { type = domestic which  = defense_lobby value = 1 }\r
+@@ -2729,7 +2718,7 @@ event = {
+ 	action = { # 我々には新秩序が必要だ\r
+ 	trigger = { \r
+ 	NOT = {\r
+-	alliance = { country = UTC }\r
++	alliance = { country = UER }\r
+ 	alliance = { country = FRA }\r
+ 	alliance = { country = ENG }\r
+ 	alliance = { country = USA }\r
+@@ -2743,7 +2732,7 @@ event = {
+ 	command = { type = relation which = CHI value = -100 }\r
+ 	command = { type = relation which = JAP value = 10 }\r
+ 	command = { type = relation which = FRA value = 5 }\r
+-	command = { type = relation which = UTC value = 5 }\r
++	command = { type = relation which = UER value = 5 }\r
+ 	command = { type = relation which = ENG value = 5 }\r
+ 	command = { type = domestic which  = defense_lobby value = 2 }\r
+ 	command = { type = domestic which  = interventionism value = 2 }\r
+@@ -2786,8 +2775,8 @@ event = {
+ \r
+ 	action = { # ロシアとの交渉を行ってみよう\r
+ 	name = "ACTIONNAME45680045A"\r
+-	trigger = { NOT = { war = { country = UTC } } }\r
+-	command = { type = event which = 45680046 where = UTC when = 1 }\r
++	trigger = { NOT = { war = { country = UER } } }\r
++	command = { type = event which = 45680046 where = UER when = 1 }\r
+ 	command = { type = money value = -30 } \r
+ 	ai_chance = 70\r
+ 	}\r
+@@ -2812,7 +2801,7 @@ event = {
+ event = {\r
+ 	id = 45680046\r
+ 	random = no\r
+-	tag = { UTC FRA ENG }\r
++	tag = { UER FRA ENG }\r
+ \r
+ 	name = "EVT_45680046_NAME"\r
+ 	desc = "EVT_45680046_DESC"\r
+@@ -3295,7 +3284,6 @@ event = {
+ 	#command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
+-	command = { type = strength which = land when = 0 where = 0 value = 0.3 } #Kielce臨時\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -3681,7 +3669,7 @@ event = {
+ \r
+ 	trigger = {\r
+ 	exists = GER\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = FRA\r
+ 	event = { id = 45680103 days = 60 } # 中道右派連立政権の成立\r
+ 	}\r
+@@ -3700,8 +3688,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = money value = -30 } \r
+ 	command = { type = relation which = FRA value = 10 }\r
+-	command = { type = relation which = UTC value = 10 }\r
+-	command = { trigger = { exists = UTC } type = event which = 45680105 where = UTC when = 3 }\r
++	command = { type = relation which = UER value = 10 }\r
++	command = { trigger = { exists = UER } type = event which = 45680105 where = UER when = 3 }\r
+ 	command = { trigger = { exists = FRA } type = event which = 45680105 where = FRA when = 3 }\r
+ 	}\r
+ }\r
+@@ -3709,7 +3697,7 @@ event = {
+ event = {\r
+ 	id = 45680105\r
+ 	random = no\r
+-	TAG = { UTC FRA }\r
++	TAG = { UER FRA }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_45680105_NAME"\r
+@@ -3942,7 +3930,7 @@ event = {
+ 	OR = {\r
+ 	war = { country = GER country = FRA }\r
+ 	war = { country = GER country = ENG }\r
+-	war = { country = GER country = UTC }\r
++	war = { country = GER country = UER }\r
+ 	war = { country = GER country = UB8 }\r
+ 	war = { country = GER country = ITA }\r
+ 	war = { country = GER country = U14 }\r
+@@ -3971,7 +3959,7 @@ event = {
+ 	command = { type = dissent value = 10 }\r
+ 	command = { trigger = { war = { country = GER country = FRA } } type = setflag which = GER_FRA_WAR_PEACE }\r
+ 	command = { trigger = { war = { country = GER country = ENG } } type = setflag which = GER_ENG_WAR_PEACE }\r
+-	command = { trigger = { war = { country = GER country = UTC } } type = setflag which = GER_UTC_WAR_PEACE }\r
++	command = { trigger = { war = { country = GER country = UER } } type = setflag which = GER_UER_WAR_PEACE }\r
+ 	command = { trigger = { war = { country = GER country = UB8 } } type = setflag which = GER_UB8_WAR_PEACE }\r
+ 	command = { trigger = { war = { country = GER country = ITA } } type = setflag which = GER_ITA_WAR_PEACE }\r
+ 	command = { trigger = { war = { country = GER country = U14 } } type = setflag which = GER_U14_WAR_PEACE }\r
+@@ -3982,7 +3970,7 @@ event = {
+ 	command = { trigger = { war = { country = GER country = U00 } } type = setflag which = GER_U00_WAR_PEACE }\r
+ 	command = { trigger = { control = { province = 163 data = FRA } } type = event which = 45680112 where = FRA when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = ENG } } type = event which = 45680112 where = ENG when = 0 }\r
+-	command = { trigger = { control = { province = 163 data = UTC } } type = event which = 45680112 where = UTC when = 0 }\r
++	command = { trigger = { control = { province = 163 data = UER } } type = event which = 45680112 where = UER when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = UB8 } } type = event which = 45680112 where = UB8 when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = ITA } } type = event which = 45680112 where = ITA when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = U14 } } type = event which = 45680112 where = U14 when = 0 }\r
+@@ -4076,7 +4064,7 @@ event = {
+ event = {\r
+ 	id = 45680112\r
+ 	random = no\r
+-	TAG = { FRA ENG UTC UB8 ITA U14 CHI JAP USA CSA U00 }\r
++	TAG = { FRA ENG UER UB8 ITA U14 CHI JAP USA CSA U00 }\r
+ 	\r
+ 	name = EVT_45680112_NAME\r
+ 	desc = EVT_45680112_DESC\r
+@@ -4089,7 +4077,7 @@ event = {
+ 	command = { type = dissent value = -30 }\r
+ 	command = { trigger = { war = { country = GER country = FRA } } type = peace which = FRA value = 1 }\r
+ 	command = { trigger = { war = { country = GER country = ENG } } type = peace which = ENG value = 1 }\r
+-	command = { trigger = { war = { country = GER country = UTC } } type = peace which = UTC value = 1 }\r
++	command = { trigger = { war = { country = GER country = UER } } type = peace which = UER value = 1 }\r
+ 	command = { trigger = { war = { country = GER country = UB8 } } type = peace which = UB8 value = 1 }\r
+ 	command = { trigger = { war = { country = GER country = ITA } } type = peace which = ITA value = 1 }\r
+ 	command = { trigger = { war = { country = GER country = U14 } } type = peace which = U14 value = 1 }\r
+@@ -4121,7 +4109,7 @@ event = {
+ 	command = { type = inherit which = GER }\r
+ 	command = { trigger = { control = { province = 163 data = FRA } } type = event which = 45680113 where = FRA when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = ENG } } type = event which = 45680113 where = ENG when = 0 }\r
+-	command = { trigger = { control = { province = 163 data = UTC } } type = event which = 45680113 where = UTC when = 0 }\r
++	command = { trigger = { control = { province = 163 data = UER } } type = event which = 45680113 where = UER when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = UB8 } } type = event which = 45680113 where = UB8 when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = ITA } } type = event which = 45680113 where = ITA when = 0 }\r
+ 	command = { trigger = { control = { province = 163 data = U14 } } type = event which = 45680113 where = U14 when = 0 }\r
+@@ -4141,7 +4129,7 @@ event = {
+ event = {\r
+ 	id = 45680113\r
+ 	random = no\r
+-	TAG = { FRA ENG UTC UB8 ITA U14 CHI JAP USA CSA U00 }\r
++	TAG = { FRA ENG UER UB8 ITA U14 CHI JAP USA CSA U00 }\r
+ 	\r
+ 	name = EVT_45680113_NAME\r
+ 	desc = EVT_45680113_DESC\r
+@@ -4151,7 +4139,7 @@ event = {
+ 	action = { # 戦後処理を進めよう\r
+ 	name = "ACTIONNAME45680113A"\r
+ 	command = { trigger = { exists = UB8 NOT = { exists = UB3 } } type = independence which = UB3 value = 1 when = 0 }\r
+-	command = { trigger = { NOT = { exists = LIT country = UTC } } type = independence which = LIT value = 1 when = 0 }\r
++	command = { trigger = { NOT = { exists = LIT country = UER } } type = independence which = LIT value = 1 when = 0 }\r
+ 	#command = { trigger = { NOT = { exists = BEL country = FRA } } type = independence which = BEL value = 1 when = 0 }\r
+ 	command = { trigger = { NOT = { exists = HOL country = FRA } } type = independence which = HOL value = 1 when = 0 }\r
+ 	#command = { trigger = { NOT = { exists = U17 } country = FRA } type = independence which = U17 value = 1 when = 0 }\r
+@@ -4187,17 +4175,17 @@ event = {
+ 	command = { trigger = { flag = GER_FRA_WAR_PEACE NOT = { war = { country = -1 country = FRA } } } type = secederegion which = FRA value = "France" when = 1 }\r
+ 	command = { trigger = { flag = GER_ENG_WAR_PEACE NOT = { war = { country = -1 country = ENG } } } type = secederegion which = ENG value = "Scotland" when = 1 }\r
+ 	command = { trigger = { flag = GER_ENG_WAR_PEACE NOT = { war = { country = -1 country = ENG } } } type = secederegion which = ENG value = "England" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Northern Russia" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Russia" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Eastern Russia" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Southern Russia" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Western Russia" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Ukraine" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Belarus" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "White Sea Tundra" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Kaukasus" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Western Russia" when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE NOT = { war = { country = -1 country = UTC } } } type = secederegion which = UTC value = "Western Russia" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Northern Russia" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Russia" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Eastern Russia" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Southern Russia" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Western Russia" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Ukraine" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Belarus" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "White Sea Tundra" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Kaukasus" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Western Russia" when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE NOT = { war = { country = -1 country = UER } } } type = secederegion which = UER value = "Western Russia" when = 1 }\r
+ 	command = { trigger = { flag = GER_UB8_WAR_PEACE NOT = { war = { country = -1 country = UB8 } } } type = secederegion which = UB8 value = "Austria" when = 1 }\r
+ 	command = { trigger = { flag = GER_UB8_WAR_PEACE NOT = { war = { country = -1 country = UB8 } } } type = secederegion which = UB8 value = "Hungary" when = 1 }\r
+ 	command = { trigger = { flag = GER_UB8_WAR_PEACE NOT = { war = { country = -1 country = UB8 } } } type = secederegion which = UB8 value = "Czechoslovakia" when = 1 }\r
+@@ -4282,69 +4270,69 @@ event = {
+ 	command = { trigger = { exists = U32 } type = addcore which = 225 where = U32 }\r
+ 	command = { trigger = { exists = U32 } type = addcore which = 226 where = U32 }\r
+ 	command = { trigger = { exists = U32 } type = addcore which = 181 where = U32 }\r
+-	#command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secederegion which = UTC value = "Poland" when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedearea which = UTC value = "Warsaw" when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedearea which = UTC value = "Brest Litovsk" when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedearea which = UTC value = "Polotsk" when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedearea which = UTC value = "Grodno" when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedeprovince which = UTC value = 223 when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedeprovince which = UTC value = 227 when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedeprovince which = UTC value = 233 when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedeprovince which = UTC value = 234 when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedeprovince which = UTC value = 243 when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedeprovince which = UTC value = 246 when = 2 }\r
+-	#command = { trigger = { flag = GER_UTC_WAR_PEACE } type = add_core_region which = "Poland" where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = add_core_area which = "Warsaw" where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = add_core_area which = "Brest Litovsk" where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = add_core_area which = "Polotsk" where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = add_core_area which = "Grodno" where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = addcore which = 223 where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = addcore which = 227 where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = addcore which = 233 where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = addcore which = 234 where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = addcore which = 243 where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = addcore which = 246 where = UTC }\r
++	#command = { trigger = { flag = GER_UER_WAR_PEACE } type = secederegion which = UER value = "Poland" when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedearea which = UER value = "Warsaw" when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedearea which = UER value = "Brest Litovsk" when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedearea which = UER value = "Polotsk" when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedearea which = UER value = "Grodno" when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedeprovince which = UER value = 223 when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedeprovince which = UER value = 227 when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedeprovince which = UER value = 233 when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedeprovince which = UER value = 234 when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedeprovince which = UER value = 243 when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedeprovince which = UER value = 246 when = 2 }\r
++	#command = { trigger = { flag = GER_UER_WAR_PEACE } type = add_core_region which = "Poland" where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = add_core_area which = "Warsaw" where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = add_core_area which = "Brest Litovsk" where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = add_core_area which = "Polotsk" where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = add_core_area which = "Grodno" where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = addcore which = 223 where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = addcore which = 227 where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = addcore which = 233 where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = addcore which = 234 where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = addcore which = 243 where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = addcore which = 246 where = UER }\r
+ 	#戦後処理(東プロイセン)\r
+-	command = { trigger = { country = UTC } type = secedearea which = UTC value = "East Prussia" when = 2 }\r
+-	command = { trigger = { country = UTC } type = secedeprovince which = UTC value = 222 when = 2 }\r
+-	command = { trigger = { country = UTC } type = secedeprovince which = UTC value = 261 when = 2 }\r
+-	command = { trigger = { country = UTC } type = add_core_area which = "East Prussia" where = UTC }\r
+-	command = { trigger = { country = UTC } type = addcore which = 222 where = UTC }\r
+-	command = { trigger = { country = UTC } type = addcore which = 261 where = UTC }\r
++	command = { trigger = { country = UER } type = secedearea which = UER value = "East Prussia" when = 2 }\r
++	command = { trigger = { country = UER } type = secedeprovince which = UER value = 222 when = 2 }\r
++	command = { trigger = { country = UER } type = secedeprovince which = UER value = 261 when = 2 }\r
++	command = { trigger = { country = UER } type = add_core_area which = "East Prussia" where = UER }\r
++	command = { trigger = { country = UER } type = addcore which = 222 where = UER }\r
++	command = { trigger = { country = UER } type = addcore which = 261 where = UER }\r
+ 	#戦後処理(スカンジナビア)\r
+ 	command = { trigger = { exists = SCA NOT = { war = { country = -1 country = SCA } } } type = secedearea which = SCA value = "Denmark" when = 2 }\r
+ 	command = { trigger = { exists = DEN NOT = { war = { country = -1 country = DEN } } } type = secedearea which = DEN value = "Denmark" when = 2 }\r
+ 	#戦後処理(バルト)\r
+-	command = { trigger = { NOT = { exists = LIT country = UTC } } type = secedeprovince which = UTC value = 182 when = 2 }\r
+-	command = { trigger = { NOT = { exists = LIT country = UTC } } type = secedeprovince which = UTC value = 183 when = 2 }\r
+-	command = { trigger = { NOT = { exists = LIT country = UTC } } type = secedeprovince which = UTC value = 185 when = 2 }\r
+-	command = { trigger = { NOT = { exists = LIT country = UTC } } type = secedeprovince which = UTC value = 222 when = 2 }\r
+-	command = { trigger = { NOT = { exists = LIT country = UTC } } type = secedeprovince which = UTC value = 261 when = 2 }\r
+-	command = { trigger = { NOT = { exists = LIT country = UTC } } type = secedearea which = UTC value = "Lithuania" when = 2 }\r
++	command = { trigger = { NOT = { exists = LIT country = UER } } type = secedeprovince which = UER value = 182 when = 2 }\r
++	command = { trigger = { NOT = { exists = LIT country = UER } } type = secedeprovince which = UER value = 183 when = 2 }\r
++	command = { trigger = { NOT = { exists = LIT country = UER } } type = secedeprovince which = UER value = 185 when = 2 }\r
++	command = { trigger = { NOT = { exists = LIT country = UER } } type = secedeprovince which = UER value = 222 when = 2 }\r
++	command = { trigger = { NOT = { exists = LIT country = UER } } type = secedeprovince which = UER value = 261 when = 2 }\r
++	command = { trigger = { NOT = { exists = LIT country = UER } } type = secedearea which = UER value = "Lithuania" when = 2 }\r
+ 	command = { trigger = { exists = LIT } type = secedeprovince which = LIT value = 182 when = 2 }\r
+ 	command = { trigger = { exists = LIT } type = secedeprovince which = LIT value = 183 when = 2 }\r
+ 	command = { trigger = { exists = LIT } type = secedeprovince which = LIT value = 185 when = 2 }\r
+ 	command = { trigger = { exists = LIT } type = secedeprovince which = LIT value = 222 when = 2 }\r
+ 	command = { trigger = { exists = LIT } type = secedeprovince which = LIT value = 261 when = 2 }\r
+ 	command = { trigger = { exists = LIT } type = secedearea which = LIT value = "Lithuania" when = 2 }\r
+-	command = { trigger = { NOT = { exists = LIT } country = UTC } type = addcore which = 182 where = UTC }\r
+-	command = { trigger = { NOT = { exists = LIT } country = UTC } type = addcore which = 183 where = UTC }\r
+-	command = { trigger = { NOT = { exists = LIT } country = UTC } type = addcore which = 185 where = UTC }\r
+-	command = { trigger = { NOT = { exists = LIT } country = UTC } type = addcore which = 222 where = UTC }\r
+-	command = { trigger = { NOT = { exists = LIT } country = UTC } type = addcore which = 261 where = UTC }\r
+-	command = { trigger = { NOT = { exists = LIT } country = UTC } type = add_core_area which = "Lithuania" where = UTC }\r
++	command = { trigger = { NOT = { exists = LIT } country = UER } type = addcore which = 182 where = UER }\r
++	command = { trigger = { NOT = { exists = LIT } country = UER } type = addcore which = 183 where = UER }\r
++	command = { trigger = { NOT = { exists = LIT } country = UER } type = addcore which = 185 where = UER }\r
++	command = { trigger = { NOT = { exists = LIT } country = UER } type = addcore which = 222 where = UER }\r
++	command = { trigger = { NOT = { exists = LIT } country = UER } type = addcore which = 261 where = UER }\r
++	command = { trigger = { NOT = { exists = LIT } country = UER } type = add_core_area which = "Lithuania" where = UER }\r
+ 	command = { trigger = { exists = LIT } type = addcore which = 182 where = LIT }\r
+ 	command = { trigger = { exists = LIT } type = addcore which = 183 where = LIT }\r
+ 	command = { trigger = { exists = LIT } type = addcore which = 185 where = LIT }\r
+ 	command = { trigger = { exists = LIT } type = addcore which = 222 where = LIT }\r
+ 	command = { trigger = { exists = LIT } type = addcore which = 261 where = LIT }\r
+ 	command = { trigger = { exists = LIT } type = add_core_area which = "Lithuania" where = LIT }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = secedeprovince which = UTC value = 184 when = 2 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE } type = addcore which = 184 where = UTC }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE exists = POL } type = event which = 45680114 where = -1 when = 1 }\r
+-	command = { trigger = { NOT = { flag = GER_UTC_WAR_PEACE } exists = U32 } type = event which = 45680114 where = -1 when = 1 }\r
+-	command = { trigger = { flag = GER_UTC_WAR_PEACE exists = LIT } type = event which = 45680115 where = UTC when = 1 }\r
+-	command = { trigger = { NOT = { flag = GER_UTC_WAR_PEACE } exists = LIT } type = event which = 45680115 where = -1 when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = secedeprovince which = UER value = 184 when = 2 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE } type = addcore which = 184 where = UER }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE exists = POL } type = event which = 45680114 where = -1 when = 1 }\r
++	command = { trigger = { NOT = { flag = GER_UER_WAR_PEACE } exists = U32 } type = event which = 45680114 where = -1 when = 1 }\r
++	command = { trigger = { flag = GER_UER_WAR_PEACE exists = LIT } type = event which = 45680115 where = UER when = 1 }\r
++	command = { trigger = { NOT = { flag = GER_UER_WAR_PEACE } exists = LIT } type = event which = 45680115 where = -1 when = 1 }\r
+ 	command = { trigger = { flag = GER_ENG_WAR_PEACE exists = DFR } type = event which = 45680116 where = ENG when = 1 }\r
+ 	command = { trigger = { NOT = { flag = GER_ENG_WAR_PEACE } exists = DFR } type = event which = 45680116 where = -1 when = 1 }\r
+ 	command = { trigger = { flag = GER_UB8_WAR_PEACE exists = UB3 } type = event which = 45680117 where = UB8 when = 1 }\r
+@@ -4359,7 +4347,7 @@ event = {
+ event = {\r
+ 	id = 45680114\r
+ 	random = no\r
+-	TAG = { FRA ENG UTC UB8 ITA U14 CHI JAP USA CSA U00 }\r
++	TAG = { FRA ENG UER UB8 ITA U14 CHI JAP USA CSA U00 }\r
+ 	\r
+ 	name = EVT_45680114_NAME\r
+ 	desc = EVT_45680114_DESC\r
+@@ -4384,7 +4372,7 @@ event = {
+ event = {\r
+ 	id = 45680115\r
+ 	random = no\r
+-	TAG = { FRA ENG UTC UB8 ITA U14 CHI JAP USA CSA U00 }\r
++	TAG = { FRA ENG UER UB8 ITA U14 CHI JAP USA CSA U00 }\r
+ 	\r
+ 	name = EVT_45680115_NAME\r
+ 	desc = EVT_45680115_DESC\r
+@@ -4407,7 +4395,7 @@ event = {
+ event = {\r
+ 	id = 45680116\r
+ 	random = no\r
+-	TAG = { FRA ENG UTC UB8 ITA U14 CHI JAP USA CSA U00 }\r
++	TAG = { FRA ENG UER UB8 ITA U14 CHI JAP USA CSA U00 }\r
+ 	\r
+ 	name = EVT_45680116_NAME\r
+ 	desc = EVT_45680116_DESC\r
+@@ -4430,7 +4418,7 @@ event = {
+ event = {\r
+ 	id = 45680117\r
+ 	random = no\r
+-	TAG = { FRA ENG UTC UB8 ITA U14 CHI JAP USA CSA U00 }\r
++	TAG = { FRA ENG UER UB8 ITA U14 CHI JAP USA CSA U00 }\r
+ 	\r
+ 	name = EVT_45680117_NAME\r
+ 	desc = EVT_45680117_DESC\r
+@@ -4483,7 +4471,7 @@ event = {
+ event = {\r
+ 	id = 45680119\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ \r
+ 	name = "EVT_45680119_NAME"\r
+ 	desc = "EVT_45680119_DESC"\r
+@@ -4869,7 +4857,7 @@ event = {
+ 	command = { type = relation which = JAP value = -50 }\r
+ 	command = { type = relation which = ENG value = -30 }\r
+ 	command = { type = relation which = U02 value = -30 }\r
+-	command = { type = relation which = UTC value = -15 }\r
++	command = { type = relation which = UER value = -15 }\r
+ 	command = { type = relation which = FRA value = -15 }\r
+ 	command = { type = relation which = ITA value = -15 }\r
+ 	command = { trigger = { control = { province = 1422 data = SIA } } type = secedeprovince which = UD6 value = 1422 }\r
+@@ -5088,7 +5076,7 @@ event = {
+ 	command = { type = relation which = JAP value = -50 }\r
+ 	command = { type = relation which = ENG value = -30 }\r
+ 	command = { type = relation which = U02 value = -30 }\r
+-	command = { type = relation which = UTC value = -15 }\r
++	command = { type = relation which = UER value = -15 }\r
+ 	command = { type = relation which = FRA value = -15 }\r
+ 	command = { type = relation which = ITA value = -15 }\r
+ 	command = { trigger = { control = { province = 1565 data = PHI } } type = secedeprovince which = UD6 value = 1565 }\r
+@@ -5417,7 +5405,7 @@ event = {
+ 	command = { type = relation which = CHI value = 50 }\r
+ 	command = { type = relation which = GER value = -150 }\r
+ 	command = { type = relation which = JAP value = -350 }\r
+-	command = { type = relation which = UTC value = -50 }\r
++	command = { type = relation which = UER value = -50 }\r
+ 	command = { type = relation which = ENG value = -50 }\r
+ 	command = { type = relation which = FRA value = -50 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -5544,7 +5532,7 @@ event = {
+ 	command = { type = relation which = GER value = -350 }\r
+ 	command = { type = relation which = UD6 value = -350 }\r
+ 	command = { type = relation which = CHI value = -350 }\r
+-	command = { type = relation which = UTC value = 50 }\r
++	command = { type = relation which = UER value = 50 }\r
+ 	command = { type = relation which = FRA value = 50 }\r
+ \r
+ 	command = { type = add_corps which = "予備役動員軍" value = land where = 1552 }\r

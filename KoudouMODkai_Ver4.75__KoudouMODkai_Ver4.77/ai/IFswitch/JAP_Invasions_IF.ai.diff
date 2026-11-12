@@ -1,0 +1,203 @@
+--- A/ai/IFswitch/JAP_Invasions_IF.ai [utf-8]
++++ B/ai/IFswitch/JAP_Invasions_IF.ai [utf-8]
+@@ -1,100 +1,100 @@
+-###################################\r
+-# Invasions and Naval\r
+-###################################\r
+-front = { \r
+-   	recklessness     = 3 \r
+-  	distrib_vs_ai    = reactive\r
+-   	distrib_vs_human = reactive\r
+-\r
+-	enemy_reinf_days	= 6\r
+-	reserve_prop		= 0.0\r
+-	panic_ratio_vs_ai	= 2.5\r
+-	panic_ratio_vs_human= 2.5\r
+-	base_attack_odds	= 1.1 # 1.1\r
+-	min_attack_odds		= 0.8 # 0.8\r
+-	max_attack_odds		= 3.0\r
+-	reinforce_odds		= 1.2\r
+-	withdraw_odds		= 0.6\r
+-}\r
+-\r
+-invasion = {\r
+-\r
+-	invasion			= yes\r
+- 	base				= 10000	#Relative modifier. (lower = specific targets much more important.)# was 0.1\r
+-	random				= 100.0	#How big a random range.  (1.0 = 1%)\r
+-	coastal				= 0.1	#increase to avoid coastal forts more.\r
+-	beach				= 0.01	#higher, avoid worst beaches.\r
+-	max_distance   		= 150.0  \r
+-	max_staging_distance = 150	# How far should the staging area be from the target invasion point\r
+-	distance			= 0.01	#higher = avoid long distance.   # was 0.1 06mar\r
+-	pocket				= 0.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
+-	island				= 0.1	#prioritise taking pure islands.\r
+-	enemy				= 0.1	#higher = much more vary of troops in province.\r
+-	adjacentenemy 		= 0.2	#higher = much more vary of troops nearby\r
+-	air_base			= 0.1\r
+-   	naval_base 			= 0.1 \r
+-   	#air_support 		= 0.1 \r
+-   	redirect 			= priority\r
+-	ignore				= yes\r
+-	help_allies 	= no\r
+-	staging_province = {\r
+-		1399  #Saigon\r
+-		1361  #Kaohsung\r
+-		1647  #Truk\r
+-		1550  #Yokosuka\r
+-		1552  #Tokyo\r
+-		1553  #Osaka\r
+-		1726  #Rabaul\r
+-		1560  #Fukuoka\r
+-		2760  #追加\r
+-		2761  #追加\r
+-	}\r
+-\r
+-	target = {\r
+-	#北海道\r
+-	2803 = 90000\r
+-	2804 = 90000\r
+-	2805 = 90000\r
+-	1544 = 90000\r
+-\r
+-	#樺太・北方領土\r
+-	1542 = 1500\r
+-	1543 = 1500\r
+-\r
+-	#日本沿岸諸島\r
+-	2796 = 1200\r
+-	2790 = 1200\r
+-	2791 = 1200\r
+-\r
+-	#朝鮮半島\r
+-	1221 = 800\r
+-	1228 = 800\r
+-\r
+-	#沖縄\r
+-	1564 = 800\r
+-	2794 = 800\r
+-\r
+-	#台湾\r
+-	2797 = 800\r
+-	1361 = 800\r
+-	1362 = 800\r
+-\r
+-	#大陸（中国）\r
+-	1334 = 60\r
+-	1338 = 60\r
+-	1328 = 60\r
+-	1241 = 60\r
+-\r
+-	#大陸（沿海州）\r
+-	1185 = 600\r
+-	1191 = 600\r
+-\r
+-	#フィリピン\r
+-	1567 = 600\r
+-	1566 = 600\r
+-	1573 = 600\r
+-	1579 = 600\r
+-	}\r
+-}\r
+-\r
+-\r
++###################################
++# Invasions and Naval
++###################################
++front = { 
++   	recklessness     = 3 
++  	distrib_vs_ai    = reactive
++   	distrib_vs_human = reactive
++
++	enemy_reinf_days	= 6
++	reserve_prop		= 0.0
++	panic_ratio_vs_ai	= 2.5
++	panic_ratio_vs_human= 2.5
++	base_attack_odds	= 1.1 # 1.1
++	min_attack_odds		= 0.8 # 0.8
++	max_attack_odds		= 3.0
++	reinforce_odds		= 1.2
++	withdraw_odds		= 0.6
++}
++
++invasion = {
++
++	invasion			= yes
++ 	base				= 10000	#Relative modifier. (lower = specific targets much more important.)# was 0.1
++	random				= 100.0	#How big a random range.  (1.0 = 1%)
++	coastal				= 0.1	#increase to avoid coastal forts more.
++	beach				= 0.01	#higher, avoid worst beaches.
++	max_distance   		= 150.0  
++	max_staging_distance = 150	# How far should the staging area be from the target invasion point
++	distance			= 0.01	#higher = avoid long distance.   # was 0.1 06mar
++	pocket				= 0.0	#prioritise pockets, ie provinces with no adjacent controlled by same.
++	island				= 0.1	#prioritise taking pure islands.
++	enemy				= 0.1	#higher = much more vary of troops in province.
++	adjacentenemy 		= 0.2	#higher = much more vary of troops nearby
++	air_base			= 0.1
++   	naval_base 			= 0.1 
++   	#air_support 		= 0.1 
++   	redirect 			= priority
++	ignore				= yes
++	help_allies 	= no
++	staging_province = {
++		1399  #Saigon
++		1361  #Kaohsung
++		1647  #Truk
++		1550  #Yokosuka
++		1552  #Tokyo
++		1553  #Osaka
++		1726  #Rabaul
++		1560  #Fukuoka
++		2760  #追加
++		2761  #追加
++	}
++
++	target = {
++	#北海道
++	2803 = 90000
++	2804 = 90000
++	2805 = 90000
++	1544 = 90000
++
++	#樺太・北方領土
++	1542 = 1500
++	1543 = 1500
++
++	#日本沿岸諸島
++	2796 = 1200
++	2790 = 1200
++	2791 = 1200
++
++	#朝鮮半島
++	1221 = 800
++	1228 = 800
++
++	#沖縄
++	1564 = 800
++	2794 = 800
++
++	#台湾
++	2797 = 800
++	1361 = 800
++	1362 = 800
++
++	#大陸（中国）
++	1334 = 60
++	1338 = 60
++	1328 = 60
++	1241 = 60
++
++	#大陸（沿海州）
++	1185 = 600
++	1191 = 600
++
++	#フィリピン
++	1567 = 600
++	1566 = 600
++	1573 = 600
++	1579 = 600
++	}
++}
++
++

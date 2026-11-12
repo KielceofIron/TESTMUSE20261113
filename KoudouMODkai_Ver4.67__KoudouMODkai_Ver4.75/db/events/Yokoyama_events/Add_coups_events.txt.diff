@@ -1,0 +1,76 @@
+--- A/db/events/Yokoyama_events/Add_coups_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Add_coups_events.txt [cp932]
+@@ -11,6 +11,7 @@
+ #id = 1200005 右翼クーデター（ブラジル）\r
+ #id = 1200006 突然の政府交代（帝政復古）\r
+ #id = 1200007 突然の政府交代（カナダ）\r
++#id = 1200008 1948年大統領選挙 ― 史実とは異なる結果\r
+ #########################################################################\r
+ #  リビア再編\r
+ #########################################################################\r
+@@ -581,4 +582,64 @@ event = {
+ 	command = { type = dissent value = 2 }\r
+ 	ai_chance = 98\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  1948年大統領選挙 ― 史実とは異なる結果\r
++# 1948年大統領選挙は、アメリカ史の中でも最大の番狂わせが起こった選挙であった。\r
++# 民主党が、トルーマンの黒人の公民権を推進する公民権綱領を採択したことをきっかけ、\r
++# 保守的な南部州出身の議員を中心に「州権民主党（南部諸州において黒人の公民権拡大に反対する勢力）」が成立し、党が二分されたのである。\r
++# ストロム・サーモンドを独自に大統領候補として擁立し、「保守的な南部」の票がサーモンドに流れたのは事前に予測されていたが、\r
++# 現在の民主党のリベラル的政策が、共産主義的であると一般に拡がった思いこみによって、多くの票が州権民主党に向かった。\r
++# 更に共和党の候補者であるトーマス・デューイが共産党を存在を容認する発言を行うという失態が、州権民主党の追い風となった。\r
++# 選挙開票の夜まであらゆる世論調査が、共和党が民主党に勝利すると予測していたが、どこよりも早く当確を出したのはシカゴ・トリビューン紙であった。\r
++# 第一面には「サーモンド、デューイ・トルーマンを破る」の見出しが躍った。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 1200008\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++		ideology = paternal_autocrat\r
++		NOT = { ispuppet = USA }\r
++		OR = {\r
++			headofstate = 240001\r
++			headofstate = 240011\r
++			headofstate = 240012\r
++			headofstate = 240013\r
++			headofstate = 240014\r
++			headofstate = 240015\r
++			headofstate = 240016\r
++			headofstate = 240017\r
++			headofstate = 240146\r
++		}\r
++	}\r
++\r
++	name = "EVT_1200008_NAME"\r
++	desc = "EVT_1200008_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 1 month = november year = 1948 }\r
++\r
++	action = { # 了解\r
++		name = "ACTION_NAME_OK" \r
++		command = { type = set_domestic which = democratic value = 4 }\r
++		command = { type = set_domestic which = political_left value = 4 }\r
++		command = { type = headofstate which = 240487 }\r
++		command = { type = headofgovernment which = 240488 }\r
++		command = { type = foreignminister which = 240489 }\r
++		command = { type = armamentminister which = 240490 }\r
++		command = { type = ministerofsecurity which = 240491 }\r
++		command = { type = ministerofintelligence which = 240492 }\r
++		command = { type = chiefofstaff which = 240190 }\r
++		command = { type = chiefofarmy which = 240452 }\r
++		command = { type = chiefofnavy which = 240455 }\r
++		command = { type = chiefofair which = 240231 }\r
++		\r
++		command = { type = sleepevent which = 2900077 }\r
++		command = { type = sleepevent which = 2900078 }\r
++	}\r
+ }
+\ No newline at end of file

@@ -1,0 +1,200 @@
+--- A/scenarios/1933if_Azia/china sinkiang_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/china sinkiang_Azia.inc [cp932]
+@@ -11,8 +11,8 @@ country = {
+   ai                 = "IFazia/SIK_if_Azia.ai"\r
+   ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes MOB6 = yes RES = yes } }\r
+   capital            = 1281 # ウルムチ（鳥魯木齊）\r
+-  dissent            = 50\r
+-  manpower           = 5\r
++  dissent            = 10\r
++  manpower           = 25\r
+   # Resource Reserves\r
+   energy         = 500\r
+   metal          = 350\r
+@@ -20,6 +20,10 @@ country = {
+   oil            = 1000\r
+   supplies       = 1000\r
+   money          = 5\r
++  free = {\r
++  ic 		 = 3\r
++  supplies       = 25\r
++  }\r
+ \r
+   diplomacy = {\r
+     relation = { tag = CHC value = 40 }\r
+@@ -32,10 +36,10 @@ country = {
+ \r
+   nationalprovinces      = { 1273 1274 1275 1276 1277 1278 1279 1280 1281 1282 }\r
+   ownedprovinces         = { 1273 1276 1277 1280 1281 }\r
+-  controlledprovinces    = { 1281 1277 }\r
++  controlledprovinces    = { 1273 1276 1280 1281 }\r
+ \r
+-  techapps               = { 5810 5800 5316 5326 1010 1020 1030 1040 1050 1060 1160 1170 1180 1190 1200 1210 13060 13070 13080 1310 1320 1330 1340 1350 1830 1910 1920 1930 1940 1950 2290 2300 2310 14000 14010 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 }\r
+-  blueprints             = { 1070 1220 1360 5050 5820 5327 5700 5600 7600 7610 2620 2010 2860 2870 2920 2900 2910 6570 6000300 14020 4500 4510 4520 4530 4540 4300 4310 4320 4600 4610 4620 4630 4800 4810 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 }\r
++  techapps               = { 5800 1010 1020 1030 1040 1050 1160 1170 1180 1190 1200 13060 13070 13080 1310 1320 1830 1910 1920 1930 1940 1950 2290 2300 2310 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 1840 4510 4500 4520 4600 27480 27490 27500 27510 27570 27580 27600 27590 9030 27520 9020 27530 27540 27550 27560 }\r
++  blueprints             = { 7600 7610 2620 2010 2870 2900 2910 6570 6000300 4530 4540 4300 4310 4320 4620 4630 4800 4810 2860 3010 3020 3110 3220 3210 4610 }\r
+   inventions             = { 3000027 }\r
+ \r
+   policy = {\r
+@@ -60,120 +64,73 @@ country = {
+   chiefofair             = { type = 9 id = 420010 } # ピョートル・オルロフ\r
+ \r
+   landunit = {\r
+-    id       = { type = 25600 id = 20 }\r
+-    name     = "反帝同盟軍"\r
++    id       = { type = 25600 id = 1 }\r
++    name     = "新疆省軍"\r
+     location = 1281\r
+     division = {\r
+-      id             = { type = 25600 id = 21 }\r
++      id             = { type = 25600 id = 2 }\r
+       name           = "親衛連隊"\r
+       type           = infantry\r
+       model          = 4\r
+-      strength       = 15\r
++      strength       = 90\r
+     }\r
+     division = {\r
+-      id             = { type = 25600 id = 22 }\r
+-      name           = "迪化市防衛大隊"\r
+-      type           = garrison\r
++      id             = { type = 25600 id = 3 }\r
++      name           = "第7師"\r
++      type           = infantry\r
+       model          = 3\r
+-      strength       = 10\r
++      strength       = 80\r
+     }\r
+     division = {\r
+-      id             = { type = 25600 id = 23 }\r
+-      name           = "訓練連隊"\r
+-      type           = militia\r
++      id             = { type = 25600 id = 4 }\r
++      name           = "第12師"\r
++      type           = infantry\r
+       model          = 3\r
+-      strength       = 10\r
++      strength       = 80\r
+     }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 25600 id = 24 }\r
+-    name     = "伊犁警備司令部"\r
+-    location = 1281\r
+     division = {\r
+-      id             = { type = 25600 id = 25 }\r
+-      name           = "伊犁＝塔城警備"\r
+-      type           = garrison\r
+-      model          = 3\r
+-      strength       = 5\r
++      id             = { type = 25600 id = 5 }\r
++      name           = "訓練連隊"\r
++      type           = militia\r
++      model          = 2\r
++      strength       = 70\r
+     }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 25600 id = 26 }\r
+-    name     = "成華警備司令部"\r
+-    location = 1281\r
+     division = {\r
+-      id             = { type = 25600 id = 27 }\r
+-      name           = "阿山守備隊"\r
+-      type           = garrison\r
+-      model          = 3\r
+-      strength       = 5\r
++      id             = { type = 25600 id = 6 }\r
++      name           = "ウルムチ防衛大隊"\r
++      type           = militia\r
++      model          = 1\r
++      strength       = 70\r
+     }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 25600 id = 28 }\r
+-    name     = "奇台市警備司令部"\r
+-    location = 1281\r
+     division = {\r
+-      id             = { type = 25600 id = 29 }\r
+-      name           = "奇台守備隊"\r
+-      type           = garrison\r
+-      model          = 3\r
+-      strength       = 8\r
++      id             = { type = 25600 id = 7 }\r
++      name           = "新疆民兵隊"\r
++      type           = militia\r
++      model          = 1\r
++      strength       = 70\r
+     }\r
+   }\r
+   landunit = {\r
+-    id       = { type = 25600 id = 30 }\r
+-    name     = "哈密警備司令部"\r
+-    location = 1277\r
++    id       = { type = 25600 id = 8 }\r
++    name     = "騎兵軍団"\r
++    location = 1280\r
+     division = {\r
+-      id             = { type = 25600 id = 31 }\r
+-      name           = "哈密守備隊"\r
+-      type           = garrison\r
++      id             = { type = 25600 id = 9 }\r
++      name           = "第4騎兵連隊"\r
++      type           = cavalry\r
+       model          = 3\r
+-      strength       = 4\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 25600 id = 32 }\r
+-    name     = "吐ゼン托警備司令部"\r
+-    location = 1281\r
+-    division = {\r
+-      id             = { type = 25600 id = 33 }\r
+-      name           = "第12歩兵/第8騎兵"\r
+-      type           = infantry\r
+-      model          = 5\r
+-      strength       = 12\r
++      extra          = armored_car\r
++      brigade_model  = 2\r
++      strength       = 60\r
+     }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 25600 id = 34 }\r
+-    name     = "喀什ガ爾警備司令部"\r
+-    location = 1281\r
+     division = {\r
+-      id             = { type = 25600 id = 35 }\r
+-      name           = "第4/第5/第7/第9騎兵連隊"\r
++      id             = { type = 25600 id = 10 }\r
++      name           = "第5騎兵連隊"\r
+       type           = cavalry\r
+-      model          = 6\r
+-      strength       = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 25600 id = 36 }\r
+-      name           = "第7師"\r
+-      type           = infantry\r
+-      model          = 6\r
+-      strength       = 15\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 25600 id = 37 }\r
+-    name     = "焉耆警備司令部"\r
+-    location = 1281\r
+-    division = {\r
+-      id             = { type = 25600 id = 38 }\r
+-      name           = "焉耆守備隊"\r
+-      type           = garrison\r
+       model          = 3\r
+-      strength       = 4\r
++      extra          = engineer\r
++      brigade_model  = 0\r
++      strength       = 60\r
+     }\r
+   }\r
+ }\r

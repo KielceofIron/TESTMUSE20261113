@@ -1,0 +1,31 @@
+--- A/db/events/AdditionalEvents_if_Japan/BigeventplanifJapan.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/BigeventplanifJapan.txt [cp932]
+@@ -88,14 +88,10 @@ event = {
+ 	\r
+ 	\r
+ 	NOT = { flag = WorldBigeventflag0001 }  #発生済判定\r
+-	OR ={\r
+-		AND = { NOT = { exists = GER } NOT = { exists = DDR } }\r
+-		AND = {\r
+-			exists = DDR\r
+-			NOT = { flag = German_Communism }\r
+-			}\r
+-		}\r
+-\r
++	NOT = { exists = GER }\r
++	NOT = { exists = DDR }\r
++	NOT = { flag = German_Communism }\r
++	\r
+ 	}\r
+ 	name = AI_EVENT #AI\r
+ 	#picture = ""\r
+@@ -269,8 +265,7 @@ event = {
+ 	ai = no\r
+ 	flag = WorldBigeventflag0003\r
+ 	NOT = { event = { id = 19310003 days = 2 } }\r
+-	NOT = { event = { id = 19310003001 days = 2 } }\r
+-	NOT = {	local_flag = Bigeventflag0003 }\r
++	NOT = {	 local_flag = Bigeventflag0003 }\r
+ 	 #新規独立国などでの発生防止\r
+ 	}\r
+ 	name = "第二次世界大戦" #てきとう\r

@@ -1,0 +1,196 @@
+--- A/ai/IFswitch/CHI_defense.ai [utf-8]
++++ B/ai/IFswitch/CHI_defense.ai [utf-8]
+@@ -5,7 +5,7 @@ max_front_ratio = 1.5
+ max_front_ratios = {\r
+ 	CHC = 1.0\r
+ 	JAP = 3.0\r
+-	UTC = 3.0\r
++	UER = 3.0\r
+ }\r
+ neutrality = 150.000 \r
+ war = 0\r
+@@ -267,7 +267,7 @@ spyprefs =
+ 		found_partisans 	= 0\r
+ 		massmedia 			= 2\r
+ 		disrupt_techteam	= 0\r
+-		country 			= UTC\r
++		country 			= UER\r
+ 	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 7\r
+@@ -445,11 +445,11 @@ construction = {
+ 	1345 # 杭洲\r
+ 	1351 # 上饒\r
+ 	}\r
+-	fort_borders = { UTC } \r
++	fort_borders = { UER } \r
+ \r
+-	ic_at_war = no\r
+-	force_ic_until = 1930\r
+-	ic_end_year = 1930\r
++	ic_at_war = yes\r
++	force_ic_until = 1937\r
++	ic_end_year = 1939\r
+ 	IC_provs = { } \r
+ \r
+ 	nuclear_reactor = yes	\r
+@@ -460,15 +460,15 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= no # yes\r
+ 	max_batch_peace 		= 500 # 1200 \r
+-	max_batch_war 			= 550 # 270 \r
++	max_batch_war 			= 360 # 270 \r
+ 	max_batch_home_front 	= 270\r
+ 	extra_convoys_war 		= 0.0000 \r
+ 	extra_convoys_peace 	= 0.0000 \r
+ \r
+ \r
+ 	#### Divisions etc...\r
+-	infantry 		= 20\r
+-	cavalry 		= 0\r
++	infantry 		= 0\r
++	cavalry 		= 8\r
+ 	motorized 		= 0\r
+ 	mechanized 		= 0\r
+ 	light_armor 	= 0\r
+@@ -478,42 +478,42 @@ military = {
+ 	bergsjaeger 	= 0\r
+ 	garrison		= 0\r
+     hq 				= 3\r
+-	militia 		= 77\r
++	militia 		= 62\r
+ #				#68 %\r
+-	interceptor 	= 0\r
++	interceptor 	= 8\r
+ 	multi_role 		= 0\r
+ 	cas 			= 0\r
+-	strategic_bomber = 0\r
+-	tactical_bomber = 0\r
++	strategic_bomber = 3\r
++	tactical_bomber = 6\r
+ 	naval_bomber 	= 0\r
+ 	transport_plane = 0\r
+ 	flying_bomb 	= 0\r
+ 	flying_rocket 	= 0\r
+ #				#17 %\r
+-	battleship 		= 0\r
+-	carrier 		= 0\r
+-	destroyer 		= 0\r
+-	light_cruiser 	= 0\r
+-	heavy_cruiser 	= 0\r
++	battleship 		= 1\r
++	carrier 		= 1\r
++	destroyer 		= 1\r
++	light_cruiser 	= 2\r
++	heavy_cruiser 	= 1\r
+ 	battlecruiser 	= 0\r
+-	submarine 		= 0\r
+-	transports 		= 0\r
++	submarine 		= 1\r
++	transports 		= 2\r
+ #				10 %\r
+ \r
+ 	#### Brigades\r
+-	artillery 			= 0\r
++	artillery 			= 20\r
+ 	sp_artillery 		= 0\r
+-	cavalry_brigade	= 0\r
++	cavalry_brigade	= 15\r
+ 	sp_anti_air 	= 0\r
+-	medium_armor 			= 0\r
++	medium_armor 			= 3\r
+ 	tank_destroyer 		= 0\r
+-	light_armor_brigade = 0\r
++	light_armor_brigade = 3\r
+ 	heavy_armor 		= 0\r
+ 	super_heavy_armor 	= 0\r
+-	armored_car 		= 0\r
++	armored_car 		= 5\r
+ 	anti_air 			= 0\r
+-	police 				= 0\r
+-	engineer 			= 0	#5\r
++	police 				= 5\r
++	engineer 			= 10	#5\r
+ \r
+ 	cag 				= 100.000\r
+ 	escort 				= 100.0000\r
+@@ -615,21 +615,21 @@ garrison = {
+ 	defend_overseas_beaches = yes\r
+ 	home_multiplier 	= 0.7\r
+ 	overseas_multiplier = 0.9\r
+-	home_peace_cap 		= 0.1\r
+-	war_zone_odds 		= 99.0\r
++	home_peace_cap 		= 10\r
++	war_zone_odds 		= 3.0\r
+ 	key_point_prio_mult	= 0.1\r
+ 	revolt_risk_mult	= 0.3\r
+ \r
+ 	# PRIORITIES:\r
+-	beach			= 1 # 20 # 50	# Beach level 2\r
+-	capital		= 3	# Our capital\r
++	beach			= 5 # 20 # 50	# Beach level 2\r
++	capital		= 30	# Our capital\r
+ 	human_border	= 30		# Ignored for allied human players\r
+-	war_target		= 500	# The next country targeted for attack by this AI\r
++	war_target		= 50	# The next country targeted for attack by this AI\r
+ 	reserves 		= 2\r
+ \r
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+-		UTC = 130\r
++		UER = 130\r
+ 		SOV = 100\r
+ 		MON = 50 # -1\r
+ 		TIB = 80\r
+@@ -653,6 +653,7 @@ garrison = {
+ 		IND = 50\r
+ 		U02 = 50\r
+ 	}\r
++	province_priorities = {	1241 = 250 1328 = 250 1333 = 250 1334 = 250 1338 = 250 1358 = 250 1367 = 250 1369 = 250 1331 = -1 1552 = 250 1553 = 250 1559 = 150 1560 = 150 2780 = 150 }\r
+ 	area_multiplier = {	}\r
+ }\r
+ front = { \r
+@@ -695,7 +696,6 @@ front = {
+ 	urban_attack 	= 0.7\r
+ 	river 			= 0.7\r
+ \r
+-	province_priorities = {	1241 = 250 1328 = 250 1333 = 250 1334 = 250 1338 = 250 1358 = 250 1367 = 250 1369 = 250 1331 = -1 1552 = 250 1553 = 250 1559 = 150 1560 = 150 2780 = 150 }\r
+ 	enemy_handicap = {\r
+ 	} \r
+ 	passivity = {\r
+@@ -714,16 +714,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30000.0\r
+-	groundattackdesirability 		= 40000.0\r
+-	inderdictiondesirability 		= 20000\r
+-	logisticalstrikedesirability 		= 2000\r
+-	runwaycrateringdesirability 		= 10000\r
+-	strategicstrikedesirability 		= 10000\r
+-	installationstrikedesirability 		= 5000\r
+-	navalstrikedesirability 		= 15000\r
+-	portstrikedesirability 		= 9000\r
+-	convoyraiddesirability 		= 9000\r
++	airsuperioritydesirability 		= 30.0\r
++	groundattackdesirability 		= 40.0\r
++	inderdictiondesirability 		= 20.0\r
++	logisticalstrikedesirability 	= 2.0\r
++	runwaycrateringdesirability 	= 10.0\r
++	strategicstrikedesirability 	= 10.0\r
++	installationstrikedesirability 	= 5.0\r
++	navalstrikedesirability 		= 15.0\r
++	portstrikedesirability 			= 9.0\r
++	convoyraiddesirability			= 9.0\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -745,7 +745,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r

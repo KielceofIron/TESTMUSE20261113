@@ -1,0 +1,47 @@
+--- A/db/events/AdditionalEvents_if_Japan/BigeventplanifJapan.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/BigeventplanifJapan.txt [cp932]
+@@ -254,6 +254,7 @@ event = {
+ 	action = { # \r
+ 	name = "OK"\r
+ 	command = { type = setflag which = WorldBigeventflag0003 } \r
++	command = { type = setflag which = IFJapanWorldWarII } \r
+ 	}\r
+ }\r
+ event = {\r
+@@ -758,19 +759,9 @@ event = {
+ 	save_date = yes\r
+ 	country = REB\r
+ 	\r
+-	trigger = {\r
+-	event = 5951019\r
+-	NOT = { war = { country = UER country = CHI } }\r
+-	NOT = { event = 5951021 }\r
+-	NOT = { flag = WorldBigeventflag0012 }  #発生済判定\r
+-	\r
+-	}\r
+ 	name = AI_EVENT #AI\r
+ 	#picture = ""\r
+ \r
+-	date = { day = 5 month = 3 year = 1900 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 4 year = 2000 }\r
+ \r
+ 	action = { # \r
+ 	name = "OK"\r
+@@ -800,14 +791,14 @@ event = {
+ \r
+ 	action = { # \r
+ 	name = "OK"\r
+-	trigger = { incabinet = 1337028 }\r
++	trigger = { incabinet = 1362028 }\r
+ 	command = { type = local_setflag which = Bigeventflag0012 } #イベントが起きたことを示す\r
+ 	command = { type = songs which = "Special/0012.txt" } #音源流し\r
+ 	command = { type = trigger which = 19330012 when = 0 } #本イベントを起こす\r
+ 	}\r
+ 	action = { # \r
+ 	name = "OK"\r
+-	trigger = { NOT = { incabinet = 1337028 } }\r
++	trigger = { NOT = { incabinet = 1362028 } }\r
+ 	command = { type = local_setflag which = Bigeventflag0012 } #イベントが起きたことを示す\r
+ 	command = { type = songs which = "Special/0012b.txt" } #音源流し\r
+ 	command = { type = trigger which = 19330012 when = 0 } #本イベントを起こす\r

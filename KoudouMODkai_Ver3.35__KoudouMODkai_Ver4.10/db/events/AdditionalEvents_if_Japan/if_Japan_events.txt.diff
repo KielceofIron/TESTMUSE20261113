@@ -1,0 +1,765 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
+@@ -108,6 +108,7 @@
+ #id = 2991124 上野動物園クロヒョウ事件\r
+ #id = 2991125 松代大本営\r
+ #id = 2991126 東京への帰還\r
++#id = 2991127 皇居竹橋爆破陰謀事件\r
+ #id = 2991201 新経済政策\r
+ #id = 2991202 新経済政策 ― 計画の進展\r
+ #id = 2991203 アジア動乱\r
+@@ -134,6 +135,11 @@
+ #id = 2991313 太平洋戦争\r
+ #id = 2991314 太平洋戦争 ― 些細な反撃\r
+ #id = 2991315 第二次三国干渉の結末\r
++#id = 2991401 昭和天皇崩御（JAP）\r
++#id = 2991402 昭和天皇崩御（AXI）\r
++#id = 2991403 日本内戦\r
++#id = 2991404 日本内戦 ― 終結\r
++#id = 2991405 日本内戦 ― 租借地からの撤退\r
+ ##########################################################################\r
+ #  変容する国内情勢\r
+ # 日露戦争に敗北した日本は、開国以来の努力で得てきた『一等国』としての地位を失った。\r
+@@ -768,6 +774,7 @@ event = {
+ 	command = { type = gain_tech which = 6410 } # 大規模強襲ドクトリン\r
+ 	command = { type = gain_tech which = 6430 } # 防衛計画事前策定ドクトリン\r
+ 	ai_chance = 30\r
++	#ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 機動戦は本土防衛に必須だ\r
+@@ -797,6 +804,7 @@ event = {
+ 	command = { type = gain_tech which = 6260 } # 電撃戦ドクトリン\r
+ 	command = { type = gain_tech which = 6230 } # 遅延戦術ドクトリン\r
+ 	ai_chance = 30\r
++	#ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 縦深作戦による攻撃戦だ\r
+@@ -825,7 +833,9 @@ event = {
+ 	command = { type = gain_tech which = 6310 } # 広域戦線ドクトリン\r
+ 	command = { type = gain_tech which = 6320 } # 局地防衛ドクトリン\r
+ 	command = { type = gain_tech which = 6330 } # 縦深作戦ドクトリン\r
++	command = { trigger = { ai = yes } type = local_setflag which = kongyo }\r
+ 	ai_chance = 30\r
++	#ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 火力こそ今最も求められている\r
+@@ -854,6 +864,7 @@ event = {
+ 	command = { type = gain_tech which = 6050 } # 機動防御ドクトリン\r
+ 	command = { type = gain_tech which = 6060 } # スタンドオフドクトリン\r
+ 	ai_chance = 10\r
++	#ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -976,17 +987,17 @@ event = {
+ 	id = 2991013\r
+ 	random = no\r
+ 	country = JAP\r
+-	\r
++\r
+ 	trigger = {\r
+ 	atwar = no\r
+ 	}\r
+-	\r
++\r
+ 	name = "EVT_2991013_NAME"\r
+ 	desc = "EVT_2991013_DESC"\r
+ 	style = 2\r
+ 	picture = "Hibiya_Incendiary_Incident"\r
+ \r
+-	date = { day = 0 month = 4 year = 1933 }\r
++	date = { day = 0 month = 5 year = 1933 }\r
+ \r
+ 	action = { # 我々は弾圧の中からさらに力を得るのだ！\r
+ 	name = "ACTIONNAME2991013A"\r
+@@ -2350,7 +2361,8 @@ event = {
+ 	command = { trigger = { ai = no } type = event which = 2991037 where = -1 when = 120 }\r
+ 	command = { trigger = { ai = yes } type = event which = 2991037 where = -1 when = 200 }\r
+ 	command = { type = event which = 2991038 where = CHI when = 0 }\r
+-	command = { trigger = { ai = yes } type = ai which = "IFswitch/JAP_HondoKessen_Chugoku.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_Chugoku.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_Chugoku_m.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2401,7 +2413,7 @@ event = {
+ 	action = {\r
+ 	name = ACTION_NAME_DAMN\r
+ 	command = { type = dissent value = 10 }\r
+-	command = { type = ground_def_eff value = -0.1 when = 1 }\r
++	#command = { type = ground_def_eff value = -0.1 when = 1 }\r
+ 	command = { type = max_organization which = land value = -30 }\r
+ 	command = { type = max_organization which = naval value = -30 }\r
+ 	command = { type = max_organization which = air value = -30 }\r
+@@ -2426,7 +2438,7 @@ event = {
+ 	action = {\r
+ 	name = ACTION_NAME_DAMN\r
+ 	command = { type = dissent value = 10 }\r
+-	command = { type = ground_def_eff value = 0.1 when = 1 }\r
++	#command = { type = ground_def_eff value = 0.1 when = 1 }\r
+ 	command = { type = max_organization which = land value = 30 }\r
+ 	command = { type = max_organization which = naval value = 30 }\r
+ 	command = { type = max_organization which = air value = 30 }\r
+@@ -3535,7 +3547,8 @@ event = {
+ 	command = { type = activate_division which = 13016 value = 8012 where = 2802 when = 1 }\r
+ 	command = { type = event which = 2991064 where = CHI when = 0 }\r
+ 	command = { type = setflag which = Amakusa_fort }\r
+-	command = { trigger = { ai = yes } type = ai which = "IFswitch/JAP_HondoKessen_Amakusa.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_Amakusa.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_Amakusa_m.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3596,6 +3609,7 @@ event = {
+ 	action = { # 神州は不滅だ！\r
+ 	name = "ACTIONNAME2991065A"\r
+ 	command = { type = dissent value = -5 }\r
++	command = { type = ground_def_eff when = 1 value = 0.1 }\r
+ 	command = { type = morale which = land value = 5 }\r
+ 	command = { type = morale which = naval value = 5 }\r
+ 	command = { type = morale which = air value = 5 }\r
+@@ -3625,7 +3639,8 @@ event = {
+ 	command = { type = sleepevent which = 2991068 }\r
+ 	command = { type = sleepevent which = 2991069 }	\r
+ 	command = { type = sleepevent which = 2991070 }\r
+-	command = { trigger = { ai = yes } type = ai which = "IFswitch/JAP_HondoKessen.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_m.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3642,6 +3657,7 @@ event = {
+ 	action = { # 無様な敗北だ！\r
+ 	name = "ACTIONNAME2991066A"\r
+ 	command = { type = dissent value = 5 }\r
++	#command = { type = ground_def_eff when = 1 value = -0.1 }\r
+ 	command = { type = morale which = land value = -5 }\r
+ 	command = { type = morale which = naval value = -5 }\r
+ 	command = { type = morale which = air value = -5 }\r
+@@ -3723,7 +3739,8 @@ event = {
+ 	command = { type = morale which = land value = -5 }\r
+ 	command = { type = morale which = naval value = -5 }\r
+ 	command = { type = morale which = air value = -5 }\r
+-	command = { trigger = { ai = yes } type = ai which = "IFswitch/JAP_HondoKessen_Chugoku.ai" }\r
++	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_Chugoku.ai" }\r
++	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_Chugoku_m.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3968,13 +3985,13 @@ event = {
+ 	command = { type = sleepminister which = 50001 } # 昭和天皇\r
+ 	command = { type = sleepminister which = 50172 }\r
+ 	command = { type = sleepminister which = 50173 }\r
+-	command = { type = sleepminister which = 50565 } # 辻政信\r
++	command = { type = sleepminister which = 50565 } # 辻正信\r
+ 	command = { type = sleepminister which = 50565 }\r
+-	command = { type = sleepleader which = 101168 }\r
++	command = { type = sleepleader which = 50187 }\r
+ 	command = { type = sleepminister which = 50509 } # 服部卓四郎\r
+ 	command = { type = sleepminister which = 50510 }\r
+-	command = { type = sleepleader which = 101031 }\r
+-	command = { type = sleepleader which = 101027 } # 花谷正\r
++	command = { type = sleepleader which = 50036 }\r
++	command = { type = sleepleader which = 50031 } # 花谷正\r
+ 	command = { type = sleepminister which = 50030 } # 鳩山一郎\r
+ 	command = { type = sleepminister which = 50059 }\r
+ 	command = { type = sleepminister which = 50416 }\r
+@@ -3991,6 +4008,10 @@ event = {
+ 	command = { type = sleepminister which = 50078 } # 山本達雄\r
+ 	command = { type = sleepminister which = 50304 }\r
+ 	command = { type = event which = 2991076 where = JAP when = 1 }\r
++	command = { type = local_setflag which = Bigeventflag0002 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0002.txt" } #音源流し\r
++	command = { type = trigger which = 19330002 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310002 where = REB when = 0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4021,8 +4042,8 @@ event = {
+ 	command = { type = sleepminister which = 50568 }\r
+ 	command = { type = wakeminister which = 50569 }\r
+ 	command = { type = headofstate which = 50569 }\r
+-	command = { trigger = { NOT = { leader = 103002 } } type = wakeleader which = 103002 }\r
+-	command = { trigger = { leader = 103001 } type = sleepleader which = 103001 }\r
++	command = { trigger = { NOT = { leader = 50664 } } type = wakeleader which = 50664 }\r
++	command = { trigger = { leader = 50663 } type = sleepleader which = 50663 }\r
+ 	command = { type = sleepminister which = 51016 }\r
+ 	command = { type = sleepevent which = 2991019 }\r
+ 	command = { type = sleepminister which = 51009 }\r
+@@ -4129,7 +4150,7 @@ event = {
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { trigger = { exists = U66 } type = event which = 2991078 where = U66 when = 1 }\r
+-	command = { trigger = { NOT = { exists = U66 } } type = event which = 2991078 where = CHI when = 1 }\r
++	command = { type = event which = 2991078 where = CHI when = 1 }\r
+ 	}\r
+ \r
+ 	action = { # 琉球独立を盾に交渉だ\r
+@@ -4154,6 +4175,7 @@ event = {
+ 	name = "EVT_2991078_NAME"\r
+ 	desc = "EVT_2991078_DESC"\r
+ 	style = 2\r
++	persistent = yes\r
+ 	picture = "ccip_mukden"\r
+ \r
+ 	action = { # 受け入れよう…\r
+@@ -4202,6 +4224,7 @@ event = {
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = add_corps which = "沖縄進駐軍" value = land when = 0 where = 1564 }\r
+ 	command = { type = add_division which = "沖縄海軍陸戦隊" value = marine when = 2 }\r
++	command = { type = inherit which = U66 }	\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -6471,6 +6494,80 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
++#########################################################################\r
++#  皇居竹橋爆破陰謀事件\r
++# 第二次日比谷焼き討ち事件が本格化し、都市圏を主とした民衆暴動に発展する最中、\r
++# 宮内庁はこの暴動が皇居方面にまで及ぶことを危惧し、今上天皇陛下に対し皇居からの脱出を進言。\r
++# 昭和天皇裕仁はこの進言に対し頑として反意を示したが、同事件から派生する暴動が首都圏を中心とした長期暴動としての様相を見せるに際し、この進言を受け入れた。\r
++# しかし、この暴動の最中にあって『外科手術的一撃』を加えようと目論んだ日本無政府共産党首魁・二見敏雄は皇居周辺の情報を収集し\r
++# 昭和天皇裕仁が裏門である平川門から続く竹橋を通って退去することを耳にし、内通者が竹橋へ爆弾を設置した。\r
++# この事実が判明したのは、昭和天皇裕仁が皇居を脱出する当日であった。\r
++# 警察当局は――\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2991127\r
++	random = no\r
++	country = JAP\r
++	\r
++	trigger = {\r
++	event = { id = 2991002 days = 15 }\r
++	}\r
++	\r
++	name = "EVT_2991127_NAME"\r
++	desc = "EVT_2991127_DESC"\r
++	style = 2\r
++	picture = "Kokyo"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 連絡に成功し、爆破は未然に防がれた！\r
++	name = "ACTIONNAME2991127A"\r
++	command = { type = dissent value = -0.5 }\r
++	ai_chance = 99\r
++	}\r
++\r
++	action = { # 連絡が滞り、竹橋は爆破されてしまった……\r
++	name = "ACTIONNAME2991127B"\r
++	command = { type = dissent value = 1 }\r
++	command = { type = event which = 2991401 where = JAP when = 0 }\r
++	command = { type = sleepevent which = 2991401 }\r
++	command = { type = sleepevent which = 2991402 }\r
++	command = { type = sleepevent which = 2991403 }\r
++	command = { type = sleepevent which = 2991015 }\r
++	command = { type = sleepevent which = 2991016 }\r
++	command = { type = sleepevent which = 2991041 }\r
++	command = { type = sleepevent which = 2991042 }\r
++	command = { type = sleepevent which = 2991043 }\r
++	command = { type = sleepevent which = 2991044 }\r
++	command = { type = sleepevent which = 2991045 }\r
++	command = { type = sleepevent which = 2991046 }\r
++	command = { type = sleepevent which = 2991047 }\r
++	command = { type = sleepevent which = 2991048 }\r
++	command = { type = sleepevent which = 2991049 }\r
++	command = { type = sleepevent which = 2991050 }\r
++	command = { type = sleepevent which = 2991051 }\r
++	command = { type = sleepevent which = 2991052 }\r
++	command = { type = sleepevent which = 2991053 }\r
++	command = { type = sleepevent which = 2991054 }\r
++	command = { type = sleepevent which = 2991055 }\r
++	command = { type = sleepevent which = 2991056 }\r
++	command = { type = sleepevent which = 2991057 }\r
++	command = { type = sleepevent which = 2991058 }\r
++	command = { type = sleepevent which = 2991059 }\r
++	command = { type = sleepevent which = 2991071 }\r
++	command = { type = sleepevent which = 2991072 }\r
++	command = { type = sleepevent which = 2991073 }\r
++	command = { type = sleepevent which = 2991074 }\r
++	command = { type = sleepevent which = 2991075 }\r
++	command = { type = sleepevent which = 2991076 }\r
++	ai_chance = 1\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  新経済政策\r
+ # 戦後復興と経済体制を牛耳るのは戦前から皇道派政権における内政を一手に引き受けてきた岸信介である。\r
+@@ -7535,83 +7632,36 @@ event = {
+ 	command = { type = sleepminister which = 50013 } # 林銑十郞\r
+ 	command = { type = sleepminister which = 50047 }\r
+ 	command = { type = sleepminister which = 50362 }\r
+-	command = { type = sleepleader which = 101336 }\r
+-	command = { type = sleepminister which = 50022 } #東條英機 粛清\r
+-	command = { type = sleepminister which = 50074 }\r
+-	command = { type = sleepminister which = 50103 }\r
+-	command = { type = sleepminister which = 50134 }\r
+-	command = { type = sleepminister which = 50143 }\r
+-	command = { type = sleepminister which = 50159 }\r
+-	command = { type = sleepminister which = 50166 }\r
+-	command = { type = sleepleader which = 101160 }\r
+-	command = { type = sleepleader which = 101307 }\r
+-	command = { type = sleepteam which = 50039 }\r
+-	command = { type = sleepminister which = 50695 } #永田鉄山\r
+-	command = { type = sleepminister which = 50696 }\r
+-	command = { type = sleepminister which = 50697 }\r
+-	command = { type = sleepminister which = 50698 }\r
+-	command = { type = sleepleader which = 101395 }\r
+-	command = { type = sleepteam which = 50038 }\r
++	command = { type = sleepleader which = 50546 }\r
+ 	command = { type = sleepminister which = 50548 } #石原莞爾 粛清\r
+-	command = { type = sleepminister which = 50723 }\r
+-	command = { type = sleepminister which = 50724 }\r
+-	command = { type = sleepleader which = 101057 }\r
++	command = { type = sleepleader which = 50065 }\r
+ 	command = { type = sleepteam which = 50102 }\r
++	command = { type = sleepminister which = 50133 } # 杉山元 宇垣閥。軍籍剥奪\r
++	command = { type = sleepminister which = 50142 }\r
++	command = { type = sleepleader which = 50161 }\r
++	command = { type = sleepleader which = 50646 }\r
++	command = { type = sleepteam which = 50110 }\r
+ 	command = { type = sleepminister which = 50019 } # 寺内壽一 統制派。軍籍剥奪\r
+ 	command = { type = sleepminister which = 50070 }\r
+ 	command = { type = sleepminister which = 50364 }\r
+-	command = { type = sleepleader which = 101159 }\r
++	command = { type = sleepleader which = 50177 }\r
+ 	command = { type = sleepteam which = 50111 }\r
+-	command = { type = sleepleader which = 101177 } # 山田乙三 余波。粛清\r
++	command = { type = sleepleader which = 50196 } # 山田乙三 余波。粛清\r
+ 	command = { type = sleepteam which = 50109 }\r
+-	command = { type = sleepleader which = 101116 } # 西尾壽造 余波。粛清\r
++	command = { type = sleepleader which = 50132 } # 西尾壽造 余波。粛清\r
+ 	command = { type = sleepteam which = 50107 }\r
+-	command = { type = sleepminister which = 50023 } # 小磯国昭 宇垣閥。 軍籍剥奪\r
+-	command = { type = sleepminister which = 50124 }\r
+-	command = { type = sleepminister which = 50746 }\r
+-	command = { type = sleepleader which = 101086 }\r
+-	command = { type = sleepminister which = 50026 } # 宇垣一成 軍縮がない？からどうなんだろうというのはある。死亡\r
+-	command = { type = sleepminister which = 50040 }\r
+-	command = { type = sleepminister which = 50110 }\r
+-	command = { type = sleepminister which = 50222 }\r
+-	command = { type = sleepminister which = 50247 }\r
+-	command = { type = sleepminister which = 50271 }\r
+-	command = { type = sleepminister which = 50280 }\r
+-	command = { type = sleepminister which = 50133 } # 杉山元 宇垣閥。軍籍剥奪\r
+-	command = { type = sleepminister which = 50142 }\r
+-	command = { type = sleepleader which = 101145 }\r
+-	command = { type = sleepteam which = 50110 }\r
+ 	command = { type = sleepminister which = 50338 } # 二宮治重 宇垣閥。予備役\r
+-	command = { type = sleepleader which = 101399 }\r
+ 	command = { type = sleepminister which = 50339 } # 建川美次 宇垣閥。予備役\r
+-	command = { type = sleepminister which = 50737 }\r
+-	command = { type = sleepleader which = 101396 }\r
++	command = { type = sleepleader which = 50662 }\r
+ 	command = { type = sleepminister which = 50346 } # 武藤章 統制派。 予備役\r
+ 	command = { type = sleepminister which = 50504 }\r
+ 	command = { type = sleepminister which = 50505 }\r
+-	command = { type = sleepleader which = 101108 }\r
+-	command = { type = sleepminister which = 50554 } # 池田純久 統制派。\r
+-	command = { type = sleepleader which = 101398 }\r
+-	command = { type = sleepminister which = 50133 } # 梅津美治郞 満州派。 予備役\r
+-	command = { type = sleepminister which = 50144 }\r
+-	command = { type = sleepleader which = 101171 }\r
+-	command = { type = sleepleader which = 101311 }\r
+-	command = { type = sleepminister which = 50096 } # 中島今朝吾 226事件早期鎮圧を提言。粛清\r
+-	command = { type = sleepleader which = 101113 }\r
++	command = { type = sleepleader which = 50121 }\r
++	command = { type = sleepminister which = 50554 } # 池田純久 統制派。 粛清\r
+ 	command = { type = sleepminister which = 50366 } # 板垣征四郎 満州派。 予備役\r
+-	command = { type = sleepleader which = 101060 }\r
+-	command = { type = sleepminister which = 50564 } # 片倉衷 統制派。 射殺\r
+-	command = { type = sleepleader which = 101068 }\r
+-	command = { type = sleepleader which = 101376 } # 根本博 統制派。粛清\r
+-	command = { type = sleepleader which = 101135 } # 佐藤幸徳 統制派。粛清\r
+-	command = { type = sleepminister which = 50162 } # 阿南惟幾 226事件を批判。粛清\r
+-	command = { type = sleepminister which = 50368 }\r
+-	command = { type = sleepleader which = 101007 }\r
+-	command = { type = sleepleader which = 101411 }\r
+-	command = { type = sleepminister which = 50565 } # 辻政信 統制派。粛清\r
+-	command = { type = sleepminister which = 50566 }\r
+-	command = { type = sleepleader which = 101168 }\r
+-\r
++	command = { type = sleepleader which = 50068 }\r
++	command = { type = sleepminister which = 50957 } # 片倉衷 統制派。 射殺\r
++	command = { type = sleepleader which = 50078 }\r
+ 	command = { type = sleepminister which = 50122 } # 荒木貞夫\r
+ 	command = { type = sleepminister which = 50361 }\r
+ 	command = { type = sleepminister which = 50572 }\r
+@@ -7654,8 +7704,6 @@ event = {
+ 	command = { type = sleepleader which = 101374 }\r
+ 	command = { type = sleepteam which = 50106 }\r
+ 	command = { type = sleepminister which = 50591 } # 山岡重厚\r
+-	command = { type = sleepminister which = 50666 }\r
+-	command = { type = sleepminister which = 50667 }\r
+ 	command = { type = sleepleader which = 101179 }\r
+ 	command = { type = sleepminister which = 50588 } # 本庄繁\r
+ 	command = { type = sleepminister which = 50589 }\r
+@@ -7712,6 +7760,8 @@ event = {
+ 	command = { type = sleepleader which = 101402 }\r
+ 	command = { type = sleepminister which = 50614 } # 満井佐吉\r
+ 	command = { type = sleepminister which = 50615 }\r
++	command = { type = sleepminister which = 50664 }\r
++	command = { type = sleepminister which = 50665 }\r
+ 	command = { type = sleepleader which = 101406 }\r
+ 	command = { type = sleepminister which = 50662 } # 村上啓作\r
+ 	command = { type = sleepminister which = 50663 }\r
+@@ -7719,12 +7769,11 @@ event = {
+ 	command = { type = sleepminister which = 50664 } # 香椎浩平\r
+ 	command = { type = sleepminister which = 50665 }\r
+ 	command = { type = sleepleader which = 101404 }\r
+-	command = { type = sleepminister which = 50666 } # 山岡重厚\r
++	command = { type = sleepminister which = 50666 } # 有末精三\r
+ 	command = { type = sleepminister which = 50667 }\r
+-	command = { type = sleepminister which = 50668 } # 秦彦三郎\r
++	command = { type = sleepminister which = 50668 } # 小野寺信\r
+ 	command = { type = sleepminister which = 50669 }\r
+-	command = { type = sleepminister which = 50689 } # 井出宣時\r
+-	command = { type = sleepminister which = 50690 }\r
++	command = { type = wakeminister which = 50660 }\r
+ 	command = { type = sleepleader which = 101405 } # 工藤義雄\r
+ 	command = { type = sleepleader which = 101408 } # 松浦淳六郎\r
+ 	command = { type = sleepminister which = 50655 } # 秦真次\r
+@@ -7743,6 +7792,26 @@ event = {
+ 	command = { type = sleepminister which = 50679 } # 堀丈夫\r
+ 	command = { type = sleepleader which = 101410 }\r
+ 	command = { type = sleepminister which = 50657 } # 小笠原長生\r
++	command = { type = sleepleader which = 101583 } # 橋本虎之助\r
++	command = { type = sleepleader which = 101610 } # 大島陸太郎\r
++	command = { type = sleepleader which = 101611 } # 佐藤正三郎\r
++	command = { type = sleepleader which = 101405 } # 工藤義雄\r
++	command = { type = sleepleader which = 101612 } # 小藤恵\r
++	command = { type = sleepleader which = 101613 } # 石田保道\r
++	# 皇道派系閣僚\r
++	command = { type = sleepminister which = 50639 } # 白鳥敏夫\r
++	command = { type = sleepminister which = 50640 } # 大川周明\r
++	command = { type = sleepminister which = 50641 } # 蓑田胸喜\r
++	command = { type = sleepminister which = 50642 } # 内田良平\r
++	command = { type = sleepminister which = 50652 } # 出口王仁三郎\r
++	command = { type = sleepminister which = 50725 }\r
++	command = { type = sleepminister which = 50729 }\r
++	command = { type = sleepminister which = 50639 } # 井上日召\r
++	command = { type = sleepminister which = 50661 }\r
++	command = { type = sleepminister which = 50639 } # 市川房枝\r
++	command = { type = sleepminister which = 50730 } # 岩淵辰雄\r
++	command = { type = sleepminister which = 50731 }\r
++	command = { type = sleepminister which = 50732 }\r
+ 	command = { type = sleepleader which = 1300001 }\r
+ 	command = { type = sleepleader which = 1300002 }\r
+ 	command = { type = sleepleader which = 1300003 }\r
+@@ -8366,18 +8435,17 @@ event = {
+ 	command = { type = sleepminister which = 50007 }\r
+ 	command = { type = sleepminister which = 50216 }\r
+ 	command = { type = sleepminister which = 50241 }\r
+-	command = { type = sleepleader which = 101065 }\r
+-	command = { type = sleepleader which = 102130 }\r
+-	command = { type = sleepleader which = 101371 } # 閑院宮春仁王\r
++	command = { type = sleepleader which = 50075 }\r
++	command = { type = sleepleader which = 50483 }\r
+ 	command = { type = sleepminister which = 50018 } # 東久邇宮稔彦王\r
+ 	command = { type = sleepminister which = 50155 }\r
+ 	command = { type = sleepminister which = 50369 }\r
+-	command = { type = sleepleader which = 101034 }\r
+-	command = { type = sleepleader which = 101414 }\r
++	command = { type = sleepleader which = 50039 }\r
++	command = { type = sleepleader which = 50649 }\r
+ 	command = { type = sleepminister which = 50228 } # 伏見宮博恭王\r
+-	command = { type = sleepleader which = 101323 }\r
+-	command = { type = sleepleader which = 102177 }\r
+-	command = { type = sleepleader which = 101014 } # 朝香宮鳩彦王\r
++	command = { type = sleepleader which = 50348 }\r
++	command = { type = sleepleader which = 50530 }\r
++	command = { type = sleepleader which = 50015 } # 朝香宮鳩彦王\r
+ 	command = { type = sleepevent which = 25200003 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+@@ -8419,12 +8487,12 @@ event = {
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+-	command = { type = wakeleader which = 104001 } # 稻葉悟\r
+-	command = { type = wakeleader which = 104002 } # 中澤佑\r
+-	command = { type = wakeleader which = 104003 } # 福井義男\r
+-	command = { type = wakeleader which = 104004 } # 長村河鹿\r
+-	command = { type = wakeleader which = 104005 } # 林田博嗣\r
+-	command = { type = wakeleader which = 104006 } # 河合明\r
++	command = { type = wakeleader which = 50693 } # 稻葉悟\r
++	command = { type = wakeleader which = 50694 } # 中澤佑\r
++	command = { type = wakeleader which = 50695 } # 福井義男\r
++	command = { type = wakeleader which = 50696 } # 長村河鹿\r
++	command = { type = wakeleader which = 50697 } # 林田博嗣\r
++	command = { type = wakeleader which = 50698 } # 河合明\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -8467,6 +8535,10 @@ event = {
+ 	command = { type = event which = 2991314 where = UD6 when = 0 }\r
+ 	command = { type = event which = 2991314 where = UTC when = 0 }\r
+ 	command = { type = event which = 2991314 where = CHI when = 0 }\r
++	command = { type = local_setflag which = Bigeventflag0006 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0006.txt" } #音源流し\r
++	command = { type = trigger which = 19330006 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310006 where = REB when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -8564,4 +8636,249 @@ event = {
+ 	command = { trigger = { country = JAP } type = trade which = ENG where = JAP money = 6 supplies = 30 when = 9999 value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  昭和天皇崩御\r
++# 皇居平川門における竹橋爆破事件によって『顔の判別がつかないほど』の重傷を負った昭和天皇裕仁は数日後、虎の門病院において死亡が確認された。\r
++# この事件を契機として日本全土における暴動は拡大し、\r
++# 日本各地に租界を持つ露独両政府は日本に統治能力はもはや存在しないと断定し、軍事介入を決定した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2991401\r
++	random = no\r
++	country = JAP\r
++	\r
++	name = "EVT_2991401_NAME"\r
++	desc = "EVT_2991401_DESC"\r
++	style = 2\r
++	picture = "Kokyo"\r
++\r
++	action = { # たった一つの爆弾が、世界を動かした\r
++	name = "ACTIONNAME2991401A"\r
++	command = { type = dissent value = 15 }\r
++	command = { type = sleepminister which = 50001 } # 裕仁天皇\r
++	command = { type = sleepminister which = 50172 }\r
++	command = { type = sleepminister which = 50173 }\r
++	command = { type = sleepminister which = 50283 }\r
++	command = { type = headofstate which = 51013 } # 三種の神器\r
++	command = { type = demobilize which = land when = 0 where = 0 value = 4 }\r
++	command = { type = demobilize which = naval when = 0 where = 0 value = 3 }\r
++	command = { type = demobilize which = air when = 0 where = 0 value = 2 }\r
++	command = { type = remove_core_area which = "Honshu" where = JAP }\r
++	command = { type = independence which = AXI value = 1 when = 1 }\r
++	command = { type = secedearea which = AXI value = "Honshu" when = 1 }\r
++	command = { type = add_core_area which = "Honshu" where = JAP }\r
++	command = { type = event which = 2991402 where = AXI when = 0 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 2991402\r
++	random = no\r
++	country = AXI\r
++\r
++	name = "EVT_2991401_NAME"\r
++	desc = "EVT_2991401_DESC"\r
++	style = 2\r
++	picture = "Kokyo"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = add_core_region which = "Japan" where = AXI }\r
++	command = { type = event which = 2991403 where = AXI when = 10 }\r
++	command = { type = set_relation which = FRA value = 50 }\r
++	command = { type = set_relation which = ENG value = 15 }\r
++	command = { type = set_relation which = USA value = 15 }\r
++	command = { type = set_relation which = UTC value = -150 }\r
++	command = { type = set_relation which = GER value = -150 }\r
++	command = { type = set_relation which = UB9 value = -150 }\r
++	command = { type = set_relation which = CHI value = -150 }\r
++	command = { type = dissent value = -30 }\r
++	command = { type = free_ic value = 5 }\r
++	command = { type = flag_ext where = AXI which = "_dom" }\r
++	command = { type = name where = AXI which = "大和民国" }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 10 }\r
++	command = { type = set_domestic which = free_market value = 1 }\r
++	command = { type = set_domestic which = freedom value = 1 }\r
++	command = { type = set_domestic which = interventionism value = 2 }\r
++	command = { type = set_domestic which = defense_lobby value = 8 }\r
++	command = { type = headofstate which = 8191052 } # 河上肇\r
++	command = { type = headofgovernment which = 8191054 } # 山川均\r
++	command = { type = foreignminister which = 8191056 } # 黒田寿男\r
++	command = { type = armamentminister which = 8191057 } # 福本和夫\r
++	command = { type = ministerofsecurity which = 8191059 } # 瀧川幸辰\r
++	command = { type = ministerofintelligence which = 8191061 } # 八木秀次\r
++	command = { type = chiefofstaff which = 8191063 } # 朝枝繁春\r
++	command = { type = chiefofarmy which = 8191065 } # 前田光繁\r
++	command = { type = chiefofnavy which = 8191067 } # 岡田文吉\r
++	command = { type = chiefofair which = 8191069 } # 林弥一郎\r
++	command = { type = add_division value = infantry when = 8 }\r
++	command = { type = add_division value = infantry when = 8 }\r
++	command = { type = add_division value = infantry when = 8 }\r
++	command = { type = add_division value = infantry when = 8 }\r
++	command = { type = add_division value = infantry when = 8 }\r
++	command = { type = add_division value = infantry when = 8 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = cavalry when = 9 }\r
++	command = { type = add_division value = cavalry when = 9 }\r
++	command = { type = add_division value = interceptor when = 5 }\r
++	command = { type = add_division value = interceptor when = 5 }\r
++	command = { type = add_division value = tactical_bomber when = 4 }\r
++	command = { type = add_division value = tactical_bomber when = 4 }\r
++	command = { type = transport_pool which = AXI value = 150 }\r
++	command = { type = escort_pool which = AXI value = 10 }\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  日本内戦\r
++# 暴動が進行し、日本政府が露独と連合して鎮圧にあたると宣言した結果、都市圏における労働者の暴動は\r
++# 警察当局による自宅拘禁令への反発もあり、より悪化――拡大の一途を辿った。\r
++# この事態を見て、全国の都市圏に散らばって地下運動を継続していた活動家たちは、\r
++# それぞれが根ざす地域を拠点とし、日本政府及びその同盟諸国に対して全面的革命闘争の開始を宣言した。\r
++# ここに、第二次日比谷焼き討ち事件に端を発する暴動事件は平川門竹橋における昭和天皇爆殺事件を経て、\r
++# 今ここに『日本内戦』という結末を迎えることとなる……。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2991403\r
++	random = no\r
++	country = AXI\r
++	\r
++	name = "EVT_2991403_NAME"\r
++	desc = "EVT_2991403_DESC"\r
++	style = 2\r
++	picture = "226_March"\r
++\r
++	action = { # 内戦だ！\r
++	name = "ACTIONNAME2991403A"\r
++	command = { type = dissent value = 15 }\r
++	command = { type = end_non_aggression which = JAP where = AXI }\r
++	command = { type = war which = JAP }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  日本内戦 ― 終結\r
++# 新日本共和政府と旧日本帝国政府との内戦は、多数の血の犠牲と外交における日本の著しい地位低下と引き換えに、新日本共和国政府が勝利を収めた。\r
++# 旧日本帝国政府は、今や新日本共和国の一部となった長崎において降伏文書に記名し、その裏側に存在する露独政府は遠征軍維持の困難さを理由に撤退を決定。\r
++# 結果として――大日本帝国政府よりも国土の一体性を持ち、旧支配者の暴虐を跳ね除けた新たな革命国家『日本共和国』は今日この日、誕生した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2991404\r
++	random = no\r
++	country = AXI\r
++\r
++	trigger = {\r
++	event = 2991403 # 日本内戦\r
++	OR = {\r
++	control = { province = 1552 data = AXI } # 東京\r
++	NOT = { exists = JAP }\r
++	}\r
++	NOT = { ispuppet = AXI }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_2991404_NAME"\r
++	desc = "EVT_2991404_DESC"\r
++	style = 2\r
++	picture = "Russian_civil_war"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 日本共和国万歳！日本共和政府万歳！\r
++	name = "ACTIONNAME2991404A"\r
++	command = { trigger = { exists = JAP } type = inherit which = JAP }\r
++	command = { type = dissent value = -10 }\r
++	command = { type = event which = 2991405 where = UTC when = 0 }\r
++	command = { type = event which = 2991405 where = UD6 when = 0 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  日本内戦 ― 租借地からの撤退\r
++# 新日本共和政府と旧日本帝国政府との内戦は、多数の血の犠牲と外交における日本の著しい地位低下と引き換えに、新日本共和国政府が勝利を収めた。\r
++# 旧日本帝国政府は、今や新日本共和国の一部となった長崎において降伏文書に記名し、その裏側に存在する露独政府は遠征軍維持の困難さを理由に撤退を決定した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2991405\r
++	random = no\r
++	TAG = { UTC UD6 }\r
++	persistent = yes\r
++	\r
++	name = "EVT_2991405_NAME"\r
++	desc = "EVT_2991405_DESC"\r
++	style = 2\r
++	picture = "226_March"\r
++\r
++	action = { # 撤退しかない\r
++	name = "ACTIONNAME2991405A"\r
++	trigger = { country = UTC }\r
++	command = { type = dissent value = 3 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 402 } } type = remove_division which = 10848 value = 402 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 403 } } type = remove_division which = 10848 value = 403 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 404 } } type = remove_division which = 10848 value = 404 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 406 } } type = remove_division which = 10848 value = 406 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 407 } } type = remove_division which = 10848 value = 407 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 409 } } type = remove_division which = 10848 value = 409 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 410 } } type = remove_division which = 10848 value = 410 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 412 } } type = remove_division which = 10848 value = 412 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 413 } } type = remove_division which = 10848 value = 413 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 414 } } type = remove_division which = 10848 value = 414 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 415 } } type = remove_division which = 10848 value = 415 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 417 } } type = remove_division which = 10848 value = 417 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 418 } } type = remove_division which = 10848 value = 418 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 419 } } type = remove_division which = 10848 value = 419 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 421 } } type = remove_division which = 10848 value = 421 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 422 } } type = remove_division which = 10848 value = 422 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 423 } } type = remove_division which = 10848 value = 423 }\r
++	command = { type = removecore which = 2773 }\r
++	command = { type = removecore which = 2787 }\r
++	command = { type = removecore which = 2788 }\r
++	command = { type = removecore which = 2790 }\r
++	command = { type = removecore which = 2796 }\r
++	command = { type = removeclaim which = 2773 }\r
++	command = { type = removeclaim which = 2787 }\r
++	command = { type = removeclaim which = 2788 }\r
++	command = { type = removeclaim which = 2790 }\r
++	command = { type = removeclaim which = 2796 }\r
++	command = { type = secedeprovince which = AXI value = 2773 }\r
++	command = { type = secedeprovince which = AXI value = 2787 }\r
++	command = { type = secedeprovince which = AXI value = 2788 }\r
++	command = { type = secedeprovince which = AXI value = 2790 }\r
++	command = { type = secedeprovince which = AXI value = 2796 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 撤退しかない\r
++	name = "ACTIONNAME2991405A"\r
++	trigger = { country = UD6 }\r
++	command = { type = dissent value =5 }\r
++	command = { trigger = { division_exists = { type = 14530 id = 64 } } type = remove_division which = 14530 value = 64 }\r
++	command = { trigger = { division_exists = { type = 14530 id = 65 } } type = remove_division which = 14530 value = 65 }\r
++	command = { type = removecore which = 1550 }\r
++	command = { type = removeclaim which = 1550 }\r
++	command = { type = secedeprovince which = AXI value = 1550 }\r
++	ai_chance = 100\r
++	}\r
+ }
+\ No newline at end of file

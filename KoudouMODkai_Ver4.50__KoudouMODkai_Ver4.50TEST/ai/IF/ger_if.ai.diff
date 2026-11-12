@@ -1,0 +1,319 @@
+--- A/ai/IF/ger_if.ai [cp932]
++++ B/ai/IF/ger_if.ai [cp932]
+@@ -186,23 +186,6 @@ tech_sharing = {
+ 	embargo = { U14 }\r
+ 	not = { }\r
+ 	prioritized = {\r
+-		#\r
+-		6010 = 500\r
+-		6020 = 500\r
+-		6030 = 500\r
+-		6040 = 500\r
+-		6050 = 500\r
+-		6060 = 500\r
+-		6070 = 500\r
+-		6080 = 500\r
+-		6090 = 500\r
+-		6100 = 500\r
+-		14050 = 500\r
+-		\r
+-		\r
+-		\r
+-		\r
+-		\r
+ 		# Agriculture\r
+ 		5700 = 100\r
+ 		5710 = 100\r
+@@ -353,7 +336,7 @@ spyprefs =
+ 		steal_blueprint 	= 1\r
+ 		minister_assassination 		= 1\r
+ 		smear_campaign 		= 4\r
+-		coup 				= 0\r
++		coup 				= 1\r
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans 	= 0\r
+@@ -392,7 +375,7 @@ spyprefs =
+ 		steal_blueprint 	= 0\r
+ 		minister_assassination 		= 0\r
+ 		smear_campaign 		= 0\r
+-		coup 				= 0\r
++		coup 				= 5\r
+ 		sabotage_industry 	= 0\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans 	= 0\r
+@@ -418,7 +401,7 @@ spyprefs =
+ 		steal_blueprint 	= 0\r
+ 		minister_assassination 		= 0\r
+ 		smear_campaign 		= 0\r
+-		coup 				= 0\r
++		coup 				= 5\r
+ 		sabotage_industry 	= 0\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans 	= 0\r
+@@ -431,7 +414,7 @@ spyprefs =
+ # Construction and Tech Research\r
+ ###################################\r
+ construction = { \r
+-	max_factor = 0.9 #.8\r
++	max_factor = 0.7\r
+ \r
+    	AA_batteries = atwar \r
+ 	max_AA_level = 6 \r
+@@ -492,8 +475,8 @@ construction = {
+ 	}\r
+ \r
+ 	ic_at_war = no\r
+-	force_ic_until = 1939\r
+-	ic_end_year = 1940\r
++	force_ic_until = 1937\r
++	ic_end_year = 1938\r
+ 	IC_provs = {\r
+ 		127 # Saarburken\r
+ 		179 # Munchen\r
+@@ -511,53 +494,53 @@ construction = {
+ \r
+ military = { \r
+ 	relative_build_scheme 	= no\r
+-	max_batch_peace			= 1500 #540 \r
+-	max_batch_war 			=  400 #320 \r
+-	max_batch_home_front = 300\r
++	max_batch_peace			= 720 #540 \r
++	max_batch_war			= 360 #320 \r
++	max_batch_home_front	= 180\r
+ 	extra_convoys_war		= 0.0000 \r
+ 	extra_convoys_peace		= 0.0000\r
+ \r
+ 	#### Divisions etc...\r
+-	infantry			= 20		#33\r
++	infantry			= 17		#33\r
+ 	cavalry				= 0\r
+-	motorized			= 0		#5\r
+-	mechanized			= 0		#4\r
+-	light_armor			= 0\r
+-	armor				= 0		#10\r
+-	paratrooper			= 0		#0\r
++	motorized			= 5		#5\r
++	mechanized			= 4		#4\r
++	light_armor			= 4\r
++	armor				= 4		#10\r
++	paratrooper			= 3		#0\r
+ 	marine				= 0\r
+ 	bergsjaeger			= 0		#1\r
+ 	garrison			= 0		#5\r
+ 	hq					= 3		#4\r
+ 	militia				= 0\r
+-#				8 #62 %\r
+-\r
+-	interceptor			= 7		#4\r
+-	multi_role			= 10\r
+-	cas					= 7\r
+-	strategic_bomber	= 5\r
+-	tactical_bomber		= 7		#5\r
+-	naval_bomber		= 6		#2\r
++#				70 #62 %\r
++\r
++	interceptor			= 16		#4\r
++	multi_role			= 11\r
++	cas					= 8\r
++	strategic_bomber	= 6\r
++	tactical_bomber		= 8		#5\r
++	naval_bomber		= 1		#2\r
+ 	transport_plane		= 0\r
+ 	flying_bomb			= 0\r
+ 	flying_rocket		= 0 	#0\r
+-#				51 #19 %\r
++#				20 #19 %\r
+ \r
+-	battleship			= 6		#0\r
+-	carrier				= 5\r
++	battleship			= 1		#0\r
++	carrier				= 1\r
+ 	escort_carrier		= 0		#0\r
+ 	destroyer			= 3		#4\r
+ 	light_cruiser		= 2		#3\r
+ 	heavy_cruiser		= 2\r
+-	battlecruiser		= 3\r
++	battlecruiser		= 0\r
+ 	submarine			= 1		#10\r
+-	nuclear_submarine	= 10\r
+-	transports			= 3		#2\r
+-#				41 #19 %\r
++	nuclear_submarine	= 0\r
++	transports			= 0		#2\r
++#				10 #19 %\r
+ \r
+ 	#### Brigades\r
+ 	artillery			= 30	#30\r
+-	sp_artillery			= 36		#8\r
++	sp_artillery			= 6		#8\r
+ 	cavalry_brigade	= 2		#0 #Cav Brigade\r
+ 	sp_anti_air	= 2		#0\r
+    	medium_armor			= 2		#0 #Med. Tank\r
+@@ -692,6 +675,70 @@ technology = {
+ 		5190 5200 5210 5220 5230 5240 53020\r
+ 	} \r
+ 	ignore 		= {\r
++		# Self-Propelled Anti-Air\r
++		22910 22920\r
++		\r
++		# Strategic bombers\r
++		# 4800 4810 4820 4220 4230 4240 4246 15160 15170 16030\r
++\r
++		# Aircraft CarriersAir groups\r
++		# 4900 4910 4920 4930\r
++		\r
++		# Destroyers\r
++		# 12000 3080\r
++		\r
++		# Light Cruiser\r
++		12010 3170\r
++\r
++		# Heavy Cruiser\r
++		12020 3270\r
++\r
++		# Battlecruisers\r
++		3350 12030\r
++\r
++		# Battleship\r
++		# 3480 12040 3490\r
++\r
++		# Carrier\r
++		# 3520 3530\r
++		\r
++		# Transport\r
++		# 3840\r
++		\r
++		# ASW_EQUIPMENT\r
++		3910 3920\r
++\r
++		# Light Carrier\r
++		12120 12130\r
++\r
++		# Escort Fighters\r
++		# 4080 4110\r
++\r
++		# Nuclear\r
++		# 5490 5500 5510\r
++		\r
++		# radar\r
++		# 5417 5420\r
++		\r
++		#EQUIPMENT Winter Jungle Desert Sturdy\r
++		5920 5930 5940 5950 5960 5970 5980 5990\r
++		\r
++		# Subsidiary Carrier Role\r
++		81650\r
++\r
++		# Amphibious Warfare\r
++		#82300 82310 \r
++\r
++		# Logistic Support\r
++		82500 82510 \r
++		\r
++		# Anti-Submarine Patrols\r
++		8200 8210 8220 8230 8240 8250 8260 8300 8310 8320 8330 8340 8350 \r
++\r
++		# Strategic Destruction - Flying Armada\r
++		#9140 \r
++		9150 9160 9170 9180 9430 9440 9450 9460\r
++\r
+ 		# 歩兵直協戦車戦術\r
+ 		6920\r
+ 	}\r
+@@ -788,11 +835,11 @@ front = {
+ 	reserve_prop		= 0.1\r
+ 	panic_ratio_vs_ai	= 1.75\r
+ 	panic_ratio_vs_human	= 1.25\r
+-	base_attack_odds	= 0.92 #1.02\r
++	base_attack_odds	= 1.02\r
+ 	min_attack_odds		= 1.001\r
+ 	max_attack_odds		= 2.0\r
+ 	reinforce_odds		= 1.02\r
+-	withdraw_odds		= 0.5\r
++	withdraw_odds		= 0.95\r
+ \r
+ 	strength 	= 1.0\r
+ 	organisation 	= 1.0\r
+@@ -841,16 +888,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30000.0\r
+-	groundattackdesirability 		= 40000.0\r
+-	inderdictiondesirability 		= 20000\r
+-	logisticalstrikedesirability 		= 2000\r
+-	runwaycrateringdesirability 		= 10000\r
+-	strategicstrikedesirability 		= 10000\r
+-	installationstrikedesirability 		= 5000\r
+-	navalstrikedesirability 		= 15000\r
+-	portstrikedesirability 		= 9000\r
+-	convoyraiddesirability 		= 9000\r
++	airsuperioritydesirability 		= 30.0\r
++	groundattackdesirability 		= 40.0\r
++	inderdictiondesirability 		= 20.0\r
++	logisticalstrikedesirability 	= 2.0\r
++	runwaycrateringdesirability 	= 10.0\r
++	strategicstrikedesirability 	= 10.0\r
++	installationstrikedesirability 	= 5.0\r
++	navalstrikedesirability 		= 15.0\r
++	portstrikedesirability 			= 9.0\r
++	convoyraiddesirability			= 9.0\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -872,7 +919,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+@@ -945,31 +992,31 @@ admiral = {
+ \r
+ 	ignore = {\r
+ 		#England/France border Sea Areas\r
+-		#"English Channel"\r
+-		#"Bay of Biscay"\r
+-		#"Cape Finisterre"\r
++		"English Channel"\r
++		"Bay of Biscay"\r
++		"Cape Finisterre"\r
+ 		\r
+ 		#Spanish Coase (Atlantic Side)\r
+-		#"Portugese Coast"\r
+-		#"Cap St Vincent"\r
++		"Portugese Coast"\r
++		"Cap St Vincent"\r
+ 		\r
+ 		#Iceland\r
+-		#"Faroes Gap"\r
+-		#"Denmark Strait"\r
++		"Faroes Gap"\r
++		"Denmark Strait"\r
+ 		\r
+ 		#Ireland/West Coast of England\r
+-		#"Irish Sea"\r
+-		#"The Hebreides"\r
+-		#"Irish West Coast"\r
++		"Irish Sea"\r
++		"The Hebreides"\r
++		"Irish West Coast"\r
+ 		\r
+ 		#Greenland\r
+-		#"Greenland Coast"\r
+-		#"Northern Sea of Labrador" \r
+-		#"Southern Sea of Labrador"\r
++		"Greenland Coast"\r
++		"Northern Sea of Labrador" \r
++		"Southern Sea of Labrador"\r
+ 		\r
+ 		#Canada East Coast\r
+ 		"Hudson Bay"\r
+-		#"Grand Banks"\r
++		"Grand Banks"\r
+ 		"Canadian Maritimes"\r
+ \r
+ 		#Caribbean Sea and Guilf of Mexico\r

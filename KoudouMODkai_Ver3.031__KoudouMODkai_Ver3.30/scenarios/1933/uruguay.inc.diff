@@ -1,0 +1,316 @@
+--- A/scenarios/1933/uruguay.inc [cp932]
++++ B/scenarios/1933/uruguay.inc [cp932]
+@@ -1,150 +1,169 @@
+- \r
+- ############################## \r
+- # Country definition for URU # \r
+- ############################## \r
+-  \r
+- ##################### \r
+- # Country main data # \r
+- ##################### \r
+-  \r
+- country = \r
+- {  tag                    = URU \r
+-	ai = "uru_1936.ai"\r
+-	ai_settings	= { flags = { MOB1 = yes MOB2 = yes } }\r
+-	dissent = 20\r
+-	# Resource Reserves \r
+-	energy                 = 480\r
+-	metal                  = 240\r
+-	rare_materials         = 120\r
+-	transports = 10\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 10 \r
+-	capital                = 2052 \r
+-	manpower               = 2 \r
+-      \r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 5 \r
+-     political_left    = 2 \r
+-     freedom           = 5 \r
+-     free_market       = 5 \r
+-     professional_army = 2 \r
+-     defense_lobby     = 4 \r
+-     interventionism   = 1 \r
+-    } \r
++##############################\r
++# Country definition for URU #\r
++##############################\r
+ \r
+-   nationalprovinces      = {  2051 2052  } \r
+-   ownedprovinces         = {  2051 2052  } \r
+-   controlledprovinces    = {  2051 2052  } \r
+-   # ROTW Minor Tech '36 \r
+-   # Group D 1936 techs \r
+-   # ###################### \r
+-   # GW fighter \r
+-   techapps               = {  \r
+- #Interwar Fighter  \r
+- 4500 4510 4520 4530 4540 4550 4010\r
+-#Basic Armoured Car  \r
+-2860 2870 2880 2020\r
+-#Great War Heavy Field Artillery \r
+-2290 2300 2310\r
+-#SW Tank \r
+-7600 7610\r
+-#Great War Infantry Division  \r
+-1010  1020 1030 1040 1050 1060 \r
+-#Interbellum 1930 Supply \r
+-1910 1920 1930 1940 1950 1960\r
+-#Great War Cavalry Division  \r
+-13060 13070 13080 1310 1320 1330 1340 \r
+-#Early Mountain Division \r
+-1160  1170 1180 1190 1200 1210 1220 1230 1240   \r
+-#Early Static Anti-Air Artillery \r
+-2800 2450 21180 21190\r
+-#Basic Anti-Air Artillery Brigade \r
+-2810 2820 2510\r
+-#Mechanized Agriculture\r
+-5700 5710 5010 5020\r
+-#Manufactoring\r
+-5810 5820 5050\r
+-#Improved Construction Engineering\r
+-5800 5080  \r
+-#Basic Oil Refining\r
+- #5190 \r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+- #Naval Infantry\r
+-#1560 1570\r
+-#Engineers\r
+-1830 1840 1850 \r
+-#Medicine\r
+-5600 5610 \r
+-#Torpedo & ASW 18\r
+-3720 3730 3736 3740 3750 3900\r
+-#Troopships\r
+-3810\r
+-# Land Doctrines WWI - Entente line\r
+-6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-#Landdoctrine ww2 - none?\r
++country = {\r
++  tag                = URU\r
++  ai                 = "uru_1936.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes } }\r
++  capital            = 2052 # モンテビデオ\r
++  dissent            = 20\r
++  manpower           = 2\r
++  # Resource Reserves\r
++  energy         = 480\r
++  metal          = 240\r
++  rare_materials = 120\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 10\r
++  transports     = 10\r
+ \r
+-#Air Doctrines - ww2 techs\r
+-27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010\r
++  diplomacy = {\r
++    relation = { tag = ARG value = -50 }\r
++    relation = { tag = BOL value = 10 }\r
++    relation = { tag = BRA value = 125 }\r
++    relation = { tag = CHL value = 20 }\r
++    relation = { tag = COL value = 10 }\r
++    relation = { tag = ECU value = 10 }\r
++    relation = { tag = PAR value = 20 }\r
++    relation = { tag = PRU value = 25 }\r
++    relation = { tag = SOV value = -100 }\r
++    relation = { tag = USA value = 100 }\r
++    relation = { tag = VEN value = 10 }\r
++  }\r
++  SpyInfo                = { country = "URU" NumberOfSpies = 4 }\r
+ \r
+-} \r
+-inventions = { 3000027 }\r
+-   diplomacy = \r
+-   {  relation = {  tag = ARG value = -50  } \r
+-     relation = {  tag = BOL value = 10  } \r
+-     relation = {  tag = BRA value = 125  } \r
+-     relation = {  tag = CHL value = 20  } \r
+-     relation = {  tag = COL value = 10  } \r
+-     relation = {  tag = ECU value = 10  } \r
+-     relation = {  tag = PAR value = 20  } \r
+-     relation = {  tag = PRU value = 25  } \r
+-     relation = {  tag = SOV value = -100  } \r
+-     relation = {  tag = USA value = 100  } \r
+-     relation = {  tag = VEN value = 10  } \r
+-    } \r
+-   SpyInfo                = {  country = "URU" NumberOfSpies = 4  } \r
+-   headofstate            = {  type = 9 id = 195001  } \r
+-   headofgovernment       = {  type = 9 id = 195002  } \r
+-   foreignminister        = {  type = 9 id = 195003  } \r
+-   armamentminister       = {  type = 9 id = 195004  } \r
+-   ministerofsecurity     = {  type = 9 id = 195005  } \r
+-   ministerofintelligence = {  type = 9 id = 195006  } \r
+-   chiefofstaff           = {  type = 9 id = 195007  } \r
+-   chiefofarmy            = {  type = 9 id = 195008  } \r
+-   chiefofnavy            = {  type = 9 id = 195009  } \r
+-   chiefofair             = {  type = 9 id = 195010  } \r
+-   landunit = \r
+-   {  id       = {  type = 13700 id = 1  } \r
+-     name     = "ウルグアイ陸軍" \r
+-     location = 2052 \r
+-     Division = \r
+-     {  id       = {  type = 13700 id = 2  } \r
+-       name     = "第1歩兵旅団" \r
+-       strength = 25 \r
+-       type     = infantry \r
+-	   model    = 6\r
+-      } \r
+-	  Division = \r
+-     {  id       = {  type = 13700 id = 3  } \r
+-       name     = "第2歩兵旅団" \r
+-       strength = 25\r
+-       type     = infantry\r
+-	   model    = 6\r
+-      } \r
++  nationalprovinces      = { 2051 2052 }\r
++  ownedprovinces         = { 2051 2052 }\r
++  controlledprovinces    = { 2051 2052 }\r
++\r
++  techapps               = { 4500 4510 4520 4530 4540 4550 4010 2860 2870 2880 2020 2290 2300 2310 7600 7610 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 1240 2800 2450 21180 21190 2810 2820 2510 5700 5710 5010 5020 5810 5820 5050 5800 5080 1830 1840 1850 5600 5610 3720 3730 3736 3740 3750 3900 3810 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 \r
++}\r
++  inventions             = { 3000027 }\r
++\r
++\r
++  policy = {\r
++    date              = { year = 9999 month = january day = 0 }\r
++    democratic        = 5\r
++    political_left    = 2\r
++    freedom           = 5\r
++    free_market       = 5\r
++    professional_army = 2\r
++    defense_lobby     = 4\r
++    interventionism   = 1\r
++  }\r
++  headofstate            = { type = 9 id = 195001 } # ガブリエル・テラ\r
++  headofgovernment       = { type = 9 id = 195002 } # ガブリエル・テラ\r
++  foreignminister        = { type = 9 id = 195003 } # ホセ・エスパルテル\r
++  armamentminister       = { type = 9 id = 195004 } # アルフレド・バルドミル\r
++  ministerofsecurity     = { type = 9 id = 195005 } # ハインツ・グロッケンバーガー\r
++  ministerofintelligence = { type = 9 id = 195006 } # クリスティアノ・ピラグイ・トレリェス\r
++  chiefofstaff           = { type = 9 id = 195007 } # マヌエル・エインス・アスプルア\r
++  chiefofarmy            = { type = 9 id = 195008 } # ホルヘ・エリオ・メンドーサ\r
++  chiefofnavy            = { type = 9 id = 195009 } # カルロス・ジャクソン・ウリベ\r
++  chiefofair             = { type = 9 id = 195010 } # コスメ・アルバレス・ベリッソ\r
++\r
++  landunit = {\r
++    id       = { type = 13700 id = 1 }\r
++    name     = "ウルグアイ陸軍"\r
++    location = 2052\r
++    division = {\r
++      id             = { type = 13700 id = 2 }\r
++      name           = "第1歩兵旅団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 25\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 3 }\r
++      name           = "第2歩兵旅団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 25\r
++    }\r
++  }\r
++\r
++  navalunit = {\r
++    id       = { type = 13700 id = 4 }\r
++    name     = "ウルグアイ海軍"\r
++    location = 2052\r
++    base     = 2052\r
++    division = {\r
++      id             = { type = 13700 id = 5 }\r
++      name           = "ROU モンテビデオ"\r
++      type           = light_cruiser\r
++      model          = 0\r
++    }\r
++  }\r
++\r
++  airunit = { \r
++    id       = { type = 13700 id = 6 }\r
++    name     = "A"\r
++    location = 2052\r
++    base     = 2052\r
++    division = {\r
++      id             = { type = 13700 id = 7 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 8 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 9 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 10 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 11 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 12 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 13 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++    division = {\r
++      id             = { type = 13700 id = 14 }\r
++      name           = "A"\r
++      type           = multi_role\r
++      model          = 13\r
++    }\r
++  }\r
++  airunit = { \r
++    id       = { type = 13700 id = 15 }\r
++    name     = "A"\r
++    location = 2052\r
++    base     = 2052\r
++    division = {\r
++      id             = { type = 13700 id = 23 }\r
++      name           = "A"\r
++      type           = strategic_bomber\r
++      model          = 9\r
+     }\r
+-	\r
+-	navalunit = { \r
+-		id = { type = 13700 id = 4 } \r
+-		name = "ウルグアイ海軍" \r
+-		location = 2052 \r
+-		base = 2052 \r
+-		division = { \r
+-			id = { type = 13700 id = 5 } \r
+-			name = "ROU モンテビデオ" \r
+-			type = light_cruiser\r
+-			model = 0 \r
+-			} 	\r
+-  } \r
+- \r
++  }\r
+ }\r

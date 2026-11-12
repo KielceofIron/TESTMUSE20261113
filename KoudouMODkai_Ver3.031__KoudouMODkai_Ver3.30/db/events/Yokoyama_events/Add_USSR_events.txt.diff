@@ -1,0 +1,132 @@
+--- A/db/events/Yokoyama_events/Add_USSR_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Add_USSR_events.txt [cp932]
+@@ -381,7 +381,6 @@ event = {
+ 	trigger = {\r
+ 	dissent = 10\r
+ 	OR = { \r
+-	ideology = left_wing_radical\r
+ 	government = democratic\r
+ 	government = fascist\r
+ 	}\r
+@@ -583,13 +582,6 @@ event = {
+ 	command = { type = sleepminister which = 30046 }\r
+ 	command = { type = sleepminister which = 30076 }\r
+ 	command = { type = sleepminister which = 30144 }\r
+-	command = { type = sleepminister which = 30017 } # ベリヤ\r
+-	command = { type = sleepminister which = 30028 }\r
+-	command = { type = sleepminister which = 30005 } # ゲンリフ・G・ヤゴーダ\r
+-	command = { type = sleepminister which = 30015 } # ニコライ・I・エジョフ\r
+-	command = { type = sleepminister which = 30019 }\r
+-	command = { type = sleepminister which = 30026 }\r
+-	command = { type = sleepminister which = 30032 }\r
+ 	command = { type = sleepevent which = 2007108 } # First Political Purges\r
+ 	command = { type = sleepevent which = 2007025 } # The Great Purge\r
+ 	ai_chance = 100\r
+@@ -1576,6 +1568,15 @@ event = {
+ 	command = { type = dissent value = -5 }\r
+ 	command = { trigger = { NOT = { year = 1938 } } type = ministerofsecurity which = 30214 } # ゲンリフ・G・ヤゴーダ\r
+ 	command = { trigger = { year = 1938 } type = ministerofsecurity which = 30214 } # ニコライ・I・エジョフ\r
++	command = { type = sleepevent which = 1410001 }\r
++	command = { type = sleepevent which = 1410002 }\r
++	command = { type = sleepevent which = 1410003 }\r
++	command = { type = sleepevent which = 1410004 }\r
++	command = { type = sleepevent which = 1410005 }\r
++	command = { type = sleepevent which = 1410007 }\r
++	command = { type = sleepevent which = 1410008 }\r
++	command = { type = sleepevent which = 1410009 }\r
++	command = { type = sleepevent which = 1410010 }\r
+ 	ai_chance = 100 \r
+ 	}\r
+ \r
+@@ -2242,6 +2243,7 @@ event = {
+ 	minister = 30306\r
+ 	}\r
+ 	NOT = { ispuppet = SOV }\r
++	random = 10\r
+ 	}\r
+ \r
+ 	name = "EVT_120_NAME"\r
+@@ -2250,7 +2252,7 @@ event = {
+  	picture = "news_paper"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 10\r
++	offset = 30\r
+ 	deathdate = { day = 29 month = 11 year = 1942 }\r
+ \r
+ 	action = { # クーデター成功\r
+@@ -2514,6 +2516,74 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++# 　日ソ戦争における敗北\r
++# 日ソの国境における大小さまざまの火花が、充満した総力戦の火元に引火したのは何時の事であっただろうか。\r
++# 結果から言うと、ソビエト連邦は自ら敗北を招いたのである。\r
++# 秘密警察による無軌道な粛清は極東地域における指揮系統を分断し、最も先進的な機械化軍団によって守られていると謳われていた満ソの国境は、日本軍ではなく、ソ連指導部のペンによって撃滅されたのである。\r
++# モスクワが前線の地図を引き直したころには、日本軍はシベリアの奥地にたどり着いていた。\r
++# 国内における不満の拡大、後門の欧州方面のざわめきを聞きつけて、ソビエト連邦は和平を決断した。\r
++# シベリアを切り捨てることで、一時の時間を稼ごうとしたのである。\r
++# 確かにこれは日本軍の進撃を止めるのに役に立ったが、今や人民はソ連指導部の手腕とプロパガンダを全く信用しなくなっている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 1410027\r
++	random = no\r
++	country = SOV\r
++\r
++	trigger = {\r
++	NOT = { event = 2007033 } # The Bitter Peace\r
++	event = 1410016 # スターリン主義の追放\r
++	event = 1330120022 # 新彊条約\r
++	NOT = { ispuppet = SOV }\r
++	}\r
++\r
++	name = "EVT_1410027_NAME"\r
++	desc = "EVT_1410027_DESC"\r
++	style = 2\r
++	picture = "strikesruspetro1"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1941 }\r
++\r
++	action = { # 反動分子は徹底して取り締まれ！\r
++	name = "ACTIONNAME1410027A"\r
++	command = { type = dissent value = 10 }\r
++	command = { type = industrial_modifier which = total value = -15 }\r
++	command = { type = peacetime_ic_mod value = -20 }\r
++	command = { type = peacetime_ic_mod value = -20 }\r
++	command = { type = event which = 1410028 where = SOV when = 3600 }\r
++	ai_chance = 100 \r
++	}\r
++}\r
++\r
++#########################################################################\r
++# 　日ソ戦争における敗北からの立て直し\r
++# 日ソ戦争における敗北から、我が国はようやく立ち直りつつある…\r
++#########################################################################\r
++\r
++event = {\r
++	id = 1410028\r
++	random = no\r
++	country = SOV\r
++\r
++	name = "EVT_1410028_NAME"\r
++	desc = "EVT_1410028_DESC"\r
++	style = 2\r
++	picture = "strikesruspetro1"\r
++\r
++	action = { # 立て直した\r
++	name = "ACTIONNAME1410028A"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = industrial_modifier which = total value = 15 }\r
++	command = { type = peacetime_ic_mod value = 20 }\r
++	command = { type = peacetime_ic_mod value = 20 }\r
++	ai_chance = 100 \r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  突然の政府交代（NKVDルート）\r
+ #########################################################################\r

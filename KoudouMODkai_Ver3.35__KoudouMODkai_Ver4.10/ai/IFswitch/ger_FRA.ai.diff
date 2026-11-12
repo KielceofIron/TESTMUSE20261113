@@ -1,0 +1,94 @@
+--- A/ai/IFswitch/ger_FRA.ai [cp932]
++++ B/ai/IFswitch/ger_FRA.ai [cp932]
+@@ -3,7 +3,7 @@
+ switch = no # [yes/no]\r
+ max_front_ratio = 1.5 \r
+ max_front_ratios = {\r
+-	FRA = 1\r
++	FRA = -1\r
+ 	UTC = 30\r
+ 	UB8 = 10\r
+ }\r
+@@ -13,27 +13,25 @@ neutrality = 130 # 90.000
+ war = 0\r
+ ferocity = no\r
+ desperation = 0.65\r
+-reinforcement = 0.0  \r
+-upgrading = 0.1  \r
+ strat_redeploy_threshold = 50\r
+ max_redeploying = 0.05\r
+ exp_force_ratio = 0.3\r
+-exp_force_ratios = { POL = 0.8 HOL = 0.8 } \r
++exp_force_ratios = { POL = 0.8 HOL = 0.8 UB8 = 0 } \r
+ no_exp_forces_to = { JAP SIA MAN FRA }\r
+ \r
+ \r
+ target = { \r
+ #	#Austria\r
+-	#143 = 80 # Lech\r
+-	#186 = 80 # Freistadt\r
+-	#188 = 80 # Eisenstadt\r
+-	#189 = 80 # Innsbruck\r
++	143 = 80 # Lech\r
++	186 = 80 # Freistadt\r
++	188 = 80 # Eisenstadt\r
++	189 = 80 # Innsbruck\r
+ 	192 = 80 # Salzburg\r
+-	#191 = 80 # Klagenfurt\r
+-	#187 = 80 # Linz\r
+-	#194 = 80 # Hollabrunn\r
++	191 = 80 # Klagenfurt\r
++	187 = 80 # Linz\r
++	194 = 80 # Hollabrunn\r
+ 	195 = 180 # Vienna\r
+-	#190 = 80 # Graz\r
++	190 = 80 # Graz\r
+ \r
+ 	#Czech\r
+ 	200 = 60 # Liberec\r
+@@ -150,9 +148,6 @@ construction = {
+ 	max_land_level = 6\r
+ 	fort_borders = { }\r
+ 	fort_provs	= {\r
+-		127 # Saarburken\r
+-		132 # Freiburg\r
+-		130 # Mainz\r
+ 	}\r
+ \r
+ 	ic_at_war = no\r
+@@ -373,7 +368,7 @@ garrison = {
+ 	human_border		= 0	# Ignored for allied human players\r
+ 	war_target		= 10	# The next country targeted for attack by this AI\r
+ 	\r
+-	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"\r
++	opposing_alliance	= 1	# For neutrals, all alliances are "opposing"\r
+ 	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+ 	unstable_border		= 30	# Bordering countries at war with someone else get this\r
+ \r
+@@ -383,6 +378,8 @@ garrison = {
+ 		ITA = 1\r
+ 		SCH = 1\r
+ 		ENG = -1\r
++		U14 = -1\r
++		SER = -1\r
+ 		AUS = 10\r
+ 		CZE = 75\r
+ 		POL = 100\r
+@@ -391,7 +388,7 @@ garrison = {
+ 		BEL = 25\r
+ 		DEN = 25\r
+ 		UTC = 150\r
+-		FRA = 1\r
++		FRA = -1\r
+ 		UB8 = 100\r
+ 		HOL = 20\r
+ 	}\r
+@@ -478,7 +475,7 @@ garrison = {
+ }\r
+ front = { \r
+ 	recklessness 		= 2 # 0-3\r
+-	distrib_vs_ai 		= offensive\r
++	distrib_vs_ai 		= defensive\r
+ 	distrib_vs_human 	= even\r
+ \r
+ 	enemy_reinf_days	= 6\r

@@ -1,0 +1,352 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Spain_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Spain_events.txt [cp932]
+@@ -4,6 +4,7 @@
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
++###スペイン\r
+ #id = 2152001 スペイン内戦\r
+ #id = 2152002 スペイン内戦 ― 全体主義国家\r
+ #id = 2152003 スペイン内戦 ― 革命国家\r
+@@ -33,8 +34,8 @@
+ #id = 2152303 内戦からの復興 ― 国情の回復（SPR）\r
+ ###スペイン左派独裁\r
+ #id = 2152401 内戦からの復興（U35）\r
+-#id = 2152302 内戦からの復興 ― 再建の進展（U35）\r
+-#id = 2152303 内戦からの復興 ― 国情の回復（U35）\r
++#id = 2152402 内戦からの復興 ― 再建の進展（U35）\r
++#id = 2152403 内戦からの復興 ― 国情の回復（U35）\r
+ ###義勇兵派遣イベント\r
+ #id = 2152501 スペイン内戦 ― 介入（GER）\r
+ #id = 2152502 スペイン内戦 ― ドイツの介入\r
+@@ -62,6 +63,14 @@
+ #id = 2152524 スペイン内戦 ― ソ連の介入\r
+ #id = 2152525 スペイン内乱の終結 ― 重要な経験（SOV）\r
+ #id = 2152526 スペイン内乱の終結 ― 貴重な経験（SOV）\r
++###ポルトガル\r
++#id = 2152601 ポルトガル第二王政\r
++#id = 2152602 経済回復政策\r
++#id = 2152603 失業率15パーセント低下\r
++#id = 2152604 国家防衛秘密警察の創設\r
++#id = 2152605 国王暗殺未遂事件\r
++#id = 2152606 ポルトガルが犯人引き渡しを要求\r
++#id = 2152607 スペインが犯人を引き渡す\r
+ #########################################################################\r
+ #  スペイン\r
+ ##########################################################################\r
+@@ -3632,4 +3641,314 @@ event = {
+ 	command = { type = money value = 250 }\r
+ 	command = { type = sleepevent which = 2152525 } # スペイン内乱の終結 ― 重要な経験\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  ポルトガル\r
++##########################################################################\r
++#  ポルトガル第二王政\r
++# 12世紀にポルトガル王国が成立し、その後は海外へと植民地を獲得して隆盛を極めた。\r
++# しかしナポレオン戦争で王制は動揺し、1910年に起きた共和革命により王政が打倒された\r
++# だが、新たに樹立された共和政府は行き着く暇もなく、イギリスとの同盟に基づき第一次世界大戦に参戦する。\r
++# アフリカの植民地やフランスにおける戦いで、お粗末な軍隊・経済をさらけ出し、簒奪者のメンツをつぶすには十分な敗北を重ねた。\r
++# 戦後の1921年、軍が反乱を起こして王政復古を支持したため、共和政府はあっけなく崩壊し、ポルトガルは再び王冠を頂く国家となった。\r
++# 亡命先のイギリスから帰国したマヌエル2世は、後継者にドゥアルテ・ヌノを指名し、王政の盤石化を図るも、不安定な経済は長く続いた。\r
++# 1929年の世界恐慌では、深刻な政治危機を引き起こし、マヌエル・ゴメス・ダ・コスタ将軍のクーデター未遂事件も起こるなど、\r
++# さらなる混乱がポルトガルを襲おうとしている。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 2152601\r
++	random = no\r
++	country = POR\r
++\r
++	trigger = {\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_2152601_NAME"\r
++	desc = "EVT_2152601_DESC"\r
++	style = 2\r
++  	picture = "scw"\r
++\r
++	date = { day = 4 month = 2 year = 1933 }\r
++\r
++	action = { # 再び甦れ、ポルトガルの栄光よ\r
++	name = "ACTIONNAME2152601A"\r
++	command = { }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  経済回復政策\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2152602\r
++	random = no\r
++	country = POR\r
++	save_date = yes\r
++	\r
++	decision = {\r
++	atwar = no\r
++	}\r
++\r
++	decision_trigger = {\r
++	money = 300\r
++	}\r
++\r
++	trigger = {\r
++	atwar = no\r
++	random = 35\r
++	}\r
++	\r
++	name = "2011038name"\r
++	desc = "2011038desc"\r
++	style = 2\r
++	picture = "new_deal"\r
++	decision_picture = "decision_new_deal"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 18\r
++	deathdate = { day = 29 month = 11 year = 1935 }\r
++\r
++	action = { # 強固な経済を必要としている\r
++	name = "2011038a"\r
++	command = { type = peacetime_ic_mod value = 10 }\r
++	command = { type = wartime_ic_mod value = 10 }\r
++	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = dissent value = -3 }\r
++	command = { trigger = { ai = no } type = money value = -300 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  失業率15パーセント低下\r
++# 最近の報告書は、失業率が著しく減少したと強調しています。\r
++# このことは、我が国の景気回復政策が一定の成果を上げたことを示しています。\r
++# 我が政府は、国民の信頼を回復し、景気回復は我が国の成長に刺激を与えるでしょう。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2152603\r
++	random = no\r
++	country = POR\r
++	\r
++	trigger = {\r
++	event = 2152602 # 経済回復政策\r
++	random = 15\r
++	}\r
++	\r
++	name = "2049092name"\r
++	desc = "2049092desc"\r
++	style = 2\r
++	picture = "Unemployment_rate"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # まあまあだな\r
++	name = "2049092a"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = research_mod value = 5 }\r
++	command = { type = gain_tech which = -1 }\r
++	command = { type = gain_tech which = -2 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  国家防衛秘密警察の創設\r
++# ポルトガルの治安は年々悪化しており、共産主義者・社会主義者・共和主義者・フリーメイソンが陰謀を張り巡らしている。\r
++# そこで秘密警察を創設することが議論されてきたが、この組織には政治部門と国際部門の2つの部門がある。\r
++# 政治部門は政治犯罪を防ぎ、国際部門は移民を監視し、反体制派を追放することで国家をスパイから守ることが可能となる。\r
++# 創設するべきだろうか？\r
++# （史実において、非常に保守的な権威主義体制を築いたアントニオ・サラザールは、\r
++# 1933年にドイツとイタリアから顧問を招聘し、「国家防衛秘密警察」と称する秘密警察を創設した。\r
++# この秘密警察は反体制派への弾圧に猛威を揮い、1945年以降は「国家防衛警察」と呼ばれた。）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 2152604\r
++	random = no\r
++	country = POR\r
++\r
++	decision = {\r
++	NOT = { ispuppet = POR }\r
++	}\r
++\r
++	decision_trigger = {\r
++	NOT = { ispuppet = POR }\r
++	manpower = 5\r
++	supplies = 1000\r
++	money = 100\r
++	}\r
++\r
++	trigger = {\r
++	NOT = { ispuppet = POR }\r
++	random = 25\r
++	}\r
++\r
++	name = "EVT_2152604_NAME"\r
++	desc = "EVT_2152604_DESC"\r
++	style = 2\r
++	picture = "okhrana"\r
++	decision_picture = "decision_NKVD"\r
++\r
++	date = { day = 1 month = 6 year = 1933 }\r
++	offset = 100\r
++	deathdate = { day = 29 month = 11 year = 1936 }\r
++\r
++	action = { # これは我々の州に安全をもたらすだろう!\r
++	name = "ACTIONNAME2152604A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = domestic which = democratic value = -1 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = manpowerpool value = -5 }\r
++	command = { type = supplies value = -500 }\r
++	command = { type = money value = -100 }\r
++	command = { type = relation which = SPR value = -30 }\r
++	command = { type = relation which = SPA value = -30 }\r
++	command = { type = intelligence which = us value = 3 }\r
++	command = { type = intelligence which = them value = -3 }\r
++	command = { type = army_detection which = us value = 3 }\r
++	command = { type = army_detection which = them value = -3 }\r
++	command = { type = suppression which = police value = 3 }\r
++	command = { type = add_brigade value = police when = 1 }\r
++	command = { type = add_brigade value = police when = 1 }\r
++	command = { type = add_brigade value = police when = 1 }\r
++	ai_chance = 80\r
++	}\r
++\r
++	action = { # こんな秘密警察はいらない!\r
++	name = "ACTIONNAME2152604B"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = 2 }\r
++	ai_chance = 20\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  国王暗殺未遂事件\r
++# 国王が貴族院における行事への出席を終えて帰る途上、ドゥアルテ2世が乗った車両が襲撃された。\r
++# 銃撃は辛うじて国王を外れたが、付き添っていた従者は重傷を負った。\r
++# 1908年の国王暗殺を彷彿とさせるこの事件は、国内の急進的な共和主義者が犯人であることが判明し、\r
++# 更に社会主義政権下のスペインに亡命したことが判明した。\r
++# この重犯罪への対応には、あらゆる選択肢が考えられるだろう…\r
++###########################################################################\r
++\r
++event = {\r
++	id = 2152605\r
++	random = no\r
++	country = POR\r
++\r
++	trigger = {\r
++	OR = {\r
++	headofstate = 20201 # ドゥアルテ2世\r
++	headofstate = 20202\r
++	}\r
++	OR = {\r
++	AND = {\r
++	exists = U35\r
++	government = { type = communist country = U35 }\r
++	NOT = { war = { country = POR country = U35 } }\r
++	}\r
++	AND = {\r
++	exists = SPR\r
++	government = { type = communist country = SPR }\r
++	NOT = { war = { country = POR country = SPR } }\r
++	}\r
++	}\r
++	NOT = {\r
++	government = communist\r
++	ispuppet = POR\r
++	}\r
++	random = 18\r
++	}\r
++\r
++	name = "EVT_2152605_NAME"\r
++	desc = "EVT_2152605_DESC"\r
++	style = 2\r
++	picture = "assassinationofker"\r
++\r
++	date = { day = 0 month = 0 year = 1937 }\r
++	offset = 35\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 犯人引き渡しを要求する\r
++	name = "ACTIONNAME2152605A"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { trigger = { exists = SPR } type = event which = 2152606 where = SPR when = 0 }\r
++	command = { trigger = { exists = U35 } type = event which = 2152606 where = U35 when = 0 }\r
++	ai_chance = 65\r
++	}\r
++\r
++	action = { # 警告にとどめる\r
++	name = "ACTIONNAME2152605B"\r
++	command = { type = dissent value = 2 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	ai_chance = 35\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ポルトガルが犯人引き渡しを要求\r
++# ポルトガルで国王暗殺未遂事件が起こり、その事件の犯人が亡命してきた。\r
++# ポルトガル政府は、犯人の引き渡しを要求しており、対応を決める必要がある。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 2152606\r
++	random = no\r
++	TAG = { SPR U35 }\r
++\r
++	name = "EVT_2152606_NAME"\r
++	desc = "EVT_2152606_DESC"\r
++	style = 2\r
++	picture = "assassinationofker"\r
++\r
++	action = { # 犯人を引き渡そう\r
++	name = "ACTIONNAME2152606A"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = relation which = POR value = 10 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = event which = 2152607 where = POR when = 0 }\r
++	ai_chance = 94\r
++	}\r
++\r
++	action = { # 引き渡しを拒否する\r
++	name = "ACTIONNAME2152606B"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = belligerence value = 5 }\r
++	command = { type = relation which = POR value = -100 }\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  スペインが犯人を引き渡す\r
++# スペインは、犯人引き渡しの要求に迅速に応じ、犯人の亡命を拒否して、送還してきた。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 2152607\r
++	random = no\r
++	country = POR\r
++\r
++	name = "EVT_2152607_NAME"\r
++	desc = "EVT_2152607_DESC"\r
++	style = 2\r
++	picture = "assassinationofker"\r
++\r
++	action = { # 感謝しよう\r
++	name = "ACTIONNAME2152607A"\r
++	command = { type = dissent value = -1 }\r
++	command = { trigger = { exists = SPR } type = relation which = SPR value = 10 }\r
++	command = { trigger = { exists = U35 } type = relation which = U35 value = 10 }\r
++	ai_chance = 100\r
++	}\r
+ }
+\ No newline at end of file

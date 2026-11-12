@@ -1,0 +1,57 @@
+--- A/db/tech/land_doctrines_tech.txt [cp932]
++++ B/db/tech/land_doctrines_tech.txt [cp932]
+@@ -23,7 +23,7 @@ technology =
+     required  = { }\r
+     effects =\r
+     { command = { type = max_organization which = land value = 5 }\r
+-      command = { type = ground_def_eff value = 0.2 }\r
++      command = { type = ground_def_eff when = 1 value = 0.1 }\r
+       command = { type = enable_task which = attack }\r
+       command = { type = muddy_attack which = land value = -16 }\r
+       command = { type = plain_attack which = land value = -20 }\r
+@@ -67,7 +67,7 @@ technology =
+     effects =\r
+     { command = { type = morale which = land value = 5 }\r
+       command = { type = max_organization which = land value = 5 }\r
+-      command = { type = ground_def_eff value = 0.22 }\r
++      command = { type = ground_def_eff when = 1 value = 0.02 }\r
+       command = { type = task_efficiency which = attack value = -0.25 }\r
+       command = { type = task_efficiency which = support_attack value = -0.25 }\r
+     }\r
+@@ -93,7 +93,7 @@ technology =
+     effects =\r
+     { command = { type = morale which = land value = 5 }\r
+       command = { type = max_organization which = land value = 5 }\r
+-      command = { type = ground_def_eff value = 0.25 }\r
++      command = { type = ground_def_eff when = 1 value = 0.03 }\r
+       command = { type = activate_unit_type which = hq }\r
+       command = { type = new_model which = hq value = 0 }\r
+     }\r
+@@ -251,7 +251,7 @@ technology =
+     required  = { 6680 }\r
+     effects =\r
+     { command = { type = counterattack value = 10 }\r
+-      command = { type = ground_def_eff value = 0.25 }\r
++      command = { type = ground_def_eff when = 1 value = 0.02 }\r
+       command = { type = max_organization which = land value = -16 }\r
+     }\r
+   }\r
+@@ -361,7 +361,7 @@ technology =
+     required  = { 6690 }\r
+     effects =\r
+     { command = { type = deactivate which = 6640 }\r
+-      command = { type = ground_def_eff value = 0.24 }\r
++      command = { type = ground_def_eff when = 1 value = -0.01 }\r
+       command = { type = max_organization which = land value = 6 }\r
+       command = { type = muddy_attack which = land value = 4 }\r
+       command = { type = plain_attack which = land value = 5 }\r
+@@ -602,7 +602,8 @@ technology =
+     or_required = { 6540 6550 }\r
+     effects =\r
+     { command = { type = deactivate which = 6600 }\r
+-      command = { type = ground_def_eff value = 0.75 }\r
++      command = { trigger = { technology = 6640 } type = ground_def_eff when = 1 value = 0.50 }\r
++      command = { trigger = { technology = 6700 } type = ground_def_eff when = 1 value = 0.51 }\r
+       command = { type = counterattack value = -10 }\r
+       command = { type = delay value = -10 }\r
+       command = { type = morale which = land value = -10 }\r

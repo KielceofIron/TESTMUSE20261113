@@ -1,0 +1,322 @@
+--- A/db/events/Yokoyama_events/AI_events.txt [utf-8]
++++ B/db/events/Yokoyama_events/AI_events.txt [utf-8]
+@@ -6,11 +6,17 @@
+ #########################################################################\r
+ #日本\r
+ #id = 5276001 敗戦時軍解体イベント\r
++#id = 5276003 日中戦争停滞AI（JAP）\r
++#id = 5276004 日中戦争停滞解消AI（JAP）\r
+ #中国\r
+ #id = 5277001 抗日内戦（中華民国）\r
+ #id = 5277002 抗日内戦（抗日戦線）\r
+ #id = 5277003 抗日内戦後AI\r
+ #id = 5277004 ウイグル講和拒否AI\r
++#id = 5277005 日中戦争停滞AI（CHI）\r
++#id = 5277006 日中戦争停滞解消AI（CHI）\r
++#id = 5277005 日中戦争停滞AI（CHC）\r
++#id = 5277006 日中戦争停滞解消AI（CHC）\r
+ #ソ連\r
+ #id = 5278001 日ソ新秩序AI\r
+ #id = 5278002 不可侵条約バグ修正\r
+@@ -24,7 +30,8 @@
+ #イタリア\r
+ #id = 20150001 戦艦建造イベント（イタリア）\r
+ #id = 20150002 戦艦建造イベント（イタリア）\r
+-#イタリア\r
++#韓国\r
++#id = 20160001 アメリカ傀儡化イベント\r
+ ##########################################################################\r
+ #  敗戦時軍解体イベント\r
+ ###########################################################################\r
+@@ -85,7 +92,100 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  日中戦争停滞AI（JAP）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 5276003\r
++	random = no \r
++	country = JAP\r
++	save_date = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	ai = CHI\r
++	war = { country = CHI }\r
++	lost_national = { country = CHI value = 35 }\r
++	region = { region = "China" country = JAP data = 1 value = 40 }\r
++	control = { province = 1337 data = -3 } # 南京\r
++	control = { province = 1338 data = -3 } # 上海\r
++	control = { province = 1317 data = -3 } # 武漢\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	action_a = {\r
++	command = { type = ai which = "switch/jap_Stagnation.ai" }\r
++	command = { type = event which = 5276004 where = -1 when = 10 }\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 5276004\r
++	random = no \r
++	country = JAP\r
++	persistent = yes\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++\r
++	action = {\r
++	trigger = {\r
++	war = { country = CHI }\r
++	NOT = {\r
++	lost_national = { country = JAP value = 40 }\r
++	event = { id = 5276003 days = 2880 }\r
++	year = 1945\r
++	}\r
++	AND = {\r
++	control = { province = 1337 data = -3 } # 南京\r
++	control = { province = 1338 data = -3 } # 上海\r
++	control = { province = 1317 data = -3 } # 武漢\r
++	}\r
++	}\r
++	command = { type = event which = 5276004 where = -1 when = 10 }\r
++	command = { type = ai which = "switch/jap_Stagnation.ai" }\r
++	}\r
++\r
++\r
++	action = {\r
++	trigger = {\r
++	OR = {\r
++	NOT = { war = { country = CHI } }\r
++	lost_national = { country = JAP value = 40 }\r
++	event = { id = 5276003 days = 2880 }\r
++	year = 1945\r
++	}\r
++	AND = {\r
++	control = { province = 1337 data = -3 } # 南京\r
++	control = { province = 1338 data = -3 } # 上海\r
++	control = { province = 1317 data = -3 } # 武漢\r
++	}\r
++	}\r
++	command = { type = ai which = "switch/jap_Stagnation_Off.ai" }\r
++	command = { type = sleepevent which = 5276003 }\r
++	command = { type = sleepevent which = 5276004 }\r
++	}\r
+ \r
++	action = {\r
++	trigger = {\r
++	war = { country = CHI }\r
++	OR = {\r
++	NOT = { control = { province = 1337 data = -2 } } # 南京\r
++	NOT = { control = { province = 1338 data = -2 } } # 上海\r
++	NOT = { control = { province = 1317 data = -2 } } # 武漢\r
++	}\r
++	}\r
++	command = { type = ai which = "switch/recklessness_yes.ai" }\r
++	command = { type = event which = 5276004 where = -1 when = 30 }\r
++	}\r
++}\r
+ ##########################################################################\r
+ #  抗日内戦（中華民国）\r
+ ###########################################################################\r
+@@ -189,6 +289,147 @@ event = {
+ }\r
+ \r
+ \r
++##########################################################################\r
++#  日中戦争停滞AI（CHI）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 5277005\r
++	random = no \r
++	country = CHI\r
++	save_date = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	ai = JAP\r
++	event = 5276003\r
++	war = { country = JAP }\r
++	lost_national = { country = CHI value = 35 }\r
++	control = { province = 1337 data = -2 } # 南京\r
++	control = { province = 1338 data = -2 } # 上海\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	action_a = {\r
++	command = { type = ai which = "switch/UCH_Stagnation.ai" }\r
++	command = { type = event which = 5277006 where = -1 when = 10 }\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 5277006\r
++	random = no \r
++	country = CHI\r
++	persistent = yes\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++\r
++	action = {\r
++	trigger = {\r
++	war = { country = JAP }\r
++	NOT = {\r
++	event = { id = 5277005 days = 2880 }\r
++	year = 1945\r
++	}\r
++	}\r
++	command = { type = event which = 5277006 where = -1 when = 10 }\r
++	command = { type = ai which = "switch/UCH_Stagnation.ai" }\r
++	}\r
++\r
++\r
++	action = {\r
++	trigger = {\r
++	OR = {\r
++	NOT = { war = { country = JAP } }\r
++	lost_national = { country = JAP value = 40 }\r
++	event = { id = 5277005 days = 2880 }\r
++	year = 1945\r
++	}\r
++	}\r
++	command = { type = ai which = "switch/UCH_Stagnation_Off.ai" }\r
++	command = { type = sleepevent which = 5277005 }\r
++	command = { type = sleepevent which = 5277006 }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  日中戦争停滞AI（CHC）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 5277007\r
++	random = no \r
++	country = CHC\r
++	save_date = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	ai = JAP\r
++	event = 5276003\r
++	war = { country = JAP }\r
++	lost_national = { country = CHI value = 35 }\r
++	control = { province = 1337 data = -2 } # 南京\r
++	control = { province = 1338 data = -2 } # 上海\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 1 month = january year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	action_a = {\r
++	command = { type = ai which = "switch/UCH_Stagnation.ai" }\r
++	command = { type = event which = 5277008 where = -1 when = 10 }\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 5277008\r
++	random = no \r
++	country = CHC\r
++	persistent = yes\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++\r
++	action = {\r
++	trigger = {\r
++	war = { country = JAP }\r
++	NOT = {\r
++	event = { id = 5277007 days = 2880 }\r
++	year = 1945\r
++	}\r
++	}\r
++	command = { type = event which = 5277008 where = -1 when = 10 }\r
++	command = { type = ai which = "switch/UCH_Stagnation.ai" }\r
++	}\r
++\r
++\r
++	action = {\r
++	trigger = {\r
++	OR = {\r
++	NOT = { war = { country = JAP } }\r
++	lost_national = { country = JAP value = 40 }\r
++	event = { id = 5277007 days = 2880 }\r
++	year = 1945\r
++	}\r
++	}\r
++	command = { type = ai which = "switch/UCH_Stagnation_Off.ai" }\r
++	command = { type = sleepevent which = 5277007 }\r
++	command = { type = sleepevent which = 5277008 }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  日ソ新秩序AI\r
+ ###########################################################################\r
+@@ -412,4 +653,41 @@ event = {
+ 	command = { type = build_division which = battleship value = naval_improved_hull_l name = "RN ローマ" }\r
+ 	command = { type = build_division which = battleship value = naval_improved_hull_l name = "RN インペロ" }\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  アメリカ傀儡化イベント\r
++#########################################################################\r
++\r
++event = {\r
++	id = 20160001\r
++	random = no \r
++	country = KOR\r
++	\r
++	trigger = {\r
++		puppet = { country = KOR country = USA }\r
++		ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 2\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++\r
++	action = {\r
++		command = { type = set_domestic which = democratic value = 3 }\r
++		command = { type = set_domestic which = political_left value = 4 }\r
++		command = { type = headofstate which = 265169 } # 李承晩（イ・スンマン）\r
++		command = { type = headofgovernment which = 265138 } # 金九（キム・グ）\r
++		command = { type = foreignminister which = 265182 } # 林炳稷（イム・ビョンチク）\r
++		command = { type = armamentminister which = 265210 } # 白斗鎮（ペク・ドゥジン）\r
++		command = { type = ministerofsecurity which = 265173 } # 張沢相（チャン・テクサン）\r
++		command = { type = ministerofintelligence which = 265243 } # 朴正煕（パク・チョンヒ）\r
++		command = { type = chiefofstaff which = 265193 } # 丁一権（チョン・イルグォン）\r
++		command = { type = chiefofarmy which = 265194 } # 丁一権（チョン・イルグォン）\r
++		command = { type = chiefofnavy which = 265009 } # 孫元一（ソン・ウォニル）\r
++		command = { type = chiefofair which = 265195 } # 金貞烈（キム・ジョンニョル）\r
++	}\r
+ }
+\ No newline at end of file

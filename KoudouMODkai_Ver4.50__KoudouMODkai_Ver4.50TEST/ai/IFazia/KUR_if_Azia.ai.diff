@@ -1,0 +1,189 @@
+--- A/ai/IFazia/KUR_if_Azia.ai [utf-8]
++++ B/ai/IFazia/KUR_if_Azia.ai [ascii]
+@@ -3,9 +3,8 @@
+ switch = no # [yes/no]\r
+ max_front_ratio = 1.2\r
+ max_front_ratios = {\r
+-	TUR = 2.5\r
+-	U34 = 2.5\r
+-	U39 = 2.5\r
++	TUR = 2.0\r
++	OTT = 2.0\r
+ }\r
+ max_garrison_prop = 0.30\r
+ min_garrison_prop = 0.20\r
+@@ -29,9 +28,9 @@ claim_acceptance = -59
+ \r
+ liberate = { OMN YEM EGY JOR PAL TUR PER ARM AZB GEO U55 U61 }\r
+ \r
+-resistance = {  \r
+-	SOV = 5\r
+-	UER = 5 \r
++resistance = { \r
++	UER = 4  \r
++	SOV = 4\r
+ 	ENG = 4\r
+ 	FRA = 4\r
+ }\r
+@@ -47,10 +46,10 @@ befriend = {
+ 	PER = 40\r
+ 	IRQ = 40\r
+ 	JOR = 40\r
+-	TUR = 10 # 追加\r
+-	U34 = 10 # 追加\r
+-	U39 = 10 # 追加\r
+-	ARM = 10 # 追加\r
++	TUR = 10\r
++	OTT = 10\r
++	ARM = 40\r
++	U39 = 10\r
+ }\r
+ protect = { }\r
+ target = {\r
+@@ -73,18 +72,18 @@ trade = {
+ 	favored = {\r
+ 	ENG = 60\r
+ 	FRA = 60\r
+-	UER = 60\r
+-	SOV = 60\r
++	UER = 40\r
++	SOV = 40\r
+ 	SAU = 40\r
+ 	U50 = 40\r
+ 	YUG = 40\r
+ 	PER = 40\r
+ 	IRQ = 40\r
+ 	JOR = 40\r
+-	TUR = 10 # 追加\r
+-	U34 = 10 # 追加\r
+-	U39 = 10 # 追加\r
+-	ARM = 10 # 追加\r
++	TUR = 10\r
++	OTT = 10\r
++	ARM = 10\r
++	U39 = 10\r
+ 	}\r
+ 	embargo = { }\r
+ }\r
+@@ -92,18 +91,18 @@ tech_sharing = {
+ 	favored = {\r
+ 	ENG = 60\r
+ 	FRA = 60\r
+-	UER = 60\r
+-	SOV = 60\r
++	UER = 40\r
++	SOV = 40\r
+ 	SAU = 40\r
+ 	U50 = 40\r
+ 	YUG = 40\r
+ 	PER = 40\r
+ 	IRQ = 40\r
+ 	JOR = 40\r
+-	TUR = 10 # 追加\r
+-	U34 = 10 # 追加\r
+-	U39 = 10 # 追加\r
+-	ARM = 10 # 追加\r
++	TUR = 10\r
++	OTT = 10\r
++	ARM = 10\r
++	U39 = 10\r
+ 	}\r
+ 	embargo = { }\r
+ 	not = { }\r
+@@ -157,7 +156,7 @@ spyprefs =
+ 		found_partisans 	= 0\r
+ 		massmedia 		= 2\r
+ 		disrupt_techteam	= 2\r
+-		country 		= U34\r
++		country 		= OTT\r
+ 	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 3\r
+@@ -167,10 +166,23 @@ spyprefs =
+ 		coup 			= 0\r
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 		= 2\r
++		found_partisans 	= 4\r
++		massmedia 		= 4\r
++		disrupt_techteam	= 2\r
++		country 		= IRQ\r
++	}\r
++	spyprefsdata = {\r
++		country_priorities	= 3\r
++		steal_blueprint 	= 0\r
++		minister_assassination 	= 0\r
++		smear_campaign 		= 8\r
++		coup 			= 0\r
++		sabotage_industry 	= 5\r
++		nuclear_sabotage 	= 0\r
++		found_partisans 	= 4\r
++		massmedia 		= 4\r
+ 		disrupt_techteam	= 2\r
+-		country 		= U39\r
++		country 		= PER\r
+ 	}\r
+ }\r
+ ###################################\r
+@@ -178,7 +190,7 @@ spyprefs =
+ ###################################\r
+ #Default values\r
+ construction = { \r
+-	max_factor = 0.700 \r
++	max_factor = 0.800 \r
+ \r
+ 	AA_batteries = no\r
+ 	max_AA_level = 4\r
+@@ -371,11 +383,11 @@ technology = {
+ 	infantry 	= 5\r
+ 	industry 	= 4\r
+ 	aircraft 	= 1\r
+-	naval 		= 2\r
++	naval 		= 0\r
+ 	land_doctrines 	= 2\r
+ 	secret_weapons 	= 0\r
+ 	air_doctrines 	= 1\r
+-	naval_doctrines = 1\r
++	naval_doctrines = 0\r
+ }  \r
+ ###################################\r
+ # Ground Combat, Leaders and Garrisons\r
+@@ -415,18 +427,17 @@ garrison = {
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+ 		TUR = 50\r
+-		U34 = 50\r
+-		U39 = 50\r
++		OTT = 50\r
+ 		PER = 40\r
+-		ARM = 40\r
+-		IRQ = 40\r
++		ARM = 10\r
++		IRQ = 30\r
+ 	}\r
+ 	ignore = { }\r
+ 	province_priorities = { }\r
+ 	area_multiplier = { }\r
+ }\r
+ front = { \r
+-	recklessness 		= 0 # 0-3\r
++	recklessness 		= 1 # 0-3\r
+ 	distrib_vs_ai 		= even\r
+ 	distrib_vs_human 	= even\r
+ \r
+@@ -467,14 +478,8 @@ front = {
+ 	river 			= 1.0\r
+ \r
+ 	enemy_handicap = {\r
+-	TUR = 720\r
+-	U34 = 720\r
+-	U39 = 720\r
+ 	} \r
+ 	passivity = {\r
+-	TUR = 95\r
+-	U34 = 95\r
+-	U39 = 95\r
+ 	} \r
+ } \r
+ ###################################\r

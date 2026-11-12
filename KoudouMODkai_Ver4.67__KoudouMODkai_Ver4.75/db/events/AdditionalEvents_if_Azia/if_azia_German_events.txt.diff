@@ -1,0 +1,741 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_German_events.txt [cp932]
+@@ -5,24 +5,24 @@
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+ #ヒトラーの後継者イベント\r
+-#id = 45680001 ヒトラーの健康の悪化\r
+-#id = 45680002 アドルフ・ヒトラー最後の演説\r
+-#id = 45680003 ヒトラーの後継者 ― ゲーリングが選ばれた\r
+-#id = 45680004 ヒトラーの後継者 ― ゲッベルスが選ばれた\r
+-#id = 45680005 ヒトラーの後継者 ― ヒムラーが選ばれた\r
+-#id = 45680006 ヒトラーの後継者 ― シュペーアが選ばれた\r
+-#id = 45680007 ヒトラーの死\r
+-#id = 45680008 新たな総統\r
+-#id = 45680009 新たな総統 ― デーニッツが選ばれた！\r
+-#id = 45680010 新たな総統 ― ボルマンが選ばれた！\r
+-#id = 45680011 新たな総統 ― ハイドリヒによる権力掌握\r
+-#id = 45680012 ドイツ内戦\r
+-#id = 45680013 内戦勃発（REB）\r
+-#id = 45680014 ブルグント騎士団計画\r
+-#id = 45680015 ブルグント騎士団の樹立\r
+-#id = 45680016 ブルグント体制\r
+-#id = 45680017 ブルグントにおける核開発\r
+-#id = 45680018 ブルグント騎士団計画（手動独立）\r
++#id = 945680001 ヒトラーの健康の悪化\r
++#id = 945680002 アドルフ・ヒトラー最後の演説\r
++#id = 945680003 ヒトラーの後継者 ― ゲーリングが選ばれた\r
++#id = 945680004 ヒトラーの後継者 ― ゲッベルスが選ばれた\r
++#id = 945680005 ヒトラーの後継者 ― ヒムラーが選ばれた\r
++#id = 945680006 ヒトラーの後継者 ― シュペーアが選ばれた\r
++#id = 945680007 ヒトラーの死\r
++#id = 945680008 新たな総統\r
++#id = 945680009 新たな総統 ― デーニッツが選ばれた！\r
++#id = 945680010 新たな総統 ― ボルマンが選ばれた！\r
++#id = 945680011 新たな総統 ― ハイドリヒによる権力掌握\r
++#id = 945680012 ドイツ内戦\r
++#id = 945680013 内戦勃発（REB）\r
++#id = 945680014 ブルグント騎士団計画\r
++#id = 945680015 ブルグント騎士団の樹立\r
++#id = 945680016 ブルグント体制\r
++#id = 945680017 ブルグントにおける核開発\r
++#id = 945680018 ブルグント騎士団計画（手動独立）\r
+ #ダンツィヒ回避後イベント\r
+ #id = 45790001 シュレースヴィヒ＝ホルシュタイン要求（ダンツィヒ割譲済）\r
+ #id = 45790002 シュレースヴィヒ＝ホルシュタイン要求（ダンツィヒ割譲失敗）\r
+@@ -163,7 +163,7 @@
+ # 1946年には症状の改善が見られたが、1950年頃に再度悪化し、ヒトラーを蝕み続けている。\r
+ ###########################################################################\r
+ event = {\r
+-	id = 45680001\r
++	id = 945680001\r
+ 	random = no\r
+ 	country = GER\r
+ 	save_date = yes\r
+@@ -183,8 +183,8 @@ event = {
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_45680001_NAME"\r
+-	desc = "EVT_45680001_DESC"\r
++	name = "EVT_AZIA45680001_NAME"\r
++	desc = "EVT_AZIA45680001_DESC"\r
+ 	style = 2\r
+ 	picture = "Hitler_1945"\r
+ \r
+@@ -193,7 +193,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 総統閣下は大丈夫なのだろうか\r
+-	name = "ACTIONNAME45680001A"\r
++	name = "ACTIONNAME_AZIA45680001A"\r
+ 	command = { type = dissent value = 1 }\r
+ 	}\r
+ }\r
+@@ -207,7 +207,7 @@ event = {
+ # 後継者については、ヒトラーが最後に参加する党大会で明らかになるとしており、誰が選ばれるかに注目が集まっている。\r
+ ###########################################################################\r
+ event = {\r
+-	id = 45680002\r
++	id = 945680002\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+@@ -217,7 +217,7 @@ event = {
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	NOT = { event = 2003183 } # アドルフ・ヒトラーの死\r
+ 	event = 2007033 # ビターピース\r
+-	event = 45680001 # ヒトラーの健康の悪化\r
++	event = 945680001 # ヒトラーの健康の悪化\r
+ 	OR = {\r
+ 	minister = 1 # Hitler\r
+ 	minister = 22 # Hitler\r
+@@ -255,8 +255,8 @@ event = {
+ 	random = 45\r
+ 	}\r
+ \r
+-	name = "EVT_45680001_NAME"\r
+-	desc = "EVT_45680001_DESC"\r
++	name = "EVT_AZIA45680001_NAME"\r
++	desc = "EVT_AZIA45680001_DESC"\r
+ 	style = 2\r
+ 	picture = "Hitler_1945"\r
+ \r
+@@ -265,43 +265,43 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # ゲーリングを後継者にする\r
+-	name = "ACTIONNAME45680002A"\r
++	name = "ACTIONNAME_AZIA45680002A"\r
+ 	trigger = { minister = 11 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = domestic which = freedom value = 1 }\r
+ 	command = { type = name where = GER which = GER_GERMANE }\r
+-	command = { type = trigger which = 45680003 }\r
++	command = { type = trigger which = 945680003 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # ゲッベルスを後継者にする\r
+-	name = "ACTIONNAME45680002B"\r
++	name = "ACTIONNAME_AZIA45680002B"\r
+ 	trigger = { minister = 12 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+ 	command = { type = name where = GER which = GER_GERMANE }\r
+-	command = { type = trigger which = 45680004 }\r
++	command = { type = trigger which = 945680004 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # ヒムラーを後継者にする\r
+-	name = "ACTIONNAME45680002C"\r
++	name = "ACTIONNAME_AZIA45680002C"\r
+ 	trigger = { minister = 261 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+ 	command = { type = name where = GER which = GER_GERMANE_SS }\r
+ 	command = { type = flag_ext where = GER which = "_Bur" }\r
+-	command = { type = trigger which = 45680005 }\r
++	command = { type = trigger which = 945680005 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # シュペーアを後継者にする\r
+-	name = "ACTIONNAME45680002D"\r
++	name = "ACTIONNAME_AZIA45680002D"\r
+ 	trigger = { minister = 278 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+ 	command = { type = name where = GER which = GER_GERMANE }\r
+-	command = { type = trigger which = 45680006 }\r
++	command = { type = trigger which = 945680006 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ }\r
+@@ -314,18 +314,18 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680003\r
++	id = 945680003\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_45680003_NAME"\r
+-	desc = "EVT_45680003_DESC"\r
++	name = "EVT_AZIA45680003_NAME"\r
++	desc = "EVT_AZIA45680003_DESC"\r
+ 	style = 2\r
+ 	picture = "Goering"\r
+ \r
+ \r
+ 	action = { # ハイル・ゲーリング！！\r
+-	name = "ACTIONNAME45680003A"\r
++	name = "ACTIONNAME_AZIA45680003A"\r
+ 	command = { type = sleepminister which = 1 } # アドルフ・ヒトラー\r
+ 	command = { type = sleepminister which = 22 }\r
+ 	command = { type = sleepminister which = 149 }\r
+@@ -368,17 +368,17 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680004\r
++	id = 945680004\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_45680004_NAME"\r
+-	desc = "EVT_45680004_DESC"\r
++	name = "EVT_AZIA45680004_NAME"\r
++	desc = "EVT_AZIA45680004_DESC"\r
+ 	style = 2\r
+ 	picture = "Goebbels"\r
+ \r
+ 	action = { # ハイル・ヒトラー！！ハイル・ゲッベルス！\r
+-	name = "ACTIONNAME45680004A"\r
++	name = "ACTIONNAME_AZIA45680004A"\r
+ 	command = { type = sleepminister which = 1 } # アドルフ・ヒトラー\r
+ 	command = { type = sleepminister which = 22 }\r
+ 	command = { type = sleepminister which = 149 }\r
+@@ -417,17 +417,17 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680005\r
++	id = 945680005\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_45680005_NAME"\r
+-	desc = "EVT_45680005_DESC"\r
++	name = "EVT_AZIA45680005_NAME"\r
++	desc = "EVT_AZIA45680005_DESC"\r
+ 	style = 2\r
+ 	picture = "Himmler"\r
+ \r
+ 	action = { # ハイル・ヒムラー！\r
+-	name = "ACTIONNAME45680005A"\r
++	name = "ACTIONNAME_AZIA45680005A"\r
+ 	command = { type = sleepminister which = 1 } # アドルフ・ヒトラー\r
+ 	command = { type = sleepminister which = 22 }\r
+ 	command = { type = sleepminister which = 149 }\r
+@@ -468,17 +468,17 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680006\r
++	id = 945680006\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_45680006_NAME"\r
+-	desc = "EVT_45680006_DESC"\r
++	name = "EVT_AZIA45680006_NAME"\r
++	desc = "EVT_AZIA45680006_DESC"\r
+ 	style = 2\r
+ 	picture = "Speer"\r
+ \r
+ 	action = { # ハイル・シュペーア\r
+-	name = "ACTIONNAME45680006A"\r
++	name = "ACTIONNAME_AZIA45680006A"\r
+ 	command = { type = sleepminister which = 1 } # アドルフ・ヒトラー\r
+ 	command = { type = sleepminister which = 22 }\r
+ 	command = { type = sleepminister which = 149 }\r
+@@ -518,7 +518,7 @@ event = {
+ # ヒトラーの死はドイツの勢力圏に大きな衝撃を与えており、また最後まで後継者を指名できなかったことから、政治的混乱は避けられないだろう。\r
+ ###########################################################################\r
+ event = {\r
+-	id = 45680007\r
++	id = 945680007\r
+ 	random = no\r
+ 	country = GER\r
+ 	save_date = yes\r
+@@ -528,9 +528,9 @@ event = {
+ 	NOT = { government = communist }\r
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	NOT = { event = 2003183 } # アドルフ・ヒトラーの死\r
+-	NOT = { event = 45680002 } # アドルフ・ヒトラー最後の演説\r
++	NOT = { event = 945680002 } # アドルフ・ヒトラー最後の演説\r
+ 	event = 2007033 # ビターピース\r
+-	event = { id = 45680001 days = 180 }\r
++	event = { id = 945680001 days = 180 }\r
+ 	OR = {\r
+ 	minister = 1 # Hitler\r
+ 	minister = 22 # Hitler\r
+@@ -539,8 +539,8 @@ event = {
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_45680007_NAME"\r
+-	desc = "EVT_45680007_DESC"\r
++	name = "EVT_AZIA45680007_NAME"\r
++	desc = "EVT_AZIA45680007_DESC"\r
+ 	style = 2\r
+ 	picture = "Hitler_1945"\r
+ \r
+@@ -549,19 +549,19 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 総統が死んだ！\r
+-	name = "ACTIONNAME45680007A"\r
++	name = "ACTIONNAME_AZIA45680007A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = sleepminister which = 1 } # アドルフ・ヒトラー\r
+ 	command = { type = sleepminister which = 22 }\r
+ 	command = { type = sleepminister which = 149 }\r
+-	command = { type = sleepevent which = 45680002 } # \r
+-	command = { type = sleepevent which = 45680003 } # \r
+-	command = { type = sleepevent which = 45680004 } # \r
+-	command = { type = sleepevent which = 45680005 } # \r
+-	command = { type = sleepevent which = 45680006 } # \r
++	command = { type = sleepevent which = 945680002 } # \r
++	command = { type = sleepevent which = 945680003 } # \r
++	command = { type = sleepevent which = 945680004 } # \r
++	command = { type = sleepevent which = 945680005 } # \r
++	command = { type = sleepevent which = 945680006 } # \r
+ 	command = { type = headofstate which = 403 } # マルティン・ボルマン\r
+ 	command = { type = headofgovernment which = 23 } # マルティン・ボルマン\r
+-	command = { type = event which = 45680008 where = GER when = 30 }\r
++	command = { type = event which = 945680008 where = GER when = 30 }\r
+ 	}\r
+ }\r
+ \r
+@@ -572,12 +572,12 @@ event = {
+ # この投票はまさに世界の命運を決めるものになるだろう……\r
+ ###########################################################################\r
+ event = {\r
+-	id = 45680008\r
++	id = 945680008\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_45680008_NAME"\r
+-	desc = "EVT_45680008_DESC"\r
++	name = "EVT_AZIA45680008_NAME"\r
++	desc = "EVT_AZIA45680008_DESC"\r
+ 	style = 2\r
+ 	picture = "Hitler_1945"\r
+ \r
+@@ -586,29 +586,29 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # デーニッツが新総統に選ばれた\r
+-	name = "ACTIONNAME45680008A"\r
++	name = "ACTIONNAME_AZIA45680008A"\r
+ 	trigger = { minister = 13 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = domestic which = freedom value = 1 }\r
+-	command = { type = trigger which = 45680009 }\r
++	command = { type = trigger which = 945680009 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # ボルマンが最多の投票を獲得した\r
+-	name = "ACTIONNAME45680008B"\r
++	name = "ACTIONNAME_AZIA45680008B"\r
+ 	trigger = { minister = 403 }\r
+ 	command = { type = dissent value = 20 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = trigger which = 45680010 }\r
++	command = { type = trigger which = 945680010 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # 党大会で大規模なテロが発生！\r
+-	name = "ACTIONNAME45680008C"\r
++	name = "ACTIONNAME_AZIA45680008C"\r
+ 	trigger = { minister = 401 }\r
+ 	command = { type = dissent value = 20 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+-	command = { type = trigger which = 45680011 }\r
++	command = { type = trigger which = 945680011 }\r
+ 	}\r
+ }\r
+ \r
+@@ -622,17 +622,17 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680009\r
++	id = 945680009\r
+ 	random = no\r
+ 	country = GER\r
+ 	\r
+-	name = "EVT_45680009_NAME"\r
+-	desc = "EVT_45680009_DESC"\r
++	name = "EVT_AZIA45680009_NAME"\r
++	desc = "EVT_AZIA45680009_DESC"\r
+ 	style = 2\r
+ 	picture = "Donitz"\r
+ \r
+ 	action = { # ハイル・デーニッツ！\r
+-	name = "ACTIONNAME45680009A"\r
++	name = "ACTIONNAME_AZIA45680009A"\r
+ 	command = { type = sleepminister which = 23 } # マルティン・ボルマン\r
+ 	command = { type = sleepminister which = 116 }\r
+ 	command = { type = sleepminister which = 403 }\r
+@@ -668,17 +668,17 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680010\r
++	id = 945680010\r
+ 	random = no\r
+ 	country = GER\r
+ 	\r
+-	name = "EVT_45680010_NAME"\r
+-	desc = "EVT_45680010_DESC"\r
++	name = "EVT_AZIA45680010_NAME"\r
++	desc = "EVT_AZIA45680010_DESC"\r
+ 	style = 2\r
+ 	picture = "Bormann"\r
+ \r
+ 	action = { # ハイル・ボルマン\r
+-	name = "ACTIONNAME45680010A"\r
++	name = "ACTIONNAME_AZIA45680010A"\r
+ 	command = { type = sleepminister which = 2 } # ルドルフ・ヘス\r
+ 	command = { type = sleepminister which = 55 }\r
+ 	command = { type = sleepminister which = 35 } # ヨアヒム・フォン・リッベントロップ\r
+@@ -723,17 +723,17 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680011\r
++	id = 945680011\r
+ 	random = no\r
+ 	country = GER\r
+ 	\r
+-	name = "EVT_45680011_NAME"\r
+-	desc = "EVT_45680011_DESC"\r
++	name = "EVT_AZIA45680011_NAME"\r
++	desc = "EVT_AZIA45680011_DESC"\r
+ 	style = 2\r
+ 	picture = "Heydrich"\r
+ \r
+ 	action = { # 忠誠こそ我が名誉！\r
+-	name = "ACTIONNAME45680011A"\r
++	name = "ACTIONNAME_AZIA45680011A"\r
+ 	command = { type = sleepminister which = 2 } # ルドルフ・ヘス\r
+ 	command = { type = sleepminister which = 55 }\r
+ 	command = { type = sleepminister which = 10 } # ヘルマン・ゲーリング\r
+@@ -778,7 +778,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # ハイル・ハイドリヒ！\r
+-	name = "ACTIONNAME45680011B"\r
++	name = "ACTIONNAME_AZIA45680011B"\r
+ 	command = { type = sleepminister which = 2 } # ルドルフ・ヘス\r
+ 	command = { type = sleepminister which = 55 }\r
+ 	command = { type = sleepminister which = 35 } # ヨアヒム・フォン・リッベントロップ\r
+@@ -839,18 +839,18 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680012\r
++	id = 945680012\r
+ 	random = no\r
+ 	country = GER\r
+ 	\r
+-	name = "EVT_45680012_NAME"\r
+-	desc = "EVT_45680012_DESC"\r
++	name = "EVT_AZIA45680012_NAME"\r
++	desc = "EVT_AZIA45680012_DESC"\r
+ 	style = 2\r
+ 	picture = "Volkssturm"\r
+ \r
+ 	action = { # \r
+ \r
+-	name = "ACTIONNAME45680012A"\r
++	name = "ACTIONNAME_AZIA45680012A"\r
+ 	trigger = { minister = 11 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = sleepminister which = 24 } # アルベルト・シュペーア\r
+@@ -895,11 +895,11 @@ event = {
+ 	command = { type = chiefofarmy which = 150 } # フェルディナント・シェルナー\r
+ 	command = { type = chiefofnavy which = 163 } # カール・ヴィッツェル\r
+ 	command = { type = chiefofair which = 10 } # ヘルマン・ゲーリング\r
+-	command = { type = event which = 45680013 where = REB when = 0 }\r
++	command = { type = event which = 945680013 where = REB when = 0 }\r
+ 	}\r
+ \r
+ 	action = { # ゲッベルスが正統政府を樹立！\r
+-	name = "ACTIONNAME45680012B"\r
++	name = "ACTIONNAME_AZIA45680012B"\r
+ 	trigger = { minister = 12 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = sleepminister which = 10 } # ヘルマン・ゲーリング\r
+@@ -945,7 +945,7 @@ event = {
+ 	command = { type = chiefofarmy which = 236 } # ギュンター・ブルーメントリット\r
+ 	command = { type = chiefofnavy which = 161 } # カール・デーニッツ\r
+ 	command = { type = chiefofair which = 174 } # アルベルト・ケッセルリンク\r
+-	command = { type = event which = 45680013 where = REB when = 0 }\r
++	command = { type = event which = 945680013 where = REB when = 0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -954,17 +954,17 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680013\r
++	id = 945680013\r
+ 	random = no\r
+ 	country = REB\r
+ 	\r
+-	name = "EVT_45680013_NAME"\r
+-	desc = "EVT_45680012_DESC"\r
++	name = "EVT_AZIA45680013_NAME"\r
++	desc = "EVT_AZIA45680012_DESC"\r
+ 	style = 2\r
+ 	picture = "Volkssturm"\r
+ \r
+ 	action = { # 内戦勃発\r
+-	name = "ACTIONNAME45680013A"\r
++	name = "ACTIONNAME_AZIA45680013A"\r
+ 	command = { type = add_corps which = "国防軍離反部隊" value = land where = 179 } # 南ドイツ\r
+ 	command = { type = add_division which = "反乱戦車師団" value = armor when = 2 where = -50 }\r
+ 	command = { type = add_division which = "反乱自動車化歩兵師団" value = motorized when = 2 where = -50 }\r
+@@ -1176,7 +1176,7 @@ event = {
+ # ヒムラーがこの計画に強い賛意を示したこともあり、順調に計画は進み、後は計画を実行するだけである。\r
+ ###########################################################################\r
+ event = {\r
+-	id = 45680014\r
++	id = 945680014\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+@@ -1251,8 +1251,8 @@ event = {
+ 	random = 45\r
+ 	}\r
+ \r
+-	name = "EVT_45680014_NAME"\r
+-	desc = "EVT_45680014_DESC"\r
++	name = "EVT_AZIA45680014_NAME"\r
++	desc = "EVT_AZIA45680014_DESC"\r
+ 	style = 2\r
+ 	picture = "Himmler"\r
+ \r
+@@ -1261,7 +1261,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # ブルグント騎士団を再建するのだ\r
+-	name = "ACTIONNAME45680014A"\r
++	name = "ACTIONNAME_AZIA45680014A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = sleepminister which = 86 } # ハインリヒ・ヒムラー\r
+ 	command = { type = sleepminister which = 276 }\r
+@@ -1289,12 +1289,12 @@ event = {
+ 	command = { trigger = { exists = UD6 } type = secedeprovince which = UD6 value = 101 when = 1 }\r
+ 	command = { trigger = { exists = UD6 } type = secedeprovince which = UD6 value = 102 when = 1 }\r
+ 	command = { trigger = { exists = UD6 } type = secedeprovince which = UD6 value = 103 when = 1 }\r
+-	command = { type = event which = 45680015 where = UD6 when = 0 }\r
++	command = { type = event which = 945680015 where = UD6 when = 0 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # ヒムラーのオカルト趣味もたいがいにしろ！\r
+-	name = "ACTIONNAME45680014B"\r
++	name = "ACTIONNAME_AZIA45680014B"\r
+ 	command = { type = dissent value = 1 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+ 	ai_chance = 25\r
+@@ -1302,12 +1302,12 @@ event = {
+ }\r
+ \r
+ event = {\r
+-	id = 45680015\r
++	id = 945680015\r
+ 	random = no\r
+ 	country = UD6\r
+ \r
+-	name = "EVT_45680015_NAME"\r
+-	desc = "EVT_45680014_DESC"\r
++	name = "EVT_AZIA45680015_NAME"\r
++	desc = "EVT_AZIA45680014_DESC"\r
+ 	style = 2\r
+ 	picture = "Himmler"\r
+ \r
+@@ -1369,7 +1369,7 @@ event = {
+ 	command = { type = add_division value = cas when = 3 }\r
+ 	command = { type = add_division value = cas when = 3 }\r
+ 	command = { type = add_division value = transport_plane when = 4 }\r
+-	command = { type = sleepevent which = 45680018 } # ブルグント騎士団計画\r
++	command = { type = sleepevent which = 945680018 } # ブルグント騎士団計画\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1386,7 +1386,7 @@ event = {
+ # 更にヒムラーは、人類の大再編と進化したアーリア人の地球支配のために、世界の浄化すら望むようになり、この急進的な思想は世界中に恐怖を与えることになる。\r
+ ###########################################################################\r
+ event = {\r
+-	id = 45680016\r
++	id = 945680016\r
+ 	random = no\r
+ 	country = UD6\r
+ 	save_date = yes\r
+@@ -1397,8 +1397,8 @@ event = {
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	event = 2007033 # ビターピース\r
+ 	OR = {\r
+-	event = 45680015 # ブルグント騎士団の樹立\r
+-	event = 45680018 # ブルグント騎士団の樹立\r
++	event = 945680015 # ブルグント騎士団の樹立\r
++	event = 945680018 # ブルグント騎士団の樹立\r
+ 	}\r
+ 	OR = {\r
+ 	minister = 632001 # ハインリヒ・ヒムラー\r
+@@ -1414,8 +1414,8 @@ event = {
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	event = 2007033 # ビターピース\r
+ 	OR = {\r
+-	event = { id = 45680015 days = 90 } # ブルグント騎士団の樹立\r
+-	event = { id = 45680018 days = 90 }\r
++	event = { id = 945680015 days = 90 } # ブルグント騎士団の樹立\r
++	event = { id = 945680018 days = 90 }\r
+ 	}\r
+ 	OR = {\r
+ 	minister = 632001 # ハインリヒ・ヒムラー\r
+@@ -1431,8 +1431,8 @@ event = {
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	event = 2007033 # ビターピース\r
+ 	OR = {\r
+-	event = 45680015 # ブルグント騎士団の樹立\r
+-	event = 45680018 # ブルグント騎士団の樹立\r
++	event = 945680015 # ブルグント騎士団の樹立\r
++	event = 945680018 # ブルグント騎士団の樹立\r
+ 	}\r
+ 	OR = {\r
+ 	minister = 632001 # ハインリヒ・ヒムラー\r
+@@ -1443,8 +1443,8 @@ event = {
+ 	random = 45\r
+ 	}\r
+ \r
+-	name = "EVT_45680016_NAME"\r
+-	desc = "EVT_45680016_DESC"\r
++	name = "EVT_AZIA45680016_NAME"\r
++	desc = "EVT_AZIA45680016_DESC"\r
+ 	style = 2\r
+ 	picture = "Burgundian_System"\r
+ \r
+@@ -1453,7 +1453,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 人類の大再編に向けて苦難の行軍だ\r
+-	name = "ACTIONNAME45680016A"\r
++	name = "ACTIONNAME_AZIA45680016A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = intelligence which = us value = 10 }\r
+ 	command = { type = intelligence which = them value = -10 }\r
+@@ -1497,7 +1497,7 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680017\r
++	id = 945680017\r
+ 	random = no\r
+ 	country = UD6\r
+ \r
+@@ -1507,10 +1507,10 @@ event = {
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	event = 2007033 # ビターピース\r
+ 	OR = {\r
+-	event = 45680015 # ブルグント騎士団の樹立\r
+-	event = 45680018 # ブルグント騎士団の樹立\r
++	event = 945680015 # ブルグント騎士団の樹立\r
++	event = 945680018 # ブルグント騎士団の樹立\r
+ 	}\r
+-	event = 45680016 # ブルグント体制\r
++	event = 945680016 # ブルグント体制\r
+ 	OR = {\r
+ 	minister = 632001 # ハインリヒ・ヒムラー\r
+ 	minister = 632002\r
+@@ -1525,8 +1525,8 @@ event = {
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	event = 2007033 # ビターピース\r
+ 	OR = {\r
+-	event = 45680015 # ブルグント騎士団の樹立\r
+-	event = 45680018 # ブルグント騎士団の樹立\r
++	event = 945680015 # ブルグント騎士団の樹立\r
++	event = 945680018 # ブルグント騎士団の樹立\r
+ 	}\r
+ 	event = { id = 45670316 days = 90 } # ブルグント体制\r
+ 	OR = {\r
+@@ -1551,8 +1551,8 @@ event = {
+ 	NOT = { lost_national = { country = GER value = 10 } }\r
+ 	event = 2007033 # ビターピース\r
+ 	OR = {\r
+-	event = 45680015 # ブルグント騎士団の樹立\r
+-	event = 45680018 # ブルグント騎士団の樹立\r
++	event = 945680015 # ブルグント騎士団の樹立\r
++	event = 945680018 # ブルグント騎士団の樹立\r
+ 	}\r
+ 	event = { id = 45670316 days = 90 } # ブルグント体制\r
+ 	OR = {\r
+@@ -1570,8 +1570,8 @@ event = {
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_45680017_NAME"\r
+-	desc = "EVT_45680017_DESC"\r
++	name = "EVT_AZIA45680017_NAME"\r
++	desc = "EVT_AZIA45680017_DESC"\r
+ 	style = 2\r
+ 	picture = "Burgundian_System"\r
+ \r
+@@ -1580,7 +1580,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 人類の浄化の炎を生み出すのだ\r
+-	name = "ACTIONNAME45680017A"\r
++	name = "ACTIONNAME_AZIA45680017A"\r
+ 	command = { trigger = { ai = no } type = supplies value = -10000 }\r
+ 	command = { trigger = { ai = no } type = money value = -2000 }\r
+ 	command = { type = research_mod value = 5 }\r
+@@ -1605,7 +1605,7 @@ event = {
+ ###########################################################################\r
+ \r
+ event = {\r
+-	id = 45680018\r
++	id = 945680018\r
+ 	random = no\r
+ 	country = UD6\r
+ \r
+@@ -1613,14 +1613,14 @@ event = {
+ 	exists = UD6\r
+ 	ideology = nazi\r
+ 	NOT = { government = communist }\r
+-	NOT = { event = 45680014 } # ブルグント騎士団の樹立\r
++	NOT = { event = 945680014 } # ブルグント騎士団の樹立\r
+ 	NOT = { ispuppet = GER }\r
+ 	atwar = no\r
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_45680018_NAME"\r
+-	desc = "EVT_45680018_DESC"\r
++	name = "EVT_AZIA45680018_NAME"\r
++	desc = "EVT_AZIA45680018_DESC"\r
+ 	style = 2\r
+ 	picture = "Himmler"\r
+ \r
+@@ -1686,8 +1686,8 @@ event = {
+ 	command = { type = add_division value = cas when = 3 }\r
+ 	command = { type = add_division value = cas when = 3 }\r
+ 	command = { type = add_division value = transport_plane when = 4 }\r
+-	command = { type = sleepevent which = 45680014 } # ブルグント騎士団計画\r
+-	command = { type = sleepevent which = 45680015 } # ブルグント騎士団計画\r
++	command = { type = sleepevent which = 945680014 } # ブルグント騎士団計画\r
++	command = { type = sleepevent which = 945680015 } # ブルグント騎士団計画\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -7450,7 +7450,7 @@ event = {
+ 	command = { type = set_domestic which = political_left value = 1 }\r
+ 	command = { type = set_domestic which = free_market value = 8 }\r
+ 	command = { type = set_domestic which = freedom value = 8 }\r
+-	command = { type = headofstate which = 875001 } # アニューリン・ベヴァン\r
++	command = { type = headofstate which = 875001 } # アナイリン・ベヴァン\r
+ 	command = { type = headofgovernment which = 875003 } # ハリー・ポリット\r
+ 	command = { type = foreignminister which = 875006 } # ラジャニ・パルメ・ダット\r
+ 	command = { type = armamentminister which = 875014 } # スタッフォード・クリップス\r

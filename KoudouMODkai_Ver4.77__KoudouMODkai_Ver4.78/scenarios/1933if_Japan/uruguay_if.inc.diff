@@ -1,0 +1,73 @@
+--- A/scenarios/1933if_Japan/uruguay_if.inc [cp932]
++++ B/scenarios/1933if_Japan/uruguay_if.inc [cp932]
+@@ -1,5 +1,5 @@
+ ##############################
+-# Country definition for URU #
++# Country definition for UF0 #
+ ##############################
+ 
+ #####################
+@@ -7,11 +7,12 @@
+ #####################
+ 
+ country = {
+-  tag                = URU
++  tag                = UF0
++  name               = "中立地域"
+   ai                 = "uru_1936.ai"
++  flag_ext           = _Neutral
+   ai_settings        = { flags = { MOB1 = yes MOB2 = yes } }
+   capital            = 2052 # モンテビデオ
+-  dissent            = 20
+   manpower           = 2
+   # Resource Reserves
+   energy         = 480
+@@ -21,6 +22,9 @@ country = {
+   supplies       = 500
+   money          = 10
+   transports     = 10
++  free = {
++    ic             = -999999
++  }
+ 
+   diplomacy = {
+     relation = { tag = ARG value = -50 }
+@@ -35,17 +39,17 @@ country = {
+     relation = { tag = USA value = 100 }
+     relation = { tag = VEN value = 10 }
+   }
+-  SpyInfo                = { country = "URU" NumberOfSpies = 4 }
++  SpyInfo                = { country = "UF0" NumberOfSpies = 20 }
+ 
+-  nationalprovinces      = { 2051 2052 }
++  nationalprovinces      = { }
+   ownedprovinces         = { 2051 2052 }
+   controlledprovinces    = { 2051 2052 }
+-
++  claimedprovinces       = {  }
+   techapps               = { 4500 4510 4520 4530 4540 4550 4010 2860 2870 2880 2020 2290 2300 2310 7600 7610 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 1240 2800 2450 21180 21190 2810 2820 2510 5700 5710 5010 5020 5810 5820 5050 5800 5080 1830 1840 1850 5600 5610 3720 3730 3736 3740 3750 3900 3810 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 }
+   inventions             = { 3000027 }
+ 
+   policy = {
+-    date              = { year = 0 month = january day = 0 }
++    date              = { year = 9999 month = january day = 0 }
+     democratic        = 5
+     political_left    = 2
+     freedom           = 5
+@@ -54,16 +58,6 @@ country = {
+     defense_lobby     = 4
+     interventionism   = 1
+   }
+-  headofstate            = { type = 9 id = 195001 } # ガブリエル・テラ
+-  headofgovernment       = { type = 9 id = 195002 } # ガブリエル・テラ
+-  foreignminister        = { type = 9 id = 195003 } # ホセ・エスパルテル
+-  armamentminister       = { type = 9 id = 195004 } # アルフレド・バルドミル
+-  ministerofsecurity     = { type = 9 id = 195005 } # ハインツ・グロッケンバーガー
+-  ministerofintelligence = { type = 9 id = 195006 } # クリスティアノ・ピラグイ・トレリェス
+-  chiefofstaff           = { type = 9 id = 195007 } # マヌエル・エインス・アスプルア
+-  chiefofarmy            = { type = 9 id = 195008 } # ホルヘ・エリオ・メンドーサ
+-  chiefofnavy            = { type = 9 id = 195009 } # カルロス・ジャクソン・ウリベ
+-  chiefofair             = { type = 9 id = 195010 } # コスメ・アルバレス・ベリッソ
+ 
+   landunit = {
+     id       = { type = 13700 id = 1 }

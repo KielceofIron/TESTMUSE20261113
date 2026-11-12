@@ -1,0 +1,3102 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Japan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Japan_events.txt [cp932]
+@@ -169,6 +169,7 @@
+ #id = 6757488 選挙（1959年）\r
+ #id = 6757489 麻生久の逝去\r
+ #id = 6757490 麻生久暗殺\r
++#id = 6757491 議会再開と政治の新風\r
+ #軍国主義ルート（中央派）\r
+ #id = 6757501 財閥の統制\r
+ #id = 6757502 国防の本義と其強化の提唱\r
+@@ -373,9 +374,14 @@ event = {
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+ 	command = { type = set_domestic which = political_left value = 7 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 52033 } # 井上準之助\r
+ 	command = { type = foreignminister which = 50257 } # 幣原喜重郞\r
+ 	command = { type = armamentminister which = 51020 } # 深井英五\r
+@@ -419,9 +425,12 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50027 } # 鈴木喜三郞\r
+ 	command = { type = foreignminister which = 50034 } # 芳澤謙吉\r
+ 	command = { type = armamentminister which = 50059 } # 鳩山一郞\r
+@@ -443,9 +452,12 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 52044 } # 水野錬太郞\r
+ 	command = { type = foreignminister which = 50034 } # 芳澤謙吉\r
+ 	command = { type = armamentminister which = 50059 } # 鳩山一郞\r
+@@ -1655,46 +1667,12 @@ event = {
+ 	command = { type = sleepleader which = 103022 }\r
+ 	command = { type = sleepteam which = 50086 }\r
+ 	command = { type = sleepteam which = 50212 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50607 } # 眞崎甚三郞\r
+ 	command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
+ 	command = { type = armamentminister which = 50742 } # 鈴木率道\r
+@@ -2677,7 +2655,7 @@ event = {
+ 	date = { day = 20 month = 3 year = 1934 }\r
+ \r
+ 	action = { # 忠犬ハチ公、恩ヲ忘レズ\r
+-	name = "ACTIONNAME22700009A"\r
++	name = "ACTIONNAME6757038A"\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -4228,16 +4206,16 @@ event = {
+ 	command = { \r
+ 	trigger = { \r
+ 	OR = {\r
+-	area = { area = "Kamchatka" country = UGS data = 1 value = 50 }\r
+-	area = { area = "Primorski" country = UGS data = 1 value = 50 }\r
+-	area = { area = "Khabarovsk" country = UGS data = 1 value = 50 }\r
+-	area = { area = "Magadan" country = UGS data = 1 value = 50 }\r
+-	area = { area = "Amur" country = UGS data = 1 value = 50 }\r
+-	area = { area = "Yakutsk" country = UGS data = 1 value = 50 }\r
+-	area = { area = "Zabaikalye" country = UGS data = 1 value = 50 }\r
++	area = { area = "Kamchatka" country = UTC data = 1 value = 50 }\r
++	area = { area = "Primorski" country = UTC data = 1 value = 50 }\r
++	area = { area = "Khabarovsk" country = UTC data = 1 value = 50 }\r
++	area = { area = "Magadan" country = UTC data = 1 value = 50 }\r
++	area = { area = "Amur" country = UTC data = 1 value = 50 }\r
++	area = { area = "Yakutsk" country = UTC data = 1 value = 50 }\r
++	area = { area = "Zabaikalye" country = UTC data = 1 value = 50 }\r
+ 	}\r
+ 	} \r
+-	type = event which = 6757060 where = UGS when = 0 }\r
++	type = event which = 6757060 where = UTC when = 0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4252,7 +4230,7 @@ event = {
+ event = {\r
+ 	id = 6757060\r
+ 	random = no\r
+-	TAG = { UER SOV PRI SIB UGS }\r
++	TAG = { UER SOV PRI SIB UTC }\r
+ \r
+ 	name = "EVT_6757060_NAME"\r
+ 	desc = "EVT_6757060_DESC"\r
+@@ -5569,6 +5547,9 @@ event = {
+ 	incabinet = 50962 # 高松宮宣仁\r
+ 	incabinet = 50963\r
+ 	incabinet = 50964\r
++	incabinet = 53030 # 熊沢天皇\r
++	incabinet = 53031\r
++	incabinet = 53032\r
+ 	}\r
+ 	NOT = { ispuppet = yes }\r
+ 	atwar = no\r
+@@ -7584,46 +7565,12 @@ event = {
+ 	command = { type = set_domestic which = freedom value = 2 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50604 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50605 } # 荒木貞夫\r
+ 	command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
+ 	command = { type = armamentminister which = 50608 } # 眞崎甚三郞\r
+@@ -7661,46 +7608,12 @@ event = {
+ 	command = { type = set_domestic which = freedom value = 3 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50604 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50013 } # 林銑十郞\r
+ 	command = { type = foreignminister which = 50039 } # 佐藤尚武\r
+ 	command = { type = armamentminister which = 50070 } # 寺内壽一\r
+@@ -8745,10 +8658,13 @@ event = {
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 9 }\r
+ 	command = { type = set_domestic which = freedom value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50173 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = wakeminister which = 52004 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50011 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50029 } # 吉田茂\r
+ 	command = { type = foreignminister which = 50038 } # 吉田茂\r
+ 	command = { type = armamentminister which = 50060 } # 星島二郞\r
+@@ -9564,7 +9480,25 @@ event = {
+ 	command = { type = domestic which = freedom value = -1 }\r
+ 	command = { trigger = { ai = yes } type = dissent value = 5 }\r
+ 	command = { trigger = { ai = no } type = dissent value = 10 }\r
+-	ai_chance = 2\r
++	ai_chance = 1\r
++	}\r
++\r
++	action = { # クーデター成功\r
++	name = "ACTION_NAME_COUP_SUCCEEDS"\r
++	command = { type = dissent value = 10 }\r
++	command = { type = sleepminister which = 50001 } # 裕仁天皇\r
++	command = { type = sleepminister which = 50172 }\r
++	command = { type = sleepminister which = 50173 }\r
++	command = { type = sleepminister which = 50283 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = domestic which = democratic value = -2 }\r
++	command = { type = domestic which = political_left value = -2 }\r
++	command = { type = wakeminister which = 53030 } # 熊沢天皇\r
++	command = { type = wakeminister which = 53031 }\r
++	command = { type = wakeminister which = 53032 }\r
++	command = { type = headofstate which = 53030 }\r
++	command = { type = sleepevent which = 6757408 } # 第二次明治維新\r
++	ai_chance = 1\r
+ 	}\r
+ }\r
+ \r
+@@ -10818,9 +10752,12 @@ event = {
+ 	command = { type = sleepleader which = 101012 }\r
+ 	command = { type = sleepleader which = 103022 }\r
+ 	command = { type = sleepteam which = 50086 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50607 } # 眞崎甚三郞\r
+ 	command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
+ 	command = { type = armamentminister which = 50625 } # 鈴木率道\r
+@@ -10904,9 +10841,12 @@ event = {
+ 	}\r
+ 	}\r
+ 	command = { type = dissent value = 2 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50605 } # 荒木貞夫\r
+ 	command = { type = foreignminister which = 50615 } # 柳川平助\r
+ 	command = { type = armamentminister which = 50624 } # 山岡重\r
+@@ -10972,9 +10912,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50669 } # 中野正剛\r
+ 	command = { type = foreignminister which = 50683 } # 中野正剛\r
+ 	command = { type = armamentminister which = 50643 } # 北一輝\r
+@@ -11016,9 +10959,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50882 } # 麻生久\r
+ 	command = { type = foreignminister which = 50896 } # 河上丈太郞\r
+ 	command = { type = armamentminister which = 50912 } # 赤松克麿\r
+@@ -11061,9 +11007,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
+ 	command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
+ 	command = { type = armamentminister which = 50684 } # 徳川義親\r
+@@ -11106,9 +11055,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50666 } # 久原房之助\r
+ 	command = { type = foreignminister which = 50676 } # 大川周明\r
+ 	command = { type = armamentminister which = 50687 } # 石原広一郞\r
+@@ -11421,46 +11373,12 @@ event = {
+ 	action = { # 軍部主導で組閣する\r
+ 	name = "ACTIONNAME6757481A"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50611 } # 小畑敏四郞\r
+ 	command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
+ 	command = { type = armamentminister which = 50067 } # 岸信介\r
+@@ -11481,46 +11399,12 @@ event = {
+ 	command = { type = domestic which = freedom value = 2 }\r
+ 	command = { type = domestic which = interventionism value = -2 } \r
+ 	command = { type = domestic which = defense_lobby value = -2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50018 } # 東久邇宮稔彦王\r
+ 	command = { type = foreignminister which = 50682 } # 大島浩\r
+ 	command = { type = armamentminister which =50667 } # 徳川義親\r
+@@ -11569,46 +11453,12 @@ event = {
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50618 } # 山下奉文\r
+ 	command = { type = foreignminister which = 50646 } # 斎藤瀏\r
+ 	command = { type = armamentminister which = 50650 } # 西田税\r
+@@ -11657,46 +11507,12 @@ event = {
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50618 } # 山下奉文\r
+ 	command = { type = foreignminister which = 50679 } # 宮崎龍介\r
+ 	command = { type = armamentminister which = 50688 } # 笹川良一\r
+@@ -11754,46 +11570,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50669 } # 中野正剛\r
+ 	command = { type = foreignminister which = 50683 } # 中野正剛\r
+ 	command = { type = armamentminister which = 50643 } # 北一輝\r
+@@ -11818,46 +11600,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50882 } # 麻生久\r
+ 	command = { type = foreignminister which = 50896 } # 河上丈太郞\r
+ 	command = { type = armamentminister which = 50912 } # 赤松克麿\r
+@@ -11885,9 +11633,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50884 } # 赤松克麿\r
+ 	command = { type = foreignminister which = 50898 } # 山名義鶴\r
+ 	command = { type = armamentminister which = 50912 } # 赤松克麿\r
+@@ -11915,12 +11666,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50825 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 50172 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50824 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50825 } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50424 } # 安部磯雄\r
+ 	command = { type = foreignminister which = 50897 } # 河上丈太郞\r
+ 	command = { type = armamentminister which = 50053 } # 水谷長三郞\r
+@@ -11948,46 +11699,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50173 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52000 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 51009 } # 斎藤隆夫\r
+ 	command = { type = foreignminister which = 50034 } # 芳澤謙吉\r
+ 	command = { type = armamentminister which = 50402 } # 松野鶴平\r
+@@ -12008,46 +11725,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
+ 	command = { type = foreignminister which = 50639 } # 白鳥敏夫\r
+ 	command = { type = armamentminister which = 50647 } # 徳川義親\r
+@@ -12068,46 +11751,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50631 } # 久原房之助\r
+ 	command = { type = foreignminister which = 50640 } # 大川周明\r
+ 	command = { type = armamentminister which = 50650 } # 石原広一郞\r
+@@ -12152,47 +11801,12 @@ event = {
+ 	}\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { type = set_domestic which = political_left value = 2 }	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50669 } # 中野正剛\r
+ 	command = { type = foreignminister which = 50679 } # 宮崎龍介\r
+ 	command = { type = armamentminister which = 50972 } # 星野直樹\r
+@@ -12226,46 +11840,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50884 } # 赤松克麿\r
+ 	command = { type = foreignminister which = 50898 } # 山名義鶴\r
+ 	command = { type = armamentminister which = 50912 } # 赤松克麿\r
+@@ -12299,12 +11879,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50825 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 50172 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50824 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50825 } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50424 } # 安部磯雄\r
+ 	command = { type = foreignminister which = 50897 } # 河上丈太郎\r
+ 	command = { type = armamentminister which = 50053 } # 水谷長三郞\r
+@@ -12332,46 +11912,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50173 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52000 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50415 } # 芳澤謙吉\r
+ 	command = { type = foreignminister which = 50038 } # 吉田茂\r
+ 	command = { type = armamentminister which = 50294 } # 尾崎行雄\r
+@@ -12392,46 +11938,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
+ 	command = { type = foreignminister which = 50681 } # 松平恆雄\r
+ 	command = { type = armamentminister which = 50697 } # 徳川義親\r
+@@ -12451,47 +11963,12 @@ event = {
+ 	}\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { type = set_domestic which = political_left value = 3 }	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50666 } # 久原房之助\r
+ 	command = { type = foreignminister which = 50980 } # 本多熊太郞\r
+ 	command = { type = armamentminister which = 51065 } # 東条貞\r
+@@ -12536,46 +12013,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50669 } # 中野正剛\r
+ 	command = { type = foreignminister which = 51070 } # 本領信治郞\r
+ 	command = { type = armamentminister which = 50972 } # 星野直樹\r
+@@ -12609,46 +12052,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50884 } # 赤松克麿\r
+ 	command = { type = foreignminister which = 50900 } # 棚橋小虎\r
+ 	command = { type = armamentminister which = 50686 } # 鈴木貞一\r
+@@ -12682,12 +12091,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50825 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 50172 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50824 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50825 } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50025 } # 片山哲\r
+ 	command = { type = foreignminister which = 50451 } # 和田博雄\r
+ 	command = { type = armamentminister which = 50452 } # 米窪満亮\r
+@@ -12715,46 +12124,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50173 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52000 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50030 } # 鳩山一郞\r
+ 	command = { type = foreignminister which = 50037 } # 重光葵\r
+ 	command = { type = armamentminister which = 50429 } # 津島寿一\r
+@@ -12775,46 +12150,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
+ 	command = { type = foreignminister which = 50901 } # 近衞文麿\r
+ 	command = { type = armamentminister which = 50628 } # 徳川義親\r
+@@ -12835,46 +12176,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50666 } # 久原房之助\r
+ 	command = { type = foreignminister which = 50446 } # 来栖三郞\r
+ 	command = { type = armamentminister which = 51065 } # 東条貞\r
+@@ -12920,46 +12227,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50669 } # 中野正剛\r
+ 	command = { type = foreignminister which = 51070 } # 本領信治郞\r
+ 	command = { type = armamentminister which = 50688 } # 笹川良一\r
+@@ -12993,46 +12266,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50670 } # 三上卓\r
+ 	command = { type = foreignminister which = 50900 } # 棚橋小虎\r
+ 	command = { type = armamentminister which = 50914 } # 浅沼稲次郎\r
+@@ -13066,12 +12305,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50825 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 50172 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50824 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50825 } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50891 } # 河上丈太郞\r
+ 	command = { type = foreignminister which = 50451 } # 和田博雄\r
+ 	command = { type = armamentminister which = 50466 } # 脇村義太郞\r
+@@ -13099,46 +12338,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50173 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52000 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50455 } # 犬養健\r
+ 	command = { type = foreignminister which = 50470 } # 保利茂\r
+ 	command = { type = armamentminister which = 50187 } # 一萬田尚登\r
+@@ -13159,46 +12364,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50014 } # 近衞文麿\r
+ 	command = { type = foreignminister which = 50041 } # 近衞文麿\r
+ 	command = { type = armamentminister which = 50067 } # 岸信介\r
+@@ -13219,46 +12390,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 51005 } # 鮎川義介\r
+ 	command = { type = foreignminister which = 50682 } # 大島浩\r
+ 	command = { type = armamentminister which = 51067 } # 松浦伊平\r
+@@ -13303,46 +12440,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50669 } # 中野正剛\r
+ 	command = { type = foreignminister which = 51070 } # 本領信治郞\r
+ 	command = { type = armamentminister which = 50688 } # 笹川良一\r
+@@ -13376,46 +12479,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50674 } # 安藤輝三\r
+ 	command = { type = foreignminister which = 50627 } # 磯部浅一\r
+ 	command = { type = armamentminister which = 50914 } # 浅沼稲次郎\r
+@@ -13449,12 +12518,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50825 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 50172 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50824 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50825 } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50889 } # 浅沼稲次郎\r
+ 	command = { type = foreignminister which = 50451 } # 和田博雄\r
+ 	command = { type = armamentminister which = 50481 } # 江田三郞\r
+@@ -13469,59 +12538,25 @@ event = {
+ \r
+ 	action = { # 河野一郞（自由民本党）\r
+ 	name = "ELECT_ZIYU_E"\r
+-	trigger = { \r
+-	local_flag = Koudou_Democracy_2 # 社会大衆党\r
+-	AND = {\r
+-	OR = {\r
+-	event = 6757489 # 麻生久の逝去\r
+-	event = 6757490 # 麻生久暗殺\r
+-	}\r
+-	local_flag = Koudou_Social_Mass_Left # 社会大衆党左派\r
+-	}\r
+-	}\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = set_domestic which = democratic value = 8 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50173 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52000 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
++	trigger = { \r
++	local_flag = Koudou_Democracy_2 # 社会大衆党\r
++	AND = {\r
+ 	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
++	event = 6757489 # 麻生久の逝去\r
++	event = 6757490 # 麻生久暗殺\r
+ 	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
++	local_flag = Koudou_Social_Mass_Left # 社会大衆党左派\r
+ 	}\r
+ 	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50469 } # 河野一郞\r
+ 	command = { type = foreignminister which = 50182 } # 藤山愛一郞\r
+ 	command = { type = armamentminister which = 50190 } # 田中角榮\r
+@@ -13542,46 +12577,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50994 } # 岸信介\r
+ 	command = { type = foreignminister which = 51000 } # 椎名悦三郞\r
+ 	command = { type = armamentminister which = 50447 } # 石井光次郞\r
+@@ -13602,46 +12603,12 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 51005 } # 鮎川義介\r
+ 	command = { type = foreignminister which = 50682 } # 大島浩\r
+ 	command = { type = armamentminister which = 51067 } # 松浦伊平\r
+@@ -13995,9 +12962,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50424 } # 安部磯雄\r
+ 	command = { type = foreignminister which = 50897 } # 河上丈太郎\r
+ 	command = { type = armamentminister which = 50053 } # 水谷長三郞\r
+@@ -14031,9 +13001,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50884 } # 赤松克麿\r
+ 	command = { type = foreignminister which = 50898 } # 山名義鶴\r
+ 	command = { type = armamentminister which = 50643 } # 北一輝\r
+@@ -14397,9 +13370,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50172 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50424 } # 安部磯雄\r
+ 	command = { type = foreignminister which = 50897 } # 河上丈太郎\r
+ 	command = { type = armamentminister which = 50053 } # 水谷長三郞\r
+@@ -14426,9 +13402,12 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50884 } # 赤松克麿\r
+ 	command = { type = foreignminister which = 50898 } # 山名義鶴\r
+ 	command = { type = armamentminister which = 50643 } # 北一輝\r
+@@ -14464,8 +13443,6 @@ event = {
+ 	style = 2\r
+ 	picture = "Japan_Parliament"\r
+ \r
+-	date = { day = 11 month = 9 year = 1940 }\r
+-\r
+ 	action = { # 雲が晴れ、光が差し込んだ！\r
+ 	name = "ACTIONNAME6757491A"\r
+ 	command = { type = sleepevent which = 6757418 } # 増長する軍人と委縮する労働者\r
+@@ -15088,10 +14065,13 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { headofstate = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50381 } # 永田鉄山\r
+ 	command = { type = foreignminister which = 50982 } # 建川美次\r
+ 	command = { type = armamentminister which = 50070 } # 寺内壽一\r
+@@ -15114,10 +14094,13 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { headofstate = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50019 } # 寺内壽一\r
+ 	command = { type = foreignminister which = 50980 } # 本多熊太郞\r
+ 	command = { type = armamentminister which = 50076 } # 加藤外松\r
+@@ -15416,47 +14399,13 @@ event = {
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { headofstate = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50381 } # 永田鉄山\r
+ 	command = { type = foreignminister which = 50682 } # 大島浩\r
+ 	command = { type = armamentminister which = 50067 } # 岸信介\r
+@@ -15475,47 +14424,13 @@ event = {
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { headofstate = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50022 } # 東條英機\r
+ 	command = { type = foreignminister which = 50045 } # 松岡洋右\r
+ 	command = { type = armamentminister which = 50066 } # 藤原銀次郞\r
+@@ -15567,47 +14482,13 @@ event = {
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { headofstate = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50022 } # 東條英機\r
+ 	command = { type = foreignminister which = 50050 } # 重光葵\r
+ 	command = { type = armamentminister which = 50067 } # 岸信介\r
+@@ -15626,47 +14507,13 @@ event = {
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { headofstate = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50023 } # 小磯國昭\r
+ 	command = { type = foreignminister which = 50171 } # 鈴木貫太郞\r
+ 	command = { type = armamentminister which = 50334 } # 石渡莊太郞\r
+@@ -15718,47 +14565,13 @@ event = {
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50601 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50602 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50962 } # 高松宮宣仁\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++	command = { trigger = { headofstate = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50022 } # 東條英機\r
+ 	command = { type = foreignminister which = 50680 } # 村田省蔵\r
+ 	command = { type = armamentminister which = 50076 } # 加藤外松\r
+@@ -16111,47 +14924,14 @@ event = {
+ 	command = { type = domestic which = free_market value = 1 } \r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50011 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
+-	command = { trigger = { incabinet = 53029 } type = headofstate which = 53029 } # 裕仁天皇（傀儡）\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50405 } # 町田忠治\r
+ 	command = { type = foreignminister which = 50003 } # 廣田弘毅\r
+ 	command = { type = armamentminister which = 50300 } # 高橋是清\r
+@@ -16176,46 +14956,14 @@ event = {
+ 	command = { type = domestic which = free_market value = 1 } \r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50011 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50269 } # 高橋是清\r
+ 	command = { type = foreignminister which = 50256 } # 西園寺公望\r
+ 	command = { type = armamentminister which = 50294 } # 尾崎行雄\r
+@@ -16240,46 +14988,14 @@ event = {
+ 	command = { type = domestic which = free_market value = 1 } \r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50001\r
+-	headofstate = 50172\r
+-	headofstate = 50173\r
+-	headofstate = 50283\r
+-	#headofstate = 53029\r
+-	} \r
+-	} \r
+-	type = headofstate which = 50001 } # 裕仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50011\r
+-	headofstate = 50601\r
+-	headofstate = 50824\r
+-	headofstate = 52000\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50011 } # 秩父宮雍仁親王\r
+-	command = { \r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50602\r
+-	headofstate = 50722\r
+-	headofstate = 50825\r
+-	headofstate = 52004\r
+-	}\r
+-	}\r
+-	type = headofstate which = 52004 } # 雍仁天皇\r
+-	command = {\r
+-	trigger = {\r
+-	OR = {\r
+-	headofstate = 50962\r
+-	headofstate = 50963\r
+-	headofstate = 50964\r
+-	}\r
+-	}\r
+-	type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50267 } # 西園寺公望\r
+ 	command = { type = foreignminister which = 50253 } # 牧野伸顕\r
+ 	command = { type = armamentminister which = 50300 } # 高橋是清\r
+@@ -16324,6 +15040,14 @@ event = {
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 4 }\r
+ 		command = { type = set_domestic which = political_left value = 3 }\r
++		command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50401 } # 三土忠造\r
+ 		command = { type = foreignminister which = 50038 } # 吉田茂\r
+ 		command = { type = armamentminister which = 50402 } # 松野鶴平\r
+@@ -16341,6 +15065,14 @@ event = {
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 9 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
++		command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50405 } # 町田忠治\r
+ 		command = { type = foreignminister which = 50003 } # 廣田弘毅\r
+ 		command = { type = armamentminister which = 50297 } # 阪谷芳郞\r
+@@ -16358,6 +15090,14 @@ event = {
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 5 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
++		command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50407 } # 中島知久平\r
+ 		command = { type = foreignminister which = 50055 } # 小川鄕太郞\r
+ 		command = { type = armamentminister which = 50408 } # 前田米蔵\r
+@@ -16375,6 +15115,12 @@ event = {
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 5 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
++		command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50411 } # 勝田主計\r
+ 		command = { type = foreignminister which = 50412 } # 駒井徳三\r
+ 		command = { type = armamentminister which = 50056 } # 伍堂卓雄\r
+@@ -16392,6 +15138,12 @@ event = {
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
++		command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++		command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++		command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++		command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++		command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50424 } # 安部磯雄\r
+ 		command = { type = foreignminister which = 50425 } # 片山哲\r
+ 		command = { type = armamentminister which = 50053 } # 水谷長三郞\r
+@@ -16431,8 +15183,15 @@ event = {
+ 		name = "ACTIONNAME6757603A"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50389 } # 吉田茂\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50415 } # 芳澤謙吉\r
+ 		command = { type = foreignminister which = 50038 } # 吉田茂\r
+ 		command = { type = armamentminister which = 50336 } # 池田成彬\r
+@@ -16449,8 +15208,15 @@ event = {
+ 		name = "ACTIONNAME6757603B"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50173 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50391 } # 町田忠治\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50405 } # 町田忠治\r
+ 		command = { type = foreignminister which = 50003 } # 廣田弘毅\r
+ 		command = { type = armamentminister which = 50418 } # 三木武吉\r
+@@ -16467,8 +15233,13 @@ event = {
+ 		name = "ACTIONNAME6757603C"\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 1 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50393 } # 勝田主計\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50421 } # 金光庸夫\r
+ 		command = { type = foreignminister which = 50042 } # 有田八郞\r
+ 		command = { type = armamentminister which = 50422 } # 堀切善兵衛\r
+@@ -16485,8 +15256,13 @@ event = {
+ 		name = "ACTIONNAME6757603D"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50172 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50395 } # 安部磯雄\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50424 } # 安部磯雄\r
+ 		command = { type = foreignminister which = 50425 } # 片山哲\r
+ 		command = { type = armamentminister which = 50053 } # 水谷長三郞\r
+@@ -16526,8 +15302,15 @@ event = {
+ 		name = "ACTIONNAME6757603A"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50389 } # 吉田茂\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50030 } # 鳩山一郞\r
+ 		command = { type = foreignminister which = 50033 } # 芦田均\r
+ 		command = { type = armamentminister which = 50429 } # 津島寿一\r
+@@ -16544,8 +15327,15 @@ event = {
+ 		name = "ACTIONNAME6757603B"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50173 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50391 } # 町田忠治\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50432 } # 三木武吉\r
+ 		command = { type = foreignminister which = 50257 } # 幣原喜重郞\r
+ 		command = { type = armamentminister which = 50433 } # 松村謙三\r
+@@ -16562,8 +15352,13 @@ event = {
+ 		name = "ACTIONNAME6757603C"\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 1 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50393 } # 勝田主計\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50436 } # 前田米蔵\r
+ 		command = { type = foreignminister which = 50042 } # 有田八郞\r
+ 		command = { type = armamentminister which = 50422 } # 堀切善兵衛\r
+@@ -16580,8 +15375,13 @@ event = {
+ 		name = "ACTIONNAME6757603D"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50172 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50395 } # 安部磯雄\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50025 } # 片山哲\r
+ 		command = { type = foreignminister which = 50425 } # 片山哲\r
+ 		command = { type = armamentminister which = 50053 } # 水谷長三郞\r
+@@ -16621,8 +15421,13 @@ event = {
+ 		name = "ACTIONNAME6757603A"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50389 } # 吉田茂\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50174 } # 芦田均\r
+ 		command = { type = foreignminister which = 50044 } # 野村吉三郞\r
+ 		command = { type = armamentminister which = 50186 } # 向井忠晴\r
+@@ -16639,8 +15444,15 @@ event = {
+ 		name = "ACTIONNAME6757603B"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50173 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50391 } # 町田忠治\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50432 } # 三木武吉\r
+ 		command = { type = foreignminister which = 50441 } # 岡崎勝男\r
+ 		command = { type = armamentminister which = 50442 } # 中村三之丞\r
+@@ -16657,8 +15469,13 @@ event = {
+ 		name = "ACTIONNAME6757603C"\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 1 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50393 } # 勝田主計\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50445 } # 大麻唯男\r
+ 		command = { type = foreignminister which = 50446 } # 来栖三郞\r
+ 		command = { type = armamentminister which = 50447 } # 石井光次郞\r
+@@ -16675,8 +15492,13 @@ event = {
+ 		name = "ACTIONNAME6757603D"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50172 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50395 } # 安部磯雄\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50450 } # 和田博雄\r
+ 		command = { type = foreignminister which = 50451 } # 和田博雄\r
+ 		command = { type = armamentminister which = 50452 } # 米窪満亮\r
+@@ -16716,7 +15538,14 @@ event = {
+ 		name = "ACTIONNAME6757603A"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50390 } # 鳩山一郞\r
+ 		command = { type = headofgovernment which = 50455 } # 犬養健\r
+ 		command = { type = foreignminister which = 50180 } # 久保田貫一郞\r
+@@ -16734,8 +15563,15 @@ event = {
+ 		name = "ACTIONNAME6757603B"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50173 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50392 } # 三木武吉\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50176 } # 石橋湛山\r
+ 		command = { type = foreignminister which = 50441 } # 岡崎勝男\r
+ 		command = { type = armamentminister which = 50457 } # 北村徳太郞\r
+@@ -16752,8 +15588,13 @@ event = {
+ 		name = "ACTIONNAME6757603C"\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 1 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50394 } # 前田米蔵\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50460 } # 緒方竹虎\r
+ 		command = { type = foreignminister which = 50461 } # 松本俊一\r
+ 		command = { type = armamentminister which = 50462 } # 川島正次郞\r
+@@ -16770,8 +15611,13 @@ event = {
+ 		name = "ACTIONNAME6757603D"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50172 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50396 } # 片山哲\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50464 } # 広川弘禅\r
+ 		command = { type = foreignminister which = 50465 } # 西村英一\r
+ 		command = { type = armamentminister which = 50466 } # 脇村義太郞\r
+@@ -16812,8 +15658,15 @@ event = {
+ 		name = "ACTIONNAME6757603A"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50390 } # 鳩山一郞\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50469 } # 河野一郞\r
+ 		command = { type = foreignminister which = 50470 } # 保利茂\r
+ 		command = { type = armamentminister which = 50185 } # 池田勇人\r
+@@ -16830,8 +15683,15 @@ event = {
+ 		name = "ACTIONNAME6757603B"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50173 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50392 } # 三木武吉\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50472 } # 松村謙三\r
+ 		command = { type = foreignminister which = 50473 } # 三木武夫\r
+ 		command = { type = armamentminister which = 50457 } # 北村徳太郞\r
+@@ -16848,8 +15708,13 @@ event = {
+ 		name = "ACTIONNAME6757603C"\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 1 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50394 } # 前田米蔵\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50476 } # 石井光次郞\r
+ 		command = { type = foreignminister which = 50461 } # 松本俊一\r
+ 		command = { type = armamentminister which = 50478 } # 藤山愛一郞\r
+@@ -16866,8 +15731,13 @@ event = {
+ 		name = "ACTIONNAME6757603D"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50172 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50396 } # 片山哲\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50464 } # 広川弘禅\r
+ 		command = { type = foreignminister which = 50465 } # 西村英一\r
+ 		command = { type = armamentminister which = 50481 } # 江田三郞\r
+@@ -16907,8 +15777,15 @@ event = {
+ 		name = "ACTIONNAME6757603A"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 2 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50390 } # 鳩山一郞\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50469 } # 河野一郞\r
+ 		command = { type = foreignminister which = 50184 } # 大平正芳\r
+ 		command = { type = armamentminister which = 50185 } # 池田勇人\r
+@@ -16926,8 +15803,15 @@ event = {
+ 		name = "ACTIONNAME6757603B"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50173 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50392 } # 三木武吉\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50173 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 52000 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = wakeminister which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 52004 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50964 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53031 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50472 } # 松村謙三\r
+ 		command = { type = foreignminister which = 50473 } # 三木武夫\r
+ 		command = { type = armamentminister which = 50485 } # 福田赳夫\r
+@@ -16944,8 +15828,13 @@ event = {
+ 		name = "ACTIONNAME6757603C"\r
+ 		command = { type = set_domestic which = democratic value = 7 }\r
+ 		command = { type = set_domestic which = political_left value = 1 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50394 } # 前田米蔵\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50001 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50284 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50962 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53030 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50476 } # 石井光次郞\r
+ 		command = { type = foreignminister which = 50182 } # 藤山愛一郞\r
+ 		command = { type = armamentminister which = 50489 } # 佐藤栄作\r
+@@ -16962,8 +15851,13 @@ event = {
+ 		name = "ACTIONNAME6757603D"\r
+ 		command = { type = set_domestic which = democratic value = 8 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
+-		command = { trigger = { NOT = { local_flag = Japan_Republic } } type = headofstate which = 50172 } # 昭和天皇\r
+ 		command = { trigger = { local_flag = Japan_Republic } type = headofstate which = 50396 } # 片山哲\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50172 } # 昭和天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50825 } # 雍仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++		command = { trigger = { NOT = { local_flag = Japan_Republic } OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 		command = { type = headofgovernment which = 50492 } # 江田三郞\r
+ 		command = { type = foreignminister which = 50465 } # 西村英一\r
+ 		command = { type = armamentminister which = 50493 } # 横山利秋\r
+@@ -18741,7 +17635,13 @@ event = {
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+ 	command = { type = relation which = SOV value = 150 }\r
+ 	command = { type = relation which = CHC value = 150 }\r
+-	command = { type = headofstate which = 50283 } # 裕仁天皇\r
++	command = { trigger = { OR = { headofstate = 50001 headofstate = 50172 headofstate = 50173 headofstate = 50283 } } type = headofstate which = 50283 } # 昭和天皇\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = wakeminister which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50011 headofstate = 50601 headofstate = 50824 headofstate = 52000 } } type = headofstate which = 50824 } # 秩父宮雍仁親王\r
++	command = { trigger = { OR = { headofstate = 50602 headofstate = 50722 headofstate = 50825 headofstate = 52004 } } type = headofstate which = 50722 } # 雍仁天皇\r
++	command = { trigger = { OR = { headofstate = 50284 headofstate = 50285 headofstate = 53002 headofstate = 53003 headofstate = 53004 headofstate = 53005 } } type = headofstate which = 50285 } # 明仁天皇\r
++	command = { trigger = { OR = { headofstate = 50962 headofstate = 50963 headofstate = 50964 } } type = headofstate which = 50963 } # 高松宮宣仁\r
++	command = { trigger = { OR = { headofstate = 53030 headofstate = 53031 headofstate = 53032 } } type = headofstate which = 53032 } # 熊沢天皇\r
+ 	command = { type = headofgovernment which = 50725 } # 荒木貞夫\r
+ 	command = { type = foreignminister which = 50780 } # 鍋山貞親\r
+ 	command = { type = armamentminister which = 50837 } # 北一輝\r

@@ -1,0 +1,673 @@
+--- A/scenarios/1933if_Japan/australia_if.inc [cp932]
++++ B/scenarios/1933if_Japan/australia_if.inc [cp932]
+@@ -1,381 +1,294 @@
+- \r
+- ############################## \r
+- # Country definition for AST # \r
+- ############################## \r
+-  \r
++##############################\r
++# Country definition for AST #\r
++##############################\r
+ \r
+-  \r
+- ##################### \r
+- # Country main data # \r
+- ##################### \r
+-  \r
+- country = \r
+- {  tag                    = AST \r
+-	ai = "ast_1933.ai"\r
+-	ai_settings = { flags = { MOB1 = yes MOB2 = yes } }\r
+-	dissent = 20\r
+-	manpower               = 10 \r
+-	# Resource Reserves \r
+-	energy                 = 1620\r
+-	metal                  = 810\r
+-	rare_materials         = 405\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 20 \r
+-	capital                = 1707 \r
+-    \r
+-   # 1st Transport Flotilla# \r
+-   transports             = 130 \r
+-   escorts                = 1 \r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 9 \r
+-     political_left    = 1 \r
+-     free_market       = 8 \r
+-     freedom           = 10 \r
+-     professional_army = 2 \r
+-     defense_lobby     = 2 \r
+-     interventionism   = 6 \r
+-    } \r
+-   nationalprovinces      = {  1688 1689 1690 1691 1692 1693 1694 1695 1696 1697 1698 1699 1700 1701 1702 1703 1704 1705 1706 1707 1708 1709 1710 1711 1712 1713 1714 1715 1716 1717 } \r
+-   ownedprovinces         = {  1604 1606 1607 1608 1609 1688 1689 1690 1691 1692 1693 1694 1695 1696 1697 1698 1699 1700 1701 1702 1703 1704 1705 1706 1707 1708 1709 1710 1711 1712 1713 1714 1715 1716 1717 }\r
+-   controlledprovinces    = {  1604 1606 1607 1608 1609 1688 1689 1690 1691 1692 1693 1694 1695 1696 1697 1698 1699 1700 1701 1702 1703 1704 1705 1706 1707 1708 1709 1710 1711 1712 1713 1714 1715 1716 1717 } \r
+-   claimedprovinces    = { 1682 }\r
+-						\r
+-	# AST 1933 techs \r
+-	# ###################### \r
+-	techapps = { \r
+-	# Infantry Division  \r
+-	1010  1020 1030 1040 1050 1060 1070 1080 1090\r
+-	# CAVALRY \r
+-	13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 \r
+-	# Hospital System \r
+-	14000 14010 14020\r
+-	# Tank \r
+-	7600 7610 2620 2010 2630\r
+-	# Armoured Car  \r
+-	2860 2870 2880 2020\r
+-	# Field Artillery \r
+-	2290 2300 2310 \r
+-	# Static Anti-Air Artillery \r
+-	2800 2450 21180 21190\r
+-	# Anti-Air Artillery Brigade \r
+-	2810 2820 2510\r
+-	#Naval Infantry\r
+-	#1560 1570 1580\r
+-	#Engineers\r
+-	1830 1840 1850 1860\r
+-	# Destroyer \r
+-	3010 3020 3030 3040 3050 \r
+-	# Light Cruiser \r
+-	3110 3120 3130 3140 3150\r
+-	# Heavy Cruiser \r
+-	3210 3220 3230 3240 3250\r
+-	# Battlecruiser  \r
+-	3310 3320 3330\r
+-	# Fighter  \r
+-	4500 4510 4520 4530 4540 4550 4010 4020\r
+-	# Bomber \r
+-	4600 4610 4620 4630 4120 4130\r
+-	# Mechanized Agriculture \r
+-	5700 5710 5010 5020\r
+-	# Manufactoring\r
+-	5810 5820 5050 5830 5060\r
+-	# Construction Engineering \r
+-	5800 5080 5090\r
+-	# Computers & cryptography\r
+-	5310 54010 54020 54030 5316 5326\r
+-	# Supply\r
+-	1910 1920 1930 1940 1950 1960 1970\r
+-	# Multirole fighter\r
+-	4300 4310 4320 4330\r
+-	# strategic bomber\r
+-	4800 4810 4820\r
+-	# SEAPLANES\r
+-	4740 4750 4760\r
+-	# Torpedo & ASW 18\r
+-	3720 3730 3736 3740 3900\r
+-	# Troopships\r
+-	3810 3820\r
+-	# Medicine\r
+-	5600 5610 5620 5630\r
+-	# Great War Land Doctrines (entente)\r
+-	6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-	# Defensive Focus Grand Battleplan Path (FRA / UK)\r
+-	6560\r
+-	# Engagement Theories\r
+-	8010 8020 8040 8050 8060 8070 8080\r
+-	# Naval Supremacy\r
+-	8100 8110 8120 8150 8160 8200 8210\r
+-	# Naval Interdiction\r
+-	8500 8510 8520 8600\r
+-	# Engagement Tactics\r
+-	8900 8910 8920 8930 8940 \r
+-	# Air Doctrines\r
+-	27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 \r
+-	82300 82310\r
+- } \r
+- inventions = { 3000027 }\r
+-   diplomacy = \r
+-   {  relation = {  tag = BEL value = 75  } \r
+-     relation = {  tag = BHU value = 200  } \r
+-     relation = {  tag = CAN value = 200  } # was access = yes \r
+-     relation = {  tag = ENG value = 200  } # was access = yes \r
+-     relation = {  tag = FIN value = 65  } \r
+-     relation = {  tag = FRA value = 150  } \r
+-     relation = {  tag = GER value = 1  } \r
+-     relation = {  tag = IRE value = 75  } \r
+-     relation = {  tag = IRQ value = 100  } \r
+-     relation = {  tag = ITA value = 1  } \r
+-     relation = {  tag = NEP value = 200  } \r
+-     relation = {  tag = NZL value = 200  } # was access = yes \r
+-     relation = {  tag = OMN value = 150  } \r
+-     relation = {  tag = SAF value = 200  } # was access = yes \r
+-     relation = {  tag = SAU value = 50  } \r
+-     relation = {  tag = USA value = 125  } \r
+-     relation = {  tag = YEM value = 150  } \r
+-    } \r
+-   SpyInfo                = {  country = "AST" NumberOfSpies = 6  } \r
+-   headofstate            = {  type = 9 id = 225001  } \r
+-   headofgovernment       = {  type = 9 id = 225002  } \r
+-   foreignminister        = {  type = 9 id = 225003  } \r
+-   armamentminister       = {  type = 9 id = 225004  } \r
+-   ministerofsecurity     = {  type = 9 id = 225005  } \r
+-   ministerofintelligence = {  type = 9 id = 225006  } \r
+-   chiefofstaff           = {  type = 9 id = 225179  } #Julius Bruche\r
+-   chiefofarmy            = {  type = 9 id = 225008  } \r
+-   chiefofnavy            = {  type = 9 id = 225009  } \r
+-   chiefofair             = {  type = 9 id = 225010  } \r
+-   # ## 1932:  The total Militia was only 28,000 men strong \r
+-   # ## Regular Army had about 1500 men (mostly coastal artillery) \r
+-   # ## This was brought upto 46,000 by 1906 \r
+-   # ## The Militia was used in New Guinea against Japan \r
+-   # ######### Australian Army ############## \r
+-   landunit = \r
+-   {  id       = {  type = 30001 id = 1  } \r
+-     name     = "第1軍管区" \r
+-     location = 1704 \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 2  } \r
+-       name     = "第5歩兵師団" \r
+-       strength = 5\r
+-       type     = garrison\r
+-	   model    = 3\r
+-      } \r
+-    } \r
+-   landunit = \r
+-   {  id       = {  type = 30001 id = 3  } \r
+-     name     = "第2軍管区" \r
+-     location = 1705 \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 4  } \r
+-       name     = "第7歩兵師団" \r
+-       strength = 5 \r
+-       type     = garrison\r
+-	   model    = 3\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 5  } \r
+-       name     = "第2歩兵師団" \r
+-       strength = 5\r
+-       type     = garrison\r
+-	   model    = 3\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 6  } \r
+-       name     = "第1騎兵師団" \r
+-       strength = 5\r
+-       type     = cavalry \r
+-       model    = 7\r
+-      } \r
+-    } \r
+-   landunit = \r
+-   {  id       = {  type = 30001 id = 7  } \r
+-     name     = "第3軍管区" \r
+-     location = 1708 \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 8  } \r
+-       name     = "第3歩兵師団" \r
+-       strength = 5\r
+-       type     = garrison\r
+-	   model    = 3\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 9  } \r
+-       name     = "第4歩兵師団" \r
+-       strength = 5\r
+-       type     = garrison\r
+-	   model    = 3\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 10  } \r
+-       name     = "第2騎兵師団" \r
+-       strength = 5 \r
+-       type     = cavalry \r
+-       model    = 7\r
+-      } \r
+-    } \r
+-   landunit = \r
+-   {  id       = {  type = 30001 id = 11  } \r
+-     name     = "オーストラリア王立第2軍団" \r
+-     location = 1707 \r
+-     Division = \r
+-     {  id       = {  type = 30001 id = 12  } \r
+-       name     = "オーストラリア第6師団" \r
+-       strength = 5\r
+-       type     = infantry \r
+-	   model    = 7\r
+-      } \r
+-    } \r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+-  landunit   = { \r
+- 	id       = { type = 30001 id = 253 }\r
+- 	location = 1705\r
+- 	name     = "王立オーストラリア陸軍"\r
+-	division = \r
+-	{ id = { type = 27111 id = 254 }\r
+-   	  name       = "オーストラリア第1師団"\r
+-   	  type       = infantry\r
+-	  model      = 6 # 2\r
+-   	  strength   = 5\r
+-	  experience = 0\r
+-	extra = cavalry_brigade\r
+-	brigade_model = 2	\r
+-   }\r
+- }\r
++country = {\r
++  tag                = AST\r
++  ai                 = "ast_1933.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes } }\r
++  capital            = 1707 # キャンベラ\r
++  dissent            = 20\r
++  manpower           = 10\r
++  # Resource Reserves\r
++  energy         = 1620\r
++  metal          = 810\r
++  rare_materials = 405\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 20\r
++  transports     = 130\r
++  escorts        = 1\r
+ \r
+-  landunit   = { \r
+- 	id       = { type = 30001 id = 250 }\r
+- 	location = 1708\r
+- 	name     = "常設軍"\r
+-	division = \r
+-	{ id = { type = 27111 id = 251 }\r
+-   	  name       = "常設隊"\r
+-   	  type       = militia\r
+-	  model      = 3 # 1	  \r
+-   	  strength   = 20\r
+-	  experience = 0	\r
+-   }\r
+- }\r
++  diplomacy = {\r
++    relation = { tag = BEL value = 75 }\r
++    relation = { tag = BHU value = 200 }\r
++    relation = { tag = CAN value = 200 }\r
++    relation = { tag = ENG value = 200 }\r
++    relation = { tag = FIN value = 65 }\r
++    relation = { tag = FRA value = 150 }\r
++    relation = { tag = GER value = 1 }\r
++    relation = { tag = IRE value = 75 }\r
++    relation = { tag = IRQ value = 100 }\r
++    relation = { tag = ITA value = 1 }\r
++    relation = { tag = NEP value = 200 }\r
++    relation = { tag = NZL value = 200 }\r
++    relation = { tag = OMN value = 150 }\r
++    relation = { tag = SAF value = 200 }\r
++    relation = { tag = SAU value = 50 }\r
++    relation = { tag = USA value = 125 }\r
++    relation = { tag = YEM value = 150 }\r
++  }\r
++  SpyInfo                = { country = "AST" NumberOfSpies = 6 }\r
+ \r
++  nationalprovinces      = { 1688 1689 1690 1691 1692 1693 1694 1695 1696 1697 1698 1699 1700 1701 1702 1703 1704 1705 1706 1707 1708 1709 1710 1711 1712 1713 1714 1715 1716 1717 }\r
++  ownedprovinces         = { 1604 1606 1607 1608 1609 1688 1689 1690 1691 1692 1693 1694 1695 1696 1697 1698 1699 1700 1701 1702 1703 1704 1705 1706 1707 1708 1709 1710 1711 1712 1713 1714 1715 1716 1717 }\r
++  controlledprovinces    = { 1604 1606 1607 1608 1609 1688 1689 1690 1691 1692 1693 1694 1695 1696 1697 1698 1699 1700 1701 1702 1703 1704 1705 1706 1707 1708 1709 1710 1711 1712 1713 1714 1715 1716 1717 }\r
++  claimedprovinces       = { 1682 }\r
+ \r
+-   # ######### Australian Navy ############## \r
+-	navalunit = { \r
+-		id = { type = 10500 id = 13 } \r
+-		name = "王立オーストラリア海軍" \r
+-		location = 1707 \r
+-		base = 1707 \r
+-		division = { \r
+-			id = { type = 10500 id = 14 } \r
+-			name = "HMAS アルバトロス" \r
+-			type = escort_carrier \r
+-			model = 0 \r
+-			}\r
+-		division = { \r
+-			id = { type = 10500 id = 15 } \r
+-			name = "HMAS オーストラリア" \r
+-			type = battleship\r
+-			model = 3\r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 16 } \r
+-			name = "HMAS キャンベラ" \r
+-			type = battleship\r
+-			model = 3\r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 17 } \r
+-			name = "HMAS ブリスベン" \r
+-			type = heavy_cruiser\r
+-			model = 2\r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 18 } \r
+-			name = "HMAS アデレード" \r
+-			type = heavy_cruiser\r
+-			model = 2 \r
+-			}\r
+-		division = { \r
+-			id = { type = 10500 id = 19 } \r
+-			name = "HMAS コリンズ" \r
+-			type = light_cruiser\r
+-			model = 2 \r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 20 } \r
+-			name = "HMAS ファーンコム" \r
+-			type = light_cruiser\r
+-			model = 2 \r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 21 } \r
+-			name = "HMAS ウォーラー" \r
+-			type = light_cruiser\r
+-			model = 2 \r
+-			}\r
+-		division = { \r
+-			id = { type = 10500 id = 22 } \r
+-			name = "第1駆逐隊" \r
+-			type = destroyer\r
+-			model = 1 \r
+-			}\r
+-		division = { \r
+-			id = { type = 10500 id = 23 } \r
+-			name = "第2駆逐隊" \r
+-			type = destroyer\r
+-			model = 1 \r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 24 } \r
+-			name = "第1潜水隊" \r
+-			type = submarine\r
+-			model = 1 \r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 25 } \r
+-			name = "第2潜水隊" \r
+-			type = submarine\r
+-			model = 1 \r
+-			}\r
+-		division = { \r
+-			id = { type = 10500 id = 26 } \r
+-			name = "第1輸送隊" \r
+-			type = transport \r
+-			model = 1 \r
+-			} \r
+-		division = { \r
+-			id = { type = 10500 id = 27 } \r
+-			name = "第2輸送隊" \r
+-			type = transport  \r
+-			model = 1 \r
+-			} \r
+-		} \r
+-   # ################## Australian Air Force ####################### \r
+-   # ## An approximation of the 13 squadron airforce in 1936.### \r
+-   airunit = \r
+-   {  location = 1707 \r
+-     base     = 1707 \r
+-     id       = {  type = 10500 id = 28  } \r
+-     name     = "王立オーストラリア空軍" \r
+-     Division = \r
+-     {  id       = {  type = 10500 id = 29  } \r
+-       name     = "RAAF 第1航空群" \r
+-       strength = 10 \r
+-       type     = multi_role \r
+-       model    = 3\r
+-      } \r
+-    } \r
+-   # Note on Warships Under Construction or Refit# \r
+-   # HMAS Adelaide was refitted by 1939. \r
+-   # Adelaide had a max speed of only 24 knots. \r
+-   division_development = \r
+-   {  name  = "第3駆逐隊" \r
+-     type  = destroyer \r
+-     model = 3\r
+-     cost  = 0.1 \r
+-     id    = {  type = 10500 id = 30  } \r
+-     date  = {  year = 1933 month = october day = 11  } \r
+-    } \r
+-landdivision = { dormant = yes id = { type = 30001 id = 1001 }  name = "第1ホームガード師団"  type = garrison model = 5 extra = artillery brigade_model = 9 locked  = yes }\r
+-  } \r
+- \r
++  techapps               = { 1010 1020 1030 1040 1050 1060 1070 1080 1090 13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 14000 14010 14020 7600 7610 2620 2010 2630 2860 2870 2880 2020 2290 2300 2310 2800 2450 21180 21190 2810 2820 2510 1830 1840 1850 1860 3010 3020 3030 3040 3050 3110 3120 3130 3140 3150 3210 3220 3230 3240 3250 3310 3320 3330 4500 4510 4520 4530 4540 4550 4010 4020 4600 4610 4620 4630 4120 4130 5700 5710 5010 5020 5810 5820 5050 5830 5060 5800 5080 5090 5310 54010 54020 54030 5316 5326 1910 1920 1930 1940 1950 1960 1970 4300 4310 4320 4330 4800 4810 4820 4740 4750 4760 3720 3730 3736 3740 3900 3810 3820 5600 5610 5620 5630 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 6560 8010 8020 8040 8050 8060 8070 8080 8100 8110 8120 8150 8160 8200 8210 8500 8510 8520 8600 8900 8910 8920 8930 8940 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 82300 82310 }\r
++  inventions             = { 3000027 }\r
++\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 9\r
++    political_left    = 1\r
++    freedom           = 10\r
++    free_market       = 8\r
++    professional_army = 2\r
++    defense_lobby     = 2\r
++    interventionism   = 6\r
++  }\r
++  headofstate            = { type = 9 id = 225001 } # アイザック・アルフレッド・アイザックス\r
++  headofgovernment       = { type = 9 id = 225002 } # ジョセフ・A・ライオンズ\r
++  foreignminister        = { type = 9 id = 225003 } # ジョージ・F・ピアース\r
++  armamentminister       = { type = 9 id = 225004 } # ロバート・A・パークヒル\r
++  ministerofsecurity     = { type = 9 id = 225005 } # トーマス・パターソン\r
++  ministerofintelligence = { type = 9 id = 225006 } # アレクサンダー・マクラクラン\r
++  chiefofstaff           = { type = 9 id = 225179 } # ジュリアス・ブルック\r
++  chiefofarmy            = { type = 9 id = 225008 } # ジョン・ラヴァラック\r
++  chiefofnavy            = { type = 9 id = 225009 } # ラグナー・M・コルヴィン\r
++  chiefofair             = { type = 9 id = 225010 } # リチャード・ウィリアムス\r
++\r
++  landunit = {\r
++    id       = { type = 30001 id = 1 }\r
++    name     = "第1軍管区"\r
++    location = 1704\r
++    division = {\r
++      id             = { type = 30001 id = 2 }\r
++      name           = "第5歩兵師団"\r
++      type           = garrison\r
++      model          = 3\r
++      strength       = 5\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30001 id = 3 }\r
++    name     = "第2軍管区"\r
++    location = 1705\r
++    division = {\r
++      id             = { type = 30001 id = 4 }\r
++      name           = "第7歩兵師団"\r
++      type           = garrison\r
++      model          = 3\r
++      strength       = 5\r
++    }\r
++    division = {\r
++      id             = { type = 30001 id = 5 }\r
++      name           = "第2歩兵師団"\r
++      type           = garrison\r
++      model          = 3\r
++      strength       = 5\r
++    }\r
++    division = {\r
++      id             = { type = 30001 id = 6 }\r
++      name           = "第1騎兵師団"\r
++      type           = cavalry\r
++      model          = 7\r
++      strength       = 5\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30001 id = 7 }\r
++    name     = "第3軍管区"\r
++    location = 1708\r
++    division = {\r
++      id             = { type = 30001 id = 8 }\r
++      name           = "第3歩兵師団"\r
++      type           = garrison\r
++      model          = 3\r
++      strength       = 5\r
++    }\r
++    division = {\r
++      id             = { type = 30001 id = 9 }\r
++      name           = "第4歩兵師団"\r
++      type           = garrison\r
++      model          = 3\r
++      strength       = 5\r
++    }\r
++    division = {\r
++      id             = { type = 30001 id = 10 }\r
++      name           = "第2騎兵師団"\r
++      type           = cavalry\r
++      model          = 7\r
++      strength       = 5\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30001 id = 11 }\r
++    name     = "オーストラリア王立第2軍団"\r
++    location = 1707\r
++    division = {\r
++      id             = { type = 30001 id = 12 }\r
++      name           = "オーストラリア第6師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 5\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30001 id = 253 }\r
++    name     = "王立オーストラリア陸軍"\r
++    location = 1705\r
++    division = {\r
++      id             = { type = 27111 id = 254 }\r
++      name           = "オーストラリア第1師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 2\r
++      strength       = 5\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30001 id = 250 }\r
++    name     = "常設軍"\r
++    location = 1708\r
++    division = {\r
++      id             = { type = 27111 id = 251 }\r
++      name           = "常設隊"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 20\r
++    }\r
++  }\r
++\r
++  navalunit = {\r
++    id       = { type = 10500 id = 13 }\r
++    name     = "王立オーストラリア海軍"\r
++    location = 1707\r
++    base     = 1707\r
++    division = {\r
++      id             = { type = 10500 id = 14 }\r
++      name           = "HMAS アルバトロス"\r
++      type           = escort_carrier\r
++      model          = 0\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 15 }\r
++      name           = "HMAS オーストラリア"\r
++      type           = battleship\r
++      model          = 3\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 16 }\r
++      name           = "HMAS キャンベラ"\r
++      type           = battleship\r
++      model          = 3\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 17 }\r
++      name           = "HMAS ブリスベン"\r
++      type           = heavy_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 18 }\r
++      name           = "HMAS アデレード"\r
++      type           = heavy_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 19 }\r
++      name           = "HMAS コリンズ"\r
++      type           = light_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 20 }\r
++      name           = "HMAS ファーンコム"\r
++      type           = light_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 21 }\r
++      name           = "HMAS ウォーラー"\r
++      type           = light_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 22 }\r
++      name           = "第1駆逐隊"\r
++      type           = destroyer\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 23 }\r
++      name           = "第2駆逐隊"\r
++      type           = destroyer\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 24 }\r
++      name           = "第1潜水隊"\r
++      type           = submarine\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 25 }\r
++      name           = "第2潜水隊"\r
++      type           = submarine\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 26 }\r
++      name           = "第1輸送隊"\r
++      type           = transport\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 10500 id = 27 }\r
++      name           = "第2輸送隊"\r
++      type           = transport\r
++      model          = 1\r
++    }\r
++  }\r
++\r
++  airunit = { \r
++    id       = { type = 10500 id = 28 }\r
++    name     = "王立オーストラリア空軍"\r
++    location = 1707\r
++    base     = 1707\r
++    division = {\r
++      id             = { type = 10500 id = 29 }\r
++      name           = "RAAF 第1航空群"\r
++      type           = multi_role\r
++      model          = 3\r
++      strength       = 10\r
++    }\r
++  }\r
++\r
++  division_development = {\r
++    id             = { type = 10500 id = 30 }\r
++    name           = "第3駆逐隊"\r
++    type           = destroyer\r
++    model          = 3\r
++    cost           = 0.1\r
++    date           = { year = 1933 month = october day = 11 }\r
++  }\r
++\r
++  landdivision = { dormant = yes id = { type = 30001 id = 1001 } name = "第1ホームガード師団"  type = garrison model = 5 extra = artillery brigade_model = 9 locked = yes } \r
++}\r

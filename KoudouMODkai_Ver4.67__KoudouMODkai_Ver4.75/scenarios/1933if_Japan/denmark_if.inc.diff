@@ -1,0 +1,513 @@
+--- A/scenarios/1933if_Japan/denmark_if.inc [cp932]
++++ B/scenarios/1933if_Japan/denmark_if.inc [cp932]
+@@ -1,296 +1,224 @@
+- \r
+- ############################## \r
+- # Country definition for DEN # \r
+- ############################## \r
+-  \r
++##############################\r
++# Country definition for DEN #\r
++##############################\r
+ \r
+- ##################### \r
+- # Country main data # \r
+- ##################### \r
+-  \r
+- country = \r
+- {  tag                    = DEN \r
+-	ai = "den_1936.ai"\r
+-	ai_settings	= { flags = { MOB1 = yes MOB2 = yes MOB3 = yes } }\r
+-	dissent = 5\r
+-	manpower               = 10 \r
+-	capital                = 294 \r
+-	# Resource Reserves \r
+-	energy                 = 660\r
+-	metal                  = 330\r
+-	rare_materials         = 165\r
+-	transports = 230\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 10 \r
+-      \r
+-   diplomacy = \r
+-   {  relation = {  tag = BEL value = 100  } \r
+-     relation = {  tag = ENG value = 100  } \r
+-     relation = {  tag = FIN value = 75  } \r
+-     relation = {  tag = GER value = 25  } \r
+-     relation = {  tag = HOL value = 100  } \r
+-     relation = {  tag = LUX value = 100  } \r
+-     relation = {  tag = NOR value = 150  } \r
+-     relation = {  tag = PER value = 50  } \r
+-     relation = {  tag = SWE value = 75  } \r
+-     relation = {  tag = USA value = 75  } \r
+-	 relation = {  tag = LIT value = 75  }\r
+-	 relation = {  tag = LAT value = 75  }\r
+-	 relation = {  tag = EST value = 75  }\r
+-    } \r
+-   SpyInfo                = {  country = "DEN" NumberOfSpies = 3  } \r
+-   nationalprovinces      = {  1 2 3 216 217 218 219 220 294 1783  } \r
+-   ownedprovinces         = {  1 2 3 217 218 219 220 294 1783  } \r
+-   controlledprovinces    = {  1 2 3 217 218 219 220 294 1783  } \r
+-   # Western Minor Tech '36 \r
+-   # Group C 1936 techs \r
+-   # ###################### \r
+-   techapps               = {  \r
+-#Early Fighter  \r
+-4500 4510 4520 4530 4540 4550 4010 4020   \r
+-#Interwar Bomber \r
+-4600 4610 4620 4630 4120   \r
+-#Great War Tank\r
+-7600 7610 2620 2010   \r
+-#Great War Heavy Field Artillery \r
+-2290 2300 2310    \r
+-#Early Static Anti-Air Artillery \r
+-2800 2450 21180 21190 21200   \r
+-#Basic Anti-Air Artillery Brigade \r
+-2810 2820 2510   \r
+-#Great War Infantry Division  \r
+-1010 1020 1030 1040 1050 1060    \r
+-#Interbellum 1930 Supply \r
+-1910 1920 1930 1940 1950 1960 1970 1980\r
+-#Great War Cavalry Division  \r
+-13060 13070 13080 1310 1320 1330 1340    \r
+-#Early Mountain Division \r
+-1160 1170 1180 1190 1200 1210 1220 1230 1240   \r
+-#Engineers\r
+-1830 1840 1850 1860\r
+-#Mechanized Agriculture \r
+-5700 5710 5010 5020\r
+-#Computers & cryptografi\r
+-5310 54010 54020 54030 5316 5326\r
+-#Manufactoring\r
+-5810 5820 5050 5830 5060\r
+-#Improved Construction Engineering \r
+-5800 5080 5090\r
+-#Basic Oil Refining \r
+-#5190 \r
+-#Faculty of Atomic Research \r
+-5470\r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+-#Naval Doctrines\r
+-8010 8020 8040 8050 \r
+-#Great War Destroyer \r
+-3010 3020 3030 3040\r
+-#Early Light Cruiser \r
+-3110 3120 3130\r
+-#Early Heavy Cruiser \r
+-3210 3220 3230\r
+-#Short Range Submarine \r
+-3610 3620 3630\r
+-#Multirole fighter\r
+-4300 4310 4320 4330\r
+-#ww1 strategic bomber\r
+-4800 4810 4820\r
+-#ww1 navalbomber\r
+-4700 4710\r
+-#Torpedo & ASW 18\r
+-3720 3730 3736 3740 3750 3900\r
+-#Troopships\r
+-3810\r
+-#Medicine\r
+-5600 5610 5620 5630\r
+-# Great War Land Doctrines (entente)\r
+-6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-#Air Doctrines - ww2 techs\r
+-27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010\r
+-} \r
+-inventions = { 3000027 }\r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 10 \r
+-     political_left    = 10 \r
+-     free_market       = 6 \r
+-     freedom           = 8 \r
+-     professional_army = 3 \r
+-     defense_lobby     = 1 \r
+-     interventionism   = 3 \r
+-    } \r
++country = {\r
++  tag                = DEN\r
++  ai                 = "den_1936.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes } }\r
++  capital            = 294 # コペンハーゲン\r
++  dissent            = 5\r
++  manpower           = 10\r
++  # Resource Reserves\r
++  energy         = 660\r
++  metal          = 330\r
++  rare_materials = 165\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 10\r
++  transports     = 230\r
+ \r
+-   headofstate            = {  type = 9 id = 75001  } \r
+-   headofgovernment       = {  type = 9 id = 75002  } \r
+-   foreignminister        = {  type = 9 id = 75003  } \r
+-   armamentminister       = {  type = 9 id = 75004  } \r
+-   ministerofsecurity     = {  type = 9 id = 75005  } \r
+-   ministerofintelligence = {  type = 9 id = 75006  } \r
+-   chiefofstaff           = {  type = 9 id = 75007  } \r
+-   chiefofarmy            = {  type = 9 id = 75008  } \r
+-   chiefofnavy            = {  type = 9 id = 75009  } \r
+-   chiefofair             = {  type = 9 id = 75010  } \r
+-   landunit = \r
+-   {  location = 294 \r
+-     name     = "デンマーク陸軍" \r
+-     id       = {  type = 27000 id = 40  } \r
+-     Division = \r
+-     {  id       = {  type = 27000 id = 41  } \r
+-       name     = "第1ユラン師団" \r
+-       type     = infantry \r
+-       model    = 7\r
+-       strength = 25\r
+-	extra = anti_air\r
+-	brigade_model = 1\r
+-      } \r
++  diplomacy = {\r
++    relation = { tag = BEL value = 100 }\r
++    relation = { tag = ENG value = 100 }\r
++    relation = { tag = FIN value = 75 }\r
++    relation = { tag = GER value = 25 }\r
++    relation = { tag = HOL value = 100 }\r
++    relation = { tag = LUX value = 100 }\r
++    relation = { tag = NOR value = 150 }\r
++    relation = { tag = PER value = 50 }\r
++    relation = { tag = SWE value = 75 }\r
++    relation = { tag = USA value = 75 }\r
++    relation = { tag = LIT value = 75 }\r
++    relation = { tag = LAT value = 75 }\r
++    relation = { tag = EST value = 75 }\r
++  }\r
++  SpyInfo                = { country = "DEN" NumberOfSpies = 3 }\r
+ \r
+-   Division = \r
+-   {  id    = {  type = 27000 id = 81  } \r
+-    name   = "第2ユラン師団" \r
+-    type   = infantry \r
+-    model  = 6 # 2\r
+-    strength = 30\r
+-	experience = 0\r
+-    } \r
+-   Division = \r
+-   {  id    = {  type = 27000 id = 83  } \r
+-    name   = "第3ユラン師団" \r
+-    type   = infantry \r
+-    model  = 6 # 2\r
+-    strength = 20\r
+-	experience = 0\r
+-    }\r
+-   Division = \r
+-   {  id    = {  type = 27000 id = 84  } \r
+-    name   = "第4ユラン師団" \r
+-    type   = infantry \r
+-    model  = 6 # 2\r
+-    strength = 20\r
+-	experience = 0\r
+-    } 	\r
++  nationalprovinces      = { 1 2 3 216 217 218 219 220 294 1783 }\r
++  ownedprovinces         = { 1 2 3 217 218 219 220 294 1783 }\r
++  controlledprovinces    = { 1 2 3 217 218 219 220 294 1783 }\r
+ \r
+-    } \r
++  techapps               = { 4500 4510 4520 4530 4540 4550 4010 4020 4600 4610 4620 4630 4120 7600 7610 2620 2010 2290 2300 2310 2800 2450 21180 21190 21200 2810 2820 2510 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 1970 1980 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 1240 1830 1840 1850 1860 5700 5710 5010 5020 5310 54010 54020 54030 5316 5326 5810 5820 5050 5830 5060 5800 5080 5090 5470 8010 8020 8040 8050 3010 3020 3030 3040 3110 3120 3130 3210 3220 3230 3610 3620 3630 4300 4310 4320 4330 4800 4810 4820 4700 4710 3720 3730 3736 3740 3750 3900 3810 5600 5610 5620 5630 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 }\r
++  inventions             = { 3000027 }\r
+ \r
+-   landunit = \r
+-   {  location = 220 \r
+-     name     = "第2ユトランド師団" \r
+-     id       = {  type = 27000 id = 42  } \r
+-     Division = \r
+-     {  id       = {  type = 27000 id = 43  } \r
+-       name     = "ユトランド師団" \r
+-       type     = infantry \r
+-       model    = 7\r
+-       strength = 25\r
+-	extra = engineer\r
+-	brigade_model = 2\r
+-      } \r
+-    } \r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 10\r
++    political_left    = 10\r
++    freedom           = 8\r
++    free_market       = 6\r
++    professional_army = 3\r
++    defense_lobby     = 1\r
++    interventionism   = 3\r
++  }\r
++  headofstate            = { type = 9 id = 75001 } # クリスティアン10世\r
++  headofgovernment       = { type = 9 id = 75002 } # トルヴァル・スタウニング\r
++  foreignminister        = { type = 9 id = 75003 } # ペーター・ムンク\r
++  armamentminister       = { type = 9 id = 75004 } # アルシング・アンデルセン\r
++  ministerofsecurity     = { type = 9 id = 75005 } # カール・クリスティアン・ステインケ\r
++  ministerofintelligence = { type = 9 id = 75006 } # エーリク・メルツ\r
++  chiefofstaff           = { type = 9 id = 75007 } # ウィルヘルム・W・プライアー\r
++  chiefofarmy            = { type = 9 id = 75008 } # エーリク・ウィット\r
++  chiefofnavy            = { type = 9 id = 75009 } # ヤルマル・レクニッツァー\r
++  chiefofair             = { type = 9 id = 75010 } # K・W・エッセマン\r
+ \r
+-	navalunit = { \r
+-		id = { type = 27000 id = 44 } \r
+-		name = "デンマーク海軍" \r
+-		location = 294 \r
+-		base = 294 \r
+-		division = { \r
+-			id = { type = 27000 id = 45 } \r
+-			name = "KDM オルフィアツ・フィッシャー" \r
+-			type = heavy_cruiser \r
+-			model = 1 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 46 } \r
+-			name = "KDM ペートー・スカラム" \r
+-			type = heavy_cruiser \r
+-			model = 1 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2428 } \r
+-			name = "KDM ニールス・ユール" \r
+-			type = light_cruiser \r
+-			model = 2 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2426 } \r
+-			name = "第1水雷隊" \r
+-			type = destroyer\r
+-			model = 0 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2427 } \r
+-			name = "第2水雷隊" \r
+-			type = destroyer\r
+-			model = 0 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2429 } \r
+-			name = "第3水雷隊" \r
+-			type = destroyer\r
+-			model = 0 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2430 } \r
+-			name = "第4水雷隊" \r
+-			type = destroyer\r
+-			model = 0 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 47 } \r
+-			name = "第1潜水隊" \r
+-			type = submarine \r
+-			model = 1 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 48 } \r
+-			name = "第2潜水隊" \r
+-			type = submarine \r
+-			model = 2 \r
+-			strength = 60\r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2431 } \r
+-			name = "第3潜水隊" \r
+-			type = submarine \r
+-			model = 3 \r
+-			strength = 60\r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2432 } \r
+-			name = "第1輸送隊" \r
+-			type = transport\r
+-			model = 1 \r
+-			} \r
+-		division = { \r
+-			id = { type = 27000 id = 2433 } \r
+-			name = "第2輸送隊" \r
+-			type = transport\r
+-			model = 1 \r
+-			} \r
+-		} \r
++  landunit = {\r
++    id       = { type = 27000 id = 40 }\r
++    name     = "デンマーク陸軍"\r
++    location = 294\r
++    division = {\r
++      id             = { type = 27000 id = 41 }\r
++      name           = "第1ユラン師団"\r
++      type           = infantry\r
++      model          = 7\r
++      extra          = anti_air\r
++      brigade_model  = 1\r
++      strength       = 25\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 81 }\r
++      name           = "第2ユラン師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 30\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 83 }\r
++      name           = "第3ユラン師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 20\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 84 }\r
++      name           = "第4ユラン師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 20\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 27000 id = 42 }\r
++    name     = "第2ユトランド師団"\r
++    location = 220\r
++    division = {\r
++      id             = { type = 27000 id = 43 }\r
++      name           = "ユトランド師団"\r
++      type           = infantry\r
++      model          = 7\r
++      extra          = engineer\r
++      brigade_model  = 2\r
++      strength       = 25\r
++    }\r
++  }\r
+ \r
+-	airunit = { \r
+-		id = { type = 27000 id = 2424 } \r
+-		name = "海軍航空隊" \r
+-		location = 294 \r
+-		base = 294 \r
+-		division = { \r
+-			id = { type = 27000 id = 2435 } \r
+-			name = "第1航空群" \r
+-			type = interceptor\r
+-			model = 6 \r
+-			strength = 20\r
+-			} \r
+-		} \r
++  navalunit = {\r
++    id       = { type = 27000 id = 44 }\r
++    name     = "デンマーク海軍"\r
++    location = 294\r
++    base     = 294\r
++    division = {\r
++      id             = { type = 27000 id = 45 }\r
++      name           = "KDM オルフィアツ・フィッシャー"\r
++      type           = heavy_cruiser\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 46 }\r
++      name           = "KDM ペートー・スカラム"\r
++      type           = heavy_cruiser\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2428 }\r
++      name           = "KDM ニールス・ユール"\r
++      type           = light_cruiser\r
++      model          = 2\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2426 }\r
++      name           = "第1水雷隊"\r
++      type           = destroyer\r
++      model          = 0\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2427 }\r
++      name           = "第2水雷隊"\r
++      type           = destroyer\r
++      model          = 0\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2429 }\r
++      name           = "第3水雷隊"\r
++      type           = destroyer\r
++      model          = 0\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2430 }\r
++      name           = "第4水雷隊"\r
++      type           = destroyer\r
++      model          = 0\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 47 }\r
++      name           = "第1潜水隊"\r
++      type           = submarine\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 48 }\r
++      name           = "第2潜水隊"\r
++      type           = submarine\r
++      model          = 2\r
++      strength       = 60\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2431 }\r
++      name           = "第3潜水隊"\r
++      type           = submarine\r
++      model          = 3\r
++      strength       = 60\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2432 }\r
++      name           = "第1輸送隊"\r
++      type           = transport\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 27000 id = 2433 }\r
++      name           = "第2輸送隊"\r
++      type           = transport\r
++      model          = 1\r
++    }\r
++  }\r
+ \r
+-    division_development =  \r
+-    {  name  = "第5水雷隊"  \r
+-      type  = destroyer  \r
+-      model = 0 \r
+-	new_model = no \r
+-      cost  = 0.1  \r
+-      id    = {  type = 27000 id = 2434  }  \r
+-      date  = {  year = 1934 month = october day = 19  }  \r
+-     }  \r
++  airunit = { \r
++    id       = { type = 27000 id = 2424 }\r
++    name     = "海軍航空隊"\r
++    location = 294\r
++    base     = 294\r
++    division = {\r
++      id             = { type = 27000 id = 2435 }\r
++      name           = "第1航空群"\r
++      type           = interceptor\r
++      model          = 6\r
++      strength       = 20\r
++    }\r
++  }\r
+ \r
+-  } \r
+- \r
++  division_development = {\r
++    id             = { type = 27000 id = 2434 }\r
++    name           = "第5水雷隊"\r
++    type           = destroyer\r
++    model          = 0\r
++    cost           = 0.1\r
++    new_model      = no\r
++    date           = { year = 1934 month = october day = 19 }\r
++  }\r
++}\r

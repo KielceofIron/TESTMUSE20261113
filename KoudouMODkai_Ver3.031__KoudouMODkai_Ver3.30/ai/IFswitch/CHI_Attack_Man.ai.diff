@@ -1,0 +1,90 @@
+--- A/ai/IFswitch/CHI_Attack_Man.ai [ascii]
++++ B/ai/IFswitch/CHI_Attack_Man.ai [ascii]
+@@ -6,9 +6,9 @@
+ garrison = {\r
+ 	defend_overseas_beaches = no\r
+ 	home_multiplier 	= 0.7\r
+-	overseas_multiplier = 0.9\r
+-	home_peace_cap 		= 15\r
+-	war_zone_odds 		= 2.5\r
++	overseas_multiplier = 0\r
++	home_peace_cap 		= 0\r
++	war_zone_odds 		= 25\r
+ 	key_point_prio_mult	= 0.1\r
+ 	revolt_risk_mult	= 0.1\r
+ \r
+@@ -46,6 +46,9 @@ garrison = {
+ 		U02 = 50\r
+ 	}\r
+ 	province_priorities = {	\r
++	1158 = -1\r
++	1157 = -1\r
++	1155 = -1\r
+ 	1197 = 50 # Manchu \r
+ 	1198 = 50\r
+ 	1199 = 50\r
+@@ -113,9 +116,63 @@ garrison = {
+ 	1281 = 20\r
+ 	1289 = 20\r
+ 	}\r
+-	area_multiplier = {	}\r
++	area_multiplier = { \r
++1219 = 10000\r
++1221 = 40\r
++1228 = 40\r
++1191 = 100\r
++\r
++\r
++	}\r
+ }\r
++front = { \r
++	recklessness 		= 3 # 0 # 0-3\r
++	distrib_vs_ai 		= Defensive\r
++	distrib_vs_human 	= Defensive\r
++\r
++	enemy_reinf_days	= 5\r
++	reserve_prop		= 0.2\r
++	panic_ratio_vs_ai	= 3.0\r
++	panic_ratio_vs_human	= 3.0\r
++	base_attack_odds	= 1.0\r
++	min_attack_odds		= 0.7\r
++	max_attack_odds		= 3.0\r
++	reinforce_odds		= 1.1\r
++	withdraw_odds		= 0.8\r
++	support_defense_prop 	= 0.4\r
++\r
++	strength 		= 0.7\r
++	organisation 	= 0.7\r
++	soft_attack 	= 0.7\r
++	hard_attack 	= 0.7\r
++	ground_defense 	= 0.7\r
++	dig_in 			= 1.0 # Against defender\r
++\r
++	frozen_attack 	= 1.0\r
++	snow_attack 	= 1.0\r
++	blizzard_attack = 1.0\r
++	storm_attack 	= 1.0\r
++	muddy_attack 	= 1.0\r
+ \r
++	occupied 	= 0.7\r
++	owned 		= 0.7\r
++\r
++	jungle_attack 	= 0.7\r
++	mountain_attack = 0.7\r
++	swamp_attack 	= 0.7\r
++	forest_attack 	= 0.7\r
++	hill_attack 	= 0.7\r
++	urban_attack 	= 0.7\r
++	river 		= 0.7\r
++\r
++	largefort 	= 0.8\r
++	smallfort 	= 0.8\r
++\r
++	enemy_handicap = {\r
++	} \r
++	passivity = {\r
++	} \r
++} \r
+ ###################################\r
+ # Invasions and Naval\r
+ ###################################\r

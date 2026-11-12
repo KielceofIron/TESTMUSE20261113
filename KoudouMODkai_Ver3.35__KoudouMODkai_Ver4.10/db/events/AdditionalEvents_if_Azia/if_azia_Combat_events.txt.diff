@@ -1,0 +1,209 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Combat_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Combat_events.txt [utf-8]
+@@ -8,6 +8,9 @@
+ #id = 1171002 倍達民族\r
+ #id = 1171003 中華の共和国\r
+ #id = 1171004 インターナショナル\r
++#id = 1171005 崩壊寸前の三民主義\r
++#id = 1171006 護国軍前進\r
++#id = 1171007 祖国は我らのために\r
+ ##########################################################################\r
+ #  大和魂\r
+ # 日本は明治維新によって文明開化を果たし、アジア初の産業化を成し遂げた。\r
+@@ -135,15 +138,16 @@ event = {
+ \r
+ 	action = { # 進め、各民族の英雄なる人民よ！\r
+ 	name = "ACTIONNAME1171003A"\r
+-	command = { type = assault value = 2 }\r
+-	command = { type = mountain_move which = militia value = 10 }\r
+-	command = { type = hill_move which = militia value = 10 }\r
+-	command = { type = forest_move which = militia value = 10 }\r
+-	command = { type = urban_move which = militia value = 10 }\r
+-	command = { type = mountain_defense which = militia value = 10 }\r
+-	command = { type = hill_defense which = militia value = 10 }\r
+-	command = { type = forest_defense which = militia value = 10 }\r
+-	command = { type = urban_defense which = militia value = 10 }\r
++	command = { type = assault value = 10 }\r
++	command = { type = relative_manpower value = 10 }\r
++	command = { type = urban_attack which = land value = 5 }\r
++	command = { type = urban_defense which = land value = 5 }\r
++	command = { type = toughness which = land value = 2 }\r
++	command = { type = toughness which = infantry value = 3 }\r
++	command = { type = toughness which = militia value = 3 }\r
++	command = { type = defensiveness which = land value = 2 }\r
++	command = { type = defensiveness which = infantry value = 3 }\r
++	command = { type = defensiveness which = militia value = 3 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -197,6 +201,169 @@ event = {
+ 	command = { type = relative_manpower value = 5 }\r
+ 	command = { type = building_prod_mod which = ic value = 5 }\r
+ 	command = { type = repair_mod value = 3 }\r
++	command = { type = supply_consumption which = infantry value = -0.3 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
++\r
++\r
++##########################################################################\r
++#  崩壊寸前の三民主義\r
++# 1930年に中華民国は1911年に衰退した清朝に代わって勢力を増し、孫文によって多くの革命勢力が統一され、西洋列強に取り残された中国の近代化を目指す新たな政府が誕生した。\r
++# だが不幸にも、中華民国は孫文の死後、無数の軍閥に分裂した。\r
++# 中華民国は、表向きは正統な中央政府と内外から思われているが、実態は無数の軍閥によって引き裂かれた中国の残骸に過ぎない。\r
++# だがそれでもなお、孫文が残した遺産であるが故、大勢の中国人民から支持を受けており、また知識人、軍人、政治家の人材も豊富である。\r
++# 彼らが進めようとしている改革を進めれば、中華の再建も不可能ではないだろう。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1171005\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = {\r
++	country = CHI\r
++	}\r
++\r
++	name = "EVT_1171005_NAME"\r
++	desc = "EVT_1171005_DESC"\r
++	style = 2\r
++	picture = "CoB_CHI"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 最後まで三民主義を貫徹しよう\r
++	name = "ACTIONNAME1171005A"\r
++	command = { type = assault value = 8 }\r
++	command = { type = repair_mod value = 5 }\r
++	command = { type = trickleback_mod value = -3 }\r
++	command = { type = relative_manpower value = 10 }\r
++	command = { type = plain_attack which = infantry value = 5 }\r
++	command = { type = plain_defense which = infantry value = 5 }\r
++	command = { type = plain_attack which = militia value = 5 }\r
++	command = { type = plain_defense which = militia value = 5 }\r
++	command = { type = toughness which = land value = 2 }\r
++	command = { type = toughness which = infantry value = 3 }\r
++	command = { type = toughness which = militia value = 3 }\r
++	command = { type = defensiveness which = land value = 2 }\r
++	command = { type = defensiveness which = infantry value = 3 }\r
++	command = { type = defensiveness which = militia value = 3 }\r
++	command = { type = max_organization which = cavalry_brigade value = 5 }\r
++	command = { type = morale which = cavalry_brigade value = 5 }\r
++	command = { type = supply_consumption which = infantry value = -0.3 }\r
++	command = { type = tc_mod value = 10 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  護国軍前進\r
++# 1930年に中華民国は1911年に衰退した清朝に代わって勢力を増し、孫文によって多くの革命勢力が統一され、西洋列強に取り残された中国の近代化を目指す新たな政府が誕生した。\r
++# だが不幸にも、中華民国は孫文の死後、無数の軍閥に分裂した。\r
++# 雲南護国軍は、1915年の第三革命の時に立ち上がった雲南派の系譜をひく軍隊である。\r
++# 中国が崩壊している中、最後の愛国者たちは雲南に集まり、最後の希望の光を輝かせている。\r
++# その光が、中国全土を未来と希望で照らすものになるか、もしくは中国のすべてを焼き尽くす炎になるか、誰にも分からない…\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1171006\r
++	random = no\r
++	country = CYN\r
++\r
++	trigger = {\r
++	country = CYN\r
++	}\r
++\r
++	name = "EVT_1171006_NAME"\r
++	desc = "EVT_1171006_DESC"\r
++	style = 2\r
++	picture = "CoB_CYN"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 我らが血肉で築こう新たな長城を！\r
++	name = "ACTIONNAME1171006A"\r
++	command = { type = tactical_withdrawal value = 10 }\r
++	command = { type = delay value = 10 }\r
++	command = { type = relative_manpower value = 15 }\r
++	command = { type = mountain_move which = infantry value = 10 }\r
++	command = { type = hill_move which = infantry value = 10 }\r
++	command = { type = forest_move which = infantry value = 10 }\r
++	command = { type = urban_move which = infantry value = 10 }\r
++	command = { type = mountain_defense which = infantry value = 10 }\r
++	command = { type = hill_defense which = infantry value = 10 }\r
++	command = { type = forest_defense which = infantry value = 10 }\r
++	command = { type = urban_defense which = infantry value = 10 }\r
++	command = { type = mountain_move which = militia value = 10 }\r
++	command = { type = hill_move which = militia value = 10 }\r
++	command = { type = forest_move which = militia value = 10 }\r
++	command = { type = urban_move which = militia value = 10 }\r
++	command = { type = mountain_defense which = militia value = 10 }\r
++	command = { type = hill_defense which = militia value = 10 }\r
++	command = { type = forest_defense which = militia value = 10 }\r
++	command = { type = urban_defense which = militia value = 10 }\r
++	command = { type = max_organization which = engineer value = 5 }\r
++	command = { type = morale which = engineer value = 5 }\r
++	command = { type = toughness which = land value = 2 }\r
++	command = { type = toughness which = infantry value = 3 }\r
++	command = { type = toughness which = militia value = 3 }\r
++	command = { type = defensiveness which = land value = 2 }\r
++	command = { type = defensiveness which = infantry value = 3 }\r
++	command = { type = defensiveness which = militia value = 3 }\r
++	command = { type = supply_consumption which = infantry value = -0.3 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  祖国は我らのために\r
++# かつてヨーロッパから極東アジアに至るまで、強大な帝国を築き上げたロシアは、今や混沌としている。\r
++# 政治的対立と国内経済の停滞によって民族の結束と兄弟の団結は崩れ、力強き意思を持っていたはずの国軍からは栄光を失っている。\r
++# ロシアが再び誇りを取り戻せるのか、誰にもわからない。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1171007\r
++	random = no\r
++	country = UER\r
++\r
++	trigger = {\r
++	country = UER\r
++	}\r
++\r
++	name = "EVT_1171007_NAME"\r
++	desc = "EVT_1171007_DESC"\r
++	style = 2\r
++	picture = "CoB_UER"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 国よ讃えられて在れ！我等汝を誇らん！\r
++	name = "ACTIONNAME1171007A"\r
++	command = { type = snow_attack which = land value = 12 }\r
++	command = { type = snow_defense which = land value = 12 }\r
++	command = { type = snow_move which = land value = 12 }\r
++	command = { type = frozen_attack which = land value = 12 }\r
++	command = { type = frozen_defense which = land value = 12 }\r
++	command = { type = frozen_move which = land value = 12 }\r
++	command = { type = blizzard_attack which = land value = 12 }\r
++	command = { type = blizzard_defense which = land value = 12 }\r
++	command = { type = blizzard_move which = land value = 12 }\r
++	command = { type = counterattack value = 15 }\r
++	command = { type = assault value = 15 }\r
++	command = { type = max_organization which = artillery value = 5 }\r
++	command = { type = morale which = artillery value = 5 }\r
++	command = { type = max_organization which = sp_artillery value = 5 }\r
++	command = { type = morale which = sp_artillery value = 5 }\r
++	command = { type = defensiveness which = land value = 2 }\r
++	command = { type = defensiveness which = artillery value = -2 }\r
++	command = { type = relative_manpower value = 20 }\r
++	ai_chance = 100\r
++	}\r
++}
+\ No newline at end of file

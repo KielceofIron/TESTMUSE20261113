@@ -1,0 +1,401 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
+@@ -173,7 +173,8 @@ event = {
+ 	name = "EVT_362_ACTC"\r
+ 	command = { type = sleepminister which = 18 }\r
+ 	command = { type = sleepminister which = 304 }\r
+-	command = { trigger = { OR = { incabinet = 18 incabinet = 304 } } type = headofstate which = 306 } # ヴィルヘルム4世\r
++	command = { trigger = { incabinet = 18 } type = headofstate which = 306 } # ヴィルヘルム4世\r
++	command = { trigger = { incabinet = 304 } type = headofstate which = 306 } # ヴィルヘルム4世\r
+ 	}\r
+ }\r
+ \r
+@@ -618,7 +619,7 @@ event = {
+ 	offset = 12\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+-	action = { # 新しい帝国！　新しい文学！\r
++	action = { # 新しい帝国！ 新しい文学！\r
+ 	name = "ACTIONNAME45680011A"\r
+ 	command = { type = dissent value = -1 }\r
+ 	}\r
+@@ -775,8 +776,8 @@ event = {
+ 	NOT = { event = 45680110 } # ヒンデンブルグ内閣の成立\r
+ 	}\r
+ \r
+-	name = EVT_45680017_NAME\r
+-	desc = EVT_45680017_DESC\r
++	name = EVT_45680015_NAME\r
++	desc = EVT_45680015_DESC\r
+ 	style = 2\r
+ 	picture = "National_Communism"\r
+ \r
+@@ -856,6 +857,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1937 }\r
+ 	\r
+ 	action = { # 民主主義は死に、灰色の骸のみがのこされた\r
++	trigger = { NOT = { event = 3327008 } }\r
+ 	name = "ACTIONNAME45680017A" \r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = flag_ext where = GER which = "_NAZIBORU" }\r
+@@ -882,6 +884,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 民主主義は死に、真っ赤な鮮血のみがのこされた\r
++	trigger = { event = 3327008 }\r
+ 	name = "ACTIONNAME45680017B" \r
+ 	command = { type = setflag which = German_Communism }\r
+ 	command = { type = leave_alliance when = 1 }\r
+@@ -897,6 +900,8 @@ event = {
+ 	command = { type = ministerofintelligence which = 625040 } # Erich Weinert \r
+ 	command = { type = chiefofstaff which = 625026 } #Erich Weinert\r
+ 	command = { type = dissent value = 60 }\r
++	command = { type = wartime_ic_mod value = 40 }\r
++	command = { type = peacetime_ic_mod value = 40 }\r
+ 	command = { type = waketeam which = 625013 } #AEG\r
+ 	command = { type = waketeam which = 625014 } #Krupp\r
+ 	command = { type = waketeam which = 625015 } #I.G. Farben\r
+@@ -918,83 +923,63 @@ event = {
+ 	command = { type = waketeam which = 625031 } #Adolf Galland\r
+ 	command = { type = waketeam which = 625032 } #J臠er Kampfschule\r
+ 	#Cores on eastern provinces of Germany\r
+-	command = { type = addcore which = 158 where = DDR} #Stettin\r
+-	command = { type = addcore which = 155 where = DDR} #Stolp\r
+-	command = { type = addcore which = 161 where = DDR} #Deutsch Krone\r
+-	command = { type = addcore which = 159 where = DDR} #Meseritz\r
+-	command = { type = addcore which = 165 where = DDR} #Liegnitz\r
+-	command = { type = addcore which = 167 where = DDR} #Breslau\r
+-	command = { type = addcore which = 164 where = DDR} #Oppeln\r
+-	command = { type = addcore which = 166 where = DDR} #Waldenburg\r
+-	command = { type = addcore which = 168 where = DDR} #Gleiwitz\r
+-	command = { type = addcore which = 183 where = DDR} #Elbing\r
+-	command = { type = addcore which = 184 where = DDR} #Konigsberg\r
+-	command = { type = addcore which = 182 where = DDR} #Tilsit\r
+-	command = { type = addcore which = 185 where = DDR} #Allenstein\r
+-	command = { type = addcore which = 109 where = DDR} #追加\r
+-	command = { type = addcore which = 104 where = DDR} #追加\r
+-	command = { type = addcore which = 107 where = DDR} #追加\r
+-	command = { type = addcore which = 105 where = DDR} #追加\r
+-	command = { type = addcore which = 216 where = DDR} #追加\r
+-	command = { type = addcore which = 389 where = DDR} #追加\r
++	command = { type = addcore which = 158 where = DDR } #Stettin\r
++	command = { type = addcore which = 155 where = DDR } #Stolp\r
++	command = { type = addcore which = 161 where = DDR } #Deutsch Krone\r
++	command = { type = addcore which = 159 where = DDR } #Meseritz\r
++	command = { type = addcore which = 165 where = DDR } #Liegnitz\r
++	command = { type = addcore which = 167 where = DDR } #Breslau\r
++	command = { type = addcore which = 164 where = DDR } #Oppeln\r
++	command = { type = addcore which = 166 where = DDR } #Waldenburg\r
++	command = { type = addcore which = 168 where = DDR } #Gleiwitz\r
++	command = { type = addcore which = 183 where = DDR } #Elbing\r
++	command = { type = addcore which = 184 where = DDR } #Konigsberg\r
++	command = { type = addcore which = 182 where = DDR } #Tilsit\r
++	command = { type = addcore which = 185 where = DDR } #Allenstein\r
++	command = { type = addcore which = 109 where = DDR } #追加\r
++	command = { type = addcore which = 104 where = DDR } #追加\r
++	command = { type = addcore which = 107 where = DDR } #追加\r
++	command = { type = addcore which = 105 where = DDR } #追加\r
++	command = { type = addcore which = 216 where = DDR } #追加\r
++	command = { type = addcore which = 389 where = DDR } #追加\r
+ 	#cores on Austria and Czech\r
+-	command = { type = addcore which = 186 where = DDR} #追加\r
+-	command = { type = addcore which = 187 where = DDR} #追加\r
+-	command = { type = addcore which = 188 where = DDR} #追加\r
+-	command = { type = addcore which = 189 where = DDR} #追加\r
+-	command = { type = addcore which = 190 where = DDR} #追加\r
+-	command = { type = addcore which = 191 where = DDR} #追加\r
+-	command = { type = addcore which = 192 where = DDR} #追加\r
+-	command = { type = addcore which = 193 where = DDR} #追加\r
+-	command = { type = addcore which = 194 where = DDR} #追加\r
+-	command = { type = addcore which = 195 where = DDR} #追加\r
+-	command = { type = addcore which = 196 where = DDR} #追加\r
+-	command = { type = addcore which = 197 where = DDR} #追加\r
+-	command = { type = addcore which = 198 where = DDR} #追加\r
+-	command = { type = addcore which = 199 where = DDR} #追加\r
+-	command = { type = addcore which = 200 where = DDR} #追加\r
+-	command = { type = addcore which = 201 where = DDR} #追加\r
+-	command = { type = addcore which = 202 where = DDR} #追加\r
+-	command = { type = addcore which = 203 where = DDR} #追加\r
+-	command = { type = addcore which = 204 where = DDR} #追加\r
+-	command = { type = addcore which = 205 where = DDR} #追加\r
+-	command = { type = addcore which = 206 where = DDR} #追加\r
+-	command = { type = addcore which = 207 where = DDR} #追加\r
++	command = { type = addcore which = 186 where = DDR } #追加\r
++	command = { type = addcore which = 187 where = DDR } #追加\r
++	command = { type = addcore which = 188 where = DDR } #追加\r
++	command = { type = addcore which = 189 where = DDR } #追加\r
++	command = { type = addcore which = 190 where = DDR } #追加\r
++	command = { type = addcore which = 191 where = DDR } #追加\r
++	command = { type = addcore which = 192 where = DDR } #追加\r
++	command = { type = addcore which = 193 where = DDR } #追加\r
++	command = { type = addcore which = 194 where = DDR } #追加\r
++	command = { type = addcore which = 195 where = DDR } #追加\r
++	command = { type = addcore which = 196 where = DDR } #追加\r
++	command = { type = addcore which = 197 where = DDR } #追加\r
++	command = { type = addcore which = 198 where = DDR } #追加\r
++	command = { type = addcore which = 199 where = DDR } #追加\r
++	command = { type = addcore which = 200 where = DDR } #追加\r
++	command = { type = addcore which = 201 where = DDR } #追加\r
++	command = { type = addcore which = 202 where = DDR } #追加\r
++	command = { type = addcore which = 203 where = DDR } #追加\r
++	command = { type = addcore which = 204 where = DDR } #追加\r
++	command = { type = addcore which = 205 where = DDR } #追加\r
++	command = { type = addcore which = 206 where = DDR } #追加\r
++	command = { type = addcore which = 207 where = DDR } #追加\r
+ 	#cores on Poland and Lithuania\r
+-	command = { type = addcore which = 221 where = DDR} #Katowice\r
+-	command = { type = addcore which = 224 where = DDR} #Poznan\r
+-	command = { type = addcore which = 225 where = DDR} #Bygoszcz\r
+-	command = { type = addcore which = 181 where = DDR} #Danzig\r
+-	command = { type = addcore which = 261 where = DDR} #Klaipeda\r
+-	command = { type = addcore which = 226 where = DDR} #Gdynia\r
+-	command = { type = addcore which = 222 where = DDR} #Torun\r
++	command = { type = addcore which = 221 where = DDR } #Katowice\r
++	command = { type = addcore which = 224 where = DDR } #Poznan\r
++	command = { type = addcore which = 225 where = DDR } #Bygoszcz\r
++	command = { type = addcore which = 181 where = DDR } #Danzig\r
++	command = { type = addcore which = 261 where = DDR } #Klaipeda\r
++	command = { type = addcore which = 226 where = DDR } #Gdynia\r
++	command = { type = addcore which = 222 where = DDR } #Torun\r
+ 	command = { type = revolt which = 179 } # Munich\r
+ 	command = { type = revolt which = 179 } # Munich\r
+ 	command = { type = revolt which = 176 } # Landshut\r
+ 	command = { type = revolt which = 177 } # Nuremberg\r
++	command = { type = end_mastery which = CON }\r
++	command = { type = end_mastery which = UD6 }\r
+ \r
+-	#植民地喪失\r
+-\r
+-	command = { trigger = { event = 2001501 } type = secedeprovince which = BEL value = 846 when = 1 } \r
+-	command = { trigger = { event = 2001501 } type = secedeprovince which = BEL value = 847 when = 1 }\r
+-	command = { trigger = { NOT= { war = { country = ENG country = FRA } } } \r
+-	type = secedeprovince which = ENG value = 933 when = 1 } #Buea\r
+-	command = { trigger = { NOT= { war = { country = ENG country = FRA } } } \r
+-	type = secedeprovince which = ENG value = 936 when = 1 } #Yola\r
+-	command = { trigger = { NOT= { war = { country = SAF country = FRA } } } \r
+-	type = secederegion which = SAF value = "Southwest Africa" when = 1 }\r
+-	command = { trigger = { NOT= { war = { country = ENG country = FRA } } } \r
+-	type = secedearea which = ENG value = "Tanganyika" when = 1 }\r
+-	command = { trigger = { NOT= { war = { country = BEL country = FRA } } } \r
+-	type = secedeprovince which = BEL value = 846 when = 1 } #Kigali\r
+-	command = { trigger = { NOT= { war = { country = BEL country = FRA } } } \r
+-	type = secedeprovince which = BEL value = 847 when = 1 } #Usumbura\r
+-	command = { trigger = { NOT= { war = { country = ENG country = FRA } } } \r
+-	type = secedearea which = ENG value = "Gold Coast" when = 1 }\r
+-	command = { type = secedearea which = FRA value = "Slave Coast" when = 1 }\r
+-	command = { type = secedearea which = FRA value = "Cameroonian Jungle" when = 1 }\r
+-	command = { type = secedearea which = FRA value = "Central Africa Plains" when = 1 }\r
+-	command = { type = secederegion which = FRA value = "West Africa" when = 1 }\r
+ 	#太平洋 \r
+ 	#Qingdao to JAP, otherwise to China if possible, otherwise to FRA\r
+ 	command = { trigger = { alliance = { country = JAP country = FRA } }  \r
+@@ -1850,6 +1835,7 @@ event = {
+ 	command = { type = secedearea which = U37 value = "Latvia" when = 1 }\r
+ 	command = { type = make_puppet which = U37 }\r
+ 	command = { type = alliance which = U37 }\r
++	command = { trigger = { ai = U37 } type = event which = 45690013 where = U37 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1896,6 +1882,7 @@ event = {
+ 	command = { type = secedeprovince which = LIT value = 255 when = 1 }\r
+ 	command = { type = make_puppet which = LIT }\r
+ 	command = { type = alliance which = LIT }\r
++	command = { trigger = { ai = LIT } type = event which = 45690014 where = LIT when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1948,6 +1935,7 @@ event = {
+ 	command = { type = secedeprovince which = POL value = 254 when = 1 } #Bialystock\r
+ 	command = { type = make_puppet which = POL }\r
+ 	command = { type = alliance which = POL }\r
++	command = { trigger = { ai = POL } type = event which = 45690015 where = POL when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2005,6 +1993,7 @@ event = {
+ 	command = { type = secedeprovince which = BLR value = 599 when = 1 } #Minsk\r
+ 	command = { type = make_puppet which = BLR }\r
+ 	command = { type = alliance which = BLR }\r
++	command = { trigger = { ai = BLR } type = event which = 45690016 where = BLR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2053,6 +2042,7 @@ event = {
+ 	command = { type = secedeprovince which = UKR value = 249 when = 1 } #Sarny\r
+ 	command = { type = make_puppet which = UKR }\r
+ 	command = { type = alliance which = UKR }\r
++	command = { trigger = { ai = UKR } type = event which = 45690017 where = UKR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2309,7 +2299,7 @@ event = {
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = add_division which = "第1予備戦車団" value = light_armor when = 0 }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "第2予備戦車団" value = light_armor when = 0 }\r
+-	command = { trigger = { ai = yes } type = add_division which = "第3予備洗車団" value = light_armor when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "第3予備戦車団" value = light_armor when = 0 }\r
+ 	command = { type = add_division which = "第1予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第2予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第3予備歩兵師団" value = infantry when = 5 }\r
+@@ -2514,9 +2504,14 @@ event = {
+ 	command = { type = gain_tech which = 5000110 }\r
+ 	command = { type = gain_tech which = 5130 }\r
+ 	command = { type = gain_tech which = 5100 }\r
+-	command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
+-	command = { trigger = { ai = yes }  type = trigger which = 130031 }\r
+-	command = { trigger = { ai = yes exists = FRA } type = sleepevent which = 130033 }\r
++	#command = { type = repair_mod value = 100 }\r
++	#command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
++		#command = {  trigger = { ai = yes }  type = local_setflag which = do_not_demob }\r
++		#command = {  trigger = { ai = yes }  type = local_clrflag which = demob }\r
++		#command = { trigger = { ai = yes } type = trigger which = 8300107 }\r
++		#command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
++		command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
++	#command = { trigger = { ai = yes } type = event which = }\r
+ 	}\r
+ }\r
+ \r
+@@ -2626,7 +2621,7 @@ event = {
+ 	NOT = { alliance = { country = GER country = AUS } }\r
+ 	NOT = { alliance = { country = GER country = U09 } }\r
+ 	NOT = { alliance = { country = GER country = UB8 } }\r
+-	event = 3327029 # 第二次露仏同盟\r
++	NOT = { event = 3327008 } #フランス左派勝利\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -2645,7 +2640,7 @@ event = {
+ 	NOT = { alliance = { country = GER country = AUS } }\r
+ 	NOT = { alliance = { country = GER country = U09 } }\r
+ 	NOT = { alliance = { country = GER country = UB8 } }\r
+-	event = 3327029 # 第二次露仏同盟\r
++	NOT = { event = 3327008 }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+@@ -2664,7 +2659,7 @@ event = {
+ 	NOT = { alliance = { country = GER country = AUS } }\r
+ 	NOT = { alliance = { country = GER country = U09 } }\r
+ 	NOT = { alliance = { country = GER country = UB8 } }\r
+-	event = 3327029 # 第二次露仏同盟\r
++	NOT = { event = 3327008 }\r
+ 	}\r
+ \r
+ 	name = "EVT_45680042_NAME"\r
+@@ -3198,21 +3193,21 @@ event = {
+ 	command = { type = setflag which = Die_Wacht_am_Rhein }\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
+-	command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
++	#command = { type = add_division value = infantry when = 0 }\r
+ 	command = { type = add_corps which = "西部方面第1軍" value = land where = 110 }\r
+ 	command = { type = activate_division which = 14510 value = 1052 where = 110 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1001 where = 110 when = 1 }\r
+@@ -3249,12 +3244,12 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1024 where = 104 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1025 where = 104 when = 1 }\r
+ \r
+-	#command = { type = add_corps which = "西部方面第6軍" value = land where = 104 }\r
+-	#command = { type = activate_division which = 14510 value = 1026 where = 104 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1027 where = 104 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1028 where = 104 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1029 where = 104 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1030 where = 104 when = 1 }\r
++	command = { type = add_corps which = "西部方面第6軍" value = land where = 104 }\r
++	command = { type = activate_division which = 14510 value = 1026 where = 104 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1027 where = 104 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1028 where = 104 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1029 where = 104 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1030 where = 104 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第7軍" value = land where = 107 }\r
+ 	command = { type = activate_division which = 14510 value = 1051 where = 107 when = 1 }\r
+@@ -3264,12 +3259,12 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1034 where = 107 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1035 where = 107 when = 1 }\r
+ \r
+-	#command = { type = add_corps which = "西部方面第8軍" value = land where = 107 }\r
+-	#command = { type = activate_division which = 14510 value = 1036 where = 107 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1037 where = 107 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1038 where = 107 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1039 where = 107 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1040 where = 107 when = 1 }\r
++	command = { type = add_corps which = "西部方面第8軍" value = land where = 107 }\r
++	command = { type = activate_division which = 14510 value = 1036 where = 107 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1037 where = 107 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1038 where = 107 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1039 where = 107 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1040 where = 107 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第9軍" value = land where = 105 }\r
+ 	command = { type = activate_division which = 14510 value = 1041 where = 105 when = 1 }\r
+@@ -3278,12 +3273,14 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1044 where = 105 when = 1 }\r
+ 	command = { type = activate_division which = 14510 value = 1045 where = 105 when = 1 }\r
+ \r
+-	#command = { type = add_corps which = "西部方面第10軍" value = land where = 105 }\r
+-	#command = { type = activate_division which = 14510 value = 1046 where = 105 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1047 where = 105 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
+-	#command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
++	command = { type = add_corps which = "西部方面第10軍" value = land where = 105 }\r
++	command = { type = activate_division which = 14510 value = 1046 where = 105 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1047 where = 105 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
++	command = { type = strength which = land when = 0 where = 0 value = 0.2 } #Kielce臨時\r
++	command = { type = activate which = 6900 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -4193,8 +4190,8 @@ event = {
+ 	command = { trigger = { flag = GER_U14_WAR_PEACE country = FRA NOT = { war = { country = -1 country = U14 } } } type = secederegion which = U14 value = "Italy" when = 1 }\r
+ 	command = { trigger = { flag = GER_CHI_WAR_PEACE NOT = { war = { country = -1 country = CHI } } } type = secederegion which = CHI value = "China" when = 1 }\r
+ 	command = { trigger = { flag = GER_JAP_WAR_PEACE NOT = { war = { country = -1 country = JAP } } } type = secederegion which = JAP value = "Japan" when = 1 }\r
+-	command = { trigger = { flag = GER_USA_WAR_PEACE NOT = { war = { country = -1 country = USA } } } type = secederegion which = USA value = "North America" when = 1 }\r
+-	command = { trigger = { flag = GER_USA_WAR_PEACE NOT = { war = { country = -1 country = USA } } } type = secederegion which = USA value = "South America" when = 1 }\r
++	command = { trigger = { flag = GER_USA_WAR_PEACE NOT = { war = { country = -1 country = USA } } } type = secederegion which = USA value = "Northeast US" when = 1 }\r
++	command = { trigger = { flag = GER_USA_WAR_PEACE NOT = { war = { country = -1 country = USA } } } type = secederegion which = USA value = "American Pacific" when = 1 }\r
+ 	command = { trigger = { flag = GER_USA_WAR_PEACE NOT = { war = { country = -1 country = USA } } } type = secederegion which = USA value = "Midwest US" when = 1 }\r
+ 	command = { trigger = { flag = GER_USA_WAR_PEACE NOT = { war = { country = -1 country = USA } } } type = secederegion which = USA value = "Northwest US" when = 1 }\r
+ 	command = { trigger = { flag = GER_USA_WAR_PEACE NOT = { war = { country = -1 country = USA } } } type = secederegion which = USA value = "Southwest US" when = 1 }\r
+@@ -5462,7 +5459,7 @@ event = {
+ 	picture = "Danzig_coup"\r
+ \r
+ 	action = { # 作戦を実施せよ\r
+-	name = "ACTIONNAME45680217A"\r
++	name = "ACTIONNAME45680221A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = belligerence which = UD6 value = 15 }\r
+ 	command = { type = leave_alliance }\r

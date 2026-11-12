@@ -1,0 +1,953 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
+@@ -140,7 +140,6 @@
+ #id = 2991403 日本内戦\r
+ #id = 2991404 日本内戦 ― 終結\r
+ #id = 2991405 日本内戦 ― 租借地からの撤退\r
+-#id = 2991406 史実中国イベントの移植\r
+ ##########################################################################\r
+ #  変容する国内情勢\r
+ # 日露戦争に敗北した日本は、開国以来の努力で得てきた『一等国』としての地位を失った。\r
+@@ -534,7 +533,7 @@ event = {
+ 	decision = {\r
+ 	event = 2991006\r
+ 	exists = CHI\r
+-	exists = UTC\r
++	exists = UER\r
+ 	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	control = { province = 1560 data = JAP } # 福岡\r
+@@ -543,7 +542,7 @@ event = {
+ 	decision_trigger = {\r
+ 	event = { id = 2991006 days = 100 }\r
+ 	exists = CHI\r
+-	exists = UTC\r
++	exists = UER\r
+ 	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	control = { province = 1560 data = JAP } # 福岡\r
+@@ -553,7 +552,7 @@ event = {
+ 	trigger = {\r
+ 	event = { id = 2991006 days = 100 }\r
+ 	exists = CHI\r
+-	exists = UTC\r
++	exists = UER\r
+ 	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	control = { province = 1560 data = JAP } # 福岡\r
+@@ -573,13 +572,13 @@ event = {
+ \r
+ 	action = { # 空母の建造を推し進めよう\r
+ 	name = "ACTIONNAME2991008A"\r
+-	ai_chance = 0\r
++	ai_chance = 35\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = relation which = CHI value =  -30 }\r
+-	command = { type = relation which = UTC value =  -30 }\r
++	command = { type = relation which = UER value =  -30 }\r
+ 	command = { type = add_division value = light_carrier when = 0 where = light_cag }\r
+ 	command = { type = add_division value = light_carrier when = 0 where = light_cag }\r
+ 	command = { type = add_division value = light_cruiser when = 3 }\r
+@@ -616,13 +615,13 @@ event = {
+ \r
+ 	action = { # 水中艦隊にこそ活路がある\r
+ 	name = "ACTIONNAME2991008B"\r
+-	ai_chance = 100\r
++	ai_chance = 30\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = relation which = CHI value =  -30 }\r
+-	command = { type = relation which = UTC value =  -30 }\r
++	command = { type = relation which = UER value =  -30 }\r
+ 	command = { type = add_division value = nuclear_submarine when = 0 }\r
+ 	command = { type = add_division value = nuclear_submarine when = 0 }\r
+ 	command = { type = add_division value = submarine when = 4 }\r
+@@ -650,13 +649,13 @@ event = {
+ \r
+ 	action = { # 戦艦・重巡の強化が必要だろう\r
+ 	name = "ACTIONNAME2991008C"\r
+-	ai_chance = 0\r
++	ai_chance = 35\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = relation which = CHI value =  -30 }\r
+-	command = { type = relation which = UTC value =  -30 }\r
++	command = { type = relation which = UER value =  -30 }\r
+ 	command = { type = morale which = naval value = 10 }\r
+ 	command = { type = add_division value = battleship when = 3 }\r
+ 	command = { type = add_division value = battleship when = 3 }\r
+@@ -1146,7 +1145,7 @@ event = {
+ 	decision = {\r
+ 	event = 2991008\r
+ 	exists = CHI\r
+-	exists = UTC\r
++	exists = UER\r
+ 	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	control = { province = 1554 data = JAP } # 廣島\r
+@@ -1155,7 +1154,7 @@ event = {
+ 	decision_trigger = {\r
+ 	event = { id = 2991008 days = 90 }\r
+ 	exists = CHI\r
+-	exists = UTC\r
++	exists = UER\r
+ 	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	control = { province = 1554 data = JAP } # 廣島\r
+@@ -1165,7 +1164,7 @@ event = {
+ 	trigger = {\r
+ 	event = { id = 2991008 days = 90 }\r
+ 	exists = CHI\r
+-	exists = UTC\r
++	exists = UER\r
+ 	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	control = { province = 1554 data = JAP } # 廣島\r
+@@ -1184,7 +1183,7 @@ event = {
+ \r
+ 	action = { # 山本英輔案 ― 海軍航空隊\r
+ 	name = "ACTIONNAME2991017A"\r
+-	ai_chance = 0\r
++	ai_chance = 35\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -1218,7 +1217,7 @@ event = {
+ \r
+ 	action = { # 末次信正案 ― 潜水艦隊\r
+ 	name = "ACTIONNAME2991017B"\r
+-	ai_chance = 100\r
++	ai_chance = 30\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -1252,7 +1251,7 @@ event = {
+ \r
+ 	action = { # 中村良三案 ― 重巡増強\r
+ 	name = "ACTIONNAME2991017C"\r
+-	ai_chance = 0\r
++	ai_chance = 35\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -1636,11 +1635,11 @@ event = {
+ event = {\r
+ 	id = 2991022\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ \r
+ 	decision = {\r
+ 	war = { country = JAP country = CHI }\r
+-	NOT = { war = { country = JAP country = UTC } }\r
++	NOT = { war = { country = JAP country = UER } }\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	}\r
+@@ -1653,7 +1652,7 @@ event = {
+ \r
+ 	trigger = {\r
+ 	war = { country = JAP country = CHI }\r
+-	NOT = { war = { country = JAP country = UTC } }\r
++	NOT = { war = { country = JAP country = UER } }\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	}\r
+@@ -1679,7 +1678,7 @@ event = {
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+ 	command = { type = trigger which = 2991023 }\r
+-	command = { type = belligerence which = UTC value = 1 }\r
++	command = { type = belligerence which = UER value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1767,7 +1766,7 @@ event = {
+ 	name = "ACTIONNAME2991024A"\r
+ 	command = { trigger = { ai = yes } type = dissent value = -5 }\r
+ 	command = { trigger = { ai = no } type = dissent value = -3 }\r
+-	command = { type = relation which = UTC value = 50 }\r
++	command = { type = relation which = UER value = 50 }\r
+ 	command = { type = sleepleader which = 1300002 }\r
+ 	command = { type = sleepleader which = 1300003 }\r
+ 	command = { type = remove_division which = "ロシア義勇騎兵師団「スヴェントヴィト」" value = JAP }\r
+@@ -1776,7 +1775,7 @@ event = {
+ 	command = { type = remove_division which = "ロシア義勇歩兵師団「ラデガスト」" value = JAP }\r
+ 	command = { type = remove_division which = "ロシア義勇航空師団「ペルーン」" value = JAP }\r
+ 	command = { type = remove_division which = "ロシア義勇航空師団「ダジボーグ」" value = JAP }\r
+-	command = { type = event which = 2991025 where = UTC when = 0 } \r
++	command = { type = event which = 2991025 where = UER when = 0 } \r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1784,7 +1783,7 @@ event = {
+ \r
+ event = {\r
+ 	id = 2991025\r
+-	country = UTC\r
++	country = UER\r
+ 	random = no\r
+ 	persistent = no\r
+ \r
+@@ -1818,7 +1817,7 @@ event = {
+ \r
+ event = {\r
+ 	id = 2991026\r
+-	country = UTC\r
++	country = UER\r
+ 	random = no\r
+ 	persistent = no\r
+ \r
+@@ -2137,10 +2136,10 @@ event = {
+ 	action = { # 歯舞、色丹、国後、択捉を忘るるべからず\r
+ 	name = "ACTIONNAME2991031A"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = relation which = UTC value = 50 }\r
++	command = { type = relation which = UER value = 50 }\r
+ 	command = { type = remove_core_area which = "Sakhalin_Kuriles" }\r
+ 	command = { type = remove_claim_area which = "Sakhalin_Kuriles" }\r
+-	command = { type = secedearea which = UTC value = "Sakhalin_Kuriles" when = 1 }\r
++	command = { type = secedearea which = UER value = "Sakhalin_Kuriles" when = 1 }\r
+ 	command = { type = trigger which = 2991032 }\r
+ 	}\r
+ }\r
+@@ -2148,7 +2147,7 @@ event = {
+ event = {\r
+ 	id = 2991032\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ \r
+ 	name = "EVT_2991032_NAME"\r
+ 	desc = "EVT_2991031_DESC"\r
+@@ -2338,10 +2337,6 @@ event = {
+ \r
+ 	action = { # 諸君！反撃の時はきた！\r
+ 	name = "ACTIONNAME2991036A"\r
+-	command = { type = shore_attack which = land value = 67 }\r
+-	command = { type = shore_attack which = cavalry value = 8 }\r
+- 	command = { type = task_efficiency which = amphibious_assault value = 0.5 }\r
+-      	command = { type = max_amphib_mod value = 20 when = 1 }\r
+ 	command = { trigger = { ai = no } type = chiefofarmy which = 50945 }\r
+ 	command = { type = ground_def_eff value = 0.3 when = 1 }\r
+       	command = { type = surprise which = land value = 30 }\r
+@@ -2350,7 +2345,6 @@ event = {
+ 	command = { type = max_organization which = land value = 20 }\r
+ 	command = { type = morale which = land value = 20 }\r
+ 	command = { trigger = { ai = yes } type = morale which = land value = 20 }\r
+-	command = { trigger = { ai = yes } type = morale which = land value = 20 }\r
+ 	command = { type = morale which = naval value = 20 }\r
+ 	command = { type = morale which = air value = 20 }\r
+ 	command = { type = speed which = land value = 3 }\r
+@@ -2384,10 +2378,6 @@ event = {
+ \r
+ 	action = {\r
+ 	name = ACTION_NAME_OK\r
+-	command = { type = shore_attack which = land value = -67 }\r
+-	command = { type = shore_attack which = cavalry value = -8 }\r
+- 	command = { type = task_efficiency which = amphibious_assault value = -0.5 }\r
+-      	command = { type = max_amphib_mod value = -20 when = 1 }\r
+ 	command = { type = ground_def_eff value = -0.3 when = 1 }\r
+       	command = { type = surprise which = land value = -30 }\r
+       	command = { type = surprise which = naval value = -30 }\r
+@@ -2516,8 +2506,8 @@ event = {
+ 	control = { province = 2765 data = CHI } # 岐阜\r
+ 	#追加\r
+ 	control = { province = 1548 data = CHI } # 長野\r
+-	control = { province = 1549 data = CHI } # 仙台\r
+-	region = { region = JAPAN country = UD6 data = 1 value = 3 } #AOGにより領土失陥\r
++	control = { province = 1549 data = CHI } # 仙臺\r
++	region = { region = "Japan" country = UD6 data = 1 value = 3 }\r
+ 	#追加終わり\r
+ 	AND = {\r
+ 	control = { province = 1559 data = CHI } # 四国\r
+@@ -2953,21 +2943,6 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+-	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+ 	}\r
+ }\r
+ \r
+@@ -3451,11 +3426,11 @@ event = {
+ event = {\r
+ 	id = 2991060\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ 	\r
+ 	trigger = {\r
+ 	exists = JAP\r
+-	exists = UTC\r
++	exists = UER\r
+ 	}\r
+ 	\r
+ 	name = "EVT_2991060_NAME"\r
+@@ -3469,7 +3444,7 @@ event = {
+ 	name = "ACTIONNAME2991060A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = event which = 2991061 where = JAP when = 0 }\r
+-	command = { type = event which = 2991085 where = UTC when = 7 }\r
++	command = { type = event which = 2991085 where = UER when = 7 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4184,7 +4159,7 @@ event = {
+ 	command = { type = belligerence which = JAP value = 2 }\r
+ 	command = { type = relation which = CHI value = -100 }\r
+ 	command = { type = relation which = GER value = -100 }\r
+-	command = { type = relation which = UTC value = 10 }\r
++	command = { type = relation which = UER value = 10 }\r
+ 	command = { type = relation which = ENG value = 10 }\r
+ 	command = { type = relation which = FRA value = 10 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -4199,7 +4174,7 @@ event = {
+ 	command = { type = belligerence which = JAP value = 2 }\r
+ 	command = { type = relation which = CHI value = -100 }\r
+ 	command = { type = relation which = GER value = -100 }\r
+-	command = { type = relation which = UTC value = 15 }\r
++	command = { type = relation which = UER value = 15 }\r
+ 	command = { type = relation which = ENG value = 15 }\r
+ 	command = { type = relation which = FRA value = 15 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -4412,7 +4387,7 @@ event = {
+ 	AND = { lost_national = { country = -1 value = 15 } }\r
+ 	AND = { war = { country = -1 country = CHI } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = GER } lost_national = { country = -1 value = 8 } }\r
+-	AND = { war = { country = -1 country = UTC } lost_national = { country = -1 value = 8 } }\r
++	AND = { war = { country = -1 country = UER } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = SOV } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = ENG } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = FRA } lost_national = { country = -1 value = 8 } }\r
+@@ -4471,7 +4446,7 @@ event = {
+ event = {\r
+ 	id = 2991085\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ 	\r
+ 	name = "EVT_2991085_NAME"\r
+ 	desc = "EVT_2991085_DESC"\r
+@@ -4513,27 +4488,27 @@ event = {
+ event = {\r
+ 	id = 2991087\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ 	\r
+ 	decision = {\r
+-	not = { ispuppet = UTC }\r
++	not = { ispuppet = UER }\r
+ 	war = { country = JAP country = CHI }\r
+-	NOT = { war = { country = UTC country = JAP } }\r
++	NOT = { war = { country = UER country = JAP } }\r
+ 	event = 1891018\r
+ 	}\r
+ 	\r
+ 	decision_trigger = {\r
+-	not = { ispuppet = UTC }\r
++	not = { ispuppet = UER }\r
+ 	war = { country = JAP country = CHI }\r
+-	NOT = { war = { country = UTC country = JAP } }\r
++	NOT = { war = { country = UER country = JAP } }\r
+ 	event = { id = 1891018 days = 90 }\r
+ 	supplies = 5000\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+-	not = { ispuppet = UTC }\r
++	not = { ispuppet = UER }\r
+ 	war = { country = JAP country = CHI }\r
+-	NOT = { war = { country = UTC country = JAP } }\r
++	NOT = { war = { country = UER country = JAP } }\r
+ 	event = { id = 1891018 days = 90 }\r
+ 	random = 60\r
+ 	}\r
+@@ -4578,7 +4553,7 @@ event = {
+ 	action = { # 条約を締結する\r
+ 	name = "ACTIONNAME2991088A"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { type = relation which = UTC value = 50 }\r
++	command = { type = relation which = UER value = 50 }\r
+ 	command = { type = add_division value = light_armor when = 1 where = engineer }\r
+ 	command = { type = add_division value = motorized when = 0 where = armored_car }\r
+ 	command = { type = add_division value = infantry when = 9 where = artillery }\r
+@@ -4586,13 +4561,13 @@ event = {
+ 	command = { type = add_division value = infantry when = 9 where = artillery }\r
+ 	command = { type = add_division value = interceptor when = 7 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 where = escort }\r
+-	command = { type = setflag which = UTC_JAP_lend_lease }\r
++	command = { type = setflag which = UER_JAP_lend_lease }\r
+ 	}\r
+ \r
+ 	action = { # 必要ない！\r
+ 	name = "ACTIONNAME2991088B"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = relation which = UTC value = -10 }\r
++	command = { type = relation which = UER value = -10 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4614,10 +4589,10 @@ event = {
+ 	\r
+ \r
+ 	trigger = {\r
+-	flag = UTC_JAP_lend_lease\r
+-	not = { ispuppet = UTC }\r
++	flag = UER_JAP_lend_lease\r
++	not = { ispuppet = UER }\r
+ 	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = UTC country = JAP } }\r
++	NOT = { war = { country = UER country = JAP } }\r
+ 	event = 2991087\r
+ 	random = 60\r
+ 	}\r
+@@ -4634,8 +4609,8 @@ event = {
+ \r
+ 	action = { # 借りた者には利子をつけて返済しなくてはならない\r
+ 	name = "ACTIONNAME2991089A"\r
+-	command = { type = relation which = UTC value = 50 }\r
+-	command = { type = trade which = UTC where = JAP money = 0.5 supplies = 3 when = 9999 value = 1 }\r
++	command = { type = relation which = UER value = 50 }\r
++	command = { type = trade which = UER where = JAP money = 0.5 supplies = 3 when = 9999 value = 1 }\r
+ 	command = { type = trigger which = 2991090 }\r
+ 	}\r
+ }\r
+@@ -4643,7 +4618,7 @@ event = {
+ event = {\r
+ 	id = 2991090\r
+ 	random = no\r
+-	country = UTC\r
++	country = UER\r
+ \r
+ 	name = "EVT_2991090_NAME"\r
+ 	desc = "EVT_2991089_DESC"\r
+@@ -4743,7 +4718,7 @@ event = {
+ 	command = { type = relation which = CAN value = 15 }\r
+ 	command = { type = relation which = U02 value = 15 }\r
+ 	command = { type = relation which = FRA value = 15 }\r
+-	command = { type = relation which = UTC value = 15 }\r
++	command = { type = relation which = UER value = 15 }\r
+ 	command = { type = relation which = CHI value = -25 }\r
+ 	command = { type = relation which = GER value = -25 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -4945,7 +4920,7 @@ event = {
+ 	NOT = {\r
+ 	war = { country = ENG country = JAP }\r
+ 	war = { country = FRA country = JAP }\r
+-	war = { country = UTC country = JAP }\r
++	war = { country = UER country = JAP }\r
+ 	}\r
+ 	war = { country = JAP country = CHI }\r
+ 	}\r
+@@ -4957,7 +4932,7 @@ event = {
+ 	NOT = {\r
+ 	war = { country = ENG country = JAP }\r
+ 	war = { country = FRA country = JAP }\r
+-	war = { country = UTC country = JAP }\r
++	war = { country = UER country = JAP }\r
+ 	}\r
+ 	war = { country = JAP country = CHI }\r
+ 	supplies = 500\r
+@@ -4970,7 +4945,7 @@ event = {
+ 	NOT = {\r
+ 	war = { country = ENG country = JAP }\r
+ 	war = { country = FRA country = JAP }\r
+-	war = { country = UTC country = JAP }\r
++	war = { country = UER country = JAP }\r
+ 	}\r
+ 	war = { country = JAP country = CHI }\r
+ 	random = 20\r
+@@ -5743,7 +5718,7 @@ event = {
+ 	AND = { lost_national = { country = -1 value = 15 } }\r
+ 	AND = { war = { country = -1 country = CHI } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = GER } lost_national = { country = -1 value = 8 } }\r
+-	AND = { war = { country = -1 country = UTC } lost_national = { country = -1 value = 8 } }\r
++	AND = { war = { country = -1 country = UER } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = SOV } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = ENG } lost_national = { country = -1 value = 8 } }\r
+ 	AND = { war = { country = -1 country = FRA } lost_national = { country = -1 value = 8 } }\r
+@@ -6071,13 +6046,13 @@ event = {
+ 	war = { country = JAP country = CHI }\r
+ 	war = { country = JAP country = ENG }\r
+ 	war = { country = JAP country = FRA }\r
+-	war = { country = JAP country = UTC }\r
++	war = { country = JAP country = UER }\r
+ 	war = { country = JAP country = GER }\r
+ 	war = { country = GER country = ENG }\r
+ 	war = { country = GER country = FRA }\r
+-	war = { country = GER country = UTC }\r
+-	war = { country = UTC country = CHI }\r
+-	war = { country = UTC country = FIN }\r
++	war = { country = GER country = UER }\r
++	war = { country = UER country = CHI }\r
++	war = { country = UER country = FIN }\r
+ 	}\r
+ 	not = { ispuppet = JAP }\r
+ 	flag = JAP_NorthStrategy\r
+@@ -6094,13 +6069,13 @@ event = {
+ 	war = { country = JAP country = CHI }\r
+ 	war = { country = JAP country = ENG }\r
+ 	war = { country = JAP country = FRA }\r
+-	war = { country = JAP country = UTC }\r
++	war = { country = JAP country = UER }\r
+ 	war = { country = JAP country = GER }\r
+ 	war = { country = GER country = ENG }\r
+ 	war = { country = GER country = FRA }\r
+-	war = { country = GER country = UTC }\r
+-	war = { country = UTC country = CHI }\r
+-	war = { country = UTC country = FIN }\r
++	war = { country = GER country = UER }\r
++	war = { country = UER country = CHI }\r
++	war = { country = UER country = FIN }\r
+ 	}\r
+ 	not = { ispuppet = JAP }\r
+ 	supplies = 2000\r
+@@ -6117,13 +6092,13 @@ event = {
+ 	war = { country = JAP country = CHI }\r
+ 	war = { country = JAP country = ENG }\r
+ 	war = { country = JAP country = FRA }\r
+-	war = { country = JAP country = UTC }\r
++	war = { country = JAP country = UER }\r
+ 	war = { country = JAP country = GER }\r
+ 	war = { country = GER country = ENG }\r
+ 	war = { country = GER country = FRA }\r
+-	war = { country = GER country = UTC }\r
+-	war = { country = UTC country = CHI }\r
+-	war = { country = UTC country = FIN }\r
++	war = { country = GER country = UER }\r
++	war = { country = UER country = CHI }\r
++	war = { country = UER country = FIN }\r
+ 	}\r
+ 	not = { ispuppet = JAP }\r
+ 	flag = JAP_NorthStrategy\r
+@@ -6738,7 +6713,7 @@ event = {
+ 				war = { country = JAP country = SOV }\r
+ 				war = { country = JAP country = ENG }\r
+ 				war = { country = JAP country = GER }\r
+-				war = { country = JAP country = UTC }\r
++				war = { country = JAP country = UER }\r
+ 				war = { country = JAP country = USA }\r
+ 				war = { country = JAP country = DDR }\r
+ 				war = { country = JAP country = U08 }\r
+@@ -6818,7 +6793,7 @@ event = {
+ 				war = { country = JAP country = SOV }\r
+ 				war = { country = JAP country = ENG }\r
+ 				war = { country = JAP country = GER }\r
+-				war = { country = JAP country = UTC }\r
++				war = { country = JAP country = UER }\r
+ 				war = { country = JAP country = USA }\r
+ 				war = { country = JAP country = DDR }\r
+ 				war = { country = JAP country = U08 }\r
+@@ -6864,7 +6839,7 @@ event = {
+ 	save_date = yes\r
+ \r
+ 	decision = {\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = ENG\r
+ 	exists = FRA\r
+ 	OR = { \r
+@@ -6879,7 +6854,7 @@ event = {
+ 	headofstate = 51013 # 三種の神器\r
+ 	}\r
+ 	OR = { \r
+-	war = { country = CHI country = UTC }\r
++	war = { country = CHI country = UER }\r
+ 	war = { country = CHI country = ENG }\r
+ 	war = { country = CHI country = FRA }\r
+ 	war = { country = CHI country = U87 }\r
+@@ -6899,7 +6874,7 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {	\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = ENG\r
+ 	exists = FRA\r
+ 	OR = { \r
+@@ -6914,7 +6889,7 @@ event = {
+ 	headofstate = 51013 # 三種の神器\r
+ 	}\r
+ 	OR = { \r
+-	war = { country = CHI country = UTC }\r
++	war = { country = CHI country = UER }\r
+ 	war = { country = CHI country = ENG }\r
+ 	war = { country = CHI country = FRA }\r
+ 	war = { country = CHI country = U87 }\r
+@@ -6934,7 +6909,7 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = ENG\r
+ 	exists = FRA\r
+ 	OR = { \r
+@@ -6949,7 +6924,7 @@ event = {
+ 	headofstate = 51013 # 三種の神器\r
+ 	}\r
+ 	OR = { \r
+-	war = { country = CHI country = UTC }\r
++	war = { country = CHI country = UER }\r
+ 	war = { country = CHI country = ENG }\r
+ 	war = { country = CHI country = FRA }\r
+ 	war = { country = CHI country = U87 }\r
+@@ -7006,7 +6981,7 @@ event = {
+ 	action = { # ロシアと立場を同一にするべきだ\r
+ 	name = "ACTIONNAME2991203C"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { type = relation which = UTC value = 30 }\r
++	command = { type = relation which = UER value = 30 }\r
+ 	command = { trigger = { government = fascist } type = foreignminister which = 50039 } # 佐藤尚武\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	ai_chance = 75\r
+@@ -7033,7 +7008,7 @@ event = {
+ 	country = JAP\r
+ \r
+ 	trigger = {\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = ENG\r
+ 	exists = FRA\r
+ 	OR = { \r
+@@ -7048,7 +7023,7 @@ event = {
+ 	headofstate = 51013 # 三種の神器\r
+ 	}\r
+ 	OR = { \r
+-	war = { country = CHI country = UTC }\r
++	war = { country = CHI country = UER }\r
+ 	war = { country = CHI country = ENG }\r
+ 	war = { country = CHI country = FRA }\r
+ 	war = { country = CHI country = U87 }\r
+@@ -7103,7 +7078,7 @@ event = {
+ 	country = JAP\r
+ \r
+ 	trigger = {\r
+-	exists = UTC\r
++	exists = UER\r
+ 	exists = ENG\r
+ 	exists = FRA\r
+ 	OR = { \r
+@@ -7118,7 +7093,7 @@ event = {
+ 	headofstate = 51013 # 三種の神器\r
+ 	}\r
+ 	OR = { \r
+-	war = { country = CHI country = UTC }\r
++	war = { country = CHI country = UER }\r
+ 	war = { country = CHI country = ENG }\r
+ 	war = { country = CHI country = FRA }\r
+ 	war = { country = CHI country = U87 }\r
+@@ -8038,10 +8013,10 @@ event = {
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = belligerence which = GER value = 5 }\r
+ 	command = { type = relation which = CHI value = 10 }\r
+-	command = { type = relation which = UTC value = 10 }\r
++	command = { type = relation which = UER value = 10 }\r
+ 	command = { type = relation which = ENG value = 5 }\r
+ 	command = { type = relation which = FRA value = 5 }\r
+-	command = { type = event which = 2991304 where = UTC when = 1 }\r
++	command = { type = event which = 2991304 where = UER when = 1 }\r
+ 	command = { type = event which = 2991304 where = CHI when = 1 }\r
+ 	command = { type = event which = 2991305 where = JAP when = 2 }\r
+ 	}\r
+@@ -8058,7 +8033,7 @@ event = {
+ event = {\r
+ 	id = 2991304\r
+ 	random = no\r
+-	TAG = { UTC CHI }\r
++	TAG = { UER CHI }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_2991304_NAME"\r
+@@ -8095,10 +8070,10 @@ event = {
+ 	command = { type = foreignminister which = 50257 } # 幣原喜重郞\r
+ 	command = { type = relation which = GER value = 20 }\r
+ 	command = { type = relation which = CHI value = 20 }\r
+-	command = { type = relation which = UTC value = 20 }\r
++	command = { type = relation which = UER value = 20 }\r
+ 	command = { type = event which = 2991306 where = JAP when = 1 }\r
+ 	command = { type = event which = 2991307 where = GER when = 1 }\r
+-	command = { type = event which = 2991307 where = UTC when = 1 }\r
++	command = { type = event which = 2991307 where = UER when = 1 }\r
+ 	command = { type = event which = 2991307 where = CHI when = 1 }\r
+ 	ai_chance = 99\r
+ 	}\r
+@@ -8108,14 +8083,14 @@ event = {
+ 	command = { type = foreignminister which = 50257 } # 幣原喜重郞\r
+ 	command = { type = relation which = GER value = -30 }\r
+ 	command = { type = relation which = CHI value = -30 }\r
+-	command = { type = relation which = UTC value = -30 }\r
++	command = { type = relation which = UER value = -30 }\r
+ 	command = { type = relation which = ENG value = 15 }\r
+ 	command = { type = relation which = FRA value = 15 }\r
+ 	command = { type = event which = 2991315 where = JAP when = 1 }\r
+ 	command = { type = event which = 2991315 where = ENG when = 1 }\r
+ 	command = { type = event which = 2991315 where = GER when = 1 }\r
+ 	command = { type = event which = 2991315 where = UD6 when = 1 }\r
+-	command = { type = event which = 2991315 where = UTC when = 1 }\r
++	command = { type = event which = 2991315 where = UER when = 1 }\r
+ 	command = { type = event which = 2991315 where = CHI when = 1 }\r
+ 	ai_chance = 1\r
+ 	}\r
+@@ -8144,7 +8119,7 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = foreignminister which = 50257 } # 幣原喜重郞\r
+ 	command = { type = relation which = GER value = 1 }\r
+-	command = { type = relation which = UTC value = 1 }\r
++	command = { type = relation which = UER value = 1 }\r
+ 	command = { type = relation which = CHI value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -8161,7 +8136,7 @@ event = {
+ event = {\r
+ 	id = 2991307\r
+ 	random = no\r
+-	TAG = { GER UTC CHI }\r
++	TAG = { GER UER CHI }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_2991307_NAME"\r
+@@ -8172,7 +8147,7 @@ event = {
+ 	action = { # 秘密協定、知らぬは日本ばかりなり…\r
+ 	name = "ACTIONNAME2991307A"\r
+ 	command = { trigger = { NOT = { country = GER } } type = relation which = GER value = 30 }\r
+-	command = { trigger = { NOT = { country = UTC } } type = relation which = UTC value = 30 }\r
++	command = { trigger = { NOT = { country = UER } } type = relation which = UER value = 30 }\r
+ 	command = { trigger = { NOT = { country = CHI } } type = relation which = CHI value = 30 }\r
+ 	command = { trigger = { country = GER } type = event which = 2991308 where = JAP when = 30 }\r
+ 	command = { trigger = { country = GER } type = event which = 2991309 where = JAP when = 90 }\r
+@@ -8204,7 +8179,7 @@ event = {
+ 	name = "ACTIONNAME2991308A"\r
+ 	command = { type = revolt which = 1552 }\r
+ 	command = { type = trade which = GER where = JAP money = 2 supplies = 10 when = 9999 value = 1 }\r
+-	command = { type = trade which = UTC where = JAP money = 2 supplies = 10 when = 9999 value = 1 }\r
++	command = { type = trade which = UER where = JAP money = 2 supplies = 10 when = 9999 value = 1 }\r
+ 	command = { type = trade which = CHI where = JAP money = 2 supplies = 10 when = 9999 value = 1 }\r
+ 	command = { type = sleepminister which = 50028 } # 幣原喜重郞 銃殺\r
+ 	command = { type = sleepminister which = 50036 }\r
+@@ -8239,11 +8214,11 @@ event = {
+ 	command = { type = dissent value = 45 }\r
+ 	command = { type = access which = GER }\r
+ 	command = { type = access which = UD6 }\r
+-	command = { type = access which = UTC }\r
++	command = { type = access which = UER }\r
+ 	command = { type = access which = CHI }\r
+ 	command = { type = non_aggression which = JAP where = GER when = 9999 }\r
+ 	command = { type = non_aggression which = JAP where = UD6 when = 9999 }\r
+-	command = { type = non_aggression which = JAP where = UTC when = 9999 }\r
++	command = { type = non_aggression which = JAP where = UER when = 9999 }\r
+ 	command = { type = non_aggression which = JAP where = CHI when = 9999 }\r
+ 	command = { type = remove_core_area which = "Bonin" }\r
+ 	command = { type = remove_claim_area which = "Bonin" }\r
+@@ -8257,13 +8232,13 @@ event = {
+ 	command = { type = remove_claim_area which = "Ryukyusland" }\r
+ 	command = { type = event which = 2991310 where = GER when = 0 }\r
+ 	command = { type = event which = 2991310 where = UD6 when = 0 }\r
+-	command = { type = event which = 2991310 where = UTC when = 0 }\r
++	command = { type = event which = 2991310 where = UER when = 0 }\r
+ 	command = { type = event which = 2991310 where = CHI when = 0 }\r
+ 	command = { type = event which = 2991311 where = JAP when = 360 }\r
+-	command = { type = secedearea which = UTC value = "Hokkaido" when = 1 }\r
+-	command = { type = secedearea which = UTC value = "Sakhalin_Kuriles" when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 2787 when = 1 }\r
+-	command = { type = secedeprovince which = UTC value = 2788 when = 1 }\r
++	command = { type = secedearea which = UER value = "Hokkaido" when = 1 }\r
++	command = { type = secedearea which = UER value = "Sakhalin_Kuriles" when = 1 }\r
++	command = { type = secedeprovince which = UER value = 2787 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 2788 when = 1 }\r
+ 	command = { type = secedearea which = CHI value = "Ryukyusland" when = 1 }\r
+ 	command = { type = secedeprovince which = CHI value = 1560 when = 1 }\r
+ 	command = { type = secedeprovince which = CHI value = 1561 when = 1 }\r
+@@ -8287,7 +8262,7 @@ event = {
+ event = {\r
+ 	id = 2991310\r
+ 	random = no\r
+-	TAG = { GER UD6 UTC CHI }\r
++	TAG = { GER UD6 UER CHI }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_2991309_NAME"\r
+@@ -8299,23 +8274,23 @@ event = {
+ 	name = "ACTIONNAME2991310A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = manpowerpool value = -100 }\r
+-	command = { trigger = { country = UTC } type = add_core_area which = "Hokkaido" where = UTC }\r
+-	command = { trigger = { country = UTC } type = add_core_area which = "Sakhalin_Kuriles" where = UTC }\r
+-	command = { trigger = { country = UTC } type = add_corps which = "極東日本軍区司令部" value = land where = 1549 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8001 where = 1549 when = 0 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8002 where = 1549 when = 0 }\r
+-	command = { trigger = { country = UTC } type = add_corps which = "日本第1管区" value = land where = 1551 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8003 where = 1551 when = 0 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8004 where = 1551 when = 0 }\r
+-	command = { trigger = { country = UTC } type = add_corps which = "日本第2管区" value = land where = 2464 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8005 where = 2464 when = 0 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8006 where = 2464 when = 0 }\r
+-	command = { trigger = { country = UTC } type = add_corps which = "日本第3管区" value = land where = 1544 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8007 where = 1544 when = 0 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8008 where = 1544 when = 0 }\r
+-	command = { trigger = { country = UTC } type = add_corps which = "日本第4管区" value = land where = 2767 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8009 where = 2767 when = 0 }\r
+-	command = { trigger = { country = UTC } type = activate_division which = 10848 value = 8010 where = 2767 when = 0 }\r
++	command = { trigger = { country = UER } type = add_core_area which = "Hokkaido" where = UER }\r
++	command = { trigger = { country = UER } type = add_core_area which = "Sakhalin_Kuriles" where = UER }\r
++	command = { trigger = { country = UER } type = add_corps which = "極東日本軍区司令部" value = land where = 1549 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8001 where = 1549 when = 0 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8002 where = 1549 when = 0 }\r
++	command = { trigger = { country = UER } type = add_corps which = "日本第1管区" value = land where = 1551 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8003 where = 1551 when = 0 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8004 where = 1551 when = 0 }\r
++	command = { trigger = { country = UER } type = add_corps which = "日本第2管区" value = land where = 2464 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8005 where = 2464 when = 0 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8006 where = 2464 when = 0 }\r
++	command = { trigger = { country = UER } type = add_corps which = "日本第3管区" value = land where = 1544 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8007 where = 1544 when = 0 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8008 where = 1544 when = 0 }\r
++	command = { trigger = { country = UER } type = add_corps which = "日本第4管区" value = land where = 2767 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8009 where = 2767 when = 0 }\r
++	command = { trigger = { country = UER } type = activate_division which = 10848 value = 8010 where = 2767 when = 0 }\r
+ 	command = { trigger = { country = CHI } type = add_core_area which = "Ryukyusland" where = CHI }\r
+ 	command = { trigger = { country = CHI } type = addcore which = 1560 where = CHI }\r
+ 	command = { trigger = { country = CHI } type = addcore which = 1561 where = CHI }\r
+@@ -8567,11 +8542,11 @@ event = {
+ 	command = { type = dissent value = 30 }\r
+ 	command = { type = war which = GER }\r
+ 	command = { type = war which = UD6 }\r
+-	command = { type = war which = UTC }\r
++	command = { type = war which = UER }\r
+ 	command = { type = war which = CHI }\r
+ 	command = { type = end_non_aggression which = JAP where = GER }\r
+ 	command = { type = end_non_aggression which = JAP where = UD6 }\r
+-	command = { type = end_non_aggression which = JAP where = UTC }\r
++	command = { type = end_non_aggression which = JAP where = UER }\r
+ 	command = { type = end_non_aggression which = JAP where = CHI }\r
+ 	command = { type = add_division value = militia when = 0 }\r
+ 	command = { type = add_division value = militia when = 0 }\r
+@@ -8580,7 +8555,7 @@ event = {
+ 	command = { type = add_division value = militia when = 0 }\r
+ 	command = { type = event which = 2991314 where = GER when = 0 }\r
+ 	command = { type = event which = 2991314 where = UD6 when = 0 }\r
+-	command = { type = event which = 2991314 where = UTC when = 0 }\r
++	command = { type = event which = 2991314 where = UER when = 0 }\r
+ 	command = { type = event which = 2991314 where = CHI when = 0 }\r
+ 	command = { type = local_setflag which = Bigeventflag0006 } #イベントが起きたことを示す\r
+ 	command = { type = songs which = "Special/0006.txt" } #音源流し\r
+@@ -8610,23 +8585,23 @@ event = {
+ 	action = { # 蛮族を征伐するのだ\r
+ 	name = "ACTIONNAME2991314A"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { trigger = { country = UTC } type = addcore which = 1159 where = UTC }\r
+-	command = { trigger = { country = UTC } type = addcore which = 2761 where = UTC }\r
+-	command = { trigger = { country = UTC } type = addcore which = 2764 where = UTC }\r
++	command = { trigger = { country = UER } type = addcore which = 1159 where = UER }\r
++	command = { trigger = { country = UER } type = addcore which = 2761 where = UER }\r
++	command = { trigger = { country = UER } type = addcore which = 2764 where = UER }\r
+ 	command = { trigger = { country = UD6 } type = addcore which = 1552 where = UD6 }\r
+ 	command = { trigger = { country = UD6 } type = addcore which = 2760 where = UD6 }\r
+ 	command = { trigger = { country = UD6 } type = addcore which = 2762 where = UD6 }\r
+-	command = { trigger = { country = UTC } type = add_corps which = "ロシア日本方面第1軍" value = land where = 1549 }\r
+-	command = { trigger = { country = UTC } type = add_division value = cavalry when = 9 }\r
+-	command = { trigger = { country = UTC } type = add_division value = cavalry when = 9 }\r
+-	command = { trigger = { country = UTC } type = add_division value = infantry when = 8 }\r
+-	command = { trigger = { country = UTC } type = add_division value = infantry when = 8 }\r
+-	command = { trigger = { country = UTC } type = add_division value = infantry when = 8 }\r
+-	command = { trigger = { country = UTC } type = add_division value = infantry when = 8 }\r
+-	command = { trigger = { country = UTC } type = add_corps which = "ロシア日本方面第2軍" value = land where = 1549 }\r
+-	command = { trigger = { country = UTC } type = add_division value = infantry when = 8 }\r
+-	command = { trigger = { country = UTC } type = add_division value = infantry when = 8 }\r
+-	command = { trigger = { country = UTC } type = add_division value = infantry when = 8 }\r
++	command = { trigger = { country = UER } type = add_corps which = "ロシア日本方面第1軍" value = land where = 1549 }\r
++	command = { trigger = { country = UER } type = add_division value = cavalry when = 9 }\r
++	command = { trigger = { country = UER } type = add_division value = cavalry when = 9 }\r
++	command = { trigger = { country = UER } type = add_division value = infantry when = 8 }\r
++	command = { trigger = { country = UER } type = add_division value = infantry when = 8 }\r
++	command = { trigger = { country = UER } type = add_division value = infantry when = 8 }\r
++	command = { trigger = { country = UER } type = add_division value = infantry when = 8 }\r
++	command = { trigger = { country = UER } type = add_corps which = "ロシア日本方面第2軍" value = land where = 1549 }\r
++	command = { trigger = { country = UER } type = add_division value = infantry when = 8 }\r
++	command = { trigger = { country = UER } type = add_division value = infantry when = 8 }\r
++	command = { trigger = { country = UER } type = add_division value = infantry when = 8 }\r
+ 	command = { trigger = { country = UD6 } type = add_corps which = "東亜総合商社日本方面第1軍" value = land where = 1550 }\r
+ 	command = { trigger = { country = UD6 } type = add_division value = cavalry when = 9 }\r
+ 	command = { trigger = { country = UD6 } type = add_division value = cavalry when = 9 }\r
+@@ -8658,7 +8633,7 @@ event = {
+ event = {\r
+ 	id = 2991315\r
+ 	random = no\r
+-	TAG = { JAP ENG GER UD6 UTC CHI }\r
++	TAG = { JAP ENG GER UD6 UER CHI }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_2991315_NAME"\r
+@@ -8670,11 +8645,11 @@ event = {
+ 	name = "ACTIONNAME2991315A"\r
+ 	command = { trigger = { country = JAP } type = dissent value = 2 }\r
+ 	command = { trigger = { country = ENG } type = dissent value = -2 }\r
+-	command = { trigger = { OR = { country = GER country = UD6 country = UTC country = CHI } } type = dissent value = 1 }\r
++	command = { trigger = { OR = { country = GER country = UD6 country = UER country = CHI } } type = dissent value = 1 }\r
+ 	command = { trigger = { country = JAP } type = relation which = ENG value = 30 }\r
+ 	command = { trigger = { country = ENG } type = relation which = JAP value = 50 }\r
+-	command = { trigger = { OR = { country = GER country = UD6 country = UTC country = CHI } } type = relation which = ENG value = -30 }\r
+-	command = { trigger = { OR = { country = GER country = UD6 country = UTC country = CHI } } type = relation which = JAP value = -30 }\r
++	command = { trigger = { OR = { country = GER country = UD6 country = UER country = CHI } } type = relation which = ENG value = -30 }\r
++	command = { trigger = { OR = { country = GER country = UD6 country = UER country = CHI } } type = relation which = JAP value = -30 }\r
+ 	command = { trigger = { country = ENG } type = make_puppet which = JAP }\r
+ 	command = { trigger = { country = JAP } type = secedeprovince which = ENG value = 1561 when = 1 }\r
+ 	command = { trigger = { country = JAP } type = secedeprovince which = ENG value = 1562 when = 1 }\r
+@@ -8740,7 +8715,7 @@ event = {
+ 	command = { type = set_relation which = FRA value = 50 }\r
+ 	command = { type = set_relation which = ENG value = 15 }\r
+ 	command = { type = set_relation which = USA value = 15 }\r
+-	command = { type = set_relation which = UTC value = -150 }\r
++	command = { type = set_relation which = UER value = -150 }\r
+ 	command = { type = set_relation which = GER value = -150 }\r
+ 	command = { type = set_relation which = UB9 value = -150 }\r
+ 	command = { type = set_relation which = CHI value = -150 }\r
+@@ -8855,7 +8830,7 @@ event = {
+ 	name = "ACTIONNAME2991404A"\r
+ 	command = { trigger = { exists = JAP } type = inherit which = JAP }\r
+ 	command = { type = dissent value = -10 }\r
+-	command = { type = event which = 2991405 where = UTC when = 0 }\r
++	command = { type = event which = 2991405 where = UER when = 0 }\r
+ 	command = { type = event which = 2991405 where = UD6 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -8870,7 +8845,7 @@ event = {
+ event = {\r
+ 	id = 2991405\r
+ 	random = no\r
+-	TAG = { UTC UD6 }\r
++	TAG = { UER UD6 }\r
+ 	persistent = yes\r
+ 	\r
+ 	name = "EVT_2991405_NAME"\r
+@@ -8880,7 +8855,7 @@ event = {
+ \r
+ 	action = { # 撤退しかない\r
+ 	name = "ACTIONNAME2991405A"\r
+-	trigger = { country = UTC }\r
++	trigger = { country = UER }\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { trigger = { division_exists = { type = 10848 id = 402 } } type = remove_division which = 10848 value = 402 }\r
+ 	command = { trigger = { division_exists = { type = 10848 id = 403 } } type = remove_division which = 10848 value = 403 }\r

@@ -1,0 +1,63 @@
+--- A/ai/IFswitch/CHI_Japan_chugoku.ai [cp932]
++++ B/ai/IFswitch/CHI_Japan_chugoku.ai [cp932]
+@@ -1,6 +1,9 @@
+ \r
+-\r
+-\r
++max_front_ratio = 30\r
++max_front_ratios = {\r
++	JAP = 20.0\r
++	\r
++}\r
+ ###################################\r
+ # Ground Combat, Leaders and Garrisons\r
+ ###################################\r
+@@ -15,17 +18,18 @@ garrison = {
+ 	1558 = 5\r
+ 	1560 = 5\r
+ 	1561 = 5\r
++	2780 = 10\r
+ 	}\r
+ 	province_priorities = { #四国中国各プロビ優先度高\r
+ 	2802 = -1	#天草\r
+ 	2785 = 10	#熊本\r
+-	1554 = 100	#広島\r
++	1554 = 200	#広島\r
+ 	\r
+-	1555 = 200	#神戸\r
+-	2777 = 100	#鳥取\r
+-	2778 = 100	#岡山\r
+-	2779 = 100	#島根\r
+-	2780 = 100	#山口\r
++	1555 = 400	#神戸\r
++	2777 = 200	#鳥取\r
++	2778 = 200	#岡山\r
++	2779 = 200	#島根\r
++	2780 = 200	#山口\r
+ \r
+ 	2781 = 100	#香川\r
+ 	2782 = 100	#徳島\r
+@@ -53,7 +57,7 @@ garrison = {
+ 		SIA = 1\r
+ 		ENG = -1\r
+ 		POR = -1\r
+-		JAP = 300\r
++		JAP = 3000\r
+ 		CHC = 3\r
+ 		MAN = 1\r
+ 		CSX = 1\r
+@@ -69,10 +73,10 @@ garrison = {
+ }\r
+ front = {\r
+ 	recklessness 		= 3 # 0 # 0-3\r
+-	distrib_vs_ai 		= Offensive\r
+-	distrib_vs_human 	= Offensive\r
+-	largefort = 1.2\r
+-	smallfort = 1.2\r
++	distrib_vs_ai 		= Defensive\r
++	distrib_vs_human 	= reactive\r
++	largefort = 0.9\r
++	smallfort = 0.8\r
+ 	base_attack_odds	= 1.0\r
+ 	min_attack_odds		= 0.9\r
+ 	max_attack_odds		= 2.5\r

@@ -1,0 +1,2190 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Britain_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Britain_events.txt [cp932]
+@@ -1062,8 +1062,8 @@ control = { province = 29 data = -2 }
+ 		command = { trigger = { ai =  no } type = dissent value = 50 }\r
+ 		command = { type = set_domestic which = democratic value = 10 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { type = wakeminister which = 10018 }\r
+-		command = { type = headofgovernment which = 10018 }\r
++		command = { type = wakeminister which = 10438 }\r
++		command = { type = headofgovernment which = 10438 }\r
+ 		command = { type = foreignminister which = 10003 }\r
+ 		command = { type = armamentminister which = 10040 }\r
+ 		command = { type = ministerofsecurity which = 10005 }\r
+@@ -1117,7 +1117,7 @@ control = { province = 29 data = -2 }
+ 	#command = { type = morale which = land value = 50 }\r
+ 	#command = { type = event which = 4656024 when = 100 where = ENG }\r
+ 		\r
+-	ai_chance = 80\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ \r
+@@ -1135,7 +1135,7 @@ control = { province = 29 data = -2 }
+ 		command = { type = ministerofsecurity which = 10430 }\r
+ 		command = { type = ministerofintelligence which = 10429 }\r
+ 	#command = { type = trigger which = 4656023 }\r
+-	ai_chance = 20\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ }\r
+@@ -1151,7 +1151,7 @@ control = { province = 29 data = -2 }
+ # 玉虫色の答えしか出すことが出来なかった。\r
+ # そうした状況の中で、労働党政治家アーサー・グリーンウッドが質問をする場面になった。\r
+ # しかし、暗い雰囲気が立ち込め、誰もが大英帝国の敗北を予感するこの時にあって、彼は中々口を開けずにいた。\r
+-# それを見て"保守党"政治家であるレオ・エイメリーは叫んだ。\r
++# それを見て「保守党」政治家であるレオ・エイメリーは叫んだ。\r
+ # 「アーサー、スピーク・フォー・イングランド！」\r
+ # この言葉の後、アーサー・グリーンウッドは口を開いた。\r
+ # 事態がここに及ぶまでの政治家たちの立場を擁護しながら、そうして導き出された現在の状況を彼は強く非難し、\r
+@@ -1219,7 +1219,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # 我々は諦めない。最後には必ず勝利する\r
+-	name = "ACTIONNAMEIDA"\r
++	name = "ACTIONNAME4656024A"\r
+ 	command = { type = wakeminister which = 10437 }\r
+ 	command = { type = headofgovernment which = 10437 }\r
+ 	command = { type = event which = 4656025 when = 30 where = ENG }\r
+@@ -1246,8 +1246,8 @@ event = {
+ # そこで白羽の矢が立ったのは、徹底抗戦派で知られ、第一次世界大戦においては横浜の戦いを指揮し、戦間期においては\r
+ # デビッド・ロイド・ジョージ首相のフランス革命工作に反対していた立場のウィンストン・チャーチルであった。\r
+ # 年齢で言えばネヴィル・チェンバレンに負けず劣らず彼も高齢であったが、チェンバレン氏と違い政治に参加するだけの体力を有していた。\r
+-# 戦間期にはＷＷ１の時代の"横浜の虐殺者"の異名が邪魔をし、明確な政治的権力を持つことが出来なかったのも、\r
+-# 一連のいわば"宥和政策"と距離が遠いということにもなり、半ば彼は"消去法的な"流れで首相の地位につくこととなる。\r
++# 戦間期にはＷＷ１の時代の「横浜の虐殺者」の異名が邪魔をし、明確な政治的権力を持つことが出来なかったのも、\r
++# 一連のいわば「宥和政策」と距離が遠いということにもなり、半ば彼は「消去法的な」流れで首相の地位につくこととなる。\r
+ ##########################################################################\r
+ event = {\r
+ 	id = 4656025\r
+@@ -1322,7 +1322,7 @@ event = {
+ #  大陸包囲の成立\r
+ # アジアの大陸軍国家である中華民国がロシア帝国へと宣戦を布告した。\r
+ # これを見て大英帝国は欧州インターナショナル、中華民国へと宣戦を布告し、ロシア帝国及び大日本帝国と同盟を結んだ。\r
+-# 後世に言われる"大陸包囲"の成立である。\r
++# 後世に言われる「大陸包囲」の成立である。\r
+ # この事態に際し、ウィンストン・チャーチルは英国議会において演説。\r
+ # 汎ゆる場所での戦闘を宣言し、英国が降伏しない限り、必ず英国は勝利すると、彼特有のレトリックをもって宣言。\r
+ # 一連の演説は英国議会の輝かしい瞬間＜Darkest Hour＞を象徴するものとして後世に認識されることとなる。\r
+@@ -1349,6 +1349,9 @@ event = {
+ 	\r
+ 	action = { # 我々は屈してはならない。決して、決して、決して、決して――\r
+ 	name = "ACTIONNAMEIDA"\r
++	command = { trigger = { NOT = { war = { country = FRA } } } type = war which = FRA }\r
++	command = { type = dissent value = -15 }\r
++	command = { type = alliance_name which = "IFJAPAN_ENG_IF" where = 3 }\r
+ 	command = { type = domestic which = defense_lobby value = 10 }\r
+ 	command = { type = domestic which = free_market value = 10 }\r
+ 	command = { type = domestic which = interventionism value = 10 }\r
+@@ -1430,146 +1433,993 @@ event = {
+ 	offset = 7\r
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+-	action = { # 我々は屈してはならない。決して、決して、決して、決して――\r
+-	name = "ACTIONNAMEIDA"\r
++	action = { #\r
++	name = "OK"\r
+ 	command = { type = alliance which = ENG when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
++	action = { #\r
++	name = "CANCEL"\r
++	command = { type = dissent value = 5 }\r
++	ai_chance = 0\r
++	}\r
+ }\r
++#\r
++#\r
++#\r
++\r
++#4656028 バフイベント（英国）\r
++#4656029 バフイベント（ドイツ）\r
++#4656030 上陸？未定イベント（ドイツ）\r
++\r
++\r
++\r
++#愛国戦線突入による降伏交渉明記をENGに行う\r
++#イギリス降伏（対中央同盟、英国本土戦イベント発生時）\r
+ ###################################################\r
+-##  英国の降伏\r
+-## ロンドン議会を愛国戦線と一部軍人によって占拠されると、英国政府は組織の改変を余儀なくされ、程なく\r
+-## 議会は停止され、憲法改正と何より敵国に対する降伏条約の条件を練る必要が出てきた。\r
+-## 敵国から課せられる条件は苛烈なものであり、艦船の大量譲渡や軍港の使用権の譲渡、賠償金の支払い\r
+-## などが盛り込まれたものとなった。\r
+-## この日、先のロンドン議会占拠の際に崩れかけていたロンドン塔が完全に崩壊し、長く飼育され続けていた\r
+-## ワタリガラスが一匹残らず居なくなっていたことが報告されていた。\r
++##  英国の降伏（中央同盟）\r
++# 英国議会を愛国戦線と一部軍人によって占拠されると、英国政府は組織の改変を余儀なくされ、程なく\r
++# 議会は停止され、憲法改正と何より敵国に対する降伏条約の条件を練る必要が出てきた。\r
+ ###################################################\r
++#	独墺\r
++event = {		\r
++	id = 46560031\r
++	random = no	\r
++	country = ENG	\r
++	persistent = no\r
++	trigger = {	\r
++	#flag = #愛国戦線\r
++	region = { region = "England" country = -2 data = 1 value = 20 } 5/15\r
++	OR = {\r
++	AND = { \r
++		war = { country = GER }\r
++		NOT = { ispuppet = GER }\r
++	region = { region = "England" country = GER data = 1 value = 15 } #2.25/15\r
++		}\r
++	AND = { \r
++		war = { country = GER }\r
++		NOT = { ispuppet = UB8 }\r
++		NOT = { ispuppet = GER }\r
++		alliance = { country = UB8 country = GER }\r
++	region = { region = "England" country = UB8 data = 1 value = 15 }\r
++		}\r
++	}\r
++	}	\r
++	\r
++	name = EVT_46560031_NAME\r
++	desc = EVT_46560031_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }	\r
++	offset = 7	\r
++	deathdate = { day = 29 month = 11 year = 1999 }	\r
++	\r
++	action = { # 降伏交渉を行う\r
++	region = { region = "England" country = GER data = 1 value = 10 }\r
++	name = "ACTIONNAME46560031A"\r
++	command = { type = event which = 465650032 where = GER when = 1 }\r
++	\r
++	ai_chance = 100	\r
++	}	\r
++	\r
++	action = { # 降伏交渉を行う\r
++	region = { region = "England" country = UB8 data = 1 value = 10 }\r
++	name = "ACTIONNAME46560031A"\r
++	command = { type = event which = 465650032 where = UB8 when = 1 }\r
++	command = { \r
++	\r
++	ai_chance = 100	\r
++	}	\r
++\r
++}		\r
++\r
+ #\r
+-## ＜……英国はこの先、どうなってしまうのだろうか？＞\r
+ #\r
+ #\r
++\r
++#########################################################################		\r
++#  独英休戦協定\r
++# 我が軍はイギリス本土に橋頭堡を築くことに成功した。\r
++# これを受け、愛国戦線と一部軍人らによる政変が英国で起こり、成立した新政府の高官は、\r
++# 我が国に対し、かの国の降伏を申し出ている。\r
++########################################################################\r
+ #\r
++#条件は一つに定まる。\r
++\r
++		\r
++event = {		\r
++	id = 46560032\r
++	random = no	\r
++	\r
++	name = EVT_46560032_NAME\r
++	desc = EVT_46560032_DESC\r
++	style = 2	\r
++	#picture = "picture"\r
++	\r
++	action = { # 素晴らしい！	\r
++	name = "ACTIONNAME46560032A"\r
++	command = { type = event which = 46560036 where = REB when = 0 } #通行許可\r
++	command = { trigger = { alliance = { country = TAG } } type = access which = TAG where = ENG }\r
++	command = { trigger = { alliance = { country = TAG } } type = non_aggression which = TAG where = ENG }\r
++	command = { type = event which = 46560033 where = ENG when = 7 }\r
++	command = { trigger = { alliance = { country = TAG } } type = event which = 46560036 where = TAG when = 0 }\r
++	ai_chance = 100	\r
++	}	\r
++	action = { # 拒絶する	\r
++	name = "ACTIONNAME46560032B"\r
++	command = { type = dissent value = 15 }\r
++	ai_chance = 0	\r
++	}	\r
++	\r
++}		\r
++	\r
+ #\r
+ #\r
+ #\r
+-##########################################################################\r
+-##  イギリスの降伏（ENG）\r
+-## 我が軍は驚異的な速度でイギリス本土の大部分を占領下に置くことに成功した。\r
+-## 残留している英国政府高官は、我が国に対し、かの国の降伏と我が国の条件について交渉を申し出ている。\r
+-## 彼らは非常に明確な言葉でイギリス本土の国民に対して大英帝国の終焉という声明を出しており、交渉をおこなえば譲歩を引き出せるだろう。\r
+-##########################################################################\r
+ #\r
++\r
++#########################################################################\r
++#  大英帝国の降伏\r
++# 敵国から課せられる条件は苛烈なものであり、艦船の大量譲渡や軍港の使用権の譲渡、賠償金の支払い\r
++# などが盛り込まれたものとなった。\r
++# この日、先のロンドン議会占拠の際に崩れかけていたロンドン塔が完全に崩壊し、長く飼育され続けていた\r
++# ワタリガラスが一匹残らず居なくなっていたことが報告されていた。\r
++#########################################################################	\r
++#	\r
++event = {		\r
++	id = 46560033\r
++	random = no	\r
++	country = ENG\r
++	\r
++	name = EVT_46560033_NAME\r
++	desc = EVT_46560033_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++\r
++#＜……英国はこの先、どうなってしまうのだろうか？＞\r
++	action = { # 	\r
++	name = "ACTIONNAME46560033A"\r
++#産業効果\r
++	command = { type = dissent value = 25 }\r
++	command = { type = industrial_modifier which = ic value = -40 }\r
++	command = { type = industrial_modifier which = oil value = 40 }\r
++	command = { type = industrial_modifier which = metal value = 40 }\r
++	command = { type = industrial_modifier which = energy value = 40 }\r
++	command = { type = industrial_modifier which = rare_materials value = 50 }\r
++	command = { type = research_mod value = -25 }\r
++	command = { type = industrial_modifier which = supplies value = -20 }\r
++	command = { type = building_prod_mod which = ic value = -30 }\r
++	command = { type = building_prod_mod which = infrastructure value = -30 }\r
++	command = { type = building_prod_mod which = land_fort value = -30 }\r
++	command = { type = building_prod_mod which = coastal_fort value = -30 }\r
++	command = { type = building_prod_mod which = flak value = -30 }\r
++	command = { type = building_prod_mod which = radar_station value = -30 }\r
++	command = { type = building_prod_mod which = naval_base value = -30 }\r
++	command = { type = building_prod_mod which = air_base value = -30 }\r
++	command = { type = building_prod_mod which = rocket_test value = -30 }\r
++	command = { type = building_prod_mod which = nuclear_reactor value = -30 }\r
++	command = { type = removecore which = 35 }\r
++	command = { type = removecore which = 36 }\r
++	command = { trigger = { NOT = { exists = IRE } } type = secedeprovince which = ENG value = Dublin when = 2 }\r
++	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE }\r
++	command = { trigger = { control = { province = 30 data = -2 } type = secedeprovince which = IRE value = 30 when = 2 }\r
++	command = { trigger = { control = { province = 31 data = -2 } type = secedeprovince which = IRE value = 31 when = 2 }\r
++	command = { trigger = { control = { province = 32 data = -2 } type = secedeprovince which = IRE value = 32 when = 2 }\r
++	command = { trigger = { control = { province = 33 data = -2 } type = secedeprovince which = IRE value = 33 when = 2 }\r
++	command = { trigger = { control = { province = 34 data = -2 } type = secedeprovince which = IRE value = 34 when = 2 }\r
++	command = { trigger = { control = { province = 35 data = -2 } type = secedeprovince which = IRE value = 35 when = 2 }\r
++	command = { trigger = { control = { province = 36 data = -2 } type = secedeprovince which = IRE value = 36 when = 2 }\r
++command = { trigger = { owned = { province = 4 data = ENG } control = { province = 4 data = -2 } type = control which = ENG value = 4 when = 2 }\r
++command = { trigger = { owned = { province = 5 data = ENG } control = { province = 5 data = -2 } type = control which = ENG value = 5 when = 2 }\r
++command = { trigger = { owned = { province = 6 data = ENG } control = { province = 6 data = -2 } type = control which = ENG value = 6 when = 2 }\r
++command = { trigger = { owned = { province = 7 data = ENG } control = { province = 7 data = -2 } type = control which = ENG value = 7 when = 2 }\r
++command = { trigger = { owned = { province = 8 data = ENG } control = { province = 8 data = -2 } type = control which = ENG value = 8 when = 2 }\r
++command = { trigger = { owned = { province = 9 data = ENG } control = { province = 9 data = -2 } type = control which = ENG value = 9 when = 2 }\r
++command = { trigger = { owned = { province = 10 data = ENG } control = { province = 10 data = -2 } type = control which = ENG value = 10 when = 2 }\r
++command = { trigger = { owned = { province = 11 data = ENG } control = { province = 11 data = -2 } type = control which = ENG value = 11 when = 2 }\r
++command = { trigger = { owned = { province = 12 data = ENG } control = { province = 12 data = -2 } type = control which = ENG value = 12 when = 2 }\r
++command = { trigger = { owned = { province = 13 data = ENG } control = { province = 13 data = -2 } type = control which = ENG value = 13 when = 2 }\r
++command = { trigger = { owned = { province = 14 data = ENG } control = { province = 14 data = -2 } type = control which = ENG value = 14 when = 2 }\r
++command = { trigger = { owned = { province = 15 data = ENG } control = { province = 15 data = -2 } type = control which = ENG value = 15 when = 2 }\r
++command = { trigger = { owned = { province = 16 data = ENG } control = { province = 16 data = -2 } type = control which = ENG value = 16 when = 2 }\r
++command = { trigger = { owned = { province = 17 data = ENG } control = { province = 17 data = -2 } type = control which = ENG value = 17 when = 2 }\r
++command = { trigger = { owned = { province = 18 data = ENG } control = { province = 18 data = -2 } type = control which = ENG value = 18 when = 2 }\r
++command = { trigger = { owned = { province = 19 data = ENG } control = { province = 19 data = -2 } type = control which = ENG value = 19 when = 2 }\r
++command = { trigger = { owned = { province = 20 data = ENG } control = { province = 20 data = -2 } type = control which = ENG value = 20 when = 2 }\r
++command = { trigger = { owned = { province = 21 data = ENG } control = { province = 21 data = -2 } type = control which = ENG value = 21 when = 2 }\r
++command = { trigger = { owned = { province = 22 data = ENG } control = { province = 22 data = -2 } type = control which = ENG value = 22 when = 2 }\r
++command = { trigger = { owned = { province = 23 data = ENG } control = { province = 23 data = -2 } type = control which = ENG value = 23 when = 2 }\r
++command = { trigger = { owned = { province = 24 data = ENG } control = { province = 24 data = -2 } type = control which = ENG value = 24 when = 2 }\r
++command = { trigger = { owned = { province = 25 data = ENG } control = { province = 25 data = -2 } type = control which = ENG value = 25 when = 2 }\r
++command = { trigger = { owned = { province = 26 data = ENG } control = { province = 26 data = -2 } type = control which = ENG value = 26 when = 2 }\r
++command = { trigger = { owned = { province = 27 data = ENG } control = { province = 27 data = -2 } type = control which = ENG value = 27 when = 2 }\r
++command = { trigger = { owned = { province = 28 data = ENG } control = { province = 28 data = -2 } type = control which = ENG value = 28 when = 2 }\r
++command = { trigger = { owned = { province = 29 data = ENG } control = { province = 29 data = -2 } type = control which = ENG value = 29 when = 2 }\r
++command = { trigger = { owned = { province = 30 data = ENG } control = { province = 30 data = -2 } type = control which = ENG value = 30 when = 2 }\r
++	command = { trigger = { flag = Irish_Britain } type = secederegion which = IRE value = "Ireland" when = 1 }\r
++	command = { trigger = { flag = Irish_Britain } type = secedeprovince which = IRE value = 4 when = 2 }\r
++	command = { trigger = { flag = Irish_Britain } type = secedeprovince which = IRE value = 17 when = 1 }\r
++	command = { trigger = { flag = Irish_Britain } type = secedeprovince which = IRE value = 21 when = 1 }\r
++	command = { trigger = { flag = Irish_Britain } type = secedeprovince which = IRE value = 22 when = 1 }\r
++	command = { trigger = { flag = Irish_Britain } type = addclaim which = 4 where = IRE }\r
++	command = { trigger = { flag = Irish_Britain } type = addclaim which = 17 where = IRE }\r
++	command = { trigger = { flag = Irish_Britain } type = addclaim which = 21 where = IRE }\r
++	command = { trigger = { flag = Irish_Britain } type = addclaim which = 22 where = IRE }\r
++	\r
++	command = { trigger = { flag = GER_Britain } type = secedeprovince which = 5 where = GER when = 1 }\r
++	command = { trigger = { flag = GER_Britain } type = addclaim which = 5 where = GER }\r
++	command = { trigger = { flag = GER_Britain } type = secedeprovince which = 20 where = GER when = 1 }\r
++	command = { trigger = { flag = GER_Britain } type = addclaim which = 20 where = GER }\r
++	command = { trigger = { flag = GER_Britain } type = secedeprovince which = 23 where = GER when = 1 }\r
++	command = { trigger = { flag = GER_Britain } type = addclaim which = 23 where = GER }\r
++	command = { trigger = { flag = GER_Britain } type = secedeprovince which = 25 where = GER when = 1 }\r
++	command = { trigger = { flag = GER_Britain } type = addclaim which = 25 where = GER }\r
++	command = { trigger = { flag = GER_Britain } type = secedeprovince which = 26 where = GER when = 1 }\r
++	command = { trigger = { flag = GER_Britain } type = addclaim which = 26 where = GER }\r
++	command = { trigger = { flag = GER_Britain } type = secedeprovince which = 27 where = GER when = 1 }\r
++	command = { trigger = { flag = GER_Britain } type = addclaim which = 27 where = GER }\r
++	 \r
++	command = { type = secedeprovince which = 896 where = GER } #セントヘレナ\r
++	command = { type = addclaim which = 896 where = GER }\r
++	command = { type = secedeprovince which = 993 where = GER } #アセンション\r
++	command = { type = addclaim which = 993 where = GER }\r
++	\r
++	command = { type = secedeprovince which = 348 where = GER } #Gib\r
++	command = { type = addclaim which = 348 where = GER }\r
++	command = { type = secedeprovince which = 348 where = GER } #Suez\r
++	command = { type = addclaim which = 348 where = GER }\r
++	command = { type = secedeprovince which = 348 where = GER } #Malta\r
++	command = { type = addclaim which = 348 where = GER }\r
++command = { type = remove_claim_region which = "Afghanistan" }\r
++command = { type = remove_claim_region which = "Alaska" }\r
++command = { type = remove_claim_region which = "Algeria" }\r
++command = { type = remove_claim_region which = "Amazonas" }\r
++command = { type = remove_claim_region which = "American Pacific" }\r
++command = { type = remove_claim_region which = "Anatolia" }\r
++command = { type = remove_claim_region which = "Andes" }\r
++command = { type = remove_claim_region which = "Asian Pacific" }\r
++command = { type = remove_claim_region which = "Australia" }\r
++command = { type = remove_claim_region which = "Austria" }\r
++command = { type = remove_claim_region which = "Balkan" }\r
++command = { type = remove_claim_region which = "Baltic States" }\r
++command = { type = remove_claim_region which = "Belarus" }\r
++command = { type = remove_claim_region which = "Benelux" }\r
++command = { type = remove_claim_region which = "Bismarck Archipelago" }\r
++command = { type = remove_claim_region which = "Brazil" }\r
++command = { type = remove_claim_region which = "Brazilian Highlands" }\r
++command = { type = remove_claim_region which = "Caribbean" }\r
++command = { type = remove_claim_region which = "Caucasus" }\r
++command = { type = remove_claim_region which = "Central Africa" }\r
++command = { type = remove_claim_region which = "Central America" }\r
++command = { type = remove_claim_region which = "Central Asia" }\r
++command = { type = remove_claim_region which = "Central Canada" }\r
++command = { type = remove_claim_region which = "Central Russia" }\r
++command = { type = remove_claim_region which = "China" }\r
++command = { type = remove_claim_region which = "Czechoslovakia" }\r
++command = { type = remove_claim_region which = "Denmark" }\r
++command = { type = remove_claim_region which = "Diego Garcia Island" }\r
++command = { type = remove_claim_region which = "East Africa" }\r
++command = { type = remove_claim_region which = "Eastern Canada" }\r
++command = { type = remove_claim_region which = "Eastern Russia" }\r
++command = { type = remove_claim_region which = "Egypt" }\r
++command = { type = remove_claim_region which = "England" }\r
++command = { type = remove_claim_region which = "Ethiopia" }\r
++command = { type = remove_claim_region which = "Far East Siberia" }\r
++command = { type = remove_claim_region which = "Finland" }\r
++command = { type = remove_claim_region which = "France" }\r
++command = { type = remove_claim_region which = "Germany" }\r
++command = { type = remove_claim_region which = "Gran Chaco" }\r
++command = { type = remove_claim_region which = "Grand Colombia" }\r
++command = { type = remove_claim_region which = "Greenland" }\r
++command = { type = remove_claim_region which = "Horn of Africa" }\r
++command = { type = remove_claim_region which = "Hungary" }\r
++command = { type = remove_claim_region which = "Iceland" }\r
++command = { type = remove_claim_region which = "India" }\r
++command = { type = remove_claim_region which = "Indochine" }\r
++command = { type = remove_claim_region which = "Indonesia" }\r
++command = { type = remove_claim_region which = "Ireland" }\r
++command = { type = remove_claim_region which = "Irkutsk" }\r
++command = { type = remove_claim_region which = "Italy" }\r
++command = { type = remove_claim_region which = "Japan" }\r
++command = { type = remove_claim_region which = "Kazakstan" }\r
++command = { type = remove_claim_region which = "Kazan" }\r
++command = { type = remove_claim_region which = "Korea" }\r
++command = { type = remove_claim_region which = "Krasnoyarsk" }\r
++command = { type = remove_claim_region which = "Libya" }\r
++command = { type = remove_claim_region which = "Madagascar" }\r
++command = { type = remove_claim_region which = "Mexico" }\r
++command = { type = remove_claim_region which = "Middle East" }\r
++command = { type = remove_claim_region which = "Midwest US" }\r
++command = { type = remove_claim_region which = "Morocco" }\r
++command = { type = remove_claim_region which = "New Guinea" }\r
++command = { type = remove_claim_region which = "New Hebrides" }\r
++command = { type = remove_claim_region which = "Northeast US" }\r
++command = { type = remove_claim_region which = "Northern Canada" }\r
++command = { type = remove_claim_region which = "Northern Permafrost" }\r
++command = { type = remove_claim_region which = "Northern Russia" }\r
++command = { type = remove_claim_region which = "Northwest US" }\r
++command = { type = remove_claim_region which = "Norway" }\r
++command = { type = remove_claim_region which = "Novosibirsk" }\r
++command = { type = remove_claim_region which = "Patagonia" }\r
++command = { type = remove_claim_region which = "Persia" }\r
++command = { type = remove_claim_region which = "Philippines" }\r
++command = { type = remove_claim_region which = "Poland" }\r
++command = { type = remove_claim_region which = "Portugal" }\r
++command = { type = remove_claim_region which = "Rio de la Plata" }\r
++command = { type = remove_claim_region which = "Romania" }\r
++command = { type = remove_claim_region which = "Sahara" }\r
++command = { type = remove_claim_region which = "Solomons" }\r
++command = { type = remove_claim_region which = "South Africa" }\r
++command = { type = remove_claim_region which = "Southcentral US" }\r
++command = { type = remove_claim_region which = "Southeast US" }\r
++command = { type = remove_claim_region which = "Southern Russia" }\r
++command = { type = remove_claim_region which = "Southwest Africa" }\r
++command = { type = remove_claim_region which = "Southwest US" }\r
++command = { type = remove_claim_region which = "Spain" }\r
++command = { type = remove_claim_region which = "Sudan" }\r
++command = { type = remove_claim_region which = "Sweden" }\r
++command = { type = remove_claim_region which = "Switzerland" }\r
++command = { type = remove_claim_region which = "Tomsk" }\r
++command = { type = remove_claim_region which = "Tunisia" }\r
++command = { type = remove_claim_region which = "Ukraine" }\r
++command = { type = remove_claim_region which = "Urals" }\r
++command = { type = remove_claim_region which = "West Africa" }\r
++command = { type = remove_claim_region which = "Western Canada" }\r
++command = { type = remove_claim_region which = "Western Russia" }\r
++command = { type = remove_claim_region which = "White Sea Tundra" }\r
++	command = { trigger = { alliance = { country = SAR } type = inherit which = SAR }\r
++	command = { trigger = { alliance = { country = BRU } type = inherit which = BRU }\r
++	command = { trigger = { alliance = { country = SAF } type = inherit which = SAF }\r
++	command = { trigger = { alliance = { country = GLD } type = inherit which = GLD }\r
++	command = { trigger = { alliance = { country = IND } type = inherit which = IND }\r
++	command = { trigger = { alliance = { country = U02 } type = inherit which = U02 }\r
++	command = { trigger = { alliance = { country = NEP } type = inherit which = NEP }\r
++	command = { trigger = { alliance = { country = PER } type = inherit which = PER }\r
++	command = { trigger = { alliance = { country = BHU } type = inherit which = BHU }\r
++	command = { trigger = { exists = CHI } type = secederegion which = CHI value = "China" when = 1 } \r
++	command = { trigger = { exists = CHI } type = secederegion which = CHI value = "Japan" when = 1 } \r
++	command = { trigger = { exists = CHI } type = secederegion which = CHI value = "Korea" when = 1 } \r
++	command = { trigger = { exists = CHI } type = secedearea which = CHI value = "Himalayas" when = 1 } \r
++	command = { trigger = { exists = CHI } type = secederegion which = CHI value = "China" when = 1 } \r
++	command = { trigger = { exists = CHI } type = secederegion which = CHI value = "China" when = 1 } \r
++	command = { trigger = { exists = CHI } type = secedeprovince which = 1539 where = CHI } #Kashimir\r
++	command = { trigger = { exists = CHI } type = secedeprovince which = 1540 where = CHI } #Kashimir\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = TIB } } type = independence which = TIB }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = SIK } } type = independence which = SIK }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = CSX } } type = independence which = CSX }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = CXB } } type = independence which = CXB }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = CYN } } type = independence which = CYN }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = CGX } } type = independence which = CGX }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = JAP } } type = independence which = JAP }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = MAN } } type = independence which = MAN }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = U67 } } type = independence which = U67 }\r
++	command = { trigger = { NOT = { exists = CHI } NOT = { exists = PRI } } type = independence which = PRI }\r
++	command = { trigger = { NOT = { exists = CHI } } type = independence which = CHI }v\r
++	command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "Indochine" when = 1 }\r
++	command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "India" when = 1 }\r
++	command = { trigger = { war = { country = CHI } } type = secederegion which = CHI value = "Persia" when = 1 }\r
++	command = { trigger = { NOT = {war = { country = CHI } } } type = secederegion which = GER value = "Persia" when = 1 }\r
++command = { type = secederegion which = -1 value = "Madagascar" when = 1 }\r
++command = { type = secederegion which = -1 value = "Diego Garcia Island" when = 1 }\r
++command = { type = secederegion which = -1 value = "New Guinea" when = 1 }\r
++command = { type = secederegion which = -1 value = "North Solomon Islands" when = 1 }\r
++command = { type = secederegion which = -1 value = "Philippines" when = 1 }\r
++command = { type = secederegion which = -1 value = "South Solomon Islands" when = 1 }\r
++command = { type = secederegion which = -1 value = "American Pacific" when = 1 }\r
++command = { type = secederegion which = -1 value = "Asian Pacific" when = 1 }\r
++command = { type = secederegion which = -1 value = "Australia" when = 1 }\r
++command = { type = secederegion which = -1 value = "Bismarck Archipelago" when = 1 }\r
++\r
++command = { trigger = { exists = CHI } type = secedearea which = CHI value = "Hawaii" when = 1 }\r
++command = { trigger = { exists = CHI } type = secedearea which = CHI value = "Marcus_Wake" when = 1 }\r
++command = { trigger = { exists = CHI } type = secedearea which = CHI value = "Johnson Island" when = 1 }\r
++command = { trigger = { exists = CHI } type = secedearea which = CHI value = "Hawaii" when = 1 }\r
++\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "Diego Garcia Island" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "New Guinea" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "North Solomon Islands" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "Philippines" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "South Solomon Islands" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "American Pacific" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "Asian Pacific" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "Australia" when = 1 }\r
++command = { trigger = { exists = UD6 } type = secederegion which = UD6 value = "Bismarck Archipelago" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "Madagascar" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "Diego Garcia Island" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "New Guinea" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "North Solomon Islands" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "Philippines" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "South Solomon Islands" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "American Pacific" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "Asian Pacific" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "Australia" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "Bismarck Archipelago" when = 1 }\r
++command = { trigger = { NOT = { exists = UD6 }  } type = secederegion which = GER value = "Bismarck Archipelago" when = 1 }\r
++command = { triggger = { exists = UD6 } type = add_claim_region which = "Australia" where = UD6 }\r
++command = { triggger = { exists = UD6 } type = add_claim_region which = "Indonesia" where = UD6 }\r
++command = { triggger = { exists = UD6 } type = add_claim_region which = "India" where = UD6 }\r
++command = { triggger = { exists = UD6 } type = add_claim_region which = "Diego Garcia Island" where = UD6 }\r
++command = { triggger = { exists = UD6 } type = add_claim_region which = "Indochine" where = UD6 }\r
++\r
++#イギリスの同盟国を併合(アフリカ、南ア以外)\r
++command = { trigger = { alliance = { country = 	ALG	 country = ENG } } type = inherit which = 	ALG	 }\r
++command = { trigger = { alliance = { country = 	ANG	 country = ENG } } type = inherit which = 	ANG	 }\r
++command = { trigger = { alliance = { country = 	BEN	 country = ENG } } type = inherit which = 	BEN	 }\r
++command = { trigger = { alliance = { country = 	CAM	 country = ENG } } type = inherit which = 	CAM	 }\r
++command = { trigger = { alliance = { country = 	CON	 country = ENG } } type = inherit which = 	CON	 }\r
++command = { trigger = { alliance = { country = 	EAF	 country = ENG } } type = inherit which = 	EAF	 }\r
++command = { trigger = { alliance = { country = 	EGY	 country = ENG } } type = inherit which = 	EGY	 }\r
++command = { trigger = { alliance = { country = 	EQA	 country = ENG } } type = inherit which = 	EQA	 }\r
++command = { trigger = { alliance = { country = 	ETH	 country = ENG } } type = inherit which = 	ETH	 }\r
++command = { trigger = { alliance = { country = 	GAB	 country = ENG } } type = inherit which = 	GAB	 }\r
++command = { trigger = { alliance = { country = 	GLD	 country = ENG } } type = inherit which = 	GLD	 }\r
++command = { trigger = { alliance = { country = 	GUI	 country = ENG } } type = inherit which = 	GUI	 }\r
++command = { trigger = { alliance = { country = 	LBY	 country = ENG } } type = inherit which = 	LBY	 }\r
++command = { trigger = { alliance = { country = 	LIB	 country = ENG } } type = inherit which = 	LIB	 }\r
++command = { trigger = { alliance = { country = 	MAD	 country = ENG } } type = inherit which = 	MAD	 }\r
++command = { trigger = { alliance = { country = 	MAL	 country = ENG } } type = inherit which = 	MAL	 }\r
++command = { trigger = { alliance = { country = 	MOR	 country = ENG } } type = inherit which = 	MOR	 }\r
++command = { trigger = { alliance = { country = 	MOZ	 country = ENG } } type = inherit which = 	MOZ	 }\r
++command = { trigger = { alliance = { country = 	NAM	 country = ENG } } type = inherit which = 	NAM	 }\r
++command = { trigger = { alliance = { country = 	NIG	 country = ENG } } type = inherit which = 	NIG	 }\r
++command = { trigger = { alliance = { country = 	RHO	 country = ENG } } type = inherit which = 	RHO	 }\r
++#command = { trigger = { alliance = { country = 	SAF	 country = ENG } } type = inherit which = 	SAF	 }\r
++command = { trigger = { alliance = { country = 	SIE	 country = ENG } } type = inherit which = 	SIE	 }\r
++command = { trigger = { alliance = { country = 	SOM	 country = ENG } } type = inherit which = 	SOM	 }\r
++command = { trigger = { alliance = { country = 	SUD	 country = ENG } } type = inherit which = 	SUD	 }\r
++command = { trigger = { alliance = { country = 	TUN	 country = ENG } } type = inherit which = 	TUN	 }\r
++command = { trigger = { alliance = { country = 	U49	 country = ENG } } type = inherit which = 	U49	 }\r
++command = { trigger = { alliance = { country = 	U70	 country = ENG } } type = inherit which = 	U70	 }\r
++command = { trigger = { alliance = { country = 	U81	 country = ENG } } type = inherit which = 	U81	 }\r
++command = { trigger = { alliance = { country = 	U82	 country = ENG } } type = inherit which = 	U82	 }\r
++command = { trigger = { alliance = { country = 	U84	 country = ENG } } type = inherit which = 	U84	 }\r
++command = { trigger = { alliance = { country = 	U85	 country = ENG } } type = inherit which = 	U85	 }\r
++command = { trigger = { alliance = { country = 	U86	 country = ENG } } type = inherit which = 	U86	 }\r
++command = { trigger = { alliance = { country = 	U88	 country = ENG } } type = inherit which = 	U88	 }\r
++command = { trigger = { alliance = { country = 	U90	 country = ENG } } type = inherit which = 	U90	 }\r
++command = { trigger = { alliance = { country = 	U93	 country = ENG } } type = inherit which = 	U93	 }\r
++command = { trigger = { alliance = { country = 	U94	 country = ENG } } type = inherit which = 	U94	 }\r
++command = { trigger = { alliance = { country = 	U95	 country = ENG } } type = inherit which = 	U95	 }\r
++command = { trigger = { alliance = { country = 	U96	 country = ENG } } type = inherit which = 	U96	 }\r
++command = { trigger = { alliance = { country = 	U97	 country = ENG } } type = inherit which = 	U97	 }\r
++command = { trigger = { alliance = { country = 	U98	 country = ENG } } type = inherit which = 	U98	 }\r
++command = { trigger = { alliance = { country = 	U99	 country = ENG } } type = inherit which = 	U99	 }\r
++command = { trigger = { alliance = { country = 	UAU	 country = ENG } } type = inherit which = 	UAU	 }\r
++command = { trigger = { alliance = { country = 	UD3	 country = ENG } } type = inherit which = 	UD3	 }\r
++command = { trigger = { alliance = { country = 	UD8	 country = ENG } } type = inherit which = 	UD8	 }\r
++#GermanAfrica\r
++command = { trigger = { exists = SAF } type = secederegion which = SAF value = "South Africa" when = 1 }\r
++command = { trigger = { exists = SAF } type = secederegion which = SAF value = "Southwest Africa" when = 1 }\r
++command = { trigger = { puppet = { country = CON country = GER } type = secederegion which = CON value = "West Africa" when = 1 }\r
++command = { trigger = { puppet = { country = CON country = GER } type = secederegion which = CON value = "Southwest Africa" when = 1 }\r
++command = { trigger = { puppet = { country = CON country = GER } type = secederegion which = CON value = "Horn of Africa" when = 1 }\r
++command = { trigger = { puppet = { country = CON country = GER } type = secederegion which = CON value = "Central Africa" when = 1 }\r
++command = { type = secederegion which = GER value = "Algeria" when = 1 }\r
++command = { type = secederegion which = GER value = "Central Africa" when = 1 }\r
++command = { type = secederegion which = GER value = "East Africa" when = 1 }\r
++command = { type = secederegion which = GER value = "Egypt" when = 1 }\r
++command = { type = secederegion which = GER value = "Ethiopia" when = 1 }\r
++command = { type = secederegion which = GER value = "Horn of Africa" when = 1 }\r
++command = { type = secederegion which = GER value = "Libya" when = 1 }\r
++command = { type = secederegion which = GER value = "Morocco" when = 1 }\r
++command = { type = secederegion which = GER value = "Sahara" when = 1 }\r
++command = { type = secederegion which = GER value = "South Africa" when = 1 }\r
++command = { type = secederegion which = GER value = "Southwest Africa" when = 1 }\r
++command = { type = secederegion which = GER value = "Sudan" when = 1 }\r
++command = { type = secederegion which = GER value = "Tunisia" when = 1 }\r
++command = { type = secederegion which = GER value = "West Africa" when = 1 }\r
++#アメリカ大陸\r
++command = { type = secederegion which = -1 value = "Caribbean" when = 1 }\r
++command = { type = secederegion which = GER value = "Caribbean" when = 1 }\r
++command = { type = secederegion which = -1 value = "Grand Colombia" when = 1 }\r
++command = { type = secederegion which = GER value = "Grand Colombia" when = 1 }\r
++command = { type = secederegion which = -1 value = "Central America" when = 1 }\r
++command = { type = secederegion which = GER value = "Central America" when = 1 }\r
++command = { trigger = { exists = ARG } type = secederegion which = ARG value = "Patagonia" when = 1 }\r
++\r
++\r
++\r
++#ダメ押し\r
++\r
++	command = { type = secederegion which = -1 value = "Afghanistan" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Alaska" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Algeria" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Amazonas" when = 1 }\r
++	command = { type = secederegion which = -1 value = "American Pacific" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Anatolia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Andes" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Asian Pacific" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Australia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Austria" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Balkan" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Baltic States" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Belarus" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Benelux" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Bismarck Archipelago" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Brazil" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Brazilian Highlands" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Canada" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Caribbean" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Central Africa" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Central America" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Central Asia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "China" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Czechoslovakia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Denmark" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Diego Garcia Island" when = 1 }\r
++	command = { type = secederegion which = -1 value = "East Africa" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Eastern Canada" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Eastern Russia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Egypt" when = 1 }\r
++#	command = { type = secederegion which = -1 value = "England" when = 1 }			#イングランド\r
++	command = { type = secederegion which = -1 value = "Ethiopia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Far East Siberia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Finland" when = 1 }\r
++	command = { type = secederegion which = -1 value = "France" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Germany" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Gran Chaco" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Grand Colombia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Greenland" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Horn of Africa" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Hungary" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Iceland" when = 1 }\r
++	command = { type = secederegion which = -1 value = "India" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Indochine" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Indonesia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Ireland" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Irkutsk" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Italy" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Japan" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Kaukasus" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Kazakstan" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Korea" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Krasnoyarsk" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Libya" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Madagascar" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Mexico" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Middle East" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Midwest US" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Morocco" when = 1 }\r
++	command = { type = secederegion which = -1 value = "New Guinea" when = 1 }\r
++	command = { type = secederegion which = -1 value = "North Solomon Islands" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Northeast US" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Northern Canada" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Northern Permafrost" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Northern Russia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Northwest US" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Norway" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Novosibirsk" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Patagonia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Persia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Philippines" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Poland" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Portugal" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Rio de la Plata" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Romania" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Russia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Sahara" when = 1 }\r
++#	command = { type = secederegion which = -1 value = "Scotland" when = 1 }		#スコットランド\r
++	command = { type = secederegion which = -1 value = "South Africa" when = 1 }\r
++	command = { type = secederegion which = -1 value = "South Solomon Islands" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Southcentral US" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Southeast US" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Southern Russia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Southwest Africa" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Southwest US" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Spain" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Sudan" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Sweden" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Switzerland" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Tomsk" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Tunisia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Ukraine" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Urals" when = 1 }\r
++	command = { type = secederegion which = -1 value = "West Africa" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Western Canada" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Western Russia" when = 1 }\r
++	command = { type = secederegion which = -1 value = "White Sea Tundra" when = 1 }\r
++	command = { type = secederegion which = GER value = "Afghanistan" when = 1 }\r
++	command = { type = secederegion which = GER value = "Alaska" when = 1 }\r
++	command = { type = secederegion which = GER value = "Algeria" when = 1 }\r
++	command = { type = secederegion which = GER value = "Amazonas" when = 1 }\r
++	command = { type = secederegion which = GER value = "American Pacific" when = 1 }\r
++	command = { type = secederegion which = GER value = "Anatolia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Andes" when = 1 }\r
++	command = { type = secederegion which = GER value = "Asian Pacific" when = 1 }\r
++	command = { type = secederegion which = GER value = "Australia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Austria" when = 1 }\r
++	command = { type = secederegion which = GER value = "Balkan" when = 1 }\r
++	command = { type = secederegion which = GER value = "Baltic States" when = 1 }\r
++	command = { type = secederegion which = GER value = "Belarus" when = 1 }\r
++	command = { type = secederegion which = GER value = "Benelux" when = 1 }\r
++	command = { type = secederegion which = GER value = "Bismarck Archipelago" when = 1 }\r
++	command = { type = secederegion which = GER value = "Brazil" when = 1 }\r
++	command = { type = secederegion which = GER value = "Brazilian Highlands" when = 1 }\r
++	command = { type = secederegion which = GER value = "Canada" when = 1 }\r
++	command = { type = secederegion which = GER value = "Caribbean" when = 1 }\r
++	command = { type = secederegion which = GER value = "Central Africa" when = 1 }\r
++	command = { type = secederegion which = GER value = "Central America" when = 1 }\r
++	command = { type = secederegion which = GER value = "Central Asia" when = 1 }\r
++	command = { type = secederegion which = GER value = "China" when = 1 }\r
++	command = { type = secederegion which = GER value = "Czechoslovakia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Denmark" when = 1 }\r
++	command = { type = secederegion which = GER value = "Diego Garcia Island" when = 1 }\r
++	command = { type = secederegion which = GER value = "East Africa" when = 1 }\r
++	command = { type = secederegion which = GER value = "Eastern Canada" when = 1 }\r
++	command = { type = secederegion which = GER value = "Eastern Russia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Egypt" when = 1 }\r
++#	command = { type = secederegion which = GER value = "England" when = 1 }			#イングランド\r
++	command = { type = secederegion which = GER value = "Ethiopia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Far East Siberia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Finland" when = 1 }\r
++	command = { type = secederegion which = GER value = "France" when = 1 }\r
++	command = { type = secederegion which = GER value = "Germany" when = 1 }\r
++	command = { type = secederegion which = GER value = "Gran Chaco" when = 1 }\r
++	command = { type = secederegion which = GER value = "Grand Colombia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Greenland" when = 1 }\r
++	command = { type = secederegion which = GER value = "Horn of Africa" when = 1 }\r
++	command = { type = secederegion which = GER value = "Hungary" when = 1 }\r
++	command = { type = secederegion which = GER value = "Iceland" when = 1 }\r
++	command = { type = secederegion which = GER value = "India" when = 1 }\r
++	command = { type = secederegion which = GER value = "Indochine" when = 1 }\r
++	command = { type = secederegion which = GER value = "Indonesia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Ireland" when = 1 }\r
++	command = { type = secederegion which = GER value = "Irkutsk" when = 1 }\r
++	command = { type = secederegion which = GER value = "Italy" when = 1 }\r
++	command = { type = secederegion which = GER value = "Japan" when = 1 }\r
++	command = { type = secederegion which = GER value = "Kaukasus" when = 1 }\r
++	command = { type = secederegion which = GER value = "Kazakstan" when = 1 }\r
++	command = { type = secederegion which = GER value = "Korea" when = 1 }\r
++	command = { type = secederegion which = GER value = "Krasnoyarsk" when = 1 }\r
++	command = { type = secederegion which = GER value = "Libya" when = 1 }\r
++	command = { type = secederegion which = GER value = "Madagascar" when = 1 }\r
++	command = { type = secederegion which = GER value = "Mexico" when = 1 }\r
++	command = { type = secederegion which = GER value = "Middle East" when = 1 }\r
++	command = { type = secederegion which = GER value = "Midwest US" when = 1 }\r
++	command = { type = secederegion which = GER value = "Morocco" when = 1 }\r
++	command = { type = secederegion which = GER value = "New Guinea" when = 1 }\r
++	command = { type = secederegion which = GER value = "North Solomon Islands" when = 1 }\r
++	command = { type = secederegion which = GER value = "Northeast US" when = 1 }\r
++	command = { type = secederegion which = GER value = "Northern Canada" when = 1 }\r
++	command = { type = secederegion which = GER value = "Northern Permafrost" when = 1 }\r
++	command = { type = secederegion which = GER value = "Northern Russia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Northwest US" when = 1 }\r
++	command = { type = secederegion which = GER value = "Norway" when = 1 }\r
++	command = { type = secederegion which = GER value = "Novosibirsk" when = 1 }\r
++	command = { type = secederegion which = GER value = "Patagonia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Persia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Philippines" when = 1 }\r
++	command = { type = secederegion which = GER value = "Poland" when = 1 }\r
++	command = { type = secederegion which = GER value = "Portugal" when = 1 }\r
++	command = { type = secederegion which = GER value = "Rio de la Plata" when = 1 }\r
++	command = { type = secederegion which = GER value = "Romania" when = 1 }\r
++	command = { type = secederegion which = GER value = "Russia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Sahara" when = 1 }\r
++#	command = { type = secederegion which = GER value = "Scotland" when = 1 }		#スコットランド\r
++	command = { type = secederegion which = GER value = "South Africa" when = 1 }\r
++	command = { type = secederegion which = GER value = "South Solomon Islands" when = 1 }\r
++	command = { type = secederegion which = GER value = "Southcentral US" when = 1 }\r
++	command = { type = secederegion which = GER value = "Southeast US" when = 1 }\r
++	command = { type = secederegion which = GER value = "Southern Russia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Southwest Africa" when = 1 }\r
++	command = { type = secederegion which = GER value = "Southwest US" when = 1 }\r
++	command = { type = secederegion which = GER value = "Spain" when = 1 }\r
++	command = { type = secederegion which = GER value = "Sudan" when = 1 }\r
++	command = { type = secederegion which = GER value = "Sweden" when = 1 }\r
++	command = { type = secederegion which = GER value = "Switzerland" when = 1 }\r
++	command = { type = secederegion which = GER value = "Tomsk" when = 1 }\r
++	command = { type = secederegion which = GER value = "Tunisia" when = 1 }\r
++	command = { type = secederegion which = GER value = "Ukraine" when = 1 }\r
++	command = { type = secederegion which = GER value = "Urals" when = 1 }\r
++	command = { type = secederegion which = GER value = "West Africa" when = 1 }\r
++	command = { type = secederegion which = GER value = "Western Canada" when = 1 }\r
++	command = { type = secederegion which = GER value = "Western Russia" when = 1 }\r
++	command = { type = secederegion which = GER value = "White Sea Tundra" when = 1 }\r
++\r
++\r
++\r
++\r
++#和平コマンド&同盟脱退\r
++		command = { type = leave_alliance when = 1 }\r
++		command = { type = peace which = GER value = 1 }\r
++		command = { type = peace which = USA value = 1 }\r
++		command = { type = peace which = CSA value = 1 }\r
++		command = { type = peace which = MEX value = 1 }\r
++		command = { type = peace which = CHI value = 1 }\r
++		command = { type = peace which = JAP value = 1 }\r
++		command = { type = peace which = AST value = 1 }\r
++		command = { type = peace which = AUS value = 1 }\r
++		command = { type = peace which = ISR value = 1 }\r
++		command = { type = peace which = RUS value = 1 }\r
++		command = { type = peace which = SOV value = 1 }\r
++		command = { type = peace which = ITA value = 1 }\r
++		command = { type = peace which = U14 value = 1 }\r
++		command = { type = peace which = SPR value = 1 }\r
++		command = { type = peace which = SPA value = 1 }\r
++		command = { type = peace which = POR value = 1 }\r
++		command = { type = peace which = POL value = 1 }\r
++		command = { type = peace which = GRE value = 1 }\r
++		command = { type = peace which = TUR value = 1 }\r
++		command = { type = peace which = U34 value = 1 }\r
++		command = { type = peace which = ARA value = 1 }\r
++		command = { type = peace which = CHI value = 1 }\r
++	command = { trigger = { alliance = { country = CAN } type = make_puppet which = CAN }\r
++\r
++\r
++	command = { type = event which = 46560034 where = IRE when = 0 }\r
++	command = { type = event which = 46560035 where = GER when = 0 }\r
++	command = { type = setflag which = ENG_losses_total value = 0 when = 0 }	\r
++	ai_chance = 0	\r
++	}	\r
++}		\r
++	\r
++#ドイツイベント\r
++#アイルランドイベント\r
++#参加国イベント（参戦国：IC基準で適当に配分）\r
++#カナダイベント\r
++#が発生\r
++#イギリス資源メモ\r
++#E659/M88/R5/O101\r
+ #\r
+ #\r
+-##########################################################################\r
+-##  イギリス降伏（ENG）\r
+-## 我が国の敵国は要求を提示しました。我々が同意しようとしていることを次世代の人々が許しますように。\r
+-##########################################################################\r
++\r
+ #\r
+-#event = {\r
+-#	id = 46700054\r
+-#	random = no\r
+-#	country = ENG\r
+-#	save_date = yes\r
++#########################################################################		\r
++#  イギリス降伏（アイルランド）\r
++# 歴史的敗戦を喫した英国に突きつけられた講和条約は、有無を言わさぬ強制力を持った、非常に厳しい条件となった。\r
++# ジブラルタル、シンガポール含むマレーシア、太平洋及びカリブ海における英国植民地、英領インド、同盟国カナダ、スエズ運河と言った、過去に\r
++# 英国が所有してきた名だたる重要地点<チョークポイント>をドイツ帝国に割譲する上、北アイルランド・ウェールズ・アウターヘブリディーズをアイルランドへ割譲。\r
++# 加えて、"英国主導によるアイルランド共和国への経済支援"を条約に組み込まれた上に、\r
++# スカパフロー・英仏海峡沿岸地域・ノリッジがドイツ帝国による百年間の租借とされた。\r
++# 石炭や鉄鋼といった戦略資源についても同様に（こちらは二十年間の）ドイツ帝国への無償譲渡を義務づけられた。\r
++# 今やブリテン島とアイルランド島の地位は逆転し、ブリテン島はありとあらゆる資源をアイルランド及びドイツ帝国へ譲渡する植民地と化したのである…\r
++########################################################################		\r
++event = {		\r
++	id = 46560034\r
++	random = no	\r
++	country = IRE	\r
++	\r
++	\r
++	name = EVT_46560034_NAME\r
++	desc = EVT_46560034_DESC\r
++	style = 2	\r
++	#picture = "picture"\r
++	\r
++	action = { # \r
++	name = "ACTIONNAME46560034A"\r
++	command = { type = trade which = IRE where = ENG money = 20 when = 18000 value = 1 }\r
++	command = { type = trade which = IRE where = ENG supplies = 150 when = 18000 value = 1 }\r
++	command = { trigger = { NOT = { alliance = { country = GER } } } type = alliance which = GER }\r
++	command = { type = relation which = GER value = 400 }\r
++	command = { type = dissent value = -100 }\r
++	command = { type = make_puppet which = ENG }\r
++	command = { type = industrial_modifier which = total value = 20 }\r
++	command = { type = research_mod value = 25 }\r
++	command = { type = industrial_modifier which = supplies value = 50 }\r
++	command = { type = building_prod_mod which = ic value = 30 }\r
++	command = { type = building_prod_mod which = infrastructure value = 30 }\r
++	command = { type = building_prod_mod which = land_fort value = 30 }\r
++	command = { type = building_prod_mod which = coastal_fort value = 30 }\r
++	command = { type = building_prod_mod which = flak value = 30 }\r
++	command = { type = building_prod_mod which = radar_station value = 30 }\r
++	command = { type = building_prod_mod which = naval_base value = 30 }\r
++	command = { type = building_prod_mod which = air_base value = 30 }\r
++	command = { type = building_prod_mod which = rocket_test value = 30 }\r
++	command = { type = building_prod_mod which = nuclear_reactor value = 30 }\r
++	command = { type = add_corps which = "ササナ駐留軍" value = land where = 29 } #ロンドン\r
++	command = { type = activate_division which = 21500 value = 10 where = 29 }\r
++	command = { type = activate_division which = 21500 value = 11 where = 29 }\r
++	command = { type = activate_division which = 21500 value = 12 where = 29 }\r
++	command = { type = activate_division which = 21500 value = 13 where = 29 }\r
++	command = { type = add_corps which = "カムリ守備隊" value = land where = 22 } #カーディフ\r
++	command = { type = activate_division which = 21500 value = 15 where = 22 }\r
++	command = { type = add_corps which = "北ササナ守備隊" value = land where = 17 } #マンチェスター(リヴァプール）\r
++	command = { type = activate_division which = 21500 value = 17 where = 17 }\r
++	command = { type = activate_division which = 21500 value = 18 where = 17 }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	ai_chance = 100	\r
++	}	\r
++}		\r
++	\r
++#########################################################################		\r
++#  イギリス降伏（ドイツ）	\r
++# 歴史的敗戦を喫した英国に突きつけられた講和条約は、有無を言わさぬ強制力を持った、非常に厳しい条件となった。\r
++# ジブラルタル、シンガポール含むマレーシア、太平洋及びカリブ海における英国植民地、英領インド、同盟国カナダ、スエズ運河と言った、過去に\r
++# 英国が所有してきた名だたる重要地点<チョークポイント>をドイツ帝国に割譲する上、北アイルランド・ウェールズ・アウターヘブリディーズをアイルランドへ割譲。\r
++# 加えて、"英国主導によるアイルランド共和国への経済支援"を条約に組み込まれた上に、\r
++# スカパフロー・英仏海峡沿岸地域・ノリッジがドイツ帝国による百年間の租借とされた。\r
++# 石炭や鉄鋼といった戦略資源についても同様に（こちらは二十年間の）ドイツ帝国への無償譲渡を義務づけられた。\r
++# 今やブリテン島とアイルランド島の地位は逆転し、ブリテン島はありとあらゆる資源をアイルランド及びドイツ帝国へ譲渡する植民地と化したのである……。\r
++########################################################################		\r
++event = {		\r
++	id = 46560035\r
++	random = no	\r
++	country = GER	\r
++	\r
++	name = EVT_46560035_NAME\r
++	desc = EVT_46560035_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME46560035A"\r
++#基本効果\r
++	command = { type = dissent value = -30 }\r
++#貿易E300/M30/R0/O50\r
++	command = { type = trade which = GER where = ENG energy = 300 metal = 30 oil = 50 money = 15 when = 7200 value = 1 }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = ENG }\r
++	command = { type = steal_tech which = CAN }\r
++	command = { type = steal_tech which = CAN }\r
++	command = { type = steal_tech which = CAN }\r
++	command = { type = steal_tech which = CAN }\r
++	command = { type = steal_tech which = CAN }\r
++	command = { type = steal_tech which = CAN }\r
++	command = { type = steal_tech which = CAN }\r
+ #\r
+-#	name = "EVT_46700054_NAME"\r
+-#	desc = "EVT_46700054_DESC"\r
+-#	style = 2\r
+-#	picture = "news_paper"\r
++\r
++#アフリカ地域効果\r
++\r
++	command = { trigger = { NOT = { exists = CON } } type = independence which = CON }\r
++	command = { trigger = { alliance = { country =  GLD country = ENG } } type = inherit which = GLD }\r
++#	command = { trigger = { NOT = { puppet = { country = CON country = GER } } type = event which = EVENTIDALLC09 where = CON when = 1 }\r
++	command = { trigger = { NOT = { puppet = { country = CON country = GER } } type = make_puppet which = CON }\r
++	command = { trigger = { exists = CON } type = secederegion which = CON value = "Central Africa" when = 1 }\r
++	command = { trigger = { NOT = { exists = SAF } } type = independence which = SAF }\r
++	command = { trigger = { war = { country = SAF } } type = peace which = SAF }\r
++#中東方面効果\r
++	command = { trigger = { NOT = { exists = ARA } NOT = { exists = ISR } } type = independence which = ARA }\r
++	command = { trigger = { war = { country = ARA } } type = peace which = ARA }\r
++	command = { trigger = { alliance = { country = CHI } } type = secederegion which = CHI value = "Persia" when = 1 }\r
++	command = { trigger = { alliance = { country = CHI } } type = secederegion which = CHI value = "Afghanistan" when = 1 }\r
++	command = { trigger = { alliance = { country = CHI } } type = secedearea which = CHI value = "Pakistan" when = 1 }\r
++	\r
+ #\r
+ #\r
+-#	action = { # 協定に調印する\r
+-#	name = "ACTIONNAME46700054A"\r
+-#	trigger = { flag = whitepeace }\r
+-#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 }\r
+-#	command = { type = secederegion which = U12 value = "England" }\r
+-#	command = { type = secederegion which = U12 value = "Scotland" }\r
+-#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
+-#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
+-#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
+-#	command = { type = sleepteam which = 10006 }\r
+-#	command = { type = sleepteam which = 10007 }\r
+-#	command = { type = sleepteam which = 10016 }\r
+-#	command = { type = trigger which = 46700055 }\r
+-#	}\r
+ #\r
+-#	action = { # 協定に調印する\r
+-#	name = "ACTIONNAME46700054A"\r
+-#	trigger = { flag = lightdem }\r
+-#	command = { type = secedeprovince which = DDR value = 5 } # スカパフロー\r
+-#	command = { type = secedeprovince which = DDR value = 9 } # ラーウィック\r
+-#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 } #units change allegiance\r
+-#	command = { type = secederegion which = U12 value = "England" }\r
+-#	command = { type = secedeprovince which = U12 value = 4 } # ストーノウェイ\r
+-#	command = { type = secedeprovince which = U12 value = 6 } # インヴァネス\r
+-#	command = { type = secedeprovince which = U12 value = 7 } # アバディーン\r
+-#	command = { type = secedeprovince which = U12 value = 8 } # フォート・ウィリアム（スコットランド）\r
+-#	command = { type = secedeprovince which = U12 value = 10 } # ダンフリーズ\r
+-#	command = { type = secedeprovince which = U12 value = 11 } # グラスゴー\r
+-#	command = { type = secedeprovince which = U12 value = 12 } # エディンバラ\r
+-#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
+-#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
+-#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
+-#	command = { type = sleepteam which = 10006 }\r
+-#	command = { type = sleepteam which = 10007 }\r
+-#	command = { type = sleepteam which = 10016 }\r
+-#	command = { type = trigger which = 46700055 }\r
+-#	}\r
+ #\r
+-#	action = { # 協定に調印する\r
+-#	name = "ACTIONNAME46700054A"\r
+-#	trigger = { flag = meddem }\r
+-#	command = { type = secedeprovince which = DDR value = 4 } # ストーノウェイ\r
+-#	command = { type = secedeprovince which = DDR value = 5 } # スカパフロー\r
+-#	command = { type = secedeprovince which = DDR value = 6 } # インヴァネス\r
+-#	command = { type = secedeprovince which = DDR value = 7 } # アバディーン\r
+-#	command = { type = secedeprovince which = DDR value = 8 } # フォート・ウィリアム（スコットランド）\r
+-#	command = { type = secedeprovince which = DDR value = 9 } # ラーウィック\r
+-#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 } #units change allegiance\r
+-#	command = { type = secederegion which = U12 value = "England" }\r
+-#	command = { type = secederegion which = U12 value = "Scotland" }\r
+-#	command = { type = secedeprovince which = U12 value = 10 } # ダンフリーズ\r
+-#	command = { type = secedeprovince which = U12 value = 11 } # グラスゴー\r
+-#	command = { type = secedeprovince which = U12 value = 12 } # エディンバラ\r
+-#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
+-#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
+-#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
+-#	command = { type = sleepteam which = 10006 }\r
+-#	command = { type = sleepteam which = 10007 }\r
+-#	command = { type = sleepteam which = 10016 }\r
+-#	command = { type = trigger which = 46700055 }\r
+-#	}\r
+ #\r
+-#	action = { # 協定に調印する\r
+-#	name = "ACTIONNAME46700054A"\r
+-#	trigger = { flag = highdem }\r
+-#	command = { type = secedeprovince which = DDR value = 4 } # ストーノウェイ\r
+-#	command = { type = secedeprovince which = DDR value = 5 } # スカパフロー\r
+-#	command = { type = secedeprovince which = DDR value = 6 } # インヴァネス\r
+-#	command = { type = secedeprovince which = DDR value = 7 } # アバディーン\r
+-#	command = { type = secedeprovince which = DDR value = 8 } # フォート・ウィリアム（スコットランド）\r
+-#	command = { type = secedeprovince which = DDR value = 9 } # ラーウィック\r
+-#	command = { type = secedeprovince which = DDR value = 10 } # ダンフリーズ\r
+-#	command = { type = secedeprovince which = DDR value = 11 } # グラスゴー\r
+-#	command = { type = secedeprovince which = DDR value = 12 } # エディンバラ\r
+-#	command = { trigger = { NOT = { exists = SCO } } type = independence which = SCO value = 0 }\r
+-#	command = { trigger = { NOT = { ispuppet = SCO } } type = make_puppet which = SCO }\r
+-#	command = { type = secederegion which = SCO value = "Scotland" }\r
+-#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 }\r
+-#	command = { type = secederegion which = U12 value = "England" }\r
+-#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
+-#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
+-#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
+-#	command = { type = sleepteam which = 10006 }\r
+-#	command = { type = sleepteam which = 10007 }\r
+-#	command = { type = sleepteam which = 10016 }\r
+-#	command = { type = trigger which = 46700055 }\r
+-#	}\r
+-#}\r
+ #\r
++#アメリカ地域効果\r
++	command = { trigger = { puppet = { country = CAN country = ENG } } type = make_puppet which = CAN }	\r
++	command = { trigger = { puppet = { country = CAN country = IRE } } type = make_puppet which = CAN }\r
++	command = { trigger = { puppet = { country = CAN } type = alliance which = CAN }\r
++#カナダ用\r
++	command = { trigger = { exists = CAN alliance = { country = CAN } } type = event which = 46560037 where = CAN when = 0 }\r
++#合衆国勝利2149 2090割譲\r
++	command = { trigger = { flag = USA_Victory_America owned = { province = 2149 data = CAN } type = secedeprovince which = GER value = 2149 when = 2 }\r
++	command = { trigger = { flag = USA_Victory_America owned = { province = 2090 data = CAN } type = secedeprovince which = GER value = 2090 when = 2 }\r
++	\r
+ #\r
++	command = { trigger = { flag = USA_Victory_America } type = non_aggresion which = USA when  1080 }\r
++#南北アメリカ国家和平。\r
++command = { trigger = { war = { country = ARG } } type = peace which = ARG when = 1 } #アルゼンチン\r
++command = { trigger = { war = { country = BOL } } type = peace which = BOL when = 1 } #ボリビア\r
++command = { trigger = { war = { country = BRA } } type = peace which = BRA when = 1 } #ブラジル\r
++command = { trigger = { war = { country = CAL } } type = peace which = CAL when = 1 } #カリフォルニア\r
++command = { trigger = { war = { country = CAN } } type = peace which = CAN when = 1 } #カナダ\r
++command = { trigger = { war = { country = CHL } } type = peace which = CHL when = 1 } #チリ\r
++command = { trigger = { war = { country = COL } } type = peace which = COL when = 1 } #コロンビア\r
++command = { trigger = { war = { country = COS } } type = peace which = COS when = 1 } #コスタリカ\r
++command = { trigger = { war = { country = CSA } } type = peace which = CSA when = 1 } #南部連合国\r
++command = { trigger = { war = { country = CUB } } type = peace which = CUB when = 1 } #キューバ\r
++command = { trigger = { war = { country = DOM } } type = peace which = DOM when = 1 } #ドミニカ共和国\r
++command = { trigger = { war = { country = ECU } } type = peace which = ECU when = 1 } #エクアドル\r
++command = { trigger = { war = { country = GUA } } type = peace which = GUA when = 1 } #グアテマラ\r
++command = { trigger = { war = { country = GUY } } type = peace which = GUY when = 1 } #ガイアナ\r
++command = { trigger = { war = { country = HAI } } type = peace which = HAI when = 1 } #ハイチ\r
++command = { trigger = { war = { country = HON } } type = peace which = HON when = 1 } #ホンジュラス\r
++command = { trigger = { war = { country = MEX } } type = peace which = MEX when = 1 } #メキシコ\r
++command = { trigger = { war = { country = NIC } } type = peace which = NIC when = 1 } #ニカラグア\r
++command = { trigger = { war = { country = PAN } } type = peace which = PAN when = 1 } #パナマ\r
++command = { trigger = { war = { country = PAR } } type = peace which = PAR when = 1 } #パラグアイ\r
++command = { trigger = { war = { country = PRU } } type = peace which = PRU when = 1 } #ペルー\r
++command = { trigger = { war = { country = QUE } } type = peace which = QUE when = 1 } #ケベック\r
++command = { trigger = { war = { country = SAL } } type = peace which = SAL when = 1 } #エルサルバドル\r
++command = { trigger = { war = { country = TEX } } type = peace which = TEX when = 1 } #テキサス\r
++#command = { trigger = { war = { country = U00 } } type = peace which = U00 when = 1 } #アメリカ社会主義合衆国\r
++command = { trigger = { war = { country = U38 } } type = peace which = U38 when = 1 } #カナダ人民共和国\r
++command = { trigger = { war = { country = U54 } } type = peace which = U54 when = 1 } #デザレット\r
++command = { trigger = { war = { country = U57 } } type = peace which = U57 when = 1 } #メキシコ（立憲派）\r
++command = { trigger = { war = { country = U58 } } type = peace which = U58 when = 1 } #メキシコ（ビリャ派）\r
++command = { trigger = { war = { country = U59 } } type = peace which = U59 when = 1 } #メキシコ（サパタ派）\r
++command = { trigger = { war = { country = U60 } } type = peace which = U60 when = 1 } #ニューファンドランド\r
++command = { trigger = { war = { country = U77 } } type = peace which = U77 when = 1 } #大コロンビア\r
++command = { trigger = { war = { country = U78 } } type = peace which = U78 when = 1 } #中央アメリカ\r
++command = { trigger = { war = { country = U79 } } type = peace which = U79 when = 1 } #西インド諸島\r
++command = { trigger = { war = { country = U89 } } type = peace which = U89 when = 1 } #ジャマイカ\r
++command = { trigger = { war = { country = UA0 } } type = peace which = UA0 when = 1 } #アラスカ\r
++command = { trigger = { war = { country = UA1 } } type = peace which = UA1 when = 1 } #ニューイングランド\r
++command = { trigger = { war = { country = UA2 } } type = peace which = UA2 when = 1 } #五大湖連邦\r
++command = { trigger = { war = { country = UA3 } } type = peace which = UA3 when = 1 } #中部大西洋共和国\r
++command = { trigger = { war = { country = UA4 } } type = peace which = UA4 when = 1 } #ロッキー山脈連邦\r
++command = { trigger = { war = { country = UA5 } } type = peace which = UA5 when = 1 } #フロリダ\r
++command = { trigger = { war = { country = UA6 } } type = peace which = UA6 when = 1 } #ニューアフリカ\r
++command = { trigger = { war = { country = UA7 } } type = peace which = UA7 when = 1 } #アメリカ先住民連合\r
++command = { trigger = { war = { country = UA8 } } type = peace which = UA8 when = 1 } #リオグランデ共和国\r
++command = { trigger = { war = { country = UA9 } } type = peace which = UA9 when = 1 } #カスカディア\r
++command = { trigger = { war = { country = UBO } } type = peace which = UBO when = 1 } #カリブ共同体\r
++command = { trigger = { war = { country = UD1 } } type = peace which = UD1 when = 1 } #アマゾニア\r
++command = { trigger = { war = { country = UD4 } } type = peace which = UD4 when = 1 } #ベリーズ\r
++command = { trigger = { war = { country = UD5 } } type = peace which = UD5 when = 1 } #西カナダ\r
++command = { trigger = { war = { country = UE0 } } type = peace which = UE0 when = 1 } #マンハッタン・コミューン\r
++command = { trigger = { war = { country = UE5 } } type = peace which = UE5 when = 1 } #ユナイテッド・フルーツ社\r
++command = { trigger = { war = { country = UE6 } } type = peace which = UE6 when = 1 } #プエルトリコ\r
++command = { trigger = { war = { country = UES } } type = peace which = UES when = 1 } #南米諸国連合\r
++command = { trigger = { war = { country = UF4 } } type = peace which = UF4 when = 1 } #パタゴニア\r
++command = { trigger = { war = { country = UF5 } } type = peace which = UF5 when = 1 } #ニューメキシコ\r
++command = { trigger = { war = { country = UF6 } } type = peace which = UF6 when = 1 } #ペルー・ボリビア連合\r
++command = { trigger = { war = { country = URU } } type = peace which = URU when = 1 } #ウルグアイ\r
++command = { trigger = { war = { country = USA } } type = peace which = USA when = 1 } #アメリカ合衆国\r
++command = { trigger = { war = { country = VEN } } type = peace which = VEN when = 1 } #ベネズエラ\r
++\r
++#南米は英効果で割譲済。\r
++	ai_chance = 100	\r
++	}	\r
++}		\r
++	\r
++#########################################################################		\r
++#  対英判定イベント		\r
++# 我が国は英軍に十分な戦果を与えた。\r
++# ブリテン島に存在する豊富な工場設備の一部は我が国の戦果に応じて\r
++# 戦後賠償として我が国に配分されるべきだろう。\r
++########################################################################\r
+ #\r
++#750万くらい英軍が動員、処分IC240程度を想定。\r
++#→25万/4IC×30回を移転。（効率50％）\r
+ #\r
+ #\r
+ #\r
+@@ -1577,6 +2427,1002 @@ event = {
+ #\r
+ \r
+ \r
++		\r
++event = {		\r
++	id = 46560036\r
++	random = no	\r
++	name = EVT_46560036_NAME\r
++	desc = EVT_46560036_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	persistent = yes\r
++	trigger = { \r
++	event = 46560033\r
++	NOT = { war = { country = ENG } }\r
++	losses = { country = ENG type = manpower value = 250000 data = 1 }\r
++	NOT = { local_flag = ENG_losses }\r
++	}\r
++	date = { day = 0 month = 0 year = 1900 }	\r
++	offset = 10	\r
++	deathdate = { day = 29 month = 11 year = 1999 }	\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME46560036A"\r
++#戦果計算\r
++	command = { type = local_setflag which = ENG_losses value = 0 when = 0 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 250000 	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 500000 	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 750000		data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1000000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1250000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1500000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1750000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2000000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2250000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2500000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2750000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3000000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3250000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3500000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3750000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4000000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4250000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4500000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4750000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5000000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5250000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5500000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5750000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6000000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6250000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6500000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6750000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7000000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7250000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7500000	data = 1 } } type = steal_tech which = ENG }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 250000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 500000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 750000		data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++\r
++command = { trigger = { losses = { country = ENG type = manpower value = 250000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 500000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 750000		data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++\r
++command = { trigger = { losses = { country = ENG type = manpower value = 250000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 500000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 750000		data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++\r
++command = { trigger = { losses = { country = ENG type = manpower value = 250000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 500000 	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 750000		data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6750000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7000000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7250000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7500000	data = 1 } } type = construct which = ic where = -1 value = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 250000 	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 500000 	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 750000		data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1000000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1250000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1500000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1750000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2000000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2250000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2500000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2750000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3000000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3250000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3500000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3750000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4000000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4250000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4500000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4750000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5000000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5250000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5500000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5750000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6000000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6250000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6500000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6750000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7000000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7250000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7500000	data = 1 } } type = local_setflag which = ENG_losses value = 1 when = 1 }\r
++\r
++#合計値計算 ※ENGの損害計算ではなく、各国の点数合計\r
++\r
++command = { trigger = { losses = { country = ENG type = manpower value = 250000 	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 500000 	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 750000		data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1000000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1250000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1500000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 1750000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2000000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2250000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2500000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 2750000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3000000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3250000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3500000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 3750000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4000000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4250000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4500000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 4750000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5000000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5250000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5500000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 5750000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6000000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6250000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6500000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 6750000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7000000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7250000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++command = { trigger = { losses = { country = ENG type = manpower value = 7500000	data = 1 } } type = setflag which = ENG_losses_total value = 1 when = 1 }\r
++	ai_chance = 100	\r
++	}	\r
++}		\r
++	\r
++#########################################################################		\r
++#  イギリス降伏（カナダ）\r
++# 本国政府の降伏により、\r
++# 我が国も敵国と講和することとなった\r
++########################################################################		\r
++event = {		\r
++	id = 46560037\r
++	random = no	\r
++	country = CAN	\r
++	\r
++	\r
++	name = EVT_46560037_NAME\r
++	desc = EVT_46560037_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME46560037A"\r
++	command = { trigger = { war = { country = USA } } type = peace which = USA }\r
++	command = { trigger = { war = { country = UE0 } } type = peace which = UE0 }\r
++	command = { trigger = { war = { country = MEX } } type = peace which = MEX }\r
++	command = { trigger = { war = { country = CSA } } type = peace which = CSA }\r
++	command = { type = secederegion which = -1 value = "Eastern Canada" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Western Canada" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Northern Canada" when = 1 }\r
++	command = { type = secederegion which = -1 value = "Canada" when = 1 }\r
++	command = { trigger = { puppet = { country = MEX } } type = end_mastery which = MEX }\r
++	command = { trigger = { puppet = { country = TEX } } type = end_mastery which = TEX }\r
++	command = { trigger = { puppet = { country = CSA } } type = end_mastery which = CSA }\r
++	command = { trigger = { puppet = { country = CAL } } type = end_mastery which = CAL }\r
++	command = { trigger = { puppet = { country = MEX } } type = end_mastery which = MEX }\r
++	command = { trigger = { puppet = { country = MEX } } type = end_mastery which = MEX }\r
++	command = { trigger = { puppet = { country = MEX } } type = end_mastery which = MEX }\r
++	command = { trigger = { war = { country = U00 } type = peace which = U00 }\r
++	command = { type = peace which = TEX }\r
++	command = { type = peace which = CAL }\r
++	command = { type = remove_core_region which = "Eastern Canada" }\r
++	command = { type = secederegion which = GER value = "Eastern Canada" when = 1 }\r
++	command = { triggger = { NOT = { vp = 3 } } which = GER value = "Western Canada" when = 1 }\r
++	command = { triggger = { NOT = { vp = 3 } } which = GER value = "Northern Canada" when = 1 }\r
++	command = { triggger = { NOT = { vp = 3 } } which = GER value = "Canada" when = 1 }\r
++	command = { type = remove_core_region which = "Northeast US" }\r
++	command = { type = remove_core_region which = "Northwest US" }\r
++	command = { type = remove_core_region which = "Southeast US" }\r
++	command = { type = remove_core_region which = "Southwest US" }\r
++	command = { type = remove_core_region which = "Midwest US" }\r
++	command = { type = remove_core_region which = "Southcentral US" }\r
++	command = { trigger = { flag = CAN_Victory_America NOT = { AND = { exists = USA  exists = U00 } } } type = independence which = USA }\r
++	command = { type = secederegion which = USA value = "Northeast US"when = 1 }\r
++	command = { type = secederegion which = USA value = "Northwest US"when = 1 }\r
++	command = { type = secederegion which = USA value = "Southeast US"when = 1 }\r
++	command = { type = secederegion which = USA value = "Southwest US"when = 1 }\r
++	command = { type = secederegion which = USA value = "Midwest US"when = 1 }\r
++	command = { type = secederegion which = USA value = "Southcentral US"when = 1 }\r
++	command = { type = secederegion which = CSA value = "Northeast US"when = 1 }\r
++	command = { type = secederegion which = CSA value = "Northwest US"when = 1 }\r
++	command = { type = secederegion which = CSA value = "Southeast US"when = 1 }\r
++	command = { type = secederegion which = CSA value = "Southwest US"when = 1 }\r
++	command = { type = secederegion which = CSA value = "Midwest US"when = 1 }\r
++	command = { type = secederegion which = CSA value = "Southcentral US"when = 1 }\r
++	command = { type = secederegion which = U00 value = "Northeast US"when = 1 }\r
++	command = { type = secederegion which = U00 value = "Northwest US"when = 1 }\r
++	command = { type = secederegion which = U00 value = "Southeast US"when = 1 }\r
++	command = { type = secederegion which = U00 value = "Southwest US"when = 1 }\r
++	command = { type = secederegion which = U00 value = "Midwest US"when = 1 }\r
++	command = { type = secederegion which = U00 value = "Southcentral US"when = 1 }\r
++	command = { type = secederegion which = UE0 value = "Northeast US"when = 1 }\r
++	command = { type = secederegion which = UE0 value = "Northwest US"when = 1 }\r
++	command = { type = secederegion which = UE0 value = "Southeast US"when = 1 }\r
++	command = { type = secederegion which = UE0 value = "Southwest US"when = 1 }\r
++	command = { type = secederegion which = UE0 value = "Midwest US"when = 1 }\r
++	command = { type = secederegion which = UE0 value = "Southcentral US"when = 1 }\r
++	command = { type = secederegion which = GER value = "Northeast US"when = 1 }\r
++	command = { type = secederegion which = GER value = "Northwest US"when = 1 }\r
++	command = { type = secederegion which = GER value = "Southeast US"when = 1 }\r
++	command = { type = secederegion which = GER value = "Southwest US"when = 1 }\r
++	command = { type = secederegion which = GER value = "Midwest US"when = 1 }\r
++	command = { type = secederegion which = GER value = "Southcentral US"when = 1 }\r
++	command = { trigger = { puppet = { country = CAN country = GER } flag = CAN_Victory_America } type = end_puppet }\r
++	command = { trigger = { puppet = { country = CAN country = IRE } flag = CAN_Victory_America } type = end_puppet }\r
++	command = { type = access which = GER where = CAN }\r
++	command = { type = name where = CAN which = "カナダ国" }\r
++	command = { type = sleepminister which = 220001 }\r
++	command = { type = sleepminister which = 220096 }\r
++	command = { type = sleepminister which = 220097 }\r
++	command = { type = sleepminister which = 220098 }\r
++	command = { type = sleepminister which = 220112 }\r
++	command = { type = sleepminister which = 220113 }\r
++	command = { type = sleepminister which = 220182 }\r
++	command = { type = sleepminister which = 220183 }\r
++\r
++	command = { type = sleepminister which = 220400 }\r
++	command = { type = sleepminister which = 220401 }\r
++	command = { type = sleepminister which = 220402 }\r
++	command = { type = sleepminister which = 220403 }\r
++	command = { type = sleepminister which = 220404 }\r
++	command = { type = sleepminister which = 220405 }\r
++	command = { type = sleepminister which = 220406 }\r
++	command = { type = sleepminister which = 220407 }\r
++	command = { type = sleepminister which = 220408 }\r
++	command = { type = sleepminister which = 220409 }\r
++	command = { type = sleepminister which = 220410 }\r
++	command = { type = sleepminister which = 220411 }\r
++	command = { type = sleepminister which = 220412 }\r
++	command = { type = sleepminister which = 220413 }\r
++	command = { type = sleepminister which = 220414 }\r
++	command = { type = sleepminister which = 220415 }\r
++	command = { type = sleepminister which = 220416 }\r
++	command = { type = sleepminister which = 220417 }\r
++	command = { type = sleepminister which = 220418 }\r
++	command = { type = sleepminister which = 220419 }\r
++	command = { type = sleepminister which = 220420 }\r
++	command = { type = sleepminister which = 220421 }\r
++	command = { type = sleepminister which = 220422 }\r
++	command = { type = sleepminister which = 220423 }\r
++	command = { type = sleepminister which = 220424 }\r
++	command = { type = sleepminister which = 220425 }\r
++	command = { type = sleepminister which = 220426 }\r
++	command = { type = sleepminister which = 220427 }\r
++	command = { type = sleepminister which = 220428 }\r
++	command = { type = sleepminister which = 220429 }\r
++	command = { type = sleepminister which = 220430 }\r
++	command = { type = sleepminister which = 220431 }\r
++	command = { type = sleepminister which = 220432 }\r
++	command = { type = sleepminister which = 220433 }\r
++	command = { type = sleepminister which = 220434 }\r
++	command = { type = sleepminister which = 220435 }\r
++	command = { type = sleepminister which = 220436 }\r
++	command = { type = sleepminister which = 220437 }\r
++	command = { type = sleepminister which = 220438 }\r
++	command = { type = sleepminister which = 220439 }\r
++	command = { type = sleepminister which = 220440 }\r
++	command = { type = sleepminister which = 220441 }\r
++	command = { type = sleepminister which = 220442 }\r
++	command = { type = sleepminister which = 220443 }\r
++	command = { type = sleepminister which = 220444 }\r
++	command = { type = sleepminister which = 220445 }\r
++	command = { type = sleepminister which = 220446 }\r
++	command = { type = sleepminister which = 220447 }\r
++	command = { type = sleepminister which = 220448 }\r
++	command = { type = sleepminister which = 220449 }\r
++	command = { type = sleepminister which = 220450 }\r
++	command = { type = sleepminister which = 220451 }\r
++	command = { type = sleepminister which = 220452 }\r
++	command = { type = sleepminister which = 220453 }\r
++	command = { type = sleepminister which = 220454 }\r
++	command = { type = sleepminister which = 220455 }\r
++	command = { type = sleepminister which = 220456 }\r
++	command = { type = sleepminister which = 220457 }\r
++	command = { type = sleepminister which = 220458 }\r
++	command = { type = sleepminister which = 220459 }\r
++	command = { type = sleepminister which = 220460 }\r
++	command = { type = sleepminister which = 220461 }\r
++	command = { type = sleepminister which = 220462 }\r
++	command = { type = sleepminister which = 220463 }\r
++	command = { type = sleepminister which = 220464 }\r
++	command = { type = sleepminister which = 220465 }\r
++	command = { type = sleepminister which = 220466 }\r
++	command = { type = sleepminister which = 220467 }\r
++	command = { type = sleepminister which = 220468 }\r
++	command = { type = sleepminister which = 220469 }\r
++	command = { type = sleepminister which = 220470 }\r
++	command = { type = sleepminister which = 220471 }\r
++	command = { type = sleepminister which = 220472 }\r
++	command = { type = sleepminister which = 220473 }\r
++	command = { type = sleepminister which = 220474 }\r
++	command = { type = sleepminister which = 220475 }\r
++	command = { type = sleepminister which = 220476 }\r
++	command = { type = sleepminister which = 220477 }\r
++	command = { type = sleepminister which = 220478 }\r
++	command = { type = sleepminister which = 220479 }\r
++	command = { type = sleepminister which = 220480 }\r
++	command = { type = sleepminister which = 220481 }\r
++	command = { type = sleepminister which = 220482 }\r
++	command = { type = sleepminister which = 220483 }\r
++	command = { type = sleepminister which = 220484 }\r
++	command = { type = sleepminister which = 220485 }\r
++	command = { type = sleepminister which = 220486 }\r
++	command = { type = sleepminister which = 220487 }\r
++	command = { type = sleepminister which = 220488 }\r
++	command = { type = sleepminister which = 220489 }\r
++	command = { type = sleepminister which = 220490 }\r
++	command = { type = sleepminister which = 220491 }\r
++	command = { type = sleepminister which = 220492 }\r
++	command = { type = sleepminister which = 220493 }\r
++	command = { type = sleepminister which = 220494 }\r
++	command = { type = sleepminister which = 220495 }\r
++	command = { type = sleepminister which = 220496 }\r
++	command = { type = sleepminister which = 220497 }\r
++	command = { type = sleepminister which = 220498 }\r
++	command = { type = sleepminister which = 220499 }\r
++	command = { type = sleepminister which = 220500 }\r
++	command = { type = sleepminister which = 220501 }\r
++	command = { type = sleepminister which = 220502 }\r
++	command = { type = sleepminister which = 220503 }\r
++	command = { type = sleepminister which = 220504 }\r
++	command = { type = sleepminister which = 220505 }\r
++	command = { type = sleepminister which = 220506 }\r
++	command = { type = sleepminister which = 220507 }\r
++	command = { type = sleepminister which = 220508 }\r
++	command = { type = sleepminister which = 220509 }\r
++	command = { type = sleepminister which = 220510 }\r
++	command = { type = sleepminister which = 220511 }\r
++	command = { type = sleepminister which = 220512 }\r
++	command = { type = sleepminister which = 220513 }\r
++	command = { type = sleepminister which = 220514 }\r
++	command = { type = sleepminister which = 220515 }\r
++	command = { type = sleepminister which = 220516 }\r
++	command = { type = sleepminister which = 220517 }\r
++	command = { type = sleepminister which = 220518 }\r
++	command = { type = sleepminister which = 220519 }\r
++	command = { type = sleepminister which = 220520 }\r
++	command = { type = sleepminister which = 220521 }\r
++	command = { type = sleepminister which = 220522 }\r
++	command = { type = sleepminister which = 220523 }\r
++	command = { type = sleepminister which = 220524 }\r
++	command = { type = sleepminister which = 220525 }\r
++	command = { type = sleepminister which = 220526 }\r
++	command = { type = sleepminister which = 220527 }\r
++	command = { type = sleepminister which = 220528 }\r
++	command = { type = sleepminister which = 220529 }\r
++	command = { type = sleepminister which = 220530 }\r
++	command = { type = sleepminister which = 220531 }\r
++	command = { type = sleepminister which = 220532 }\r
++	command = { type = sleepminister which = 220533 }\r
++	command = { type = sleepminister which = 220534 }\r
++	command = { type = sleepminister which = 220535 }\r
++	command = { type = sleepminister which = 220536 }\r
++	command = { type = sleepminister which = 220537 }\r
++	command = { type = sleepminister which = 220538 }\r
++	command = { type = sleepminister which = 220539 }\r
++	command = { type = sleepminister which = 220540 }\r
++	command = { type = sleepminister which = 220541 }\r
++	command = { type = sleepminister which = 220542 }\r
++	command = { type = sleepminister which = 220543 }\r
++	command = { type = sleepminister which = 220544 }\r
++	command = { type = sleepminister which = 220545 }\r
++	command = { type = sleepminister which = 220546 }\r
++	command = { type = sleepminister which = 220547 }\r
++	command = { type = sleepminister which = 220548 }\r
++	command = { type = sleepminister which = 220549 }\r
++	command = { type = sleepminister which = 220550 }\r
++	command = { type = sleepminister which = 220551 }\r
++	command = { type = sleepminister which = 220552 }\r
++	command = { type = sleepminister which = 220553 }\r
++	command = { type = sleepminister which = 220554 }\r
++	command = { type = sleepminister which = 220555 }\r
++	command = { type = sleepminister which = 220556 }\r
++	command = { type = sleepminister which = 220557 }\r
++	command = { type = sleepminister which = 220558 }\r
++	command = { type = sleepminister which = 220559 }\r
++	command = { type = sleepminister which = 220560 }\r
++	command = { type = sleepminister which = 220561 }\r
++	command = { type = sleepminister which = 220562 }\r
++	command = { type = sleepminister which = 220563 }\r
++	command = { type = sleepminister which = 220564 }\r
++	command = { type = sleepminister which = 220565 }\r
++	command = { type = sleepminister which = 220566 }\r
++	command = { type = sleepminister which = 220567 }\r
++	command = { type = sleepminister which = 220568 }\r
++	command = { type = sleepminister which = 220569 }\r
++	command = { type = sleepminister which = 220570 }\r
++	command = { type = sleepminister which = 220571 }\r
++	command = { type = sleepminister which = 220572 }\r
++	command = { type = sleepminister which = 220573 }\r
++	command = { type = sleepminister which = 220574 }\r
++	command = { type = sleepminister which = 220575 }\r
++	command = { type = sleepminister which = 220576 }\r
++	command = { type = sleepminister which = 220577 }\r
++	command = { type = sleepminister which = 220578 }\r
++	command = { type = sleepminister which = 220579 }\r
++	command = { type = sleepminister which = 220580 }\r
++	command = { type = sleepminister which = 220581 }\r
++	command = { type = sleepminister which = 220582 }\r
++	command = { type = sleepminister which = 220583 }\r
++	command = { type = sleepminister which = 220584 }\r
++	command = { type = sleepminister which = 220585 }\r
++	command = { type = sleepminister which = 220586 }\r
++	command = { type = sleepminister which = 220587 }\r
++	command = { type = sleepminister which = 220588 }\r
++	command = { type = sleepminister which = 220589 }\r
++	command = { type = sleepminister which = 220590 }\r
++	command = { type = sleepminister which = 220591 }\r
++	command = { type = sleepminister which = 220592 }\r
++	command = { type = sleepminister which = 220593 }\r
++	command = { type = sleepminister which = 220594 }\r
++	command = { type = sleepminister which = 220595 }\r
++	command = { type = sleepminister which = 220596 }\r
++	command = { type = sleepminister which = 220597 }\r
++	command = { type = sleepminister which = 220598 }\r
++	command = { type = sleepminister which = 220599 }\r
++	command = { type = sleepminister which = 220600 }\r
++	command = { type = sleepminister which = 220601 }\r
++	command = { type = sleepminister which = 220602 }\r
++	command = { type = sleepminister which = 220603 }\r
++	command = { type = sleepminister which = 220604 }\r
++	command = { type = sleepminister which = 220605 }\r
++	command = { type = sleepminister which = 220606 }\r
++	command = { type = sleepminister which = 220607 }\r
++	command = { type = sleepminister which = 220608 }\r
++	command = { type = sleepminister which = 220609 }\r
++	command = { type = sleepminister which = 220610 }\r
++	command = { type = sleepminister which = 220611 }\r
++	command = { type = sleepminister which = 220612 }\r
++	command = { type = sleepminister which = 220613 }\r
++	command = { type = sleepminister which = 220614 }\r
++	command = { type = sleepminister which = 220615 }\r
++	command = { type = sleepminister which = 220616 }\r
++	command = { type = sleepminister which = 220617 }\r
++	command = { type = sleepminister which = 220618 }\r
++	command = { type = sleepminister which = 220619 }\r
++	command = { type = sleepminister which = 220620 }\r
++	command = { type = sleepminister which = 220621 }\r
++	command = { type = sleepminister which = 220622 }\r
++	command = { type = sleepminister which = 220623 }\r
++	command = { type = sleepminister which = 220624 }\r
++	command = { type = sleepminister which = 220625 }\r
++	command = { type = sleepminister which = 220626 }\r
++	command = { type = sleepminister which = 220627 }\r
++	command = { type = sleepminister which = 220628 }\r
++	command = { type = sleepminister which = 220629 }\r
++	command = { type = sleepminister which = 220630 }\r
++	command = { type = sleepminister which = 220631 }\r
++	command = { type = sleepminister which = 220632 }\r
++	command = { type = sleepminister which = 220633 }\r
++	command = { type = sleepminister which = 220634 }\r
++	command = { type = sleepminister which = 220635 }\r
++	command = { type = sleepminister which = 220636 }\r
++	command = { type = sleepminister which = 220637 }\r
++	command = { type = sleepminister which = 220638 }\r
++	command = { type = sleepminister which = 220639 }\r
++	command = { type = sleepminister which = 220640 }\r
++	command = { type = sleepminister which = 220641 }\r
++	command = { type = sleepminister which = 220642 }\r
++	command = { type = sleepminister which = 220643 }\r
++	command = { type = sleepminister which = 220644 }\r
++	command = { type = sleepminister which = 220645 }\r
++	command = { type = sleepminister which = 220646 }\r
++	command = { type = sleepminister which = 220647 }\r
++	command = { type = sleepminister which = 220648 }\r
++	command = { type = sleepminister which = 220649 }\r
++	command = { type = sleepminister which = 220650 }\r
++	command = { type = sleepminister which = 220651 }\r
++	command = { type = sleepminister which = 220652 }\r
++	command = { type = sleepminister which = 220653 }\r
++	command = { type = sleepminister which = 220654 }\r
++	command = { type = sleepminister which = 220655 }\r
++	command = { type = sleepminister which = 220656 }\r
++	command = { type = sleepminister which = 220657 }\r
++	command = { type = sleepminister which = 220658 }\r
++	command = { type = sleepminister which = 220659 }\r
++	command = { type = sleepminister which = 220660 }\r
++	command = { type = sleepminister which = 220661 }\r
++	command = { type = sleepminister which = 220662 }\r
++	command = { type = sleepminister which = 220663 }\r
++	command = { type = sleepminister which = 220664 }\r
++	command = { type = sleepminister which = 220665 }\r
++	command = { type = sleepminister which = 220666 }\r
++	command = { type = sleepminister which = 220667 }\r
++	command = { type = sleepminister which = 220668 }\r
++	command = { type = sleepminister which = 220669 }\r
++	command = { type = sleepminister which = 220670 }\r
++	command = { type = sleepminister which = 220671 }\r
++	command = { type = sleepminister which = 220672 }\r
++	command = { type = sleepminister which = 220673 }\r
++	command = { type = sleepminister which = 220674 }\r
++	command = { type = sleepminister which = 220675 }\r
++	command = { type = sleepminister which = 220676 }\r
++	command = { type = sleepminister which = 220677 }\r
++	command = { type = sleepminister which = 220678 }\r
++	command = { type = sleepminister which = 220679 }\r
++	command = { type = sleepminister which = 220680 }\r
++	command = { type = sleepminister which = 220681 }\r
++	command = { type = sleepminister which = 220682 }\r
++	command = { type = sleepminister which = 220683 }\r
++	command = { type = sleepminister which = 220684 }\r
++	command = { type = sleepminister which = 220685 }\r
++	command = { type = sleepminister which = 220686 }\r
++	command = { type = sleepminister which = 220687 }\r
++	command = { type = sleepminister which = 220688 }\r
++	command = { type = sleepminister which = 220689 }\r
++	command = { type = sleepminister which = 220690 }\r
++	command = { type = sleepminister which = 220691 }\r
++	command = { type = sleepminister which = 220692 }\r
++	command = { type = sleepminister which = 220693 }\r
++	command = { type = sleepminister which = 220694 }\r
++	command = { type = sleepminister which = 220695 }\r
++	command = { type = sleepminister which = 220696 }\r
++	command = { type = sleepminister which = 220697 }\r
++	command = { type = sleepminister which = 220698 }\r
++	command = { type = sleepminister which = 220699 }\r
++	command = { type = sleepminister which = 220700 }\r
++	command = { type = sleepminister which = 220701 }\r
++	command = { type = sleepminister which = 220702 }\r
++	command = { type = sleepminister which = 220703 }\r
++	command = { type = sleepminister which = 220704 }\r
++	command = { type = sleepminister which = 220705 }\r
++	command = { type = sleepminister which = 220706 }\r
++	command = { type = sleepminister which = 220707 }\r
++	command = { type = sleepminister which = 220708 }\r
++	command = { type = sleepminister which = 220709 }\r
++	command = { type = sleepminister which = 220710 }\r
++	command = { type = sleepminister which = 220711 }\r
++	command = { type = sleepminister which = 220712 }\r
++	command = { type = sleepminister which = 220713 }\r
++	command = { type = sleepminister which = 220714 }\r
++	command = { type = sleepminister which = 220715 }\r
++	command = { type = sleepminister which = 220716 }\r
++	command = { type = sleepminister which = 220717 }\r
++	command = { type = sleepminister which = 220718 }\r
++	command = { type = sleepminister which = 220719 }\r
++	command = { type = sleepminister which = 220720 }\r
++	command = { type = sleepminister which = 220721 }\r
++	command = { type = sleepminister which = 220722 }\r
++	command = { type = sleepminister which = 220723 }\r
++	command = { type = sleepminister which = 220724 }\r
++	command = { type = sleepminister which = 220725 }\r
++	command = { type = sleepminister which = 220726 }\r
++	command = { type = sleepminister which = 220727 }\r
++	command = { type = sleepminister which = 220728 }\r
++	command = { type = sleepminister which = 220729 }\r
++	command = { type = sleepminister which = 220730 }\r
++	command = { type = sleepminister which = 220731 }\r
++	command = { type = sleepminister which = 220732 }\r
++	command = { type = sleepminister which = 220733 }\r
++	command = { type = sleepminister which = 220734 }\r
++	command = { type = sleepminister which = 220735 }\r
++	command = { type = sleepminister which = 220736 }\r
++\r
++\r
++	command = { type = sleepteam which = 220401 }\r
++	command = { type = sleepteam which = 220402 }\r
++	command = { type = sleepteam which = 220403 }\r
++	command = { type = sleepteam which = 220404 }\r
++	command = { type = sleepteam which = 220405 }\r
++	command = { type = sleepteam which = 220406 }\r
++	command = { type = sleepteam which = 220407 }\r
++	command = { type = sleepteam which = 220408 }\r
++	command = { type = sleepteam which = 220409 }\r
++	command = { type = sleepteam which = 220410 }\r
++	command = { type = sleepteam which = 220411 }\r
++	command = { type = sleepteam which = 220412 }\r
++	command = { type = sleepteam which = 220413 }\r
++	command = { type = sleepteam which = 220414 }\r
++	command = { type = sleepteam which = 220415 }\r
++	command = { type = sleepteam which = 220416 }\r
++	command = { type = sleepteam which = 220417 }\r
++	command = { type = sleepteam which = 220418 }\r
++	command = { type = sleepteam which = 220419 }\r
++	command = { type = sleepteam which = 220420 }\r
++	command = { type = sleepteam which = 220421 }\r
++	command = { type = sleepteam which = 220422 }\r
++	command = { type = sleepteam which = 220423 }\r
++	command = { type = sleepteam which = 220424 }\r
++	command = { type = sleepteam which = 220425 }\r
++	command = { type = sleepteam which = 220426 }\r
++	command = { type = sleepteam which = 220427 }\r
++	command = { type = sleepteam which = 220428 }\r
++	command = { type = sleepteam which = 220429 }\r
++	command = { type = sleepteam which = 220430 }\r
++	command = { type = sleepteam which = 220431 }\r
++	command = { type = sleepteam which = 220432 }\r
++	command = { type = sleepteam which = 220433 }\r
++	command = { type = sleepteam which = 220434 }\r
++	command = { type = sleepteam which = 220435 }\r
++	command = { type = sleepteam which = 220436 }\r
++	command = { type = sleepteam which = 220437 }\r
++	command = { type = sleepteam which = 220438 }\r
++	command = { type = sleepteam which = 220439 }\r
++	command = { type = sleepteam which = 220440 }\r
++	command = { type = sleepteam which = 220441 }\r
++	command = { type = sleepteam which = 220442 }\r
++	command = { type = sleepteam which = 220443 }\r
++	command = { type = sleepteam which = 220444 }\r
++	command = { type = sleepteam which = 220445 }\r
++	command = { type = sleepteam which = 220446 }\r
++	command = { type = sleepteam which = 220447 }\r
++	command = { type = sleepteam which = 220448 }\r
++	command = { type = sleepteam which = 220449 }\r
++	command = { type = sleepteam which = 220450 }\r
++	command = { type = sleepteam which = 220451 }\r
++	command = { type = sleepteam which = 220452 }\r
++	command = { type = sleepteam which = 220453 }\r
++	command = { type = sleepteam which = 220454 }\r
++	command = { type = sleepteam which = 220455 }\r
++	command = { type = sleepteam which = 220456 }\r
++	command = { type = sleepteam which = 220457 }\r
++	command = { type = sleepteam which = 220458 }\r
++	command = { type = sleepteam which = 220459 }\r
++	command = { type = sleepteam which = 220460 }\r
++	command = { type = sleepteam which = 220461 }\r
++	ai_chance = 100\r
++	}	\r
++}		\r
++	\r
++#########################################################################		\r
++#  イギリス降伏（イギリス）\r
++# 歴史的敗戦を喫した英国に突きつけられた講和条約は、有無を言わさぬ強制力を持った、非常に厳しい条件となった。\r
++# ジブラルタル、シンガポール含むマレーシア、太平洋及びカリブ海における英国植民地、英領インド、同盟国カナダ、スエズ運河と言った、過去に\r
++# 英国が所有してきた名だたる重要地点<チョークポイント>をドイツ帝国に割譲する上、北アイルランド・ウェールズ・アウターヘブリディーズをアイルランドへ割譲。\r
++# 加えて、"英国主導によるアイルランド共和国への経済支援"を条約に組み込まれた上に、\r
++# スカパフロー・英仏海峡沿岸地域・ノリッジがドイツ帝国による百年間の租借とされた。\r
++# 石炭や鉄鋼といった戦略資源についても同様に（こちらは二十年間の）ドイツ帝国への無償譲渡を義務づけられた。\r
++# 今やブリテン島とアイルランド島の地位は逆転し、ブリテン島はありとあらゆる資源をアイルランド及びドイツ帝国へ譲渡する植民地と化したのである…\r
++########################################################################	\r
++event = {		\r
++	id = 46560038\r
++	random = no	\r
++	country = ENG	\r
++	\r
++	trigger = {	\r
++	event = 46560036\r
++	}	\r
++	\r
++	name = EVT_46560038_NAME\r
++	desc = EVT_46560038_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }	\r
++	offset = 16	\r
++	deathdate = { day = 29 month = 11 year = 1999 }	\r
++	#合計得点*4IC削除\r
++	action = { # 	\r
++	name = "ACTIONNAME46560038A"\r
++	\r
++	command = { type = name where = ENG which = "大英帝国" }\r
++# 政体、国家協同主義に\r
++# 国家元首：ジョージ六世（傀儡）\r
++# →形のみの指導者\r
++# 政府首班：ウィリアム・ジョイス\r
++# →権力者の腰ぎんちゃく\r
++# 外務大臣：ウィリアム・ジョイス\r
++# →イデオロギーの闘士\r
++# 内務大臣：ハロルド・ハームズワース\r
++# →メディア王\r
++# 軍需大臣：セシル・ハームズワース\r
++# →自由放任主義者\r
++# 情報大臣：A・K・チェスタトン\r
++# →不気味な謎の人物\r
++		command = { type = set_domestic which = democratic value = 4 }\r
++		command = { type = set_domestic which = political_left value = 4 }\r
++		#command = { type = headofstate\r
++\r
++\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 1	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 2	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 3	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 4	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 5	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 6	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 7	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 8	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 9	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 10	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 11	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 12	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 13	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 14	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 15	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 16	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 17	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 18	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 19	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 20	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 21	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 22	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 23	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 24	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 25	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 26	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 27	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 28	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 29	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 30	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 31	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 32	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 33	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 34	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 35	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 36	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 37	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 38	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 39	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 40	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 41	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 42	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 43	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 44	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 45	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 46	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 47	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 48	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 49	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 50	 } } type = construct which = IC value = -1 where = -4 }\r
++	\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 1	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 2	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 3	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 4	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 5	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 6	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 7	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 8	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 9	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 10	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 11	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 12	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 13	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 14	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 15	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 16	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 17	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 18	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 19	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 20	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 21	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 22	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 23	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 24	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 25	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 26	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 27	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 28	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 29	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 30	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 31	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 32	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 33	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 34	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 35	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 36	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 37	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 38	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 39	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 40	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 41	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 42	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 43	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 44	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 45	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 46	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 47	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 48	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 49	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 50	 } } type = construct which = IC value = -1 where = -4 }\r
++	\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 1	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 2	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 3	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 4	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 5	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 6	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 7	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 8	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 9	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 10	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 11	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 12	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 13	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 14	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 15	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 16	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 17	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 18	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 19	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 20	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 21	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 22	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 23	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 24	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 25	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 26	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 27	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 28	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 29	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 30	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 31	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 32	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 33	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 34	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 35	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 36	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 37	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 38	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 39	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 40	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 41	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 42	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 43	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 44	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 45	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 46	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 47	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 48	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 49	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 50	 } } type = construct which = IC value = -1 where = -4 }\r
++	\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 1	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 2	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 3	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 4	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 5	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 6	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 7	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 8	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 9	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 10	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 11	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 12	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 13	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 14	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 15	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 16	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 17	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 18	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 19	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 20	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 21	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 22	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 23	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 24	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 25	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 26	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 27	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 28	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 29	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 30	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 31	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 32	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 33	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 34	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 35	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 36	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 37	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 38	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 39	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 40	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 41	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 42	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 43	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 44	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 45	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 46	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 47	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 48	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 49	 } } type = construct which = IC value = -1 where = -4 }\r
++command = { trigger = { flag = { which = ENG_losses_total when = 1 value = 50	 } } type = construct which = IC value = -1 where = -4 }\r
++	ai_chance = 100	\r
++	}	\r
++}		\r
++\r
++\r
+ ##########################################################################\r
+ #  オーストラリア関連イベント\r
+ ##########################################################################\r

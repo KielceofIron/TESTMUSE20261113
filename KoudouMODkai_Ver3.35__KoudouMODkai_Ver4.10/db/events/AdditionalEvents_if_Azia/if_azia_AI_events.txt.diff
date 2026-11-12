@@ -1,0 +1,1466 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
+@@ -10,14 +10,49 @@
+ #id = 6656003 輸送艦生産AIイベント\r
+ #id = 6656004 上陸部隊AIイベント\r
+ #id = 6656005 戦時AI\r
++#id = 6656006 中華民国対軍閥戦AI\r
++#id = 6656007 中華民国対軍閥戦終了AI\r
+ #日本\r
+ #id = 6656101 対中国防衛AI\r
+ #id = 6656102 対中国反撃AI\r
++#id = 6656103 民主主義体制不満度減少AIイベント\r
++#id = 6656104 輸送艦生産AIイベント\r
++#id = 6656105 樺太防衛AI\r
++#id = 6656106 樺太防衛終了AI\r
+ #奉天\r
+ #id = 6656201 奉天アメリカAI\r
+ #id = 6656202 戦時AI\r
+ #アメリカ\r
+ #id = 6656301 アメリカ対中戦AI\r
++#ロシア\r
++#id = 6656401 ロシア領土請求AI\r
++#id = 6656402 ロシア領土請求AI\r
++#id = 6656403 ロシア領土請求消滅AI\r
++#id = 6656404 ドイツ戦時体制時反応AI\r
++#id = 6656405 対ドイツ戦AI\r
++#id = 6656406 対ドイツ戦二年目AI\r
++#id = 6656407 ロシア対独国境AI\r
++#id = 6656408 ロシア対独国境消滅AI\r
++#id = 6656409 ロシアビターピースAI\r
++#id = 6656410 ロシア通常生産AI\r
++#id = 6656411 ロシア陸軍生産AI\r
++#id = 6656412 ロシアパニック生産AI\r
++#id = 6656413 ロシア首都変更AI（その1）\r
++#id = 6656414 ロシア首都変更AI（その2）\r
++#id = 6656415 ロシア首都変更AI（その3）\r
++#id = 6656416 ロシアボーナスAI\r
++#id = 6656417 ダライ・ラマ・ハモ・トンドウプ就任\r
++#id = 6656418 フィンランド傀儡政権成立\r
++#id = 6656419 民主主義体制不満度減少AIイベント\r
++#id = 6656420 親ロシア傀儡AI（DEN）\r
++#id = 6656421 親ロシア傀儡AI（NOR）\r
++#id = 6656422 親ロシア傀儡AI（SWE）\r
++#id = 6656423 親ロシア傀儡AI（FIN）\r
++#id = 6656424 親ロシア傀儡AI（BUL）\r
++#id = 6656425 親ロシア傀儡AI（GRE）\r
++#id = 6656426 親ロシア傀儡AI（POL）\r
++#id = 6656427 親ロシア傀儡AI（ROM）\r
++#id = 6656428 親ロシア傀儡AI（YUG）\r
+ ##########################################################################\r
+ #  中華民国\r
+ ##########################################################################\r
+@@ -183,6 +218,197 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  中華民国対軍閥戦AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656006\r
++	random = no \r
++	country = CHI\r
++	\r
++	trigger = {\r
++	event = 6959107 # 北伐の再開\r
++	ai = yes\r
++	ai = CSX\r
++	ai = CXB\r
++	ai = CYN\r
++	ai = CGX\r
++	OR = {\r
++	NOT = { exists = CSX }\r
++	AND = {\r
++	exists = CSX\r
++	ai = CSX\r
++	}\r
++	}\r
++	OR = {\r
++	NOT = { exists = CXB }\r
++	AND = {\r
++	exists = CXB\r
++	ai = CXB\r
++	}\r
++	}\r
++	OR = {\r
++	NOT = { exists = CYN }\r
++	AND = {\r
++	exists = CYN\r
++	ai = CYN\r
++	}\r
++	}\r
++	OR = {\r
++	NOT = { exists = CGX }\r
++	AND = {\r
++	exists = CGX\r
++	ai = CGX\r
++	}\r
++	}\r
++	OR = {\r
++	war = { country = CSX }\r
++	war = { country = CXB }\r
++	war = { country = CYN }\r
++	war = { country = CGX }\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = surprise which = land value = 10 }\r
++	command = { type = surprise which = naval value = 10 }\r
++	command = { type = surprise which = air value = 10 }\r
++	command = { type = speed which = land value = 5 }\r
++	command = { type = clear_attack which = land value = 20 }\r
++	command = { type = clear_defense which = land value = 20 }\r
++	command = { type = clear_move which = land value = 20 }\r
++	command = { type = rain_attack which = land value = 20 }\r
++	command = { type = rain_defense which = land value = 20 }\r
++	command = { type = rain_move which = land value = 20 }\r
++	command = { type = snow_attack which = land value = 20 }\r
++	command = { type = snow_defense which = land value = 20 }\r
++	command = { type = snow_move which = land value = 20 }\r
++	command = { type = frozen_attack which = land value = 20 }\r
++	command = { type = frozen_defense which = land value = 20 }\r
++	command = { type = frozen_move which = land value = 20 }\r
++	command = { type = blizzard_attack which = land value = 20 }\r
++	command = { type = blizzard_defense which = land value = 20 }\r
++	command = { type = blizzard_move which = land value = 20 }\r
++	command = { type = plain_attack which = land value = 20 }\r
++	command = { type = plain_defense which = land value = 20 }\r
++	command = { type = plain_move which = land value = 20 }\r
++	command = { type = forest_attack which = land value = 20 }\r
++	command = { type = forest_defense which = land value = 20 }\r
++	command = { type = forest_move which = land value = 20 }\r
++	command = { type = jungle_attack which = land value = 20 }\r
++	command = { type = jungle_defense which = land value = 20 }\r
++	command = { type = jungle_move which = land value = 20 }\r
++	command = { type = hill_attack which = land value = 20 }\r
++	command = { type = hill_defense which = land value = 20 }\r
++	command = { type = hill_move which = land value = 20 }\r
++	command = { type = mountain_attack which = land value = 20 }\r
++	command = { type = mountain_defense which = land value = 20 }\r
++	command = { type = mountain_move which = land value = 20 }\r
++	command = { type = swamp_attack which = land value = 20 }\r
++	command = { type = swamp_defense which = land value = 20 }\r
++	command = { type = swamp_move which = land value = 20 }\r
++	command = { type = desert_attack which = land value = 20 }\r
++	command = { type = desert_defense which = land value = 20 }\r
++	command = { type = desert_move which = land value = 20 }\r
++	command = { type = urban_attack which = land value = 20 }\r
++	command = { type = urban_defense which = land value = 20 }\r
++	command = { type = urban_move which = land value = 20 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中華民国対軍閥戦終了AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656007\r
++	random = no \r
++	country = CHI\r
++	\r
++	trigger = {\r
++	event = 6959107 # 北伐の再開\r
++	event = 6656006 # 中華民国対軍閥戦AI\r
++	ai = yes\r
++	OR = {\r
++	NOT = {\r
++	war = { country = CSX }\r
++	war = { country = CXB }\r
++	war = { country = CYN }\r
++	war = { country = CGX }\r
++	}\r
++	war = { country = ENG }\r
++	war = { country = FRA }\r
++	war = { country = USA }\r
++	war = { country = GER }\r
++	war = { country = ITA }\r
++	war = { country = JAP }\r
++	war = { country = SOV }\r
++	war = { country = U67 }\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = {  type = surprise which = land value = -10 }\r
++	command = {  type = surprise which = naval value = -10 }\r
++	command = {  type = surprise which = air value = -10 }\r
++	command = {  type = speed which = land value = -5 }\r
++	command = { type = clear_attack which = land value = -20 }\r
++	command = { type = clear_defense which = land value = -20 }\r
++	command = { type = clear_move which = land value = -20 }\r
++	command = { type = rain_attack which = land value = -20 }\r
++	command = { type = rain_defense which = land value = -20 }\r
++	command = { type = rain_move which = land value = -20 }\r
++	command = { type = snow_attack which = land value = -20 }\r
++	command = { type = snow_defense which = land value = -20 }\r
++	command = { type = snow_move which = land value = -20 }\r
++	command = { type = frozen_attack which = land value = -20 }\r
++	command = { type = frozen_defense which = land value = -20 }\r
++	command = { type = frozen_move which = land value = -20 }\r
++	command = { type = blizzard_attack which = land value = -20 }\r
++	command = { type = blizzard_defense which = land value = -20 }\r
++	command = { type = blizzard_move which = land value = -20 }\r
++	command = { type = plain_attack which = land value = -20 }\r
++	command = { type = plain_defense which = land value = -20 }\r
++	command = { type = plain_move which = land value = -20 }\r
++	command = { type = forest_attack which = land value = -20 }\r
++	command = { type = forest_defense which = land value = -20 }\r
++	command = { type = forest_move which = land value = -20 }\r
++	command = { type = jungle_attack which = land value = -20 }\r
++	command = { type = jungle_defense which = land value = -20 }\r
++	command = { type = jungle_move which = land value = -20 }\r
++	command = { type = hill_attack which = land value = -20 }\r
++	command = { type = hill_defense which = land value = -20 }\r
++	command = { type = hill_move which = land value = -20 }\r
++	command = { type = mountain_attack which = land value = -20 }\r
++	command = { type = mountain_defense which = land value = -20 }\r
++	command = { type = mountain_move which = land value = -20 }\r
++	command = { type = swamp_attack which = land value = -20 }\r
++	command = { type = swamp_defense which = land value = -20 }\r
++	command = { type = swamp_move which = land value = -20 }\r
++	command = { type = desert_attack which = land value = -20 }\r
++	command = { type = desert_defense which = land value = -20 }\r
++	command = { type = desert_move which = land value = -20 }\r
++	command = { type = urban_attack which = land value = -20 }\r
++	command = { type = urban_defense which = land value = -20 }\r
++	command = { type = urban_move which = land value = -20 }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  日本\r
+ ##########################################################################\r
+@@ -247,6 +473,145 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  民主主義体制不満度減少AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656103\r
++	random = no \r
++	country = JAP\r
++	\r
++	trigger = {\r
++	government = democratic\r
++	dissent = 50\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = dissent value = -100 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  輸送艦生産AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656104\r
++	random = no \r
++	country = JAP\r
++	\r
++	trigger = {\r
++	technology = 3830 # 1936年型輸送艦\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++\r
++	action = {\r
++	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
++	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
++	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
++	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
++	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
++	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  樺太防衛AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656105\r
++	random = no\r
++	country = JAP\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	OR = {\r
++	owned = { province = 1541 data = JAP } # オハ\r
++	owned = { province = 1542 data = JAP } # 豐原\r
++	owned = { province = 2792 data = JAP } # アレクサンドロフスク・サハリンスキー\r
++	owned = { province = 2793 data = JAP } # 敷香\r
++	}\r
++	OR = {\r
++	control = { province = 1541 data = -2 } # オハ\r
++	control = { province = 1542 data = -2 } # 豐原\r
++	control = { province = 2792 data = -2 } # アレクサンドロフスク・サハリンスキー\r
++	control = { province = 2793 data = -2 } # 敷香\r
++	}\r
++\r
++	NOT = { local_flag = Karahuto_Bouei }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/Karahuto_Bouei.ai" }\r
++	command = { type = local_setflag which = Karahuto_Bouei }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  樺太防衛終了AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656106\r
++	random = no\r
++	country = JAP\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	OR = {\r
++	owned = { province = 1541 data = JAP } # オハ\r
++	owned = { province = 1542 data = JAP } # 豐原\r
++	owned = { province = 2792 data = JAP } # アレクサンドロフスク・サハリンスキー\r
++	owned = { province = 2793 data = JAP } # 敷香\r
++	}\r
++	AND = {\r
++	control = { province = 1541 data = -3 } # オハ\r
++	control = { province = 1542 data = -3 } # 豐原\r
++	control = { province = 2792 data = -3 } # アレクサンドロフスク・サハリンスキー\r
++	control = { province = 2793 data = -3 } # 敷香\r
++	}\r
++	local_flag = Karahuto_Bouei\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/Karahuto_Bouei_End.ai" }\r
++	command = { type = local_clrflag which = Karahuto_Bouei }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  奉天共和国\r
+ ##########################################################################\r
+@@ -354,4 +719,1068 @@ event = {
+ 	action = {\r
+ 	command = { type = ai which = "IFazia/switch/USA_invade_chi.ai" }\r
+ 	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシア\r
++##########################################################################\r
++#  ロシア領土請求AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656401\r
++	random = no \r
++	tag = { EST LIT LAT } \r
++	persistent = yes\r
++\r
++	trigger = {\r
++	ai = yes\r
++	event = 7060041 # 新たな汎スラヴ主義\r
++	OR = {\r
++	country = EST\r
++	country = LAT\r
++	country = LIT\r
++	}\r
++	NOT = { local_flag = Balticclaims } \r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1938 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/UER_Baltic_Claims.ai" }\r
++	command = { type = local_setflag which = Balticclaims }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシア領土請求AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656402\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	event = 7060041 # 新たな汎スラヴ主義\r
++	NOT = { non_aggression = { country = EST country = UER } }\r
++	NOT = { non_aggression = { country = LIT country = UER } }\r
++	NOT = { non_aggression = { country = LAT country = UER } }\r
++	NOT = {	alliance = { country = GER country = EST } }\r
++	NOT = {	alliance = { country = GER country = LIT } }\r
++	NOT = {	alliance = { country = GER country = LAT } }\r
++	NOT = {	alliance = { country = ENG country = EST } }\r
++	NOT = {	alliance = { country = ENG country = LIT } }\r
++	NOT = {	alliance = { country = ENG country = LAT } }\r
++	OR = {\r
++	exists = EST\r
++	exists = LIT\r
++	exists = LAT\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1938 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/UER_Baltic.ai" } # decrease Sov AI intell spending, so it has money to demand territory.\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシア領土請求消滅AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656403\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	event = 7060041 # 新たな汎スラヴ主義\r
++	event = 6656402 # AIイベント\r
++	NOT = {\r
++	exists = EST\r
++	exists = LIT\r
++	exists = LAT\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1938 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/UER_Baltic_off.ai" } # decrease Sov AI intell spending, so it has money to demand territory.\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ戦時体制時反応AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656404\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	OR = {\r
++	atwar = yes\r
++	atwar = GER\r
++	year = 1938\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++	command = { type = ai which = "IFazia/switch/UER_GER_atwar.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  対ドイツ戦AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656405\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	war = { country = GER }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/UER_Germany.ai" }\r
++	command = { type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  対ドイツ戦二年目AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656406\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	war = { country = GER }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/UER_Germany_Second_Year.ai" }\r
++	command = { type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシア対独国境AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656407\r
++	random = no\r
++	country = UER\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	event = 7060078 # ドイツへ西部ポーランドを割譲\r
++	NOT = { war = { country = GER } }\r
++	NOT = { war = { country = FIN } }\r
++	NOT = {	lost_national = { country = UER value = 2 } }\r
++	NOT = { local_flag = UERDefensePrepareGER }\r
++	OR = {\r
++	#garrison = { country = GER province = 236  type = land size = 8 area = no } # Zamosc\r
++	#garrison = { country = GER province = 237  type = land size = 8 area = no } # Przemyst\r
++	garrison = { country = GER province = 243  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 252  type = land size = 8 area = no } # Suwalki\r
++	#garrison = { country = GER province = 184  type = land size = 8 area = no } # Konigsberg\r
++	#garrison = { country = GER province = 259  type = land size = 8 area = no } # Memel\r
++	garrison = { country = GER province = 185  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 182  type = land size = 8 area = no } # Suwalki\r
++	garrison = { country = GER province = 254  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 250  type = land size = 8 area = no } # Suwalki\r
++	garrison = { country = GER province = 228  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 239  type = land size = 8 area = no } # Suwalki\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = local_setflag which = UERDefensePrepareGER }\r
++	command = { type = ai which = "IFazia/switch/UER_Defense_GER_Border.ai" }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  ロシア対独国境消滅AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656408\r
++	random = no \r
++	country = UER\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	NOT = { war = { country = GER } }\r
++	NOT = { war = { country = FIN } }\r
++	NOT = {	lost_national = { country = UER value = 2 } }\r
++	local_flag = UERDefensePrepareGER\r
++	NOT = {\r
++	event = 7060078 # ドイツへ西部ポーランドを割譲\r
++	OR = {\r
++	#garrison = { country = GER province = 236  type = land size = 8 area = no } # Zamosc\r
++	#garrison = { country = GER province = 237  type = land size = 8 area = no } # Przemyst\r
++	garrison = { country = GER province = 243  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 252  type = land size = 8 area = no } # Suwalki\r
++	#garrison = { country = GER province = 184  type = land size = 8 area = no } # Konigsberg\r
++	#garrison = { country = GER province = 259  type = land size = 8 area = no } # Memel\r
++	garrison = { country = GER province = 185  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 182  type = land size = 8 area = no } # Suwalki\r
++	garrison = { country = GER province = 254  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 250  type = land size = 8 area = no } # Suwalki\r
++	garrison = { country = GER province = 228  type = land size = 8 area = no } # Lubin\r
++	garrison = { country = GER province = 239  type = land size = 8 area = no } # Suwalki\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++		command = { type = local_clrflag which = UERDefensePrepareGER }\r
++		command = { type = ai which = "IFazia/switch/UER_Defense_Standard.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシアビターピースAI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656409\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	event = 2003077 # Bitter Peace\r
++	NOT = { war = { country = GER } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++	command = { type = ai which = "IFazia/switch/UER_Bitter_Peace.ai" }\r
++	command = { type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシア通常生産AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656410\r
++	random = no \r
++	country = UER\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	NOT = { local_flag = UERBuildStandard }\r
++	NOT = {\r
++	NOT = { land_percentage = { country = JAP value = 1.55 } }\r
++	OR = {\r
++	AND = {\r
++	ai = GER\r
++	NOT = { land_percentage = { country = GER value = 2.05 } }\r
++	}\r
++	AND = {\r
++	NOT = { ai = GER }\r
++	NOT = { land_percentage = { country = GER value = 3.05 } }\r
++	}\r
++	}\r
++	AND = {\r
++	war = { country = ENG }\r
++	NOT = { land_percentage = { country = ENG value = 2.05 } }\r
++	}\r
++	AND = {\r
++	war = { country = USA }\r
++	NOT = { land_percentage = { country = USA value = 1.35 } }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++	command = { type = local_setflag which = UERBuildStandard }\r
++	command = { type = local_clrflag which = UERBuildLand }\r
++	command = { type = local_clrflag which = UERBuildLandPanic }\r
++	command = { type = ai which = "IFazia/switch/UER_Build_Standard.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシア陸軍生産AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656411\r
++	random = no \r
++	country = UER\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	NOT = { local_flag = UERBuildLand }\r
++	OR = {\r
++	AND = {\r
++	ai = GER\r
++	NOT = { land_percentage = { country = GER value = 2.0 } }\r
++	land_percentage = { country = GER value = 0.95 }\r
++	}\r
++	AND = {\r
++	NOT = { ai = GER }\r
++	NOT = { land_percentage = { country = GER value = 3.0 } }\r
++	land_percentage = { country = GER value = 0.95 }\r
++	}\r
++	AND = {\r
++	NOT = { land_percentage = { country = JAP value = 1.5 } }\r
++	land_percentage = { country = JAP value = 0.95 }\r
++	}\r
++	AND = {\r
++	war = { country = ENG }\r
++	NOT = { land_percentage = { country = ENG value = 2.0 } }\r
++	}\r
++	AND = {\r
++	war = { country = USA }\r
++	NOT = { land_percentage = { country = USA value = 1.3 } }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++		command = { type = local_clrflag which = UERBuildStandard }\r
++		command = { type = local_setflag which = UERBuildLand }\r
++		command = { type = local_clrflag which = UERBuildLandPanic }\r
++		command = { type = ai which = "IFazia/switch/UER_Build_Land.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシアパニック生産AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656412\r
++	random = no \r
++	country = UER\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	NOT = { local_flag = UERBuildLandPanic }\r
++	OR = {\r
++	NOT = { land_percentage = { country = GER value = 0.9 } }\r
++	AND = {\r
++	NOT = { ai = JAP }\r
++	NOT = { land_percentage = { country = JAP value = 0.9 } }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++	command = { type = local_clrflag which = UERBuildStandard }\r
++	command = { type = local_clrflag which = UERBuildLand }\r
++	command = { type = local_setflag which = UERBuildLandPanic }\r
++	command = { type = ai which = "IFazia/switch/UER_Build_Panic.ai" } \r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシア首都変更AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656413\r
++	random = no\r
++	country = UER\r
++\r
++	trigger = {\r
++	ai = yes\r
++	atwar = yes\r
++	control = { province = 680 data = UER } # ゴーリキー\r
++	NOT = { capital = { province = 668 data = UER } } #Kubyschiev\r
++	OR = {\r
++	NOT = { control = { province = 572 data = UER } } #Moscow\r
++	}\r
++	OR = { \r
++	NOT  = { control = { province = 558 data = UER } } #Rzhev\r
++	NOT  = { control = { province = 574 data = UER } } #Vyazma\r
++	NOT  = { control = { province = 567 data = UER } } #Serpukhov\r
++	NOT  = { control = { province = 570 data = UER } } #Zagorsk\r
++	NOT  = { control = { province = 569 data = UER } } #Tver\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	desc = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 2\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = { \r
++		command = { type = capital which = 680 }\r
++	}\r
++}\r
++event = {\r
++	id = 6656414\r
++	random = no\r
++	country = UER\r
++\r
++	trigger = {\r
++	ai = yes\r
++	atwar = yes\r
++	event = 3007031\r
++	control = { province = 664 data = UER } # Naberez\r
++	NOT = { capital = { province = 668 data = UER } } #Kubyschiev\r
++	NOT = { control = { province = 572 data = UER } } #Moscow\r
++	OR = { \r
++	NOT  = { control = { province = 682 data = UER } } #Ivanovo\r
++	NOT  = { control = { province = 683 data = UER } } #Arzamas\r
++	NOT  = { control = { province = 578 data = UER } } #Sasovo\r
++	NOT  = { control = { province = 670 data = UER } } #Saransk\r
++	NOT  = { control = { province = 675 data = UER } } #Cheboksary\r
++	NOT  = { control = { province = 680 data = UER } } #Gorky\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	desc = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 2\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = { \r
++	command = { type = capital which = 664 }\r
++	command = { type = sleepevent which = 3007031 }		\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 6656415\r
++	random = no\r
++	country = UER\r
++\r
++	trigger = {\r
++	ai = yes\r
++	atwar = yes\r
++	OR = {\r
++	event = 6656413\r
++	event = 6656414\r
++	}\r
++	control = { province = 682 data = UER }\r
++	control = { province = 683 data = UER }\r
++	control = { province = 578 data = UER }\r
++	control = { province = 670 data = UER }\r
++	control = { province = 675 data = UER }\r
++	control = { province = 680 data = UER }\r
++	control = { province = 558 data = UER }\r
++	control = { province = 574 data = UER }\r
++	control = { province = 567 data = UER }\r
++	control = { province = 570 data = UER }\r
++	control = { province = 569 data = UER }\r
++	control = { province = 572 data = UER }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	desc = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 2\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = { \r
++	command = { type = capital which = 572 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ロシアボーナスAI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656416\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	exists = GER \r
++	war = { country = UER }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++\r
++	action_a = {\r
++	command = { type = manpowerpool value = 50 when = 1 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { type = morale which = naval value = 10 }\r
++	command = { type = morale which = air value = 10 }\r
++	command = { type = build_time which = land when = on_upgrade value = -15 }\r
++	command = { type = build_cost which = land when = on_upgrade value = -1 }\r
++	command = { type = frozen_move which = land value = 13 }\r
++	command = { type = frozen_attack which = land value = 13 }\r
++	command = { type = frozen_defense which = land value = 13 }\r
++	command = { type = snow_move which = land value = 13 }\r
++	command = { type = snow_attack which = land value = 13 }\r
++	command = { type = snow_defense which = land value = 13 }\r
++	command = { type = jungle_move which = land value = 13 }\r
++	command = { type = jungle_attack which = land value = 13 }\r
++	command = { type = jungle_defense which = land value = 13 }\r
++	command = { type = forest_move which = land value = 5 }\r
++	command = { type = forest_attack which = land value = 5 }\r
++	command = { type = forest_defense which = land value = 5 }\r
++	command = { type = desert_move which = land value = 13 }\r
++	command = { type = desert_attack which = land value = 13 }\r
++	command = { type = desert_defense which = land value = 13 }\r
++	command = { type = muddy_move which = land value = 18 }\r
++	command = { type = muddy_attack which = land value = 18 }\r
++	command = { type = muddy_defense which = land value = 18 }\r
++	command = { type = mountain_move which = land value = 13 }\r
++	command = { type = mountain_attack which = land value = 13 }\r
++	command = { type = mountain_defense which = land value = 13 }\r
++	command = { type = hill_move which = land value = 8 }\r
++	command = { type = hill_attack which = land value = 8 }\r
++	command = { type = hill_defense which = land value = 8 }\r
++	command = { type = build_division which = hq value = anti_air when = 4 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = hq value = anti_air when = 4 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = artillery when = 11 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = artillery when = 12 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = infantry value = artillery when = 11 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = artillery when = 12 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = infantry value = engineer when = 11 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = engineer when = 12 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = infantry value = engineer when = 11 cost = -0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = engineer when = 12 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ダライ・ラマ・ハモ・トンドウプ就任\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656417\r
++	random = no\r
++	country = TIB\r
++	style = 2\r
++	\r
++	trigger = {\r
++	NOT = { headofstate = 440001 } # ダライ・ラマ・ハモ・トンドウプ\r
++	OR = {\r
++	AND = { year = 1935 random = 15 }\r
++	AND = { year = 1936 random = 20 }\r
++	year = 1937\r
++	}\r
++	}\r
++\r
++	date = { day = 5 month = july year = 1935 }\r
++	offset = 60\r
++	deathdate = { day = 29 month = december year = 1939 }\r
++\r
++	name = "EVT_148_NAME"\r
++	desc = "EVT_148_DESC"\r
++	picture = "minister_resign"\r
++\r
++	action_a = {\r
++	name = "EVT_362_ACTC"\r
++	command = { type = headofstate which = 440001 } # ダライ・ラマ・ハモ・トンドウプ\r
++	command = { type = sleepminister which = 440087 } # ラデン・リンポチェ（摂政）\r
++	command = { type = sleepevent which = 2108010 }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  フィンランド傀儡政権成立\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656418\r
++	random = no\r
++	country = FIN\r
++	\r
++	trigger = {\r
++	puppet = { country = FIN country = UER }\r
++	OR = {\r
++	government = democratic\r
++	government = fascist\r
++	}\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	desc = "AI_EVENT"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	trigger = { government = democratic }\r
++	command = { type = flag_ext where = FIN which = "_RUS" }\r
++	command = { trigger = { NOT = { event = 7060404 } } type = name where = FIN which = "フィンランド民主国" }\r
++	command = { trigger = { event = 7060404 } type = name where = FIN which = "フィンランド大公国" }\r
++	command = { type = set_domestic which = democratic value = 9 } \r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { trigger = { NOT = { event = 7060404 } } type = headofstate which = 145121 } # キュヨスティ・カリオ\r
++	command = { trigger = { event = 7060404 } type = wakeminister which = 145305 } # 全ロシアのツァーリ\r
++	command = { trigger = { event = 7060404 } type = wakeminister which = 145306 } # 全ロシアのツァーリ\r
++	command = { trigger = { event = 7060404 } type = headofstate which = 145305 } # 全ロシアのツァーリ\r
++	command = { type = headofgovernment which = 145025 } # アイモ・カヤンデル\r
++	command = { type = foreignminister which = 145042 } # ユホ・E・エルッコ\r
++	command = { type = armamentminister which = 145055 } # ユホ・ニウカネン\r
++	command = { type = ministerofsecurity which = 145071 } # アーホ・K・ケッコネン\r
++	command = { type = ministerofintelligence which = 145094 } # ヴァイノ・L・R・ヴァルヴ\r
++	command = { type = chiefofstaff which = 145101 } # ユーゴ・オステルマン\r
++	command = { type = chiefofarmy which = 145106 } # K・L・オーシュ\r
++	command = { type = chiefofnavy which = 145009 } # ヴァイノ・L・R・ヴァルヴ\r
++	command = { type = chiefofair which = 145115 } # トイヴォ・ソメルト\r
++	command = { type = sleepminister which = 145011 } # カール・G・マンネルヘイム\r
++	command = { type = sleepminister which = 145102 }\r
++	command = { type = sleepminister which = 145107 }\r
++	command = { type = sleepminister which = 145122 }\r
++	command = { type = sleepminister which = 145301 }\r
++	command = { type = sleepminister which = 145302 }\r
++	command = { type = sleepminister which = 145303 }\r
++	command = { type = sleepleader which = 145108 }\r
++	command = { type = sleepteam which = 145006 }\r
++	}\r
++\r
++	action = {\r
++	trigger = { government = fascist }\r
++	command = { type = flag_ext where = FIN which = "_RUS" }\r
++	command = { trigger = { NOT = { event = 7060404 } } type = name where = FIN which = "フィンランド国" }\r
++	command = { trigger = { event = 7060404 } type = name where = FIN which = "フィンランド大公国" }\r
++	command = { type = set_domestic which = democratic value = 3 } \r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { NOT = { event = 7060404 } } type = headofstate which = 145019 } # I・ヴィヒトリ・I・コソラ\r
++	command = { trigger = { event = 7060404 } type = wakeminister which = 145305 } # 全ロシアのツァーリ\r
++	command = { trigger = { event = 7060404 } type = wakeminister which = 145306 } # 全ロシアのツァーリ\r
++	command = { trigger = { event = 7060404 } type = headofstate which = 145306 } # 全ロシアのツァーリ\r
++	command = { type = headofgovernment which = 145035 } # ヴィルホ・アンナラ\r
++	command = { type = foreignminister which = 145048 } # ヒリヤ・E・リーピネン\r
++	command = { type = armamentminister which = 145068 } # ユホ・ニウカネン\r
++	command = { type = ministerofsecurity which = 145087 } # ブルーノ・サルミアラ\r
++	command = { type = ministerofintelligence which = 145097 } # ヴルホ・アンナラ\r
++	command = { type = chiefofstaff which = 145103 } # クルト・M・ワレニウス\r
++	command = { type = chiefofarmy which = 145108 } # ヴルホ・V・P・ヘラネン\r
++	command = { type = chiefofnavy which = 145112 } # ラウリ・T・チアイネン\r
++	command = { type = chiefofair which = 145116 } # タウノ・ヴィルヤネン\r
++	command = { type = sleepminister which = 145011 } # カール・G・マンネルヘイム\r
++	command = { type = sleepminister which = 145102 }\r
++	command = { type = sleepminister which = 145107 }\r
++	command = { type = sleepminister which = 145122 }\r
++	command = { type = sleepminister which = 145301 }\r
++	command = { type = sleepminister which = 145302 }\r
++	command = { type = sleepminister which = 145303 }\r
++	command = { type = sleepleader which = 145108 }\r
++	command = { type = sleepteam which = 145006 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  民主主義体制不満度減少AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656419\r
++	random = no \r
++	country = UER\r
++	\r
++	trigger = {\r
++	government = democratic\r
++	dissent = 50\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = dissent value = -100 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（DEN）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656420\r
++	random = no \r
++	country = DEN\r
++	\r
++	trigger = {\r
++	puppet = { country = DEN country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/DEN_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（NOR）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656421\r
++	random = no \r
++	country = NOR\r
++	\r
++	trigger = {\r
++	puppet = { country = NOR country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/NOR_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（SWE）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656422\r
++	random = no \r
++	country = SWE\r
++	\r
++	trigger = {\r
++	puppet = { country = SWE country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/SWE_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（FIN）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656423\r
++	random = no \r
++	country = FIN\r
++	\r
++	trigger = {\r
++	puppet = { country = FIN country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/FIN_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（BUL）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656424\r
++	random = no \r
++	country = BUL\r
++	\r
++	trigger = {\r
++	puppet = { country = BUL country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/BUL_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（GRE）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656425\r
++	random = no \r
++	country = GRE\r
++	\r
++	trigger = {\r
++	puppet = { country = GRE country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/GRE_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（POL）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656426\r
++	random = no \r
++	country = POL\r
++	\r
++	trigger = {\r
++	puppet = { country = POL country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/POL_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（ROM）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656427\r
++	random = no \r
++	country = ROM\r
++	\r
++	trigger = {\r
++	puppet = { country = ROM country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/ROM_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  親ロシア傀儡AI（YUG）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656428\r
++	random = no \r
++	country = YUG\r
++	\r
++	trigger = {\r
++	puppet = { country = YUG country = UER }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/YUG_PUT_UER.ai" }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  謝辞イベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 226226002\r
++	random = no\r
++	country = -1\r
++\r
++	trigger = {\r
++	ai = no\r
++	}\r
++\r
++	name = "SHAJI_NAME_AZIA"\r
++	desc = "SHAJI_DESC_AZIA"\r
++	style = 2\r
++	picture = "koudou"\r
++\r
++	date = { day = 0 month = 0 year = 1930 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++	name = "ACTIONNAME_SHAJI_AZIA" \r
++	command = { }\r
++	}\r
+ }
+\ No newline at end of file

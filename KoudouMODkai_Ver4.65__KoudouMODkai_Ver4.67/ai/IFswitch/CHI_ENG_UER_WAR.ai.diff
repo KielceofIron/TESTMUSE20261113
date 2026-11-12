@@ -1,0 +1,200 @@
+--- A/ai/IFswitch/CHI_ENG_UER_WAR.ai [ascii]
++++ B/ai/IFswitch/CHI_ENG_UER_WAR.ai [utf-8]
+@@ -39,9 +39,12 @@ protect = {
+ # Ground Combat, Leaders and Garrisons\r
+ ###################################\r
+ garrison = {\r
+-	beach		= 20\r
+-	capital		= 15	# Our capital\r
+-	\r
++	# PRIORITIES:\r
++	beach			= 1 # 20 # 50	# Beach level 2\r
++	capital		= 3	# Our capital\r
++	human_border	= 30		# Ignored for allied human players\r
++	war_target		= 500	# The next country targeted for attack by this AI\r
++	reserves 		= 2\r
+ 	# PRIORITIES:\r
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+@@ -85,4 +88,179 @@ front = {
+ 	hill_attack 	= 1.2\r
+ 	urban_attack 	= 1.2\r
+ 	river 			= 1.2\r
+-} 
+\ No newline at end of file
++} \r
++admiral = { \r
++	min_org		= 100	# NEW: Percent of org gained back before the unit can leave port\r
++	min_dmg		= 98    # NEW: Percent of dmg gained back before the unit can leave port\r
++	return_org 	= 60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships\r
++	return_dmg 	= 80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships\r
++\r
++	min_core_attack_fleets  = 1		# Minimum amount of attack fleets to defend CORE provinces (default 0)\r
++	num_attack_fleets		= 10 	# ENG/USA default 3, JAP default 2 everyone else is 1\r
++\r
++	base = {\r
++		1245 #葫芦島（唐山）\r
++		1219 # 大連\r
++	     	1328 # 青島\r
++     		1346 # 寧波 \r
++     		1338 # 上海 \r
++     		1358 # 福州\r
++     		2823 # 湛江（皇道マップ広州湾）\r
++		1367 #上の代替？\r
++		1369 # 広州\r
++		1365 # 海南\r
++		1191 # ウラジオストク\r
++		1232 # 釜山\r
++		1184 # ペトロパブロフスク・カムチャツキー\r
++		1371 # 香港\r
++		1362 # 台北\r
++		1560 # 長崎\r
++		1558 #舞鶴\r
++		2787 # 長崎 皇道マップ\r
++		1550 # 横浜\r
++		1552 # 東京\r
++		1543 # 千島\r
++		1563 # 沖縄\r
++		1661 # 硫黄島\r
++		1683 # グアム\r
++		1685 # サイパン\r
++		1565 # マニラ\r
++		1395 # ハノイ\r
++		1399 # ホーチミン\r
++		2174 # アッツ\r
++		2151 # ウナラスカ\r
++		2142 # アンカレッジ\r
++		1726 # ラバウル\r
++		1607 # ポートモレスビー\r
++		1647 # ジョグジャカルタ\r
++		1625 # ブルネイ\r
++		1432 # シンガポール\r
++		1511 # コロンボ\r
++		1586 # ニューカレドニア\r
++		1697 # ダーウィン\r
++		1694 # コリー\r
++		1705 # シドニー\r
++		1721 # ウェリントン\r
++		1728 # スバ（フィジー\r
++		1673 # ウェーク\r
++		1739 # ミッドウェイ\r
++		1734 # 真珠湾\r
++		1613 # ウェスト島\r
++		1611 # マレ（モルディブ\r
++		896 # セントヘレナ\r
++		993 # アスンシオン\r
++		#995 # アゾレス\r
++       		#429 #マルタ\r
++\r
++	}\r
++\r
++\r
++	target = { } \r
++	core = {\r
++#日中周辺\r
++2488 2489 2490 2491 2492 2493 2495 2496 \r
++2497 2498 2499 2511 2512 2513 2514 2515 \r
++2516 2517 2518 2519 2520 2521 2522 2523 \r
++2524 2525 2527\r
++#極東ロシア\r
++2500 2501 2502 2503 2504 2505 2506 2507 2508 2509 2510\r
++#ハワイ\r
++2634 2635 2636\r
++#\r
++2455 2458\r
++2528\r
++2435 2434 2598 \r
++2389 2388\r
++ } \r
++}\r
++construction = { \r
++	max_factor = 0.0 \r
++\r
++	AA_batteries = yes\r
++	max_AA_level = 5\r
++	AA_provs = {\r
++    	1299 # 重慶\r
++	1317 # 武漢\r
++	1328 # 青島\r
++	1337 # 南京\r
++	1338 # 上海\r
++	} \r
++\r
++	coastal_fort = no\r
++	max_coastal_level = 3\r
++	coastal_fort_provs = { } \r
++\r
++	radar_station = yes \r
++	max_radar = 5 \r
++	radar_provs = {\r
++    	1299 # 重慶\r
++	1317 # 武漢\r
++	1328 # 青島\r
++	1337 # 南京\r
++	1338 # 上海\r
++	} \r
++\r
++	air_base = yes\r
++	max_air_base = 5\r
++	air_base_provs = {\r
++	1198 # 布特哈\r
++	1208 # 新京\r
++	1247 # 北京\r
++	1264 # 蘭洲\r
++	1281 # ウルムチ（鳥魯木齊）\r
++	1289 # ラサ（拉薩）\r
++    	1299 # 重慶\r
++	1317 # 武漢\r
++	1328 # 青島\r
++	1337 # 南京\r
++	1338 # 上海\r
++	1369 # 廣州\r
++	1378 # 桂林\r
++	1390 # 昆明\r
++	}\r
++\r
++	naval_base = yes\r
++	max_naval_base = 5 \r
++	naval_base_provs = {\r
++	1328 # 青島\r
++	1338 # 上海\r
++	1358 # 福州\r
++	1360 # 廈門\r
++	1369 # 廣州\r
++	} \r
++\r
++	land_fort = yes\r
++	max_land_level = 5\r
++	fort_provs	= {\r
++	1197 # 鶴崗\r
++	1200 # 呼馬\r
++	1201 # 黒河\r
++	1202 # 佳木斯\r
++	1204 # 鶏西\r
++	1205 # 牡丹江\r
++	1206 # 海拉爾\r
++	1209 # 烏蘭浩特\r
++	1212 # 延吉\r
++	1261 # 隴南\r
++	1267 # 安康\r
++	1296 # 灌縣\r
++	1297 # 成都\r
++	1298 # 瀘州\r
++	1299 # 重慶\r
++	1302 # 萬縣\r
++	1337 # 南京\r
++	1343 # 淮南\r
++	1345 # 杭洲\r
++	1351 # 上饒\r
++	}\r
++	fort_borders = { UER } \r
++\r
++	ic_at_war = no\r
++	force_ic_until = 1930\r
++	ic_end_year = 1930\r
++	IC_provs = { } \r
++\r
++	nuclear_reactor = yes	\r
++	nuclear_reactor_prov = 1299 # 重慶\r
++	max_nuclear = 10\r
++}\r

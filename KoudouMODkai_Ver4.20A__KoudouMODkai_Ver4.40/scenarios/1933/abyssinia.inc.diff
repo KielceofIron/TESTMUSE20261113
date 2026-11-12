@@ -1,0 +1,238 @@
+--- A/scenarios/1933/abyssinia.inc [cp932]
++++ B/scenarios/1933/abyssinia.inc [cp932]
+@@ -7,7 +7,7 @@
+  country = \r
+  {  tag                    = ETH \r
+ 	ai = "eth_1936.ai"\r
+-	ai_settings	= { flags = { AI_reinforcements = yes RES = yes MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes MOB6 = yes MOB7 = yes } }\r
++	# ai_settings	= { flags = { AI_reinforcements = yes RES = yes MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes MOB6 = yes } } # MOB7 = yes\r
+ 	dissent = 20\r
+ 	# Resource Reserves \r
+ 	energy                 = 1060\r
+@@ -26,7 +26,7 @@
+      political_left    = 4 \r
+      free_market       = 7 \r
+      freedom           = 3 \r
+-     professional_army = 7 \r
++     professional_army = 6 # 7 \r
+      defense_lobby     = 5 \r
+      interventionism   = 2 \r
+     } \r
+@@ -41,7 +41,9 @@
+    techapps               = {  \r
+ \r
+ #Interwar Fighter  \r
+-4500 4510 4520 4530\r
++4500 4510 4520 4530 4540\r
++#Multirole fighter # mods\r
++4300 4310 4320\r
+ #Interwar Armoured Car  \r
+ 2860\r
+ #Light Field Artillery  \r
+@@ -53,11 +55,11 @@
+ #SW Tank \r
+ 7600 7610\r
+ #Early Infantry Division  \r
+-1010 1020 1030 1040 1050 1060 1070\r
++1010 1020 1030 1040 1050 1060 # 1070\r
+ #Early Mountain Division\r
+-1160  1170 1180 1190 1200 1210 1220 \r
++1160  1170 1180 1190 1200 1210 # 1220 \r
+ #1916 Cavalry Division  \r
+-13060 13070 13080 1310 1320 1330 1340 \r
++13060 13070 13080 1310 1320 1330 # 1340 \r
+ #Early Agriculture\r
+ 5700 \r
+ # Great War Land Doctrines (entente)\r
+@@ -82,15 +84,25 @@
+    ministerofsecurity     = {  type = 9 id = 245005  } \r
+    ministerofintelligence = {  type = 9 id = 245006  } \r
+    chiefofstaff           = {  type = 9 id = 245007  } \r
+-   chiefofarmy            = {  type = 9 id = 245008  } \r
++   chiefofarmy            = {  type = 9 id = 245504  } # mods\r
+    chiefofnavy            = {  type = 9 id = 245009  } \r
+-   chiefofair             = {  type = 9 id = 245010  } \r
++   chiefofair             = {  type = 9 id = 245064  } # mods\r
+   #################################################################################### \r
+  #OOB Ethiopian Troops - Second Italo Abyssinian War 1935-1936 by Cardus \r
+  # ref. http://en.wikipedia.org/wiki/Ethiopian_Order_of_Battle_Second_Italo-Abyssinian_War \r
+  # ref http://it.wikipedia.org/wiki/Guerra_d%27Etiopia \r
+  # ref http://en.wikipedia.org/wiki/Ethiopian_Air_Force#Early_years_.281929-1935.29 \r
+  ##################################################################################### \r
++\r
++  # fullkai追加reader\r
++\r
++   dormant_leaders        = {  \r
++		245501 # ミシカ・バビチェフ\r
++		245035 # ジョン・ロビンソン\r
++		245507 # ワヒブ・パシャ\r
++		245508 # タリク・ベイ\r
++		245509 # ヒョードル・コノヴァロフ\r
++}\r
+   \r
+          landunit =\r
+        {  id       = {  type = 31000 id = 1  }\r
+@@ -115,24 +127,23 @@
+           }\r
+ \r
+         }\r
++\r
+        landunit =\r
+        {  id       = {  type = 31000 id = 3  }\r
+          location = 823\r
+          name     = "左方面軍"\r
+-      # Ras Imru Haile Selassie\r
++		 leader   = 245016 # Ras Imru Haile Selassie\r
+          Division =\r
+          {  id       = {  type = 31000 id = 4  }\r
+-           name     = "ゴジャム州兵隊"\r
+-        # Ras Imru Haile Selassie\r
++           name     = "ゴジャム州兵隊" # led by Ras Imru Haile Selassie\r
+            type     = infantry\r
+            strength = 10\r
+-	   max_strength = 100\r
++	       max_strength = 100\r
+            model    = 4\r
+           }\r
+          Division =\r
+          {  id       = {  type = 31000 id = 5  }\r
+-           name     = "ウォルカイト軍"\r
+-        # Fitawrari Ayalew Birru\r
++           name     = "ウォルカイト軍" # led by Fitawrari Ayalew Birru\r
+            type     = militia\r
+            strength = 10\r
+ 	   max_strength = 100\r
+@@ -174,8 +185,7 @@
+        landunit =\r
+        {  id       = {  type = 31000 id = 10  }\r
+          location = 821\r
+-         name     = "中央軍" \r
+-      #Ras  Mulugeta Yeggazu of Illubabor\r
++         name     = "中央軍" # led by Ras  Mulugeta Yeggazu of Illubabor\r
+          Division =\r
+          {  id       = {  type = 31000 id = 11  }\r
+            name     = "アミノ軍"\r
+@@ -253,7 +263,7 @@
+        {  id       = {  type = 31000 id = 20  }\r
+          location = 821\r
+          name     = "右方面軍" # about 50,000 men\r
+-      #Ras Kassa Haile Darge (Qegnazmach = "General/Commander of the right")\r
++         leader = 245018 #Ras Kassa Haile Darge (Qegnazmach = "General/Commander of the right")\r
+          Division =\r
+          {  id       = {  type = 31000 id = 21  }\r
+            name     = "第1ベゲムデル軍"\r
+@@ -418,8 +428,7 @@
+        landunit =\r
+        {  id       = {  type = 31000 id = 41  }\r
+          location = 819\r
+-         name     = "ダナキル州軍"\r
+-      #Dejazmach Kassa Sebhat\r
++         name     = "ダナキル州軍" # led by Dejazmach Kassa Sebhat\r
+          Division =\r
+          {  id       = {  type = 31000 id = 42  }\r
+            name     = "ダナキル軍"\r
+@@ -488,8 +497,7 @@
+        landunit =\r
+        {  id       = {  type = 31000 id = 50  }\r
+          location = 826\r
+-         name     = "南部軍"\r
+-      #Grazmach Afawarq Walda Samayat\r
++         name     = "南部軍" # led by Grazmach Afawarq Walda Samayat\r
+          Division =\r
+          {  id       = {  type = 31000 id = 51  }\r
+            name     = "オガデン軍"\r
+@@ -502,8 +510,7 @@
+        landunit =\r
+        {  id       = {  type = 31000 id = 52  }\r
+          location = 828\r
+-         name     = "ハラルゲ軍"\r
+-      #Grazmach Afawarq Walda Samayat\r
++         name     = "ハラルゲ軍" # led by Grazmach Afawarq Walda Samayat\r
+          Division =\r
+          {  id       = {  type = 31000 id = 53  }\r
+            name     = "第1イルバボル軍"\r
+@@ -522,7 +529,7 @@
+        }\r
+          Division =\r
+          {  id       = {  type = 31000 id = 55  }\r
+-           name     = "第3イルバボル軍"\r
++           name     = "第3イルバボル軍" \r
+            type     = militia\r
+            strength = 3\r
+ 	   max_strength = 80\r
+@@ -530,8 +537,7 @@
+        }\r
+          Division =\r
+          {  id       = {  type = 31000 id = 56  }\r
+-           name     = "ガム・ゴファ大隊"\r
+-        #Dejazmach Abebe Damtew\r
++           name     = "ガム・ゴファ大隊" # led by Dejazmach Abebe Damtew\r
+            type     = militia\r
+            strength = 10\r
+ 	   max_strength = 60\r
+@@ -539,8 +545,7 @@
+        }\r
+          Division =\r
+          {  id       = {  type = 31000 id = 57  }\r
+-           name     = "アルシ軍"\r
+-        #Dejazmach Amde Mikael\r
++           name     = "アルシ軍" # led by Dejazmach Amde Mikael\r
+            type     = militia\r
+            strength = 10\r
+ 	   max_strength = 60\r
+@@ -548,8 +553,7 @@
+        }\r
+          Division =\r
+          {  id       = {  type = 31000 id = 58  }\r
+-           name     = "クラ軍"\r
+-        #Dejazmach Hapte Mikael\r
++           name     = "クラ軍" # led by Dejazmach Hapte Mikael\r
+            type     = militia\r
+            strength = 10\r
+ 	   max_strength = 20\r
+@@ -559,8 +563,7 @@
+        landunit =\r
+        {  id       = {  type = 31000 id = 59  }\r
+          location = 827\r
+-         name     = "シェベリ軍"\r
+-      #Dejazmach Beine Merid\r
++         name     = "シェベリ軍" # led by Dejazmach Beine Merid\r
+          Division =\r
+          {  id       = {  type = 31000 id = 60  }\r
+            name     = "バレ軍"\r
+@@ -573,12 +576,10 @@
+        landunit =\r
+        {  id       = {  type = 31000 id = 61  }\r
+          location = 830\r
+-         name     = "ジュバ軍"\r
+-      #Dejazmach Beine Merid\r
++         name     = "ジュバ軍" # led by Dejazmach Beine Merid\r
+          Division =\r
+          {  id       = {  type = 31000 id = 62  }\r
+-           name     = "第1シダモ軍"\r
+-        #Ras Desta Damtew\r
++           name     = "第1シダモ軍" # led by Ras Desta Damtew\r
+            type     = infantry\r
+            strength = 5\r
+ 	   max_strength = 80\r
+@@ -588,8 +589,7 @@
+           }\r
+          Division =\r
+          {  id       = {  type = 31000 id = 63  }\r
+-           name     = "第2シダモ軍"\r
+-        #Fitawraris Ademe Anbassu and Tedeamme Zelleka\r
++           name     = "第2シダモ軍" # led by Fitawraris Ademe Anbassu and Tedeamme Zelleka\r
+            type     = infantry\r
+            strength = 5\r
+ 	   max_strength = 80\r
+@@ -609,8 +609,8 @@
+     { id       = { type = 31000 id = 502 }\r
+       name     = "帝国戦闘爆撃航空団"\r
+       strength = 10\r
+-      type     = interceptor\r
+-      model    = 3\r
++      type     = multi_role\r
++      model    = 1\r
+     }\r
+   }\r
+ }\r

@@ -1,0 +1,100 @@
+--- A/db/events/japan.txt [cp932]
++++ B/db/events/japan.txt [cp932]
+@@ -95,9 +95,9 @@ event = {
+ \r
+ 		command = { type = setflag which = 226_Failure }\r
+ 		# mod 追加\r
+-		command = { type = sleepminister which = 50269 } # id = 50269 の閣僚を死亡（使用不能）させる　高橋是清\r
++		command = { type = sleepminister which = 50269 } # id = 50269 の閣僚を死亡（使用不能）させる 高橋是清\r
+ 		command = { type = sleepminister which = 50300 } # id = 50300 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる　斎藤実\r
++		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる 斎藤実\r
+ 		command = { type = sleepminister which = 50323 } # id = 50323 の閣僚を死亡（使用不能）させる\r
+ 		command = { type = sleepminister which = 50535 } # 渡辺錠太郎\r
+ 		command = { type = sleepleader which = 50544 }\r
+@@ -136,14 +136,14 @@ event = {
+ \r
+ 		# mod 追加\r
+ 		command = { type = songs which = seinennihon.txt }\r
+-		command = { type = sleepminister which = 50002 } # id = 50002 の閣僚を死亡（使用不能）させる　岡田啓介\r
++		command = { type = sleepminister which = 50002 } # id = 50002 の閣僚を死亡（使用不能）させる 岡田啓介\r
+ 		command = { type = sleepminister which = 50035 } # id = 50035 の閣僚を死亡（使用不能）させる\r
+ 		command = { type = sleepminister which = 50227 } # id = 50227 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50269 } # id = 50269 の閣僚を死亡（使用不能）させる　高橋是清\r
++		command = { type = sleepminister which = 50269 } # id = 50269 の閣僚を死亡（使用不能）させる 高橋是清\r
+ 		command = { type = sleepminister which = 50300 } # id = 50300 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる　斎藤実\r
++		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる 斎藤実\r
+ 		command = { type = sleepminister which = 50323 } # id = 50323 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる　斎藤実\r
++		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる 斎藤実\r
+ 		command = { type = sleepminister which = 50323 } # id = 50323 の閣僚を死亡（使用不能）させる\r
+ 		command = { type = sleepminister which = 50119 } # id = 50119 の閣僚を死亡（使用不能）させる  鈴木貫太郎\r
+ 		command = { type = sleepminister which = 50171 } # id = 50171 の閣僚を死亡（使用不能）させる\r
+@@ -1060,7 +1060,7 @@ event = {
+ 								owned = { province = 1272 data = CXB } \r
+ 					} type = secedeprovince which = MEN value = 1272 when = 2 } #Bayan Hot\r
+ 		command = { trigger = { flag = China_surrender_puppet } type = clrflag which = China_surrender_puppet }\r
+-		command = { type = ai which = "switch/jap_build_standard.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/jap_build_standard.ai" }\r
+ 		#command = { type = trigger which = 26003 }\r
+ 	} \r
+ }\r
+@@ -1083,6 +1083,10 @@ event = {
+ 		OR = { \r
+ 			lost_national = { country = CHI value = 80 }\r
+ 			lost_vp = { country = CHI value = 80 }\r
++	AND = {\r
++	event = 1891001\r
++	region = { region = "China" country = -3 data = 1 value = 70 }\r
++		}\r
+ 		}\r
+ 		NOT = { ispuppet = JAP }\r
+ 	}\r
+@@ -1092,12 +1096,20 @@ event = {
+ 		OR = { \r
+ 			lost_national = { country = CHI value = 90 }\r
+ 			lost_vp = { country = CHI value = 90 }\r
++		AND = {\r
++	event = 1891001\r
++	region = { region = "China" country = -3 data = 1 value = 85 }\r
++		}\r
+ 		}\r
+ 	}\r
+ 	trigger = {\r
+ 		OR = { \r
+ 			lost_national = { country = CHI value = 90 }\r
+ 			lost_vp = { country = CHI value = 90 }\r
++	AND = {\r
++	event = 1891001\r
++	region = { region = "China" country = -3 data = 1 value = 85 }\r
++		}\r
+ 		}\r
+ 		region = { region = "China" country = -3 data = 1 value = 48 } #about 90 provinces out of 185\r
+ 		land_percentage = { country = CHI value = 1.1 }\r
+@@ -1113,7 +1125,7 @@ event = {
+ 		NOT = { ispuppet = JAP }\r
+ 	}\r
+ \r
+-	date = { day = 0 month = january year = 1936 }\r
++	date = { day = 0 month = january year = 1933 }\r
+ 	offset = 10\r
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+@@ -1249,6 +1261,7 @@ event = {
+ \r
+ 	action = { \r
+ 		trigger = { flag = China_surrender_puppet }\r
++		trigger = { NOT = { event = 1891001 } }\r
+ 		ai_chance = 40\r
+ 		name = "3815a"\r
+ 		command = { type = trigger which = 2011016 }\r
+@@ -1573,7 +1586,7 @@ event = {
+ 								owned = { province = 1272 data = CXB } \r
+ 					} type = secedeprovince which = MEN value = 1272 when = 2 } #Bayan Hot\r
+ 		command = { trigger = { flag = China_surrender_puppet } type = clrflag which = China_surrender_puppet }\r
+-		command = { type = ai which = "switch/jap_build_standard.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/jap_build_standard.ai" }\r
+ 		#command = { type = trigger which = 26003 }\r
+ 	}\r
+ }\r

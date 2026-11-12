@@ -1,0 +1,92 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
+@@ -408,6 +408,7 @@ event = {
+ 	command = { type = sleepevent which = 2003152 }\r
+ 	command = { type = sleepevent which = 2003153 }\r
+ 	command = { type = sleepevent which = 2003155 }\r
++	command = { type = sleepevent which = 2003090 } #フリッチュイベント\r
+ 	}\r
+ }\r
+ \r
+@@ -1552,6 +1553,7 @@ event = {
+ 	control = { province = 668 data = -3 } #Kuybyshev\r
+ 	control = { province = 672 data = -3 } #Kazan\r
+ 	control = { province = 706 data = -3 } #Astrakhan\r
++	NOT = { lost_national = { country = UTC value = 70 } }\r
+ 	}\r
+ 	\r
+ 	name = EVT_45680024_NAME\r
+@@ -1850,6 +1852,7 @@ event = {
+ 	command = { type = secedearea which = U37 value = "Latvia" when = 1 }\r
+ 	command = { type = make_puppet which = U37 }\r
+ 	command = { type = alliance which = U37 }\r
++	command = { trigger = { ai = U37 } type = event which = 45690013 where = U37 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1896,6 +1899,7 @@ event = {
+ 	command = { type = secedeprovince which = LIT value = 255 when = 1 }\r
+ 	command = { type = make_puppet which = LIT }\r
+ 	command = { type = alliance which = LIT }\r
++	command = { trigger = { ai = LIT } type = event which = 45690014 where = LIT when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1948,6 +1952,7 @@ event = {
+ 	command = { type = secedeprovince which = POL value = 254 when = 1 } #Bialystock\r
+ 	command = { type = make_puppet which = POL }\r
+ 	command = { type = alliance which = POL }\r
++	command = { trigger = { ai = POL } type = event which = 45690015 where = POL when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2005,6 +2010,7 @@ event = {
+ 	command = { type = secedeprovince which = BLR value = 599 when = 1 } #Minsk\r
+ 	command = { type = make_puppet which = BLR }\r
+ 	command = { type = alliance which = BLR }\r
++	command = { trigger = { ai = BLR } type = event which = 45690016 where = BLR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2053,6 +2059,7 @@ event = {
+ 	command = { type = secedeprovince which = UKR value = 249 when = 1 } #Sarny\r
+ 	command = { type = make_puppet which = UKR }\r
+ 	command = { type = alliance which = UKR }\r
++	command = { trigger = { ai = UKR } type = event which = 45690017 where = UKR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2309,7 +2316,7 @@ event = {
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = add_division which = "第1予備戦車団" value = light_armor when = 0 }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "第2予備戦車団" value = light_armor when = 0 }\r
+-	command = { trigger = { ai = yes } type = add_division which = "第3予備洗車団" value = light_armor when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "第3予備戦車団" value = light_armor when = 0 }\r
+ 	command = { type = add_division which = "第1予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第2予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第3予備歩兵師団" value = infantry when = 5 }\r
+@@ -2514,9 +2521,13 @@ event = {
+ 	command = { type = gain_tech which = 5000110 }\r
+ 	command = { type = gain_tech which = 5130 }\r
+ 	command = { type = gain_tech which = 5100 }\r
+-	command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
+-	command = { trigger = { ai = yes }  type = trigger which = 130031 }\r
+-	command = { trigger = { ai = yes exists = FRA } type = sleepevent which = 130033 }\r
++	#command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
++		#command = {  trigger = { ai = yes }  type = local_setflag which = do_not_demob }\r
++		#command = {  trigger = { ai = yes }  type = local_clrflag which = demob }\r
++		#command = { trigger = { ai = yes } type = trigger which = 8300107 }\r
++		#command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
++		command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
++	#command = { trigger = { ai = yes } type = event which = }\r
+ 	}\r
+ }\r
+ \r
+@@ -3284,6 +3295,7 @@ event = {
+ 	#command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
++	command = { type = strength which = land when = 0 where = 0 value = 0.3 } #Kielce臨時\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r

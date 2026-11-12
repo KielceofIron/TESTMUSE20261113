@@ -1,0 +1,119 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_South_America_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_South_America_events.txt [cp932]
+@@ -52,6 +52,8 @@
+ #id = 2111210 コロンビアの国旗の廃止\r
+ #id = 2111211 経済回復政策\r
+ #id = 2111212 失業率15パーセント低下\r
++#id = 2111213 隣国の脅威\r
++#id = 2111214 コロンビアからの同盟提案\r
+ #政府交代イベント\r
+ #id = 2111251 1934年選挙\r
+ #id = 2111252 1938年選挙\r
+@@ -2036,7 +2038,7 @@ event = {
+ \r
+ 	action = { # これでいい\r
+ 	name = "ACTIONNAME211005A"\r
+-	command = { trigger = { ai = yes } type = ai which = "PRU_1936.ai" } # 通常時に戻る\r
++	command = { type = ai which = "PRU_1936.ai" } # 通常時に戻る\r
+ 	command = { type = relation which = U77 value = 10 }\r
+ 	command = { type = dissent value = -2 }\r
+ 	# command = { type = domestic which = defense_lobby value = -1 }\r
+@@ -3814,7 +3816,7 @@ event = {
+ \r
+ 	action = { # 素晴らしい提案だ\r
+ 	name = "ACTIONNAME2111309A"\r
+-	command = { type = leave_alliance when = 1 }\r
++	#command = { type = leave_alliance when = 1 }\r
+ 	command = { type = alliance which = CHL when = 1 }\r
+ 	command = { type = set_relation which = CHL value = 200 }\r
+ 	command = { type = guarantee which = CHL where = BRA }\r
+@@ -4706,7 +4708,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2150009 } # エルネスト・スクロー\r
+ 		command = { type = chiefofair which = 21500010 } # パウル・デ・ベアウディエス\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # ローザ一世を擁立し、立憲君主制を敷く\r
+@@ -4728,7 +4730,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2150091 } # アルベルト・ロケ・サルディアス\r
+ 		command = { type = chiefofair which = 2150098 } # ヴィクトール・ソラノ\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # ペルー派が主導権を握り、共和制が樹立される\r
+@@ -4750,7 +4752,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2150091 } # アルベルト・ロケ・サルディアス\r
+ 		command = { type = chiefofair which = 2150098 } # ヴィクトール・ソラノ\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # 社会主義者が蜂起し、政府が転覆する\r
+@@ -4772,7 +4774,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2151170 } # ダニエル・サンチェス・ブスタマンテ\r
+ 		command = { type = chiefofair which = 2151184 } # アルベルト・サラレギ・サンチェス\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # ローザ一世を擁立しセロが護国官に就任する\r
+@@ -4794,7 +4796,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2150009 } # エルネスト・スクロー\r
+ 		command = { type = chiefofair which = 21500010 } # パウル・デ・ベアウディエス\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # ローザ一世を擁立し、立憲君主制を敷く\r
+@@ -4816,7 +4818,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2150091 } # アルベルト・ロケ・サルディアス\r
+ 		command = { type = chiefofair which = 2150098 } # ヴィクトール・ソラノ\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # ペルー派が主導権を握り、共和制が樹立される\r
+@@ -4838,7 +4840,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2150091 } # アルベルト・ロケ・サルディアス\r
+ 		command = { type = chiefofair which = 2150098 } # ヴィクトール・ソラノ\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # 社会主義者が蜂起し、政府が転覆する\r
+@@ -4860,7 +4862,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2151170 } # ダニエル・サンチェス・ブスタマンテ\r
+ 		command = { type = chiefofair which = 2151184 } # アルベルト・サラレギ・サンチェス\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # 終身護国官セロ閣下万歳！\r
+@@ -4882,7 +4884,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2150009 } # エルネスト・スクロー\r
+ 		command = { type = chiefofair which = 21500010 } # パウル・デ・ベアウディエス\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = { # ローザ一世を擁立しボリビア派が主導権を握る\r
+@@ -4904,7 +4906,7 @@ event = {
+ 		command = { type = chiefofnavy which = 2151009 } # ヒル・イバラ・フアレス\r
+ 		command = { type = chiefofair which = 2151010 } # エクトール・ビルバオ・ロハ\r
+ \r
+-		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
++		#command = { type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ \r

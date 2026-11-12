@@ -1,0 +1,1018 @@
+--- A/ai/IFswitch/ger_rus_war.ai [cp932]
++++ B/ai/IFswitch/ger_rus_war.ai [cp932]
+@@ -4,13 +4,8 @@ switch = no # [yes/no]
+ max_front_ratio = 1.5 \r
+ max_front_ratios = {\r
+ 	FRA = -1\r
+-	UTC = 30\r
+-	UB8 = 1\r
+-	SER = -1\r
+-	U29 = -1\r
+-	ITA = -1\r
+-	UC3 = -1\r
+-	U14 = -1\r
++	UER = 20\r
++	UB8 = 50\r
+ }\r
+ max_garrison_prop = 0.30\r
+ min_garrison_prop = 0.20\r
+@@ -20,8 +15,8 @@ ferocity = no
+ desperation = 0.65\r
+ strat_redeploy_threshold = 50\r
+ max_redeploying = 0.05\r
+-exp_force_ratio = 0.3\r
+-exp_force_ratios = { POL = 0.8 HOL = 0.8 UB8 = 0 } \r
++exp_force_ratio = 0.1\r
++exp_force_ratios = { UB8 = 0 } \r
+ no_exp_forces_to = { JAP SIA MAN FRA }\r
+ \r
+ ###################################\r
+@@ -74,37 +69,46 @@ protect = {
+ 	TUR = 80\r
+ }\r
+ target = { \r
++	#要塞\r
++		104 = -1  #Metz\r
++		110 = -1\r
++		109 = -1\r
++		107 = -1\r
++		105 = -1\r
++		389 = -1\r
++	#独仏国境付近\r
++		108 = -1\r
++		391 = -1\r
++		98 = -1\r
++		95 = -1\r
++		100 = -1\r
++		97 = -1\r
++		96 = -1\r
++		111 = -1\r
++		108 = -1\r
+ #	#Austria\r
+-	#143 = 80 # Lech\r
+-	#186 = 80 # Freistadt\r
+-	#188 = 80 # Eisenstadt\r
+-	#189 = 80 # Innsbruck\r
++	143 = 80 # Lech\r
++	186 = 80 # Freistadt\r
++	188 = 80 # Eisenstadt\r
++	189 = 80 # Innsbruck\r
+ 	192 = 80 # Salzburg\r
+-	#191 = 80 # Klagenfurt\r
+-	#187 = 80 # Linz\r
+-	#194 = 80 # Hollabrunn\r
+-	195 = 180 # Vienna\r
+-	#190 = 80 # Graz\r
++	191 = 80 # Klagenfurt\r
++	187 = 80 # Linz\r
++	194 = 80 # Hollabrunn\r
++	195 = 80 # Vienna\r
++	190 = 80 # Graz\r
+ \r
+ 	#Czech\r
+ 	200 = 60 # Liberec\r
+ 	204 = 60 # Prachatice\r
+ 	205 = 60 # Karlovy Vary\r
+ 	197 = 60 # Znojmo\r
+-	207 = 200 #Prague\r
+-	208 = 200 #Blatislava\r
+-	352 = 200 #Zagreb\r
+-\r
+-	316 = 100 #Bukarest\r
+-	321 = 100 #Sofia\r
+-\r
+ \r
+ 	#Poland\r
+-	181 = 50 # Danzig\r
+-	235 = 100 #Krakow\r
+-	242 = 100 #Lwow\r
++#	181 = 50 # Danzig\r
++\r
+ 	#Baltic States\r
+-	261 = 50 # Klaipeda\r
++#	261 = 50 # Klaipeda\r
+ \r
+ 	#Russia\r
+ 	247 = 300\r
+@@ -118,27 +122,8 @@ target = {
+ 	644 = 100\r
+ 	641 = 100\r
+ \r
+-	#要塞\r
+-		104 = -1  #Metz\r
+-		110 = -1\r
+-		109 = -1\r
+-		107 = -1\r
+-		105 = -1\r
+-		389 = -1\r
+-	#独仏国境付近\r
+-		108 = -1\r
+-		391 = -1\r
+-		98 = -1\r
+-		95 = -1\r
+-		100 = -1\r
+-		97 = -1\r
+-		96 = -1\r
+-		111 = -1\r
+-		108 = -1\r
+-	118 = 300\r
+-	121 = 300\r
+-	122 = 300\r
+-	125 = 300\r
++\r
++\r
+ \r
+ \r
+ } \r
+@@ -337,7 +322,7 @@ spyprefs =
+ 		found_partisans		= 3\r
+ 		massmedia 			= 1\r
+ 		disrupt_techteam 	= 6\r
+-		country 			= UTC\r
++		country 			= UER\r
+ 	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 8\r
+@@ -460,15 +445,90 @@ spyprefs =
+ ###################################\r
+ # Construction and Tech Research\r
+ ###################################\r
+-\r
+ construction = { \r
+-   max_factor = 0.1 # 0.50 \r
++	max_factor = 0.1\r
++\r
++   	AA_batteries = no \r
++	max_AA_level = 6 \r
++	AA_provs = { \r
++		141 # Muenster\r
++		145 # Essen\r
++		131 # Cologne\r
++		127 # Saarbrucken\r
++		138 # Frankfurt\r
++		177 # Nuremberg\r
++		134 # Suttgart\r
++		179 # Munich\r
++		173 # Dresden\r
++		163 # Berlin\r
++		152 # Kiel\r
++		146 # Hannover\r
++	}\r
++\r
++	coastal_fort = no\r
++	max_coastal_level = 3\r
++	coastal_fort_provs = {\r
++		152 # Kiel\r
++	} \r
++\r
++	radar_station = no\r
++	max_radar = 2\r
++	radar_provs = {\r
++		145 # Essen\r
++		137 # Kassel\r
++		147 # Wilhemshafen\r
++		163 # Berlin\r
++		134 # Stutgart\r
++		116 # Brussels\r
++		122 # Amsterdam\r
++		52 # Lille\r
++		55 # Paris\r
++	} \r
++\r
++	air_base = no\r
++	max_air_base = 3\r
++	air_base_provs = {\r
++		126 # Aachen\r
++		145 # Essen\r
++		130 # Mainz\r
++	} \r
++\r
++	naval_base = no \r
++	max_naval_base = 5 \r
++	naval_base_provs = { } \r
++\r
++	land_fort = no #yes\r
++	max_land_level = 6\r
++	fort_borders = { }\r
++	fort_provs	= {\r
++		127 # Saarburken\r
++		132 # Freiburg\r
++		130 # Mainz\r
++	}\r
++\r
++	ic_at_war = no\r
++	force_ic_until = 1931\r
++	ic_end_year = 1931\r
++	IC_provs = {\r
++		127 # Saarburken\r
++		179 # Munchen\r
++		163 # Berlin\r
++		131 # Cologne\r
++		134 # Stuttgart\r
++		146 # Hannover\r
++		173 # Dresden\r
++	} \r
++	\r
++	nuclear_reactor = yes	\r
++	nuclear_reactor_prov = 151 # リューベック 163 # Berlin\r
++	max_nuclear = 10\r
+ }\r
++\r
+ military = { \r
+ 	relative_build_scheme 	= no\r
+ 	max_batch_peace			= 720 #540 \r
+-	max_batch_war 			=  360 #320 \r
+-	max_batch_home_front	= 280\r
++	max_batch_war			= 360 #320 \r
++	max_batch_home_front	= 180\r
+ 	extra_convoys_war		= 0.0000 \r
+ 	extra_convoys_peace		= 0.0000\r
+ \r
+@@ -647,6 +707,72 @@ technology = {
+ 		5190 5200 5210 5220 5230 5240 53020\r
+ 	} \r
+ 	ignore 		= {\r
++		# Self-Propelled Anti-Air\r
++		22910 22920\r
++		\r
++		# Strategic bombers\r
++		# 4800 4810 4820 4220 4230 4240 4246 15160 15170 16030\r
++\r
++		# Aircraft CarriersAir groups\r
++		# 4900 4910 4920 4930\r
++		\r
++		# Destroyers\r
++		# 12000 3080\r
++		\r
++		# Light Cruiser\r
++		12010 3170\r
++\r
++		# Heavy Cruiser\r
++		12020 3270\r
++\r
++		# Battlecruisers\r
++		3350 12030\r
++\r
++		# Battleship\r
++		# 3480 12040 3490\r
++\r
++		# Carrier\r
++		# 3520 3530\r
++		\r
++		# Transport\r
++		# 3840\r
++		\r
++		# ASW_EQUIPMENT\r
++		3910 3920\r
++\r
++		# Light Carrier\r
++		12120 12130\r
++\r
++		# Escort Fighters\r
++		# 4080 4110\r
++\r
++		# Nuclear\r
++		# 5490 5500 5510\r
++		\r
++		# radar\r
++		# 5417 5420\r
++		\r
++		#EQUIPMENT Winter Jungle Desert Sturdy\r
++		5920 5930 5940 5950 5960 5970 5980 5990\r
++		\r
++		# Subsidiary Carrier Role\r
++		81650\r
++\r
++		# Amphibious Warfare\r
++		#82300 82310 \r
++\r
++		# Logistic Support\r
++		82500 82510 \r
++		\r
++		# Anti-Submarine Patrols\r
++		8200 8210 8220 8230 8240 8250 8260 8300 8310 8320 8330 8340 8350 \r
++\r
++		# Strategic Destruction - Flying Armada\r
++		#9140 \r
++		9150 9160 9170 9180 9430 9440 9450 9460\r
++\r
++		# 歩兵直協戦車戦術\r
++		6920\r
+ 	}\r
+  \r
+ 	armor 		= 6 # 8\r
+@@ -677,33 +803,49 @@ leader_ratio = {
+ 	air_lt_General 		=0.11\r
+ }\r
+ garrison = {\r
+-	defend_overseas_beaches = no\r
++	defend_overseas_beaches = yes\r
+ 	home_multiplier 	= 1.2\r
+-	overseas_multiplier 	= -1\r
++	overseas_multiplier 	= 0.1\r
+ 	home_peace_cap 		= 10\r
+-	war_zone_odds 		= 1.0\r
++	war_zone_odds 		= 3.0\r
+ 	key_point_prio_mult	= 0.5\r
+ 	revolt_risk_mult	= 0.1\r
+ \r
+ 	# PRIORITIES:\r
+ 	beach			= 20	# Beach level 2\r
+ 	capital			= 40	# Our capital\r
+-	human_border		= 1	# Ignored for allied human players\r
++	human_border		= 0	# Ignored for allied human players\r
+ 	war_target		= 50	# The next country targeted for attack by this AI\r
+ 	\r
+ 	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"\r
+ 	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+ 	unstable_border		= 30	# Bordering countries at war with someone else get this\r
+ \r
++	area_multiplier = {\r
++	131 = 30\r
++	141 = 30\r
++	147 = 30\r
++	207 = 50\r
++	195 = 50\r
++	208 = 20\r
++	284 = 20\r
++	346 = 20\r
++	355 = 20\r
++	287 = 10\r
++	165 = 40\r
++	227 = 40\r
++	235 = 40\r
++	242 = 10\r
++	341 = 10\r
++	399 = -5\r
++	107 = -5\r
++	109 = -5\r
++	}\r
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+ 		FIN = -1\r
+ 		ITA = -1\r
+-		U14 = -1\r
+-		SER = -2000\r
+-		ROM = -1\r
+-		U29 = -2000\r
+-		SCH = 1\r
++		SCH = -1\r
+ 		ENG = -1\r
+ 		AUS = 10\r
+ 		CZE = 75\r
+@@ -712,10 +854,9 @@ garrison = {
+ 		HOL = 10 # 5\r
+ 		BEL = 25\r
+ 		DEN = 25\r
+-		UTC = 9999\r
+-		FRA = -9999\r
+-		UB8 = 100\r
+-		HOL = 20\r
++		UER = 150\r
++		FRA = -1\r
++		UB8 = 500\r
+ 	}\r
+ 	ignore = { }\r
+ 	province_priorities = {\r
+@@ -731,6 +872,21 @@ garrison = {
+ 		243  = 50  #Lubin\r
+ 		236  = 50\r
+ 		237  = 50\r
++		\r
++		#55  = 20  #Paris\r
++		#52  = 20  #Lille\r
++		#116  = 20  #Brussels\r
++		145  = 20  #Prague\r
++		#104  = 20  #Metz\r
++		#43  = 20  #Cherborg\r
++		#42  = 20  #Avranches\r
++		#69  = 10  #La Rochele\r
++		147  = 20  #Wilhelmshafen\r
++		148  = 20  #Bremen\r
++		150  = 20  #Groningen\r
++		338  = 20  #Belgrade\r
++\r
++\r
+ 	#要塞\r
+ 		104 = -1  #Metz\r
+ 		110 = -1\r
+@@ -738,70 +894,22 @@ garrison = {
+ 		107 = -1\r
+ 		105 = -1\r
+ 		389 = -1\r
+-		\r
+-#		55  = 20  #Paris\r
+-#		52  = 20  #Lille\r
+-#		116  = 20  #Brussels\r
+-		145  = 20  #Prague\r
+-#		104  = 20  #Metz\r
+-#		43  = 20  #Cherborg\r
+-#		42  = 20  #Avranches\r
+-#		69  = 10  #La Rochele\r
+-		147  = 20  #Wilhelmshafen\r
+-		148  = 20  #Bremen\r
+-#		150  = 20  #Groningen\r
+-		338  = 20  #Belgrade\r
+ 	#独仏国境付近\r
+-		108 = -100\r
+-		391 = -100\r
+-		98 = -100\r
+-		95 = -100\r
+-		100 = -100\r
+-		97 = -100\r
+-		96 = -100\r
+-		111 = -100\r
+-		108 = -100\r
+-	}\r
+-	area_multiplier = {\r
+-	399 = -5000\r
+-	107 = -5000\r
+-	109 = -5000\r
+-	131 = 30\r
+-	141 = 30\r
+-	147 = 30\r
+-	184 = 5\r
+-	232 = 5\r
+-	210 = 5\r
+-	240 = 5\r
+-	264 = 5\r
+-	270 = 5\r
+-	617 = 5\r
+-	611 = 5\r
+-	626 = 5\r
+-	304 = 5\r
+-	299 = 5\r
+-	316 = 5\r
+-	322 = 5\r
+-	597 = 5\r
+-	608 = 5\r
+-	590 = 5\r
+-	262 = 5\r
+-	630 = 5\r
+-	641 = 5\r
+-	636 = 5\r
+-	643 = 5\r
+-	576 = 5\r
+-	572 = 5\r
+-	558 = 5\r
+-	553 = 5\r
+-	530 = 5\r
+-	617 = 5\r
++		108 = -1\r
++		391 = -1\r
++		98 = -1\r
++		95 = -1\r
++		100 = -1\r
++		97 = -1\r
++		96 = -1\r
++		111 = -1\r
++		108 = -1\r
+ 	}\r
+ }\r
+ front = { \r
+ 	recklessness 		= 3 # 0-3\r
+-	distrib_vs_ai 		= defensive\r
+-	distrib_vs_human 	= even\r
++	distrib_vs_ai 		= Deffensive\r
++	distrib_vs_human 	= Reactive\r
+ \r
+ 	enemy_reinf_days	= 6\r
+ 	reserve_prop		= 0.1\r
+@@ -811,7 +919,7 @@ front = {
+    	min_attack_odds   = 0.8\r
+ 	max_attack_odds 	= 2.0\r
+ 	reinforce_odds		= 1.2\r
+-	withdraw_odds		= 0.5\r
++	withdraw_odds		= 0.6\r
+ \r
+ 	strength 	= 1.0\r
+ 	organisation 	= 1.0\r
+@@ -839,479 +947,66 @@ front = {
+ 	urban_attack 	= 1.0\r
+ 	river 		= 1.0\r
+ \r
+-	enemy_handicap = { FRA = 100 \r
+-	} \r
+-	passivity = {  FRA = 100 }\r
+-\r
+ \r
+-	province_priorities = {\r
+-595 = 0.2\r
+-597 = 0.2\r
+-275 = 1\r
+-394 = 1\r
+-395 = 1\r
+-396 = 1\r
+-398 = 1\r
+-407 = 1\r
+-697 = 1\r
+-696 = 1\r
+-701 = 1\r
+-703 = 1\r
+-705 = 1\r
+-545 = 1\r
+-546 = 1\r
+-547 = 1\r
+-402 = 2\r
+-403 = 2\r
+-406 = 2\r
+-699 = 2\r
+-706 = 2\r
+-707 = 2\r
+-708 = 2\r
+-710 = 2\r
+-401 = 3\r
+-702 = 4\r
+-704 = 4\r
+-698 = 4\r
+-404 = 5\r
+-405 = 5\r
+-709 = 5\r
+-695 = 5\r
+-700 = 8\r
+-711 = 10\r
+-713 = 10\r
+-543 = 10\r
+-684 = 10\r
+-391 = 10\r
+-534 = 10\r
+-535 = 10\r
+-536 = 10\r
+-537 = 10\r
+-538 = 10\r
+-539 = 10\r
+-540 = 10\r
+-541 = 10\r
+-651 = 15\r
+-653 = 15\r
+-654 = 15\r
+-655 = 15\r
+-189 = 20\r
+-190 = 20\r
+-191 = 20\r
+-268 = 20\r
+-399 = 20\r
+-692 = 20\r
+-693 = 20\r
+-694 = 20\r
+-680 = 20\r
+-555 = 20\r
+-556 = 20\r
+-557 = 20\r
+-659 = 20\r
+-661 = 20\r
+-662 = 20\r
+-663 = 20\r
+-681 = 30\r
+-656 = 30\r
+-674 = 30\r
+-675 = 30\r
+-578 = 30\r
+-670 = 30\r
+-679 = 30\r
+-683 = 30\r
+-678 = 30\r
+-682 = 30\r
+-650 = 30\r
+-657 = 30\r
+-658 = 30\r
+-665 = 30\r
+-669 = 30\r
+-337 = 40\r
+-542 = 40\r
+-668 = 40\r
+-554 = 40\r
+-677 = 40\r
+-642 = 40\r
+-643 = 40\r
+-644 = 40\r
+-645 = 40\r
+-649 = 40\r
+-192 = 50\r
+-317 = 50\r
+-318 = 50\r
+-319 = 50\r
+-320 = 50\r
+-322 = 50\r
+-323 = 50\r
+-324 = 50\r
+-325 = 50\r
+-339 = 50\r
+-342 = 50\r
+-114 = 50\r
+-115 = 50\r
+-116 = 50\r
+-117 = 50\r
+-118 = 50\r
+-111 = 50\r
+-112 = 50\r
+-113 = 50\r
+-393 = 50\r
+-671 = 50\r
+-672 = 50\r
+-321 = 70\r
+-327 = 70\r
+-328 = 70\r
+-329 = 70\r
+-330 = 70\r
+-331 = 70\r
+-332 = 70\r
+-333 = 70\r
+-334 = 70\r
+-335 = 70\r
+-121 = 70\r
+-123 = 70\r
+-108 = 70\r
+-563 = 70\r
+-2165 = 70\r
+-2166 = 70\r
+-2167 = 70\r
+-326 = 80\r
+-400 = 80\r
+-691 = 80\r
+-673 = 80\r
+-2162 = 80\r
+-2163 = 80\r
+-2164 = 80\r
+-270 = 100\r
+-271 = 100\r
+-272 = 100\r
+-273 = 100\r
+-274 = 100\r
+-265 = 100\r
+-266 = 100\r
+-200 = 100\r
+-204 = 100\r
+-205 = 100\r
+-206 = 100\r
+-210 = 100\r
+-307 = 100\r
+-308 = 100\r
+-309 = 100\r
+-310 = 100\r
+-311 = 100\r
+-312 = 100\r
+-313 = 100\r
+-314 = 100\r
+-315 = 100\r
+-316 = 100\r
+-551 = 100\r
+-559 = 100\r
+-562 = 100\r
+-567 = 100\r
+-568 = 100\r
+-570 = 100\r
+-571 = 100\r
+-583 = 100\r
+-584 = 100\r
+-585 = 100\r
+-580 = 100\r
+-581 = 100\r
+-582 = 100\r
+-602 = 100\r
+-604 = 100\r
+-652 = 100\r
+-390 = 100\r
+-392 = 100\r
+-632 = 100\r
+-633 = 100\r
+-634 = 100\r
+-635 = 100\r
+-637 = 100\r
+-638 = 100\r
+-639 = 100\r
+-640 = 100\r
+-549 = 100\r
+-550 = 100\r
+-552 = 100\r
+-560 = 100\r
+-561 = 100\r
+-564 = 100\r
+-565 = 100\r
+-566 = 100\r
+-573 = 100\r
+-575 = 100\r
+-586 = 100\r
+-587 = 100\r
+-588 = 100\r
+-340 = 120\r
+-676 = 120\r
+-2160 = 120\r
+-2161 = 120\r
+-2156 = 130\r
+-2157 = 130\r
+-2158 = 130\r
+-336 = 140\r
+-338 = 140\r
+-341 = 140\r
+-300 = 140\r
+-302 = 140\r
+-303 = 140\r
+-304 = 140\r
+-305 = 140\r
+-306 = 140\r
+-297 = 140\r
+-298 = 140\r
+-299 = 140\r
+-301 = 140\r
+-285 = 140\r
+-286 = 140\r
+-287 = 140\r
+-288 = 140\r
+-289 = 140\r
+-291 = 140\r
+-292 = 140\r
+-293 = 140\r
+-295 = 140\r
+-296 = 140\r
+-574 = 140\r
+-576 = 140\r
+-579 = 140\r
+-603 = 140\r
+-646 = 140\r
+-647 = 140\r
+-648 = 140\r
+-264 = 150\r
+-280 = 150\r
+-281 = 150\r
+-282 = 150\r
+-283 = 150\r
+-276 = 150\r
+-277 = 150\r
+-278 = 150\r
+-279 = 150\r
+-2159 = 150\r
+-641 = 150\r
+-558 = 170\r
+-569 = 170\r
+-577 = 170\r
+-623 = 170\r
+-624 = 170\r
+-630 = 170\r
+-631 = 170\r
+-598 = 180\r
+-343 = 200\r
+-344 = 200\r
+-345 = 200\r
+-346 = 200\r
+-347 = 200\r
+-349 = 200\r
+-350 = 200\r
+-351 = 200\r
+-352 = 200\r
+-267 = 200\r
+-269 = 200\r
+-209 = 200\r
+-211 = 200\r
+-212 = 200\r
+-213 = 200\r
+-214 = 200\r
+-215 = 200\r
+-284 = 200\r
+-2152 = 200\r
+-2153 = 200\r
+-2154 = 200\r
+-2155 = 200\r
+-636 = 200\r
+-613 = 200\r
+-615 = 200\r
+-622 = 200\r
+-627 = 200\r
+-628 = 200\r
+-589 = 200\r
+-594 = 220\r
+-596 = 220\r
+-600 = 220\r
+-601 = 220\r
+-590 = 250\r
+-591 = 250\r
+-592 = 250\r
+-593 = 250\r
+-599 = 250\r
+-238 = 250\r
+-239 = 250\r
+-240 = 250\r
+-241 = 250\r
+-242 = 250\r
+-196 = 300\r
+-197 = 300\r
+-198 = 300\r
+-199 = 300\r
+-201 = 300\r
+-202 = 300\r
+-203 = 300\r
+-208 = 300\r
+-553 = 300\r
+-572 = 300\r
+-619 = 300\r
+-620 = 300\r
+-621 = 300\r
+-625 = 300\r
+-626 = 300\r
+-605 = 300\r
+-606 = 300\r
+-607 = 300\r
+-608 = 300\r
+-610 = 300\r
+-629 = 300\r
+-244 = 400\r
+-245 = 400\r
+-247 = 400\r
+-248 = 400\r
+-249 = 400\r
+-258 = 400\r
+-609 = 400\r
+-611 = 400\r
+-612 = 400\r
+-614 = 400\r
+-616 = 400\r
+-618 = 400\r
+-186 = 500\r
+-187 = 500\r
+-188 = 500\r
+-193 = 500\r
+-194 = 500\r
+-195 = 500\r
+-207 = 500\r
+-217 = 500\r
+-218 = 500\r
+-219 = 500\r
+-220 = 500\r
+-251 = 500\r
+-255 = 500\r
+-256 = 500\r
+-257 = 500\r
+-246 = 500\r
+-617 = 500\r
+-250 = 700\r
+-252 = 700\r
+-253 = 700\r
+-254 = 700\r
+-259 = 1000\r
+-260 = 1000\r
+-262 = 1000\r
+-263 = 1000\r
+-294 = 1000\r
+-233 = 1000\r
+-234 = 1000\r
+-235 = 1000\r
+-236 = 1000\r
+-237 = 1000\r
+-243 = 1000\r
+-119 = 2000\r
+-122 = 2000\r
+-124 = 2000\r
+-125 = 2000\r
+-222 = 2000\r
+-223 = 2000\r
+-224 = 2000\r
+-225 = 2000\r
+-226 = 2000\r
+-227 = 2000\r
+-389 = 2000\r
+-120 = 3000\r
+-228 = 3000\r
+-229 = 3000\r
+-230 = 3000\r
+-231 = 3000\r
+-232 = 4000\r
+-261 = 9999\r
+-109 = 9999\r
+-110 = 9999\r
+-216 = 9999\r
+-132 = 9999\r
+-133 = 9999\r
+-134 = 9999\r
+-135 = 9999\r
+-136 = 9999\r
+-174 = 9999\r
+-175 = 9999\r
+-176 = 9999\r
+-177 = 9999\r
+-178 = 9999\r
+-179 = 9999\r
+-180 = 9999\r
+-155 = 9999\r
+-156 = 9999\r
+-157 = 9999\r
+-158 = 9999\r
+-159 = 9999\r
+-160 = 9999\r
+-161 = 9999\r
+-162 = 9999\r
+-163 = 9999\r
+-182 = 9999\r
+-183 = 9999\r
+-184 = 9999\r
+-185 = 9999\r
+-146 = 9999\r
+-147 = 9999\r
+-148 = 9999\r
+-149 = 9999\r
+-137 = 9999\r
+-138 = 9999\r
+-139 = 9999\r
+-140 = 9999\r
+-150 = 9999\r
+-151 = 9999\r
+-152 = 9999\r
+-153 = 9999\r
+-154 = 9999\r
+-181 = 9999\r
+-126 = 9999\r
+-127 = 9999\r
+-128 = 9999\r
+-129 = 9999\r
+-130 = 9999\r
+-131 = 9999\r
+-169 = 9999\r
+-170 = 9999\r
+-171 = 9999\r
+-172 = 9999\r
+-173 = 9999\r
+-164 = 9999\r
+-165 = 9999\r
+-166 = 9999\r
+-167 = 9999\r
+-168 = 9999\r
+-141 = 9999\r
+-142 = 9999\r
+-143 = 9999\r
+-144 = 9999\r
+-145 = 9999\r
+-221 = 9999\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-	}\r
+-} \r
++	enemy_handicap = { FRA = 1000\r
++	} \r
++	passivity = {  FRA = 1000 }\r
++}\r
+ ###################################\r
+ # Air bombardment and defense\r
+ ###################################\r
+ # Air AI File For Ground Bombings as priority\r
+ # bomber is now obsolete and NOT USED AT ALL replace and use Air Marshal instead\r
+ \r
++air_marshal = {\r
++	min_mission_strength_org	= 0.8\r
++	icxdayscostfactor 			= 10.0		# How to value true industrial cost when calculating expect causalties\r
++	manpowercostfactor			= 100.0		# How to value manpower cost when calculating expect causalties\r
++	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
++\r
++	# desirability is a multiplier used when calcualting the mission desirability\r
++	airsuperioritydesirability 		= 30.0\r
++	groundattackdesirability 		= 40.0\r
++	inderdictiondesirability 		= 20.0\r
++	logisticalstrikedesirability 	= 2.0\r
++	runwaycrateringdesirability 	= 10.0\r
++	strategicstrikedesirability 	= 10.0\r
++	installationstrikedesirability 	= 5.0\r
++	navalstrikedesirability 		= 15.0\r
++	portstrikedesirability 			= 9.0\r
++	convoyraiddesirability			= 9.0\r
++\r
++	# tolerance is the required kill:loss ration expected to do \r
++	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
++	airsuperioritylosstolerance 	= 1.0\r
++	groundattacklosstolerance 		= 1.0\r
++	interdictionlosstolerance 		= 2.0\r
++	logisticalstrikelosstolerance 	= 0.5\r
++	runwaycrateringlosstolerance 	= 1.5\r
++	strategicstriketolerance 		= 4.5\r
++	installationstriketolerance 	= 1.5\r
++	navalstriketolerance 			= 1.0\r
++	portstriketolerance 			= 1.0\r
++	convoyraidtolerance				= 1.0\r
++\r
++	# efficency is a tweakable param to adjust according to how \r
++	#    much actual damage comes from doing this mission (not to be confused with desirability)\r
++	logisticalstrikeefficency 	= 0.01\r
++	runwaycrateringefficency 	= 0.01\r
++	strategicstrikeefficency 	= 0.01\r
++	installationstrikeefficency = 0.01\r
++\r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
++	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
++	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
++	taskforcetype = { name = "Naval Bombing" desiredratio = 0.050 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 2000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes naval_strike = yes port_strike = yes convoy_air_raiding = yes } \r
++	taskforcetype = { name = "Airlift" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = -2000.000 softkillpowerweight = -2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = -2000.000 transportcapacityweight = 1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes airborne_assault = yes air_supply = yes } \r
++}\r
+ ###################################\r
+ # Invasions and Naval\r
+ ###################################\r
+ invasion = { \r
+-	invasion			= yes\r
+  	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)\r
+ 	random		= 1.0	#How big a random range.  (1.0 = 1%)\r
+ 	coastal		= 0.2	#increase to avoid coastal forts more.\r

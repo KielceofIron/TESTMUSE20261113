@@ -1,0 +1,157 @@
+--- A/db/events/AdditionalEvents_if_Japan/Bigeventtemplate.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Japan/Bigeventtemplate.txt [utf-8]
+@@ -1,77 +1,77 @@
+-#フラグ判定イベント(ここではFullでドイツ滅亡を扱います)\r
+-event = {\r
+-	id = 19310001\r
+-	random = no\r
+-	save_date = yes\r
+-	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう\r
+-	\r
+-	trigger = {\r
+-	\r
+-	\r
+-	NOT = { flag = WorldBigeventflag0001 }  #発生済判定\r
+-	NOT = { exists = GER } \r
+-	NOT = { exists = DDR } \r
+-	NOT = { flag = German_Communism }   #←↑イベント以外の要因で発生することもあるから、必要なら条件をトリガーに書きます。\r
+-	#ドイツの開幕共産化のときには起こって欲しくない\r
+-	\r
+-	}\r
+-	name = AI_EVENT #イベント一覧に出て欲しくないし\r
+-	#picture = ""\r
+-\r
+-	date = { day = 5 month = 3 year = 1 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 4 year = 9999 }\r
+-\r
+-	action = { # \r
+-	name = "OK"\r
+-	command = { type = setflag which = WorldBigeventflag0001 } \r
+-	}\r
+-}\r
+-event = {\r
+-	id = 19320001\r
+-#1932→音源流しイベント、1933→画像つきイベント\r
+-#プレイヤー国のイベントによって発生する場合\r
+-#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？\r
+-#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います\r
+-#\r
+-	random = no\r
+-	persistent = yes\r
+-	trigger = {\r
+-	ai = no\r
+-	flag = WorldBigeventflag0001\r
+-	NOT = { event = { id = 19310001 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし\r
+-	NOT = {	local_flag = Bigeventflag0001 }\r
+-	 #新規独立国などでの発生防止\r
+-	}\r
+-	name = 名前 #てきとう\r
+-	desc = 説明 #てきとう\r
+-	style = 2 #新聞\r
+-	#picture = ""\r
+-\r
+-	date = { day = 5 month = 3 year = 1 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 4 year = 9999 }\r
+-\r
+-	action = { # \r
+-	name = "OK"\r
+-	command = { type = local_setflag which = Bigeventflag0001 } #イベントが起きたことを示す、再発防止\r
+-	command = { type = songs which = "Special/0001.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む\r
+-	command = { type = trigger which = 19330001 when = 0 } #画像つき本イベントを起こす\r
+-	}\r
+-}\r
+-#画像イベント\r
+-event = {\r
+-	id = 19330001 #1932→発生判定＋音源流し、1933→画像つきイベント\r
+-	random = no\r
+-	persistent = yes\r
+-\r
+-	name = "イベント名を書く場所（空欄でも良い）" #名無しイベント\r
+-	desc = "DESCを書く場所（空欄でも良い、処理上すべて同じ行数に揃える）"\r
+-	style = 1\r
+-	picture = "Big/German_fall" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる\r
+-#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。\r
+-	action = { # \r
+-	name = "OK"\r
+-	command = {  }\r
+-	}\r
++#フラグ判定イベント(ここではFullでドイツ滅亡を扱います)
++event = {
++	id = 19310001
++	random = no
++	save_date = yes
++	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう
++	
++	trigger = {
++	
++	
++	NOT = { flag = WorldBigeventflag0001 }  #発生済判定
++	NOT = { exists = GER } 
++	NOT = { exists = DDR } 
++	NOT = { flag = German_Communism }   #←↑イベント以外の要因で発生することもあるから、必要なら条件をトリガーに書きます。
++	#ドイツの開幕共産化のときには起こって欲しくない
++	
++	}
++	name = AI_EVENT #イベント一覧に出て欲しくないし
++	#picture = ""
++
++	date = { day = 5 month = 3 year = 1 }
++	offset = 1
++	deathdate = { day = 29 month = 4 year = 9999 }
++
++	action = { # 
++	name = "OK"
++	command = { type = setflag which = WorldBigeventflag0001 } 
++	}
++}
++event = {
++	id = 19320001
++#1932→音源流しイベント、1933→画像つきイベント
++#プレイヤー国のイベントによって発生する場合
++#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？
++#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います
++#
++	random = no
++	persistent = yes
++	trigger = {
++	ai = no
++	flag = WorldBigeventflag0001
++	NOT = { event = { id = 19310001 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし
++	NOT = {	local_flag = Bigeventflag0001 }
++	 #新規独立国などでの発生防止
++	}
++	name = 名前 #てきとう
++	desc = 説明 #てきとう
++	style = 2 #新聞
++	#picture = ""
++
++	date = { day = 5 month = 3 year = 1 }
++	offset = 1
++	deathdate = { day = 29 month = 4 year = 9999 }
++
++	action = { # 
++	name = "OK"
++	command = { type = local_setflag which = Bigeventflag0001 } #イベントが起きたことを示す、再発防止
++	command = { type = songs which = "Special/0001.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む
++	command = { type = trigger which = 19330001 when = 0 } #画像つき本イベントを起こす
++	}
++}
++#画像イベント
++event = {
++	id = 19330001 #1932→発生判定＋音源流し、1933→画像つきイベント
++	random = no
++	persistent = yes
++
++	name = "イベント名を書く場所（空欄でも良い）" #名無しイベント
++	desc = "DESCを書く場所（空欄でも良い、処理上すべて同じ行数に揃える）"
++	style = 1
++	picture = "Big/German_fall" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる
++#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。
++	action = { # 
++	name = "OK"
++	command = {  }
++	}
+ }
+\ No newline at end of file

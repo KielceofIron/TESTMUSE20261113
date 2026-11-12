@@ -1,0 +1,130 @@
+--- A/ai/IFazia/CHI_if_Azia.ai [cp932]
++++ B/ai/IFazia/CHI_if_Azia.ai [cp932]
+@@ -4,8 +4,10 @@ switch = no # [yes/no]
+ max_front_ratio = 1.5\r
+ max_front_ratios = {\r
+ 	CHC = 2.0\r
++	U36 = 2.0\r
+ 	UCH = 2.0\r
+ 	U74 = 2.0\r
++	UF2 = 2.0\r
+ }\r
+ max_garrison_prop = 0.40\r
+ min_garrison_prop = 0.30\r
+@@ -19,7 +21,7 @@ strat_redeploy_threshold = 50
+ max_redeploying = 0.05\r
+ exp_force_ratio = 0.25\r
+ exp_force_ratios = { }\r
+-no_exp_forces_to = { CGX CSX CYN CXB U36 U67 MON TAN }\r
++no_exp_forces_to = { CGX CSX CYN CXB U36 U67 MON TAN UF2 }\r
+ use_offensive_supply = yes\r
+ \r
+ ###################################\r
+@@ -46,6 +48,7 @@ resistance = {
+ 	GER = 4\r
+ 	DDR = 3\r
+ 	ITA = 4\r
++	UF2 = 3\r
+ }\r
+ befriend = {\r
+ 	CSX = 100\r
+@@ -53,9 +56,11 @@ befriend = {
+ 	CYN = 100\r
+ 	CXB = 100\r
+ 	SIK = 100\r
++	U36 = 30\r
+ 	UCH = 30\r
+ 	U74 = 30\r
+ 	U67 = 30\r
++	UF2 = 30\r
+ 	JAP = 50\r
+ 	UF8 = 30\r
+ 	CHC = 30\r
+@@ -194,9 +199,11 @@ trade = {
+ 		CXB = 70\r
+ 		CYN = 70\r
+ 		CGX = 70\r
++		U36 = 70\r
+ 		UCH = 70\r
+ 		U74 = 70\r
+ 		U67 = 70\r
++		UF2 = 70\r
+ 		JAP = 30\r
+ 		UF8 = 10\r
+ 		GER = 80\r
+@@ -223,9 +230,11 @@ tech_sharing = {
+ 		CXB = 70\r
+ 		CYN = 70\r
+ 		CGX = 70\r
++		U36 = 70\r
+ 		UCH = 70\r
+ 		U74 = 70\r
+ 		U67 = 70\r
++		UF2 = 70\r
+ 		JAP = 30\r
+ 		UF8 = 10\r
+ 		GER = 80\r
+@@ -317,6 +326,19 @@ spyprefs =
+ 		disrupt_techteam	= 3\r
+ 		country 		= CHC\r
+ 	}\r
++	spyprefsdata = {\r
++		country_priorities	= 5\r
++		steal_blueprint 	= 0\r
++		minister_assassination 	= 0\r
++		smear_campaign 		= 6\r
++		coup 			= 0\r
++		sabotage_industry 	= 3\r
++		nuclear_sabotage 	= 0\r
++		found_partisans 	= 2\r
++		massmedia 		= 2\r
++		disrupt_techteam	= 3\r
++		country 		= U36\r
++	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 5\r
+ 		steal_blueprint 	= 0\r
+@@ -356,6 +378,19 @@ spyprefs =
+ 		disrupt_techteam	= 3\r
+ 		country 		= U74\r
+ 	}\r
++	spyprefsdata = {\r
++		country_priorities	= 5\r
++		steal_blueprint 	= 8\r
++		minister_assassination 	= 0\r
++		smear_campaign 		= 6\r
++		coup 			= 0\r
++		sabotage_industry 	= 3\r
++		nuclear_sabotage 	= 0\r
++		found_partisans 	= 2\r
++		massmedia 		= 2\r
++		disrupt_techteam	= 3\r
++		country 		= UF2\r
++	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 5\r
+ 		steal_blueprint 	= 0\r
+@@ -698,6 +733,7 @@ garrison = {
+ 	country_priorities = {\r
+ 		#CHI = 100\r
+ 		CHC = 100\r
++		U36 = 70\r
+ 		UCH = 70\r
+ 		U74 = 70\r
+ 		U67 = 70\r
+@@ -706,6 +742,7 @@ garrison = {
+ 		CYN = 50\r
+ 		CXB = 50\r
+ 		SIK = 50\r
++		UF2 = 50\r
+ 		UPE = 30\r
+ 		TIB = 30\r
+ 		MAN = 30\r
+@@ -1087,6 +1124,7 @@ admiral = {
+ 		1365 # 海口（ハイコウ）\r
+ 		1367 # 茂名（マオミン）\r
+ 		1369 # 廣州（グァンヂョウ）\r
++		2822 # 蘇州（ソシュウ）\r
+ 	}\r
+ 	target = {\r
+ 	} \r

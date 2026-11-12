@@ -1,0 +1,2283 @@
+--- A/db/events/Yokoyama_events/iphone/Add_iphone_events.txt [cp932]
++++ B/db/events/Yokoyama_events/iphone/Add_iphone_events.txt [cp932]
+@@ -21,10 +21,32 @@
+ #id = 114514015 婚約指輪、そして温泉\r
+ #id = 114514016 砂漠の遭難者、そして工房\r
+ #id = 114514017 本収集、そして読書喫茶\r
++#id = 114514018 帝都動乱、そして帝国の姫（ROM ALS）\r
++#id = 114514019 帝都動乱、そして帝国の姫（YUG）\r
++#id = 114514020 五人目、そして新国家樹立（ROM）\r
++#id = 114514021 五人目、そして新国家樹立（YUG SER）\r
++#id = 114514022 ブリュンヒルド公国の成立（ALS）\r
++#id = 114514023 錬金棟、そして思わぬ再会\r
++#id = 114514024 格納庫、そしてフレームギア\r
++#id = 114514025 二人の王子、そして小さな婚約者\r
++#id = 114514026 望月冬夜の潜入\r
++#id = 114514027 望月冬夜の潜入 ― 成功\r
++#id = 114514028 望月冬夜の潜入 ― 失敗\r
++#id = 114514029 休日デート、そして姫騎士（ROM ALS）\r
++#id = 114514030 休日デート、そして姫騎士（YUG CRO）\r
++#id = 114514031 記憶喪失、そしてピアノ\r
++#id = 114514032 姉参上、そして騎士（ROM ALS）\r
++#id = 114514033 姉参上、そして騎士（YUG CRO）\r
++#id = 114514034 王子誕生、そしてスマートフォンとともに\r
+ #オプションイベント\r
+-#id = 114514201 異世界はスマートフォンとともに。 ― ミスミド王国\r
+-#id = 114514202 異世界はスマートフォンとともに。 ― ミスミド王国の成立\r
+-#id = 114514203 異世界はスマートフォンとともに。 ― 神様からの贈り物\r
++#id = 114514201 異世界はスマートフォンとともに。 ― 国家の変更\r
++#id = 114514202 異世界はスマートフォンとともに。 ― ベルファスト王国の成立\r
++#id = 114514203 異世界はスマートフォンとともに。 ― ミスミド王国の成立\r
++#id = 114514204 異世界はスマートフォンとともに。 ― リーニエ王国の成立\r
++#id = 114514205 異世界はスマートフォンとともに。 ― レグルス帝国の成立\r
++#id = 114514206 異世界はスマートフォンとともに。 ― レスティア騎士王国の成立\r
++#id = 114514207 異世界はスマートフォンとともに。 ― リーフリース皇国の成立\r
++#id = 114514208 異世界はスマートフォンとともに。 ― 神様からの贈り物\r
+ #########################################################################\r
+ #  異世界はスマートフォンとともに。\r
+ # 神様の不注意により、神雷を受けて死んでしまった青年、望月冬夜は、異世界で蘇らせてもらうことになった。\r
+@@ -58,13 +80,13 @@ event = {
+ 	offset = 3\r
+ 	deathdate = { day = 5 month = 2 year = 1933 }\r
+ 		\r
+-	action = { # ルーマニア王国へ転生する\r
++	action = { # ルーマニア王国へ転生する（イベント発動）\r
+ 	name = "ACTIONNAME114514001A"\r
+ 	command = { type = setflag which = ISESUMA }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # ベルファスト王国へ転生する\r
++	action = { # ベルファスト王国へ転生する（イベント停止）\r
+ 	name = "ACTIONNAME114514001B"\r
+ 	command = { type = clrflag which = ISESUMA }\r
+ 	ai_chance = 100\r
+@@ -85,7 +107,6 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	random = 18\r
+ 	}\r
+ \r
+ 	name = "EVT_114514002_NAME"\r
+@@ -94,27 +115,13 @@ event = {
+ 	picture = "ISESUMA_26"\r
+ \r
+ 	date = { day = 0 month = 2 year = 1933 }\r
+-	offset = 8\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	offset = 12\r
++	deathdate = { day = 5 month = 2 year = 1933 }\r
+ 		\r
+ 	action = { # 彼は何者だ？\r
+ 	name = "ACTIONNAME114514002A"\r
+ 	command = { type = dissent value = -0.1 }\r
+-	command = { type = wakeminister which = 110322 } # バルサ\r
+-	command = { type = wakeminister which = 110323 }\r
+-	command = { type = wakeminister which = 110324 }\r
+-	command = { type = wakeminister which = 110325 } # ザナック\r
+-	command = { type = wakeminister which = 110326 }\r
+-	command = { type = waketeam which = 110302 } # ファッションキング・ザナック\r
+-	command = { type = wakeminister which = 110327 } # トリストウィン・エルネス・ベルファスト\r
+-	command = { type = wakeminister which = 110328 }\r
+-	command = { type = wakeminister which = 110329 } # アルフレッド・エルネス・オルトリンデ\r
+-	command = { type = wakeminister which = 110330 }\r
+-	command = { type = wakeminister which = 110331 } # レオン・ブリッツ\r
+-	command = { type = wakeminister which = 110332 }\r
+-	command = { type = wakeleader which = 110307 }\r
+-	command = { type = wakeminister which = 110333 } # リオン・ブリッツ\r
+-	command = { type = wakeleader which = 110308 }\r
++	command = { type = wakeleader which = 110301 } # 望月冬夜\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -144,8 +151,8 @@ event = {
+ 	picture = "ISESUMA_28"\r
+ \r
+ 	date = { day = 0 month = 2 year = 1933 }\r
+-	offset = 8\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	offset = 12\r
++	deathdate = { day = 5 month = 2 year = 1933 }\r
+ 		\r
+ 	action = { # 彼は頼りになる男だ\r
+ 	name = "ACTIONNAME114514003A"\r
+@@ -170,7 +177,7 @@ event = {
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+ 	event = 114514003 # 初旅、そしてサムライ\r
+-	random = 16\r
++	random = 20\r
+ 	}\r
+ \r
+ 	name = "EVT_114514004_NAME"\r
+@@ -180,7 +187,7 @@ event = {
+ \r
+ 	date = { day = 0 month = 2 year = 1933 }\r
+ 	offset = 12\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	deathdate = { day = 5 month = 2 year = 1933 }\r
+ 		\r
+ 	action = { # まるで将棋だな\r
+ 	name = "ACTIONNAME114514004A"\r
+@@ -208,7 +215,7 @@ event = {
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+ 	event = 114514004 # 将棋盤、そして地下遺跡\r
+-	random = 16\r
++	random = 20\r
+ 	}\r
+ \r
+ 	name = "EVT_114514005_NAME"\r
+@@ -218,7 +225,7 @@ event = {
+ \r
+ 	date = { day = 0 month = 2 year = 1933 }\r
+ 	offset = 12\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	deathdate = { day = 5 month = 2 year = 1933 }\r
+ 		\r
+ 	action = { # 陰謀は防がれた！\r
+ 	name = "ACTIONNAME114514005A"\r
+@@ -231,27 +238,28 @@ event = {
+ 	command = { type = wakeminister which = 110303 }\r
+ 	command = { type = wakeminister which = 110304 }\r
+ 	command = { type = wakeminister which = 110305 }\r
+-	command = { type = wakeleader which = 110300 }\r
+-	command = { type = waketeam which = 110300 }\r
++	command = { type = wakeleader which = 110301 }\r
+ 	command = { type = waketeam which = 110301 }\r
++	command = { type = waketeam which = 110302 }\r
+ 	command = { type = wakeminister which = 110306 } # ユミナ・エルネア・ベルファスト\r
+ 	command = { type = wakeminister which = 110307 }\r
+ 	command = { type = wakeminister which = 110308 }\r
+ 	command = { type = wakeminister which = 110309 }\r
+ 	command = { type = wakeminister which = 110310 }\r
+-	command = { type = wakeleader which = 110301 }\r
++	command = { type = wakeleader which = 110302 }\r
+ 	command = { type = wakeminister which = 110311 } # リンゼ・シエルスカ\r
+ 	command = { type = wakeminister which = 110312 }\r
+ 	command = { type = wakeminister which = 110313 }\r
+-	command = { type = wakeleader which = 110303 }\r
++	command = { type = wakeleader which = 110304 }\r
+ 	command = { type = wakeminister which = 110314 } # エルゼ・シエルスカ\r
+ 	command = { type = wakeminister which = 110315 }\r
+ 	command = { type = wakeminister which = 110316 }\r
+-	command = { type = wakeleader which = 110302 }\r
++	command = { type = wakeleader which = 110303 }\r
+ 	command = { type = wakeminister which = 110317 } # 九重八重\r
+ 	command = { type = wakeminister which = 110318 }\r
+ 	command = { type = wakeminister which = 110319 }\r
+-	command = { type = wakeleader which = 110304 }\r
++	command = { type = wakeleader which = 110305 }\r
++	command = { type = setflag which = ISESUMA_114514005 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -262,18 +270,41 @@ event = {
+ 	command = { type = sleepminister which = 110323 }\r
+ 	command = { type = sleepminister which = 110324 }\r
+ 	command = { type = sleepminister which = 110324 }\r
++	command = { type = sleepminister which = 110301 } # 望月冬夜\r
++	command = { type = sleepminister which = 110302 }\r
++	command = { type = sleepminister which = 110303 }\r
++	command = { type = sleepminister which = 110304 }\r
++	command = { type = sleepminister which = 110305 }\r
++	command = { type = sleepleader which = 110301 }\r
++	command = { type = sleepteam which = 110301 }\r
++	command = { type = sleepteam which = 110302 }\r
++	command = { type = sleepminister which = 110306 } # ユミナ・エルネア・ベルファスト\r
++	command = { type = sleepminister which = 110307 }\r
++	command = { type = sleepminister which = 110308 }\r
++	command = { type = sleepminister which = 110309 }\r
++	command = { type = sleepminister which = 110310 }\r
++	command = { type = sleepleader which = 110302 }\r
++	command = { type = sleepminister which = 110311 } # リンゼ・シエルスカ\r
++	command = { type = sleepminister which = 110312 }\r
++	command = { type = sleepminister which = 110313 }\r
++	command = { type = sleepleader which = 110304 }\r
++	command = { type = sleepminister which = 110314 } # エルゼ・シエルスカ\r
++	command = { type = sleepminister which = 110315 }\r
++	command = { type = sleepminister which = 110316 }\r
++	command = { type = sleepleader which = 110303 }\r
++	command = { type = sleepminister which = 110317 } # 九重八重\r
++	command = { type = sleepminister which = 110318 }\r
++	command = { type = sleepminister which = 110319 }\r
++	command = { type = sleepleader which = 110305 }\r
+ 	command = { type = independence which = ALS value = 1 when = 0 }\r
+-	command = { type = secedearea which = ALS value = "Bessarabia" when = 1 }\r
+-	command = { type = event which = 114515001 where = ALS when = 0 }\r
+-	command = { type = sleepevent which = 114514006 } # スライムキャッスル、そして新機能\r
+-	command = { type = sleepevent which = 114514007 } # 引っ越し、そしてドラゴン\r
+-	command = { type = sleepevent which = 114514008 } # 獣人の国、そして監視者\r
+-	command = { type = sleepevent which = 114514009 } # 日々の暮らし、そしてイーシェンへ\r
+-	command = { type = sleepevent which = 114514010 } # トウキョウ、そして不死の宝玉\r
+-	command = { type = sleepevent which = 114514011 } # 武田軍出現\r
+-	command = { type = sleepevent which = 114514012 } # 海、そしてバカンス\r
+-	command = { type = sleepevent which = 114514013 } # ぱんつ、そして空中庭園\r
+-	command = { type = sleepevent which = 114514014 } # 決断、そしてスマートフォンとともに\r
++	command = { type = secedeprovince which = ALS value = 285 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 295 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 336 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 341 when = 1 }\r
++	command = { type = event which = 114514022 where = ALS when = 0 }\r
++	command = { type = sleepevent which = 114514020 } # 五人目、そして新国家樹立（ROM）\r
++	command = { type = sleepevent which = 114514021 } # 五人目、そして新国家樹立（YUG SER）\r
++	command = { type = setflag which = ISESUMA_114514005 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -288,35 +319,50 @@ event = {
+ event = {\r
+ 	id = 114514006\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514004 # 将棋盤、そして地下遺跡\r
++	flag = ISESUMA_114514005 # 将棋盤、そして地下遺跡\r
+ 	random = 14\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
+ 	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
+ 	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
++	}\r
+ \r
+ 	name = "EVT_114514006_NAME"\r
+ 	desc = "EVT_114514006_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_30"\r
+ \r
+-	date = { day = 0 month = 2 year = 1933 }\r
++	date = { day = 5 month = 3 year = 1933 }\r
+ 	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 		\r
+ 	action = { # 研究所を焼き払え！\r
+ 	name = "ACTIONNAME114514006A"\r
+ 	command = { type = dissent value = -0.1 }\r
+-	command = { type = sleepteam which = 110304 } # スライム研究所\r
++	command = { trigger = { country = ROM } type = sleepteam which = 110305 } # スライム研究所\r
++	command = { trigger = { country = ALS } type = sleepteam which = 6840010 } # スライム研究所\r
++	command = { type = setflag which = ISESUMA_114514006 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 研究所を活用しよう\r
+ 	name = "ACTIONNAME114514006B"\r
+ 	command = { type = dissent value = 0.5 }\r
+-	command = { type = waketeam which = 110304 } # スライム研究所\r
++	command = { trigger = { country = ROM } type = waketeam which = 110305 } # スライム研究所\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840010 } # スライム研究所\r
++	command = { type = setflag which = ISESUMA_114514006 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r
+@@ -332,12 +378,24 @@ event = {
+ event = {\r
+ 	id = 114514007\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514005 # 婚約、そして押し掛け\r
++	flag = ISESUMA_114514006 # 婚約、そして押し掛け\r
+ 	random = 14\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514007_NAME"\r
+@@ -352,6 +410,17 @@ event = {
+ 	action = { # ドラゴンだと！？\r
+ 	name = "ACTIONNAME114514007A"\r
+ 	command = { type = dissent value = -0.5 }\r
++	command = { trigger = { country = ROM } type = add_leader_skill which = 110301 value = 1 } # 望月冬夜\r
++	command = { trigger = { country = ROM } type = add_leader_skill which = 110302 value = 1 } # ユミナ・エルネア・ベルファスト\r
++	command = { trigger = { country = ROM } type = add_leader_skill which = 110303 value = 1 } # エルゼ・シエルスカ\r
++	command = { trigger = { country = ROM } type = add_leader_skill which = 110304 value = 1 } # リンゼ・シエルスカ\r
++	command = { trigger = { country = ROM } type = add_leader_skill which = 110305 value = 1 } # 九重八重\r
++	command = { trigger = { country = ALS } type = add_leader_skill which = 6840001 value = 1 } # 望月冬夜\r
++	command = { trigger = { country = ALS } type = add_leader_skill which = 6840004 value = 1 } # ユミナ・エルネア・ベルファスト\r
++	command = { trigger = { country = ALS } type = add_leader_skill which = 6840005 value = 1 } # エルゼ・シエルスカ\r
++	command = { trigger = { country = ALS } type = add_leader_skill which = 6840006 value = 1 } # リンゼ・シエルスカ\r
++	command = { trigger = { country = ALS } type = add_leader_skill which = 6840007 value = 1 } # 九重八重\r
++	command = { type = setflag which = ISESUMA_114514007 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -366,13 +435,25 @@ event = {
+ event = {\r
+ 	id = 114514008\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514007 # 引っ越し、そしてドラゴン\r
++	flag = ISESUMA_114514007 # 引っ越し、そしてドラゴン\r
+ 	NOT = { war = { country = BUL country = ROM } }\r
+ 	random = 14\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514008_NAME"\r
+@@ -388,16 +469,20 @@ event = {
+ 	name = "ACTIONNAME114514008A"\r
+ 	command = { type = dissent value = -0.5 }\r
+ 	command = { type = relation which = BUL value = 50 }\r
+-	command = { type = non_aggression which = BUL where = ROM }\r
+-	command = { type = guarantee which = BUL where = ROM }\r
+-	command = { type = guarantee which = ROM where = BUL }\r
++	command = { trigger = { country = ROM } type = non_aggression which = BUL where = ROM }\r
++	command = { trigger = { country = ROM } type = guarantee which = BUL where = ROM }\r
++	command = { trigger = { country = ROM } type = guarantee which = ROM where = BUL }\r
++	command = { trigger = { country = ALS } type = non_aggression which = BUL where = ALS }\r
++	command = { trigger = { country = ALS } type = guarantee which = BUL where = ALS }\r
++	command = { trigger = { country = ALS } type = guarantee which = ALS where = BUL }\r
++	command = { type = setflag which = ISESUMA_114514008 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+ #  日々の暮らし、そして日本へ\r
+-# ミスミド王国から帰ってきた冬夜たちは、町でレネというスリをして生計を立てていた孤児と出会い、メイドとして雇うなど、平和な日常を過ごしていた。\r
++# ルーマニアに帰ってきた冬夜たちは、町でレネというスリをして生計を立てていた孤児と出会い、メイドとして雇うなど、平和な日常を過ごしていた。\r
+ # そこに妖精族のリーンが以前冬夜たちが倒した水晶の魔物の調査のために、館に訪れる。\r
+ # リーンは、この水晶の魔物の手掛かりが、東洋の小国にあるとのことであった。\r
+ #########################################################################\r
+@@ -405,13 +490,25 @@ event = {
+ event = {\r
+ 	id = 114514009\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514008 # 獣人の国、そして監視者\r
++	flag = ISESUMA_114514008 # 獣人の国、そして監視者\r
+ 	NOT = { war = { country = ROM country = JAP } }\r
+ 	random = 14\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514009_NAME"\r
+@@ -425,11 +522,14 @@ event = {
+ 		\r
+ 	action = { # 調査に同行する\r
+ 	name = "ACTIONNAME114514009A"\r
+-	command = { type = wakeminister which = 6840062 } # 琥珀\r
+-	command = { type = wakeminister which = 6840063 }\r
++	command = { trigger = { country = ROM } type = wakeleader which = 110311 } # 琥珀\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840082 } # 琥珀\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840092 }\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840051 }\r
+ 	command = { type = relation which = BUL value = 5 }\r
+ 	command = { type = relation which = JAP value = 5 }\r
+ 	command = { type = setflag which = ISESUMA_Eashen }\r
++	command = { type = setflag which = ISESUMA_114514009 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -439,12 +539,14 @@ event = {
+ 	command = { type = relation which = JAP value = -5 }\r
+ 	command = { type = sleepevent which = 114514010 } # 日々の暮らし、そして日本へ\r
+ 	command = { type = sleepevent which = 114514011 } # 武田軍出現\r
++	command = { type = sleepevent which = 114514012 } # 海、そしてバカンス\r
++	command = { type = setflag which = ISESUMA_114514009 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  日々の暮らし、そして日本へ\r
++#  トウキョウ、そして不死の宝玉\r
+ # トウキョウに到着した冬夜は、八重の家へと向かう。\r
+ # 女中の綾音と八重の母・七重に会い、八重の父と兄が暴動の鎮圧へ向かったことを聞く。\r
+ # 戦況が劣勢と聞き、戦場に向かった冬夜たちがそこで目にしたものは、古代文明の強力な魔法道具を使い、\r
+@@ -455,15 +557,27 @@ event = {
+ event = {\r
+ 	id = 114514010\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+ 	flag = ISESUMA_Eashen # フラグが成立している\r
+-	event = 114514008 # 獣人の国、そして監視者\r
++	flag = ISESUMA_114514009 # 日々の暮らし、そして日本へ\r
+ 	exists = JAP\r
+ 	NOT = { war = { country = ROM country = JAP } }\r
+ 	random = 14\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514010_NAME"\r
+@@ -479,6 +593,7 @@ event = {
+ 	name = "ACTIONNAME114514010A"\r
+ 	command = { type = relation which = JAP value = 5 }\r
+ 	command = { type = event which = 114514011 where = JAP when = 0 }\r
++	command = { type = setflag which = ISESUMA_114514010 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -504,7 +619,6 @@ event = {
+ 	name = "ACTIONNAME114514011A"\r
+ 	command = { type = revolt which = 1548 } # 長野\r
+ 	command = { type = revolt which = 1548 }\r
+-	command = { type = revolt which = 1548 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -520,13 +634,34 @@ event = {
+ event = {\r
+ 	id = 114514012\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
++	OR = {\r
++	AND = {\r
+ 	flag = ISESUMA_Eashen # フラグが成立している\r
+-	event = 114514010 # 日々の暮らし、そして日本へ\r
++	flag = ISESUMA_114514010 # トウキョウ、そして不死の宝玉\r
++	}\r
++	AND = {\r
++	NOT = { flag = ISESUMA_Eashen } # フラグが成立していない\r
++	NOT = { flag = ISESUMA_114514010 } # トウキョウ、そして不死の宝玉\r
++	flag = ISESUMA_114514009 # 日々の暮らし、そして日本へ\r
++	}\r
++	}\r
+ 	random = 14\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514012_NAME"\r
+@@ -540,9 +675,10 @@ event = {
+ 		\r
+ 	action = { # ここは一体…！？\r
+ 	name = "ACTIONNAME114514012A"\r
+-	command = { type = wakeminister which = 6840064 } # 琥珀\r
+-	command = { type = wakeleader which = 6840043 }\r
+-	command = { type = event which = 114514013 where = ROM when = 1 }\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840106 } # 黒曜&珊瑚\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840052 }\r
++	command = { trigger = { country = ROM } type = wakeleader which = 110312 } # 黒曜&珊瑚\r
++	command = { type = event which = 114514013 where = -1 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -557,7 +693,7 @@ event = {
+ event = {\r
+ 	id = 114514013\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ \r
+ 	name = "EVT_114514013_NAME"\r
+ 	desc = "EVT_114514013_DESC"\r
+@@ -566,7 +702,10 @@ event = {
+ 		\r
+ 	action = { # 今後どうなることやら\r
+ 	name = "ACTIONNAME114514013A"\r
+-	command = { type = waketeam which = 110305 } # 空中庭園バビロン\r
++	command = { trigger = { country = ROM } type = waketeam which = 110307 } # 空中遺跡バビロン「庭園」\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840048 } # フランシェスカ\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840017 } # 空中遺跡バビロン「庭園」\r
++	command = { type = setflag which = ISESUMA_114514013 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -583,12 +722,24 @@ event = {
+ event = {\r
+ 	id = 114514014\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514013 # ぱんつ、そして空中庭園\r
++	flag = ISESUMA_114514013 # ぱんつ、そして空中庭園\r
+ 	random = 14\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514014_NAME"\r
+@@ -603,26 +754,39 @@ event = {
+ 	action = { # スマートフォンとともに\r
+ 	name = "ACTIONNAME114514014A"\r
+ 	command = { type = dissent value = -5 }\r
++	command = { type = setflag which = ISESUMA_114514014 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+ #  婚約指輪、そして温泉\r
+-# 4人と婚約した冬夜は、ギルドの冒険者ランクを上げるため、様々な依頼をこなしていった。\r
+-# 一方、ユミナ、エルゼ、リンゼ、八重の婚約者たちは、冬夜からもらった婚約指輪をつけてお風呂で嫁会議を行い、\r
+-# 冬夜を今後も支えていくことを誓い合った。\r
++# ユミナ、エルゼ、リンゼ、八重の4人と婚約した冬夜は、ギルドの冒険者ランクを上げるため、依頼をこなしながら異世界での第2の人生をそれなりに楽しんでいた。\r
++# 冬夜自身をこの世界に送り込んだ神からスマートフォンへの呼び出しを受け、婚約者たちとの親密ぶりを冷やかされるほどであった。\r
++# 一方、ユミナ、エルゼ、リンゼ、八重の婚約者たちは、冬夜からもらった婚約指輪をつけてお風呂で嫁会議を開き、冬夜を今後も支えていくことを誓い合った。\r
+ #########################################################################\r
+ \r
+ event = {\r
+ 	id = 114514015\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514014 # ぱんつ、そして空中庭園\r
++	flag = ISESUMA_114514014 # 決断、そしてスマートフォンとともに\r
+ 	random = 16\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514015_NAME"\r
+@@ -634,15 +798,14 @@ event = {
+ 	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 		\r
+-	action = { # ベッサラビアの治安が回復した\r
++	action = { # 冬夜と嫁の関係は大変良好である\r
+ 	name = "ACTIONNAME114514015A"\r
+ 	command = { type = dissent value = -1 }\r
+-	command = { type = province_revoltrisk which = 300 value = -75 }\r
+-	command = { type = province_revoltrisk which = 302 value = -75 }\r
+-	command = { type = province_revoltrisk which = 303 value = -75 }\r
+-	command = { type = province_revoltrisk which = 304 value = -75 }\r
+-	command = { type = province_revoltrisk which = 305 value = -75 }\r
+-	command = { type = province_revoltrisk which = 306 value = -75 }\r
++	command = { type = province_revoltrisk which = 285 value = -75 }\r
++	command = { type = province_revoltrisk which = 295 value = -75 }\r
++	command = { type = province_revoltrisk which = 336 value = -75 }\r
++	command = { type = province_revoltrisk which = 341 value = -75 }\r
++	command = { type = setflag which = ISESUMA_114514015 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -658,12 +821,24 @@ event = {
+ event = {\r
+ 	id = 114514016\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514015 # 婚約指輪、そして温泉\r
++	flag = ISESUMA_114514015 # 婚約指輪、そして温泉\r
+ 	random = 16\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514016_NAME"\r
+@@ -677,7 +852,13 @@ event = {
+ 		\r
+ 	action = { # 古代の大工場だ\r
+ 	name = "ACTIONNAME114514016A"\r
+-	command = { type = waketeam which = 110306 } # 空中庭園バビロン\r
++	command = { trigger = { country = ROM } type = waketeam which = 110307 } # 空中遺跡バビロン「工房」\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840054 } # レベッカ\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840055 } # ローガン\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840056 } # ウィル\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840049 } # ハイロゼッタ\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840018 } # 空中遺跡バビロン「工房」\r
++	command = { type = setflag which = ISESUMA_114514016 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -695,12 +876,24 @@ event = {
+ event = {\r
+ 	id = 114514017\r
+ 	random = no\r
+-	country = ROM\r
++	TAG = { ROM ALS }\r
+ 	\r
+ 	trigger = {\r
+ 	flag = ISESUMA # フラグが成立している\r
+-	event = 114514016 # 砂漠の遭難者、そして工房\r
++	flag = ISESUMA_114514016 # 砂漠の遭難者、そして工房\r
+ 	random = 16\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_114514017_NAME"\r
+@@ -714,142 +907,1430 @@ event = {
+ 		\r
+ 	action = { # 読書喫茶は大繁盛した\r
+ 	name = "ACTIONNAME114514017A"\r
+-	command = { type = construct which = ic where = 304 value = 1 } # キシネフ\r
+-	command = { type = construct which = infrastructure where = 304 value = 10 }\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840014 } # 読書喫茶「月読」\r
++	command = { type = construct which = ic where = 285 value = 1 } # ティミショアラ\r
++	command = { type = construct which = infrastructure where = 285 value = 10 }\r
+ 	command = { type = research_mod value = 1 }\r
+ 	command = { type = industrial_modifier which = total value = 1 }\r
++	command = { type = industrial_modifier which = total value = 1 }\r
++	command = { type = setflag which = ISESUMA_114514017 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+-\r
+-#########################################################################\r
+-#  オプションイベント\r
+ #########################################################################\r
+-#  異世界はスマートフォンとともに。 ― ミスミド王国\r
+-# このイベントを起動した場合、ブルガリアがミスミド王国に代わります。\r
++#  帝都動乱、そして帝国の姫（ROM ALS）\r
++# 読書喫茶「月読」に本を仕入れる為、ユーゴスラビアにやって来た冬夜は、街が戦火に巻き込まれているのを目撃する。\r
++# 軍部がクーデターを起こした事を知り城に向かうと、兵に剣を突き付けられた皇女ルーシアを間一髪で助けることができた。\r
++# ルーシアから国王と皇太子も助けてほしいと懇願された冬夜は皇帝の元に急ぐが、そこで悪魔デモンズロードと契約したクーデターの首謀者、バズール将軍と相見える。\r
++# アーティファクトを装備し、悪魔の力を手に入れていたバズール将軍を前に、冬夜は国王と皇女を助ける、一度撤退する。\r
++# その後、再びユーゴスラビアに戻り、軍部のクーデターを鎮圧。\r
++# デモンズロードを討伐するとバズール将軍を捕まえ、首都に平穏を取り戻した。\r
+ #########################################################################\r
++\r
+ event = {\r
+-	id = 114514201\r
++	id = 114514018\r
+ 	random = no\r
+-	country = -1\r
++	TAG = { ROM ALS }\r
++	\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514017 # 本収集、そして読書喫茶\r
++	random = 16\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
++	}\r
+ \r
+-	decision = {\r
+-	ai = no # AI操作でない\r
+-	flag = ISESUMA # フラグが立っている\r
+-	exists = BUL\r
++	name = "EVT_114514018_NAME"\r
++	desc = "EVT_114514018_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_45"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # 未曽有の戦争の危機は回避された\r
++	name = "ACTIONNAME114514018A"\r
++	command = { type = belligerence value = -1 }\r
++	command = { type = relation which = YUG value = 25 }\r
++	command = { trigger = { exists = YUG } type = event which = 114514019 where = YUG when = 0 }\r
++	command = { trigger = { exists = SER } type = event which = 114514019 where = SER when = 0 }\r
++	command = { type = setflag which = ISESUMA_114514018 }\r
++	ai_chance = 100\r
+ 	}\r
++}\r
+ \r
+-	decision_trigger = {\r
+-	ai = no # AI操作でない\r
+-	flag = ISESUMA # フラグが立っている\r
+-	exists = BUL\r
++#########################################################################\r
++#  帝都動乱、そして帝国の姫（YUG）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514019\r
++	random = no\r
++	TAG = { YUG SER }\r
++\r
++	name = "EVT_114514018_NAME"\r
++	desc = "EVT_114514018_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_45"\r
++		\r
++	action = { # 未曽有の戦争の危機は回避された\r
++	name = "ACTIONNAME114514018A"\r
++	command = { type = belligerence which = YUG value = 3 }\r
++	command = { type = relation which = ROM value = 25 }\r
++	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  五人目、そして新国家樹立（ROM）\r
++# ユーゴスラビアでのクーデター事件を解決した冬夜にユーゴスラビアの王女ルーシアは好意を寄せていた。\r
++# それを察したユミナは、ルーシアを5人目の婚約者として迎える事を提案する。\r
++# 更には、ルーマニアとユーゴスラビアから領土を譲渡され、両国の境に新たな国を建国する事が決定、冬夜が国王として即位する事になった。\r
++# 国名を『ブリュンヒルド公国』と決め、国王となった冬夜は、道路の整備や城の建築に取り掛かった。\r
++# しばらくすると、ブリュンヒルド公国に周辺国から王が訪れ、親睦を深めた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514020\r
++	random = no\r
++	country = ROM\r
+ 	\r
+ 	trigger = {\r
+-	ai = no # AI操作でない\r
+-	flag = ISESUMA # フラグが立っている\r
+-	exists = BUL\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514018 # 帝都動乱、そして帝国の姫（ROM ALS）\r
++	random = 14\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
+ 	}\r
+ \r
+-	name = "EVT_114514201_NAME"\r
+-	desc = "EVT_114514201_DESC"\r
++	name = "EVT_114514020_NAME"\r
++	desc = "EVT_114514020_DESC"\r
+ 	style = 2\r
+-	picture = "ISESUMA_6"\r
+-	decision_picture = "decision_ISESUMA"\r
++	picture = "ISESUMA_46"\r
+ \r
+ 	date = { day = 0 month = 2 year = 1933 }\r
+-	offset = 3\r
+-	deathdate = { day = 5 month = 2 year = 1933 }\r
++	offset = 18\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 		\r
+-	action = { # 変更する\r
+-	name = "ACTIONNAME114514201A"\r
+-	command = { type = trigger which = 114514202 }\r
++	action = { # ブリュンヒルド公国、万歳！\r
++	name = "ACTIONNAME114514020A"\r
++	command = { type = relation which = YUG value = 25 }\r
++	command = { type = relation which = BUL value = 25 }\r
++	command = { type = relation which = GRE value = 25 }\r
++	command = { type = relation which = HUN value = 25 }\r
++	command = { type = relation which = AUS value = 25 }\r
++	command = { type = relation which = ITA value = 25 }\r
++	command = { type = independence which = ALS value = 1 when = 0 }\r
++	command = { type = secedeprovince which = ALS value = 285 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 295 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 336 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 341 when = 1 }\r
++	command = { trigger = { exists = YUG } type = event which = 114515021 where = YUG when = 0 }\r
++	command = { trigger = { exists = SER } type = event which = 114515021 where = SER when = 0 }\r
++	command = { type = event which = 114515022 where = ALS when = 0 }\r
++	command = { type = setflag which = ISESUMA_114514020 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 変更しない\r
+-	name = "ACTIONNAME114514201B"\r
+-	command = { type = sleepevent which = 114514202 }\r
+-	ai_chance = 100\r
++	action = { # 申し出を拒否する\r
++	name = "ACTIONNAME114514020B"\r
++	command = { type = relation which = YUG value = 5 }\r
++	command = { type = relation which = BUL value = 5 }\r
++	command = { type = relation which = GRE value = 5 }\r
++	command = { type = relation which = HUN value = 5 }\r
++	command = { type = relation which = AUS value = 5 }\r
++	command = { type = relation which = ITA value = 5 }\r
++	command = { type = sleepevent which = 114514021 } # 五人目、そして新国家樹立（YUG SER）\r
++	command = { type = sleepevent which = 114514022 } # 五人目、そして新国家樹立（ALS）\r
++	command = { type = setflag which = NOT_Brunhild }\r
++	command = { type = setflag which = ISESUMA_114514020 }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  異世界はスマートフォンとともに。 ― ミスミド王国の成立\r
+-# ミスミド王国は、ライトノベル『異世界はスマートフォンとともに。』に登場する国家です。\r
+-# ベルファストの南方に位置する、獣人等の亜人が建国した新興国であり、現在は獣人が国王を務めている。\r
++#  五人目、そして新国家樹立（YUG SER）\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114514202\r
++	id = 114514021\r
+ 	random = no\r
+-	country = BUL\r
++	TAG = { YUG SER }\r
+ \r
+-	name = "EVT_114514202_NAME"\r
+-	desc = "EVT_114514202_DESC"\r
++	name = "EVT_114514020_NAME"\r
++	desc = "EVT_114514020_DESC"\r
+ 	style = 2\r
+-	picture = "ISESUMA_6"\r
++	picture = "ISESUMA_46"\r
+ 		\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = dissent value = -0.1 }\r
+-	command = { type = wakeminister which = 95301 } # ミスミド王国系閣僚\r
+-	command = { type = wakeminister which = 95302 }\r
+-	command = { type = wakeminister which = 95303 }\r
+-	command = { type = wakeminister which = 95304 }\r
+-	command = { type = wakeminister which = 95305 }\r
+-	command = { type = wakeminister which = 95306 }\r
+-	command = { type = wakeminister which = 95307 }\r
+-	command = { type = wakeminister which = 95308 }\r
+-	command = { type = wakeminister which = 95309 }\r
+-	command = { type = wakeminister which = 95310 }\r
+-	command = { type = wakeminister which = 95311 }\r
+-	command = { type = wakeminister which = 95312 }\r
+-	command = { type = wakeminister which = 95313 }\r
+-	command = { type = wakeminister which = 95314 }\r
+-	command = { type = wakeleader which = 95201 } # ミスミド王国系将軍\r
+-	command = { type = wakeleader which = 95202 }\r
+-	command = { type = wakeleader which = 95203 }\r
+-	command = { type = wakeleader which = 95204 }\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = name where = BUL which = "ミスミド王国" }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = headofstate which = 95301 } # ジャムカ・ブラウ・ミスミド\r
+-	command = { type = headofgovernment which = 95302 } # グラーツ\r
+-	command = { type = foreignminister which = 95303 } # オリガ・ストランド\r
+-	command = { type = armamentminister which = 95304 } # オリガ・ストランド\r
+-	command = { type = ministerofsecurity which = 95305 } # アルマ・ストランド\r
+-	command = { type = ministerofintelligence which = 95306 } # トム・デール\r
+-	command = { type = chiefofstaff which = 95307 } # ジャムカ・ブラウ・ミスミド\r
+-	command = { type = chiefofarmy which = 95308 } # ガルン\r
+-	command = { type = chiefofnavy which = 95309 } # ジャムカ・ブラウ・ミスミド\r
+-	command = { type = chiefofair which = 95310 } # ガルン\r
+-	command = { type = sleepevent which = 9999143 } # AI閣僚変更イベント\r
+-	command = { type = sleepevent which = 9999144 }\r
+-	command = { type = sleepevent which = 9999145 }\r
+-	command = { type = sleepevent which = 9999146 }\r
+-	command = { type = sleepevent which = 9999147 }\r
+-	command = { type = sleepevent which = 9999148 }\r
+-	command = { type = sleepevent which = 9999149 }\r
+-	command = { type = sleepevent which = 9999150 }\r
+-	command = { type = sleepevent which = 9999151 }\r
+-	command = { type = sleepevent which = 9999152 }\r
+-	command = { type = sleepevent which = 9999153 }\r
+-	command = { type = sleepevent which = 9999154 }\r
+-	command = { type = sleepevent which = 9999155 }\r
++	action = { # 未曽有の戦争の危機は回避された\r
++	name = "ACTIONNAME114514020A"\r
++	command = { type = relation which = ROM value = 25 }\r
++	command = { type = relation which = BUL value = 25 }\r
++	command = { type = relation which = GRE value = 25 }\r
++	command = { type = relation which = HUN value = 25 }\r
++	command = { type = relation which = AUS value = 25 }\r
++	command = { type = relation which = ITA value = 25 }\r
++	command = { type = secedeprovince which = ALS value = 285 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 295 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 336 when = 1 }\r
++	command = { type = secedeprovince which = ALS value = 341 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ #########################################################################\r
+-#  異世界はスマートフォンとともに。 ― 神様からの贈り物\r
+-# 神様を名乗る人物から援助をもらえるそうだ。どうすべきだろうか？\r
++#  五人目、そして新国家樹立（ALS）\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 114514203\r
++	id = 114514022\r
++	random = no\r
++	country = ALS\r
++\r
++	name = "EVT_114514022_NAME"\r
++	desc = "EVT_114514022_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_46"\r
++		\r
++	action = { # ブリュンヒルド公国、万歳！\r
++	name = "ACTIONNAME114514022A"\r
++	command = { type = setflag which = Brunhild }\r
++	command = { type = dissent value = 20 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = set_domestic which = free_market value = 5 } \r
++	command = { type = set_domestic which = freedom value = 5 } \r
++	command = { type = set_domestic which = defense_lobby value = 4 }\r
++	command = { type = set_domestic which = interventionism value = 4 }\r
++	command = { type = headofstate which = 6840001 } # 望月冬夜\r
++	command = { type = headofgovernment which = 6840002 } # ユミナ・エルネア・ベルファスト\r
++	command = { type = foreignminister which = 6840003 } # 高坂政信\r
++	command = { type = armamentminister which = 6840004 } # リンゼ・シエルスカ\r
++	command = { type = ministerofsecurity which = 6840005 } # スゥシィ・エルネア・オルトリンデ\r
++	command = { type = ministerofintelligence which = 6840006 } # 九重八重\r
++	command = { type = chiefofstaff which = 6840007 } # 望月冬夜\r
++	command = { type = chiefofarmy which = 6840008 } # エルゼ・シエルスカ\r
++	command = { type = chiefofnavy which = 6840009 } # 望月冬夜\r
++	command = { type = chiefofair which = 6840010 } # リーン\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = belligerence which = ALS value = 5 }\r
++	command = { type = non_aggression which = ALS where = YUG }\r
++	command = { type = non_aggression which = ALS where = SER }\r
++	command = { type = non_aggression which = ALS where = CRO }\r
++	command = { type = non_aggression which = ALS where = MTN }\r
++	command = { type = non_aggression which = ALS where = ROM }\r
++	command = { type = non_aggression which = ALS where = BUL }\r
++	command = { type = non_aggression which = ALS where = HUN }\r
++	command = { type = non_aggression which = ALS where = AUS }\r
++	command = { type = non_aggression which = ALS where = CZE }\r
++	command = { type = non_aggression which = ALS where = ITA }\r
++	command = { type = non_aggression which = ALS where = ALB }\r
++	command = { type = guarantee which = ALS where = ROM }\r
++	command = { type = guarantee which = ALS where = BUL }\r
++	command = { type = guarantee which = ALS where = YUG }\r
++	command = { type = guarantee which = ALS where = SER }\r
++	command = { type = guarantee which = ALS where = CRO }\r
++	command = { type = guarantee which = ALS where = MTN }\r
++	command = { type = guarantee which = ALS where = HUN }\r
++	command = { type = guarantee which = ALS where = AUS }\r
++	command = { type = guarantee which = ROM where = ALS }\r
++	command = { type = guarantee which = YUG where = ALS }\r
++	command = { type = guarantee which = SER where = ALS }\r
++	command = { type = guarantee which = CRO where = ALS }\r
++	command = { type = guarantee which = MTN where = ALS }\r
++	command = { type = guarantee which = ROM where = ALS }\r
++	command = { type = guarantee which = BUL where = ALS }\r
++	command = { type = set_relation which = ROM value = 75 }\r
++	command = { type = set_relation which = BUL value = 75 }\r
++	command = { type = set_relation which = YUG value = 50 }\r
++	command = { type = set_relation which = SER value = 50 }\r
++	command = { type = set_relation which = CRO value = 15 }\r
++	command = { type = set_relation which = MTN value = 30 }\r
++	command = { type = set_relation which = HUN value = -50 }\r
++	command = { type = set_relation which = AUS value = -50 }\r
++	command = { type = set_relation which = CZE value = -50 }\r
++	command = { type = set_relation which = GRE value = -50 }\r
++	command = { type = set_relation which = ITA value = -50 }\r
++	command = { type = set_relation which = ENG value = -50 }\r
++	command = { type = set_relation which = FRA value = -50 }\r
++	command = { type = set_relation which = GER value = -50 }\r
++	command = { type = set_relation which = SOV value = -50 }\r
++	command = { type = set_relation which = RUS value = -50 }\r
++	command = { type = set_relation which = UER value = -50 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  錬金棟、そして思わぬ再会\r
++# 新たなバビロンの遺跡である「錬金棟」を発見した冬夜は、管理者のフローラからの適合資格チェックを経てマスターとなった。\r
++# 国づくりも落ち着き、恋愛神から恋愛モードに入ったと知らされた冬夜は、八重とエルゼ、リンゼそれぞれの親へ婚約の報告に行く。\r
++# 報告を終え一息ついたところ、エンデと思わぬ再会する。\r
++# 彼から、最近出没している水晶の魔物フレイズが自分たちの『王』を探している事、世界が数千年前に滅びかけたという出来事を聞き、\r
++# 対抗するためには秘密兵器が必要だと改めて認識する。\r
++# バビロンの遺跡の転送陣を探し出すため、冬夜は琥珀と黒曜&珊瑚の力を借りて翼の王である神獣・炎帝を召喚する。\r
++# 炎帝は既に琥珀らの主となっている冬夜の力量を見抜き、すぐに主従関係に同意して、紅玉と名付けられた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514023\r
++	random = no\r
++	TAG = { ROM ALS }\r
++	\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	OR = {\r
++	flag = ISESUMA_114514020 # 五人目、そして新国家樹立\r
++	exists = ALS\r
++	}\r
++	random = 16\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	tech_team = { id = 110308 country = ROM } # 空中遺跡バビロン「工房」\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	tech_team = { id = 6840018 country = ALS } # 空中遺跡バビロン「工房」\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_114514023_NAME"\r
++	desc = "EVT_114514023_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_47"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # バビロンの遺跡をさらに探す必要がある\r
++	name = "ACTIONNAME114514023A"\r
++	command = { type = relation which = YUG value = 15 }\r
++	command = { type = relation which = BUL value = 15 }\r
++	command = { type = relation which = GRE value = 15 }\r
++	command = { type = relation which = HUN value = 15 }\r
++	command = { type = relation which = AUS value = 15 }\r
++	command = { type = relation which = ITA value = 15 }\r
++	command = { trigger = { country = ALS } type = relation which = ROM value = 15 }\r
++	command = { trigger = { country = ROM } type = waketeam which = 110309 } # 空中遺跡バビロン「錬金棟」\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840019 } # 空中遺跡バビロン「錬金棟」\r
++	command = { trigger = { country = ROM } type = wakeleader which = 110313 } # 紅玉\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840114 } # 紅玉\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840053 }\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840050 } # ベルフローラ\r
++	command = { type = setflag which = ISESUMA_114514023 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  格納庫、そしてフレームギア\r
++# バビロンの遺跡捜索の為、孤島に降り立った冬夜一行。\r
++# バビロンの遺跡の「格納庫」を発見し、管理人モニカに認められ、所有者登録完了すると、所蔵されているフレームギアとついに対面した。\r
++# 冬夜は歓喜したが、燃料が無いと動かないと判明し、早速、燃料の素材を確保しつつ、ロゼッタが用意していた操作訓練用「フレームユニット」で対戦シミュレーションを始めた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514024\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514023 # 錬金棟、そして思わぬ再会\r
++	random = 18\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	tech_team = { id = 110309 country = ROM } # 空中遺跡バビロン「錬金棟」\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	tech_team = { id = 6840019 country = ALS } # 空中遺跡バビロン「錬金棟」\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_114514024_NAME"\r
++	desc = "EVT_114514024_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_48"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # ついにフレームギアが発見され…動かないのか…\r
++	name = "ACTIONNAME114514024A"\r
++	command = { trigger = { country = ROM } type = waketeam which = 110310 } # 空中遺跡バビロン「格納庫」\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840020 } # 空中遺跡バビロン「格納庫」\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840051 } # フレドモニカ\r
++	command = { type = setflag which = ISESUMA_114514024 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  二人の王子、そして小さな婚約者\r
++# バビロンの遺跡創作も一段落し、冬夜が人心地ついていると、大貴族のオルトリンデ侯爵の令嬢であるスゥシィ・エルネア・オルトリンデが突然訪ねてきた。\r
++# ギリシャの王子との縁談が持ち上がったのだが、その素行が問題視されており、スゥシィがそれを嫌がったのだ。\r
++# また縁談の使者として来た第二王子から、軍の将軍に幽閉されている母を転移魔法で助けてほしいと懇願され、真相を確かめるべくギリシャへ潜入。\r
++# すると現国王を暗殺し、王国を転覆させる陰謀が判明。\r
++# 冬夜から真実を知らされた国王は、様々な悪行が判明した将軍一派を粛清し、その後、冬夜はスゥシィを婚約者として受け入れた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514025\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514024 # 格納庫、そしてフレームギア\r
++	exists = GRE\r
++	random = 15\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_114514025_NAME"\r
++	desc = "EVT_114514025_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_49"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # 王国へ潜入する\r
++	name = "ACTIONNAME114514025A"\r
++	command = { type = relation which = GRE value = -15 }\r
++	command = { type = event which = 114515026 where = GRE when = 0 }\r
++	command = { type = setflag which = ISESUMA_114514025 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 潜入は危険すぎる\r
++	name = "ACTIONNAME114514025B"\r
++	command = { type = relation which = GRE value = 5 }\r
++	command = { type = sleepevent which = 114515026 } # 望月冬夜の潜入\r
++	command = { type = sleepevent which = 114515027 } # 望月冬夜の潜入 ― 成功\r
++	command = { type = sleepevent which = 114515028 } # 望月冬夜の潜入 ― 失敗\r
++	command = { type = setflag which = ISESUMA_114514025 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  望月冬夜の潜入\r
++# バビロンの遺跡創作も一段落し、冬夜が人心地ついていると、大貴族のオルトリンデ侯爵の令嬢であるスゥシィ・エルネア・オルトリンデが突然訪ねてきた。\r
++# ギリシャの王子との縁談が持ち上がったのだが、その素行が問題視されており、スゥシィがそれを嫌がったのだ。\r
++# また縁談の使者として来た第二王子クラウドから、宰相に幽閉されている母を転移魔法で助けてほしいと懇願され、真相を確かめるべくギリシャへ潜入。\r
++# すると現国王を暗殺し、王国を転覆させる陰謀が判明。\r
++# 冬夜から真実を知らされた国王は、決断に迫られている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514026\r
++	random = no\r
++	country = GRE\r
++\r
++	name = "EVT_114514026_NAME"\r
++	desc = "EVT_114514026_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_49"\r
++		\r
++	action = { # 国王は粛清を決断した\r
++	name = "ACTIONNAME114514026A"\r
++	command = { type = relation which = ROM value = 15 }\r
++	command = { trigger = { exists = ALS } type = relation which = ALS value = 15 }\r
++	command = { type = sleepleader which = -1 }\r
++	command = { type = sleepleader which = -1 }\r
++	command = { trigger = { NOT = { exists = ALS } } type = event which = 114515027 where = ROM when = 0 }\r
++	command = { trigger = { exists = ALS } type = event which = 114515027 where = ALS when = 0 }\r
++	command = { type = sleepevent which = 114515028 } # 望月冬夜の潜入 ― 失敗\r
++	ai_chance = 95\r
++	}\r
++\r
++	action = { # この怪しげな男を逮捕せよ！\r
++	name = "ACTIONNAME114514026B"\r
++	command = { type = relation which = ROM value = -100 }\r
++	command = { trigger = { exists = ALS } type = relation which = ALS value = -100 }\r
++	command = { trigger = { NOT = { exists = ALS } } type = event which = 114515028 where = ROM when = 0 }\r
++	command = { trigger = { exists = ALS } type = event which = 114515028 where = ALS when = 0 }\r
++	command = { type = sleepevent which = 114515027 } # 望月冬夜の潜入 ― 成功\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  望月冬夜の潜入 ― 成功\r
++# 冬夜によるギリシャへの潜入は成功し、ギリシャにおける陰謀は未然に阻止された！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514027\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	name = "EVT_114514027_NAME"\r
++	desc = "EVT_114514027_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_49"\r
++		\r
++	action = { # 大変結構！\r
++	name = "ACTIONNAME114514027A"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = relation which = ROM value = 15 }\r
++	command = { trigger = { exists = ALS } type = relation which = ALS value = 15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  望月冬夜の潜入 ― 失敗\r
++# 冬夜によるギリシャへの潜入は失敗し、彼は逮捕されてしまった。\r
++# その後の動向は不明であり、どうなったかは定かではない…\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514028\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	name = "EVT_114514028_NAME"\r
++	desc = "EVT_114514028_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_49"\r
++\r
++	action = { # 大変なことになってしまった\r
++	name = "ACTIONNAME114514028A"\r
++	trigger = { exists = ROM }\r
++	command = { type = dissent value = 15 }\r
++	command = { type = relation which = GRE value = -100 }\r
++	command = { type = sleepminister which = 110301 } # 望月冬夜\r
++	command = { type = sleepminister which = 110302 }\r
++	command = { type = sleepminister which = 110303 }\r
++	command = { type = sleepminister which = 110304 }\r
++	command = { type = sleepminister which = 110305 }\r
++	command = { type = sleepleader which = 110301 }\r
++	command = { type = sleepteam which = 110301 }\r
++	command = { type = sleepteam which = 110302 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 大変なことになってしまった\r
++	name = "ACTIONNAME114514028A"\r
++	trigger = { exists = ALS }\r
++	command = { type = dissent value = 15 }\r
++	command = { type = relation which = GRE value = -100 }\r
++	command = { trigger = { incabinet = 6840001 } type = headofstate which = 6840012 } # 摂政評議会\r
++	command = { trigger = { incabinet = 6840011 } type = headofstate which = 6840013 } # 摂政評議会\r
++	command = { trigger = { incabinet = 6840007 } type = chiefofstaff which = 6840078 } # エルゼ・シエルスカ\r
++	command = { type = sleepminister which = 6840001 } # 望月冬夜\r
++	command = { type = sleepminister which = 6840007 }\r
++	command = { type = sleepminister which = 6840009 }\r
++	command = { type = sleepminister which = 6840011 }\r
++	command = { type = sleepminister which = 6840021 }\r
++	command = { type = sleepminister which = 6840022 }\r
++	command = { type = sleepminister which = 6840047 }\r
++	command = { type = sleepminister which = 6840087 }\r
++	command = { type = sleepminister which = 6840098 }\r
++	command = { type = sleepminister which = 6840110 }\r
++	command = { type = sleepleader which = 6840001 }\r
++	command = { type = sleepleader which = 6840002 }\r
++	command = { type = sleepleader which = 6840003 }\r
++	command = { type = sleepteam which = 6840001 }\r
++	command = { type = sleepteam which = 6840031 }\r
++	command = { type = sleepteam which = 6840002 } # スマートフォン\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  休日デート、そして姫騎士（ROM ALS）\r
++# ユミナから6人同時にデートしようと提案された冬夜は、デート用の新しい服でおめかしした婚約者達と楽しい時間を満喫するが、\r
++# 城に戻ると、一人取り残されたと頬をふくらませるスゥシィが待っており、数日後にスゥシィと二人で出掛けることになった。\r
++# そしてフレームギアを量産する為、素材を確保しに周辺を飛行していた冬夜は、フレイズに襲われている街を発見。\r
++# そこでは姫騎士ヒルデガルドが戦っており、冬夜は彼女を助けることに成功した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514029\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514025 # 二人の王子、そして小さな婚約者\r
++	OR = {\r
++	exists = YUG\r
++	exists = SER\r
++	}\r
++	random = 15\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	OR = {\r
++	minister = 6840001 # 望月冬夜\r
++	minister = 6840011 # 望月冬夜\r
++	}\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_114514029_NAME"\r
++	desc = "EVT_114514029_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_50"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # 姫騎士を助けた\r
++	name = "ACTIONNAME114514029A"\r
++	command = { type = relation which = YUG value = -15 }\r
++	command = { trigger = { exists = YUG } type = event which = 114515030 where = YUG when = 0 }\r
++	command = { trigger = { exists = CRO } type = event which = 114515030 where = CRO when = 0 }\r
++	command = { type = setflag which = ISESUMA_114514029 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  休日デート、そして姫騎士（YUG CRO）\r
++# 国内のとある村に謎の魔物が暴れていたところ、最近話題となっていた東洋人が突如現れ、魔物を成敗したとのことだ。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514030\r
++	random = no\r
++	TAG = { YUG CRO }\r
++\r
++	name = "EVT_114514030_NAME"\r
++	desc = "EVT_114514030_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_50"\r
++		\r
++	action = { # ありがたい\r
++	name = "ACTIONNAME114514030A"\r
++	command = { trigger = { NOT = { exists = ALS } } type = relation which = ROM value = 15 }\r
++	command = { trigger = { exists = ALS } type = relation which = ALS value = 15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  記憶喪失、そしてピアノ\r
++# ある時、冬夜は立ち寄った森で怪我を負った少女を発見した。\r
++# バビロンの古代遺跡「錬金棟」の技術によって怪我は完全に治ったが、記憶を失っており、なぜあんな大怪我をしたのか、自分の名前さえも覚えていなかった。\r
++# 冬夜は少女に頼まれて、「桜」と名を付ける。\r
++# そして庭で歌っている桜を見た冬夜は、ピアノを伴奏、その歌声に感嘆するのであった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514031\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514029 # 休日デート、そして姫騎士（ROM ALS）\r
++	random = 15\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	OR = {\r
++	minister = 6840001 # 望月冬夜\r
++	minister = 6840011 # 望月冬夜\r
++	}\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_114514031_NAME"\r
++	desc = "EVT_114514031_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_51"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # 素晴らしい歌声だ\r
++	name = "ACTIONNAME114514031A"\r
++	command = { trigger = { country = ROM } type = wakeminister which = 110328 } # 桜\r
++	command = { trigger = { country = ROM } type = wakeminister which = 110329 }\r
++	command = { trigger = { country = ROM } type = wakeleader which = 110310 }\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840032 } # 桜\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840063 }\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840012 }\r
++	command = { type = setflag which = ISESUMA_114514031 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  姉参上、そして騎士（ROM ALS）\r
++# ある日、城に冬夜の姉の望月花恋と名乗る女性が訪れる。\r
++# その正体はこの世界に降りてきた恋愛神で、バカンスのために、しばらく冬夜の世話になることになった。\r
++# そこに、隣国から姫騎士のヒルデガルド・ミナス・レスティアと祖父のギャレンが訪ねて来る。\r
++# そしてヒルダの恋心に気づいた八重は一緒に嫁にしてもらおうと提案、さっそく開かれた嫁会議で恋心を白状させられる。\r
++# ヒルダの想いを聞いた祖父ギャレンは自分と戦って勝つことが条件だとヒルダに告げる。\r
++# 勝負の末、勝利を収めたヒルダは祖父に認められ、冬夜の嫁となった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514032\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514031 # 記憶喪失、そしてピアノ\r
++	random = 15\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	OR = {\r
++	minister = 6840001 # 望月冬夜\r
++	minister = 6840011 # 望月冬夜\r
++	}\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_114514032_NAME"\r
++	desc = "EVT_114514032_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_51"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # 素晴らしい歌声だ\r
++	name = "ACTIONNAME114514032A"\r
++	command = { trigger = { country = ROM } type = wakeminister which = 110326 } # ヒルデガルド・ミナス・レスティア\r
++	command = { trigger = { country = ROM } type = wakeminister which = 110327 }\r
++	command = { trigger = { country = ROM } type = wakeleader which = 110309 }\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840031 } # ヒルデガルド・ミナス・レスティア\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840080 }\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840090 }\r
++	command = { trigger = { country = ALS } type = wakeleader which = 6840011 }\r
++	command = { trigger = { exists = YUG } type = event which = 114515033 where = YUG when = 0 }\r
++	command = { trigger = { exists = CRO } type = event which = 114515033 where = CRO when = 0 }\r
++	command = { type = setflag which = ISESUMA_114514032 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  姉参上、そして騎士（YUG CRO）\r
++# 隣国で話題となっている東洋人に、我が国の姫騎士が嫁ぐことになった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514033\r
++	random = no\r
++	TAG = { YUG CRO }\r
++\r
++	name = "EVT_114514033_NAME"\r
++	desc = "EVT_114514033_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_51"\r
++		\r
++	action = { # めでたい！\r
++	name = "ACTIONNAME114514033A"\r
++	command = { trigger = { NOT = { exists = ALS } } type = relation which = ROM value = 15 }\r
++	command = { trigger = { exists = ALS } type = relation which = ALS value = 15 }\r
++	command = { trigger = { country = CRO } type = sleepminister which = 275103 } # ヒルデガルド・ミナス・レスティア\r
++	command = { trigger = { country = CRO } type = sleepminister which = 275104 }\r
++	command = { trigger = { country = CRO } type = sleepleader which = 275102 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  王子誕生、そしてスマートフォンとともに\r
++# バビロンの遺跡 「塔」と「城壁」が新たに発見し、管理者リオラとノエルに認められ、冬夜はいつものマスター登録を完了する。\r
++# 一方、ベルファスト王国からユエル王妃の出産の急報が届き、急いで王都を訪れた冬夜は誕生した王子の名付け親になってほしいと頼まれた。\r
++# 王子に名をつけた冬夜は、将来、婚約者たちと子供ができることを想像し、改めて将来を誓った。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514034\r
++	random = no\r
++	TAG = { ROM ALS }\r
++\r
++	trigger = {\r
++	flag = ISESUMA # フラグが成立している\r
++	flag = ISESUMA_114514032 # 姉参上、そして騎士\r
++	random = 15\r
++	OR = {\r
++	AND = {\r
++	country = ROM\r
++	minister = 110301 # 望月冬夜\r
++	NOT = { exists = ALS } # ブリュンヒルド公国が存在しない\r
++	}\r
++	AND = {\r
++	country = ALS\r
++	exists = ALS\r
++	OR = {\r
++	minister = 6840001 # 望月冬夜\r
++	minister = 6840011 # 望月冬夜\r
++	}\r
++	NOT = { minister = 110301 } # 望月冬夜\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_114514034_NAME"\r
++	desc = "EVT_114514034_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_52"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++		\r
++	action = { # スマートフォンとともに！\r
++	name = "ACTIONNAME114514034A"\r
++	command = { type = dissent value = -5 }\r
++	command = { trigger = { country = ROM } type = waketeam which = 110311 } # 空中遺跡バビロン「庭園」\r
++	command = { trigger = { country = ROM } type = waketeam which = 110312 } # 空中遺跡バビロン「塔」\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840052 } # プレリオラ\r
++	command = { trigger = { country = ALS } type = wakeminister which = 6840053 } # パメラノエル\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840021 } # 空中遺跡バビロン「城壁」\r
++	command = { trigger = { country = ALS } type = waketeam which = 6840022 } # 空中遺跡バビロン「塔」\r
++	command = { type = setflag which = ISESUMA_END }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  オプションイベント\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― 国家の変更\r
++# このイベントを起動した場合、以下の通りに国家が変更されます。\r
++# ルーマニア→ベルファスト王国\r
++# ブルガリア→ミスミド王国\r
++# ギリシャ→リーニエ王国\r
++# ユーゴスラビア→セルビア、クロアチア、モンテネグロに分裂\r
++# セルビア→レグルス帝国\r
++# クロアチア→レスティア騎士王国\r
++# モンテネグロ→リーフリース皇国\r
++#########################################################################\r
++event = {\r
++	id = 114514201\r
++	random = no\r
++	country = -1\r
++\r
++	decision = {\r
++	ai = no # AI操作でない\r
++	flag = ISESUMA # フラグが立っている\r
++	}\r
++\r
++	decision_trigger = {\r
++	ai = no # AI操作でない\r
++	flag = ISESUMA # フラグが立っている\r
++	}\r
++	\r
++	trigger = {\r
++	ai = no # AI操作でない\r
++	flag = ISESUMA # フラグが立っている\r
++	}\r
++\r
++	name = "EVT_114514201_NAME"\r
++	desc = "EVT_114514201_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_6"\r
++	decision_picture = "decision_ISESUMA"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 5 month = 2 year = 1933 }\r
++		\r
++	action = { # 変更する\r
++	name = "ACTIONNAME114514201A"\r
++	command = { type = event which = 114514202 where = ROM when = 0 }\r
++	command = { type = event which = 114514203 where = BUL when = 0 }\r
++	command = { type = event which = 114514204 where = GRE when = 0 }\r
++	command = { type = event which = 114514205 where = YUG when = 0 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 変更しない\r
++	name = "ACTIONNAME114514201B"\r
++	command = { type = sleepevent which = 114514202 }\r
++	command = { type = sleepevent which = 114514202 }\r
++	command = { type = sleepevent which = 114514202 }\r
++	command = { type = sleepevent which = 114514202 }\r
++	command = { type = sleepevent which = 114514202 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― ベルファスト王国の成立\r
++# ベルファスト王国は、ライトノベル『異世界はスマートフォンとともに。』に登場する国家です。\r
++# 冬夜が異世界に飛ばされたとき、最初に訪れた国で、国王のトリストウィン・エルネス・ベルファストの善政によって平和な国となっている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514202\r
++	random = no\r
++	country = ROM\r
++\r
++	name = "EVT_114514202_NAME"\r
++	desc = "EVT_114514202_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_1"\r
++		\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = wakeminister which = 110330 } # ベルファスト王国系閣僚\r
++	command = { type = wakeminister which = 110331 }\r
++	command = { type = wakeminister which = 110332 }\r
++	command = { type = wakeminister which = 110333 }\r
++	command = { type = wakeminister which = 110334 }\r
++	command = { type = wakeminister which = 110335 }\r
++	command = { type = wakeminister which = 110336 }\r
++	command = { type = wakeminister which = 110337 }\r
++	command = { type = wakeminister which = 110338 }\r
++	command = { type = wakeminister which = 110339 }\r
++	command = { type = wakeminister which = 110340 }\r
++	command = { type = wakeminister which = 110341 }\r
++	command = { type = wakeminister which = 110342 }\r
++	command = { type = wakeminister which = 110343 }\r
++	command = { type = wakeminister which = 110344 }\r
++	command = { type = wakeminister which = 110345 }\r
++	command = { type = wakeminister which = 110346 }\r
++	command = { type = wakeleader which = 110314 } # ベルファスト王国系将軍\r
++	command = { type = wakeleader which = 110315 }\r
++	command = { type = wakeleader which = 110316 }\r
++	command = { type = waketeam which = 110313 } # ベルファスト王国系将軍\r
++	command = { type = waketeam which = 110314 }\r
++	command = { type = waketeam which = 110315 }\r
++	command = { type = dissent value = -8 }\r
++	command = { type = name where = ROM which = "ベルファスト王国" }\r
++	command = { type = set_domestic which = democratic value = 5 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = headofstate which = 110330 } # トリストウィン・エルネス・ベルファスト\r
++	command = { type = headofgovernment which = 110332 } # アルフレッド・エルネス・オルトリンデ\r
++	command = { type = foreignminister which = 110333 } # アルフレッド・エルネス・オルトリンデ\r
++	command = { type = armamentminister which = 110334 } # シャルロッテ\r
++	command = { type = ministerofsecurity which = 110335 } # ユエル・エルネス・ベルファスト\r
++	command = { type = ministerofintelligence which = 110336 } # レイム\r
++	command = { type = chiefofstaff which = 110337 } # レオン・ブリッツ\r
++	command = { type = chiefofarmy which = 110339 } # リオン・ブリッツ\r
++	command = { type = sleepevent which = 9999689 } # AI閣僚変更イベント\r
++	command = { type = sleepevent which = 9999690 }\r
++	command = { type = sleepevent which = 9999691 }\r
++	command = { type = sleepevent which = 9999692 }\r
++	command = { type = sleepevent which = 9999693 }\r
++	command = { type = sleepevent which = 9999697 }\r
++	command = { type = sleepevent which = 9999698 }\r
++	command = { type = sleepevent which = 9999699 }\r
++	command = { type = sleepevent which = 9999700 }\r
++	command = { type = sleepevent which = 9999701 }\r
++	command = { type = sleepevent which = 9999702 }\r
++	command = { type = sleepevent which = 9999703 }\r
++	command = { type = sleepevent which = 9999704 }\r
++	command = { type = sleepevent which = 9999705 }\r
++	command = { type = sleepevent which = 9999706 }\r
++	command = { type = sleepevent which = 9999707 }\r
++	command = { type = sleepevent which = 9999708 }\r
++	command = { type = sleepevent which = 9999709 }\r
++	command = { type = sleepevent which = 9999710 }\r
++	command = { type = sleepevent which = 9999711 }\r
++	command = { type = sleepevent which = 9999712 }\r
++	command = { type = sleepevent which = 9999713 }\r
++	command = { type = sleepevent which = 9999714 }\r
++	command = { type = sleepevent which = 9999715 }\r
++	command = { type = sleepevent which = 9999716 }\r
++	command = { type = sleepevent which = 9999717 }\r
++	command = { type = sleepevent which = 9999718 }\r
++	command = { type = sleepevent which = 9999719 }\r
++	command = { type = sleepevent which = 9999720 }\r
++	command = { type = sleepevent which = 9999721 }\r
++	command = { type = sleepevent which = 9999722 }\r
++	command = { type = sleepevent which = 9999723 }\r
++	command = { type = sleepevent which = 2500070 } # 政府交代イベント\r
++	command = { type = sleepevent which = 2500071 }\r
++	command = { type = sleepevent which = 2500072 }\r
++	command = { type = sleepevent which = 2500073 }\r
++	command = { type = sleepevent which = 2500074 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― ミスミド王国の成立\r
++# ミスミド王国は、ライトノベル『異世界はスマートフォンとともに。』に登場する国家です。\r
++# ベルファストの南方に位置する、獣人等の亜人が建国した新興国であり、現在は獣人が国王を務めている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514203\r
++	random = no\r
++	country = BUL\r
++\r
++	name = "EVT_114514203_NAME"\r
++	desc = "EVT_114514203_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_1"\r
++		\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = wakeminister which = 95301 } # ミスミド王国系閣僚\r
++	command = { type = wakeminister which = 95302 }\r
++	command = { type = wakeminister which = 95303 }\r
++	command = { type = wakeminister which = 95304 }\r
++	command = { type = wakeminister which = 95305 }\r
++	command = { type = wakeminister which = 95306 }\r
++	command = { type = wakeminister which = 95307 }\r
++	command = { type = wakeminister which = 95308 }\r
++	command = { type = wakeminister which = 95309 }\r
++	command = { type = wakeminister which = 95310 }\r
++	command = { type = wakeminister which = 95311 }\r
++	command = { type = wakeminister which = 95312 }\r
++	command = { type = wakeminister which = 95313 }\r
++	command = { type = wakeminister which = 95314 }\r
++	command = { type = wakeleader which = 95201 } # ミスミド王国系将軍\r
++	command = { type = wakeleader which = 95202 }\r
++	command = { type = wakeleader which = 95203 }\r
++	command = { type = wakeleader which = 95204 }\r
++	command = { type = waketeam which = 95101 } # ミスミド王国系研究機関\r
++	command = { type = waketeam which = 95102 }\r
++	command = { type = waketeam which = 95103 }\r
++	command = { type = waketeam which = 95104 }\r
++	command = { type = waketeam which = 95105 }\r
++	command = { type = dissent value = -3 }\r
++	command = { type = name where = BUL which = "ミスミド王国" }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 95301 } # ジャムカ・ブラウ・ミスミド\r
++	command = { type = headofgovernment which = 95302 } # グラーツ\r
++	command = { type = foreignminister which = 95303 } # オリガ・ストランド\r
++	command = { type = armamentminister which = 95304 } # オリガ・ストランド\r
++	command = { type = ministerofsecurity which = 95305 } # アルマ・ストランド\r
++	command = { type = ministerofintelligence which = 95306 } # トム・デール\r
++	command = { type = chiefofstaff which = 95307 } # ジャムカ・ブラウ・ミスミド\r
++	command = { type = chiefofarmy which = 95308 } # ガルン\r
++	command = { type = chiefofnavy which = 95309 } # ジャムカ・ブラウ・ミスミド\r
++	command = { type = chiefofair which = 95310 } # ガルン\r
++	command = { type = sleepevent which = 9999143 } # AI閣僚変更イベント\r
++	command = { type = sleepevent which = 9999144 }\r
++	command = { type = sleepevent which = 9999145 }\r
++	command = { type = sleepevent which = 9999146 }\r
++	command = { type = sleepevent which = 9999147 }\r
++	command = { type = sleepevent which = 9999148 }\r
++	command = { type = sleepevent which = 9999149 }\r
++	command = { type = sleepevent which = 9999150 }\r
++	command = { type = sleepevent which = 9999151 }\r
++	command = { type = sleepevent which = 9999152 }\r
++	command = { type = sleepevent which = 9999153 }\r
++	command = { type = sleepevent which = 9999154 }\r
++	command = { type = sleepevent which = 9999155 }\r
++	command = { type = sleepevent which = 260000001 } # ブルガリアイベント\r
++	command = { type = sleepevent which = 260000002 }\r
++	command = { type = sleepevent which = 260000003 }\r
++	command = { type = sleepevent which = 260000004 }\r
++	command = { type = sleepevent which = 260000005 }\r
++	command = { type = sleepevent which = 260000006 }\r
++	command = { type = sleepevent which = 260000007 }\r
++	command = { type = sleepevent which = 260000008 }\r
++	command = { type = sleepevent which = 260000009 }\r
++	command = { type = sleepevent which = 260000010 }\r
++	command = { type = sleepevent which = 260000011 }\r
++	command = { type = sleepevent which = 260000012 }\r
++	command = { type = sleepevent which = 260000013 }\r
++	command = { type = sleepevent which = 260000014 }\r
++	command = { type = sleepevent which = 260000015 }\r
++	command = { type = sleepevent which = 260000016 }\r
++	command = { type = sleepevent which = 260000017 }\r
++	command = { type = sleepevent which = 260000018 }\r
++	command = { type = sleepevent which = 260000019 }\r
++	command = { type = sleepevent which = 260000020 }\r
++	command = { type = sleepevent which = 260000021 }\r
++	command = { type = sleepevent which = 260000022 }\r
++	command = { type = sleepevent which = 260000023 }\r
++	command = { type = sleepevent which = 260000024 }\r
++	command = { type = sleepevent which = 260000025 }\r
++	command = { type = sleepevent which = 260000026 }\r
++	command = { type = sleepevent which = 260000027 }\r
++	command = { type = sleepevent which = 260000028 }\r
++	command = { type = sleepevent which = 260000029 }\r
++	command = { type = sleepevent which = 260000030 }\r
++	command = { type = sleepevent which = 260000031 }\r
++	command = { type = sleepevent which = 260000032 }\r
++	command = { type = sleepevent which = 260000033 }\r
++	command = { type = sleepevent which = 260000034 }\r
++	command = { type = sleepevent which = 260000035 }\r
++	command = { type = sleepevent which = 260000036 }\r
++	command = { type = sleepevent which = 260000037 }\r
++	command = { type = sleepevent which = 260000038 }\r
++	command = { type = sleepevent which = 260000039 }\r
++	command = { type = sleepevent which = 260000040 }\r
++	command = { type = sleepevent which = 260000041 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― リーニエ王国の成立\r
++# リーニエ王国は、ライトノベル『異世界はスマートフォンとともに。』に登場する国家です。\r
++# ベルファスト王国やレグルス帝国と通商関係を結んでいるが、国王は宰相のワルダックの傀儡となっており、腐敗が著しい国です。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514204\r
++	random = no\r
++	country = GRE\r
++\r
++	name = "EVT_114514204_NAME"\r
++	desc = "EVT_114514204_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_1"\r
++		\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = wakeminister which = 90401 } # リーニエ王国系閣僚\r
++	command = { type = wakeminister which = 90402 }\r
++	command = { type = wakeminister which = 90403 }\r
++	command = { type = wakeminister which = 90404 }\r
++	command = { type = wakeminister which = 90405 }\r
++	command = { type = wakeminister which = 90406 }\r
++	command = { type = wakeminister which = 90407 }\r
++	command = { type = wakeminister which = 90408 }\r
++	command = { type = wakeminister which = 90409 }\r
++	command = { type = wakeminister which = 90410 }\r
++	command = { type = wakeminister which = 90411 }\r
++	command = { type = wakeminister which = 90412 }\r
++	command = { type = wakeleader which = 90101 } # リーニエ王国系将軍\r
++	command = { type = wakeleader which = 90102 }\r
++	command = { type = wakeleader which = 90103 }\r
++	command = { type = wakeleader which = 90104 }\r
++	command = { type = waketeam which = 90101 } # リーニエ王国系研究機関\r
++	command = { type = waketeam which = 90102 }\r
++	command = { type = waketeam which = 90103 }\r
++	command = { type = dissent value = 15 }\r
++	command = { type = name where = GRE which = "リーニエ王国" }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 90401 } # シュラフ・ゼフ・リーニエ\r
++	command = { type = headofgovernment which = 90402 } # ワルダック\r
++	command = { type = foreignminister which = 90410 } # クラウド・ゼフ・リーニエ\r
++	command = { type = armamentminister which = 90403 } # ワルダック\r
++	command = { type = ministerofsecurity which = 90405 } # ダキア\r
++	command = { type = chiefofstaff which = 90408 } # ザブン\r
++	command = { type = sleepevent which = 9999332 } # AI閣僚変更イベント\r
++	command = { type = sleepevent which = 9999333 }\r
++	command = { type = sleepevent which = 9999334 }\r
++	command = { type = sleepevent which = 9999335 }\r
++	command = { type = sleepevent which = 9999336 }\r
++	command = { type = sleepevent which = 9999337 }\r
++	command = { type = sleepevent which = 9999338 }\r
++	command = { type = sleepevent which = 9999339 }\r
++	command = { type = sleepevent which = 9999340 }\r
++	command = { type = sleepevent which = 9999341 }\r
++	command = { type = sleepevent which = 9999342 }\r
++	command = { type = sleepevent which = 9999343 }\r
++	command = { type = sleepevent which = 9999344 }\r
++	command = { type = sleepevent which = 9999345 }\r
++	command = { type = sleepevent which = 9999346 }\r
++	command = { type = sleepevent which = 9999347 }\r
++	command = { type = sleepevent which = 9999348 }\r
++	command = { type = sleepevent which = 9999349 }\r
++	command = { type = sleepevent which = 9999350 }\r
++	command = { type = sleepevent which = 9999351 }\r
++	command = { type = sleepevent which = 9999352 }\r
++	command = { type = sleepevent which = 9999353 }\r
++	command = { type = sleepevent which = 9999354 }\r
++	command = { type = sleepevent which = 9999355 }\r
++	command = { type = sleepevent which = 9999356 }\r
++	command = { type = sleepevent which = 9999357 }\r
++	command = { type = sleepevent which = 9999358 }\r
++	command = { type = sleepevent which = 9999359 }\r
++	command = { type = sleepevent which = 9999360 }\r
++	command = { type = sleepevent which = 2500026 } # 政府交代イベント\r
++	command = { type = sleepevent which = 2500027 }\r
++	command = { type = sleepevent which = 2500028 }\r
++	command = { type = sleepevent which = 2500029 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― レグルス帝国の成立\r
++# レグルス帝国は、ライトノベル『異世界はスマートフォンとともに。』に登場する国家です。\r
++# レグルス帝国は、国防を担う軍部と治安維持、要人警護を担う騎士団の二つの軍事組織を抱える軍国主義的国家です。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514205\r
++	random = no\r
++	country = YUG\r
++\r
++	name = "EVT_114514205_NAME"\r
++	desc = "EVT_114514205_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_1"\r
++		\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = country which = SER }\r
++	command = { type = independence which = CRO value = 1 when = 1 }\r
++	command = { type = independence which = MTN value = 1 when = 1 }\r
++	command = { type = secedearea which = CRO value = "Croatia" when = 1 }\r
++	command = { type = secedearea which = CRO value = "Bosnia" when = 1 }\r
++	command = { type = add_core_area which = "Croatia" where = CRO }\r
++	command = { type = add_core_area which = "Bosnia" where = CRO }\r
++	command = { type = wakeminister which = 415301 } # レグルス帝国系閣僚\r
++	command = { type = wakeminister which = 415302 }\r
++	command = { type = wakeminister which = 415303 }\r
++	command = { type = wakeminister which = 415304 }\r
++	command = { type = wakeminister which = 415305 }\r
++	command = { type = wakeminister which = 415306 }\r
++	command = { type = wakeminister which = 415307 }\r
++	command = { type = wakeminister which = 415308 }\r
++	command = { type = wakeminister which = 415309 }\r
++	command = { type = wakeminister which = 415310 }\r
++	command = { type = wakeminister which = 415311 }\r
++	command = { type = wakeminister which = 415312 }\r
++	command = { type = wakeminister which = 415313 }\r
++	#command = { type = wakeminister which = 415314 }\r
++	#command = { type = wakeminister which = 415315 }\r
++	command = { type = wakeleader which = 415201 } # レグルス帝国系将軍\r
++	command = { type = wakeleader which = 415202 }\r
++	command = { type = wakeleader which = 415203 }\r
++	command = { type = wakeleader which = 415204 }\r
++	#command = { type = wakeleader which = 415205 }\r
++	command = { type = waketeam which = 415201 } # レグルス帝国系研究機関\r
++	command = { type = waketeam which = 415202 }\r
++	command = { type = waketeam which = 415203 }\r
++	command = { type = waketeam which = 415204 }\r
++	#command = { type = waketeam which = 415205 }\r
++	command = { type = dissent value = 15 }\r
++	command = { type = name where = SER which = "レグルス帝国" }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 415301 } # ゼフィルス・ロア・レグルス\r
++	command = { type = headofgovernment which = 415302 } # ゼフィルス・ロア・レグルス\r
++	command = { type = foreignminister which = 415307 } # ルーシア・レア・レグルス\r
++	command = { type = armamentminister which = 415305 } # キャロライン・リエット\r
++	command = { type = ministerofsecurity which = 415308 } # ルーシア・レア・レグルス\r
++	command = { type = chiefofstaff which = 415304 } # ゼフィルス・レア・レグルス\r
++	command = { type = chiefofarmy which = 415306 } # キャロライン・リエット\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = cavalry when = 7 }\r
++	command = { type = add_division value = cavalry when = 7 }\r
++	command = { type = add_division value = cavalry when = 7 }\r
++	command = { type = event which = 114514206 where = CRO when = 0 }\r
++	command = { type = event which = 114514207 where = MTN when = 0 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― レスティア騎士王国の成立\r
++# レスティア騎士王国は、ライトノベル『異世界はスマートフォンとともに。』に登場する国家です。\r
++# レスティア騎士王国は古代の戦争を終わらせた聖剣の伝説をもとに建国された国家です。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514206\r
++	random = no\r
++	country = CRO\r
++\r
++	name = "EVT_114514206_NAME"\r
++	desc = "EVT_114514206_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_1"\r
++		\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = wakeminister which = 275101 } # レスティア騎士王国系閣僚\r
++	command = { type = wakeminister which = 275102 }\r
++	command = { type = wakeminister which = 275103 }\r
++	command = { type = wakeminister which = 275104 }\r
++	command = { type = wakeleader which = 275101 } # レスティア騎士王国系将軍\r
++	command = { type = wakeleader which = 275102 }\r
++	command = { type = waketeam which = 275021 } # レスティア騎士王国系研究機関\r
++	command = { type = waketeam which = 275022 }\r
++	command = { type = dissent value = 5 }\r
++	command = { type = name where = CRO which = "レスティア騎士王国" }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 275101 } # ゼフィルス・ロア・レグルス\r
++	command = { type = headofgovernment which = 275102 } # ゼフィルス・ロア・レグルス\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = infantry when = 7 }\r
++	command = { type = add_division value = cavalry when = 7 }\r
++	command = { type = non_aggression which = CRO where = SER }\r
++	command = { type = non_aggression which = CRO where = MTN }\r
++	command = { type = non_aggression which = CRO where = ROM }\r
++	command = { type = non_aggression which = CRO where = HUN }\r
++	command = { type = non_aggression which = CRO where = AUS }\r
++	command = { type = non_aggression which = CRO where = CZE }\r
++	command = { type = non_aggression which = CRO where = ITA }\r
++	command = { type = guarantee which = CRO where = SER }\r
++	command = { type = guarantee which = CRO where = MTN }\r
++	command = { type = guarantee which = CRO where = ROM }\r
++	command = { type = guarantee which = CRO where = HUN }\r
++	command = { type = guarantee which = ROM where = CRO }\r
++	command = { type = guarantee which = MTN where = CRO }\r
++	command = { type = guarantee which = HUN where = CRO }\r
++	command = { type = guarantee which = AUS where = CRO }\r
++	command = { type = guarantee which = CZE where = CRO }\r
++	command = { type = set_relation which = SER value = -100 }\r
++	command = { type = set_relation which = MTN value = -50 }\r
++	command = { type = set_relation which = ROM value = 20 }\r
++	command = { type = set_relation which = HUN value = 15 }\r
++	command = { type = set_relation which = AUS value = 15 }\r
++	command = { type = set_relation which = CZE value = 30 }\r
++	command = { type = set_relation which = ITA value = -30 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― リーフリース皇国の成立\r
++# リーフリース皇国は、ライトノベル『異世界はスマートフォンとともに。』に登場する国家です。\r
++# リーフリース皇国の国王は、アメリカ人の俳優に似ていることから、映画ネタでよくいじられています。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514207\r
++	random = no\r
++	country = MTN\r
++\r
++	name = "EVT_114514207_NAME"\r
++	desc = "EVT_114514207_DESC"\r
++	style = 2\r
++	picture = "ISESUMA_1"\r
++		\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = wakeminister which = 390101 } # リーフリース皇国系閣僚\r
++	command = { type = wakeminister which = 390102 }\r
++	command = { type = wakeminister which = 390103 }\r
++	command = { type = wakeminister which = 390104 }\r
++	command = { type = wakeminister which = 390105 }\r
++	command = { type = wakeminister which = 390106 }\r
++	command = { type = wakeminister which = 390107 }\r
++	command = { type = wakeleader which = 390101 } # リーフリース皇国系将軍\r
++	command = { type = waketeam which = 390021 } # リーフリース皇国系研究機関\r
++	command = { type = waketeam which = 390022 }\r
++	command = { type = waketeam which = 390023 }\r
++	command = { type = dissent value = 15 }\r
++	command = { type = name where = MTN which = "リーフリース皇国" }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 390101 } # リグ・リーク・リーフリース\r
++	command = { type = headofgovernment which = 390103 } # リリエル・リーム・リーフリース\r
++	command = { type = armamentminister which = 390105 } # ジョゼフ\r
++	command = { type = ministerofsecurity which = 390106 } # ラナ\r
++	command = { type = ministerofintelligence which = 390107 } # エマ\r
++	command = { type = free_ic value = 3 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = non_aggression which = MTN where = SER }\r
++	command = { type = non_aggression which = MTN where = CRO }\r
++	command = { type = non_aggression which = MTN where = ROM }\r
++	command = { type = non_aggression which = MTN where = HUN }\r
++	command = { type = non_aggression which = MTN where = AUS }\r
++	command = { type = non_aggression which = MTN where = CZE }\r
++	command = { type = non_aggression which = MTN where = ITA }\r
++	command = { type = non_aggression which = MTN where = ALB }\r
++	command = { type = guarantee which = MTN where = CRO }\r
++	command = { type = guarantee which = MTN where = ROM }\r
++	command = { type = guarantee which = MTN where = HUN }\r
++	command = { type = guarantee which = CRO where = MTN }\r
++	command = { type = guarantee which = ROM where = MTN }\r
++	command = { type = guarantee which = HUN where = MTN }\r
++	command = { type = guarantee which = AUS where = MTN }\r
++	command = { type = guarantee which = CZE where = MTN }\r
++	command = { type = set_relation which = SER value = -50 }\r
++	command = { type = set_relation which = CRO value = 15 }\r
++	command = { type = set_relation which = ROM value = 50 }\r
++	command = { type = set_relation which = HUN value = 25 }\r
++	command = { type = set_relation which = AUS value = 25 }\r
++	command = { type = set_relation which = CZE value = 50 }\r
++	command = { type = set_relation which = ITA value = -15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  異世界はスマートフォンとともに。 ― 神様からの贈り物\r
++# 神様を名乗る人物から援助をもらえるそうだ。どうすべきだろうか？\r
++#########################################################################\r
++\r
++event = {\r
++	id = 114514208\r
+ 	random = no\r
+ 	TAG = { ROM ALS }\r
+ \r
+@@ -870,8 +2351,8 @@ event = {
+ 	flag = ISESUMA # フラグが立っている\r
+ 	}\r
+ \r
+-	name = "EVT_114514203_NAME"\r
+-	desc = "EVT_114514203_DESC"\r
++	name = "EVT_114514208_NAME"\r
++	desc = "EVT_114514208_DESC"\r
+ 	style = 2\r
+ 	picture = "ISESUMA_6"\r
+ \r
+@@ -880,13 +2361,13 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 必要ない\r
+-	name = "ACTIONNAME114514203A"\r
++	name = "ACTIONNAME114514208A"\r
+ 	command = {  }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 好意だけもらおうか\r
+-	name = "ACTIONNAME114514203B"\r
++	name = "ACTIONNAME114514208B"\r
+ 	command = { type = supplies value = 1000 }\r
+ 	command = { type = money value = 150 }\r
+ 	command = { type = manpowerpool value = 20 }\r
+@@ -895,7 +2376,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 我々には援助が必要だ！\r
+-	name = "ACTIONNAME114514203C"\r
++	name = "ACTIONNAME114514208C"\r
+ 	command = { type = supplies value = 1500 }\r
+ 	command = { type = money value = 250 }\r
+ 	command = { type = manpowerpool value = 50 }\r

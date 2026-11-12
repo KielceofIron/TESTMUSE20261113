@@ -1,0 +1,837 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Middle_East_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Middle_East_events.txt [cp932]
+@@ -47,7 +47,7 @@
+ #id = 3738008 ハッキャリ兵器廠の設立\r
+ # シリア\r
+ #id = 3739001 シリアの現状\r
+-#id = 3739002 パレスチナ反乱\r
++#id = 3739002 1933年パレスチナ暴動\r
+ #id = 3739003 パレスチナ反乱 ― ユダヤ国家\r
+ #id = 3739004 パレスチナ反乱 ― アラブ国家\r
+ #id = 3739005 パレスチナ反乱 ― レバノン国家\r
+@@ -60,17 +60,18 @@
+ #id = 3748003 ネジド・ヒジャーズ国境紛争\r
+ #id = 3748004 ネジド・ヒジャーズ国境紛争 ― 交渉\r
+ #id = 3748005 ネジド・ヒジャーズ国境紛争 ― 紛争の激化\r
+-#id = 3748006 アラビアの統一（U50）\r
+-#id = 3748007 アラビアの統一（SAU）\r
+-#id = 3748008 ネジド・ヒジャーズ戦争 ― イラクの反応\r
+-#id = 3748009 ネジド・ヒジャーズ戦争 ― イラクの義勇兵の到着\r
+-#id = 3748010 ネジド・ヒジャーズ戦争 ― イラクの支援の到着\r
+-#id = 3748011 ネジド・ヒジャーズ戦争 ― ヨルダンの反応\r
+-#id = 3748012 ネジド・ヒジャーズ戦争 ― ヨルダンの義勇兵の到着\r
+-#id = 3748013 ネジド・ヒジャーズ戦争 ― ヨルダンの支援の到着\r
+-#id = 3748014 ロイヤル・ダッチ・シェルがアラビアの石油掘削権を獲得\r
+-#id = 3748015 ダンマン油田の発見（ENG）\r
+-#id = 3748016 ダンマン油田の発見（SAU U50）\r
++#id = 3748051 アラビアの統一（U50）\r
++#id = 3748052 アラビアの統一（SAU）\r
++#id = 3748053 アラビアの統一（U52）\r
++#id = 3748054 ネジド・ヒジャーズ戦争 ― イラクの反応\r
++#id = 3748055 ネジド・ヒジャーズ戦争 ― イラクの義勇兵の到着\r
++#id = 3748056 ネジド・ヒジャーズ戦争 ― イラクの支援の到着\r
++#id = 3748057 ネジド・ヒジャーズ戦争 ― ヨルダンの反応\r
++#id = 3748058 ネジド・ヒジャーズ戦争 ― ヨルダンの義勇兵の到着\r
++#id = 3748059 ネジド・ヒジャーズ戦争 ― ヨルダンの支援の到着\r
++#id = 3748060 ロイヤル・ダッチ・シェルがアラビアの石油掘削権を獲得\r
++#id = 3748061 ダンマン油田の発見（ENG）\r
++#id = 3748062 ダンマン油田の発見（SAU U50）\r
+ # イラク\r
+ #id = 3749001 イラクのクーデター\r
+ # 政府交代イベント\r
+@@ -2302,9 +2303,10 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  パレスチナ反乱\r
+-# シリアが独立して以降、国内は常にユダヤ人とアラブ人の民族問題に悩まされ続けてきた。\r
+-# そしてついに民族問題は、シリアの民衆を反乱に駆り立てた。\r
++#  1933年パレスチナ暴動\r
++# ドイツやロシアは歴史的に反ユダヤ主義が強い地域であり、ヒトラーの台頭やロシアにおける政情不安から逃れようとするユダヤ人移民が急増した。\r
++# ユダヤ人の土地入植を巡り、不満を抱えていたアラブ人の怒りは頂点に達し、1933年10月、大規模なデモがパレスチナで発生した。\r
++# この大規模デモは、警察が数千人規模の群衆に向けて発砲したことで、数十名が死亡する大惨事となり、その後数週間にわたる大暴動を引き起こした。\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -2313,7 +2315,10 @@ event = {
+ 	country = SYR\r
+ \r
+ 	trigger = {\r
+-	event = { id = 3747101 days = 60 } # 国家元首の逝去（イブン・ハサン・ファイサル1世）\r
++	OR = {\r
++	control = { province = 1016 data = SYR } # ダマスカス\r
++	control = { province = 1172 data = SYR } # エルサレム\r
++	}\r
+ 	area = { area = Palestine country = SYR data = 1 value = 50 } # パレスチナ\r
+ 	NOT = {\r
+ 	exists = ISR\r
+@@ -2321,209 +2326,34 @@ event = {
+ 	}\r
+ 	}\r
+ \r
++	date = { day = 12 month = 9 year = 1933 }\r
++\r
+ 	name = "EVT_3739002_NAME"\r
+ 	desc = "EVT_3739002_DESC"\r
+ 	style = 2\r
+ 	picture = "scw"\r
+ \r
+-	action = { # 内戦だ！\r
++	action = { # 群衆は気まぐれで興奮しており、危険である！\r
+ 	name = "ACTIONNAME3739002A"\r
+-	command = { type = relation which = ENG value = -20 }\r
+-	command = { type = relation which = FRA value = -20 }\r
+-	command = { type = relation which = ITA value = -20 }\r
+-	command = { type = relation which = USA value = -20 }\r
+-	command = { type = relation which = UER value = -20 }\r
+-	command = { type = relation which = SOV value = -20 }\r
+-	command = { type = relation which = GER value = -20 }\r
+-	command = { type = relation which = IRQ value = -20 }\r
+-	command = { type = relation which = EGY value = -20 }\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = relation which = ITA value = -10 }\r
++	command = { type = relation which = USA value = -10 }\r
++	command = { type = relation which = UER value = -10 }\r
++	command = { type = relation which = SOV value = -10 }\r
++	command = { type = relation which = GER value = -10 }\r
++	command = { type = relation which = IRQ value = -25 }\r
++	command = { type = relation which = EGY value = -25 }\r
++	command = { type = relation which = SAU value = -25 }\r
++	command = { type = relation which = U50 value = -25 }\r
++	command = { type = relation which = U52 value = -25 }\r
++	command = { type = relation which = OMN value = -25 }\r
++	command = { type = relation which = YEM value = -25 }\r
+ 	command = { type = dissent value = 8 }\r
+-	command = { type = independence which = ISR value = 1 when = 0 }\r
+-	command = { type = independence which = PAL value = 1 when = 0 }\r
+-	command = { type = independence which = LEB value = 1 when = 0 }\r
+-	#\r
+-	command = { type = secedeprovince which = ISR value = 1011 }\r
+-	command = { type = secedeprovince which = ISR value = 1013 }\r
+-	command = { type = secedeprovince which = ISR value = 1172 }\r
+-	#\r
+-	command = { type = secedeprovince which = PAL value = 1008 }\r
+-	command = { type = secedeprovince which = PAL value = 1009 }\r
+-	command = { type = secedeprovince which = PAL value = 1010 }\r
+-	#\r
+-	command = { type = secedeprovince which = LEB value = 1018 }\r
+-	command = { type = secedeprovince which = LEB value = 1019 }\r
+-	command = { type = event which = 3739003 where = ISR when = 0 } # パレスチナ反乱 ― ユダヤ国家\r
+-	command = { type = event which = 3739004 where = PAL when = 0 } # パレスチナ反乱 ― アラブ国家\r
+-	command = { type = event which = 3739005 where = LEB when = 0 } # パレスチナ反乱 ― レバノン国家\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  パレスチナ反乱 ― ユダヤ国家\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 3739003\r
+-	random = no\r
+-	country = ISR\r
+-\r
+-	name = "EVT_3739003_NAME"\r
+-	desc = "EVT_3739003_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	#\r
+-	command = { type = secedeprovince which = ISR value = 1011 }\r
+-	command = { type = secedeprovince which = ISR value = 1013 }\r
+-	command = { type = secedeprovince which = ISR value = 1172 }\r
+-	#\r
+-	command = { type = secedeprovince which = PAL value = 1008 }\r
+-	command = { type = secedeprovince which = PAL value = 1009 }\r
+-	command = { type = secedeprovince which = PAL value = 1010 }\r
+-	#\r
+-	command = { type = secedeprovince which = LEB value = 1018 }\r
+-	command = { type = secedeprovince which = LEB value = 1019 }\r
+-	#\r
+-	command = { trigger = { ai = no } type = dissent value = 5 }\r
+-	command = { trigger = { ai = yes } type = dissent value = 10 }\r
+-	#command = { type = name where = ISR which = "イスラエル" }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = set_domestic which = free_market value = 5 }\r
+-	command = { type = set_domestic which = freedom value = 5 }\r
+-	command = { type = set_domestic which = defense_lobby value = 7 }\r
+-	command = { type = set_domestic which = interventionism value = 3 }\r
+-	command = { type = headofstate which = 675067 } # ゼエヴ・ジャボチンスキー\r
+-	command = { type = headofgovernment which = 675069 } # アブラハム・テホミ\r
+-	command = { type = foreignminister which = 675071 } # デビッド・ラジエル\r
+-	command = { type = armamentminister which = 675072 } # ヤアコフ・メリドール\r
+-	command = { type = ministerofsecurity which = 675073 } # アリエ・ベン・エリエゼル\r
+-	command = { type = ministerofintelligence which = 675074 } # アミチャイ・パグリン\r
+-	command = { type = chiefofstaff which = 675075 } # イツハク・サデー\r
+-	command = { type = chiefofarmy which = 675076 } # ウジ・ナルキス\r
+-	command = { type = chiefofnavy which = 675077 } # エリヤフ・ランキン\r
+-	command = { type = chiefofair which = 675078 } # ヨセフ・トルンペルドール\r
+-	#\r
+-	command = { type = add_division which = "第1騎兵師団" value = cavalry when = 6 } \r
+-	command = { type = add_division which = "第1歩兵師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第1民兵隊" value = militia when = 3 }\r
+-	command = { type = add_division which = "第2民兵隊" value = militia when = 3 }\r
+-	command = { type = add_division which = "第3民兵隊" value = militia when = 3 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  パレスチナ反乱 ― アラブ国家\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 3739004\r
+-	random = no\r
+-	country = PAL\r
+-\r
+-	name = "EVT_3739004_NAME"\r
+-	desc = "EVT_3739004_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	#\r
+-	command = { type = secedeprovince which = ISR value = 1011 }\r
+-	command = { type = secedeprovince which = ISR value = 1013 }\r
+-	command = { type = secedeprovince which = ISR value = 1172 }\r
+-	#\r
+-	command = { type = secedeprovince which = PAL value = 1008 }\r
+-	command = { type = secedeprovince which = PAL value = 1009 }\r
+-	command = { type = secedeprovince which = PAL value = 1010 }\r
+-	#\r
+-	command = { type = secedeprovince which = LEB value = 1018 }\r
+-	command = { type = secedeprovince which = LEB value = 1019 }\r
+-	#\r
+-	command = { trigger = { ai = no } type = dissent value = 5 }\r
+-	command = { trigger = { ai = yes } type = dissent value = 10 }\r
+-	#command = { type = name where = PAL which = "パレスチナ" }\r
+-	command = { type = set_domestic which = democratic value = 8 }\r
+-	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = set_domestic which = free_market value = 5 }\r
+-	command = { type = set_domestic which = freedom value = 5 }\r
+-	command = { type = set_domestic which = defense_lobby value = 4 }\r
+-	command = { type = set_domestic which = interventionism value = 3 }\r
+-	command = { type = headofstate which = 510013 } # ファイド・アル=アラミ\r
+-	command = { type = headofgovernment which = 510017 } # アフマド・シュカイリー\r
+-	command = { type = foreignminister which = 510021 } # ハリー・C・ルーク\r
+-	command = { type = armamentminister which = 510025 } # ルヒ・アブドゥル・ハディ\r
+-	command = { type = ministerofsecurity which = 510029 } # ニコラス・アブド\r
+-	command = { type = ministerofintelligence which = 510033 } # ファルク・ハイダル\r
+-	command = { type = chiefofstaff which = 510038 } # ファルク・ハイダル\r
+-	command = { type = chiefofarmy which = 510043 } # リワ・アル=マワウィー\r
+-	command = { type = chiefofnavy which = 510047 } # アルフレッド・ハワード\r
+-	command = { type = chiefofair which = 510051 } # ジェームズ・ロジャース\r
+-	#\r
+-	command = { type = add_division which = "第1民兵隊" value = militia when = 3 }\r
+-	command = { type = add_division which = "第2民兵隊" value = militia when = 3 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  パレスチナ反乱 ― レバノン国家\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 3739005\r
+-	random = no\r
+-	country = LEB\r
+-\r
+-	name = "EVT_3739005_NAME"\r
+-	desc = "EVT_3739005_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	#\r
+-	command = { type = secedeprovince which = ISR value = 1011 }\r
+-	command = { type = secedeprovince which = ISR value = 1013 }\r
+-	command = { type = secedeprovince which = ISR value = 1172 }\r
+-	#\r
+-	command = { type = secedeprovince which = PAL value = 1008 }\r
+-	command = { type = secedeprovince which = PAL value = 1009 }\r
+-	command = { type = secedeprovince which = PAL value = 1010 }\r
+-	#\r
+-	command = { type = secedeprovince which = LEB value = 1018 }\r
+-	command = { type = secedeprovince which = LEB value = 1019 }\r
+-	#\r
+-	command = { trigger = { ai = no } type = dissent value = 5 }\r
+-	command = { trigger = { ai = yes } type = dissent value = 10 }\r
+-	#command = { type = name where = LEB which = "レバノン" }\r
+-	command = { type = set_domestic which = democratic value = 10 }\r
+-	command = { type = set_domestic which = political_left value = 7 }\r
+-	command = { type = set_domestic which = free_market value = 5 }\r
+-	command = { type = set_domestic which = freedom value = 5 }\r
+-	command = { type = set_domestic which = defense_lobby value = 3 }\r
+-	command = { type = set_domestic which = interventionism value = 3 }\r
+-	command = { type = headofstate which = 375001 } # エミール・エデー\r
+-	command = { type = headofgovernment which = 375002 } # アユーブ・タベット\r
+-	command = { type = foreignminister which = 375003 } # アブダッラー・アレフ・アル=ヤフィ\r
+-	command = { type = armamentminister which = 375004 } # アルフレ・ナカチェ\r
+-	command = { type = ministerofsecurity which = 375005 } # カレド・チェハブ\r
+-	command = { type = ministerofintelligence which = 375006 } # カイレディン・アル=アフダブ\r
+-	command = { type = chiefofstaff which = 375007 } # アドリアン・ペルティエ\r
+-	command = { type = chiefofarmy which = 375008 } # アルフレ・カゾー\r
+-	command = { type = chiefofnavy which = 375009 } # アシル・ペレティ\r
+-	command = { type = chiefofair which = 375010 } # アンリ・スーラ\r
+-	#\r
+-	command = { type = add_division which = "第1民兵隊" value = militia when = 3 }\r
+-	command = { type = add_division which = "第2民兵隊" value = militia when = 3 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+ \r
+ #########################################################################\r
+ #  政府交代イベント\r
+@@ -2614,15 +2444,18 @@ event = {
+ #  ヒジャーズ＆ネジド\r
+ #########################################################################\r
+ #  アラビアの現状\r
+-# 1924年にフサイン・イブン・アリーがカリフを僭称したことで、ヒジャーズ王国はネジド王国と対立している。\r
+-# この2つの王国は、アラビア地域の支配権をめぐり、長期にわたる紛争に忙殺されており、未だに決着がつかずにいた。\r
+-# 現在は休戦状態が続いているが、いずれ戦いが再燃するだろう。\r
++# 19世紀後半からのオスマン帝国の衰退以降、アラビア半島では不安定な状態が続いていた。\r
++# 1914年から第一次世界大戦が始まると、ネジド王国のサウード家はオスマン帝国と敵対していたイギリスに協力することで力を蓄えた。\r
++# しかしイギリスは、サウード王国に全面協力をしていたわけではなく、ヒジャーズ王国のハシミテ家を別途支援するなど、複雑な外交戦略を展開していた。\r
++# 1921年にネジド王国は、ジャバル・シャンマル王国のラシード家を征服しようと図ったが、\r
++# 地域の不安定化を望まないイギリスの介入によって統一に向けた行動を止めざるを得なかった。\r
++# 現在は休戦状態が続いているが、3つの王国が虎視眈々とアラビア地域の支配権を狙っている。\r
+ #########################################################################\r
+ \r
+ event = {\r
+ 	id = 3748001\r
+ 	random = no\r
+-	TAG = { SAU U50 }\r
++	TAG = { SAU U50 U52 }\r
+ 	persistent = yes\r
+ \r
+ 	name = "EVT_3748001_NAME"\r
+@@ -2652,8 +2485,8 @@ event = {
+ 	OR = {\r
+ 	minister = 1065011 # トーマス・エドワード・ロレンス\r
+ 	minister = 1065012\r
+-	minister = 1065028\r
+-	minister = 1065053\r
++	minister = 1065122\r
++	minister = 1065125\r
+ 	}\r
+ 	}\r
+ \r
+@@ -2669,10 +2502,9 @@ event = {
+ 	command = { type = dissent value = 2 }\r
+ 	command = { type = sleepminister which = 1065011 } # トーマス・エドワード・ロレンス\r
+ 	command = { type = sleepminister which = 1065012 }\r
+-	command = { type = sleepminister which = 1065028 }\r
+-	command = { type = sleepminister which = 1065053 }\r
+-	command = { type = sleepleader which = 1065036 }\r
+-	command = { type = sleepleader which = 1065037 }\r
++	command = { type = sleepminister which = 1065122 }\r
++	command = { type = sleepminister which = 1065125 }\r
++	command = { type = sleepleader which = 1065106 }\r
+ 	command = { type = sleepteam which = 1065003 }\r
+ 	}\r
+ }\r
+@@ -2811,7 +2643,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748006\r
++	id = 3748051\r
+ 	random = no\r
+ 	country = U50\r
+ \r
+@@ -2826,7 +2658,10 @@ event = {
+ 	owned = { province = 1045 data = -1 } # リヤド\r
+ 	owned = { province = 1048 data = -1 } # メディナ\r
+ 	owned = { province = 1049 data = -1 } # メッカ\r
+-	NOT = { exists = SAU } # サウジアラビア\r
++	NOT = { \r
++	exists = SAU # サウジアラビア\r
++	exists = U52 # ジャバル・シャンマル\r
++	}\r
+ 	atwar = no\r
+ 	}\r
+ \r
+@@ -2836,12 +2671,15 @@ event = {
+ 	owned = { province = 1045 data = -1 } # リヤド\r
+ 	owned = { province = 1048 data = -1 } # メディナ\r
+ 	owned = { province = 1049 data = -1 } # メッカ\r
+-	NOT = { exists = SAU } # サウジアラビア\r
++	NOT = { \r
++	exists = SAU # サウジアラビア\r
++	exists = U52 # ジャバル・シャンマル\r
++	}\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = EVT_3748006_NAME\r
+-	desc = EVT_3748006_DESC\r
++	name = EVT_3748051_NAME\r
++	desc = EVT_3748051_DESC\r
+ 	style = 2\r
+   	picture = "baghdad_captured"\r
+   	decision_picture = "decision_diplomatic_campaign"\r
+@@ -2856,6 +2694,8 @@ event = {
+ 	command = { type = name where = U50 which = "ハシミテアラビア" }\r
+ 	command = { type = research_mod value = 5 }\r
+ 	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = sleepevent which = 3748052 } # アラビアの統一（SAU）\r
++	command = { type = sleepevent which = 3748053 } # アラビアの統一（U52）\r
+ 	}\r
+ }\r
+ \r
+@@ -2865,7 +2705,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748007\r
++	id = 3748052\r
+ 	random = no\r
+ 	country = SAU\r
+ \r
+@@ -2880,7 +2720,10 @@ event = {
+ 	owned = { province = 1045 data = -1 } # リヤド\r
+ 	owned = { province = 1048 data = -1 } # メディナ\r
+ 	owned = { province = 1049 data = -1 } # メッカ\r
+-	NOT = { exists = U50 } # ヒジャーズ\r
++	NOT = { \r
++	exists = U50 # ヒジャーズ\r
++	exists = U52 # ジャバル・シャンマル\r
++	}\r
+ 	atwar = no\r
+ 	}\r
+ \r
+@@ -2890,12 +2733,15 @@ event = {
+ 	owned = { province = 1045 data = -1 } # リヤド\r
+ 	owned = { province = 1048 data = -1 } # メディナ\r
+ 	owned = { province = 1049 data = -1 } # メッカ\r
+-	NOT = { exists = U50 } # ヒジャーズ\r
++	NOT = { \r
++	exists = U50 # ヒジャーズ\r
++	exists = U52 # ジャバル・シャンマル\r
++	}\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = EVT_3748007_NAME\r
+-	desc = EVT_3748007_DESC\r
++	name = EVT_3748052_NAME\r
++	desc = EVT_3748052_DESC\r
+ 	style = 2\r
+   	picture = "baghdad_captured"\r
+   	decision_picture = "decision_diplomatic_campaign"\r
+@@ -2911,6 +2757,71 @@ event = {
+ 	command = { type = flag_ext where = SAU }\r
+ 	command = { type = research_mod value = 5 }\r
+ 	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = sleepevent which = 3748051 } # アラビアの統一（U50）\r
++	command = { type = sleepevent which = 3748053 } # アラビアの統一（U52）\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  アラビアの統一（U52）\r
++# 長年にわたり分裂が続いていたアラビア世界が、ついに統一された。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 3748053\r
++	random = no\r
++	country = U52\r
++\r
++	decision = {\r
++	area = { area = "Arabian Desert" country = U52 data = 1 value = 70 }\r
++	area = { area = "Hedjaz" country = U52 data = 1 value = 70 }\r
++	}\r
++\r
++	decision_trigger = {\r
++	area = { area = "Arabian Desert" country = U52 data = 1 value = 70 }\r
++	area = { area = "Hedjaz" country = U52 data = 1 value = 70 }\r
++	owned = { province = 1045 data = -1 } # リヤド\r
++	owned = { province = 1048 data = -1 } # メディナ\r
++	owned = { province = 1049 data = -1 } # メッカ\r
++	NOT = {\r
++	exists = SAU # サウジアラビア\r
++	exists = U50 # ヒジャーズ\r
++	}\r
++	atwar = no\r
++	}\r
++\r
++	trigger = {\r
++	area = { area = "Arabian Desert" country = U50 data = 1 value = 70 }\r
++	area = { area = "Hedjaz" country = U50 data = 1 value = 70 }\r
++	owned = { province = 1045 data = -1 } # リヤド\r
++	owned = { province = 1048 data = -1 } # メディナ\r
++	owned = { province = 1049 data = -1 } # メッカ\r
++	NOT = {\r
++	exists = SAU # サウジアラビア\r
++	exists = U50 # ヒジャーズ\r
++	}\r
++	atwar = no\r
++	}\r
++\r
++	name = EVT_3748053_NAME\r
++	desc = EVT_3748053_DESC\r
++	style = 2\r
++  	picture = "baghdad_captured"\r
++  	decision_picture = "decision_diplomatic_campaign"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 万歳！\r
++	name = "ACTION_NAME_HURRAH"\r
++	command = { type = dissent value = -10 }\r
++	command = { type = flag_ext where = U52 which = "_1920" }\r
++	command = { type = name where = U52 which = "ランジアラビア" }\r
++	command = { type = research_mod value = 5 }\r
++	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = sleepevent which = 3748051 } # アラビアの統一（U50）\r
++	command = { type = sleepevent which = 3748052 } # アラビアの統一（SAU）\r
+ 	}\r
+ }\r
+ \r
+@@ -2922,26 +2833,23 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748008\r
++	id = 3748054\r
+ 	random = no\r
+ 	country = IRQ\r
+ \r
+ 	trigger = {\r
+ 	OR = {\r
+-	headofstate = 365001 # イブン・ファイサル・ガジ1世\r
+-	headofstate = 365011\r
+-	headofstate = 365012\r
+-	headofstate = 365013\r
+-	headofstate = 365018 # イブン・ガジ・ファイサル2世\r
+-	headofstate = 365019\r
+-	headofstate = 365020\r
++	headofstate = 365201 # イブン・ザイド・ファイサル1世\r
++	headofstate = 365202\r
++	headofstate = 365203\r
++	headofstate = 365204\r
+ 	}\r
+ 	war = { country = SAU country = U50 }\r
+ 	NOT = { government = communist }\r
+ 	}\r
+ \r
+-	name = "EVT_3748008_NAME"\r
+-	desc = "EVT_3748008_DESC"\r
++	name = "EVT_3748054_NAME"\r
++	desc = "EVT_3748054_DESC"\r
+ 	style = 2\r
+ 	picture = "foreign_volunteers"\r
+ \r
+@@ -2950,7 +2858,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 彼らに援助を送る\r
+-	name = "ACTIONNAME3748008A"\r
++	name = "ACTIONNAME3748054A"\r
+ 	trigger = { government = fascist }\r
+ 	command = { type = dissent value = 4 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -2964,13 +2872,13 @@ event = {
+ 	command = { trigger = { ai = no } type = manpowerpool value = -10 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -800 }\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+-	command = { type = trigger which = 3748009 }\r
+-	command = { type = sleepevent which = 3748010 }\r
++	command = { type = trigger which = 3748055 }\r
++	command = { type = sleepevent which = 3748056 }\r
+ 	ai_chance = 75\r
+ 	}\r
+ \r
+ 	action = { # 行きたいのなら行かせてやれ\r
+-	name = "ACTIONNAME3748008B"\r
++	name = "ACTIONNAME3748054B"\r
+ 	trigger = { government = democratic }\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -2982,13 +2890,13 @@ event = {
+ 	command = { type = relation which = AST value = -10 }\r
+ 	command = { type = relation which = U02 value = -10 }\r
+ 	command = { trigger = { ai = no } type = manpowerpool value = -5 }\r
+-	command = { type = trigger which = 3748010 }\r
+-	command = { type = sleepevent which = 3748009 }\r
++	command = { type = trigger which = 3748056 }\r
++	command = { type = sleepevent which = 3748055 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # 戦争に関与することは避けるべきだ\r
+-	name = "ACTIONNAME3748008C"\r
++	name = "ACTIONNAME3748054C"\r
+ 	trigger = { government = fascist }\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+@@ -2999,13 +2907,13 @@ event = {
+ 	command = { type = relation which = CAN value = 15 }\r
+ 	command = { type = relation which = AST value = 15 }\r
+ 	command = { type = relation which = U02 value = 15 }\r
+-	command = { type = sleepevent which = 3748009 }\r
+-	command = { type = sleepevent which = 3748010 }\r
++	command = { type = sleepevent which = 3748055 }\r
++	command = { type = sleepevent which = 3748056 }\r
+ 	ai_chance = 75\r
+ 	}\r
+ \r
+ 	action = { # 戦争に関与することは避けるべきだ\r
+-	name = "ACTIONNAME3748008D"\r
++	name = "ACTIONNAME3748054D"\r
+ 	trigger = { government = democratic }\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+@@ -3016,8 +2924,8 @@ event = {
+ 	command = { type = relation which = CAN value = 15 }\r
+ 	command = { type = relation which = AST value = 15 }\r
+ 	command = { type = relation which = U02 value = 15 }\r
+-	command = { type = sleepevent which = 3748009 }\r
+-	command = { type = sleepevent which = 3748010 }\r
++	command = { type = sleepevent which = 3748055 }\r
++	command = { type = sleepevent which = 3748056 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ }\r
+@@ -3028,12 +2936,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748009\r
++	id = 3748055\r
+ 	random = no\r
+ 	country = U50\r
+ \r
+-	name = "EVT_3748009_NAME"\r
+-	desc = "EVT_3748009_DESC"\r
++	name = "EVT_3748055_NAME"\r
++	desc = "EVT_3748055_DESC"\r
+ 	style = 2\r
+ 	picture = "foreign_volunteers"\r
+ \r
+@@ -3051,12 +2959,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748010\r
++	id = 3748056\r
+ 	random = no\r
+ 	country = U50\r
+ \r
+-	name = "EVT_3748010_NAME"\r
+-	desc = "EVT_3748009_DESC"\r
++	name = "EVT_3748056_NAME"\r
++	desc = "EVT_3748055_DESC"\r
+ 	style = 2\r
+ 	picture = "foreign_volunteers"\r
+ \r
+@@ -3075,7 +2983,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748011\r
++	id = 3748057\r
+ 	random = no\r
+ 	country = JOR\r
+ \r
+@@ -3090,8 +2998,8 @@ event = {
+ 	NOT = { government = communist }\r
+ 	}\r
+ \r
+-	name = "EVT_3748011_NAME"\r
+-	desc = "EVT_3748011_DESC"\r
++	name = "EVT_3748057_NAME"\r
++	desc = "EVT_3748057_DESC"\r
+ 	style = 2\r
+ 	picture = "foreign_volunteers"\r
+ \r
+@@ -3100,7 +3008,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 彼らに援助を送る\r
+-	name = "ACTIONNAME3748011A"\r
++	name = "ACTIONNAME3748057A"\r
+ 	trigger = { government = fascist }\r
+ 	command = { type = dissent value = 4 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -3114,13 +3022,13 @@ event = {
+ 	command = { trigger = { ai = no } type = manpowerpool value = -10 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -800 }\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+-	command = { type = trigger which = 3748012 }\r
+-	command = { type = sleepevent which = 3748013 }\r
++	command = { type = trigger which = 3748058 }\r
++	command = { type = sleepevent which = 3748059 }\r
+ 	ai_chance = 75\r
+ 	}\r
+ \r
+ 	action = { # 行きたいのなら行かせてやれ\r
+-	name = "ACTIONNAME3748011B"\r
++	name = "ACTIONNAME3748057B"\r
+ 	trigger = { government = democratic }\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+@@ -3132,13 +3040,13 @@ event = {
+ 	command = { type = relation which = AST value = -10 }\r
+ 	command = { type = relation which = U02 value = -10 }\r
+ 	command = { trigger = { ai = no } type = manpowerpool value = -5 }\r
+-	command = { type = trigger which = 3748013 }\r
+-	command = { type = sleepevent which = 3748012 }\r
++	command = { type = trigger which = 3748059 }\r
++	command = { type = sleepevent which = 3748058 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # 戦争に関与することは避けるべきだ\r
+-	name = "ACTIONNAME3748011C"\r
++	name = "ACTIONNAME3748057C"\r
+ 	trigger = { government = fascist }\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+@@ -3149,13 +3057,13 @@ event = {
+ 	command = { type = relation which = CAN value = 15 }\r
+ 	command = { type = relation which = AST value = 15 }\r
+ 	command = { type = relation which = U02 value = 15 }\r
+-	command = { type = sleepevent which = 3748012 }\r
+-	command = { type = sleepevent which = 3748013 }\r
++	command = { type = sleepevent which = 3748058 }\r
++	command = { type = sleepevent which = 3748059 }\r
+ 	ai_chance = 75\r
+ 	}\r
+ \r
+ 	action = { # 戦争に関与することは避けるべきだ\r
+-	name = "ACTIONNAME3748011D"\r
++	name = "ACTIONNAME3748057D"\r
+ 	trigger = { government = democratic }\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+@@ -3166,8 +3074,8 @@ event = {
+ 	command = { type = relation which = CAN value = 15 }\r
+ 	command = { type = relation which = AST value = 15 }\r
+ 	command = { type = relation which = U02 value = 15 }\r
+-	command = { type = sleepevent which = 3748012 }\r
+-	command = { type = sleepevent which = 3748013 }\r
++	command = { type = sleepevent which = 3748058 }\r
++	command = { type = sleepevent which = 3748059 }\r
+ 	ai_chance = 25\r
+ 	}\r
+ }\r
+@@ -3178,12 +3086,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748012\r
++	id = 3748058\r
+ 	random = no\r
+ 	country = U50\r
+ \r
+-	name = "EVT_3748012_NAME"\r
+-	desc = "EVT_3748012_DESC"\r
++	name = "EVT_3748058_NAME"\r
++	desc = "EVT_3748058_DESC"\r
+ 	style = 2\r
+ 	picture = "foreign_volunteers"\r
+ \r
+@@ -3201,12 +3109,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748013\r
++	id = 3748059\r
+ 	random = no\r
+ 	country = U50\r
+ \r
+-	name = "EVT_3748013_NAME"\r
+-	desc = "EVT_3748012_DESC"\r
++	name = "EVT_3748059_NAME"\r
++	desc = "EVT_3748058_DESC"\r
+ 	style = 2\r
+ 	picture = "foreign_volunteers"\r
+ \r
+@@ -3226,7 +3134,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748014\r
++	id = 3748060\r
+ 	random = no\r
+ 	country = ENG\r
+ \r
+@@ -3249,8 +3157,8 @@ event = {
+ 	random = 30\r
+ 	}\r
+ \r
+-	name = "EVT_3748014_NAME"\r
+-	desc = "EVT_3748014_DESC"\r
++	name = "EVT_3748060_NAME"\r
++	desc = "EVT_3748060_DESC"\r
+ 	style = 2\r
+ 	picture = "Aramco"\r
+ 	decision_picture = "decision_anticominternpact"\r
+@@ -3273,7 +3181,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748015\r
++	id = 3748061\r
+ 	random = no\r
+ 	country = ENG\r
+ \r
+@@ -3303,8 +3211,8 @@ event = {
+ 	}\r
+ 	}\r
+ \r
+-	name = "EVT_3748015_NAME"\r
+-	desc = "EVT_3748015_DESC"\r
++	name = "EVT_3748061_NAME"\r
++	desc = "EVT_3748061_DESC"\r
+ 	style = 2\r
+ 	picture = "Aramco"\r
+ \r
+@@ -3317,7 +3225,7 @@ event = {
+ 	trigger = { exists = SAU }\r
+ 	command = { type = relation which = SAU value = 25 }\r
+ 	command = { type = trade which = SAU where = ENG oil = -3 money = 1 value = 1 } \r
+-	command = { type = event which = 3748016 where = SAU when = 0 }\r
++	command = { type = event which = 3748062 where = SAU when = 0 }\r
+ 	}\r
+ \r
+ 	action = { # 了解\r
+@@ -3325,7 +3233,7 @@ event = {
+ 	trigger = { exists = U50 }\r
+ 	command = { type = relation which = U50 value = 25 }\r
+ 	command = { type = trade which = U50 where = ENG oil = -3 money = 1 value = 1 } \r
+-	command = { type = event which = 3748016 where = U50 when = 0 }\r
++	command = { type = event which = 3748062 where = U50 when = 0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -3334,12 +3242,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 3748016\r
++	id = 3748062\r
+ 	random = no\r
+ 	TAG = { SAU U50 }\r
+ \r
+-	name = "EVT_3748015_NAME"\r
+-	desc = "EVT_3748015_DESC"\r
++	name = "EVT_3748061_NAME"\r
++	desc = "EVT_3748061_DESC"\r
+ 	style = 2\r
+ 	picture = "Aramco"\r
+ \r

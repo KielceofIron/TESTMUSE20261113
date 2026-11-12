@@ -1,0 +1,249 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_AI_war_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_AI_war_events.txt [cp932]
+@@ -46,6 +46,7 @@
+ #############################################\r
+ # 戦時生産AI ― ドナウ連邦\r
+ #############################################\r
++#暫定削除(Kielce)\r
+ event = {\r
+ 	id = 99981001\r
+ 	random = no \r
+@@ -55,14 +56,15 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 9999 }\r
+ 	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
++	deathdate = { day = 29 month = 11 year = 9999 }\r
+ \r
+ 	action = {\r
+ 	command = { type = ai which = "IFswitch/Build_War.ai" }\r
+@@ -88,9 +90,9 @@ event = {
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 9999 }\r
+ 	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
++	deathdate = { day = 29 month = 11 year = 9999 }\r
+ \r
+ 	action = {\r
+ 	command = { type = ai which = "IFswitch/Build_Standard.ai" }\r
+@@ -110,6 +112,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -164,6 +167,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -217,6 +221,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -270,6 +275,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -323,6 +329,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -376,6 +383,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -429,6 +437,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -482,6 +491,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -535,6 +545,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -588,6 +599,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -642,6 +654,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -696,6 +709,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -740,7 +754,7 @@ event = {
+ \r
+ \r
+ #############################################\r
+-# 戦時生産AI ― フランス\r
++# 生産AI ― フランス【低人的】\r
+ #############################################\r
+ event = {\r
+ 	id = 9994001\r
+@@ -749,13 +763,25 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 		ai = yes\r
++	OR = {\r
+ 		NOT = { manpower = 1000 } \r
++		AND = {\r
++			atwar = yes\r
++			NOT = { war = { country = GER } }\r
++			NOT = { war = { country = UTC } }\r
++			NOT = { war = { country = UB8 } }\r
++			NOT = { war = { country = ITA } }\r
++			NOT = { war = { country = ENG } }\r
++			NOT = { war = { country = CHI } }\r
++			NOT = { year = 1940 }\r
++			}\r
++		}\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1960 }\r
+ 	offset = 3\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+@@ -782,9 +808,9 @@ event = {
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1993 }\r
+ 	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
+ \r
+ 	action = {\r
+ 	command = { type = ai which = "IFswitch/Build_Standard_FRA.ai" }\r
+@@ -793,22 +819,43 @@ event = {
+ }\r
+ \r
+ #############################################\r
+-# 生産AI ― ドイツ【低人的】\r
++# 戦時生産AI ― ドイツ【低人的】\r
+ #############################################\r
+ event = {\r
+ 	id = 9995001\r
+ 	random = no \r
+ 	country = GER\r
+-	\r
++	persistent = yes\r
+ 	trigger = {\r
++	NOT = { local_flag = Lowmanpowerger }\r
+ 		ai = yes\r
+-		NOT = { manpower = 1000 } \r
++	OR = { \r
++	atwar = yes\r
++	year = 1941\r
++	}\r
++	OR = {\r
++		NOT = { manpower = 2400 } \r
++		AND = {	 #対露講和後の対仏戦が進んでいる\r
++		 region = { region = France country = -3 data = 1 value = 30 }\r
++		 war = { country = FRA }\r
++		 war = { country = ENG }\r
++		 NOT = { war = { country = UTC } } \r
++			}\r
++\r
++		AND = {	#対仏講和後の対露戦が進んでいる\r
++		 lost_IC = { country = UTC value = 30 }\r
++		 war = { country = UTC }\r
++		 war = { country = ENG }\r
++		 NOT = { war = { country = FRA } } \r
++			}\r
++		}\r
++	NOT = { local_flag = ger_eng }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1939 }\r
+ 	offset = 3\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+@@ -830,6 +877,7 @@ event = {
+ 		ai = yes\r
+ 		manpower = 1000 \r
+ 		local_flag = Lowmanpowerger\r
++		atwar = yes\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -840,7 +888,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/GER_Build_Land.ai" }\r
++	#command = { type = ai which = "switch/GER_Build_Land.ai" }\r
+ 	command = { type = local_clrflag which = Lowmanpowerger }\r
+ 	}\r
+ }\r

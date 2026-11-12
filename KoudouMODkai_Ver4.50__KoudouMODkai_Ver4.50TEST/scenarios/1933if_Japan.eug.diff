@@ -1,0 +1,442 @@
+--- A/scenarios/1933if_Japan.eug [cp932]
++++ B/scenarios/1933if_Japan.eug [cp932]
+@@ -10,7 +10,7 @@ header =
+   FRA        = { desc = "FRA_IFJAPAN_DESC" picture = "scenarios\data\propaganda_FRA_if.bmp" flag_ext = _COM name = "フランス・コミューン" }\r
+   ITA        = { desc = "ITA_IFJAPAN_DESC" picture = "scenarios\data\propaganda_ITA_if.bmp" }\r
+   GER        = { desc = "GER_IFJAPAN_DESC" picture = "scenarios\data\propaganda_GER_if.bmp" flag_ext = _empire name = "ドイツ帝国" }\r
+-  UTC        = { desc = "UTC_IFJAPAN_DESC" picture = "scenarios\data\propaganda_UTC_if.bmp" flag_ext = _emp name = "ロシア帝国" }\r
++  UER        = { desc = "UER_IFJAPAN_DESC" picture = "scenarios\data\propaganda_UER_if.bmp" flag_ext = _emp name = "ロシア帝国" }\r
+   # SOV        = { picture = "scenarios\data\propaganda_SOV_1936.bmp" }\r
+   # POL        = { }\r
+   JAP        = { desc = "JAP_IFJAPAN_DESC" picture = "scenarios\data\propaganda_JAP_if.bmp" }\r
+@@ -22,7 +22,7 @@ header =
+   UE5 	     = { desc = "UE5_IFJAPAN_DESC" }\r
+   # ETH 	     = { }\r
+   # SOM 	     = { desc = "SOM_IFJAPAN_DESC" flag_ext = _KIN name = "ソマリア帝国" }\r
+-  UD6 	     = { desc = "UD6_IFJAPAN_DESC"  flag_ext = _AOG name = "東亜総合商社" }\r
++  UD6 	     = { flag_ext = _AOG name = "東亜総合商社" }\r
+   # HOL 	     = { }\r
+   # BRA 	     = { }\r
+   # CZE 	     = { }\r
+@@ -70,7 +70,7 @@ globaldata =
+  # }\r
+   alliance =\r
+  { id          = { type = 15000 id = 13 }\r
+-   participant = { UTC SER }\r
++   participant = { UER SER }\r
+  }\r
+  # war =\r
+  # { id        = { type = 9430 id = 4 }\r
+@@ -207,7 +207,7 @@ globaldata =
+     event = { tag = CHI  id = 1891001 hour = 0 } # China Start Event\r
+     event = { tag = CHI  id = 1891002 hour = 72 } # China Start Event\r
+     #event = { tag = FRA  id = 3327001 hour = 0 } # France Start Event\r
+-    event = { tag = UTC  id = 5951001 hour = 0 } # Russia Start Event\r
++    event = { tag = UER  id = 5951001 hour = 0 } # Russia Start Event\r
+     event = { tag = CHI  id = 1891019 hour = 48 } # China Navy Event\r
+     event = { tag = GER  id = 45680005 hour = 240 } # Sino-German cooperation\r
+     event = { tag = GER  id = 45680007 hour = 0 } # German Start Event\r
+@@ -238,7 +238,7 @@ globaldata =
+     event = { tag = ENG  id = 1930001 hour = 480 } # Rondon Start Event\r
+     event = { tag = FRA  id = 1930001 hour = 480 }\r
+     event = { tag = GER  id = 1930001 hour = 480 }\r
+-    event = { tag = UTC  id = 1930001 hour = 480 }\r
++    event = { tag = UER  id = 1930001 hour = 480 }\r
+     event = { tag = UB8  id = 1930001 hour = 480 }\r
+     event = { tag = ITA  id = 1930001 hour = 480 }\r
+     event = { tag = USA  id = 1930001 hour = 480 }\r
+@@ -695,16 +695,6 @@ globaldata =
+ 	631521 631522 631523 631524 631525 631526 631527 631528 631529 631530\r
+ 	631531 631532 631533 631534 631535 631536 631537 631538 631539 631540\r
+ 	631541 631542 631543 631544 631545 631546 631547 631548\r
+-	#カリフ（U39）\r
+-	1010001 1010002 1010003 1010004 1010005 1010006 1010007 1010008 1010009 1010010\r
+-	1010011 1010012 1010013 1010014 1010015 1010016 1010017 1010018 1010019 1010020\r
+-	1010021 1010022 1010023 1010024 1010025 1010026 1010027 1010028 1010029 1010030\r
+-	1010031 1010032 1010033 1010034 1010035 1010036 1010037 1010038 1010039 1010040\r
+-	1010041 1010042 1010043 1010044 1010045 1010046 1010047 1010048 1010049 1010050\r
+-	1010051 1010052 1010053 1010054 1010055 1010056 1010057 1010058 1010059 1010060\r
+-	1010061 1010062 1010063 1010064 1010065 1010066 1010067 1010068 1010069 1010070\r
+-	1010071 1010072 1010073 1010074 1010075 1010076 1010077 1010078 1010079 1010080\r
+-	1010081 1010082 1010083 \r
+ 	#インド（UE9）\r
+ 	5379301 5379302 5379303 5379304 5379305 5379306 5379307 5379308 5379309 5379310\r
+ 	5379311 5379312 5379313 5379314 5379315 5379316 5379317 5379318 5379319 5379320\r
+@@ -713,6 +703,8 @@ globaldata =
+ 	5379411 5379412 5379413 5379414 5379415 5379416 5379417 5379418 5379419 5379420\r
+ 	5379421 5379422 5379423 5379424 5379425 5379426 5379427 5379428 5379429 5379430\r
+ 	5379431 5379432 5379433 5379434 5379435 5379436 5379437 5379438 5379439 5379440\r
++	#ハタイ（U39）\r
++	1010031 1010032 1010033 1010034 1010035 1010036 1010037 1010038 1010039\r
+ 	# イセスマ\r
+ 	6840036 6840100 6840101 6840102 110300 110301\r
+ 	}\r
+@@ -824,8 +816,28 @@ globaldata =
+ 50035 50071 50091 50227 50515 50516 50518 50519 50520 1124046 1124047 1124048 1124049 1305055\r
+ #ロシア（IFシナリオ用）\r
+ 1337031 1337032 \r
++1360856 1360871 # エヴノ・アゼフ\r
++1360889 1360892 1360898 # ヴィクトル・M・チェルノフ\r
++1360811 1360813 # ボリス・サヴィンコフ\r
++1360960 1360961 # キリル総主教\r
++1360708 1360805 1360806 1360967 # ラーヴル・G・コルニーロフ\r
++1360872 # ロマン・マリノフスキー\r
++1360830 1360832 # ボリス・V・アンネンコフ\r
++1360796 1360797 1360853 # アレクサンドル・F・ケレンスキー\r
+ #ケマル（IF限定）\r
+ 45001 45089 720008 720701\r
++#オスマン\r
++720801 720802 720803 720804 720805 720806 720807 720808 720809 720810\r
++720811 720812 720813 720814 720815 720816 720817 720818 720819 720820\r
++720821 720822 720823 720824 720825 720826 720827 720828 720829 720830\r
++720831 720832 720833 720834 720835 720836 720837 720838 720839 720840\r
++720841 720842 720843 720844 720845 720846 720847 720848 720849 720850\r
++720851 720852 720853 720854 720855 720856 720857 720858 720859 720860\r
++720861 720862 720863 720864 720865 720866 720867 720868 720869 720870\r
++720871 720872 720873 720874 720875 720876 720877 720878 720879 720880\r
++720881 720882 720883 720884 720885 720886 720887 720888 720889 720890\r
++720891 720892 720893 720894 720895 720896 720897 720898 720899 720900\r
++720901\r
+ #リビア\r
+ 495031 495032 495033 495034 495035 495036 495037 495038 495039 495040\r
+ 495041 495042\r
+@@ -839,6 +851,9 @@ globaldata =
+ 225211 225212 225213 225214 225215 225216 225217 225218 225219\r
+ #ドイツ\r
+ 1 2 3 5 6 10 11 17 22 23 35 37 41 55 58 70 86 125 149 187 191 215 273 276 277 303 305 \r
++115204 115205 115206 # ヒトラー\r
++855701 855702 855703\r
++855801 855802 855803 855804 855805\r
+ #イタリア（バニラ）\r
+ 25002 25004 25016 25024 25032 25070 25173 25188 25230\r
+ 215500 215507\r
+@@ -864,13 +879,16 @@ globaldata =
+ 30471 30472 30473 \r
+ #アメリカ\r
+ 240001 240511 240513 240514 240515\r
++240601 240602 240603 240604 240605 240606\r
+ #南部連合(ニミッツ)\r
+ 573206 573237\r
+ #五大湖連邦(フォード)\r
+ 604054 604080 604104 604117\r
+-#スペイン\r
++#スペイン（SPR）\r
+ 255301 255302 255303 255304 255305 255306 255307 255308 255309 255310 255311\r
+ 255311 255312 255313\r
++#スペイン（SPA）\r
++35401 35402 35403 35404 35405 35406 35407\r
+ #中華民国（バニラ）\r
+ 55014 55015 55016 55017 55303 55304 55318 55319 55400 55401 55408 55409 55412 55413\r
+ 55493 55494 55495 55496\r
+@@ -896,10 +914,21 @@ globaldata =
+ 1185231 1185232 1185233 1185234 1185235 1185236 1185237 1185238 1185239 1185240\r
+ 1185241 1185242 1185243 1185244 1185245 1185246 1185247 1185248 1185249 1185250\r
+ 1185251 1185252 \r
+-#西北三馬（CXB）\r
+-610301 610302 610303 610304 610305 610306\r
++#広西（CGX）\r
++585201 585202 585203\r
++#山西（CSX）\r
++605101 605102 605103\r
+ #雲南軍閥（CYN）\r
+ 615081\r
++615301 615302 615303 615304 615305 615306 615307 615308 615309 615310\r
++615311 615312 615313 615314 615315 615316\r
++615401 615402 615403\r
++#西北三馬（CXB）\r
++610301 610302 610303 610304 610305 610306\r
++610401 610402 610403\r
++#中国共産党（CHC）\r
++261001 261002 261003 261004 261005 261006 261007 261008 261009 261010\r
++261011 261012 261013 261014 261015 261016 261017 261018\r
+ #ソ連\r
+ 30301 30302 30303 30304 30305 30306 30307 30308 30309 30310\r
+ 30311 30312 30313 30314\r
+@@ -927,7 +956,7 @@ globaldata =
+ 110001 110011 110012\r
+ #南京政府\r
+ 1250014 1250015 1250022 1250023 1250026 1250028 1250046 1250047 1250048 1250049\r
+-1250101 1250102\r
++1250101 1250102 1250103\r
+ #マンハッタン・コミューン\r
+ 919517 919518 919519 919520 919521 919522 919523\r
+ 919601 919602 919603 919604 919605 919606 919607 919608 919609 919610\r
+@@ -947,8 +976,6 @@ globaldata =
+ 730204 730212 730223\r
+ #イギリス(フラー)\r
+ 10098 10107\r
+-# 山西\r
+-605051 605052\r
+ # 南京政府（日本軍関係者）\r
+ 1250014 1250015 1250022 1250023 1250026 1250028 1250046 1250047 1250048 1250049\r
+ # 台湾\r
+@@ -974,17 +1001,11 @@ globaldata =
+ 630181 630182 630183 630184 630185 630186 630187 630188 630189 630190\r
+ 630191 630192 630193 630194 630195 630196 630197 630198 630199 630200\r
+ 630201 630202 630203 630204 630205 \r
+-#カリフ（U39）\r
+-1010101 1010102 1010103 1010104 1010105 1010106 1010107 1010108 1010109 1010110\r
+-1010111 1010112 1010113 1010114 1010115 1010116 1010117 1010118 1010119 1010120\r
+-1010121 1010122 1010123 1010124 1010125 1010126 1010127 1010128 1010129 1010130\r
+-1010131 1010132 1010133 1010134 1010135 1010136 1010137 1010138 1010139 1010140\r
+-1010141 1010142 1010143 1010144 1010145 1010146 1010147 1010148 1010149 1010150\r
+-1010151 1010152 1010153 1010154 1010155 1010156 1010157 1010158 1010159 1010160\r
+-1010161 1010162 1010163 1010164 1010165 1010166 1010167 1010168 1010169 1010170\r
+-1010171 1010172 1010173 1010174 1010175 1010176 1010177 1010178 1010179 1010180\r
+-1010181 1010182 1010183 1010184 1010185 1010186 1010187 1010188 1010189 1010190\r
+-1010191 1010192 1010193 1010194 \r
++#ドイツ（DDR）\r
++625069 625070\r
++625071 625072 625073 625074 625075 625076 625077 625078 625079 625080  \r
++#英領インド\r
++825301 825302 \r
+ #インド（UE9）\r
+ 5379201 5379202 5379203 5379204 5379205 5379206 5379207 5379208 5379209 5379210\r
+ 5379211 5379212 5379213 5379214 5379215 5379216 5379217 5379218 5379219 5379220\r
+@@ -1001,14 +1022,37 @@ globaldata =
+ #台湾\r
+ 942101 942102 942103 942104 942105 942106 942107 942108 942109 942110\r
+ 942111 942112 942113 942114 942115 942116 942117 942118 942119 942120\r
++# ユーゴスラビア\r
++100201 100202 100203 100204 100205 100206 100207 100208 100209\r
+ # UER\r
+-1360701 1360965 1360966 1361003 1361004 1361005 1361006 1361007 1361008 1361009\r
+-1361010	1361011 1361012 1361013\r
++1360701 1360965 1360966 \r
++1361501 1361502 1361503 1361504 1361505 1361506 1361507 1361508 1361509 1361510\r
++1361511 1361512 1361513 1361514 1361515 1361516 1361517\r
++#ウクライナ\r
++545201 545202 545203 545204 545205 545206 545207 545208 545209 545210\r
++545211 545212 545213 545214 545215 545216 545217 545218 545219 545220\r
++545221 545222 545223 545224 545225 545226 545227 545228 545229 545230\r
++545231 545232 545233 545234 545235 545236 545237 545238 545239 545240\r
++545241 545242 545243 545244 545245 545246 545247 545248 545249 545250\r
++545251 545252 545253 545254 545255 545256 545257 545258 545259 545260\r
++545261 545262 545263 545264 545265 545266 545267 545268\r
++#ウズベキスタン\r
++550101 550102 550103 550104 550105 550106 550107 550108 550109 550110\r
++550111 550112 550113 550114 550115 550116 550117\r
+ # メキシコ\r
+ 170301 170302 170303 170304 170305 170306 170307 170308 170309 170310\r
+ 170311 170312 170313\r
+ # フィンランド\r
+ 145305 145306\r
++#イラン\r
++150201 150202 150203 150204 150205 150206 150207 150208 150209 150210\r
++150211 150212 \r
++#ハンガリー\r
++105304 105305 105306 105307 105308 105309 105310 105311 105312 105313\r
++#ハタイ（U39）\r
++1010031 1010032 1010033 1010034 1010035 1010036 1010037 1010038 1010039 1010040\r
++1010041 1010042 1010043 1010044 1010045 1010046 1010047 1010048 1010049 1010050\r
++1010051 1010052 1010053 1010054 1010055 1010056 1010057 \r
+ }\r
+ \r
+   dormant_teams = {\r
+@@ -1114,15 +1158,14 @@ globaldata =
+ #ブルグント騎士団（親衛隊関係）\r
+ 632003 632008 632009 632010 632011 632012 632013 632014 632015 632016 632017 632018 632019\r
+ 632020 632024 632025 632026\r
+-#カリフ（U39）\r
+-1010001 1010002 1010003 1010004 1010005 1010006 1010007 1010008 1010009 1010010\r
+-1010011 1010012 1010013 1010014 1010015 1010016 1010017 1010018\r
+ #インド（UE9）\r
+ 5379101 5379102 5379103 5379104 5379105 5379106 5379107 5379108 5379109 5379110\r
+ 5379111 5379112 5379113 5379114 5379115 5379116 5379117 5379118 5379119 5379120\r
+ 5379121 5379122 5379123\r
+ #コンゴ\r
+ 10400 10401 10402 10403 10404 10405\r
++#ハタイ（U39）\r
++1010031 1010032 1010033 1010034 1010035 1010036 1010037 \r
+   }\r
+   # ########################### 1933 ############################\r
+   treaty =\r
+@@ -1555,7 +1598,7 @@ globaldata =
+   { id         = { type = 16384 id = 102 }\r
+     type       = non_aggression\r
+     country    = "JAP"\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1948 month = december day = 29 }\r
+   }\r
+@@ -1586,7 +1629,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 106 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "GER"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1594,7 +1637,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 107 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "SWE"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1602,7 +1645,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 108 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "NOR"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1610,7 +1653,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 109 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "ROM"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1618,7 +1661,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 110 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "GRE"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1626,7 +1669,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 111 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "SER"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1948 month = december day = 29 }\r
+@@ -1634,7 +1677,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 112 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "UB8"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1938 month = december day = 29 }\r
+@@ -1642,7 +1685,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 113 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "FRA"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1650,7 +1693,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 114 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "ENG"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1658,7 +1701,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 115 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "AFG"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1948 month = december day = 29 }\r
+@@ -1666,7 +1709,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 116 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "PER"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1948 month = december day = 29 }\r
+@@ -1674,7 +1717,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 117 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "ARM"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1682,7 +1725,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 118 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "AZB"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1690,7 +1733,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 119 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "GEO"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1698,7 +1741,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 120 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "UE7"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -1706,7 +1749,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 121 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "ARA"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1948 month = december day = 29 }\r
+@@ -1714,7 +1757,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 122 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "ISR"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1948 month = december day = 29 }\r
+@@ -1722,7 +1765,7 @@ globaldata =
+     treaty =\r
+   { id         = { type = 16384 id = 123 }\r
+     type       = non_aggression\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     country    = "U34"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1939 month = may day = 29 }\r
+@@ -2171,7 +2214,7 @@ globaldata =
+   { id         = { type = 16384 id = 179 }\r
+     type       = non_aggression\r
+     country    = "SCH"\r
+-    country    = "UTC"\r
++    country    = "UER"\r
+     startdate  = { year = 1932 month = december day = 29 }\r
+     expirydate = { year = 1964 month = december day = 29 }\r
+   }\r
+@@ -2342,7 +2385,7 @@ event      = "db\events\AI\AI_USA.txt"
+ #event      = "db\events\AI\AI_ITA.txt" #Kielce粛清\r
+ event      = "db\events\AI\AI_sov_spheres.txt"\r
+ event      = "db\events\AI\AI_ROM.txt"\r
+-#event      = "db\events\AI\AI_FIN.txt" #Kielce粛清(AIイベントにSOV→UTC書き換え掲載）\r
++#event      = "db\events\AI\AI_FIN.txt" #Kielce粛清(AIイベントにSOV→UER書き換え掲載）\r
+ event      = "db\events\AI\AI_HUN.txt"\r
+ event      = "db\events\AI\AI_TUR.txt"\r
+ event      = "db\events\AI\AI_SPA.txt"\r

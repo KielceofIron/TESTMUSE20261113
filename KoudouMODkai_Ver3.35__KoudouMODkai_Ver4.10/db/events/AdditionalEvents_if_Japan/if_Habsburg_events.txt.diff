@@ -1,0 +1,59 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Habsburg_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Habsburg_events.txt [cp932]
+@@ -103,7 +103,7 @@ event = {
+ 	offset = 1\r
+ 	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+-	action = { # クワ一本はカブ一本と等価値であり、農民達は新しいトラクターを乗り回している\r
++	action = { # クワ一本はカブ一本の価値となった\r
+ 	name = "ACTIONNAME3333002A"\r
+ 	command = { type = dissent value = 25 }\r
+ 	command = { type = money value = -500 }\r
+@@ -275,7 +275,7 @@ event = {
+ 	country = UB8\r
+ \r
+ 	trigger = {\r
+-	event = 45680104\r
++	event = 45680104 # 融和外交\r
+ 	atwar = no\r
+ 	}\r
+ \r
+@@ -983,6 +983,8 @@ event = {
+ 	command = { type = activate_division which = 17352 value = 502 where = 401 when = 1 }\r
+ 	command = { type = activate_division which = 17352 value = 503 where = 401 when = 1 }\r
+ 	command = { type = activate_division which = 17352 value = 504 where = 401 when = 1 }\r
++	command = { type = province_keypoints which = 401 value = -1 } #追加\r
++	command = { type = dissent value = -5 }\r
+ \r
+ 	command = { type = add_corps which = "要塞第1軍" value = land where = 402 }\r
+ 	command = { type = activate_division which = 17352 value = 505 where = 402 when = 1 }\r
+@@ -1007,6 +1009,7 @@ event = {
+ 	command = { type = activate_division which = 17352 value = 518 where = 403 when = 1 }\r
+ 	command = { type = activate_division which = 17352 value = 519 where = 403 when = 1 }\r
+ 	command = { type = activate_division which = 17352 value = 520 where = 403 when = 1 }\r
++	command = { type = province_keypoints which = 404 value = -1 } #追加\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1695,8 +1698,8 @@ event = {
+ 	command = { type = relation which = UTC value = 10 }\r
+ 	command = { type = relation which = FRA value = 10 }\r
+ 	command = { type = relation which = GER value = -50 }\r
+-	command = { type = sleepevent which = 45680055 }\r
+-	command = { type = sleepevent which = 45680056 }\r
++	command = { type = sleepevent which = 45680042 } # 中欧同盟再び\r
++	command = { type = sleepevent which = 45680043 } # ドイツとの交渉\r
+ 	command = { type = event which = 3333107 where = UTC when = 1 }\r
+ 	ai_chance = 40\r
+ 	}\r
+@@ -1709,8 +1712,8 @@ event = {
+ 	command = { type = relation which = GER value = 10 }\r
+ 	command = { type = relation which = UTC value = -50 }\r
+ 	command = { type = relation which = FRA value = -50 }\r
+-	command = { type = sleepevent which = 45680055 }\r
+-	command = { type = sleepevent which = 45680056 }\r
++	command = { type = sleepevent which = 45680042 } # 中欧同盟再び\r
++	command = { type = sleepevent which = 45680043 } # ドイツとの交渉\r
+ 	command = { type = event which = 3333107 where = GER when = 1 }\r
+ 	ai_chance = 60\r
+ 	}\r

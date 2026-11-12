@@ -1,0 +1,133 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Russia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Russia_events.txt [cp932]
+@@ -1029,20 +1029,24 @@ event = {
+ 	command = { type = unlock_division which = 22000 value = 247 }\r
+ 	command = { type = unlock_division which = 22000 value = 248 }\r
+ 	command = { type = unlock_division which = 22000 value = 249 }\r
+-	command = { trigger = { ai = no } type = max_organization which = land value = 20 }\r
+-	command = { trigger = { ai = no } type = morale which = land value = 20 }\r
+-	command = { trigger = { ai = no } type = morale which = naval value = 20 }\r
+-	command = { trigger = { ai = no } type = morale which = air value = 20 }\r
+-	command = { trigger = { ai = no } type = speed which = land value = 5 }\r
+-	command = { trigger = { ai = no } type = counterattack value = 2 }\r
+-	command = { trigger = { ai = no } type = assault value = 2 }\r
+-	command = { trigger = { ai = no } type = ambush value = 2 }\r
+-	command = { trigger = { ai = no } type = breakthrough value = 2 }\r
+-	command = { trigger = { ai = no } type = encirclement value = 2 }\r
+-	command = { trigger = { ai = no } type = hq_supply_eff value = 2 }\r
+-	command = { trigger = { ai = no } type = sce_frequency value = 0.3 }\r
+-	command = { trigger = { ai = no } type = attrition_mod value = 2 }\r
+-	command = { trigger = { ai = no } type = trickleback_mod value = 5 }\r
++	command = {  type = max_organization which = land value = 20 }\r
++	command = {  type = morale which = land value = 20 }\r
++	command = {  type = morale which = naval value = 20 }\r
++	command = {  type = morale which = air value = 20 }\r
++	command = {  type = speed which = land value = 5 }\r
++	command = {  type = counterattack value = 2 }\r
++	command = {  type = assault value = 2 }\r
++	command = {  type = ambush value = 2 }\r
++	command = {  type = breakthrough value = 2 }\r
++	command = {  type = encirclement value = 2 }\r
++	command = {  type = hq_supply_eff value = 2 }\r
++	command = {  type = sce_frequency value = 0.3 }\r
++	command = {  type = attrition_mod value = 2 }\r
++	command = {  type = trickleback_mod value = 5 }\r
++	command = { type = local_setflag which = Bigeventflag0008 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0008.txt" } #音源流し\r
++	command = { type = trigger which = 19330008 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310008 where = REB when = 0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1674,7 +1678,7 @@ event = {
+ 	command = { type = gain_tech which = 6300 }\r
+ 	command = { type = gain_tech which = 6310 }\r
+ 	command = { type = gain_tech which = 6320 }\r
+-	command = { type = ground_def_eff value = 0.1 when = 1 }\r
++	#command = { type = ground_def_eff value = 0.1 when = 1 }\r
+ 	command = { type = morale which = land value = 5 }\r
+ 	command = { type = morale which = naval value = 5 }\r
+ 	command = { type = morale which = air value = 5 }\r
+@@ -4296,6 +4300,7 @@ event = {
+ 	command = { trigger = { exists = AZB NOT = { alliance = { country = AZB } } } type = event which = 5951068 where = AZB when = 3 }\r
+ 	command = { trigger = { exists = UE7 NOT = { alliance = { country = UE7 } } } type = event which = 5951068 where = UE7 when = 3 }\r
+ 	command = { trigger = { exists = GEO NOT = { alliance = { country = GEO } } } type = event which = 5951068 where = GEO when = 3 }\r
++	command = { type = ai which = "IFswitch/UTC_Kavkaz.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4490,6 +4495,7 @@ event = {
+ 	command = { trigger = { exists = EST NOT = { alliance = { country = EST } } } type = event which = 5951073 where = EST when = 3 }\r
+ 	command = { trigger = { exists = LAT NOT = { alliance = { country = LAT } } } type = event which = 5951073 where = LAT when = 3 }\r
+ 	command = { trigger = { exists = LIT NOT = { alliance = { country = LIT } } } type = event which = 5951073 where = LIT when = 3 }\r
++	command = { type = ai which = "IFswitch/UTC_Baltic.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4665,6 +4671,7 @@ event = {
+ 	command = { type = relation which = SWE value = -30 }\r
+ 	command = { type = relation which = U21 value = -30 }\r
+ 	command = { type = trigger which = 5951078 }\r
++	command = { trigger = { ai = yes } type = ai which = "IF/UTC_if.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4701,6 +4708,9 @@ event = {
+ 	command = { type = end_non_aggression which = FIN where = UTC }\r
+ 	command = { type = war which = UTC }\r
+ 	command = { type = trigger which = 5951079 }\r
++	command = { type = local_setflag which = Bigeventflag0010 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0010.txt" } #音源流し\r
++	command = { type = trigger which = 19330010 when = 0 } #本イベントを起こす\r
+ 	ai_chance = 80\r
+ 	}\r
+ \r
+@@ -4867,7 +4877,7 @@ event = {
+ event = {\r
+ 	id = 5951084\r
+ 	random = no\r
+-	country = ETH\r
++	country = FIN\r
+ \r
+ 	trigger = {\r
+ 	war = { country = UTC country = FIN }\r
+@@ -4925,6 +4935,9 @@ event = {
+ 	command = { type = remove_core_region which = "Finland" where = UTC }\r
+ 	command = { type = remove_claim_region which = "Finland" where = UTC }\r
+ 	command = { type = trigger which = 5951086 }\r
++	command = { type = local_setflag which = Bigeventflag0011 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0011.txt" } #音源流し\r
++	command = { type = trigger which = 19330011 when = 0 } #本イベントを起こす\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -4948,6 +4961,10 @@ event = {
+ 	action = { # すばらしい！\r
+ 	name = "ACTION_NAME_GREAT"\r
+ 	command = { type = dissent value = -10 }\r
++	command = { type = event which = 19310011  where = REB when = 0 }\r
++	command = { type = local_setflag which = Bigeventflag0011 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0011.txt" } #音源流し\r
++	command = { type = trigger which = 19330011 when = 0 } #本イベントを起こす\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -5085,6 +5102,7 @@ event = {
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
++\r
+ 	}\r
+ }\r
+ \r
+@@ -5211,6 +5229,10 @@ event = {
+ 	action = { # 祖国の名誉と栄光のために！\r
+ 	name = "ACTIONNAME5951089A"\r
+ 	command = { type = dissent value = -10 }\r
++	command = { type = local_setflag which = Bigeventflag0007 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0007.txt" } #音源流し\r
++	command = { type = trigger which = 19330007 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310007 where = REB when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r

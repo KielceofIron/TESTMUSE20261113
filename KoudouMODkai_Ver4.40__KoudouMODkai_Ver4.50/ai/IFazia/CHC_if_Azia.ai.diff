@@ -1,0 +1,234 @@
+--- A/ai/IFazia/CHC_if_Azia.ai [cp932]
++++ B/ai/IFazia/CHC_if_Azia.ai [cp932]
+@@ -2,12 +2,10 @@
+ switch = no # [yes/no]\r
+ max_front_ratio = 1.5\r
+ max_front_ratios = {\r
+-	CHI = 2.0\r
+-	U74 = 2.0\r
+-	UCH = 2.0\r
++	CHI = 3.0\r
+ }\r
+-max_garrison_prop = 0.40\r
+-min_garrison_prop = 0.30\r
++max_garrison_prop = 0.30\r
++min_garrison_prop = 0.20\r
+ neutrality = 105.000 \r
+ war = 1\r
+ ferocity = yes\r
+@@ -16,7 +14,7 @@ reinforcement = 0.0
+ strat_redeploy_threshold = 25\r
+ exp_force_ratio = 0.1\r
+ exp_force_ratios = { SOV = 0.2 }\r
+-no_exp_forces_to = { CHI CGX CSX CYN CXB UCH U74 U36 U67 MON TAN }\r
++no_exp_forces_to = { CHI CGX CSX CYN CXB U36 U67 MON TAN }\r
+ use_offensive_supply = yes\r
+ \r
+ ###################################\r
+@@ -26,37 +24,34 @@ combat = { }
+ \r
+ claim_acceptance = -59\r
+ \r
+-liberate = { AFG AXI BHU BUR CMB IND INO KAZ KYG LAO MLY PAK PER PHI PRI SOV SIA SIB TAJ TRA TRK U72 U56 U64 U66 U68 U69 U75 U83 }\r
+-\r
+ demand_claims = {\r
++\r
+ }\r
+ # Special resistance against "influence" by the listed nations. Value range = [0 - 10]  \r
+ resistance = {  \r
+-	UER = 2\r
+-	SOV = 4\r
+-	JAP = 2\r
+-	UF8 = 4\r
+-	DDR = 4\r
++	CHI = 6\r
++	SOV = 5\r
++	JAP = 6\r
++	UF8 = 6\r
++	ENG = 6\r
++	FRA = 6\r
++	USA = 6\r
+ }\r
+ befriend = {\r
+-	CHI = 30\r
+-	CSX = 30\r
+-	CGX = 30\r
+-	CYN = 30\r
+-	CXB = 30\r
+-	SIK = 30\r
+-	UCH = 30\r
+-	U74 = 30\r
+-	U67 = 30\r
+-	JAP = 10\r
+-	UF8 = 70\r
+-	UER = 10\r
+-	SOV = 70\r
+-	ENG = 10\r
+-	FRA = 50\r
+-	USA = 10\r
++	CSX = 100\r
++	SIK = 100\r
++	CXB = 100\r
++	CYN = 100\r
++	CGX = 100\r
++	JAP = 50\r
++	UF8 = 100\r
+ }\r
+ protect = {\r
++	CSX = 100\r
++	SIK = 100\r
++	CXB = 100\r
++	CYN = 100\r
++	CGX = 100\r
+ }\r
+ target = {\r
+ 	#Japan \r
+@@ -160,21 +155,16 @@ trade = {
+ 	money 		= -1\r
+ \r
+ 	favored = {\r
+-		UER = 50\r
++		CHI = 90\r
+ 		SOV = 100\r
+ 		JAP = 50\r
+ 		UF8 = 100\r
+ 	}\r
+-	embargo = { CHI UCH U74 }\r
++	embargo = { }\r
+ }\r
+ tech_sharing = {\r
+-	favored = {\r
+-		UER = 50\r
+-		SOV = 100\r
+-		JAP = 50\r
+-		UF8 = 100\r
+-	}\r
+-	embargo = { CHI UCH U74 }\r
++	favored = { }\r
++	embargo = { }\r
+ 	not = { }\r
+ 	prioritized = {\r
+ 		# Agriculture\r
+@@ -230,56 +220,30 @@ spyprefs =
+ 		country = CHC\r
+ 	}\r
+ 	spyprefsdata = {\r
+-		country_priorities	= 8\r
++		country_priorities	= 3\r
+ 		steal_blueprint 	= 10\r
+-		minister_assassination  = 1\r
++		minister_assassination          = 1\r
+ 		smear_campaign 		= 4\r
+-		coup 			= 0\r
++		coup 				= 1\r
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans 	= 2\r
+-		massmedia 		= 1\r
++		massmedia 			= 1\r
+ 		disrupt_techteam	= 5\r
+-		country 		= CHI\r
+-	}\r
+-	spyprefsdata = {\r
+-		country_priorities	= 5\r
+-		steal_blueprint 	= 0\r
+-		minister_assassination  = 0\r
+-		smear_campaign 		= 4\r
+-		coup 			= 0\r
+-		sabotage_industry 	= 2\r
+-		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 2\r
+-		massmedia 		= 2\r
+-		disrupt_techteam	= 0\r
+-		country 		= JAP\r
+-	}\r
+-	spyprefsdata = {\r
+-		country_priorities	= 4\r
+-		steal_blueprint 	= 0\r
+-		minister_assassination  = 0\r
+-		smear_campaign 		= 4\r
+-		coup 			= 0\r
+-		sabotage_industry 	= 2\r
+-		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 2\r
+-		massmedia 		= 2\r
+-		disrupt_techteam	= 0\r
+-		country 		= UCH\r
++		country 			= CHI\r
+ 	}\r
+ 	spyprefsdata = {\r
+-		country_priorities	= 4\r
++		country_priorities	= 7\r
+ 		steal_blueprint 	= 0\r
+-		minister_assassination  = 0\r
++		minister_assassination          = 0\r
+ 		smear_campaign 		= 4\r
+-		coup 			= 0\r
++		coup 				= 0\r
+ 		sabotage_industry 	= 2\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans 	= 2\r
+-		massmedia 		= 2\r
++		massmedia 			= 2\r
+ 		disrupt_techteam	= 0\r
+-		country 		= U74\r
++		country 			= JAP\r
+ 	}\r
+ }\r
+ ###################################\r
+@@ -328,8 +292,8 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= yes # no \r
+ 	max_batch_peace 		= 680 \r
+-	max_batch_war 			= 500 \r
+-	max_batch_home_front = 500\r
++	max_batch_war 			= 780 \r
++	max_batch_home_front = 780\r
+         extra_convoys_war = 0.0000 \r
+         extra_convoys_peace = 0.0000 \r
+ \r
+@@ -526,8 +490,6 @@ garrison = {
+ 		CXB = 30\r
+ 		CYN = 30\r
+ 		CGX = 30\r
+-		UCH = 30\r
+-		U74 = 30\r
+ 		U67 = 30\r
+ 		U02 = 70 # 追加\r
+ 		U03 = 20 # 追加\r
+@@ -605,16 +567,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30.0\r
+-	groundattackdesirability 		= 40.0\r
+-	inderdictiondesirability 		= 20.0\r
+-	logisticalstrikedesirability 	= 2.0\r
+-	runwaycrateringdesirability 	= 10.0\r
+-	strategicstrikedesirability 	= 10.0\r
+-	installationstrikedesirability 	= 5.0\r
+-	navalstrikedesirability 		= 15.0\r
+-	portstrikedesirability 			= 9.0\r
+-	convoyraiddesirability			= 9.0\r
++	airsuperioritydesirability 		= 30000.0\r
++	groundattackdesirability 		= 40000.0\r
++	inderdictiondesirability 		= 20000\r
++	logisticalstrikedesirability 		= 2000\r
++	runwaycrateringdesirability 		= 10000\r
++	strategicstrikedesirability 		= 10000\r
++	installationstrikedesirability 		= 5000\r
++	navalstrikedesirability 		= 15000\r
++	portstrikedesirability 		= 9000\r
++	convoyraiddesirability 		= 9000\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -636,7 +598,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r

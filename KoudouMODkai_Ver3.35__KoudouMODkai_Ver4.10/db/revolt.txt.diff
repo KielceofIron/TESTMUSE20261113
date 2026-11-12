@@ -1,0 +1,402 @@
+--- A/db/revolt.txt [cp932]
++++ B/db/revolt.txt [cp932]
+@@ -950,7 +950,7 @@
+  \r
+ U08 = { #  Germany - WW1\r
+  date = { day = 0 month = january year = 1914 } \r
+- expirydate = { day = 29 month = december year = 1930 } \r
++ expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 126 145 127 131 142 147 141 137 174 171 176 146 148 154  \r
+  151 152 153 156 169 157 163 162 158 183 159 172 170 173 177 138 \r
+                134 132 178 175 179 167 164 184 104 107 105 109  \r
+@@ -963,9 +963,13 @@ U08 = { #  Germany - WW1
+  186 187 188 189 190 191 192 193 194 195 \r
+  # Poland 226 230 222 \r
+  } \r
++ min = 8\r
+  extra = { \r
+  } \r
+  capital = 163 \r
++ regular_id = GER \r
++ intrinsic_gov_type = fascist\r
++ no = { SOV USA ENG FRA CAN U01 AST NZL GER }\r
+  } \r
+  \r
+  GEO = { # Georgia\r
+@@ -1163,7 +1167,7 @@ GER = { # Germany
+  1639 1640 1635 1637 1636 1638 1650 1647 1634 1643 1619 1644 1645 1615 1657 1630 1631 1628 1627 \r
+  1632 1633 1660 1658 1659 1620 1621 1622 1616 1617 1599 1600 1641 1601 1642 1595 1596 1598 \r
+  1597 1602 1234 1603 1604 1606 1607 1610 1608 1609 1605 \r
+- 1652 1618 1623 1594 1646 \r
++ 1652 1618 1623 1594 1646 1629\r
+  } \r
+  capital = 1654 \r
+  } \r
+@@ -1510,15 +1514,15 @@ GER = { # Germany
+  MEN = { # Mengkuko\r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+- minimum = { 1124 1238 1239 1240 1246 1270 } #Inner Mongolia\r
+- min = 1\r
++ minimum = { 1238 1239 1240 1246 1270 } #Inner Mongolia\r
++ min = 4\r
+  extra = { 1268 1272 1269 #Inner Mongolia\r
+- 1120 1121 1122 1123 1125 #Mongolia\r
++ 1120 1121 1122 1123 1124 1125 #Mongolia\r
+  1119 #Tuva\r
+  }\r
+  capital = 1246\r
+  revolt = no\r
+- } \r
++ }\r
+  \r
+  MEX = { # Mexico\r
+  date = { day = 0 month = january year = 1914 } \r
+@@ -1587,7 +1591,7 @@ GER = { # Germany
+  minimum = { \r
+  1457 \r
+  } \r
+- extra = { } \r
++ extra = { 1451 1452 } \r
+  capital = 1457 \r
+  } \r
+ \r
+@@ -2048,7 +2052,7 @@ SIB = { # Siberia
+   617 608 609 600 596 607 597 630 634 635 636 603 602 1097 \r
+   1098 1105 1104 1099 1103 1106 1109 1108 1119 531 532 1107 \r
+   605 606 610 629 707 1185 506 1100 711 712 713 1149 1141 499 \r
+-  519 705 714 1069 1070 1126 1127 1128 1161 1170 1171 2792 2793 } \r
++  519 705 714 1069 1070 1126 1127 1128 1161 1170 1171 2792 2793 2819 2820 2821 } \r
+   capital = 572 \r
+   regular_id = RUS \r
+   intrinsic_gov_type = leninist \r
+@@ -3009,7 +3013,7 @@ U43 = { # Reichskommissariat Moskowien
+ 		553 554 555 556 557 558 559 562 563 567 568 569 570 571\r
+ 		574 576 577 578 579 583 584 585 656 664 667 668\r
+ 		670 671 672 673 674 675 676 677\r
+-		678 679 680 681 682 683 684 685 686 688 \r
++		678 679 680 681 682 683 684 685 686 688 689 \r
+ 	}\r
+ 	country = { GER }\r
+ 	#min_extra = 20\r
+@@ -3529,22 +3533,6 @@ expirydate = { day = 29 month = december year = 1999 }
+  1750 1751 # Gilbert Islands\r
+   } \r
+  capital = 1665 \r
+- } \r
+- \r
+-  USN = { # ポリネシア\r
+- date = { day = 1 month = january year = 1914 } \r
+- expirydate = { day = 29 month = december year = 1999 } \r
+- minimum = { 1734 1735 1736 1737 } # Hawai\r
+- extra = {\r
+- 1730 1731 1732 1733 # Fiji\r
+- 1738 # Johnson\r
+- 1739 # Midway\r
+- 1687 1740 1741 1742 1743 1744 # Ellice Islands\r
+- 1745 1746 1747 # Line Islands\r
+- 1748 # Niue\r
+- 1749 # Samoa\r
+-  } \r
+- capital = 1736 \r
+  } \r
+ \r
+  UPR = { # メラネシア\r
+@@ -3583,7 +3571,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  } \r
+ \r
+  UE3 = { # 教皇領\r
+-	date = { day = 1 month = january year = 1933 }\r
++	date = { day = 0 month = january year = 1933 }\r
+ 	expirydate = { day = 29 month = december year = 1967 }\r
+ 	minimum = {\r
+ 		419\r
+@@ -3594,16 +3582,24 @@ expirydate = { day = 29 month = december year = 1999 }
+ \r
+  }\r
+ \r
+- UE8 = {	# ハワイ\r
+-	date = { day = 1 month = january year = 1933 }\r
+-	expirydate = { day = 29 month = december year = 1967 }\r
+-	minimum = { 1736 }\r
+-	extra = { 1734 1737 1735 1738 }\r
+-	capital = 1736\r
+- }\r
++ UE8 = { # ハワイ\r
++ date = { day = 1 month = january year = 1914 } \r
++ expirydate = { day = 29 month = december year = 1999 } \r
++ minimum = { 1734 1735 1736 1737 } # Hawai\r
++ extra = {\r
++ 1730 1731 1732 1733 # Fiji\r
++ 1738 # Johnson\r
++ 1739 # Midway\r
++ 1687 1740 1741 1742 1743 1744 # Ellice Islands\r
++ 1745 1746 1747 # Line Islands\r
++ 1748 # Niue\r
++ 1749 # Samoa\r
++  } \r
++ capital = 1736 \r
++ } \r
+ \r
+  UE9 = { # ベンガル\r
+-	date = { day = 1 month = january year = 1933 }\r
++	date = { day = 0 month = january year = 1933 }\r
+ 	expirydate = { day = 29 month = december year = 1967 }\r
+ 	minimum = {\r
+ 		1447\r
+@@ -3712,10 +3708,10 @@ expirydate = { day = 29 month = december year = 1999 }
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { \r
+- 1544 1545 1549 1551 1550 1556 1552 1557 1558 1553 1554 1559 1560 1561 1555 1542 1547 1548 1546 \r
++ 1544 1545 1549 1551 1550 1556 1552 1557 1558 1553 1554 1559 1560 1561 1555 1547 1548 1546 \r
+  } \r
+  min = 1\r
+- extra = { 1543 1562 1563 1564 1662 1661 1663 1664 1672 1541 \r
++ extra = { 1562 1563 1564 1662 1661 1663 1664 1672 1541 1542 1543 \r
+ 	   1012 1159 2464 2760 2761 2762 2763 2764 2765 2766 2767 2768 2769 2770 2771 2772 2773 2774 2775 2776 2777 2778 2779 2780 2781 2782 2783 2784 2785 2786 2787 2788 2789 2790 2792 2793 2794 2795 2796 2797 2798 2799 2800 2801 2802 2803 2804 2805 2824 }\r
+  capital = 1552\r
+ \r
+@@ -3809,7 +3805,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  U00 = { # Commnist America\r
+- date = { day = 0 month = january year = 1914 } \r
++ date = { day = 0 month = january year = 1934 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { \r
+  1809 \r
+@@ -3927,7 +3923,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  } \r
+ \r
+  UA0 = { # アラスカ\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1935 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 2142 } \r
+  extra = { 2139 2140 2141 2143 2144 2145 2146 2147 2150 2151 2174 } \r
+@@ -3936,7 +3932,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA1 = { # ニューイングランド\r
+- date = { day = 1 month = january year = 1933 }\r
++ date = { day = 1 month = january year = 1935 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  minimum = { 1789 }\r
+  extra = { 1784 1786 1785 1787 1790 1794 1788 1789 1796 1793 1799 1791 1792 1800 }\r
+@@ -3945,7 +3941,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA2 = { # 五大湖連邦\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1935 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1832 } \r
+  extra = { \r
+@@ -3961,7 +3957,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA3 = { # 中部大西洋共和国\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1935 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1805 } \r
+  extra = { 1795 1797 1798 1801 1802 1803 1804 1805 1806 1807 1808 1809 1810 1811 1814 1816 1817 1819 1820 } \r
+@@ -3971,7 +3967,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA4 = { # ロッキー山脈連邦\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1935 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1858 1866 1898 } \r
+  min = 1\r
+@@ -3982,7 +3978,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA5 = { # フロリダ\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1935 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1953 }\r
+  extra = { 1948 1949 1950 1951 1952 1953 } \r
+@@ -3991,7 +3987,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA6 = { # ニューアフリカ\r
+- date = { day = 0 month = january year = 1933 }\r
++ date = { day = 0 month = january year = 1935 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  minimum = { 1929 1930 1931 1932 1934 }\r
+  min = 1\r
+@@ -4006,7 +4002,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  } \r
+ \r
+  UA7 = { # アメリカ先住民連合\r
+- date = { day = 1 month = january year = 1933 }\r
++ date = { day = 1 month = january year = 1935 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  minimum = { 1857 1913 }\r
+  min = 1\r
+@@ -4016,7 +4012,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA8 = { # リオグランデ共和国\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1935 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1926 } \r
+  extra = { 1922 1923 1926 1967 1975 1976 } \r
+@@ -4025,7 +4021,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UA9 = { # カスカディア\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1935 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1878 } \r
+  extra = { 1861 1869 1870 1871 1881 1872 1873 1874 1875 1876 1877 1878 1879 1880 1882 2089 2090 2091 2092 2148 2149 } \r
+@@ -4146,12 +4142,12 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 680\r
+  }\r
+ \r
+- UC2 = { # カレニア\r
++ UC2 = { # マドラス\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+- minimum = { 530 531 532 534 535 536 537 538 539 540 541 }\r
+- min = 1\r
+- capital = 531\r
++ minimum = { 1499 1500 1506 }\r
++ extra = { 1493 1494 1495 1496 1497 1498 1501 1502 1503 1504 1505 1507 1509 }\r
++ capital = 1500\r
+  }\r
+ \r
+  UC3 = { # ヴェネツィア\r
+@@ -4218,7 +4214,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  expirydate = { day = 29 month = december year = 1999 }\r
+  revolt = no\r
+  minimum = { 1447 }\r
+- extra = { 1439 1440 1441 1442 1443 1444 1445 1446 1447 1448 1449 1450 }\r
++ extra = { 1439 1440 1441 1442 1443 1444 1445 1446 1447 1448 1449 1450 1452 1455 1458 }\r
+  capital = 1447\r
+  }\r
+ \r
+@@ -4264,26 +4260,30 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 2089\r
+  }\r
+ \r
+- UD6 = { # 東亜総合商社\r
++ UD6 = { # ブルゴーニュ騎士団国\r
+  date = { day = 1 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+- minimum = { 1391 1392 1393 1394 1395 1396 1397 1398 1399 1400 1401 1402 1403 1404 1405 2770 2798 }\r
++ minimum = { 104 105 106 107 } # アルザス・ロレーヌ\r
+  min = 1\r
+- extra = { 1422 1423 1424 1425 1426 1427 1428 }\r
+- claims = {}\r
++ extra = {\r
++ 108 109 110 111 112 113 # フランドル\r
++ 114 115 116 117 # ワロニア\r
++ 49 50 51 52 53 # パ・ド・カレー\r
++ 56 # パリ地域\r
++ 96 99 100 101 102 103 # ブルゴーニュ\r
++ }\r
++ capital = 106\r
+  country = { GER } \r
+- capital = 1395\r
+  revolt = no\r
+  intrinsic_gov_type = nazi\r
+  }\r
+ \r
+- UD7 = { # マクロネシア\r
+- date = { day = 1 month = january year = 1933 }\r
+- expirydate = { day = 29 month = december year = 1999 }\r
+- revolt = yes	\r
+- minimum = { 1773 }\r
+- extra = { 990 991 992 994 995 }\r
+- capital = 1773\r
++ UD7 = { # マイソール\r
++ date = { day = 0 month = january year = 1933 } \r
++ expirydate = { day = 29 month = december year = 1963 } \r
++ minimum = { 1507 1502  } \r
++ extra = { 1503 1501 } \r
++ capital = 1507\r
+  }\r
+ \r
+  UD8 = { # プロイセン\r
+@@ -4316,38 +4316,36 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1795\r
+  }\r
+ \r
+- UE1 = { # Moscow\r
++ UE1 = { # Macedonia\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+- minimum = { 572 } \r
++ minimum = { 333 } \r
+  extra = { \r
+- 542 543 544 545 546 547 548 671 672 673 676 680 681 684 685 686 688 689 # ロシア北部\r
+- 549 550 552 560 561 564 565 566 573 575 586 587 588 589 # ロシア西部\r
+- 551 553 554 555 556 557 558 559 562 563 567 568 569 570 571 572 574 576 577 578 579 583 584 585 656 668 670 674 675 677 678 679 682 683 # ロシア中部\r
+- 580 581 582 602 603 604 642 643 644 645 646 647 648 649 650 651 652 653 654 655 657 658 659 661 662 663 665 669 # ロシア南部\r
++ 328 333 334\r
+  } \r
+- capital = 572\r
++ capital = 333\r
+  }  \r
+ \r
+- UE2 = { # CzechRepublic\r
++ UE2 = { #Hyderabad\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+- minimum = { 207 } \r
+- extra = { 196 197 198 199 200 201 202 203 204 205 206 207 } \r
+- capital = 207\r
+- }\r
++ minimum = { 1487 1489 1486 1490 1491 } \r
++ extra = { 1492 1488 } \r
++ capital = 1487 \r
++ }  \r
++\r
+ \r
+  UE4 = { # Sakhalin\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+- minimum = { 1541 1542 1545 } \r
+- extra = { 1543 2792 2793 1544 1545 2767 2773 2792 2793 2799 2803 2804 2805 } \r
++ minimum = { 1541 1542 1545 2792 2793 } \r
++ extra = { 1543 2792 2793 1544 1545 2767 2773 2799 2803 2804 2805 } \r
+  min = 1\r
+  capital = 1545\r
+  }\r
+ \r
+  UE5 = { # UFCO\r
+- date = { day = 0 month = january year = 1930 } \r
++ date = { day = 0 month = january year = 1936 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1758 1991 2079 } \r
+  extra = { \r
+@@ -4363,7 +4361,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  }\r
+ \r
+  UE6 = { # Puerto Rico\r
+- date = { day = 0 month = january year = 1933 } \r
++ date = { day = 0 month = january year = 1936 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1765 } \r
+  capital = 1765\r
+@@ -4378,6 +4376,13 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
++ U63 = { # CzechRepublic\r
++ date = { day = 0 month = january year = 1933 } \r
++ expirydate = { day = 29 month = december year = 1999 } \r
++ minimum = { 207 } \r
++ extra = { 196 197 198 199 200 201 202 203 204 205 206 207 } \r
++ capital = 207\r
++ }\r
+ \r
+  U67 = { # Mukden\r
+  date = { day = 0 month = january year = 1933 } \r

@@ -1,0 +1,685 @@
+--- A/scenarios/1933if_Japan/argentina.inc [cp932]
++++ B/scenarios/1933if_Japan/argentina.inc [cp932]
+@@ -1,378 +1,308 @@
+- \r
+- ############################## \r
+- # Country definition for ARG # \r
+- ############################## \r
+-  \r
++##############################\r
++# Country definition for ARG #\r
++##############################\r
++\r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+- ##################### \r
+- # Country main data # \r
+- ##################### \r
+-  \r
+ country = {\r
+-	tag                    = ARG \r
+-	ai = "arg_1936.ai"\r
+-	ai_settings	= { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes } }\r
+-	dissent = 20\r
+-	manpower               = 78 \r
+-	# Resource Reserves \r
+-	energy                 = 1620\r
+-	metal                  = 810\r
+-	rare_materials         = 405\r
+-	transports = 50\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 20 \r
+-	capital                = 2050 \r
++  tag                = ARG\r
++  name               = " "\r
++  ai                 = "arg_1936.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes } }\r
++  capital            = 2050 # ブエノスアイレス\r
++  dissent            = 20\r
++  manpower           = 78\r
++  flag_ext	= _flag4\r
++  # Resource Reserves\r
++  energy         = 1620\r
++  metal          = 810\r
++  rare_materials = 405\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 20\r
++  transports     = 50\r
++\r
++  diplomacy = {\r
++    relation = { tag = BOL value = 50 }\r
++    relation = { tag = BRA value = -10 }\r
++    relation = { tag = CHL value = -20 }\r
++    relation = { tag = COL value = 10 }\r
++    relation = { tag = ENG value = 75 }\r
++    relation = { tag = ECU value = 10 }\r
++    relation = { tag = GER value = 75 }\r
++    relation = { tag = IRE value = 20 }\r
++    relation = { tag = ITA value = 30 }\r
++    relation = { tag = PAR value = 50 }\r
++    relation = { tag = PRU value = 20 }\r
++    relation = { tag = URU value = -50 }\r
++    relation = { tag = USA value = 75 }\r
++    relation = { tag = VEN value = 10 }\r
++  }\r
++  SpyInfo                = { country = "ARG" NumberOfSpies = 6 }\r
++\r
++  nationalprovinces      = { 2026 2027 2028 2029 2034 2035 2036 2037 2038 2039 2043 2044 2045 2048 2049 2050 2053 2054 2055 2056 }\r
++  ownedprovinces         = { 2026 2027 2028 2029 2034 2035 2036 2037 2038 2039 2044 2048 2049 2050 2053 2054 2055 2056 }\r
++  controlledprovinces    = { 2026 2027 2028 2029 2034 2035 2036 2037 2038 2039 2044 2048 2049 2050 2053 2054 2055 2056 }\r
++\r
++  techapps               = { 4500 4510 4520 4530 4540 4550 4010 4600 4610 4620 4630 4120 4130 4740 4750 4760 7600 7610 2620 2010 2630 2290 2300 2310 2800 2450 21180 21190 2810 2820 2510 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 1240 1830 1840 1850 1860 5600 5610 5620 5700 5710 5010 5020 5810 5820 5050 5830 5060 5800 5080 5310 54010 54020 54030 5316 5326 3010 3020 3030 3040 3050 3110 3120 3130 3140 3210 3220 3230 3240 3410 3420 3430 3440 3450 3456 3460 3610 3620 3630 3720 3730 3736 3740 3900 3810 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 6560 8010 8020 8040 8050 8100 8900 8910 8920 8930 }\r
++  inventions             = { 3000027 }\r
++\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 5\r
++    political_left    = 3\r
++    freedom           = 6\r
++    free_market       = 8\r
++    professional_army = 4\r
++    defense_lobby     = 6\r
++    interventionism   = 3\r
++  }\r
++  headofstate            = { type = 9 id = 165305 } # アグスティン・P・フスト\r
++  headofgovernment       = {  } # アグスティン・P・フスト\r
++  foreignminister        = {  } # カルロス・サベドラ・ラマス\r
++  armamentminister       = {  } # アルベルト・ウエヨ\r
++  ministerofsecurity     = {  } # ラモン・カスティリョ\r
++  ministerofintelligence = { } # ホルヘ・デ・ラ・トーレ\r
++  chiefofstaff           = { } # マヌエル・A・ロドリゲス\r
++  chiefofarmy            = { } # マヌエル・A・ロドリゲス\r
++  chiefofnavy            = { } # ペドロ・S・カサル\r
++  chiefofair             = { } # アントニオ・パロディ\r
++\r
++  landunit = {\r
++    id       = { type = 12000 id = 1 }\r
++    name     = "騎兵軍団"\r
++    location = 2050\r
++    division = {\r
++      id             = { type = 12000 id = 2 }\r
++      name           = "第1騎兵旅団"\r
++      type           = cavalry\r
++      model          = 8\r
++      strength       = 20\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 3 }\r
++      name           = "第2騎兵旅団"\r
++      type           = cavalry\r
++      model          = 8\r
++      strength       = 20\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 4 }\r
++      name           = "第3騎兵旅団"\r
++      type           = cavalry\r
++      model          = 8\r
++      strength       = 20\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 12000 id = 5 }\r
++    name     = "第1歩兵師団"\r
++    location = 2050\r
++    division = {\r
++      id             = { type = 12000 id = 6 }\r
++      name           = "第1歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 35\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 12000 id = 7 }\r
++    name     = "第2歩兵師団"\r
++    location = 2053\r
++    division = {\r
++      id             = { type = 12000 id = 8 }\r
++      name           = "第2歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 35\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 12000 id = 9 }\r
++    name     = "第3歩兵師団"\r
++    location = 2055\r
++    division = {\r
++      id             = { type = 12000 id = 10 }\r
++      name           = "第3歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 35\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 12000 id = 11 }\r
++    name     = "第4歩兵師団"\r
++    location = 2054\r
++    division = {\r
++      id             = { type = 12000 id = 12 }\r
++      name           = "第4歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 35\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 12000 id = 13 }\r
++    name     = "第5歩兵師団"\r
++    location = 2026\r
++    division = {\r
++      id             = { type = 12000 id = 14 }\r
++      name           = "第5歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 35\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 12000 id = 15 }\r
++    name     = "山岳歩兵軍団"\r
++    location = 2026\r
++    division = {\r
++      id             = { type = 12000 id = 16 }\r
++      name           = "山岳兵師団"\r
++      type           = bergsjaeger\r
++      model          = 7\r
++      strength       = 25\r
++    }\r
++  }\r
+ \r
+-	policy = {\r
+-		date              = {  year = 0 month = january day = 0  } \r
+-		democratic        = 5 \r
+-		political_left    = 3 \r
+-		free_market       = 8 \r
+-		freedom           = 6 \r
+-		professional_army = 4 \r
+-		defense_lobby     = 6 \r
+-		interventionism   = 3 \r
+-	} \r
++  navalunit = {\r
++    id       = { type = 12000 id = 17 }\r
++    name     = "アルゼンチン海軍"\r
++    location = 2048\r
++    base     = 2048\r
++    division = {\r
++      id             = { type = 12000 id = 18 }\r
++      name           = "ARA リヴァダヴィア"\r
++      type           = battleship\r
++      model          = 3\r
++      extra1         = naval_fire_controll_l\r
++      extra2         = naval_anti_air_l\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 19 }\r
++      name           = "ARA モレノ"\r
++      type           = battleship\r
++      model          = 3\r
++      extra1         = naval_fire_controll_l\r
++      extra2         = naval_anti_air_l\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 20 }\r
++      name           = "ARA ガリバルディ"\r
++      type           = heavy_cruiser\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 21 }\r
++      name           = "ARA サン・マルティン"\r
++      type           = heavy_cruiser\r
++      model          = 1\r
++      extra1         = naval_fire_controll_s\r
++      brigade_model1 = 0\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 22 }\r
++      name           = "ARA ヘネラル・ベルグラノ"\r
++      type           = heavy_cruiser\r
++      model          = 1\r
++      extra1         = naval_fire_controll_s\r
++      brigade_model1 = 0\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 23 }\r
++      name           = "ARA ヘネラル・プエイレドン"\r
++      type           = heavy_cruiser\r
++      model          = 1\r
++      extra1         = naval_fire_controll_s\r
++      brigade_model1 = 0\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 24 }\r
++      name           = "ARA アルミランテ・ブラウン"\r
++      type           = light_cruiser\r
++      model          = 3\r
++      extra1         = naval_fire_controll_s\r
++      extra2         = floatplane\r
++      brigade_model1 = 0\r
++      brigade_model2 = 4\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 25 }\r
++      name           = "ARA ベインティシンコ・デ・マジョ"\r
++      type           = light_cruiser\r
++      model          = 3\r
++      extra1         = naval_fire_controll_s\r
++      extra2         = floatplane\r
++      brigade_model1 = 0\r
++      brigade_model2 = 4\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 26 }\r
++      name           = "第1駆逐隊"\r
++      type           = destroyer\r
++      model          = 2\r
++      strength       = 80\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 27 }\r
++      name           = "第2駆逐隊"\r
++      type           = destroyer\r
++      model          = 4\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 28 }\r
++      name           = "第1潜水隊"\r
++      type           = submarine\r
++      model          = 3\r
++      strength       = 60\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 29 }\r
++      name           = "第1輸送隊"\r
++      type           = transport\r
++      model          = 1\r
++    }\r
++  }\r
+ \r
+-	nationalprovinces   = {  2026 2027 2028 2029 2034 2035 2036 2037 2038 2039 2043 2044 2045 2048 2049 2050 2053 2054 2055 2056  } \r
+-	ownedprovinces      = {  2026 2027 2028 2029 2034 2035 2036 2037 2038 2039 2044 2048 2049 2050 2053 2054 2055 2056  } \r
+-	controlledprovinces = {  2026 2027 2028 2029 2034 2035 2036 2037 2038 2039 2044 2048 2049 2050 2053 2054 2055 2056  } \r
+-	\r
+-	# Semi-Major Tech '36 \r
+-	# Group C 1933 techs \r
+-	# ###################### \r
+-	techapps = {\r
+-		#Early Fighter  \r
+-		4500 4510 4520 4530 4540 4550 4010\r
+-		#Early Bomber \r
+-		4600 4610 4620 4630 4120 4130\r
+-		#SEAPLANES\r
+-		4740 4750 4760\r
+-		#Great War Tank \r
+-		7600 7610 2620 2010 2630\r
+-		#Great War Heavy Field Artillery \r
+-		2290 2300 2310\r
+-		#Early Static Anti-Air Artillery \r
+-		2800 2450 21180 21190\r
+-		#Basic Anti-Air Artillery Brigade \r
+-		2810 2820 2510\r
+-		#Great War Infantry Division  \r
+-		1010  1020 1030 1040 1050 1060 \r
+-		#Interbellum Supply \r
+-		1910 1920 1930 1940 1950 1960\r
+-		#Great War Cavalry Division  \r
+-		13060 13070 13080 1310 1320 1330 1340 \r
+-		#Early Mountain Division \r
+-		1160  1170 1180 1190 1200 1210 1220 1230 1240\r
+-		#Naval Infantry\r
+-		#1560 1570 1580\r
+-		#Engineers\r
+-		1830 1840 1850 1860\r
+-		#Medicine\r
+-		5600 5610 5620\r
+-		#Mechanized Agriculture \r
+-		5700 5710 5010 5020\r
+-		#Manufactoring\r
+-		5810 5820 5050 5830 5060\r
+-		#Improved Construction Engineering \r
+-		5800 5080  \r
+-		#Computers & cryptography\r
+-		5310 54010 54020 54030 5316 5326\r
+-		#Improved Destroyer \r
+-		3010 3020 3030 3040 3050\r
+-		#Interwar Light Cruiser \r
+-		3110 3120 3130 3140\r
+-		#Early Heavy Cruiser \r
+-		3210 3220 3230 3240\r
+-		#Great War Battleship \r
+-		3410 3420 3430 3440 3450 3456 3460\r
+-		#Short Range Submarine \r
+-		3610 3620 3630\r
+-		#Torpedo & ASW 18\r
+-		3720 3730 3736 3740 3900\r
+-		#Troopships\r
+-		3810\r
+-		#Air Doctrines - ww2 techs\r
+-		27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470\r
+-		# Great War Land Doctrines (entente)\r
+-		6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-		# Defensive Focus Grand Battleplan Path (FRA / UK)\r
+-		6560\r
+-		# Engagement Theories\r
+-		8010 8020 8040 8050\r
+-		# Naval Supremacy\r
+-		8100\r
+-		# Engagement Tactics - Fleet-in-Being colum\r
+-		8900 8910 8920 8930\r
+-	} \r
+-	\r
+-	inventions = { 3000027 }\r
+-	diplomacy = {\r
+-		relation = {  tag = BOL value = 50  } \r
+-		relation = {  tag = BRA value = -10  } \r
+-		relation = {  tag = CHL value = -20  } \r
+-		relation = {  tag = COL value = 10  } \r
+-		relation = {  tag = ENG value = 75  } \r
+-		relation = {  tag = ECU value = 10  } \r
+-		relation = {  tag = GER value = 75  } \r
+-		relation = {  tag = IRE value = 20  } \r
+-		relation = {  tag = ITA value = 30  } \r
+-		relation = {  tag = PAR value = 50  } \r
+-		relation = {  tag = PRU value = 20  } \r
+-		relation = {  tag = URU value = -50  } \r
+-		relation = {  tag = USA value = 75  } \r
+-		relation = {  tag = VEN value = 10  } \r
+-	} \r
+-	SpyInfo                = {  country = "ARG" NumberOfSpies = 6  } \r
+-	headofstate            = {  type = 9 id = 165001  } \r
+-	headofgovernment       = {  type = 9 id = 165002  } \r
+-	foreignminister        = {  type = 9 id = 165003  } \r
+-	armamentminister       = {  type = 9 id = 165004  } \r
+-	ministerofsecurity     = {  type = 9 id = 165005  } \r
+-	ministerofintelligence = {  type = 9 id = 165006  } \r
+-	chiefofstaff           = {  type = 9 id = 165007  } \r
+-	chiefofarmy            = {  type = 9 id = 165008  } \r
+-	chiefofnavy            = {  type = 9 id = 165009  } \r
+-	chiefofair             = {  type = 9 id = 165010  } \r
+-	\r
+-	###############\r
+-	# Argentine OOB \r
+-	###############\r
+-	\r
+-	landunit = {\r
+-		id       = {  type = 12000 id = 1  } \r
+-		name     = "騎兵軍団" \r
+-		location = 2050 # Buenos Aires \r
+-		division = {\r
+-			id       = {  type = 12000 id = 2  } \r
+-			name     = "第1騎兵旅団" \r
+-			type     = cavalry \r
+-			model    = 8\r
+-			strength = 20\r
+-		} \r
+-		division = {\r
+-			id       = {  type = 12000 id = 3  } \r
+-			name     = "第2騎兵旅団" \r
+-			type     = cavalry \r
+-			model    = 8\r
+-			strength = 20\r
+-		} \r
+-		division = {\r
+-			id       = {  type = 12000 id = 4  } \r
+-			name     = "第3騎兵旅団" \r
+-			type     = cavalry \r
+-			model    = 8\r
+-			strength = 20\r
+-		} \r
+-	} \r
+-	landunit = {\r
+-		id       = {  type = 12000 id = 5  } \r
+-		name     = "第1歩兵師団" \r
+-		location = 2050 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 6  } \r
+-			name     = "第1歩兵師団" \r
+-			strength = 35\r
+-			type     = infantry \r
+-			model    = 7\r
+-		} \r
+-	} \r
+-	landunit = {\r
+-		id       = {  type = 12000 id = 7  } \r
+-		name     = "第2歩兵師団" \r
+-		location = 2053 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 8  } \r
+-			name     = "第2歩兵師団" \r
+-			strength = 35\r
+-			type     = infantry\r
+-			model    = 7\r
+-		} \r
+-	} 	\r
+-	landunit = {\r
+-		id       = {  type = 12000 id = 9  } \r
+-		name     = "第3歩兵師団" \r
+-		location = 2055 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 10  } \r
+-			name     = "第3歩兵師団" \r
+-			strength = 35\r
+-			type     = infantry\r
+-			model    = 7\r
+-		} \r
+-	} 	\r
+-	landunit = {\r
+-		id       = {  type = 12000 id = 11  } \r
+-		name     = "第4歩兵師団" \r
+-		location = 2054 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 12  } \r
+-			name     = "第4歩兵師団" \r
+-			strength = 35\r
+-			type     = infantry\r
+-			model    = 7\r
+-		} \r
+-	} 	\r
+-	landunit = {\r
+-		id       = {  type = 12000 id = 13  } \r
+-		name     = "第5歩兵師団" \r
+-		location = 2026 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 14  } \r
+-			name     = "第5歩兵師団" \r
+-			strength = 35\r
+-			type     = infantry\r
+-			model    = 7\r
+-		} \r
+-	} 	\r
+-	landunit = {\r
+-		id       = {  type = 12000 id = 15  } \r
+-		name     = "山岳歩兵軍団" \r
+-		location = 2026 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 16  } \r
+-			name     = "山岳兵師団" \r
+-			strength = 25\r
+-			type     = bergsjaeger\r
+-			model    = 7\r
+-		} \r
+-	} 		\r
+-	\r
+-	navalunit = { \r
+-		id = { type = 12000 id = 17 } \r
+-		name = "アルゼンチン海軍" \r
+-		location = 2048 \r
+-		base = 2048 \r
+-		division = { \r
+-			id = { type = 12000 id = 18 } \r
+-			name = "ARA リヴァダヴィア" \r
+-			type = battleship \r
+-			model = 3\r
+-			extra1 = naval_fire_controll_l\r
+-			brigade_model1 = 0 \r
+-			extra2 = naval_anti_air_l\r
+-			brigade_model2 = 0\r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 19 } \r
+-			name = "ARA モレノ" \r
+-			type = battleship \r
+-			model = 3 \r
+-			extra1 = naval_fire_controll_l\r
+-			brigade_model1 = 0 \r
+-			extra2 = naval_anti_air_l\r
+-			brigade_model2 = 0\r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 20 } \r
+-			name = "ARA ガリバルディ" \r
+-			type = heavy_cruiser \r
+-			model = 1 \r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 21 } \r
+-			name = "ARA サン・マルティン" \r
+-			type = heavy_cruiser \r
+-			model = 1 \r
+-			extra1 = naval_fire_controll_s\r
+-			brigade_model1 = 0 \r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 22 } \r
+-			name = "ARA ヘネラル・ベルグラノ" \r
+-			type = heavy_cruiser \r
+-			model = 1\r
+- 			extra1 = naval_fire_controll_s\r
+-			brigade_model1 = 0 \r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 23 } \r
+-			name = "ARA ヘネラル・プエイレドン" \r
+-			type = heavy_cruiser \r
+-			model = 1 \r
+- 			extra1 = naval_fire_controll_s\r
+-			brigade_model1 = 0 \r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 24 } \r
+-			name = "ARA アルミランテ・ブラウン" \r
+-			type = light_cruiser \r
+-			model = 3 \r
+- 			extra1 = naval_fire_controll_s\r
+-			brigade_model1 = 0 \r
+-			extra2 = floatplane\r
+-			brigade_model2 = 4\r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 25 } \r
+-			name = "ARA ベインティシンコ・デ・マジョ" \r
+-			type = light_cruiser \r
+-			model = 3 \r
+- 			extra1 = naval_fire_controll_s\r
+-			brigade_model1 = 0 \r
+-			extra2 = floatplane\r
+-			brigade_model2 = 4\r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 26 } \r
+-			name = "第1駆逐隊" \r
+-			type = destroyer \r
+-			model = 2\r
+-			strength = 80 \r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 27 } \r
+-			name = "第2駆逐隊" \r
+-			type = destroyer \r
+-			model = 4 \r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 28 } \r
+-			name = "第1潜水隊" \r
+-			type = submarine \r
+-			model = 3\r
+-			strength = 60 \r
+-		} \r
+-		division = { \r
+-			id = { type = 12000 id = 29 } \r
+-			name = "第1輸送隊" \r
+-			type = transport\r
+-			model = 1\r
+-		} \r
+-	}   \r
+-	\r
+-	airunit = {\r
+-		id       = {  type = 12000 id = 30  } \r
+-		name     = "陸軍航空隊" \r
+-		location = 2050 \r
+-		base     = 2050 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 31  } \r
+-			name     = "第4航空団" \r
+-			strength = 15\r
+-			type     = interceptor \r
+-			model    = 6\r
+-		} \r
+-		division = {\r
+-			id       = {  type = 12000 id = 32  } \r
+-			name     = "航空輸送団" \r
+-			strength = 10\r
+-			type     = transport_plane\r
+-			model    = 0\r
+-		} \r
+-	} \r
+-	airunit = {\r
+-		id       = {  type = 12000 id = 33  } \r
+-		name     = "第1海上航空団" \r
+-		location = 2048 \r
+-		base     = 2048 \r
+-		division = {\r
+-			id       = {  type = 12000 id = 34  } \r
+-			name     = "第2航空団" \r
+-			strength = 20\r
+-			type     = naval_bomber \r
+-			model    = 1\r
+-		} \r
+-    } \r
+-} \r
++  airunit = { \r
++    id       = { type = 12000 id = 30 }\r
++    name     = "陸軍航空隊"\r
++    location = 2050\r
++    base     = 2050\r
++    division = {\r
++      id             = { type = 12000 id = 31 }\r
++      name           = "第4航空団"\r
++      type           = interceptor\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 12000 id = 32 }\r
++      name           = "航空輸送団"\r
++      type           = transport_plane\r
++      model          = 0\r
++      strength       = 10\r
++    }\r
++  }\r
++  airunit = { \r
++    id       = { type = 12000 id = 33 }\r
++    name     = "第1海上航空団"\r
++    location = 2048\r
++    base     = 2048\r
++    division = {\r
++      id             = { type = 12000 id = 34 }\r
++      name           = "第2航空団"\r
++      type           = naval_bomber\r
++      model          = 1\r
++      strength       = 20\r
++    }\r
++  }\r
++}\r

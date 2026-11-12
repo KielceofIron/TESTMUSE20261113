@@ -1,0 +1,110 @@
+--- A/db/events/DayofDecision.txt [cp932]
++++ B/db/events/DayofDecision.txt [cp932]
+@@ -1066,22 +1066,95 @@ event = {
+ 	style = 2\r
+ 	picture = "Reichstag"\r
+ 	action = {\r
+-		ai_chance = 100\r
++		ai_chance = 90\r
+ 		name = "2003130a"\r
+ 		command = { type = dissent value = -10 }\r
+ 		command = { type = domestic which = political_left value = -1 }\r
+ 	}\r
+ 	action = {\r
+-		trigger = { 	OR = { 	ai = no exists = UF8 } } # 追加\r
+-\r
++		trigger = { \r
++		OR = { 	\r
++		ai = no\r
++		exists = UF8\r
++		} \r
++		} # 追加\r
+ 		ai_chance = 10000 # 0 # 追加\r
+ 		name = "2003130b"\r
+ 		command = { type = leave_alliance when = 1 }\r
+ 		command = { type = country which = DDR }\r
+-\r
++		command = { type = demobilize which = militia when = 0 where = 0 value = 0 }\r
+ 		command = { type = relation which = SOV value = 50 } # 追加\r
++		command = { type = flag_ext where = DDR which = "_weimar" }\r
+ \r
++		command = { type = domestic which = political_left value = 5 }\r
++		command = { type = domestic which = democratic value = -2 }\r
++		command = { type = headofstate which = 625041 } # Ernst Toller\r
++		command = { type = headofgovernment which = 625036 } # Ernst Th舁mann\r
++		command = { type = foreignminister which = 625038 } # Helmut Herzfelde\r
++		command = { type = armamentminister which = 625039 } # Willie Munzenberg\r
++		command = { type = ministerofsecurity which = 625045 } # Arkadi Maslow\r
++		command = { type = ministerofintelligence which = 625040 } # Erich Weinert \r
++		command = { type = chiefofstaff which = 625026 } #Erich Weinert\r
++		command = { type = dissent value = 40 }\r
++		command = { type = waketeam which = 625013 } #AEG\r
++		command = { type = waketeam which = 625014 } #Krupp\r
++		command = { type = waketeam which = 625015 } #I.G. Farben\r
++		command = { type = waketeam which = 625016 } #Siemens & Halske\r
++		command = { type = waketeam which = 625017 } #Werner Heisenberg\r
++		command = { type = waketeam which = 625018 } #Konrad Zuse\r
++		command = { type = waketeam which = 625019 } #Mauser Werke\r
++		command = { type = waketeam which = 625020 } #MAN\r
++		command = { type = waketeam which = 625021 } #Opel\r
++		command = { type = waketeam which = 625022 } #Rheinmetall\r
++		command = { type = waketeam which = 625023 } #Volkswagen\r
++		command = { type = waketeam which = 625024 } #Volksmarinewerft\r
++		command = { type = waketeam which = 625025 } #Blohm & Voss\r
++		command = { type = waketeam which = 625026 } #Luftschiffbau Zeppelin\r
++		command = { type = waketeam which = 625027 } #Gothaer Waggonfabrik\r
++		command = { type = waketeam which = 625028 } #Messerschmitt\r
++		command = { type = waketeam which = 625029 } #Focke-Wulf\r
++		command = { type = waketeam which = 625030 } #Arado\r
++		command = { type = waketeam which = 625031 } #Adolf Galland\r
++		command = { type = waketeam which = 625032 } #J臠er Kampfschule\r
++		#Cores on eastern provinces of Germany\r
++		command = { type = addcore which = 158 where = DDR} #Stettin\r
++		command = { type = addcore which = 155 where = DDR} #Stolp\r
++		command = { type = addcore which = 161 where = DDR} #Deutsch Krone\r
++		command = { type = addcore which = 159 where = DDR} #Meseritz\r
++		command = { type = addcore which = 165 where = DDR} #Liegnitz\r
++		command = { type = addcore which = 167 where = DDR} #Breslau\r
++		command = { type = addcore which = 164 where = DDR} #Oppeln\r
++		command = { type = addcore which = 166 where = DDR} #Waldenburg\r
++		command = { type = addcore which = 168 where = DDR} #Gleiwitz\r
++		command = { type = addcore which = 183 where = DDR} #Elbing\r
++		command = { type = addcore which = 184 where = DDR} #Konigsberg\r
++		command = { type = addcore which = 182 where = DDR} #Tilsit\r
++		command = { type = addcore which = 185 where = DDR} #Allenstein\r
++		#cores on Poland and Lithuania\r
++		command = { type = addcore which = 221 where = DDR} #Katowice\r
++		command = { type = addcore which = 224 where = DDR} #Poznan\r
++		command = { type = addcore which = 225 where = DDR} #Bygoszcz\r
++		command = { type = addcore which = 181 where = DDR} #Danzig\r
++		command = { type = addcore which = 261 where = DDR} #Klaipeda\r
++		command = { type = revolt which = 179 } # Munich\r
++		command = { type = revolt which = 179 } # Munich\r
++		command = { type = revolt which = 176 } # Landshut\r
++		command = { type = revolt which = 177 } # Nuremberg\r
++		command = { type = setflag which = DDR_1933 } # 追加\r
++	}\r
+ \r
++	action = {\r
++		trigger = { \r
++		event = 7060001 # 停滞の時代\r
++		} # 未完のアジアシナリオ\r
++		ai_chance = 10\r
++		name = "2003130b"\r
++		command = { type = leave_alliance when = 1 }\r
++		command = { type = country which = DDR }\r
++		command = { type = demobilize which = militia when = 0 where = 0 value = 0 }\r
++		command = { type = relation which = UER value = 50 }\r
++		command = { type = relation which = SOV value = 50 }\r
++		command = { type = flag_ext where = DDR which = "_weimar" }\r
+ \r
+ 		command = { type = domestic which = political_left value = 5 }\r
+ 		command = { type = domestic which = democratic value = -2 }\r
+@@ -1137,6 +1210,7 @@ event = {
+ 		command = { type = revolt which = 179 } # Munich\r
+ 		command = { type = revolt which = 176 } # Landshut\r
+ 		command = { type = revolt which = 177 } # Nuremberg\r
++		command = { type = setflag which = DDR_1933 } # 追加\r
+ 	}\r
+ \r
+ 	action = {\r

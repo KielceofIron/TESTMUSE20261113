@@ -1,0 +1,496 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Balkan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Balkan_events.txt [cp932]
+@@ -8,20 +8,21 @@
+ #id = 7733001 バルカン半島の明確な敗北者\r
+ #id = 7733002 フランス・ブルガリア経済協定\r
+ #id = 7733004 バルカン共産主義連邦\r
++#id = 7733005 バルカンの孤児\r
++#id = 7733006 鉄衛団の最後通牒 -ブルガリアの反応-\r
+ #セルビア\r
+ #id = 7734001 ピュロスの勝利\r
+ #id = 7734002 ロシア・セルビア軍事協定\r
+ #id = 7734004 アレクサンダル1世暗殺事件\r
+ #ルーマニア\r
+-#id = 7735001 ロムニアの再生\r
+-#id = 7735002 絶滅計画\r
+-#id = 7735003 人種改良計画\r
+-#id = 7735004 人種改良実験\r
+-#id = 7735005 神兵計画\r
+-#id = 7735006 神兵計画 ─ 計画の進展\r
+-#id = 7735007 『民族戦線』結成\r
+-#id = 7735008 民族戦線』結成に伴う生産力低下の終了\r
+-#id = 7735009 世界大戦への参戦\r
++#id = 7735000 ロムニアの再生\r
++#id = 7735001 恐怖のパレード\r
++#id = 7735002 ルーマニア生産協会\r
++#id = 7735003 浄化機関\r
++#id = 7735004 暗闇からの見えざる手\r
++#id = 7735005 鉄衛団の最後通牒\r
++#id = 7735006 平和のためのラストチャンス（鉄衛団）\r
++#id = 7735007 フランスとの同盟……？\r
+ ##########################################################################\r
+ #  バルカン半島の明確な敗北者\r
+ # ブルガリアは２０世紀初頭におけるバルカン半島の明確な敗北者である。\r
+@@ -47,7 +48,15 @@ event = {
+ \r
+ 	action = { # バルカン連邦のほかに、頼るものは存在しない…\r
+ 	name = "ACTIONNAME7733001A"\r
++	command = { type = defensiveness which = land value = -40 }\r
++	command = { type = mountain_attack which = land value = 30 }\r
++	command = { type = mountain_defense which = land value = 100 }\r
++	command = { type = mountain_move which = land value = 10 }\r
++	command = { type = hill_attack which = land value = 30 }\r
++	command = { type = hill_defense which = land value = 65 }\r
++	command = { type = hill_move which = land value = 10 }\r
+ 	command = { type = dissent value = 5 }\r
++	command = { type = free_manpower value = 0.003 }\r
+ 	command = { type = embargo which = GRE where = U29 value = 0 }\r
+ 	command = { type = embargo which = ROM where = U29 value = 0 }\r
+ 	command = { type = embargo which = SER where = U29 value = 0 }\r
+@@ -109,6 +118,7 @@ event = {
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = industrial_modifier which = total value = 10 }\r
+ 	command = { type = building_prod_mod which = ic value = 10 }\r
++	command = { type = construct which = ic where = 321 value = 5 }\r
+ 	command = { type = relation which = FRA value = 30 }\r
+ 	command = { type = waketeam which = 960101 } #ソミュア・ブルガリア支社\r
+ 	command = { type = waketeam which = 960102 } #モラーヌ・ソルニエ・ブルガリア支社\r
+@@ -173,6 +183,7 @@ event = {
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = belligerence which = U29 value = 5 }\r
+ 	command = { type = manpowerpool value = 100 }\r
++	command = { type = free_manpower value = 0.01 }\r
+ 	command = { type = dissent value = -15 }\r
+ 	command = { type = add_core_region which = "Balkan" }\r
+ 	command = { type = add_core_region which = "Romania" }\r
+@@ -249,6 +260,90 @@ event = {
+ 	}\r
+ }\r
+ \r
++event = {\r
++	id = 7733005\r
++	random = no\r
++	country = U29\r
++\r
++	trigger = {\r
++	event = 3327009\r
++	alliance = { country = FRA }\r
++	}\r
++\r
++	name = "EVT_7733005_NAME"\r
++	desc = "EVT_7733005_DESC"\r
++	style = 2\r
++	picture = "invest_research"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 協定を結ぼう\r
++	name = "ACTIONNAME7733005A"\r
++	command = { type = leave_alliance }\r
++	command = { type = relation which = FRA value = -200 }\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 7733006\r
++	random = no\r
++	country = U29\r
++\r
++\r
++	trigger = {\r
++	NOT = { exists = ROM }\r
++	OR = {\r
++	control = { province = 316 data = -1 }\r
++	control = { province = 297 data = -1 }\r
++	control = { province = 304 data = -1 }\r
++	}\r
++	}\r
++\r
++	name = "EVT_7733005_NAME"\r
++	desc = "EVT_7733005_DESC"\r
++	style = 2\r
++	picture = "invest_research"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 協定を結ぼう\r
++	name = "ACTIONNAME7733006A"\r
++	command = { trigger = { control = { province = 316 data = -1 } } type = manpowerpool value = 200 }\r
++	command = { trigger = { control = { province = 297 data = -1 } } type = manpowerpool value = 200 }\r
++	command = { trigger = { control = { province = 304 data = -1 } } type = manpowerpool value = 200 }\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 7733007\r
++	random = no\r
++	country = U29\r
++\r
++	name = "EVT_7733005_NAME"\r
++	desc = "EVT_7733005_DESC"\r
++	style = 2\r
++	picture = "invest_research"\r
++\r
++\r
++	action = { # 協定を結ぼう\r
++	name = "ACTIONNAME7733006A"\r
++	command = { type = trigger which = 7735006 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	command = { type = add_division  value = bergsjaeger when = 10 }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  ピュロスの勝利\r
+ # 第一次世界大戦におけるセルビア王国は確かに勝利を勝ち得た――しかし、これはピュロスの勝利であった。\r
+@@ -274,6 +369,16 @@ event = {
+ \r
+ 	action = { # 散っていった英霊のために、勝利が！尚勝利が必要なのだ！\r
+ 	name = "ACTIONNAME7734001A"\r
++	command = { type = defensiveness which = land value = -30 }\r
++	command = { type = urban_attack which = land value = 30 }\r
++	command = { type = urban_defense which = land value = 70 }\r
++	command = { type = urban_move which = land value = 30 }\r
++	command = { type = mountain_attack which = land value = 30 }\r
++	command = { type = mountain_defense which = land value = 40 }\r
++	command = { type = mountain_move which = land value = 10 }\r
++	command = { type = hill_attack which = land value = 30 }\r
++	command = { type = hill_defense which = land value = 70 }\r
++	command = { type = hill_move which = land value = 10 }\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = embargo which = UB8 where = SER value = 0 }\r
+ 	command = { type = embargo which = FRA where = SER value = 0 }\r
+@@ -331,6 +436,7 @@ event = {
+ 	command = { type = relation which = UER value = 30 }\r
+ 	command = { type = wakeleader which = 415102 } #ワシーリー・チュイコフ\r
+ 	command = { type = waketeam which = 415101 } #ワシーリー・チュイコフ\r
++	\r
+ 	}\r
+ }\r
+ \r
+@@ -603,9 +709,6 @@ event = {
+ 	action = { # 汚染しきった血は必要ない\r
+ 	name = "ACTIONNAME7735003B" \r
+ 	command = { type = money value = 10 }\r
+-	command = { type = sleepevent which = 7735004 }\r
+-	command = { type = sleepevent which = 7735005 }\r
+-	command = { type = sleepevent which = 7735006 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -663,39 +766,28 @@ event = {
+ \r
+ event = {\r
+ 	id = 7735005\r
+-	persistent = yes\r
++	persistent = no\r
+ 	country = ROM\r
+ \r
+ 	decision = { \r
+-	ideology = nazi \r
+-	event = 7735004\r
+-	local_flag = Iron_Guard\r
+-	OR = { \r
+-	headofstate = 110016 # コドレアヌ\r
+-	headofgovernment = 110155 # コドレアヌ\r
+-	headofstate = 110018 # ホリア・シマ\r
+-	headofgovernment = 110030 # ホリア・シマ\r
++	OR = {\r
++	AND = { exists = BUL NOT = { ispuppet = BUL } }\r
++	AND = { exists = U29 NOT = { ispuppet = U29 } }\r
+ 	}\r
+-	NOT = { flag = iron_guard_soldier }\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	supplies = 1500\r
+-	money = 200\r
++	OR = {\r
++	AND = { exists = BUL NOT = { ispuppet = BUL } }\r
++	AND = { exists = U29 NOT = { ispuppet = U29 } }\r
++	}\r
+ 	}\r
+ \r
+-	trigger = { \r
+-	ideology = nazi \r
+-	event = 7735004\r
+-	local_flag = Iron_Guard\r
+-	OR = { \r
+-	headofstate = 110016 # コドレアヌ\r
+-	headofgovernment = 110155 # コドレアヌ\r
+-	headofstate = 110018 # ホリア・シマ\r
+-	headofgovernment = 110030 # ホリア・シマ\r
++	trigger = {\r
++	OR = {\r
++	AND = { exists = BUL NOT = { ispuppet = BUL } }\r
++	AND = { exists = U29 NOT = { ispuppet = U29 } }\r
+ 	}\r
+-	NOT = { flag = iron_guard_soldier }\r
+-	random = 40\r
+ 	}\r
+ \r
+ \r
+@@ -704,24 +796,19 @@ event = {
+ 	style = 2\r
+ 	picture = "ROM_Nazi"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 3 year = 1937 }\r
+ 	offset = 25\r
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # 計画を実行せよ\r
+ 	name = "ACTIONNAME7735005A" \r
+-	command = { type = dissent value = 1 }\r
+-	command = { type = belligerence which = ROM value = 5 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1500 }\r
+-	command = { trigger = { ai = no } type = money value = -200 }\r
+-	command = { type = event which = 7735006 where = -1 when = 300 }\r
+-	command = { type = setflag which = iron_guard_soldier }\r
++	command = { type = trigger which = 7733007 }\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+ 	id = 7735006\r
+-	persistent = yes\r
++	persistent = no\r
+ 	country = ROM\r
+ \r
+ 	name = "EVT_7735006_NAME"\r
+@@ -731,12 +818,8 @@ event = {
+ \r
+ 	action = { # 鉄衛団万歳！！\r
+ 	name = "ACTIONNAME7735006A" \r
+-	command = { type = belligerence which = ROM value = 3 }\r
+-	command = { type = manpowerpool value = 1 }\r
+-	command = { type = add_division which = "神兵軍団" value = militia when = 2 }\r
+-	command = { type = add_division which = "神兵軍団" value = militia when = 2 }\r
+-	command = { type = manpowerpool value = 2 }\r
+-	command = { type = clrflag which = iron_guard_soldier }\r
++	command = { trigger = { NOT = { ispuppet = U29 } } type = war which = U29 }\r
++	command = { trigger = { NOT = { ispuppet = BUL } } type = war which = BUL }\r
+ 	}\r
+ }\r
+ \r
+@@ -756,24 +839,7 @@ event = {
+ 	save_date = yes\r
+ \r
+ 	trigger = { \r
+-	ideology = nazi \r
+-	event = 7735002\r
+-	local_flag = Iron_Guard\r
+-	lost_national = { country = ROM value = 40 }\r
+-\r
+-	OR = { \r
+-	war = { country = GER country = ROM }\r
+-	war = { country = UER country = ROM }\r
+-	war = { country = ENG country = ROM }\r
+-	war = { country = FRA country = ROM }\r
+-	war = { country = UB8 country = ROM }\r
+-	}\r
+-	OR = { \r
+-	headofstate = 110016 # コドレアヌ\r
+-	headofgovernment = 110155 # コドレアヌ\r
+-	headofstate = 110018 # ホリア・シマ\r
+-	headofgovernment = 110030 # ホリア・シマ\r
+-	}\r
++	event = 3327009 #労働総取引所選挙 ― 極右が優位\r
+ 	}\r
+ \r
+ 	name = "EVT_7735007_NAME"\r
+@@ -781,39 +847,17 @@ event = {
+ 	style = 2\r
+ 	picture = "ROM_Nazi"\r
+ \r
+-	date = { day = 0 month = 0 year = 1936 }\r
++	date = { day = 0 month = 0 year = 1934 }\r
+ 	offset = 10\r
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # 国家社会主義の団結の強さを見よ！！\r
+ 	name = "ACTIONNAME7735007A" \r
+-	command = { type = manpowerpool value = -100 } # -250\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = morale which = militia value = 10 } \r
+-	command = { type = max_organization which = militia value = -10 }\r
+-	command = { type = peacetime_ic_mod value = -30 }\r
+-	command = { type = wartime_ic_mod value = -30 }\r
+-	command = { type = event which = 38383106 where = ROM when = 1800 } # 五年後\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
+-	command = { type = add_division which = "民族戦線軍団" value = militia when = 4 where = police }\r
++	command = { type = alliance which = FRA } #\r
++	command = { type = relation which = FRA value = 200 } #\r
++	command = { type = relation which = UB8 value = -200 } #\r
++	command = { type = relation which = GER value = -200 } #\r
++\r
+ 	}\r
+ }\r
+ \r
+@@ -823,7 +867,7 @@ event = {
+ 	country = ROM\r
+ \r
+ 	trigger = { \r
+-	event = { id = 7735007 days = 1800 }\r
++	event = { id = 7735007 days = 18000 }\r
+ 	}\r
+ \r
+ 	name = "EVT_7735007_NAME"\r
+@@ -846,127 +890,3 @@ event = {
+ 	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  世界大戦への参戦\r
+-# 列強の間で二度目の大戦争が勃発した。\r
+-# 我が国も中立で参戦しないというわけにはいかず、方針を決めることが求められている。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 7735009\r
+-	random = no\r
+-	country = ROM\r
+-\r
+-	decision = {\r
+-	OR = {\r
+-	war = { country = GER country = UER }\r
+-	war = { country = GER country = FRA }\r
+-	war = { country = GER country = ENG }\r
+-	}\r
+-	not = { ispuppet = ROM }\r
+-	atwar = no\r
+-	NOT = { alliance = { country = ROM country = UER } }\r
+-	NOT = { war = { country = ROM country = UER } }\r
+-	NOT = { alliance = { country = ROM country = GER } }\r
+-	NOT = { war = { country = ROM country = GER } }\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = {\r
+-	war = { country = GER country = UER }\r
+-	war = { country = GER country = FRA }\r
+-	war = { country = GER country = ENG }\r
+-	}\r
+-	not = { ispuppet = ROM }\r
+-	atwar = no\r
+-	NOT = { alliance = { country = ROM country = UER } }\r
+-	NOT = { war = { country = ROM country = UER } }\r
+-	NOT = { alliance = { country = ROM country = GER } }\r
+-	NOT = { war = { country = ROM country = GER } }\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	war = { country = GER country = UER }\r
+-	war = { country = GER country = FRA }\r
+-	war = { country = GER country = ENG }\r
+-	}\r
+-	not = { ispuppet = ROM }\r
+-	atwar = no\r
+-	NOT = { alliance = { country = ROM country = UER } }\r
+-	NOT = { war = { country = ROM country = UER } }\r
+-	NOT = { alliance = { country = ROM country = GER } }\r
+-	NOT = { war = { country = ROM country = GER } }\r
+-	random = 30\r
+-	}\r
+-\r
+-	name = "EVT_7735009_NAME"\r
+-	desc = "EVT_7735009_DESC"\r
+-	style = 2\r
+-  	picture = "negotiaton"\r
+-	decision_picture = "decision_negotiaton"\r
+-\r
+-	date = { day = 0 month = 0 year = 1939 }\r
+-	offset = 6\r
+-	deathdate = { day = 29 month = 11 year = 1942 }\r
+-\r
+-	action = { # ロシア帝国こそ勝利するだろう\r
+-	name = "ACTIONNAME7735009A"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = relation which = UER value = 10 }\r
+-	command = { type = relation which = FRA value = 10 }\r
+-	command = { type = relation which = GER value = -50 }\r
+-	command = { type = event which = 7735010 where = UER when = 1 }\r
+-	ai_chance = 40\r
+-	}\r
+-\r
+-	action = { # ドイツの秩序に加わるのだ\r
+-	name = "ACTIONNAME7735009B"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = relation which = GER value = 10 }\r
+-	command = { type = relation which = UER value = -50 }\r
+-	command = { type = relation which = FRA value = -50 }\r
+-	command = { type = event which = 7735010 where = GER when = 1 }\r
+-	ai_chance = 60\r
+-	}\r
+-\r
+-	action = { # 欧州に安寧を！独自の道を行こう！\r
+-	name = "ACTIONNAME7735009C"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = domestic which = defense_lobby value = 2 }\r
+-	command = { type = relation which = GER value = -50 }\r
+-	command = { type = relation which = UER value = -50 }\r
+-	command = { type = relation which = FRA value = -50 }\r
+-	command = { type = sleepevent which = 7735010 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-event = { \r
+-	id = 7735010\r
+-	TAG = { UER GER }\r
+-\r
+-	name = "EVT_7735010_NAME"\r
+-	desc = "EVT_7735010_DESC"\r
+-	style = 2\r
+-  	picture = "negotiaton"\r
+-\r
+-	action = { # 承諾\r
+-	name = "ACTION_NAME_ACCEPT"	\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = relation which = ROM value = 100 }\r
+-	command = { type = alliance which = ROM }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 拒否\r
+-	name = "ACTION_NAME_REFUSE"\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = relation which = ROM value = -200 }\r
+-	ai_chance = 0\r
+-	}\r
+-}
+\ No newline at end of file

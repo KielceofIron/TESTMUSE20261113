@@ -1,0 +1,553 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_AI_war_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_AI_war_events.txt [cp932]
+@@ -10,9 +10,6 @@
+ #東亜総合商社\r
+ #id = 99982001 戦時生産AI\r
+ #id = 99982001 平時生産AI\r
+-#アメリカ社会主義合衆国\r
+-#id = 99983001 戦時生産AI\r
+-#id = 99983001 平時生産AI\r
+ #ユナイテッドフルーツ社\r
+ #id = 99984001 戦時生産AI\r
+ #id = 99984001 平時生産AI\r
+@@ -46,6 +43,7 @@
+ #############################################\r
+ # 戦時生産AI ― ドナウ連邦\r
+ #############################################\r
++#暫定削除(Kielce)\r
+ event = {\r
+ 	id = 99981001\r
+ 	random = no \r
+@@ -55,17 +53,18 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 9999 }\r
+ 	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
++	deathdate = { day = 29 month = 11 year = 9999 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -88,12 +87,12 @@ event = {
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 9999 }\r
+ 	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
++	deathdate = { day = 29 month = 11 year = 9999 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -110,17 +109,18 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 9999 }\r
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -143,68 +143,16 @@ event = {
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 9999 }\r
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+ \r
+-#############################################\r
+-# 戦時生産AI ― アメリカ社会主義合衆国\r
+-#############################################\r
+-event = {\r
+-	id = 99983001\r
+-	random = no \r
+-	country = U00\r
+-	\r
+-	trigger = {\r
+-		ai = yes\r
+-		atwar = yes\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_U00.ai" }\r
+-	command = { type = local_setflag which = atwar }\r
+-	}\r
+-}\r
+-\r
+-#############################################\r
+-# 平時生産AI ― アメリカ社会主義合衆国\r
+-#############################################\r
+-event = {\r
+-	id = 99983002\r
+-	random = no \r
+-	country = U00\r
+-	\r
+-	trigger = {\r
+-		ai = yes\r
+-		atwar = no\r
+-		local_flag = atwar\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_U00.ai" }\r
+-	command = { type = local_clrflag which = atwar }\r
+-	}\r
+-}\r
+ \r
+ #############################################\r
+ # 戦時生産AI ― ユナイテッドフルーツ社\r
+@@ -217,6 +165,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -227,7 +176,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_UE5.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_UE5.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -254,7 +203,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_UE5.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_UE5.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -270,6 +219,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -280,7 +230,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_UE0.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_UE0.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -307,7 +257,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_UE0.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_UE0.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -323,6 +273,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -333,7 +284,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_ARM.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_ARM.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -360,7 +311,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_ARM.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_ARM.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -376,6 +327,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -386,7 +338,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_AZB.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_AZB.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -413,7 +365,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_AZB.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_AZB.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -429,6 +381,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -439,7 +392,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_ARA.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_ARA.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -466,7 +419,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_ARA.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_ARA.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -482,6 +435,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -492,7 +446,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_ISR.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_ISR.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -519,7 +473,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_ISR.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_ISR.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -535,6 +489,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -545,7 +500,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_U14.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_U14.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -572,7 +527,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_U14.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_U14.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -581,13 +536,14 @@ event = {
+ # 戦時生産AI ― グランコロンビア\r
+ #############################################\r
+ event = {\r
+-	id = 9991001\r
++	id = 99991001\r
+ 	random = no \r
+ 	country = U77\r
+ 	\r
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -598,7 +554,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_U77.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_U77.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -607,7 +563,7 @@ event = {
+ # 平時生産AI ― グランコロンビア\r
+ #############################################\r
+ event = {\r
+-	id = 9991002\r
++	id = 99991002\r
+ 	random = no \r
+ 	country = U77\r
+ 	\r
+@@ -625,7 +581,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_U77.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_U77.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -642,6 +598,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -652,7 +609,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_U64.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_U64.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -679,7 +636,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_U64.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_U64.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -696,6 +653,7 @@ event = {
+ 	trigger = {\r
+ 		ai = yes\r
+ 		atwar = yes\r
++		NOT = { local_flag = atwar }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -706,7 +664,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_War_UE3.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_War_UE3.ai" }\r
+ 	command = { type = local_setflag which = atwar }\r
+ 	}\r
+ }\r
+@@ -733,14 +691,14 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_UE3.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_UE3.ai" }\r
+ 	command = { type = local_clrflag which = atwar }\r
+ 	}\r
+ }\r
+ \r
+ \r
+ #############################################\r
+-# 戦時生産AI ― フランス\r
++# 生産AI ― フランス【低人的】\r
+ #############################################\r
+ event = {\r
+ 	id = 9994001\r
+@@ -749,18 +707,30 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 		ai = yes\r
++	OR = {\r
+ 		NOT = { manpower = 1000 } \r
++		AND = {\r
++			atwar = yes\r
++			NOT = { war = { country = GER } }\r
++			NOT = { war = { country = UER } }\r
++			NOT = { war = { country = UB8 } }\r
++			NOT = { war = { country = ITA } }\r
++			NOT = { war = { country = ENG } }\r
++			NOT = { war = { country = CHI } }\r
++			NOT = { year = 1940 }\r
++			}\r
++		}\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1960 }\r
+ 	offset = 3\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/fra_LowManpower.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/fra_LowManpower.ai" }\r
+ 	command = { type = local_setflag which = Lowmanpowerfra }\r
+ 	}\r
+ }\r
+@@ -782,38 +752,59 @@ event = {
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1993 }\r
+ 	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/Build_Standard_FRA.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/Build_Standard_FRA.ai" }\r
+ 	command = { type = local_clrflag which = Lowmanpowerfra }\r
+ 	}\r
+ }\r
+ \r
+ #############################################\r
+-# 生産AI ― ドイツ【低人的】\r
++# 戦時生産AI ― ドイツ【低人的】\r
+ #############################################\r
+ event = {\r
+ 	id = 9995001\r
+ 	random = no \r
+ 	country = GER\r
+-	\r
++	persistent = yes\r
+ 	trigger = {\r
++	NOT = { local_flag = Lowmanpowerger }\r
+ 		ai = yes\r
+-		NOT = { manpower = 1000 } \r
++	OR = { \r
++	atwar = yes\r
++	year = 1941\r
++	}\r
++	OR = {\r
++		NOT = { manpower = 2400 } \r
++		AND = {	 #対露講和後の対仏戦が進んでいる\r
++		 region = { region = France country = -3 data = 1 value = 30 }\r
++		 war = { country = FRA }\r
++		 war = { country = ENG }\r
++		 NOT = { war = { country = UER } } \r
++			}\r
++\r
++		AND = {	#対仏講和後の対露戦が進んでいる\r
++		 lost_IC = { country = UER value = 30 }\r
++		 war = { country = UER }\r
++		 war = { country = ENG }\r
++		 NOT = { war = { country = FRA } } \r
++			}\r
++		}\r
++	NOT = { local_flag = ger_eng }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1939 }\r
+ 	offset = 3\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFswitch/ger_LowManpower.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/ger_LowManpower.ai" }\r
+ 	command = { type = local_setflag which = Lowmanpowerger }\r
+ 	}\r
+ }\r
+@@ -830,6 +821,7 @@ event = {
+ 		ai = yes\r
+ 		manpower = 1000 \r
+ 		local_flag = Lowmanpowerger\r
++		atwar = yes\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -840,7 +832,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/GER_Build_Land.ai" }\r
++	#command = { trigger = { ai = yes } type = ai which = "switch/GER_Build_Land.ai" }\r
+ 	command = { type = local_clrflag which = Lowmanpowerger }\r
+ 	}\r
+ }\r

@@ -1,0 +1,133 @@
+--- A/db/events/Yokoyama_events/Koudou.txt [cp932]
++++ B/db/events/Yokoyama_events/Koudou.txt [cp932]
+@@ -460,6 +460,7 @@ event = { # triggered by 226
+ 	command = { type = sleepminister which = 50548 } #石原莞爾 粛清\r
+ 	command = { type = sleepminister which = 50723 }\r
+ 	command = { type = sleepminister which = 50724 }\r
++	command = { type = sleepminister which = 50747 }\r
+ 	command = { type = sleepleader which = 50065 }\r
+ 	command = { type = sleepteam which = 50102 }\r
+ 	command = { type = sleepminister which = 50019 } # 寺内壽一 統制派。軍籍剥奪\r
+@@ -479,6 +480,7 @@ event = { # triggered by 226
+ 	#command = { type = sleepteam which = 50079 }\r
+ 	command = { type = sleepminister which = 50023 } # 小磯国昭 宇垣閥。 軍籍剥奪\r
+ 	command = { type = sleepminister which = 50124 }\r
++	command = { type = sleepminister which = 50746 }\r
+ 	command = { type = sleepleader which = 50099 }\r
+ 	command = { type = sleepminister which = 50026 } # 宇垣一成 軍縮がない？からどうなんだろうというのはある。死亡\r
+ 	command = { type = sleepminister which = 50040 }\r
+@@ -494,6 +496,7 @@ event = { # triggered by 226
+ 	command = { type = sleepteam which = 50110 }\r
+ 	command = { type = sleepminister which = 50338 } # 二宮治重 宇垣閥。予備役\r
+ 	command = { type = sleepminister which = 50339 } # 建川美次 宇垣閥。予備役\r
++	command = { type = sleepminister which = 50737 }\r
+ 	command = { type = sleepleader which = 50662 }\r
+ 	command = { type = sleepminister which = 50346 } # 武藤章 統制派。 予備役\r
+ 	command = { type = sleepminister which = 50504 }\r
+@@ -516,6 +519,9 @@ event = { # triggered by 226
+ 	command = { type = sleepminister which = 50368 }\r
+ 	command = { type = sleepleader which = 50008 }\r
+ 	command = { type = sleepleader which = 50651 }\r
++	command = { type = sleepminister which = 50565 } # 辻政信 統制派。粛清\r
++	command = { type = sleepminister which = 50566 }\r
++	command = { type = sleepleader which = 50187 }\r
+ 	# command = { type = country which = U56 }\r
+ 	# command = { type = trigger which = 2260007 }\r
+ 	command = { type = event which = 2260007 where = -1 when = 0 }\r
+@@ -548,7 +554,7 @@ event = {
+ \r
+ 	action = { # "鼓舞してくださった荒木貞夫閣下こそ適任だろう"\r
+ 		name = "ACTIONNAME2260007A" \r
+-		ai_chance = 50 \r
++		ai_chance = 70 \r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+@@ -568,7 +574,7 @@ event = {
+ 	action = { # "我らを理解してくださる真崎甚三郎閣下こそ最良だ！"\r
+ 		trigger = { minister = 50902 NOT = { event = 2991001 } } # 眞崎甚三郎が使用可能\r
+ 		name = "ACTIONNAME2260007B" \r
+-		ai_chance = 20\r
++		ai_chance = 10\r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+@@ -586,8 +592,8 @@ event = {
+ \r
+ 	action = {\r
+ 		name = "海軍内閣で安定を目指そう"\r
+-		trigger = { minister = 50630 NOT = { event = 2991001 } }\r
+-		ai_chance = 20\r
++		trigger = { minister = 50630 NOT = { event = 2991001 event = 3432003 } }\r
++		ai_chance = 10\r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+@@ -604,7 +610,7 @@ event = {
+ \r
+ 	action = { # "日本を憂う平沼騏一郞氏こそ良いだろう"\r
+ 		name = "ACTIONNAME2260007D"\r
+-		trigger = { minister = 50021 NOT = { event = 2991001 } } \r
++		trigger = { minister = 50021 NOT = { event = 2991001 event = 3432003 } } \r
+ 		ai_chance = 10\r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+@@ -622,6 +628,7 @@ event = {
+ 	}\r
+ 	action = { # 天皇制社会主義ルート\r
+ 		name = "思いもよらぬ選択を！"\r
++		trigger = { NOT = { event = 2991001 event = 3432003 } }\r
+ 		ai_chance = 0\r
+ 		command = { type = event which = 26600001 where = -1 when = 0 }\r
+ 		command = { type = event which = 22600027 where = -1 when = 10 }\r
+@@ -917,7 +924,7 @@ event = {
+ 		command = { type = headofgovernment which = 50578 }\r
+ 		command = { type = chiefofstaff which = 50583 }\r
+ 		command = { type = chiefofarmy which = 50580 }\r
+-		ai_chance = 5\r
++		ai_chance = 40\r
+ 	}\r
+ \r
+ 	action = { # 北一輝を指名\r
+@@ -933,7 +940,7 @@ event = {
+ 		command = { type = headofgovernment which = 50608 }\r
+ 		command = { type = chiefofstaff which = 50586 }\r
+ 		command = { type = chiefofarmy which = 50584 }\r
+-		ai_chance = 5\r
++		ai_chance = 20\r
+ 	}\r
+ \r
+ 	action = { # 近衞文麿を指名\r
+@@ -949,7 +956,7 @@ event = {
+ 		command = { type = headofgovernment which = 50014 }\r
+ 		command = { type = chiefofstaff which = 50583 }\r
+ 		command = { type = chiefofarmy which = 50580 }\r
+-		ai_chance = 80\r
++		ai_chance = 20\r
+ 	}\r
+ \r
+ 	action = { # 勝田主計を指名\r
+@@ -965,7 +972,7 @@ event = {
+ 		command = { type = headofgovernment which = 50411 }\r
+ 		command = { type = chiefofstaff which = 50583 }\r
+ 		command = { type = chiefofarmy which = 50580 }\r
+-		ai_chance = 10\r
++		ai_chance = 20\r
+ 	}\r
+ }\r
+ \r
+@@ -1070,6 +1077,14 @@ event = {
+ 	command = { type = sleepminister which = 50331 } # 小倉正恆 財閥関係者。銃殺\r
+ 	command = { type = sleepminister which = 50333 } # 結城豐太郞 財閥関係者。銃殺\r
+ 	command = { type = sleepminister which = 50456 } # 小坂善太郎 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50738 } # 津雲国利 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50738 } # 津雲国利 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50739 } # 内田信也 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50740 } # 三好英之 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50741 } # 勝正憲 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50742 } # 堤康次郎 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50744 } # 小笠原三九郎 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50745 } # 五島慶太 財閥関係者。銃殺\r
+ 	command = { type = local_setflag which = Nihon_Kaizou when = 1 value = 1 }\r
+ 	}\r
+ }\r

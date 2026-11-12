@@ -1,0 +1,114 @@
+--- A/scenarios/1933if_Japan.eug [cp932]
++++ B/scenarios/1933if_Japan.eug [cp932]
+@@ -3,7 +3,7 @@ panel      = "scenarios/data/scenario_1933Japan.bmp"
+ header =\r
+ { name       = "Grand Campaign"\r
+   startdate  = { year = 1933 }\r
+-  selectable = { AFG ALB ARG AST BEL BHU BOL BRA CAN CHI CHL COL COS CUB DEN DOM ECU EGY ENG ETH FRA GER GRE GUA HAI HOL HON IRE ITA \r
++  selectable = { REB AFG ALB ARG AST BEL BHU BOL BRA CAN CHI CHL COL COS CUB DEN DOM ECU EGY ENG ETH FRA GER GRE GUA HAI HOL HON IRE ITA \r
+ 		 JAP LIB MON NEP NIC NOR NZL PAN PAR PER POR PRU ROM SWE SAF SAL SCH SIA SPR TIB URU USA VEN YUG U02 U05 U60\r
+                  UPE SAR BRU WLL FLA UB8 UE5 SER LBY ISR ARA KUR SOM U29 ARM AZB GEO UE7 UD6 U58 } #サラワク・ブルネイ・トルキスタン、ヨルダン、マダガスカル、カタール追加\r
+   ENG        = { desc = "ENG_IFJAPAN_DESC" }\r
+@@ -38,8 +38,10 @@ header =
+   URU        = { desc = "URU_1933if_DESC" }\r
+   # U02 	     = { }\r
+ }\r
++\r
+ globaldata =\r
+ { startdate = { year = 1933 month = march day = 0 }\r
++\r
+   axis =\r
+   { id          = { type = 15000 id = 2 }\r
+     participant = { GER UD6 }\r
+@@ -243,6 +245,10 @@ globaldata =
+     event = { tag = ITA  id = 1930001 hour = 480 }\r
+     event = { tag = USA  id = 1930001 hour = 480 }\r
+   }\r
++\r
++  flags = {\r
++	if_japan_scenario = yes\r
++  }\r
+   dormant_leaders = { \r
+ 	#SPA\r
+ 	35014 35017 35028 35056 35067 35093 35094 35095\r
+@@ -871,6 +877,8 @@ globaldata =
+ 5022 5103 5104\r
+ # ドイツ（IFシナリオ用）\r
+ 23\r
++#ルーマニア（IFシナリオ用）\r
++110012\r
+ #ユーゴスラビア（IFシナリオ用）\r
+ 100011 950011\r
+ #グランコロンビア\r
+@@ -2061,7 +2069,7 @@ event      = "db\events\AI\AI_Other.txt"
+ #event      = "db\events\AI\AI_JAP.txt"\r
+ event      = "db\events\AI\AI_ENG.txt"\r
+ event      = "db\events\AI\AI_SOV.txt"\r
+-event      = "db\events\AI\AI_FRA.txt"\r
++#event      = "db\events\AI\AI_FRA.txt" #Kielce粛清\r
+ event      = "db\events\AI\AI_USA.txt"\r
+ #event      = "db\events\AI\AI_ITA.txt" #Kielce粛清\r
+ event      = "db\events\AI\AI_sov_spheres.txt"\r
+@@ -2335,38 +2343,38 @@ event      = "db\events\AddtionalAI\AI_BUL.txt"
+ event      = "db\events\AddtionalAI\AI_YUG.txt"\r
+ event      = "db\events\AddtionalAI\AI_HUN.txt"\r
+ event      = "db\events\AddtionalAI\AI_POR.txt"\r
+-event      = "db\events\AddtionalAI\AI_NOR.txt"\r
++#event      = "db\events\AddtionalAI\AI_NOR.txt"\r
+ event      = "db\events\AddtionalAI\AI_DEN.txt"\r
+ event      = "db\events\AddtionalAI\AI_SCH.txt"\r
+ event      = "db\events\AddtionalAI\AI_CZE.txt"\r
+ event      = "db\events\AddtionalAI\AI_GRE.txt"\r
+ event      = "db\events\AddtionalAI\AI_FIN.txt"\r
+ event      = "db\events\AddtionalAI\AI_POL.txt"\r
+-event      = "db\events\AddtionalAI\AI_CAN.txt"\r
++#event      = "db\events\AddtionalAI\AI_CAN.txt"\r
+ event      = "db\events\AddtionalAI\AI_HOL.txt"\r
+ event      = "db\events\AddtionalAI\AI_BEL.txt"\r
+ event      = "db\events\AddtionalAI\AI_LUX.txt"\r
+-event      = "db\events\AddtionalAI\AI_USA.txt"\r
+-event      = "db\events\AddtionalAI\AI_JAP.txt"\r
++#event      = "db\events\AddtionalAI\AI_USA.txt"\r
++#event      = "db\events\AddtionalAI\AI_JAP.txt"\r
+ event      = "db\events\AddtionalAI\AI_LIT.txt"\r
+ event      = "db\events\AddtionalAI\AI_EST.txt"\r
+ event      = "db\events\AddtionalAI\AI_LAT.txt"\r
+-event      = "db\events\AddtionalAI\AI_ITA.txt"\r
+-event      = "db\events\AddtionalAI\AI_GER.txt"\r
+-event      = "db\events\AddtionalAI\AI_SOV.txt"\r
+-event      = "db\events\AddtionalAI\AI_CHI.txt"\r
+-event      = "db\events\AddtionalAI\AI_U02.txt"\r
++#event      = "db\events\AddtionalAI\AI_ITA.txt"\r
++#event      = "db\events\AddtionalAI\AI_GER.txt"\r
++#event      = "db\events\AddtionalAI\AI_SOV.txt"\r
++#event      = "db\events\AddtionalAI\AI_CHI.txt"\r
++#event      = "db\events\AddtionalAI\AI_U02.txt"\r
+ event      = "db\events\AddtionalAI\AI_ENG.txt"\r
+-event      = "db\events\AddtionalAI\AI_U87.txt"\r
+-event      = "db\events\AddtionalAI\AI_UIC.txt"\r
+-event      = "db\events\AddtionalAI\AI_CHC.txt"\r
++#event      = "db\events\AddtionalAI\AI_U87.txt"\r
++#event      = "db\events\AddtionalAI\AI_UIC.txt"\r
++#event      = "db\events\AddtionalAI\AI_CHC.txt"\r
+ event      = "db\events\AddtionalAI\AI_BRA.txt"\r
+ event      = "db\events\AddtionalAI\AI_ROM.txt"\r
+-event      = "db\events\AddtionalAI\AI_PRU.txt"\r
+-event      = "db\events\AddtionalAI\AI_SPR.txt"\r
+-event      = "db\events\AddtionalAI\AI_U78.txt"\r
+-event      = "db\events\AddtionalAI\AI_MEX.txt"\r
+-event      = "db\events\AddtionalAI\AI_CSA.txt"\r
++#event      = "db\events\AddtionalAI\AI_PRU.txt"\r
++#event      = "db\events\AddtionalAI\AI_SPR.txt"\r
++#event      = "db\events\AddtionalAI\AI_U78.txt"\r
++#event      = "db\events\AddtionalAI\AI_MEX.txt"\r
++#event      = "db\events\AddtionalAI\AI_CSA.txt"\r
+ \r
+ sleepevent = { \r
+ 		#  2003141 2003142  #  オーストリア帝国クーデター未遂\r
+@@ -2463,4 +2471,6 @@ sleepevent = {
+ 		3049001 3049002 3049003 3049004 3049005 3049006 3049007 3049012 3049013 3049014 3049015 3049049 3049050 # アメリカAIイベント\r
+ 		3003003 3003004 3003005 # ドイツAIイベント\r
+ 		9999428 9999429 9999430 9999431 # インド閣僚変更(AI）\r
++		3001013 3001014 #イギリスAI\r
++		3045017 #カナダAI\r
+ 		}\r

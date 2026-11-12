@@ -1,0 +1,125 @@
+--- A/db/events/hoi2.txt [cp932]
++++ B/db/events/hoi2.txt [cp932]
+@@ -448,34 +448,99 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	trigger = {\r
+-		NOT = { \r
+-			war = { country = GER country = ENG } \r
+-			war = { country = GER country = USA }\r
+-			axis = 25\r
+-			}\r
++	trigger = {	\r
+ 		OR = {\r
+-			control = { province = 1228 data = SOV } # Seoul, South Korea\r
+-			control = { province = 1552 data = SOV } # Tokyo, Japan\r
+-			control = { province = 2159 data = SOV } # Stockholm, Sweden\r
+-			control = { province = 483 data = SOV } # Oslo, Norway\r
+-			control = { province = 55 data = SOV } # Paris, France\r
+-			control = { province = 122 data = SOV } # Amsterdam, Holland\r
+-			control = { province = 116 data = SOV } # Brussels, Belgium\r
+-			control = { province = 294 data = SOV } # Copenhagen, Denmark\r
+-			control = { province = 109 data = SOV } # Luxembourg, Lux\r
+-			control = { province = 419 data = SOV } # Rome, Italy\r
+-			control = { province = 409 data = SOV } # Istanbul, Turkey\r
+-			control = { province = 1085 data = SOV } # Iran\r
+-			control = { province = 1035 data = SOV } # Baghdad, Iraq\r
+-			control = { province = 1459 data = SOV } # Delhi, India\r
+-			control = { province = 1247 data = SOV } # Beijing, China\r
+-			control = { province = 1399 data = SOV } # Saigon, Vietnam\r
++		AND = {	#史実シナリオ\r
++			NOT = { flag = if_azia_scenario }\r
++				NOT = { \r
++					war = { country = GER country = ENG } \r
++					war = { country = GER country = USA }\r
++					axis = 25\r
++					}\r
++				OR = {\r
++					control = { province = 1228 data = SOV } # Seoul, South Korea\r
++					control = { province = 1552 data = SOV } # Tokyo, Japan\r
++					control = { province = 2159 data = SOV } # Stockholm, Sweden\r
++					control = { province = 483 data = SOV } # Oslo, Norway\r
++					control = { province = 55 data = SOV } # Paris, France\r
++					control = { province = 122 data = SOV } # Amsterdam, Holland\r
++					control = { province = 116 data = SOV } # Brussels, Belgium\r
++					control = { province = 294 data = SOV } # Copenhagen, Denmark\r
++					control = { province = 109 data = SOV } # Luxembourg, Lux\r
++					control = { province = 419 data = SOV } # Rome, Italy\r
++					control = { province = 409 data = SOV } # Istanbul, Turkey\r
++					control = { province = 1085 data = SOV } # Iran\r
++					control = { province = 1035 data = SOV } # Baghdad, Iraq\r
++					control = { province = 1459 data = SOV } # Delhi, India\r
++					control = { province = 1247 data = SOV } # Beijing, China\r
++					control = { province = 1399 data = SOV } # Saigon, Vietnam\r
++				}\r
++			NOT = { atwar = SOV }\r
++			\r
++			\r
++			}\r
++\r
++\r
++		AND = {	#未完シナリオ\r
++		flag = if_azia_scenario\r
++		\r
++			AND = { \r
++			NOT = { \r
++				war = { country = DDR country = ENG } \r
++				war = { country = GER country = ENG } \r
++				war = { country = GER country = USA }\r
++				war = { country = DDR country = USA } \r
++				axis = 25\r
++				}\r
++			OR = {\r
++				#control = { province = 1228 data = SOV } # Seoul, South Korea\r
++				control = { province = 1552 data = SOV } # Tokyo, Japan\r
++				control = { province = 2159 data = SOV } # Stockholm, Sweden\r
++				control = { province = 483 data = SOV } # Oslo, Norway\r
++				control = { province = 55 data = SOV } # Paris, France\r
++				control = { province = 122 data = SOV } # Amsterdam, Holland\r
++				control = { province = 116 data = SOV } # Brussels, Belgium\r
++				control = { province = 294 data = SOV } # Copenhagen, Denmark\r
++				control = { province = 109 data = SOV } # Luxembourg, Lux\r
++				control = { province = 419 data = SOV } # Rome, Italy\r
++				#control = { province = 409 data = SOV } # Istanbul, Turkey\r
++				#control = { province = 1085 data = SOV } # Iran\r
++				#control = { province = 1035 data = SOV } # Baghdad, Iraq\r
++				control = { province = 1459 data = SOV } # Delhi, India\r
++				control = { province = 1247 data = SOV } # Beijing, China\r
++				control = { province = 1399 data = SOV } # Saigon, Vietnam\r
++				\r
++				#control = { province = 1228 data = UER } # Seoul, South Korea\r
++				control = { province = 1552 data = UER } # Tokyo, Japan\r
++				control = { province = 2159 data = UER } # Stockholm, Sweden\r
++				control = { province = 483 data = UER } # Oslo, Norway\r
++				control = { province = 55 data = UER } # Paris, France\r
++				control = { province = 122 data = UER } # Amsterdam, Holland\r
++				control = { province = 116 data = UER } # Brussels, Belgium\r
++				control = { province = 294 data = UER } # Copenhagen, Denmark\r
++				control = { province = 109 data = UER } # Luxembourg, Lux\r
++				control = { province = 419 data = UER } # Rome, Italy\r
++				#control = { province = 409 data = UER } # Istanbul, Turkey\r
++				#control = { province = 1085 data = UER } # Iran\r
++				#control = { province = 1035 data = UER } # Baghdad, Iraq\r
++				control = { province = 1459 data = UER } # Delhi, India\r
++				control = { province = 1247 data = UER } # Beijing, China\r
++				control = { province = 1399 data = UER } # Saigon, Vietnam\r
++			}\r
++			NOT = { atwar = SOV }\r
++			NOT = { atwar = UER }\r
++			\r
++			\r
++			\r
++			\r
++			\r
++			}\r
+ 		}\r
+ 		atwar = no\r
+-		NOT = { atwar = SOV }\r
+ 		random = 30\r
+ 	}\r
++	}\r
++	\r
+ \r
+ 	date = { day = 0 month = january year = 1936 }\r
+ 	offset = 30\r

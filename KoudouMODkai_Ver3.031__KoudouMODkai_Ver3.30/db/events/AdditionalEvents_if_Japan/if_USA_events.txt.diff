@@ -1,0 +1,667 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_USA_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_USA_events.txt [cp932]
+@@ -109,6 +109,16 @@
+ #id = 1299120 アメリカ太平洋諸州の防衛方針\r
+ #id = 1299121 アメリカ合衆国の崩壊\r
+ #id = 1299122 アメリカ政府の降伏\r
++#id = 1299123 治安維持活動\r
++#id = 1299124 『反米救国論』\r
++#id = 1299125 『卵の空中一回転』\r
++#id = 1299126 『ジ・インベーダー』\r
++#id = 1299127 『人民戦線より米帝打倒を志す全ての人々へ』\r
++#id = 1299128 『気分が良くて何が悪い？』\r
++#id = 1299129 デレク・ハートフィールドの死\r
++#id = 1299130 デレク・ハートフィールドの『不在』\r
++#id = 1299131 オルガナイトの流行と弊害\r
++#id = 1299132 チャールズ・ポンジ・スキーム\r
+ #id = 1299201 アメリカ内戦 ― ロシアの介入\r
+ #id = 1299202 アメリカ内戦 ― ロシアからの義勇兵が到着\r
+ #id = 1299203 アメリカ内戦の終結 ― 重要な経験\r
+@@ -130,10 +140,10 @@
+ #########################################################################\r
+ #  第32代米大統領就任\r
+ # 第一次世界大戦において中立を守ったアメリカ合衆国であったが、その結果として齎されたものは混乱のみであった。\r
+-# 大戦における中立政策によってアメリカ合衆国は政治的発言力を失い、\r
+-# フランスにおける革命、大英帝国の繁栄は国際市場におけるアメリカの立場を暗く、狭いところへと押し込んだ。\r
+-# 今やアメリカ合衆国は、様々な政治派閥による手段を問わない闘争が展開され、\r
+-# 五大湖の重工業地域では社会主義者が大手を振って街道を歩き、南部ルイジアナ州はヒューイ・ロングとその一家による事実上の王国がきずかれつつある。\r
++# 大戦における中立政策によってアメリカ合衆国は政治的発言力を失い、フランスにおける革命、\r
++# 大英帝国の繁栄は国際市場におけるアメリカの立場を暗く、狭いところへと押し込んだ。\r
++# 今やアメリカ合衆国は、様々な政治派閥による手段を問わない闘争が展開され、五大湖の重工業地域では社会主義者が大手を振って街道を歩き、\r
++# 南部ルイジアナ州はヒューイ・ロングとその一家による事実上の王国がきずかれつつある。\r
+ # アメリカに唯一変革をもたらすことができる筈だった1932年選挙は、\r
+ # 停滞したアメリカをもたらしたといわれたハーバート・フーヴァーと頼りないジョン・N・ガーナーの二人の立候補に留まり、停滞を強めている。\r
+ # 彼らのうち、どちらかが大統領になろうと、国内に山積した多数の問題が減ることはないだろう。\r
+@@ -204,14 +214,20 @@ event = {
+ 		command = { type = event which = 1299002 where = USA when = 1 }\r
+ 		command = { type = event which = 1299003 where = USA when = 2 }\r
+ 		command = { type = event which = 1299079 where = USA when = 3 }\r
++		command = { type = event which = 1299131 where = USA when = 45 }\r
++	command = { type = setflag which = ProhibitionParty }\r
++	command = { type = local_setflag which = Bigeventflag0009 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0009.txt" } #音源流し\r
++	command = { type = trigger which = 19330009 when = 0 } #本イベントを起こす\r
++		\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+ #  ルイジアナのキングフィッシュ\r
+-# アメリカ合衆国南部ルイジアナ州の州知事はオスカー・K・アレンであったが、彼はヒューイ・ロングの事実上の傀儡であった。\r
+-# またルイジアナ州を中心としたアメリカ合衆国南部においてはヒューイ・ロングと彼の妻ローズ・マコーネル・ロング、\r
+-# 弟であるアール・ケンプ・ロング、ヒューイ・ロングの子息であるラッセル・ロングによって事実上、支配されていた。\r
++# アメリカ合衆国南部ルイジアナ州の州知事はオスカー・Ｋ・アレンであったが、彼はヒューイ・ロングの事実上の傀儡であった。\r
++# ルイジアナ州を中心としたアメリカ合衆国南部においてはヒューイ・ロングと彼の妻ローズ・マコーネル・ロング。\r
++# 弟であるアール・ケンプ・ロング。ヒューイ・ロングの子息であるラッセル・ロングによって支配されており、\r
+ # 彼らは北部によって南部は植民地同然に支配・搾取されていると主張し、こうした社会構造を一変させることを目論んでいる。\r
+ ###########################################################################\r
+ \r
+@@ -228,6 +244,8 @@ event = {
+ 	action = { # この腐敗しきったクソ野郎共！\r
+ 	name = "ACTIONNAME1299002A"\r
+ 	command = { type = dissent value = 5 }\r
++	command = { type = remove_core_area which = "Louisiana" } # ルイジアナ州\r
++	command = { type = add_claim_area which = "Louisiana" }\r
+ 	}\r
+ }\r
+ \r
+@@ -251,6 +269,15 @@ event = {
+ 	action = { # 私達の工場を返してくれ！\r
+ 	name = "ACTIONNAME1299003A"\r
+ 	command = { type = dissent value = 5 }\r
++	command = { type = industrial_modifier which = ic value = -15 }\r
++	command = { type = remove_core_area which = "Wisconsin" } # ウィスコンシン州\r
++	command = { type = add_claim_area which = "Wisconsin" }\r
++	command = { type = remove_core_area which = "Indiana" } # インディアナ州\r
++	command = { type = add_claim_area which = "Indiana" }\r
++	command = { type = remove_core_area which = "Michigan" } # ミシガン州\r
++	command = { type = add_claim_area which = "Michigan" }\r
++	command = { type = remove_core_area which = "Illinois" } # イリノイ州\r
++	command = { type = add_claim_area which = "Illinois" }\r
+ 	}\r
+ }\r
+ \r
+@@ -6466,6 +6493,583 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  治安維持活動\r
++# 現在のアメリカ合衆国における治安は悪化の一途を辿っており、市井における様々な犯罪は民衆を脅かし、\r
++# また困窮したものの一部は犯罪者として身を落とし、治安は悪化こそすれ改善の道は見えてこないのが現状である。\r
++# この事態を憂慮したアメリカ合衆国政府は、軍事費を削減の上で、陸軍軍人らを中心に治安維持組織への出向もしくは移籍を推奨し、彼等を治安維持の任務に就かせた。\r
++# この政策は大変不評なものであり、また議会における社会主義勢力の反対もあって後に削減されることとなるが、\r
++# こうした、アメリカ合衆国政府の軍事政策や治安維持に関する一貫性のない態度は、政府の弱腰と野党の勢い……\r
++# そして、米軍自体の不満とを増長させ、結局社会不安は増大し、減少することはなかった。\r
++###########################################################################\r
++\r
++event = { \r
++	id = 1299123\r
++	random = no\r
++	country = USA\r
++	\r
++	decision = {\r
++	event = 1299002\r
++	event = 1299003\r
++	}\r
++			\r
++	decision_trigger = { \r
++	event = 1299002\r
++	event = 1299003\r
++	supplies = 3000 \r
++	money = 500\r
++	}\r
++			\r
++	trigger = {\r
++	event = 1299002\r
++	event = 1299003\r
++	}\r
++	\r
++	name = "EVT_1299123_NAME"\r
++	desc = "EVT_1299123_DESC"\r
++	style = 2\r
++	picture = "CSA"\r
++	decision_picture = "decision_foreign_volunteers"\r
++	\r
++	date = { day = 0 month = 7 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1936 }\r
++\r
++	action = { # 一体君達は我々にどうせよと言うんだ\r
++	name = "ACTIONNAME1299123A"\r
++	command = { type = manpowerpool value = -100 }\r
++	command = { trigger = { ai = no } type = supplies value = -3000 }\r
++	command = { trigger = { ai = no } type = money value = -500 }\r
++	command = { type = belligerence value = 5 }\r
++	command = { type = strength which = land when = 0 where = 1 value = 0.5 }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = add_division value = militia when = 4 where = police }\r
++	command = { type = province_revoltrisk which = 1784 value = -30 } # アメリカ北東部\r
++	command = { type = province_revoltrisk which = 1785 value = -30 }\r
++	command = { type = province_revoltrisk which = 1786 value = -30 }\r
++	command = { type = province_revoltrisk which = 1787 value = -30 }\r
++	command = { type = province_revoltrisk which = 1788 value = -30 }\r
++	command = { type = province_revoltrisk which = 1789 value = -30 }\r
++	command = { type = province_revoltrisk which = 1790 value = -30 }\r
++	command = { type = province_revoltrisk which = 1791 value = -30 }\r
++	command = { type = province_revoltrisk which = 1792 value = -30 }\r
++	command = { type = province_revoltrisk which = 1793 value = -30 }\r
++	command = { type = province_revoltrisk which = 1794 value = -30 }\r
++	command = { type = province_revoltrisk which = 1795 value = -30 }\r
++	command = { type = province_revoltrisk which = 1796 value = -30 }\r
++	command = { type = province_revoltrisk which = 1797 value = -30 }\r
++	command = { type = province_revoltrisk which = 1798 value = -30 }\r
++	command = { type = province_revoltrisk which = 1799 value = -30 }\r
++	command = { type = province_revoltrisk which = 1800 value = -30 }\r
++	command = { type = province_revoltrisk which = 1801 value = -30 }\r
++	command = { type = province_revoltrisk which = 1802 value = -30 }\r
++	command = { type = province_revoltrisk which = 1803 value = -30 }\r
++	command = { type = province_revoltrisk which = 1804 value = -30 }\r
++	command = { type = province_revoltrisk which = 1805 value = -30 }\r
++	command = { type = province_revoltrisk which = 1806 value = -30 }\r
++	command = { type = province_revoltrisk which = 1807 value = -30 }\r
++	command = { type = province_revoltrisk which = 1808 value = -30 }\r
++	command = { type = province_revoltrisk which = 1809 value = -30 }\r
++	command = { type = province_revoltrisk which = 1810 value = -30 }\r
++	command = { type = province_revoltrisk which = 1811 value = -30 }\r
++	command = { type = province_revoltrisk which = 1812 value = -30 }\r
++	command = { type = province_revoltrisk which = 1813 value = -30 }\r
++	command = { type = province_revoltrisk which = 1814 value = -30 }\r
++	command = { type = province_revoltrisk which = 1815 value = -30 }\r
++	command = { type = province_revoltrisk which = 1816 value = -30 }\r
++	command = { type = province_revoltrisk which = 1817 value = -30 }\r
++	command = { type = province_revoltrisk which = 1818 value = -30 }\r
++	command = { type = province_revoltrisk which = 1819 value = -30 }\r
++	command = { type = province_revoltrisk which = 1820 value = -30 }\r
++	command = { type = province_revoltrisk which = 1821 value = -30 }\r
++	command = { type = province_revoltrisk which = 1822 value = -30 }\r
++	command = { type = province_revoltrisk which = 1823 value = -30 }\r
++	command = { type = province_revoltrisk which = 1824 value = -30 }\r
++	command = { type = province_revoltrisk which = 1825 value = -30 }\r
++	command = { type = province_revoltrisk which = 1826 value = -30 }\r
++	command = { type = province_revoltrisk which = 1827 value = -30 }\r
++	command = { type = province_revoltrisk which = 1828 value = -30 }\r
++	command = { type = province_revoltrisk which = 1829 value = -30 } # アメリカ中西部\r
++	command = { type = province_revoltrisk which = 1830 value = -30 }\r
++	command = { type = province_revoltrisk which = 1831 value = -30 }\r
++	command = { type = province_revoltrisk which = 1832 value = -30 }\r
++	command = { type = province_revoltrisk which = 1833 value = -30 }\r
++	command = { type = province_revoltrisk which = 1834 value = -30 }\r
++	command = { type = province_revoltrisk which = 1835 value = -30 }\r
++	command = { type = province_revoltrisk which = 1836 value = -30 }\r
++	command = { type = province_revoltrisk which = 1837 value = -30 }\r
++	command = { type = province_revoltrisk which = 1838 value = -30 }\r
++	command = { type = province_revoltrisk which = 1839 value = -30 }\r
++	command = { type = province_revoltrisk which = 1840 value = -30 }\r
++	command = { type = province_revoltrisk which = 1841 value = -30 }\r
++	command = { type = province_revoltrisk which = 1842 value = -30 }\r
++	command = { type = province_revoltrisk which = 1843 value = -30 }\r
++	command = { type = province_revoltrisk which = 1844 value = -30 }\r
++	command = { type = province_revoltrisk which = 1845 value = -30 }\r
++	command = { type = province_revoltrisk which = 1846 value = -30 }\r
++	command = { type = province_revoltrisk which = 1847 value = -30 }\r
++	command = { type = province_revoltrisk which = 1848 value = -30 }\r
++	command = { type = province_revoltrisk which = 1849 value = -30 }\r
++	command = { type = province_revoltrisk which = 1850 value = -30 }\r
++	command = { type = province_revoltrisk which = 1851 value = -30 }\r
++	command = { type = province_revoltrisk which = 1852 value = -30 }\r
++	command = { type = province_revoltrisk which = 1853 value = -30 }\r
++	command = { type = province_revoltrisk which = 1854 value = -30 }\r
++	command = { type = province_revoltrisk which = 1855 value = -30 }\r
++	command = { type = province_revoltrisk which = 1856 value = -30 }\r
++	command = { type = province_revoltrisk which = 1857 value = -30 }\r
++	command = { type = province_revoltrisk which = 1858 value = -30 }\r
++	command = { type = province_revoltrisk which = 1859 value = -30 }\r
++	command = { type = province_revoltrisk which = 1860 value = -30 }\r
++	command = { type = province_revoltrisk which = 1861 value = -30 } # アメリカ北西部\r
++	command = { type = province_revoltrisk which = 1862 value = -30 }\r
++	command = { type = province_revoltrisk which = 1863 value = -30 }\r
++	command = { type = province_revoltrisk which = 1864 value = -30 }\r
++	command = { type = province_revoltrisk which = 1865 value = -30 }\r
++	command = { type = province_revoltrisk which = 1866 value = -30 }\r
++	command = { type = province_revoltrisk which = 1867 value = -30 }\r
++	command = { type = province_revoltrisk which = 1868 value = -30 }\r
++	command = { type = province_revoltrisk which = 1869 value = -30 }\r
++	command = { type = province_revoltrisk which = 1870 value = -30 }\r
++	command = { type = province_revoltrisk which = 1871 value = -30 }\r
++	command = { type = province_revoltrisk which = 1872 value = -30 }\r
++	command = { type = province_revoltrisk which = 1873 value = -30 }\r
++	command = { type = province_revoltrisk which = 1874 value = -30 }\r
++	command = { type = province_revoltrisk which = 1875 value = -30 }\r
++	command = { type = province_revoltrisk which = 1876 value = -30 }\r
++	command = { type = province_revoltrisk which = 1877 value = -30 }\r
++	command = { type = province_revoltrisk which = 1878 value = -30 }\r
++	command = { type = province_revoltrisk which = 1879 value = -30 }\r
++	command = { type = province_revoltrisk which = 1880 value = -30 }\r
++	command = { type = province_revoltrisk which = 1881 value = -30 }\r
++	command = { type = province_revoltrisk which = 1882 value = -30 }\r
++	command = { type = province_revoltrisk which = 1883 value = -30 } # アメリカ南西部\r
++	command = { type = province_revoltrisk which = 1884 value = -30 }\r
++	command = { type = province_revoltrisk which = 1885 value = -30 }\r
++	command = { type = province_revoltrisk which = 1886 value = -30 }\r
++	command = { type = province_revoltrisk which = 1887 value = -30 }\r
++	command = { type = province_revoltrisk which = 1888 value = -30 }\r
++	command = { type = province_revoltrisk which = 1889 value = -30 }\r
++	command = { type = province_revoltrisk which = 1890 value = -30 }\r
++	command = { type = province_revoltrisk which = 1891 value = -30 }\r
++	command = { type = province_revoltrisk which = 1892 value = -30 }\r
++	command = { type = province_revoltrisk which = 1893 value = -30 }\r
++	command = { type = province_revoltrisk which = 1894 value = -30 }\r
++	command = { type = province_revoltrisk which = 1895 value = -30 }\r
++	command = { type = province_revoltrisk which = 1896 value = -30 }\r
++	command = { type = province_revoltrisk which = 1897 value = -30 }\r
++	command = { type = province_revoltrisk which = 1898 value = -30 }\r
++	command = { type = province_revoltrisk which = 1899 value = -30 }\r
++	command = { type = province_revoltrisk which = 1900 value = -30 }\r
++	command = { type = province_revoltrisk which = 1901 value = -30 }\r
++	command = { type = province_revoltrisk which = 1902 value = -30 }\r
++	command = { type = province_revoltrisk which = 1903 value = -30 } # アメリカ中南部\r
++	command = { type = province_revoltrisk which = 1904 value = -30 }\r
++	command = { type = province_revoltrisk which = 1905 value = -30 }\r
++	command = { type = province_revoltrisk which = 1906 value = -30 }\r
++	command = { type = province_revoltrisk which = 1907 value = -30 }\r
++	command = { type = province_revoltrisk which = 1908 value = -30 }\r
++	command = { type = province_revoltrisk which = 1909 value = -30 }\r
++	command = { type = province_revoltrisk which = 1910 value = -30 }\r
++	command = { type = province_revoltrisk which = 1911 value = -30 }\r
++	command = { type = province_revoltrisk which = 1912 value = -30 }\r
++	command = { type = province_revoltrisk which = 1913 value = -30 }\r
++	command = { type = province_revoltrisk which = 1914 value = -30 }\r
++	command = { type = province_revoltrisk which = 1915 value = -30 }\r
++	command = { type = province_revoltrisk which = 1916 value = -30 }\r
++	command = { type = province_revoltrisk which = 1917 value = -30 }\r
++	command = { type = province_revoltrisk which = 1918 value = -30 }\r
++	command = { type = province_revoltrisk which = 1919 value = -30 }\r
++	command = { type = province_revoltrisk which = 1920 value = -30 }\r
++	command = { type = province_revoltrisk which = 1921 value = -30 }\r
++	command = { type = province_revoltrisk which = 1922 value = -30 }\r
++	command = { type = province_revoltrisk which = 1923 value = -30 }\r
++	command = { type = province_revoltrisk which = 1924 value = -30 }\r
++	command = { type = province_revoltrisk which = 1925 value = -30 }\r
++	command = { type = province_revoltrisk which = 1926 value = -30 }\r
++	command = { type = province_revoltrisk which = 1927 value = -30 }\r
++	command = { type = province_revoltrisk which = 1928 value = -30 }\r
++	command = { type = province_revoltrisk which = 1929 value = -30 }\r
++	command = { type = province_revoltrisk which = 1930 value = -30 }\r
++	command = { type = province_revoltrisk which = 1931 value = -30 }\r
++	command = { type = province_revoltrisk which = 1932 value = -30 }\r
++	command = { type = province_revoltrisk which = 1933 value = -30 }\r
++	command = { type = province_revoltrisk which = 1934 value = -30 }\r
++	command = { type = province_revoltrisk which = 1935 value = -30 } # アメリカ南東部\r
++	command = { type = province_revoltrisk which = 1936 value = -30 }\r
++	command = { type = province_revoltrisk which = 1937 value = -30 }\r
++	command = { type = province_revoltrisk which = 1938 value = -30 }\r
++	command = { type = province_revoltrisk which = 1939 value = -30 }\r
++	command = { type = province_revoltrisk which = 1940 value = -30 }\r
++	command = { type = province_revoltrisk which = 1941 value = -30 }\r
++	command = { type = province_revoltrisk which = 1942 value = -30 }\r
++	command = { type = province_revoltrisk which = 1943 value = -30 }\r
++	command = { type = province_revoltrisk which = 1944 value = -30 }\r
++	command = { type = province_revoltrisk which = 1945 value = -30 }\r
++	command = { type = province_revoltrisk which = 1946 value = -30 }\r
++	command = { type = province_revoltrisk which = 1947 value = -30 }\r
++	command = { type = province_revoltrisk which = 1948 value = -30 }\r
++	command = { type = province_revoltrisk which = 1949 value = -30 }\r
++	command = { type = province_revoltrisk which = 1950 value = -30 }\r
++	command = { type = province_revoltrisk which = 1951 value = -30 }\r
++	command = { type = province_revoltrisk which = 1952 value = -30 }\r
++	command = { type = province_revoltrisk which = 1953 value = -30 }\r
++	command = { type = province_revoltrisk which = 1954 value = -30 }\r
++	command = { type = province_revoltrisk which = 1955 value = -30 }\r
++	command = { type = province_revoltrisk which = 1956 value = -30 }\r
++	command = { type = province_revoltrisk which = 1957 value = -30 }\r
++	command = { type = province_revoltrisk which = 1958 value = -30 }\r
++	command = { type = province_revoltrisk which = 1959 value = -30 }\r
++	command = { type = province_revoltrisk which = 1960 value = -30 }\r
++	command = { type = province_revoltrisk which = 1961 value = -30 }\r
++	command = { type = province_revoltrisk which = 1962 value = -30 }\r
++	command = { type = province_revoltrisk which = 1963 value = -30 }\r
++	command = { type = province_revoltrisk which = 1964 value = -30 }\r
++	command = { type = province_revoltrisk which = 2139 value = -30 } # アラスカ\r
++	command = { type = province_revoltrisk which = 2140 value = -30 }\r
++	command = { type = province_revoltrisk which = 2141 value = -30 }\r
++	command = { type = province_revoltrisk which = 2142 value = -30 }\r
++	command = { type = province_revoltrisk which = 2143 value = -30 }\r
++	command = { type = province_revoltrisk which = 2144 value = -30 }\r
++	command = { type = province_revoltrisk which = 2145 value = -30 }\r
++	command = { type = province_revoltrisk which = 2146 value = -30 }\r
++	command = { type = province_revoltrisk which = 2147 value = -30 }\r
++	command = { type = province_revoltrisk which = 2150 value = -30 }\r
++	command = { type = province_revoltrisk which = 2151 value = -30 }\r
++	command = { type = province_revoltrisk which = 2174 value = -30 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  『反米救国論』\r
++# アメリカにおけるトロツキストの代表格として知られるジェームズ・P・キャノン氏の新たな著作物、『反米救国論』が新たに発売された。\r
++# 過去にアメリカの労働運動における基本方針『反帝反レーニン』を提言した彼の新たな書物に記載された内容は非常にショッキングなものであった。\r
++# 「アメリカ帝国主義とは、WASP層の上位からの指示により構築されたものであり、アメリカ建国の歴史とは多民族融和ではなく、WASPによる少数の特権階級の支配によって作り上げられた『帝国』の歴史であり、WASPとは欧州における王族に該当する。\r
++# そのため、我々はアメリカの建国の歴史そのものを否定しなければならない。何故ならばそれは『アメリカ国家の精神』を否定する歴史に他ならないからである」\r
++# この理論は、とくに米国の移民層に歓迎を持って迎えられたが、主要白人層……とくに、南部からの強い反発を受け、南部諸州を含む多数の州で発禁処分を受けるも、それがさらなる人気を呼び、大ベストセラー作品となったのである。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299124\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	NOT = { war = { country = USA country = U00 } }\r
++	atwar = no\r
++	random = 30\r
++	}\r
++\r
++	name = "EVT_1299124_NAME"\r
++	desc = "EVT_1299124_DESC"\r
++	style = 2\r
++	picture = "censorship"\r
++\r
++	date = { day = 0 month = 3 year = 1934 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 発禁だ！　即急に発禁にするんだ！\r
++	name = "ACTIONNAME1299124A"\r
++	command = { type = dissent value = 2 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  『卵の空中一回転』\r
++# アメリカ合衆国オハイオ州在住の作家、デレク・ハートフィールド氏の新作小説『卵の空中―回転』が発売された。\r
++# 作家デレク・ハートフィールドの作品のほとんどは冒険小説ないし怪奇ものであり、\r
++# 代表作である『冒険児ウォルド』シリーズはその二つの要素をうまく合わせていると評されている。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299125\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	random = 35\r
++	}\r
++\r
++	name = "EVT_1299125_NAME"\r
++	desc = "EVT_1299125_DESC"\r
++	style = 2\r
++	picture = "censorship"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1935 }\r
++\r
++	action = { # ……聞いたことのない作家だな？\r
++	name = "ACTIONNAME1299125A"\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  『ジ・インベーダー』\r
++# 日系人ジャーナリスト、リン・オオクボの著書『ジ・インベーダー』は、大ヒット作としてアメリカの多数の読者によって読まれている……ただし"SF小説として"である。\r
++# リン・オオクボの著書『ジ・インベーダー』においては、不況下のアメリカ合衆国において宇宙の意志と名乗る勢力の暗示により、\r
++# 大科学者が死者を引き連れてアメリカを割拠し、地球を征服せんと企んでいる――というあまりに荒唐無稽なものであり、\r
++# 大半の人々はこの作品をフィクションであると確信していた。\r
++# 日系人ジャーナリスト、リン・オオクボの正体は謎に満ちており、一説には未来人。神そのもの……などというような、\r
++# 『ジ・インベーダー』の内容に勝るとも劣らない荒唐無稽な話説のみが流布しており、その正体は定かではない。\r
++# また話によれば、ロシアの神秘主義者ゲオルギイ・グルジエフや、今も生存説の残るグリゴリー・ラスプーチンから神秘主義についての教育を受けたともされている……。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299126\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	random = 35\r
++	}\r
++\r
++	name = "EVT_1299126_NAME"\r
++	desc = "EVT_1299126_DESC"\r
++	style = 2\r
++	picture = "censorship"\r
++\r
++	date = { day = 0 month = 6 year = 1934 }\r
++	offset = 18\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # ロクでもない奴だ。発禁にならないことを感謝するべきだな\r
++	name = "ACTIONNAME1299126A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  『人民戦線より米帝打倒を志す全ての人々へ』\r
++# とある左派系雑誌に寄稿されたこの文章は、現在左派政党による統治が行われている五大湖周辺を中心としてコピーされる形で北米中に広まった。\r
++# 失敗したロシア革命（極左における『ソヴィエト蜂起』の通称）の総括を始めとし、ネイティブ・アメリカン史や黒人奴隷とその差別の歴史に触れ、\r
++# また先の『反米救国論』を引用しつつ、米国帝国主義を打倒するための組織のあるべき姿や、その論理が解説されている。\r
++# これら文章は、寄稿された雑誌を含め発禁処分を受けているが、その内容を手元に留めていた活動家や、\r
++# 大戦後に増加した発禁書を蒐集する好事家の間で人気が沸騰し、今や警察当局にさえも完全な規制が困難な状態にある。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299127\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	random = 35\r
++	}\r
++\r
++	name = "EVT_1299127_NAME"\r
++	desc = "EVT_1299127_DESC"\r
++	style = 2\r
++	picture = "censorship"\r
++\r
++	date = { day = 0 month = 8 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1940 }\r
++\r
++	action = { # 米国人の『犯罪性』を告発せよ！\r
++	name = "ACTIONNAME1299127A"\r
++	command = { type = dissent value = 8 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  『気分が良くて何が悪い？』\r
++# アメリカ合衆国オハイオ州在住の作家、デレク・ハートフィールド氏の新作小説『気分が良くて何が悪い？』が発売された。\r
++# 作家デレク・ハートフィールドは作中で人生・夢・愛といった主題を直接的に扱うことは稀である。\r
++# 彼は小説について、それが情報であるという前提のもと、グラフや表で表現できるべきであり、\r
++# その正確さは文量に比例すると考えており、この観点からロマン・ロランの『ジャン・クリストフ』を高く評価していた。\r
++# 一方レフ・トルストイの『戦争と平和』については「宇宙の観念」が不足しているという理由により、再三の批判を加えている。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299128\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	event = 1299125 # 『卵の空中一回転』\r
++	random = 35\r
++	}\r
++\r
++	name = "EVT_1299128_NAME"\r
++	desc = "EVT_1299128_DESC"\r
++	style = 2\r
++	picture = "censorship"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 5 year = 1936 }\r
++\r
++	action = { # この作家の本、見たことないぞ……？\r
++	name = "ACTIONNAME1299128A"\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  デレク・ハートフィールドの死\r
++# 残念な知らせが舞い込んできた。\r
++# 1938年6月、作家デレク・ハートフィールド氏は、彼自身の母の死の直後に、\r
++# 前年完成したばかりのエンパイア・ステート・ビルの屋上から飛び降り自殺をした。\r
++# この際に彼は右手にアドルフ・ヒトラーの肖像画を抱え、左手に傘を差していた。\r
++# 彼の遺体は、哲学者フリードリヒ・ニーチェの「昼の光に、夜の闇の深さがわかるものか」という遺言が刻まれた、\r
++# アメリカ合衆国オハイオ州にあるハイヒールの踵ぐらいの小さな墓に埋葬されている。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299129\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	event = 1299125 # 『卵の空中一回転』\r
++	event = 1299128 # 『気分が良くて何が悪い？』\r
++	}\r
++\r
++	name = "EVT_1299129_NAME"\r
++	desc = "EVT_1299129_DESC"\r
++	style = 2\r
++	picture = "censorship"\r
++\r
++	date = { day = 0 month = 5 year = 1938 }\r
++\r
++	action = { # 待ってくれ。私は本当にこの作家を知らないんだ\r
++	name = "ACTIONNAME1299129A"\r
++	command = { type = dissent value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  デレク・ハートフィールドの『不在』\r
++# 作家デレク・ハートフィールドの死後に、大学図書館などで彼の著作を読みたいという学生が跡を絶たず、\r
++# それぞれの図書館の司書は彼の著作を蔵書に入れるために探すが、市場には彼の作品は一つも見つからないと言われている。\r
++# これを訝しんだ司書達は、ニューヨーク州の私立探偵、ブルーにデレク・ハートフィールドの足跡を追うように依頼した。\r
++# 調査期間を終えた私立探偵、ブルーの導き出した調査結果は意外なものであった。\r
++# 「作家デレク・ハートフィールドなる人物は、存在していない」\r
++# この結果に唖然とした司書達であったが、唖然としたのはその結果にではなく、\r
++# 自分たちがそもそもデレク・ハートフィールドなる作家の存在を既に消却していたことに起因している。\r
++# しかしその後も、世界中の図書館では作家デレク・ハートフィールドの著作を大学図書館に入れるべきだとするリクエストが届き続けているという……。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299130\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	event = 1299129 # デレク・ハートフィールドの死\r
++	}\r
++\r
++	name = "EVT_1299130_NAME"\r
++	desc = "EVT_1299130_DESC"\r
++	style = 2\r
++	picture = "censorship"\r
++\r
++	date = { day = 0 month = 0 year = 1939 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++\r
++	action = { # 居ただろ。居たはずなんだよ……確かに彼が\r
++	name = "ACTIONNAME1299130A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  オルガナイトの流行と弊害\r
++# 今、民衆の間で『オルガナイト』と呼称される鉱石が大流行している。\r
++# これは、人間に存在するネガティブなエネルギーをポジティブなエネルギーに変換する装置とされており、とくに女性の間で人気がある。\r
++# 一部の女性なぞはこの鉱石を"人には見えない場所"に埋め込んで、その効果を高めているという話もあり、\r
++# アメリカ合衆国政府はこれを疑似科学として強く非難し、当局による規制を進めようとしているが、\r
++# 先から続く政府不信は根深く、当局の注意にも関わらずオルガナイトの流行は終局へ至らず、\r
++# これを発明した科学者、ヴィルヘルム・ライヒは莫大な富を築いたとされている。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299131\r
++	random = no\r
++	country = USA\r
++\r
++	name = "EVT_1299131_NAME"\r
++	desc = "EVT_1299131_DESC"\r
++	style = 2\r
++	picture = "Orgone_Box"\r
++\r
++	action = { # こんなものを本気で信じているというのか！\r
++	name = "ACTIONNAME1299131A"\r
++	command = { type = dissent value = 3 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  チャールズ・ポンジ・スキーム\r
++# なんということだ！\r
++# イタリア系移民のビジネスマン、チャールズ・ポンジのビジネスは破綻し、\r
++# これに出資していた多数の階級を問わない人々の資産が溶けて、消えて――なくなった。\r
++# これは国際返信切手券と外貨交換レートの差を利用して利ざやを得ることを目的とし、\r
++# その元手となる資本への出資者を不特定多数に求めたもので、現在の不況下にあって人々はこのビジネスにこぞって出資をし、\r
++# ある人物は自身の老後の蓄えの全てを彼に出資する形で投じていたという。\r
++# 彼のこのビジネスは実際には、国際返信切手券ではなく出資者への配当の割当に出資者の資金をあてるという破綻を前提としたタコ足配当方式の詐欺であり、警察当局は彼を拘束。\r
++# 心神喪失状態にあると診断された彼は、ニューイングランドに存在するアーカム精神病院へと収容された。\r
++# この事件の被害者はあまりに多く、政府が救済措置を取らなければ、数え切れない程の数の人々が路頭に迷うことは確実である……。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1299132\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = {\r
++	event = { id = 1929001 days = 100 } # 暗黒の日\r
++	}\r
++\r
++	name = "EVT_1299132_NAME"\r
++	desc = "EVT_1299132_DESC"\r
++	style = 2\r
++	picture = "Charles_Ponzi"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++\r
++	action = { # 詐欺を詐欺と見抜けない国民にも問題はある\r
++	name = "ACTIONNAME1299132A"\r
++	command = { type = dissent value = 20 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # ……仕方がない。救済措置をとろう\r
++	name = "ACTIONNAME1299132B"\r
++	command = { type = dissent value = 5 }\r
++	command = { trigger = { ai = no } type = money value = -8000 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  アメリカ内戦 ― ロシアの介入\r
+ # 1936年、ついにアメリカで社会主義者が蜂起したことをきっかけに内戦が勃発した。\r

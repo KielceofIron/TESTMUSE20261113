@@ -1,0 +1,841 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Italy_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Italy_events.txt [cp932]
+@@ -30,6 +30,8 @@
+ #id = 1229024 ファシストの蜂起 ― 勝利（RSI）\r
+ #id = 1229025 連合陣営に参戦（ITA）\r
+ #id = 1229026 枢軸陣営に参戦（RSI）\r
++#id = 1229027 王政の廃止\r
++#id = 1229028 王政の廃止 ― 国号の変更\r
+ #第二次イタリア=エチオピア戦争厭戦イベント\r
+ #id = 1229051 厭戦\r
+ #id = 1229052 平和集会\r
+@@ -59,6 +61,8 @@
+ #id = 1229252 政治家の暗殺（エミリオ・デ・ボーノ）\r
+ #id = 1229253 政治家の暗殺（グイド・ブファリーニ=グイディ）\r
+ #id = 1229254 政治家の暗殺（ディノ・グランディ）\r
++#id = 1229255 イタロ・バルボの暗殺\r
++#id = 1229256 大臣の逝去（ジャコモ・マッテオッティ）\r
+ #エチオピア関連イベント\r
+ #id = 1229301 エチオピアの近代化\r
+ #id = 1229302 アディスアベバ大学の設立\r
+@@ -159,9 +163,10 @@ event = {
+ 	exists = ETH\r
+ 	NOT = { war = { country = ITA country = ETH } }\r
+ 	NOT = { war = { country = ITA country = ENG } }\r
+-	NOT = { alliance = { country = ITA country = FRA } }\r
+-	NOT = { alliance = { country = ITA country = ENG } }\r
+-	NOT = { alliance = { country = ITA country = FRA } }\r
++	OR = {\r
++	alliance = { country = ITA country = ENG }\r
++	alliance = { country = ITA country = FRA }\r
++	}\r
+ 	OR = {\r
+ 	year = 1935\r
+ 	event = 204020 # ワルワル事件 ― アビシニア危機\r
+@@ -208,6 +213,7 @@ event = {
+ \r
+ 	action = { # 思いとどまろう\r
+ 	name = "ACTIONNAME1229002B"\r
++	trigger = { }\r
+ 	command = { type = relation which = ENG value = 15 }\r
+ 	command = { type = relation which = U02 value = 15 }\r
+ 	command = { type = relation which = CAN value = 15 }\r
+@@ -806,12 +812,13 @@ event = {
+ event = {\r
+ 	id = 1229014\r
+ 	random = no\r
+-	country = SPR\r
++	country = ITA\r
+ 	save_date = yes\r
+ \r
+ 	trigger = {\r
+-	NOT = {\r
+ 	event = 1229102 # 選挙（1938年）\r
++	NOT = {\r
++	event = 1229206 # イタリア民主主義の危機 ― 改革の成功\r
+ 	exists = RSI\r
+ 	}\r
+ 	atwar = no\r
+@@ -826,13 +833,15 @@ event = {
+ \r
+ 	action = { # 内戦だ！\r
+ 	name = "ACTIONNAME1229014A"\r
++	command = { trigger = { NOT = { event = 1229203 } } type = industrial_modifier which = total value = 10 }\r
++	command = { trigger = { NOT = { event = 1229204 } } type = industrial_modifier which = total value = 10 }\r
++	command = { trigger = { NOT = { event = 1229205 } } type = industrial_modifier which = total value = 10 }\r
+ 	command = { type = relation which = ENG value = 10 }\r
+ 	command = { type = relation which = FRA value = 10 }\r
+ 	command = { type = relation which = USA value = 10 }\r
+ 	command = { type = relation which = UER value = -10 }\r
+ 	command = { type = relation which = SOV value = 10 }\r
+ 	command = { type = relation which = GER value = -10 }\r
+-	command = { type = dissent value = 15 }\r
+ 	#VP設定\r
+ 	command = { type = province_keypoints which = 393 value = 1 } # イタリア\r
+ 	command = { type = province_keypoints which = 394 value = 1 }\r
+@@ -913,26 +922,29 @@ event = {
+ \r
+ 	action = { # 彼らの要求を受け入れる\r
+ 	name = "ACTIONNAME1229014B"\r
+-	command = { type = country which = RSI }\r
+-	command = { type = flag_ext where = RSI }\r
+-	command = { type = name where = RSI which = "イタリア" }\r
+-	#\r
++	command = { trigger = { NOT = { event = 1229203 } } type = industrial_modifier which = total value = 10 }\r
++	command = { trigger = { NOT = { event = 1229204 } } type = industrial_modifier which = total value = 10 }\r
++	command = { trigger = { NOT = { event = 1229205 } } type = industrial_modifier which = total value = 10 }\r
++	command = { type = dissent value = 15 }\r
++	#command = { type = country which = RSI }\r
++	#command = { type = flag_ext where = ITA which = "_FA" }\r
++	#command = { type = name where = ITA which = "大ローマ帝国" }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { type = set_domestic which = free_market value = 3 }\r
+ 	command = { type = set_domestic which = freedom value = 3 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 750061 } # イタロ・バルボ\r
+-	command = { type = headofgovernment which = 750062 } # イタロ・バルボ\r
+-	command = { type = foreignminister which = 750003 } # セラフィノ・モローニ\r
+-	command = { type = armamentminister which = 750021 } # シルヴィオ・ガイ\r
+-	command = { type = ministerofsecurity which = 750005 } # グイド・ブファリーニ=グイディ\r
+-	command = { type = ministerofintelligence which = 750006 } # レナート・リッチ\r
+-	command = { type = chiefofstaff which = 750007 } # ガストーン・ガンバラ\r
+-	command = { type = chiefofarmy which = 750037 } # レナート・リッチ\r
+-	command = { type = chiefofnavy which = 750009 } # アントニオ・レニャーニ\r
+-	command = { type = chiefofair which = 750064 } # イタロ・バルボ\r
++	command = { type = set_domestic which = defense_lobby value = 5 }\r
++	command = { type = set_domestic which = interventionism value = 5 }\r
++	command = { type = headofstate which = 25001 } # ヴィットーリオ・エマヌエーレ3世\r
++	command = { type = headofgovernment which = 25292 } # ロベルト・ファリナッチ\r
++	command = { type = foreignminister which = 25033 } # ジュゼッペ・バスティアニーニ\r
++	command = { type = armamentminister which = 25045 } # アルベルト・パリアーニ\r
++	command = { type = ministerofsecurity which = 25294 } # ジョヴァンニ・プレツィオージ\r
++	command = { type = ministerofintelligence which = 25295 } # ジュリオ・エヴォラ\r
++	command = { type = chiefofstaff which = 25099 } # アキレ・スタラーセ\r
++	command = { type = chiefofarmy which = 25109 } # ロドルフォ・グラッツィアーニ\r
++	command = { type = chiefofnavy which = 25009 } # ドメニコ・カバニャリ\r
++	command = { type = chiefofair which = 25010 } # ジュゼッペ・ヴァレ\r
+         command = { type = sleepevent which = 1229015 } # ファシストの蜂起 ― 民主主義国家\r
+         command = { type = sleepevent which = 1229016 } # ファシストの蜂起 ― ファシスト国家\r
+         command = { type = sleepevent which = 1229017 } # ファシストの蜂起 ― シチリアの離反\r
+@@ -943,9 +955,14 @@ event = {
+         command = { type = sleepevent which = 1229022 } # ファシストの蜂起 ― 内戦\r
+         command = { type = sleepevent which = 1229023 } # ファシストの蜂起 ― 勝利（ITA）\r
+         command = { type = sleepevent which = 1229024 } # ファシストの蜂起 ― 勝利（RSI）\r
++        command = { type = sleepevent which = 1229201 } # フォンターナ広場爆破事件\r
++        command = { type = sleepevent which = 1229202 } # イタリア民主主義の危機\r
+         command = { type = sleepevent which = 1229203 } # イタリア民主主義の危機 ― 経済不況問題の解決\r
+         command = { type = sleepevent which = 1229204 } # イタリア民主主義の危機 ― マフィア問題の解決\r
+         command = { type = sleepevent which = 1229205 } # イタリア民主主義の危機 ― 政界の腐敗問題の解決\r
++        command = { type = sleepevent which = 1229206 } # イタリア民主主義の危機 ― 改革の成功\r
++        command = { type = sleepevent which = 1229207 } # イタリア民主主義の危機 ― 政界の腐敗の一掃\r
++        command = { type = sleepevent which = 1229208 } # イタリア民主主義の危機 ― 汚職が摘発される\r
+ 	ai_chance = 40\r
+ 	}\r
+ }\r
+@@ -967,6 +984,8 @@ event = {
+ \r
+ 	action = { # 反乱軍を鎮圧せよ！\r
+ 	name = "ACTIONNAME1229015A"\r
++	command = { trigger = { ai = yes } type = dissent value = 25 }\r
++	command = { trigger = { ai = no } type = dissent value = 15 }\r
+ 	command = { type = secedeprovince which = RSI value = 393 }\r
+ 	command = { type = secedeprovince which = RSI value = 394 }\r
+ 	command = { type = secedeprovince which = RSI value = 395 }\r
+@@ -1037,20 +1056,20 @@ event = {
+ 	command = { type = secedeprovince which = UD9 value = 431 }\r
+ 	command = { type = secedeprovince which = UD9 value = 432 }\r
+ 	#\r
+-	command = { type = flag_ext where = RSI which = "_Es" }\r
+-	command = { type = name where = RSI which = "イタリア軍団" }\r
++	command = { type = flag_ext where = RSI which = "_URO" }\r
++	command = { type = name where = RSI which = "ローマ臨時政府" }\r
+ 	#\r
+-	command = { type = set_domestic which = democratic value = 1 }\r
+-	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { type = set_domestic which = free_market value = 1 }\r
+-	command = { type = set_domestic which = freedom value = 1 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = set_domestic which = free_market value = 3 }\r
++	command = { type = set_domestic which = freedom value = 3 }\r
+ 	command = { type = set_domestic which = defense_lobby value = 5 }\r
+ 	command = { type = set_domestic which = interventionism value = 5 }\r
+-	command = { type = headofstate which = 750065 } # ユリウス・エヴォラ\r
+-	command = { type = headofgovernment which = 750066 } # ユリウス・エヴォラ\r
++	command = { type = headofstate which = 750065 } # ロベルト・ファリナッチ\r
++	command = { type = headofgovernment which = 750066 } # ロベルト・ファリナッチ\r
+ 	command = { type = foreignminister which = 750003 } # セラフィノ・モローニ\r
+ 	command = { type = armamentminister which = 750018 } # ロマノ・ルゲロ\r
+-	command = { type = ministerofsecurity which = 750005 } # グイド・ブファリーニ=グイディ\r
++	command = { type = ministerofsecurity which = 750066 } # ロベルト・ファリナッチ\r
+ 	command = { type = ministerofintelligence which = 750006 } # レナート・リッチ\r
+ 	command = { type = chiefofstaff which = 750007 } # ガストーン・ガンバラ\r
+ 	command = { type = chiefofarmy which = 750037 } # レナート・リッチ\r
+@@ -1787,10 +1806,20 @@ event = {
+ event = {\r
+ 	id = 1229025\r
+ 	random = no\r
+-	country = ITA\r
++	TAG = { ITA RSI }\r
+ 	\r
+ 	decision = {\r
+-	event = 1229023 # ファシストの蜂起 ― 勝利（ITA）\r
++	government = democratic\r
++	OR = {\r
++	AND = {\r
++	exists = ITA\r
++	NOT = { exists = RSI }\r
++	}\r
++	AND = {\r
++	exists = RSI\r
++	NOT = { exists = ITA }\r
++	}\r
++	}\r
+ 	OR = {\r
+ 	war = { country = ENG country = GER }\r
+ 	war = { country = ENG country = DDR }\r
+@@ -1798,16 +1827,27 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++	government = democratic\r
+ 	relation = { which = ENG value = 100 }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 1229023 # ファシストの蜂起 ― 勝利（ITA）\r
++	government = democratic\r
++	OR = {\r
++	AND = {\r
++	exists = ITA\r
++	NOT = { exists = RSI }\r
++	}\r
++	AND = {\r
++	exists = RSI\r
++	NOT = { exists = ITA }\r
++	}\r
++	}\r
+ 	OR = {\r
+ 	war = { country = ENG country = GER }\r
+ 	war = { country = ENG country = DDR }\r
+ 	}\r
+-	random = 20\r
++	random = 10\r
+ 	}\r
+ 	\r
+ 	name = "EVT_1229025_NAME" \r
+@@ -1817,13 +1857,14 @@ event = {
+ 	decision_picture = "decision_congress"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1939 }\r
+-	offset = 15\r
++	offset = 35\r
+ 	deathdate = { day = 29 month = december year = 1964 }\r
+ \r
+ 	action = { # ファシストどもに引導を渡せ！\r
+ 	name = "ACTIONNAME1229025A"\r
+ 	command = { type = alliance which = ENG when = 1 }\r
+ 	command = { type = domestic which = interventionism value = 3 }\r
++	command = { type = sleepevent which = 1229026 } # 枢軸陣営に参戦\r
+ 	}\r
+ }\r
+ \r
+@@ -1837,19 +1878,40 @@ event = {
+ event = {\r
+ 	id = 1229026\r
+ 	random = no\r
+-	country = RSI\r
++	TAG = { ITA RSI }\r
+ 	\r
+ 	decision = {\r
+-	event = 1229024 # ファシストの蜂起 ― 勝利（RSI）\r
++	government = fascist\r
++	OR = {\r
++	AND = {\r
++	exists = ITA\r
++	NOT = { exists = RSI }\r
++	}\r
++	AND = {\r
++	exists = RSI\r
++	NOT = { exists = ITA }\r
++	}\r
++	}\r
+ 	war = { country = GER country = ENG }\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++	government = fascist\r
+ 	relation = { which = GER value = 100 }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 1229024 # ファシストの蜂起 ― 勝利（RSI）\r
++	government = fascist\r
++	OR = {\r
++	AND = {\r
++	exists = ITA\r
++	NOT = { exists = RSI }\r
++	}\r
++	AND = {\r
++	exists = RSI\r
++	NOT = { exists = ITA }\r
++	}\r
++	}\r
+ 	war = { country = GER country = ENG }\r
+ 	random = 20\r
+ 	}\r
+@@ -1868,6 +1930,156 @@ event = {
+ 	name = "ACTIONNAME1229026A"\r
+ 	command = { type = alliance which = GER when = 1 }\r
+ 	command = { type = domestic which = interventionism value = 3 }\r
++	command = { type = sleepevent which = 1229025 } # 連合陣営に参戦\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  王政の廃止\r
++# イタリア王国においてファシストが権力を掌握することとなった。\r
++# 民主派や王党派は、ファシスト政権を拒否することを国王に懇願し、国王も過激派を拒否しようとした。\r
++# しかしファシズム勢力はその意志に従わず、君主制を廃止するために行動を起こした。\r
++# ロベルト・ファリナッチは国王が、反ファシズム勢力を手を組み、陰謀を仕掛けようとしていることを察知すると、\r
++# 民兵と軍を動員して反対派を次々に逮捕し、国王は国外への亡命を余儀なくされた。\r
++#########################################################################\r
++event = {\r
++	id = 1229027\r
++	random = no\r
++	country = ITA\r
++\r
++	decision = {\r
++	government = fascist\r
++	OR = {\r
++	headofstate = 25001 # ヴィットーリオ・エマヌエーレ3世\r
++	headofstate = 25014\r
++	headofstate = 25015\r
++	headofstate = 25202\r
++	headofstate = 25203\r
++	headofstate = 25204\r
++	}\r
++	OR = {\r
++	headofstate = 25291 # ロベルト・ファリナッチ\r
++	headofgovernment = 25292 # ロベルト・ファリナッチ\r
++	}\r
++	}\r
++\r
++	decision_trigger = {\r
++	government = fascist\r
++	OR = {\r
++	headofstate = 25001 # ヴィットーリオ・エマヌエーレ3世\r
++	headofstate = 25014\r
++	headofstate = 25015\r
++	headofstate = 25202\r
++	headofstate = 25203\r
++	headofstate = 25204\r
++	}\r
++	OR = {\r
++	headofstate = 25291 # ロベルト・ファリナッチ\r
++	headofgovernment = 25292 # ロベルト・ファリナッチ\r
++	}\r
++	}\r
++\r
++	trigger = {\r
++	government = fascist\r
++	OR = {\r
++	headofstate = 25001 # ヴィットーリオ・エマヌエーレ3世\r
++	headofstate = 25014\r
++	headofstate = 25015\r
++	headofstate = 25202\r
++	headofstate = 25203\r
++	headofstate = 25204\r
++	}\r
++	OR = {\r
++	headofstate = 25291 # ロベルト・ファリナッチ\r
++	headofgovernment = 25292 # ロベルト・ファリナッチ\r
++	}\r
++	}\r
++\r
++	name = "EVT_1229027_NAME"\r
++	desc = "EVT_1229027_DESC"\r
++	style = 2\r
++	Picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1938 }\r
++\r
++	action = { # 王政を廃止せよ\r
++	name = "ACTIONNAME1229027A"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = headofstate which = 25291 } # ロベルト・ファリナッチ\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = event which = 1229028 where = ITA when = 0 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  王政の廃止 ― 国号の変更\r
++# イタリアで王政が廃止され、ファシズム政権が成立すると、イタリアの正式な国名が変更されることになった。\r
++# 臨時政府の指導者となったロベルト・ファリナッチは、布告によって国家指導者の地位を「総統（伊：Duce）」の称号とすること、新たな国号の採用を宣言した。\r
++#########################################################################\r
++event = {\r
++	id = 1229028\r
++	random = no\r
++	country = ITA\r
++\r
++	name = "EVT_1229028_NAME"\r
++	desc = "EVT_1229028_DESC"\r
++	style = 2\r
++	Picture = "news_paper"\r
++\r
++	action = { # 『イタリア帝国』とする\r
++	name = "ACTIONNAME1229028A"\r
++	command = { type = flag_ext where = ITA which = "_Ari" }\r
++	command = { type = name where = ITA which = "イタリア帝国" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『大イタリア帝国』とする\r
++	name = "ACTIONNAME1229028B"\r
++	command = { type = flag_ext where = ITA which = "_Ari" }\r
++	command = { type = name where = ITA which = "大イタリア帝国" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『ローマ帝国』とする\r
++	name = "ACTIONNAME1229028C"\r
++	command = { type = flag_ext where = ITA which = "_Ard" }\r
++	command = { type = name where = ITA which = "ローマ帝国" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『大ローマ帝国』とする\r
++	name = "ACTIONNAME1229028D"\r
++	command = { type = flag_ext where = ITA which = "_Ard" }\r
++	command = { type = name where = ITA which = "大ローマ帝国" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『イタリア』とする\r
++	name = "ACTIONNAME1229028E"\r
++	command = { type = flag_ext where = ITA which = "_dom" }\r
++	command = { type = name where = ITA which = "イタリア" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 『ローマ』とする\r
++	name = "ACTIONNAME1229028F"\r
++	command = { type = flag_ext where = ITA which = "_dom" }\r
++	command = { type = name where = ITA which = "ローマ" }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+@@ -1886,7 +2098,7 @@ event = {
+ 	country = ITA\r
+ \r
+ 	trigger = { \r
+-	event = 1229002 # 第二次イタリア=エチオピア戦争\r
++	event = 1229004 # 第二次イタリア=エチオピア戦争\r
+ 	war = { country = ETH country = ITA }\r
+ 	losses = 150000\r
+ 	}\r
+@@ -1918,7 +2130,7 @@ event = {
+ 	country = ITA\r
+ \r
+ 	trigger = { \r
+-	event = 1229002 # 第二次イタリア=エチオピア戦争\r
++	event = 1229004 # 第二次イタリア=エチオピア戦争\r
+ 	war = { country = ETH country = ITA }\r
+ 	losses = 300000\r
+ 	}\r
+@@ -1950,7 +2162,7 @@ event = {
+ 	country = ITA\r
+ \r
+ 	trigger = { \r
+-	event = 1229002 # 第二次イタリア=エチオピア戦争\r
++	event = 1229004 # 第二次イタリア=エチオピア戦争\r
+ 	war = { country = ETH country = ITA }\r
+ 	losses = 500000\r
+ 	}\r
+@@ -1982,7 +2194,7 @@ event = {
+ 	country = ITA\r
+ \r
+ 	trigger = { \r
+-	event = 1229002 # 第二次イタリア=エチオピア戦争\r
++	event = 1229004 # 第二次イタリア=エチオピア戦争\r
+ 	war = { country = ETH country = ITA }\r
+ 	owned = { province = 815 data = ITA } # エリトリア\r
+ 	owned = { province = 816 data = ITA }\r
+@@ -2019,7 +2231,7 @@ event = {
+ 	country = ITA\r
+ \r
+ 	trigger = { \r
+-	event = 1229002 # 第二次イタリア=エチオピア戦争\r
++	event = 1229004 # 第二次イタリア=エチオピア戦争\r
+ 	war = { country = ETH country = ITA }\r
+ 	owned = { province = 834 data = ITA } # ソマリア\r
+ 	owned = { province = 835 data = ITA }\r
+@@ -2059,7 +2271,7 @@ event = {
+ 	country = ITA\r
+ \r
+ 	trigger = { \r
+-	event = 1229002 # 第二次イタリア=エチオピア戦争\r
++	event = 1229004 # 第二次イタリア=エチオピア戦争\r
+ 	NOT = {  war = { country = ETH country = ITA } }\r
+ 	}\r
+ \r
+@@ -2116,7 +2328,7 @@ event = {
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = headofstate which = 25015 } # ヴィットーリオ・エマヌエーレ3世\r
+-	command = { type = headofgovernment which = 25258 } # メウッチョ・ルイニ\r
++	command = { type = headofgovernment which = 25307 } # ジャコモ・マッテオッティ\r
+ 	command = { type = foreignminister which = 25041 } # イヴァノエ・ボノーミ\r
+ 	command = { type = armamentminister which = 25264 } # エピカルモ・コルビーノ\r
+ 	command = { type = ministerofsecurity which = 25267 } # ヴィンチェンツォ・アランヒオ・ルイズ\r
+@@ -2125,7 +2337,7 @@ event = {
+ 	command = { type = chiefofarmy which = 25115 } # アルベルト・デ・マリニス\r
+ 	command = { type = chiefofnavy which = 25278 } # ジュゼッペ・フィオラヴァンツォ\r
+ 	command = { type = chiefofair which = 25131 } # ルイージ・ガスパロット\r
+-	ai_chance = 50\r
++	ai_chance = 45\r
+ 	}\r
+ \r
+ 	action = { # 右派を選ぶ\r
+@@ -2147,6 +2359,53 @@ event = {
+ 	command = { type = chiefofarmy which = 25112 } # ヴィットーリオ・アンブロージョ\r
+ 	command = { type = chiefofnavy which = 25121 } # ラファエル・デ・コーテン\r
+ 	command = { type = chiefofair which = 25128 } # トマッソ・ティトーニ\r
++	ai_chance = 5\r
++	}\r
++\r
++	action = { # クーデター成功\r
++	name = "ACTION_NAME_COUP_SUCCEEDS"\r
++	command = { trigger = { NOT = { event = 1229203 } } type = industrial_modifier which = total value = 10 }\r
++	command = { trigger = { NOT = { event = 1229204 } } type = industrial_modifier which = total value = 10 }\r
++	command = { trigger = { NOT = { event = 1229205 } } type = industrial_modifier which = total value = 10 }\r
++	command = { type = dissent value = 5 }\r
++	#command = { type = country which = RSI }\r
++	#command = { type = flag_ext where = ITA which = "_FA" }\r
++	#command = { type = name where = ITA which = "大ローマ帝国" }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = set_domestic which = free_market value = 3 }\r
++	command = { type = set_domestic which = freedom value = 3 }\r
++	command = { type = set_domestic which = defense_lobby value = 5 }\r
++	command = { type = set_domestic which = interventionism value = 5 }\r
++	command = { type = headofstate which = 25001 } # ヴィットーリオ・エマヌエーレ3世\r
++	command = { type = headofgovernment which = 25292 } # ロベルト・ファリナッチ\r
++	command = { type = foreignminister which = 25033 } # ジュゼッペ・バスティアニーニ\r
++	command = { type = armamentminister which = 25045 } # アルベルト・パリアーニ\r
++	command = { type = ministerofsecurity which = 25294 } # ジョヴァンニ・プレツィオージ\r
++	command = { type = ministerofintelligence which = 25295 } # ジュリオ・エヴォラ\r
++	command = { type = chiefofstaff which = 25099 } # アキレ・スタラーセ\r
++	command = { type = chiefofarmy which = 25109 } # ロドルフォ・グラッツィアーニ\r
++	command = { type = chiefofnavy which = 25009 } # ドメニコ・カバニャリ\r
++	command = { type = chiefofair which = 25010 } # ジュゼッペ・ヴァレ\r
++        command = { type = sleepevent which = 1229014 } # ファシストの蜂起\r
++        command = { type = sleepevent which = 1229015 } # ファシストの蜂起 ― 民主主義国家\r
++        command = { type = sleepevent which = 1229016 } # ファシストの蜂起 ― ファシスト国家\r
++        command = { type = sleepevent which = 1229017 } # ファシストの蜂起 ― シチリアの離反\r
++        command = { type = sleepevent which = 1229018 } # ファシストの蜂起 ― リビアの離反\r
++        command = { type = sleepevent which = 1229019 } # ファシストの蜂起 ― エチオピアの離反\r
++        command = { type = sleepevent which = 1229020 } # ファシストの蜂起 ― ソマリアの離反\r
++        command = { type = sleepevent which = 1229021 } # ファシストの蜂起 ― サルディーニャの離反\r
++        command = { type = sleepevent which = 1229022 } # ファシストの蜂起 ― 内戦\r
++        command = { type = sleepevent which = 1229023 } # ファシストの蜂起 ― 勝利（ITA）\r
++        command = { type = sleepevent which = 1229024 } # ファシストの蜂起 ― 勝利（RSI）\r
++        command = { type = sleepevent which = 1229201 } # フォンターナ広場爆破事件\r
++        command = { type = sleepevent which = 1229202 } # イタリア民主主義の危機\r
++        command = { type = sleepevent which = 1229203 } # イタリア民主主義の危機 ― 経済不況問題の解決\r
++        command = { type = sleepevent which = 1229204 } # イタリア民主主義の危機 ― マフィア問題の解決\r
++        command = { type = sleepevent which = 1229205 } # イタリア民主主義の危機 ― 政界の腐敗問題の解決\r
++        command = { type = sleepevent which = 1229206 } # イタリア民主主義の危機 ― 改革の成功\r
++        command = { type = sleepevent which = 1229207 } # イタリア民主主義の危機 ― 政界の腐敗の一掃\r
++        command = { type = sleepevent which = 1229208 } # イタリア民主主義の危機 ― 汚職が摘発される\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r
+@@ -2182,7 +2441,7 @@ event = {
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = headofstate which = 25015 } # ヴィットーリオ・エマヌエーレ3世\r
+-	command = { type = headofgovernment which = 25258 } # メウッチョ・ルイニ\r
++	command = { type = headofgovernment which = 25307 } # ジャコモ・マッテオッティ\r
+ 	command = { type = foreignminister which = 25263 } # カルロ・スフォルツァ\r
+ 	command = { type = armamentminister which = 25265 } # マンリオ・ブロジオ\r
+ 	command = { type = ministerofsecurity which = 25268 } # ウンベルト・トゥピーニ\r
+@@ -2191,7 +2450,7 @@ event = {
+ 	command = { type = chiefofarmy which = 25115 } # アルベルト・デ・マリニス\r
+ 	command = { type = chiefofnavy which = 25278 } # ジュゼッペ・フィオラヴァンツォ\r
+ 	command = { type = chiefofair which = 25282 } # アドリアーノ・ヴィスコンティ\r
+-	ai_chance = 50\r
++	ai_chance = 70\r
+ 	}\r
+ \r
+ 	action = { # 右派を選ぶ\r
+@@ -2213,7 +2472,7 @@ event = {
+ 	command = { type = chiefofarmy which = 25112 } # ヴィットーリオ・アンブロージョ\r
+ 	command = { type = chiefofnavy which = 25121 } # ラファエル・デ・コーテン\r
+ 	command = { type = chiefofair which = 25128 } # トマッソ・ティトーニ\r
+-	ai_chance = 50\r
++	ai_chance = 30\r
+ 	}\r
+ }\r
+ \r
+@@ -2249,7 +2508,7 @@ event = {
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = headofstate which = 25015 } # ヴィットーリオ・エマヌエーレ3世\r
+-	command = { type = headofgovernment which = 25259 } # マルチェロ・ソレリ\r
++	command = { type = headofgovernment which = 25307 } # ジャコモ・マッテオッティ\r
+ 	command = { type = foreignminister which = 25042 } # ピエトロ・ネニ\r
+ 	command = { type = armamentminister which = 25266 } # エドアルド・アマルディ\r
+ 	command = { type = ministerofsecurity which = 25269 } # ロベルト・トレメローニ\r
+@@ -2258,7 +2517,7 @@ event = {
+ 	command = { type = chiefofarmy which = 25115 } # アルベルト・デ・マリニス\r
+ 	command = { type = chiefofnavy which = 25279 } # アンジェロ・イアチノ\r
+ 	command = { type = chiefofair which = 25282 } # アドリアーノ・ヴィスコンティ\r
+-	ai_chance = 50\r
++	ai_chance = 70\r
+ 	}\r
+ \r
+ 	action = { # 右派を選ぶ\r
+@@ -2280,7 +2539,7 @@ event = {
+ 	command = { type = chiefofarmy which = 25113 } # ディオニシオ・アンセロッティ\r
+ 	command = { type = chiefofnavy which = 25122 } # アレッサンドリノ・セレサ\r
+ 	command = { type = chiefofair which = 25128 } # トマッソ・ティトーニ\r
+-	ai_chance = 50\r
++	ai_chance = 30\r
+ 	}\r
+ }\r
+ \r
+@@ -3013,7 +3272,7 @@ event = {
+ 	action = { # 改革を進めるのだ\r
+ 	name = "ACTIONNAME1229203A"\r
+         command = { type = dissent value = -8 }\r
+-	command = { type = industrial_modifier which = total value = 20 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
+         command = { type = sleepevent which = 6657201 } # AIイベント\r
+         command = { type = sleepevent which = 6657202 }\r
+         command = { type = sleepevent which = 6657203 }\r
+@@ -3055,7 +3314,7 @@ event = {
+ 	action = { # 改革を進めるのだ\r
+ 	name = "ACTIONNAME1229204A"\r
+         command = { type = dissent value = -8 }\r
+-	command = { type = industrial_modifier which = total value = 20 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
+ 	command = { type = add_core_area which = "Sicilian Gap" where = ITA }\r
+         command = { type = sleepevent which = 6657211 } # AIイベント\r
+         command = { type = sleepevent which = 6657212 }\r
+@@ -3090,7 +3349,7 @@ event = {
+ 	action = { # 改革を進めるのだ\r
+ 	name = "ACTIONNAME1229205A"\r
+         command = { type = dissent value = -8 }\r
+-	command = { type = industrial_modifier which = total value = 20 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
+         command = { type = sleepevent which = 1229207 } # イタリア民主主義の危機 ― 政界の腐敗の一掃\r
+         command = { type = sleepevent which = 1229208 } # イタリア民主主義の危機 ― 汚職が摘発される\r
+ 	}\r
+@@ -3123,13 +3382,29 @@ event = {
+ 	offset = 5\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action = { # 改革を進めるのだ\r
++	action = { # いざ未来へ！\r
+ 	name = "ACTIONNAME1229206A"\r
+         command = { type = dissent value = -10 }\r
+ 	command = { type = industrial_modifier which = total value = 10 }\r
++        command = { type = sleepevent which = 1229014 } # ファシストの蜂起\r
++        command = { type = sleepevent which = 1229015 } # ファシストの蜂起 ― 民主主義国家\r
++        command = { type = sleepevent which = 1229016 } # ファシストの蜂起 ― ファシスト国家\r
++        command = { type = sleepevent which = 1229017 } # ファシストの蜂起 ― シチリアの離反\r
++        command = { type = sleepevent which = 1229018 } # ファシストの蜂起 ― リビアの離反\r
++        command = { type = sleepevent which = 1229019 } # ファシストの蜂起 ― エチオピアの離反\r
++        command = { type = sleepevent which = 1229020 } # ファシストの蜂起 ― ソマリアの離反\r
++        command = { type = sleepevent which = 1229021 } # ファシストの蜂起 ― サルディーニャの離反\r
++        command = { type = sleepevent which = 1229022 } # ファシストの蜂起 ― 内戦\r
++        command = { type = sleepevent which = 1229023 } # ファシストの蜂起 ― 勝利（ITA）\r
++        command = { type = sleepevent which = 1229024 } # ファシストの蜂起 ― 勝利（RSI）\r
++        command = { type = sleepevent which = 1229201 } # フォンターナ広場爆破事件\r
++        command = { type = sleepevent which = 1229202 } # イタリア民主主義の危機\r
+         command = { type = sleepevent which = 1229203 } # イタリア民主主義の危機 ― 経済不況問題の解決\r
+         command = { type = sleepevent which = 1229204 } # イタリア民主主義の危機 ― マフィア問題の解決\r
+         command = { type = sleepevent which = 1229205 } # イタリア民主主義の危機 ― 政界の腐敗問題の解決\r
++        command = { type = sleepevent which = 1229206 } # イタリア民主主義の危機 ― 改革の成功\r
++        command = { type = sleepevent which = 1229207 } # イタリア民主主義の危機 ― 政界の腐敗の一掃\r
++        command = { type = sleepevent which = 1229208 } # イタリア民主主義の危機 ― 汚職が摘発される\r
+         command = { type = sleepevent which = 1229251 } # 暗殺イベント\r
+         command = { type = sleepevent which = 1229252 }\r
+         command = { type = sleepevent which = 1229253 }\r
+@@ -3213,14 +3488,21 @@ event = {
+ 	NOT = { ispuppet = yes }\r
+ 	OR = {\r
+ 	AND = {\r
++	ai = yes\r
++	random = 20\r
++	}\r
++	AND = {\r
++	ai = no\r
+ 	flag = { which = "ITALIA_CORRUPTION_REFORM" when = 0 value = 1 }\r
+ 	random = 10\r
+ 	}\r
+ 	AND = {\r
++	ai = no\r
+ 	flag = { which = "ITALIA_CORRUPTION_REFORM" when = 0 value = 2 }\r
+ 	random = 10\r
+ 	}\r
+ 	AND = {\r
++	ai = no\r
+ 	flag = { which = "ITALIA_CORRUPTION_REFORM" when = 0 value = 3 }\r
+ 	random = 10\r
+ 	}\r
+@@ -3267,7 +3549,7 @@ event = {
+ 	name = "EVT_1229251_NAME"\r
+ 	desc = "EVT_1229251_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "minister_died"\r
+ \r
+ 	date = { day = 8 month = 5 year = 1936 }\r
+ \r
+@@ -3301,7 +3583,7 @@ event = {
+ 	name = "EVT_1229251_NAME"\r
+ 	desc = "EVT_1229251_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "minister_died"\r
+ \r
+ 	date = { day = 14 month = 0 year = 1935 }\r
+ \r
+@@ -3333,7 +3615,7 @@ event = {
+ 	name = "EVT_1229251_NAME"\r
+ 	desc = "EVT_1229251_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "minister_died"\r
+ \r
+ 	date = { day = 0 month = 4 year = 1933 }\r
+ \r
+@@ -3367,7 +3649,7 @@ event = {
+ 	name = "EVT_1229251_NAME"\r
+ 	desc = "EVT_1229251_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "minister_died"\r
+ \r
+ 	date = { day = 11 month = 6 year = 1934 }\r
+ \r
+@@ -3382,6 +3664,90 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  イタロ・バルボの暗殺\r
++# 1922年に国家ファシスト党のクーデター計画が、軍隊と民兵によって粉砕された後、ファシズム運動は停滞の時を迎えた。\r
++# しかしながら、ファシスト党の生き残りであるイタロ・バルボとロベルト・ファリナッチは「共和ファシスト党」を名乗る偽装政党を興し、密かに活動を継続。\r
++# 政府の腐敗に対する国民の不満を利用し、支持を徐々に回復させることに成功した。\r
++# だが党の再建途中で、クーデターの際に命を落としたファシズム運動の先駆者であるムッソリーニの遺産をどう継承するかという問題によって、バルボとファリナッチは対立した。\r
++# この対立は、ますます高まる緊張と共に党内の分裂の危機に直面したが、この対立はイタロ・バルボの急死によって突如として幕を閉じた。\r
++# 1933年6月10日、ローマで誘拐されたバルボは刃物で刺され、その後ローマ郊外で遺体が見つかった。\r
++# この事件については、自由主義者の民兵や共産主義者の残党、そしてファリナッチ支持のファシストなど複数の容疑者が取りざたされましたが、証拠が不十分で逮捕者はでなかった。\r
++# 暗殺事件後、ロベルト・ファリナッチは共和ファシスト党の団結を維持することに成功した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 1229255\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	OR = {\r
++	minister = 25247 # イタロ・バルボ\r
++	minister = 25248\r
++	minister = 25249\r
++	minister = 25250\r
++	minister = 25251\r
++	}\r
++	NOT = { ispuppet = ITA }\r
++	}\r
++\r
++	name = "EVT_1229255_NAME"\r
++	desc = "EVT_1229255_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++\r
++	date = { day = 9 month = 6 year = 1933 }\r
++\r
++	action = { # 悲劇だ！\r
++	name = "ACTIONNAME1229255A"\r
++	command = { type = dissent value = 1 }\r
++	command = { type = sleepminister which = 25247 } # イタロ・バルボ\r
++	command = { type = sleepminister which = 25248 }\r
++	command = { type = sleepminister which = 25249 }\r
++	command = { type = sleepminister which = 25250 }\r
++	command = { type = sleepminister which = 25251 }\r
++	command = { type = sleepleader which = 25016 }\r
++	command = { type = sleepleader which = 25195 }\r
++	command = { type = sleepteam which = 25016 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  大臣の逝去（ジャコモ・マッテオッティ）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 1229256\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	OR = {\r
++	minister = 25307 # ジャコモ・マッテオッティ\r
++	minister = 25308\r
++	minister = 25309\r
++	}\r
++	}\r
++\r
++	name = "EVT_103_NAME"\r
++	desc = "EVT_103_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++\r
++	date = { day = 9 month = 6 year = 1945 }\r
++\r
++	action = { # いなくなると寂しい\r
++	name = "EVT_362_ACTC"\r
++	command = { type = dissent value = 1 }\r
++	command = { trigger = { headofgovernment = 25308 } type = headofgovernment which = 25030 } # フェルシオ・パッリ\r
++	command = { type = sleepminister which = 25307 } # ジャコモ・マッテオッティ\r
++	command = { type = sleepminister which = 25308 }\r
++	command = { type = sleepminister which = 25309 }\r
++	ai_chance = 100\r
++	}\r
++}\r
+ #########################################################################\r
+ #  エチオピア関連イベント\r
+ #########################################################################\r
+@@ -4739,7 +5105,7 @@ event = {
+ 	command = { trigger = { ai = no } type = metalpool value = -400 }\r
+ 	command = { trigger = { ai = no } type = rarematerialspool value = -400 }\r
+ 	command = { trigger = { ai = no } type = oilpool value = -400 }\r
+-	command = { type = event which = 1229359 where = JAP when = 0 }\r
++	command = { type = event which = 1229360 where = JAP when = 0 }\r
+ 	ai_chance = 99\r
+ 	}\r
+ \r

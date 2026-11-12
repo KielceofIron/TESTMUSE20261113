@@ -1,0 +1,253 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
+@@ -45,6 +45,14 @@
+ #id = 6656106 樺太防衛終了AI\r
+ #id = 6656107 対台湾・朝鮮戦AI\r
+ #id = 6656108 対台湾・朝鮮戦終了AI\r
++#id = 6656151 日本の秩序回復（東日本維持）\r
++#id = 6656152 日本の秩序回復（東日本喪失）\r
++#id = 6656153 日本の秩序回復（西日本維持）\r
++#id = 6656154 日本の秩序回復（西日本喪失）\r
++#id = 6656155 日本の秩序回復（北海道維持）\r
++#id = 6656156 日本の秩序回復（北海道喪失）\r
++#id = 6656157 日本の秩序回復（九州・四国維持）\r
++#id = 6656158 日本の秩序回復（九州・四国喪失）\r
+ #奉天\r
+ #id = 6656201 奉天アメリカAI\r
+ #id = 6656202 戦時AI\r
+@@ -1723,6 +1731,235 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  日本の秩序回復（東日本維持）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656151\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	NOT = { area = { area = "Tohoku" country = REB data = 1 value = 1 } }\r
++	NOT = { flag = { which = "JAPAN_TOHOKU_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_TOHOKU_KAIFUKU" when = 1 value = 1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本の秩序回復（東日本喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656152\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	area = { area = "Tohoku" country = REB data = 1 value = 1 }\r
++	NOT = { flag = { which = "JAPAN_TOHOKU_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_TOHOKU_KAIFUKU" when = 1 value = -100 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本の秩序回復（西日本維持）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656153\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	NOT = { area = { area = "Honshu" country = REB data = 1 value = 1 } }\r
++	NOT = { flag = { which = "JAPAN_HONSHU_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_HONSHU_KAIFUKU" when = 1 value = 1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本の秩序回復（西日本喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656154\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	area = { area = "Honshu" country = REB data = 1 value = 1 }\r
++	NOT = { flag = { which = "JAPAN_HONSHU_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_HONSHU_KAIFUKU" when = 1 value = -100 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本の秩序回復（北海道維持）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656155\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	NOT = { area = { area = "Hokkaido" country = REB data = 1 value = 1 } }\r
++	NOT = { flag = { which = "JAPAN_HOKKAIDO_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_HOKKAIDO_KAIFUKU" when = 1 value = 1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本の秩序回復（北海道喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656156\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	area = { area = "Hokkaido" country = REB data = 1 value = 1 }\r
++	NOT = { flag = { which = "JAPAN_HOKKAIDO_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_HOKKAIDO_KAIFUKU" when = 1 value = -100 }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  日本の秩序回復（九州・四国維持）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656157\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	NOT = { area = { area = "Kyushu_Shikoku" country = REB data = 1 value = 1 } }\r
++	NOT = { flag = { which = "JAPAN_KYUSHU_SHIKOKU_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_KYUSHU_SHIKOKU_KAIFUKU" when = 1 value = 1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本の秩序回復（九州・四国喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656158\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 6757099 # 日本の崩壊\r
++	area = { area = "Kyushu_Shikoku" country = REB data = 1 value = 1 }\r
++	NOT = { flag = { which = "JAPAN_KYUSHU_SHIKOKU_KAIFUKU" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "JAPAN_KYUSHU_SHIKOKU_KAIFUKU" when = 1 value = -100 }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  奉天共和国\r
+ ##########################################################################\r

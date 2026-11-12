@@ -1,0 +1,687 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_India_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_India_events.txt [cp932]
+@@ -31,6 +31,18 @@
+ #id = 2233024 中印国境紛争 ― インドの反応\r
+ #id = 2233025 中印国境紛争 ― インドの領土主張\r
+ #id = 2233026 中印国境紛争 ― 中国の領土要求\r
++#id = 2233027 平和的デモの粉砕\r
++#id = 2233028 新インド統治法の先送り\r
++#id = 2233029 第二次インド大反乱\r
++#id = 2233030 第二次インド大反乱 ― イギリスの反応\r
++#id = 2233031 第二次インド大反乱　─ 反乱軍の内部対立（U02）\r
++#id = 2233032 第二次インド大反乱　─ 反乱軍の内部対立（IND PAK）\r
++#id = 2233033 第二次インド大反乱　─ 藩王国における動員\r
++#id = 2233034 第二次インド大反乱　─ 反乱の鎮圧\r
++#id = 2233035 インドにおける反乱の終結\r
++#id = 2233036 インド大飢饉\r
++#id = 2233037 総督交代\r
++#id = 2233038 チャーチルの帰国\r
+ #########################################################################\r
+ #  インド\r
+ #########################################################################\r
+@@ -97,7 +109,8 @@ event = {
+ 	command = { type = relation which = U02 value = 10 }\r
+ 	command = { type = event which = 2233003 where = U02 when = 0 }\r
+ 	command = { type = sleepevent which = 2233004 }\r
+-	ai_chance = 60\r
++	command = { type = sleepevent which = 2233027 }\r
++	ai_chance = 2\r
+ 	}\r
+ \r
+ 	action = { # 繁栄の根源であるインドに自治を与えることはできない\r
+@@ -105,7 +118,62 @@ event = {
+ 	command = { type = relation which = U02 value = -10 }\r
+ 	command = { type = event which = 2233004 where = U02 when = 0 }\r
+ 	command = { type = sleepevent which = 2233003 }\r
+-	ai_chance = 40\r
++	command = { type = sleepevent which = 2233027 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # インドの独立は断固阻止されなければならない\r
++	name = "ACTIONNAME2233002C"\r
++	command = { type = local_setflag which = Churchill_India }\r
++	command = { type = belligerence which = ENG value = 5 }\r
++	command = { type = belligerence which = U02 value = 5 }\r
++	command = { type = relation which = U02 value = -30 }\r
++	command = { type = event which = 2233027 where = U02 when = 0 }\r
++	command = { type = relation which = U02 value = -30 }\r
++	command = { type = sleepminister which = 10018 } # ウィンストン・チャーチル\r
++	command = { type = sleepminister which = 10154 }\r
++	command = { type = sleepminister which = 10243 }\r
++	command = { type = sleepminister which = 10253 }\r
++	command = { type = sleepevent which = 2233003 }\r
++	command = { type = sleepevent which = 2233004 }\r
++	command = { type = sleepevent which = 2001039 } # チャーチルの首相就任\r
++	command = { type = sleepevent which = 9999258 } # チャーチル閣僚イベント\r
++	command = { type = sleepevent which = 2900006 } # 1945年選挙イベント\r
++	command = { type = sleepevent which = 9999428 } # 英領インド閣僚交代AIイベント\r
++	command = { type = sleepevent which = 9999429 }\r
++	command = { type = sleepevent which = 2900127 } # 大英帝国の至宝が独立\r
++	command = { type = sleepevent which = 2900130 } # パキスタンの独立\r
++	command = { type = sleepevent which = 216001 } # Fullkaiビルマイベント\r
++	command = { type = sleepevent which = 216002 }\r
++	command = { type = sleepevent which = 216003 }\r
++	command = { type = sleepevent which = 216004 }\r
++	command = { type = sleepevent which = 216005 }\r
++	command = { type = sleepevent which = 2004004 } # Full独立イベント\r
++	command = { type = sleepevent which = 2055001 }\r
++	command = { type = sleepevent which = 2030006 }\r
++	command = { type = sleepevent which = 2119001 }\r
++	command = { type = sleepevent which = 2069011 }\r
++	command = { type = sleepevent which = 2001069 }\r
++	command = { type = sleepevent which = 2094001 }\r
++	command = { type = sleepevent which = 2001070 }\r
++	command = { type = sleepevent which = 2136001 }\r
++	command = { type = sleepevent which = 2001071 }\r
++	command = { type = sleepevent which = 2075001 }\r
++	command = { type = sleepevent which = 2002020 }\r
++	command = { type = sleepevent which = 2138001 }\r
++	command = { type = sleepevent which = 2006018 }\r
++	command = { type = sleepevent which = 2100001 }\r
++	command = { type = sleepevent which = 2001072 }\r
++	command = { type = sleepevent which = 2049056 }\r
++	command = { type = sleepevent which = 2002021 }\r
++	command = { type = sleepevent which = 2076002 }\r
++	command = { type = sleepevent which = 2002022 }\r
++	command = { type = sleepevent which = 2087001 }\r
++	command = { type = sleepevent which = 2004005 }\r
++	command = { type = sleepevent which = 2002023 }\r
++	command = { type = sleepevent which = 2001073 }\r
++	command = { type = sleepevent which = 2001074 }\r
++	ai_chance = 98\r
+ 	}\r
+ }\r
+ \r
+@@ -2273,4 +2341,589 @@ event = {
+ 	command = { trigger = { exists = U74 } type = relation which = U74 value = -30 }\r
+ 	ai_chance = 0\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r
++\r
++#########################################################################\r
++#  平和的デモの粉砕\r
++# チャーチルがインド総督に就任した時、インドの人々は期待と不安の二つを抱いた。\r
++# チャーチルはインドでも比較的知られた人物であり、第一次世界大戦におけるガリポリの戦いの主導者、\r
++# イギリス本国においてデモやストライキなどの社会運動を粉砕した人物であることから、人々は不安を抱いた一方、\r
++# インドの独立運動を徹底的に弾圧した前任者のウィリンダン卿の後任であったことから、独立運動に対する風当たりが緩やかになると期待した。\r
++# しかし楽観的な見通しは、あっけなく打ち砕かれた。\r
++# 総督就任の式典の際、デリーなどの大都市では市民らによる平和的なデモ行進が行われたが、それを知ったチャーチルはデモの解散を断固として命じ、\r
++# それに従わないようであれば強硬手段を取ることを現地部隊に認めたのである。\r
++# デモ参加者と治安部隊の睨み合いは、緊張状態のエスカレーションの末に兵士の発砲により市民側に多数の死傷者が出るという最悪の結果に至り、その後多くの逮捕者を出す事態となった。\r
++# この式典デモ事件はインド全体に大きな波紋を呼び、数年にわたるインドの混乱を引き起こした事件として知られることになる。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233027\r
++	random = no\r
++	country = U02\r
++\r
++	name = "EVT_2233027_NAME"\r
++	desc = "EVT_2233027_DESC"\r
++	style = 2\r
++	picture = "Churchill"\r
++\r
++	action = { # インドに暗雲が立ち込めている…\r
++	name = "ACTIONNAME2233027A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = manpowerpool value = -10 }\r
++	command = { type = belligerence which = ENG value = 1 }\r
++	command = { type = belligerence which = U02 value = 1 }\r
++	command = { type = wakeminister which = 825301 } # ウィンストン・チャーチル\r
++	command = { type = wakeminister which = 825302 } # ウィンストン・チャーチル\r
++	command = { type = headofstate which = 825301 } # ウィンストン・チャーチル\r
++	command = { type = headofgovernment which = 825002 } # ジョン・エドワード・ゴライトリー\r
++	command = { type = event which = 2233028 where = U02 when = 90 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  新インド統治法の先送り\r
++# チャーチルが平和的デモを武力で鎮圧したことは、インド人の大きな反感を招いた。\r
++# 各地で独立に関するプロパガンダが宣伝されるようになり、ガンジーをはじめとする活動家はチャーチルを徹底的に批判した。\r
++# これに触発した多くのインド人は各地で暴動を起こし、インドにおける混乱は拡大の一途を辿った。\r
++# チャーチル総督は治安騒擾を理由として「令状なしの逮捕」「裁判なしの投獄」「陪審員によらない裁判」などを認めた緊急治安法令を制定したが、\r
++# この「ローラット法の復活」は英本国においても批判の的となった。\r
++# しかし、チャーチルは現在のインドの混乱を収めるのに必要なことは「宥和ではなく対決」であるとの姿勢を崩さず、逆に「新インド統治法」の制定を見送るよう英本国に提案したのであった。\r
++# 国民議会を完全に無視してインド支配を継続しようとするこの態度は、大勢のインド人を憤慨させ、独立運動へと合流する下地を作る要因となった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233028\r
++	random = no\r
++	country = U02\r
++\r
++	name = "EVT_2233028_NAME"\r
++	desc = "EVT_2233028_DESC"\r
++	style = 2\r
++	picture = "Sansad_Bhavan"\r
++\r
++	action = { # 再び約束が破られた\r
++	name = "ACTIONNAME2233028A"\r
++	command = { type = dissent value = 10 }\r
++	command = { type = belligerence which = ENG value = 1 }\r
++	command = { type = belligerence which = U02 value = 1 }\r
++	command = { type = relation which = ENG value = -20 }\r
++	command = { type = relation which = CAN value = -10 }\r
++	command = { type = relation which = AST value = -10 }\r
++	command = { type = relation which = NZL value = -10 }\r
++	command = { type = relation which = SAF value = -10 }\r
++	command = { type = remove_core_region which = "India" where = U02 }\r
++	command = { type = remove_core_area which = "North Burma" where = U02 }\r
++	command = { type = remove_core_area which = "Burma" where = U02 }\r
++	command = { type = add_claim_region which = "India" where = U02 }\r
++	command = { type = add_claim_area which = "North Burma" where = U02 }\r
++	command = { type = add_claim_area which = "Burma" where = U02 }\r
++	command = { type = addcore which = 1459 where = U02 } # デリー\r
++	command = { type = addcore which = 1533 where = U02 } # カラチ（パキスタン）\r
++	command = { type = addcore which = 1517 where = U02 } # ボンベイ\r
++	command = { type = addcore which = 1487 where = U02 } # ハイデラバード\r
++	command = { type = addcore which = 1500 where = U02 } # マドラス\r
++	command = { type = addcore which = 1447 where = U02 } # カルカッタ\r
++	command = { type = addcore which = 1415 where = U02 } # ラングーン\r
++	command = { type = event which = 2233029 where = U02 when = 90 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次インド大反乱\r
++# イギリスによる度重なるインドへの抑圧は、インド人の怒りを買った。\r
++# インド全土に反英組織が構築され、暴動も多発するようになり、英領インドの国内問題は日を追うごとに悪化した。\r
++# また各地の都市には独立を求めるプロパガンダが広まり、チャーチルの鎮圧命令もデモ隊が反撃を行うようになったことで、意味をなさなくなりつつあった。\r
++# インドで緊張が高まる中、ついに英領インドの兵士達がデモ隊への鎮圧命令を拒否し、蜂起した。\r
++# この蜂起の直接的なきっかけは、チャーチルとイギリスが混乱を鎮めるために、毒ガスの使用を検討しているという噂が流れたことにある。\r
++# 噂は広まるとすぐにインド総督府は否定したが、信用されず、不信は解消されなかった。\r
++# 結果、彼らは毒ガスの使用の恐れのある噂を信じ、反乱を起こすに至ったのである。\r
++# 英領インドの部隊の反乱は、弾圧されていた独立運動家、社会主義者、農民、都市住民ら反英勢力を宗教・階級の枠を越えて一斉に蜂起させ、インドを揺るがす大反乱の始まりとなった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233029\r
++	random = no\r
++	country = U02\r
++	save_date = yes\r
++\r
++	name = "EVT_2233029_NAME"\r
++	desc = "EVT_2233029_DESC"\r
++	style = 2\r
++	picture = "Sansad_Bhavan"\r
++\r
++	action = { # 二度目の大反乱が勃発した…\r
++	name = "ACTIONNAME2233029A"\r
++	command = { type = sleepevent which = 216006 } # 藩王国軍の動員\r
++	command = { type = dissent value = 20 }\r
++	command = { type = end_puppet }\r
++	command = { type = leave_alliance }\r
++	command = { type = strength which = land when = 1 where = 1 org = 0.1 value = 0.3 }\r
++	command = { type = belligerence which = ENG value = 2 }\r
++	command = { type = belligerence which = U02 value = 2 }\r
++	command = { type = event which = 2233030 where = ENG when = 0 }\r
++	command = { type = remove_division which = "ジャンムー第1歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ジャンムー第2歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ジャンムー第3歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ジャンムー第1騎兵旅団" value = U02 }\r
++	command = { type = remove_division which = "カシミール第1歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "カシミール第2歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "カシミール第3歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "カシミール第1騎兵旅団" value = U02 }\r
++	command = { type = remove_division which = "グワーリヤル騎兵旅団" value = U02 }\r
++	command = { type = remove_division which = "グワーリヤル第2騎兵旅団" value = U02 }\r
++	command = { type = remove_division which = "グワーリヤル第1歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "グワーリヤル第2歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "グワーリヤル第3歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "グワーリヤル第4歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ハイデラバード第1歩兵軍" value = U02 }\r
++	command = { type = remove_division which = "ハイデラバード第2歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ハイデラバード第3歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ハイデラバード第4歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ハイデラバード第5歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ハイデラバード第6歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ハイデラバード第1騎兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ビカネール第1歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ビカネール第2歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ビカネール第3歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ビカネール第4歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "ビカネール第1騎兵旅団" value = U02 }\r
++	command = { type = remove_division which = "パティアーラー第1歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "パティアーラー第2歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "パティアーラー第3歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "パティアーラー第4歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "パティアーラー第1騎兵旅団" value = U02 }\r
++	command = { type = remove_division which = "マイソール第1歩兵軍" value = U02 }\r
++	command = { type = remove_division which = "マイソール第2歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "マイソール第3歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "マイソール第4歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "マイソール第5歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "マイソール第6歩兵旅団" value = U02 }\r
++	command = { type = remove_division which = "マイソール第7歩兵旅団" value = U02 }\r
++	command = { type = revolt which = 1459 } # デリー\r
++	command = { type = revolt which = 1459 }\r
++	command = { type = revolt which = 1447 } # カルカッタ\r
++	command = { type = revolt which = 1447 }\r
++	command = { type = revolt which = 1517 } # ボンベイ\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	command = { type = revolt which = -1 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次インド大反乱 ― イギリスの反応\r
++# インドの大反乱は、イギリスの植民地統治に大きな混乱をもたらしており、政府は現地の状況の把握に苦慮している。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233030\r
++	random = no\r
++	country = ENG\r
++\r
++	name = "EVT_2233030_NAME"\r
++	desc = "EVT_2233030_DESC"\r
++	style = 2\r
++	picture = "Sansad_Bhavan"\r
++\r
++	action = { # インドの状況は不透明だ\r
++	name = "ACTIONNAME2233030A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = end_mastery which = U02 }\r
++	command = { type = relation which = U02 value = -150 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次インド大反乱　─ 反乱軍の内部対立\r
++# 二度目のインド大反乱は、燎原の火の如く広がっていった。\r
++# 英領インド支配地域の内、実に3分の2に相当する地域が一時的ながら反乱軍の手に落ち、チャーチルを始めとする総督府の人員もニューデリー脱出を真剣に検討するにまで追い詰められた。\r
++# しかし、急激に広がった運動はその初期からインド国民会議のコントロールを外れ、指導者不在の状態となっていた。\r
++# いくつかの都市では「インド独立宣言」が出されたものの、それらのほとんどは庁舎を占拠した群衆が勢いのまま出したものに過ぎず、カシミールやドラヴィディスタンなどは別個に独立を図るなど「統一インド」という目標も共有されていなかった。\r
++# また、反乱軍の急激な拡大は各地で食糧インフラに大混乱を及ぼし、ベンガルなど反乱軍支配地域の一部では飢饉が発生することにもなった。\r
++# さらに、反乱軍内でヒンドゥー色が強まるにつれてムスリム地域の離反も相次ぎ、これに国民会議内部での主導権争いまで加わり、反乱軍はその勢力を急激に拡大させながらも内部対立によって自壊しつつあった。\r
++# この状況に反乱軍を支持していた民衆の間では失望が広がると共に、イギリス側にとっては反乱鎮圧に向けて体勢を整える絶好の機会となったのである。\r
++########################################################################\r
++\r
++event = {\r
++	id = 2233031\r
++	random = no\r
++	country = U02\r
++	\r
++	trigger = {\r
++	event = { id = 2233029 days = 120 } # 第二次インド大反乱\r
++	}\r
++\r
++	name = "EVT_2233031_NAME"\r
++	desc = "EVT_2233031_DESC"\r
++	style = 2\r
++  	picture = "militia1"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 体制を整えるのだ\r
++	name = "ACTIONNAME2233031A"\r
++	command = { type = dissent value = -10 }\r
++	command = { type = strength which = land when = 1 where = 1 org = 0.1 value = 0.1 }\r
++	command = { trigger = { exists = IND war = { country = IND } } type = event which = 2233032 where = IND when = 0 }\r
++	command = { trigger = { exists = PAK war = { country = PAK } } type = event which = 2233032 where = PAK when = 0 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次インド大反乱　─ 反乱軍の内部対立（IND PAK）\r
++########################################################################\r
++\r
++event = {\r
++	id = 2233032\r
++	random = no\r
++	TAG = { IND PAK }\r
++	persistent = yes\r
++	\r
++	name = "EVT_2233031_NAME"\r
++	desc = "EVT_2233031_DESC"\r
++	style = 2\r
++  	picture = "militia1"\r
++\r
++	action = { # 反乱は瓦解しつつある\r
++	name = "ACTIONNAME2233032A"\r
++	command = { type = dissent value = 50 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次インド大反乱　─ 藩王国における動員\r
++# 第二次インド大反乱が起きた時、英領インドでも上流階級に属する藩王国は、多くが中立を保ち、静観の構えを見せていた。\r
++# しかし、イギリスの傀儡と見られていた藩王国は今までの植民地統治への報復を求める反乱軍の攻撃目標となり、反乱軍が占領した場合では藩王国が廃止されいった。\r
++# また、反乱軍内部で革命と平等を唱える社会主義派閥が急速に台頭するようになると、藩王国は反乱軍を恐れて次々にイギリスの味方になっていた。\r
++# 兵力不足となっていたイギリスにとって、藩王国の軍隊は貴重な戦力になり、またネパール王国のグルカ兵をはじめとする傭兵が動員されるようになると、イギリスは反乱勢力鎮圧に向けた組織の立て直しに成功。\r
++# これらの戦力で持って反乱軍に対する攻勢を強めていった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233033\r
++	random = no\r
++	country = U02\r
++\r
++	decision = {\r
++	control = { province = 1459 data = -1 } # デリー\r
++	event = { id = 2233029 days = 60 } # 第二次インド大反乱\r
++	}\r
++\r
++	decision_trigger = {\r
++	supplies = 2000\r
++	money = 80\r
++	}\r
++\r
++	trigger = {\r
++	control = { province = 1459 data = -1 } # デリー\r
++	event = { id = 2233029 days = 60 } # 第二次インド大反乱\r
++	}\r
++\r
++	name = "EVT_2233033_NAME"\r
++	desc = "EVT_2233033_DESC"\r
++	style = 2\r
++	picture = "Indian state"\r
++	decision_picture = "decision_Indian state"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 28 month = 11 year = 1963 }\r
++\r
++	action = { # 藩王国軍を動員する\r
++	name = "ACTIONNAME2233033A" \r
++	command = { type = dissent value = -10 }\r
++	command = { trigger = { ai = no } type = supplies value = -2000 }\r
++	command = { trigger = { ai = no } type = money value = -80 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = manpowerpool value = 100 }\r
++	command = { type = add_division value = cavalry when = 7 where = -50 }\r
++	command = { type = add_division value = cavalry when = 7 where = -50 }\r
++	command = { type = add_division value = cavalry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	command = { type = add_division value = infantry when = 7 where = -50 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  第二次インド大反乱　─ 反乱の鎮圧\r
++# 第二次インド大反乱は、一時はイギリスの統治を覆せるかに見えるほどの勢いを見せたが、イギリスが体勢を立て直すと、劣勢になっていた。\r
++# また反乱軍内における内紛によって、方針や統治の混乱が起きたこと、ヒンドゥー、イスラム両教徒のあいだの不信も、\r
++# 独立運動への支持を失わせる原因となり、地元住民は反乱に対して徐々に非協力的へと傾いていった。\r
++# 人々の支持と組織の統一を欠いた反乱軍は最終的には個別撃破されて消滅し、ガンジーをはじめとする大勢の独立運動家は投獄か、亡命を余儀なくされた。\r
++# インドにおける大反乱は、結果的に独立運動の大きな転換点となり、インド人の民族運動への熱意を大きく失わせ、英領インドというイギリスの宝石を盤石なものにするものになった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233034\r
++	random = no\r
++	country = U02\r
++	save_date = yes\r
++\r
++	decision = {\r
++	control = { province = 1459 data = -1 } # デリー\r
++	control = { province = 1533 data = -1 } # カラチ（パキスタン）\r
++	control = { province = 1500 data = -1 } # マドラス\r
++	control = { province = 1447 data = -1 } # カルカッタ\r
++	event = { id = 2233029 days = 360 } # 第二次インド大反乱\r
++	}\r
++\r
++	decision_trigger = {\r
++	control = { province = 1459 data = -1 } # デリー\r
++	control = { province = 1533 data = -1 } # カラチ（パキスタン）\r
++	control = { province = 1500 data = -1 } # マドラス\r
++	control = { province = 1447 data = -1 } # カルカッタ\r
++	region = { region = "India" country = U02 data = 1 value = 80 }\r
++	event = 2233029 # 第二次インド大反乱\r
++	NOT = { exists = IND }\r
++	NOT = { exists = PAK }\r
++	}\r
++\r
++	trigger = {\r
++	control = { province = 1459 data = -1 } # デリー\r
++	control = { province = 1533 data = -1 } # カラチ（パキスタン）\r
++	control = { province = 1500 data = -1 } # マドラス\r
++	control = { province = 1447 data = -1 } # カルカッタ\r
++	region = { region = "India" country = U02 data = 1 value = 80 }\r
++	event = { id = 2233029 days = 360 } # 第二次インド大反乱\r
++	NOT = { exists = IND }\r
++	NOT = { exists = PAK }\r
++	}\r
++\r
++	name = "EVT_2233034_NAME"\r
++	desc = "EVT_2233034_DESC"\r
++	style = 2\r
++	picture = "Indian state"\r
++	decision_picture = "decision_Indian state"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 28 month = 11 year = 1963 }\r
++\r
++	action = { # 反乱は鎮圧された！\r
++	name = "ACTIONNAME2233034A" \r
++	command = { type = dissent value = -20 }\r
++	command = { type = add_core_region which = "India" where = U02 }\r
++	command = { type = add_core_area which = "North Burma" where = U02 }\r
++	command = { type = add_core_area which = "Burma" where = U02 }\r
++	command = { type = domestic which = freedom value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = manpowerpool value = 100 }\r
++	command = { trigger = { exists = ENG NOT = { war = { country = ENG } } } type = event which = 2233035 where = ENG when = 0 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  インドにおける反乱の終結\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233035\r
++	random = no\r
++	country = ENG\r
++\r
++	name = "EVT_2233035_NAME"\r
++	desc = "EVT_2233035_DESC"\r
++	style = 2\r
++	picture = "Indian state"\r
++\r
++	action = { # インドが帝国に復帰した！\r
++	name = "ACTIONNAME2233035A"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = make_puppet which = U02 }\r
++	command = { type = relation which = U02 value = 250 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  インド大飢饉\r
++# インドにおける2度目の大反乱は、インドに深い爪痕を残した。\r
++# 反乱で疲弊したインド社会で農業生産は重大な打撃を受け、深刻な飢餓が発生したのである。\r
++# 元来、インドの農業生産はイギリスによる経済的搾取のみならず、農村の構造、農民への様々な階層からによる搾取などによって、農業は停滞し、小規模な飢饉が多発していた.。\r
++# 反乱が起きた際、反乱軍・英領インド軍の双方が行った食糧や家畜の強制徴発や農村インフラの破壊によって、かつてない大規模な飢饉が発生したのである。\r
++# 飢饉が発生した時、当時の総督であったチャーチルが、インド人に対し人種的嫌悪感を抱いていたため、飢饉にあえぐインドに全くの援助をしないばかりか、\r
++# 飢饉を「作り話」「悪意のある噂」と捉え、農村の不穏分子を弾圧したことも被害をさらに拡大させた。\r
++# 発生が確認された最初の年だけで300万人が死亡し、その後も数年間に渡り、無数の人々が亡くなり続け、インド社会に深刻な影響を与えることになる。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233036\r
++	random = no\r
++	country = U02\r
++\r
++	trigger = {\r
++	event = { id = 2233034 days = 90 } # 第二次インド大反乱　─ 反乱の鎮圧\r
++	}\r
++\r
++	name = "EVT_2233036_NAME"\r
++	desc = "EVT_2233036_DESC"\r
++	style = 2\r
++	picture = "strike"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 28 month = 11 year = 1963 }\r
++\r
++	action = { # インド暗黒の時代だ…\r
++	name = "ACTIONNAME2233036A" \r
++	command = { type = dissent value = 15 }\r
++	command = { type = manpowerpool value = -300 }\r
++	command = { type = relative_manpower value = -20 }\r
++	command = { type = industrial_modifier which = total value = -10 }\r
++	command = { type = industrial_modifier which = supplies value = -10 }\r
++	command = { type = province_manpower which = 1447 value = -3 } # カルカッタ\r
++	command = { type = province_manpower which = 1462 value = -3 } # ムザファルプル\r
++	command = { type = province_manpower which = 1449 value = -3 } # ラジシャヒ\r
++	command = { type = province_manpower which = 1517 value = -3 } # ボンベイ\r
++	command = { type = province_manpower which = 1461 value = -3 } # ラックナウ\r
++	command = { type = province_manpower which = 1445 value = -3 } # ダッカ\r
++	command = { type = province_manpower which = 1534 value = -3 } # ラーワルピンディー\r
++	command = { type = province_manpower which = 1466 value = -3 } # アラー\r
++	command = { type = province_manpower which = 1464 value = -2 } # バレーリー\r
++	command = { type = province_manpower which = 1450 value = -2 } # チッタゴン\r
++	command = { type = province_manpower which = 1476 value = -2 } # ラーンチー\r
++	command = { type = province_manpower which = 1502 value = -2 } # バンガロール\r
++	command = { type = province_manpower which = 1468 value = -2 } # カーンプル\r
++	command = { type = province_manpower which = 1524 value = -2 } # ジャイプール\r
++	command = { type = province_manpower which = 1465 value = -2 } # パトナ\r
++	command = { type = province_manpower which = 1460 value = -2 } # メーラト\r
++	command = { type = province_manpower which = 1457 value = -2 } # カトマンドゥ\r
++	command = { type = province_manpower which = 1467 value = -2 } # ゴーラクプル\r
++	command = { type = province_manpower which = 1444 value = -2 } # クルナ\r
++	command = { type = province_manpower which = 1459 value = -2 } # デリー\r
++	command = { type = province_manpower which = 1500 value = -2 } # マドラス\r
++	command = { type = province_manpower which = 1526 value = -1 } # ウダイプル\r
++	command = { type = province_manpower which = 1487 value = -1 } # ハイデラバード\r
++	command = { type = province_manpower which = 1497 value = -1 } # コーチ\r
++	command = { type = province_manpower which = 1530 value = -1 } # ラホール\r
++	command = { type = province_manpower which = 1446 value = -1 } # シリグリ\r
++	command = { type = province_manpower which = 1533 value = -1 } # カラチ（パキスタン）\r
++	command = { type = province_manpower which = 1463 value = -1 } # チャンディーガル\r
++	command = { type = province_manpower which = 1531 value = -1 } # ルディアーナ\r
++	command = { type = province_manpower which = 1493 value = -1 } # ヴィザーガパタム\r
++	command = { type = province_manpower which = 1521 value = -1 } # ヴァドーダラー\r
++	command = { type = province_manpower which = 1537 value = -1 } # ペシャワール\r
++	command = { type = province_manpower which = 1495 value = -1 } # ティルヴァナンタプラム\r
++	command = { type = province_manpower which = 1443 value = -1 } # ドゥブリー\r
++	command = { type = province_manpower which = 1505 value = -1 } # コインバトール\r
++	command = { type = province_manpower which = 1441 value = -1 } # ディブルーガル\r
++	command = { type = province_manpower which = 1518 value = -1 } # アフマダーバード\r
++	command = { type = province_manpower which = 1498 value = -1 } # ヴィジャヤワーダ\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  総督交代\r
++# 夕日が徐々に沈む中、チャーチルはカルカッタ行きの列車の中で過去を思い出していた。\r
++# 1920年代の自身の政治的失敗の結果、英領インド総督の地位に飛ばされてしまった時、自身の運命を呪ったが、やがてこれがチャンスということに気づいた。\r
++# インドの自治権拡大に強く反対していた彼に、イギリス帝国を支えるインドの独立を阻止するまたとない機会が訪れたのである。\r
++# チャーチルは自分の使命を鉄の意志で遂行し、大反乱が起きても毅然として命令を出した。\r
++# 数年間にわたる戦いの末、インドの独立運動は粉砕され、忌み嫌ったガンジーなど多くの活動家は、彼とイギリスの前から消え去った。\r
++# 結果的にインドの反乱を鎮める功績を残した彼を、イギリス本国は高く評価しており、本国への帰還が許されたことは報酬の一つである。\r
++# チャーチルはふと、ティーカップを取り、インド産の紅茶に思いをはせた。\r
++# 湯の中で開く茶葉の姿は、インド人と英国人の関係に似ている。\r
++# 英国が紅茶の文化をインドの茶葉とともに洗練させたように、インド人そのものもまた、英国人の手の中にある時に最大の輝きを放つのだ。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233037\r
++	random = no\r
++	country = U02\r
++\r
++	trigger = {\r
++	headofstate = 825301 # ウィンストン・チャーチル\r
++	event = 2233027 # 平和的デモの粉砕\r
++	event = 2233034 # 第二次インド大反乱　─ 反乱の鎮圧\r
++	NOT = { exists = IND }\r
++	NOT = { exists = PAK }\r
++	}\r
++\r
++	name = "EVT_2233037_NAME"\r
++	desc = "EVT_2233037_DESC"\r
++	style = 2\r
++	picture = "Churchill"\r
++\r
++	date = { day = 1 month = 3 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 28 month = 11 year = 1963 }\r
++\r
++	action = { # やるべきことはたくさんある\r
++	name = "ACTIONNAME2233037A" \r
++	command = { type = dissent value = -1 }\r
++	command = { type = headofstate which = 825001 }\r
++	command = { type = event which = 2233037 where = ENG when = 30 }\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  チャーチルの帰国\r
++# チャーチルが客車を降りて駅のホームに出ると、すでに日が昇っていた。\r
++# 都市特有の静けさを感じ、帰ってきたことを彼は実感していた。ロンドンについたのだ。\r
++# やり直そう、彼はそうつぶやいた。ふいに役人が一人近づいてきた。\r
++# 誰も本名を知らなかったが、彼はその人物をアーサーと呼んだ。アーサーはコートのポケットから1通の手紙を取り出した。\r
++# 「チャーチル閣下、お出迎えに上がりました。政府から新たな役職が用意されています」。\r
++# チャーチルはそれを開いて読むと、葉巻に火をつけた。「結構」、彼の決心は固まった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2233038\r
++	random = no\r
++	country = ENG\r
++\r
++	name = "EVT_2233038_NAME"\r
++	desc = "EVT_2233038_DESC"\r
++	style = 2\r
++	picture = "Churchill"\r
++\r
++	action = { # さぁ仕事だ\r
++	name = "ACTIONNAME2233038A" \r
++	command = { type = wakeminister which = 10018 } # ウィンストン・チャーチル\r
++	command = { type = wakeminister which = 10154 }\r
++	}\r
++}\r
++\r

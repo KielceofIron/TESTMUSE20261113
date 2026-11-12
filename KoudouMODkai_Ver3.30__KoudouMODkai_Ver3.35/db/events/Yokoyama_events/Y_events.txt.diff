@@ -1,0 +1,220 @@
+--- A/db/events/Yokoyama_events/Y_events.txt [utf-8]
++++ B/db/events/Yokoyama_events/Y_events.txt [utf-8]
+@@ -4,13 +4,11 @@
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+-#id = 15500001 皇道派の噂\r
++#id = 15500001 架空人物の起用\r
+ #########################################################################\r
+-#  皇道派の噂\r
+-# 皇道派に関する不穏な噂が流れていた。\r
+-# 皇道派を陰で支える謎の人物がいるということだ。\r
+-# 真偽は定かではないが、近ごろの皇道派の動向を見るにそれは否定できない。\r
+-# 果たして噂は本当なのだろうか？\r
++#  架空人物の起用\r
++# このディシジョンは、架空小説などに出てくる人物を登場させるかどうかを選択できます。\r
++# 彼らを登場させた場合、将軍が大幅に増えたり、プレイ中の想像力がさらに増すことでしょう。\r
+ #########################################################################\r
+ event = {\r
+ 	id = 15500001\r
+@@ -36,55 +34,161 @@ event = {
+ 	name = "EVT_15500001_NAME"\r
+ 	desc = "EVT_15500001_DESC"\r
+ 	style = 2\r
+-	picture = "Yokoyama1"\r
+-	decision_picture = "decision_Rhineland"\r
++	picture = "diplomatic_campaign"\r
++	decision_picture = "decision_diplomatic_campaign"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 1\r
+ 	deathdate = { day = 29 month = 11 year = 1939 }\r
+ \r
+-	action = { # \r
++	action = { # 登場させよう。彼らは必要だ。\r
+ 	name = "ACTIONNAME15500001A"\r
++	#command = { type = wakeleader which = 104007 }\r
++	#command = { type = wakeleader which = 104008 }\r
++	command = { type = wakeleader which = 104009 }\r
++	command = { type = wakeleader which = 104010 }\r
++	command = { type = wakeleader which = 104011 }\r
++	command = { type = wakeleader which = 104012 }\r
++	command = { type = wakeleader which = 104013 }\r
++	command = { type = wakeleader which = 104014 }\r
++	command = { type = wakeleader which = 104015 }\r
++	command = { type = wakeleader which = 104016 }\r
++	command = { type = wakeleader which = 104017 }\r
++	command = { type = wakeleader which = 104018 }\r
++	command = { type = wakeleader which = 104019 }\r
++	command = { type = wakeleader which = 104020 }\r
++	command = { type = wakeleader which = 104021 }\r
++	command = { type = wakeleader which = 104022 }\r
++	command = { type = wakeleader which = 104023 }\r
++	command = { type = wakeleader which = 104024 }\r
++	command = { type = wakeleader which = 104025 }\r
++	command = { type = wakeleader which = 104026 }\r
++	command = { type = wakeminister which = 52000 }\r
++	command = { type = wakeminister which = 52005 }\r
++	command = { type = wakeminister which = 52006 }\r
++	command = { type = wakeminister which = 52007 }\r
++	command = { type = wakeminister which = 52008 }\r
++	command = { type = wakeminister which = 52009 }\r
++	command = { type = wakeminister which = 52010 }\r
++	command = { type = wakeminister which = 52011 }\r
++	command = { type = wakeminister which = 52012 }\r
++	command = { type = wakeminister which = 52013 }\r
++	command = { type = wakeminister which = 52014 }\r
++	command = { type = wakeminister which = 52015 }\r
++	command = { type = wakeminister which = 52016 }\r
++	command = { type = wakeminister which = 52017 }\r
++	command = { type = wakeminister which = 52018 }\r
++	command = { type = wakeminister which = 52019 }\r
++	command = { type = wakeminister which = 52020 }\r
++	command = { type = wakeminister which = 52021 }\r
++	command = { type = wakeminister which = 52022 }\r
++	command = { type = wakeminister which = 52023 }\r
++	#command = { type = wakeminister which = 52024 }\r
++	#command = { type = wakeminister which = 52025 }\r
++	#command = { type = wakeminister which = 52026 }\r
++	#command = { type = wakeminister which = 52027 }\r
++	command = { type = wakeminister which = 52028 }\r
++	command = { type = wakeminister which = 52029 }\r
++	command = { type = wakeminister which = 52030 }\r
++	command = { type = wakeminister which = 52031 }\r
++	command = { type = wakeminister which = 52032 }\r
++	command = { type = wakeminister which = 52033 }\r
++	command = { type = wakeminister which = 52034 }\r
++	command = { type = wakeminister which = 52035 }\r
++	command = { type = wakeminister which = 52036 }\r
++	command = { type = wakeminister which = 52037 }\r
++	command = { type = wakeminister which = 52038 }\r
++	command = { type = wakeminister which = 52039 }\r
++	command = { type = wakeminister which = 52040 }\r
++	command = { type = wakeminister which = 52041 }\r
++	command = { type = wakeminister which = 52042 }\r
++	command = { type = wakeminister which = 52043 }\r
++	command = { type = wakeminister which = 52044 }\r
++	command = { type = wakeminister which = 52045 }\r
++	command = { type = wakeminister which = 52046 }\r
++	command = { type = wakeminister which = 52047 }\r
++	command = { type = local_setflag which = JAPAN_IF }\r
++	ai_chance = 0 # AIはこの選択肢を100％の確率で選択\r
++	}\r
++\r
++\r
++	action = { # 皇道派の影が見えた\r
++	name = "ACTIONNAME15500001B"\r
+ 	command = { type = intelligence which = us value = 35 }\r
+ 	command = { type = intelligence which = them value = -35 }\r
+-	command = { type = wakeleader which = 50701 }\r
+-	command = { type = wakeleader which = 50702 }\r
+-	command = { type = wakeleader which = 50703 }\r
+-	command = { type = wakeleader which = 50704 }\r
+-	command = { type = wakeleader which = 50705 }\r
+-	command = { type = wakeleader which = 50706 }\r
+-	command = { type = wakeleader which = 50707 }\r
+-	command = { type = wakeleader which = 50708 }\r
+-	command = { type = wakeleader which = 50709 }\r
+-	command = { type = wakeminister which = 50900 }\r
+-	command = { type = wakeminister which = 50905 }\r
+-	command = { type = wakeminister which = 50906 }\r
+-	command = { type = wakeminister which = 50907 }\r
+-	command = { type = wakeminister which = 50908 }\r
+-	command = { type = wakeminister which = 50909 }\r
+-	command = { type = wakeminister which = 50910 }\r
+-	command = { type = wakeminister which = 50911 }\r
+-	command = { type = wakeminister which = 50912 }\r
+-	command = { type = wakeminister which = 50913 }\r
+-	command = { type = wakeminister which = 50914 }\r
+-	command = { type = wakeminister which = 50915 }\r
+-	command = { type = wakeminister which = 50916 }\r
+-	command = { type = wakeminister which = 50917 }\r
+-	command = { type = wakeminister which = 50918 }\r
+-	command = { type = wakeminister which = 50919 }\r
+-	command = { type = wakeminister which = 50920 }\r
+-	command = { type = wakeminister which = 50921 }\r
+-	command = { type = wakeminister which = 50922 }\r
+-	command = { type = wakeminister which = 50923 }\r
++	command = { type = wakeleader which = 104007 }\r
++	command = { type = wakeleader which = 104008 }\r
++	command = { type = wakeleader which = 104009 }\r
++	command = { type = wakeleader which = 104010 }\r
++	command = { type = wakeleader which = 104011 }\r
++	command = { type = wakeleader which = 104012 }\r
++	command = { type = wakeleader which = 104013 }\r
++	command = { type = wakeleader which = 104014 }\r
++	command = { type = wakeleader which = 104015 }\r
++	command = { type = wakeleader which = 104016 }\r
++	command = { type = wakeleader which = 104017 }\r
++	command = { type = wakeleader which = 104018 }\r
++	command = { type = wakeleader which = 104019 }\r
++	command = { type = wakeleader which = 104020 }\r
++	command = { type = wakeleader which = 104021 }\r
++	command = { type = wakeleader which = 104022 }\r
++	command = { type = wakeleader which = 104023 }\r
++	command = { type = wakeleader which = 104024 }\r
++	command = { type = wakeleader which = 104025 }\r
++	command = { type = wakeleader which = 104026 }\r
++	command = { type = wakeminister which = 52000 }\r
++	command = { type = wakeminister which = 52005 }\r
++	command = { type = wakeminister which = 52006 }\r
++	command = { type = wakeminister which = 52007 }\r
++	command = { type = wakeminister which = 52008 }\r
++	command = { type = wakeminister which = 52009 }\r
++	command = { type = wakeminister which = 52010 }\r
++	command = { type = wakeminister which = 52011 }\r
++	command = { type = wakeminister which = 52012 }\r
++	command = { type = wakeminister which = 52013 }\r
++	command = { type = wakeminister which = 52014 }\r
++	command = { type = wakeminister which = 52015 }\r
++	command = { type = wakeminister which = 52016 }\r
++	command = { type = wakeminister which = 52017 }\r
++	command = { type = wakeminister which = 52018 }\r
++	command = { type = wakeminister which = 52019 }\r
++	command = { type = wakeminister which = 52020 }\r
++	command = { type = wakeminister which = 52021 }\r
++	command = { type = wakeminister which = 52022 }\r
++	command = { type = wakeminister which = 52023 }\r
++	#command = { type = wakeminister which = 52024 }\r
++	#command = { type = wakeminister which = 52025 }\r
++	#command = { type = wakeminister which = 52026 }\r
++	#command = { type = wakeminister which = 52027 }\r
++	command = { type = wakeminister which = 52028 }\r
++	command = { type = wakeminister which = 52029 }\r
++	command = { type = wakeminister which = 52030 }\r
++	command = { type = wakeminister which = 52031 }\r
++	command = { type = wakeminister which = 52032 }\r
++	command = { type = wakeminister which = 52033 }\r
++	command = { type = wakeminister which = 52034 }\r
++	command = { type = wakeminister which = 52035 }\r
++	command = { type = wakeminister which = 52036 }\r
++	command = { type = wakeminister which = 52037 }\r
++	command = { type = wakeminister which = 52038 }\r
++	command = { type = wakeminister which = 52039 }\r
++	command = { type = wakeminister which = 52040 }\r
++	command = { type = wakeminister which = 52041 }\r
++	command = { type = wakeminister which = 52042 }\r
++	command = { type = wakeminister which = 52043 }\r
++	command = { type = wakeminister which = 52044 }\r
++	command = { type = wakeminister which = 52045 }\r
++	command = { type = wakeminister which = 52046 }\r
++	command = { type = wakeminister which = 52047 }\r
+ 	command = { type = gas_attack }\r
+ 	command = { type = gas_protection }\r
++	command = { type = local_setflag which = JAPAN_IF }\r
+ 	command = { type = local_setflag which = Koudou_226_IF }\r
+-	ai_chance = 0 # AIはこの選択肢を100％の確率で選択\r
++	ai_chance = 0\r
+ 	}\r
+-\r
+-	action = { # \r
+-	name = "ACTIONNAME15500001B"\r
++	action = { # このディシジョンは必要ない\r
++	name = "ACTIONNAME15500001C"\r
+ 	command = { }\r
+-	ai_chance = 100 # AIはこの選択肢を100％の確率で選択\r
++	ai_chance = 100\r
+ 	}\r
+ }
+\ No newline at end of file

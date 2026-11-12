@@ -1,0 +1,41 @@
+--- A/db/events/AdditionalEvents_if_Japan/AI/if_Canada_AI_events.txt [ascii]
++++ B/db/events/AdditionalEvents_if_Japan/AI/if_Canada_AI_events.txt [ascii]
+@@ -6,10 +6,15 @@ event = {
+ 	id = 4661001\r
+ 	random = no \r
+ 	country = CAN\r
+-	\r
++	persistent = yes\r
+ 	trigger = {\r
+ 	ai = yes\r
+ 	atwar = yes\r
++	NOT = { local_flag = CAN_ACW }\r
++	OR = {\r
++	NOT = { event = 4660011 }\r
++	flag = CAN_Victory_America flag = UK_Victory_America\r
++	}\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -50,6 +55,7 @@ event = {
+ \r
+ 	action = {\r
+ 	command = { trigger = { ai = yes } type = ai which = "IFswitch/CAN_ACW.ai" }\r
++	command = { type = local_setflag which = CAN_ACW }\r
+ 	}\r
+ }\r
+ \r
+@@ -61,11 +67,13 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
++	atwar = no\r
+ OR = {\r
+ 	event = 1299140\r
+ 	event = 1299704\r
+ 	event = 1299504\r
+ 	event = 4660013\r
++	NOT = { flag = CAN_ACW }\r
+ 	}\r
+ \r
+ 	}\r

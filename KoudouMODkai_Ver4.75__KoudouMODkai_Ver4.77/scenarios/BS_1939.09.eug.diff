@@ -1,0 +1,429 @@
+--- A/scenarios/BS_1939.09.eug [utf-8]
++++ B/scenarios/BS_1939.09.eug [utf-8]
+@@ -1,213 +1,213 @@
+-name = "fallweiss_name"\r
+-panel = "scenarios/data/scenario_fallweiss.bmp"\r
+-\r
+-header = {\r
+-	startyear = 1939\r
+-	endyear = 1939\r
+-	free = no\r
+-	combat = yes	#this is a battlescenario\r
+-\r
+-	GER = {\r
+-		desc = FW_GER\r
+-		picture = "scenarios\data\poland.bmp"		\r
+-	}\r
+-	SOV = {\r
+-		desc = FW_SOV\r
+-		picture = "scenarios\data\poland.bmp"		\r
+-	}\r
+-	SLO = {\r
+-		desc = FW_SLO\r
+-		picture = "scenarios\data\poland.bmp"		\r
+-	}\r
+-	POL = {\r
+-		desc = FW_POL\r
+-		bottom = yes\r
+-		picture = "scenarios\data\poland.bmp"		\r
+-	}\r
+-}\r
+-\r
+-globaldata = {\r
+-	rules = {\r
+-		diplomacy = no\r
+-		production = no\r
+-		technology = no\r
+-	}\r
+-	\r
+-	startdate = {\r
+-		year = 1939\r
+-		month = september\r
+-		day = 0\r
+-	}\r
+-	\r
+-	enddate = {\r
+-		year = 1939\r
+-		month = october\r
+-		day = 29   ###Last large pocket destroyed on 5th Oct\r
+-	}\r
+-	\r
+-	allies = {\r
+-		id = { type = 15000 id = 1 }\r
+-		participant = { POL }\r
+-	}\r
+-	axis = 	{\r
+-		id = { type = 15000 id = 2 }\r
+-		participant = { GER SLO }\r
+-	}\r
+-\r
+-	comintern = {\r
+-		id = { type = 15000 id = 3 }\r
+-		participant = { SOV }\r
+-	}\r
+-\r
+-	war = {\r
+-		id = { type = 9430 id = 1 }\r
+-		date = {\r
+-			year = 1939\r
+-			month = september\r
+-			day = 1\r
+-			hour = 1\r
+-		}\r
+-		enddate = {\r
+-			year = 1939\r
+-			month = october\r
+-			day = 29\r
+-		}\r
+-		attackers = {\r
+-			id = { type = 9430 id = 2 }\r
+-			participant = { GER SLO }\r
+-		}\r
+-		defenders = {\r
+-			id = { type = 9430 id = 3 }\r
+-			participant = { POL }\r
+-		}\r
+-	}\r
+-}\r
+-\r
+-\r
+-map = {\r
+-	no = all\r
+-	\r
+-	#Poland\r
+-	yes = 226\r
+-	yes = 181\r
+-	yes = 225\r
+-	yes = 224\r
+-	yes = 222\r
+-	yes = 227\r
+-	yes = 221\r
+-	yes = 223\r
+-	yes = 231\r
+-	yes = 230\r
+-	yes = 233\r
+-	yes = 235\r
+-	yes = 236\r
+-	yes = 237\r
+-	yes = 234\r
+-	yes = 232\r
+-	yes = 229\r
+-	yes = 228\r
+-	yes = 243\r
+-	yes = 239\r
+-	yes = 246\r
+-	yes = 254\r
+-	yes = 250\r
+-	yes = 252\r
+-	yes = 258\r
+-	yes = 257\r
+-	yes = 256\r
+-	yes = 255\r
+-	yes = 251\r
+-	yes = 253\r
+-	yes = 247\r
+-	yes = 248\r
+-	yes = 249\r
+-	yes = 245\r
+-	yes = 244\r
+-	yes = 240\r
+-	yes = 242\r
+-	yes = 241\r
+-	yes = 238\r
+-	yes = 203\r
+-	\r
+-	#Slovakia\r
+-	yes = 214\r
+-	yes = 211\r
+-	yes = 212\r
+-	yes = 208\r
+-	\r
+-	# Bohemia-Moravia\r
+-	yes = 205\r
+-	yes = 199\r
+-	yes = 204\r
+-	yes = 200\r
+-	yes = 207\r
+-	yes = 202\r
+-	yes = 197\r
+-	yes = 196\r
+-	yes = 206\r
+-	yes = 198\r
+-	yes = 201\r
+-	\r
+-	#East Prussia\r
+-	yes = 261\r
+-	yes = 182\r
+-	yes = 184\r
+-	yes = 183\r
+-	yes = 185\r
+-	\r
+-	#Germany Proper\r
+-	yes = 163\r
+-	yes = 157\r
+-	yes = 160\r
+-	yes = 162\r
+-	yes = 172\r
+-	yes = 158\r
+-	yes = 161\r
+-	yes = 159\r
+-	yes = 165\r
+-	yes = 167\r
+-	yes = 166\r
+-	yes = 164\r
+-	yes = 168\r
+-	yes = 155\r
+-	\r
+-	#Soviet Union\r
+-	yes = 593\r
+-	yes = 590\r
+-	yes = 591\r
+-	yes = 592\r
+-	yes = 599\r
+-	yes = 594\r
+-	yes = 596\r
+-	yes = 597\r
+-	yes = 598\r
+-	yes = 595\r
+-	yes = 609\r
+-	yes = 616\r
+-	yes = 611\r
+-	yes = 612\r
+-	yes = 614\r
+-	yes = 618\r
+-	yes = 619\r
+-	\r
+-	# Sea Zones\r
+-	yes = 2718\r
+-	yes = 2719\r
+-\r
+-	top = {	x = 15556 y = 1712 }\r
+-	bottom = {	x = 17304 y = 2912 }\r
+-}\r
+-\r
+-# VP things\r
+-include = "scenarios/BS_1939.09/vp.inc"\r
+-\r
+-include = "scenarios/BS_1939.09/danzig.inc"\r
+-include = "scenarios/BS_1939.09/germany.inc"\r
+-include = "scenarios/BS_1939.09/poland.inc"\r
+-include = "scenarios/BS_1939.09/slovakia.inc"\r
+-include = "scenarios/BS_1939.09/soviet.inc"\r
+-include = "scenarios\1933\Terrain.inc" #地形設定ファイル\r
+-\r
+-event = "scenarios/BS_1939.09/fall_weiss_events.txt"\r
+-\r
++name = "fallweiss_name"
++panel = "scenarios/data/scenario_fallweiss.bmp"
++
++header = {
++	startyear = 1939
++	endyear = 1939
++	free = no
++	combat = yes	#this is a battlescenario
++
++	GER = {
++		desc = FW_GER
++		picture = "scenarios\data\poland.bmp"		
++	}
++	SOV = {
++		desc = FW_SOV
++		picture = "scenarios\data\poland.bmp"		
++	}
++	SLO = {
++		desc = FW_SLO
++		picture = "scenarios\data\poland.bmp"		
++	}
++	POL = {
++		desc = FW_POL
++		bottom = yes
++		picture = "scenarios\data\poland.bmp"		
++	}
++}
++
++globaldata = {
++	rules = {
++		diplomacy = no
++		production = no
++		technology = no
++	}
++	
++	startdate = {
++		year = 1939
++		month = september
++		day = 0
++	}
++	
++	enddate = {
++		year = 1939
++		month = october
++		day = 29   ###Last large pocket destroyed on 5th Oct
++	}
++	
++	allies = {
++		id = { type = 15000 id = 1 }
++		participant = { POL }
++	}
++	axis = 	{
++		id = { type = 15000 id = 2 }
++		participant = { GER SLO }
++	}
++
++	comintern = {
++		id = { type = 15000 id = 3 }
++		participant = { SOV }
++	}
++
++	war = {
++		id = { type = 9430 id = 1 }
++		date = {
++			year = 1939
++			month = september
++			day = 1
++			hour = 1
++		}
++		enddate = {
++			year = 1939
++			month = october
++			day = 29
++		}
++		attackers = {
++			id = { type = 9430 id = 2 }
++			participant = { GER SLO }
++		}
++		defenders = {
++			id = { type = 9430 id = 3 }
++			participant = { POL }
++		}
++	}
++}
++
++
++map = {
++	no = all
++	
++	#Poland
++	yes = 226
++	yes = 181
++	yes = 225
++	yes = 224
++	yes = 222
++	yes = 227
++	yes = 221
++	yes = 223
++	yes = 231
++	yes = 230
++	yes = 233
++	yes = 235
++	yes = 236
++	yes = 237
++	yes = 234
++	yes = 232
++	yes = 229
++	yes = 228
++	yes = 243
++	yes = 239
++	yes = 246
++	yes = 254
++	yes = 250
++	yes = 252
++	yes = 258
++	yes = 257
++	yes = 256
++	yes = 255
++	yes = 251
++	yes = 253
++	yes = 247
++	yes = 248
++	yes = 249
++	yes = 245
++	yes = 244
++	yes = 240
++	yes = 242
++	yes = 241
++	yes = 238
++	yes = 203
++	
++	#Slovakia
++	yes = 214
++	yes = 211
++	yes = 212
++	yes = 208
++	
++	# Bohemia-Moravia
++	yes = 205
++	yes = 199
++	yes = 204
++	yes = 200
++	yes = 207
++	yes = 202
++	yes = 197
++	yes = 196
++	yes = 206
++	yes = 198
++	yes = 201
++	
++	#East Prussia
++	yes = 261
++	yes = 182
++	yes = 184
++	yes = 183
++	yes = 185
++	
++	#Germany Proper
++	yes = 163
++	yes = 157
++	yes = 160
++	yes = 162
++	yes = 172
++	yes = 158
++	yes = 161
++	yes = 159
++	yes = 165
++	yes = 167
++	yes = 166
++	yes = 164
++	yes = 168
++	yes = 155
++	
++	#Soviet Union
++	yes = 593
++	yes = 590
++	yes = 591
++	yes = 592
++	yes = 599
++	yes = 594
++	yes = 596
++	yes = 597
++	yes = 598
++	yes = 595
++	yes = 609
++	yes = 616
++	yes = 611
++	yes = 612
++	yes = 614
++	yes = 618
++	yes = 619
++	
++	# Sea Zones
++	yes = 2718
++	yes = 2719
++
++	top = {	x = 15556 y = 1712 }
++	bottom = {	x = 17304 y = 2912 }
++}
++
++# VP things
++include = "scenarios/BS_1939.09/vp.inc"
++
++include = "scenarios/BS_1939.09/danzig.inc"
++include = "scenarios/BS_1939.09/germany.inc"
++include = "scenarios/BS_1939.09/poland.inc"
++include = "scenarios/BS_1939.09/slovakia.inc"
++include = "scenarios/BS_1939.09/soviet.inc"
++include = "scenarios\1933\Terrain.inc" #地形設定ファイル
++
++event = "scenarios/BS_1939.09/fall_weiss_events.txt"
++
+ #END
+\ No newline at end of file

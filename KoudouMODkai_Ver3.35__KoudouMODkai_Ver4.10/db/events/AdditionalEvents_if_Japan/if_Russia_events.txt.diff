@@ -1,0 +1,902 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Russia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Russia_events.txt [cp932]
+@@ -89,6 +89,17 @@
+ #id = 5951095 首都\r
+ #id = 5951096 ロシア政府がペトログラードへ帰還\r
+ #id = 5951097 ロシア政府がモスクワへ帰還\r
++#  東三省勝利ルート\r
++#id = 5951201 東三省事変 ― ロシア帝国の勝利（CHI）\r
++#id = 5951202 東三省事変 ― ロシア帝国の勝利（UTC）\r
++#id = 5951203 ニコライ2世の死\r
++#id = 5951204 英露条約\r
++#id = 5951205 英露条約 ― 提案\r
++#id = 5951206 英露条約 ― 締結と秘密協定\r
++#id = 5951207 英露条約 ― ロシアが拒否\r
++#id = 5951208 北海道進駐\r
++#id = 5951209 北海道進駐 ― ロシアの進駐\r
++#id = 5951210 北海道進駐 ― 北海道の占領\r
+ ##########################################################################\r
+ #  冬眠中の巨熊\r
+ # 第一次世界大戦におけるロシア帝国は勝利した……確かに、勝利していた。\r
+@@ -1029,20 +1040,24 @@ event = {
+ 	command = { type = unlock_division which = 22000 value = 247 }\r
+ 	command = { type = unlock_division which = 22000 value = 248 }\r
+ 	command = { type = unlock_division which = 22000 value = 249 }\r
+-	command = { trigger = { ai = no } type = max_organization which = land value = 20 }\r
+-	command = { trigger = { ai = no } type = morale which = land value = 20 }\r
+-	command = { trigger = { ai = no } type = morale which = naval value = 20 }\r
+-	command = { trigger = { ai = no } type = morale which = air value = 20 }\r
+-	command = { trigger = { ai = no } type = speed which = land value = 5 }\r
+-	command = { trigger = { ai = no } type = counterattack value = 2 }\r
+-	command = { trigger = { ai = no } type = assault value = 2 }\r
+-	command = { trigger = { ai = no } type = ambush value = 2 }\r
+-	command = { trigger = { ai = no } type = breakthrough value = 2 }\r
+-	command = { trigger = { ai = no } type = encirclement value = 2 }\r
+-	command = { trigger = { ai = no } type = hq_supply_eff value = 2 }\r
+-	command = { trigger = { ai = no } type = sce_frequency value = 0.3 }\r
+-	command = { trigger = { ai = no } type = attrition_mod value = 2 }\r
+-	command = { trigger = { ai = no } type = trickleback_mod value = 5 }\r
++	command = {  type = max_organization which = land value = 20 }\r
++	command = {  type = morale which = land value = 20 }\r
++	command = {  type = morale which = naval value = 20 }\r
++	command = {  type = morale which = air value = 20 }\r
++	command = {  type = speed which = land value = 5 }\r
++	command = {  type = counterattack value = 2 }\r
++	command = {  type = assault value = 2 }\r
++	command = {  type = ambush value = 2 }\r
++	command = {  type = breakthrough value = 2 }\r
++	command = {  type = encirclement value = 2 }\r
++	command = {  type = hq_supply_eff value = 2 }\r
++	command = {  type = sce_frequency value = 0.3 }\r
++	command = {  type = attrition_mod value = 2 }\r
++	command = {  type = trickleback_mod value = 5 }\r
++	command = { type = local_setflag which = Bigeventflag0008 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0008.txt" } #音源流し\r
++	command = { type = trigger which = 19330008 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310008 where = REB when = 0 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1239,20 +1254,20 @@ event = {
+ 	command = { type = addcore which = 1195 }\r
+ 	command = { type = addcore which = 1196 }\r
+ 	command = { type = add_core_region which = "Korea" }\r
+-	command = { trigger = { ai = no } type = max_organization which = land value = -20 }\r
+-	command = { trigger = { ai = no } type = morale which = land value = -20 }\r
+-	command = { trigger = { ai = no } type = morale which = naval value = -20 }\r
+-	command = { trigger = { ai = no } type = morale which = air value = -20 }\r
+-	command = { trigger = { ai = no } type = speed which = land value = -5 }\r
+-	command = { trigger = { ai = no } type = counterattack value = -2 }\r
+-	command = { trigger = { ai = no } type = assault value = -2 }\r
+-	command = { trigger = { ai = no } type = ambush value = -2 }\r
+-	command = { trigger = { ai = no } type = breakthrough value = -2 }\r
+-	command = { trigger = { ai = no } type = encirclement value = -2 }\r
+-	command = { trigger = { ai = no } type = hq_supply_eff value = -2 }\r
+-	command = { trigger = { ai = no } type = sce_frequency value = -0.3 }\r
+-	command = { trigger = { ai = no } type = attrition_mod value = -2 }\r
+-	command = { trigger = { ai = no } type = trickleback_mod value = -5 }\r
++	command = {   type = max_organization which = land value = -20 }\r
++	command = {   type = morale which = land value = -20 }\r
++	command = {   type = morale which = naval value = -20 }\r
++	command = {   type = morale which = air value = -20 }\r
++	command = {   type = speed which = land value = -5 }\r
++	command = {   type = counterattack value = -2 }\r
++	command = {   type = assault value = -2 }\r
++	command = {   type = ambush value = -2 }\r
++	command = {   type = breakthrough value = -2 }\r
++	command = {   type = encirclement value = -2 }\r
++	command = {   type = hq_supply_eff value = -2 }\r
++	command = {   type = sce_frequency value = -0.3 }\r
++	command = {   type = attrition_mod value = -2 }\r
++	command = {   type = trickleback_mod value = -5 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+@@ -1270,20 +1285,20 @@ event = {
+ 	command = { type = alliance which = KOR }\r
+ 	command = { type = name where = KOR which = "高麗国" 	}\r
+ 	command = { type = flag_ext where = KOR which = "_chi" }\r
+-	command = { trigger = { ai = no } type = max_organization which = land value = -20 }\r
+-	command = { trigger = { ai = no } type = morale which = land value = -20 }\r
+-	command = { trigger = { ai = no } type = morale which = naval value = -20 }\r
+-	command = { trigger = { ai = no } type = morale which = air value = -20 }\r
+-	command = { trigger = { ai = no } type = speed which = land value = -5 }\r
+-	command = { trigger = { ai = no } type = counterattack value = -2 }\r
+-	command = { trigger = { ai = no } type = assault value = -2 }\r
+-	command = { trigger = { ai = no } type = ambush value = -2 }\r
+-	command = { trigger = { ai = no } type = breakthrough value = -2 }\r
+-	command = { trigger = { ai = no } type = encirclement value = -2 }\r
+-	command = { trigger = { ai = no } type = hq_supply_eff value = -2 }\r
+-	command = { trigger = { ai = no } type = sce_frequency value = -0.3 }\r
+-	command = { trigger = { ai = no } type = attrition_mod value = -2 }\r
+-	command = { trigger = { ai = no } type = trickleback_mod value = -5 }\r
++	command = {   type = max_organization which = land value = -20 }\r
++	command = {   type = morale which = land value = -20 }\r
++	command = {   type = morale which = naval value = -20 }\r
++	command = {   type = morale which = air value = -20 }\r
++	command = {   type = speed which = land value = -5 }\r
++	command = {   type = counterattack value = -2 }\r
++	command = {   type = assault value = -2 }\r
++	command = {   type = ambush value = -2 }\r
++	command = {   type = breakthrough value = -2 }\r
++	command = {   type = encirclement value = -2 }\r
++	command = {   type = hq_supply_eff value = -2 }\r
++	command = {   type = sce_frequency value = -0.3 }\r
++	command = {   type = attrition_mod value = -2 }\r
++	command = {   type = trickleback_mod value = -5 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r
+@@ -1438,6 +1453,7 @@ event = {
+ 	name = "ACTIONNAME5951026A"\r
+ 	command = { type = sleepminister which = 1337001 }\r
+ 	command = { type = sleepminister which = 1337018 }\r
++	command = { type = sleepevent which = 5951203 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1674,7 +1690,7 @@ event = {
+ 	command = { type = gain_tech which = 6300 }\r
+ 	command = { type = gain_tech which = 6310 }\r
+ 	command = { type = gain_tech which = 6320 }\r
+-	#command = { type = ground_def_eff value = 0.1 when = 1 }\r
++	command = { type = ground_def_eff value = 0.1 when = 1 }\r
+ 	command = { type = morale which = land value = 5 }\r
+ 	command = { type = morale which = naval value = 5 }\r
+ 	command = { type = morale which = air value = 5 }\r
+@@ -1935,8 +1951,8 @@ event = {
+ 	command = { type = secedearea which = CHI value = "Khabarovsk" when = 1 }\r
+ 	command = { type = secedearea which = CHI value = "Primorski" when = 1 }\r
+ 	command = { trigger = { ai = yes } type = ai which = "switch/Combat_off.ai" }\r
+-	command = { trigger = { war = { country = GER country = UTC } } type = trigger which = 45680038 }\r
+-	command = { trigger = { war = { country = GER country = UTC } } type = sleepevent which = 45680037 }\r
++	command = { trigger = { war = { country = GER country = UTC } } type = trigger which = 45680025 }\r
++	command = { trigger = { war = { country = GER country = UTC } } type = sleepevent which = 45680024 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -4053,11 +4069,11 @@ event = {
+ 	command = { trigger = { country = FIN } type = add_division which = "第2山岳猟兵師団" value = bergsjaeger when = 2 }\r
+ 	command = { trigger = { country = FIN } type = add_division which = "第3山岳猟兵師団" value = bergsjaeger when = 2 }\r
+ 	command = { trigger = { country = FIN } type = add_division which = "第4山岳猟兵師団" value = bergsjaeger when = 2 }\r
+-    	command = { trigger = { country = LAT } type = ai which = "lat_1936.ai" }\r
+-    	command = { trigger = { country = EST } type = ai which = "est_1936.ai" }\r
+-    	command = { trigger = { country = FIN } type = ai which = "fin_1936.ai" }\r
+-    	command = { trigger = { country = LIT } type = ai which = "lit_1936.ai" }\r
+-    	command = { trigger = { country = POL } type = ai which = "pol_1936.ai" }\r
++    	command = { trigger = { country = LAT ai = yes } type = ai which = "lat_1936.ai" }\r
++    	command = { trigger = { country = EST ai = yes } type = ai which = "est_1936.ai" }\r
++    	command = { trigger = { country = FIN ai = yes } type = ai which = "IF/fin_1936.ai" }\r
++    	command = { trigger = { country = LIT ai = yes } type = ai which = "lit_1936.ai" }\r
++    	command = { trigger = { country = POL ai = yes } type = ai which = "pol_1936.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4611,7 +4627,7 @@ event = {
+ 	alliance = { country = FIN country = UTC }\r
+ 	ispuppet = FIN\r
+ 	ispuppet = UTC\r
+-	event = 45680037\r
++	event = 45680024 # ブレスト＝リトフスク条約\r
+ 	}\r
+ 	area = { area = "Estonia" country = UTC data = 1 value = 80 }\r
+ 	area = { area = "Latvia" country = UTC data = 1 value = 80 }\r
+@@ -4628,7 +4644,7 @@ event = {
+ 	alliance = { country = FIN country = UTC }\r
+ 	ispuppet = FIN\r
+ 	ispuppet = UTC\r
+-	event = 45680037\r
++	event = 45680024 # ブレスト＝リトフスク条約\r
+ 	}\r
+ 	area = { area = "Estonia" country = UTC data = 1 value = 80 }\r
+ 	area = { area = "Latvia" country = UTC data = 1 value = 80 }\r
+@@ -4645,7 +4661,7 @@ event = {
+ 	alliance = { country = FIN country = UTC }\r
+ 	ispuppet = FIN\r
+ 	ispuppet = UTC\r
+-	event = 45680037\r
++	event = 45680024 # ブレスト＝リトフスク条約\r
+ 	}\r
+ 	area = { area = "Estonia" country = UTC data = 1 value = 80 }\r
+ 	area = { area = "Latvia" country = UTC data = 1 value = 80 }\r
+@@ -4667,7 +4683,7 @@ event = {
+ 	command = { type = relation which = SWE value = -30 }\r
+ 	command = { type = relation which = U21 value = -30 }\r
+ 	command = { type = trigger which = 5951078 }\r
+-	command = { type = ai which = "IF/UTC_if.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IF/UTC_if.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4704,6 +4720,9 @@ event = {
+ 	command = { type = end_non_aggression which = FIN where = UTC }\r
+ 	command = { type = war which = UTC }\r
+ 	command = { type = trigger which = 5951079 }\r
++	command = { type = local_setflag which = Bigeventflag0010 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0010.txt" } #音源流し\r
++	command = { type = trigger which = 19330010 when = 0 } #本イベントを起こす\r
+ 	ai_chance = 80\r
+ 	}\r
+ \r
+@@ -4870,7 +4889,7 @@ event = {
+ event = {\r
+ 	id = 5951084\r
+ 	random = no\r
+-	country = ETH\r
++	country = FIN\r
+ \r
+ 	trigger = {\r
+ 	war = { country = UTC country = FIN }\r
+@@ -4928,6 +4947,9 @@ event = {
+ 	command = { type = remove_core_region which = "Finland" where = UTC }\r
+ 	command = { type = remove_claim_region which = "Finland" where = UTC }\r
+ 	command = { type = trigger which = 5951086 }\r
++	command = { type = local_setflag which = Bigeventflag0011 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0011.txt" } #音源流し\r
++	command = { type = trigger which = 19330011 when = 0 } #本イベントを起こす\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -4951,6 +4973,10 @@ event = {
+ 	action = { # すばらしい！\r
+ 	name = "ACTION_NAME_GREAT"\r
+ 	command = { type = dissent value = -10 }\r
++	command = { type = event which = 19310011  where = REB when = 0 }\r
++	command = { type = local_setflag which = Bigeventflag0011 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0011.txt" } #音源流し\r
++	command = { type = trigger which = 19330011 when = 0 } #本イベントを起こす\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -5180,11 +5206,9 @@ event = {
+ 	war = { country = UTC country = JAP }\r
+ 	}\r
+ 	control = { province = 572 data = UTC }\r
+-	OR = {\r
+ 	lost_national = { country = UTC value = 35 }\r
+ 	event = 5951088\r
+ 	}\r
+-	}\r
+ \r
+ 	trigger = {\r
+ 	OR = {\r
+@@ -5196,11 +5220,9 @@ event = {
+ 	war = { country = UTC country = JAP }\r
+ 	}\r
+ 	control = { province = 572 data = UTC }\r
+-	OR = {\r
+ 	lost_national = { country = UTC value = 35 }\r
+ 	event = 5951088\r
+ 	}\r
+-	}\r
+ 	\r
+ 	name = EVT_5951089_NAME\r
+ 	desc = EVT_5951089_DESC\r
+@@ -5215,6 +5237,10 @@ event = {
+ 	action = { # 祖国の名誉と栄光のために！\r
+ 	name = "ACTIONNAME5951089A"\r
+ 	command = { type = dissent value = -10 }\r
++	command = { type = local_setflag which = Bigeventflag0007 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0007.txt" } #音源流し\r
++	command = { type = trigger which = 19330007 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310007 where = REB when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -5551,4 +5577,614 @@ event = {
+ 	command = { type = capital which = 572 }\r
+ 	command = { type = clrflag  which = CAP_MOS }\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r
++\r
++#########################################################################\r
++#  東三省勝利ルート\r
++##########################################################################\r
++#  東三省事変 ― ロシア帝国の勝利\r
++# 中露戦争においてロシア帝国は奇跡的な勝利を収めた。\r
++# 長きに渡る経済不況とそれに伴う軍縮政策はロシア軍の練度を著しく低下させており、\r
++# 新たに軍備増強に励む中華民国軍に対し、勝利を収めるのはまったく困難であった。\r
++# しかし、ロシア帝国軍部の極限の努力とケレンスキー宰相の戦争継続の意志がこの困難を可能としたのである！\r
++# この戦争に勝利したロシア帝国は"先進国の寛大さ"をもって中華民国に接した。\r
++# ロシア帝国側が提示した国境ラインを承認し、十年に渡る不可侵と上海・海南島の租借。\r
++# 幾らかの賠償金をもって講話成立とする通称・保定条約は無事締結され、ロシア帝国の国際的地位を高める結果となった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 5951201\r
++	random =  no\r
++	country = CHI\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	event = 5951020 # 東三省事変（UTC）\r
++	NOT = { event = 5951021 } # 東三省事変 ― ロシアの敗北\r
++	war = { country = CHI country = UTC }\r
++	AND = { \r
++	control = { province = 1199 data = UTC } # 哈爾濱（ハルビン）\r
++	control = { province = 1219 data = UTC } # 旅順港（リューシュン）\r
++	control = { province = 1191 data = UTC } # ウラジオストック\r
++	control = { province = 1208 data = UTC } # 新京（しんきょう）\r
++	control = { province = 1221 data = UTC } # 平壌（ピョンヤン）\r
++	control = { province = 1228 data = UTC } # 京城（ソウル）\r
++	}\r
++	AND = { \r
++	control = { province = 1241 data = UTC } # 天津（ティエンジン）\r
++	control = { province = 1247 data = UTC } # 北京（ベイジン）\r
++	control = { province = 1251 data = UTC } # 大同（タートン）\r
++	control = { province = 1252 data = UTC } # 太原（タイヨアン）\r
++	control = { province = 1328 data = UTC } # 青島（チンタオ）\r
++	control = { province = 1330 data = UTC } # 濟南（ジーナン）\r
++	}\r
++	}\r
++\r
++	name = "EVT_5951201_NAME"\r
++	desc = "EVT_5951201_DESC"\r
++	style = 2\r
++	picture = "ccip_fs"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 我々の敗北だ…！\r
++	name = "ACTIONNAME5951201A"\r
++	command = { type = dissent value = 50 }\r
++	command = { trigger = { war = { country = UTC country = CHI } } type = peace which = UTC value = 0 }\r
++	command = { trigger = { war = { country = UTC country = ENG } } type = peace which = ENG value = 0 }\r
++	command = { trigger = { war = { country = UTC country = FRA } } type = peace which = FRA value = 0 }\r
++	command = { trigger = { war = { country = UTC country = GER } } type = peace which = GER value = 0 }\r
++	command = { trigger = { war = { country = UTC country = ITA } } type = peace which = ITA value = 0 }\r
++	command = { trigger = { war = { country = UTC country = U14 } } type = peace which = U14 value = 0 }\r
++	command = { trigger = { war = { country = UTC country = JAP } } type = peace which = JAP value = 0 }\r
++	command = { trigger = { war = { country = UTC country = USA } } type = peace which = USA value = 0 }\r
++	command = { type = secedearea which = UTC value = "Hebei" when = 1 }\r
++	command = { type = secedearea which = UTC value = "Shanxi" when = 1 }\r
++	command = { type = secedearea which = UTC value = "Chahar" when = 1 }\r
++	command = { type = secedeprovince which = UTC value = 1321 }\r
++	command = { type = secedeprovince which = UTC value = 1323 }\r
++      	command = { type = surprise which = land value = -30 }\r
++      	command = { type = surprise which = naval value = -30 }\r
++      	command = { type = surprise which = air value = -30 }\r
++	command = { type = max_organization which = land value = -20 }\r
++	command = { type = morale which = land value = -20 }\r
++	command = { type = morale which = naval value = -20 }\r
++	command = { type = morale which = air value = -20 }\r
++	command = { type = speed which = land value = -5 }\r
++	command = { type = counterattack value = -2 }\r
++	command = { type = assault value = -2 }\r
++	command = { type = ambush value = -2 }\r
++	command = { type = breakthrough value = -2 }\r
++	command = { type = encirclement value = -2 }\r
++	command = { type = hq_supply_eff value = -2 }\r
++	command = { type = sce_frequency value = -0.3 }\r
++	command = { type = attrition_mod value = -2 }\r
++	command = { type = trickleback_mod value = -5 }\r
++	command = { type = event which = 5951202 where = UTC when = 0 }\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 5951202\r
++	random =  no\r
++	country = UTC\r
++\r
++	name = "EVT_5951201_NAME"\r
++	desc = "EVT_5951201_DESC"\r
++	style = 2\r
++	picture = "ccip_fs"\r
++\r
++	action = { # 我々には神が居た――諸君らには居なかったのであろう\r
++	name = "ACTIONNAME5951202A"\r
++	command = { type = dissent value = -35 }\r
++	command = { type = ground_def_eff value = 0.1 when = 1 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = wakeminister which = 1337031 }\r
++	command = { type = wakeminister which = 1337032 }\r
++	command = { type = headofstate which = 1337018 } # ニコライ2世\r
++	command = { type = headofgovernment which = 1337032 } # アレクサンドル・F・ケレンスキー\r
++	command = { type = add_claim_area which = "Hebei" where = UTC }\r
++	command = { type = add_claim_area which = "Shanxi" where = UTC }\r
++	command = { type = add_claim_area which = "Chahar" where = UTC }\r
++	command = { type = addclaim which = 1321 where = UTC }\r
++	command = { type = addclaim which = 1323 where = UTC }\r
++	command = { trigger = { division_exists = { type = 10848 id = 202 } } type = unlock_division which = 10848 value = 202 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 203 } } type = unlock_division which = 10848 value = 203 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 205 } } type = unlock_division which = 10848 value = 205 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 206 } } type = unlock_division which = 10848 value = 206 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 208 } } type = unlock_division which = 10848 value = 208 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 209 } } type = unlock_division which = 10848 value = 209 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 211 } } type = unlock_division which = 10848 value = 211 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 212 } } type = unlock_division which = 10848 value = 212 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 214 } } type = unlock_division which = 10848 value = 214 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 215 } } type = unlock_division which = 10848 value = 215 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 217 } } type = unlock_division which = 10848 value = 217 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 218 } } type = unlock_division which = 10848 value = 218 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 220 } } type = unlock_division which = 10848 value = 220 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 221 } } type = unlock_division which = 10848 value = 221 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 223 } } type = unlock_division which = 10848 value = 223 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 224 } } type = unlock_division which = 10848 value = 224 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 226 } } type = unlock_division which = 10848 value = 226 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 227 } } type = unlock_division which = 10848 value = 227 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 229 } } type = unlock_division which = 10848 value = 229 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 230 } } type = unlock_division which = 10848 value = 230 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 232 } } type = unlock_division which = 10848 value = 232 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 233 } } type = unlock_division which = 10848 value = 233 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 235 } } type = unlock_division which = 10848 value = 235 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 236 } } type = unlock_division which = 10848 value = 236 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 238 } } type = unlock_division which = 10848 value = 238 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 239 } } type = unlock_division which = 10848 value = 239 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 241 } } type = unlock_division which = 10848 value = 241 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 242 } } type = unlock_division which = 10848 value = 242 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 244 } } type = unlock_division which = 10848 value = 244 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 245 } } type = unlock_division which = 10848 value = 245 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 246 } } type = unlock_division which = 10848 value = 247 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 248 } } type = unlock_division which = 10848 value = 248 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 250 } } type = unlock_division which = 10848 value = 250 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 251 } } type = unlock_division which = 10848 value = 251 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 253 } } type = unlock_division which = 10848 value = 253 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 254 } } type = unlock_division which = 10848 value = 254 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 256 } } type = unlock_division which = 10848 value = 256 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 257 } } type = unlock_division which = 10848 value = 257 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 259 } } type = unlock_division which = 10848 value = 259 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 260 } } type = unlock_division which = 10848 value = 260 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 262 } } type = unlock_division which = 10848 value = 262 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 263 } } type = unlock_division which = 10848 value = 263 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 265 } } type = unlock_division which = 10848 value = 265 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 266 } } type = unlock_division which = 10848 value = 266 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 248 } } type = unlock_division which = 10848 value = 268 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 269 } } type = unlock_division which = 10848 value = 269 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 271 } } type = unlock_division which = 10848 value = 271 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 272 } } type = unlock_division which = 10848 value = 272 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 274 } } type = unlock_division which = 10848 value = 274 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 275 } } type = unlock_division which = 10848 value = 275 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 277 } } type = unlock_division which = 10848 value = 277 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 278 } } type = unlock_division which = 10848 value = 278 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 280 } } type = unlock_division which = 10848 value = 280 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 281 } } type = unlock_division which = 10848 value = 281 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 283 } } type = unlock_division which = 10848 value = 283 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 284 } } type = unlock_division which = 10848 value = 284 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 286 } } type = unlock_division which = 10848 value = 286 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 287 } } type = unlock_division which = 10848 value = 287 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 289 } } type = unlock_division which = 10848 value = 289 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 290 } } type = unlock_division which = 10848 value = 290 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 292 } } type = unlock_division which = 10848 value = 292 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 293 } } type = unlock_division which = 10848 value = 293 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 295 } } type = unlock_division which = 10848 value = 295 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 296 } } type = unlock_division which = 10848 value = 296 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 298 } } type = unlock_division which = 10848 value = 298 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 299 } } type = unlock_division which = 10848 value = 299 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 301 } } type = unlock_division which = 10848 value = 301 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 302 } } type = unlock_division which = 10848 value = 302 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 304 } } type = unlock_division which = 10848 value = 304 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 305 } } type = unlock_division which = 10848 value = 305 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 307 } } type = unlock_division which = 10848 value = 307 }\r
++	command = { trigger = { division_exists = { type = 10848 id = 308 } } type = unlock_division which = 10848 value = 308 }\r
++\r
++	command = { type = event which = 5951203 where = UTC when = 120 }\r
++	command = { type = sleepevent which = 5951023 }\r
++	command = { type = sleepevent which = 5951024 }\r
++	command = { type = sleepevent which = 5951025 }\r
++	command = { type = sleepevent which = 5951054 }\r
++	command = { type = sleepevent which = 5951055 }\r
++	command = { type = sleepevent which = 5951056 }\r
++	command = { type = sleepevent which = 5951057 }\r
++	command = { type = sleepevent which = 5951058 }\r
++	command = { type = sleepevent which = 5951059 }\r
++	command = { type = sleepevent which = 5951060 }\r
++	command = { type = sleepevent which = 5951061 }\r
++	command = { type = sleepevent which = 5951062 }\r
++	command = { type = sleepevent which = 5951063 }\r
++	command = { type = sleepevent which = 5951064 }\r
++	command = { type = sleepevent which = 5951065 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ニコライ2世の死\r
++# アレクサンドル・ケレンスキー最少が勝利を収めてから半年が経ち、ニコライ2世が今宵、崩御された。\r
++# 老皇帝は「ロマノフ朝の再興の始まりを見ることができた」と涙をもって語り、アレクセイ二世もまた同様の態度をもって答えた。\r
++# 葬式はケレンスキー宰相の指導の下、国葬によって執り行われ、国民達はこの老皇帝の死を惜しんだのである。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 5951203\r
++	random = no\r
++	country = UTC\r
++\r
++	name = "EVT_5951203_NAME"\r
++	desc = "EVT_5951203_DESC"\r
++	style = 2\r
++	picture = "minister_died2"\r
++\r
++	action = { # 皇帝陛下万歳！ケレンスキー宰相万歳！\r
++	name = "ACTIONNAME5951203A"\r
++	command = { type = sleepevent which = 5951026 }\r
++	command = { type = sleepminister which = 1337001 }\r
++	command = { type = sleepminister which = 1337018 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = headofstate which = 1337031 } # アレクセイ2世\r
++	command = { type = headofgovernment which = 1337032 } # アレクサンドル・F・ケレンスキー\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  英露条約\r
++# 今や世界でも数少ない民主的国家として数えられる英国と、不安定な時期を乗り越えて制限付きではあるものの、\r
++# 議会制民主主義を成立させたロシア帝国との間で、軍事同盟締結の機運が高まりつつあった。\r
++# かつてはグレート・ゲームの相手国として互いを認識していた英露両国であったが、\r
++# 欧州大陸における主導権を握ろうと画策するドイツ帝国や、革命の先駆としての地位を確立しつつあるフランス・コミューンらに対する牽制を行いながら、\r
++# 極東において『責任ある先進国の立場』を行使し得る国家として、英国はロシア帝国の地位と力とを認識するようになりつつあった。\r
++# また、ロシア帝国領土に眠る多量の資源も英国には魅力的に映る。\r
++# ロシア帝国からすれば、工業的にも軍事的にも優越し、とくに海空軍における戦術的・技術的優越を持つ英国からの技術提供は非常に美味しいものがあった。\r
++# こうした相互利益に基づき、英露両国は公式に軍事協定を結んだ。\r
++# この軍事協定の中身には、極東領域におけるロシア帝国の領土伸長に関するものもあり、\r
++# その中には対中国のみならず、対日本への軍事計画についても"否定はしない"という文言が存在していたとされている……。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5951204\r
++	random = no\r
++	country = ENG\r
++\r
++	decision = {\r
++	exists = UTC\r
++	event = 5951202 # 東三省事変 ― ロシア帝国の勝利\r
++	NOT = {\r
++	ispuppet = ENG\r
++	alliance = { country = UTC country = GER }\r
++	alliance = { country = UTC country = FRA }\r
++	alliance = { country = UTC country = UB9 }\r
++	atwar = UTC\r
++	}\r
++	}\r
++\r
++	decision_trigger = { \r
++	exists = UTC\r
++	event = 5951202 # 東三省事変 ― ロシア帝国の勝利\r
++	NOT = {\r
++	ispuppet = ENG\r
++	alliance = { country = UTC country = GER }\r
++	alliance = { country = UTC country = FRA }\r
++	alliance = { country = UTC country = UB9 }\r
++	atwar = UTC\r
++	}\r
++	}\r
++\r
++	trigger = {\r
++	exists = UTC\r
++	event = 5951202 # 東三省事変 ― ロシア帝国の勝利\r
++	NOT = {\r
++	ispuppet = ENG\r
++	alliance = { country = UTC country = GER }\r
++	alliance = { country = UTC country = FRA }\r
++	alliance = { country = UTC country = UB9 }\r
++	atwar = UTC\r
++	}\r
++	random = 30\r
++	}\r
++\r
++	name = "EVT_5951204_NAME"\r
++	desc = "EVT_5951204_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 提案する\r
++	name = "ACTIONNAME5951204A"\r
++	command = { type = relation which = UTC value = 15 }\r
++	command = { type = relation which = GER value = -50 }\r
++	command = { type = relation which = FRA value = -50 }\r
++	command = { type = relation which = UB9 value = -50 }\r
++	command = { type = relation which = USA value = -50 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = trigger which = 5951205 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 必要ない\r
++	name = "ACTIONNAME5951204B"\r
++	command = { type = relation which = UTC value = -5 }\r
++	command = { type = relation which = GER value = 5 }\r
++	command = { type = relation which = FRA value = 5 }\r
++	command = { type = relation which = UB9 value = 5 }\r
++	command = { type = relation which = USA value = 5 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  英露条約 ― 提案\r
++#########################################################################\r
++\r
++event = { \r
++	id = 5951205\r
++	random = no\r
++	country = UTC\r
++	\r
++	name = "EVT_5951205_NAME"\r
++	desc = "EVT_5951204_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { type = relation which = ENG value = 15 }\r
++	command = { type = relation which = CAN value = 15 }\r
++	command = { type = relation which = AST value = 15 }\r
++	command = { type = relation which = U02 value = 15 }\r
++	command = { type = relation which = GER value = -50 }\r
++	command = { type = relation which = FRA value = -50 }\r
++	command = { type = relation which = UB9 value = -50 }\r
++	command = { type = relation which = USA value = -50 }\r
++	command = { type = leave_alliance }\r
++	command = { type = alliance which = ENG }\r
++	command = { type = trigger which = 5951206 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 断る\r
++	name = "ACTION_NAME_DECLINE"\r
++	command = { type = relation which = ENG value = -5 }\r
++	command = { type = relation which = CAN value = -5 }\r
++	command = { type = relation which = AST value = -5 }\r
++	command = { type = relation which = U02 value = -5 }\r
++	command = { type = relation which = GER value = 5 }\r
++	command = { type = relation which = FRA value = 5 }\r
++	command = { type = relation which = UB9 value = 5 }\r
++	command = { type = relation which = USA value = 5 }\r
++	command = { type = trigger which = 5951207 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  英露条約 ― 締結と秘密協定\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5951206\r
++	random = no\r
++	country = ENG\r
++\r
++	name = "EVT_5951206_NAME"\r
++	desc = "EVT_5951204_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = guarantee which = ENG where = UTC }\r
++	command = { type = guarantee which = UTC where = ENG }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  英露条約 ― ロシアが拒否\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5951207\r
++	random = no\r
++	country = ENG\r
++\r
++	name = "EVT_5951207_NAME"\r
++	desc = "EVT_5951204_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = 2 }\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  北海道進駐\r
++# 日中戦争が開始され、日本軍の苦戦が見られるようになると、ロシア帝国は日本列島に存在する租借地の安全を確保する義務があると外交ラインで通告。\r
++# その上で「もしロシア帝国租借地の安全が完全に確保されない場合には、我が国は帝国臣民の安全確保のために日本列島の一部港湾を求めるであろう」と宣言。\r
++# 日本政府はこれに厳重に抗議したが、中華民国との戦争が続いており、その上ロシア帝国には大英帝国の後ろ盾があることを理解していた日本政府は、\r
++# それ以上の行動を起こすことはできなかった。\r
++# ロシア帝国は、日中戦争の進展が芳しくないことを理由とし、現在無政府主義者による独立政府が発足している北海道に軍隊を派遣。これを併呑した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5951208\r
++	random = no\r
++	country = UTC\r
++\r
++	decision = {\r
++	exists = UTC\r
++	event = 5951204 # 英露条約\r
++	event = 2991045 # 北海道大動乱\r
++	NOT = { event = 2991049 } # 北海道反乱の鎮圧\r
++	war = { country = JAP country = CHI }\r
++	OR = {\r
++	area = { area = "Hokkaido" country = JAP data = 1 value = 10 }\r
++	area = { area = "Hokkaido" country = U64 data = 1 value = 10 }\r
++	area = { area = "Hokkaido" country = UE4 data = 1 value = 10 }\r
++	}\r
++	NOT = {\r
++	ispuppet = UTC\r
++	war = { country = JAP country = ENG }\r
++	war = { country = JAP country = UTC }\r
++	alliance = { country = JAP country = ENG }\r
++	alliance = { country = U64 country = ENG }\r
++	alliance = { country = UE4 country = ENG }\r
++	alliance = { country = JAP country = UTC }\r
++	alliance = { country = U64 country = UTC }\r
++	alliance = { country = UE4 country = UTC }\r
++	}\r
++	}\r
++\r
++	decision_trigger = { \r
++	exists = UTC\r
++	event = 5951204 # 英露条約\r
++	event = 2991045 # 北海道大動乱\r
++	NOT = { event = 2991049 } # 北海道反乱の鎮圧\r
++	war = { country = JAP country = CHI }\r
++	OR = {\r
++	area = { area = "Hokkaido" country = JAP data = 1 value = 10 }\r
++	area = { area = "Hokkaido" country = U64 data = 1 value = 10 }\r
++	area = { area = "Hokkaido" country = UE4 data = 1 value = 10 }\r
++	}\r
++	NOT = {\r
++	ispuppet = UTC\r
++	war = { country = JAP country = ENG }\r
++	war = { country = JAP country = UTC }\r
++	alliance = { country = JAP country = ENG }\r
++	alliance = { country = U64 country = ENG }\r
++	alliance = { country = UE4 country = ENG }\r
++	alliance = { country = JAP country = UTC }\r
++	alliance = { country = U64 country = UTC }\r
++	alliance = { country = UE4 country = UTC }\r
++	}\r
++	}\r
++\r
++	trigger = {\r
++	exists = UTC\r
++	event = 5951204 # 英露条約\r
++	event = 2991045 # 北海道大動乱\r
++	NOT = { event = 2991049 } # 北海道反乱の鎮圧\r
++	war = { country = JAP country = CHI }\r
++	OR = {\r
++	area = { area = "Hokkaido" country = JAP data = 1 value = 10 }\r
++	area = { area = "Hokkaido" country = U64 data = 1 value = 10 }\r
++	area = { area = "Hokkaido" country = UE4 data = 1 value = 10 }\r
++	}\r
++	NOT = {\r
++	ispuppet = UTC\r
++	war = { country = JAP country = ENG }\r
++	war = { country = JAP country = UTC }\r
++	alliance = { country = JAP country = ENG }\r
++	alliance = { country = U64 country = ENG }\r
++	alliance = { country = UE4 country = ENG }\r
++	alliance = { country = JAP country = UTC }\r
++	alliance = { country = U64 country = UTC }\r
++	alliance = { country = UE4 country = UTC }\r
++	}\r
++	random = 30\r
++	}\r
++\r
++	name = "EVT_5951208_NAME"\r
++	desc = "EVT_5951208_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 進駐を行おう\r
++	name = "ACTIONNAME5951208A"\r
++	command = { type = belligerence which = UTC value = 1 }\r
++	command = { type = relation which = JAP value = -50 }\r
++	command = { type = relation which = UF8 value = -50 }\r
++	command = { type = relation which = U64 value = -50 }\r
++	command = { type = relation which = UE4 value = -50 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = event which = 5951209 where = JAP when = 5 }\r
++	command = { type = event which = 5951209 where = U64 when = 5 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 必要ない\r
++	name = "ACTIONNAME5951208B"\r
++	command = { type = belligerence which = UTC value = -1 }\r
++	command = { type = relation which = JAP value = -5 }\r
++	command = { type = relation which = UF8 value = -5 }\r
++	command = { type = relation which = U64 value = -5 }\r
++	command = { type = relation which = UE4 value = -5 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  北海道進駐 ― ロシアの進駐\r
++#########################################################################\r
++\r
++event = { \r
++	id = 5951209\r
++	random = no\r
++	TAG = { JAP U64 }\r
++	persistent = yes\r
++	\r
++	name = "EVT_5951209_NAME"\r
++	desc = "EVT_5951208_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	trigger = { country = JAP }\r
++	command = { type = dissent value = 20 }\r
++	command = { type = secedearea which = UTC value = "Hokkaido" when = 1 }\r
++	command = { type = secedearea which = UTC value = "Sakhalin_Kuriles" when = 1 }\r
++	command = { type = relation which = UTC value = -50 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 断る\r
++	name = "ACTION_NAME_DECLINE"\r
++	trigger = { country = JAP }\r
++	command = { type = dissent value = 35 }\r
++	command = { type = war which = UTC }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	trigger = { country = U64 }\r
++	command = { type = event which = 5951210 where = UTC when = 0 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 断る\r
++	name = "ACTION_NAME_DECLINE"\r
++	trigger = { country = U64 }\r
++	command = { type = dissent value = 35 }\r
++	command = { type = war which = UTC }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  北海道進駐 ― 北海道の占領\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5951210\r
++	random = no\r
++	country = UTC\r
++\r
++	name = "EVT_5951210_NAME"\r
++	desc = "EVT_5951208_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = inherit which = U64 }\r
++	command = { type = inherit which = UE4 }\r
++	command = { type = add_core_area which = "Hokkaido" where = UTC }\r
++	command = { type = add_core_area which = "Sakhalin_Kuriles" where = UTC }\r
++	}\r
++}\r
++\r

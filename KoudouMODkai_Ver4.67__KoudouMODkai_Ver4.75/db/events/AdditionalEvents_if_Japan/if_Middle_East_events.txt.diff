@@ -1,0 +1,720 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Middle_East_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Middle_East_events.txt [cp932]
+@@ -78,12 +78,23 @@ event = {
+ \r
+ #########################################################################\r
+ #  作戦『モーセ・プラン』\r
+-# モーシェ・ダヤン及びイスラエル国防軍が考え出した軍事ドクトリンとは、第一次世界大戦におけるドイツ帝国軍のシュリーフェン・プランにも相似したものであった。\r
+-# つまり、イスラエルは周辺を敵対的な国家に囲まれており、これを軍事的に解決するためには、先制攻撃と速攻こそが肝要であると考えられたのである。\r
+-# そこで提示された軍事作戦計画。それこそが『モーセ・プラン』である。\r
+-# これは、政治的にエジプトの中立を勝ち取った上で、戦車・航空機の連携をもってアラブ連合王国を、エジプトが中立的立場を放棄する前に撃滅するというものであった。\r
+-# 今、エジプトはスーダン領域を巡ってエチオピアと戦争を開始しており、この政治的状況は『モーセ・プラン』に提示された状態そのものなのである。\r
+-# ――今こそ、海は開かられるべきであろう。\r
++# モーシェ・ダヤン及びイスラエル国防軍が考え出した軍事ドクトリンとは、\r
++# 第一次世界大戦におけるドイツ帝国軍のシュリーフェン・プランにも相似した\r
++# ものであった。つまり、イスラエルは周辺を敵対的な国家に囲まれており、\r
++# これを軍事的に解決するためには、先制攻撃と速攻こそが肝要であると考え\r
++# られたのである。そこで提示された軍事作戦計画。それこそが\r
++# 『モーセ・プラン』である。これは、政治的にエジプトの中立を勝ち取った上で、\r
++# 戦車・航空機の連携をもってアラブ連合王国を、エジプトが中立的立場を放棄する\r
++# 前に撃滅するというものであった。\r
++# 現在のエジプトは先の中東戦争の敗戦によって生じた政変から未だ立ち直っておらず、\r
++# アフリカにはエチオピア、スエズ対岸にはイスラエルという敵対的な国家が側面に並んでおり、\r
++# 諜報機関モサドの工作の甲斐もあり、エジプト政府と不可侵条約を締結することも可能である、\r
++# と判断されている。\r
++# \r
++# 「あなたは、あなたの杖を上げ、あなたの手を海の上に伸ばし、海を分けなさい。\r
++# そうすれば、イスラエルの子らは海の真ん中の乾いた地面を行くことができる。」\r
++# \r
++# ……旧約聖書：出エジプト記十四章十六節\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -96,25 +107,27 @@ event = {
+ 	exists = ARA\r
+ 	area = { area = "Palestine" country = ISR data = 1 value = 70 }\r
+ 	NOT = { ispuppet = ISR }\r
+-	war = { country = EGY country = ETH }\r
++	#war = { country = EGY country = ETH }\r
+ 	NOT = { war = { country = ISR country = ARA } }\r
+ 	}\r
+ 	\r
+ 	decision_trigger = {\r
++	year = 1939\r
+ 	exists = ISR\r
+ 	exists = ARA\r
+ 	area = { area = "Palestine" country = ISR data = 1 value = 70 }\r
+ 	NOT = { ispuppet = ISR }\r
+-	war = { country = EGY country = ETH }\r
++	#war = { country = EGY country = ETH }\r
+ 	NOT = { war = { country = ISR country = ARA } }\r
+ 	}\r
+ \r
+ 	trigger = {\r
++	year = 1939\r
+ 	exists = ISR\r
+ 	exists = ARA\r
+ 	area = { area = "Palestine" country = ISR data = 1 value = 70 }\r
+ 	NOT = { ispuppet = ISR }\r
+-	war = { country = EGY country = ETH }\r
++	#war = { country = EGY country = ETH }\r
+ 	NOT = { war = { country = ISR country = ARA } }\r
+ 	random = 25\r
+ 	}\r
+@@ -128,7 +141,7 @@ event = {
+ 	offset = 5\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+-	action = { # イスラエル全軍に告ぐ。今こそ状況を開始せよ！\r
++	action = { # 信ぜよ――さらば救われん！\r
+ 	name = "ACTIONNAME6644002A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = belligerence which = ISR value = 15 }\r
+@@ -222,7 +235,7 @@ event = {
+ 	picture = "negotiaton"\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1937 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = { # 講和しかない\r
+@@ -259,7 +272,7 @@ event = {
+ 	name = "ACTIONNAME6644005A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = belligerence which = ISR value = 5 }\r
+-	command = { type = add_claim_area which = "Transjordan" }\r
++	command = { type = add_core_area which = "Transjordan" }\r
+ 	command = { type = addclaim which = 2807 }\r
+ 	command = { type = addclaim which = 1046 }\r
+ 	command = { type = addclaim which = 1030 }\r
+@@ -288,12 +301,14 @@ event = {
+ 	picture = "negotiaton"\r
+ 	\r
+ 	action = { # 終わりだ！\r
++	trigger = { NOT = { alliance = { country = ENG } } }\r
+ 	name = "ACTIONNAME6644006A"\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = demobilize which = land when = 1 where = 1 value = 5 }\r
+ 	command = { type = demobilize which = naval when = 1 where = 1 value = 0 }\r
+ 	command = { type = demobilize which = air when = 1 where = 1 value = 0 }\r
+ 	command = { type = peace which = ISR value = 0 }\r
++	command = { type = peace which = KUR value = 0 }\r
+ 	command = { trigger = { war = { country = ARA country = LBY } } type = peace which = LBY value = 0 }\r
+ 	command = { trigger = { war = { country = ARA country = ENG } } type = peace which = ENG value = 0 }\r
+ 	command = { trigger = { war = { country = ARA country = FRA } } type = peace which = FRA value = 0 }\r
+@@ -355,12 +370,84 @@ event = {
+ 	command = { trigger = { exists = OMN } type = event which = 6644007 where = OMN when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
++	\r
++	action = { # 終わりだ！\r
++	trigger = { alliance = { country = ENG } }\r
++	name = "ACTIONNAME6644006A"\r
++	command = { type = dissent value = 10 }\r
++	command = { type = demobilize which = land when = 1 where = 1 value = 5 }\r
++	command = { type = demobilize which = naval when = 1 where = 1 value = 0 }\r
++	command = { type = demobilize which = air when = 1 where = 1 value = 0 }\r
++	command = { type = peace which = ISR value = 1 }\r
++	command = { type = peace which = KUR value = 1 }\r
++	command = { trigger = { war = { country = ARA country = LBY } } type = peace which = LBY value = 1 }\r
++	command = { trigger = { war = { country = ARA country = ENG } } type = peace which = ENG value = 1 }\r
++	command = { trigger = { war = { country = ARA country = FRA } } type = peace which = FRA value = 1 }\r
++	command = { trigger = { war = { country = ARA country = GER } } type = peace which = GER value = 1 }\r
++	command = { trigger = { war = { country = ARA country = ITA } } type = peace which = ITA value = 1 }\r
++	command = { trigger = { war = { country = ARA country = U14 } } type = peace which = U14 value = 1 }\r
++	command = { trigger = { war = { country = ARA country = U18 } } type = peace which = UB8 value = 1 }\r
++	command = { trigger = { war = { country = ARA country = UER } } type = peace which = UER value = 1 }\r
++	command = { type = country which = SAU  }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = set_domestic which = free_market value = 6 }\r
++	command = { type = set_domestic which = freedom value = 4 }\r
++	command = { type = set_domestic which = defense_lobby value = 8 }\r
++	command = { type = set_domestic which = interventionism value = 8 }\r
++	command = { type = independence which = U91 value = 1 when = 0 }\r
++	command = { type = independence which = U50 value = 1 when = 0 }\r
++	command = { type = independence which = U51 value = 1 when = 0 }\r
++	command = { type = independence which = YEM value = 1 when = 0 }\r
++	command = { type = independence which = OMN value = 1 when = 0 }\r
++	command = { type = secedearea which = ISR value = "Transjordan" when = 1 }\r
++	command = { type = secedeprovince which = ISR value = 2807 }\r
++	command = { type = secedeprovince which = ISR value = 1046 }\r
++	command = { type = secedeprovince which = ISR value = 1030 }\r
++	command = { type = secedeprovince which = ISR value = 1031 }\r
++	command = { type = secedeprovince which = ISR value = 1032 }\r
++	command = { type = secedeprovince which = U91 value = 1041 }\r
++	command = { type = secedeprovince which = U50 value = 1048 }\r
++	command = { type = secedeprovince which = U50 value = 1049 }\r
++	command = { type = secedeprovince which = U50 value = 2806 }\r
++	command = { type = secedeprovince which = U50 value = 2808 }\r
++	command = { type = secedeprovince which = U51 value = 1038 }\r
++	command = { type = secedeprovince which = YEM value = 1051 }\r
++	command = { type = secedeprovince which = YEM value = 1053 }\r
++	command = { type = secedeprovince which = YEM value = 840 }\r
++	command = { type = secedeprovince which = YEM value = 2812 }\r
++	command = { type = secedeprovince which = YEM value = 2813 }\r
++	command = { type = secedeprovince which = OMN value = 1039 }\r
++	command = { type = secedeprovince which = OMN value = 1043 }\r
++	command = { type = secedeprovince which = OMN value = 2814 }\r
++	command = { type = secedeprovince which = OMN value = 2815 }\r
++	command = { type = secedeprovince which = OMN value = 2816 }\r
++	command = { type = secedeprovince which = OMN value = 2818 }\r
++	command = { trigger = { exists = GRE NOT = { ispuppet = GRE } } type = secederegion which = GRE value = "Anatolia" when = 1 }\r
++	command = { trigger = { exists = U34 NOT = { ispuppet = U34 } } type = secederegion which = U34 value = "Anatolia" when = 1 }\r
++	command = { trigger = { exists = TUR NOT = { ispuppet = TUR } } type = secederegion which = TUR value = "Anatolia" when = 1 }\r
++	command = { trigger = { exists = ISR NOT = { ispuppet = ISR } } type = secederegion which = GRE value = "Anatolia" when = 1 }\r
++	command = { trigger = { NOT = { exists = KUR } } type = independence which = KUR value = 1 when = 0 }\r
++	command = { trigger = { exists = KUR } type = secedearea which = KUR value = "Iraq" when = 1 }\r
++	command = { type = sleepteam which = 295000 }\r
++	command = { type = sleepteam which = 295001 }\r
++	command = { type = sleepteam which = 295017 }\r
++	command = { type = sleepteam which = 295013 }\r
++	command = { type = sleepteam which = 295014 }\r
++	command = { trigger = { exists = U91 } type = event which = 6644007 where = U91 when = 0 }\r
++	command = { trigger = { exists = U50 } type = event which = 6644007 where = U50 when = 0 }\r
++	command = { trigger = { exists = U51 } type = event which = 6644007 where = U51 when = 0 }\r
++	command = { trigger = { exists = YEM } type = event which = 6644007 where = YEM when = 0 }\r
++	command = { trigger = { exists = OMN } type = event which = 6644007 where = OMN when = 0 }\r
++	command = { trigger = { war = { country = ISR country = ENG } } type = event which = 6644007 where = ISR when = 0 }\r
++	ai_chance = 100\r
++	}\r
+ }\r
+ \r
+ event = {\r
+ 	id = 6644007\r
+ 	random = no\r
+-	TAG = { U91 U50 YEM OMN }\r
++	TAG = { U91 U50 YEM OMN ISR }\r
+ 	persistent = yes\r
+ \r
+ 	name = EVT_6644007_NAME\r
+@@ -369,6 +456,7 @@ event = {
+ 	picture = "negotiaton"\r
+ \r
+ 	action = { # 独立だ\r
++	trigger = { NOT = { country = ISR } }\r
+ 	name = "ACTIONNAME6644003A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = add_division which = "警察隊" value = militia when = 2 }\r
+@@ -404,6 +492,18 @@ event = {
+ 	command = { trigger = { country = OMN } type = set_domestic which = defense_lobby value = 2 }\r
+ 	command = { trigger = { country = OMN } type = set_domestic which = interventionism value = 1 }\r
+ 	}\r
++	action = { # \r
++	trigger = { country = ISR }\r
++	name = "OK"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = make_puppet which = SAU }\r
++	command = { type = make_puppet which = U91 }\r
++	command = { type = make_puppet which = U50 }\r
++	command = { type = make_puppet which = U51 }\r
++	command = { type = make_puppet which = YEM }\r
++	command = { type = make_puppet which = OMN }\r
++	command = { trigger = { war = { country = CHI country = ENG } war = { country = ISR country = ENG } NOT = { war = { country = ISR country = CHI } } } type = alliance which = CHI when = 1 }\r
++	}\r
+ }\r
+ \r
+ \r
+@@ -719,29 +819,40 @@ event = {
+ 	country = U34\r
+ 	\r
+ 	decision = {\r
++OR = { AND = {\r
+ 	exists = ISR\r
+ 	exists = ARA\r
+ 	war = { country = ISR country = ARA }\r
+ 	region = { region = "Anatolia" country = ARA data = 2 value = 10 }\r
+ 	atwar = no\r
++} \r
++alliance = { country = FRA country = DDR }\r
++}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++OR = { AND = {\r
+ 	exists = ISR\r
+ 	exists = ARA\r
+ 	war = { country = ISR country = ARA }\r
+ 	region = { region = "Anatolia" country = ARA data = 2 value = 10 }\r
+ 	atwar = no\r
+-	}\r
+-\r
++} \r
++alliance = { country = FRA country = DDR }\r
++}\r
++}\r
+ 	trigger = {\r
++OR = { AND = {\r
+ 	exists = ISR\r
+ 	exists = ARA\r
+ 	war = { country = ISR country = ARA }\r
+ 	region = { region = "Anatolia" country = ARA data = 2 value = 10 }\r
+ 	atwar = no\r
+ 	random = 65\r
+-	}\r
++} \r
++alliance = { country = FRA country = DDR }\r
++}\r
++}\r
+ 	\r
+ 	name = "EVT_6645003_NAME"\r
+ 	desc = "EVT_6645003_DESC"\r
+@@ -750,7 +861,7 @@ event = {
+ 	decision_picture = "decision_budyonnui"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 要求しよう\r
+@@ -828,13 +939,18 @@ event = {
+ 	country = GRE\r
+ \r
+ 	trigger = {\r
++OR = { 	\r
++AND = {\r
+ 	event = 6645005\r
+ 	exists = GRE\r
+ 	exists = U34\r
+ 	NOT = { war = { country = GRE country = U34 } }\r
+ 	NOT = { ispuppet = GRE }\r
+ 	NOT = { ispuppet = U34 }\r
+-	random = 60\r
++random = 60\r
++}\r
++alliance = { country = FRA country = DDR }\r
++}\r
+ 	}\r
+ 	\r
+ 	name = "EVT_6645006_NAME"\r
+@@ -844,7 +960,7 @@ event = {
+ 	decision_picture = "decision_budyonnui"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 住民に亡命の動きが見受けられる\r
+@@ -964,6 +1080,7 @@ event = {
+ 	name = "ACTIONNAME6645010A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = belligerence which = U34 value = 5 }\r
++	command = { trigger = { alliance = { country = FRA country = DDR } } type = alliance which = FRA when = 1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -982,6 +1099,8 @@ event = {
+ 	country = U34\r
+ \r
+ 	trigger = {\r
++	NOT = { alliance = { country = FRA }  }\r
++	NOT = { alliance = { country = DDR }  }\r
+ 	war = { country = GRE country = U34 }\r
+ 	NOT = { war = { country = GRE country = UER } }\r
+ 	NOT = { war = { country = GRE country = ENG } }\r
+@@ -1005,7 +1124,7 @@ event = {
+ 	picture = "negotiaton"\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = { # 講和を提案しよう\r
+@@ -1016,6 +1135,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 戦争継続だ！\r
++	trigger = { alliance = { country =  FRA } }\r
+ 	name = "ACTIONNAME6645012B"\r
+ 	command = { type = dissent value = 20 }\r
+ 	ai_chance = 0\r
+@@ -1312,384 +1432,5 @@ event = {
+ }\r
+ ##########################################################################\r
+ #ギリシャ\r
+-##########################################################################\r
+-#  ビザンツ・ナショナリズム\r
+-# 1914年にオスマン帝国が崩壊し、中東で大動乱が勃発するとギリシャはアナトリア半島に介入した。\r
+-# 内戦で混乱していたトルコは、ギリシャ軍に各地で撃破され、トルコの指導者であったムスタファ・ケマルも戦死。\r
+-# ギリシャはトルコに対して大勝利を収め、長年に渡り夢見てきたイガリ・メデアを達成した。\r
+-# この偉大な功績は、ギリシャに新たなナショナリズムであるビザンツ(東ローマ帝国)復古運動を巻き起こし、ギリシャは国号を改めるに至った。\r
+-# ギリシャの栄光は続くかと思われたが、現在の中東の情勢は、オスマン帝国が存在していた時期より極度に悪化している。\r
+-# イスラエル、アラブ連合王国、エジプト、クルディスタン、そして何よりトルコの社会主義はギリシャをアナトリア半島から追放することを狙っていた。\r
+-# ギリシャがかつての帝国の国威を得ることができるかは不透明である。\r
+-###########################################################################\r
+-event = {\r
+-	id = 6646001\r
+-	random = no\r
+-	country = GRE\r
+-\r
+-	name = "EVT_6646001_NAME"\r
+-	desc = "EVT_6646001_DESC"\r
+-	style = 1\r
+-	picture = "diplomatic_campaign"\r
+-\r
+-	action = {\r
+-	name = "ACTIONNAME6646001A"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = sleepteam which = 90008 }\r
+-	command = { type = sleepteam which = 90009 }\r
+-	command = { type = sleepteam which = 90030 }\r
+-	command = { type = sleepteam which = 90004 }\r
+-	command = { type = sleepteam which = 90034 }\r
+-	command = { type = sleepteam which = 90046 }\r
+-	command = { type = sleepteam which = 90042 }\r
+-	command = { type = sleepteam which = 90002 }\r
+-	command = { type = sleepteam which = 90036 }\r
+-	command = { type = sleepteam which = 90006 }\r
+-	command = { type = sleepteam which = 90007 }\r
+-	command = { type = sleepteam which = 90011 }\r
+-	command = { type = sleepteam which = 90035 }\r
+-	command = { type = sleepteam which = 90001 }\r
+-	command = { type = sleepteam which = 90040 }\r
+-	command = { type = sleepteam which = 90010 }\r
+-	command = { type = sleepteam which = 90003 }\r
+-	command = { type = sleepteam which = 90032 }\r
+-	command = { type = sleepteam which = 90005 }\r
+-	command = { type = sleepteam which = 90045 }\r
+-	command = { type = sleepteam which = 90037 }\r
+-	command = { type = sleepteam which = 90012 }\r
+-	command = { type = sleepteam which = 90013 }\r
+-	command = { type = sleepteam which = 90014 }\r
+-	command = { type = sleepteam which = 90039 }\r
+-	command = { type = waketeam which = 90101 }\r
+-	command = { type = waketeam which = 90102 }\r
+-	command = { type = waketeam which = 90103 }\r
+-	command = { type = waketeam which = 90104 }\r
+-	command = { type = waketeam which = 90105 }\r
+-	command = { type = waketeam which = 90106 }\r
+-	command = { type = waketeam which = 90107 }\r
+-	command = { type = waketeam which = 90108 }\r
+-	command = { type = waketeam which = 90109 }\r
+-	command = { type = waketeam which = 90110 }\r
+-	command = { type = waketeam which = 90111 }\r
+-	command = { type = waketeam which = 90112 }\r
+-	command = { type = waketeam which = 90113 }\r
+-	command = { type = waketeam which = 90114 }\r
+-	command = { type = waketeam which = 90115 }\r
+-	command = { type = waketeam which = 90116 }\r
+-	command = { type = waketeam which = 90117 }\r
+-	command = { type = waketeam which = 90118 }\r
+-	command = { type = waketeam which = 90119 }\r
+-	command = { type = waketeam which = 90120 }\r
+-	command = { type = waketeam which = 90121 }\r
+-	command = { type = waketeam which = 90122 }\r
+-	command = { type = waketeam which = 90123 }\r
+-	command = { type = waketeam which = 90124 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-##################################################\r
+-#  アカデメイア\r
+-# 『アカデメイア』とは古代ギリシアのアテナイ北西部郊外にあった神域である。\r
+-# 紀元前387年、プラトンがここに学園を開設、算術、幾何学、天文学等を始めとする学問や哲学を教授していた。\r
+-# アカデメイアは学校として有名となり、高度な研究ないし教育機関をこれに因んで『アカデミー』と名付けるほどであった。\r
+-# ビザンツ・ナショナリズムに基づく、国粋的復古主義が盛んとなっていたギリシャでは『アカデメイア』を国立大学として再開する嘆願がなされた。\r
+-# 資金を投入すれば、古代ギリシャの偉大な大学が蘇ることだろう。\r
+-##################################################\r
+-\r
+-event = { \r
+-	id = 6646002\r
+-	random = no \r
+-	country = GRE\r
+-\r
+-	decision = {\r
+-	event = 6646001\r
+-	control = { province = 377 data = GRE } # アテネ\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	decision_trigger = {\r
+-	control = { province = 377 data = GRE } # アテネ\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	trigger = {\r
+-	control = { province = 377 data = GRE } # アテネ\r
+-	atwar = no\r
+-	random = 20\r
+-	}\r
+-	\r
+-	date = { day = 0 month = 7 year = 1933 }		 \r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1963 }	\r
+-	\r
+-	name = "EVT_6646002_NAME"\r
+-	desc = "EVT_6646002_DESC"\r
+-  	style = 2\r
+-  	picture = "invest_research"\r
+-	\r
+-	action = {\r
+-	name = "ACTIONNAME6646002A"\r
+-	command = { trigger = { ai = no } type = money value = -300 }\r
+-	command = { type = research_mod value = 10 }\r
+-	command = { type = waketeam which = 90125 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  ローマ帝国の再建\r
+-# バルカン半島におけるギリシャの優位は、世界中の軍事関係者を驚愕させた。\r
+-# ギリシャは長年の宿敵ともいえるトルコを下し、アナトリア半島における絶対的優位を築いた。\r
+-# 今やコンスタンティノープルは正教会の一大聖地となり、ギリシャ国家の誇りをこれまでにないほどに高めている。\r
+-# ギリシャは、長らくビザンチン帝国の後継国家として、アナトリアからの侵略者を食い止めてきたが、\r
+-# この偉大な勝利を機にビザンチン帝国の栄光を取り戻す動きが国内で見られた。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 6646003\r
+-	random = no\r
+-	country = GRE\r
+-	save_date = yes\r
+-	\r
+-	decision = {\r
+-	region = { region = "Anatolia" country = -3 data = 1 value = 80 }\r
+-	control = { province = 409 data = GRE }\r
+-	OR = {\r
+-	NOT = { exists = U34 }\r
+-	puppet = { country = U34 country = GRE }\r
+-	}\r
+-	}\r
+ \r
+-	decision_trigger = {\r
+-	region = { region = "Anatolia" country = -3 data = 1 value = 80 }\r
+-	control = { province = 409 data = GRE }\r
+-	OR = {\r
+-	NOT = { exists = U34 }\r
+-	puppet = { country = U34 country = GRE }\r
+-	}\r
+-	}\r
+ \r
+-	trigger = {\r
+-	region = { region = "Anatolia" country = -3 data = 1 value = 80 }\r
+-	control = { province = 409 data = GRE }\r
+-	OR = {\r
+-	NOT = { exists = U34 }\r
+-	puppet = { country = U34 country = GRE }\r
+-	}\r
+-	}\r
+-	\r
+-	name = "EVT_6646003_NAME"\r
+-	desc = "EVT_6646003_DESC"\r
+-	style = 2\r
+-  	picture = "Eastern_Roman_Empire"\r
+-	decision_picture = "decision_Eastern_Roman_Empire"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # ローマ帝国を再建するのだ\r
+-	name = "ACTIONNAME6646003A"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = flag_ext where = GRE which = "_ERE" }\r
+-	command = { type = name where = GRE which = "ローマ帝国" }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # ビザンツ帝国による覇権を目指す時だ\r
+-	name = "ACTIONNAME6646003B"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = flag_ext where = GRE which = "_BZT" }\r
+-	command = { type = name where = GRE which = "ビザンツ帝国" }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # ビザンツ・ギリシャ万歳！\r
+-	name = "ACTIONNAME6646003C"\r
+-	command = { type = dissent value = -1 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  エレフテリオス・ヴェニゼロス暗殺\r
+-# 近代ギリシャの政治を牽引し、メガリ・イデアを達成した欧州政治家を代表するといっても過言ではないエレフテリオス・ヴェニゼロスを凶弾が襲った。\r
+-# 銃弾はヴェニゼロスを貫き、彼は病院へ搬送されるも死亡した。\r
+-# アテネでは大規模な国葬が営まれ、国王はこれまでの功績をたたえるとともに、国家英雄の称号が授けられた。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 6646101\r
+-	country = GRE\r
+-	random = no\r
+-	persistent = no\r
+-\r
+-	trigger = {\r
+-	flag = Venizelos_Assassination\r
+-	random =15\r
+-	}\r
+-\r
+-	name = "EVT_6646101_NAME"\r
+-	desc = "EVT_6646101_DESC"\r
+-	style = 2\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
+-\r
+-	action_a = {\r
+-	name = "ACTION_NAME_DAMN"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = sleepminister which = 90301 }\r
+-	command = { type = sleepminister which = 90302 }\r
+-	command = { type = sleepminister which = 90010 }\r
+-	command = { type = sleepminister which = 90074 }\r
+-	command = { type = sleepminister which = 90187 }\r
+-	command = { type = sleepminister which = 90195 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  メタクサス体制の成立\r
+-# エレフテリオス・ヴェニゼロス暗殺後、政治的な混乱が起こることが懸念されたことで軍部出身のイオアニス・メタクサスが首相に任命された。\r
+-# 彼は就任すると同時に非常事態を宣言、反体制派の取締りを実行、15,000人あまりを獄中または国外に追放した。\r
+-# このすばやい動きは軍部と内閣への支持につながり、国内政治は安定することになる。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 6646102\r
+-	random = no\r
+-	country = GRE\r
+-\r
+-	trigger = {\r
+-	NOT = { ispuppet = yes }\r
+-	NOT = { \r
+-	minister = 90301\r
+-	minister = 90302\r
+-	}\r
+-	event = 3955101\r
+-	}\r
+-\r
+-	name = "EVT_6646102_NAME"\r
+-	desc = "EVT_6646102_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	date = { day = 0 month = january year = 1933 }\r
+-	offset = 2\r
+-	deathdate = { day = 29 month = december year = 1940 }\r
+-\r
+-	action = {\r
+-	name = ACTION_NAME_OK\r
+-	ai_chance = 100\r
+-	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 90001 }\r
+-	command = { type = headofgovernment which = 90303 }\r
+-	command = { type = dissent value = -3 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  戦時内閣の発足\r
+-# 戦争が起きたことで、ギリシャでは戦時体制が構築された。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 6646103\r
+-	random = no\r
+-	country = GRE\r
+-\r
+-	trigger = {\r
+-	atwar = yes\r
+-	NOT = { ispuppet = yes }\r
+-	incabinet = 90303\r
+-	}\r
+-\r
+-	name = "EVT_6646103_NAME"\r
+-	desc = "EVT_6646103_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1939 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1943 }\r
+-\r
+-	action_a = {\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 90001 }\r
+-	command = { type = headofgovernment which = 90303 }\r
+-	command = { type = dissent value = -3 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  民主主義を求める運動\r
+-# 長らく続いた戦時体制も終わり、内政へ力を入れることを望む国民は独裁体制の終焉を求めた。\r
+-# しかし一方で戦時体制を基盤に中央統制政府を作り、より強力な政府運営を求める勢力も存在している。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 6646104\r
+-	random = no\r
+-	country = GRE\r
+-\r
+-	trigger = {\r
+-	event = 6646103\r
+-	atwar = no\r
+-	control = { province = 333 data = GER }\r
+-	NOT = { ispuppet = yes }\r
+-	random = 35\r
+-	}\r
+-\r
+-	name = "EVT_6646104_NAME"\r
+-	desc = "EVT_6646104_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-	\r
+-\r
+-	date = { day = 0 month = 0 year = 1944 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = december year = 1964 }\r
+-\r
+-	action = { # 民主化を実行する\r
+-	name = "ACTIONNAME6646104A"\r
+-	command = { type = set_domestic which = democratic value = 7 }\r
+-	command = { type = set_domestic which = political_left value = 6 }\r
+-	command = { type = headofstate which = 90011 }\r
+-	command = { type = headofgovernment which = 90026 }\r
+-	command = { type = foreignminister which = 90046 }\r
+-	command = { type = armamentminister which = 90068 }\r
+-	command = { type = ministerofsecurity which = 90089 }\r
+-	command = { type = ministerofintelligence which = 90110 }\r
+-	command = { type = chiefofstaff which = 90130 }\r
+-	command = { type = chiefofarmy which = 90133 }\r
+-	command = { type = chiefofnavy which = 90142 }\r
+-	command = { type = chiefofair which = 90148 }\r
+-	command = { type = dissent value = -1 }\r
+-	ai_chance = 50\r
+-	}\r
+-\r
+-	action = { # 国家統制をより強める\r
+-	name = "ACTIONNAME6646104B"\r
+-	command = { type = set_domestic which = democratic value = 1 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 90017 }\r
+-	command = { type = headofgovernment which = 914003 }\r
+-	command = { type = foreignminister which = 90057 }\r
+-	command = { type = armamentminister which = 90082 }\r
+-	command = { type = ministerofsecurity which = 90103 }\r
+-	command = { type = ministerofintelligence which = 90119 }\r
+-	command = { type = chiefofstaff which = 914005 }\r
+-	command = { type = chiefofarmy which = 90138 }\r
+-	command = { type = chiefofnavy which = 90145 }\r
+-	command = { type = chiefofair which = 90246 }\r
+-	command = { type = dissent value = -1 }\r
+-	ai_chance = 50\r
+-	}\r
+-}
+\ No newline at end of file

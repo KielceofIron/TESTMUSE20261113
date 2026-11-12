@@ -1,0 +1,308 @@
+--- A/scenarios/1933if_Japan/paraguay_if.inc [cp932]
++++ B/scenarios/1933if_Japan/paraguay_if.inc [cp932]
+@@ -1,192 +1,119 @@
+- \r
+- ############################## \r
+- # Country definition for PAR # \r
+- ############################## \r
++##############################\r
++# Country definition for PAR #\r
++##############################\r
+ \r
+- ##################### \r
+- # Country main data # \r
+- ##################### \r
+-  \r
+- country = \r
+- {  tag                    = PAR \r
+-	ai = "par_1936.ai"\r
+-	ai_settings	= { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes MOB6 = yes MOB7 = yes } }\r
+-	dissent = 15 # 20\r
+-	belligerence           = 5 # 追加\r
+-	# Resource Reserves \r
+-	energy                 = 360\r
+-	metal                  = 180\r
+-	rare_materials         = 90\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 10 \r
+-	capital                = 2047 \r
+-	manpower               = 50 \r
+-      \r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 7 \r
+-     political_left    = 5 \r
+-     freedom           = 3 \r
+-     free_market       = 5 \r
+-     professional_army = 7 # 8 \r
+-     defense_lobby     = 8 \r
+-     interventionism   = 8 \r
+-    } \r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+-   nationalprovinces      = {  2046 2047  } \r
+-   ownedprovinces         = {  2046 2047  } \r
+-   controlledprovinces    = {  2047  } \r
+-   # ROTW Minor Tech '36 \r
+-   # Group D 1936 techs \r
+-   # ###################### \r
+-   # GW fighter \r
+-   techapps               = { \r
+-#Interwar Fighter  \r
+-4500 4510 4520 4530 4540 4550 4010\r
+-#Basic Armoured Car  \r
+-2860 2870 2880 2020\r
+-#Great War Heavy Field Artillery \r
+-2290 2300 2310\r
+-#SW Tank \r
+-7600 7610 \r
+-#Great War Infantry Division  \r
+-1010  1020 1030 1040 1050 1060 \r
+-#Interbellum Supply \r
+-1910 1920 1930 1940 1950 1960\r
+-#Great War Cavalry Division  \r
+-13060 13070 13080 1310 1320 1330 1340\r
+-#Early Mountain Division \r
+-1160  1170 1180 1190 1200 1210 1220 1230 1240\r
+-#Early Static Anti-Air Artillery \r
+-2800 2450 21180 21190\r
+-#Basic Anti-Air Artillery Brigade \r
+-2810 2820 2510\r
+-#Modern Agriculture  \r
+-5700 5710 5010\r
+-#Improved Construction Engineering \r
+-5800 5080  \r
++country = {\r
++  tag                = PAR\r
++  ai                 = "par_1936.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes MOB6 = yes MOB7 = yes } }\r
++  belligerence       = 5\r
++  capital            = 2047 # アスンシオン（パラグアイ）\r
++  dissent            = 15\r
++  manpower           = 50\r
++  # Resource Reserves\r
++  energy         = 360\r
++  metal          = 180\r
++  rare_materials = 90\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 10\r
+ \r
+-#Medicine\r
+-5600 5610\r
+-#Engineers\r
+-1830 1840 \r
+-# Land Doctrine WW1 - Entente line\r
+-6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-# Land Doctrine WW2 - none\r
+-# 6570 # 人的資源ドクトリン\r
+-6000100 # 補給戦攻撃\r
+-6000110\r
++  diplomacy = {\r
++    relation = { tag = ARG value = 50 }\r
++    relation = { tag = BRA value = 10 }\r
++    relation = { tag = BOL value = -200 }\r
++    relation = { tag = CHL value = 35 }\r
++    relation = { tag = COL value = 10 }\r
++    relation = { tag = ECU value = 25 }\r
++    relation = { tag = PRU value = 25 }\r
++    relation = { tag = URU value = 20 }\r
++    relation = { tag = USA value = 75 }\r
++    relation = { tag = VEN value = 10 }\r
++  }\r
++  SpyInfo                = { country = "PAR" NumberOfSpies = 4 }\r
+ \r
+-#Air Doctrines - ww2 techs\r
+-27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010\r
+-} \r
+-inventions = { 3000027 }\r
+-   diplomacy = \r
+-   {  relation = {  tag = ARG value = 50  } \r
+-     relation = {  tag = BRA value = 10  } \r
+-     relation = {  tag = BOL value = -200  } # -50 \r
+-     relation = {  tag = CHL value = 35  } \r
+-     relation = {  tag = COL value = 10  } \r
+-     relation = {  tag = ECU value = 25  } \r
+-     relation = {  tag = PRU value = 25  } \r
+-     relation = {  tag = URU value = 20  } \r
+-     relation = {  tag = USA value = 75  } \r
+-     relation = {  tag = VEN value = 10  } \r
+-    } \r
+-   SpyInfo                = {  country = "PAR" NumberOfSpies = 4  } \r
+-   headofstate            = {  type = 9 id = 200001  } \r
+-   headofgovernment       = {  type = 9 id = 200002  } \r
+-   foreignminister        = {  type = 9 id = 200003  } \r
+-   armamentminister       = {  type = 9 id = 200004  } \r
+-   ministerofsecurity     = {  type = 9 id = 200005  } \r
+-   ministerofintelligence = {  type = 9 id = 200006  } \r
+-   chiefofstaff           = {  type = 9 id = 200098  } # 200007\r
+-   chiefofarmy            = {  type = 9 id = 200008  } \r
+-   chiefofnavy            = {  type = 9 id = 200009  } \r
+-   chiefofair             = {  type = 9 id = 200010  } \r
+-   landunit = \r
+-   {  id       = {  type = 15600 id = 60  } \r
+-     name     = "中央軍集団" \r
+-     location = 2047 \r
+-     Division = \r
+-     {  id       = {  type = 15600 id = 6000  } \r
+-       name     = "第1歩兵師団" \r
+-       strength   = 65 \r
+-	   max_strength = 100\r
+-       type     = infantry \r
+-	   model    = 6\r
+-      } \r
++  nationalprovinces      = { 2046 2047 }\r
++  ownedprovinces         = { 2046 2047 }\r
++  controlledprovinces    = { 2047 }\r
++\r
++  techapps               = { 4500 4510 4520 4530 4540 4550 4010 2860 2870 2880 2020 2290 2300 2310 7600 7610 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 1240 2800 2450 21180 21190 2810 2820 2510 5700 5710 5010 5800 5080 5600 5610 1830 1840 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 6000100 6000110 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 }\r
++  inventions             = { 3000027 }\r
++\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 7\r
++    political_left    = 5\r
++    freedom           = 3\r
++    free_market       = 5\r
++    professional_army = 7\r
++    defense_lobby     = 8\r
++    interventionism   = 8\r
++  }\r
++  headofstate            = { type = 9 id = 200001 } # エウセビオ・アヤラ\r
++  headofgovernment       = { type = 9 id = 200002 } # エウセビオ・アヤラ\r
++  foreignminister        = { type = 9 id = 200003 } # ルイス・アルベルト・リアル\r
++  armamentminister       = { type = 9 id = 200004 } # フェデリコ・チャべス\r
++  ministerofsecurity     = { type = 9 id = 200005 } # ニコラス・デルガド\r
++  ministerofintelligence = { type = 9 id = 200006 } # ファン・マヌエル・フルトス\r
++  chiefofstaff           = { type = 9 id = 200098 } # ホセ・エスティガリビア・インサウラルデ\r
++  chiefofarmy            = { type = 9 id = 200008 } # マヌエル・T・アポンテ\r
++  chiefofnavy            = { type = 9 id = 200009 } # マヌエル・T・アポンテ\r
++  chiefofair             = { type = 9 id = 200010 } # ヴィセンテ・アルモナシド\r
++\r
++  landunit = {\r
++    id       = { type = 15600 id = 60 }\r
++    name     = "中央軍集団"\r
++    location = 2047\r
++    division = {\r
++      id             = { type = 15600 id = 6000 }\r
++      name           = "第1歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 65\r
++      max_strength   = 100\r
+     }\r
++  }\r
++  landunit = {\r
++    id       = { type = 15600 id = 61 }\r
++    name     = "パラグアイ陸軍"\r
++    location = 2047\r
++    leader   = 200009\r
++    division = {\r
++      id             = { type = 15600 id = 6008 }\r
++      name           = "パラグアイ総司令部"\r
++      type           = hq\r
++      model          = 1\r
++      strength       = 40\r
++      max_strength   = 100\r
++    }\r
++    division = {\r
++      id             = { type = 15600 id = 6001 }\r
++      name           = "第2歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = artillery\r
++      brigade_model  = 3\r
++      strength       = 15\r
++      max_strength   = 100\r
++    }\r
++  }\r
+ \r
+-   landunit = \r
+-   {  id       = {  type = 15600 id = 61  } \r
+-     name     = "パラグアイ陸軍" \r
+-     leader = 200009 # エスティガリビア\r
+-     location = 2047\r
+-     Division = \r
+-     {  id       = {  type = 15600 id = 6008  } \r
+-       name     = "パラグアイ総司令部" \r
+-       strength   = 40 \r
+-	   max_strength = 100\r
+-       type     = hq \r
+-	   model    = 1\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 15600 id = 6001  } \r
+-       name     = "第2歩兵師団" \r
+-       strength   = 15 # 100 \r
+-	   max_strength = 100\r
+-       type     = infantry \r
+-	   model    = 6\r
+-       extra    = artillery \r
+-	   brigade_model = 3\r
+-      } \r
+-   #  Division = \r
+-   #  {  id       = {  type = 15600 id = 6002  } \r
+-   #    name     = "第3歩兵師団" \r
+-   #    strength   = 10 # 100 \r
+-   #	   max_strength = 100\r
+-   #    type     = infantry \r
+-   #	   model    = 6\r
+-   #   } \r
+-   #  Division = \r
+-   #  {  id       = {  type = 15600 id = 6003  } \r
+-   #    name     = "第4歩兵師団" \r
+-   #    strength   = 10 # 100 \r
+-   #	   max_strength = 100\r
+-   #    type     = infantry \r
+-   #	   model    = 5\r
+-   #   } \r
+-   #  Division = \r
+-   #  {  id       = {  type = 15600 id = 6004  } \r
+-   #    name     = "第1騎兵連隊" \r
+-   #    strength   = 15 # 100 \r
+-   #    type     = cavalry\r
+-   #	   model    = 6\r
+-   #   } \r
+-   #  Division = \r
+-   #  {  id       = {  type = 15600 id = 6007  } \r
+-   #    name     = "第5歩兵師団" \r
+-   #    strength   = 10 \r
+-   #	   max_strength = 100\r
+-   #    type     = militia \r
+-   #	   model    = 3\r
+-   #   }\r
+-    } \r
+-   airunit = \r
+-   {  id       = {  type = 15600 id = 6005  } \r
+-     name     = "パラグアイ空軍" \r
+-     location = 2047 \r
+-     base     = 2047\r
+-     Division = \r
+-     {  id       = {  type = 15600 id = 6006  } \r
+-       name     = "第1航空群" \r
+-       strength   = 10\r
+-	   max_strength = 100\r
+-       type     = interceptor\r
+-	   model    = 6\r
+-      } \r
+-    } \r
+-  } \r
+- \r
++  airunit = { \r
++    id       = { type = 15600 id = 6005 }\r
++    name     = "パラグアイ空軍"\r
++    location = 2047\r
++    base     = 2047\r
++    division = {\r
++      id             = { type = 15600 id = 6006 }\r
++      name           = "第1航空群"\r
++      type           = interceptor\r
++      model          = 6\r
++      strength       = 10\r
++      max_strength   = 100\r
++    }\r
++  }\r
++}\r

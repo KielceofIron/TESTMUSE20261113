@@ -1,0 +1,955 @@
+--- A/scenarios/1933if_Japan/canada_if.inc [cp932]
++++ B/scenarios/1933if_Japan/canada_if.inc [cp932]
+@@ -1,476 +1,476 @@
+-##############################\r
+-# Country definition for CAN #\r
+-##############################\r
+-\r
+-#####################\r
+-# Country main data #\r
+-#####################\r
+-\r
+-country = {\r
+-  tag                = CAN\r
+-  ai                 = "IF/CAN_if.ai"\r
+-  ai_settings        = { flags = { MOB1 = yes MOB2 = yes } }\r
+-  belligerence       = 10\r
+-  capital            = 2108 # オタワ\r
+-  dissent            = 25\r
+-  manpower           = 80\r
+-  # Resource Reserves\r
+-  energy         = 500\r
+-  metal          = 200\r
+-  rare_materials = 100\r
+-  oil            = 200\r
+-  supplies       = 300\r
+-  money          = 500\r
+-  transports     = 350\r
+-  escorts        = 60\r
+-\r
+-  diplomacy = {\r
+-    relation = { tag = AST value = 200 }\r
+-    relation = { tag = BEL value = 150 }\r
+-    relation = { tag = BHU value = 200 }\r
+-    relation = { tag = ENG value = 200 }\r
+-    relation = { tag = FRA value = -150 }\r
+-    relation = { tag = GER value = -100 }\r
+-    relation = { tag = HOL value = 80 }\r
+-    relation = { tag = IRE value = 75 }\r
+-    relation = { tag = IRQ value = 100 }\r
+-    relation = { tag = ITA value = 20 }\r
+-    relation = { tag = NEP value = 200 }\r
+-    relation = { tag = NZL value = 200 }\r
+-    relation = { tag = OMN value = 150 }\r
+-    relation = { tag = SAF value = 200 }\r
+-    relation = { tag = USA value = -200 }\r
+-    relation = { tag = YEM value = 150 }\r
+-    relation = { tag = RUS value = -50 }\r
+-    relation = { tag = JAP value = -200 }\r
+-    relation = { tag = CHI value = 100 }\r
+-    relation = { tag = UB9 value = -100 }\r
+-  }\r
+-  SpyInfo                = { country = "CAN" NumberOfSpies = 12 }\r
+-\r
+-  nationalprovinces      = { 2089 2090 2091 2092 2093 2094 2095 2096 2097 2098 2099 2100 2101 2102 2103 2104 2105 2106 2107 2108 2109 2110 2111 2112 2113 2114 2115 2116 2117 2118 2119 2120 2121 2122 2123 2124 2125 2126 2127 2128 2129 2130 2131 2132 2133 2134 2135 2136 2137 2138 2148 2149 }\r
+-  ownedprovinces         = { 2089 2091 2092 2093 2094 2095 2096 2097 2098 2099 2100 2101 2102 2103 2104 2105 2106 2107 2108 2109 2110 2111 2112 2113 2114 2115 2116 2117 2118 2119 2120 2121 2122 2123 2124 2125 2126 2127 2128 2129 2130 2131 2132 2133 2134 2136 2137 2138 2148 }\r
+-  controlledprovinces    = { 2089 2091 2092 2093 2094 2095 2096 2097 2098 2099 2100 2101 2102 2103 2104 2105 2106 2107 2108 2109 2110 2111 2112 2113 2114 2115 2116 2117 2118 2119 2120 2121 2122 2123 2124 2125 2126 2127 2128 2129 2130 2131 2132 2133 2134 2136 2137 2138 2148 }\r
+-\r
+-  techapps               = { 1010 1020 1030 1040 1050 1060 1070 1080 13060 13070 13080 1310 1320 1330 1340 1350 1360 14000 14010 1910 1920 1930 1940 1950 1960 1970 1830 1840 1850 7600 7610 2620 2010 2630 2860 2870 2880 2020 2290 2300 2310 2800 2450 21180 21190 2810 2820 2510 3010 3020 3030 3040 3110 3120 4500 4510 4520 4530 4540 4550 4010 4600 4610 4620 4630 4120 4300 4310 4320 4330 4800 4810 4740 4750 4760 4290 5700 5710 5010 5810 5820 5050 5830 5060 5800 5080 5090 5310 54010 54020 54030 5316 5326 3720 3810 3820 5600 5610 5620 5560 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 8010 8020 8040 8050 8060 8070 8080 8100 8110 8120 8150 8160 8200 8210 8500 8510 8520 8600 8900 8910 8920 8930 8940 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 1160 1170 1180 1190 1560 1396 1980 2640 2646 2650 2900 2910 2920 2400 3130 3410 3420 3430 3440 3450 3310 3320 3210 3220 3230 3240 6210 1200 2930 6220 6900 }\r
+-  inventions             = { 3000027 3120001 }\r
+-  deactivate             = { 6000300 6000500 6570 6210 6000100 6390 6560 6010 2002076 2002077 }\r
+-\r
+-  policy = {\r
+-    date              = { year = 0 month = january day = 0 }\r
+-    democratic        = 6\r
+-    political_left    = 2\r
+-    freedom           = 8\r
+-    free_market       = 9\r
+-    professional_army = 2\r
+-    defense_lobby     = 6\r
+-    interventionism   = 5\r
+-  }\r
+-  headofstate            = { type = 9 id = 220182 } # ベスボロウ伯爵ヴィア・ポンソンビー\r
+-  headofgovernment       = { type = 9 id = 220013 } # R・B・ベネット\r
+-  foreignminister        = { type = 9 id = 220023 } # アドリアン・アルカン\r
+-  armamentminister       = { type = 9 id = 220312 } # モーリス・デュプレシ\r
+-  ministerofsecurity     = { type = 9 id = 220315 } # モーリス・デュプレシ\r
+-  ministerofintelligence = { type = 9 id = 220313 } # ルイ＝フェルディナン・セリーヌ\r
+-  chiefofstaff           = { type = 9 id = 220314 } # ジェームズ・S・ブラウン\r
+-  chiefofarmy            = { type = 9 id = 220304 } # ジョン・フレデリック・チャールズ・フラー\r
+-  chiefofnavy            = { type = 9 id = 220188 } # ウォルター・ホセ\r
+-  chiefofair             = { type = 9 id = 220189 } # ジェームズ・リンジー・ゴードン\r
+-\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 1 }\r
+-    name     = "カナダ第1軍団"\r
+-    location = 2108\r
+-    leader   = 220001\r
+-    division = {\r
+-      id             = { type = 20000 id = 2 }\r
+-      name           = "第1軍司令部"\r
+-      type           = hq\r
+-      model          = 1\r
+-      strength       = 80\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 3 }\r
+-      name           = "第1歩兵師団"\r
+-      type           = infantry\r
+-      model          = 6\r
+-      extra          = artillery\r
+-      brigade_model  = 4\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 4 }\r
+-      name           = "第2歩兵師団"\r
+-      type           = infantry\r
+-      model          = 6\r
+-      extra          = artillery\r
+-      brigade_model  = 4\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 5 }\r
+-    name     = "カナダ第2軍団"\r
+-    location = 2111\r
+-    leader   = 220004\r
+-    division = {\r
+-      id             = { type = 20000 id = 6 }\r
+-      name           = "第3歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = artillery\r
+-      brigade_model  = 4\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 7 }\r
+-      name           = "第4歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = engineer\r
+-      brigade_model  = 0\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 8 }\r
+-      name           = "第1騎兵師団"\r
+-      type           = cavalry\r
+-      model          = 3\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 9 }\r
+-    name     = "カナダ第3軍団"\r
+-    location = 2118\r
+-    division = {\r
+-      id             = { type = 20000 id = 10 }\r
+-      name           = "第5歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = armored_car\r
+-      brigade_model  = 1\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 11 }\r
+-      name           = "第6歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = engineer\r
+-      brigade_model  = 0\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 12 }\r
+-    name     = "カナダ第4軍団"\r
+-    location = 2106\r
+-    division = {\r
+-      id             = { type = 20000 id = 13 }\r
+-      name           = "第7歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = artillery\r
+-      brigade_model  = 4\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 14 }\r
+-      name           = "第8歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = engineer\r
+-      brigade_model  = 0\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 15 }\r
+-    name     = "カナダ第5軍団"\r
+-    location = 2104\r
+-    division = {\r
+-      id             = { type = 20000 id = 16 }\r
+-      name           = "第9歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = artillery\r
+-      brigade_model  = 4\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 17 }\r
+-      name           = "第10歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = engineer\r
+-      brigade_model  = 0\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 18 }\r
+-    name     = "カナダ第6軍団"\r
+-    location = 2089\r
+-    division = {\r
+-      id             = { type = 20000 id = 19 }\r
+-      name           = "第11歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = artillery\r
+-      brigade_model  = 4\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 20 }\r
+-      name           = "第12歩兵師団"\r
+-      type           = infantry\r
+-      model          = 3\r
+-      extra          = engineer\r
+-      brigade_model  = 0\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 21 }\r
+-      name           = "第2騎兵師団"\r
+-      type           = cavalry\r
+-      model          = 3\r
+-      strength       = 5\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 22 }\r
+-    name     = "カナダ第1装甲軍団"\r
+-    location = 2108\r
+-    leader   = 220301\r
+-    division = {\r
+-      id             = { type = 20000 id = 23 }\r
+-      name           = "第1装甲師団"\r
+-      type           = light_armor\r
+-      model          = 0\r
+-      strength       = 8\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 24 }\r
+-      name           = "第1自動車化歩兵師団"\r
+-      type           = motorized\r
+-      model          = 0\r
+-      strength       = 8\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 25 }\r
+-    name     = "カナダ第2装甲軍団"\r
+-    location = 2109\r
+-    leader   = 220302\r
+-    division = {\r
+-      id             = { type = 20000 id = 26 }\r
+-      name           = "第2装甲師団"\r
+-      type           = light_armor\r
+-      model          = 0\r
+-      strength       = 8\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 27 }\r
+-      name           = "第2自動車化歩兵師団"\r
+-      type           = motorized\r
+-      model          = 0\r
+-      strength       = 8\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 20000 id = 28 }\r
+-    name     = "カナダ第3装甲軍団"\r
+-    location = 2089\r
+-    division = {\r
+-      id             = { type = 20000 id = 29 }\r
+-      name           = "第3装甲師団"\r
+-      type           = light_armor\r
+-      model          = 0\r
+-      strength       = 8\r
+-      experience     = 30\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 30 }\r
+-      name           = "第3自動車化師団"\r
+-      type           = motorized\r
+-      model          = 0\r
+-      strength       = 8\r
+-      experience     = 30\r
+-    }\r
+-  }\r
+-\r
+-  navalunit = {\r
+-    id       = { type = 20000 id = 101 }\r
+-    name     = "カナダ艦隊"\r
+-    location = 2132\r
+-    base     = 2132\r
+-    division = {\r
+-      id             = { type = 20000 id = 102 }\r
+-      name           = "HMCS カナダ"\r
+-      type           = battleship\r
+-      model          = 1\r
+-      extra1         = naval_fire_controll_l\r
+-      extra2         = naval_anti_air_l\r
+-      brigade_model1 = 0\r
+-      brigade_model2 = 0\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 103 }\r
+-      name           = "HMCS オンタリオ"\r
+-      type           = battleship\r
+-      model          = 1\r
+-      extra1         = naval_fire_controll_l\r
+-      extra2         = naval_anti_air_l\r
+-      brigade_model1 = 0\r
+-      brigade_model2 = 0\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 104 }\r
+-      name           = "HMCS ケベック"\r
+-      type           = battleship\r
+-      model          = 1\r
+-      extra1         = naval_fire_controll_l\r
+-      extra2         = naval_anti_air_l\r
+-      brigade_model1 = 0\r
+-      brigade_model2 = 0\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 105 }\r
+-      name           = "HMCS ナイオビ"\r
+-      type           = heavy_cruiser\r
+-      model          = 1\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 106 }\r
+-      name           = "HMCS キングストン"\r
+-      type           = heavy_cruiser\r
+-      model          = 1\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 107 }\r
+-      name           = "HMCS ブリティッシュコロンビア"\r
+-      type           = heavy_cruiser\r
+-      model          = 1\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 108 }\r
+-      name           = "HMCS ノヴァスコシア"\r
+-      type           = heavy_cruiser\r
+-      model          = 1\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 109 }\r
+-      name           = "HMCS ニューブランズウィック"\r
+-      type           = light_cruiser\r
+-      model          = 1\r
+-      extra1         = naval_fire_controll_s\r
+-      brigade_model1 = 0\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 110 }\r
+-      name           = "HMCS マニトバ"\r
+-      type           = light_cruiser\r
+-      model          = 1\r
+-      extra1         = naval_fire_controll_s\r
+-      brigade_model1 = 0\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 111 }\r
+-      name           = "HMCS ニューブランズウィック"\r
+-      type           = light_cruiser\r
+-      model          = 1\r
+-      extra1         = naval_fire_controll_s\r
+-      brigade_model1 = 0\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 112 }\r
+-      name           = "第1駆逐隊"\r
+-      type           = destroyer\r
+-      model          = 1\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 113 }\r
+-      name           = "第2駆逐隊"\r
+-      type           = destroyer\r
+-      model          = 1\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 114 }\r
+-      name           = "第3駆逐隊"\r
+-      type           = destroyer\r
+-      model          = 1\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 115 }\r
+-      name           = "第1輸送支隊"\r
+-      type           = transport\r
+-      model          = 0\r
+-      experience     = 20\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 116 }\r
+-      name           = "第2輸送支隊"\r
+-      type           = transport\r
+-      model          = 0\r
+-      experience     = 20\r
+-    }\r
+-  }\r
+-\r
+-  airunit = { \r
+-    id       = { type = 20000 id = 201 }\r
+-    name     = "カナダ空軍"\r
+-    location = 2108\r
+-    base     = 2108\r
+-    division = {\r
+-      id             = { type = 20000 id = 202 }\r
+-      name           = "RCAF 第1戦闘航空隊"\r
+-      type           = interceptor\r
+-      model          = 5\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 203 }\r
+-      name           = "RCAF 第2戦闘航空隊"\r
+-      type           = interceptor\r
+-      model          = 5\r
+-    }\r
+-    division = {\r
+-      id             = { type = 20000 id = 204 }\r
+-      name           = "RCAF 第1戦術航空隊"\r
+-      type           = tactical_bomber\r
+-      model          = 3\r
+-    }\r
+-  }\r
+-}\r
++##############################
++# Country definition for CAN #
++##############################
++
++#####################
++# Country main data #
++#####################
++
++country = {
++  tag                = CAN
++  ai                 = "IF/CAN_if.ai"
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes } }
++  belligerence       = 10
++  capital            = 2108 # オタワ
++  dissent            = 25
++  manpower           = 80
++  # Resource Reserves
++  energy         = 500
++  metal          = 200
++  rare_materials = 100
++  oil            = 200
++  supplies       = 300
++  money          = 500
++  transports     = 350
++  escorts        = 60
++
++  diplomacy = {
++    relation = { tag = AST value = 200 }
++    relation = { tag = BEL value = 150 }
++    relation = { tag = BHU value = 200 }
++    relation = { tag = ENG value = 200 }
++    relation = { tag = FRA value = -150 }
++    relation = { tag = GER value = -100 }
++    relation = { tag = HOL value = 80 }
++    relation = { tag = IRE value = 75 }
++    relation = { tag = IRQ value = 100 }
++    relation = { tag = ITA value = 20 }
++    relation = { tag = NEP value = 200 }
++    relation = { tag = NZL value = 200 }
++    relation = { tag = OMN value = 150 }
++    relation = { tag = SAF value = 200 }
++    relation = { tag = USA value = -200 }
++    relation = { tag = YEM value = 150 }
++    relation = { tag = RUS value = -50 }
++    relation = { tag = JAP value = -200 }
++    relation = { tag = CHI value = 100 }
++    relation = { tag = UB9 value = -100 }
++  }
++  SpyInfo                = { country = "CAN" NumberOfSpies = 12 }
++
++  nationalprovinces      = { 2089 2090 2091 2092 2093 2094 2095 2096 2097 2098 2099 2100 2101 2102 2103 2104 2105 2106 2107 2108 2109 2110 2111 2112 2113 2114 2115 2116 2117 2118 2119 2120 2121 2122 2123 2124 2125 2126 2127 2128 2129 2130 2131 2132 2133 2134 2135 2136 2137 2138 2148 2149 }
++  ownedprovinces         = { 2089 2091 2092 2093 2094 2095 2096 2097 2098 2099 2100 2101 2102 2103 2104 2105 2106 2107 2108 2109 2110 2111 2112 2113 2114 2115 2116 2117 2118 2119 2120 2121 2122 2123 2124 2125 2126 2127 2128 2129 2130 2131 2132 2133 2134 2136 2137 2138 2148 }
++  controlledprovinces    = { 2089 2091 2092 2093 2094 2095 2096 2097 2098 2099 2100 2101 2102 2103 2104 2105 2106 2107 2108 2109 2110 2111 2112 2113 2114 2115 2116 2117 2118 2119 2120 2121 2122 2123 2124 2125 2126 2127 2128 2129 2130 2131 2132 2133 2134 2136 2137 2138 2148 }
++
++  techapps               = { 1010 1020 1030 1040 1050 1060 1070 1080 13060 13070 13080 1310 1320 1330 1340 1350 1360 14000 14010 1910 1920 1930 1940 1950 1960 1970 1830 1840 1850 7600 7610 2620 2010 2630 2860 2870 2880 2020 2290 2300 2310 2800 2450 21180 21190 2810 2820 2510 3010 3020 3030 3040 3110 3120 4500 4510 4520 4530 4540 4550 4010 4600 4610 4620 4630 4120 4300 4310 4320 4330 4800 4810 4740 4750 4760 4290 5700 5710 5010 5810 5820 5050 5830 5060 5800 5080 5090 5310 54010 54020 54030 5316 5326 3720 3810 3820 5600 5610 5620 5560 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 8010 8020 8040 8050 8060 8070 8080 8100 8110 8120 8150 8160 8200 8210 8500 8510 8520 8600 8900 8910 8920 8930 8940 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 1160 1170 1180 1190 1560 1396 1980 2640 2646 2650 2900 2910 2920 2400 3130 3410 3420 3430 3440 3450 3310 3320 3210 3220 3230 3240 6210 1200 2930 6220 6900 }
++  inventions             = { 3000027 3120001 }
++  deactivate             = { 6000300 6000500 6570 6210 6000100 6390 6560 6010 2002076 2002077 }
++
++  policy = {
++    date              = { year = 0 month = january day = 0 }
++    democratic        = 6
++    political_left    = 2
++    freedom           = 8
++    free_market       = 9
++    professional_army = 2
++    defense_lobby     = 6
++    interventionism   = 5
++  }
++  headofstate            = { type = 9 id = 220182 } # ベスボロウ伯爵ヴィア・ポンソンビー
++  headofgovernment       = { type = 9 id = 220013 } # R・B・ベネット
++  foreignminister        = { type = 9 id = 220023 } # アドリアン・アルカン
++  armamentminister       = { type = 9 id = 220312 } # モーリス・デュプレシ
++  ministerofsecurity     = { type = 9 id = 220315 } # モーリス・デュプレシ
++  ministerofintelligence = { type = 9 id = 220313 } # ルイ＝フェルディナン・セリーヌ
++  chiefofstaff           = { type = 9 id = 220314 } # ジェームズ・S・ブラウン
++  chiefofarmy            = { type = 9 id = 220304 } # ジョン・フレデリック・チャールズ・フラー
++  chiefofnavy            = { type = 9 id = 220188 } # ウォルター・ホセ
++  chiefofair             = { type = 9 id = 220189 } # ジェームズ・リンジー・ゴードン
++
++  landunit = {
++    id       = { type = 20000 id = 1 }
++    name     = "カナダ第1軍団"
++    location = 2108
++    leader   = 220001
++    division = {
++      id             = { type = 20000 id = 2 }
++      name           = "第1軍司令部"
++      type           = hq
++      model          = 1
++      strength       = 80
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 3 }
++      name           = "第1歩兵師団"
++      type           = infantry
++      model          = 6
++      extra          = artillery
++      brigade_model  = 4
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 4 }
++      name           = "第2歩兵師団"
++      type           = infantry
++      model          = 6
++      extra          = artillery
++      brigade_model  = 4
++      strength       = 5
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 5 }
++    name     = "カナダ第2軍団"
++    location = 2111
++    leader   = 220004
++    division = {
++      id             = { type = 20000 id = 6 }
++      name           = "第3歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = artillery
++      brigade_model  = 4
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 7 }
++      name           = "第4歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = engineer
++      brigade_model  = 0
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 8 }
++      name           = "第1騎兵師団"
++      type           = cavalry
++      model          = 3
++      strength       = 5
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 9 }
++    name     = "カナダ第3軍団"
++    location = 2118
++    division = {
++      id             = { type = 20000 id = 10 }
++      name           = "第5歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = armored_car
++      brigade_model  = 1
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 11 }
++      name           = "第6歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = engineer
++      brigade_model  = 0
++      strength       = 5
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 12 }
++    name     = "カナダ第4軍団"
++    location = 2106
++    division = {
++      id             = { type = 20000 id = 13 }
++      name           = "第7歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = artillery
++      brigade_model  = 4
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 14 }
++      name           = "第8歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = engineer
++      brigade_model  = 0
++      strength       = 5
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 15 }
++    name     = "カナダ第5軍団"
++    location = 2104
++    division = {
++      id             = { type = 20000 id = 16 }
++      name           = "第9歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = artillery
++      brigade_model  = 4
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 17 }
++      name           = "第10歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = engineer
++      brigade_model  = 0
++      strength       = 5
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 18 }
++    name     = "カナダ第6軍団"
++    location = 2089
++    division = {
++      id             = { type = 20000 id = 19 }
++      name           = "第11歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = artillery
++      brigade_model  = 4
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 20 }
++      name           = "第12歩兵師団"
++      type           = infantry
++      model          = 3
++      extra          = engineer
++      brigade_model  = 0
++      strength       = 5
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 21 }
++      name           = "第2騎兵師団"
++      type           = cavalry
++      model          = 3
++      strength       = 5
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 22 }
++    name     = "カナダ第1装甲軍団"
++    location = 2108
++    leader   = 220301
++    division = {
++      id             = { type = 20000 id = 23 }
++      name           = "第1装甲師団"
++      type           = light_armor
++      model          = 0
++      strength       = 8
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 24 }
++      name           = "第1自動車化歩兵師団"
++      type           = motorized
++      model          = 0
++      strength       = 8
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 25 }
++    name     = "カナダ第2装甲軍団"
++    location = 2109
++    leader   = 220302
++    division = {
++      id             = { type = 20000 id = 26 }
++      name           = "第2装甲師団"
++      type           = light_armor
++      model          = 0
++      strength       = 8
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 27 }
++      name           = "第2自動車化歩兵師団"
++      type           = motorized
++      model          = 0
++      strength       = 8
++      experience     = 30
++    }
++  }
++  landunit = {
++    id       = { type = 20000 id = 28 }
++    name     = "カナダ第3装甲軍団"
++    location = 2089
++    division = {
++      id             = { type = 20000 id = 29 }
++      name           = "第3装甲師団"
++      type           = light_armor
++      model          = 0
++      strength       = 8
++      experience     = 30
++    }
++    division = {
++      id             = { type = 20000 id = 30 }
++      name           = "第3自動車化師団"
++      type           = motorized
++      model          = 0
++      strength       = 8
++      experience     = 30
++    }
++  }
++
++  navalunit = {
++    id       = { type = 20000 id = 101 }
++    name     = "カナダ艦隊"
++    location = 2132
++    base     = 2132
++    division = {
++      id             = { type = 20000 id = 102 }
++      name           = "HMCS カナダ"
++      type           = battleship
++      model          = 1
++      extra1         = naval_fire_controll_l
++      extra2         = naval_anti_air_l
++      brigade_model1 = 0
++      brigade_model2 = 0
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 103 }
++      name           = "HMCS オンタリオ"
++      type           = battleship
++      model          = 1
++      extra1         = naval_fire_controll_l
++      extra2         = naval_anti_air_l
++      brigade_model1 = 0
++      brigade_model2 = 0
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 104 }
++      name           = "HMCS ケベック"
++      type           = battleship
++      model          = 1
++      extra1         = naval_fire_controll_l
++      extra2         = naval_anti_air_l
++      brigade_model1 = 0
++      brigade_model2 = 0
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 105 }
++      name           = "HMCS ナイオビ"
++      type           = heavy_cruiser
++      model          = 1
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 106 }
++      name           = "HMCS キングストン"
++      type           = heavy_cruiser
++      model          = 1
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 107 }
++      name           = "HMCS ブリティッシュコロンビア"
++      type           = heavy_cruiser
++      model          = 1
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 108 }
++      name           = "HMCS ノヴァスコシア"
++      type           = heavy_cruiser
++      model          = 1
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 109 }
++      name           = "HMCS ニューブランズウィック"
++      type           = light_cruiser
++      model          = 1
++      extra1         = naval_fire_controll_s
++      brigade_model1 = 0
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 110 }
++      name           = "HMCS マニトバ"
++      type           = light_cruiser
++      model          = 1
++      extra1         = naval_fire_controll_s
++      brigade_model1 = 0
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 111 }
++      name           = "HMCS ニューブランズウィック"
++      type           = light_cruiser
++      model          = 1
++      extra1         = naval_fire_controll_s
++      brigade_model1 = 0
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 112 }
++      name           = "第1駆逐隊"
++      type           = destroyer
++      model          = 1
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 113 }
++      name           = "第2駆逐隊"
++      type           = destroyer
++      model          = 1
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 114 }
++      name           = "第3駆逐隊"
++      type           = destroyer
++      model          = 1
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 115 }
++      name           = "第1輸送支隊"
++      type           = transport
++      model          = 0
++      experience     = 20
++    }
++    division = {
++      id             = { type = 20000 id = 116 }
++      name           = "第2輸送支隊"
++      type           = transport
++      model          = 0
++      experience     = 20
++    }
++  }
++
++  airunit = { 
++    id       = { type = 20000 id = 201 }
++    name     = "カナダ空軍"
++    location = 2108
++    base     = 2108
++    division = {
++      id             = { type = 20000 id = 202 }
++      name           = "RCAF 第1戦闘航空隊"
++      type           = interceptor
++      model          = 5
++    }
++    division = {
++      id             = { type = 20000 id = 203 }
++      name           = "RCAF 第2戦闘航空隊"
++      type           = interceptor
++      model          = 5
++    }
++    division = {
++      id             = { type = 20000 id = 204 }
++      name           = "RCAF 第1戦術航空隊"
++      type           = tactical_bomber
++      model          = 3
++    }
++  }
++}

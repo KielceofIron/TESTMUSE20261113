@@ -1,0 +1,103 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
+@@ -140,6 +140,9 @@ event = {
+ 	command = { type = event which = 1891074 where = CHI when = 10 }\r
+ 	command = { type = event which = 1891005 where = CHI when = 12 }\r
+ 	command = { type = event which = 1891069 where = CHI when = 15 }\r
++	command = { type = supply_dist_mod value = 50 }\r
++	command = { type = tc_occupied_mod value = 50 }\r
++	command = { type = tc_mod value = 100 }\r
+ 	}\r
+ }\r
+ \r
+@@ -217,9 +220,18 @@ event = {
+ 	action_a = {\r
+ 	name = "ACTIONNAME1891003A"\r
+ 	command = { type = dissent value = 30 }\r
++	command = { trigger = { ai = no }  type = dissent value = 10 }\r
+ 	command = { type = research_mod value = -30 }\r
+-	command = { type = industrial_modifier which = total value = -40 }\r
++	command = {  type = industrial_modifier which = total value = -40 }\r
+ 	command = { type = money value = -3000 }\r
++	command = { trigger = { ai = no }  type = speed which = land value = -4 }\r
++	command = { trigger = { ai = yes }  type = speed which = land value = -3 }\r
++	command = { trigger = { ai = no } type = extra_tc value = -500 }\r
++	command = { trigger = { ai = yes } type = extra_tc value = -100 }\r
++	command = { type = supply_dist_mod value = -80 }\r
++	command = { type = tc_occupied_mod value = -80 }\r
++	command = { type = tc_mod value = -10 }\r
++	command = { type = ground_def_eff when = 1 value = -0.2 }\r
+ 	}\r
+ }\r
+ \r
+@@ -277,13 +289,19 @@ event = {
+ 	\r
+ 	action = {\r
+ 	name = "ACTIONNAME1891004A"\r
+-	command = { type = research_mod value = 10 }\r
+-	command = { type = industrial_modifier which = total value = 20 }\r
++	command = { trigger = { ai = yes } type = research_mod value = 30 }\r
++	command = { trigger = { ai = yes } type = industrial_modifier which = total value = 40 }\r
++	command = { trigger = { ai = no } type = research_mod value = 10 }\r
++	command = { trigger = { ai = no } type = industrial_modifier which = total value = 20 }\r
+ 	command = { type = dissent value = -20 }\r
+ 	command = { trigger = { ai = no IC = 80 } type = money value = -15000 }\r
+ 	command = { trigger = { ai = no IC = 50 NOT = { IC = 80 } } type = money value = -12000 }\r
+ 	command = { trigger = { ai = no IC = 15 NOT = { IC = 50 } } type = money value = -10000 }\r
+ 	command = { trigger = { ai = no NOT = { IC = 15 } } type = money value = -8000 }\r
++	command = { trigger = { ai = no }  type = speed which = land value = 4 }\r
++	command = { trigger = { ai = yes }  type = speed which = land value = 2 }\r
++	command = { trigger = { ai = yes } type = extra_tc value = 100 }\r
++	command = { type = ground_def_eff when = 1 value = 0.1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -341,6 +359,9 @@ event = {
+ 	command = { type = activate_division which = 22000 value = 3528 where = 1338 when = 0 }\r
+ 	command = { type = activate_division which = 22000 value = 3529 where = 1338 when = 0 }\r
+ 	command = { type = activate_division which = 22000 value = 3530 where = 1338 when = 0 }\r
++	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
++	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
++	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
+   	}\r
+ }\r
+ \r
+@@ -912,6 +933,7 @@ event = {
+ 	command = { type = name where = U66 which = "琉球三民主義共和国"  }\r
+ 	command = { type = flag_ext where = U66 which = "_Chi" }\r
+ 	command = { type = event which = 1891016 where = JAP when = 0 }\r
++	command = { trigger = { ai = yes } type = ai which = IFswitch/CHI_if_1938.ai }\r
+ 	}\r
+ }\r
+ \r
+@@ -2301,6 +2323,14 @@ event = {
+ 	command = { type = morale which = naval value = 3 }\r
+ 	command = { type = morale which = air value = 3 }\r
+ 	command = { trigger = { ai = yes } type = ai which = "IFswitch/JAP_HondoKessen_prepare.ai" }\r
++	\r
++        command = { trigger = { ai = yes } type = construct which = land_fort where = 1551 value = 3 } #\r
++        command = { trigger = { ai = yes } type = construct which = land_fort where = 1555 value = 6 } #\r
++        command = { trigger = { ai = yes } type = construct which = land_fort where = 2775 value = 3 } #\r
++        command = { trigger = { ai = yes } type = construct which = land_fort where = 2765 value = 3 } #\r
++        command = { trigger = { ai = yes } type = construct which = land_fort where = 1557 value = 3 } #\r
++        command = { trigger = { ai = yes } type = construct which = land_fort where = 1548 value = 3 } #\r
++        command = { trigger = { ai = yes } type = construct which = land_fort where = 1552 value = 3 } #\r
+ 	}\r
+ }\r
+ \r
+@@ -2401,6 +2431,7 @@ event = {
+ 	command = { type = sleepevent which = 2991090 }\r
+ 	command = { type = sleepevent which = 2991091 }\r
+ 	command = { type = sleepevent which = 2991092 }\r
++	command = { trigger = { ai = yes } type = ai which = IFswitch/CHI_if_1938.ai }\r
+ 	}\r
+ }\r
+ \r
+@@ -2619,6 +2650,7 @@ event = {
+ 	command = { type = secedearea which = UF8 value = "Hokkaido" when = 1 }\r
+ 	command = { type = secedearea which = UF8 value = "Tohoku" when = 1 }\r
+ 	command = { type = event which = 1891023 where = UF8 when = 0 } \r
++	command = { trigger = { ai = yes } type = ai which = IFswitch/CHI_if_1938.ai }\r
+ 	}\r
+ }\r
+ \r

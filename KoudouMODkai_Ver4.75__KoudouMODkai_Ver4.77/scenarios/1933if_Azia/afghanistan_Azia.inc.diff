@@ -1,0 +1,162 @@
+--- A/scenarios/1933if_Azia/afghanistan_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/afghanistan_Azia.inc [cp932]
+@@ -8,11 +8,12 @@
+ \r
+ country = {\r
+   tag                = AFG\r
++  flag_ext           = _14\r
+   ai                 = "IFazia/AFG_if_Azia.ai"\r
+   ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes MOB5 = yes } }\r
+   capital            = 2171 # カーブル\r
+-  dissent            = 10\r
+-  manpower           = 18\r
++  dissent            = 5\r
++  manpower           = 110\r
+   # Resource Reserves\r
+   energy         = 360\r
+   metal          = 180\r
+@@ -22,7 +23,8 @@ country = {
+   money          = 10\r
+ \r
+   diplomacy = {\r
+-    relation = { tag = ENG value = -75 }\r
++    relation = { tag = ENG value = -150 }\r
++    relation = { tag = U02 value = -150 }\r
+     relation = { tag = ITA value = 50 }\r
+     relation = { tag = PER value = 25 }\r
+     relation = { tag = SAU value = 50 }\r
+@@ -37,30 +39,31 @@ country = {
+   SpyInfo                = { country = "AFG" NumberOfSpies = 5 }\r
+ \r
+   nationalprovinces      = { 2168 2169 2170 2171 2172 2173 1529 1537 }\r
+-  ownedprovinces         = { 2168 2169 2170 2171 2172 2173 }\r
+-  controlledprovinces    = { 2168 2169 2170 2171 2172 2173 }\r
++  ownedprovinces         = { 2168 2169 2170 2171 2172 2173 1529 1537 }\r
++  controlledprovinces    = { 2168 2169 2170 2171 2172 2173 1529 1537 }\r
++  claimedprovinces       = { 1104 1098 1538 }\r
+ \r
+-  techapps               = { 2860 1910 1920 1930 1940 1950 1960 2290 7600 7610 1010 1020 1030 1040 1050 1060 1070 1160 1170 1180 1190 1200 1210 1220 1230 13060 13070 13080 1310 1320 1330 1340 1350 5700 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 6000500 6000510 6000520 }\r
++  techapps               = { 1010 1020 1030 1040 1050 1060 1070 1080 13060 13070 13080 1310 2860 2870 2290 5700 5800 5810 5600 5316 4600 4300 4310 4320 4500 4510 4520 4530 4540 4550 6500 6510 6530 6550 6590 6600 6610 6620 6650 6670 6680 6690 6700 6710 6910 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 1160 1170 1180 1190 1200 1210 1220 1230 1910 1930 1950 1970 1920 1940 1960 1320 1330 1340 1350 2300 2310 2800 4610 4620 4630 }\r
+   inventions             = { 3000027 }\r
+ \r
+   policy = {\r
+     date              = { year = 0 month = january day = 0 }\r
+-    democratic        = 3\r
++    democratic        = 2\r
+     political_left    = 3\r
+-    freedom           = 6\r
++    freedom           = 5\r
+     free_market       = 7\r
+     professional_army = 5\r
+-    defense_lobby     = 1\r
++    defense_lobby     = 4\r
+     interventionism   = 1\r
+   }\r
+-  headofstate            = { type = 9 id = 155089 } # ムハンマド・ナジール\r
+-  headofgovernment       = { type = 9 id = 155002 } # ムハンマド・ハシム\r
++  headofstate            = { type = 9 id = 155069 } # アマヌラー\r
++  headofgovernment       = { type = 9 id = 155106 } # イナーヤトゥッラー\r
+   foreignminister        = { type = 9 id = 155003 } # ハジ・ファイズ・ムハンマド・ジケリア\r
+   armamentminister       = { type = 9 id = 155004 } # アブドゥル・マジド・ザブリ\r
+   ministerofsecurity     = { type = 9 id = 155005 } # ムハンマド・ハシム\r
+-  ministerofintelligence = { type = 9 id = 155006 } # シャー・マフムード・ガージ\r
+-  chiefofstaff           = { type = 9 id = 155007 } # ムハンマド・ダウド\r
+-  chiefofarmy            = { type = 9 id = 155008 } # ムハンマド・ダウド\r
++  ministerofintelligence = { type = 9 id = 155114 } # ムハンマド・カビール・ルディン\r
++  chiefofstaff           = { type = 9 id = 155115 } # アフマド・アリ・カーン・ソライマン\r
++  chiefofarmy            = { type = 9 id = 155104 } # ムハンマド・ナジール\r
+   chiefofnavy            = { type = 9 id = 155009 } # ムハンマド・ザヒール\r
+   chiefofair             = { type = 9 id = 155010 } # ムハンマド・ダウド\r
+ \r
+@@ -75,39 +78,40 @@ country = {
+       model          = 6\r
+       extra          = artillery\r
+       brigade_model  = 3\r
+-      experience     = 20\r
++      strength       = 75\r
++      experience     = 35\r
+     }\r
+     division = {\r
+       id             = { type = 10000 id = 2 }\r
+       name           = "ファイザーバード民兵団"\r
+       type           = militia\r
+-      model          = 1\r
++      model          = 2\r
+       strength       = 60\r
+     }\r
+     division = {\r
+       id             = { type = 10000 id = 3 }\r
+       name           = "ガズニ民兵団"\r
+       type           = militia\r
+-      model          = 1\r
++      model          = 2\r
+       strength       = 60\r
+     }\r
+   }\r
+   landunit = {\r
+     id       = { type = 10000 id = 4 }\r
+     name     = "ヘラート軍"\r
+-    location = 2171\r
++    location = 2173\r
+     division = {\r
+       id             = { type = 10000 id = 5 }\r
+       name           = "ヘラート民兵団"\r
+       type           = militia\r
+-      model          = 1\r
++      model          = 3\r
+       strength       = 60\r
+     }\r
+     division = {\r
+       id             = { type = 10000 id = 6 }\r
+       name           = "ヘラート騎兵隊"\r
+       type           = cavalry\r
+-      model          = 3\r
++      model          = 4\r
+       strength       = 30\r
+     }\r
+   }\r
+@@ -117,17 +121,38 @@ country = {
+     location = 2169\r
+     division = {\r
+       id             = { type = 10000 id = 8 }\r
+-      name           = "ジャララバード民兵団"\r
+-      type           = militia\r
+-      model          = 1\r
+-      strength       = 60\r
++      name           = "カンダハル混成師団"\r
++      type           = infantry\r
++      model          = 4\r
++      strength       = 50\r
+     }\r
+     division = {\r
+       id             = { type = 10000 id = 9 }\r
+       name           = "カンダハル民兵団"\r
+       type           = militia\r
+-      model          = 1\r
+-      strength       = 60\r
++      model          = 2\r
++      strength       = 50\r
++    }\r
++  }\r
++\r
++  airunit = { \r
++    id       = { type = 10000 id = 51 }\r
++    name     = "アフガニスタン王立航空隊"\r
++    location = 2171\r
++    base     = 2171\r
++    division = {\r
++      id             = { type = 10000 id = 52 }\r
++      name           = "第1戦術航空隊"\r
++      type           = tactical_bomber\r
++      model          = 3\r
++      strength       = 25\r
++    }\r
++    division = {\r
++      id             = { type = 10000 id = 53 }\r
++      name           = "第1戦闘航空隊"\r
++      type           = interceptor\r
++      model          = 5\r
++      strength       = 25\r
+     }\r
+   }\r
+ }\r

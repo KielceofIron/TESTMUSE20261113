@@ -1,0 +1,435 @@
+--- A/scenarios/1933if_Azia/china yunan_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/china yunan_Azia.inc [cp932]
+@@ -9,14 +9,12 @@
+ country = {\r
+   tag                = CYN\r
+   regular_id         = CHI\r
+-  name               = "雲南護国軍"\r
+-  flag_ext           = _NS\r
+   ai                 = "IFazia/CYN_if_Azia.ai"\r
+   ai_settings        = { flags = { MOB1 = yes MOB2 = yes RES = yes } }\r
+   intrinsic_gov_type = paternal_autocrat\r
+   capital            = 1390 # 昆明（クンミン）\r
+   dissent            = 20\r
+-  extra_tc           = 30\r
++  extra_tc           = 20\r
+   manpower           = 50\r
+   # Resource Reserves\r
+   energy         = 300\r
+@@ -25,6 +23,10 @@ country = {
+   oil            = 100\r
+   supplies       = 100\r
+   money          = 50\r
++  free = {\r
++    ic             = 3\r
++    supplies       = 25\r
++  }\r
+ \r
+   diplomacy = {\r
+     relation = { tag = CHI value = -100 }\r
+@@ -39,78 +41,34 @@ country = {
+   }\r
+   SpyInfo                = { country = "CYN" NumberOfSpies = 15 }\r
+ \r
+-   nationalprovinces      = {   \r
+- #Nationalist China at Start \r
+- 1257 1258 1261 1262 1267 1291 1292 1293 1296 1297 1298 1299 1300 1301 1302 1303 1304 1305 1306 1307 1308 1309 1310 1311 1312 1313 1314 1315 1316 1317 1318 1319 1320 1321 1322 1323 1324 1325 1326 1333 1334 1335 1336 1337 1338 1339 1340 1341 1342 1343 1344 1345 1346 1347 1348 1349 1350 1351 1352 1353 1354 1355 1356 1357 1358 1359 1360      \r
+-  \r
+- #Yunnan          \r
+- 1384 1385 1386 1387 1388 1389 1390\r
+-  \r
+- #Guanxi Clique  \r
+-  510 1365 1367 1368 1369 1370 1373 1374 1375 1376 1377 1378 1379 1380 1381 1382 1383  \r
+-  \r
+- #Shanxi       \r
+-  1241 1242 1243 1244 1245 1246 1247 1248 1249 1250 1251 1252 1253 1254 1327 1328 1329 1330 1331 1332   \r
+-  \r
+- #Manchoukou \r
+- 1197 1198 1199 1200 1201 1202 1203 1204 1205 1206 1207 1208 1209 1210 1211 1212 1213 1214 1215 1216 1217 1218 1220 1235 1236 1237 2750   \r
+-  \r
+- #Xibei san ma            \r
+- 1263 1264 1265 1266 1268 1269 1270 1271 1272 1283 1284 1285   \r
+-  \r
+- #Tibet       \r
+- 1286 1287 1288 1289 1290 1294 1295 \r
+-  \r
+- #Sinkiang        \r
+- 1273 1274 1275 1277 1279 1280 1281 1282 \r
+-  \r
+- #India        \r
+- 1276 1278  \r
+-  \r
+- #Communist China      \r
+- 1255 1256 1259 1260 \r
+-  \r
+- #Japan In China     \r
+- 1219 1238 1239 1240 \r
+-  \r
+- #European Possessions     \r
+-  1371 1372  \r
+-   \r
+- #Taiwan     \r
+-  1361 1362 1363 1364   \r
+-  \r
+- #Mongolia \r
+- 1120 1121 1122 1123 1124 1125 \r
+-\r
+- #NEW\r
+- 2797 2798 2822 2823 }\r
++  nationalprovinces      = { 1257 1258 1261 1262 1267 1291 1292 1293 1296 1297 1298 1299 1300 1301 1302 1303 1304 1305 1306 1307 1308 1309 1310 1311 1312 1313 1314 1315 1316 1317 1318 1319 1320 1321 1322 1323 1324 1325 1326 1333 1334 1335 1336 1337 1338 1339 1340 1341 1342 1343 1344 1345 1346 1347 1348 1349 1350 1351 1352 1353 1354 1355 1356 1357 1358 1359 1360 1384 1385 1386 1387 1388 1389 1390 510 1365 1367 1368 1369 1370 1373 1374 1375 1376 1377 1378 1379 1380 1381 1382 1383 1241 1242 1243 1244 1245 1246 1247 1248 1249 1250 1251 1252 1253 1254 1327 1328 1329 1330 1331 1332 1197 1198 1199 1200 1201 1202 1203 1204 1205 1206 1207 1208 1209 1210 1211 1212 1213 1214 1215 1216 1217 1218 1220 1235 1236 1237 2750 1263 1264 1265 1266 1268 1269 1270 1271 1272 1283 1284 1285 1286 1287 1288 1289 1290 1294 1295 1273 1274 1275 1277 1279 1280 1281 1282 1276 1278 1255 1256 1259 1260 1219 1238 1239 1240 1371 1372 1361 1362 1363 1364 1120 1121 1122 1123 1124 1125 2797 2798 2822 2823 }\r
+   ownedprovinces         = { 1291 1292 1293 1296 1297 1298 1299 1300 1302 1304 1384 1385 1386 1387 1388 1389 1390 }\r
+   controlledprovinces    = { 1291 1292 1293 1296 1297 1298 1299 1300 1302 1304 1384 1385 1386 1387 1388 1389 1390 }\r
+ \r
+-  techapps               = { 5810 5820 5800 5080 5316 5326 1010 1020 1030 1040 1050 1060 1160 1170 1180 1190 1200 1210 1220 13060 13070 13080 1310 1830 1910 1920 1930 1940 1950 2290 2300 2310 2900 2910 14000 14010 14020 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 4500 4510 4520 4530 4540 4300 4310 4320 4600 4610 4620 4630 4800 4810 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 }\r
+-  blueprints             = { 1070 1230 1320 1330 1340 1350 5050 5327 1960 7600 7610 2620 2010 2860 2870 2880 6570 6000300 6000500 8010 8020 8050 8060 8070 8080 3010 3110 3120 3210 3220 3810 3720 3410 4700 4740 4750 4760 }\r
++  techapps               = { 1010 1020 1030 1040 1050 1060 1160 1170 1180 1190 1200 13060 13070 13080 1310 1830 1910 1920 1930 1940 1950 2290 2300 2310 6500 6510 6530 6600 6610 6680 6620 6650 6670 6910 4500 4510 4520 4530 4540 4300 4310 4600 4610 4620 4800 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 2800 2860 1210 1220 1840 14000 5800 6590 6710 6550 6700 6690 }\r
++  blueprints             = { 1070 1320 1330 1340 1960 7600 7610 2620 2010 2870 2880 6570 6000300 6000500 8010 8020 8050 8060 8070 8080 3010 3110 3120 3210 3220 3810 3720 3410 }\r
+   inventions             = { 3000027 }\r
+ \r
+   policy = {\r
+     date              = { year = 0 month = january day = 0 }\r
+-    democratic        = 1\r
+-    political_left    = 1\r
+-    freedom           = 1\r
+-    free_market       = 1\r
++    democratic        = 4\r
++    political_left    = 3\r
++    freedom           = 4\r
++    free_market       = 4\r
+     professional_army = 2\r
+-    defense_lobby     = 8\r
+-    interventionism   = 8\r
++    defense_lobby     = 4\r
++    interventionism   = 2\r
+   }\r
+-  headofstate            = { type = 9 id = 615301 } # 龍雲（ルン・ユン）\r
+-  headofgovernment       = { type = 9 id = 615302 } # 龍雲（ルン・ユン）\r
+-  foreignminister        = { type = 9 id = 615003 } # 胡若愚（フー・ルオユー）\r
+-  armamentminister       = { type = 9 id = 615304 } # 繆雲台（ミャオ・ユンタイ）\r
+-  ministerofsecurity     = { type = 9 id = 615005 } # 丁治磐（ティン・チーパン）\r
+-  ministerofintelligence = { type = 9 id = 615006 } # 米協銘（ミ・ツィアミン）\r
+-  chiefofstaff           = { type = 9 id = 615303 } # 龍雲（ルン・ユン）\r
+-  chiefofarmy            = { type = 9 id = 615008 } # 龍雲（ルン・ユン）\r
+-  chiefofnavy            = { type = 9 id = 615009 } # 盧漢（ル・ハン）\r
+-  chiefofair             = { type = 9 id = 615010 } # 盧漢（ル・ハン）\r
++  headofstate            = { type = 9 id = 615305 } # 唐継尭（タン・ジーヤオ）\r
++  headofgovernment       = { type = 9 id = 615306 } # 任可澄（レン・クードン）\r
++  foreignminister        = { type = 9 id = 615307 } # 周鍾嶽（ヂョウ・ヂョンユエ）\r
++  armamentminister       = { type = 9 id = 615308 } # 王九齢（ワン・ジウリン）\r
++  ministerofsecurity     = { type = 9 id = 615309 } # 唐継尭（タン・ジーヤオ）\r
++  ministerofintelligence = { type = 9 id = 615310 } # 唐継尭（タン・ジーヤオ）\r
++  chiefofstaff           = { type = 9 id = 615311 } # 唐継尭（タン・ジーヤオ）\r
++  chiefofarmy            = { type = 9 id = 615312 } # 龍覲光（ロン・ジンクアン）\r
++  chiefofnavy            = { type = 9 id = 615313 } # 任可澄（レン・クードン）\r
++  chiefofair             = { type = 9 id = 615314 } # 唐継尭（タン・ジーヤオ）\r
+   dormant_leaders        = { 615023 615024 615101 615102 615103 615104 615105 615106 615107 615108 615109 615110 615111 615112 615113 615114 615115 615116 615117 615118 615119 615120 615121 615122 615123 615124 615125 615126 615127 615128 615129 615130 615131 615132 615133 615134 615135 615136 615137 615138 615139 615140 615141 615142 615143 615144 615145 615146 615147 615148 615149 615150 615151 615152 615153 615154 615155 615156 615157 615158 615159 615160 615161 615162 615163 615164 615165 615166 615167 615168 615169 615170 615171 615172 615173 615174 615175 615176 615177 615178 615179 615180 615181 615182 615183 615184 615185 615186 615187 615188 615189 615190 615191 615192 615193 615194 615195 615196 615197 615198 615199 615200 615201 615202 615203 615204 615205 615206 615207 615208 615209 615210 615211 615212 615213 615214 615215 615216 615217 615218 615219 615221 615222 615223 615224 615225 615226 615227 615228 615229 615230 615231 615232 615233 615234 615235 615236 615237 615238 615239 615240 615241 615242 615243 615244 615245 615246 615247 615248 615249 615250 615251 615252 615253 615254 615255 615256 615257 615258 615259 615260 615261 615262 615263 615264 615265 615266 615267 615268 615269 615270 615271 615272 615273 615274 615275 615276 615277 615278 615279 615280 615281 615282 615283 615284 615285 615286 615287 615288 615289 615290 615291 615292 615293 615294 615295 615296 615297 615298 615299 615300 615301 615302 615303 615304 615305 615306 615307 615308 615309 615310 615311 615312 615313 615314 615315 615316 615317 615319 615320 615321 615322 615323 615324 615325 615326 615327 615329 615330 615331 615333 615334 615335 615336 615337 615338 615339 615340 615341 615342 615343 615344 615345 615346 615347 615348 615349 615350 615351 615352 615353 615354 615355 615356 615357 615358 615359 615360 615361 615362 615363 615364 615365 615366 615367 615368 615369 615370 615371 615372 615373 615374 615375 615376 615377 615378 615379 615380 615381 615382 615383 615384 615385 615386 615387 615388 615389 615390 615391 615392 615393 615394 615395 615396 615397 615398 615399 615400 615401 615402 615403 615404 615405 615406 615407 615408 615409 615410 615411 615412 615413 615414 615415 615416 615417 615418 615419 615420 615421 615422 615423 615424 615425 615426 615427 615428 615429 615430 615431 615432 615433 615434 615435 615437 615438 615439 615440 615441 615442 615443 615444 615445 615446 615447 615448 615449 615450 615451 615452 615453 615454 615455 615456 615457 615458 615459 615460 615461 615462 615463 615464 615465 615466 615467 615468 615469 615470 615471 615472 615473 615474 615475 615476 615477 615478 615479 615480 615481 615482 615483 615484 615485 615486 615487 615488 615489 615490 615491 615492 615493 615494 615495 615496 615497 }\r
+ \r
+   landunit = {\r
+@@ -121,7 +79,7 @@ country = {
+       id             = { type = 22100 id = 2 }\r
+       name           = "第136師"\r
+       type           = militia\r
+-      model          = 3\r
++      model          = 2\r
+       extra          = police\r
+       brigade_model  = 1\r
+       strength       = 33\r
+@@ -131,7 +89,7 @@ country = {
+       id             = { type = 22100 id = 3 }\r
+       name           = "第137師"\r
+       type           = militia\r
+-      model          = 3\r
++      model          = 2\r
+       extra          = police\r
+       brigade_model  = 1\r
+       strength       = 33\r
+@@ -141,7 +99,7 @@ country = {
+       id             = { type = 22100 id = 4 }\r
+       name           = "第138師"\r
+       type           = militia\r
+-      model          = 3\r
++      model          = 2\r
+       extra          = police\r
+       brigade_model  = 1\r
+       strength       = 33\r
+@@ -156,7 +114,7 @@ country = {
+       id             = { type = 22100 id = 6 }\r
+       name           = "第1独立旅"\r
+       type           = infantry\r
+-      model          = 6\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+@@ -164,7 +122,7 @@ country = {
+       id             = { type = 22100 id = 7 }\r
+       name           = "第2独立旅"\r
+       type           = infantry\r
+-      model          = 6\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+@@ -172,7 +130,7 @@ country = {
+       id             = { type = 22100 id = 8 }\r
+       name           = "第3独立旅"\r
+       type           = infantry\r
+-      model          = 6\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+@@ -180,7 +138,7 @@ country = {
+       id             = { type = 22100 id = 9 }\r
+       name           = "第5独立旅"\r
+       type           = infantry\r
+-      model          = 6\r
++      model          = 4\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+@@ -188,7 +146,7 @@ country = {
+       id             = { type = 22100 id = 10 }\r
+       name           = "第7独立旅"\r
+       type           = infantry\r
+-      model          = 6\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+@@ -196,7 +154,7 @@ country = {
+       id             = { type = 22100 id = 11 }\r
+       name           = "第9独立旅"\r
+       type           = infantry\r
+-      model          = 6\r
++      model          = 3\r
+       strength       = 40\r
+       experience     = 30\r
+     }\r
+@@ -204,8 +162,8 @@ country = {
+       id             = { type = 22100 id = 18 }\r
+       name           = "第10路軍司令部"\r
+       type           = hq\r
+-      model          = 2\r
+-      strength       = 40\r
++      model          = 1\r
++      strength       = 80\r
+       experience     = 30\r
+     }\r
+   }\r
+@@ -217,7 +175,7 @@ country = {
+       id             = { type = 22100 id = 20 }\r
+       name           = "第146師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 65\r
+       experience     = 30\r
+     }\r
+@@ -225,7 +183,7 @@ country = {
+       id             = { type = 22100 id = 21 }\r
+       name           = "第147師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 65\r
+       experience     = 30\r
+     }\r
+@@ -233,7 +191,7 @@ country = {
+       id             = { type = 22100 id = 22 }\r
+       name           = "第162師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 65\r
+       experience     = 30\r
+     }\r
+@@ -241,7 +199,7 @@ country = {
+       id             = { type = 22100 id = 23 }\r
+       name           = "第12独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 65\r
+       experience     = 30\r
+     }\r
+@@ -249,7 +207,7 @@ country = {
+       id             = { type = 22100 id = 24 }\r
+       name           = "第15独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 65\r
+       experience     = 30\r
+     }\r
+@@ -262,7 +220,7 @@ country = {
+       id             = { type = 22100 id = 26 }\r
+       name           = "第144師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -270,7 +228,7 @@ country = {
+       id             = { type = 22100 id = 27 }\r
+       name           = "第148師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -278,7 +236,7 @@ country = {
+       id             = { type = 22100 id = 28 }\r
+       name           = "第17独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -291,7 +249,7 @@ country = {
+       id             = { type = 22100 id = 30 }\r
+       name           = "第149師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -299,7 +257,7 @@ country = {
+       id             = { type = 22100 id = 31 }\r
+       name           = "第150師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -307,7 +265,7 @@ country = {
+       id             = { type = 22100 id = 32 }\r
+       name           = "第163師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -320,7 +278,7 @@ country = {
+       id             = { type = 22100 id = 34 }\r
+       name           = "第145師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -328,7 +286,7 @@ country = {
+       id             = { type = 22100 id = 35 }\r
+       name           = "第161師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -336,7 +294,7 @@ country = {
+       id             = { type = 22100 id = 36 }\r
+       name           = "第164師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -344,7 +302,7 @@ country = {
+       id             = { type = 22100 id = 37 }\r
+       name           = "第11独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -352,7 +310,7 @@ country = {
+       id             = { type = 22100 id = 38 }\r
+       name           = "第13独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -360,7 +318,7 @@ country = {
+       id             = { type = 22100 id = 39 }\r
+       name           = "第16独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -368,7 +326,7 @@ country = {
+       id             = { type = 22100 id = 40 }\r
+       name           = "第7軍団司令部"\r
+       type           = hq\r
+-      model          = 2\r
++      model          = 1\r
+       strength       = 45\r
+       experience     = 30\r
+     }\r
+@@ -383,7 +341,7 @@ country = {
+       id             = { type = 22100 id = 202 }\r
+       name           = "第38航空隊"\r
+       type           = interceptor\r
+-      model          = 4\r
++      model          = 3\r
+       strength       = 50\r
+       experience     = 10\r
+     }\r
+@@ -391,7 +349,7 @@ country = {
+       id             = { type = 22100 id = 203 }\r
+       name           = "第39航空隊"\r
+       type           = interceptor\r
+-      model          = 4\r
++      model          = 3\r
+       strength       = 50\r
+       experience     = 10\r
+     }\r
+@@ -405,7 +363,7 @@ country = {
+       id             = { type = 22100 id = 205 }\r
+       name           = "第40航空隊"\r
+       type           = tactical_bomber\r
+-      model          = 3\r
++      model          = 1\r
+       strength       = 40\r
+       experience     = 10\r
+     }\r
+@@ -413,11 +371,12 @@ country = {
+       id             = { type = 22100 id = 206 }\r
+       name           = "第41航空隊"\r
+       type           = tactical_bomber\r
+-      model          = 3\r
++      model          = 1\r
+       strength       = 40\r
+       experience     = 10\r
+     }\r
+   }\r
++\r
+   province_development = {\r
+     id             = { type = 22100 id = 7001 }\r
+     location       = 1293\r
+@@ -467,8 +426,8 @@ country = {
+     type           = land_fort\r
+   }\r
+ \r
+-  airdivision = { dormant = yes id = { type = 22100 id = 9001 } name = "渾沌1号" type = flying_rocket model = 1 nuke = yes }\r
+-  airdivision = { dormant = yes id = { type = 22100 id = 9002 } name = "渾沌2号" type = flying_rocket model = 1 nuke = yes }\r
+-  airdivision = { dormant = yes id = { type = 22100 id = 9003 } name = "渾沌3号" type = flying_rocket model = 1 nuke = yes }\r
+-  airdivision = { dormant = yes id = { type = 22100 id = 9004 } name = "渾沌4号" type = flying_rocket model = 1 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22100 id = 9001 } name = "第101戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22100 id = 9002 } name = "第102戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22100 id = 9003 } name = "第103戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22100 id = 9004 } name = "第104戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
+ }\r

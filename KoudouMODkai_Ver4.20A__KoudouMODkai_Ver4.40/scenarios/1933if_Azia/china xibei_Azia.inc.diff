@@ -1,0 +1,358 @@
+--- A/scenarios/1933if_Azia/china xibei_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/china xibei_Azia.inc [cp932]
+@@ -9,7 +9,7 @@
+ country = {\r
+   tag                = CXB\r
+   regular_id         = CHI\r
+-  ai                 = "cxb_1933.ai"\r
++  ai                 = "IFazia/CXB_if_Azia.ai"\r
+   ai_settings        = { flags = { MOB1 = yes MOB2 = yes RES = yes } }\r
+   intrinsic_gov_type = paternal_autocrat\r
+   capital            = 1264 # 蘭洲（ランチョウ）\r
+@@ -24,7 +24,8 @@ country = {
+   supplies       = 100\r
+   money          = 50\r
+   free = {\r
+-    ic             = 5\r
++    ic             = 1\r
++    supplies       = 20\r
+   }\r
+ \r
+   diplomacy = {\r
+@@ -35,11 +36,7 @@ country = {
+     relation = { tag = CYN value = 100 }\r
+     relation = { tag = JAP value = 50 }\r
+     relation = { tag = CHC value = -100 }\r
+-    relation = {\r
+-      tag        = SIK\r
+-      value      = 100\r
+-      guaranteed = { year = 1934 month = december day = 29 }\r
+-    }\r
++    relation = { tag = SIK value = -100 }\r
+     relation = { tag = KOR value = -100 }\r
+     relation = { tag = SOV value = -100 }\r
+   }\r
+@@ -47,20 +44,20 @@ country = {
+ \r
+   nationalprovinces      = { 1256 1261 1262 1263 1264 1265 1266 1267 1268 1269 1270 1271 1272 1273 1274 1275 1276 1277 1278 1279 1280 1281 1282 1283 1284 1285 }\r
+   ownedprovinces         = { 1256 1261 1262 1263 1264 1265 1266 1267 1268 1269 1270 1271 1272 1283 1284 1285 }\r
+-  controlledprovinces    = { 1256 1261 1262 1263 1264 1265 1266 1267 1268 1269 1270 1271 1272 1283 1284 1285 }\r
++  controlledprovinces    = { 1256 1261 1262 1263 1264 1265 1266 1267 1268 1269 1270 1271 1272 1283 1284 1285 1277 }\r
+ \r
+-  techapps               = { 5810 5800 5080 5316 5326 1010 1020 1030 1040 1050 1060 1070 1160 1170 1180 1190 1200 1210 1220 13060 13070 13080 1310 1320 1330 1340 1350 1830 1910 1920 1930 1940 1950 1960 2290 2300 2310 14000 14010 14020 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 }\r
+-  blueprints             = { 1230 1360 5050 5820 5327 5700 5600 7600 7610 2620 2010 2860 2870 2920 2900 2910 6570 6000300 8010 8020 8050 8060 8070 8080 3010 3110 3120 3210 3220 3810 3720 3410 4500 4510 4520 4530 4540 4300 4310 4320 4600 4610 4620 4630 4800 4810 4700 4740 4750 4760 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 }\r
++  techapps               = { 1010 1020 1030 1040 1050 1160 1170 1180 1190 1200 13060 13070 13080 1310 1320 1330 1830 1910 1920 1930 1940 1950 2290 2300 6500 6510 6530 6600 6610 6680 6620 6650 6670 6910 1840 4500 4510 4520 4600 4610 5800 14000 6710 6550 6690 6700 6590 }\r
++  blueprints             = { 7600 7610 6570 6000300 8010 8020 8050 8060 8070 8080 3010 3110 3120 3210 3220 3810 3720 3410 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 }\r
+   inventions             = { 3000027 }\r
+ \r
+   policy = {\r
+     date              = { year = 0 month = january day = 0 }\r
+     democratic        = 3\r
+     political_left    = 4\r
+-    freedom           = 3\r
+-    free_market       = 3\r
++    freedom           = 5\r
++    free_market       = 5\r
+     professional_army = 2\r
+-    defense_lobby     = 10\r
++    defense_lobby     = 4\r
+     interventionism   = 3\r
+   }\r
+   headofstate            = { type = 9 id = 610001 } # 馬鴻逵（マー・フンクエ）\r
+@@ -82,11 +79,9 @@ country = {
+       id             = { type = 22200 id = 2 }\r
+       name           = "新編第9師"\r
+       type           = infantry\r
+-      model          = 6\r
+-      extra1         = artillery\r
+-      extra2         = cavalry_brigade\r
+-      brigade_model1 = 4\r
+-      brigade_model2 = 6\r
++      model          = 2\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 2\r
+       strength       = 85\r
+       experience     = 40\r
+     }\r
+@@ -99,9 +94,9 @@ country = {
+       id             = { type = 22200 id = 4 }\r
+       name           = "南青海守備隊"\r
+       type           = cavalry\r
+-      model          = 3\r
++      model          = 2\r
+       strength       = 50\r
+-      experience     = 40\r
++      experience     = 10\r
+     }\r
+   }\r
+   landunit = {\r
+@@ -110,21 +105,17 @@ country = {
+     location = 1283\r
+     division = {\r
+       id             = { type = 22200 id = 9 }\r
+-      name           = "第1/第2騎兵旅"\r
++      name           = "第1独立騎兵旅"\r
+       type           = cavalry\r
+-      model          = 4\r
+-      extra          = artillery\r
+-      brigade_model  = 3\r
++      model          = 2\r
+       strength       = 55\r
+       experience     = 40\r
+     }\r
+     division = {\r
+       id             = { type = 22200 id = 10 }\r
+-      name           = "第3独立騎兵旅"\r
++      name           = "第2独立騎兵旅"\r
+       type           = cavalry\r
+-      model          = 4\r
+-      extra          = artillery\r
+-      brigade_model  = 3\r
++      model          = 2\r
+       strength       = 55\r
+       experience     = 40\r
+     }\r
+@@ -137,20 +128,20 @@ country = {
+       id             = { type = 22200 id = 12 }\r
+       name           = "新編第7師"\r
+       type           = infantry\r
+-      model          = 5\r
++      model          = 2\r
+       extra          = cavalry_brigade\r
+-      brigade_model  = 3\r
+-      strength       = 100\r
++      brigade_model  = 2\r
++      strength       = 80\r
+       experience     = 40\r
+     }\r
+     division = {\r
+       id             = { type = 22200 id = 13 }\r
+       name           = "第10独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra          = cavalry_brigade\r
+-      brigade_model  = 3\r
+-      strength       = 100\r
++      model          = 2\r
++      extra          = artillery\r
++      brigade_model  = 1\r
++      strength       = 80\r
+       experience     = 40\r
+     }\r
+   }\r
+@@ -162,9 +153,7 @@ country = {
+       id             = { type = 22200 id = 15 }\r
+       name           = "第35師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra          = cavalry_brigade\r
+-      brigade_model  = 3\r
++      model          = 1\r
+       strength       = 100\r
+       experience     = 40\r
+     }\r
+@@ -177,11 +166,9 @@ country = {
+       id             = { type = 22200 id = 17 }\r
+       name           = "第1/第2地域警備隊"\r
+       type           = militia\r
+-      model          = 4\r
+-      extra          = cavalry_brigade\r
+-      brigade_model  = 3\r
+-      strength       = 100\r
+-      experience     = 40\r
++      model          = 1\r
++      strength       = 50\r
++      experience     = 10\r
+     }\r
+   }\r
+   landunit = {\r
+@@ -192,118 +179,132 @@ country = {
+       id             = { type = 22200 id = 19 }\r
+       name           = "第122師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra          = cavalry_brigade\r
+-      brigade_model  = 5\r
+-      strength       = 100\r
+-      experience     = 30\r
++      model          = 2\r
++      strength       = 70\r
++      experience     = 20\r
+     }\r
+     division = {\r
+       id             = { type = 22200 id = 20 }\r
+       name           = "第123師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra          = cavalry_brigade\r
+-      brigade_model  = 5\r
+-      strength       = 100\r
+-      experience     = 30\r
++      model          = 2\r
++      strength       = 70\r
++      experience     = 20\r
+     }\r
+     division = {\r
+       id             = { type = 22200 id = 21 }\r
+       name           = "第124師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      extra          = cavalry_brigade\r
+-      brigade_model  = 5\r
+-      strength       = 100\r
+-      experience     = 30\r
++      model          = 2\r
++      strength       = 70\r
++      experience     = 20\r
+     }\r
+   }\r
+   landunit = {\r
+     id       = { type = 22200 id = 22 }\r
+-    name     = "第45軍団"\r
++    name     = "第14軍団"\r
+     location = 1264\r
+     division = {\r
+       id             = { type = 22200 id = 23 }\r
+-      name           = "第125師"\r
++      name           = "第14独立旅"\r
+       type           = infantry\r
+-      model          = 5\r
+-      strength       = 62\r
+-      experience     = 30\r
++      model          = 2\r
++      strength       = 60\r
++      experience     = 20\r
+     }\r
+     division = {\r
+       id             = { type = 22200 id = 24 }\r
+-      name           = "第126師"\r
+-      type           = infantry\r
+-      model          = 5\r
+-      strength       = 62\r
+-      experience     = 30\r
++      name           = "第14軍団司令部"\r
++      type           = hq\r
++      model          = 1\r
++      strength       = 60\r
++      experience     = 20\r
+     }\r
++  }\r
++  landunit = {\r
++    id       = { type = 22200 id = 25 }\r
++    name     = "第45軍団"\r
++    location = 1277\r
++    leader   = 610501\r
+     division = {\r
+-      id             = { type = 22200 id = 25 }\r
+-      name           = "第127師"\r
++      id             = { type = 22200 id = 26 }\r
++      name           = "第125師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      strength       = 62\r
++      model          = 3\r
++      extra          = artillery\r
++      brigade_model  = 1\r
++      strength       = 90\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22200 id = 26 }\r
+-      name           = "第128師"\r
++      id             = { type = 22200 id = 27 }\r
++      name           = "第126師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      strength       = 62\r
++      model          = 3\r
++      extra          = artillery\r
++      brigade_model  = 1\r
++      strength       = 90\r
+       experience     = 30\r
+     }\r
+     division = {\r
+-      id             = { type = 22200 id = 27 }\r
+-      name           = "第131師"\r
++      id             = { type = 22200 id = 28 }\r
++      name           = "第127師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      strength       = 62\r
++      model          = 3\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 3\r
++      strength       = 90\r
+       experience     = 30\r
+     }\r
+-  }\r
+-  landunit = {\r
+-    id       = { type = 22200 id = 28 }\r
+-    name     = "第47軍団"\r
+-    location = 1264\r
+     division = {\r
+       id             = { type = 22200 id = 29 }\r
+-      name           = "第104師"\r
++      name           = "第128師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      strength       = 60\r
++      model          = 3\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 3\r
++      strength       = 90\r
+       experience     = 30\r
+     }\r
+     division = {\r
+       id             = { type = 22200 id = 30 }\r
+-      name           = "予備旅"\r
++      name           = "第131師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      strength       = 60\r
++      model          = 3\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 3\r
++      strength       = 90\r
+       experience     = 30\r
+     }\r
+   }\r
+   landunit = {\r
+     id       = { type = 22200 id = 31 }\r
+-    name     = "第14軍団"\r
+-    location = 1264\r
++    name     = "第47軍団"\r
++    location = 1277\r
+     division = {\r
+       id             = { type = 22200 id = 32 }\r
+-      name           = "第14独立旅"\r
++      name           = "第104師"\r
+       type           = infantry\r
+-      model          = 5\r
+-      strength       = 60\r
++      model          = 3\r
++      extra          = armored_car\r
++      brigade_model  = 0\r
++      strength       = 90\r
+       experience     = 30\r
+     }\r
+     division = {\r
+       id             = { type = 22200 id = 33 }\r
+-      name           = "第14軍団司令部"\r
+-      type           = hq\r
+-      model          = 2\r
+-      strength       = 60\r
++      name           = "予備旅"\r
++      type           = infantry\r
++      model          = 3\r
++      extra          = artillery\r
++      brigade_model  = 1\r
++      strength       = 90\r
+       experience     = 30\r
+     }\r
+   }\r
++\r
++  airdivision = { dormant = yes id = { type = 22200 id = 9001 } name = "第101戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22200 id = 9002 } name = "第102戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22200 id = 9003 } name = "第103戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
++  airdivision = { dormant = yes id = { type = 22200 id = 9004 } name = "第104戦略轟炸機大隊" type = strategic_bomber model = 5 nuke = yes }\r
+ }\r

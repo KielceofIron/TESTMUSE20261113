@@ -1,0 +1,24 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Spain_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Spain_events.txt [cp932]
+@@ -942,7 +942,7 @@ event = {
+ 	offset = 5\r
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+-	action = { # 社会主義者を打倒せよ！\r
++action = { # 社会主義者を打倒せよ！\r
+ 	name = "ACTIONNAME2652015A"\r
+ 	command = { type = non_aggression which = POR where = SPA }\r
+ 	command = { trigger = { ai = no } type = dissent value = 5 }\r
+@@ -1027,8 +1027,11 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	atwar = yes\r
+-	NOT = { region = { region = "Portugal" country = POR data = 1 value = 90 } }\r
++	OR = { \r
++	region = { region = "Portugal" country = POR data = -2 value = 20 }\r
+ 	NOT = { control = { province = 476 data = POR } }\r
++	dissent = 50\r
++	}\r
+ 	}\r
+ 	\r
+ 	name = "EVT_2652017_NAME"\r

@@ -1,0 +1,144 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Option_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Option_events.txt [cp932]
+@@ -23,6 +23,8 @@
+ #id = 8761116 Option ― 雲南軍閥のルート分岐\r
+ #id = 8761117 Option ― 両広軍閥のルート分岐\r
+ #id = 8761118 Option ― 軍閥統一戦線のルート分岐\r
++#id = 8761119 Option ― アメリカのルート分岐\r
++#id = 8761120 Option ― アメリカルートの細部分岐\r
+ #########################################################################\r
+ #  Optionイベント\r
+ #########################################################################\r
+@@ -1228,4 +1230,131 @@ event = {
+ 	command = { type = sleepevent which = 8761118 } # Option ― 軍閥統一戦線のルート分岐\r
+ 	ai_chance = 0\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― アメリカのルート分岐\r
++# このディシジョンは、架空世界におけるアメリカの1932年選挙イベントで多くの分岐を抱えているため、特定のルートを選べるようにするものです。\r
++# 何かおかしいと感じましたらご一報ください。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761119\r
++	random = no\r
++	country = -1\r
++\r
++	decision = {\r
++	NOT = {\r
++	country = USA\r
++	OR = {\r
++	event = 7161003 # 第32代米大統領就任 ― 民主党候補の指名\r
++	event = 7161004 # 第32代米大統領就任 ― 1932年選挙の結果\r
++	}\r
++	}\r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	decision_trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	name = "EVT_8761119_NAME"\r
++	desc = "EVT_8761119_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	decision_picture = "decision_diplomatic_campaign"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 45\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
++\r
++	action = { # 民主党を選択する\r
++	name = "ACTIONNAME8761119A"\r
++	command = { type = setflag which = USA_ELECTION_1 }\r
++	command = { type = event which = 8761120 where = -1 when = 0 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 共和党を選択する\r
++	name = "ACTIONNAME8761119B"\r
++	command = { type = setflag which = USA_ELECTION_2 }\r
++	command = { type = sleepevent which = 8761120 } # Option ― アメリカルートの細部分岐\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 共産党を選択する\r
++	name = "ACTIONNAME8761119C"\r
++	command = { type = setflag which = USA_ELECTION_3 }\r
++	command = { type = sleepevent which = 8761120 } # Option ― アメリカルートの細部分岐\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 禁酒党を選択する\r
++	name = "ACTIONNAME8761119D"\r
++	command = { type = setflag which = USA_ELECTION_4 }\r
++	command = { type = sleepevent which = 8761120 } # Option ― アメリカルートの細部分岐\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 銀シャツ団を選択する\r
++	name = "ACTIONNAME8761119E"\r
++	command = { type = setflag which = USA_ELECTION_5 }\r
++	command = { type = sleepevent which = 8761120 } # Option ― アメリカルートの細部分岐\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # このディシジョンは必要ない\r
++	name = "ACTIONNAME8761119F"\r
++	command = { type = sleepevent which = 8761120 } # Option ― アメリカルートの細部分岐\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― アメリカルートの細部分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761120\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761120_NAME"\r
++	desc = "EVT_8761120_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # ルーズベルト・ルート\r
++	name = "ACTIONNAME8761120A"\r
++	command = { type = setflag which = USA_Democratic_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # アル・スミス・ルート\r
++	name = "ACTIONNAME8761120B"\r
++	command = { type = setflag which = USA_Democratic_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # ジョン・N・ガーナー・ルート\r
++	name = "ACTIONNAME8761120C"\r
++	command = { type = setflag which = USA_Democratic_3 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # ウィル・ロジャース・ルート\r
++	name = "ACTIONNAME8761120D"\r
++	command = { type = setflag which = USA_Democratic_4 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # ウィリアム・H・マレー・ルート\r
++	name = "ACTIONNAME8761120E"\r
++	command = { type = setflag which = USA_Democratic_5 }\r
++	ai_chance = 0\r
++	}\r
+ }
+\ No newline at end of file

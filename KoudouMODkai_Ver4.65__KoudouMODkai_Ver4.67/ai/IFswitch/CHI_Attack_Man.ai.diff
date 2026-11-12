@@ -1,0 +1,172 @@
+--- A/ai/IFswitch/CHI_Attack_Man.ai [ascii]
++++ B/ai/IFswitch/CHI_Attack_Man.ai [ascii]
+@@ -1,36 +1,38 @@
+ # China attack Russia AI File by Lothos\r
+-\r
++max_redeploying = 0\r
+ ###################################\r
+ # Ground Combat, Leaders and Garrisons\r
+ ###################################\r
+ garrison = {\r
+ 	defend_overseas_beaches = no\r
+ 	home_multiplier 	= 0.7\r
+-	overseas_multiplier = 0\r
+-	home_peace_cap 		= 0\r
++	overseas_multiplier = -1\r
++	home_peace_cap 		= 0.1\r
+ 	war_zone_odds 		= 25\r
+ 	key_point_prio_mult	= 0.1\r
+ 	revolt_risk_mult	= 0.1\r
+ \r
+ 	# PRIORITIES:\r
+-	beach			= 5 # 20 # 50	# Beach level 2\r
+-	capital		= 30	# Our capital\r
+-	human_border	= 30		# Ignored for allied human players\r
+-	war_target		= 50	# The next country targeted for attack by this AI\r
+-	reserves 		= 2\r
++	beach			= -1 # 20 # 50	# Beach level 2\r
++	capital		= -1	# Our capital\r
++	human_border	= -1		# Ignored for allied human players\r
++	war_target		= 9999	# The next country targeted for attack by this AI\r
++	reserves 		= 1\r
+ \r
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+-		UER = 150\r
++		UER = 99999\r
+ 		SOV = 100\r
+-		MON = 10 # -1\r
++		MON = -10 # -1\r
+ 		TIB = -1\r
+ 		NEP = 20\r
+ 		AFG = -1\r
+ 		FRA = -1\r
+ 		SIA = -1\r
+ 		ENG = -1\r
++		SIK = -1\r
+ 		POR = -1\r
++		UPE = -1\r
+ 		JAP = 100\r
+ 		CHC = 100\r
+ 		MAN = 20\r
+@@ -42,87 +44,23 @@ garrison = {
+ 		U74 = 70\r
+ 		UD6 = -1\r
+ 		BUR = 50\r
+-		IND = 50\r
+-		U02 = 50\r
++		IND = -50\r
++		U02 = -50\r
+ 	}\r
+ 	province_priorities = {	\r
+ 	1158 = -1\r
+ 	1157 = -1\r
+ 	1155 = -1\r
+-	1197 = 50 # Manchu \r
+-	1198 = 50\r
+-	1199 = 50\r
+-	1200 = 50\r
+-	1201 = 50\r
+-	1202 = 50\r
+-	1203 = 50\r
+-	1204 = 50\r
+-	1205 = 50\r
+-	1206 = 50\r
+-	1207 = 50\r
+-	1208 = 50\r
+-	1209 = 50\r
+-	1210 = 50\r
+-	1210 = 50\r
+-	1211 = 50\r
+-	1212 = 50\r
+-	1213 = 50\r
+-	1214 = 50\r
+-	1215 = 50\r
+-	1216 = 50\r
+-	1217 = 50\r
+-	1218 = 50\r
+-	1219 = 50\r
+-	1220 = 50\r
+-	1235 = 50\r
+-	1236 = 50\r
+-	1235 = 50\r
+-	1236 = 50\r
+-	1237 = 50\r
+-	1238 = 50\r
+-	1239 = 50\r
+-	1240 = 50\r
+-	1221 = 50 # Korea\r
+-	1222 = 50\r
+-	1223 = 50\r
+-	1224 = 50\r
+-	1225 = 50\r
+-	1226 = 50\r
+-	1227 = 50\r
+-	1228 = 50\r
+-	1229 = 50\r
+-	1230 = 50\r
+-	1231 = 50\r
+-	1232 = 50\r
+-	1233 = 50\r
+-	1191 = 50 # Primorsky\r
+-	1192 = 50\r
+-	1193 = 50\r
+-	1194 = 50\r
+-	1195 = 50\r
+-	1196 = 50\r
+-	1185 = 50\r
+-	1186 = 50\r
+-	1187 = 50\r
+-	1188 = 50\r
+-	1189 = 50\r
+-	1190 = 50\r
+-	1162 = 20 # Russia\r
+-	1142 = 20\r
+-	1138 = 20\r
+-	572 = 20\r
+-	1552 = 50 # Japan\r
+-	1124 = 20 # China\r
+-	1281 = 20\r
+-	1289 = 20\r
+ 	}\r
+ 	area_multiplier = { \r
+-1219 = 10000\r
+-1221 = 40\r
+-1228 = 40\r
+-1191 = 100\r
+-\r
+-\r
++	1214 = 1\r
++	1199 = 1\r
++	1191 = 1\r
++	1208 = 1\r
++	1221 = 1\r
++	1228 = 1\r
++	1169 = -1\r
++	1179 = -1\r
+ 	}\r
+ }\r
+ front = { \r
+@@ -136,9 +74,9 @@ front = {
+ 	panic_ratio_vs_human	= 3.0\r
+ 	base_attack_odds	= 1.0\r
+ 	min_attack_odds		= 0.7\r
+-	max_attack_odds		= 3.0\r
++	max_attack_odds		= 99.0\r
+ 	reinforce_odds		= 1.1\r
+-	withdraw_odds		= 0.8\r
++	withdraw_odds		= 0.2\r
+ 	support_defense_prop 	= 0.4\r
+ \r
+ 	strength 		= 0.7\r
+@@ -182,8 +120,8 @@ invasion = {
+ 	random		= 8.0	#How big a random range.  (1.0 = 1%)\r
+ 	coastal		= 0.0	#increase to avoid coastal forts more.\r
+ 	beach		= 0.0	#higher, avoid worst beaches.\r
+-	distance	= 20.0	#higher = avoid long distance.\r
+-	max_distance    = 60\r
++	distance	= 0.01	#higher = avoid long distance.\r
++	max_distance    = 250\r
+ 	pocket		= 10.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
+ 	island		= 0.1	#prioritise taking pure islands.\r
+ 	enemy		= 2.0	#higher = much more vary of troops in province.\r

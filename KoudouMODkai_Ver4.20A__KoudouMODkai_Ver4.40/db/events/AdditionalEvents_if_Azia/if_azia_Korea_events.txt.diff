@@ -1,0 +1,786 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Korea_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Korea_events.txt [cp932]
+@@ -90,6 +90,11 @@
+ #id = 6858084 朝鮮排華事件\r
+ #id = 6858085 映画『青春の十字路』\r
+ #id = 6858086 小説『魔人』\r
++#id = 6858087 『半島の舞姫』\r
++#id = 6858088 童話『海松童話集』\r
++#id = 6858089 朝鮮の秘密兵器\r
++#id = 6858090 朝鮮の秘密兵器 ― 計画の進展\r
++#id = 6858091 朝鮮の秘密兵器 ― 計画達成\r
+ #朝鮮内戦ルート\r
+ #id = 6858101 朝鮮内戦\r
+ #id = 6858102 朝鮮人民の蜂起\r
+@@ -129,6 +134,17 @@
+ #id = 6858207 朝鮮との交渉\r
+ #id = 6858208 朝鮮の降伏\r
+ #id = 6858209 大朝鮮の成立\r
++#和平イベント\r
++#id = 6858301 日本への和平提案\r
++#id = 6858302 朝鮮が和平を提案\r
++#id = 6858303 日本が和平提案承諾\r
++#id = 6858304 日本が和平提案拒否\r
++#id = 6858305 朝鮮への和平提案\r
++#id = 6858306 日本が和平を提案\r
++#id = 6858307 朝鮮の屈伏\r
++#id = 6858308 朝鮮が要求を拒否\r
++#id = 6858309 朝鮮との白紙和平\r
++#id = 6858310 日本が白紙和平を提案\r
+ #########################################################################\r
+ #  失墜した大韓帝国の権威\r
+ # 時代遅れの専制君主制を事実上採用している朝鮮の政治体制は、外交的揺動と内政の失敗を前にして砂上の楼閣と化している。\r
+@@ -148,7 +164,7 @@ event = {
+ 	\r
+ 	name = "EVT_6858001_NAME"\r
+ 	desc = "EVT_6858001_DESC"\r
+-	style = 2\r
++	style = 1\r
+ 	picture = "Korea"\r
+ \r
+ 	action = { # 失われた10年を取り戻せ！\r
+@@ -4035,7 +4051,6 @@ event = {
+ 	}\r
+ }\r
+ \r
+-\r
+ ##########################################################################\r
+ #  万宝山事件\r
+ # 1934年7月2日、長春北西に位置する万宝山周辺に入植していた朝鮮人移民が水路工事を行っていたが、\r
+@@ -4211,6 +4226,256 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  『半島の舞姫』\r
++# 舞踏家の崔承喜が生み出した現代舞踊と朝鮮の伝統舞踊を組み合わせた独創的な踊りが、国内で強い人気を集めている。\r
++# 京城で両班の家に生まれた彼女は、モダンダンスの師事を受けて頭角を現し、国内外の多くの文化人にも称賛された。\r
++# さらに注目すべき点として、1935年に「崔承喜舞踊研究所」を設立し、世界各地での公演を計画しているとのことだ。\r
++# （史実では、崔承喜は幼いころから踊りの才能を認められて、1926年に日本本土に渡り活動。\r
++# 独自のスタイルを築き、日本はもとよりヨーロッパ、アメリカでも好評を博した。\r
++# 戦後は夫と共に北朝鮮に移ったが、修正主義者として粛清された。）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6858087\r
++	random = no\r
++	country = KOR\r
++\r
++	trigger = {\r
++	atwar = no\r
++	random = 6\r
++	}\r
++\r
++	name = "EVT_6858087_NAME"\r
++	desc = "EVT_6858087_DESC"\r
++	style = 2\r
++ 	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 3 year = 1935 }\r
++	offset = 6\r
++	deathdate = { day = 29 month = 11 year = 1935 }\r
++\r
++	action = { # 半島を代表する文化人だ！\r
++	name = "ACTIONNAME6858087A"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = relation which = JAP value = 5 }\r
++	command = { type = relation which = U67 value = 5 }\r
++	command = { type = relation which = ENG value = 5 }\r
++	command = { type = relation which = FRA value = 5 }\r
++	command = { type = relation which = USA value = 5 }\r
++	command = { type = relation which = CHI value = 5 }\r
++	command = { type = relation which = UCH value = 5 }\r
++	command = { type = relation which = U74 value = 5 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  童話『海松童話集』\r
++# 開闢出版社から我が国初の童話集である『海松童話集』を発表した。\r
++# 作者である馬海松は、文筆活動で大きな成功を成し遂げたことで朝鮮文化界において一躍有名人となった児童文学作家であり、\r
++# 人気女優をはじめ、様々な女性から交際を求められているとのことだ。\r
++# （史実では、創作童話の執筆に生涯を捧げ、方定煥と共に朝鮮の児童文学運動を先駆を担った。\r
++# その文才は菊池寛に認められ、日本の植民地支配下に置かれていた朝鮮出身の人物であるにもかかわらず、一流文人として活動した。）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6858088\r
++	random = no\r
++	country = KOR\r
++\r
++	trigger = {\r
++	atwar = no\r
++	random = 6\r
++	}\r
++\r
++	name = "EVT_6858088_NAME"\r
++	desc = "EVT_6858088_DESC"\r
++	style = 2\r
++ 	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 3 year = 1934 }\r
++	offset = 6\r
++	deathdate = { day = 29 month = 11 year = 1934 }\r
++\r
++	action = { # 半島を代表する文化人だ！\r
++	name = "ACTIONNAME6858088A"\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  朝鮮の秘密兵器\r
++# 朝鮮政府は、周辺諸国からの侵略に備えて、戦局を変える革命的な新兵器の開発に着手した。\r
++# 多くの兵器は試作品止まりだったか、あるいは配備に手間取り、軍事的効果がほとんどなかったが、\r
++# ロケット兵器や核兵器は最も開発の進展が進んだ兵器で、周辺諸国に脅威を与えた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858089\r
++	random = no\r
++	country = KOR\r
++\r
++	decision = {\r
++	region = { region = "Korea" country = KOR data = 1 value = 50 }\r
++	owned = { province = 1221 data = -1 } # 平壌（ピョンヤン）\r
++	owned = { province = 1228 data = -1 } # 京城（ソウル）\r
++	owned = { province = 1223 data = -1 } # 元山（ウォンサン）\r
++	NOT = { ispuppet = KOR }\r
++	}\r
++	\r
++	decision_trigger = {\r
++	region = { region = "Korea" country = KOR data = 1 value = 50 }\r
++	owned = { province = 1221 data = -1 } # 平壌（ピョンヤン）\r
++	owned = { province = 1228 data = -1 } # 京城（ソウル）\r
++	owned = { province = 1223 data = -1 } # 元山（ウォンサン）\r
++	NOT = { ispuppet = KOR }\r
++	money = 5000 \r
++	}	\r
++	\r
++	trigger = {\r
++	region = { region = "Korea" country = KOR data = 1 value = 50 }\r
++	owned = { province = 1221 data = -1 } # 平壌（ピョンヤン）\r
++	owned = { province = 1228 data = -1 } # 京城（ソウル）\r
++	owned = { province = 1223 data = -1 } # 元山（ウォンサン）\r
++	NOT = { ispuppet = KOR }\r
++	OR = {\r
++	year = 1940\r
++	technology =  5470 # 原爆開発チーム\r
++	}\r
++	}\r
++\r
++	name = EVT_6858089_NAME\r
++	desc = EVT_6858089_DESC\r
++	style = 2\r
++  	picture = "wunderwaffen"\r
++  	decision_picture = "decision_wunderwaffen"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 秘密兵器だ\r
++	name = "ACTIONNAME6858089A"\r
++	command = { type = dissent value = -5 }\r
++	command = { trigger = { ai = yes } type = research_mod value = 2 }\r
++	command = { trigger = { ai = no } type = money value = -5000 }\r
++	# 核兵器\r
++	command = { trigger = { NOT = { technology =  5470 } } type = gain_tech which = 5470 } # 原爆開発チーム\r
++	command = { trigger = { NOT = { technology =  5480 } } type = gain_tech which = 5480 } # 原爆開発研究所\r
++	command = { trigger = { NOT = { technology =  5490 } } type = gain_tech which = 5490 } # 核開発チーム\r
++	command = { trigger = { NOT = { technology =  5500 } } type = gain_tech which = 5500 } # 同位元素分離施設\r
++	command = { trigger = { NOT = { technology =  5510 } } type = gain_tech which = 5510 } # 核燃料分析\r
++	command = { trigger = { NOT = { technology =  5520 } } type = gain_tech which = 5520 } # 実験用原子炉\r
++	command = { trigger = { NOT = { technology =  5530 } } type = gain_tech which = 5530 } # 原子炉の実用化\r
++	command = { trigger = { NOT = { technology =  5540 } } type = gain_tech which = 5540 } # 原子力発電\r
++	command = { type = construct which = nuclear_reactor where = 1223 value = 2 } # 元山（ウォンサン）\r
++	# ロケット兵器\r
++	command = { trigger = { NOT = { technology = 7550 } } type = gain_tech which = 7550 } # ロケット試験研究施設\r
++	command = { trigger = { NOT = { technology = 7560 } } type = gain_tech which = 7560 } # ロケットエンジン\r
++	command = { trigger = { NOT = { technology = 7570 } } type = gain_tech which = 7570 } # ターボジェットエンジン\r
++	command = { trigger = { NOT = { technology = 7580 } } type = gain_tech which = 7580 } # 飛行爆弾開発\r
++	command = { trigger = { NOT = { technology = 7590 } } type = gain_tech which = 7590 } # 飛行ロケット開発\r
++	command = { trigger = { NOT = { technology = 7100 } } type = gain_tech which = 7100 } # 飛行爆弾\r
++	command = { trigger = { NOT = { technology = 7110 } } type = gain_tech which = 7110 } # 戦略ロケット\r
++	command = { trigger = { NOT = { technology = 7120 } } type = gain_tech which = 7120 } # 弾道ミサイル\r
++	command = { trigger = { NOT = { technology = 7130 } } type = gain_tech which = 7130 } # 大陸間弾道ミサイル\r
++	command = { type = construct which = rocket_test where = 1223 value = 2 } # 元山（ウォンサン）\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  朝鮮の秘密兵器 ― 計画の進展\r
++# 朝鮮政府は、周辺諸国からの侵略に備えて、戦局を変える革命的な新兵器の開発に着手した。\r
++# 多大な資材と予算を浪費しながらも計画が進められ、時には外国で行われていた核開発計画に対する諜報活動も行われた。\r
++# 計画は多大な努力によって進展し、特に原子爆弾については開発に目途が立ちつつある。\r
++########################################################################\r
++\r
++event = {\r
++	id = 6858090\r
++	random = no\r
++	country = KOR\r
++	\r
++	trigger = {\r
++	event = 6858089 # 朝鮮の秘密兵器 ― 計画の進展\r
++	is_tech_active = 7170 # 核廃棄物爆弾\r
++	NOT = { ispuppet = KOR }\r
++	}\r
++\r
++	name = "EVT_6858090_NAME"\r
++	desc = "EVT_6858090_DESC"\r
++	style = 2\r
++  	picture = "manhattan_project"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 計画を進める\r
++	name = "ACTIONNAME6858090A"\r
++        command = { type = nuke_damage value = 10 }\r
++	command = { trigger = { NOT = { technology = 7170 } } type = gain_tech which = 7170 } # 核廃棄物爆弾\r
++	command = { trigger = { NOT = { technology = 7180 } } type = gain_tech which = 7180 } # 半核分裂爆弾\r
++	command = { trigger = { NOT = { technology = 7190 } } type = gain_tech which = 7190 } # 核分裂爆弾\r
++	command = { trigger = { NOT = { technology = 16010 } } type = gain_tech which = 16010 } # 核小型原子爆弾\r
++	command = { trigger = { NOT = { technology = 16020 } } type = gain_tech which = 16020 } # 水素爆弾\r
++	command = { type = construct which = nuclear_reactor where = 1223 value = 2 } # 元山（ウォンサン）\r
++	command = { type = construct which = rocket_test where = 1223 value = 2 } # 元山（ウォンサン）\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  朝鮮の秘密兵器 ― 計画達成\r
++# 朝鮮政府は、周辺諸国からの侵略に備えて、戦局を変える革命的な新兵器の開発に着手した。\r
++# 多大な資材と予算を浪費しながらも計画が進められ、時には外国で行われていた核開発計画に対する諜報活動も行われた。\r
++# 計画は多大な努力によって達成され、朝鮮は半島から侵略者を追放するための兵器を獲得した！\r
++########################################################################\r
++\r
++event = {\r
++	id = 6858091\r
++	random = no\r
++	country = KOR\r
++\r
++	trigger = {\r
++	event = 6858090 # 朝鮮の秘密兵器 ― 計画の進展\r
++	OR = {\r
++	AND = { year = 1950 random = 5 }\r
++	technology = 7190 # 核分裂爆弾\r
++	}\r
++	NOT = { ispuppet = KOR }\r
++	}\r
++\r
++	name = "EVT_6858091_NAME"\r
++	desc = "EVT_6858091_DESC"\r
++	style = 2\r
++  	picture = "manhattan_project"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 素晴らしい成果だ！\r
++	name = "ACTIONNAME6858091A"\r
++	command = { type = enable_task which = nuke }\r
++	command = { type = nuclear_carrier which = flying_bomb }\r
++	command = { type = nuclear_carrier which = flying_rocket }\r
++        command = { type = abomb_production }\r
++        command = { type = nuke_damage value = 50 }\r
++	command = { type = construct which = nuclear_reactor where = 1223 value = 2 } # 元山（ウォンサン）\r
++	command = { type = construct which = rocket_test where = 1223 value = 2 } # 元山（ウォンサン）\r
++	command = { type = add_corps value = air where = 1228 }\r
++	command = { type = activate_division which = 9064 value = 9001 where = 1228 when = 0 }\r
++	command = { type = add_corps value = air where = 1228 }\r
++	command = { type = activate_division which = 9064 value = 9002 where = 1228 when = 0 }\r
++	command = { type = add_corps value = air where = 1228 }\r
++	command = { type = activate_division which = 9064 value = 9003 where = 1228 when = 0 }\r
++	command = { type = add_corps value = air where = 1228 }\r
++	command = { type = activate_division which = 9064 value = 9004 where = 1228 when = 0 }\r
++	}\r
++}\r
+ #########################################################################\r
+ #  朝鮮内戦ルート\r
+ #########################################################################\r
+@@ -6453,4 +6718,478 @@ event = {
+ 	command = { trigger = { control = { province = 1247 data = KOR } } type = addclaim which = 1247 }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  和平イベント\r
++#########################################################################\r
++#  日本への和平提案\r
++# 我が国は日本本土への侵攻を成功させ、破竹の進撃によって敵の重要な拠点を占領している。\r
++# 今なら日本も我が国の和平勧告も受け入れることだろう。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858301\r
++	random = no\r
++	country = KOR\r
++\r
++	trigger = {\r
++	war = { country = KOR country = JAP }\r
++	OR = {\r
++	control = { province = 1552 data = KOR } # 東京\r
++	AND = {\r
++	control = { province = 1553 data = KOR } # 大阪\r
++	region = { region = "Japan" country = KOR data = 1 value = 40 }\r
++	}\r
++	AND = {\r
++	control = { province = 1560 data = KOR } # 福岡\r
++	region = { region = "Japan" country = KOR data = 1 value = 40 }\r
++	}\r
++	region = { region = "Japan" country = KOR data = 1 value = 60 }\r
++	}\r
++	NOT = {\r
++	ispuppet = KOR\r
++	ispuppet = JAP\r
++	alliance = { country = KOR country = ENG }\r
++	alliance = { country = KOR country = FRA }\r
++	alliance = { country = KOR country = USA }\r
++	alliance = { country = KOR country = RUS }\r
++	alliance = { country = KOR country = UER }\r
++	alliance = { country = KOR country = SOV }\r
++	alliance = { country = KOR country = GER }\r
++	alliance = { country = KOR country = CHI }\r
++	alliance = { country = KOR country = CHC }\r
++	alliance = { country = KOR country = CYN }\r
++	war = { country = JAP country = ENG }\r
++	war = { country = JAP country = FRA }\r
++	war = { country = JAP country = USA }\r
++	war = { country = JAP country = RUS }\r
++	war = { country = JAP country = UER }\r
++	war = { country = JAP country = SOV }\r
++	war = { country = JAP country = GER }\r
++	war = { country = JAP country = CHI }\r
++	war = { country = JAP country = CHC }\r
++	war = { country = JAP country = CYN }\r
++	}\r
++	AND = {\r
++	NOT = { lost_national = { country = KOR value = 20 } }\r
++	control = { province = 1221 data = KOR } # 平壌（ピョンヤン）\r
++	control = { province = 1228 data = KOR } # 京城（ソウル）\r
++	}\r
++	}\r
++\r
++	name = "EVT_6858301_NAME"\r
++	desc = "EVT_6858301_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 目標は達成された\r
++	name = "ACTIONNAME6858301A"\r
++	command = { type = addclaim which = 2787 } # 長崎\r
++	command = { type = addclaim which = 2788 } # 佐賀\r
++	command = { type = addclaim which = 1560 } # 福岡\r
++	command = { type = addclaim which = 2779 } # 松江\r
++	command = { type = addclaim which = 2780 } # 山口\r
++	command = { type = addclaim which = 1556 } # 金澤\r
++	command = { type = addclaim which = 2771 } # 福井\r
++	command = { type = event which = 6858302 where = JAP when = 0 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 戦争を継続せよ\r
++	name = "ACTIONNAME6858301B"\r
++	command = { type = dissent value = 15 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  朝鮮が和平を提案\r
++# 我が国は朝鮮に大敗北を喫した。\r
++# 本土が脅威に晒されており、暴動が日常となりつつある。\r
++# これ以上の戦争を止めるためにも、敵の要求を受け入れるしかないだろう。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858302\r
++	random = no\r
++	country = JAP\r
++\r
++	name = "EVT_6858302_NAME"\r
++	desc = "EVT_6858302_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 選択の余地はあるまい…\r
++	name = "ACTIONNAME6858302A"\r
++	command = { type = dissent value = 20 }\r
++	#本国返還\r
++	command = { type = secederegion which = KOR value = "KOR" when = 1 }\r
++	#本土割譲\r
++	command = { type = secedeprovince which = KOR value = 2790 when = 1 } # 対馬\r
++	command = { type = secedeprovince which = KOR value = 2796 when = 1 } # 竹島\r
++	command = { type = secedeprovince which = KOR value = 2787 when = 1 } # 長崎\r
++	command = { type = secedeprovince which = KOR value = 2788 when = 1 } # 佐賀\r
++	command = { type = secedeprovince which = KOR value = 1560 when = 1 } # 福岡\r
++	command = { type = secedeprovince which = KOR value = 2779 when = 1 } # 松江\r
++	command = { type = secedeprovince which = KOR value = 2780 when = 1 } # 山口\r
++	command = { type = secedeprovince which = KOR value = 1556 when = 1 } # 金澤\r
++	command = { type = secedeprovince which = KOR value = 2771 when = 1 } # 福井\r
++	#対外関係\r
++	command = { type = leave_alliance when = 1 }\r
++	command = { type = peace which = KOR value = 1 }\r
++	command = { type = belligerence value = -5 }\r
++	command = { type = set_relation which = KOR value = 50 }\r
++	command = { type = set_relation which = ENG value = -75 }\r
++	command = { type = set_relation which = FRA value = -75 }\r
++	command = { type = set_relation which = USA value = -75 }\r
++	command = { type = set_relation which = UER value = -75 }\r
++	command = { type = set_relation which = SOV value = -75 }\r
++	command = { type = set_relation which = GER value = -75 }\r
++	command = { type = set_relation which = ITA value = -75 }\r
++	command = { type = non_aggression which = KOR where = JAP when = 7200 }\r
++	#政治体制\r
++	command = { type = domestic which = defense_lobby value = -3 }\r
++	command = { type = domestic which = interventionism value = -3 }\r
++	#賠償金\r
++	command = { type = trade which = JAP where = KOR money = -2 when = 7200 value = 1 }\r
++	command = { type = trade which = JAP where = KOR supplies = -10 when = 7200 value = 1 }\r
++	command = { type = event which = 6858303 where = JAP when = 0 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 戦争を継続する\r
++	name = "ACTIONNAME6858302B"\r
++	command = { type = dissent value = 35 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = event which = 6858304 where = JAP when = 0 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  日本が和平提案承諾\r
++# 日本が和平提案を承諾し、厳しい講和条約を履行してきた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858303\r
++	random = no\r
++	country = KOR\r
++\r
++	name = "EVT_6858303_NAME"\r
++	desc = "EVT_6858303_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  日本が和平提案拒否\r
++# 日本が和平提案を拒否し、あくまで戦争継続を望んでいるらしい。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858304\r
++	random = no\r
++	country = KOR\r
++\r
++	name = "EVT_6858304_NAME"\r
++	desc = "EVT_6858304_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  朝鮮への和平提案\r
++# 誉も高き光輝ある我が軍は連戦連勝し、朝鮮に大きな屈辱を与えた。\r
++# 今や朝鮮の命運は我々が握っているのだ。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858305\r
++	random = no\r
++	country = JAP\r
++\r
++	trigger = {\r
++	war = { country = KOR country = JAP }\r
++	OR = {\r
++	AND = {\r
++	control = { province = 1221 data = JAP } # 平壌（ピョンヤン）\r
++	region = { region = "Korea" country = JAP data = 1 value = 40 }\r
++	}\r
++	AND = {\r
++	control = { province = 1228 data = JAP } # 京城（ソウル）\r
++	region = { region = "Korea" country = JAP data = 1 value = 40 }\r
++	}\r
++	AND = {\r
++	control = { province = 1232 data = JAP } # 釜山（プサン）\r
++	lost_national = { country = 30 value = KOR }\r
++	}\r
++	region = { region = "Korea" country = JAP data = 1 value = 60 }\r
++	}\r
++	NOT = {\r
++	ispuppet = KOR\r
++	ispuppet = JAP\r
++	alliance = { country = JAP country = ENG }\r
++	alliance = { country = JAP country = FRA }\r
++	alliance = { country = JAP country = USA }\r
++	alliance = { country = JAP country = RUS }\r
++	alliance = { country = JAP country = UER }\r
++	alliance = { country = JAP country = SOV }\r
++	alliance = { country = JAP country = GER }\r
++	alliance = { country = JAP country = CHI }\r
++	alliance = { country = JAP country = CHC }\r
++	alliance = { country = JAP country = CYN }\r
++	war = { country = KOR country = ENG }\r
++	war = { country = KOR country = FRA }\r
++	war = { country = KOR country = USA }\r
++	war = { country = KOR country = RUS }\r
++	war = { country = KOR country = UER }\r
++	war = { country = KOR country = SOV }\r
++	war = { country = KOR country = GER }\r
++	war = { country = KOR country = CHI }\r
++	war = { country = KOR country = CHC }\r
++	war = { country = KOR country = CYN }\r
++	}\r
++	AND = {\r
++	NOT = { lost_national = { country = JAP value = 20 } }\r
++	control = { province = 1552 data = JAP } # 東京\r
++	control = { province = 1553 data = JAP } # 大阪\r
++	}\r
++	}\r
++\r
++	name = "EVT_6858305_NAME"\r
++	desc = "EVT_6858305_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 目標は達成された\r
++	name = "ACTIONNAME6858305A"\r
++	command = { type = addclaim which = 1232 } # 釜山（プサン）\r
++	command = { type = addclaim which = 2791 } # 済州\r
++	command = { type = event which = 6858306 where = KOR when = 0 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 戦争を継続せよ\r
++	name = "ACTIONNAME6858305B"\r
++	command = { type = dissent value = 15 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  日本が和平を提案\r
++# わが軍は日本軍の攻撃を食い止めることに失敗した。\r
++# 今や半島は危機的状況に晒されており、日本はこの機会を利用して我々に服従を要求してきた。\r
++# これを受け入れることは我が国の独立国としての立場の終焉を意味するが、\r
++# これ以上の強力な日本軍との戦争は、朝鮮半島にとっての災厄であろう…\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858306\r
++	random = no\r
++	country = KOR\r
++\r
++	name = "EVT_6858306_NAME"\r
++	desc = "EVT_6858306_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 受け入れよう、日本に対する勝ち目はない\r
++	name = "ACTIONNAME6858306A"\r
++	command = { type = dissent value = 20 }\r
++	#本国返還\r
++	command = { type = secederegion which = JAP value = "Japan" when = 1 }\r
++	#本土割譲\r
++	command = { type = secedeprovince which = JAP value = 1232 when = 1 } # 釜山（プサン）\r
++	command = { type = secedeprovince which = JAP value = 2791 when = 1 } # 済州\r
++	#対外関係\r
++	command = { type = leave_alliance when = 1 }\r
++	command = { type = peace which = JAP value = 1 }\r
++	command = { type = belligerence value = -5 }\r
++	command = { type = set_relation which = JAP value = 50 }\r
++	command = { type = set_relation which = ENG value = -75 }\r
++	command = { type = set_relation which = FRA value = -75 }\r
++	command = { type = set_relation which = USA value = -75 }\r
++	command = { type = set_relation which = UER value = -75 }\r
++	command = { type = set_relation which = SOV value = -75 }\r
++	command = { type = set_relation which = GER value = -75 }\r
++	command = { type = set_relation which = ITA value = -75 }\r
++	command = { type = non_aggression which = JAP where = KOR when = 7200 }\r
++	#政治体制\r
++	command = { type = domestic which = defense_lobby value = -3 }\r
++	command = { type = domestic which = interventionism value = -3 }\r
++	#賠償金\r
++	command = { type = trade which = KOR where = JAP money = -2 when = 7200 value = 1 }\r
++	command = { type = trade which = KOR where = JAP supplies = -10 when = 7200 value = 1 }\r
++	command = { type = event which = 6858307 where = JAP when = 0 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 断固拒否！\r
++	name = "ACTIONNAME6858306B"\r
++	command = { type = dissent value = 35 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  朝鮮の屈伏\r
++# 朝鮮は我が国の要求を全て受け入れた！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858307\r
++	random = no\r
++	country = JAP\r
++\r
++	name = "EVT_6858307_NAME"\r
++	desc = "EVT_6858307_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  朝鮮が要求を拒否\r
++# 朝鮮は我が国の要求を全面的に拒否した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858308\r
++	random = no\r
++	country = JAP\r
++\r
++	name = "EVT_6858308_NAME"\r
++	desc = "EVT_6858308_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = 3 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  朝鮮との白紙和平\r
++# 我が国と朝鮮の戦争は、互いに決定打に欠けたことで、泥沼となっている。\r
++# この戦争が何も利益をもたらさないのであれば、白紙和平も視野に入れるべきだ。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858309\r
++	random = no\r
++	country = JAP\r
++\r
++	trigger = {\r
++	war = { country = JAP country = KOR }\r
++	NOT = {\r
++	event = 6858303 # 日本が和平提案承諾\r
++	event = 6858307 # 朝鮮の屈伏\r
++	alliance = { country = JAP country = ENG }\r
++	alliance = { country = JAP country = FRA }\r
++	alliance = { country = JAP country = USA }\r
++	alliance = { country = JAP country = UER }\r
++	alliance = { country = JAP country = SOV }\r
++	alliance = { country = KOR country = ENG }\r
++	alliance = { country = KOR country = FRA }\r
++	alliance = { country = KOR country = USA }\r
++	alliance = { country = KOR country = UER }\r
++	alliance = { country = KOR country = SOV }\r
++	ispuppet = JAP\r
++	ispuppet = KOR\r
++	}\r
++	control = { province = 1552 data = JAP } # 東京\r
++	control = { province = 1553 data = JAP } # 大阪\r
++	control = { province = 1221 data = JAP } # 平壌（ピョンヤン）\r
++	control = { province = 1228 data = JAP } # 京城（ソウル）\r
++	random = 40\r
++	}\r
++\r
++	name = "EVT_6858309_NAME"\r
++	desc = "EVT_6858309_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 120\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 白紙和平を提案しよう\r
++	name = "ACTIONNAME6858309A"\r
++	command = { type = belligerence value = 3 }\r
++	command = { type = relation which = KOR value = 5 }\r
++	command = { type = relation which = CHI value = 5 }\r
++	command = { type = relation which = CHC value = 5 }\r
++	command = { type = relation which = UCH value = 5 }\r
++	command = { type = relation which = U74 value = 5 }\r
++	command = { type = event which = 6858310 where = KOR when = 0 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 戦争を継続する\r
++	name = "ACTIONNAME6858309B"\r
++	command = { type = dissent value = 1 }\r
++	ai_chance = 50\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  日本が白紙和平を提案\r
++# 我が国と日本の戦争が、泥沼の戦いとなったことで、日本が停戦を提案してきた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6858310\r
++	random = no\r
++	country = KOR\r
++	persistent = yes\r
++\r
++	name = "EVT_6858310_NAME"\r
++	desc = "EVT_6858310_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++\r
++	action = { # 白紙和平だ\r
++	name = "ACTIONNAME6858310A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = belligerence value = -5 }\r
++	command = { type = peace which = JAP value = 0 }\r
++	command = { type = non_aggression which = KOR where = JAP }\r
++	}\r
++\r
++	action = { # 和平など拒否だ\r
++	name = "ACTIONNAME68583010B"\r
++	command = { type = belligerence value = 5 }\r
++	command = { type = dissent value = 12 }\r
++	}\r
+ }
+\ No newline at end of file

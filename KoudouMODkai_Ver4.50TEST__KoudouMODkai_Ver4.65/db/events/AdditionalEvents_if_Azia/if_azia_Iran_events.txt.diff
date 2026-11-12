@@ -1,0 +1,343 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Iran_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Iran_events.txt [cp932]
+@@ -11,11 +11,7 @@
+ #id = 28520005 ペルシャ内戦 ― 社会主義国家\r
+ #id = 28520006 ペルシャ内戦 ― 勝利（UD2）\r
+ #id = 28520007 ペルシャ内戦 ― 勝利（PER）\r
+-#id = 28520008 ペルシャの破綻（PER）\r
+-#id = 28520009 ペルシャの破綻（ENG）\r
+-#id = 28520010 ペルシャの破綻 ― イギリス保護領ペルシャ\r
+-#id = 28520011 ペルシャの破綻 ― APOC国家\r
+-#id = 28520012 イギリスのペルシャ支配の終焉\r
++#id = 28520008 レザ・ハーンの暗殺\r
+ # 義勇兵派遣イベント\r
+ #id = 28520101 ペルシャ内戦 ― 介入（UER）\r
+ #id = 28520102 ペルシャ内戦 ― ロシアの介入\r
+@@ -69,6 +65,7 @@ event = {
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
++\r
+ #########################################################################\r
+ #  ペルシャ内戦\r
+ # ペルシャの指導者であるレザ・ハーンは、不平等条約改正と近代化のために、長年に渡り搾取を続けてきたイギリスとロシアに妥協せざるを得なかった。\r
+@@ -200,6 +197,11 @@ event = {
+ 	action = { # 戦う！\r
+ 	name = "ACTION_NAME_FIGHT"\r
+ 	command = { type = free_ic value = 5 }\r
++	command = { type = energypool value = 350 }\r
++	command = { type = metalpool value = 200 }\r
++	command = { type = rarematerialspool value = 200 }\r
++	command = { type = oilpool value = 120 }\r
++	command = { type = supplies value = 250 }\r
+ 	command = { type = end_non_aggression which = UD2 where = PER }\r
+ 	command = { type = war which = PER }\r
+ 	command = { type = name where = UD2 which = "ペルシャ（革命派）" }\r
+@@ -207,7 +209,7 @@ event = {
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+ 	command = { type = set_domestic which = free_market value = 3 }\r
+ 	command = { type = set_domestic which = freedom value = 3 }\r
+-	command = { type = headofstate which = 2345002 } # タキ・アラニ\r
++	command = { type = headofstate which = 2345003 } # レザ・ラドマネシュ\r
+ 	command = { type = headofgovernment which = 2345007 } # ソレイマン・エスカンダリ\r
+ 	command = { type = foreignminister which = 2345012 } # ボゾルグ・アラヴィー\r
+ 	command = { type = armamentminister which = 2345016 } # イラジ・エスカンダリ\r
+@@ -328,7 +330,7 @@ event = {
+ \r
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+-	command = { type = name where = UD2 }\r
++	command = { type = name where = PER }\r
+ 	command = { type = capital which = 1085 } # テヘラン\r
+ 	command = { type = belligerence which = PER value = -10 }\r
+ 	command = { type = remove_division which = "第1革命騎兵師団" value = PER }\r
+@@ -360,265 +362,48 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  ペルシャの破綻（PER）\r
+-# ペルシャ内戦は、中東の没落国家を破綻させるには充分な出来事であった。\r
+-# 多くの労働者や民族主義者は、王制に対する怒りをくすぶらせており、都市は破壊と飢餓に苦しめられていた。\r
+-# 国王の絶対主義的な権力の根源である軍隊は内戦で消耗し、ペルシャの国家基盤は不安定となった。\r
+-# こうした中、イギリスとアングロ・ペルシア石油会社は、内戦中に負った借金の返済を保証のために、\r
+-# ペルシャ国内の大部分の権力を譲り渡すよう要求した。\r
+-# 国王と政府関係者は、この要求に反抗できないことを悟り、この要求に譲歩することに同意した。\r
+-# これにより、ペルシャは滅亡し、イギリスの保護領の一つになり果てることになった。\r
++#  レザ・ハーンの暗殺\r
++# 1934年にイランで社会主義者の反乱が勃発し、混沌が広がっていた。\r
++# そんな中、ペルシャの指導者であるレザ・ハーンが暗殺される事件が起きた。\r
++# 視察の途中、爆弾を仕掛けられた車両が爆発し、レザ・ハーンはその場で命を落としてしまったのである。\r
++# 暗殺犯は特定されていないが、社会主義の過激派が犯行声明を出しており、彼らに容疑がかかっている。\r
++# 国内は大混乱に陥り、政情不安が続く中、イランの将来は不透明なものとなった。\r
+ #########################################################################\r
+-\r
+ event = {\r
+ 	id = 28520008\r
+ 	random = no\r
+ 	country = PER\r
+ \r
+ 	trigger = {\r
++	headofstate = 150001 # レザ・パーラヴィ\r
+ 	event = 28520002 # ペルシャ内戦\r
+-	event = 28520007 # ペルシャ内戦 ― 勝利（PER）\r
+-        NOT = {\r
+-	government = { type = communist country = PER }\r
+-	government = { type = communist country = ENG }\r
+-	war = { country = ENG country = UER }\r
+-	war = { country = ENG country = SOV }\r
+-	alliance = { country = ENG country = PER }\r
+-	alliance = { country = UER country = PER }\r
+-	alliance = { country = SOV country = PER }\r
+ 	}\r
+-        }\r
+ \r
+ 	name = "EVT_28520008_NAME"\r
+ 	desc = "EVT_28520008_DESC"\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++  	picture = "scw"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 17\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
++	date = { day = 16 month = 5 year = 1934 }\r
+ \r
+-	action = { # 彼らの要求を聞く\r
++	action = { # 議会が臨時内閣を組閣する\r
+ 	name = "ACTIONNAME28520008A"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = leave_alliance when = 1 }\r
+-	command = { type = end_puppet }\r
+-	command = { type = set_relation which = GER value = -50 }\r
+-	command = { type = set_relation which = JAP value = -50 }\r
+-	command = { type = set_relation which = ITA value = -50 }\r
+-	command = { type = set_relation which = UER value = 25 }\r
+-	command = { type = set_relation which = SOV value = 25 }\r
+-	command = { type = set_relation which = ENG value = 100 }\r
+-	command = { type = set_relation which = U02 value = 100 }\r
+-	command = { type = set_relation which = CAN value = 100 }\r
+-	command = { type = set_relation which = AST value = 100 }\r
+-	command = { type = set_relation which = NZL value = 100 }\r
+-	command = { type = end_trades which = PER where = GER }\r
+-	command = { type = end_trades which = PER where = JAP }\r
+-	command = { type = end_trades which = PER where = ITA }\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 1080 }\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 1081 }\r
+-	command = { trigger = { exists = UER } type = secedeprovince which = UER value = 1083 }\r
+-	command = { trigger = { exists = UER } type = addcore which = 1080 where = UER }\r
+-	command = { trigger = { exists = UER } type = addcore which = 1081 where = UER }\r
+-	command = { trigger = { exists = UER } type = addcore which = 1083 where = UER }\r
+-	command = { trigger = { exists = SOV } type = secedeprovince which = SOV value = 1080 }\r
+-	command = { trigger = { exists = SOV } type = secedeprovince which = SOV value = 1081 }\r
+-	command = { trigger = { exists = SOV } type = secedeprovince which = SOV value = 1083 }\r
+-	command = { trigger = { exists = SOV } type = addcore which = 1080 where = SOV }\r
+-	command = { trigger = { exists = SOV } type = addcore which = 1081 where = SOV }\r
+-	command = { trigger = { exists = SOV } type = addcore which = 1083 where = SOV }\r
+-	command = { type = trigger which = 28520009 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 拒否\r
+-	name = "ACTIONNAME28520008B"\r
+-	command = { type = dissent value = 75 }\r
+-	command = { type = relation which = ENG value = -75 }\r
+-	command = { type = relation which = UER value = -75 }\r
+-	command = { type = relation which = SOV value = -75 }\r
+-	command = { type = end_non_aggression which = ENG where = PER }\r
+-	command = { type = end_non_aggression which = UER where = PER }\r
+-	command = { type = end_non_aggression which = SOV where = PER }\r
+-	command = { type = war which = ENG }\r
+-	command = { type = war which = UER }\r
+-	command = { type = war which = SOV }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ペルシャの破綻（ENG）\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 28520009\r
+-	random = no\r
+-	country = ENG\r
+-\r
+-	name = "EVT_28520008_NAME"\r
+-	desc = "EVT_28520008_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 保護領を設立する\r
+-	name = "ACTIONNAME28520009A"\r
+-	command = { type = make_puppet which = PER }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = ENG value = 1 }\r
+-	command = { type = trigger which = 28520010 }\r
+-	}\r
+-\r
+-	action = { # 会社に管理を任せる\r
+-	name = "ACTIONNAME28520009B"\r
+-	command = { type = make_puppet which = PER }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = ENG value = 3 }\r
+-	command = { type = trigger which = 28520011 }\r
+-	}\r
+-\r
+-	action = { # ペルシャの独立を守るべきだ\r
+-	name = "ACTIONNAME28520009C"\r
+-	command = { type = domestic which = interventionism value = -1 }\r
+-	command = { type = belligerence which = ENG value = -1 }\r
+-	command = { type = guarantee which = ENG where = PER }\r
+-	command = { type = sleepevent which = 28520010 }\r
+-	command = { type = sleepevent which = 28520011 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ペルシャの破綻 ― イギリス保護領ペルシャ\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 28520010\r
+-	random = no\r
+-	country = PER\r
+-\r
+-	name = "EVT_28520010_NAME"\r
+-	desc = "EVT_28520008_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = name where = PER which = "英領ペルシャ" }\r
+-	command = { type = flag_ext where = PER which = "_eng" }\r
+-	command = { type = wakeminister which = 150202 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = wakeminister which = 150203 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = wakeminister which = 150204 } # ストラサルモンド男爵ウィリアム・フレイザー\r
+-	command = { type = wakeminister which = 150205 } # ストラサルモンド男爵ウィリアム・フレイザー\r
+-	command = { type = wakeminister which = 150207 } # エドワード・クイナン\r
+-	command = { type = wakeminister which = 150208 } # エドワード・クイナン\r
+-	command = { type = wakeminister which = 150209 } # ウィリアム・スリム\r
+-	command = { type = wakeminister which = 150210 } # ウィリアム・スリム\r
+-	command = { type = wakeminister which = 150211 } # イギリス保護国\r
+-	command = { type = wakeminister which = 150212 } # イギリス保護国\r
+-	command = { type = set_domestic which = democratic value = 10 } \r
+-	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = set_domestic which = free_market value = 10 }\r
+-	command = { type = set_domestic which = freedom value = 1 }\r
+-	command = { type = headofstate which = 150211 } # イギリス保護国\r
+-	command = { type = headofgovernment which = 150212 } # イギリス保護国\r
+-	command = { type = armamentminister which = 150203 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = chiefofstaff which = 150207 } # エドワード・クイナン\r
+-	command = { type = chiefofarmy which = 150207 } # エドワード・クイナン\r
+-	ai_chance = 100\r
++	command = { type = sleepminister which = 150001 } # レザ・パーラヴィ\r
++	command = { type = sleepminister which = 150007 }\r
++	command = { type = sleepleader which = 150017 }\r
++	command = { type = sleepteam which = 150009 }\r
++	command = { type = headofstate which = 150126 } # マームッド・ジャム\r
++	command = { type = headofgovernment which = 150002 } # マームッド・ジャム\r
++	command = { type = foreignminister which = 150003 } # イノヤトゥラー・カーン・サミ\r
++	command = { type = armamentminister which = 150004 } # アーマッド・カーン・ナクジャーヴァン\r
++	command = { type = ministerofsecurity which = 150005 } # アリ・アクバー・デイヴァ\r
++	command = { type = ministerofintelligence which = 150006 } # レザ・ミザニ\r
++	command = { type = chiefofstaff which = 150127 } # アブドレザ・アフカーミ\r
++	command = { type = chiefofarmy which = 150008 } # アブドレザ・アフカーミ\r
++	command = { type = chiefofnavy which = 150009 } # アーマッド・ミラ・コスラヴァニ\r
++	command = { type = chiefofair which = 150010 } # アーマッド・カーン・ナクジャーヴァン\r
+ 	}\r
+ }\r
+-\r
+-#########################################################################\r
+-#  ペルシャの破綻 ― APOC国家\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 28520011\r
+-	random = no\r
+-	country = PER\r
+-\r
+-	name = "EVT_28520011_NAME"\r
+-	desc = "EVT_28520008_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = name where = PER which = "アングロ・ペルシアン石油会社" }\r
+-	command = { type = flag_ext where = PER which = "_APOC" }\r
+-	command = { type = wakeminister which = 150201 } # APOC取締役会\r
+-	command = { type = wakeminister which = 150202 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = wakeminister which = 150203 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = wakeminister which = 150204 } # ストラサルモンド男爵ウィリアム・フレイザー\r
+-	command = { type = wakeminister which = 150205 } # ストラサルモンド男爵ウィリアム・フレイザー\r
+-	command = { type = wakeminister which = 150207 } # エドワード・クイナン\r
+-	command = { type = wakeminister which = 150208 } # エドワード・クイナン\r
+-	command = { type = wakeminister which = 150209 } # ウィリアム・スリム\r
+-	command = { type = wakeminister which = 150210 } # ウィリアム・スリム\r
+-	command = { type = set_domestic which = democratic value = 10 } \r
+-	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { type = set_domestic which = free_market value = 10 }\r
+-	command = { type = set_domestic which = freedom value = 1 }\r
+-	command = { type = headofstate which = 150201 } # APOC取締役会\r
+-	command = { type = headofgovernment which = 150202 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = armamentminister which = 150203 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = chiefofstaff which = 150207 } # エドワード・クイナン\r
+-	command = { type = chiefofarmy which = 150207 } # エドワード・クイナン\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  イギリスのペルシャ支配の終焉\r
+-# イギリスによるペルシャ支配が崩壊した。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 28520012\r
+-	random = no\r
+-	country = PER\r
+-\r
+-	trigger = {\r
+-	event = 28520002 # ペルシャ内戦\r
+-        OR = {\r
+-	event = 28520010 # ペルシャの破綻 ― イギリス保護領ペルシャ\r
+-	event = 28520011 # ペルシャの破綻 ― APOC国家\r
+-	}\r
+-        NOT = {\r
+-	puppet = { country = PER country = ENG }\r
+-	alliance = { country = PER country = ENG }\r
+-	}\r
+-        }\r
+-\r
+-	name = "EVT_28520012_NAME"\r
+-	desc = "EVT_28520012_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-\r
+-	action = { # 植民地支配が終わった\r
+-	name = "ACTIONNAME28520012A"\r
+-	command = { type = name where = PER }\r
+-	command = { type = flag_ext where = PER }\r
+-	command = { type = sleepminister which = 150201 } # APOC取締役会\r
+-	command = { type = sleepminister which = 150202 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = sleepminister which = 150203 } # カドマン男爵ジョン・カドマン\r
+-	command = { type = sleepminister which = 150204 } # ストラサルモンド男爵ウィリアム・フレイザー\r
+-	command = { type = sleepminister which = 150205 } # ストラサルモンド男爵ウィリアム・フレイザー\r
+-	command = { type = sleepminister which = 150207 } # エドワード・クイナン\r
+-	command = { type = sleepminister which = 150208 } # エドワード・クイナン\r
+-	command = { type = sleepminister which = 150209 } # ウィリアム・スリム\r
+-	command = { type = sleepminister which = 150210 } # ウィリアム・スリム\r
+-	command = { type = sleepminister which = 150211 } # イギリス保護国\r
+-	command = { type = sleepminister which = 150212 } # イギリス保護国\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+ #########################################################################\r
+ #  義勇兵派遣イベント\r
+ #########################################################################\r

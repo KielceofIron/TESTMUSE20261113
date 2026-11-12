@@ -1,0 +1,96 @@
+--- A/db/events/AdditionalEvents/ETH_events.txt [cp932]
++++ B/db/events/AdditionalEvents/ETH_events.txt [cp932]
+@@ -14,14 +14,14 @@
+ #id = 204009 イタリアによる対日禁輸\r
+ #id = 204010 イタリアによる満州国承認\r
+ #id = 204011 イタリアが満州国承認！\r
+-#id = 204020 ワルワル事件 ― アビシニア危機\r
+-#id = 204021 ワルワル事件 ― アビシニア危機(イタリア視点)\r
++#id = 204020 ワルワル事件　― アビシニア危機\r
++#id = 204021 ワルワル事件　― アビシニア危機(イタリア視点)\r
+ #id = 204022 第二次エチオピア戦争 ― 勃発\r
+-#id = 204023 ホーア・ラヴァル案 ― 国際連盟の調停\r
+-#id = 204024 ホーア・ラヴァル案 ― エチオピアが調停を拒絶\r
+-#id = 204025 ホーア・ラヴァル案 ― エチオピアが調停を受諾\r
+-#id = 204026 ホーア・ラヴァル案 ― 講和が成立した\r
+-#id = 204027 ホーア・ラヴァル案 ― イタリアが拒絶した\r
++#id = 204023 ホーア・ラヴァル案　―　国際連盟の調停\r
++#id = 204024 ホーア・ラヴァル案　―　エチオピアが調停を拒絶\r
++#id = 204025 ホーア・ラヴァル案　―　エチオピアが調停を受諾\r
++#id = 204026 ホーア・ラヴァル案　―　講和が成立した\r
++#id = 204027 ホーア・ラヴァル案　―　イタリアが拒絶した\r
+ #id = 204028 廃帝リジ・イヤス逝去\r
+ #id = 204029 皇族将軍が裏切った！\r
+ #id = 204030 皇族将軍が裏切った！(イタリア視点)\r
+@@ -706,7 +706,7 @@ event = {
+ \r
+ \r
+ ##########################################################################\r
+-# ホーア・ラヴァル案 ― 国際連盟の調停\r
++# ホーア・ラヴァル案　―　国際連盟の調停\r
+ # 第二次エチオピア戦争を受けて国際連盟はエチオピア・イタリア両国に\r
+ # 英仏両外相による和平案（ホーア・ラヴァル案）を提案した。\r
+ # 侵攻当初に用意された妥協案よりもはるかに広大な領域をイタリアにあたえ\r
+@@ -782,7 +782,7 @@ event = { # 
+ }\r
+ \r
+ ##########################################################################\r
+-#  ホーア・ラヴァル案 ― エチオピアが調停を受諾\r
++#  ホーア・ラヴァル案　―　エチオピアが調停を受諾\r
+ # 第二次エチオピア戦争を受けて国際連盟はエチオピア・イタリア両国に\r
+ # 英仏両外相による和平案（ホーア・ラヴァル案）を提案した。\r
+ # 侵攻当初に用意された妥協案よりもはるかに広大な領域をイタリアにあたえ\r
+@@ -843,7 +843,7 @@ event = {
+ \r
+ \r
+ \r
+-event = { # ホーア・ラヴァル案 ― 講和が成立した\r
++event = { # ホーア・ラヴァル案　―　講和が成立した\r
+ 	id = 204026\r
+ 	random = no\r
+ 	country = ETH\r
+@@ -868,7 +868,7 @@ event = { # 
+ }\r
+ \r
+ \r
+-event = { # ホーア・ラヴァル案 ― イタリアが拒絶した\r
++event = { # ホーア・ラヴァル案　―　イタリアが拒絶した\r
+ 	id = 204027\r
+ 	random = no\r
+ 	country = ETH\r
+@@ -2608,9 +2608,9 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-		supplies = 1500\r
+-		manpower = 50\r
+-	}\r
++		supplies = 500\r
++		manpower = 20\r
++		 }\r
+ \r
+ 	trigger = {\r
+ 		event = { id = 204039 days = 200 }\r
+@@ -2627,8 +2627,8 @@ event = {
+ \r
+ 	action = { # 軍を再編する\r
+ 		name = "ACTIONNAME204066A"\r
+-		command = { trigger = { ai = no } type = supplies value = -1500 }\r
+-		command = { trigger = { ai = no } type = manpowerpool value = -50 }\r
++		command = { trigger = { ai = no } type = supplies value = -500 }\r
++		command = { trigger = { ai = no } type = money value = -20 }\r
+ 		# command = { type = add_corps which = "帝国本営" value = land when = 0 where = 825 }\r
+ 		# command = { type = add_division which = "本営司令部" value = hq when = 3 }\r
+ 		# command = { type = add_division which = "帝国武装近衛隊" value = infantry when = 9 }\r
+@@ -2654,11 +2654,6 @@ event = {
+ 		command = { type = add_division value = infantry when = 9 } # which = "カッファ・セファリ"\r
+ 		command = { type = add_division value = infantry when = 9 } # which = "ジッマ・セファリ"\r
+ 	}\r
+-	action = { # 工廠の拡大のみで十分だ\r
+-		name = "ACTIONNAME204066B"\r
+-		command = { trigger = { ai = no } type = supplies value = -500 }\r
+-		command = { type = waketeam which = 245508 } #アディスアベバ造兵工廠\r
+-	}\r
+ }\r
+ \r
+ ##########################################################################\r

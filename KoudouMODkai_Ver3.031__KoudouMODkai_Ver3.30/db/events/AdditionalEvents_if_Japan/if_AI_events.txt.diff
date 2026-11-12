@@ -1,0 +1,904 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_AI_events.txt [cp932]
+@@ -19,9 +19,14 @@
+ #id = 1892012 対露戦争AI\r
+ #id = 1892013 連合・ロシア二正面戦争AI\r
+ #id = 1892014 日本戦略爆撃AI\r
++#id = 1892015 中国民兵ラッシュ\r
++#id = 1892016 関西地方攻勢AI（中国地方領有）\r
++#id = 1892017 日本による中国地方奪還後AI\r
++#id = 1892018 水陸両用攻撃AI\r
++#id = 1892019 通常AI切り替えイベント\r
++#id = 1892020 中国1938年AI\r
+ #ドイツ\r
+ #id = 45690001 対伊友好AI\r
+-#id = 45690002 歩兵生産イベント\r
+ #日本\r
+ #id = 2992001 日本工場再建設イベント\r
+ #id = 2992002 陸軍生産イベント\r
+@@ -33,14 +38,6 @@
+ #id = 5952001 不可侵条約破棄イベント\r
+ #id = 5952002 ロシア戦時生産AI\r
+ #id = 5952003 ロシア平時生産AI\r
+-#id = 5952004 ロシア対独戦争AI\r
+-#id = 5952005 ロシア対独戦争AI（二年目）\r
+-#id = 5952006 ロシアアップグレードAI\r
+-#id = 5952007 歩兵生産イベント\r
+-#id = 5952008 自動車化歩兵師団生産イベント\r
+-#id = 5952009 航空部隊生産イベント\r
+-#id = 5952010 歩兵追加イベント\r
+-#id = 5952011 自動車化歩兵師団生産イベント\r
+ #ギリシャ\r
+ #id = 3956001 傀儡トルコ通行許可イベント\r
+ #バルカン\r
+@@ -69,9 +66,6 @@
+ #id = 3328001 フランスアップグレードAI\r
+ #オセアニア\r
+ #id = 4658001 オセアニア蘭領東インド攻撃AI\r
+-#id = 4658002 オセアニア蘭領東インド攻撃後AI\r
+-#id = 4658003 インドネシア攻撃AI\r
+-#id = 4658004 インドネシア攻撃後AI\r
+ #謝辞イベント\r
+ ##########################################################################\r
+ #  英領インド宣戦布告イベント\r
+@@ -101,6 +95,7 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
+ ##########################################################################\r
+ #  中華民国枢軸加盟イベント\r
+ ###########################################################################\r
+@@ -224,8 +219,6 @@ event = {
+ 	command = { type = add_division value = transport when = 2 }\r
+ 	command = { type = add_division value = transport when = 2 }\r
+ 	command = { type = add_division value = transport when = 2 }\r
+-	command = { type = build_division which = transport when = 40 cost = -0.1 where = 200 }\r
+-	command = { type = build_division which = transport when = 40 cost = -0.1 where = 200 }\r
+ 	}\r
+ }\r
+ \r
+@@ -270,9 +263,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = end_non_aggression which = IRQ where = CHI }\r
+-	command = { type = end_non_aggression which = CHI where = IRQ }\r
+-	command = { type = war which = IRQ }\r
++	command = { type = end_non_aggression which = AFG where = CHI }\r
++	command = { type = end_non_aggression which = CHI where = AFG }\r
++	command = { type = war which = AFG }\r
+ 	}\r
+ }\r
+ \r
+@@ -450,7 +443,7 @@ event = {
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 1 month = january year = 1933 }\r
++	date = { day = 1 month = january year = 1934 }\r
+ 	offset = 7\r
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+@@ -547,10 +540,12 @@ event = {
+ 	}\r
+ }\r
+ \r
+-#中国地方領有で関西地方攻勢\r
++##########################################################################\r
++#  関西地方攻勢AI（中国地方領有）\r
++###########################################################################\r
+ \r
+ event = {\r
+-	id = c\r
++	id = 1892016\r
+ 	random = no \r
+ 	country = CHI\r
+ 	\r
+@@ -583,7 +578,11 @@ event = {
+ 	command = { type = ai which = "IFswitch/CHI_Japan_Kansai.ai" }\r
+ 	}\r
+ }\r
+-#日本の中国地方奪還によりAIを中国四国AIに戻す\r
++\r
++##########################################################################\r
++#  日本による中国地方奪還後AI\r
++###########################################################################\r
++\r
+ event = {\r
+ 	id = 1892017\r
+ 	random = no \r
+@@ -620,6 +619,11 @@ event = {
+ 	command = { type = ai which = "IFswitch/CHI_Japan_Chugoku.ai" }\r
+ 	}\r
+ }\r
++\r
++##########################################################################\r
++#  水陸両用攻撃AI\r
++###########################################################################\r
++\r
+ event = {\r
+ 	id = 1892018\r
+ 	random = no \r
+@@ -657,25 +661,67 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  中国1938年AI\r
++###########################################################################\r
+ \r
++event = {\r
++	id = 1892020\r
++	random = no \r
++	country = CHI\r
++	persistent = no\r
++	trigger = {\r
++	ai = yes\r
++	OR = {\r
++	NOT = { exists = JAP }\r
++	ispuppet = JAP\r
+ \r
+-#Kielce\r
+-#日本戦\r
+-#第一弾（福岡山口鹿児島山口高知）\r
+-#初期AI上陸地点保持（九州全土）（山口）（高知）（新潟）	CHI_JAPAN\r
+-#天草攻勢（初期は九州優先）				CHI_Japan_Amakusa\r
+-#天草失敗成功（防衛OR攻撃成功イベントの発生）→熊本優先度10、中国四国攻勢	CHI_Japan_Chugoku\r
+-#(佐渡含む日本領土保持なし)東日本エリア九州島四国島占領なし、プレイヤー向け	CHI_Japan_amphibious\r
+-#佐渡のみ領有（これは初期AIで代用、領有していない区域への重要度設定は無意味だから）\r
+-#\r
+ \r
+ \r
+ \r
++}\r
++	}\r
+ \r
++	name = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
+ \r
+ \r
++	action_a = {\r
++	command = { type = ai which = "IFswitch/CHI_if_1938.ai" }\r
++	}\r
++}\r
+ \r
+ \r
++##########################################################################\r
++#  通常AI切り替えイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1892019\r
++	random = no \r
++	country = CHI\r
++	persistent = no\r
++	trigger = {\r
++	ai = yes\r
++	NOT = { exists = JAP }\r
++	\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++\r
++\r
++	action_a = {\r
++	command = { type = ai which = "IF/CHI_if.ai" }\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  対伊友好AI\r
+ ###########################################################################\r
+@@ -706,91 +752,150 @@ event = {
+ 	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  歩兵生産イベント\r
+-###########################################################################\r
+-\r
+ event = {\r
+ 	id = 45690002\r
+-	random = no\r
++	random = no \r
+ 	country = GER\r
+-\r
++	\r
+ 	trigger = {\r
+-		ai = yes\r
+-		atwar = yes\r
+-		technology = 1100 #1936年型歩兵師団\r
++	ai = yes\r
++	event = 5951033\r
++	 war = { country = GER country = UTC }  \r
++	 NOT = { war = { country = UB8 country = UTC }  } \r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+-\r
+-	date = { day = 0 month = january year = 1916 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1920 }\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-		command = { type = build_division which = infantry value = artillery when = 20 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 20 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 20 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 20 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 20 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 20 cost = -0.1 }\r
++	command = { type = ai which = "IFswitch/ger_rus_war.ai" }\r
+ 	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  対ロシア戦AI\r
+-###########################################################################\r
+-\r
+ event = {\r
+ 	id = 45690003\r
+ 	random = no \r
+ 	country = GER\r
+-	save_date = yes\r
+ 	\r
+ 	trigger = {\r
+-		ai = yes\r
+-		war= { country = UTC }\r
++	ai = yes\r
++	event = 5951033\r
++	 war = { country = GER country = UTC }  \r
++	 war = { country = UB8 country = UTC }  \r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 1 month = january year = 1933 }\r
+-	offset = 4\r
+-	deathdate = { day = 29 month = december year = 1963 }\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action_a = { #Russian Campaign\r
+-	command = { type = ai which = "IFswitch/GER_Russia.ai" }\r
++	action = {\r
++	command = { type = ai which = "IFswitch/ger_rus_ast_war.ai" }\r
+ 	}\r
+ }\r
++#ドイツ防衛戦闘\r
++event = {\r
++	id = 45690004\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	region = { region = "Germany" country = -2 data = 1 value = 20 }\r
++	atwar = yes\r
++	}\r
+ \r
+-##########################################################################\r
+-#  対ロシア戦AI（2年目）\r
+-###########################################################################\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
++	action = {\r
++	command = { type = ai which = "IFswitch/ger_land.ai" }\r
++	}\r
++}\r
++#フランスのベネルクス侵攻対応\r
+ event = {\r
+-	id = 45690004\r
++	id = 45690005\r
+ 	random = no \r
+ 	country = GER\r
+ 	\r
+ 	trigger = {\r
+-		ai = yes\r
+-		war = { country = UTC }\r
+-		event = { id = 45690003 days = 720 }\r
++	ai = yes\r
++	 war = { country = GER country = FRA } \r
++	 alliance = { country = GER country = HOL }  \r
++	atwar = yes\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 1 month = january year = 1933 }\r
+-	offset = 4\r
+-	deathdate = { day = 29 month = december year = 1963 }\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	action_a = {\r
+-	command = { type = ai which = "IFswitch/GER_Russia_Second_Year.ai" }\r
++	action = {\r
++	command = { type = ai which = "IFswitch/ger_hol_fra.ai" }\r
++	}\r
++}\r
++#対仏開戦→対露戦まで\r
++event = {\r
++	id = 45690006\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	 war = { country = GER country = FRA } \r
++	 NOT = { war = { country = GER country = UTC }  }\r
++	atwar = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFswitch/ger_FRA.ai" }\r
+ 	}\r
+ }\r
+ \r
++event = {\r
++	id = 45690007\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++OR = {\r
++	event = 5951033\r
++	year = 1938\r
++}\r
++	 alliance = { country = UB8 country = UTC }  \r
++}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFswitch/ger_rus_war.ai" }\r
++	}\r
++}\r
+ ##########################################################################\r
+ #  日本工場再建設イベント\r
+ ###########################################################################\r
+@@ -1005,7 +1110,6 @@ event = {
+ }\r
+ \r
+ \r
+-\r
+ ##########################################################################\r
+ #  日中戦争民兵ラッシュ\r
+ ###########################################################################\r
+@@ -1192,10 +1296,6 @@ event = {
+ \r
+ }\r
+ \r
+-\r
+-\r
+-\r
+-\r
+ ##########################################################################\r
+ #  不可侵条約破棄イベント\r
+ ###########################################################################\r
+@@ -1309,7 +1409,6 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ground_def_eff value = -0.3 when = 1 }\r
+ 	command = { type = ai which = "IFswitch/UTC_Germany.ai" }\r
+ 	command = { type = ai which = "IFswitch/UTC_air_ground.ai" }\r
+ 	}\r
+@@ -1336,14 +1435,12 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ground_def_eff value = 0.3 when = 1 }\r
+ 	command = { type = ai which = "IFswitch/UTC_Germany_Second_Year.ai" }\r
+ 	command = { type = ai which = "IFswitch/UTC_air_ground.ai" }\r
+ 	}\r
+ }\r
+-\r
+ ##########################################################################\r
+-#  ロシアアップグレードAI\r
++#  ロシア反撃AI（対ドイツ）\r
+ ###########################################################################\r
+ event = {\r
+ 	id = 5952006\r
+@@ -1352,233 +1449,165 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
++	OR = {\r
++	lost_national = { country = UTC value = 65 }\r
++	control = { province = 541 data = GER }\r
++	control = { province = 539 data = GER }\r
++	control = { province = 556 data = GER }\r
++	control = { province = 555 data = GER }\r
++	control = { province = 554 data = GER }\r
++	control = { province = 569 data = GER }\r
++	control = { province = 568 data = GER }\r
++	control = { province = 574 data = GER }\r
++	control = { province = 588 data = GER }\r
++	control = { province = 581 data = GER }\r
++	control = { province = 602 data = GER }\r
++	control = { province = 603 data = GER }\r
++	control = { province = 636 data = GER }\r
++	control = { province = 632 data = GER }\r
++	control = { province = 630 data = GER }\r
++	}\r
++	war = { country = GER }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+ 	\r
+-	date = { day = 0 month = 6 year = 1937 }\r
+-	offset = 3\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 5\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFswitch/UTC_Upg.ai" }\r
++	command = { type = ai which = "IFswitch/UTC_Counterattack.ai" }\r
++	command = { type = ai which = "IFswitch/UTC_air_ground.ai" }\r
++	command = { type = sleepevent which = 5952004 }\r
++	command = { type = sleepevent which = 5952005 }\r
++	command = { type = sleepevent which = 5952007 }\r
++	command = { type = sleepevent which = 5952008 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { type = morale which = naval value = 10 }\r
++	command = { type = morale which = air value = 10 }\r
+ 	}\r
+ }\r
+-\r
+-\r
+ ##########################################################################\r
+-#  歩兵生産イベント\r
++#  ロシア反撃AI（対ドナウ）\r
+ ###########################################################################\r
+-\r
+ event = {\r
+ 	id = 5952007\r
+-	random = no\r
+-	country = GER\r
+-\r
++	random = no \r
++	country = UTC\r
++	\r
+ 	trigger = {\r
+-		ai = yes\r
+-		technology = 1100 #1936年型歩兵師団\r
++	ai = yes\r
++	OR = {\r
++	lost_national = { country = UTC value = 65 }	\r
++	control = { province = 541 data = UB8 }\r
++	control = { province = 539 data = UB8 }\r
++	control = { province = 556 data = UB8 }\r
++	control = { province = 555 data = UB8 }\r
++	control = { province = 554 data = UB8 }\r
++	control = { province = 569 data = UB8 }\r
++	control = { province = 568 data = UB8 }\r
++	control = { province = 574 data = UB8 }\r
++	control = { province = 588 data = UB8 }\r
++	control = { province = 581 data = UB8 }\r
++	control = { province = 602 data = UB8 }\r
++	control = { province = 603 data = UB8 }\r
++	control = { province = 636 data = UB8 }\r
++	control = { province = 632 data = UB8 }\r
++	control = { province = 630 data = UB8 }\r
++	}\r
++	war = { country = UB8 }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	date = { day = 0 month = january year = 1916 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1920 }\r
+-\r
+-	action = {\r
+-		command = { type = build_division which = infantry value = artillery when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry value = artillery when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
++	action_a = {\r
++	command = { type = ai which = "IFswitch/UTC_Counterattack.ai" }\r
++	command = { type = ai which = "IFswitch/UTC_air_ground.ai" }\r
++	command = { type = sleepevent which = 5952004 }\r
++	command = { type = sleepevent which = 5952005 }\r
++	command = { type = sleepevent which = 5952006 }\r
++	command = { type = sleepevent which = 5952008 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { type = morale which = naval value = 10 }\r
++	command = { type = morale which = air value = 10 }\r
+ 	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  自動車化歩兵師団生産イベント\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5952008\r
+-	random = no\r
+-	country = GER\r
+-\r
+-	trigger = {\r
+-		ai = yes\r
+-		technology = 1410 #1942年型自動車化歩兵師団\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-\r
+-	date = { day = 0 month = january year = 1916 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1920 }\r
+-\r
+-	action = {\r
+-		command = { type = build_division which = motorized value = armored_car when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = motorized value = engineer when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = motorized value = engineer when = 10 cost = -0.1 }\r
+-		command = { type = build_division which = motorized value = engineer when = 10 cost = -0.1 }\r
+-	}\r
+-}\r
+ \r
+ ##########################################################################\r
+-#  航空部隊生産イベント\r
++#  ロシア反撃AI（対中国）\r
+ ###########################################################################\r
+-\r
+ event = {\r
+-	id = 5952009\r
+-	random = no\r
+-	country = GER\r
+-\r
++	id = 5952008\r
++	random = no \r
++	country = UTC\r
++	\r
+ 	trigger = {\r
+-		ai = yes\r
+-		technology = 4140 #1938年型戦術爆撃機\r
+-		technology = 4040 #1938年型戦闘機\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-\r
+-	date = { day = 0 month = january year = 1916 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1920 }\r
+-\r
+-	action = {\r
+-		command = { type = build_division which = multi_role when = 8 cost = -0.1 }\r
+-		command = { type = build_division which = multi_role when = 8 cost = -0.1 }\r
+-		command = { type = build_division which = tactical_bomber when = 8 cost = -0.1 }\r
+-		command = { type = build_division which = tactical_bomber when = 8 cost = -0.1 }\r
++	ai = yes\r
++	OR = {\r
++	lost_national = { country = UTC value = 65 }\r
++	control = { province = 1150 data = CHI }\r
++	control = { province = 1135 data = CHI }\r
++	control = { province = 1138 data = CHI }\r
++	control = { province = 1139 data = CHI }\r
++	control = { province = 501 data = CHI }\r
++	control = { province = 502 data = CHI }\r
++	control = { province = 1116 data = CHI }\r
++	control = { province = 1111 data = CHI }\r
++	control = { province = 1109 data = CHI }\r
++	control = { province = 1099 data = CHI }\r
+ 	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  歩兵追加イベント\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 5952010\r
+-	random = no\r
+-	country = GER\r
+-\r
+-	trigger = {\r
+-		ai = yes\r
+-		atwar = yes\r
+-		technology = 1110 #1939年型歩兵師団\r
++	war = { country = CHI }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	date = { day = 0 month = january year = 1916 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1920 }\r
+-\r
+-	action = {\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
++	action_a = {\r
++	command = { type = ai which = "IFswitch/UTC_Counterattack.ai" }\r
++	command = { type = ai which = "IFswitch/UTC_air_ground.ai" }\r
++	command = { type = sleepevent which = 5952004 }\r
++	command = { type = sleepevent which = 5952005 }\r
++	command = { type = sleepevent which = 5952006 }\r
++	command = { type = sleepevent which = 5952007 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { type = morale which = naval value = 10 }\r
++	command = { type = morale which = air value = 10 }\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  自動車化歩兵師団生産イベント\r
++#  ロシアアップグレードAI\r
+ ###########################################################################\r
+-\r
+ event = {\r
+-	id = 5952011\r
+-	random = no\r
+-	country = GER\r
+-\r
++	id = 5952009\r
++	random = no \r
++	country = UTC\r
++	\r
+ 	trigger = {\r
+-		ai = yes\r
+-		technology = 1400 #1939年型自動車化歩兵師団\r
++	ai = yes\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 6 year = 1937 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	date = { day = 0 month = january year = 1916 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1920 }\r
+-\r
+-	action = {\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
+-	command = { type = add_division value = motorized when = 1 }\r
++	action_a = {\r
++	command = { type = ai which = "IFswitch/UTC_Upg.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -1670,14 +1699,16 @@ event = {
+ event = {\r
+ 	id = 1227001\r
+ 	random = no \r
+-	country = U14\r
++	TAG = { ITA U14 }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+ 	event = 1226013\r
+-	flag = U14_Gramsci\r
++	OR = {\r
++	flag = ITA_Dannunzio\r
+ 	exists = U14\r
+ 	}\r
++	}\r
+ \r
+ 	name = "AI_EVENT"\r
+ 	style = 0	\r
+@@ -2173,98 +2204,9 @@ event = {
+ 	action_a = {\r
+ 		command = { type = ai which = "IFswitch/AST_Attack_U05.ai" }\r
+ 		command = { type = ai which = "air_naval.ai" }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-#############################################\r
+-# オセアニア蘭領東インド攻撃後AI\r
+-#############################################\r
+-event = {\r
+-	id = 4658002\r
+-	random = no \r
+-	country = AST\r
+-	\r
+-	trigger = {\r
+-		event = 4658001\r
+-		ai = yes\r
+-		NOT = { war = { country = AST country = U05 } }\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 1 month = january year = 1933 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = december year = 1939 }\r
+-\r
+-	action_a = {\r
+-		command = { type = ai which = "switch/Invasion_Shutoff.ai" }\r
+-	}\r
+-}\r
+-\r
+-\r
+-#############################################\r
+-# インドネシア攻撃AI\r
+-#############################################\r
+-event = {\r
+-	id = 4658003\r
+-	random = no \r
+-	country = AST\r
+-	\r
+-	trigger = {\r
+-		ai = yes\r
+-		war = { country = AST country = INO }\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 1 month = january year = 1933 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = december year = 1939 }\r
+-\r
+-	action_a = {\r
+-		command = { type = ai which = "IFswitch/AST_Attack_U05.ai" }\r
+-		command = { type = ai which = "air_naval.ai" }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+-		command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+ 	}\r
+ }\r
+ \r
+-\r
+-#############################################\r
+-# インドネシア攻撃後AI\r
+-#############################################\r
+-event = {\r
+-	id = 4658004\r
+-	random = no \r
+-	country = AST\r
+-	\r
+-	trigger = {\r
+-		event = 4658003\r
+-		ai = yes\r
+-		NOT = { war = { country = AST country = INO } }\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 1 month = january year = 1933 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = december year = 1939 }\r
+-\r
+-	action_a = {\r
+-		command = { type = ai which = "switch/Invasion_Shutoff.ai" }\r
+-	}\r
+-}\r
+ #############################################\r
+ # 謝辞イベント\r
+ #############################################\r

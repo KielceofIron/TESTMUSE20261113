@@ -1,0 +1,27 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Habsburg_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Habsburg_events.txt [cp932]
+@@ -387,6 +387,7 @@ event = {
+ \r
+ 	action = { # エンゲルベルト・ドルフースを帝国宰相に任命する\r
+ 	name = "ACTIONNAME3333010A"\r
++	trigger = { NOT = { event = 3327008 } }\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+@@ -406,6 +407,7 @@ event = {
+ \r
+ 	action = { # カール・レンナーに全てを委ねる\r
+ 	name = "ACTIONNAME3333010B"\r
++	trigger = { event = 3327008 }\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+@@ -1715,7 +1717,7 @@ event = {
+ 	command = { type = sleepevent which = 45680042 } # 中欧同盟再び\r
+ 	command = { type = sleepevent which = 45680043 } # ドイツとの交渉\r
+ 	command = { type = event which = 3333107 where = GER when = 1 }\r
+-	ai_chance = 60\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 欧州に安寧を！独自の道を行こう！\r

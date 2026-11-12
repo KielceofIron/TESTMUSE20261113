@@ -1,0 +1,4729 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Spain_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Spain_events.txt [cp932]
+@@ -1,2363 +1,2363 @@
+-#########################################################################\r
+-#\r
+-#		スペインイベント  by 横山大佐\r
+-#########################################################################\r
+-###### 追加イベント一覧 ############\r
+-#########################################################################\r
+-#id = 2652001 1936年選挙\r
+-#id = 2652002 自由都市バルセロナ\r
+-#id = 2652003 バスクの蠢動\r
+-#id = 2652004 スペイン内戦\r
+-#id = 2652005 スペイン内戦 ― スペイン人民戦線の成立\r
+-#id = 2652006 スペイン内戦 ― 右派の分裂\r
+-#id = 2652007 スペイン内戦 ― マドリード陥落（SPR）\r
+-#id = 2652008 スペイン内戦 ― マドリード陥落（SPA）\r
+-#id = 2652009 スペイン内戦 ― フランシスコ・フランコの権力掌握\r
+-#id = 2652010 スペイン内戦 ― ゲルニカ爆撃（SPR）\r
+-#id = 2652011 スペイン内戦 ― ゲルニカ爆撃（SPA）\r
+-#id = 2652012 スペイン内戦 ― 国際旅団\r
+-#id = 2652013 スペイン内戦 ― 国際旅団第一陣の到着\r
+-#id = 2652014 スペイン内戦 ― 国際旅団第二陣の到着\r
+-#id = 2652015 スペイン内戦 ― 国際旅団第三陣の到着\r
+-#id = 2652016 スペイン内戦 ― 国際旅団第四陣の到着\r
+-#id = 2652017 スペイン内戦 ― 国際旅団第五陣の到着\r
+-#id = 2652018 スペイン内戦 ― ポルトガルの参戦（POR）\r
+-#id = 2652019 スペイン内戦 ― ポルトガルの参戦（SPA）\r
+-#id = 2652020 ポルトガル植民地の分解\r
+-#id = 2652021 スペイン内戦 ― 国際旅団の撤退\r
+-#id = 2652022 スペイン内戦 ― 勝利！（民主派）\r
+-#id = 2652023 スペイン内戦 ― 勝利！（全体派）\r
+-#id = 2652024 国際自由ヒスパニア\r
+-#id = 2652025 ヒスパニア総選挙\r
+-#id = 2652026 自治権の拡大\r
+-#id = 2652027 フランスがドイツ帝国主義者との戦争に突入\r
+-#id = 2652028 スペインの同盟提案\r
+-#スペイン内戦義勇軍派遣イベント\r
+-#id = 2652101 スペイン内戦 ― ロシアの介入（UER）\r
+-#id = 2652102 スペイン内戦 ― ロシアの介入（SPA）\r
+-#id = 2652103 スペイン内戦の終結 ― 義勇兵の凱旋（UER）\r
+-#id = 2652104 スペイン内戦の終結 ― 義勇兵の帰国（UER）\r
+-#id = 2652105 スペイン内戦 ― ドイツの介入（GER）\r
+-#id = 2652106 スペイン内戦 ― ドイツの介入（SPA）\r
+-#id = 2652107 スペイン内戦の終結 ― 義勇兵の凱旋（GER）\r
+-#id = 2652108 スペイン内戦の終結 ― 義勇兵の帰国（GER）\r
+-#id = 2652109 スペイン内戦 ― イギリスの介入（ENG）\r
+-#id = 2652110 スペイン内戦 ― イギリスの介入（SPR）\r
+-#id = 2652111 スペイン内戦の終結 ― 義勇兵の凱旋（ENG）\r
+-#id = 2652112 スペイン内戦の終結 ― 義勇兵の帰国（ENG）\r
+-#########################################################################\r
+-#  1936年選挙\r
+-#########################################################################\r
+-event = {\r
+-	id = 2052001\r
+-	random = no\r
+-	country = SPR\r
+-	one_action = yes\r
+-\r
+-	name = EVT_2_NAME\r
+-	desc = EVT_2_DESC\r
+-	style = 2\r
+-  	picture = "news_paper"\r
+-\r
+-	trigger = {\r
+-	government = democratic\r
+-	atwar = no\r
+-	NOT = {\r
+-	exists = SPA\r
+-	}\r
+-	}\r
+-\r
+-	date = { day = 16 month = 1 year = 1936 }\r
+-\r
+-	action_a = {\r
+-	name = EVT_2_ACTA\r
+-	command = { type = dissent value = 4 }\r
+-	command = { type = set_domestic which = democratic value = 7 }\r
+-	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = headofstate which = 255012 } # アウグスト・バルシア・トレリェス\r
+-	command = { type = headofgovernment which = 255032 } # サンティアゴ・カサレス・キロガ\r
+-	command = { type = foreignminister which = 255061 } # マヌエル・アサニャ・ディアス\r
+-	command = { type = armamentminister which = 255095 } # ホセ・ヒラル・ペレイラ\r
+-	command = { type = ministerofsecurity which = 255138 } # サンティアゴ・カサレス・キロガ\r
+-	command = { type = ministerofintelligence which = 255169 } # マヌエル・トレス・カンパーナ\r
+-	command = { type = chiefofstaff which = 255200 } # セバスチアン・ポサス・ペレア\r
+-	command = { type = chiefofarmy which = 255225 } # マヌエル・アサニャ・ディアス\r
+-	command = { type = chiefofnavy which = 255248 } # ホセ・ヒラル・ペレイラ\r
+-	command = { type = chiefofair which = 255264 } # フェリペ・ディアス・サンディノ\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = {\r
+-	name = EVT_2_ACTB\r
+-	command = { type = dissent value = 4 }\r
+-	command = { type = domestic which = democratic value = -1 }\r
+-	command = { type = domestic which = political_left value = -1 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  自由都市バルセロナ\r
+-# 「バルセロナの様相には、何か目を見張らせる圧倒的なものがあった」\r
+-# この言葉は、政治的分断が進みつつあるスペインを訪れたルポライター、ジョージ・オーウェル氏の言葉である。\r
+-# 王党派、保守主義者の勢力が強い力を持つ地域も無論存在していたが、スペインの都市バルセロナでは夢想的社会主義者と無政府主義者たちによる統治が浸透しつつあった。\r
+-# 街頭には赤旗、黒旗が掲げられ、兵士も民衆も上下の区別なく互いを『同志』と呼び合っている。\r
+-# 国内には対立があり、経済的問題が人々を蝕み、店からは物資が少しずつ減りつつあったが、\r
+-# 自由都市バルセロナには確かに、穏やかにして苛烈な革命の空気が漂いつつあった。\r
+-###########################################################################\r
+-event = {\r
+-	id = 2652002\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	NOT = {\r
+-	exists = SPA\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652002_NAME"\r
+-	desc = "EVT_2652002_DESC"\r
+-	style = 2\r
+-	picture = "scw_barcelona"\r
+-\r
+-	date = { day = 5 month = 0 year = 1936 }\r
+-\r
+-	action = { # きっと革命は明日にでも成るであろう\r
+-	name = "ACTIONNAME2652002A"\r
+-	command = { type = dissent value = 1 }\r
+-	command = { type = removecore which = 441 }\r
+-	command = { type = removecore which = 444 }\r
+-	command = { type = removecore which = 445 }\r
+-	command = { type = removecore which = 447 }\r
+-	command = { type = removecore which = 448 }\r
+-	command = { type = removecore which = 449 }\r
+-	command = { type = removecore which = 450 }\r
+-	command = { type = removecore which = 451 }\r
+-	command = { type = removecore which = 452 }\r
+-	command = { type = addclaim which = 441 }\r
+-	command = { type = addclaim which = 444 }\r
+-	command = { type = addclaim which = 445 }\r
+-	command = { type = addclaim which = 447 }\r
+-	command = { type = addclaim which = 448 }\r
+-	command = { type = addclaim which = 449 }\r
+-	command = { type = addclaim which = 450 }\r
+-	command = { type = addclaim which = 451 }\r
+-	command = { type = addclaim which = 452 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  バスクの蠢動\r
+-# バルセロナにおいて世界の急進的自由主義者の第二の故郷が生まれようとしている中、\r
+-# アラゴンを挟み向こうに位置する大西洋沿いの地域、バスクにおいては急進的な民族主義の発達の傾向があった。\r
+-# そもそもが自治と独立の要求を持つバスクは、カタルーニャ地方がアナキズムを基礎とした自由で解放的な\r
+-# 思想の土壌となったのに対し、バスク地方はバスク民族の自治のみならず、反動的な政策を望み、カトリック教会と結託、\r
+-# また現在の国王アルフォンソ十三世と、その腹心とされた軍人ミゲル・プリモ・デ・リベラの民族自治弾圧政策に抵抗するため、\r
+-# カルリスタの王位請求者であるハビエル八世を支持する方針を固めている。\r
+-# 折しもカトリック教会の総本山たるバチカンの地位と権威が危ぶまれる現時点においでカルリスタとその支持者である\r
+-# バスク人たちは教会の権威を望む人々にとっての希望の星となりつつあり、\r
+-# フランスやオーストリアの政治的混乱に失望したカトリック信者たちがバスク地方へ集う状態にまでなっている。\r
+-###########################################################################\r
+-event = {\r
+-	id = 2652003\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	NOT = {\r
+-	exists = SPA\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652003_NAME"\r
+-	desc = "EVT_2652003_DESC"\r
+-	style = 2\r
+-	picture = "scw_Euskal"\r
+-\r
+-	date = { day = 8 month = 0 year = 1936 }\r
+-\r
+-	action = { # 革命反対！バスク独立万歳！！\r
+-	name = "ACTIONNAME2652003A"\r
+-	command = { type = dissent value = 1 }\r
+-	command = { type = removecore which = 443 }\r
+-	command = { type = removecore which = 446 }\r
+-	command = { type = addclaim which = 443 }\r
+-	command = { type = addclaim which = 446 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦\r
+-# 1931年四月の自治体選挙において民主派が勝利し、ボルボーン朝アルフォンソ13世が退位すると、\r
+-# 民主派・農民・労働者・知識人は当時のフランス・コミューンに影響を受けたコミューン政権発足を目指し始めた。\r
+-# 当時スペイン国内に散在していた共産党、組合主義者、無政府主義者を始めとする革新政党をまとめ上げ、\r
+-# 1936年2月16日の総選挙で右派を抑えて勝利し、挙国一致内閣を成立させた。\r
+-# これに反対する軍部・右翼・地主・旧貴族・カトリック教会に加え、権威主義的体制を構築していたポルトガルの介入により、\r
+-# ホセ・サンフルホやエミリオ・モラ、フランシス・フランコ将軍率いる反乱軍が蜂起を開始し、ここにスペイン内戦は開始された。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652004\r
+-	random = no\r
+-	country = SPR\r
+-	save_date = yes\r
+-\r
+-	trigger = {\r
+-	NOT = {\r
+-	exists = SPA\r
+-	}\r
+-	atwar = no\r
+-	OR = {\r
+-	government = communist\r
+-	government = democratic\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652004_NAME"\r
+-	desc = "EVT_2652004_DESC"\r
+-	style = 2\r
+-  	picture = "scw"\r
+-\r
+-	date = { day = 16 month = 6 year = 1936 }\r
+-\r
+-	action = { # !No pasaran!（奴らを通すな！）\r
+-	name = "ACTIONNAME2652004A"\r
+-	command = { type = independence which = SPA value = 1 when = 0 }\r
+-	#VP設定	\r
+-	command = { trigger = { control = { province =  436  data = -3 }  } type = province_keypoints which = 436 value = 1 } # Tarragona   									\r
+-	command = { trigger = { control = { province =  437  data = -3 }  } type = province_keypoints which = 437 value = 1 } # Gerona   									\r
+-	command = { trigger = { control = { province =  438  data = -3 }  } type = province_keypoints which = 438 value = 1 } # Huesca   									\r
+-	command = { trigger = { control = { province =  439  data = -3 }  } type = province_keypoints which = 439 value = 1 } # Lerida   									\r
+-	command = { trigger = { control = { province =  442  data = -3 }  } type = province_keypoints which = 442 value = 1 } # Zaragoza   									\r
+-	command = { trigger = { control = { province =  443  data = -3 }  } type = province_keypoints which = 443 value = 1 } # Bilbao   									\r
+-	command = { trigger = { control = { province =  444  data = -3 }  } type = province_keypoints which = 444 value = 1 } # Oviedo   									\r
+-	command = { trigger = { control = { province =  445  data = -3 }  } type = province_keypoints which = 445 value = 1 } # Santander   									\r
+-	command = { trigger = { control = { province =  446  data = -3 }  } type = province_keypoints which = 446 value = 1 } # Pamplona   									\r
+-	command = { trigger = { control = { province =  447  data = -3 }  } type = province_keypoints which = 447 value = 1 } # Salamanca   									\r
+-	command = { trigger = { control = { province =  448  data = -3 }  } type = province_keypoints which = 448 value = 1 } # Leon   									\r
+-	command = { trigger = { control = { province =  449  data = -3 }  } type = province_keypoints which = 449 value = 1 } # Vigo   									\r
+-	command = { trigger = { control = { province =  450  data = -3 }  } type = province_keypoints which = 450 value = 1 } # Plasencia   									\r
+-	command = { trigger = { control = { province =  451  data = -3 }  } type = province_keypoints which = 451 value = 1 } # Burgos   									\r
+-	command = { trigger = { control = { province =  452  data = -3 }  } type = province_keypoints which = 452 value = 1 } # Segovia   									\r
+-	command = { trigger = { control = { province =  453  data = -3 }  } type = province_keypoints which = 453 value = 1 } # Caceres   									\r
+-	command = { trigger = { control = { province =  454  data = -3 }  } type = province_keypoints which = 454 value = 1 } # Tarancon   									\r
+-	command = { trigger = { control = { province =  455  data = -3 }  } type = province_keypoints which = 455 value = 1 } # Guadalajara   									\r
+-	command = { trigger = { control = { province =  456  data = -3 }  } type = province_keypoints which = 456 value = 1 } # Soria   									\r
+-	command = { trigger = { control = { province =  457  data = -3 }  } type = province_keypoints which = 457 value = 1 } # Toledo   									\r
+-	command = { trigger = { control = { province =  458  data = -3 }  } type = province_keypoints which = 458 value = 1 } # Badajoz   									\r
+-	command = { trigger = { control = { province =  459  data = -3 }  } type = province_keypoints which = 459 value = 1 } # Teruel   									\r
+-	command = { trigger = { control = { province =  461  data = -3 }  } type = province_keypoints which = 461 value = 1 } # Castellon de la Plana									\r
+-	command = { trigger = { control = { province =  462  data = -3 }  } type = province_keypoints which = 462 value = 1 } # Alicante   									\r
+-	command = { trigger = { control = { province =  463  data = -3 }  } type = province_keypoints which = 463 value = 1 } # Murcia   									\r
+-	command = { trigger = { control = { province =  465  data = -3 }  } type = province_keypoints which = 465 value = 1 } # Albacete   									\r
+-	command = { trigger = { control = { province =  466  data = -3 }  } type = province_keypoints which = 466 value = 1 } # Jaen   									\r
+-	command = { trigger = { control = { province =  467  data = -3 }  } type = province_keypoints which = 467 value = 1 } # Cordoba   									\r
+-	command = { trigger = { control = { province =  468  data = -3 }  } type = province_keypoints which = 468 value = 1 } # Ciudad Real  									\r
+-	command = { trigger = { control = { province =  470  data = -3 }  } type = province_keypoints which = 470 value = 1 } # Granada   									\r
+-	command = { trigger = { control = { province =  471  data = -3 }  } type = province_keypoints which = 471 value = 1 } # Malaga   									\r
+-	command = { trigger = { control = { province =  472  data = -3 }  } type = province_keypoints which = 472 value = 1 } # Huelva   									\r
+-	command = { trigger = { control = { province =  473  data = -3 }  } type = province_keypoints which = 473 value = 1 } # Cadiz   									\r
+-\r
+-	command = { type = relation which = ENG value = 10 }\r
+-	command = { type = relation which = FRA value = 10 }\r
+-	command = { type = relation which = SOV value = 5 }\r
+-	command = { type = relation which = USA value = 5 }\r
+-	command = { type = relation which = GER value = -15 }\r
+-	command = { type = relation which = ITA value = -10 }\r
+-	command = { type = relation which = POR value = -10 }\r
+-	command = { type = dissent value = 3 }\r
+-	command = { type = event which = 2652005 where = SPR when = 1 }\r
+-	command = { type = event which = 2652006 where = SPA when = 1 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― スペイン人民戦線の成立\r
+-# 1931年四月の自治体選挙において民主派が勝利し、ボルボーン朝アルフォンソ１３世が退位すると、\r
+-# 民主派・農民・労働者・知識人は当時のフランス・コミューンに影響を受けたコミューン政権発足を目指し始めた。\r
+-# 当時スペイン国内に散在していた共産党、組合主義者、無政府主義者を始めとする革新政党をまとめ上げ、\r
+-# 1936年2月16日の総選挙で右派を抑えて勝利し、挙国一致内閣を成立させた。\r
+-# これに反対する軍部・右翼・地主・旧貴族・カトリック教会に加え、権威主義的体制を構築していたポルトガルの介入により、\r
+-# ホセ・サンフルホやエミリオ・モラ、フランシス・フランコ将軍率いる反乱軍が蜂起を開始し、ここにスペイン内戦は開始された。\r
+-# 海軍・空軍が民主派に参加したのに対し、陸軍の大半は全体派に参加したため、スペイン共和国政府は陸軍力を欠く状態となった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652005\r
+-	random = no\r
+-	country = SPR\r
+-\r
+-	name = "EVT_2652005_NAME"\r
+-	desc = "EVT_2652005_DESC"\r
+-	style = 2\r
+-  	picture = "scw"\r
+-\r
+-	action = { # !No pasaran!（奴らを通すな！）\r
+-	name = "ACTIONNAME2652005A"\r
+-	command = { type = secedeprovince which = SPA value = 441 }\r
+-	command = { type = secedeprovince which = SPA value = 444 }\r
+-	command = { type = secedeprovince which = SPA value = 445 }\r
+-	command = { type = secedeprovince which = SPA value = 447 }\r
+-	command = { type = secedeprovince which = SPA value = 448 }\r
+-	command = { type = secedeprovince which = SPA value = 449 }\r
+-	command = { type = secedeprovince which = SPA value = 450 }\r
+-	command = { type = secedeprovince which = SPA value = 451 }\r
+-	command = { type = secedeprovince which = SPA value = 452 }\r
+-	command = { type = secederegion which = SPA value = Sahara } # Sahara\r
+-	command = { type = secedearea which = SPA value = "Cameroonian Jungle" } #malabo, bata\r
+-	#\r
+-	command = { type = end_guarantee which = SPR where = FRA }\r
+-	command = { type = end_guarantee which = FRA where = SPR }\r
+-	command = { type = war which = SPA }\r
+-	command = { type = name where = SPR which = スペイン（民主派） }\r
+-	#\r
+-	command = { type = set_domestic which = democratic value = 7 }\r
+-	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = set_domestic which = free_market value = 6 }\r
+-	command = { type = set_domestic which = freedom value = 6 }\r
+-	command = { type = set_domestic which = defense_lobby value = 4 }\r
+-	command = { type = set_domestic which = interventionism value = 4 }\r
+-	command = { type = headofstate which = 255012 } # アウグスト・バルシア・トレリェス\r
+-	command = { type = headofgovernment which = 255032 } # サンティアゴ・カサレス・キロガ\r
+-	command = { type = foreignminister which = 255061 } # マヌエル・アサニャ・ディアス\r
+-	command = { type = armamentminister which = 255095 } # ホセ・ヒラル・ペレイラ\r
+-	command = { type = ministerofsecurity which = 255138 } # サンティアゴ・カサレス・キロガ\r
+-	command = { type = ministerofintelligence which = 255169 } # マヌエル・トレス・カンパーナ\r
+-	command = { type = chiefofstaff which = 255200 } # セバスチアン・ポサス・ペレア\r
+-	command = { type = chiefofarmy which = 255225 } # マヌエル・アサニャ・ディアス\r
+-	command = { type = chiefofnavy which = 255248 } # ホセ・ヒラル・ペレイラ\r
+-	command = { type = chiefofair which = 255264 } # フェリペ・ディアス・サンディノ\r
+-	#\r
+-	command = { type = add_division which = "第11戦闘航空隊" value = interceptor when = 6 }\r
+-	command = { type = add_division which = "第5爆撃航空隊" value = tactical_bomber when = 4 }\r
+-	command = { type = add_corps which = "CNT民兵師団" value = land where = 440 } #バルセロナ\r
+-	command = { type = add_division which = "CNT民兵師団" value = militia when = 5 }\r
+-	command = { type = add_corps which = "POUM民兵師団" value = land where = 464 } #バレンシア\r
+-	command = { type = add_division which = "POUM民兵師団" value = militia when = 5 }\r
+-	command = { type = add_corps which = "第2騎兵旅団" value = land where = 455 } #グアダラハラ\r
+-	command = { type = add_division which = "第2騎兵旅団" value = cavalry when = 6 } \r
+-	command = { type = add_corps which = "第3軍" value = land where = 457 } #トレド\r
+-	command = { type = add_division which = "第27師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第28師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第45師団" value = infantry when = 6 } \r
+-	command = { type = add_corps which = "第4軍" value = land where = 470 } #グラナダ\r
+-	command = { type = add_division which = "第39師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第42師団" value = infantry when = 6 }	\r
+-	command = { type = add_corps which = "レバンテ軍" value = land where = 461 }			\r
+-	command = { type = add_division which = "第41師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第64師団" value = infantry when = 6 }\r
+-	command = { type = add_corps which = "北部軍" value = land where = 443 } #ビルバオ\r
+-	command = { type = add_division which = "第40師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第35師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第46師団" value = infantry when = 6 }\r
+-	command = { type = add_corps which = "第47師団" value = land where = 459 } #テルエル\r
+-	command = { type = add_division which = "第47師団" value = infantry when = 6 }\r
+-	command = { type = add_corps which = "第5軍" value = land where = 458 } #バダホス\r
+-	command = { type = add_division which = "第48師団" value = militia when = 5 }\r
+-	command = { type = add_division which = "第49師団" value = militia when = 5 }\r
+-	command = { type = add_division which = "第50師団" value = militia when = 5 }\r
+-	command = { type = add_corps which = "中央軍" value = land where = 460 } #マドリード\r
+-	command = { type = add_division which = "第34師団" value = infantry when = 6 } \r
+-	command = { type = add_division which = "第70師団" value = infantry when = 6 } \r
+-	command = { type = add_division which = "第72師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第11師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第25師団" value = infantry when = 6 }\r
+-	#\r
+-	command = { type = add_core_region which = "Spain" where = SPR } \r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― 右派の分裂\r
+-# スペイン内戦において全体派と称された人々は主にバスク地方でバスクの自治と独立を望んだバスク人、\r
+-# 彼らが支持するハビエル八世とその支持者であるカトリック信者の人々。\r
+-# エミリオ・モラ将軍と彼を支持する陸軍軍人たち。\r
+-# ホセ・サンフルホ将軍と彼を支持する軍人たち。\r
+-# また、モロッコの兵士を動員し彼らからの支持を集めるフランシスコ・フランコ将軍。\r
+-# 人民戦線と同様にスペイン内戦の片方の当事者たる全体派の人々にも複数の派閥が存在していたのである。\r
+-# その中で、バスク人らに目をつけたフランシスコ・フランコは、その背景にあるフランス政府からの支援や、\r
+-# 民間業者に偽装した英国海軍の支援を受けており、今後の情勢次第では一挙にスペイン全体派勢力の権力を握る可能性がある。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652006\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	name = "EVT_2652006_NAME"\r
+-	desc = "EVT_2652006_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	action = { # 戦後の皮算用か?目敏いことだ\r
+-	name = "ACTIONNAME2652006A"\r
+-	command = { type = secedeprovince which = SPR value = 467 }\r
+-	command = { type = secedeprovince which = SPR value = 474 }\r
+-	command = { type = dissent value = 10 }\r
+-	command = { type = name where = SPA which = スペイン（全体派） }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
+-	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = set_domestic which = free_market value = 4 }\r
+-	command = { type = set_domestic which = freedom value = 4 }\r
+-	command = { type = set_domestic which = defense_lobby value = 5 }\r
+-	command = { type = set_domestic which = interventionism value = 2 }\r
+-	command = { type = headofstate which = 35183 } # エミリオ・モラ・ビダル\r
+-	command = { type = headofgovernment which = 35015 } # エミリオ・モラ・ビダル\r
+-	command = { type = foreignminister which = 35022 } # フランシスコ・ゴメス=ホルダナ・イ・ソウサ\r
+-	command = { type = armamentminister which = 35047 } # ホセ・デ・アレイルサ・イ・マルチネス=ロダス\r
+-	command = { type = ministerofsecurity which = 35083 } # トマス・ガルシアノ・ゴニ\r
+-	command = { type = ministerofintelligence which = 35101 } # ホセ・ウングリア・ヒメネス\r
+-	command = { type = chiefofstaff which = 35117 } # フランシスコ・フランコ・バーモンデ\r
+-	command = { type = chiefofarmy which = 35008 } # エミリオ・モラ・ビダル\r
+-	command = { type = chiefofnavy which = 35146 } # カルロス・バレダ・テリー \r
+-	command = { type = chiefofair which = 35159 } # ラモン・フランコ・バーモンデ\r
+-	command = { type = sleepminister which = 35121 } # ホセ・サンフルホ・サカネル\r
+-	command = { type = sleepminister which = 35137 }\r
+-	command = { type = sleepminister which = 35184 }\r
+-	command = { type = sleepminister which = 35186 }\r
+-	command = { type = sleepleader which = 35061 }\r
+-	#\r
+-	command = { type = money value = 30 } \r
+-	command = { type = supplies value = 500 }\r
+-	command = { type = oilpool value = 2500 }\r
+-	command = { type = metalpool value = 2500 }\r
+-	command = { type = energypool value = 5000 }\r
+-	command = { type = rarematerialspool value = 2500 }\r
+-	command = { type = manpowerpool value = 200 }\r
+-	#\r
+-	command = { type = addclaim which = 715 } #Tanger \r
+-	command = { type = addclaim which = 716 } #Nador\r
+-	command = { type = addclaim which = 987 } #El Aiun \r
+-	command = { type = addclaim which = 988 } #Villa Cisneros\r
+-	command = { type = addclaim which = 989 } #Villa Bens\r
+-	command = { type = addclaim which = 913 } #Bata\r
+-	command = { type = addclaim which = 916 } #Malabo\r
+-	#\r
+-	command = { type = add_division which = "第1ファランヘ党民兵師団" value = militia when = 5 }\r
+-	command = { type = add_division which = "第2ファランヘ党民兵師団" value = militia when = 5 }\r
+-	command = { type = add_division which = "第11師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第12師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第13師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第21師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第22師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第23師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第31師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第1バスク民族師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "第2バスク民族師団" value = militia when = 5 }\r
+-	command = { type = add_corps which = "義勇旅団" value = land where = 474 } \r
+-	command = { type = add_division which = "イギリス反共義勇旅団" value = militia when = 5 }\r
+-	command = { type = add_division which = "アイルランド反共義勇旅団" value = militia when = 5 }\r
+-	command = { type = add_corps which = "南部軍" value = land where = 467 } \r
+-	command = { type = add_division which = "第32師団" value = infantry when = 6 }\r
+-	command = { type = add_division which = "モロッコ師団" value = infantry when = 6 }\r
+-	command = { type = add_division value = interceptor when = 5 }\r
+-	command = { type = add_division value = tactical_bomber when = 4 }\r
+-	command = { type = add_division value = transport when = 0 }\r
+-	command = { type = add_division value = transport when = 0 }\r
+-	command = { type = add_division value = transport when = 0 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― マドリード陥落（SPR）\r
+-# スペイン内戦において、マドリードを巡る戦いは重要な戦いの一つになった。\r
+-# 民主派と全体派は、マドリードを支配するべく、多くの兵力をを投じだ。\r
+-# 最終的に全体派の攻勢によって、マドリードは陥落した。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652007\r
+-	random = no\r
+-	country = SPR\r
+-\r
+-	trigger = {\r
+-	exists = SPA\r
+-	war = { country = SPR country = SPA }\r
+-	control = { province = 460 data = SPA } # マドリッド\r
+-	}\r
+-\r
+-	name = "EVT_2652007_NAME"\r
+-	desc = "EVT_2652007_DESC"\r
+-	style = 2\r
+-	picture = "Spanish_Civil_War"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-\r
+-	action = { # 防衛線を立て直す必要がある\r
+-	name = "ACTIONNAME2652007A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = event which = 2652008 where = SPA when = 0 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― マドリード陥落（SPA）\r
+-# スペイン内戦において、マドリードを巡る戦いは重要な戦いの一つになった。\r
+-# 民主派と全体派は、マドリードを支配するべく、多くの兵力を投じだ。\r
+-# 最終的に全体派の攻勢によって、マドリードを占拠。\r
+-# この戦いにおいて活躍したフランシスコ・フランコと彼の部隊は全体派内部における地位が高まり、\r
+-# 徐々に指揮系統自体をフランコ将軍が握るようになっていった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652008\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	name = "EVT_2652008_NAME"\r
+-	desc = "EVT_2652008_DESC"\r
+-	style = 2\r
+-	picture = "Spanish_Civil_War"\r
+-\r
+-	action = { # Hemos pasado（我々は押し通した）\r
+-	name = "ACTIONNAME2652008A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = event which = 2652009 where = SPA when = 30 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― フランシスコ・フランコの権力掌握\r
+-# マドリード攻略戦を成功させたフランコ将軍は、バスク地方の民族主義者と手を結んだ。\r
+-# スペイン内戦が続く現時点で、カタロニアはアナキストの聖地と化しており、この地域を再度統合するためにはバスク人らを抱き込む必要があった。\r
+-# また、戦果に恵まれないエミリオ・モラ将軍やホセ・サンフルホ将軍らが権力掌握に動こうとしている現状があり、\r
+-# そうした状況を見れば、フランコ将軍の選択もあり得ることだろう。\r
+-# これに応じたバスク人の代表者であるホセ・アントニオ・アギーレは内戦終結後のバスク州の独自の地位の保障に加え、カルリスタ王位請求者第一位であるハビエル8世の即位を要求。\r
+-# フランコ将軍はこれを承諾し、戦後スペインの構造が今ここに確立されることとなった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652009\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	name = "EVT_2652009_NAME"\r
+-	desc = "EVT_2652009_DESC"\r
+-	style = 2\r
+-	picture = "Carlista"\r
+-\r
+-	action = { # 諸君らはいつも内ゲバで忙しいんだな?\r
+-	name = "ACTIONNAME2652009A"\r
+-	command = { }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― ゲルニカ爆撃（SPR）\r
+-# 悲劇的な事件が起きた！\r
+-# スペイン全体派に参加したドイツ人義勇軍『コンドル軍団』によってバスク地方の都市ゲルニカに大規模な空爆が行われ、同都市は廃墟と化した！\r
+-# この爆撃を主導した軍人はヴォルフラム・フォン・リヒトホーフェンであり、ドイツ軍側では『リューゲン作戦』と呼称されている。\r
+-# 爆撃による死傷者の数は夥しいものであり、その残虐性に罪悪感を覚える人々がドイツ軍側にも存在するほどであったが、同揮官は以下の言葉を残している。\r
+-# 「我々は多くの家と水道を破壊した。焼夷弾がその威力を示す時が来た。\r
+-# 瓦葺で木組みという建築構造は、完全な破壊をもたらした。\r
+-# 街路には爆弾の穴がまだ見える。素晴らしい！」\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652010\r
+-	random = no\r
+-	country = SPR\r
+-\r
+-	trigger = {\r
+-	exists = SPA\r
+-	war = { country = SPR country = SPA }\r
+-	control = { province = 443 data = SPR } # ビルバオ\r
+-	event = { id = 2652004 days = 90 } # スペイン内戦\r
+-	}\r
+-\r
+-	name = "EVT_2652010_NAME"\r
+-	desc = "EVT_2652010_DESC"\r
+-	style = 2\r
+-	picture = "ccip_unrest"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-\r
+-	action = { # 何ということだ！\r
+-	name = "ACTIONNAME2652010A"\r
+-	command = { type = dissent value = 1 }\r
+-	command = { type = construct which = infrastructure where = 443 value = -10 }\r
+-	command = { type = event which = 2652011 where = SPA when = 0 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― ゲルニカ爆撃（SPA）\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652011\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	name = "EVT_2652010_NAME"\r
+-	desc = "EVT_2652010_DESC"\r
+-	style = 2\r
+-	picture = "ccip_unrest"\r
+-\r
+-	action = { # 何ということだ！\r
+-	name = "ACTIONNAME2652010A"\r
+-	command = { type = dissent value = 1 }\r
+-	command = { type = belligerence which = SPA value = 2 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 国際旅団\r
+-# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。\r
+-# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、\r
+-# 既にその予兆が見られる第二次世界大戦のスケールモデルであると人々が考えたためである。\r
+-# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652012\r
+-	persistent = yes\r
+-	TAG = { ENG FRA AUS HUN GER UER ITA U21 SER POL CAN USA U00 U38 IRE CZE MEX SWE U27 }\r
+-	\r
+-	trigger = {\r
+-	NOT = { local_flag = International_Brigade }\r
+-	NOT = { war = { country = SPA } }\r
+-	NOT = { war = { country = SPR } }\r
+-	war = { country = SPA country = SPR }\r
+-	}\r
+-\r
+-	name = "EVT_2652012_NAME"\r
+-	desc = "EVT_2652012_DESC"\r
+-	style = 2\r
+-  	picture = "Brigadas_Internacionales"\r
+-\r
+-	date = { day = 5 month = 1 year = 1936 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 多数の人間がスペインへ旅立った\r
+-	name = "ACTIONNAME2652012A"\r
+-	command = { trigger = { government = fascist } type = dissent value = 1 }\r
+-	command = { trigger = { government = democratic } type = dissent value = -2 }\r
+-	command = { trigger = { government = communist } type = dissent value = -1 }\r
+-	command = { trigger = { government = fascist } type = relation which = SPR value = -20 }\r
+-	command = { trigger = { government = democratic } type = relation which = SPR value = 20 }\r
+-	command = { trigger = { government = communist } type = relation which = SPR value = 10 }\r
+-	command = { trigger = { government = fascist } type = relation which = SPA value = 20 }\r
+-	command = { trigger = { government = democratic } type = relation which = SPA value = -20 }\r
+-	command = { trigger = { government = communist } type = relation which = SPA value = -10 }\r
+-	command = { type = local_setflag which = International_Brigade }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 国際旅団第一陣の到着\r
+-# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。\r
+-# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、\r
+-# 既にその予兆が見られる第二次世界大戦のスケールモデルであると人々が考えたためである。\r
+-# とくにイギリスの革新派の人々と、フランスの自由主義者たちはこの戦争にこぞって参加する態度を見せ、\r
+-# 多数の人々がイベリア半島に訪れ、組織化された上で戦争に身を投じた。\r
+-# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652013\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	war = { country = SPA country = SPR }\r
+-	random = 20\r
+-	}\r
+-\r
+-	name = "EVT_2652013_NAME"\r
+-	desc = "EVT_2652013_DESC"\r
+-	style = 2\r
+-  	picture = "Brigadas_Internacionales"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 9\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 我々は孤独ではない！\r
+-	name = "ACTIONNAME2652013A"\r
+-	command = { type = manpowerpool value = 5 }\r
+-	command = { type = supplies value = 100 }\r
+-	command = { type = relation which = ENG value = 20 }\r
+-	command = { type = relation which = FRA value = 20 }\r
+-	command = { type = add_division which = "ガイ・フォークス隊" value = militia when = 5 where = -40 }\r
+-	command = { type = add_division which = "コミューン・ド・パリ隊" value = militia when = 5 where = -40 }\r
+-	command = { type = add_division which = "ラ・マルセイエーズ隊" value = militia when = 5 where = -40 }\r
+-	command = { type = wakeleader which = 255201 }\r
+-	command = { type = wakeleader which = 255202 }\r
+-	command = { type = waketeam which = 255102 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 国際旅団第二陣の到着\r
+-# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。\r
+-# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、既にその予兆が見られる第二次世界大戦の\r
+-# スケールモデルであると人々が考えたためである。\r
+-# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652014\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	event = 2652013 # スペイン内戦 ― 国際旅団第一陣の到着\r
+-	war = { country = SPA country = SPR }\r
+-	random = 20\r
+-	}\r
+-\r
+-	name = "EVT_2652014_NAME"\r
+-	desc = "EVT_2652014_DESC"\r
+-	style = 2\r
+-  	picture = "Brigadas_Internacionales"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 9\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 我々は孤独ではない！\r
+-	name = "ACTIONNAME2652014A"\r
+-	command = { type = manpowerpool value = 5 }\r
+-	command = { type = supplies value = 100 }\r
+-	command = { type = relation which = U21 value = 20 }\r
+-	command = { type = relation which = AUS value = -20 }\r
+-	command = { type = relation which = GER value = -20 }\r
+-	command = { type = relation which = ITA value = -20 }\r
+-	command = { type = relation which = UER value = -20 }\r
+-	command = { type = add_division which = "ハンス・バイムラー隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "エルンスト・テールマン隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "ガリバルディ隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "レーニン隊" value = militia when = 4 where = -40 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 国際旅団第三陣の到着\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652015\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	event = 2652014 # スペイン内戦 ― 国際旅団第二陣の到着\r
+-	war = { country = SPA country = SPR }\r
+-	random = 20\r
+-	}\r
+-\r
+-	name = "EVT_2652015_NAME"\r
+-	desc = "EVT_2652014_DESC"\r
+-	style = 2\r
+-  	picture = "Brigadas_Internacionales"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 9\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # もはや我々の部隊の三分の一は、外国人である\r
+-	name = "ACTIONNAME2652015A"\r
+-	command = { type = manpowerpool value = 5 }\r
+-	command = { type = supplies value = 100 }\r
+-	command = { type = relation which = SER value = -20 }\r
+-	command = { type = relation which = POL value = -20 }\r
+-	command = { type = add_division which = "ディミトロフ隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "ドンブロフスキ隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "ミツキエービッチ隊" value = militia when = 4 where = -40 }\r
+-	command = { type = wakeleader which = 255203 }\r
+-	command = { type = wakeleader which = 255204 }\r
+-	command = { type = wakeleader which = 255205 }\r
+-	command = { type = wakeleader which = 255206 }\r
+-	command = { type = wakeleader which = 255207 }\r
+-	command = { type = waketeam which = 255101 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 国際旅団第四陣の到着\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652016\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	event = 2652015 # スペイン内戦 ― 国際旅団第三陣の到着\r
+-	war = { country = SPA country = SPR }\r
+-	random = 20\r
+-	}\r
+-\r
+-	name = "EVT_2652016_NAME"\r
+-	desc = "EVT_2652014_DESC"\r
+-	style = 2\r
+-  	picture = "Brigadas_Internacionales"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 9\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 一体何人の兵士が来ると言うのだ？\r
+-	name = "ACTIONNAME2652016A"\r
+-	command = { type = manpowerpool value = 5 }\r
+-	command = { type = supplies value = 100 }\r
+-	command = { type = relation which = CAN value = -20 }\r
+-	command = { type = relation which = USA value = -20 }\r
+-	command = { type = relation which = U38 value = 20 }\r
+-	command = { type = relation which = U00 value = 20 }\r
+-	command = { type = relation which = IRE value = 20 }\r
+-	command = { type = relation which = CZE value = 20 }\r
+-	command = { type = relation which = MEX value = 20 }\r
+-	command = { type = add_division which = "マッケンジー・パピノー隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "ジョージ・ワシントン隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "ジェームズ・コノリー隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "シモン・ボリバル隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "ヤン・マサリク隊" value = militia when = 4 where = -40 }\r
+-	command = { type = add_division which = "モランディ隊" value = militia when = 4 where = -40 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 国際旅団第五陣の到着\r
+-# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。\r
+-# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、既にその予兆が見られる第二次世界大戦の\r
+-# スケールモデルであると人々が考えたためである。\r
+-# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。\r
+-# その中でも特筆すべき貢献を行ったのは、元スウェーデン人カール・グスタフ・フォン・ローゼンとフランス人アンドレ・マルローである。\r
+-# 両者は航空機に明るく、スペイン内戦に参加するにあたり、欧州に存在していた軍用機・民間機をかき集め、内戦へ参加した。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652017\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	event = 2652016 # スペイン内戦 ― 国際旅団第四陣の到着\r
+-	war = { country = SPA country = SPR }\r
+-	random = 20\r
+-	}\r
+-\r
+-	name = "EVT_2652017_NAME"\r
+-	desc = "EVT_2652017_DESC"\r
+-	style = 2\r
+-  	picture = "Brigadas_Internacionales"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 9\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # とうとう航空機まで来てしまった！\r
+-	name = "ACTIONNAME2652017A"\r
+-	command = { type = manpowerpool value = 2 }\r
+-	command = { type = supplies value = 500 }\r
+-	command = { type = oilpool value = 150 }\r
+-	command = { type = relation which = SWE value = -20 }\r
+-	command = { type = relation which = U21 value = 20 }\r
+-	command = { type = relation which = FRA value = 20 }\r
+-	command = { type = add_division which = "リベルテ隊" value = interceptor when = 6 }\r
+-	command = { type = add_division which = "エガリテ隊" value = tactical_bomber when = 5 }\r
+-	command = { type = add_division which = "フラテルニテ隊" value = transport_plane when = 0 }\r
+-	command = { type = wakeleader which = 255208 }\r
+-	command = { type = wakeleader which = 255209 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― ポルトガルの参戦（POR）\r
+-# 1931年4月の自治体選挙において民主派が勝利し、ボルボーン朝アルフォンソ13世が退位すると、民主派・農民・労働者・知識人は\r
+-# 当時のフランス・コミューンに影響を受けたコミューン政権発足を目指し始めた。\r
+-# スペイン国内に散在していた共産党、組合主義者、無政府主義者を始めとする革新政党をまとめ上げ、\r
+-# 1936年2月16日の総選挙で右派を抑えて勝利し、挙国一致内閣を成立させた。\r
+-# これに反対する軍部・右翼・地主・旧貴族・カトリック教会に加え、権威主義的体制を構築していたポルトガルの介入により、\r
+-# ホセ・サンフルホやエミリオ・モラ、フランシス・フランコ将軍率いる反乱軍が蜂起を開始し、ここにスペイン内戦は開始された。\r
+-# 隣国のポルトガルに成立していたサラザールによる独裁政権は、民主派の背後にフランスの存在があると考え、全体派側で参戦した。\r
+-#########################################################################\r
+-\r
+-event = { \r
+-	id = 2652018\r
+-	random = no\r
+-	country = POR\r
+-	\r
+-	trigger = {\r
+-	war = { country = SPA country = SPR }\r
+-	event = 2652006\r
+-	NOT = {\r
+-	OR = {\r
+-	# government = fascist\r
+-	alliance = { country = ENG country = SPR }\r
+-	alliance = { country = POR country = SPA }\r
+-	war = { country = POR country = SPA }\r
+-	war = { country = POR country = UER }\r
+-	war = { country = POR country = GER }\r
+-	war = { country = POR country = USA }\r
+-	war = { country = POR country = FRA }\r
+-	}\r
+-	}\r
+-	}\r
+-	\r
+-	name = "EVT_2652018_NAME"\r
+-	desc = "EVT_2652018_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-	\r
+-	date = { day = 19 month = july year = 1936 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = december year = 1963 }\r
+-\r
+-	action = { # 社会主義者を打倒せよ！\r
+-	name = "ACTIONNAME2652018A"\r
+-	command = { type = non_aggression which = POR where = SPA }\r
+-	command = { trigger = { ai = no } type = dissent value = 5 }\r
+-	command = { trigger = { ai = yes } type = dissent value = 50 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = relation which = SPA value = 30 }\r
+-	command = { type = relation which = SPR value = -50 }\r
+-	command = { type = relation which = FRA value = -10 }\r
+-	command = { type = relation which = ENG value = -15 }\r
+-	command = { type = relation which = UER value = 10 }\r
+-	command = { type = relation which = GER value = 10 }\r
+-	command = { type = money value = -100 }\r
+-	command = { type = trigger which = 2652019 }\r
+-	command = { type = belligerence which = POR value = 3 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # イベリアを我が手に！\r
+-	name = "ACTIONNAME2652018B"\r
+-	command = { type = war which = SPA }\r
+-	command = { type = war which = SPR }\r
+-	command = { trigger = { ai = no } type = dissent value = 10 }\r
+-	command = { trigger = { ai = yes } type = dissent value = 50 }\r
+-	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { type = relation which = SPA value = -200 }\r
+-	command = { type = relation which = SPR value = -200 }\r
+-	command = { type = relation which = FRA value = -50 }\r
+-	command = { type = relation which = ENG value = -50 }\r
+-	command = { type = relation which = SOV value = -50 }\r
+-	command = { type = relation which = GER value = -25 }\r
+-	command = { type = belligerence which = POR value = 10 }\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # 参戦？とんでもない！\r
+-	name = "ACTIONNAME2652018C"\r
+-	command = { trigger = { ai = no } type = dissent value = 30 }\r
+-	command = { trigger = { ai = yes } type = dissent value = 50 }\r
+-	command = { type = domestic which = interventionism value = -1 }\r
+-	command = { type = relation which = SPA value = 5 }\r
+-	command = { type = relation which = SPR value = 5 }\r
+-	command = { type = belligerence which = POR value = -1 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― ポルトガルの参戦（SPA）\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652019\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	name = "EVT_2652018_NAME"\r
+-	desc = "EVT_2652018_DESC"\r
+-  	style = 2\r
+-  	picture = "Corpo_truppe_Volontarie"\r
+-	\r
+-	action = {\r
+-	name = "ACTION_NAME_ACCEPT" \r
+-	command = { type = relation which = POR value = 20 }\r
+-	command = { type = alliance which = POR when = 1 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = {\r
+-	name = "ACTION_NAME_REFUSE"\r
+-	command = { type = relation which = POR value = -5 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-\r
+-#########################################################################\r
+-#  ポルトガル植民地の分解\r
+-# ポルトガルは本土を戦争で失ったことで、各地にあった植民地は周辺国に奪われるか、独立してしまった。\r
+-#########################################################################\r
+-\r
+-event = { \r
+-	id = 2652020\r
+-	random = no\r
+-	country = POR\r
+-	\r
+-	trigger = {\r
+-	atwar = yes\r
+-	OR = { \r
+-	region = { region = "Portugal" country = POR data = -2 value = 20 }\r
+-	NOT = { control = { province = 476 data = POR } }\r
+-	dissent = 50\r
+-	}\r
+-	}\r
+-	\r
+-	name = "EVT_2652020_NAME"\r
+-	desc = "EVT_2652020_DESC"\r
+-	style = 2\r
+-	picture = "Civi_War_Win"\r
+-	\r
+-	date = { day = 19 month = july year = 1936 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = december year = 1963 }\r
+-\r
+-	action = { # もはや終わりが近い…\r
+-	name = "ACTIONNAME2652020A"\r
+-	command = { type = non_aggression which = POR where = SPA }\r
+-	command = { type = dissent value = 10 }\r
+-	command = { trigger = { NOT = { exists = ANG } } type = independence which = ANG value = 1 when = 1 }\r
+-	command = { trigger = { NOT = { exists = MOZ } } type = independence which = MOZ value = 1 when = 1 }\r
+-	command = { type = secedearea which = ANG value = "Angolan Plains" when = 1 }\r
+-	command = { type = secedearea which = ANG value = "Angolan Coast" when = 1 }\r
+-	command = { type = secedearea which = MOZ value = "Niassa" when = 1 }\r
+-	command = { type = secedearea which = MOZ value = "Mocambique" when = 1 }\r
+-	command = { type = secedeprovince which = GER value = 992 when = 1 }\r
+-	command = { type = secedeprovince which = GER value = 963 when = 1 }\r
+-	command = { type = secedeprovince which = U02 value = 1513 when = 1 }\r
+-	command = { type = secedeprovince which = IND value = 1513 when = 1 }\r
+-	command = { type = secedeprovince which = CHI value = 1372 when = 1 }\r
+-	command = { type = secedeprovince which = U05 value = 1617 when = 1 }\r
+-	command = { type = secedeprovince which = INO value = 1617 when = 1 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 国際旅団の撤退\r
+-# スペイン内戦が最終局面に到達すると、世界中から参加した国際旅団の人々がスペイン国粋派の魔の手から逃れるため、帰還を決定した。\r
+-# その帰路は英国政府が手配した輸送艦と軍艦によって保護されることが決定し、人々は革命家の第二の故郷・バルセロナを後にし、\r
+-# ビスケー湾から大西洋を渡り、英国本土へ撤退した……。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652021\r
+-	random = no\r
+-	country = SPR\r
+-	\r
+-	trigger = {\r
+-	OR = {\r
+-	event = 2652013 # スペイン内戦 ― 国際旅団第一陣の到着\r
+-	event = 2652014 # スペイン内戦 ― 国際旅団第二陣の到着\r
+-	event = 2652015 # スペイン内戦 ― 国際旅団第三陣の到着\r
+-	event = 2652016 # スペイン内戦 ― 国際旅団第四陣の到着\r
+-	event = 2652017 # スペイン内戦 ― 国際旅団第五陣の到着\r
+-	}\r
+-	war = { country = SPA country = SPR }\r
+-	lost_national = { country = SPR value = 80 }\r
+-	}\r
+-\r
+-	name = "EVT_2652021_NAME"\r
+-	desc = "EVT_2652021_DESC"\r
+-	style = 2\r
+-  	picture = "Brigadas_Internacionales"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 9\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 諸君らは偉大な人々であった。それは間違いないことだ\r
+-	name = "ACTIONNAME2652021A"\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = remove_division which = "ガイ・フォークス隊" value = SPR }\r
+-	command = { type = remove_division which = "コミューン・ド・パリ隊" value = SPR }\r
+-	command = { type = remove_division which = "ラ・マルセイエーズ隊" value = SPR }\r
+-	command = { type = remove_division which = "ハンス・バイムラー隊" value = SPR }\r
+-	command = { type = remove_division which = "エルンスト・テールマン隊" value = SPR }\r
+-	command = { type = remove_division which = "ガリバルディ隊" value = SPR }\r
+-	command = { type = remove_division which = "レーニン隊" value = SPR }\r
+-	command = { type = remove_division which = "ディミトロフ隊" value = SPR }\r
+-	command = { type = remove_division which = "ドンブロフスキ隊" value = SPR }\r
+-	command = { type = remove_division which = "ミツキエービッチ隊" value = SPR }\r
+-	command = { type = remove_division which = "マッケンジー・パピノー隊" value = SPR }\r
+-	command = { type = remove_division which = "ジョージ・ワシントン隊" value = SPR }\r
+-	command = { type = remove_division which = "ジェームズ・コノリー隊" value = SPR }\r
+-	command = { type = remove_division which = "シモン・ボリバル隊" value = SPR }\r
+-	command = { type = remove_division which = "ヤン・マサリク隊" value = SPR }\r
+-	command = { type = remove_division which = "モランディ隊" value = SPR }\r
+-	command = { type = remove_division which = "リベルテ隊" value = SPR }\r
+-	command = { type = remove_division which = "エガリテ隊" value = SPR }\r
+-	command = { type = remove_division which = "フラテルニテ隊" value = SPR }\r
+-	command = { type = sleepleader which = 255201 }\r
+-	command = { type = sleepleader which = 255202 }\r
+-	command = { type = sleepleader which = 255203 }\r
+-	command = { type = sleepleader which = 255204 }\r
+-	command = { type = sleepleader which = 255205 }\r
+-	command = { type = sleepleader which = 255206 }\r
+-	command = { type = sleepleader which = 255207 }\r
+-	command = { type = sleepleader which = 255208 }\r
+-	command = { type = sleepleader which = 255209 }\r
+-	command = { type = sleepteam which = 255101 }\r
+-	command = { type = sleepteam which = 255102 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 勝利(民主派）\r
+-# スペイン内戦は当初、全体派に参加する陸軍部隊の多さから民主派が不利であると考えられていた。\r
+-# しかし、不足していた陸軍力は様々な国から自主的に来訪した義勇軍部隊によって補填され、数の上で同等となった。\r
+-# 最後はスペイン内戦は当初の下馬評を覆し、民主派は全体派の戦力を壊滅させ、勝利を収めることに成功した。\r
+-#########################################################################\r
+-event = {\r
+-	id = 2652022\r
+-	random = no\r
+-	country = SPR\r
+- \r
+-	trigger = {\r
+-	owned = { province = 460 data = SPR } # マドリッド\r
+-	event = 2652004\r
+-	NOT = { \r
+-	exists = SPA \r
+-	event = 2652023 # スペイン内戦 ― 勝利(全体派）\r
+-	war = { country = POR }\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652022_NAME" \r
+-	desc = "EVT_2652022_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-\r
+-	action = { # 彼らは最後まで我々に押し止められたのだ！\r
+-	name = "ACTIONNAME2652022A"\r
+-	command = { type = name where = SPR }\r
+-	command = { type = capital which = 460 }\r
+-	command = { type = remove_division which = "ロシア義勇装甲師団" value = SPR }\r
+-	command = { type = remove_division which = "ロシア義勇歩兵師団" value = SPR }\r
+-	command = { type = remove_division which = "ロシア義勇戦闘隊" value = SPR }\r
+-	command = { type = remove_division which = "ロシア義勇爆撃隊" value = SPR }\r
+-	command = { type = remove_division which = "コンドル爆撃航空隊" value = SPR }\r
+-	command = { type = remove_division which = "コンドル軍団司令部" value = SPR }\r
+-	command = { type = remove_division which = "イムカー戦闘団" value = SPR }\r
+-	command = { type = remove_division which = "イギリス義勇爆撃航空隊" value = SPR }\r
+-	command = { type = remove_division which = "イギリス義勇軍司令部" value = SPR }\r
+-	command = { type = remove_division which = "イギリス義勇装甲師団" value = SPR }\r
+-	#\r
+-	command = { type = remove_division which = "POUM民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "CNT民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "第1ファランヘ党民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "第2ファランヘ党民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "モロッコ師団" value = SPR }\r
+-	command = { type = remove_division which = "第1バスク民族師団" value = SPR }\r
+-	command = { type = remove_division which = "第2バスク民族師団" value = SPR }\r
+-	command = { type = remove_division which = "イギリス反共義勇旅団" value = SPR }\r
+-	command = { type = remove_division which = "アイルランド反共義勇旅団" value = SPR }\r
+-	command = { type = strength which = militia when = 0 where = 1 value = 0.0 }\r
+-	#\r
+-	command = { type = sleepleader which = 255008 } # Pavel Ivanovich Batov / SOV\r
+-	command = { type = sleepleader which = 255020 } # Coronel Hans - Hans Kahle / DDR\r
+-	command = { type = sleepleader which = 255035 } # Gallo - Luigi Longo / ITA\r
+-	command = { type = sleepleader which = 255039 } # Generale Gom騷 - Wilhelm Zaisser / DDR\r
+-	command = { type = sleepleader which = 255047 } # Kl饕er - Manfred Stern / SOV\r
+-	command = { type = sleepleader which = 255048 } # Oliver Law / USA\r
+-	command = { type = sleepleader which = 255051 } # Pavol Luk當s - M疸・Zalka / HUN\r
+-	command = { type = sleepleader which = 255065 } # Robert Merriman / USA\r
+-	command = { type = sleepleader which = 255082 } # Frank Ryan / IRE\r
+-	command = { type = sleepleader which = 255091 } # Walter - Karol Swierczewski / POL\r
+-	command = { type = sleepleader which = 255111 } # Chato - Ivan Trofimovich Yeremenko / SOV\r
+-	command = { type = sleepleader which = 255118 } # Andr・Malraux / FRA\r
+-	#\r
+-	command = { type = sleepevent which = 2652023 } # スペイン内戦 ― 勝利(全体派）\r
+-	#\r
+-	command = { type = province_keypoints which = 436 value = -1 } # Tarragona\r
+-	command = { type = province_keypoints which = 437 value = -1 } # Gerona\r
+-	command = { type = province_keypoints which = 438 value = -1 } # Huesca\r
+-	command = { type = province_keypoints which = 439 value = -1 } # Lerida\r
+-	command = { type = province_keypoints which = 442 value = -1 } # Zaragoza\r
+-	command = { type = province_keypoints which = 443 value = -1 } # Bilbao\r
+-	command = { type = province_keypoints which = 444 value = -1 } # Oviedo\r
+-	command = { type = province_keypoints which = 445 value = -1 } # Santander\r
+-	command = { type = province_keypoints which = 446 value = -1 } # Pamplona\r
+-	command = { type = province_keypoints which = 447 value = -1 } # Salamanca\r
+-	command = { type = province_keypoints which = 448 value = -1 } # Leon\r
+-	command = { type = province_keypoints which = 449 value = -1 } # Vigo\r
+-	command = { type = province_keypoints which = 450 value = -1 } # Plasencia\r
+-	command = { type = province_keypoints which = 451 value = -1 } # Burgos\r
+-	command = { type = province_keypoints which = 452 value = -1 } # Segovia\r
+-	command = { type = province_keypoints which = 453 value = -1 } # Caceres\r
+-	command = { type = province_keypoints which = 454 value = -1 } # Tarancon\r
+-	command = { type = province_keypoints which = 455 value = -1 } # Guadalajara\r
+-	command = { type = province_keypoints which = 456 value = -1 } # Soria\r
+-	command = { type = province_keypoints which = 457 value = -1 } # Toledo\r
+-	command = { type = province_keypoints which = 458 value = -1 } # Badajoz\r
+-	command = { type = province_keypoints which = 459 value = -1 } # Teruel\r
+-	command = { type = province_keypoints which = 461 value = -1 } # Castellon de la Plana		\r
+-	command = { type = province_keypoints which = 462 value = -1 } # Alicante\r
+-	command = { type = province_keypoints which = 463 value = -1 } # Murcia\r
+-	command = { type = province_keypoints which = 465 value = -1 } # Albacete\r
+-	command = { type = province_keypoints which = 466 value = -1 } # Jaen\r
+-	command = { type = province_keypoints which = 467 value = -1 } # Cordoba\r
+-	command = { type = province_keypoints which = 468 value = -1 } # Ciudad Real		\r
+-	command = { type = province_keypoints which = 470 value = -1 } # Granada \r
+-	command = { type = province_keypoints which = 471 value = -1 } # Malaga \r
+-	command = { type = province_keypoints which = 472 value = -1 } # Huelva\r
+-	command = { type = province_keypoints which = 473 value = -1 } # Cadiz \r
+-	}	\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペイン内戦 ― 勝利！（全体派）\r
+-# スペイン内戦の勝者は全体派となった。\r
+-# 戦後、フランコ将軍はバスク人とカルリスタの要求に従い、ただちにハビエルの即位式を実行。\r
+-# ハビエル8世……現在はスペイン王ハビエル1世は、神の恩寵の下に全ての将軍の地位を保障し、\r
+-# その上でフランシスコ・フランコをスペイン王国宰相に任命した。\r
+-# フランコ将軍は予てより構想中であった、仏伊で流行するコーポラティズムの論理を導入した反動的体制を構築し、\r
+-# それぞれに自治州を設け、また全ての民族を職能と資本によって地位を明確に振り分け、\r
+-# 擬似的なカースト制を敷く、スペイン・コーポラティズム体制を確立させた。\r
+-# これにより、バスク人・カタルーニャ人・スペイン人・モロッコ人はそれぞれ法の上では格差が存在しない状態になった反面、\r
+-# 先の内戦で共和派に参加したカタルーニャ人は公務員勤務から締め出され、\r
+-# またそれぞれの民族で資産毎に階級を切り分けたため、民族内部の対立が生まれる結果にも繋がった。\r
+-# これらの実態も含めて、全てはフランコ将軍の予測通りの結果なのである――。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652023\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	trigger = {\r
+-	owned = { province = 460 data = SPA } # マドリッド\r
+-	event = 2652004\r
+-	\r
+-	NOT = { \r
+-	exists = SPR \r
+-	event = 2652022 # スペイン内戦 ― 勝利(民主派）\r
+-		OR = {\r
+-		event = 2652018 #ポルトガル参戦\r
+-		exists = POR\r
+-		}\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652023_NAME"\r
+-	desc = "EVT_2652023_DESC"\r
+-  	style = 2\r
+-  	picture = "scw"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1963 }\r
+-\r
+-	action = { # 時計の針は逆回り……\r
+-	name = "ACTIONNAME2652023A"\r
+-	command = { type = name where = SPR }\r
+-	command = { type = capital which = 460 }\r
+-	command = { type = belligerence which = SPA value = -10 }\r
+-	command = { type = set_domestic which = democratic value = 3 } \r
+-	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = headofstate which = 35401 } # ボルボン=パルマ家ハビエル1世\r
+-	command = { type = headofgovernment which = 35402 } # フランシスコ・フランコ・バーモンデ\r
+-	command = { type = foreignminister which = 35403 } # ジョージ・サンタヤーナ\r
+-	command = { type = armamentminister which = 35404 } # アルフレド・オッタビアーニ\r
+-	command = { type = ministerofsecurity which = 35405 } # ホセ・アントニオ・アギーレ\r
+-	command = { type = ministerofintelligence which = 35406 } # ディエス・デル・コラール\r
+-	command = { type = chiefofstaff which = 35117 } # フランシスコ・フランコ・バーモンデ\r
+-	command = { type = chiefofarmy which = 35008 } # エミリオ・モラ・ビダル\r
+-	command = { type = chiefofnavy which = 35009 } # フランシスコ・モレノ・フェルナンデス\r
+-	command = { type = chiefofair which = 35407 } # フアン・アントニオ・アンサルド\r
+-	#\r
+-	command = { type = remove_division which = "ロシア義勇装甲師団" value = SPR }\r
+-	command = { type = remove_division which = "ロシア義勇歩兵師団" value = SPR }\r
+-	command = { type = remove_division which = "ロシア義勇戦闘隊" value = SPR }\r
+-	command = { type = remove_division which = "ロシア義勇爆撃隊" value = SPR }\r
+-	command = { type = remove_division which = "コンドル爆撃航空隊" value = SPR }\r
+-	command = { type = remove_division which = "コンドル軍団司令部" value = SPR }\r
+-	command = { type = remove_division which = "イムカー戦闘団" value = SPR }\r
+-	command = { type = remove_division which = "イギリス義勇爆撃航空隊" value = SPR }\r
+-	command = { type = remove_division which = "イギリス義勇軍司令部" value = SPR }\r
+-	command = { type = remove_division which = "イギリス義勇装甲師団" value = SPR }\r
+-	#\r
+-	command = { type = remove_division which = "POUM民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "CNT民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "第1ファランヘ党民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "第2ファランヘ党民兵師団" value = SPR }\r
+-	command = { type = remove_division which = "モロッコ師団" value = SPR }\r
+-	command = { type = remove_division which = "第1バスク民族師団" value = SPR }\r
+-	command = { type = remove_division which = "第2バスク民族師団" value = SPR }\r
+-	command = { type = remove_division which = "イギリス反共義勇旅団" value = SPR }\r
+-	command = { type = remove_division which = "アイルランド反共義勇旅団" value = SPR }\r
+-	command = { type = strength which = militia when = 0 where = 1 value = 0.0 }\r
+-	#\r
+-	command = { type = sleepleader which = 35014 } #Bergonzoli\r
+-	command = { type = sleepleader which = 35017 } #Cavalcanti\r
+-	command = { type = sleepleader which = 35028 } #Gambara\r
+-	command = { type = sleepleader which = 35056 } #Roatta\r
+-	command = { type = sleepleader which = 35094 } #von Richthofen W.\r
+-	command = { type = sleepleader which = 35095 } #Sperrle (GER)\r
+-	#\r
+-	command = { type = sleepevent which = 2652022 } # スペイン内戦 ― 勝利(民主派）\r
+-	command = { type = sleepevent which = 2052010 } # Repuplican SCW win event\r
+-	command = { type = sleepevent which = 2007048 } # USSR SCW Victory event\r
+-	command = { type = sleepevent which = 2002003 } # France SCW Victory event\r
+-	command = { type = sleepevent which = 2001034 } # UK SCW Victory event\r
+-	#\r
+-	command = { type = province_keypoints which = 436 value = -1 } # Tarragona\r
+-	command = { type = province_keypoints which = 437 value = -1 } # Gerona\r
+-	command = { type = province_keypoints which = 438 value = -1 } # Huesca\r
+-	command = { type = province_keypoints which = 439 value = -1 } # Lerida\r
+-	command = { type = province_keypoints which = 442 value = -1 } # Zaragoza\r
+-	command = { type = province_keypoints which = 443 value = -1 } # Bilbao\r
+-	command = { type = province_keypoints which = 444 value = -1 } # Oviedo\r
+-	command = { type = province_keypoints which = 445 value = -1 } # Santander\r
+-	command = { type = province_keypoints which = 446 value = -1 } # Pamplona\r
+-	command = { type = province_keypoints which = 447 value = -1 } # Salamanca\r
+-	command = { type = province_keypoints which = 448 value = -1 } # Leon\r
+-	command = { type = province_keypoints which = 449 value = -1 } # Vigo\r
+-	command = { type = province_keypoints which = 450 value = -1 } # Plasencia\r
+-	command = { type = province_keypoints which = 451 value = -1 } # Burgos\r
+-	command = { type = province_keypoints which = 452 value = -1 } # Segovia\r
+-	command = { type = province_keypoints which = 453 value = -1 } # Caceres\r
+-	command = { type = province_keypoints which = 454 value = -1 } # Tarancon\r
+-	command = { type = province_keypoints which = 455 value = -1 } # Guadalajara\r
+-	command = { type = province_keypoints which = 456 value = -1 } # Soria\r
+-	command = { type = province_keypoints which = 457 value = -1 } # Toledo\r
+-	command = { type = province_keypoints which = 458 value = -1 } # Badajoz\r
+-	command = { type = province_keypoints which = 459 value = -1 } # Teruel\r
+-	command = { type = province_keypoints which = 461 value = -1 } # Castellon de la Plana		\r
+-	command = { type = province_keypoints which = 462 value = -1 } # Alicante\r
+-	command = { type = province_keypoints which = 463 value = -1 } # Murcia\r
+-	command = { type = province_keypoints which = 465 value = -1 } # Albacete\r
+-	command = { type = province_keypoints which = 466 value = -1 } # Jaen\r
+-	command = { type = province_keypoints which = 467 value = -1 } # Cordoba\r
+-	command = { type = province_keypoints which = 468 value = -1 } # Ciudad Real		\r
+-	command = { type = province_keypoints which = 470 value = -1 } # Granada \r
+-	command = { type = province_keypoints which = 471 value = -1 } # Malaga \r
+-	command = { type = province_keypoints which = 472 value = -1 } # Huelva\r
+-	command = { type = province_keypoints which = 473 value = -1 } # Cadiz \r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  国際自由ヒスパニア\r
+-# 経済的、政治的に死につつあったスペイン国家は多数の外国人義勇兵と人々の自由を求める精神の力によって勝利し、蘇った。\r
+-# スペイン内戦における国際旅団の活躍を認めたスペイン共和国政府は、彼ら義勇兵達に新しいスペインの国籍を彼らに認めた。\r
+-# また長く分断の中にあったポルトガルは共和国に統合され、多数の外国人が居ながら彼らと同居することを厭わない人々によって解放されつつあった。\r
+-# 今やスペイン共和国の国籍は「世界でもっとも取得しやすい国籍」と認められるようになったのである。\r
+-# そうした情勢を鑑みて、ここにスペイン共和国は国号を『国際自由ヒスパニア』とあらため、新たな門出を祝った！\r
+-#########################################################################\r
+-\r
+-event = { \r
+-	id = 2652024\r
+-	random = no \r
+-	country = SPR\r
+-\r
+-	decision = {\r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	owned = { province = 460 data = SPR } # マドリッド\r
+-	owned = { province = 476 data = SPR } # リスボン\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	decision_trigger = {\r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	region = { region = "Portugal" country = SPR data = 1 value = 90 }\r
+-	region = { region = "Spain" country = SPR data = 1 value = 90 }\r
+-	owned = { province = 460 data = SPR } # マドリッド\r
+-	owned = { province = 476 data = SPR } # リスボン\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	trigger = {\r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	region = { region = "Portugal" country = SPR data = 1 value = 90 }\r
+-	region = { region = "Spain" country = SPR data = 1 value = 90 }\r
+-	owned = { province = 460 data = SPR } # マドリッド\r
+-	owned = { province = 476 data = SPR } # リスボン\r
+-	atwar = no\r
+-	random = 20\r
+-	}\r
+-	\r
+-	date = { day = 0 month = 5 year = 1933 }		 \r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1963 }	\r
+-	\r
+-	name = "EVT_2652024_NAME"\r
+-	desc = "EVT_2652024_DESC"\r
+-  	style = 2\r
+-  	picture = "Corpo_truppe_Volontarie"\r
+-	\r
+-	action = { # 真に自由な国が今ここに誕生したのだ\r
+-	name = "ACTIONNAME2652024A"\r
+-	command = { type = flag_ext where = SPR which = "_IBE" }\r
+-	command = { type = name where = SPR which = "国際自由ヒスパニア" }\r
+-	command = { type = add_core_region which = "Portugal" }\r
+-	command = { type = add_core_region which = "Spain" }\r
+-	command = { type = event which = 2652025 where = SPR when = 7 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  ヒスパニア総選挙\r
+-# 多数の外国人『であった』人々を内包する国際自由ヒスパニアは大規模な選挙制度改革を行った。\r
+-# 対外的な国家の象徴として実権を有さない大統領職と、実務的な面を全て統括する首相職とで政治役割を切り分け、\r
+-# それらの立候補権・選挙権はヒスパニアの国籍を持つ全ての人々に認められたのだ。\r
+-# 大統領職についたのはスペインにおける人民戦線を構築したマヌエル・アサーニャ氏であった。\r
+-# 選挙において注目されたのは、首相職を任ぜられる人物の人選である。\r
+-# つい数年前までは『外国人』であった彼らは独自に政党を構築し、総選挙に打って出たのだ。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652025\r
+-	random = no\r
+-	country = SPR\r
+-\r
+-	name = "EVT_2652025_NAME"\r
+-	desc = "EVT_2652025_DESC"\r
+-	style = 2\r
+-	picture = "election_time"\r
+-\r
+-	action = { # 社会自由党 ― エリック・ブレア\r
+-	name = "ACTIONNAME2652025A"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = set_domestic which = democratic value = 6 }\r
+-	command = { type = set_domestic which = political_left value = 9 }\r
+-	command = { type = wakeminister which = 255301 }\r
+-	command = { type = wakeminister which = 255302 }\r
+-	command = { type = wakeminister which = 255303 }\r
+-	command = { type = wakeminister which = 255304 }\r
+-	command = { type = wakeminister which = 255305 }\r
+-	command = { type = wakeminister which = 255306 }\r
+-	command = { type = wakeminister which = 255307 }\r
+-	command = { type = wakeminister which = 255308 }\r
+-	command = { type = wakeminister which = 255309 }\r
+-	command = { type = wakeminister which = 255310 }\r
+-	command = { type = wakeminister which = 255311 }\r
+-	command = { type = wakeminister which = 255312 }\r
+-	command = { type = wakeminister which = 255313 }\r
+-	command = { type = headofstate which = 255301 } # マヌエル・アサニャ・ディアス\r
+-	command = { type = headofgovernment which = 255303 } # エリック・ブレア\r
+-	command = { type = foreignminister which = 255308 }\r
+-	command = { type = armamentminister which = 255309 }\r
+-	command = { type = ministerofsecurity which = 255310 }\r
+-	command = { type = ministerofintelligence which = 255311 }\r
+-	command = { type = chiefofarmy which = 255312 }\r
+-	command = { type = event which = 2652026 where = SPR when = 1 }\r
+-	ai_chance = 35\r
+-	}\r
+-\r
+-	action = { # 自由連邦党 ― ヨシップ・ブロズ・チトー\r
+-	name = "ACTIONNAME2652025B"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = set_domestic which = democratic value = 7 }\r
+-	command = { type = set_domestic which = political_left value = 9 }\r
+-	command = { type = wakeminister which = 255301 }\r
+-	command = { type = wakeminister which = 255302 }\r
+-	command = { type = wakeminister which = 255303 }\r
+-	command = { type = wakeminister which = 255304 }\r
+-	command = { type = wakeminister which = 255305 }\r
+-	command = { type = wakeminister which = 255306 }\r
+-	command = { type = wakeminister which = 255307 }\r
+-	command = { type = wakeminister which = 255308 }\r
+-	command = { type = wakeminister which = 255309 }\r
+-	command = { type = wakeminister which = 255310 }\r
+-	command = { type = wakeminister which = 255311 }\r
+-	command = { type = wakeminister which = 255312 }\r
+-	command = { type = wakeminister which = 255313 }\r
+-	command = { type = headofstate which = 255301 } # マヌエル・アサニャ・ディアス\r
+-	command = { type = headofgovernment which = 255306 } # ヨシップ・ブロズ・チトー\r
+-	command = { type = foreignminister which = 255308 }\r
+-	command = { type = armamentminister which = 255309 }\r
+-	command = { type = ministerofsecurity which = 255310 }\r
+-	command = { type = ministerofintelligence which = 255313 }\r
+-	command = { type = chiefofarmy which = 255312 }\r
+-	command = { type = event which = 2652026 where = SPR when = 1 }\r
+-	ai_chance = 35\r
+-	}\r
+-\r
+-	action = { # 大連立 ― リュイス・クンパニィス\r
+-	name = "ACTIONNAME2652025C"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = set_domestic which = democratic value = 7 }\r
+-	command = { type = set_domestic which = political_left value = 9 }\r
+-	command = { type = wakeminister which = 255301 }\r
+-	command = { type = wakeminister which = 255302 }\r
+-	command = { type = wakeminister which = 255303 }\r
+-	command = { type = wakeminister which = 255304 }\r
+-	command = { type = wakeminister which = 255305 }\r
+-	command = { type = wakeminister which = 255306 }\r
+-	command = { type = wakeminister which = 255307 }\r
+-	command = { type = wakeminister which = 255308 }\r
+-	command = { type = wakeminister which = 255309 }\r
+-	command = { type = wakeminister which = 255310 }\r
+-	command = { type = wakeminister which = 255311 }\r
+-	command = { type = wakeminister which = 255312 }\r
+-	command = { type = wakeminister which = 255313 }\r
+-	command = { type = headofstate which = 255301 } # マヌエル・アサニャ・ディアス\r
+-	command = { type = headofgovernment which = 255307 } # リュイス・クンパニィス\r
+-	command = { type = foreignminister which = 255308 }\r
+-	command = { type = armamentminister which = 255309 }\r
+-	command = { type = ministerofsecurity which = 255310 }\r
+-	command = { type = ministerofintelligence which = 255311 }\r
+-	command = { type = chiefofarmy which = 255312 }\r
+-	command = { type = event which = 2652026 where = SPR when = 1 }\r
+-	ai_chance = 30\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  自治権の拡大\r
+-# 国際自由ヒスパニアはその多様な民族と文化圏を有する国内情勢から、各州の自治権を認め、アメリカ合衆国の連邦制にもよく似た独自の体制を構築した。\r
+-# 軍は防衛に特化したものとなり、有事の際には国家が一丸となって敵対者に対抗できるよう、労働者達への軍事的教育を義務化。\r
+-# 同国は結果として欧州情勢からは距離をとり、自身らの自由な国家の防衛のために多数の革新的な施策を実行していった。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 2652026\r
+-	random = no\r
+-	country = SPR\r
+-\r
+-	name = "EVT_2652026_NAME"\r
+-	desc = "EVT_2652026_DESC"\r
+-	style = 2\r
+-  	picture = "Corpo_truppe_Volontarie"\r
+-\r
+-	action = { # 我々は自主独立路線を往くのである！\r
+-	name = "ACTIONNAME2652026A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = morale which = land value = 10 }\r
+-	command = { type = morale which = naval value = 10 }\r
+-	command = { type = morale which = air value = 10 }\r
+-	command = { type = set_domestic which = defense_lobby value = 2 }\r
+-	command = { type = set_domestic which =  interventionism value = 3 }\r
+-	ai_chance = 35\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  フランスがドイツ帝国主義者との戦争に突入\r
+-# 国際自由ヒスパニアの隣国であるフランスがドイツとの戦争に突入した。\r
+-# 我々は自由主義を守るためにも、フランスと共に戦うべきだろうか？\r
+-#########################################################################\r
+-\r
+-event = { \r
+-	id = 2652027\r
+-	random = no \r
+-	country = SPR\r
+-\r
+-	decision = {\r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	war = { country = GER country = FRA }\r
+-	NOT = { war = { country = SPR country = FRA } }\r
+-	owned = { province = 460 data = SPR } # マドリッド\r
+-	owned = { province = 476 data = SPR } # リスボン\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	decision_trigger = {\r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	war = { country = GER country = FRA }\r
+-	NOT = { war = { country = SPR country = FRA } }\r
+-	region = { region = "Portugal" country = SPR data = 1 value = 90 }\r
+-	region = { region = "Spain" country = SPR data = 1 value = 90 }\r
+-	owned = { province = 460 data = SPR } # マドリッド\r
+-	owned = { province = 476 data = SPR } # リスボン\r
+-	atwar = no\r
+-	}\r
+-	\r
+-	trigger = {\r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	war = { country = GER country = FRA }\r
+-	NOT = { war = { country = SPR country = FRA } }\r
+-	region = { region = "Portugal" country = SPR data = 1 value = 90 }\r
+-	region = { region = "Spain" country = SPR data = 1 value = 90 }\r
+-	owned = { province = 460 data = SPR } # マドリッド\r
+-	owned = { province = 476 data = SPR } # リスボン\r
+-	atwar = no\r
+-	random = 20\r
+-	}\r
+-	\r
+-	name = "EVT_2652027_NAME"\r
+-	desc = "EVT_2652027_DESC"\r
+-  	style = 2\r
+-  	picture = "Corpo_truppe_Volontarie"\r
+-\r
+-	date = { day = 0 month = 5 year = 1933 }		 \r
+-	offset = 12\r
+-	deathdate = { day = 29 month = 11 year = 1942 }	\r
+-	\r
+-	action = { # 自由を守るために戦おう\r
+-	name = "ACTIONNAME2652027A"\r
+-	command = { type = relation which = FRA value = 30 }\r
+-	command = { type = money value = -30 } \r
+-	command = { type = event which = 2652028 where = FRA when = 0 }\r
+-	ai_chance = 70\r
+-	}\r
+-\r
+-	action = { # 戦争に参加する必要はない\r
+-	name = "ACTIONNAME2652027B"\r
+-	command = { type = relation which = FRA value = -30 }\r
+-	ai_chance = 30\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  スペインの同盟提案\r
+-# スペイン内戦で勝利したヒスパニアが、我々との同盟を提案してきた。\r
+-#########################################################################\r
+-\r
+-event = { \r
+-	id = 2652028\r
+-	country = FRA\r
+-\r
+-	name = "EVT_2652028_NAME"\r
+-	desc = "EVT_2652028_DESC"\r
+-	style = 2\r
+-	picture = "spread_revolution"\r
+-\r
+-	action = { # 友を迎えよう！\r
+-	name = "ACTIONNAME2652028A"	\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = relation which = SPR value = 100 }\r
+-	command = { type = alliance which = SPR }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 彼らには中立でいてもらおう\r
+-	name = "ACTIONNAME2652028B"\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦義勇軍派遣イベント\r
+-##########################################################################\r
+-#  スペイン内戦 ― ロシアの介入（UER）\r
+-# 1936年、スペインにおける右派と左派の対立はついに内戦に発展した。\r
+-# 保守派の国粋派と左派の共和派に分かれ、激しい戦闘をスペイン内部で繰り広げている。\r
+-# この内戦には様々な思惑の下、多くの国が介入した。\r
+-###########################################################################\r
+-\r
+-event = { \r
+-	id = 2652101\r
+-	random = no\r
+-	country = UER\r
+-	\r
+-	decision = {\r
+-	war = { country = SPA country = SPR }\r
+-	event = 2652004 # スペイン内戦\r
+-	NOT = {\r
+-	OR = {\r
+-	alliance = { country = UER country = SPA }\r
+-	alliance = { country = ENG country = SPA }\r
+-	war = { country = UER country = SPA }\r
+-	war = { country = UER country = SPR }\r
+-	war = { country = UER country = GER }\r
+-	war = { country = UER country = ENG }\r
+-	war = { country = UER country = FRA }\r
+-	war = { country = UER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-			\r
+-	decision_trigger = { \r
+-	manpower = 10\r
+-	supplies = 1000 \r
+-	money = 200\r
+-	}\r
+-			\r
+-	trigger = {\r
+-	war = { country = SPA country = SPR }\r
+-	event = 2652004 # スペイン内戦\r
+-	NOT = {\r
+-	OR = {\r
+-	alliance = { country = UER country = SPA }\r
+-	alliance = { country = ENG country = SPA }\r
+-	war = { country = UER country = SPA }\r
+-	war = { country = UER country = SPR }\r
+-	war = { country = UER country = GER }\r
+-	war = { country = UER country = ENG }\r
+-	war = { country = UER country = FRA }\r
+-	war = { country = UER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-	\r
+-	name = "EVT_2652101_NAME"\r
+-	desc = "EVT_2652101_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
+-\r
+-	action = { # 介入する\r
+-	name = "ACTIONNAME2652101A"\r
+-	command = { type = manpowerpool value = -10 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-	command = { trigger = { ai = no } type = money value = -200 }\r
+-	command = { type = relation which = SPA value = 20 }\r
+-	command = { type = relation which = SPR value = -15 }\r
+-	command = { type = relation which = GER value = -5 }\r
+-	command = { type = relation which = ENG value = -5 }\r
+-	command = { type = relation which = FRA value = -5 }\r
+-	command = { type = relation which = POR value = -10 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = UER value = 1 }\r
+-	command = { type = trigger which = 2652102 }\r
+-	ai_chance = 100\r
+-	}\r
+-	\r
+-	action = { # 軍事顧問団を派遣しよう\r
+-	name = "ACTIONNAME2652101B"\r
+-	command = { type = manpowerpool value = -10 }\r
+-	command = { type = supplies value = -2000 }\r
+-	command = { type = money value = -400 }\r
+-	command = { type = relation which = SPA value = 20 }\r
+-	command = { type = relation which = SPR value = -15 }\r
+-	command = { type = relation which = GER value = -5 }\r
+-	command = { type = relation which = ENG value = -5 }\r
+-	command = { type = relation which = FRA value = -5 }\r
+-	command = { type = relation which = POR value = -10 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = UER value = 1 }\r
+-	command = { type = trigger which = 2652102 }\r
+-	command = { trigger = { ai = no } type = military_control which = UER where = SPA value = 1 }\r
+-	command	= { type = local_setflag which = military_control_SPA }\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # 介入する必要はない\r
+-	name = "ACTIONNAME2652101C"\r
+-	command = { type = relation which = SPA value = -20 }\r
+-	command = { type = relation which = SPR value = 15 }\r
+-	command = { type = relation which = GER value = 5 }\r
+-	command = { type = relation which = ENG value = 5 }\r
+-	command = { type = relation which = FRA value = 5 }\r
+-	command = { type = relation which = POR value = 10 }\r
+-	command = { type = domestic which = interventionism value = -1 }\r
+-	command = { type = belligerence which = UER value = -1 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― ロシアの介入（SPA）\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652102\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	name = "EVT_2652101_NAME"\r
+-	desc = "EVT_2652101_DESC"\r
+-	style = 2\r
+-  	picture = "scw"\r
+-	\r
+-	action = { # 了解\r
+-	name = ACTION_NAME_OK\r
+-	command = { type = money value = -100 }\r
+-	command = { type = manpowerpool value = 10 }\r
+-	command = { type = supplies value = 2500 }\r
+-	command = { type = add_division value = militia when = 5 }\r
+-	command = { type = add_division value = militia when = 5 }\r
+-	command = { type = add_division which = "ロシア義勇装甲師団" value = light_armor when = 0 }\r
+-	command = { type = add_division which = "ロシア義勇歩兵師団" value = infantry when = 7 }\r
+-	command = { type = add_division which = "ロシア義勇戦闘隊" value = interceptor when = 5 }\r
+-	command = { type = add_division which = "ロシア義勇爆撃隊" value = tactical_bomber when = 4 }\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = gain_tech which = -1 }		\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = steal_tech which = UER }\r
+-	command = { type = steal_tech which = UER }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦の終結 ― 義勇兵の凱旋\r
+-# ロシアはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。\r
+-# また「軍事顧問」と呼ばれる集団もロシアから多数派遣された。\r
+-# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652103\r
+-	random = no\r
+-	country = UER\r
+-\r
+-	trigger = {\r
+-	exists = SPA\r
+-	event = 2652023 # スペイン内戦 ― 勝利！（全体派）\r
+-	event = 2652102 # スペイン内戦 ― ロシアの介入（SPA）\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = UER country = SPA }\r
+-	war = { country = UER country = SPR }\r
+-	war = { country = UER country = GER }\r
+-	war = { country = UER country = ENG }\r
+-	war = { country = UER country = FRA }\r
+-	war = { country = UER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652103_NAME"\r
+-	desc = "EVT_2652103_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # すばらしい！\r
+-	name = "ACTION_NAME_GREAT"\r
+-	command = { type = relation which = SPA value = 50 }\r
+-	command = { type = manpowerpool value = 8 }\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = gain_tech which = -1 } \r
+-	command = { type = gain_tech which = -1 } \r
+-	command = { type = money value = 250 }\r
+-	command	= { trigger = { local_flag = military_control_SPA } type = military_control which = UER where = SPA }\r
+-	command	= { trigger = { local_flag = military_control_SPA } type = local_clrflag which = military_control_SPA }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦の終結 ― 義勇兵の帰国\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652104\r
+-	random = no\r
+-	country = UER\r
+-\r
+-	trigger = {\r
+-	NOT = { exists = SPA } \r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	event = 2652102 # スペイン内戦 ― ロシアの介入（SPA）\r
+-	NOT = { \r
+-	OR = {\r
+-	war = { country = UER country = SPA }\r
+-	war = { country = UER country = SPR }\r
+-	war = { country = UER country = GER }\r
+-	war = { country = UER country = ENG }\r
+-	war = { country = UER country = FRA }\r
+-	war = { country = UER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652104_NAME"\r
+-	desc = "EVT_2652104_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK" \r
+-	command = { type = manpowerpool value = 3 }\r
+-	command = { trigger = { ai = no } type = dissent value = 1 }\r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = money value = 250 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― ドイツの介入（GER）\r
+-###########################################################################\r
+-\r
+-event = { \r
+-	id = 2652105\r
+-	random = no\r
+-	country = GER\r
+-	\r
+-	decision = {\r
+-	war = { country = SPA country = SPR }\r
+-	event = 2652004 # スペイン内戦\r
+-	NOT = {\r
+-	OR = {\r
+-	alliance = { country = GER country = SPA }\r
+-	alliance = { country = ENG country = SPA }\r
+-	war = { country = GER country = SPA }\r
+-	war = { country = GER country = SPR }\r
+-	war = { country = GER country = UER }\r
+-	war = { country = GER country = ENG }\r
+-	war = { country = GER country = FRA }\r
+-	war = { country = GER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-			\r
+-	decision_trigger = { \r
+-	manpower = 10\r
+-	supplies = 1000 \r
+-	money = 200\r
+-	}\r
+-			\r
+-	trigger = {\r
+-	war = { country = SPA country = SPR }\r
+-	event = 2652004 # スペイン内戦\r
+-	NOT = {\r
+-	OR = {\r
+-	alliance = { country = GER country = SPA }\r
+-	alliance = { country = ENG country = SPA }\r
+-	war = { country = GER country = SPA }\r
+-	war = { country = GER country = SPR }\r
+-	war = { country = GER country = GER }\r
+-	war = { country = GER country = ENG }\r
+-	war = { country = GER country = FRA }\r
+-	war = { country = GER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-	\r
+-	name = "EVT_2652105_NAME"\r
+-	desc = "EVT_2652105_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
+-\r
+-	action = { # 介入する\r
+-	name = "ACTIONNAME2652105A"\r
+-	command = { type = manpowerpool value = -10 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-	command = { trigger = { ai = no } type = money value = -200 }\r
+-	command = { type = relation which = SPA value = 20 }\r
+-	command = { type = relation which = SPR value = -15 }\r
+-	command = { type = relation which = UER value = -5 }\r
+-	command = { type = relation which = ENG value = -5 }\r
+-	command = { type = relation which = FRA value = -5 }\r
+-	command = { type = relation which = POR value = -10 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = GER value = 1 }\r
+-	command = { type = trigger which = 2652106 }\r
+-	ai_chance = 100\r
+-	}\r
+-	\r
+-	action = { # 軍事顧問団を派遣しよう\r
+-	name = "ACTIONNAME2652105B"\r
+-	command = { type = manpowerpool value = -10 }\r
+-	command = { type = supplies value = -2000 }\r
+-	command = { type = money value = -400 }\r
+-	command = { type = relation which = SPA value = 20 }\r
+-	command = { type = relation which = SPR value = -15 }\r
+-	command = { type = relation which = UER value = -5 }\r
+-	command = { type = relation which = ENG value = -5 }\r
+-	command = { type = relation which = FRA value = -5 }\r
+-	command = { type = relation which = POR value = -10 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = GER value = 1 }\r
+-	command = { type = trigger which = 2652106 }\r
+-	command = { trigger = { ai = no } type = military_control which = GER where = SPA value = 1 }\r
+-	command	= { type = local_setflag which = military_control_SPA }\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # 介入する必要はない\r
+-	name = "ACTIONNAME2652105C"\r
+-	command = { type = relation which = SPA value = -20 }\r
+-	command = { type = relation which = SPR value = 15 }\r
+-	command = { type = relation which = UER value = 5 }\r
+-	command = { type = relation which = ENG value = 5 }\r
+-	command = { type = relation which = FRA value = 5 }\r
+-	command = { type = relation which = POR value = 10 }\r
+-	command = { type = domestic which = interventionism value = -1 }\r
+-	command = { type = belligerence which = GER value = -1 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― ドイツの介入（SPA）\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652106\r
+-	random = no\r
+-	country = SPA\r
+-\r
+-	name = "EVT_2652105_NAME"\r
+-	desc = "EVT_2652105_DESC"\r
+-	style = 2\r
+-  	picture = "scw"\r
+-	\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK" \r
+-	command = { type = money value = -100 }\r
+-	command = { type = manpowerpool value = 10 }\r
+-	command = { type = supplies value = 2500 }\r
+-	command = { type = wakeleader which = 35094 }\r
+-	command = { type = wakeleader which = 35095 }\r
+-	command = { type = add_corps which = "コンドル軍団" value = air when = 35094 where = 441 }\r
+-	command = { type = add_division which = "コンドル爆撃航空隊" value = tactical_bomber when = 4 }\r
+-	command = { type = add_corps which = "コンドル軍団" value = land when = 35067 where = 451 }\r
+-	command = { type = add_division which = "コンドル軍団司令部" value = hq when = 2 where = anti_air } \r
+-	command = { type = add_division which = "イムカー戦闘団" value = light_armor when = 0 }\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = gain_tech which = -1 }		\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = steal_tech which = GER }\r
+-	command = { type = steal_tech which = GER }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦の終結 ― 義勇兵の凱旋\r
+-# ドイツはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。\r
+-# また「軍事顧問」と呼ばれる集団もドイツから多数派遣された。\r
+-# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652107\r
+-	random = no\r
+-	country = GER\r
+-\r
+-	trigger = {\r
+-	exists = SPA\r
+-	event = 2652023 # スペイン内戦 ― 勝利！（全体派）\r
+-	event = 2652106 # スペイン内戦 ― ドイツの介入（SPA）\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = GER country = SPA }\r
+-	war = { country = GER country = SPR }\r
+-	war = { country = GER country = GER }\r
+-	war = { country = GER country = ENG }\r
+-	war = { country = GER country = FRA }\r
+-	war = { country = GER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652107_NAME"\r
+-	desc = "EVT_2652107_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # すばらしい！\r
+-	name = "ACTION_NAME_GREAT"\r
+-	command = { type = relation which = SPA value = 50 }\r
+-	command = { type = manpowerpool value = 8 }\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = gain_tech which = -1 } \r
+-	command = { type = gain_tech which = -1 } \r
+-	command = { type = money value = 250 }\r
+-	command	= { trigger = { local_flag = military_control_SPA } type = military_control which = GER where = SPA }\r
+-	command	= { trigger = { local_flag = military_control_SPA } type = local_clrflag which = military_control_SPA }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦の終結 ― 義勇兵の帰国\r
+-# ドイツはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。\r
+-# また「軍事顧問」と呼ばれる集団もドイツから多数派遣された。\r
+-# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652108\r
+-	random = no\r
+-	country = GER\r
+-\r
+-	trigger = {\r
+-	NOT = { exists = SPA } \r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	event = 2652106 # スペイン内戦 ― ドイツの介入（SPA）\r
+-	NOT = { \r
+-	OR = {\r
+-	war = { country = GER country = SPA }\r
+-	war = { country = GER country = SPR }\r
+-	war = { country = GER country = GER }\r
+-	war = { country = GER country = ENG }\r
+-	war = { country = GER country = FRA }\r
+-	war = { country = GER country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652108_NAME"\r
+-	desc = "EVT_2652108_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK" \r
+-	command = { type = manpowerpool value = 3 }\r
+-	command = { trigger = { ai = no } type = dissent value = 1 }\r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = money value = 250 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― イギリスの介入（ENG）\r
+-###########################################################################\r
+-\r
+-event = { \r
+-	id = 2652109\r
+-	random = no\r
+-	country = ENG\r
+-	\r
+-	decision = {\r
+-	war = { country = SPA country = SPR }\r
+-	event = 2652004\r
+-	NOT = {\r
+-	OR = {\r
+-	alliance = { country = ENG country = SPR }\r
+-	alliance = { country = FRA country = SPR }\r
+-	war = { country = ENG country = SPA }\r
+-	war = { country = ENG country = SPR }\r
+-	war = { country = ENG country = UER }\r
+-	war = { country = ENG country = GER }\r
+-	war = { country = ENG country = FRA }\r
+-	war = { country = ENG country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-			\r
+-	decision_trigger = { \r
+-		manpower = 10\r
+-		supplies = 1000 \r
+-		money = 200\r
+-	}\r
+-			\r
+-	trigger = {\r
+-	war = { country = SPA country = SPR }\r
+-	event = 2652004\r
+-	NOT = {\r
+-	OR = {\r
+-	alliance = { country = ENG country = SPR }\r
+-	alliance = { country = FRA country = SPR }\r
+-	war = { country = ENG country = SPA }\r
+-	war = { country = ENG country = SPR }\r
+-	war = { country = ENG country = UER }\r
+-	war = { country = ENG country = GER }\r
+-	war = { country = ENG country = FRA }\r
+-	war = { country = ENG country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-	\r
+-	name = "EVT_2652109_NAME"\r
+-	desc = "EVT_2652109_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
+-\r
+-	action = { # 介入する\r
+-	name = "ACTIONNAME2652109A"\r
+-	command = { type = manpowerpool value = -10 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-	command = { trigger = { ai = no } type = money value = -200 }\r
+-	command = { type = relation which = SPR value = 20 }\r
+-	command = { type = relation which = SPA value = -15 }\r
+-	command = { type = relation which = UER value = -5 }\r
+-	command = { type = relation which = GER value = -5 }\r
+-	command = { type = relation which = FRA value = -5 }\r
+-	command = { type = relation which = POR value = -10 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = ENG value = 1 }\r
+-	command = { type = trigger which = 2652110 }\r
+-	ai_chance = 100\r
+-	}\r
+-	\r
+-	action = { # 軍事顧問団を派遣しよう\r
+-	name = "ACTIONNAME2652109B"\r
+-	command = { type = manpowerpool value = -10 }\r
+-	command = { type = supplies value = -2000 }\r
+-	command = { type = money value = -400 }\r
+-	command = { type = relation which = SPR value = 20 }\r
+-	command = { type = relation which = SPA value = -15 }\r
+-	command = { type = relation which = UER value = -5 }\r
+-	command = { type = relation which = GER value = -5 }\r
+-	command = { type = relation which = FRA value = -5 }\r
+-	command = { type = relation which = POR value = -10 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = belligerence which = ENG value = 1 }\r
+-	command = { type = trigger which = 2652110 }\r
+-	command = { trigger = { ai = no } type = military_control which = ENG where = SPR value = 1 }\r
+-	command	= { type = local_setflag which = military_control_SPR }\r
+-	ai_chance = 0\r
+-	}\r
+-\r
+-	action = { # 介入する必要はない\r
+-	name = "ACTIONNAME2652109C"\r
+-	command = { type = relation which = SPR value = -20 }\r
+-	command = { type = relation which = SPA value = 15 }\r
+-	command = { type = relation which = UER value = 5 }\r
+-	command = { type = relation which = GER value = 5 }\r
+-	command = { type = relation which = FRA value = 5 }\r
+-	command = { type = relation which = POR value = 10 }\r
+-	command = { type = domestic which = interventionism value = -1 }\r
+-	command = { type = belligerence which = ENG value = -1 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦 ― イギリスの介入（SPR）\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652110\r
+-	random = no\r
+-	country = SPR\r
+-\r
+-	name = "EVT_2652109_NAME"\r
+-	desc = "EVT_2652109_DESC"\r
+-	style = 2\r
+-  	picture = "scw"\r
+-	\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK" \r
+-	command = { type = money value = -100 }\r
+-	command = { type = manpowerpool value = 10 }\r
+-	command = { type = supplies value = 2500 }\r
+-	command = { type = wakeleader which = 35094 }\r
+-	command = { type = wakeleader which = 35095 }\r
+-	command = { type = add_division which = "イギリス義勇爆撃航空隊" value = tactical_bomber when = 4 }\r
+-	command = { type = add_division which = "イギリス義勇軍司令部" value = hq when = 2 where = anti_air } \r
+-	command = { type = add_division which = "イギリス義勇装甲師団" value = light_armor when = 0 }\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = gain_tech which = -1 }		\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = gain_tech which = -1 }\r
+-	command = { type = steal_tech which = ENG }\r
+-	command = { type = steal_tech which = ENG }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦の終結 ― 義勇兵の凱旋\r
+-# イギリスはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。\r
+-# また「軍事顧問」と呼ばれる集団もイギリスから多数派遣された。\r
+-# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652111\r
+-	random = no\r
+-	country = ENG\r
+-\r
+-	trigger = {\r
+-	exists = SPR\r
+-	event = 2652022 # スペイン内戦 ― 勝利！（民主派）\r
+-	event = 2652110 # スペイン内戦 ― イギリスの介入（SPR）\r
+-	NOT = {\r
+-	OR = {\r
+-	war = { country = ENG country = SPA }\r
+-	war = { country = ENG country = SPR }\r
+-	war = { country = ENG country = ENG }\r
+-	war = { country = ENG country = ENG }\r
+-	war = { country = ENG country = FRA }\r
+-	war = { country = ENG country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652111_NAME"\r
+-	desc = "EVT_2652111_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # すばらしい！\r
+-	name = "ACTION_NAME_GREAT"\r
+-	command = { type = relation which = SPR value = 50 }\r
+-	command = { type = manpowerpool value = 8 }\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = gain_tech which = -1 } \r
+-	command = { type = gain_tech which = -1 } \r
+-	command = { type = money value = 250 }\r
+-	command	= { trigger = { local_flag = military_control_SPR } type = military_control which = ENG where = SPR }\r
+-	command	= { trigger = { local_flag = military_control_SPR } type = local_clrflag which = military_control_SPR }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スペイン内戦の終結 ― 義勇兵の帰国\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 2652112\r
+-	random = no\r
+-	country = ENG\r
+-\r
+-	trigger = {\r
+-	NOT = { exists = SPR } \r
+-	event = 2652023 # スペイン内戦 ― 勝利！（全体派）\r
+-	event = 2652110 # スペイン内戦 ― イギリスの介入（SPR）\r
+-	NOT = { \r
+-	OR = {\r
+-	war = { country = ENG country = SPA }\r
+-	war = { country = ENG country = SPR }\r
+-	war = { country = ENG country = ENG }\r
+-	war = { country = ENG country = ENG }\r
+-	war = { country = ENG country = FRA }\r
+-	war = { country = ENG country = USA }\r
+-	}\r
+-	}\r
+-	}\r
+-\r
+-	name = "EVT_2652112_NAME"\r
+-	desc = "EVT_2652112_DESC"\r
+-	style = 2\r
+-	picture = "scw"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK" \r
+-	command = { type = manpowerpool value = 3 }\r
+-	command = { trigger = { ai = no } type = dissent value = 1 }\r
+-	command = { type = gain_tech which = -2 } \r
+-	command = { type = money value = 250 }\r
+-	}\r
++#########################################################################
++#
++#		スペインイベント  by 横山大佐
++#########################################################################
++###### 追加イベント一覧 ############
++#########################################################################
++#id = 2652001 1936年選挙
++#id = 2652002 自由都市バルセロナ
++#id = 2652003 バスクの蠢動
++#id = 2652004 スペイン内戦
++#id = 2652005 スペイン内戦 ― スペイン人民戦線の成立
++#id = 2652006 スペイン内戦 ― 右派の分裂
++#id = 2652007 スペイン内戦 ― マドリード陥落（SPR）
++#id = 2652008 スペイン内戦 ― マドリード陥落（SPA）
++#id = 2652009 スペイン内戦 ― フランシスコ・フランコの権力掌握
++#id = 2652010 スペイン内戦 ― ゲルニカ爆撃（SPR）
++#id = 2652011 スペイン内戦 ― ゲルニカ爆撃（SPA）
++#id = 2652012 スペイン内戦 ― 国際旅団
++#id = 2652013 スペイン内戦 ― 国際旅団第一陣の到着
++#id = 2652014 スペイン内戦 ― 国際旅団第二陣の到着
++#id = 2652015 スペイン内戦 ― 国際旅団第三陣の到着
++#id = 2652016 スペイン内戦 ― 国際旅団第四陣の到着
++#id = 2652017 スペイン内戦 ― 国際旅団第五陣の到着
++#id = 2652018 スペイン内戦 ― ポルトガルの参戦（POR）
++#id = 2652019 スペイン内戦 ― ポルトガルの参戦（SPA）
++#id = 2652020 ポルトガル植民地の分解
++#id = 2652021 スペイン内戦 ― 国際旅団の撤退
++#id = 2652022 スペイン内戦 ― 勝利！（民主派）
++#id = 2652023 スペイン内戦 ― 勝利！（全体派）
++#id = 2652024 国際自由ヒスパニア
++#id = 2652025 ヒスパニア総選挙
++#id = 2652026 自治権の拡大
++#id = 2652027 フランスがドイツ帝国主義者との戦争に突入
++#id = 2652028 スペインの同盟提案
++#スペイン内戦義勇軍派遣イベント
++#id = 2652101 スペイン内戦 ― ロシアの介入（UER）
++#id = 2652102 スペイン内戦 ― ロシアの介入（SPA）
++#id = 2652103 スペイン内戦の終結 ― 義勇兵の凱旋（UER）
++#id = 2652104 スペイン内戦の終結 ― 義勇兵の帰国（UER）
++#id = 2652105 スペイン内戦 ― ドイツの介入（GER）
++#id = 2652106 スペイン内戦 ― ドイツの介入（SPA）
++#id = 2652107 スペイン内戦の終結 ― 義勇兵の凱旋（GER）
++#id = 2652108 スペイン内戦の終結 ― 義勇兵の帰国（GER）
++#id = 2652109 スペイン内戦 ― イギリスの介入（ENG）
++#id = 2652110 スペイン内戦 ― イギリスの介入（SPR）
++#id = 2652111 スペイン内戦の終結 ― 義勇兵の凱旋（ENG）
++#id = 2652112 スペイン内戦の終結 ― 義勇兵の帰国（ENG）
++#########################################################################
++#  1936年選挙
++#########################################################################
++event = {
++	id = 2052001
++	random = no
++	country = SPR
++	one_action = yes
++
++	name = EVT_2_NAME
++	desc = EVT_2_DESC
++	style = 2
++  	picture = "news_paper"
++
++	trigger = {
++	government = democratic
++	atwar = no
++	NOT = {
++	exists = SPA
++	}
++	}
++
++	date = { day = 16 month = 1 year = 1936 }
++
++	action_a = {
++	name = EVT_2_ACTA
++	command = { type = dissent value = 4 }
++	command = { type = set_domestic which = democratic value = 7 }
++	command = { type = set_domestic which = political_left value = 8 }
++	command = { type = headofstate which = 255012 } # アウグスト・バルシア・トレリェス
++	command = { type = headofgovernment which = 255032 } # サンティアゴ・カサレス・キロガ
++	command = { type = foreignminister which = 255061 } # マヌエル・アサニャ・ディアス
++	command = { type = armamentminister which = 255095 } # ホセ・ヒラル・ペレイラ
++	command = { type = ministerofsecurity which = 255138 } # サンティアゴ・カサレス・キロガ
++	command = { type = ministerofintelligence which = 255169 } # マヌエル・トレス・カンパーナ
++	command = { type = chiefofstaff which = 255200 } # セバスチアン・ポサス・ペレア
++	command = { type = chiefofarmy which = 255225 } # マヌエル・アサニャ・ディアス
++	command = { type = chiefofnavy which = 255248 } # ホセ・ヒラル・ペレイラ
++	command = { type = chiefofair which = 255264 } # フェリペ・ディアス・サンディノ
++	ai_chance = 100
++	}
++
++	action = {
++	name = EVT_2_ACTB
++	command = { type = dissent value = 4 }
++	command = { type = domestic which = democratic value = -1 }
++	command = { type = domestic which = political_left value = -1 }
++	ai_chance = 0
++	}
++}
++
++##########################################################################
++#  自由都市バルセロナ
++# 「バルセロナの様相には、何か目を見張らせる圧倒的なものがあった」
++# この言葉は、政治的分断が進みつつあるスペインを訪れたルポライター、ジョージ・オーウェル氏の言葉である。
++# 王党派、保守主義者の勢力が強い力を持つ地域も無論存在していたが、スペインの都市バルセロナでは夢想的社会主義者と無政府主義者たちによる統治が浸透しつつあった。
++# 街頭には赤旗、黒旗が掲げられ、兵士も民衆も上下の区別なく互いを『同志』と呼び合っている。
++# 国内には対立があり、経済的問題が人々を蝕み、店からは物資が少しずつ減りつつあったが、
++# 自由都市バルセロナには確かに、穏やかにして苛烈な革命の空気が漂いつつあった。
++###########################################################################
++event = {
++	id = 2652002
++	random = no
++	country = SPR
++	
++	trigger = {
++	NOT = {
++	exists = SPA
++	}
++	}
++
++	name = "EVT_2652002_NAME"
++	desc = "EVT_2652002_DESC"
++	style = 2
++	picture = "scw_barcelona"
++
++	date = { day = 5 month = 0 year = 1936 }
++
++	action = { # きっと革命は明日にでも成るであろう
++	name = "ACTIONNAME2652002A"
++	command = { type = dissent value = 1 }
++	command = { type = removecore which = 441 }
++	command = { type = removecore which = 444 }
++	command = { type = removecore which = 445 }
++	command = { type = removecore which = 447 }
++	command = { type = removecore which = 448 }
++	command = { type = removecore which = 449 }
++	command = { type = removecore which = 450 }
++	command = { type = removecore which = 451 }
++	command = { type = removecore which = 452 }
++	command = { type = addclaim which = 441 }
++	command = { type = addclaim which = 444 }
++	command = { type = addclaim which = 445 }
++	command = { type = addclaim which = 447 }
++	command = { type = addclaim which = 448 }
++	command = { type = addclaim which = 449 }
++	command = { type = addclaim which = 450 }
++	command = { type = addclaim which = 451 }
++	command = { type = addclaim which = 452 }
++	}
++}
++
++
++##########################################################################
++#  バスクの蠢動
++# バルセロナにおいて世界の急進的自由主義者の第二の故郷が生まれようとしている中、
++# アラゴンを挟み向こうに位置する大西洋沿いの地域、バスクにおいては急進的な民族主義の発達の傾向があった。
++# そもそもが自治と独立の要求を持つバスクは、カタルーニャ地方がアナキズムを基礎とした自由で解放的な
++# 思想の土壌となったのに対し、バスク地方はバスク民族の自治のみならず、反動的な政策を望み、カトリック教会と結託、
++# また現在の国王アルフォンソ十三世と、その腹心とされた軍人ミゲル・プリモ・デ・リベラの民族自治弾圧政策に抵抗するため、
++# カルリスタの王位請求者であるハビエル八世を支持する方針を固めている。
++# 折しもカトリック教会の総本山たるバチカンの地位と権威が危ぶまれる現時点においでカルリスタとその支持者である
++# バスク人たちは教会の権威を望む人々にとっての希望の星となりつつあり、
++# フランスやオーストリアの政治的混乱に失望したカトリック信者たちがバスク地方へ集う状態にまでなっている。
++###########################################################################
++event = {
++	id = 2652003
++	random = no
++	country = SPR
++	
++	trigger = {
++	NOT = {
++	exists = SPA
++	}
++	}
++
++	name = "EVT_2652003_NAME"
++	desc = "EVT_2652003_DESC"
++	style = 2
++	picture = "scw_Euskal"
++
++	date = { day = 8 month = 0 year = 1936 }
++
++	action = { # 革命反対！バスク独立万歳！！
++	name = "ACTIONNAME2652003A"
++	command = { type = dissent value = 1 }
++	command = { type = removecore which = 443 }
++	command = { type = removecore which = 446 }
++	command = { type = addclaim which = 443 }
++	command = { type = addclaim which = 446 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦
++# 1931年四月の自治体選挙において民主派が勝利し、ボルボーン朝アルフォンソ13世が退位すると、
++# 民主派・農民・労働者・知識人は当時のフランス・コミューンに影響を受けたコミューン政権発足を目指し始めた。
++# 当時スペイン国内に散在していた共産党、組合主義者、無政府主義者を始めとする革新政党をまとめ上げ、
++# 1936年2月16日の総選挙で右派を抑えて勝利し、挙国一致内閣を成立させた。
++# これに反対する軍部・右翼・地主・旧貴族・カトリック教会に加え、権威主義的体制を構築していたポルトガルの介入により、
++# ホセ・サンフルホやエミリオ・モラ、フランシス・フランコ将軍率いる反乱軍が蜂起を開始し、ここにスペイン内戦は開始された。
++###########################################################################
++
++event = {
++	id = 2652004
++	random = no
++	country = SPR
++	save_date = yes
++
++	trigger = {
++	NOT = {
++	exists = SPA
++	}
++	atwar = no
++	OR = {
++	government = communist
++	government = democratic
++	}
++	}
++
++	name = "EVT_2652004_NAME"
++	desc = "EVT_2652004_DESC"
++	style = 2
++  	picture = "scw"
++
++	date = { day = 16 month = 6 year = 1936 }
++
++	action = { # !No pasaran!（奴らを通すな！）
++	name = "ACTIONNAME2652004A"
++	command = { type = independence which = SPA value = 1 when = 0 }
++	#VP設定	
++	command = { trigger = { control = { province =  436  data = -3 }  } type = province_keypoints which = 436 value = 1 } # Tarragona   									
++	command = { trigger = { control = { province =  437  data = -3 }  } type = province_keypoints which = 437 value = 1 } # Gerona   									
++	command = { trigger = { control = { province =  438  data = -3 }  } type = province_keypoints which = 438 value = 1 } # Huesca   									
++	command = { trigger = { control = { province =  439  data = -3 }  } type = province_keypoints which = 439 value = 1 } # Lerida   									
++	command = { trigger = { control = { province =  442  data = -3 }  } type = province_keypoints which = 442 value = 1 } # Zaragoza   									
++	command = { trigger = { control = { province =  443  data = -3 }  } type = province_keypoints which = 443 value = 1 } # Bilbao   									
++	command = { trigger = { control = { province =  444  data = -3 }  } type = province_keypoints which = 444 value = 1 } # Oviedo   									
++	command = { trigger = { control = { province =  445  data = -3 }  } type = province_keypoints which = 445 value = 1 } # Santander   									
++	command = { trigger = { control = { province =  446  data = -3 }  } type = province_keypoints which = 446 value = 1 } # Pamplona   									
++	command = { trigger = { control = { province =  447  data = -3 }  } type = province_keypoints which = 447 value = 1 } # Salamanca   									
++	command = { trigger = { control = { province =  448  data = -3 }  } type = province_keypoints which = 448 value = 1 } # Leon   									
++	command = { trigger = { control = { province =  449  data = -3 }  } type = province_keypoints which = 449 value = 1 } # Vigo   									
++	command = { trigger = { control = { province =  450  data = -3 }  } type = province_keypoints which = 450 value = 1 } # Plasencia   									
++	command = { trigger = { control = { province =  451  data = -3 }  } type = province_keypoints which = 451 value = 1 } # Burgos   									
++	command = { trigger = { control = { province =  452  data = -3 }  } type = province_keypoints which = 452 value = 1 } # Segovia   									
++	command = { trigger = { control = { province =  453  data = -3 }  } type = province_keypoints which = 453 value = 1 } # Caceres   									
++	command = { trigger = { control = { province =  454  data = -3 }  } type = province_keypoints which = 454 value = 1 } # Tarancon   									
++	command = { trigger = { control = { province =  455  data = -3 }  } type = province_keypoints which = 455 value = 1 } # Guadalajara   									
++	command = { trigger = { control = { province =  456  data = -3 }  } type = province_keypoints which = 456 value = 1 } # Soria   									
++	command = { trigger = { control = { province =  457  data = -3 }  } type = province_keypoints which = 457 value = 1 } # Toledo   									
++	command = { trigger = { control = { province =  458  data = -3 }  } type = province_keypoints which = 458 value = 1 } # Badajoz   									
++	command = { trigger = { control = { province =  459  data = -3 }  } type = province_keypoints which = 459 value = 1 } # Teruel   									
++	command = { trigger = { control = { province =  461  data = -3 }  } type = province_keypoints which = 461 value = 1 } # Castellon de la Plana									
++	command = { trigger = { control = { province =  462  data = -3 }  } type = province_keypoints which = 462 value = 1 } # Alicante   									
++	command = { trigger = { control = { province =  463  data = -3 }  } type = province_keypoints which = 463 value = 1 } # Murcia   									
++	command = { trigger = { control = { province =  465  data = -3 }  } type = province_keypoints which = 465 value = 1 } # Albacete   									
++	command = { trigger = { control = { province =  466  data = -3 }  } type = province_keypoints which = 466 value = 1 } # Jaen   									
++	command = { trigger = { control = { province =  467  data = -3 }  } type = province_keypoints which = 467 value = 1 } # Cordoba   									
++	command = { trigger = { control = { province =  468  data = -3 }  } type = province_keypoints which = 468 value = 1 } # Ciudad Real  									
++	command = { trigger = { control = { province =  470  data = -3 }  } type = province_keypoints which = 470 value = 1 } # Granada   									
++	command = { trigger = { control = { province =  471  data = -3 }  } type = province_keypoints which = 471 value = 1 } # Malaga   									
++	command = { trigger = { control = { province =  472  data = -3 }  } type = province_keypoints which = 472 value = 1 } # Huelva   									
++	command = { trigger = { control = { province =  473  data = -3 }  } type = province_keypoints which = 473 value = 1 } # Cadiz   									
++
++	command = { type = relation which = ENG value = 10 }
++	command = { type = relation which = FRA value = 10 }
++	command = { type = relation which = SOV value = 5 }
++	command = { type = relation which = USA value = 5 }
++	command = { type = relation which = GER value = -15 }
++	command = { type = relation which = ITA value = -10 }
++	command = { type = relation which = POR value = -10 }
++	command = { type = dissent value = 3 }
++	command = { type = event which = 2652005 where = SPR when = 1 }
++	command = { type = event which = 2652006 where = SPA when = 1 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― スペイン人民戦線の成立
++# 1931年四月の自治体選挙において民主派が勝利し、ボルボーン朝アルフォンソ１３世が退位すると、
++# 民主派・農民・労働者・知識人は当時のフランス・コミューンに影響を受けたコミューン政権発足を目指し始めた。
++# 当時スペイン国内に散在していた共産党、組合主義者、無政府主義者を始めとする革新政党をまとめ上げ、
++# 1936年2月16日の総選挙で右派を抑えて勝利し、挙国一致内閣を成立させた。
++# これに反対する軍部・右翼・地主・旧貴族・カトリック教会に加え、権威主義的体制を構築していたポルトガルの介入により、
++# ホセ・サンフルホやエミリオ・モラ、フランシス・フランコ将軍率いる反乱軍が蜂起を開始し、ここにスペイン内戦は開始された。
++# 海軍・空軍が民主派に参加したのに対し、陸軍の大半は全体派に参加したため、スペイン共和国政府は陸軍力を欠く状態となった。
++###########################################################################
++
++event = {
++	id = 2652005
++	random = no
++	country = SPR
++
++	name = "EVT_2652005_NAME"
++	desc = "EVT_2652005_DESC"
++	style = 2
++  	picture = "scw"
++
++	action = { # !No pasaran!（奴らを通すな！）
++	name = "ACTIONNAME2652005A"
++	command = { type = secedeprovince which = SPA value = 441 }
++	command = { type = secedeprovince which = SPA value = 444 }
++	command = { type = secedeprovince which = SPA value = 445 }
++	command = { type = secedeprovince which = SPA value = 447 }
++	command = { type = secedeprovince which = SPA value = 448 }
++	command = { type = secedeprovince which = SPA value = 449 }
++	command = { type = secedeprovince which = SPA value = 450 }
++	command = { type = secedeprovince which = SPA value = 451 }
++	command = { type = secedeprovince which = SPA value = 452 }
++	command = { type = secederegion which = SPA value = Sahara } # Sahara
++	command = { type = secedearea which = SPA value = "Cameroonian Jungle" } #malabo, bata
++	#
++	command = { type = end_guarantee which = SPR where = FRA }
++	command = { type = end_guarantee which = FRA where = SPR }
++	command = { type = war which = SPA }
++	command = { type = name where = SPR which = スペイン（民主派） }
++	#
++	command = { type = set_domestic which = democratic value = 7 }
++	command = { type = set_domestic which = political_left value = 8 }
++	command = { type = set_domestic which = free_market value = 6 }
++	command = { type = set_domestic which = freedom value = 6 }
++	command = { type = set_domestic which = defense_lobby value = 4 }
++	command = { type = set_domestic which = interventionism value = 4 }
++	command = { type = headofstate which = 255012 } # アウグスト・バルシア・トレリェス
++	command = { type = headofgovernment which = 255032 } # サンティアゴ・カサレス・キロガ
++	command = { type = foreignminister which = 255061 } # マヌエル・アサニャ・ディアス
++	command = { type = armamentminister which = 255095 } # ホセ・ヒラル・ペレイラ
++	command = { type = ministerofsecurity which = 255138 } # サンティアゴ・カサレス・キロガ
++	command = { type = ministerofintelligence which = 255169 } # マヌエル・トレス・カンパーナ
++	command = { type = chiefofstaff which = 255200 } # セバスチアン・ポサス・ペレア
++	command = { type = chiefofarmy which = 255225 } # マヌエル・アサニャ・ディアス
++	command = { type = chiefofnavy which = 255248 } # ホセ・ヒラル・ペレイラ
++	command = { type = chiefofair which = 255264 } # フェリペ・ディアス・サンディノ
++	#
++	command = { type = add_division which = "第11戦闘航空隊" value = interceptor when = 6 }
++	command = { type = add_division which = "第5爆撃航空隊" value = tactical_bomber when = 4 }
++	command = { type = add_corps which = "CNT民兵師団" value = land where = 440 } #バルセロナ
++	command = { type = add_division which = "CNT民兵師団" value = militia when = 5 }
++	command = { type = add_corps which = "POUM民兵師団" value = land where = 464 } #バレンシア
++	command = { type = add_division which = "POUM民兵師団" value = militia when = 5 }
++	command = { type = add_corps which = "第2騎兵旅団" value = land where = 455 } #グアダラハラ
++	command = { type = add_division which = "第2騎兵旅団" value = cavalry when = 6 } 
++	command = { type = add_corps which = "第3軍" value = land where = 457 } #トレド
++	command = { type = add_division which = "第27師団" value = infantry when = 6 }
++	command = { type = add_division which = "第28師団" value = infantry when = 6 }
++	command = { type = add_division which = "第45師団" value = infantry when = 6 } 
++	command = { type = add_corps which = "第4軍" value = land where = 470 } #グラナダ
++	command = { type = add_division which = "第39師団" value = infantry when = 6 }
++	command = { type = add_division which = "第42師団" value = infantry when = 6 }	
++	command = { type = add_corps which = "レバンテ軍" value = land where = 461 }			
++	command = { type = add_division which = "第41師団" value = infantry when = 6 }
++	command = { type = add_division which = "第64師団" value = infantry when = 6 }
++	command = { type = add_corps which = "北部軍" value = land where = 443 } #ビルバオ
++	command = { type = add_division which = "第40師団" value = infantry when = 6 }
++	command = { type = add_division which = "第35師団" value = infantry when = 6 }
++	command = { type = add_division which = "第46師団" value = infantry when = 6 }
++	command = { type = add_corps which = "第47師団" value = land where = 459 } #テルエル
++	command = { type = add_division which = "第47師団" value = infantry when = 6 }
++	command = { type = add_corps which = "第5軍" value = land where = 458 } #バダホス
++	command = { type = add_division which = "第48師団" value = militia when = 5 }
++	command = { type = add_division which = "第49師団" value = militia when = 5 }
++	command = { type = add_division which = "第50師団" value = militia when = 5 }
++	command = { type = add_corps which = "中央軍" value = land where = 460 } #マドリード
++	command = { type = add_division which = "第34師団" value = infantry when = 6 } 
++	command = { type = add_division which = "第70師団" value = infantry when = 6 } 
++	command = { type = add_division which = "第72師団" value = infantry when = 6 }
++	command = { type = add_division which = "第11師団" value = infantry when = 6 }
++	command = { type = add_division which = "第25師団" value = infantry when = 6 }
++	#
++	command = { type = add_core_region which = "Spain" where = SPR } 
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― 右派の分裂
++# スペイン内戦において全体派と称された人々は主にバスク地方でバスクの自治と独立を望んだバスク人、
++# 彼らが支持するハビエル八世とその支持者であるカトリック信者の人々。
++# エミリオ・モラ将軍と彼を支持する陸軍軍人たち。
++# ホセ・サンフルホ将軍と彼を支持する軍人たち。
++# また、モロッコの兵士を動員し彼らからの支持を集めるフランシスコ・フランコ将軍。
++# 人民戦線と同様にスペイン内戦の片方の当事者たる全体派の人々にも複数の派閥が存在していたのである。
++# その中で、バスク人らに目をつけたフランシスコ・フランコは、その背景にあるフランス政府からの支援や、
++# 民間業者に偽装した英国海軍の支援を受けており、今後の情勢次第では一挙にスペイン全体派勢力の権力を握る可能性がある。
++###########################################################################
++
++event = {
++	id = 2652006
++	random = no
++	country = SPA
++
++	name = "EVT_2652006_NAME"
++	desc = "EVT_2652006_DESC"
++	style = 2
++	picture = "scw"
++
++	action = { # 戦後の皮算用か?目敏いことだ
++	name = "ACTIONNAME2652006A"
++	command = { type = secedeprovince which = SPR value = 467 }
++	command = { type = secedeprovince which = SPR value = 474 }
++	command = { type = dissent value = 10 }
++	command = { type = name where = SPA which = スペイン（全体派） }
++	command = { type = set_domestic which = democratic value = 4 }
++	command = { type = set_domestic which = political_left value = 3 }
++	command = { type = set_domestic which = free_market value = 4 }
++	command = { type = set_domestic which = freedom value = 4 }
++	command = { type = set_domestic which = defense_lobby value = 5 }
++	command = { type = set_domestic which = interventionism value = 2 }
++	command = { type = headofstate which = 35183 } # エミリオ・モラ・ビダル
++	command = { type = headofgovernment which = 35015 } # エミリオ・モラ・ビダル
++	command = { type = foreignminister which = 35022 } # フランシスコ・ゴメス=ホルダナ・イ・ソウサ
++	command = { type = armamentminister which = 35047 } # ホセ・デ・アレイルサ・イ・マルチネス=ロダス
++	command = { type = ministerofsecurity which = 35083 } # トマス・ガルシアノ・ゴニ
++	command = { type = ministerofintelligence which = 35101 } # ホセ・ウングリア・ヒメネス
++	command = { type = chiefofstaff which = 35117 } # フランシスコ・フランコ・バーモンデ
++	command = { type = chiefofarmy which = 35008 } # エミリオ・モラ・ビダル
++	command = { type = chiefofnavy which = 35146 } # カルロス・バレダ・テリー 
++	command = { type = chiefofair which = 35159 } # ラモン・フランコ・バーモンデ
++	command = { type = sleepminister which = 35121 } # ホセ・サンフルホ・サカネル
++	command = { type = sleepminister which = 35137 }
++	command = { type = sleepminister which = 35184 }
++	command = { type = sleepminister which = 35186 }
++	command = { type = sleepleader which = 35061 }
++	#
++	command = { type = money value = 30 } 
++	command = { type = supplies value = 500 }
++	command = { type = oilpool value = 2500 }
++	command = { type = metalpool value = 2500 }
++	command = { type = energypool value = 5000 }
++	command = { type = rarematerialspool value = 2500 }
++	command = { type = manpowerpool value = 200 }
++	#
++	command = { type = addclaim which = 715 } #Tanger 
++	command = { type = addclaim which = 716 } #Nador
++	command = { type = addclaim which = 987 } #El Aiun 
++	command = { type = addclaim which = 988 } #Villa Cisneros
++	command = { type = addclaim which = 989 } #Villa Bens
++	command = { type = addclaim which = 913 } #Bata
++	command = { type = addclaim which = 916 } #Malabo
++	#
++	command = { type = add_division which = "第1ファランヘ党民兵師団" value = militia when = 5 }
++	command = { type = add_division which = "第2ファランヘ党民兵師団" value = militia when = 5 }
++	command = { type = add_division which = "第11師団" value = infantry when = 6 }
++	command = { type = add_division which = "第12師団" value = infantry when = 6 }
++	command = { type = add_division which = "第13師団" value = infantry when = 6 }
++	command = { type = add_division which = "第21師団" value = infantry when = 6 }
++	command = { type = add_division which = "第22師団" value = infantry when = 6 }
++	command = { type = add_division which = "第23師団" value = infantry when = 6 }
++	command = { type = add_division which = "第31師団" value = infantry when = 6 }
++	command = { type = add_division which = "第1バスク民族師団" value = infantry when = 6 }
++	command = { type = add_division which = "第2バスク民族師団" value = militia when = 5 }
++	command = { type = add_corps which = "義勇旅団" value = land where = 474 } 
++	command = { type = add_division which = "イギリス反共義勇旅団" value = militia when = 5 }
++	command = { type = add_division which = "アイルランド反共義勇旅団" value = militia when = 5 }
++	command = { type = add_corps which = "南部軍" value = land where = 467 } 
++	command = { type = add_division which = "第32師団" value = infantry when = 6 }
++	command = { type = add_division which = "モロッコ師団" value = infantry when = 6 }
++	command = { type = add_division value = interceptor when = 5 }
++	command = { type = add_division value = tactical_bomber when = 4 }
++	command = { type = add_division value = transport when = 0 }
++	command = { type = add_division value = transport when = 0 }
++	command = { type = add_division value = transport when = 0 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― マドリード陥落（SPR）
++# スペイン内戦において、マドリードを巡る戦いは重要な戦いの一つになった。
++# 民主派と全体派は、マドリードを支配するべく、多くの兵力をを投じだ。
++# 最終的に全体派の攻勢によって、マドリードは陥落した。
++###########################################################################
++
++event = {
++	id = 2652007
++	random = no
++	country = SPR
++
++	trigger = {
++	exists = SPA
++	war = { country = SPR country = SPA }
++	control = { province = 460 data = SPA } # マドリッド
++	}
++
++	name = "EVT_2652007_NAME"
++	desc = "EVT_2652007_DESC"
++	style = 2
++	picture = "Spanish_Civil_War"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 7
++	deathdate = { day = 29 month = 11 year = 1963 }
++
++	action = { # 防衛線を立て直す必要がある
++	name = "ACTIONNAME2652007A"
++	command = { type = dissent value = 5 }
++	command = { type = event which = 2652008 where = SPA when = 0 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― マドリード陥落（SPA）
++# スペイン内戦において、マドリードを巡る戦いは重要な戦いの一つになった。
++# 民主派と全体派は、マドリードを支配するべく、多くの兵力を投じだ。
++# 最終的に全体派の攻勢によって、マドリードを占拠。
++# この戦いにおいて活躍したフランシスコ・フランコと彼の部隊は全体派内部における地位が高まり、
++# 徐々に指揮系統自体をフランコ将軍が握るようになっていった。
++###########################################################################
++
++event = {
++	id = 2652008
++	random = no
++	country = SPA
++
++	name = "EVT_2652008_NAME"
++	desc = "EVT_2652008_DESC"
++	style = 2
++	picture = "Spanish_Civil_War"
++
++	action = { # Hemos pasado（我々は押し通した）
++	name = "ACTIONNAME2652008A"
++	command = { type = dissent value = -5 }
++	command = { type = event which = 2652009 where = SPA when = 30 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― フランシスコ・フランコの権力掌握
++# マドリード攻略戦を成功させたフランコ将軍は、バスク地方の民族主義者と手を結んだ。
++# スペイン内戦が続く現時点で、カタロニアはアナキストの聖地と化しており、この地域を再度統合するためにはバスク人らを抱き込む必要があった。
++# また、戦果に恵まれないエミリオ・モラ将軍やホセ・サンフルホ将軍らが権力掌握に動こうとしている現状があり、
++# そうした状況を見れば、フランコ将軍の選択もあり得ることだろう。
++# これに応じたバスク人の代表者であるホセ・アントニオ・アギーレは内戦終結後のバスク州の独自の地位の保障に加え、カルリスタ王位請求者第一位であるハビエル8世の即位を要求。
++# フランコ将軍はこれを承諾し、戦後スペインの構造が今ここに確立されることとなった。
++###########################################################################
++
++event = {
++	id = 2652009
++	random = no
++	country = SPA
++
++	name = "EVT_2652009_NAME"
++	desc = "EVT_2652009_DESC"
++	style = 2
++	picture = "Carlista"
++
++	action = { # 諸君らはいつも内ゲバで忙しいんだな?
++	name = "ACTIONNAME2652009A"
++	command = { }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― ゲルニカ爆撃（SPR）
++# 悲劇的な事件が起きた！
++# スペイン全体派に参加したドイツ人義勇軍『コンドル軍団』によってバスク地方の都市ゲルニカに大規模な空爆が行われ、同都市は廃墟と化した！
++# この爆撃を主導した軍人はヴォルフラム・フォン・リヒトホーフェンであり、ドイツ軍側では『リューゲン作戦』と呼称されている。
++# 爆撃による死傷者の数は夥しいものであり、その残虐性に罪悪感を覚える人々がドイツ軍側にも存在するほどであったが、同揮官は以下の言葉を残している。
++# 「我々は多くの家と水道を破壊した。焼夷弾がその威力を示す時が来た。
++# 瓦葺で木組みという建築構造は、完全な破壊をもたらした。
++# 街路には爆弾の穴がまだ見える。素晴らしい！」
++###########################################################################
++
++event = {
++	id = 2652010
++	random = no
++	country = SPR
++
++	trigger = {
++	exists = SPA
++	war = { country = SPR country = SPA }
++	control = { province = 443 data = SPR } # ビルバオ
++	event = { id = 2652004 days = 90 } # スペイン内戦
++	}
++
++	name = "EVT_2652010_NAME"
++	desc = "EVT_2652010_DESC"
++	style = 2
++	picture = "ccip_unrest"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 7
++	deathdate = { day = 29 month = 11 year = 1963 }
++
++	action = { # 何ということだ！
++	name = "ACTIONNAME2652010A"
++	command = { type = dissent value = 1 }
++	command = { type = construct which = infrastructure where = 443 value = -10 }
++	command = { type = event which = 2652011 where = SPA when = 0 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― ゲルニカ爆撃（SPA）
++###########################################################################
++
++event = {
++	id = 2652011
++	random = no
++	country = SPA
++
++	name = "EVT_2652010_NAME"
++	desc = "EVT_2652010_DESC"
++	style = 2
++	picture = "ccip_unrest"
++
++	action = { # 何ということだ！
++	name = "ACTIONNAME2652010A"
++	command = { type = dissent value = 1 }
++	command = { type = belligerence which = SPA value = 2 }
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― 国際旅団
++# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。
++# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、
++# 既にその予兆が見られる第二次世界大戦のスケールモデルであると人々が考えたためである。
++# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。
++#########################################################################
++
++event = {
++	id = 2652012
++	persistent = yes
++	TAG = { ENG FRA AUS HUN GER UER ITA U21 SER POL CAN USA U00 U38 IRE CZE MEX SWE U27 }
++	
++	trigger = {
++	NOT = { local_flag = International_Brigade }
++	NOT = { war = { country = SPA } }
++	NOT = { war = { country = SPR } }
++	war = { country = SPA country = SPR }
++	}
++
++	name = "EVT_2652012_NAME"
++	desc = "EVT_2652012_DESC"
++	style = 2
++  	picture = "Brigadas_Internacionales"
++
++	date = { day = 5 month = 1 year = 1936 }
++	offset = 1
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 多数の人間がスペインへ旅立った
++	name = "ACTIONNAME2652012A"
++	command = { trigger = { government = fascist } type = dissent value = 1 }
++	command = { trigger = { government = democratic } type = dissent value = -2 }
++	command = { trigger = { government = communist } type = dissent value = -1 }
++	command = { trigger = { government = fascist } type = relation which = SPR value = -20 }
++	command = { trigger = { government = democratic } type = relation which = SPR value = 20 }
++	command = { trigger = { government = communist } type = relation which = SPR value = 10 }
++	command = { trigger = { government = fascist } type = relation which = SPA value = 20 }
++	command = { trigger = { government = democratic } type = relation which = SPA value = -20 }
++	command = { trigger = { government = communist } type = relation which = SPA value = -10 }
++	command = { type = local_setflag which = International_Brigade }
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― 国際旅団第一陣の到着
++# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。
++# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、
++# 既にその予兆が見られる第二次世界大戦のスケールモデルであると人々が考えたためである。
++# とくにイギリスの革新派の人々と、フランスの自由主義者たちはこの戦争にこぞって参加する態度を見せ、
++# 多数の人々がイベリア半島に訪れ、組織化された上で戦争に身を投じた。
++# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。
++#########################################################################
++
++event = {
++	id = 2652013
++	random = no
++	country = SPR
++	
++	trigger = {
++	war = { country = SPA country = SPR }
++	random = 20
++	}
++
++	name = "EVT_2652013_NAME"
++	desc = "EVT_2652013_DESC"
++	style = 2
++  	picture = "Brigadas_Internacionales"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 9
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 我々は孤独ではない！
++	name = "ACTIONNAME2652013A"
++	command = { type = manpowerpool value = 5 }
++	command = { type = supplies value = 100 }
++	command = { type = relation which = ENG value = 20 }
++	command = { type = relation which = FRA value = 20 }
++	command = { type = add_division which = "ガイ・フォークス隊" value = militia when = 5 where = -40 }
++	command = { type = add_division which = "コミューン・ド・パリ隊" value = militia when = 5 where = -40 }
++	command = { type = add_division which = "ラ・マルセイエーズ隊" value = militia when = 5 where = -40 }
++	command = { type = wakeleader which = 255201 }
++	command = { type = wakeleader which = 255202 }
++	command = { type = waketeam which = 255102 }
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― 国際旅団第二陣の到着
++# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。
++# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、既にその予兆が見られる第二次世界大戦の
++# スケールモデルであると人々が考えたためである。
++# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。
++#########################################################################
++
++event = {
++	id = 2652014
++	random = no
++	country = SPR
++	
++	trigger = {
++	event = 2652013 # スペイン内戦 ― 国際旅団第一陣の到着
++	war = { country = SPA country = SPR }
++	random = 20
++	}
++
++	name = "EVT_2652014_NAME"
++	desc = "EVT_2652014_DESC"
++	style = 2
++  	picture = "Brigadas_Internacionales"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 9
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 我々は孤独ではない！
++	name = "ACTIONNAME2652014A"
++	command = { type = manpowerpool value = 5 }
++	command = { type = supplies value = 100 }
++	command = { type = relation which = U21 value = 20 }
++	command = { type = relation which = AUS value = -20 }
++	command = { type = relation which = GER value = -20 }
++	command = { type = relation which = ITA value = -20 }
++	command = { type = relation which = UER value = -20 }
++	command = { type = add_division which = "ハンス・バイムラー隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "エルンスト・テールマン隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "ガリバルディ隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "レーニン隊" value = militia when = 4 where = -40 }
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― 国際旅団第三陣の到着
++#########################################################################
++
++event = {
++	id = 2652015
++	random = no
++	country = SPR
++	
++	trigger = {
++	event = 2652014 # スペイン内戦 ― 国際旅団第二陣の到着
++	war = { country = SPA country = SPR }
++	random = 20
++	}
++
++	name = "EVT_2652015_NAME"
++	desc = "EVT_2652014_DESC"
++	style = 2
++  	picture = "Brigadas_Internacionales"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 9
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # もはや我々の部隊の三分の一は、外国人である
++	name = "ACTIONNAME2652015A"
++	command = { type = manpowerpool value = 5 }
++	command = { type = supplies value = 100 }
++	command = { type = relation which = SER value = -20 }
++	command = { type = relation which = POL value = -20 }
++	command = { type = add_division which = "ディミトロフ隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "ドンブロフスキ隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "ミツキエービッチ隊" value = militia when = 4 where = -40 }
++	command = { type = wakeleader which = 255203 }
++	command = { type = wakeleader which = 255204 }
++	command = { type = wakeleader which = 255205 }
++	command = { type = wakeleader which = 255206 }
++	command = { type = wakeleader which = 255207 }
++	command = { type = waketeam which = 255101 }
++	}
++}
++
++
++
++#########################################################################
++#  スペイン内戦 ― 国際旅団第四陣の到着
++#########################################################################
++
++event = {
++	id = 2652016
++	random = no
++	country = SPR
++	
++	trigger = {
++	event = 2652015 # スペイン内戦 ― 国際旅団第三陣の到着
++	war = { country = SPA country = SPR }
++	random = 20
++	}
++
++	name = "EVT_2652016_NAME"
++	desc = "EVT_2652014_DESC"
++	style = 2
++  	picture = "Brigadas_Internacionales"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 9
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 一体何人の兵士が来ると言うのだ？
++	name = "ACTIONNAME2652016A"
++	command = { type = manpowerpool value = 5 }
++	command = { type = supplies value = 100 }
++	command = { type = relation which = CAN value = -20 }
++	command = { type = relation which = USA value = -20 }
++	command = { type = relation which = U38 value = 20 }
++	command = { type = relation which = U00 value = 20 }
++	command = { type = relation which = IRE value = 20 }
++	command = { type = relation which = CZE value = 20 }
++	command = { type = relation which = MEX value = 20 }
++	command = { type = add_division which = "マッケンジー・パピノー隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "ジョージ・ワシントン隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "ジェームズ・コノリー隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "シモン・ボリバル隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "ヤン・マサリク隊" value = militia when = 4 where = -40 }
++	command = { type = add_division which = "モランディ隊" value = militia when = 4 where = -40 }
++	}
++}
++
++
++#########################################################################
++#  スペイン内戦 ― 国際旅団第五陣の到着
++# スペイン内戦が勃発すると、世界中の人々はこの戦争に注目した。
++# 革新派とそれに抵抗する保守勢力によって起こったこの内戦は、既にその予兆が見られる第二次世界大戦の
++# スケールモデルであると人々が考えたためである。
++# こうした経緯から結成された外国人義勇兵による部隊は後に『国際旅団』と呼び知らされるようになる。
++# その中でも特筆すべき貢献を行ったのは、元スウェーデン人カール・グスタフ・フォン・ローゼンとフランス人アンドレ・マルローである。
++# 両者は航空機に明るく、スペイン内戦に参加するにあたり、欧州に存在していた軍用機・民間機をかき集め、内戦へ参加した。
++#########################################################################
++
++event = {
++	id = 2652017
++	random = no
++	country = SPR
++	
++	trigger = {
++	event = 2652016 # スペイン内戦 ― 国際旅団第四陣の到着
++	war = { country = SPA country = SPR }
++	random = 20
++	}
++
++	name = "EVT_2652017_NAME"
++	desc = "EVT_2652017_DESC"
++	style = 2
++  	picture = "Brigadas_Internacionales"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 9
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # とうとう航空機まで来てしまった！
++	name = "ACTIONNAME2652017A"
++	command = { type = manpowerpool value = 2 }
++	command = { type = supplies value = 500 }
++	command = { type = oilpool value = 150 }
++	command = { type = relation which = SWE value = -20 }
++	command = { type = relation which = U21 value = 20 }
++	command = { type = relation which = FRA value = 20 }
++	command = { type = add_division which = "リベルテ隊" value = interceptor when = 6 }
++	command = { type = add_division which = "エガリテ隊" value = tactical_bomber when = 5 }
++	command = { type = add_division which = "フラテルニテ隊" value = transport_plane when = 0 }
++	command = { type = wakeleader which = 255208 }
++	command = { type = wakeleader which = 255209 }
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― ポルトガルの参戦（POR）
++# 1931年4月の自治体選挙において民主派が勝利し、ボルボーン朝アルフォンソ13世が退位すると、民主派・農民・労働者・知識人は
++# 当時のフランス・コミューンに影響を受けたコミューン政権発足を目指し始めた。
++# スペイン国内に散在していた共産党、組合主義者、無政府主義者を始めとする革新政党をまとめ上げ、
++# 1936年2月16日の総選挙で右派を抑えて勝利し、挙国一致内閣を成立させた。
++# これに反対する軍部・右翼・地主・旧貴族・カトリック教会に加え、権威主義的体制を構築していたポルトガルの介入により、
++# ホセ・サンフルホやエミリオ・モラ、フランシス・フランコ将軍率いる反乱軍が蜂起を開始し、ここにスペイン内戦は開始された。
++# 隣国のポルトガルに成立していたサラザールによる独裁政権は、民主派の背後にフランスの存在があると考え、全体派側で参戦した。
++#########################################################################
++
++event = { 
++	id = 2652018
++	random = no
++	country = POR
++	
++	trigger = {
++	war = { country = SPA country = SPR }
++	event = 2652006
++	NOT = {
++	OR = {
++	# government = fascist
++	alliance = { country = ENG country = SPR }
++	alliance = { country = POR country = SPA }
++	war = { country = POR country = SPA }
++	war = { country = POR country = UER }
++	war = { country = POR country = GER }
++	war = { country = POR country = USA }
++	war = { country = POR country = FRA }
++	}
++	}
++	}
++	
++	name = "EVT_2652018_NAME"
++	desc = "EVT_2652018_DESC"
++	style = 2
++	picture = "scw"
++	
++	date = { day = 19 month = july year = 1936 }
++	offset = 5
++	deathdate = { day = 29 month = december year = 1963 }
++
++	action = { # 社会主義者を打倒せよ！
++	name = "ACTIONNAME2652018A"
++	command = { type = non_aggression which = POR where = SPA }
++	command = { trigger = { ai = no } type = dissent value = 5 }
++	command = { trigger = { ai = yes } type = dissent value = 50 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = relation which = SPA value = 30 }
++	command = { type = relation which = SPR value = -50 }
++	command = { type = relation which = FRA value = -10 }
++	command = { type = relation which = ENG value = -15 }
++	command = { type = relation which = UER value = 10 }
++	command = { type = relation which = GER value = 10 }
++	command = { type = money value = -100 }
++	command = { type = trigger which = 2652019 }
++	command = { type = belligerence which = POR value = 3 }
++	ai_chance = 100
++	}
++
++	action = { # イベリアを我が手に！
++	name = "ACTIONNAME2652018B"
++	command = { type = war which = SPA }
++	command = { type = war which = SPR }
++	command = { trigger = { ai = no } type = dissent value = 10 }
++	command = { trigger = { ai = yes } type = dissent value = 50 }
++	command = { type = domestic which = interventionism value = 2 }
++	command = { type = relation which = SPA value = -200 }
++	command = { type = relation which = SPR value = -200 }
++	command = { type = relation which = FRA value = -50 }
++	command = { type = relation which = ENG value = -50 }
++	command = { type = relation which = SOV value = -50 }
++	command = { type = relation which = GER value = -25 }
++	command = { type = belligerence which = POR value = 10 }
++	ai_chance = 0
++	}
++
++	action = { # 参戦？とんでもない！
++	name = "ACTIONNAME2652018C"
++	command = { trigger = { ai = no } type = dissent value = 30 }
++	command = { trigger = { ai = yes } type = dissent value = 50 }
++	command = { type = domestic which = interventionism value = -1 }
++	command = { type = relation which = SPA value = 5 }
++	command = { type = relation which = SPR value = 5 }
++	command = { type = belligerence which = POR value = -1 }
++	ai_chance = 0
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― ポルトガルの参戦（SPA）
++#########################################################################
++
++event = {
++	id = 2652019
++	random = no
++	country = SPA
++
++	name = "EVT_2652018_NAME"
++	desc = "EVT_2652018_DESC"
++  	style = 2
++  	picture = "Corpo_truppe_Volontarie"
++	
++	action = {
++	name = "ACTION_NAME_ACCEPT" 
++	command = { type = relation which = POR value = 20 }
++	command = { type = alliance which = POR when = 1 }
++	ai_chance = 100
++	}
++
++	action = {
++	name = "ACTION_NAME_REFUSE"
++	command = { type = relation which = POR value = -5 }
++	ai_chance = 0
++	}
++}
++
++
++#########################################################################
++#  ポルトガル植民地の分解
++# ポルトガルは本土を戦争で失ったことで、各地にあった植民地は周辺国に奪われるか、独立してしまった。
++#########################################################################
++
++event = { 
++	id = 2652020
++	random = no
++	country = POR
++	
++	trigger = {
++	atwar = yes
++	OR = { 
++	region = { region = "Portugal" country = POR data = -2 value = 20 }
++	NOT = { control = { province = 476 data = POR } }
++	dissent = 50
++	}
++	}
++	
++	name = "EVT_2652020_NAME"
++	desc = "EVT_2652020_DESC"
++	style = 2
++	picture = "Civi_War_Win"
++	
++	date = { day = 19 month = july year = 1936 }
++	offset = 5
++	deathdate = { day = 29 month = december year = 1963 }
++
++	action = { # もはや終わりが近い…
++	name = "ACTIONNAME2652020A"
++	command = { type = non_aggression which = POR where = SPA }
++	command = { type = dissent value = 10 }
++	command = { trigger = { NOT = { exists = ANG } } type = independence which = ANG value = 1 when = 1 }
++	command = { trigger = { NOT = { exists = MOZ } } type = independence which = MOZ value = 1 when = 1 }
++	command = { type = secedearea which = ANG value = "Angolan Plains" when = 1 }
++	command = { type = secedearea which = ANG value = "Angolan Coast" when = 1 }
++	command = { type = secedearea which = MOZ value = "Niassa" when = 1 }
++	command = { type = secedearea which = MOZ value = "Mocambique" when = 1 }
++	command = { type = secedeprovince which = GER value = 992 when = 1 }
++	command = { type = secedeprovince which = GER value = 963 when = 1 }
++	command = { type = secedeprovince which = U02 value = 1513 when = 1 }
++	command = { type = secedeprovince which = IND value = 1513 when = 1 }
++	command = { type = secedeprovince which = CHI value = 1372 when = 1 }
++	command = { type = secedeprovince which = U05 value = 1617 when = 1 }
++	command = { type = secedeprovince which = INO value = 1617 when = 1 }
++	ai_chance = 100
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― 国際旅団の撤退
++# スペイン内戦が最終局面に到達すると、世界中から参加した国際旅団の人々がスペイン国粋派の魔の手から逃れるため、帰還を決定した。
++# その帰路は英国政府が手配した輸送艦と軍艦によって保護されることが決定し、人々は革命家の第二の故郷・バルセロナを後にし、
++# ビスケー湾から大西洋を渡り、英国本土へ撤退した……。
++#########################################################################
++
++event = {
++	id = 2652021
++	random = no
++	country = SPR
++	
++	trigger = {
++	OR = {
++	event = 2652013 # スペイン内戦 ― 国際旅団第一陣の到着
++	event = 2652014 # スペイン内戦 ― 国際旅団第二陣の到着
++	event = 2652015 # スペイン内戦 ― 国際旅団第三陣の到着
++	event = 2652016 # スペイン内戦 ― 国際旅団第四陣の到着
++	event = 2652017 # スペイン内戦 ― 国際旅団第五陣の到着
++	}
++	war = { country = SPA country = SPR }
++	lost_national = { country = SPR value = 80 }
++	}
++
++	name = "EVT_2652021_NAME"
++	desc = "EVT_2652021_DESC"
++	style = 2
++  	picture = "Brigadas_Internacionales"
++
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 9
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 諸君らは偉大な人々であった。それは間違いないことだ
++	name = "ACTIONNAME2652021A"
++	command = { type = dissent value = 5 }
++	command = { type = remove_division which = "ガイ・フォークス隊" value = SPR }
++	command = { type = remove_division which = "コミューン・ド・パリ隊" value = SPR }
++	command = { type = remove_division which = "ラ・マルセイエーズ隊" value = SPR }
++	command = { type = remove_division which = "ハンス・バイムラー隊" value = SPR }
++	command = { type = remove_division which = "エルンスト・テールマン隊" value = SPR }
++	command = { type = remove_division which = "ガリバルディ隊" value = SPR }
++	command = { type = remove_division which = "レーニン隊" value = SPR }
++	command = { type = remove_division which = "ディミトロフ隊" value = SPR }
++	command = { type = remove_division which = "ドンブロフスキ隊" value = SPR }
++	command = { type = remove_division which = "ミツキエービッチ隊" value = SPR }
++	command = { type = remove_division which = "マッケンジー・パピノー隊" value = SPR }
++	command = { type = remove_division which = "ジョージ・ワシントン隊" value = SPR }
++	command = { type = remove_division which = "ジェームズ・コノリー隊" value = SPR }
++	command = { type = remove_division which = "シモン・ボリバル隊" value = SPR }
++	command = { type = remove_division which = "ヤン・マサリク隊" value = SPR }
++	command = { type = remove_division which = "モランディ隊" value = SPR }
++	command = { type = remove_division which = "リベルテ隊" value = SPR }
++	command = { type = remove_division which = "エガリテ隊" value = SPR }
++	command = { type = remove_division which = "フラテルニテ隊" value = SPR }
++	command = { type = sleepleader which = 255201 }
++	command = { type = sleepleader which = 255202 }
++	command = { type = sleepleader which = 255203 }
++	command = { type = sleepleader which = 255204 }
++	command = { type = sleepleader which = 255205 }
++	command = { type = sleepleader which = 255206 }
++	command = { type = sleepleader which = 255207 }
++	command = { type = sleepleader which = 255208 }
++	command = { type = sleepleader which = 255209 }
++	command = { type = sleepteam which = 255101 }
++	command = { type = sleepteam which = 255102 }
++	}
++}
++
++#########################################################################
++#  スペイン内戦 ― 勝利(民主派）
++# スペイン内戦は当初、全体派に参加する陸軍部隊の多さから民主派が不利であると考えられていた。
++# しかし、不足していた陸軍力は様々な国から自主的に来訪した義勇軍部隊によって補填され、数の上で同等となった。
++# 最後はスペイン内戦は当初の下馬評を覆し、民主派は全体派の戦力を壊滅させ、勝利を収めることに成功した。
++#########################################################################
++event = {
++	id = 2652022
++	random = no
++	country = SPR
++ 
++	trigger = {
++	owned = { province = 460 data = SPR } # マドリッド
++	event = 2652004
++	NOT = { 
++	exists = SPA 
++	event = 2652023 # スペイン内戦 ― 勝利(全体派）
++	war = { country = POR }
++	}
++	}
++
++	name = "EVT_2652022_NAME" 
++	desc = "EVT_2652022_DESC"
++	style = 2
++	picture = "scw"
++	
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1963 }
++
++	action = { # 彼らは最後まで我々に押し止められたのだ！
++	name = "ACTIONNAME2652022A"
++	command = { type = name where = SPR }
++	command = { type = capital which = 460 }
++	command = { type = remove_division which = "ロシア義勇装甲師団" value = SPR }
++	command = { type = remove_division which = "ロシア義勇歩兵師団" value = SPR }
++	command = { type = remove_division which = "ロシア義勇戦闘隊" value = SPR }
++	command = { type = remove_division which = "ロシア義勇爆撃隊" value = SPR }
++	command = { type = remove_division which = "コンドル爆撃航空隊" value = SPR }
++	command = { type = remove_division which = "コンドル軍団司令部" value = SPR }
++	command = { type = remove_division which = "イムカー戦闘団" value = SPR }
++	command = { type = remove_division which = "イギリス義勇爆撃航空隊" value = SPR }
++	command = { type = remove_division which = "イギリス義勇軍司令部" value = SPR }
++	command = { type = remove_division which = "イギリス義勇装甲師団" value = SPR }
++	#
++	command = { type = remove_division which = "POUM民兵師団" value = SPR }
++	command = { type = remove_division which = "CNT民兵師団" value = SPR }
++	command = { type = remove_division which = "第1ファランヘ党民兵師団" value = SPR }
++	command = { type = remove_division which = "第2ファランヘ党民兵師団" value = SPR }
++	command = { type = remove_division which = "モロッコ師団" value = SPR }
++	command = { type = remove_division which = "第1バスク民族師団" value = SPR }
++	command = { type = remove_division which = "第2バスク民族師団" value = SPR }
++	command = { type = remove_division which = "イギリス反共義勇旅団" value = SPR }
++	command = { type = remove_division which = "アイルランド反共義勇旅団" value = SPR }
++	command = { type = strength which = militia when = 0 where = 1 value = 0.0 }
++	#
++	command = { type = sleepleader which = 255008 } # Pavel Ivanovich Batov / SOV
++	command = { type = sleepleader which = 255020 } # Coronel Hans - Hans Kahle / DDR
++	command = { type = sleepleader which = 255035 } # Gallo - Luigi Longo / ITA
++	command = { type = sleepleader which = 255039 } # Generale Gom騷 - Wilhelm Zaisser / DDR
++	command = { type = sleepleader which = 255047 } # Kl饕er - Manfred Stern / SOV
++	command = { type = sleepleader which = 255048 } # Oliver Law / USA
++	command = { type = sleepleader which = 255051 } # Pavol Luk當s - M疸・Zalka / HUN
++	command = { type = sleepleader which = 255065 } # Robert Merriman / USA
++	command = { type = sleepleader which = 255082 } # Frank Ryan / IRE
++	command = { type = sleepleader which = 255091 } # Walter - Karol Swierczewski / POL
++	command = { type = sleepleader which = 255111 } # Chato - Ivan Trofimovich Yeremenko / SOV
++	command = { type = sleepleader which = 255118 } # Andr・Malraux / FRA
++	#
++	command = { type = sleepevent which = 2652023 } # スペイン内戦 ― 勝利(全体派）
++	#
++	command = { type = province_keypoints which = 436 value = -1 } # Tarragona
++	command = { type = province_keypoints which = 437 value = -1 } # Gerona
++	command = { type = province_keypoints which = 438 value = -1 } # Huesca
++	command = { type = province_keypoints which = 439 value = -1 } # Lerida
++	command = { type = province_keypoints which = 442 value = -1 } # Zaragoza
++	command = { type = province_keypoints which = 443 value = -1 } # Bilbao
++	command = { type = province_keypoints which = 444 value = -1 } # Oviedo
++	command = { type = province_keypoints which = 445 value = -1 } # Santander
++	command = { type = province_keypoints which = 446 value = -1 } # Pamplona
++	command = { type = province_keypoints which = 447 value = -1 } # Salamanca
++	command = { type = province_keypoints which = 448 value = -1 } # Leon
++	command = { type = province_keypoints which = 449 value = -1 } # Vigo
++	command = { type = province_keypoints which = 450 value = -1 } # Plasencia
++	command = { type = province_keypoints which = 451 value = -1 } # Burgos
++	command = { type = province_keypoints which = 452 value = -1 } # Segovia
++	command = { type = province_keypoints which = 453 value = -1 } # Caceres
++	command = { type = province_keypoints which = 454 value = -1 } # Tarancon
++	command = { type = province_keypoints which = 455 value = -1 } # Guadalajara
++	command = { type = province_keypoints which = 456 value = -1 } # Soria
++	command = { type = province_keypoints which = 457 value = -1 } # Toledo
++	command = { type = province_keypoints which = 458 value = -1 } # Badajoz
++	command = { type = province_keypoints which = 459 value = -1 } # Teruel
++	command = { type = province_keypoints which = 461 value = -1 } # Castellon de la Plana		
++	command = { type = province_keypoints which = 462 value = -1 } # Alicante
++	command = { type = province_keypoints which = 463 value = -1 } # Murcia
++	command = { type = province_keypoints which = 465 value = -1 } # Albacete
++	command = { type = province_keypoints which = 466 value = -1 } # Jaen
++	command = { type = province_keypoints which = 467 value = -1 } # Cordoba
++	command = { type = province_keypoints which = 468 value = -1 } # Ciudad Real		
++	command = { type = province_keypoints which = 470 value = -1 } # Granada 
++	command = { type = province_keypoints which = 471 value = -1 } # Malaga 
++	command = { type = province_keypoints which = 472 value = -1 } # Huelva
++	command = { type = province_keypoints which = 473 value = -1 } # Cadiz 
++	}	
++}
++
++#########################################################################
++#  スペイン内戦 ― 勝利！（全体派）
++# スペイン内戦の勝者は全体派となった。
++# 戦後、フランコ将軍はバスク人とカルリスタの要求に従い、ただちにハビエルの即位式を実行。
++# ハビエル8世……現在はスペイン王ハビエル1世は、神の恩寵の下に全ての将軍の地位を保障し、
++# その上でフランシスコ・フランコをスペイン王国宰相に任命した。
++# フランコ将軍は予てより構想中であった、仏伊で流行するコーポラティズムの論理を導入した反動的体制を構築し、
++# それぞれに自治州を設け、また全ての民族を職能と資本によって地位を明確に振り分け、
++# 擬似的なカースト制を敷く、スペイン・コーポラティズム体制を確立させた。
++# これにより、バスク人・カタルーニャ人・スペイン人・モロッコ人はそれぞれ法の上では格差が存在しない状態になった反面、
++# 先の内戦で共和派に参加したカタルーニャ人は公務員勤務から締め出され、
++# またそれぞれの民族で資産毎に階級を切り分けたため、民族内部の対立が生まれる結果にも繋がった。
++# これらの実態も含めて、全てはフランコ将軍の予測通りの結果なのである――。
++#########################################################################
++
++event = {
++	id = 2652023
++	random = no
++	country = SPA
++
++	trigger = {
++	owned = { province = 460 data = SPA } # マドリッド
++	event = 2652004
++	
++	NOT = { 
++	exists = SPR 
++	event = 2652022 # スペイン内戦 ― 勝利(民主派）
++		OR = {
++		event = 2652018 #ポルトガル参戦
++		exists = POR
++		}
++	}
++	}
++
++	name = "EVT_2652023_NAME"
++	desc = "EVT_2652023_DESC"
++  	style = 2
++  	picture = "scw"
++	
++	date = { day = 0 month = 0 year = 1936 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1963 }
++
++	action = { # 時計の針は逆回り……
++	name = "ACTIONNAME2652023A"
++	command = { type = name where = SPR }
++	command = { type = capital which = 460 }
++	command = { type = belligerence which = SPA value = -10 }
++	command = { type = set_domestic which = democratic value = 3 } 
++	command = { type = set_domestic which = political_left value = 3 }
++	command = { type = headofstate which = 35401 } # ボルボン=パルマ家ハビエル1世
++	command = { type = headofgovernment which = 35402 } # フランシスコ・フランコ・バーモンデ
++	command = { type = foreignminister which = 35403 } # ジョージ・サンタヤーナ
++	command = { type = armamentminister which = 35404 } # アルフレド・オッタビアーニ
++	command = { type = ministerofsecurity which = 35405 } # ホセ・アントニオ・アギーレ
++	command = { type = ministerofintelligence which = 35406 } # ディエス・デル・コラール
++	command = { type = chiefofstaff which = 35117 } # フランシスコ・フランコ・バーモンデ
++	command = { type = chiefofarmy which = 35008 } # エミリオ・モラ・ビダル
++	command = { type = chiefofnavy which = 35009 } # フランシスコ・モレノ・フェルナンデス
++	command = { type = chiefofair which = 35407 } # フアン・アントニオ・アンサルド
++	#
++	command = { type = remove_division which = "ロシア義勇装甲師団" value = SPR }
++	command = { type = remove_division which = "ロシア義勇歩兵師団" value = SPR }
++	command = { type = remove_division which = "ロシア義勇戦闘隊" value = SPR }
++	command = { type = remove_division which = "ロシア義勇爆撃隊" value = SPR }
++	command = { type = remove_division which = "コンドル爆撃航空隊" value = SPR }
++	command = { type = remove_division which = "コンドル軍団司令部" value = SPR }
++	command = { type = remove_division which = "イムカー戦闘団" value = SPR }
++	command = { type = remove_division which = "イギリス義勇爆撃航空隊" value = SPR }
++	command = { type = remove_division which = "イギリス義勇軍司令部" value = SPR }
++	command = { type = remove_division which = "イギリス義勇装甲師団" value = SPR }
++	#
++	command = { type = remove_division which = "POUM民兵師団" value = SPR }
++	command = { type = remove_division which = "CNT民兵師団" value = SPR }
++	command = { type = remove_division which = "第1ファランヘ党民兵師団" value = SPR }
++	command = { type = remove_division which = "第2ファランヘ党民兵師団" value = SPR }
++	command = { type = remove_division which = "モロッコ師団" value = SPR }
++	command = { type = remove_division which = "第1バスク民族師団" value = SPR }
++	command = { type = remove_division which = "第2バスク民族師団" value = SPR }
++	command = { type = remove_division which = "イギリス反共義勇旅団" value = SPR }
++	command = { type = remove_division which = "アイルランド反共義勇旅団" value = SPR }
++	command = { type = strength which = militia when = 0 where = 1 value = 0.0 }
++	#
++	command = { type = sleepleader which = 35014 } #Bergonzoli
++	command = { type = sleepleader which = 35017 } #Cavalcanti
++	command = { type = sleepleader which = 35028 } #Gambara
++	command = { type = sleepleader which = 35056 } #Roatta
++	command = { type = sleepleader which = 35094 } #von Richthofen W.
++	command = { type = sleepleader which = 35095 } #Sperrle (GER)
++	#
++	command = { type = sleepevent which = 2652022 } # スペイン内戦 ― 勝利(民主派）
++	command = { type = sleepevent which = 2052010 } # Repuplican SCW win event
++	command = { type = sleepevent which = 2007048 } # USSR SCW Victory event
++	command = { type = sleepevent which = 2002003 } # France SCW Victory event
++	command = { type = sleepevent which = 2001034 } # UK SCW Victory event
++	#
++	command = { type = province_keypoints which = 436 value = -1 } # Tarragona
++	command = { type = province_keypoints which = 437 value = -1 } # Gerona
++	command = { type = province_keypoints which = 438 value = -1 } # Huesca
++	command = { type = province_keypoints which = 439 value = -1 } # Lerida
++	command = { type = province_keypoints which = 442 value = -1 } # Zaragoza
++	command = { type = province_keypoints which = 443 value = -1 } # Bilbao
++	command = { type = province_keypoints which = 444 value = -1 } # Oviedo
++	command = { type = province_keypoints which = 445 value = -1 } # Santander
++	command = { type = province_keypoints which = 446 value = -1 } # Pamplona
++	command = { type = province_keypoints which = 447 value = -1 } # Salamanca
++	command = { type = province_keypoints which = 448 value = -1 } # Leon
++	command = { type = province_keypoints which = 449 value = -1 } # Vigo
++	command = { type = province_keypoints which = 450 value = -1 } # Plasencia
++	command = { type = province_keypoints which = 451 value = -1 } # Burgos
++	command = { type = province_keypoints which = 452 value = -1 } # Segovia
++	command = { type = province_keypoints which = 453 value = -1 } # Caceres
++	command = { type = province_keypoints which = 454 value = -1 } # Tarancon
++	command = { type = province_keypoints which = 455 value = -1 } # Guadalajara
++	command = { type = province_keypoints which = 456 value = -1 } # Soria
++	command = { type = province_keypoints which = 457 value = -1 } # Toledo
++	command = { type = province_keypoints which = 458 value = -1 } # Badajoz
++	command = { type = province_keypoints which = 459 value = -1 } # Teruel
++	command = { type = province_keypoints which = 461 value = -1 } # Castellon de la Plana		
++	command = { type = province_keypoints which = 462 value = -1 } # Alicante
++	command = { type = province_keypoints which = 463 value = -1 } # Murcia
++	command = { type = province_keypoints which = 465 value = -1 } # Albacete
++	command = { type = province_keypoints which = 466 value = -1 } # Jaen
++	command = { type = province_keypoints which = 467 value = -1 } # Cordoba
++	command = { type = province_keypoints which = 468 value = -1 } # Ciudad Real		
++	command = { type = province_keypoints which = 470 value = -1 } # Granada 
++	command = { type = province_keypoints which = 471 value = -1 } # Malaga 
++	command = { type = province_keypoints which = 472 value = -1 } # Huelva
++	command = { type = province_keypoints which = 473 value = -1 } # Cadiz 
++	}
++}
++
++#########################################################################
++#  国際自由ヒスパニア
++# 経済的、政治的に死につつあったスペイン国家は多数の外国人義勇兵と人々の自由を求める精神の力によって勝利し、蘇った。
++# スペイン内戦における国際旅団の活躍を認めたスペイン共和国政府は、彼ら義勇兵達に新しいスペインの国籍を彼らに認めた。
++# また長く分断の中にあったポルトガルは共和国に統合され、多数の外国人が居ながら彼らと同居することを厭わない人々によって解放されつつあった。
++# 今やスペイン共和国の国籍は「世界でもっとも取得しやすい国籍」と認められるようになったのである。
++# そうした情勢を鑑みて、ここにスペイン共和国は国号を『国際自由ヒスパニア』とあらため、新たな門出を祝った！
++#########################################################################
++
++event = { 
++	id = 2652024
++	random = no 
++	country = SPR
++
++	decision = {
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	owned = { province = 460 data = SPR } # マドリッド
++	owned = { province = 476 data = SPR } # リスボン
++	atwar = no
++	}
++	
++	decision_trigger = {
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	region = { region = "Portugal" country = SPR data = 1 value = 90 }
++	region = { region = "Spain" country = SPR data = 1 value = 90 }
++	owned = { province = 460 data = SPR } # マドリッド
++	owned = { province = 476 data = SPR } # リスボン
++	atwar = no
++	}
++	
++	trigger = {
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	region = { region = "Portugal" country = SPR data = 1 value = 90 }
++	region = { region = "Spain" country = SPR data = 1 value = 90 }
++	owned = { province = 460 data = SPR } # マドリッド
++	owned = { province = 476 data = SPR } # リスボン
++	atwar = no
++	random = 20
++	}
++	
++	date = { day = 0 month = 5 year = 1933 }		 
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1963 }	
++	
++	name = "EVT_2652024_NAME"
++	desc = "EVT_2652024_DESC"
++  	style = 2
++  	picture = "Corpo_truppe_Volontarie"
++	
++	action = { # 真に自由な国が今ここに誕生したのだ
++	name = "ACTIONNAME2652024A"
++	command = { type = flag_ext where = SPR which = "_IBE" }
++	command = { type = name where = SPR which = "国際自由ヒスパニア" }
++	command = { type = add_core_region which = "Portugal" }
++	command = { type = add_core_region which = "Spain" }
++	command = { type = event which = 2652025 where = SPR when = 7 }
++	ai_chance = 100
++	}
++}
++
++#########################################################################
++#  ヒスパニア総選挙
++# 多数の外国人『であった』人々を内包する国際自由ヒスパニアは大規模な選挙制度改革を行った。
++# 対外的な国家の象徴として実権を有さない大統領職と、実務的な面を全て統括する首相職とで政治役割を切り分け、
++# それらの立候補権・選挙権はヒスパニアの国籍を持つ全ての人々に認められたのだ。
++# 大統領職についたのはスペインにおける人民戦線を構築したマヌエル・アサーニャ氏であった。
++# 選挙において注目されたのは、首相職を任ぜられる人物の人選である。
++# つい数年前までは『外国人』であった彼らは独自に政党を構築し、総選挙に打って出たのだ。
++#########################################################################
++
++event = {
++	id = 2652025
++	random = no
++	country = SPR
++
++	name = "EVT_2652025_NAME"
++	desc = "EVT_2652025_DESC"
++	style = 2
++	picture = "election_time"
++
++	action = { # 社会自由党 ― エリック・ブレア
++	name = "ACTIONNAME2652025A"
++	command = { type = dissent value = -1 }
++	command = { type = set_domestic which = democratic value = 6 }
++	command = { type = set_domestic which = political_left value = 9 }
++	command = { type = wakeminister which = 255301 }
++	command = { type = wakeminister which = 255302 }
++	command = { type = wakeminister which = 255303 }
++	command = { type = wakeminister which = 255304 }
++	command = { type = wakeminister which = 255305 }
++	command = { type = wakeminister which = 255306 }
++	command = { type = wakeminister which = 255307 }
++	command = { type = wakeminister which = 255308 }
++	command = { type = wakeminister which = 255309 }
++	command = { type = wakeminister which = 255310 }
++	command = { type = wakeminister which = 255311 }
++	command = { type = wakeminister which = 255312 }
++	command = { type = wakeminister which = 255313 }
++	command = { type = headofstate which = 255301 } # マヌエル・アサニャ・ディアス
++	command = { type = headofgovernment which = 255303 } # エリック・ブレア
++	command = { type = foreignminister which = 255308 }
++	command = { type = armamentminister which = 255309 }
++	command = { type = ministerofsecurity which = 255310 }
++	command = { type = ministerofintelligence which = 255311 }
++	command = { type = chiefofarmy which = 255312 }
++	command = { type = event which = 2652026 where = SPR when = 1 }
++	ai_chance = 35
++	}
++
++	action = { # 自由連邦党 ― ヨシップ・ブロズ・チトー
++	name = "ACTIONNAME2652025B"
++	command = { type = dissent value = -1 }
++	command = { type = set_domestic which = democratic value = 7 }
++	command = { type = set_domestic which = political_left value = 9 }
++	command = { type = wakeminister which = 255301 }
++	command = { type = wakeminister which = 255302 }
++	command = { type = wakeminister which = 255303 }
++	command = { type = wakeminister which = 255304 }
++	command = { type = wakeminister which = 255305 }
++	command = { type = wakeminister which = 255306 }
++	command = { type = wakeminister which = 255307 }
++	command = { type = wakeminister which = 255308 }
++	command = { type = wakeminister which = 255309 }
++	command = { type = wakeminister which = 255310 }
++	command = { type = wakeminister which = 255311 }
++	command = { type = wakeminister which = 255312 }
++	command = { type = wakeminister which = 255313 }
++	command = { type = headofstate which = 255301 } # マヌエル・アサニャ・ディアス
++	command = { type = headofgovernment which = 255306 } # ヨシップ・ブロズ・チトー
++	command = { type = foreignminister which = 255308 }
++	command = { type = armamentminister which = 255309 }
++	command = { type = ministerofsecurity which = 255310 }
++	command = { type = ministerofintelligence which = 255313 }
++	command = { type = chiefofarmy which = 255312 }
++	command = { type = event which = 2652026 where = SPR when = 1 }
++	ai_chance = 35
++	}
++
++	action = { # 大連立 ― リュイス・クンパニィス
++	name = "ACTIONNAME2652025C"
++	command = { type = dissent value = -1 }
++	command = { type = set_domestic which = democratic value = 7 }
++	command = { type = set_domestic which = political_left value = 9 }
++	command = { type = wakeminister which = 255301 }
++	command = { type = wakeminister which = 255302 }
++	command = { type = wakeminister which = 255303 }
++	command = { type = wakeminister which = 255304 }
++	command = { type = wakeminister which = 255305 }
++	command = { type = wakeminister which = 255306 }
++	command = { type = wakeminister which = 255307 }
++	command = { type = wakeminister which = 255308 }
++	command = { type = wakeminister which = 255309 }
++	command = { type = wakeminister which = 255310 }
++	command = { type = wakeminister which = 255311 }
++	command = { type = wakeminister which = 255312 }
++	command = { type = wakeminister which = 255313 }
++	command = { type = headofstate which = 255301 } # マヌエル・アサニャ・ディアス
++	command = { type = headofgovernment which = 255307 } # リュイス・クンパニィス
++	command = { type = foreignminister which = 255308 }
++	command = { type = armamentminister which = 255309 }
++	command = { type = ministerofsecurity which = 255310 }
++	command = { type = ministerofintelligence which = 255311 }
++	command = { type = chiefofarmy which = 255312 }
++	command = { type = event which = 2652026 where = SPR when = 1 }
++	ai_chance = 30
++	}
++}
++
++#########################################################################
++#  自治権の拡大
++# 国際自由ヒスパニアはその多様な民族と文化圏を有する国内情勢から、各州の自治権を認め、アメリカ合衆国の連邦制にもよく似た独自の体制を構築した。
++# 軍は防衛に特化したものとなり、有事の際には国家が一丸となって敵対者に対抗できるよう、労働者達への軍事的教育を義務化。
++# 同国は結果として欧州情勢からは距離をとり、自身らの自由な国家の防衛のために多数の革新的な施策を実行していった。
++#########################################################################
++
++event = {
++	id = 2652026
++	random = no
++	country = SPR
++
++	name = "EVT_2652026_NAME"
++	desc = "EVT_2652026_DESC"
++	style = 2
++  	picture = "Corpo_truppe_Volontarie"
++
++	action = { # 我々は自主独立路線を往くのである！
++	name = "ACTIONNAME2652026A"
++	command = { type = dissent value = -5 }
++	command = { type = morale which = land value = 10 }
++	command = { type = morale which = naval value = 10 }
++	command = { type = morale which = air value = 10 }
++	command = { type = set_domestic which = defense_lobby value = 2 }
++	command = { type = set_domestic which =  interventionism value = 3 }
++	ai_chance = 35
++	}
++}
++
++#########################################################################
++#  フランスがドイツ帝国主義者との戦争に突入
++# 国際自由ヒスパニアの隣国であるフランスがドイツとの戦争に突入した。
++# 我々は自由主義を守るためにも、フランスと共に戦うべきだろうか？
++#########################################################################
++
++event = { 
++	id = 2652027
++	random = no 
++	country = SPR
++
++	decision = {
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	war = { country = GER country = FRA }
++	NOT = { war = { country = SPR country = FRA } }
++	owned = { province = 460 data = SPR } # マドリッド
++	owned = { province = 476 data = SPR } # リスボン
++	atwar = no
++	}
++	
++	decision_trigger = {
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	war = { country = GER country = FRA }
++	NOT = { war = { country = SPR country = FRA } }
++	region = { region = "Portugal" country = SPR data = 1 value = 90 }
++	region = { region = "Spain" country = SPR data = 1 value = 90 }
++	owned = { province = 460 data = SPR } # マドリッド
++	owned = { province = 476 data = SPR } # リスボン
++	atwar = no
++	}
++	
++	trigger = {
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	war = { country = GER country = FRA }
++	NOT = { war = { country = SPR country = FRA } }
++	region = { region = "Portugal" country = SPR data = 1 value = 90 }
++	region = { region = "Spain" country = SPR data = 1 value = 90 }
++	owned = { province = 460 data = SPR } # マドリッド
++	owned = { province = 476 data = SPR } # リスボン
++	atwar = no
++	random = 20
++	}
++	
++	name = "EVT_2652027_NAME"
++	desc = "EVT_2652027_DESC"
++  	style = 2
++  	picture = "Corpo_truppe_Volontarie"
++
++	date = { day = 0 month = 5 year = 1933 }		 
++	offset = 12
++	deathdate = { day = 29 month = 11 year = 1942 }	
++	
++	action = { # 自由を守るために戦おう
++	name = "ACTIONNAME2652027A"
++	command = { type = relation which = FRA value = 30 }
++	command = { type = money value = -30 } 
++	command = { type = event which = 2652028 where = FRA when = 0 }
++	ai_chance = 70
++	}
++
++	action = { # 戦争に参加する必要はない
++	name = "ACTIONNAME2652027B"
++	command = { type = relation which = FRA value = -30 }
++	ai_chance = 30
++	}
++}
++
++#########################################################################
++#  スペインの同盟提案
++# スペイン内戦で勝利したヒスパニアが、我々との同盟を提案してきた。
++#########################################################################
++
++event = { 
++	id = 2652028
++	country = FRA
++
++	name = "EVT_2652028_NAME"
++	desc = "EVT_2652028_DESC"
++	style = 2
++	picture = "spread_revolution"
++
++	action = { # 友を迎えよう！
++	name = "ACTIONNAME2652028A"	
++	command = { type = dissent value = -2 }
++	command = { type = relation which = SPR value = 100 }
++	command = { type = alliance which = SPR }
++	ai_chance = 100
++	}
++
++	action = { # 彼らには中立でいてもらおう
++	name = "ACTIONNAME2652028B"
++	command = { type = dissent value = 5 }
++	ai_chance = 0
++	}
++}
++
++##########################################################################
++#  スペイン内戦義勇軍派遣イベント
++##########################################################################
++#  スペイン内戦 ― ロシアの介入（UER）
++# 1936年、スペインにおける右派と左派の対立はついに内戦に発展した。
++# 保守派の国粋派と左派の共和派に分かれ、激しい戦闘をスペイン内部で繰り広げている。
++# この内戦には様々な思惑の下、多くの国が介入した。
++###########################################################################
++
++event = { 
++	id = 2652101
++	random = no
++	country = UER
++	
++	decision = {
++	war = { country = SPA country = SPR }
++	event = 2652004 # スペイン内戦
++	NOT = {
++	OR = {
++	alliance = { country = UER country = SPA }
++	alliance = { country = ENG country = SPA }
++	war = { country = UER country = SPA }
++	war = { country = UER country = SPR }
++	war = { country = UER country = GER }
++	war = { country = UER country = ENG }
++	war = { country = UER country = FRA }
++	war = { country = UER country = USA }
++	}
++	}
++	}
++			
++	decision_trigger = { 
++	manpower = 10
++	supplies = 1000 
++	money = 200
++	}
++			
++	trigger = {
++	war = { country = SPA country = SPR }
++	event = 2652004 # スペイン内戦
++	NOT = {
++	OR = {
++	alliance = { country = UER country = SPA }
++	alliance = { country = ENG country = SPA }
++	war = { country = UER country = SPA }
++	war = { country = UER country = SPR }
++	war = { country = UER country = GER }
++	war = { country = UER country = ENG }
++	war = { country = UER country = FRA }
++	war = { country = UER country = USA }
++	}
++	}
++	}
++	
++	name = "EVT_2652101_NAME"
++	desc = "EVT_2652101_DESC"
++	style = 2
++	picture = "scw"
++	
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1936 }
++
++	action = { # 介入する
++	name = "ACTIONNAME2652101A"
++	command = { type = manpowerpool value = -10 }
++	command = { trigger = { ai = no } type = supplies value = -1000 }
++	command = { trigger = { ai = no } type = money value = -200 }
++	command = { type = relation which = SPA value = 20 }
++	command = { type = relation which = SPR value = -15 }
++	command = { type = relation which = GER value = -5 }
++	command = { type = relation which = ENG value = -5 }
++	command = { type = relation which = FRA value = -5 }
++	command = { type = relation which = POR value = -10 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = belligerence which = UER value = 1 }
++	command = { type = trigger which = 2652102 }
++	ai_chance = 100
++	}
++	
++	action = { # 軍事顧問団を派遣しよう
++	name = "ACTIONNAME2652101B"
++	command = { type = manpowerpool value = -10 }
++	command = { type = supplies value = -2000 }
++	command = { type = money value = -400 }
++	command = { type = relation which = SPA value = 20 }
++	command = { type = relation which = SPR value = -15 }
++	command = { type = relation which = GER value = -5 }
++	command = { type = relation which = ENG value = -5 }
++	command = { type = relation which = FRA value = -5 }
++	command = { type = relation which = POR value = -10 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = belligerence which = UER value = 1 }
++	command = { type = trigger which = 2652102 }
++	command = { trigger = { ai = no } type = military_control which = UER where = SPA value = 1 }
++	command	= { type = local_setflag which = military_control_SPA }
++	ai_chance = 0
++	}
++
++	action = { # 介入する必要はない
++	name = "ACTIONNAME2652101C"
++	command = { type = relation which = SPA value = -20 }
++	command = { type = relation which = SPR value = 15 }
++	command = { type = relation which = GER value = 5 }
++	command = { type = relation which = ENG value = 5 }
++	command = { type = relation which = FRA value = 5 }
++	command = { type = relation which = POR value = 10 }
++	command = { type = domestic which = interventionism value = -1 }
++	command = { type = belligerence which = UER value = -1 }
++	ai_chance = 0
++	}
++}
++
++
++##########################################################################
++#  スペイン内戦 ― ロシアの介入（SPA）
++###########################################################################
++
++event = {
++	id = 2652102
++	random = no
++	country = SPA
++
++	name = "EVT_2652101_NAME"
++	desc = "EVT_2652101_DESC"
++	style = 2
++  	picture = "scw"
++	
++	action = { # 了解
++	name = ACTION_NAME_OK
++	command = { type = money value = -100 }
++	command = { type = manpowerpool value = 10 }
++	command = { type = supplies value = 2500 }
++	command = { type = add_division value = militia when = 5 }
++	command = { type = add_division value = militia when = 5 }
++	command = { type = add_division which = "ロシア義勇装甲師団" value = light_armor when = 0 }
++	command = { type = add_division which = "ロシア義勇歩兵師団" value = infantry when = 7 }
++	command = { type = add_division which = "ロシア義勇戦闘隊" value = interceptor when = 5 }
++	command = { type = add_division which = "ロシア義勇爆撃隊" value = tactical_bomber when = 4 }
++	command = { type = gain_tech which = -1 }
++	command = { type = gain_tech which = -1 }		
++	command = { type = gain_tech which = -1 }
++	command = { type = gain_tech which = -1 }
++	command = { type = steal_tech which = UER }
++	command = { type = steal_tech which = UER }
++	}
++}
++
++##########################################################################
++#  スペイン内戦の終結 ― 義勇兵の凱旋
++# ロシアはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。
++# また「軍事顧問」と呼ばれる集団もロシアから多数派遣された。
++# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。
++###########################################################################
++
++event = {
++	id = 2652103
++	random = no
++	country = UER
++
++	trigger = {
++	exists = SPA
++	event = 2652023 # スペイン内戦 ― 勝利！（全体派）
++	event = 2652102 # スペイン内戦 ― ロシアの介入（SPA）
++	NOT = {
++	OR = {
++	war = { country = UER country = SPA }
++	war = { country = UER country = SPR }
++	war = { country = UER country = GER }
++	war = { country = UER country = ENG }
++	war = { country = UER country = FRA }
++	war = { country = UER country = USA }
++	}
++	}
++	}
++
++	name = "EVT_2652103_NAME"
++	desc = "EVT_2652103_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # すばらしい！
++	name = "ACTION_NAME_GREAT"
++	command = { type = relation which = SPA value = 50 }
++	command = { type = manpowerpool value = 8 }
++	command = { type = dissent value = -1 }
++	command = { type = gain_tech which = -2 } 
++	command = { type = gain_tech which = -2 } 
++	command = { type = gain_tech which = -1 } 
++	command = { type = gain_tech which = -1 } 
++	command = { type = money value = 250 }
++	command	= { trigger = { local_flag = military_control_SPA } type = military_control which = UER where = SPA }
++	command	= { trigger = { local_flag = military_control_SPA } type = local_clrflag which = military_control_SPA }
++	}
++}
++
++##########################################################################
++#  スペイン内戦の終結 ― 義勇兵の帰国
++###########################################################################
++
++event = {
++	id = 2652104
++	random = no
++	country = UER
++
++	trigger = {
++	NOT = { exists = SPA } 
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	event = 2652102 # スペイン内戦 ― ロシアの介入（SPA）
++	NOT = { 
++	OR = {
++	war = { country = UER country = SPA }
++	war = { country = UER country = SPR }
++	war = { country = UER country = GER }
++	war = { country = UER country = ENG }
++	war = { country = UER country = FRA }
++	war = { country = UER country = USA }
++	}
++	}
++	}
++
++	name = "EVT_2652104_NAME"
++	desc = "EVT_2652104_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 了解
++	name = "ACTION_NAME_OK" 
++	command = { type = manpowerpool value = 3 }
++	command = { trigger = { ai = no } type = dissent value = 1 }
++	command = { type = gain_tech which = -2 } 
++	command = { type = money value = 250 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― ドイツの介入（GER）
++###########################################################################
++
++event = { 
++	id = 2652105
++	random = no
++	country = GER
++	
++	decision = {
++	war = { country = SPA country = SPR }
++	event = 2652004 # スペイン内戦
++	NOT = {
++	OR = {
++	alliance = { country = GER country = SPA }
++	alliance = { country = ENG country = SPA }
++	war = { country = GER country = SPA }
++	war = { country = GER country = SPR }
++	war = { country = GER country = UER }
++	war = { country = GER country = ENG }
++	war = { country = GER country = FRA }
++	war = { country = GER country = USA }
++	}
++	}
++	}
++			
++	decision_trigger = { 
++	manpower = 10
++	supplies = 1000 
++	money = 200
++	}
++			
++	trigger = {
++	war = { country = SPA country = SPR }
++	event = 2652004 # スペイン内戦
++	NOT = {
++	OR = {
++	alliance = { country = GER country = SPA }
++	alliance = { country = ENG country = SPA }
++	war = { country = GER country = SPA }
++	war = { country = GER country = SPR }
++	war = { country = GER country = GER }
++	war = { country = GER country = ENG }
++	war = { country = GER country = FRA }
++	war = { country = GER country = USA }
++	}
++	}
++	}
++	
++	name = "EVT_2652105_NAME"
++	desc = "EVT_2652105_DESC"
++	style = 2
++	picture = "scw"
++	
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1936 }
++
++	action = { # 介入する
++	name = "ACTIONNAME2652105A"
++	command = { type = manpowerpool value = -10 }
++	command = { trigger = { ai = no } type = supplies value = -1000 }
++	command = { trigger = { ai = no } type = money value = -200 }
++	command = { type = relation which = SPA value = 20 }
++	command = { type = relation which = SPR value = -15 }
++	command = { type = relation which = UER value = -5 }
++	command = { type = relation which = ENG value = -5 }
++	command = { type = relation which = FRA value = -5 }
++	command = { type = relation which = POR value = -10 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = belligerence which = GER value = 1 }
++	command = { type = trigger which = 2652106 }
++	ai_chance = 100
++	}
++	
++	action = { # 軍事顧問団を派遣しよう
++	name = "ACTIONNAME2652105B"
++	command = { type = manpowerpool value = -10 }
++	command = { type = supplies value = -2000 }
++	command = { type = money value = -400 }
++	command = { type = relation which = SPA value = 20 }
++	command = { type = relation which = SPR value = -15 }
++	command = { type = relation which = UER value = -5 }
++	command = { type = relation which = ENG value = -5 }
++	command = { type = relation which = FRA value = -5 }
++	command = { type = relation which = POR value = -10 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = belligerence which = GER value = 1 }
++	command = { type = trigger which = 2652106 }
++	command = { trigger = { ai = no } type = military_control which = GER where = SPA value = 1 }
++	command	= { type = local_setflag which = military_control_SPA }
++	ai_chance = 0
++	}
++
++	action = { # 介入する必要はない
++	name = "ACTIONNAME2652105C"
++	command = { type = relation which = SPA value = -20 }
++	command = { type = relation which = SPR value = 15 }
++	command = { type = relation which = UER value = 5 }
++	command = { type = relation which = ENG value = 5 }
++	command = { type = relation which = FRA value = 5 }
++	command = { type = relation which = POR value = 10 }
++	command = { type = domestic which = interventionism value = -1 }
++	command = { type = belligerence which = GER value = -1 }
++	ai_chance = 0
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― ドイツの介入（SPA）
++###########################################################################
++
++event = {
++	id = 2652106
++	random = no
++	country = SPA
++
++	name = "EVT_2652105_NAME"
++	desc = "EVT_2652105_DESC"
++	style = 2
++  	picture = "scw"
++	
++	action = { # 了解
++	name = "ACTION_NAME_OK" 
++	command = { type = money value = -100 }
++	command = { type = manpowerpool value = 10 }
++	command = { type = supplies value = 2500 }
++	command = { type = wakeleader which = 35094 }
++	command = { type = wakeleader which = 35095 }
++	command = { type = add_corps which = "コンドル軍団" value = air when = 35094 where = 441 }
++	command = { type = add_division which = "コンドル爆撃航空隊" value = tactical_bomber when = 4 }
++	command = { type = add_corps which = "コンドル軍団" value = land when = 35067 where = 451 }
++	command = { type = add_division which = "コンドル軍団司令部" value = hq when = 2 where = anti_air } 
++	command = { type = add_division which = "イムカー戦闘団" value = light_armor when = 0 }
++	command = { type = gain_tech which = -1 }
++	command = { type = gain_tech which = -1 }		
++	command = { type = gain_tech which = -1 }
++	command = { type = gain_tech which = -1 }
++	command = { type = steal_tech which = GER }
++	command = { type = steal_tech which = GER }
++	}
++}
++
++##########################################################################
++#  スペイン内戦の終結 ― 義勇兵の凱旋
++# ドイツはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。
++# また「軍事顧問」と呼ばれる集団もドイツから多数派遣された。
++# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。
++###########################################################################
++
++event = {
++	id = 2652107
++	random = no
++	country = GER
++
++	trigger = {
++	exists = SPA
++	event = 2652023 # スペイン内戦 ― 勝利！（全体派）
++	event = 2652106 # スペイン内戦 ― ドイツの介入（SPA）
++	NOT = {
++	OR = {
++	war = { country = GER country = SPA }
++	war = { country = GER country = SPR }
++	war = { country = GER country = GER }
++	war = { country = GER country = ENG }
++	war = { country = GER country = FRA }
++	war = { country = GER country = USA }
++	}
++	}
++	}
++
++	name = "EVT_2652107_NAME"
++	desc = "EVT_2652107_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # すばらしい！
++	name = "ACTION_NAME_GREAT"
++	command = { type = relation which = SPA value = 50 }
++	command = { type = manpowerpool value = 8 }
++	command = { type = dissent value = -1 }
++	command = { type = gain_tech which = -2 } 
++	command = { type = gain_tech which = -2 } 
++	command = { type = gain_tech which = -1 } 
++	command = { type = gain_tech which = -1 } 
++	command = { type = money value = 250 }
++	command	= { trigger = { local_flag = military_control_SPA } type = military_control which = GER where = SPA }
++	command	= { trigger = { local_flag = military_control_SPA } type = local_clrflag which = military_control_SPA }
++	}
++}
++
++##########################################################################
++#  スペイン内戦の終結 ― 義勇兵の帰国
++# ドイツはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。
++# また「軍事顧問」と呼ばれる集団もドイツから多数派遣された。
++# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。
++###########################################################################
++
++event = {
++	id = 2652108
++	random = no
++	country = GER
++
++	trigger = {
++	NOT = { exists = SPA } 
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	event = 2652106 # スペイン内戦 ― ドイツの介入（SPA）
++	NOT = { 
++	OR = {
++	war = { country = GER country = SPA }
++	war = { country = GER country = SPR }
++	war = { country = GER country = GER }
++	war = { country = GER country = ENG }
++	war = { country = GER country = FRA }
++	war = { country = GER country = USA }
++	}
++	}
++	}
++
++	name = "EVT_2652108_NAME"
++	desc = "EVT_2652108_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 了解
++	name = "ACTION_NAME_OK" 
++	command = { type = manpowerpool value = 3 }
++	command = { trigger = { ai = no } type = dissent value = 1 }
++	command = { type = gain_tech which = -2 } 
++	command = { type = money value = 250 }
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― イギリスの介入（ENG）
++###########################################################################
++
++event = { 
++	id = 2652109
++	random = no
++	country = ENG
++	
++	decision = {
++	war = { country = SPA country = SPR }
++	event = 2652004
++	NOT = {
++	OR = {
++	alliance = { country = ENG country = SPR }
++	alliance = { country = FRA country = SPR }
++	war = { country = ENG country = SPA }
++	war = { country = ENG country = SPR }
++	war = { country = ENG country = UER }
++	war = { country = ENG country = GER }
++	war = { country = ENG country = FRA }
++	war = { country = ENG country = USA }
++	}
++	}
++	}
++			
++	decision_trigger = { 
++		manpower = 10
++		supplies = 1000 
++		money = 200
++	}
++			
++	trigger = {
++	war = { country = SPA country = SPR }
++	event = 2652004
++	NOT = {
++	OR = {
++	alliance = { country = ENG country = SPR }
++	alliance = { country = FRA country = SPR }
++	war = { country = ENG country = SPA }
++	war = { country = ENG country = SPR }
++	war = { country = ENG country = UER }
++	war = { country = ENG country = GER }
++	war = { country = ENG country = FRA }
++	war = { country = ENG country = USA }
++	}
++	}
++	}
++	
++	name = "EVT_2652109_NAME"
++	desc = "EVT_2652109_DESC"
++	style = 2
++	picture = "scw"
++	
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1936 }
++
++	action = { # 介入する
++	name = "ACTIONNAME2652109A"
++	command = { type = manpowerpool value = -10 }
++	command = { trigger = { ai = no } type = supplies value = -1000 }
++	command = { trigger = { ai = no } type = money value = -200 }
++	command = { type = relation which = SPR value = 20 }
++	command = { type = relation which = SPA value = -15 }
++	command = { type = relation which = UER value = -5 }
++	command = { type = relation which = GER value = -5 }
++	command = { type = relation which = FRA value = -5 }
++	command = { type = relation which = POR value = -10 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = belligerence which = ENG value = 1 }
++	command = { type = trigger which = 2652110 }
++	ai_chance = 100
++	}
++	
++	action = { # 軍事顧問団を派遣しよう
++	name = "ACTIONNAME2652109B"
++	command = { type = manpowerpool value = -10 }
++	command = { type = supplies value = -2000 }
++	command = { type = money value = -400 }
++	command = { type = relation which = SPR value = 20 }
++	command = { type = relation which = SPA value = -15 }
++	command = { type = relation which = UER value = -5 }
++	command = { type = relation which = GER value = -5 }
++	command = { type = relation which = FRA value = -5 }
++	command = { type = relation which = POR value = -10 }
++	command = { type = domestic which = interventionism value = 1 }
++	command = { type = belligerence which = ENG value = 1 }
++	command = { type = trigger which = 2652110 }
++	command = { trigger = { ai = no } type = military_control which = ENG where = SPR value = 1 }
++	command	= { type = local_setflag which = military_control_SPR }
++	ai_chance = 0
++	}
++
++	action = { # 介入する必要はない
++	name = "ACTIONNAME2652109C"
++	command = { type = relation which = SPR value = -20 }
++	command = { type = relation which = SPA value = 15 }
++	command = { type = relation which = UER value = 5 }
++	command = { type = relation which = GER value = 5 }
++	command = { type = relation which = FRA value = 5 }
++	command = { type = relation which = POR value = 10 }
++	command = { type = domestic which = interventionism value = -1 }
++	command = { type = belligerence which = ENG value = -1 }
++	ai_chance = 0
++	}
++}
++
++##########################################################################
++#  スペイン内戦 ― イギリスの介入（SPR）
++###########################################################################
++
++event = {
++	id = 2652110
++	random = no
++	country = SPR
++
++	name = "EVT_2652109_NAME"
++	desc = "EVT_2652109_DESC"
++	style = 2
++  	picture = "scw"
++	
++	action = { # 了解
++	name = "ACTION_NAME_OK" 
++	command = { type = money value = -100 }
++	command = { type = manpowerpool value = 10 }
++	command = { type = supplies value = 2500 }
++	command = { type = wakeleader which = 35094 }
++	command = { type = wakeleader which = 35095 }
++	command = { type = add_division which = "イギリス義勇爆撃航空隊" value = tactical_bomber when = 4 }
++	command = { type = add_division which = "イギリス義勇軍司令部" value = hq when = 2 where = anti_air } 
++	command = { type = add_division which = "イギリス義勇装甲師団" value = light_armor when = 0 }
++	command = { type = gain_tech which = -1 }
++	command = { type = gain_tech which = -1 }		
++	command = { type = gain_tech which = -1 }
++	command = { type = gain_tech which = -1 }
++	command = { type = steal_tech which = ENG }
++	command = { type = steal_tech which = ENG }
++	}
++}
++
++##########################################################################
++#  スペイン内戦の終結 ― 義勇兵の凱旋
++# イギリスはスペインの内戦においては民族主義者に援助を与え、膨大な量の武器を売却した。
++# また「軍事顧問」と呼ばれる集団もイギリスから多数派遣された。
++# 彼らは内戦が集結すると、重要な経験を本国に持ち帰った。
++###########################################################################
++
++event = {
++	id = 2652111
++	random = no
++	country = ENG
++
++	trigger = {
++	exists = SPR
++	event = 2652022 # スペイン内戦 ― 勝利！（民主派）
++	event = 2652110 # スペイン内戦 ― イギリスの介入（SPR）
++	NOT = {
++	OR = {
++	war = { country = ENG country = SPA }
++	war = { country = ENG country = SPR }
++	war = { country = ENG country = ENG }
++	war = { country = ENG country = ENG }
++	war = { country = ENG country = FRA }
++	war = { country = ENG country = USA }
++	}
++	}
++	}
++
++	name = "EVT_2652111_NAME"
++	desc = "EVT_2652111_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # すばらしい！
++	name = "ACTION_NAME_GREAT"
++	command = { type = relation which = SPR value = 50 }
++	command = { type = manpowerpool value = 8 }
++	command = { type = dissent value = -1 }
++	command = { type = gain_tech which = -2 } 
++	command = { type = gain_tech which = -2 } 
++	command = { type = gain_tech which = -1 } 
++	command = { type = gain_tech which = -1 } 
++	command = { type = money value = 250 }
++	command	= { trigger = { local_flag = military_control_SPR } type = military_control which = ENG where = SPR }
++	command	= { trigger = { local_flag = military_control_SPR } type = local_clrflag which = military_control_SPR }
++	}
++}
++
++##########################################################################
++#  スペイン内戦の終結 ― 義勇兵の帰国
++###########################################################################
++
++event = {
++	id = 2652112
++	random = no
++	country = ENG
++
++	trigger = {
++	NOT = { exists = SPR } 
++	event = 2652023 # スペイン内戦 ― 勝利！（全体派）
++	event = 2652110 # スペイン内戦 ― イギリスの介入（SPR）
++	NOT = { 
++	OR = {
++	war = { country = ENG country = SPA }
++	war = { country = ENG country = SPR }
++	war = { country = ENG country = ENG }
++	war = { country = ENG country = ENG }
++	war = { country = ENG country = FRA }
++	war = { country = ENG country = USA }
++	}
++	}
++	}
++
++	name = "EVT_2652112_NAME"
++	desc = "EVT_2652112_DESC"
++	style = 2
++	picture = "scw"
++
++	date = { day = 0 month = 0 year = 1933 }
++	offset = 5
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 了解
++	name = "ACTION_NAME_OK" 
++	command = { type = manpowerpool value = 3 }
++	command = { trigger = { ai = no } type = dissent value = 1 }
++	command = { type = gain_tech which = -2 } 
++	command = { type = money value = 250 }
++	}
+ }
+\ No newline at end of file

@@ -1,0 +1,166 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Central_America_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Central_America_events.txt [utf-8]
+@@ -26,6 +26,9 @@
+ #id = 8272008 国立宮殿の建設\r
+ # ドミニカ共和国\r
+ #id = 8283001 パセリ事件\r
++# アメリカ（中央アメリカ関係）\r
++#id = 8284001 棍棒外交の終焉（USA）\r
++#id = 8284002 棍棒外交の終焉（MEX U78 HON SAL NIC COS PAN CUB DOM HAI）\r
+ #########################################################################\r
+ #  メキシコ\r
+ #########################################################################\r
+@@ -1140,4 +1143,152 @@ event = {
+ 	command = { type = relation which = USA value = -15 }\r
+ 	command = { type = manpowerpool value = -20 }\r
+ 	}\r
++}\r
++#########################################################################\r
++#  アメリカ\r
++#########################################################################\r
++#  棍棒外交の終焉（USA）\r
++# 1929年に始まった世界恐慌によって、アメリカ国内では、中南米からの撤退する主張が高まった。\r
++# 1914年に内戦が起きたメキシコへの軍事介入を皮切りに、アメリカは中南米に対する強硬政策を実施。\r
++# メキシコ、中央アメリカ、ドミニカに軍事干渉を仕掛けて、傀儡政権を樹立することで長らく内政干渉を行っていたアメリカだが、\r
++# 大恐慌を迎えて、自国の経済再建を優先するべきという主張が議会の大勢を占めるにいたったのである。\r
++# こうした中南米撤退の議論は1932年の大統領選挙にも大きな影響を与えた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8284001\r
++	random = no\r
++	country = U78\r
++	save_date = yes\r
++\r
++	decision = {\r
++	event = 7161004 # 第32代米大統領就任 ― 1932年選挙の結果\r
++	OR = {\r
++	puppet = { country = MEX }\r
++	puppet = { country = U78 }\r
++	puppet = { country = HON }\r
++	puppet = { country = SAL }\r
++	puppet = { country = NIC }\r
++	puppet = { country = COS }\r
++	puppet = { country = PAN }\r
++	puppet = { country = CUB }\r
++	puppet = { country = DOM }\r
++	puppet = { country = HAI }\r
++	}\r
++	atwar = no\r
++	}\r
++\r
++	decision_trigger = { \r
++	OR = {\r
++	puppet = { country = MEX }\r
++	puppet = { country = U78 }\r
++	puppet = { country = HON }\r
++	puppet = { country = SAL }\r
++	puppet = { country = NIC }\r
++	puppet = { country = COS }\r
++	puppet = { country = PAN }\r
++	puppet = { country = CUB }\r
++	puppet = { country = DOM }\r
++	puppet = { country = HAI }\r
++	}\r
++	atwar = no\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 7161004 days = 90 } # 第32代米大統領就任 ― 1932年選挙の結果\r
++	OR = {\r
++	puppet = { country = MEX }\r
++	puppet = { country = U78 }\r
++	puppet = { country = HON }\r
++	puppet = { country = SAL }\r
++	puppet = { country = NIC }\r
++	puppet = { country = COS }\r
++	puppet = { country = PAN }\r
++	puppet = { country = CUB }\r
++	puppet = { country = DOM }\r
++	puppet = { country = HAI }\r
++	}\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_8284001_NAME"\r
++	desc = "EVT_8284001_DESC"\r
++	style = 2\r
++ 	picture = "diplomatic_campaign"\r
++ 	decision_picture = "decision_fireside_chat"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { trigger = { puppet = { country = MEX } } type = event which = 8284002 where = MEX when = 1 }\r
++	command = { trigger = { puppet = { country = U78 } } type = event which = 8284002 where = U78 when = 1 }\r
++	command = { trigger = { puppet = { country = HON } } type = event which = 8284002 where = HON when = 1 }\r
++	command = { trigger = { puppet = { country = SAL } } type = event which = 8284002 where = SAL when = 1 }\r
++	command = { trigger = { puppet = { country = NIC } } type = event which = 8284002 where = NIC when = 1 }\r
++	command = { trigger = { puppet = { country = COS } } type = event which = 8284002 where = COS when = 1 }\r
++	command = { trigger = { puppet = { country = PAN } } type = event which = 8284002 where = PAN when = 1 }\r
++	command = { trigger = { puppet = { country = CUB } } type = event which = 8284002 where = CUB when = 1 }\r
++	command = { trigger = { puppet = { country = DOM } } type = event which = 8284002 where = DOM when = 1 }\r
++	command = { trigger = { puppet = { country = HAI } } type = event which = 8284002 where = HAI when = 1 }\r
++	command = { type = dissent value = -3 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = belligerence which = USA value = -5 }\r
++	command = { type = relation which = MEX value = 30 }\r
++	command = { type = relation which = U78 value = 30 }\r
++	command = { type = relation which = HON value = 30 }\r
++	command = { type = relation which = SAL value = 30 }\r
++	command = { type = relation which = NIC value = 30 }\r
++	command = { type = relation which = COS value = 30 }\r
++	command = { type = relation which = PAN value = 30 }\r
++	command = { type = relation which = CUB value = 30 }\r
++	command = { type = relation which = DOM value = 30 }\r
++	command = { type = relation which = HAI value = 30 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 拒否\r
++	name = "ACTION_NAME_REFUSE"\r
++	command = { type = dissent value = 30 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = belligerence which = USA value = 10 }\r
++	command = { type = relation which = MEX value = -75 }\r
++	command = { type = relation which = U78 value = -75 }\r
++	command = { type = relation which = HON value = -75 }\r
++	command = { type = relation which = SAL value = -75 }\r
++	command = { type = relation which = NIC value = -75 }\r
++	command = { type = relation which = COS value = -75 }\r
++	command = { type = relation which = PAN value = -75 }\r
++	command = { type = relation which = CUB value = -75 }\r
++	command = { type = relation which = DOM value = -75 }\r
++	command = { type = relation which = HAI value = -75 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  棍棒外交の終焉（MEX U78 HON SAL NIC COS PAN CUB DOM HAI）\r
++#########################################################################\r
++event = {\r
++	id = 8284002\r
++	random = no\r
++	TAG = { MEX U78 HON SAL NIC COS PAN CUB DOM HAI }\r
++\r
++	name = "EVT_8284001_NAME"\r
++	desc = "EVT_8284001_DESC"\r
++	style = 2\r
++ 	picture = "diplomatic_campaign"\r
++\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = relation which = USA value = 30 }\r
++	command = { type = end_puppet }\r
++	command = { type = leave_alliance }\r
++	command = { type = end_access which = USA }\r
++	}\r
+ }
+\ No newline at end of file

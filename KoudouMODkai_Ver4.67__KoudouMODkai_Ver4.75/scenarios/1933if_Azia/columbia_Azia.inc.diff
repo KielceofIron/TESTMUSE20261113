@@ -1,0 +1,476 @@
+--- A/scenarios/1933if_Azia/columbia_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/columbia_Azia.inc [cp932]
+@@ -1,5 +1,5 @@
+ ##############################\r
+-# Country definition for COL #\r
++# Country definition for U77 #\r
+ ##############################\r
+ \r
+ #####################\r
+@@ -7,27 +7,28 @@
+ #####################\r
+ \r
+ country = {\r
+-  tag                = COL\r
+-  ai                 = "IFazia/COL_if_Azia.ai"\r
++  tag                = U77\r
++  name               = "コロンビア"\r
++  ai                 = "IFazia/U77_if_Azia.ai"\r
+   ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes MOB4 = yes } }\r
+   capital            = 1991 # ボゴタ\r
+   dissent            = 20\r
+-  manpower           = 59\r
++  manpower           = 137\r
+   # Resource Reserves\r
+-  energy         = 660\r
+-  metal          = 330\r
+-  rare_materials = 165\r
+-  oil            = 500\r
+-  supplies       = 500\r
+-  money          = 20\r
+-  transports     = 30\r
++  energy         = 850\r
++  metal          = 460\r
++  rare_materials = 280\r
++  oil            = 700\r
++  supplies       = 750\r
++  money          = 50\r
++  transports     = 110\r
++  escorts        = 10\r
+ \r
+   diplomacy = {\r
+     relation = { tag = ARG value = 10 }\r
+     relation = { tag = BOL value = 1 }\r
+     relation = { tag = BRA value = 10 }\r
+     relation = { tag = CHL value = 15 }\r
+-    relation = { tag = ECU value = 20 }\r
+     relation = { tag = GER value = -20 }\r
+     relation = { tag = JAP value = -20 }\r
+     relation = { tag = ITA value = -20 }\r
+@@ -36,7 +37,6 @@ country = {
+     relation = { tag = PRU value = -200 }\r
+     relation = { tag = URU value = 10 }\r
+     relation = { tag = USA value = 75 }\r
+-    relation = { tag = VEN value = 20 }\r
+     relation = { tag = MEX value = 75 }\r
+     relation = { tag = CUB value = 75 }\r
+     relation = { tag = DOM value = 75 }\r
+@@ -47,35 +47,35 @@ country = {
+     relation = { tag = SAF value = -15 }\r
+     relation = { tag = FRA value = -15 }\r
+   }\r
+-  SpyInfo                = { country = "COL" NumberOfSpies = 9 }\r
++  SpyInfo                = { country = "U77" NumberOfSpies = 9 }\r
+ \r
+-  nationalprovinces      = { 1756 1985 1986 1987 1990 1991 1994 2009 }\r
+-  ownedprovinces         = { 1756 1985 1986 1987 1990 1991 1994 2009 }\r
+-  controlledprovinces    = { 1756 1985 1986 1987 1990 1991 1994 2009 }\r
++  nationalprovinces      = { 889 1756 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2005 2006 2007 2008 2009 2010 2033 2040 2041 2042 2077 2078 }\r
++  ownedprovinces         = { 1756 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 2007 2008 2009 2010 2033 2040 2041 2042 }\r
++  controlledprovinces    = { 1756 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 2007 2008 2009 2010 2033 2040 2041 2042 }\r
+ \r
+-  techapps               = { 4500 4510 4520 4530 4540 4550 4010 2860 2870 2880 2020 2290 2300 2310 7600 7610 2620 2010 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 2800 2450 21180 2810 2820 5700 5710 5010 5800 5080 1830 1840 1850 1860 3010 3020 3030 3040 3720 3730 3736 3740 3750 3900 3810 5600 5610 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 8010 8050 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 1070 1080 1350 2900 2910 2630 3110 3120 3130 3410 3420 3430 3610 3620 3210 3220 3230 4300 4310 4320 4330 4610 4620 4630 4120 4600 4700 4800 4740 4750 4760 5810 5820 5050 5310 54010 5316 14000 14010 5190 8020 8060 8070 8040 8080 8100 8110 8500 8510 8550 8200 }\r
++  techapps               = { 4500 4510 4520 4530 4540 4550 4010 2860 2870 2880 2020 2290 2300 2310 7600 7610 2620 2010 1010 1020 1030 1040 1050 1060 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 2800 2450 21180 2810 2820 5700 5710 5010 5800 5080 1830 1840 1850 1860 3010 3020 3030 3040 3720 3730 3736 3740 3750 3900 3810 5600 5610 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 8010 8050 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 1070 1080 1350 2900 2910 2630 3110 3120 3130 3410 3420 3430 3610 3620 3210 3220 3230 4300 4310 4320 4330 4610 4620 4630 4120 4600 4700 4800 4740 4750 4760 5810 5820 5050 5310 54010 5316 14000 14010 5190 8020 8060 8070 8040 8080 8100 8110 8500 8510 8550 8200 3630 3240 3440 4710 }\r
+   inventions             = { 3000027 }\r
+ \r
+   policy = {\r
+     date              = { year = 0 month = january day = 0 }\r
+     democratic        = 7\r
+-    political_left    = 4\r
++    political_left    = 8\r
+     freedom           = 7\r
+     free_market       = 8\r
+     professional_army = 4\r
+     defense_lobby     = 5\r
+     interventionism   = 2\r
+   }\r
+-  headofstate            = { type = 9 id = 175185 } # エンリケ・オラヤ・エレーラ\r
+-  headofgovernment       = { type = 9 id = 175186 } # エンリケ・オラヤ・エレーラ\r
+-  foreignminister        = { type = 9 id = 175044 } # ロベルト・ウルダネータ・アルベラエス\r
+-  armamentminister       = { type = 9 id = 175063 } # カルロス・アランゴ・ベレス\r
+-  ministerofsecurity     = { type = 9 id = 175005 } # ホルヘ・ロア・マルティネス\r
+-  ministerofintelligence = { type = 9 id = 175006 } # フェルナンド・ロンドノ・イ・ロンドノ\r
+-  chiefofstaff           = { type = 9 id = 175007 } # ホルヘ・メルカド・サンチェス\r
+-  chiefofarmy            = { type = 9 id = 175008 } # エドゥアルド・ポワリエ・エスコバル\r
+-  chiefofnavy            = { type = 9 id = 175009 } # ルイス・アセベド\r
+-  chiefofair             = { type = 9 id = 175010 } # ヘルマン・オラーノ\r
++  headofstate            = { type = 9 id = 1200141 } # エンリケ・オラヤ・エレーラ\r
++  headofgovernment       = { type = 9 id = 1200002 } # カルロス・ロサーノ・イ・ロサーノ\r
++  foreignminister        = { type = 9 id = 1200003 } # エルネスト・ゴンサレス・ピエドライタ\r
++  armamentminister       = { type = 9 id = 1200004 } # ベニト・エルナンデス\r
++  ministerofsecurity     = { type = 9 id = 1200005 } # ホルヘ・ロア・マルティネス\r
++  ministerofintelligence = { type = 9 id = 1200006 } # フェルナンド・ロンドノ・イ・ロンドノ\r
++  chiefofstaff           = { type = 9 id = 1200007 } # ホルヘ・メルカド・サンチェス\r
++  chiefofarmy            = { type = 9 id = 1200008 } # エドゥアルド・ポワリエ・エスコバル\r
++  chiefofnavy            = { type = 9 id = 1200009 } # ルイス・アセベド\r
++  chiefofair             = { type = 9 id = 1200010 } # ヘルマン・オラーノ\r
+ \r
+   landunit = {\r
+     id       = { type = 23000 id = 1 }\r
+@@ -83,13 +83,11 @@ country = {
+     location = 1991\r
+     division = {\r
+       id             = { type = 23000 id = 2 }\r
+-      name           = "第1師団"\r
++      name           = "第1歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = artillery\r
+-      extra2         = cavalry_brigade\r
+-      brigade_model1 = 3\r
+-      brigade_model2 = 5\r
++      extra          = artillery\r
++      brigade_model  = 3\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+@@ -100,13 +98,11 @@ country = {
+     location = 1986\r
+     division = {\r
+       id             = { type = 23000 id = 4 }\r
+-      name           = "第2師団"\r
++      name           = "第2歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = artillery\r
+-      extra2         = cavalry_brigade\r
+-      brigade_model1 = 3\r
+-      brigade_model2 = 5\r
++      extra          = artillery\r
++      brigade_model  = 3\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+@@ -117,13 +113,11 @@ country = {
+     location = 1985\r
+     division = {\r
+       id             = { type = 23000 id = 6 }\r
+-      name           = "第3師団"\r
++      name           = "第3歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = engineer\r
+-      extra2         = artillery\r
+-      brigade_model1 = 2\r
+-      brigade_model2 = 3\r
++      extra          = artillery\r
++      brigade_model  = 3\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+@@ -134,12 +128,10 @@ country = {
+     location = 1985\r
+     division = {\r
+       id             = { type = 23000 id = 8 }\r
+-      name           = "第4師団"\r
++      name           = "第4歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = engineer\r
+       extra2         = anti_air\r
+-      brigade_model1 = 2\r
+       brigade_model2 = 1\r
+       strength       = 45\r
+       experience     = 10\r
+@@ -151,13 +143,9 @@ country = {
+     location = 1756\r
+     division = {\r
+       id             = { type = 23000 id = 10 }\r
+-      name           = "第5師団"\r
++      name           = "第5歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = engineer\r
+-      extra2         = artillery\r
+-      brigade_model1 = 2\r
+-      brigade_model2 = 3\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+@@ -168,13 +156,9 @@ country = {
+     location = 1756\r
+     division = {\r
+       id             = { type = 23000 id = 12 }\r
+-      name           = "第6師団"\r
++      name           = "第6歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = engineer\r
+-      extra2         = cavalry_brigade\r
+-      brigade_model1 = 2\r
+-      brigade_model2 = 5\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+@@ -185,13 +169,9 @@ country = {
+     location = 1990\r
+     division = {\r
+       id             = { type = 23000 id = 14 }\r
+-      name           = "第7師団"\r
++      name           = "第7歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = engineer\r
+-      extra2         = artillery\r
+-      brigade_model1 = 2\r
+-      brigade_model2 = 3\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+@@ -202,13 +182,9 @@ country = {
+     location = 1990\r
+     division = {\r
+       id             = { type = 23000 id = 16 }\r
+-      name           = "第8師団"\r
++      name           = "第8歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = engineer\r
+-      extra2         = cavalry_brigade\r
+-      brigade_model1 = 2\r
+-      brigade_model2 = 5\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+@@ -219,17 +195,89 @@ country = {
+     location = 1986\r
+     division = {\r
+       id             = { type = 23000 id = 18 }\r
+-      name           = "第9師団"\r
++      name           = "第9歩兵師団"\r
+       type           = infantry\r
+       model          = 6\r
+-      extra1         = artillery\r
+-      extra2         = cavalry_brigade\r
+-      brigade_model1 = 3\r
+-      brigade_model2 = 5\r
+       strength       = 45\r
+       experience     = 10\r
+     }\r
+   }\r
++  landunit = {\r
++    id       = { type = 23000 id = 19 }\r
++    name     = "第10軍団"\r
++    location = 2042\r
++    division = {\r
++      id             = { type = 23000 id = 20 }\r
++      name           = "第10歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 5\r
++      strength       = 10\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 23000 id = 21 }\r
++    name     = "第11軍団"\r
++    location = 2008\r
++    division = {\r
++      id             = { type = 23000 id = 22 }\r
++      name           = "第11歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 10\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 23000 id = 23 }\r
++    name     = "第12軍団"\r
++    location = 1993\r
++    division = {\r
++      id             = { type = 23000 id = 24 }\r
++      name           = "第12歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 10\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 23000 id = 25 }\r
++    name     = "第13軍団"\r
++    location = 1993\r
++    division = {\r
++      id             = { type = 23000 id = 26 }\r
++      name           = "第13歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = cavalry_brigade\r
++      brigade_model  = 5\r
++      strength       = 15\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 23000 id = 27 }\r
++    name     = "第14軍団"\r
++    location = 1992\r
++    division = {\r
++      id             = { type = 23000 id = 28 }\r
++      name           = "第14歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 23000 id = 29 }\r
++    name     = "第15軍団"\r
++    location = 1998\r
++    division = {\r
++      id             = { type = 23000 id = 30 }\r
++      name           = "第15歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++  }\r
+ \r
+   navalunit = {\r
+     id       = { type = 23000 id = 201 }\r
+@@ -238,64 +286,133 @@ country = {
+     base     = 1986\r
+     division = {\r
+       id             = { type = 23000 id = 202 }\r
++      name           = "ARC アントニオ・ナリーニョ"\r
++      type           = battleship\r
++      model          = 2\r
++      extra1         = naval_fire_controll_l\r
++      extra2         = naval_improved_hull_l\r
++      extra3         = naval_anti_air_l\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
++      brigade_model3 = 0\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 23000 id = 203 }\r
++      name           = "ARC フランシスコ・デ・パウラ・サンタンデル"\r
++      type           = battleship\r
++      model          = 1\r
++      extra1         = naval_fire_controll_l\r
++      extra2         = naval_improved_hull_l\r
++      extra3         = naval_anti_air_l\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
++      brigade_model3 = 0\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 23000 id = 204 }\r
+       name           = "ARC エスペランサ"\r
+       type           = heavy_cruiser\r
+       model          = 1\r
+       experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 23000 id = 203 }\r
++      id             = { type = 23000 id = 205 }\r
+       name           = "ARC ヘネラル・ネリノ"\r
+       type           = heavy_cruiser\r
+       model          = 1\r
+       experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 23000 id = 204 }\r
++      id             = { type = 23000 id = 206 }\r
+       name           = "ARC アルミランテ・パディーヤ"\r
+       type           = light_cruiser\r
++      model          = 2\r
++      extra1         = naval_fire_controll_s\r
++      extra2         = naval_anti_air_s\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 23000 id = 207 }\r
++      name           = "ARC カルダス"\r
++      type           = light_cruiser\r
+       model          = 1\r
++      extra1         = naval_torpedoes_s\r
++      extra2         = naval_anti_air_s\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
+       experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 23000 id = 205 }\r
++      id             = { type = 23000 id = 208 }\r
+       name           = "ARC カルダス"\r
+       type           = light_cruiser\r
+-      model          = 0\r
++      model          = 1\r
++      extra1         = naval_torpedoes_s\r
++      extra2         = naval_anti_air_s\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
+       experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 23000 id = 206 }\r
++      id             = { type = 23000 id = 209 }\r
+       name           = "第1駆逐艦隊"\r
+       type           = destroyer\r
+       model          = 1\r
+       experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 23000 id = 207 }\r
++      id             = { type = 23000 id = 210 }\r
+       name           = "第2駆逐艦隊"\r
+       type           = destroyer\r
+       model          = 1\r
+       experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 23000 id = 208 }\r
++      id             = { type = 23000 id = 211 }\r
+       name           = "第1潜水隊"\r
+       type           = submarine\r
+       model          = 1\r
+       experience     = 10\r
+     }\r
+     division = {\r
+-      id             = { type = 23000 id = 209 }\r
+-      name           = "第2潜水隊"\r
+-      type           = submarine\r
++      id             = { type = 23000 id = 212 }\r
++      name           = "輸送艦隊"\r
++      type           = transport\r
+       model          = 1\r
+       experience     = 10\r
+     }\r
++  }\r
++  navalunit = {\r
++    id       = { type = 23000 id = 213 }\r
++    name     = "エクアドル艦隊"\r
++    location = 2040\r
++    base     = 2040\r
+     division = {\r
+-      id             = { type = 23000 id = 210 }\r
+-      name           = "輸送艦隊"\r
+-      type           = transport\r
++      id             = { type = 23000 id = 214 }\r
++      name           = "ARC カルダス"\r
++      type           = light_cruiser\r
++      model          = 0\r
++      extra1         = naval_torpedoes_s\r
++      extra2         = naval_anti_air_s\r
++      brigade_model1 = 0\r
++      brigade_model2 = 0\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 23000 id = 215 }\r
++      name           = "第3駆逐艦隊"\r
++      type           = destroyer\r
++      model          = 1\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 23000 id = 216 }\r
++      name           = "第2潜水隊"\r
++      type           = submarine\r
+       model          = 1\r
+       experience     = 10\r
+     }\r

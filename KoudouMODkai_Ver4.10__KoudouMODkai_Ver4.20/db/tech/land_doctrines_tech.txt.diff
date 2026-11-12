@@ -1,0 +1,60 @@
+--- A/db/tech/land_doctrines_tech.txt [cp932]
++++ B/db/tech/land_doctrines_tech.txt [cp932]
+@@ -719,6 +719,7 @@ technology =
+     position  = { x = 10 y = 280 }\r
+     picture   = "6250"\r
+     year      = 1937\r
++   \r
+     # 野砲分散配置\r
+     component = { id = 6251 name = TECH_CMP_LD_25_1_NAME type = combined_arms_focus difficulty = 5 }\r
+     # 前衛機動部隊\r
+@@ -728,7 +729,7 @@ technology =
+     # 地雷除去\r
+     component = { id = 6254 name = TECH_CMP_LD_25_4_NAME type = blitzkrieg_tactics difficulty = 5 }\r
+     # 分隊用軽機関銃\r
+-    component = { id = 6255 name = TECH_CMP_LD_25_5_NAME type = training difficulty = 6 }\r
++    component = { 　id = 6255 name = TECH_CMP_LD_25_5_NAME type = training difficulty = 6 }\r
+     required  = { 6220 }\r
+     effects =\r
+     { command = { type = muddy_attack which = light_armor value = 4 }\r
+@@ -1670,7 +1671,8 @@ technology =
+     component = { id = 6015 name = TECH_CMP_LD_1_5_NAME type = training difficulty = 5 }\r
+     required  = { 6910 }\r
+     effects =\r
+-    { # command = { type = ground_def_eff value = 0.77 }\r
++    { \r
++      command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = ground_def_effwhen = 1 value = 0.15 }\r
+       command = { type = ground_def_eff when = 1 value = 0.02 }\r
+       command = { type = max_organization which = land value = 10 }\r
+       command = { type = morale which = land value = 3.74 }\r
+@@ -1855,6 +1857,8 @@ technology =
+     required  = { 6060 }\r
+     effects =\r
+     { command = { type = build_time which = infantry when = on_upgrade where = relative value = -5 }\r
++	#command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = ground_def_effwhen = 1 value = 0.15 }\r
++\r
+       command = { type = muddy_attack which = infantry value = 4 }\r
+       command = { type = plain_attack which = infantry value = 5 }\r
+       command = { type = desert_attack which = infantry value = 1.25 }\r
+@@ -1908,6 +1912,8 @@ technology =
+     effects =\r
+     { command = { type = morale which = land value = 4 }\r
+       command = { type = ground_def_eff when = 1 value = 0.04 }\r
++	command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = toughness which = land value = 10 }\r
++	command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = defensiveness which = land value = -10 }\r
+       command = { type = build_time which = armor when = on_upgrade where = relative value = -5 }\r
+       command = { type = build_time which = motorized when = on_upgrade where = relative value = -5 }\r
+       command = { type = hard_attack which = armor value = 1 }\r
+@@ -1949,9 +1955,12 @@ technology =
+     component = { id = 6104 name = TECH_CMP_LD_10_4_NAME type = technical_efficiency difficulty = 7 }\r
+     # 高度な分隊級戦術\r
+     component = { id = 6105 name = TECH_CMP_LD_10_5_NAME type = training difficulty = 8 }\r
++\r
+     required  = { 6080 }\r
+     effects =\r
+     { command = { trigger = { NOT = { event = 11220003 OR = { country = GER country = DDR } } } type = ground_def_eff when = 1 value = 0.06 }\r
++	command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = toughness which = land value = 10 }\r
++	command = { trigger = { event = 11220003 OR = { country = GER country = DDR } } type = defensiveness which = land value = -10 }\r
+       command = { type = max_organization which = land value = 10 }\r
+       command = { type = build_time which = mechanized when = on_upgrade where = relative value = -10 }\r
+       command = { type = muddy_attack which = mechanized value = 4 }\r

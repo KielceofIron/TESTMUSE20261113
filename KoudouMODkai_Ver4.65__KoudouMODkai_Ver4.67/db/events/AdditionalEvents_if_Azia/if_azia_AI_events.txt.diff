@@ -1,0 +1,1722 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
+@@ -14,13 +14,13 @@
+ #安徽派（U74）\r
+ #id = 6656031 対中華民国戦時AI\r
+ #id = 6656032 対中華民国戦時終了AI\r
+-#直隷派（UCH）\r
++#直隷派（U36）\r
+ #id = 6656051 対中華民国戦時AI\r
+ #id = 6656052 対中華民国戦時終了AI\r
+ #中国軍閥（CSX CGX CYN CXB）\r
+ #id = 6656071 戦時AI\r
+ #id = 6656072 戦時終了AI\r
+-#中国共通（CHI CHC UCH U74 CSX CGX CYN CXB）\r
++#中国共通（CHI CHC U36 U74 CSX CGX CYN CXB）\r
+ #id = 6656086 中国研究バフAI\r
+ #id = 6656087 中国自動車化歩兵生産AI\r
+ #id = 6656088 中国戦車生産AI\r
+@@ -142,6 +142,19 @@
+ #id = 6657102 対ドイツ（DDR）攻勢AI\r
+ #id = 6657103 対ドイツ（DDR）デバフAIイベント\r
+ #id = 6657104 対ドイツデバフ解除AIイベント\r
++#イタリア\r
++#id = 6657201 イタリア民主主義の危機（経済不況問題 第1段階）\r
++#id = 6657202 イタリア民主主義の危機（経済不況問題 第1段階喪失）\r
++#id = 6657203 イタリア民主主義の危機（経済不況問題 第2段階）\r
++#id = 6657204 イタリア民主主義の危機（経済不況問題 第2段階喪失）\r
++#id = 6657205 イタリア民主主義の危機（経済不況問題 第3段階）\r
++#id = 6657206 イタリア民主主義の危機（経済不況問題 第3段階喪失）\r
++#id = 6657207 イタリア民主主義の危機（経済不況問題 第4段階）\r
++#id = 6657208 イタリア民主主義の危機（経済不況問題 第4段階喪失）\r
++#id = 6657209 イタリア民主主義の危機（経済不況問題 第5段階）\r
++#id = 6657210 イタリア民主主義の危機（経済不況問題 第5段階喪失）\r
++#id = 6657211 イタリア民主主義の危機（マフィア問題）\r
++#id = 6657212 イタリア民主主義の危機（マフィア問題喪失）\r
+ ##########################################################################\r
+ #  中華民国\r
+ ##########################################################################\r
+@@ -169,7 +182,7 @@ event = {
+ 	action = {\r
+ 	command = { type = max_amphib_mod value = 20 when = 1 }\r
+ 	command = { type = task_efficiency which = amphibious_assault value = 0.25 }\r
+-	command = { type = ai which = "IFazia/switch/CHI_JapanAttack.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/CHI_JapanAttack.ai" }\r
+ 	command = { type = local_setflag which = China_war }\r
+ 	}\r
+ }\r
+@@ -201,8 +214,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 	command = { type = max_amphib_mod value = -20 when = 1 }\r
+-	command = { type = ai which = "IFazia/switch/CHI_Sengo.ai" }\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/CHI_Sengo.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	command = { type = local_clrflag which = China_war }\r
+ 	}\r
+ }\r
+@@ -229,8 +242,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = {\r
+-	command = { type = build_division which = transport value = naval_improved_hull_s when = 5 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = transport value = naval_improved_hull_s when = 5 cost = -0.1 where = 120 }\r
++	command = { type = build_division which = transport value = naval_improved_hull_s when = 5 cost = 0.1 where = 120 }\r
++	command = { type = build_division which = transport value = naval_improved_hull_s when = 5 cost = 0.1 where = 120 }\r
+ 	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
+ 	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
+ 	command = { type = add_division value = transport when = 2 where = naval_improved_hull_s }\r
+@@ -303,7 +316,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/CHI_atwar.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/CHI_atwar.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -384,9 +397,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/U74_atwar_CHI.ai" }\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
+-	command = { type = ai which = "switch/low_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U74_atwar_CHI.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/low_construction_factor.ai" }\r
+ 	command = { type = local_setflag which = China_war_U74 }\r
+ 	}\r
+ }\r
+@@ -414,8 +427,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFazia/switch/U74_atwar_no_CHI.ai" }\r
+-	command = { type = ai which = "switch/medium_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U74_atwar_no_CHI.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/medium_construction_factor.ai" }\r
+ 	command = { type = local_clrflag which = China_war_U74 }\r
+ 	}\r
+ }\r
+@@ -429,13 +442,13 @@ event = {
+ event = {\r
+ 	id = 6656051\r
+ 	random = no \r
+-	country = UCH\r
++	country = U36\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+ 	atwar = yes\r
+ 	war = { country = CHI }\r
+-	NOT = { alliance = { country = UCH country = CHI } }\r
++	NOT = { alliance = { country = U36 country = CHI } }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -446,10 +459,10 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UCH_atwar_CHI.ai" }\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
+-	command = { type = ai which = "switch/low_construction_factor.ai" }\r
+-	command = { type = local_setflag which = China_war_UCH }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U36_atwar_CHI.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/low_construction_factor.ai" }\r
++	command = { type = local_setflag which = China_war_U36 }\r
+ 	}\r
+ }\r
+ \r
+@@ -460,11 +473,11 @@ event = {
+ event = {\r
+ 	id = 6656052\r
+ 	random = no \r
+-	country = UCH\r
++	country = U36\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+-	local_flag = China_war_UCH\r
++	local_flag = China_war_U36\r
+ 	NOT = { war = { country = CHI } }\r
+ 	}\r
+ \r
+@@ -476,9 +489,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFazia/switch/UCH_atwar_no_CHI.ai" }\r
+-	command = { type = ai which = "switch/medium_construction_factor.ai" }\r
+-	command = { type = local_clrflag which = China_war_UCH }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U36_atwar_no_CHI.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/medium_construction_factor.ai" }\r
++	command = { type = local_clrflag which = China_war_U36 }\r
+ 	}\r
+ }\r
+ \r
+@@ -507,8 +520,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
+-	command = { type = ai which = "switch/low_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/low_construction_factor.ai" }\r
+ 	command = { type = local_setflag which = China_war_Warlord }\r
+ 	}\r
+ }\r
+@@ -536,7 +549,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "switch/medium_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/medium_construction_factor.ai" }\r
+ 	command = { type = local_clrflag which = China_war_Warlord }\r
+ 	}\r
+ }\r
+@@ -550,7 +563,7 @@ event = {
+ event = {\r
+ 	id = 6656086\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -866,7 +879,7 @@ event = {
+ event = {\r
+ 	id = 6656087\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -905,7 +918,7 @@ event = {
+ event = {\r
+ 	id = 6656088\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -941,7 +954,7 @@ event = {
+ event = {\r
+ 	id = 6656089\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -974,11 +987,10 @@ event = {
+ event = {\r
+ 	id = 6656090\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+-	region = { region = "China" country = -1 data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	local_flag = China_Unification # 中国統一\r
+@@ -994,6 +1006,13 @@ event = {
+ 	action = {\r
+ 	command = { type = demobilize which = militia when = 0 where = 1 value = 0 }\r
+ 	command = { type = add_division value = hq when = 1 }\r
++	command = { type = add_division value = hq when = 1 }\r
++	command = { type = add_division value = hq when = 1 }\r
++	command = { type = add_division value = cavalry when = 6 where = armored_car }\r
++	command = { type = add_division value = cavalry when = 6 where = armored_car }\r
++	command = { type = add_division value = cavalry when = 6 where = armored_car }\r
++	command = { type = add_division value = cavalry when = 6 where = armored_car }\r
++	command = { type = add_division value = cavalry when = 6 where = armored_car }\r
+ 	command = { type = add_division value = infantry when = 7 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 7 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 7 where = artillery }\r
+@@ -1009,36 +1028,38 @@ event = {
+ 	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
+ 	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
+ 	command = { type = add_division value = infantry when = 6 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = add_division value = infantry when = 6 }\r
+-	command = { type = build_division which = infantry value = artillery when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry value = cavalry_brigade when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
+-	command = { type = build_division which = infantry when = 10 cost = 0.1 }\r
++	command = { type = build_division which = infantry value = artillery when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry value = cavalry_brigade when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = build_division which = infantry when = 10 cost = 0.5 }\r
++	command = { type = add_brigade value = medium_armor when = 2 }\r
++	command = { type = add_brigade value = medium_armor when = 2 }\r
++	command = { type = add_brigade value = medium_armor when = 2 }\r
++	command = { type = add_brigade value = medium_armor when = 2 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = light_armor_brigade when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
++	command = { type = add_brigade value = armored_car when = 3 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1049,7 +1070,7 @@ event = {
+ event = {\r
+ 	id = 6656091\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1069,7 +1090,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UCH_build_standard.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U36_build_standard.ai" }\r
+ 	command = { type = local_setflag which = China_build }\r
+ 	}\r
+ }\r
+@@ -1080,7 +1101,7 @@ event = {
+ event = {\r
+ 	id = 6656092\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1102,7 +1123,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UCH_build_land.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U36_build_land.ai" }\r
+ 	command = { type = local_clrflag which = China_build }\r
+ 	}\r
+ }\r
+@@ -1114,7 +1135,7 @@ event = {
+ event = {\r
+ 	id = 6656093\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1134,10 +1155,6 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = build_division which = paratrooper }\r
+-	command = { type = build_division which = paratrooper }\r
+-	command = { type = build_division which = transport_plane }\r
+-	command = { type = build_division which = transport_plane }\r
+ 	command = { type = add_division value = paratrooper when = 0 }\r
+ 	command = { type = add_division value = paratrooper when = 0 }\r
+ 	command = { type = add_division value = transport_plane when = 1 }\r
+@@ -1152,7 +1169,7 @@ event = {
+ event = {\r
+ 	id = 6656094\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1214,7 +1231,7 @@ event = {
+ event = {\r
+ 	id = 6656095\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1251,7 +1268,7 @@ event = {
+ event = {\r
+ 	id = 6656096\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1287,7 +1304,7 @@ event = {
+ event = {\r
+ 	id = 6656097\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1323,7 +1340,7 @@ event = {
+ event = {\r
+ 	id = 6656098\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1356,7 +1373,7 @@ event = {
+ event = {\r
+ 	id = 6656099\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 CSX CGX CYN CXB }\r
++	TAG = { CHI CHC U36 U74 CSX CGX CYN CXB }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1397,7 +1414,7 @@ event = {
+ event = {\r
+ 	id = 6656100\r
+ 	random = no \r
+-	TAG = { CHI CHC UCH U74 }\r
++	TAG = { CHI CHC U36 U74 }\r
+ 	\r
+ 	trigger = {\r
+ 	ai = yes\r
+@@ -1484,8 +1501,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/JAP_Bouei.ai" }\r
+-	command = { type = ai which = "switch/JAP_Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/JAP_Bouei.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/JAP_Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -1518,8 +1535,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/JAP_Hangeki.ai" }\r
+-	command = { type = ai which = "switch/JAP_Air_Naval.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/JAP_Hangeki.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/JAP_Air_Naval.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -1617,7 +1634,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/Karahuto_Bouei.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/Karahuto_Bouei.ai" }\r
+ 	command = { type = local_setflag which = Karahuto_Bouei }\r
+ 	}\r
+ }\r
+@@ -1657,7 +1674,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/Karahuto_Bouei_End.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/Karahuto_Bouei_End.ai" }\r
+ 	command = { type = local_clrflag which = Karahuto_Bouei }\r
+ 	}\r
+ }\r
+@@ -1690,9 +1707,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/JAP_Invade_War.ai" }\r
+-	command = { type = ai which = "switch/medium_construction_factor.ai" }\r
+-	command = { type = ai which = "switch/JAP_Air_Naval.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/JAP_Invade_War.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/medium_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/JAP_Air_Naval.ai" }\r
+ 	command = { type = local_setflag which = Invade_War }\r
+ 	}\r
+ }\r
+@@ -1724,9 +1741,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/JAP_Invade_War_End.ai" }\r
+-	command = { type = ai which = "switch/high_construction_factor.ai" }\r
+-	command = { type = ai which = "switch/JAP_Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/JAP_Invade_War_End.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/high_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/JAP_Air_Ground.ai" }\r
+ 	command = { type = local_clrflag which = Invade_War }\r
+ 	}\r
+ }\r
+@@ -1743,7 +1760,27 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	NOT = { area = { area = "Tohoku" country = REB data = 1 value = 1 } }\r
++	NOT = {\r
++	control = { province = 1012 data = REB } # 東日本\r
++	control = { province = 1159 data = REB }\r
++	control = { province = 1546 data = REB }\r
++	control = { province = 1547 data = REB }\r
++	control = { province = 1548 data = REB }\r
++	control = { province = 1549 data = REB }\r
++	control = { province = 1550 data = REB }\r
++	control = { province = 1551 data = REB }\r
++	control = { province = 1552 data = REB }\r
++	control = { province = 2464 data = REB }\r
++	control = { province = 2760 data = REB }\r
++	control = { province = 2761 data = REB }\r
++	control = { province = 2762 data = REB }\r
++	control = { province = 2763 data = REB }\r
++	control = { province = 2764 data = REB }\r
++	control = { province = 2768 data = REB }\r
++	control = { province = 2772 data = REB }\r
++	 #control = { province = 2789 data = REB } # 佐渡\r
++	control = { province = 2824 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_TOHOKU_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -1772,7 +1809,27 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	area = { area = "Tohoku" country = REB data = 1 value = 1 }\r
++	OR = {\r
++	control = { province = 1012 data = REB } # 東日本\r
++	control = { province = 1159 data = REB }\r
++	control = { province = 1546 data = REB }\r
++	control = { province = 1547 data = REB }\r
++	control = { province = 1548 data = REB }\r
++	control = { province = 1549 data = REB }\r
++	control = { province = 1550 data = REB }\r
++	control = { province = 1551 data = REB }\r
++	control = { province = 1552 data = REB }\r
++	control = { province = 2464 data = REB }\r
++	control = { province = 2760 data = REB }\r
++	control = { province = 2761 data = REB }\r
++	control = { province = 2762 data = REB }\r
++	control = { province = 2763 data = REB }\r
++	control = { province = 2764 data = REB }\r
++	control = { province = 2768 data = REB }\r
++	control = { province = 2772 data = REB }\r
++	 #control = { province = 2789 data = REB } # 佐渡\r
++	control = { province = 2824 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_TOHOKU_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -1800,7 +1857,25 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	NOT = { area = { area = "Honshu" country = REB data = 1 value = 1 } }\r
++	NOT = {\r
++	control = { province = 1553 data = REB } # 西日本\r
++	control = { province = 1554 data = REB }\r
++	control = { province = 1555 data = REB }\r
++	control = { province = 1556 data = REB }\r
++	control = { province = 1557 data = REB }\r
++	control = { province = 1558 data = REB }\r
++	control = { province = 2765 data = REB }\r
++	control = { province = 2766 data = REB }\r
++	control = { province = 2769 data = REB }\r
++	control = { province = 2771 data = REB }\r
++	control = { province = 2774 data = REB }\r
++	control = { province = 2775 data = REB }\r
++	control = { province = 2776 data = REB }\r
++	control = { province = 2777 data = REB }\r
++	control = { province = 2778 data = REB }\r
++	control = { province = 2779 data = REB }\r
++	control = { province = 2780 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_HONSHU_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -1829,7 +1904,25 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	area = { area = "Honshu" country = REB data = 1 value = 1 }\r
++	OR = {\r
++	control = { province = 1553 data = REB } # 西日本\r
++	control = { province = 1554 data = REB }\r
++	control = { province = 1555 data = REB }\r
++	control = { province = 1556 data = REB }\r
++	control = { province = 1557 data = REB }\r
++	control = { province = 1558 data = REB }\r
++	control = { province = 2765 data = REB }\r
++	control = { province = 2766 data = REB }\r
++	control = { province = 2769 data = REB }\r
++	control = { province = 2771 data = REB }\r
++	control = { province = 2774 data = REB }\r
++	control = { province = 2775 data = REB }\r
++	control = { province = 2776 data = REB }\r
++	control = { province = 2777 data = REB }\r
++	control = { province = 2778 data = REB }\r
++	control = { province = 2779 data = REB }\r
++	control = { province = 2780 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_HONSHU_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -1857,7 +1950,16 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	NOT = { area = { area = "Hokkaido" country = REB data = 1 value = 1 } }\r
++	NOT = {\r
++	control = { province = 1544 data = REB } # 北海道\r
++	control = { province = 1545 data = REB }\r
++	control = { province = 2767 data = REB }\r
++	control = { province = 2773 data = REB }\r
++	control = { province = 2799 data = REB }\r
++	control = { province = 2803 data = REB }\r
++	control = { province = 2804 data = REB }\r
++	control = { province = 2805 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_HOKKAIDO_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -1886,7 +1988,16 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	area = { area = "Hokkaido" country = REB data = 1 value = 1 }\r
++	OR = {\r
++	control = { province = 1544 data = REB } # 北海道\r
++	control = { province = 1545 data = REB }\r
++	control = { province = 2767 data = REB }\r
++	control = { province = 2773 data = REB }\r
++	control = { province = 2799 data = REB }\r
++	control = { province = 2803 data = REB }\r
++	control = { province = 2804 data = REB }\r
++	control = { province = 2805 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_HOKKAIDO_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -1915,7 +2026,19 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	NOT = { area = { area = "Kyushu_Shikoku" country = REB data = 1 value = 1 } }\r
++	NOT = {\r
++	control = { province = 1559 data = REB } # 九州・四国\r
++	control = { province = 1560 data = REB }\r
++	control = { province = 1561 data = REB }\r
++	control = { province = 2781 data = REB }\r
++	control = { province = 2782 data = REB }\r
++	control = { province = 2783 data = REB }\r
++	control = { province = 2784 data = REB }\r
++	control = { province = 2785 data = REB }\r
++	control = { province = 2786 data = REB }\r
++	control = { province = 2787 data = REB }\r
++	control = { province = 2788 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_KYUSHU_SHIKOKU_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -1944,7 +2067,19 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 6757099 # 日本の崩壊\r
+-	area = { area = "Kyushu_Shikoku" country = REB data = 1 value = 1 }\r
++	OR = {\r
++	control = { province = 1559 data = REB } # 九州・四国\r
++	control = { province = 1560 data = REB }\r
++	control = { province = 1561 data = REB }\r
++	control = { province = 2781 data = REB }\r
++	control = { province = 2782 data = REB }\r
++	control = { province = 2783 data = REB }\r
++	control = { province = 2784 data = REB }\r
++	control = { province = 2785 data = REB }\r
++	control = { province = 2786 data = REB }\r
++	control = { province = 2787 data = REB }\r
++	control = { province = 2788 data = REB }\r
++	}\r
+ 	NOT = { flag = { which = "JAPAN_KYUSHU_SHIKOKU_KAIFUKU" when = 1 value = 100 } }\r
+ 	}\r
+ \r
+@@ -2000,7 +2135,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/U67_USA.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U67_USA.ai" }\r
+ 	command = { type = alliance which = USA }\r
+ 	}\r
+ }\r
+@@ -2034,7 +2169,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/U67_atwar.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/U67_atwar.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2065,7 +2200,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/USA_invade_chi.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/USA_invade_chi.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2126,7 +2261,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UER_Baltic_Claims.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Baltic_Claims.ai" }\r
+ 	command = { type = local_setflag which = Balticclaims }\r
+ 	}\r
+ }\r
+@@ -2167,7 +2302,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UER_Baltic.ai" } # decrease Sov AI intell spending, so it has money to demand territory.\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Baltic.ai" } # decrease Sov AI intell spending, so it has money to demand territory.\r
+ 	}\r
+ }\r
+ \r
+@@ -2199,7 +2334,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UER_Baltic_off.ai" } # decrease Sov AI intell spending, so it has money to demand territory.\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Baltic_off.ai" } # decrease Sov AI intell spending, so it has money to demand territory.\r
+ 	}\r
+ }\r
+ \r
+@@ -2229,7 +2364,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFazia/switch/UER_GER_atwar.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_GER_atwar.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2255,8 +2390,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UER_Germany.ai" }\r
+-	command = { type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Germany.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2282,8 +2417,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UER_Germany_Second_Year.ai" }\r
+-	command = { type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Germany_Second_Year.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2329,7 +2464,7 @@ event = {
+ \r
+ 	action = {\r
+ 	command = { type = local_setflag which = UERDefensePrepareGER }\r
+-	command = { type = ai which = "IFazia/switch/UER_Defense_GER_Border.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Defense_GER_Border.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2378,7 +2513,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = UERDefensePrepareGER }\r
+-		command = { type = ai which = "IFazia/switch/UER_Defense_Standard.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Defense_Standard.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2405,8 +2540,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFazia/switch/UER_Bitter_Peace.ai" }\r
+-	command = { type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Bitter_Peace.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2457,7 +2592,7 @@ event = {
+ 	command = { type = local_setflag which = UERBuildStandard }\r
+ 	command = { type = local_clrflag which = UERBuildLand }\r
+ 	command = { type = local_clrflag which = UERBuildLandPanic }\r
+-	command = { type = ai which = "IFazia/switch/UER_Build_Standard.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Build_Standard.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2511,7 +2646,7 @@ event = {
+ 		command = { type = local_clrflag which = UERBuildStandard }\r
+ 		command = { type = local_setflag which = UERBuildLand }\r
+ 		command = { type = local_clrflag which = UERBuildLandPanic }\r
+-		command = { type = ai which = "IFazia/switch/UER_Build_Land.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Build_Land.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2548,7 +2683,7 @@ event = {
+ 	command = { type = local_clrflag which = UERBuildStandard }\r
+ 	command = { type = local_clrflag which = UERBuildLand }\r
+ 	command = { type = local_setflag which = UERBuildLandPanic }\r
+-	command = { type = ai which = "IFazia/switch/UER_Build_Panic.ai" } \r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_Build_Panic.ai" } \r
+ 	}\r
+ }\r
+ \r
+@@ -2711,38 +2846,38 @@ event = {
+ 	command = { type = hill_move which = land value = 8 }\r
+ 	command = { type = hill_attack which = land value = 8 }\r
+ 	command = { type = hill_defense which = land value = 8 }\r
+-	command = { type = build_division which = hq value = anti_air when = 4 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = hq value = anti_air when = 4 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 2 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = infantry value = artillery when = 11 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = infantry value = artillery when = 12 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = infantry value = artillery when = 11 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = infantry value = artillery when = 12 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = infantry value = engineer when = 11 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = infantry value = engineer when = 12 cost = -0.1 where = 100 }\r
+-	command = { type = build_division which = infantry value = engineer when = 11 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = infantry value = engineer when = 12 cost = -0.1 where = 100 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
+-	command = { type = build_division which = militia when = 6 cost = -0.1 where = 10 }\r
++	command = { type = build_division which = hq value = anti_air when = 4 cost = 0.1 where = 120 }\r
++	command = { type = build_division which = hq value = anti_air when = 4 cost = 0.1 where = 120 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = armor value = light_armor_brigade when = 6 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = motorized value = armored_car when = 2 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = artillery when = 11 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = artillery when = 12 cost = 0.1 where = 120 }\r
++	command = { type = build_division which = infantry value = artillery when = 11 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = artillery when = 12 cost = 0.1 where = 120 }\r
++	command = { type = build_division which = infantry value = engineer when = 11 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = engineer when = 12 cost = 0.1 where = 100 }\r
++	command = { type = build_division which = infantry value = engineer when = 11 cost = 0.1 where = 30 }\r
++	command = { type = build_division which = infantry value = engineer when = 12 cost = 0.1 where = 100 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
++	command = { type = build_division which = militia when = 6 cost = 0.1 where = 10 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2918,7 +3053,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/DEN_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/DEN_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2944,7 +3079,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/NOR_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/NOR_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2970,7 +3105,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/SWE_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/SWE_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2996,7 +3131,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/FIN_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/FIN_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3022,7 +3157,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/BUL_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/BUL_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3048,7 +3183,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/GRE_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/GRE_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3074,7 +3209,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/POL_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/POL_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3100,7 +3235,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/ROM_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/ROM_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3126,7 +3261,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/YUG_PUT_UER.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/YUG_PUT_UER.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3236,9 +3371,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/UER_JAP_atwar.ai" }\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
+-	command = { type = ai which = "switch/medium_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_JAP_atwar.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/medium_construction_factor.ai" }\r
+ 	command = { type = local_setflag which = russia_war_jap }\r
+ 	}\r
+ }\r
+@@ -3266,8 +3401,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = ai which = "IFazia/switch/UER_JAP_atwar_end.ai" }\r
+-	command = { type = ai which = "switch/medium_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/UER_JAP_atwar_end.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/medium_construction_factor.ai" }\r
+ 	command = { type = local_clrflag which = russia_war_jap }\r
+ 	}\r
+ }\r
+@@ -3297,11 +3432,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+-	command = { type = build_division which = armor when = 5 }\r
+-	command = { type = build_division which = armor when = 5 }\r
+-	command = { type = build_division which = armor when = 5 }\r
+-	command = { type = build_division which = armor when = 5 }\r
+-	command = { type = build_division which = armor when = 5 }\r
++	command = { type = build_division which = armor when = 5 cost = 0.1 }\r
++	command = { type = build_division which = armor when = 5 cost = 0.1 }\r
++	command = { type = build_division which = armor when = 5 cost = 0.1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -3877,7 +4010,7 @@ event = {
+ 	command = { type = gain_tech which = 7190 }\r
+ 	command = { type = gain_tech which = 16010 }\r
+ 	command = { type = gain_tech which = 16020 }\r
+-	command = { type = ai which = "IFazia/switch/GER_Research_IF.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/GER_Research_IF.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3903,7 +4036,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/GER_Research_IF.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/GER_Research_IF.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -3930,7 +4063,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/GER_Sealion.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/GER_Sealion.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4150,9 +4283,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = build_division which = interceptor when = 3 cost = 0.1 where = 0.5 }\r
+-	command = { type = build_division which = interceptor when = 3 cost = 0.1 where = 0.5 }\r
+-	command = { type = build_division which = interceptor when = 3 cost = 0.1 where = 0.5 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4178,9 +4311,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 where = 0.5 }\r
+-	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 where = 0.5 }\r
+-	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 where = 0.5 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4207,9 +4340,9 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = build_division which = naval_bomber when = 3 when = 3 cost = 0.1 where = 0.75 }\r
+-	command = { type = build_division which = naval_bomber when = 3 when = 3 cost = 0.1 where = 0.75 }\r
+-	command = { type = build_division which = naval_bomber when = 3 when = 3 cost = 0.1 where = 0.75 }\r
++	command = { type = build_division which = naval_bomber when = 3 cost = 0.1 }\r
++	command = { type = build_division which = naval_bomber when = 3 cost = 0.1 }\r
++	command = { type = build_division which = naval_bomber when = 3 cost = 0.1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4240,7 +4373,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/LIT_Axis.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/LIT_Axis.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4271,7 +4404,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/LAT_Axis.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/LAT_Axis.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4302,7 +4435,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/EST_Axis.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/EST_Axis.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4372,7 +4505,7 @@ event = {
+ 	command = { type = sleepevent which = 3003013 }\r
+ 	command = { type = sleepevent which = 3003009 }\r
+ 	command = { type = sleepevent which = 3003010 }\r
+-	command = { type = ai which = "IFazia/switch/GER_Russia.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/GER_Russia.ai" }\r
+ 	command = { type = local_clrflag which = GERInvadeRussia }\r
+ 	command = { type = local_clrflag which = GERStandardFront }\r
+ 	command = { trigger = { control = { province = 68 data = GER } } type = activate_division which = 14500 value = 2027 where = 68 when = 0 }\r
+@@ -4434,7 +4567,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/GER_Winter.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/GER_Winter.ai" }\r
+ 	}\r
+ }\r
+ ##########################################################################\r
+@@ -4465,7 +4598,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/GER_Russia_Second_Year.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/GER_Russia_Second_Year.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4494,7 +4627,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/medium_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/medium_construction_factor.ai" }\r
+ 	command = { type = local_setflag which = KOR_atwar }\r
+ 	}\r
+ }\r
+@@ -4522,7 +4655,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/high_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/high_construction_factor.ai" }\r
+ 	command = { type = local_clrflag which = KOR_atwar }\r
+ 	}\r
+ }\r
+@@ -4553,7 +4686,7 @@ event = {
+ 	action = {\r
+ 	command = { type = max_amphib_mod value = -10 when = 1 }\r
+ 	command = { type = task_efficiency which = amphibious_assault value = -0.35 }\r
+-	command = { type = ai which = "IFazia/switch/KOR_Invade_War.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/KOR_Invade_War.ai" }\r
+ 	command = { type = local_setflag which = KOR_Invade_Japan }\r
+ 	}\r
+ }\r
+@@ -4584,7 +4717,7 @@ event = {
+ 	action = {\r
+ 	command = { type = max_amphib_mod value = -10 when = 1 }\r
+ 	command = { type = task_efficiency which = amphibious_assault value = -0.35 }\r
+-	command = { type = ai which = "IFazia/switch/KOR_Invade_War_End.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/KOR_Invade_War_End.ai" }\r
+ 	command = { type = local_clrflag which = KOR_Invade_Japan }\r
+ 	}\r
+ }\r
+@@ -4616,7 +4749,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/MEX_1848.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/MEX_1848.ai" }\r
+ 	command = { type = local_setflag which = MEX_1848 }\r
+ 	}\r
+ }\r
+@@ -4652,7 +4785,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/MEX_1848_end.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/MEX_1848_end.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4742,7 +4875,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/low_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/low_construction_factor.ai" }\r
+ 	command = { type = local_setflag which = south_america_atwar }\r
+ 	}\r
+ }\r
+@@ -4771,7 +4904,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/high_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/high_construction_factor.ai" }\r
+ 	command = { type = local_clrflag which = south_america_atwar }\r
+ 	}\r
+ }\r
+@@ -4905,38 +5038,38 @@ event = {
+ \r
+ 	action = {\r
+ 	command = { type = manpowerpool value = 50 when = 0 }\r
+-	command = { type = build_division which = destroyer value = naval_fire_controll_s when = 4 cost = -0.1 where = 60 }\r
+-	command = { type = build_division which = destroyer value = naval_fire_controll_s when = 4 cost = -0.1 where = 90 }\r
+-	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = -0.1 where = 30 }\r
+-	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = -0.1 where = 60 }\r
+-	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = -0.1 where = 90 }\r
+-	command = { type = build_division which = transport when = 4 cost = -0.1 where = 90 }\r
+-	command = { type = build_division which = transport when = 4 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = naval_bomber when = 6 cost = -0.1 where = 160 }\r
+-	command = { type = build_division which = transport_plane when = 6 cost = -0.1 where = 200 }\r
+-	command = { type = build_division which = paratrooper value = glider_artillery when = 5 cost = -0.1 where = 200 }\r
+-	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = -0.1 where = 140 }\r
+-	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = -0.1 where = 200 }\r
+-	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = -0.1 where = 200 }\r
+-	command = { type = build_division which = cas when = 5 cost = -0.1 where = 140 }\r
+-	command = { type = build_division which = cas when = 5 cost = -0.1 where = 140 }\r
+-	command = { type = build_division which = cas when = 5 cost = -0.1 where = 140 }\r
+-	command = { type = build_division which = interceptor when = 8 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = interceptor when = 8 cost = -0.1 where = 160 }\r
+-	command = { type = build_division which = interceptor when = 8 cost = -0.1 where = 160 }\r
+-	command = { type = build_division which = hq value = anti_air when = 4 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = light_armor value = light_armor_brigade when = 4 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = light_armor value = light_armor_brigade when = 4 cost = -0.1 where = 200 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 8 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = motorized value = armored_car when = 8 cost = -0.1 where = 90 }\r
+-	command = { type = build_division which = infantry value = artillery when = 15 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = infantry value = artillery when = 15 cost = -0.1 where = 120 }\r
+-	command = { type = build_division which = infantry value = engineer when = 15 cost = -0.1 where = 100 }\r
+-	command = { type = build_division which = infantry value = engineer when = 15 cost = -0.1 where = 100 }\r
+-	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
+-	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
+-	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
+-	command = { type = build_division which = garrison value = police when = 10 cost = -0.1 where = 100 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s when = 4 cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s when = 4 cost = 0.1 }\r
++	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = 0.1 }\r
++	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = 0.1 }\r
++	command = { type = build_division which = submarine value = naval_torpedoes_s when = 8 cost = 0.1 }\r
++	command = { type = build_division which = transport when = 4 cost = 0.1 where = 90 }\r
++	command = { type = build_division which = transport when = 4 cost = 0.1 where = 120 }\r
++	command = { type = build_division which = naval_bomber when = 6 cost = 0.1 where = 160 }\r
++	command = { type = build_division which = transport_plane when = 6 cost = 0.1 where = 200 }\r
++	command = { type = build_division which = paratrooper value = glider_artillery when = 5 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = 0.1 }\r
++	command = { type = build_division which = tactical_bomber value = escort when = 8 cost = 0.1 }\r
++	command = { type = build_division which = cas when = 5 cost = 0.1 }\r
++	command = { type = build_division which = cas when = 5 cost = 0.1 }\r
++	command = { type = build_division which = cas when = 5 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 8 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 8 cost = 0.1 }\r
++	command = { type = build_division which = interceptor when = 8 cost = 0.1 }\r
++	command = { type = build_division which = hq value = anti_air when = 4 cost = 0.1 }\r
++	command = { type = build_division which = light_armor value = light_armor_brigade when = 4 cost = 0.1 }\r
++	command = { type = build_division which = light_armor value = light_armor_brigade when = 4 cost = 0.1 }\r
++	command = { type = build_division which = motorized value = armored_car when = 8 cost = 0.1 }\r
++	command = { type = build_division which = motorized value = armored_car when = 8 cost = 0.1 }\r
++	command = { type = build_division which = infantry value = artillery when = 15 cost = 0.1 }\r
++	command = { type = build_division which = infantry value = artillery when = 15 cost = 0.1 }\r
++	command = { type = build_division which = infantry value = engineer when = 15 cost = 0.1 }\r
++	command = { type = build_division which = infantry value = engineer when = 15 cost = 0.1 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = 0.1 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = 0.1 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = 0.1 }\r
++	command = { type = build_division which = garrison value = police when = 10 cost = 0.1 }\r
+ 	command = { type = gain_tech which = 2040 }\r
+ 	command = { type = gain_tech which = 2050 }\r
+ 	command = { type = gain_tech which = 2070 }\r
+@@ -4974,7 +5107,7 @@ event = {
+ 	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
+ 	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
+ 	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
+-	command = { type = build_division which = battleship value = naval_improved_hull_l when = 3 cost = 0.1 where = 3 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l when = 3 cost = 0.1}\r
+ 	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
+ 	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
+ 	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
+@@ -5045,9 +5178,9 @@ event = {
+ 	deathdate = { day = 29 month = may year = 1948 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/DDR_War.ai" }\r
+-	command = { type = ai which = "switch/low_construction_factor.ai" }\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/DDR_War.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/low_construction_factor.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -5076,8 +5209,8 @@ event = {
+ 	deathdate = { day = 29 month = may year = 1948 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "IFazia/switch/FRA_DDR.ai" }\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IFazia/switch/FRA_DDR.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -5120,8 +5253,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+-	command = { type = ai which = "switch/FRA_Offensive.ai" }\r
+-	command = { type = ai which = "Air_Ground.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/FRA_Offensive.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -5205,7 +5338,388 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  イタリア\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第1段階）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657201\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	ic = { country = ITA value = 70 when = now } # 基礎IC70\r
++	NOT = { flag = ITALIA_ECONOMIC_RECESSION_1 } # 経済不況問題 第1段階\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 20 } }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = 20 }\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION_1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第1段階喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657202\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	NOT = { ic = { country = ITA value = 70 when = now } } # 基礎IC70\r
++	flag = ITALIA_ECONOMIC_RECESSION_1 # 経済不況問題 第1段階\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 20 }\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = -20 }\r
++	command = { type = clrflag which = ITALIA_ECONOMIC_RECESSION_1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第2段階）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657203\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	ic = { country = ITA value = 75 when = now } # 基礎IC75\r
++	NOT = { flag = ITALIA_ECONOMIC_RECESSION_2 } # 経済不況問題 第2段階\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 40 } }\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 20 }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = 20 }\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION_2 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第2段階喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657204\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	NOT = { ic = { country = ITA value = 75 when = now } } # 基礎IC75\r
++	flag = ITALIA_ECONOMIC_RECESSION_2 # 経済不況問題 第2段階\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 40 }\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = -20 }\r
++	command = { type = clrflag which = ITALIA_ECONOMIC_RECESSION_2 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第3段階）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657205\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	ic = { country = ITA value = 80 when = now } # 基礎IC80\r
++	NOT = { flag = ITALIA_ECONOMIC_RECESSION_3 } # 経済不況問題 第3段階\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 60 } }\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 40 }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = 20 }\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION_3 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第3段階喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657206\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	NOT = { ic = { country = ITA value = 80 when = now } } # 基礎IC80\r
++	flag = ITALIA_ECONOMIC_RECESSION_3 # 経済不況問題 第3段階\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 60 }\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = -20 }\r
++	command = { type = clrflag which = ITALIA_ECONOMIC_RECESSION_3 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第4段階）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657207\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	ic = { country = ITA value = 85 when = now } # 基礎IC85\r
++	NOT = { flag = ITALIA_ECONOMIC_RECESSION_4 } # 経済不況問題 第4段階\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 80 } }\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 60 }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = 20 }\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION_4 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第4段階喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657208\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	NOT = { ic = { country = ITA value = 85 when = now } } # 基礎IC85\r
++	flag = ITALIA_ECONOMIC_RECESSION_4 # 経済不況問題 第4段階\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 80 }\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = -20 }\r
++	command = { type = clrflag which = ITALIA_ECONOMIC_RECESSION_4 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第5段階）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657209\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	ic = { country = ITA value = 90 when = now } # 基礎IC90\r
++	NOT = { flag = ITALIA_ECONOMIC_RECESSION_5 } # 経済不況問題 第5段階\r
++	NOT = { flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 100 } }\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 80 }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = 20 }\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION_5 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（経済不況問題 第5段階喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657210\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	NOT = { ic = { country = ITA value = 90 when = now } } # 基礎IC90\r
++	flag = ITALIA_ECONOMIC_RECESSION_5 # 経済不況問題 第5段階\r
++	flag = { which = "ITALIA_ECONOMIC_RECESSION" when = 1 value = 100 }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = ITALIA_ECONOMIC_RECESSION when = 1 value = -20 }\r
++	command = { type = clrflag which = ITALIA_ECONOMIC_RECESSION_5 }\r
++	}\r
++}\r
+ \r
++##########################################################################\r
++#  イタリア民主主義の危機（マフィア問題）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657211\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	NOT = {\r
++	control = { province = 430 data = REB } # シチリア\r
++	control = { province = 431 data = REB }\r
++	control = { province = 432 data = REB }\r
++	control = { province = 433 data = REB }\r
++	}\r
++	NOT = { flag = { which = "ITALIA_MAFIA" when = 1 value = 100 } }\r
++	}\r
++\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 2\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "ITALIA_MAFIA" when = 1 value = 1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  イタリア民主主義の危機（マフィア問題喪失）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6657212\r
++	random = no\r
++	country = REB\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	event = 1229201 # フォンターナ広場爆破事件\r
++	OR = {\r
++	control = { province = 430 data = REB } # シチリア\r
++	control = { province = 431 data = REB }\r
++	control = { province = 432 data = REB }\r
++	control = { province = 433 data = REB }\r
++	}\r
++	flag = { which = "ITALIA_MAFIA" when = 1 value = 1 }\r
++	NOT = { flag = { which = "ITALIA_MAFIA" when = 1 value = 100 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 2\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = setflag which = "ITALIA_MAFIA" when = 1 value = -1 }\r
++	}\r
++}\r
+ ##########################################################################\r
+ #  謝辞イベント\r
+ ###########################################################################\r
+@@ -5232,4 +5746,4 @@ event = {
+ 	name = "ACTIONNAME_SHAJI_AZIA" \r
+ 	command = { }\r
+ 	}\r
+-}\r
++}
+\ No newline at end of file

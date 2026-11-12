@@ -1,0 +1,186 @@
+--- A/db/events/AdditionalEvents/Add_spanish_civil_war.txt [cp932]
++++ B/db/events/AdditionalEvents/Add_spanish_civil_war.txt [cp932]
+@@ -171,7 +171,6 @@ event = {
+ 	action = { \r
+ 		name = "ACTIONNAME224001D" # イベリアを我が手に！\r
+ 		ai_chance = 0\r
+-\r
+ 		command = { type = war which = SPA }\r
+ 		command = { type = war which = SPR }\r
+ 		# command = { type = non_aggression which = POR where = SPA }\r
+@@ -1063,7 +1062,8 @@ event = {
+ \r
+ #########################################################################\r
+ #   ピレネーの密約 ― モロッコと北カタルーニャの確約\r
+-#  スペインの同盟国であるドイツ指導者アドルフ・ヒトラー、外相ヨヒアム・フォン・リッベントロップの出席のもと、スペイン首脳部との会談が行われました。\r
++#  スペインの同盟国であるドイツ指導者アドルフ・ヒトラー、\r
++# 外相ヨヒアム・フォン・リッベントロップの出席のもと、スペイン首脳部との会談が行われました。\r
+ # 会談でスペインは対フランス戦争に勝利した場合、モロッコと北カタルーニャに対する支配権をドイツに要求しました。\r
+ # スペインが既に支配しているサハラとセウタ、メリリャ飛び地と南部領域を結びつけることができるでしょう。\r
+ # ヒトラー政権はスペインのファシスト勢力と協調関係を構築したため、スペインの領土要求を支援することを認めました。\r
+@@ -1080,17 +1080,14 @@ event = {
+ 		alliance = { country = GER country = SPA }\r
+ 		# event = 2003047 # German 1940 diplomatic offensive\r
+ 		flag = SPA_Anti_comintern_pact\r
+-\r
+ 		Not = { event = 2002008 } # ヴィシーフランスが成立する前\r
+ 		Not = { event = 2003051 } # アンダイエ会談\r
+ 		Not = { event = 2002017 } #  FRA  Cede Marocco to Spain\r
+ 		Not = { exists = SPR }\r
+ 		Not = { exists = U35 }\r
+-\r
+ 		war = { country = GER country = FRA }\r
+-		war = { country = GER country = SPA }\r
+-		random = 30\r
+-\r
++		war = { country = SPA country = FRA }\r
++		random = 40\r
+ 	}\r
+ \r
+ 	name = "EVT_224102_NAME"\r
+@@ -1107,7 +1104,6 @@ event = {
+ 		command = { type = relation which = FRA value = -25 }\r
+ 		command = { type = relation which = ENG value = -10 }\r
+ 		command = { type = relation which = GER value = 10 }\r
+-\r
+ 		command = { type = addclaim which = 717 } #new claims on Morocco\r
+ 		command = { type = addclaim which = 718 } \r
+ 		command = { type = addclaim which = 719 } \r
+@@ -1145,36 +1141,32 @@ event = {
+ 		# event = 2003047 # German 1940 diplomatic offensive\r
+ 		# event = 2008006 # GER intervention in SCW\r
+ 		event = 224102 # ピレネーの密約 ― モロッコと北カタルーニャの確約\r
+-\r
+ 		NOT = { war = { country = GER country = SPA } }\r
+ 		alliance = { country = GER country = SPA }\r
+ 		control = { province = 55 data = -3 } # Paris\r
+ 		war = { country = GER country = ENG }\r
+-\r
+-\r
+ 		NOT = { war = { country = GER country = FRA } }\r
+ 		NOT = { alliance = { country = ENG country = FRA } }\r
+ 		NOT = { war = { country = FRA country = GER } }\r
+ \r
+-			OR = { \r
+-				control = { province = 719 data = GER } \r
+-				control = { province = 722 data = GER } \r
+-				control = { province = 718 data = GER } \r
+-				control = { province = 725 data = GER } \r
+-				control = { province = 726 data = GER } \r
+-				control = { province = 721 data = GER } \r
+-				control = { province = 717 data = GER } \r
+-				control = { province = 724 data = GER } \r
+-				control = { province = 719 data = FRA } \r
+-				control = { province = 722 data = FRA } \r
+-				control = { province = 718 data = FRA } \r
+-				control = { province = 725 data = FRA } \r
+-				control = { province = 726 data = FRA } \r
+-				control = { province = 721 data = FRA } \r
+-				control = { province = 717 data = FRA } \r
+-				control = { province = 724 data = FRA } \r
+-			}\r
+-\r
++		OR = { \r
++			control = { province = 719 data = GER } \r
++			control = { province = 722 data = GER } \r
++			control = { province = 718 data = GER } \r
++			control = { province = 725 data = GER } \r
++			control = { province = 726 data = GER } \r
++			control = { province = 721 data = GER } \r
++			control = { province = 717 data = GER } \r
++			control = { province = 724 data = GER } \r
++			control = { province = 719 data = FRA } \r
++			control = { province = 722 data = FRA } \r
++			control = { province = 718 data = FRA } \r
++			control = { province = 725 data = FRA } \r
++			control = { province = 726 data = FRA } \r
++			control = { province = 721 data = FRA } \r
++			control = { province = 717 data = FRA } \r
++			control = { province = 724 data = FRA } \r
++		}\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = january year = 1936 }		 \r
+@@ -1193,7 +1185,8 @@ event = {
+ 		command = { type = secedeprovince which = SPA value = 80 } # 北カタルーニャ\r
+ 		command = { type = secederegion which = SPA value = "Morocco" when = 1 }\r
+ 		command = { trigger = { exists = FRA } type = trigger which = 224104 } # France secedes Morocco\r
+-		command = { trigger = { NOT = { exists = FRA } } type = trigger which = 224105 } # Spain joins the Axis!\r
++		command = { trigger = { exists = MOR NOT = { exists = FRA } } type = trigger which = 224105 }\r
++		command = { trigger = { NOT = { exists = MOR exists = FRA } } type = trigger which = 224106 }\r
+ 	}\r
+ 	\r
+ 	action = { # そのような約束をした覚えはない\r
+@@ -1229,11 +1222,54 @@ event = {
+ 		command = { type = secedeprovince which = SPA value = 80 } # 北カタルーニャ\r
+ 		command = { type = secederegion which = SPA value = "Morocco" when = 1 }\r
+ 		command = { type = set_relation which = GER value = -200 }\r
+-		command = { type = end_puppet }\r
+-		command = { type = trigger which = 2008002 }\r
++		# command = { type = end_puppet }\r
++		# command = { type = trigger which = 2008002 } # SPA  Spain joins the Axis!\r
++		command = { trigger = { puppet = { country = MOR country = FRA } } type = trigger which = 224105 }\r
++		command = { trigger = { Not = { puppet = { country = MOR country = FRA } } } type = trigger which = 224106 }\r
+ 	} \r
+ }\r
+ \r
++#########################################################################\r
++#  モロッコ併合\r
++#  スペインは枢軸側として参戦すると決定し、ドイツをはじめ枢軸諸国に対する資源と軍事力を提供しています\r
++# 彼らは見返りにフランスに管理されていたモロッコの獲得が保証されており、\r
++# 彼らは躊躇いなく我が国に侵攻してくるでしょう。\r
++# 我々を保護していたフランスはもはや頼りになりません。閣下、ご采配を。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 224105 # 2008002\r
++	random = no \r
++	country = MOR\r
++\r
++	name = "EVT_224105_NAME"\r
++	desc = "EVT_224105_DESC"\r
++	style = 2\r
++	picture = "Hendaya"\r
++	\r
++	action = { # 抗戦は難しい……(ゲーム終了)\r
++		name = "ACTIONNAME224105A"\r
++		ai_chance = 100\r
++		command = { type = dissent value = 20 }\r
++		command = { type = secederegion which = SPA value = "Morocco" when = 1 }\r
++		command = { type = trigger which = 224106 }\r
++	}\r
++	\r
++	action = { # スペイン人に屈した覚えなどない！！\r
++		ai_chance = 0\r
++		name = "ACTIONNAME224105B"\r
++		command = { type = dissent value = 5 }\r
++		command = { type = relation which = GER value = -200 }\r
++		command = { type = relation which = SPA value = -200 }\r
++		command = { type = relation which = FRA value = -100 } \r
++		command = { type = end_puppet }\r
++		command = { type = war which = SPA }\r
++		command = { type = war which = GER }\r
++	}\r
++}\r
++\r
++\r
++\r
+ #########################################################################\r
+ #  スペインと枢軸同盟\r
+ #  スペインは内戦によって荒廃しました。枢軸側として参戦すると決定する際に、\r
+@@ -1243,12 +1279,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = { \r
+-	id = 224105 # 2008002\r
++	id = 224106 # 2008002\r
+ 	random = no \r
+ 	country = SPA\r
+ \r
+-	name = "EVT_224105_NAME"\r
+-	desc = "EVT_224105_DESC"\r
++	name = "EVT_224106_NAME"\r
++	desc = "EVT_224106_DESC"\r
+ 	style = 2\r
+ 	picture = "Hendaya"\r
+ 	\r

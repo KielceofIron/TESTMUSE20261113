@@ -1,0 +1,1802 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
+@@ -59,6 +59,7 @@
+ #id = 45680054 ライン防衛計画の再編成\r
+ #id = 45680055 三百隻潜水艦隊計画\r
+ #id = 45680056 歪んだ外務大臣\r
++#id = 45680057 魔術師の動向\r
+ ###ドイツ戦間期政治イベント\r
+ #id = 45680101 世界恐慌による政治的混乱\r
+ #id = 45680102 第1の流産\r
+@@ -120,6 +121,13 @@
+ #id = 45680238 東亜総合商社の四国統治 ― 新プローラ\r
+ ##########################################################################\r
+ #  ヴィルヘルム2世の死去\r
++# １９３６年はドイツ帝国に激変が生じた年である。\r
++# 国家共産主義政党『コンスル』が政権を獲得したのもこの年であり、またかの大皇帝ヴィルヘルム二世が死去したのもこの年である。\r
++# 第一次世界大戦を指導した皇帝として、民衆からの敬意を集めたヴィルヘルム二世は、１９３６年１２月４日に死去する。\r
++# ドイツ帝国では盛大な葬儀が執り行われ、また次期皇帝には予てから『コンスル』への支持を表明していたヴィルヘルム二世の長男\r
++# が皇帝に即位。「ヴィルヘルム三世」を名乗った。\r
++# 彼が皇帝の地位につくと、エルンスト・ユンガー率いる内閣は総力戦体制構築のために権限を強め、皇帝の権力を一つ一つ剥ぎ取っていった。\r
++# そして、ヴィルヘルム三世もまたそれを許容していたのである。\r
+ ###########################################################################\r
+ event = {\r
+ 	id = 45680001\r
+@@ -128,22 +136,30 @@ event = {
+ 	style = 2\r
+ \r
+ 	trigger = {\r
+-	minister = 17 # ヴィルヘルム2世\r
++\r
+ 	}\r
+ \r
+-	date = { year = 1941 month = june day = 3 }\r
++	date = { year = 1936 month = december day = 3 }\r
+ \r
+ 	name = "EVT_45680001_NAME"\r
+ 	desc = "EVT_45680001_DESC"\r
+ 	picture = "Wilhelm_II"\r
+ \r
+ 	action_a = {\r
+-	name = "EVT_362_ACTC"\r
++	name = "ACTIONNAME45680001A" # それでも帝政は残ったのだから、良いではないか……。\r
++	command = { trigger = { headofstate = 333 } type = headofstate which = 348 } # ヴィルヘルム3世 社会改良\r
++	command = { trigger = { headofstate = 341 } type = headofstate which = 304 } # ヴィルヘルム3世 国家協同\r
++	command = { trigger = { headofstate = 342 } type = headofstate which = 349 } # ヴィルヘルム3世 自由経済\r
++	command = { trigger = { headofstate = 344 } type = headofstate which = 348 } # ヴィルヘルム3世\r
++	command = { trigger = { headofstate = 345 } type = headofstate which = 304 } # ヴィルヘルム3世\r
++	command = { trigger = { headofstate = 346 } type = headofstate which = 349 } # ヴィルヘルム3世\r
+ 	command = { type = sleepminister which = 17 }\r
+ 	command = { type = sleepminister which = 333 }\r
+ 	command = { type = sleepminister which = 341 }\r
+ 	command = { type = sleepminister which = 342 }\r
+-	command = { type = headofstate which = 304 } # ヴィルヘルム3世\r
++	command = { type = sleepminister which = 344 }\r
++	command = { type = sleepminister which = 345 }\r
++	command = { type = sleepminister which = 346 }\r
+ 	}\r
+ }\r
+ \r
+@@ -157,10 +173,6 @@ event = {
+ 	style = 2\r
+ \r
+ 	trigger = {\r
+-	OR = {\r
+-	minister = 18\r
+-	minister = 304\r
+-	}\r
+ 	}\r
+ \r
+ 	date = { year = 1945 month = 6 day = 19 }\r
+@@ -173,8 +185,9 @@ event = {
+ 	name = "EVT_362_ACTC"\r
+ 	command = { type = sleepminister which = 18 }\r
+ 	command = { type = sleepminister which = 304 }\r
+-	command = { trigger = { incabinet = 18 } type = headofstate which = 306 } # ヴィルヘルム4世\r
+-	command = { trigger = { incabinet = 304 } type = headofstate which = 306 } # ヴィルヘルム4世\r
++	command = { type = sleepminister which = 348 }\r
++	command = { type = sleepminister which = 349 }\r
++	command = { trigger = { OR = { incabinet = 18 incabinet = 304 incabinet = 348 incabinet = 349 } } type = headofstate which = 306 } # ヴィルヘルム4世\r
+ 	}\r
+ }\r
+ \r
+@@ -223,6 +236,13 @@ event = {
+ \r
+ #########################################################################\r
+ #  ヒンデンブルクの死去\r
++# １９３６年１月１７日。\n\r
++# 保守連立の領袖、パウル・フォン・ヒンデンブルク元帥が死去した。\n\r
++# 第一次世界大戦において活躍した元帥は、戦後は政治家に転身し、保守連立統合の象徴として選挙戦を戦った。\r
++# 彼自身は決して積極的に選挙運動を行うことはなかったが、それが逆に或る種の神秘性を醸し出し、保守派閥は彼の下に団結していた。\r
++# しかし、普墺戦争・普仏戦争を戦い、第一次世界大戦の時点で"老元帥"と呼ばれていた彼は、このドイツ帝国の政治混乱期に死去してしまう。\r
++# 以降、保守連立は崩壊し、社民党勢力が民衆の望む改革に応えられないことが分かると、人々の支持は共産党と、そしてもう一つの或る政党に\r
++# 集まっていくこととなる。\r
+ ########################################################################\r
+ \r
+ event = {\r
+@@ -242,9 +262,9 @@ event = {
+ 	style = 2\r
+ 	picture = "hindenburg_death"\r
+ \r
+-	date = { day = 25 month = 1 year = 1936 }\r
++	date = { day = 16 month = 0 year = 1936 }\r
+ \r
+-	action = { # 我が皇帝…我が祖国よ…(Mein Kaiser. Mein Vaterland)\r
++	action = { # 我々は老人を痛めつけていたということを十分に理解しなければならない\r
+ 	name = "ACTIONNAME45680004A"\r
+ 	command = { type = sleepminister which = 268 } # Hindenburg\r
+ 	command = { type = sleepminister which = 312 } # 追加\r
+@@ -323,6 +343,11 @@ event = {
+         command = { type = build_cost which = infantry when = on_upgrade where = relative value = -20 }\r
+         command = { type = build_cost which = artillery when = on_upgrade where = relative value = -20 }\r
+         command = { type = build_cost which = armored_car when = on_upgrade where = relative value = -20 }\r
++	command = { type = add_prov_resource which = metal where = 1265 value = 10 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1269 value = 40 }\r
++	command = { type = add_prov_resource which = energy where = 1269 value = 30 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1293 value = 40 }\r
++	command = { type = add_prov_resource which = metal where = 1293 value = 50 }\r
+ 	command = { type = add_prov_resource which = rare_materials where = 1352 value = 2 }\r
+         command = { type = add_prov_resource which = rare_materials where = 1347 value = 2 }\r
+         command = { type = add_prov_resource which = rare_materials where = 1346 value = 2 }\r
+@@ -352,12 +377,24 @@ event = {
+         command = { type = construct which = ic where = 1308 value = 1 } #Changsha\r
+         command = { type = construct which = ic where = 1297 value = 1 } #Chengdu\r
+         command = { type = construct which = ic where = 1299 value = 1 } #Chongqing\r
++	command = { type = add_prov_resource which = rare_materials where = 1269 value = 40 }\r
++	command = { type = add_prov_resource which = energy where = 1269 value = 30 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1293 value = 40 }\r
++	command = { type = add_prov_resource which = metal where = 1293 value = 50 }\r
++	command = { type = trade which = GER where = CHI supplies = -2 money = 0.75 value = 1 }\r
++	command = { type = trade which = GER where = CHI supplies = -2 money = 0.75 value = 1 }\r
++	command = { type = trade which = GER where = CHI supplies = -7.5 rare_materials = 20 value = 1 }\r
++	command = { type = trade which = GER where = CHI supplies = -7.5 rare_materials = 20 value = 1 }\r
+ 	command = { type = setflag which = 45680006_2 }\r
+ 	command = { type = event which = 45680006 where = CHI when = 180 } #CHI Sino-German Cooperation\r
+ 	}\r
+ \r
+ 	action = { # すばらしい！\r
+ 	trigger = {\r
++	NOT = {\r
++	flag = 45680006_3\r
++	event = 2012002 #CHI German Mission Recalled\r
++	}\r
+ 	flag = 45680006_2\r
+ 	}\r
+ 	name = ACTION_NAME_GREAT\r
+@@ -368,17 +405,65 @@ event = {
+         command = { type = construct which = ic where = 1308 value = 1 } #Changsha\r
+         command = { type = construct which = ic where = 1297 value = 1 } #Chengdu\r
+         command = { type = construct which = ic where = 1299 value = 1 } #Chongqing\r
++	command = { type = add_prov_resource which = rare_materials where = 1269 value = 40 }\r
++	command = { type = add_prov_resource which = energy where = 1269 value = 30 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1293 value = 40 }\r
++	command = { type = add_prov_resource which = metal where = 1293 value = 50 }\r
++	command = { type = setflag which = 45680006_3 }\r
++    }\r
++	action = { # すばらしい！\r
++	trigger = {\r
++	NOT = {\r
++	flag = 45680006_4\r
++	event = 2012002 #CHI German Mission Recalled\r
++	}\r
++	flag = 45680006_3\r
++	}\r
++	name = ACTION_NAME_GREAT\r
++        command = { type = add_prov_resource which = oil where = 1203 value = 25 }\r
++        command = { type = add_prov_resource which = oil where = 1217 value = 5 }\r
++        command = { type = add_prov_resource which = oil where = 1218 value = 2 }\r
++        command = { type = add_prov_resource which = oil where = 1255 value = 20 }\r
++        command = { type = add_prov_resource which = oil where = 1259 value = 7 }\r
++        command = { type = add_prov_resource which = oil where = 1281 value = 20 }\r
++        command = { type = add_prov_resource which = oil where = 1282 value = 20 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1269 value = 40 }\r
++	command = { type = add_prov_resource which = energy where = 1269 value = 30 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1293 value = 40 }\r
++	command = { type = add_prov_resource which = metal where = 1293 value = 50 }\r
++	command = { type = setflag which = 45680006_4 }\r
++\r
++    }\r
++	action = { # すばらしい！\r
++	trigger = {\r
++	NOT = {\r
++	event = 2012002 #CHI German Mission Recalled\r
++	}\r
++	flag = 45680006_4\r
++	}\r
++	name = ACTION_NAME_GREAT\r
++        command = { type = add_prov_resource which = oil where = 1203 value = 25 }\r
++        command = { type = add_prov_resource which = oil where = 1217 value = 5 }\r
++        command = { type = add_prov_resource which = oil where = 1218 value = 2 }\r
++        command = { type = add_prov_resource which = oil where = 1255 value = 20 }\r
++        command = { type = add_prov_resource which = oil where = 1259 value = 7 }\r
++        command = { type = add_prov_resource which = oil where = 1281 value = 20 }\r
++        command = { type = add_prov_resource which = oil where = 1282 value = 20 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1269 value = 40 }\r
++	command = { type = add_prov_resource which = energy where = 1269 value = 30 }\r
++	command = { type = add_prov_resource which = rare_materials where = 1293 value = 40 }\r
++	command = { type = add_prov_resource which = metal where = 1293 value = 50 }\r
+ 	command = { type = sleepevent which = 45680006 }\r
+     }\r
+ }\r
+ \r
+ #########################################################################\r
+ #  陽の当たる場所\r
+-# ドイツ帝国は、ヴィルヘルム2世の多くの植民地を獲得してドイツを「陽の当たる場所」に導くことを目指した「世界証政策」に基づき対外進出を図った。\r
++# ドイツ帝国は、ヴィルヘルム2世の多くの植民地を獲得してドイツを「陽の当たる場所」に導くことを目指した「世界政策」に基づき対外進出を図った。\r
+ # 中国や南太平洋、そしてアフリカに植民地を獲得し、さらに植民地帝国として強力な海軍力こそがドイツに必要としたヴィルヘルム2世は、1898年9月23日の演説で「ドイツの将来は海上にあり」と演説、 海軍の拡大に力を入れた。 \r
+ # 1897年6月にアルフレート・フォン・ティルピッツが海軍大臣に就任し、彼の下で大規模な建艦計画が進められ、これは英仏との対立を招いてしまう。 \r
+ # しかしヴィルヘルム2世にとっての幸運だったことは、極東で起きた日露戦争でロシアの南下を日本が食い止められなかったことから、イギリスがドイツを「ロシアの障壁」と見なして決定的な対立を回避したことだった。\r
+-# これはバルカン半島でのオーストリアとロシア帝国の対立が世界大戦気に発展した際、イギリスの単戦争への不参戦につながり、ドイツはフランスを降伏させることに成功する。\r
++# これはバルカン半島でのオーストリアとロシア帝国の対立が世界大戦気に発展した際、イギリスの大戦争への不参戦につながり、ドイツはフランスを降伏させることに成功する。\r
+ # しかしロシア帝国との戦いは1921年まで続き、 独露両国は決定的な勝利を得ることができぬまま、国民の厭戦感情の拡大と経済の破綻回避のため、白紙和平によって世界大戦は終結した。\r
+ # ドイツは戦争によってフランスから植民地の割譲と賠償金を得ることができたが、膨大な戦死者とドイツ帝国の膨張を警戒した諸国との新しい対立、そして世界恐慌によって、ドイツ帝国は深刻な停滞と過激派の台頭を招いている。\r
+ # ドイツが陽のあたる場所で君臨し続けるか、それとも日陰で没落するか、ベルリンの皇帝の決断が決定づけるだろう。\r
+@@ -396,19 +481,7 @@ event = {
+ \r
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+-	command = { type = sleepevent which = 2003136 }\r
+-	command = { type = sleepevent which = 2003132 }\r
+-	command = { type = sleepevent which = 2003133 }\r
+-	command = { type = sleepevent which = 2003135 }\r
+-	command = { type = sleepevent which = 2003138 }\r
+-	command = { type = sleepevent which = 2003139 }\r
+-	command = { type = sleepevent which = 2003140 }\r
+-	command = { type = sleepevent which = 2003141 }\r
+-	command = { type = sleepevent which = 2003142 }\r
+-	command = { type = sleepevent which = 2003151 }\r
+-	command = { type = sleepevent which = 2003152 }\r
+-	command = { type = sleepevent which = 2003153 }\r
+-	command = { type = sleepevent which = 2003155 }\r
++	command = { }\r
+ 	}\r
+ }\r
+ \r
+@@ -539,12 +612,13 @@ event = {
+ \r
+ #########################################################################\r
+ #  落日の予兆\r
+-# フランス・コミューン政府が対独報復の方針を新たにし、またロシア帝国においては1934年に新皇帝の即位すると、\r
++# フランス政府が対独報復の方針を新たにし、またロシア帝国においては１９３４年に新皇帝の即位が起こると、\r
+ # ドイツ帝国内では第一次世界大戦同様の消耗戦、二正面作戦が行われる可能性があると考えられ始めた。\r
+-# 国民達は普仏戦争とそれに続く第一次世界大戦の勝利によって大いに自信を持ち、再度の二正面作戦においてもドイツ帝国は勝利するであろうと考えているものが多数であった。\r
++# 国民達は普仏戦争とそれに続く第一次世界大戦の勝利によって大いに自信を持ち、再度の二正面作戦においてもドイツ帝国は\r
++# 勝利するであろうと考えているものが多数であった。\r
+ # しかし、実態として第一次世界大戦はソビエト軍の蜂起なしには勝利し得なかったことをドイツ帝国参謀本部は理解していた。\r
+ # ここに至りドイツ帝国は、民衆の過度の期待と実際に迫る危機との間に板挟みとなり、徐々に機能不全を起こし始めるのであった。\r
+-########################################################################\r
++#########################################################################\r
+ \r
+ event = {\r
+ 	id = 45680010\r
+@@ -564,7 +638,9 @@ event = {
+ 	headofstate = 18\r
+ 	headofstate = 304\r
+ 	headofstate = 305\r
+-	headofstate = 306\r
++	headofstate = 333\r
++	headofstate = 341\r
++	headofstate = 342\r
+ 	}\r
+ 	}\r
+ \r
+@@ -582,11 +658,34 @@ event = {
+ 	command = { type = morale which = land value = -3 }\r
+ 	command = { type = morale which = naval value = -3 }\r
+ 	command = { type = morale which = air value = -3 }\r
++	command = { type = sleepminister which = 333 }\r
++	command = { type = sleepminister which = 341 }\r
++	command = { type = sleepminister which = 342 }\r
++	command = { type = wakeminister which = 344 }\r
++	command = { type = wakeminister which = 345 }\r
++	command = { type = wakeminister which = 346 }\r
++	command = { type = headofstate which = 345 }\r
+ 	}\r
+ }\r
+ \r
+ \r
+ \r
++# 国家元首：ヴィルヘルム二世\r
++# →老いた大皇帝\r
++# ヴィルヘルム二世はドイツ帝国の第三代皇帝です。\r
++# かの大宰相オットー・フォン・ビスマルクを政治の壇上から追いやった後、彼は皇帝としての権力を活用し、\r
++# 冒険的とも表現できる政策を実施し、結果ドイツ帝国は第一次世界大戦に勝利することができました。\r
++# しかしこれは神のふるサイコロの気まぐれに過ぎず、実情としての帝国はギリギリの線上にあります。\r
++# 今や、老いた大皇帝はその肩にのしかかる重大な責任に耐えかねており、ドイツ帝国の政治はひどく混乱しています。\r
++# それでも彼は、死に至るその日までドイツ帝国の未来を思い続けるでしょう。\r
++# 333→344\r
++# 341→345\r
++# 342→346\r
++# \r
++# \r
++# \r
++\r
++\r
+ #########################################################################\r
+ #  ゲッベルス自伝的小説『ミヒャエル』\r
+ # 喜ばしい報せが届いた！\r
+@@ -678,10 +777,8 @@ event = {
+ 	id = 45680013\r
+ 	random = no\r
+ 	country = GER\r
+-\r
+ 	trigger = {\r
+ 	atwar = no\r
+-	random = 15\r
+ 	OR = {\r
+ 	event = 45680004 # ヒンデンブルクの死去\r
+ 	NOT = {\r
+@@ -697,6 +794,9 @@ event = {
+ 	headofstate = 306\r
+ 	headofstate = 341\r
+ 	headofstate = 342\r
++	headofstate = 344\r
++	headofstate = 345\r
++	headofstate = 346 #ヴィルヘルム2か3か4\r
+ 	}\r
+ 	}\r
+ \r
+@@ -704,10 +804,7 @@ event = {
+ 	desc = EVT_45680013_DESC\r
+ 	style = 2\r
+ 	picture = "February_Crisis"\r
+-\r
+-	date = { day = 0 month = 0 year = 1934 }\r
+-	offset = 20\r
+-	deathdate = { day = 29 month = 11 year = 1939 }\r
++	date = { day = 24 month = 1 year = 1936 } \r
+ \r
+ 	action = { # 実はもう駄目なんじゃないか？この国\r
+ 	name = "ACTIONNAME45680013A"\r
+@@ -734,10 +831,7 @@ event = {
+ 	country = GER\r
+ \r
+ 	trigger = {\r
+-	atwar = no\r
+-	random = 15\r
+ 	event = 45680004 # ヒンデンブルクの死去\r
+-	event = 45680013 # 混迷するドイツ政局\r
+ 	}\r
+ \r
+ 	name = EVT_45680014_NAME\r
+@@ -745,15 +839,12 @@ event = {
+ 	style = 2\r
+ 	picture = "anschluss"\r
+ \r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1939 }\r
++	date = { day = 0 month = 2 year = 1936 }\r
+ \r
+ 	action = { # 冷静になれ。"あれ"は最後の手段だ……！\r
+ 	name = "ACTIONNAME45680014A"\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = event which = 45680016 where = GER when = 10 }\r
+ 	}\r
+ }\r
+ \r
+@@ -772,8 +863,7 @@ event = {
+ 	country = GER\r
+ \r
+ 	trigger = {\r
+-	event = 45680102 # 第1の流産\r
+-	NOT = { event = 45680110 } # ヒンデンブルグ内閣の成立\r
++	event = 45680004 # ヒンデンブルクの死去\r
+ 	}\r
+ \r
+ 	name = EVT_45680015_NAME\r
+@@ -781,7 +871,7 @@ event = {
+ 	style = 2\r
+ 	picture = "National_Communism"\r
+ \r
+-	date = { day = 0 month = 0 year = 1937 }\r
++	date = { day = 3 month = 4 year = 1936 }\r
+ \r
+ 	action = { # 皇帝は法案を拒否した！\r
+ 	name = "ACTIONNAME45680015A"\r
+@@ -798,21 +888,24 @@ event = {
+ \r
+ #########################################################################\r
+ #  『コンスル』と保守派の連携\r
+-# 1937年選挙が近づくと国家人民党やドイツ中央党などの保守政党に属する政治家達は『コンスル』と連立を組むことで議会において多数派となることを目論んだ。\r
++# 国家人民党やドイツ中央党などの保守政党に属する政治家達は『コンスル』と連立を組むことで議会において多数派となることを目論んだ。\r
+ # これは無論、彼らの支持母体であった資本家や、資本家に転身することの出来なかった貴族、また保守的な軍人らの意向も反映されている。\r
+-# 保守政党の支持母体である彼らは決して一枚岩ではなかったが『コンスル』単体での支配も、ドイツ共産党による支配もどちらも明確に嫌悪しており、\r
+-# 彼らは『コンスル』を連立に組み込むことで同党に足枷を嵌めることを求めていたのである。\r
+-# 彼らは大いに焦っていた。隣国であり、今も復讐を目論むロシア・フランスの勢力は日に日に強まっているのであるからだ。\r
+-#########################################################################\r
++# 保守政党の支持母体である彼らは決して一枚岩ではなかったが『コンスル』単体での支配も、ドイツ共産党による支配もどちらも明確に\r
++# 嫌悪しており、彼らは『コンスル』を連立に組み込むことで同党に足枷を嵌めることを求めていたのである。\r
++# 彼らは大いに焦っていた。隣国であり、今も復讐を目論むロシア・フランスの勢力は日に日に強まっているのであるから。\r
++##########################################################################\r
+ event = { \r
+ 	id = 45680016\r
+ 	random = no\r
+ 	country = GER\r
+-\r
++	trigger = { \r
++	event = 45680004 # ヒンデンブルクの死去\r
++	}\r
+ 	name = "EVT_45680016_NAME"\r
+ 	desc = "EVT_45680016_DESC"\r
+ 	style = 2\r
+ 	picture = "National_Communism"\r
++	date = { day = 0 month = 6 year = 1936 }\r
+ 	\r
+ 	action = { # ドイツを死なせてはならない！\r
+ 	name = "ACTIONNAME45680016A" \r
+@@ -821,12 +914,14 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  1937年のドイツ帝国議会選挙\r
+-# 国家共産主義政党『コンスル』と保守政党が連立を組もうとしていることが政治関係者の話題にのぼるようになるとドイツ共産党は武装蜂起を計画。\r
+-# この陰謀を軍は既に掴んでいたが、彼らも命令がなければ動けず、ドイツ皇帝ヴィルヘルム2世はこのころになると体調を崩し気味で、政務が数時間で限界であった。\r
+-# だがドイツ帝国陸軍と『コンスル』は、国際共産主義勢力を一網打尽にするべく、ヴィルヘルム2世の勅命をもって共産主義者を一人残らず、粛正する計画を打ち立てた。\r
+-# 緊張が高まる中、1937年ドイツ帝国議会選挙が始まり、投票所には異例の数の国民が投票に訪れた。\r
+-#########################################################################\r
++#  最後のチャンス\r
++# 国家共産主義政党『コンスル』と保守政党が連立を組もうとしていることが政治関係者の話題にのぼるようになると\r
++# ドイツ共産党は武装蜂起を計画。\r
++# この動作を軍は既に掴んでいたが、彼らも命令がなければ動けず、ドイツ皇帝ヴィルヘルム二世は体調を崩し、奥に隠れていた。\r
++# しかし、かの大皇帝ヴィルヘルム二世が一度号令を上げれば、ドイツ陸軍と彼に協力する突撃隊は、国際共産主義勢力を一網打尽にできると\r
++# 考えられている。\n\r
++# あとは、誰がどう決断をするか、次第である……。\r
++##########################################################################\r
+ event = { \r
+ 	id = 45680017\r
+ 	random = no\r
+@@ -836,7 +931,7 @@ event = {
+ 	trigger = {\r
+ 	event = 45680016 # 『コンスル』と保守派の連携\r
+ 	event = 45680110 # ヒンデンブルグ内閣の成立\r
+-	event = { id = 45680101 days = 1440 } # 世界恐慌による政治的混乱\r
++	event = 45680101 \r
+ 	OR = {\r
+ 	headofstate = 17\r
+ 	headofstate = 18\r
+@@ -845,6 +940,9 @@ event = {
+ 	headofstate = 306\r
+ 	headofstate = 341\r
+ 	headofstate = 342\r
++	headofstate = 344\r
++	headofstate = 345\r
++	headofstate = 346\r
+ 	}\r
+ 	}\r
+ \r
+@@ -852,18 +950,17 @@ event = {
+ 	desc = "EVT_45680017_DESC"\r
+ 	style = 2\r
+ \r
+-	date = { day = 0 month = 0 year = 1937 }\r
+-	offset = 2\r
+-	deathdate = { day = 29 month = 11 year = 1937 }\r
++	date = { day = 7 month = 9 year = 1936 }\r
+ 	\r
+ 	action = { # 民主主義は死に、灰色の骸のみがのこされた\r
+-	trigger = { NOT = { event = 3327008 } }\r
++	trigger = { NOT = { event = 3327008 }  }\r
+ 	name = "ACTIONNAME45680017A" \r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = flag_ext where = GER which = "_NAZIBORU" }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 341 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = headofstate which = 345 }\r
+ 	command = { type = headofgovernment which = 313 }\r
+ 	command = { type = foreignminister which = 331 }\r
+ 	command = { type = armamentminister which = 56 }\r
+@@ -884,22 +981,50 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 民主主義は死に、真っ赤な鮮血のみがのこされた\r
++\r
++# フランスが極左政権の場合\r
++# 国家元首：ローザ・ルクセンブルク\r
++# →固有特性名＠ドイツ共産党のイデオローグ\r
++# ローザ・ルクセンブルクはポーランド出身のマルクス主義政治理論家、哲学者、革命家である。\r
++# ドイツ共産党が有する最大の理論家として知られ、民衆の自然発生的な革命を肯定した彼女は、\r
++# フランスに端を発する欧州民主革命の機運に乗じ、ドイツ帝国を共和主義国家へと変貌させるに至った。\r
++# 彼女と彼女の国家には苦難が待ち構えている――しかし、それでも彼女は戦い続けるであろう。\r
++# 彼女には彼女を支える数多の、歴史的な共産主義者たちがおり、彼女を支持するのはドイツのみならず、\r
++# 欧州先進国全体に、数え切れないほど存在しているのだから。\r
++# 消費財の需要－５％\r
++# ユニットの生産時間とコスト－１０％\r
++# 不満度の上昇率＋２０％\r
++# 外交コスト＋１０％\r
++# ユニット指揮統制の回復＋５％\r
++# 宣戦布告するのに必要な好戦性－２５％\r
++# 政府首班：カール・リープクネヒト→寡黙な勤勉家\r
++# 軍需大臣：フリードリヒ・エーベルト→天才的実務家\r
++# 内務大臣：クララ・ツェトキン→庶民の味方\r
++# 情報大臣：エーリッヒ・ミールケ→政治分析の専門家\r
++# 外務大臣：ハインリヒ・マン→イデオロギーの闘士\r
++# 統合参謀長：エルンスト・テールマン→人海戦術論者\r
++# 陸軍大臣：ヴィリー・レオー→軍備優先ドクトリン\r
++# 海軍大臣：アルフレート・ザールヴェヒター→戦力投入ドクトリン\r
++# 空軍大臣：ハインツ・ケスラー→制空権ドクトリン\r
+ 	trigger = { event = 3327008 }\r
+ 	name = "ACTIONNAME45680017B" \r
+ 	command = { type = setflag which = German_Communism }\r
+ 	command = { type = leave_alliance when = 1 }\r
+ 	command = { type = country which = DDR }\r
+ 	command = { type = name where = DDR which = "ドイツ社会主義人民共和国" }\r
+-	command = { type = set_domestic which = democratic value = 1 }\r
+-	command = { type = set_domestic which = political_left value = 10 }\r
+-	command = { type = headofstate which = 625041 } # Ernst Toller\r
+-	command = { type = headofgovernment which = 625036 } # Ernst Th舁mann\r
+-	command = { type = foreignminister which = 625038 } # Helmut Herzfelde\r
+-	command = { type = armamentminister which = 625039 } # Willie Munzenberg\r
+-	command = { type = ministerofsecurity which = 625045 } # Arkadi Maslow\r
+-	command = { type = ministerofintelligence which = 625040 } # Erich Weinert \r
+-	command = { type = chiefofstaff which = 625026 } #Erich Weinert\r
+-	command = { type = dissent value = 60 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = headofstate which = 625101 } #\r
++	command = { type = headofgovernment which = 625102 } #\r
++	command = { type = foreignminister which = 625103 } #\r
++	command = { type = armamentminister which = 625104 } # \r
++	command = { type = ministerofsecurity which = 625105 } #\r
++	command = { type = ministerofintelligence which = 625106 } #\r
++	command = { type = chiefofstaff which = 625107 } #\r
++	command = { type = chiefofarmy which = 625108 } #\r
++	command = { type = chiefofnavy which = 625109 } #\r
++	command = { type = chiefofair which = 625110 } #\r
++	command = { type = dissent value = 25 }\r
+ 	command = { type = wartime_ic_mod value = 40 }\r
+ 	command = { type = peacetime_ic_mod value = 40 }\r
+ 	command = { type = waketeam which = 625013 } #AEG\r
+@@ -1089,10 +1214,10 @@ event = {
+ 	command = { type = secedeprovince which = U21 value = 378 when = 1 }\r
+ 	command = { type = secedeprovince which = U21 value = 379 when = 1 }\r
+ 	command = { type = sleepevent which = 45680018 } # 反『コンスル』派の粛正\r
+-	command = { type = local_setflag which = Bigeventflag0018 } #イベントが起きたことを示す\r
+-	command = { type = songs which = "Special/0018.txt" } #音源流し\r
+-	command = { type = trigger which = 19330018 when = 0 } #本イベントを起こす\r
+-	command = { type = event which = 19310018 where = REB when = 0 }\r
++	command = { type = local_setflag which = Bigeventflag0033 } #イベントが起きたことを示す\r
++	command = { type = songs which = "Special/0033.txt" } #音源流し\r
++	command = { type = trigger which = 19330033 when = 0 } #本イベントを起こす\r
++	command = { type = event which = 19310033 where = REB when = 0 }\r
+ 	ai_chance = 1\r
+ 	}\r
+ }\r
+@@ -1116,9 +1241,7 @@ event = {
+ 	country = GER\r
+ \r
+ 	trigger = {\r
+-	random = 15\r
+ 	flag = National_Communism\r
+-	event = { id = 45680017 days = 100 } # 1937年のドイツ帝国議会選挙\r
+ 	}\r
+ \r
+ 	name = EVT_45680018_NAME\r
+@@ -1126,9 +1249,7 @@ event = {
+ 	style = 2\r
+ 	picture = "purge_army"\r
+ \r
+-	date = { day = 0 month = 5 year = 1938 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1945 }\r
++	date = { day = 25 month = 10 year = 1936 }\r
+ \r
+ 	action = { # 真実は闇の中だ…\r
+ 	name = "ACTIONNAME45680018A"\r
+@@ -1167,7 +1288,6 @@ event = {
+ \r
+ 	trigger = {\r
+ 	flag = National_Communism\r
+-	event = { id = 45680017 days = 70 } # 1937年のドイツ帝国議会選挙\r
+ 	}\r
+ \r
+ 	name = EVT_45680019_NAME\r
+@@ -1175,15 +1295,14 @@ event = {
+ 	style = 2\r
+ 	picture = "Long_Knives"\r
+ \r
+-	date = { day = 0 month = 0 year = 1937 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1945 }\r
++	date = { day = 8 month = 10 year = 1936 }\r
+ \r
+ 	action = { # ドイツ国民への裏切りに断固たる報復を！\r
+ 	name = "ACTIONNAME45680019A"\r
+ 	command = { type = manpowerpool value = -1 }\r
+ 	command = { type = domestic which = political_left value = -1 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = sleepminister which = 33 } # エルンスト・トラー\r
+ 	command = { type = sleepteam which = 109 }\r
+ 	command = { type = sleepminister which = 32 } # エルンスト・テールマン\r
+@@ -1220,7 +1339,7 @@ event = {
+ 	picture = "German_mobilization"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1937 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = { # 全てを戦争に！！\r
+@@ -1228,6 +1347,7 @@ event = {
+ 	command = { type = manpowerpool value = -1 }\r
+ 	command = { type = domestic which = political_left value = -1 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = domestic which = free_market value = -10 }\r
+ 	command = { type = headofstate which = 304 }\r
+ 	command = { type = headofgovernment which = 313 }\r
+ 	command = { type = foreignminister which = 316 }\r
+@@ -1523,6 +1643,7 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	war = { country = GER country = UER }\r
++	NOT = { alliance = { country = CHI } }\r
+ 	control = { province = 247 data = -3 } #Brest-Litovsk\r
+ 	control = { province = 269 data = -3 } #Jelgava\r
+ 	control = { province = 232 data = -3 } #Warsaw\r
+@@ -1534,9 +1655,9 @@ event = {
+ 	control = { province = 566 data = -3 } #Pskov\r
+ 	control = { province = 274 data = -3 } #Narva	\r
+ 	control = { province = 663 data = -3 } #Stalingrad\r
+-	control = { province = 668 data = -3 } #Kuybyshev\r
+-	control = { province = 672 data = -3 } #Kazan\r
+-	control = { province = 706 data = -3 } #Astrakhan\r
++	#control = { province = 668 data = -3 } #Kuybyshev\r
++	#control = { province = 672 data = -3 } #Kazan\r
++	#control = { province = 706 data = -3 } #Astrakhan\r
+ 	}\r
+ 	\r
+ 	name = EVT_45680024_NAME\r
+@@ -1572,10 +1693,10 @@ event = {
+ 	\r
+ 	action = { # また一からやり直そう…\r
+ 	name = "ACTIONNAME45680025A"\r
+-	command = { trigger = { ai = no} type = dissent value = 5 }\r
+-\r
+-	command = { trigger = { war = { country = GER } } type = peace which = GER value = 0 }\r
+-	command = { trigger = { war = { country = CHI } } type = peace which = CHI value = 0 }\r
++	command = { trigger = { ai = no } type = dissent value = 5 }\r
++	command = { type = leave_alliance }\r
++	command = { trigger = { war = { country = GER } } type = peace which = GER value = 1 }\r
++	command = { trigger = { war = { country = CHI } } type = peace which = CHI value = 1 }\r
+ 	#If Germany occupied territories owned by the Volunteers' Army, they are given back to Soviet Union\r
+ 	command = { trigger = { control = { province = 552 data = GER } } type = secedeprovince which = UER value = 552 when = 2 } #Gdov\r
+ 	command = { trigger = { control = { province = 566 data = GER } } type = secedeprovince which = UER value = 566 when = 2 } #Pskov		\r
+@@ -2358,12 +2479,13 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	date = { day = 0 month = 0 year = 1938 }\r
++	date = { day = 0 month = 3 year = 1937 }\r
+ 	offset = 10\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = { # ヒャルマル・シャハトの辞任\r
+ 	name = "ACTIONNAME45680036A" \r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = sleepminister which = 16 }\r
+ 	command = { type = sleepminister which = 56 }\r
+ 	command = { type = sleepminister which = 71 }\r
+@@ -2393,12 +2515,13 @@ event = {
+ 	style = 2\r
+ 	picture = "National_Communism"\r
+ \r
+-	date = { day = 0 month = 0 year = 1938 }\r
++	date = { day = 0 month = 2 year = 1937 }\r
+ 	offset = 10\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = { # 『血の共同体』を構築せよ！\r
+ 	name = "ACTIONNAME45680037A" \r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = ministerofsecurity which = 330 }\r
+ 	}\r
+ }\r
+@@ -2493,7 +2616,7 @@ event = {
+ 	name = "ACTIONNAME45680039A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { trigger = { ai = no } type = money value = -300 }\r
+-	command = { type = domestic which = free_market value = -2 }\r
++	command = { type = domestic which = free_market value = -10 }\r
+ 	command = { type = industrial_modifier which = total value = 5 }\r
+ 	command = { type = gain_tech which = 5140 }\r
+ 	command = { type = gain_tech which = 5150 }\r
+@@ -2669,7 +2792,7 @@ event = {
+ 	decision_picture = "decision_anticominternpact"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1939 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = { # 交渉を行う\r
+@@ -2898,7 +3021,7 @@ event = {
+ 	picture = "new_deal"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = { # 産業を立て直すのだ\r
+@@ -2956,39 +3079,22 @@ event = {
+ 	random = no\r
+ 	country = POL\r
+ \r
+-	decision = {\r
+-	event = 5951055 # 東三省事変後の混乱 ― ポーランドの独立\r
+-	atwar = no\r
+-	NOT = { ispuppet = POL }\r
+-	}\r
+-\r
+-	decision_trigger = { \r
+-	event = 5951055 # 東三省事変後の混乱 ― ポーランドの独立\r
+-	atwar = no\r
+-	NOT = { ispuppet = POL }\r
+-	}\r
+-\r
+-	trigger = {\r
+-	event = 5951055 # 東三省事変後の混乱 ― ポーランドの独立\r
+-	atwar = no\r
+-	NOT = { ispuppet = POL }\r
+-	}\r
+-\r
+ 	name = "EVT_45680050_NAME"\r
+ 	desc = "EVT_45680050_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ 	decision_picture = "decision_anticominternpact"\r
+ \r
+-	date = { day = 0 month = 2 year = 1934 }\r
+-	offset = 6\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
+-\r
+ 	action = { # 提案しよう\r
+ 	name = "ACTIONNAME45680050A"\r
+ 	command = { type = money value = -30 } \r
+ 	command = { type = trigger which = 45680051 }\r
+ 	}\r
++	action = { # 提案しよう\r
++	trigger = { ai = no }\r
++	name = "CANCEL_DECISION_TEXT"\r
++	command = { type = relation which = GER value = -30 } \r
++	}\r
+ }\r
+ 	\r
+ event = {\r
+@@ -3004,6 +3110,7 @@ event = {
+ 	action = { # 締結する\r
+ 	name = "ACTIONNAME45680051A"\r
+ 	command = { type = alliance which = POL }\r
++	command = { trigger = { exists = POL } type = make_puppet which = POL }\r
+ 	command = { type = non_aggression which = GER where = POL }\r
+ 	command = { type = guarantee which = GER where = POL }\r
+ 	command = { type = relation which = POL value = 250 }\r
+@@ -3338,7 +3445,7 @@ event = {
+ 	OR = {\r
+ 	NOT = { exists = FRA }\r
+ 	ispuppet = FRA\r
+-	event = 3327025 # フランスの敗北\r
++	event = 3327062 # フランスの敗北\r
+ 	}\r
+ 	}\r
+ \r
+@@ -3348,7 +3455,7 @@ event = {
+ 	OR = {\r
+ 	NOT = { exists = FRA }\r
+ 	ispuppet = FRA\r
+-	event = 3327025 # フランスの敗北\r
++	event = 3327062 # フランスの敗北\r
+ 	}\r
+ 	}\r
+ \r
+@@ -3359,7 +3466,7 @@ event = {
+ 	OR = {\r
+ 	NOT = { exists = FRA }\r
+ 	ispuppet = FRA\r
+-	event = 3327025 # フランスの敗北\r
++	event = 3327062 # フランスの敗北\r
+ 	}\r
+ 	random = 15\r
+ 	}\r
+@@ -3512,7 +3619,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	date = { day = 0 month = 0 year = 1937 }\r
++	date = { day = 0 month = 1 year = 1937 }\r
+ 	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+@@ -3524,6 +3631,558 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  魔術師の動向\r
++# アメリカ株取引市場におけるほんの些細なきっかけから発生した世界大恐慌において、ドイツ帝国は大きな打撃を受けた。\r
++# 第一次世界大戦に勝利したドイツ帝国は未だ赤子の帝国であり、経済的にはかつての大英帝国には及ばず、恐慌によって\r
++# ドイツ帝国は通貨インフレを加速させた。\r
++# この経済的混乱に終止符をうち、その際に施した手段は後に『経済的魔術』と称されるようになる。\r
++# しかし、彼自身は全く右翼的であり、『コンスル』の主張する総力戦体制の構築にも理解があった。\r
++# １９３６年にパウル・フォン・ヒンデンブルク元帥が死去し、保守連立が分裂を開始すると、彼は\r
++# いち早く『コンスル』に接近することに成功した。\r
++# これを仲介したのはバイエルン出身のジャーナリスト、ディートリヒ・エッカートであった。\r
++#########################################################################\r
++event = {\r
++	id = 45680057\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	event = 45680004\r
++	}\r
++	\r
++	name = EVT_45680057_NAME\r
++	desc = EVT_45680057_DESC\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 14 month = 3 year = 1936 }\r
++	\r
++	action = { # 勝手なことをしないで頂きたいのだが……\r
++	name = "ACTIONNAMEID45680057A"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++\r
++\r
++#########################################################################\r
++#  1936年のドイツ帝国議会選挙\r
++# １９３６年選挙において第一党となったのは、国家共産主義政党『コンスル』であった。\r
++# 小国の陸軍並の戦力を保有する『突撃隊』を有し、多数の鮮やかな政治宣伝とその手法を駆使した『コンスル』はとうとうドイツ政治の主人公となる。\r
++# しかし、現状において『コンスル』は第一党ではあるが、議会の議決権を握るだけの議席数を持ち合わせておらず、また第二党は不倶戴天の敵である\r
++# ドイツ共産党であり、現状のままでは『コンスル』のみでは国家運営は不可能であろうと識者らは語った。\r
++#########################################################################\r
++\r
++\r
++event = {\r
++	id = 45680058\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	event = 45680004\r
++	}\r
++	\r
++	name = EVT_45680058_NAME\r
++	desc = EVT_45680058_DESC\r
++	style = 2\r
++	picture = "election_time"\r
++	\r
++	date = { day = 17 month = 4 year = 1936 }\r
++	\r
++	action = { # 大丈夫だ。まだ民主主義は終わっていない！\r
++	name = "ACTIONNAME45680058A"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++# アクション\r
++# １９３６年選挙において『コンスル』が第一党になると、ドイツ帝国内部では様々な政治的動作が生じた。\r
++# いくつかの外国資本企業がドイツ帝国から離脱し、また逆にドイツ帝国内のいくつかの企業は、あろうことか\r
++# 仮にも共産主義を標榜する『コンスル』に献金を行うようになる。\n\r
++# 無論、それらに反対する勢力も存在した。\n\r
++# とくに『コンスル』の独裁志向に対し、文学者ヨーゼフ・ゲッベルスや芸術家アドルフ・ヒトラーらは\r
++# 「ボルシェヴィズムとはユダヤ人が生み出した陰謀であり、ドイツ帝国を破綻させようとする売国的運動である」\r
++# と非難。\n\r
++# これら芸術家達の反共産主義キャンペーンは拡大し、戦時における反共産主義レジスタンス運動の礎となった。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 45680059\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	event = 45680004\r
++	}\r
++	\r
++	name = EVT_45680059_NAME\r
++	desc = EVT_45680059_DESC\r
++	style = 2\r
++	picture = "furios_hitler"\r
++	\r
++	date = { day = 18 month = 4 year = 1936 }\r
++	\r
++	action = { # 頑張れ民主主義！\r
++	name = "ACTIONNAME45680059A"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  経済改革\r
++# エルンスト・ユンガー率いる新ドイツ帝国の国家改造はとうとう経済にも及んだ。\r
++# 先に任命されたカール・カウフマン氏は計画経済の推進者であり、もし仮に彼が二年早くこの地位についていれば\r
++# ドイツ帝国の改革は間に合ったかもしれないが、先のドイツ帝国の中途半端なデモクラシー体制では望むべくもなかった。\r
++# そこで新たに白羽の矢が立ったのはエッセン生まれの若き経済学者アルフレート・ミュラー＝アルマックであった。\r
++# 彼自身は単純なプラグマティストであり、混乱の末に有効な施策を打ち出すことが出来なかった戦間期におけるドイツ帝国に失望し、\r
++# 新たに誕生した現在のドイツ帝国に対し、より果断で積極的な"強い経済"を求めていた。\r
++# 最初期においてはヒャルマル・シャハト氏が実行していたメフォ手形政策をまず第一に継承し、彼は"破綻を見越した上で"これを実行。\r
++# 加えて、今やドイツ帝国最大の権力者となったエルンスト・ユンガーの要望通り、新ドイツ帝国の国家経済は"総動員"された。\r
++# 彼、アルフレート・ミュラー＝アルマック自身がコンスルにどれほど親和的であるかは後世の論争の対象ではあったが、\r
++# 少なくとも彼はこの仕事を見事にやりきったのである。\r
++#########################################################################\r
++event = {\r
++	id = 45680060\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	flag = National_Communism\r
++	}\r
++	\r
++	name = EVT_45680060_NAME\r
++	desc = EVT_45680060_DESC\r
++	style = 2\r
++	picture = "issue_currency"\r
++	\r
++	date = { day = 0 month = 10 year = 1937 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 総動員を！　国家全土を動員せよ！\r
++	name = "ACTIONNAME45680060A"\r
++	command = { type = wakeminister which = 347 }\r
++	command = { type = armamentminister which = 347 }\r
++	command = { type = domestic which = free_market value = -10 }\r
++command = { type = construct which = ic value = 1 where = 131 } # ケルン\r
++command = { type = construct which = ic value = 1 where = 142 } # デュッセルドルフ\r
++command = { type = construct which = ic value = 1 where = 145 } # エッセン\r
++command = { type = construct which = ic value = 1 where = 138 } # フランクフルト（マイン）\r
++command = { type = construct which = ic value = 1 where = 139 } # ダルムシュタット\r
++command = { type = construct which = ic value = 1 where = 134 } # シュトゥットガルト\r
++command = { type = construct which = ic value = 1 where = 179 } # ミュンヘン\r
++command = { type = construct which = ic value = 1 where = 171 } # エアフルト\r
++command = { type = construct which = ic value = 1 where = 170 } # ライプツィヒ\r
++command = { type = construct which = ic value = 1 where = 173 } # ドレスデン\r
++	}\r
++}\r
++# 工場＋１０\r
++# 軍需大臣：アルフレート・ミュラー＝アルマック\r
++# →固有特性名＠総動員経済の立役者\r
++# アルフレート・ミュラー＝アルマックはドイツの文化社会学者、経済学者である。\r
++# 彼自身はあくまで功利主義的な人物であり、新政権のポリシー以前に、その強権によって生み出されるであろう「強い経済」\r
++# に期待していた。そして自身がその経済体制の実践者となった時、彼は確かに"良い働き"をした――それが仮に、破綻を前提とした\r
++# ものであったとしても。\r
++# 彼自身に罪はない。あるとすれば、彼自身のポリシーのなさにこそ原因がある。しかしそれでも、彼は新ドイツ帝国『総動員経済の立役者』なのである。\r
++# 工業力＋２５％\r
++# 消費財の需要－２５％\r
++# 資金生産－２５％\r
++# 国民不満度上昇率＋５０％\r
++# 陸軍ユニット生産コスト及び時間－２０％\r
++# 海軍ユニット生産コスト及び時間－５％\r
++# 空軍ユニット生産コスト及び時間－１０％\r
++# 外交コスト＋２０％\r
++\r
++\r
++#########################################################################\r
++#  総動員体制の確立\r
++# かくして新ドイツ帝国は、エルンスト・ユンガーが魔術的に述べた総動員体制は確立された。\r
++# 彼は繰り返し著書で述べている――これからの世界に生まれる人種は、総動員の中にある労働者ただそれのみである、と。\r
++# 今やドイツ帝国にかつての面影は存在しない。ビスマルクが構築した外交とプロイセン的な軍事ドクトリンが生み出したドイツ帝国は、\r
++# 新たなるニヒリズムとプロイセン主義によって統治・統一された国家と化したのである。\r
++#########################################################################\r
++event = {\r
++	id = 45680061\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	flag = National_Communism\r
++	}\r
++	\r
++	name = EVT_45680061_NAME\r
++	desc = EVT_45680061_DESC\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 2 year = 1938 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 塹壕と弾頭の嵐から新たなる国家は生まれ落ちた！\r
++	name = "ACTIONNAME45680061A"\r
++	command = { type = domestic which = free_market value = -10 }\r
++	command = { type = construct which = ic value = 1 where = 146 }		#ハノーファー\r
++	command = { type = construct which = ic value = 1 where = 126 }		#アーヘン\r
++	command = { type = construct which = ic value = 1 where = 127 }		#ザールブリュッケン\r
++	command = { type = construct which = ic value = 1 where = 128 }		#トリーア\r
++	command = { type = construct which = ic value = 1 where = 129 }		#コブレンツ\r
++	command = { type = construct which = ic value = 1 where = 130 }		#マインツ\r
++	command = { type = construct which = ic value = 1 where = 141 }		#ミュンスター\r
++	command = { type = construct which = ic value = 1 where = 143 }		#ノイヴィート\r
++	command = { type = construct which = ic value = 1 where = 144 }		#ビーレフェルト\r
++	command = { type = construct which = ic value = 1 where = 137 }		#カッセル\r
++	command = { type = construct which = ic value = 1 where = 140 }		#フルダ\r
++	command = { type = construct which = ic value = 1 where = 169 }		#マグデブルク\r
++	command = { type = construct which = ic value = 1 where = 172 }		#コットブス\r
++	command = { type = construct which = ic value = 1 where = 147 }		#ヴィルヘルムスハーフェン\r
++	command = { type = construct which = ic value = 1 where = 148 }		#ブレーメン\r
++\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  国民演説\r
++# 民族共産主義党としてのコンスルの成立過程は独自のものである。\r
++# 彼ら自身はシュトレーゼマン暗殺事件に知られるようにテロ集団であり、ボルシェヴィズムを提唱していることから\r
++# 理解出来るように、暴力革命を肯定している集団であった。\r
++# 非議会主義集団でもあった彼らは、右から左の全ての政党を「西欧ブルジョアジーの手先」と呼び、否定してきた。\r
++# しかし、国政において現在のドイツ帝国を統治し得る勢力が存在しない現状を見、とある組織員が"勝手に"立候補した\r
++# ところから、彼らの国政参加が始まる。\r
++# 彼らは議会において全ての提案にNein（否）を突きつけ、大統領緊急令を誘導してきた。そのポリシーは真反対でありながら、\r
++# 実際の行動はドイツ共産党その他国際社会主義勢力に酷似していた。\r
++# その中で指導者エルンスト・ユンガーは議会にも顔を出さず、殆ど暗闇の中に居る謎の人物であった。\r
++# だが、ドイツ帝国においてコンスルが勝利し、総動員の準備が整うと、彼はとうとう政治の表舞台へと顔を出した。\r
++# かつて"ペルテスのライオン"と称され、その精悍さからドイツ右派に神聖視された彼は、今も変わらぬ姿を持ち、そうして人々に宣言した。\r
++# 「見よ！　利害の応酬の彼方から、市民的個人に代わって類型人が支配し、市民的憲法に代わって労働計画が全地球を動員する時代がやってくる！\r
++# 我々はやってくる。例え滅び果てたとしても、我々とその思想は遠い未来に至り、そうしてようやく実現がなされるであろう！」\r
++#########################################################################\r
++event = {\r
++	id = 45680062\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	flag = National_Communism\r
++	}\r
++	\r
++	name = EVT_45680062_NAME\r
++	desc = EVT_45680062_DESC\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 2 year = 1938 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 我々は、『労働者』なのである！\r
++	name = "ACTIONNAME45680062A"\r
++	command = { type = relative_manpower value = 15 }\r
++	command = { type = domestic which = defense_lobby value = 10 }\r
++	command = { type = dissent value = -20 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  総動員\r
++# 独仏国境に存在していたドイツ帝国の傀儡国家が、薄汚きガリア人の末裔、フランスによって占拠された。\r
++# 今こそ――総動員の時である！\r
++#########################################################################\r
++event = {\r
++	id = 45680063\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	war = { country = FRA } \r
++	}\r
++	\r
++	name = EVT_45680063_NAME\r
++	desc = EVT_45680063_DESC\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 総動員を！\r
++	name = "ACTIONNAME45680063A"\r
++		command = { type = set_domestic which = professional_army value = 9 }\r
++		command = { trigger = { NOT = { local_flag = MOB3 } ai = no } type = resource which = supplies value = -100 }\r
++		command = { trigger = { NOT = { local_flag = MOB4 } ai = no } type = resource which = supplies value = -200 }\r
++		command = { trigger = { NOT = { local_flag = MOB5 } ai = no } type = resource which = supplies value = -200 }\r
++		command = { trigger = { NOT = { local_flag = MOB6 } ai = no } type = resource which = supplies value = -200 }\r
++		command = { trigger = { NOT = { local_flag = MOB7 } ai = no } type = resource which = supplies value = -500 }\r
++		command = { trigger = { ai = no } type = resource which = supplies value = -200 }\r
++		command = { trigger = { NOT = { local_flag = MOB2 } } type = manpowerpool value = 2 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = MOB3 } } type = manpowerpool value = 2.5 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = MOB4 } } type = manpowerpool value = 4 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = MOB5 } } type = manpowerpool value = 4.5 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = MOB6 } } type = manpowerpool value = 5 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = MOB7 } } type = manpowerpool value = 15 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = MOB8 } } type = manpowerpool value = 80 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = MOB9 } } type = manpowerpool value = 25 when = 1 }\r
++		command = { trigger = { NOT = { local_flag = RES } year = 1922 }  type = trigger which = 1350002 }\r
++		command = { type = belligerence value = 10 }\r
++		#command = { trigger = { ai = no } type = dissent value = 10 }\r
++		command = { trigger = { NOT = { local_flag = MOB9 } } type = local_setflag which = MOB9 }\r
++		command = { trigger = { NOT = { local_flag = MOB8 } } type = local_setflag which = MOB8 }\r
++		command = { trigger = { NOT = { local_flag = MOB7 } } type = local_setflag which = MOB7 }\r
++		command = { trigger = { NOT = { local_flag = MOB6 } } type = local_setflag which = MOB6 }		\r
++		command = { trigger = { NOT = { local_flag = MOB5 } } type = local_setflag which = MOB5 }		\r
++		command = { trigger = { NOT = { local_flag = MOB4 } } type = local_setflag which = MOB4 }		\r
++		command = { trigger = { NOT = { local_flag = MOB3 } } type = local_setflag which = MOB3 }\r
++		command = { trigger = { NOT = { local_flag = MOB2 } } type = local_setflag which = MOB2 }\r
++		command = { type = trigger which = 45680064 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++# 動員スライダー、拡大動員へ\r
++\r
++\r
++#########################################################################\r
++#  戦時社会主義体制の確立\r
++# 総動員はコンスル指導者エルンスト・ユンガーの宣言通りに開始された。\r
++# これは国家経済の全てを戦争に傾ける施策であり、長きに渡り動員体制を整えてきたドイツ帝国は\r
++# 一連の動員に耐えてみせた。\r
++# しかし、この総動員は長続きはしないであろう……。\r
++#########################################################################\r
++event = {\r
++	id = 45680064\r
++	random = no\r
++	country = GER\r
++	save_date = yes\r
++	\r
++	name = EVT_45680064_NAME\r
++	desc = EVT_45680064_DESC\r
++	style = 2	\r
++	picture = "news_paper"\r
++	\r
++	action = { # 総動員の先にこそ勝利がある！\r
++	name = "ACTIONNAME45680064A"\r
++	command = { type = dissent value = -50 }\r
++	command = { type = max_organization which = land value = 10 }\r
++	command = { type = max_organization which = naval value = 10 }\r
++	command = { type = max_organization which = air value = 10 }\r
++	command = { type = suppression which = land value = 3 }\r
++	command = { type = research_mod value = 15 }\r
++ command = { type = industrial_modifier which = ic value = 10 }\r
++ command = { type = industrial_modifier which = supplies value = 10 }\r
++ command = { type = industrial_modifier which = oil value = 15 }\r
++ command = { type = industrial_modifier which = metal value = 15 }\r
++ command = { type = industrial_modifier which = energy value = 15 }\r
++ command = { type = industrial_modifier which = rare_materials value = 15 }\r
++ command = { type = industrial_modifier which = money value = 50 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++# 国民不満度－５０\r
++# 動員に関わるデバフ、一年徴兵レベルまで削減。\r
++# 指揮統制10\r
++# 研究15\r
++# IC10%\r
++# 資金40％\r
++# 資源15%\r
++# 制圧力増加\r
++# # 三年後にイベント『総動員体制の破綻』発生\r
++# \r
++# \r
++\r
++\r
++#########################################################################\r
++#  総動員体制の破綻\r
++# 新ドイツ帝国は総動員を発動して三年が経過した。\r
++# 全ての経済を戦争に傾けた歪な体制は現在では崩壊し、国家は\r
++# 無政府状態に近いところまで落ちつつ在る……。\r
++#########################################################################\r
++\r
++\r
++event = {\r
++	id = 45680065\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	event = { id = 45680064 days = 1080 }\r
++	OR = {\r
++	war = { country = FRA }\r
++	war = { country = UER }\r
++	}\r
++	}\r
++	\r
++	name = EVT_45680065_NAME\r
++	desc = EVT_45680065_DESC\r
++	style = 2\r
++	picture = "German_mobilization2"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 何ということだ……\r
++	name = "ACTIONNAME45680065A"\r
++	command = { type = dissent value = 10 }\r
++	command = { type = max_organization which = land value = -10 }\r
++	command = { type = max_organization which = naval value = -10 }\r
++	command = { type = max_organization which = air value = -10 }\r
++	command = { type = suppression which = land value = -5 }\r
++	command = { type = research_mod value = -15 }\r
++ command = { type = industrial_modifier which = ic value = -10 }\r
++ command = { type = industrial_modifier which = supplies value = -10 }\r
++ command = { type = industrial_modifier which = oil value = -15 }\r
++ command = { type = industrial_modifier which = metal value = -15 }\r
++ command = { type = industrial_modifier which = energy value = -15 }\r
++ command = { type = industrial_modifier which = rare_materials value = -15 }\r
++ command = { type = industrial_modifier which = money value = -50 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = 126 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 145 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 127 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 131 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 142 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 147 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 141 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 137 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 174 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 171 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 176 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 146 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 148 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 154 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 151 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 152 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 153 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 156 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 169 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 157 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 163 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 162 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 158 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 183 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 159 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 172 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 170 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 173 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 177 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 138 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 134 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 132 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 178 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 175 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 179 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 167 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 164 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 184 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 104 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 107 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 105 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 109 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 182 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 155 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 161 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 185 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 165 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 166 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 168 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 133 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 144 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 160 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 180 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 136 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 139 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 135 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 129 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 128 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 130 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 216 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 181 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 261 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 225 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 224 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 221 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 149 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 110 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 150 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 143 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 140 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 226 value = 1000 }	\r
++	command = { type = province_revoltrisk which = 222 value = 1000 }	\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++event = {\r
++	id = 45680066\r
++	random = no\r
++	country = GER\r
++	persistent = yes\r
++	trigger = {\r
++	random = 3\r
++	event = 45680065\r
++	OR = {\r
++	war = { country = FRA }\r
++	war = { country = UER }\r
++	}\r
++	}\r
++	\r
++	name = EVT_45680065_NAME\r
++	desc = EVT_45680065_DESC\r
++	style = 2\r
++	picture = "German_mobilization2"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 何ということだ……\r
++	name = "ACTIONNAME45680065A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	command = { type = province_revoltrisk which = -1 value = 100 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  ドイツ戦間期政治イベント\r
+ #########################################################################\r
+@@ -3551,15 +4210,16 @@ event = {
+ 	picture = "Bankruptcy"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 辞職したって有権者の金は返ってこないんだぞ！？\r
+ 	name = "ACTIONNAME45680101A" \r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 5 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = set_domestic which = political_left value = 7 }\r
+ 	command = { type = domestic which = freedom value = 1 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = headofstate which = 333 } # ヴィルヘルム2世\r
+ 	command = { type = headofgovernment which = 332 } # ヘルマン・ミュラー\r
+ 	command = { type = foreignminister which = 282 } # ハンス・フォーゲル\r
+@@ -3601,7 +4261,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # いいからパンをくれ\r
+@@ -3609,7 +4269,7 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = headofstate which = 333 } # ヴィルヘルム2世\r
+ 	command = { type = headofgovernment which = 335 } # ドイツ帝国議会\r
+-	command = { type = event which = 45680103 where = GER when = 3 } # 中道右派連立政権の成立\r
++	#command = { type = event which = 45680103 where = GER when = 3 } # 中道右派連立政権の成立\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -3628,16 +4288,24 @@ event = {
+ 	country = GER\r
+ 	save_date = yes\r
+ \r
++	trigger = {\r
++	event = 45680102\r
++	}\r
++\r
+ 	name = "EVT_45680103_NAME"\r
+ 	desc = "EVT_45680103_DESC"\r
+ 	style = 2\r
+ 	picture = "election_time"\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # もう戦争は懲り懲りだ\r
+ 	name = "ACTIONNAME45680103A" \r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 6 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofstate which = 333 } # ヴィルヘルム2世\r
+ 	command = { type = headofgovernment which = 336 } # ヴィルヘルム・クーノ\r
+ 	command = { type = foreignminister which = 337 } # グスタフ・シュトレーゼマン\r
+@@ -3677,7 +4345,7 @@ event = {
+ 	picture = "news_paper"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = { # 交渉を行おう\r
+@@ -3784,7 +4452,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 我々が幸福になることは永遠にないのではないか？\r
+@@ -3792,7 +4460,7 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = headofstate which = 17 } # ヴィルヘルム2世\r
+ 	command = { type = headofgovernment which = 334 } # ドイツ帝国議会\r
+-	command = { type = event which = 45680108 where = GER when = 3 } # 中道右派大連立政権の成立\r
++	#command = { type = event which = 45680108 where = GER when = 3 } # 中道右派大連立政権の成立\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -3808,17 +4476,21 @@ event = {
+ 	id = 45680108\r
+ 	random = no\r
+ 	country = GER\r
+-\r
++	trigger = { event = 45680107 }\r
+ 	name = "EVT_45680108_NAME"\r
+ 	desc = "EVT_45680108_DESC"\r
+ 	style = 2\r
+ 	picture = "election_time"\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 6\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 団結せよ！されば我らは無敵となる！\r
+ 	name = "ACTIONNAME45680108A" \r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 5 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofstate which = 341 } # ヴィルヘルム2世\r
+ 	command = { type = headofgovernment which = 339 } # ハインリヒ・ブリューニング\r
+ 	command = { type = foreignminister which = 289 } # リウス・クルチウス\r
+@@ -3860,7 +4532,7 @@ event = {
+ 	picture = "1934 crisis"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # やっと落ち着いたと思ったのに\r
+@@ -3898,6 +4570,7 @@ event = {
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = headofstate which = 341 } # ヴィルヘルム2世\r
+ 	command = { type = headofgovernment which = 312 } # パウル・フォン・ヒンデンブルク\r
+ 	command = { type = foreignminister which = 40 } # ルートヴィヒ・カストル\r
+@@ -4751,7 +5424,7 @@ event = {
+ 	picture = "Danzig_coup"\r
+ \r
+ 	date = { day = 7 month = 0 year = 1934 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = { # タイに進駐せよ\r
+@@ -4993,7 +5666,7 @@ event = {
+ 	picture = "Danzig_coup"\r
+ \r
+ 	date = { day = 7 month = 0 year = 1934 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = { # 攻撃を開始せよ\r
+@@ -5175,7 +5848,7 @@ event = {
+ 	picture = "Danzig_coup"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = { # 防衛体制を整えるのだ\r
+@@ -5673,7 +6346,7 @@ event = {
+ 	picture = "Heydrich"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 我々は祖国ドイツのために働くのみである\r
+@@ -5739,7 +6412,7 @@ event = {
+ 	decision_picture = "decision_anticominternpact"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # この政策は第一段階に過ぎない\r
+@@ -5946,7 +6619,7 @@ event = {
+ 	decision_picture = "decision_new_deal"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 嗚呼、伝統あるフエ大学すら工場になってしまった\r
+@@ -5990,7 +6663,7 @@ event = {
+ 	picture = "industry2"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 今やインドシナには肉屋を支持する家畜しかいない！\r
+@@ -6064,7 +6737,7 @@ event = {
+ 	action = { # 単なる与太話だ\r
+ 	name = "ACTIONNAME45680232B"\r
+ 	command = { type = dissent value = 1 }\r
+-	ai_chance = 100\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -6095,7 +6768,7 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  バクホー油田の完成\r
++#  シュレジエン油田の完成\r
+ # 油田の探索から年月が経ち、とうとう現在に至りバクホー油田の採掘プラットフォームが完成した！\r
+ #########################################################################\r
+ \r
+@@ -6109,7 +6782,7 @@ event = {
+ 	style = 2\r
+ 	picture = "oil_mosul"\r
+ \r
+-	action = { # 次の戦争のために！\r
++	action = { # ……酷い名前だ\r
+ 	name = "ACTIONNAME45680234A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = add_prov_resource which = 1399 value = 30 where = oil } # サイゴン\r
+@@ -6272,3 +6945,229 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
++# とうとうカール・マルクスの予言は実現した！\r
++# 欧州において対立し続けてきた先進各国の殆どが社会主義を実現し、\r
++# 欧州大陸は今やインターナショナルによって支配されている！\r
++# カール・マルクスの生まれ故郷であったドイツにおける革命は、世界中のマルクス主義者の夢であった。\r
++# その夢が今や完全に――実現、したのである！\r
++# しかし、ドイツ帝国は長きに渡り保守主義的・父権的な政権運営を行ってきた実態がある。\r
++# 貴族号であるフォンの名を持つ人物も多数存在しており、この事態を解決するのにあたって、\r
++# 穏健な手段にこだわらない人々は、それこそ"国家を建設出来るほどに"多数、存在しているのである……。\r
++# \r
++event = {\r
++	id = 45680501\r
++	random = no\r
++	country = DDR\r
++	\r
++	trigger = {\r
++	flag = German_Communism\r
++	\r
++	}\r
++	\r
++	name = EVT_45680501_NAME\r
++	desc = EVT_45680501_DESC\r
++	style = 2\r
++	picture = "picture"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 16\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 旧時代の遺物どもめ。来るならば――来い！\r
++	name = "ACTIONNAME4568050A"\r
++	command = {  }\r
++	ai_chance = 100\r
++	}\r
++}\r
++# 指揮官：\r
++# 陸軍\r
++# エルンスト・テールマン＠スキル３・大将。特殊戦、補給戦、市街戦\r
++# エルンスト・ヴォルヴェーバー＠スキル５・少将。特殊戦、補給戦、工兵、要塞攻撃、市街戦\r
++# ヴィリー・レオー＠スキル３・少将。特殊戦、工兵、市街戦\r
++# エーリッヒ・ミールケ＠スキル３・大将\r
++# フリッツ・シュトレーレッツ＠スキル４・少将。防勢\r
++# ジークフリート・リーデル＠スキル３・少将。規律\r
++# カール＝ハインツ・ホフマン＠スキル４・少将。機甲戦、工兵、補給戦、要塞攻撃\r
++# ヴィンツェンツ・ミュラー＠スキル３・少将。工兵、要塞攻撃\r
++# ヴィリー・シュトフ＠スキル１・少将。補給戦、工兵、要塞攻撃\r
++# その他指揮官はバニラの東ドイツ準拠とする# ローザ・ルクセンブルグとカール・リープクネヒトが率いるドイツ共産党と、同党に連帯する\r
++# 社会主義勢力はまず第一に、ドイツ帝国をドイツ共和国とし、帝位を廃止すると宣言。\r
++# 今や議会の大半が彼ら左派勢力によって支配されているドイツ帝国議会はこれを承認。\r
++# これを見て複数のドイツ植民地国家は離反し、またホーエンツォレルン家の人々と彼らを支持する軍人たちが古来より続くプロイセン地域に集結しつつある。\r
++# ――反乱の兆しはある。しかし、それでも革命政府は断固たる態度でもって相対することであろう。\r
++# \r
++event = {\r
++	id = 45680502\r
++	random = no\r
++	country = DDR\r
++	\r
++	trigger = {\r
++	flag = German_Communism\r
++	\r
++	}\r
++	\r
++	name = EVT_45680502_NAME\r
++	desc = EVT_45680502_DESC\r
++	style = 2\r
++	picture = "picture"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 17\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # もはや諸君らの時代は終わったのだ\r
++	name = "ACTIONNAME45680502A"\r
++	command = {  }\r
++	ai_chance = 0\r
++	}\r
++}\r
++# 独領アフリカ、イギリスによって併合。\r
++# 東亜総合商社、独立。中華民国と同盟\r
++\r
++# とうとう事件は起こった！\r
++# オストプロイセンにおいて農地を有するユンカーらと現地統治機構が些細なきっかけで衝突し、\r
++# 今やオストプロイセンのみならず、プロイセン全域において暴動は拡大しつつある！\r
++# その大半はＷＷ１において従軍経験を持つ人々であり、ドイツ革命は新たな局面を迎えることとなる。\r
++# 即ち――プロイセンの独立蜂起である！\r
++# \r
++event = {\r
++	id = 45680503\r
++	random = no\r
++	country = DDR\r
++	\r
++	trigger = {\r
++	flag = German_Communism\r
++	}\r
++	\r
++	name = EVT_45680503_NAME\r
++	desc = EVT_45680503_DESC\r
++	style = 2\r
++	picture = "picture"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # ただちに鎮圧せよ！\r
++	name = "ACTIONNAME45680503A"\r
++	command = { type = independence which = UD8 }\r
++	command = { type = war which = UD8 }\r
++	command = { type = dissent value = 40 }\r
++	command = { type = trigger which = 45680504 }\r
++	command = { type = addcore which = 185 where = UD8 } #アレンシュタイン\r
++	command = { type = addcore which = 181 where = UD8 } #ダンツィヒ\r
++	command = { type = addcore which = 226 where = UD8 } #グディニャ\r
++	command = { type = addcore which = 222 where = UD8 } #トルン\r
++	command = { type = addcore which = 225 where = UD8 } #ブィドゴシュチュ\r
++	command = { type = addcore which = 161 where = UD8 } #ドイチェ・クローネ\r
++	command = { type = addcore which = 155 where = UD8 } #シュトルプ\r
++	command = { type = addcore which = 162 where = UD8 } #シュトラールズント\r
++	command = { type = addcore which = 160 where = UD8 } #フランクフルト（オーダー）\r
++	command = { type = addcore which = 158 where = UD8 } #シュテッティン\r
++	command = { type = addcore which = 159 where = UD8 } #メーゼリッツ\r
++	command = { type = addcore which = 224 where = UD8 } #ポズナン\r
++	command = { type = addcore which = 165 where = UD8 } #リーグニッツ\r
++	command = { type = addcore which = 156 where = UD8 } #ノイルッピン\r
++	command = { type = addcore which = 153 where = UD8 } #ロストック\r
++	command = { type = addcore which = 172 where = UD8 } #コットブス\r
++	command = { type = addcore which = 183 where = UD8 } #エルビンク\r
++	command = { type = addcore which = 164 where = UD8 } #オッペルン\r
++	command = { type = addcore which = 168 where = UD8 } #グリヴィツェ\r
++	command = { type = secedeprovince which = UD8 value = 185 when = 2 } #アレンシュタイン\r
++	command = { type = secedeprovince which = UD8 value = 181 when = 2 } #ダンツィヒ\r
++	command = { type = secedeprovince which = UD8 value = 226 when = 2 } #グディニャ\r
++	command = { type = secedeprovince which = UD8 value = 222 when = 2 } #トルン\r
++	command = { type = secedeprovince which = UD8 value = 225 when = 2 } #ブィドゴシュチュ\r
++	command = { type = secedeprovince which = UD8 value = 161 when = 2 } #ドイチェ・クローネ\r
++	command = { type = secedeprovince which = UD8 value = 155 when = 2 } #シュトルプ\r
++	command = { type = secedeprovince which = UD8 value = 162 when = 2 } #シュトラールズント\r
++	command = { type = secedeprovince which = UD8 value = 160 when = 2 } #フランクフルト（オーダー）\r
++	command = { type = secedeprovince which = UD8 value = 158 when = 2 } #シュテッティン\r
++	command = { type = secedeprovince which = UD8 value = 159 when = 2 } #メーゼリッツ\r
++	command = { type = secedeprovince which = UD8 value = 224 when = 2 } #ポズナン\r
++	command = { type = secedeprovince which = UD8 value = 165 when = 2 } #リーグニッツ\r
++	command = { type = secedeprovince which = UD8 value = 156 when = 2 } #ノイルッピン\r
++	command = { type = secedeprovince which = UD8 value = 153 when = 2 } #ロストック\r
++	command = { type = secedeprovince which = UD8 value = 172 when = 2 } #コットブス\r
++	command = { type = secedeprovince which = UD8 value = 183 when = 2 } #エルビンク\r
++	command = { type = secedeprovince which = UD8 value = 164 when = 2 } #オッペルン\r
++	command = { type = secedeprovince which = UD8 value = 168 when = 2 } #グリヴィツェ\r
++	command = { type = secedeprovince which = DDR value = 156 when = 2 } #ノイルッピン\r
++	command = { type = secedeprovince which = DDR value = 163 when = 2 } #ベルリン\r
++	command = { type = secedeprovince which = DDR value = 157 when = 2 } #ポツダム\r
++	command = { type = secedeprovince which = DDR value = 169 when = 2 } #マグデブルク\r
++	command = { type = secedeprovince which = DDR value = 170 when = 2 } #ライプツィヒ\r
++	command = { type = secedeprovince which = DDR value = 173 when = 2 } #ドレスデン\r
++	command = { type = secedeprovince which = DDR value = 184 when = 2 } #ケーニヒスベルク\r
++	command = { type = secedeprovince which = DDR value = 182 when = 2 } #ティルジット\r
++	command = { type = secedeprovince which = DDR value = 261 when = 2 } #メーメル（クライペダ）\r
++	command = { type = secedeprovince which = DDR value = 221 when = 2 } #カトヴィツェ\r
++	command = { type = secedeprovince which = DDR value = 149 when = 2 } #リューネブルク\r
++	command = { type = secedeprovince which = DDR value = 154 when = 2 } #ハンブルク\r
++	command = { type = secedeprovince which = DDR value = 151 when = 2 } #リューベック\r
++	command = { type = secedeprovince which = DDR value = 152 when = 2 } #キール\r
++	command = { type = secedeprovince which = DDR value = 150 when = 2 } #フレンスブルク\r
++	command = { type = secedeprovince which = DDR value = 147 when = 2 } #ヴィルヘルムスハーフェン\r
++	command = { type = secedeprovince which = DDR value = 148 when = 2 } #ブレーメン\r
++	command = { type = secedeprovince which = DDR value = 146 when = 2 } #ハノーファー\r
++	command = { type = secedeprovince which = DDR value = 144 when = 2 } #ビーレフェルト\r
++	command = { type = secedeprovince which = DDR value = 137 when = 2 } #カッセル\r
++	command = { type = secedeprovince which = DDR value = 171 when = 2 } #エアフルト\r
++	command = { type = secedeprovince which = DDR value = 180 when = 2 } #ヴュルツブルク\r
++	command = { type = secedeprovince which = DDR value = 140 when = 2 } #フルダ\r
++	command = { type = secedeprovince which = DDR value = 174 when = 2 } #バイロイト\r
++	command = { type = secedeprovince which = DDR value = 177 when = 2 } #ニュルンベルク\r
++	command = { type = secedeprovince which = DDR value = 134 when = 2 } #シュトゥットガルト\r
++	command = { type = secedeprovince which = DDR value = 175 when = 2 } #レーゲンスブルク\r
++	command = { type = secedeprovince which = DDR value = 176 when = 2 } #ランツフート\r
++	command = { type = secedeprovince which = DDR value = 178 when = 2 } #アウグスブルク\r
++	command = { type = secedeprovince which = DDR value = 133 when = 2 } #コンスタンツ\r
++	command = { type = secedeprovince which = DDR value = 179 when = 2 } #ミュンヘン\r
++\r
++	ai_chance = 0\r
++	}\r
++}\r
++event = {\r
++	id = 45680504\r
++	random = no\r
++	country = UD8\r
++	\r
++	\r
++	name = EVT_45680504_NAME\r
++	desc = EVT_45680504_DESC\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	action = { # ただちに鎮圧せよ！\r
++	name = "ACTIONNAME45680503A"\r
++command = { type = set_domestic which = democratic value = 2 }\r
++command = { type = set_domestic which = political_left value = 2 }\r
++command = { type = add_division value = hq when = 3 }\r
++command = { type = add_division value = cavalry when = 5 }\r
++command = { type = add_division value = cavalry when = 5 }\r
++command = { type = add_division value = cavalry when = 5 }\r
++command = { type = add_division value = armor when = 1 }\r
++command = { type = add_division value = armor when = 1 }\r
++command = { type = add_division value = armor when = 1 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++command = { type = add_division value = infantry when = 11 }\r
++	ai_chance = 100\r
++	}\r
++}
+\ No newline at end of file

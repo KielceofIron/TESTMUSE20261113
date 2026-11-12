@@ -1,0 +1,834 @@
+--- A/db/events/Yokoyama_events/Add_Swiss_events.txt [utf-8]
++++ B/db/events/Yokoyama_events/Add_Swiss_events.txt [utf-8]
+@@ -4,681 +4,216 @@
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+-#id = 29110001 将軍選挙\r
+-#id = 29110002 労使平和協定\r
+-#id = 29110003 食糧確保法\r
+-#id = 29110004 徴兵前訓練義務化法案\r
+-#id = 29110005 ラ・シャリテ文書事件\r
+-#id = 29110006 スパイと死刑\r
+-#id = 29110007 スイス国民運動\r
+-#id = 29110008 リュトリの誓い\r
+-#id = 29110009 栄誉ある軍旗の日\r
+-#id = 29110010 日和見主義からの脱却\r
+-#id = 29110011 スイスの運命\r
+-#id = 29110013 アルプスの燈台\r
+-#id = 29110014 『ピレ=ゴラツを追っ払え』\r
+-#id = 29110015 1939年スイス博覧会\r
+-##########################################################################\r
+-#  将軍選挙\r
+-# スイス連邦政府はヨーロッパでの戦争勃発がもはや避けられないことを悟ると、中立と独立維持のための戦時体制に移行した。\r
+-# 食料を配給制に切り替え、「非常臨戦事態」の発生を宣言するとともに総動員の準備を始めた。\r
+-# そして憲法に従い、スイス陸軍を統率する将軍の選挙を行った。\r
+-# スイス軍に於いて「将軍」は戦時にのみ置かれる階級であって、陸軍の創設以来3人しかいない。\r
+-# 連邦政府の閣僚と主要政党のほとんどはアンリ・ギサン軍団指揮官を将軍に推薦し、社会民主党左派だけがユーレス・ボーレル師団指揮官を推薦した。\r
+-###########################################################################\r
++#id = 29110001 スイスの永世中立（現在イベント作成中のため、停止）\r
++#スイス選挙イベント（1934年 1935年）\r
++#id = 29110101 スイス連邦大統領交代（1934年）\r
++#id = 29110102 スイス連邦大統領交代（1935年）\r
++#id = 29110103 スイス連邦大統領交代（1936年）\r
++#id = 29110104 スイス選挙（1935年）\r
++#########################################################################\r
++#  スイスの永世中立\r
++# スイスは1815年のウィーン会議以来、欧州で永世中立を認められた国家である。\r
++# しかし1930年代にヨーロッパの緊張が高まると、スイスは政治的および軍事的状況の再考を余儀なくされた。\r
++# スイスがこの先、存続するためにもどのような行動をとるか、決定しなくてはならない。\r
++#########################################################################\r
++\r
+ event = {\r
+ 	id = 29110001\r
+ 	random = no\r
+ 	country = SCH\r
+-	style = 0\r
+-\r
+-	trigger = {\r
+-		government = democratic\r
+-		OR = {\r
+-			war = { country = GER country = ENG }\r
+-			war = { country = GER country = USA }\r
+-			war = { country = GER country = SOV }\r
+-			atwar = SCH\r
+-			}\r
+-	}\r
+-\r
++	\r
+ 	name = "EVT_29110001_NAME"\r
+ 	desc = "EVT_29110001_DESC"\r
+ 	style = 2\r
++	picture = "news_paper"\r
+ \r
+-	date = { day = 1 month = january year = 1938 }\r
+-	offset = 5\r
+-	deathdate = { day = 15 month = january year = 1951 }\r
+-\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110001A"\r
+-		command = { type = headofstate which = 80012 }\r
+-		command = { type = headofgovernment which = 80021 }\r
+-		command = { type = foreignminister which = 80037 }\r
+-		command = { type = armamentminister which = 80046 }\r
+-		command = { type = ministerofsecurity which = 80065 }\r
+-		command = { type = ministerofintelligence which = 80072 }\r
+-		command = { type = chiefofstaff which = 80077 }\r
+-		command = { type = chiefofarmy which = 80080 }\r
+-		command = { type = chiefofnavy which = 80082 }\r
+-		command = { type = chiefofair which = 80084 }\r
+-		command = { type = sleepevent which = 3900028 }\r
+-		ai_chance = 79\r
+-		}\r
+-	action_b = {\r
+-		name = "ACTIONNAME29110001B"\r
+-		command = { type = headofstate which = 80012 }\r
+-		command = { type = headofgovernment which = 80021 }\r
+-		command = { type = foreignminister which = 80037 }\r
+-		command = { type = armamentminister which = 80046 }\r
+-		command = { type = ministerofsecurity which = 80065 }\r
+-		command = { type = ministerofintelligence which = 80072 }\r
+-		command = { type = chiefofstaff which = 80201 }\r
+-		command = { type = chiefofarmy which = 80079 }\r
+-		command = { type = chiefofnavy which = 80082 }\r
+-		command = { type = chiefofair which = 80084 }\r
+-		command = { type = sleepevent which = 3900028 }\r
+-		ai_chance = 21\r
+-		}\r
+-}\r
+-##########################################################################\r
+-#  労使平和協定\r
+-# 第一次世界大戦後から続いていた慢性的な経済不況と1929年の世界恐慌の打撃による社会不安の波は、スイスとて例外ではなかった。\r
+-# しかし他国で横行する労使闘争路線とは対照的に、スイスの労働者や資本家は闘争ではなく、双方の話し合いによる協調路線を選んだ。\r
+-# そして1937年には工業界において、労使双方の「平和協定」が結ばれるに至った。\r
+-# まもなくこの協定はほとんどの産業界にも波及し、後の大戦中の経済活動を水面下で支えることとなった。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 29110002\r
+-	random = no\r
+-	country = SCH\r
+-\r
+-	trigger = {\r
+-		government = democratic\r
+-		NOT = { ideology = social_democrat }\r
+-		random = 20\r
++	action = { # 1815年以来の永世中立は守らねばならない\r
++	name = "ACTIONNAME29110001A" \r
++	ai_chance = 80\r
+ 	}\r
+ \r
+-	name = "EVT_29110002_NAME"\r
+-	desc = "EVT_29110002_DESC"\r
+-	style = 2\r
+-\r
+-	date = { day = 1 month = january year = 1937 }\r
+-	offset = 14\r
+-	deathdate = { day = 29 month = december year = 1937 }\r
+-\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110002A"\r
+-		command = { type = money value = 50 }\r
+-		command = { type = domestic which = political_left value = 1 }\r
+-		command = { type = peacetime_ic_mod value = 2 }\r
+-		command = { type = dissent value = -5 }\r
+-		}\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110002B"\r
+-		command = { type = dissent value = -5 }\r
+-		command = { type = set_domestic which = democratic value = 3 }\r
+-		command = { type = set_domestic which = political_left value = 9 }\r
+-		command = { type = set_domestic which = interventionism value = 6 }\r
+-		command = { type = domestic which = freedom value = -5 }\r
+-		command = { type = relation which = SOV value = 50 }\r
+-		command = { type = headofstate which = 80097 }\r
+-		command = { type = headofgovernment which = 80098 }\r
+-		}\r
+-}\r
+-##########################################################################\r
+-#  食糧確保法\r
+-# 1938年、戦時経済対策の基本法とも言える「食糧確保法」が時の経済担当参事ヘルマン・オブレヒトによって議会に提出され、通過した。\r
+-# 彼はきたる大戦を見越し、戦時経済組織の準備を早くも整えはじめたのである。\r
+-# 彼の緻密でねばり強く作り上げた計画によって、大戦中の戦時経済はもとより戦時中にもかかわらず国民の誰もが満足な量のパンにありつけた、と伝えられている。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 29110003\r
+-	random = no\r
+-	country = SCH\r
+-\r
+-	trigger = {\r
+-		government = democratic\r
+-		OR = {\r
+-			atwar = GER\r
+-			atwar = SCH\r
+-			NOT = { exists = AUS }\r
+-			NOT = { exists = CZE }\r
+-			}\r
+-			random = 25\r
++	action = { # 中立を見直す時が来た\r
++	name = "ACTIONNAME29110001B" \r
++	ai_chance = 5\r
+ 	}\r
+-\r
+-	name = "EVT_29110003_NAME"\r
+-	desc = "EVT_29110003_DESC"\r
+-	style = 2\r
+-\r
+-	date = { day = 1 month = january year = 1938 }\r
+-	offset = 14\r
+-	deathdate = { day = 1 month = august year = 1940 }\r
+-\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110003A"\r
+-		command = { type = supplies value = 5000 }\r
+-		command = { type = domestic which = free_market value = -1 }\r
+-		command = { type = armamentminister which = 80202 }\r
+-		}\r
+ }\r
+-##########################################################################\r
+-#  徴兵前訓練義務化法案 # （正式名称『徴兵適齢前の青少年に対する予備軍事教練を義務化する法律案』）\r
+-# 1940年末、国防強化のための法律案「徴兵適齢前の青少年に対する予備軍事教練を義務化する法律案」が国民投票にかけられた。\r
+-# この国民投票は戦時中のスイスで唯一行われたものであったが結果として否決され、国民の連邦政府に依存しきらないという姿勢を見せつけた。\r
+-###########################################################################\r
+-event = {\r
+-	id = 29110004\r
+-	random = no\r
+-	country = SCH\r
+ \r
+-	trigger = {\r
+-		government = democratic\r
+-		atwar = GER\r
+-		NOT = { atwar = SCH }\r
+-	}\r
+-\r
+-	name = "EVT_29110004_NAME"\r
+-	desc = "EVT_29110004_DESC"\r
+-	style = 2\r
+-	picture = "Wehrmacht"\r
+-\r
+-	date = { day = 1 month = december year = 1940 }\r
+-	offset = 14\r
+-	deathdate = { day = 29 month = august year = 1941 }\r
+-\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110004A"\r
+-		ai_chance = 56\r
+-		command = { type = max_organization which = land value = 5 }\r
+-		}\r
+-	action_b = {\r
+-		name = "ACTIONNAME29110004B"\r
+-		ai_chance = 44\r
+-		command = { type = domestic which = freedom value = -1 }\r
+-		command = { type = domestic which = defense_lobby value = 1 }\r
+-		command = { type = relative_manpower value = 5 }\r
+-		command = { type = industrial_modifier which = total value = -3 }\r
+-		command = { type = dissent value = 5 }\r
+-		}\r
+-}\r
++#########################################################################\r
++#  スイス選挙イベント（1934年 1935年 1936年）\r
++#########################################################################\r
++#  スイス連邦大統領交代（1934年）\r
++#########################################################################\r
+ \r
+-##########################################################################\r
+-#  ラ・シャリテ文書事件\r
+-# とあるドイツの新聞が、アンリ・ギサン将軍の中立違反に関するスクープ記事をセンセーショナルに報道した。\r
+-# 「スイス陸軍とフランス軍が秘密軍事協定を結んでいた証拠文書を、ラ・シャリテ駅で発見した」というものである。\r
+-# この報道はある程度真実だった。スイス側は焼却処分をしていたが、フランス側のお粗末な処分の結果、証拠書類がドイツの手に渡ってしまったのである。\r
+-# スイス政府はこの協定が、スイスがドイツに攻撃を受けた事態を想定したものであると釈明し、総司令官の責任はないと回答した。\r
+-# しかし明らかな策謀といえどこのドイツの主張にも一理あり、また政府高官内にもドイツの策謀に載った輩もいて、政府は一時苦境に追い込まれたのである。\r
+-###########################################################################\r
+ event = {\r
+-	id = 29110005\r
++	id = 29110101\r
+ 	random = no\r
+ 	country = SCH\r
++	style = 2\r
++	picture = "news_paper"\r
+ \r
+ 	trigger = {\r
+-		government = democratic\r
+-		atwar = GER\r
+-		NOT = { atwar = SCH }\r
+-		NOT = { control = { province = 56 data = FRA } }\r
+-		incabinet = 80077\r
+-		}\r
++	government = democratic\r
++	NOT = { ispuppet = SCH }\r
++	}\r
+ \r
+-	name = "EVT_29110005_NAME"\r
+-	desc = "EVT_29110005_DESC"\r
+-	style = 2\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ \r
+-	date = { day = 1 month = december year = 1940 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = december year = 1940 }\r
++	date = { day = 10 month = may year = 1934 }\r
+ \r
+ \r
+-	action_a = {\r
+-		name = "ACTIONNAME29110005A"\r
+-		command = { type = relation which = GER value = -25 }\r
+-		command = { type = dissent value = 1 }\r
+-		ai_chance = 75\r
+-		}\r
+-	action_b = {\r
+-		name = "ACTIONNAME29110005B"\r
+-		command = { type = relation which = GER value = 15 }\r
+-		command = { type = sleepminister which = 80077 }\r
+-		command = { type = sleepminister which = 80080 }\r
+-		command = { type = dissent value = 15 }\r
+-		ai_chance = 25\r
+-		}\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 10 }\r
++	command = { type = set_domestic which = political_left value = 9 }\r
++	command = { type = headofstate which = 80014 } # マルセル・ピレ=ゴラツ\r
++	command = { type = headofgovernment which = 80023 } # マルセル・ピレ=ゴラツ\r
++	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
++	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
++	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
++	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
++	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  スパイと死刑\r
+-# スイス国家にとって深刻なことに、国内ではナチスの信奉者が増加している。\r
+-# 1940年5月以降、軍事機密漏洩事件は後を絶たなかったことから、スイスはすでに死刑を廃止していたにも関わらず、軍法においては緊急事態にのみ死刑の適用を許可。\r
+-# 300人以上が有罪判決を受け、1942年からは実際に死刑が執行されていき、処刑された者の中には、スイス軍将校も含まれていた。\r
+-###########################################################################\r
++#########################################################################\r
++#  スイス連邦大統領交代（1935年）\r
++#########################################################################\r
+ \r
+ event = {\r
+-	id = 29110006\r
++	id = 29110102\r
+ 	random = no\r
+ 	country = SCH\r
+-\r
+-	trigger = {\r
+-		government = democratic\r
+-		atwar = GER\r
+-		NOT = { control = { province = 55 data = FRA } }\r
+-		}\r
+-\r
+-	name = "EVT_29110006_NAME"\r
+-	desc = "EVT_29110006_DESC"\r
+ 	style = 2\r
+-\r
+-	date = { day = 8 month = october year = 1942 }\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110006A"\r
+-		command = { type = relation which = GER value = -20 }\r
+-		command = { type = relation which = ITA value = -15 }\r
+-		command = { type = relation which = ENG value = -10 }\r
+-		command = { type = domestic which = freedom value = -1 }\r
+-		command = { type = intelligence which = them value = -15 }\r
+-		command = { type = army_detection which = us value = 10 }\r
+-		}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スイス国民運動\r
+-# スイス内で活動するナチズム政治団体は、「国民戦線」（フロン）と呼ばれていた。\r
+-# 彼らは「ハイル」の代わりに「ハルス」と叫び、ナチス式能率主義・秩序主義を礼賛してスイス式の民主主義を変えようとした。\r
+-# その運動は1936年のベルリンオリンピック頃で頂点に達した。\r
+-# しかし1938年に入り、オーストリアやチェコスロバキアが併合され、ナチスの本性が露わになると次第に衰退していった。\r
+-# 1940年には、国民運動は自主解散にあった。だが、大戦の緒戦でドイツがヨーロッパを席巻する気配を見せると、彼らは「スイス国民運動」と名を変えて復活。\r
+-# 彼らはナチスの宣伝文句を鵜呑みに繰り返し、スイス連邦がヨーロッパ新秩序へ参加することを主張して、日和見層も抱き込もうと蠢動した。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 29110007\r
+-	random = no\r
+-	country = SCH\r
++	picture = "news_paper"\r
+ \r
+ 	trigger = {\r
+-		government = democratic\r
+-		atwar = GER\r
+-		NOT = { control = { province = 55 data = FRA } }\r
+-		random = 60\r
+-		}\r
+-\r
+-	name = "EVT_29110007_NAME"\r
+-	desc = "EVT_29110007_DESC"\r
+-	style = 2\r
+-	picture = "February_Crisis"\r
+-\r
+-	date = { day = 24 month = december year = 1940 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = december year = 1945 }\r
+-\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110007A"\r
+-		command = { type = relation which = GER value = -30 }\r
+-		command = { type = relation which = ITA value = -10 }\r
+-		command = { type = domestic which = political_left value = 1 }\r
+-		}\r
+-}\r
+-##########################################################################\r
+-#  リュトリの誓い\r
+-# 将軍アンリ・ギサンはスイス陸軍の大隊長以上の全指揮官に、1940年7月25日にリュトリの地に集合することを命じた。\r
+-# リュトリは650年前、ハプスブルク家の侵入に対するために結束を誓い合った誓約者同盟の成立の地、すなわち今日のスイス連邦発祥の地である。\r
+-# 湖を望む切り立つ崖の上の小さな草原に位置し、指揮官たちは船で来なければならなかった。\r
+-# 500人近い指揮官が集結を終えると、やがてギザンはゆっくりと話し始めた。\r
+-# 自らのスイスの新防衛戦略の根拠を説き、スイスの置かれている困難な状況を振り返った上で、外敵に抵抗するという鉄の意志を将軍は確かめた。\r
+-# そして数日後の建国記念日で、全部隊にもリュトリ宣言の内容をより詳しく強調して発布した。\r
+-# 曰く、全兵士と全スイス国民は「スイス人らしく考え、スイス人らしく行動せよ」、スイス陸軍の全兵士は「動員・招集の際に既に誓った、国家を死に至るまで守り抜く誓いを、再び新たにせよ」と。\r
+-# リュトリの誓いとそれに続く建国記念日における訓辞は、すぐに一般にも報道され、国内外に強い反響を呼んだ。国内の日和見主義はなりを潜め、ギザン将軍と軍の防戦態勢を支持する世論がふくらんだ。\r
+-# 中立という名の孤独の中にあった国民にとって、ギザン将軍は暗黒時代を照らす先導者と見なされるようになっていった。一方でドイツ・イタリアをはじめ、他の国内外からもギザンの行動を軍部のクーデターであると批難する声も存在した。\r
+-###########################################################################\r
+-event = {\r
+-	id = 29110008\r
+-	random = no\r
+-	country = SCH\r
+-\r
+-	trigger = {\r
+-		government = democratic\r
+-		atwar = GER\r
+-		incabinet = 80077\r
+-		}\r
++	government = democratic\r
++	NOT = { ispuppet = SCH }\r
++	}\r
+ \r
+-	name = "EVT_29110008_NAME"\r
+-	desc = "EVT_29110008_DESC"\r
+-	style = 2\r
+-	picture = "Swiss_rutli"\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ \r
+-	date = { day = 24 month = july year = 1940 }\r
++	date = { day = 10 month = may year = 1935 }\r
+ \r
+ \r
+-	action_a = {\r
+-		name = "ACTIONNAME29110008A"\r
+-		command = { type = relation which = GER value = -10 }\r
+-		command = { type = relation which = ITA value = -10 }\r
+-		command = { type = domestic which = defense_lobby value = 2 }\r
+-		command = { type = morale which = land value = 10 }\r
+-		command = { type = construct which = land_fort where = 532 value = 2 }\r
+-		command = { type = construct which = land_fort where = 372 value = 2 }\r
+-		command = { type = mountain_attack which = infantry value = 5 }\r
+-		command = { type = mountain_defense which = infantry value = 10 }\r
+-		command = { type = mountain_move which = infantry value = 5 }\r
+-		command = { type = hill_attack which = infantry value = 5 }\r
+-		command = { type = hill_defense which = infantry value = 5 }\r
+-		command = { type = hill_move which = infantry value = 5 }\r
+-		command = { type = mountain_attack which = bergsjaeger value = 5 }\r
+-		command = { type = mountain_defense which = bergsjaeger value = 10 }\r
+-		command = { type = mountain_move which = bergsjaeger value = 5 }\r
+-		command = { type = hill_attack which = bergsjaeger value = 5 }\r
+-		command = { type = hill_defense which = bergsjaeger value = 5 }\r
+-		command = { type = hill_move which = bergsjaeger value = 5 }\r
+-		command = { type = dissent value = -10 }\r
+-		}\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 10 }\r
++	command = { type = set_domestic which = political_left value = 5 }\r
++	command = { type = headofstate which = 80207 } # ルドルフ・ミンガー\r
++	command = { type = headofgovernment which = 80208 } # ルドルフ・ミンガー\r
++	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
++	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
++	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
++	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
++	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  栄誉ある軍旗の日\r
+-# 大戦が終わるとスイス陸軍もその総動員態勢を解き、日常が戻っていった。\r
+-# アンリ・ギサン将軍は現役勤務状態（動員体制）の最後の日を「栄誉ある軍旗の日」と定め、戦時中各部隊の保有していた軍旗を首都ベルンに集めて連邦大統領とともに記念行事を挙行した。\r
+-# 式典後はスイス陸軍総司令部の置かれていたエーゲンストルフ城に移り、黄昏の夕刻の中で明日からも現役勤務に残る将校たちを前に、最後の訓辞“軍事遺言状”を伝えた。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 29110009\r
+-	random = no\r
+-	country = SCH\r
+-\r
+-	trigger = {\r
+-			NOT = { atwar = GER }\r
+-			NOT = { atwar = SCH }\r
+-			event = 29110001\r
+-			NOT = { ispuppet = SCH }\r
+-			incabinet = 80077\r
+-		}\r
+-\r
+-	name = "EVT_29110009_NAME"\r
+-	desc = "EVT_29110009_DESC"\r
+-	style = 2\r
+-	picture = "Swiss_bundeshaus"\r
+-\r
+-	date = { day = 1 month = december year = 1941 }\r
+-	offset = 30\r
+-	deathdate = { day = 29 month = december year = 1963 }\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110009A"\r
+-		command = { type = dissent value = -5 }\r
+-		command = { type = sleepminister which = 80077 }\r
+-		command = { type = sleepminister which = 80080 }\r
+-		command = { type = sleepminister which = 80201 }\r
+-		command = { type = sleepminister which = 80079 }\r
+-		command = { type = chiefofstaff which = 80007 }\r
+-		command = { type = chiefofarmy which = 80203 }\r
+-		}\r
+-}\r
++#########################################################################\r
++#  スイス連邦大統領交代（1936年）\r
++#########################################################################\r
+ \r
+-##########################################################################\r
+-#  日和見主義からの脱却\r
+-# 西部戦線におけるドイツの快勝は、スイス国内の日和見主義者とドイツ系住民を参戦世論に傾かせるのに充分であった。\r
+-# ナチス寄りになった国民や右翼政治団体『スイス国民戦線』は、中立の破棄とイタリアを仲介役とした参戦を叫んで、街を練り歩いた。\r
+-###########################################################################\r
+ event = {\r
+-	id = 29110010\r
++	id = 29110103\r
+ 	random = no\r
+ 	country = SCH\r
+-\r
+-	trigger = {\r
+-			OR = {\r
+-				AND = { \r
+-					NOT = { event = 29110008 }\r
+-					random = 20\r
+-					}\r
+-				AND = {\r
+-					dissent = 10\r
+-					random = 80\r
+-					}\r
+-				AND = {\r
+-					event = 29110008\r
+-					dissent = 5\r
+-					random = 5\r
+-					}\r
+-				}\r
+-			control = { province = 55 data = GER }\r
+-			atwar = GER\r
+-			NOT = { atwar = SCH }\r
+-		}\r
+-\r
+-	name = "EVT_29110010_NAME"\r
+-	desc = "EVT_29110010_DESC"\r
+ 	style = 2\r
+-	picture = "February_Crisis"\r
+-\r
+-	date = { day = 1 month = january year = 1940 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = december year = 1945 }\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110010A"\r
+-		command = { type = domestic which = democratic value = -3 }\r
+-		command = { type = domestic which = political_left value = -3 }\r
+-		command = { type = domestic which = interventionism value = 3 }\r
+-		command = { type = dissent value = 2 }\r
+-		command = { type = relation which = GER value = 50 }\r
+-		command = { type = sleepevent which = 29110007 }\r
+-		command = { type = sleepevent which = 29110008 }\r
+-		}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  スイスの運命\r
+-# それは突然のことだった。連邦院をスイス国民戦線が占拠する事件が発生したのだ。\r
+-# ドイツ製の武器を携えた彼らは、連邦憲法の即時停止と参事会の解散を要求。\r
+-# 1918年にレーニンによって引き起こされたゼネスト以来の大危機である。\r
+-# ただし、彼らを支持する国民が、もはや目をそらせないほど増加しているのだ。\r
+-# 我々はドイツ新秩序に参加するか、鎮圧して徹底的なナチス弾圧をするかの選択を迫られている。\r
+-###########################################################################\r
+-event = {\r
+-	id = 29110011\r
+-	random = no\r
+-	country = SCH\r
++	picture = "news_paper"\r
+ \r
+ 	trigger = {\r
+-			event = 29110010\r
+-			random = 30\r
+-			NOT = { atwar = SCH }\r
+-		}\r
+-\r
+-	name = "EVT_29110011_NAME"\r
+-	desc = "EVT_29110011_DESC"\r
+-	style = 2\r
+-	picture = "February_Crisis"\r
+-\r
+-	date = { day = 1 month = february year = 1940 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = december year = 1963 }\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110011A"\r
+-		command = { type = set_domestic which = democratic value = 3 }\r
+-		command = { type = set_domestic which = political_left value = 1 }\r
+-		command = { type = set_domestic which = interventionism value = 6 }\r
+-		command = { type = domestic which = freedom value = -5 }\r
+-		command = { type = relation which = GER value = 50 }\r
+-		command = { type = headofstate which = 80087 }\r
+-		command = { type = headofgovernment which = 80088 }\r
+-		command = { type = chiefofstaff which = 80093 }\r
+-		command = { type = chiefofarmy which = 80094 }\r
+-		command = { type = chiefofnavy which = 80095 }\r
+-		command = { type = chiefofair which = 80096 }\r
+-		command = { type = dissent value = 4 }\r
+-		command = { type = trigger which = 29110012 }\r
+-		ai_chance = 90\r
++	government = democratic\r
++	NOT = { ispuppet = SCH }\r
+ 	}\r
+-	action_b = {\r
+-		name = "ACTIONNAME29110011B"\r
+-		command = { type = set_domestic which = democratic value = 10 }\r
+-		command = { type = set_domestic which = political_left value = 6 }\r
+-		command = { type = domestic which = freedom value = -3 }\r
+-		command = { type = headofstate which = 80204 }\r
+-		command = { type = headofgovernment which = 80205 }\r
+-		command = { type = relation which = GER value = -50 }\r
+-		command = { type = dissent value = 4 }\r
+-		ai_chance = 10\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 29110012\r
+-	random = no\r
+-	country = GER\r
+ \r
+-	name = "EVT_29110012_NAME"\r
+-	desc = "EVT_29110012_DESC"\r
+-	style = 2\r
+-	picture = "Swiss"\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110012A"\r
+-		command = { type = make_puppet which = SCH }\r
+-		command = { type = alliance which = SCH }\r
+-		command = { type = set_relation which = GER value = 150 }\r
+-		ai_chance = 85\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
++\r
++	date = { day = 10 month = may year = 1936 }\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 10 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = headofstate which = 80001 } # アルベルト・マイヤー\r
++	command = { type = headofgovernment which = 80002 } # アルベルト・マイヤー\r
++	command = { type = foreignminister which = 80003 } # ジュゼッペ・モタ\r
++	command = { type = armamentminister which = 80004 } # アルベルト・マイヤー\r
++	command = { type = ministerofsecurity which = 80005 } # ヨハンネス・バウマン\r
++	command = { type = ministerofintelligence which = 80006 } # ロジェ・マッソン\r
+ 	}\r
+-	action_b = {\r
+-		name = "ACTIONNAME29110012B"\r
+-		command = { type = alliance which = SCH }\r
+-		command = { type = set_relation which = GER value = 150 }\r
+-		ai_chance = 15\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  アルプスの燈台\r
+-# この時期のスイスにとって厄介な問題は、連合国軍の航空機がスイス上空を通過して、イギリスと北アフリカを行き交うことであった。\r
+-# 当然、ドイツとイタリアはスイス政府に抗議し、スイス政府もイギリス政府に抗議するものの、イギリスからはその場しのぎの返事しか与えられなかった。\r
+-# スイスは灯火管制の措置をとって、飛行の目印にならないように配慮したが、ドイツ・イタリア空軍やイギリス空軍はその後何回かスイスの工場を「誤爆」した。\r
+-###########################################################################\r
+-event = {\r
+-	id = 29110013\r
+-	random = no\r
+-	country = SCH\r
+-\r
+-	trigger = {\r
+-		war = { country = ENG country = GER }\r
+-		war = { country = ENG country = ITA }\r
+-		NOT = { atwar = SCH }\r
+-		NOT = { control = { province = 750 data = ITA } }#トリポリ\r
+-		random = 30\r
+-		}\r
+-\r
+-	name = "EVT_29110013_NAME"\r
+-	desc = "EVT_29110013_DESC"\r
+-	style = 2\r
+-	picture = "Swiss"\r
+-\r
+-	date = { day = 1 month = march year = 1936 }\r
+-	offset = 30\r
+-	deathdate = { day = 1 month = november year = 1963 }\r
+-\r
+-	action_a = {\r
+-		name = "ACTIONNAME29110013A"\r
+-		#command = { type = dissent value = 8 }\r
+-		command = { type = dissent value = 2 }\r
+-		command = { type = supplies value = -400 }\r
+-		command = { type = manpowerpool value = -3 }\r
+-		command = { type = construct which = flak where = 389 value = 1 }\r
+-		command = { type = construct which = flak where = 390 value = 1 }\r
+-		command = { type = construct which = flak where = 391 value = 1 }\r
+-		command = { type = construct which = flak where = 392 value = 1 }\r
+-		command = { type = relation which = GER value = -30 }\r
+-		command = { type = relation which = ITA value = -30 }\r
+-		command = { type = relation which = ENG value = -30 }\r
+-		}\r
+ }\r
+-\r
+-##########################################################################\r
+-#  『ピレ=ゴラツを追っ払え』\r
+-# 当時、スイス連邦大統領の職にあったマルセル・ピレ=ゴラツはフランス語圏出身の参事である。\r
+-# 1940年6月25日に彼は、フランス崩壊の報に動揺する国民を安心させるため、ラジオを通じて演説を行った。\r
+-# しかしこの演説は、言い回しが奇妙で（通訳者のフィリップ・エッターの責任もあるが）はっきりせず、\r
+-# 国民の耳にはあたかも彼が強権的な民主主義を導入し、スイスをドイツの手に渡そうとしているかのように聞こえた。\r
+-# さらにまずいことに、同年9月、極右の国民戦線派と秘密会談をしていたことが明らかになった。\r
+-# スイス国民は大いに怒り、風刺喜劇家のツァーリ・カリギエは『ピレ=ゴラツを追っ払え』という作品まで上演した。\r
+-###########################################################################\r
++#########################################################################\r
++#  スイス選挙（1935年）\r
++#########################################################################\r
+ \r
+ event = {\r
+-	id = 29110014\r
++	id = 29110104\r
+ 	random = no\r
+ 	country = SCH\r
+ \r
+ 	trigger = {\r
+-		headofstate = 80014\r
+-		\r
+-		OR = {\r
+-			NOT = { control = { province = 55 data = FRA } }\r
+-			exists = VIC\r
+-			}\r
+-		NOT = { event = 29110007 } #\r
+-		}\r
++	government = democratic\r
++	NOT = { ispuppet = SCH }\r
++	}\r
+ \r
+-	name = "EVT_29110014_NAME"\r
+-	desc = "EVT_29110014_DESC"\r
++	name = "ELECTION_TITLE"\r
++	desc = "ELECTION_DESC"\r
+ 	style = 2\r
++	picture = "news_paper"\r
+ \r
+-	date = { day = 1 month = april year = 1940 }\r
+-	offset = 30\r
+-	deathdate = { day = 29 month = december year = 1945 }\r
++	date = { day = 26 month = 9 year = 1935 }\r
+ \r
+-	action_a = {\r
+-		name = "ACTIONNAME29110014A"\r
+-		command = { type = domestic which = democratic value = -1 }\r
+-		command = { type = domestic which = political_left value = -1 }\r
+-		command = { type = dissent value = 3 }\r
++	action = { # 現政権を維持する\r
++	name = "elec_keep"\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 90\r
+ 	}\r
+-}\r
+ \r
+-##########################################################################\r
+-#  1939年スイス博覧会\r
+-# チューリヒで1939年に開催されたスイス博覧会は、スイスの精神的国土防衛の結晶であったと言ってよい。\r
+-# 「精神的国土防衛」とは、第一次世界大戦後にカトリック保守派の閣僚フィリップ・エッターによって提唱されたもので、\r
+-# 国民間の協調、外敵に対する政治的・文化的な抵抗を強化し、防衛における軍事的措置を意識面で補完した。\r
+-# 精神的国土防衛はまた、すべての他国の事柄を非スイス的であるとして拒否するものであった。\r
+-# それは外国人に対しても同様で、ファシズムや共産主義と同じくユダヤ人は特に忌避された。\r
+-# 博覧会には1000万人以上が訪れ、国民の大部分が自己と「スイス的なもの」とを再認識した。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 29110015\r
+-	random = no\r
+-	country = SCH\r
+-\r
+-	trigger = {\r
+-		atwar = no\r
+-		government = democratic\r
+-		}\r
+-\r
+-	name = "EVT_29110015_NAME"\r
+-	desc = "EVT_29110015_DESC"\r
+-	style = 2\r
+-	picture = "Swiss_expo_1939"\r
+-\r
+-	date = { day = 1 month = may year = 1939 }\r
+-	offset = 30\r
+-	deathdate = { day = 29 month = october year = 1939 }\r
++	action = { # まさか国民同盟が第一党を確保するとは！\r
++	name = "ACTIONNAME29110104A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = set_domestic which = free_market value = 4 }\r
++	command = { type = set_domestic which = freedom value = 4 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = headofstate which = 80087 } # フランツ・ブリ\r
++	command = { type = headofgovernment which = 80088 } # フランツ・ブリ\r
++	command = { type = foreignminister which = 80089 } # ヤコブ・ローレンツ\r
++	command = { type = armamentminister which = 80090 } # ハンス・エーラー\r
++	command = { type = ministerofsecurity which = 80091 } # フランツ・ブリ\r
++	command = { type = ministerofintelligence which = 80092 } # アルフレート・サラシン\r
++	command = { type = chiefofstaff which = 80093 } # オイゲン・ビルヒャー\r
++	command = { type = chiefofarmy which = 80094 } # オイゲン・ビルヒャー\r
++	command = { type = chiefofnavy which = 80095 } # ハンス・エーラー\r
++	command = { type = chiefofair which = 80096 } # アルフレート・サラシン\r
++	ai_chance = 5\r
++	}\r
+ \r
+-	action_a = {\r
+-		name = "ACTIONNAME29110015A"\r
+-		command = { type = domestic which = interventionism value = -1 }\r
+-		command = { type = dissent value = -3 }\r
++	action = { # 共産党が労働者の圧倒的支持を集めた\r
++	name = "ACTIONNAME29110104B"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = set_domestic which = free_market value = 5 }\r
++	command = { type = set_domestic which = freedom value = 5 }\r
++	command = { type = set_domestic which = defense_lobby value = 2 }\r
++	command = { type = set_domestic which = interventionism value = 2 }\r
++	command = { type = headofstate which = 80097 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = headofgovernment which = 80098 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = foreignminister which = 80099 } # ヘルマン・ヘッセル=ローレンツ\r
++	command = { type = armamentminister which = 80100 } # エミール・フライ\r
++	command = { type = ministerofsecurity which = 80062 } # ハインリヒ・アベック\r
++	command = { type = ministerofintelligence which = 80101 } # テオ・マイアー\r
++	command = { type = chiefofstaff which = 80102 } # トラウゴット・マイヤー\r
++	command = { type = chiefofarmy which = 80103 } # エミール・フライ\r
++	command = { type = chiefofnavy which = 80104 } # ヘルマン・ヘッセル=ローレンツ\r
++	command = { type = chiefofair which = 80105 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	ai_chance = 5\r
+ 	}\r
+ }
+\ No newline at end of file

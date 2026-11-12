@@ -1,0 +1,44 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Shanghai_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Shanghai_events.txt [cp932]
+@@ -119,12 +119,14 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++	NOT = { dissent = 4 }\r
+ 	money = 350\r
+ 	atwar = no\r
+ 	NOT = { ispuppet = yes }\r
+ 	}\r
+ \r
+ 	trigger = {\r
++	NOT = { dissent = 4 }\r
+ 	NOT = { local_flag = china_poppy } # アヘン問題イベントを起こしていない\r
+ 	atwar = no\r
+ 	NOT = { ispuppet = yes }\r
+@@ -137,13 +139,14 @@ event = {
+ 	decision_picture = "decision_ccip_poppy"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 80\r
++	offset = 40\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # アヘン貿易を容認する\r
+ 	name = "ACTIONNAME6949003A"\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = relation which = UF2 value = 10 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
+ 	command = { type = industrial_modifier which = money value = 10 }\r
+ 	command = { type = local_setflag which = china_poppy }\r
+ 	ai_chance = 50\r
+@@ -151,8 +154,9 @@ event = {
+ \r
+ 	action = { # アヘン密売人を処刑しろ！\r
+ 	name = "ACTIONNAME6949003B"\r
+-	command = { type = dissent value = -10 }\r
++	command = { type = dissent value = 10 }\r
+ 	command = { type = relation which = UF2 value = -50 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
+ 	command = { type = end_trades which = -1 where = UF2 }\r
+ 	command = { type = local_setflag which = china_poppy }\r
+ 	ai_chance = 50\r

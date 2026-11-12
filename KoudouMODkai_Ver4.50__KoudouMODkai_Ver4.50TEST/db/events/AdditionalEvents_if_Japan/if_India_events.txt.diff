@@ -1,0 +1,39 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_India_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_India_events.txt [cp932]
+@@ -79,7 +79,7 @@ event = {
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = relation which = ENG value = 30 }\r
+ 	command = { type = relation which = CHI value = -30 }\r
+-	command = { type = relation which = UTC value = -30 }\r
++	command = { type = relation which = UER value = -30 }\r
+ 	}\r
+ }\r
+ \r
+@@ -609,8 +609,6 @@ event = {
+ 	command = { type = chiefofarmy which = 2510099 } # スバス・チャンドラ・ボース\r
+ 	command = { type = chiefofnavy which = 2510107 } # アダル・クマル・チャッテルジー\r
+ 	command = { type = chiefofair which = 2510108 } # ラヴィンドラ・ダルシャン・シン\r
+-	command = { trigger = { ai = yes } type = ai which = "IF/U02_if.ai" }\r
+-	command = { type = end_puppet }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+@@ -673,17 +671,11 @@ event = {
+ 	command = { trigger = { NOT = { exists = NEP } } type = independence which = NEP value = 1 when = 0 }\r
+ 	command = { trigger = { NOT = { exists = BHU } } type = independence which = BHU value = 1 when = 0 }\r
+ 	command = { trigger = { NOT = { exists = UD0 } } type = independence which = UD0 value = 1 when = 0 }\r
+-	command = { type = remove_core_area which = "Bengal" where = IND }\r
+-	command = { type = remove_core_area which = "East Bengal" where = IND }\r
+ 	command = { type = make_puppet which = BUR }\r
+ 	command = { type = make_puppet which = PAK }\r
+ 	command = { type = make_puppet which = NEP }\r
+ 	command = { type = make_puppet which = BHU }\r
+-	command = { type = make_puppet which = UD0 } \r
+-	command = { type = secedearea which = UD0 value = "East Bengal" }\r
+-	command = { type = secedearea which = UD0 value = "Bengal" }\r
+-	command = { trigger = { ai = yes } type = ai which = "IF/U02_if.ai" }\r
+-	command = { type = end_puppet }\r
++	command = { type = make_puppet which = UD0 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r

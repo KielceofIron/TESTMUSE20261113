@@ -1,0 +1,1711 @@
+--- A/db/events/Yokoyama_events/Koudou_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Koudou_events.txt [cp932]
+@@ -71,6 +71,9 @@
+ #id = 22600065 皇道維新体制の構築\r
+ #id = 22600066 皇道維新体制 ― 国号選択（昭和維新）\r
+ #id = 22600067 皇道維新体制 ― 国号選択（軍国主義）\r
++#id = 22600068 皇道維新体制 ― 国旗選択\r
++#id = 22600069 石原莞爾の現役復帰\r
++#id = 22600070 命令第44号\r
+ #id = 22600100 国家の生産的組織の設立\r
+ #id = 22600101 国家の生産的組織の設立 ― 銀行省\r
+ #id = 22600102 国家の生産的組織の設立 ― 航海省\r
+@@ -245,6 +248,36 @@ event = {
+ 		#command = { type = sleepevent which = 1330120039 } #The Chin-Doihara Agreement - refused\r
+ 		#command = { type = sleepevent which = 2011022 } # Marco Polo Bridge\r
+ 		#command = { type = sleepevent which = 2011021 } # German Recognition of Manchukuo\r
++		command = { type = sleepevent which = 2500036 } # 突然の政府交代\r
++		command = { type = sleepevent which = 2500037 }\r
++		command = { type = sleepevent which = 2500038 }\r
++		command = { type = sleepevent which = 2500039 }\r
++		command = { type = sleepevent which = 2500040 }\r
++		command = { type = sleepevent which = 2900162 } # 選挙イベント（1954年）\r
++		command = { type = sleepevent which = 2900163 } # 選挙イベント（1956年）\r
++		command = { type = sleepevent which = 2900164 } # 選挙イベント（1957年）\r
++		command = { type = sleepevent which = 2900165 } # 選挙イベント（1960年）\r
++		command = { type = sleepevent which = 9999460 } # AI閣僚変更イベント\r
++		command = { type = sleepevent which = 9999461 }\r
++		command = { type = sleepevent which = 9999462 }\r
++		command = { type = sleepevent which = 9999463 }\r
++		command = { type = sleepevent which = 9999464 }\r
++		command = { type = sleepevent which = 9999465 }\r
++		command = { type = sleepevent which = 9999466 }\r
++		command = { type = sleepevent which = 9999467 }\r
++		command = { type = sleepevent which = 9999468 }\r
++		command = { type = sleepevent which = 9999469 }\r
++		command = { type = sleepevent which = 9999470 }\r
++		command = { type = sleepevent which = 9999471 }\r
++		command = { type = sleepevent which = 9999472 }\r
++		command = { type = sleepevent which = 9999473 }\r
++		command = { type = sleepevent which = 9999474 }\r
++		command = { type = sleepevent which = 9999475 }\r
++		command = { type = sleepevent which = 9999476 }\r
++		command = { type = sleepevent which = 9999477 }\r
++		command = { type = sleepevent which = 9999478 }\r
++		command = { type = sleepevent which = 9999479 }\r
++		command = { type = sleepevent which = 9999480 }\r
+ 		command = { type = songs which = "seinennihon.txt" }\r
+ 	}\r
+ }\r
+@@ -265,6 +298,7 @@ event = {
+ 	event = 2011006 # 226事件\r
+ 	event = 2260005 # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	OR = { \r
+@@ -393,9 +427,16 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
++	OR = { \r
+ 	event = 22600002 # 突然の政府交代\r
++	event = 3432011 # 第二次明治維新\r
++	}\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	not = { ispuppet = JAP }\r
+ 	}\r
+@@ -405,9 +446,16 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
++	OR = { \r
+ 	event = 22600002 # 突然の政府交代\r
++	event = 3432011 # 第二次明治維新\r
++	}\r
+ 	OR = {\r
+ 	headofstate = 50011\r
+ 	headofstate = 50568\r
+@@ -422,9 +470,16 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
++	OR = { \r
+ 	event = 22600002 # 突然の政府交代\r
++	event = 3432011 # 第二次明治維新\r
++	}\r
+ 	OR = {\r
+ 	headofstate = 50011\r
+ 	headofstate = 50568\r
+@@ -452,6 +507,7 @@ event = {
+ 	command = { type = domestic which = political_left value = -1 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = event which = 22600112 where = -1 when = 5 }\r
++	command = { type = waketeam which = 50213 } # 天皇顧問院\r
+ 	command = { type = local_setflag which = Nihon_Kaizou when = 1 value = 1 }\r
+ 	}\r
+ }\r
+@@ -474,8 +530,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	}\r
+ \r
+@@ -484,8 +544,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = { id = 2260006 days = 60 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 3432004 days = 60 } # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	not = { ispuppet = JAP }\r
+ 	}\r
+@@ -495,8 +559,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = { id = 2260006 days = 60 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 3432004 days = 60 } # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	not = { ispuppet = JAP }\r
+ 	random = 20\r
+@@ -512,7 +580,7 @@ event = {
+ 	offset = 5\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action = { # 昭和維新万歳！\r
++	action = { # 青年将校を最高司令部に参加させるのだ\r
+ 	name = "ACTIONNAME22600005A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = wakeminister which = 50594 }\r
+@@ -545,6 +613,33 @@ event = {
+ 	command = { type = wakeleader which = 50680 }\r
+ 	command = { type = wakeleader which = 50690 }\r
+ 	command = { type = wakeleader which = 50691 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 青年将校から選別する！\r
++	name = "ACTIONNAME22600005B"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = local_setflag which = Seinen_Shoukou_Senbetsu }\r
++	command = { type = wakeminister which = 50594 }\r
++	command = { type = wakeminister which = 50595 }\r
++	command = { type = wakeminister which = 50596 }\r
++	command = { type = wakeminister which = 50597 }\r
++	command = { type = wakeminister which = 50598 }\r
++	command = { type = wakeminister which = 50599 }\r
++	command = { type = wakeminister which = 50600 }\r
++	command = { type = wakeminister which = 50601 }\r
++	command = { type = wakeminister which = 50602 }\r
++	command = { type = wakeminister which = 50603 }\r
++	command = { type = wakeminister which = 50604 }\r
++	command = { type = sleepleader which = 50070 }\r
++	command = { type = wakeleader which = 50665 }\r
++	command = { type = wakeleader which = 50666 }\r
++	command = { type = wakeleader which = 50667 }\r
++	command = { type = wakeleader which = 50679 }\r
++	command = { type = wakeleader which = 50680 }\r
++	command = { type = wakeleader which = 50690 }\r
++	command = { type = wakeleader which = 50691 }\r
++	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+@@ -571,8 +666,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 30 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -609,6 +708,12 @@ event = {
+ 	command = { type = build_cost which = land when = now where = relative value = 30 }\r
+ 	command = { type = build_cost which = naval when = now where = relative value = 30 }\r
+ 	command = { type = build_cost which = air when = now where = relative value = 30 }\r
++	command = { type = build_time which = land when = on_upgrade where = relative value = 30 }\r
++	command = { type = build_time which = naval when = on_upgrade where = relative value = 30 }\r
++	command = { type = build_time which = air when = on_upgrade where = relative value = 30 }\r
++	command = { type = build_cost which = land when = on_upgrade where = relative value = 30 }\r
++	command = { type = build_cost which = naval when = on_upgrade where = relative value = 30 }\r
++	command = { type = build_cost which = air when = on_upgrade where = relative value = 30 }\r
+ 	command = { type = construct which = ic where = -4 value = -1 }\r
+ 	command = { type = construct which = ic where = -4 value = -1 }\r
+ 	command = { type = construct which = ic where = -4 value = -1 }\r
+@@ -636,8 +741,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = { \r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 2260011 # 財閥解体に伴う深刻な混乱\r
+@@ -675,6 +784,12 @@ event = {
+ 	command = { type = build_cost which = land when = now where = relative value = -40 }\r
+ 	command = { type = build_cost which = naval when = now where = relative value = -50 }\r
+ 	command = { type = build_cost which = air when = now where = relative value = -40 }\r
++	command = { type = build_time which = land when = on_upgrade where = relative value = -40 }\r
++	command = { type = build_time which = naval when = on_upgrade where = relative value = -40 }\r
++	command = { type = build_time which = air when = on_upgrade where = relative value = -40 }\r
++	command = { type = build_cost which = land when = on_upgrade where = relative value = -40 }\r
++	command = { type = build_cost which = naval when = on_upgrade where = relative value = -40 }\r
++	command = { type = build_cost which = air when = on_upgrade where = relative value = -40 }\r
+ 	command = { type = construct which = ic where = -4 value = 1 }\r
+ 	command = { type = construct which = ic where = -4 value = 1 }\r
+ 	command = { type = construct which = ic where = -4 value = 1 }\r
+@@ -713,8 +828,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = { \r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 2260011 # 財閥解体に伴う深刻な混乱\r
+@@ -784,8 +903,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = { \r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 2260011 # 財閥解体に伴う深刻な混乱\r
+@@ -839,8 +962,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = { \r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 2260011 # 財閥解体に伴う深刻な混乱\r
+@@ -917,8 +1044,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	flag = JAP_NorthStrategy\r
+ 	OR = {\r
+ 	AND = {\r
+@@ -943,8 +1074,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = { id = 2260006 days = 100 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 3432004 days = 100 } # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = {\r
+ 	AND = {\r
+ 	exists = MAN\r
+@@ -979,8 +1114,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = { id = 2260006 days = 100 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 3432004 days = 100 } # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = {\r
+ 	AND = {\r
+ 	exists = MAN\r
+@@ -1123,8 +1262,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	flag = JAP_NorthStrategy\r
+ 	NOT = { \r
+ 	exists = MAN\r
+@@ -1142,8 +1285,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = { id = 2260006 days = 200 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 3432004 days = 200 } # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	NOT = { \r
+ 	exists = MAN\r
+ 	puppet = { country = MAN country = JAP }\r
+@@ -1167,8 +1314,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = { id = 2260006 days = 200 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 3432004 days = 200 } # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	NOT = { \r
+ 	exists = MAN\r
+ 	puppet = { country = MAN country = JAP }\r
+@@ -1646,6 +1797,7 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
+ 	event = { id = 22600049 days = 180 } # 尊皇討奸 ― 戒厳令布告\r
+ 	not = { ispuppet = JAP }\r
+@@ -1690,8 +1842,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 1330120016 # 相沢事件\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -1733,8 +1889,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	}\r
+@@ -1744,9 +1904,16 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
++	OR = { \r
+ 	event = { id = 22600003 days = 60 } # 新たな天皇\r
++	event = { id = 3432011 days = 60 } # 第二次明治維新\r
++	}\r
+ 	OR = {\r
+ 	headofstate = 50011\r
+ 	headofstate = 50568\r
+@@ -1761,9 +1928,16 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
++	OR = { \r
+ 	event = { id = 22600003 days = 60 } # 新たな天皇\r
++	event = { id = 3432011 days = 60 } # 第二次明治維新\r
++	}\r
+ 	OR = {\r
+ 	headofstate = 50011\r
+ 	headofstate = 50568\r
+@@ -2042,8 +2216,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	}\r
+@@ -2053,8 +2231,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 180 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	}\r
+@@ -2064,8 +2246,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 120 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	random = 20\r
+@@ -2129,8 +2315,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+@@ -2142,8 +2332,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 30 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+@@ -2155,8 +2349,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 30 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+@@ -2507,6 +2705,7 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
+ 	OR = { \r
+ 	headofstate = 50011  # 秩父宮雍仁親王\r
+@@ -2522,6 +2721,7 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
+ 	OR = { \r
+ 	headofstate = 50011  # 秩父宮雍仁親王\r
+@@ -2538,6 +2738,7 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
+ 	OR = { \r
+ 	headofstate = 50011  # 秩父宮雍仁親王\r
+@@ -2614,60 +2815,68 @@ event = {
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+-	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50013 } # 皇道派軍人\r
+-	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50547 }\r
+-	command = { type = wakeleader which = 50638 }\r
+-	command = { type = wakeleader which = 50203 }\r
+-	command = { type = wakeleader which = 50201 }\r
+-	command = { type = wakeleader which = 50593 }\r
+-	command = { type = wakeleader which = 50586 }\r
+-	command = { type = wakeleader which = 50198 }\r
+-	command = { type = wakeleader which = 50548 }\r
+-	command = { type = wakeleader which = 50665 }\r
+-	command = { type = wakeleader which = 50666 }\r
+-	command = { type = wakeleader which = 50667 }\r
+-	command = { type = wakeleader which = 50668 }\r
+-	command = { type = wakeleader which = 50669 }\r
+-	command = { type = wakeleader which = 50670 }\r
+-	command = { type = wakeleader which = 50671 }\r
+-	command = { type = wakeleader which = 50672 }\r
+-	command = { type = wakeleader which = 50673 }\r
+-	command = { type = wakeleader which = 50674 }\r
+-	command = { type = wakeleader which = 50675 }\r
+-	command = { type = wakeleader which = 50676 }\r
+-	command = { type = wakeleader which = 50677 }\r
+-	command = { type = wakeleader which = 50678 }\r
+-	command = { type = wakeleader which = 50679 }\r
+-	command = { type = wakeleader which = 50680 }\r
+-	command = { type = wakeleader which = 50681 }\r
+-	command = { type = wakeleader which = 50682 }\r
+-	command = { type = wakeleader which = 50683 }\r
+-	command = { type = wakeleader which = 50684 }\r
+-	command = { type = wakeleader which = 50685 }\r
+-	command = { type = wakeleader which = 50686 }\r
+-	command = { type = wakeleader which = 50687 }\r
+-	command = { type = wakeleader which = 50688 }\r
+-	command = { type = wakeleader which = 50689 }\r
+-	command = { type = wakeleader which = 50690 }\r
+-	command = { type = wakeleader which = 50693 }\r
+-	command = { type = wakeleader which = 50694 }\r
+-	command = { type = wakeleader which = 50695 }\r
+-	command = { type = wakeleader which = 50696 }\r
+-	command = { type = wakeleader which = 50697 }\r
+-	command = { type = wakeleader which = 50698 }\r
+-	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50699 }\r
+-	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50700 }\r
+-	command = { type = wakeleader which = 50658 }\r
+-	command = { trigger = { flag = Ishiwara_Geneki } type = wakeleader which = 50065 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50701 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50702 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50703 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50704 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50705 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50706 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50707 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50708 }\r
+-	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50709 }\r
++	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50013 } # 荒木貞夫\r
++	command = { trigger = { NOT = { local_flag = Araki_IF } } type = wakeleader which = 50547 } # 眞崎甚三郎\r
++	command = { type = wakeleader which = 50638 } # 小畑敏四郎\r
++	command = { type = wakeleader which = 50203 } # 柳川平助\r
++	command = { type = wakeleader which = 50201 } # 山下奉文\r
++	command = { type = wakeleader which = 50593 } # 鈴木率道\r
++	command = { type = wakeleader which = 50586 } # 酒井鎬次\r
++	command = { type = wakeleader which = 50198 } # 山岡重厚\r
++	command = { type = wakeleader which = 50548 } # 本庄繁\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 50665 } # 磯部浅一\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 50666 } # 安藤輝三\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 50667 } # 村中孝次\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50668 } # 香田清貞\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50669 } # 野中四郎\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50670 } # 栗原安秀\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50671 } # 中橋基明\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50672 } # 対馬勝雄\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50673 } # 竹嶌継夫\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50674 } # 丹生誠忠\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50675 } # 坂井直\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50676 } # 田中勝\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50677 } # 安田優\r
++	command = { trigger = { event = 22600005 NOT = { local_flag = Seinen_Shoukou_Senbetsu } } type = wakeleader which = 50678 } # 林八郎\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 50679 } # 相沢三郎\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 50680 } # 武山信二\r
++	command = { type = wakeleader which = 50681 } # 秦真次\r
++	command = { type = wakeleader which = 50682 } # 斎藤瀏\r
++	command = { type = wakeleader which = 50683 } # 秦彦三郎\r
++	command = { type = wakeleader which = 50684 } # 香椎浩平\r
++	command = { type = wakeleader which = 50685 } # 工藤義雄\r
++	command = { type = wakeleader which = 50686 } # 満井佐吉\r
++	command = { type = wakeleader which = 50687 } # 村上啓作\r
++	command = { type = wakeleader which = 50688 } # 松浦淳六郎\r
++	command = { type = wakeleader which = 50689 } # 眞崎勝次\r
++	command = { type = wakeleader which = 50690 } # 三上卓\r
++	command = { trigger = { event = 22600005 } type = wakeleader which = 50691 } # 岩畔豪雄\r
++	command = { type = wakeleader which = 50693 } # 稻葉悟\r
++	command = { type = wakeleader which = 50694 } # 中澤佑\r
++	command = { type = wakeleader which = 50695 } # 福井義男\r
++	command = { type = wakeleader which = 50696 } # 長村河鹿\r
++	command = { type = wakeleader which = 50697 } # 林田博嗣\r
++	command = { type = wakeleader which = 50698 } # 河合明\r
++	command = { type = wakeleader which = 50348 } # 伏見宮博恭王\r
++	command = { type = wakeleader which = 50257 } # 中村良三\r
++	command = { type = wakeleader which = 50293 } # 山本英輔\r
++	command = { type = wakeleader which = 50564 } # 末次信正\r
++	command = { type = wakeleader which = 50575 } # 新見政一\r
++	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50699 } # 荒木貞夫\r
++	command = { trigger = { local_flag = Araki_IF } type = wakeleader which = 50700 } # 眞崎甚三郎\r
++	command = { type = wakeleader which = 50658 } # 堀丈夫\r
++	command = { trigger = { local_flag = Ishiwara_Geneki } type = wakeleader which = 50065 } # 石原莞爾\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50701 } # 横山奉文\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50702 } # 望月冬夜\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50703 } # 和川原之地\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50704 } # 小野田秀久\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50705 } # 矢田部信次郎\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50706 } # 猪口英二郎\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50707 } # 本郷義昭\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50708 } # 神宮司八郎\r
++	command = { trigger = { local_flag = Koudou_226_IF } type = wakeleader which = 50709 } # 勝山一郎\r
++	command = { trigger = { NOT = { event = 22600060 } } type = wakeleader which = 50120 } # 牟田口廉也（覚醒前）\r
++	command = { trigger = { event = 22600060 } type = wakeleader which = 50710 } # 牟田口廉也（覚醒）\r
+ 	}\r
+ }\r
+ \r
+@@ -2696,6 +2905,11 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
++	}\r
++	OR = { \r
++	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
+ 	}\r
+ 	OR = { \r
+ 	event = 22600030 # 尊皇討奸 ― 軍靴の音、高らかに\r
+@@ -2716,8 +2930,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 22600110 # 国家の生産的組織の設立 ― 内務省解体\r
+ 	not = { ispuppet = JAP }\r
+ 	}\r
+@@ -2727,8 +2945,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 22600110 # 国家の生産的組織の設立 ― 内務省解体\r
+ 	not = { ispuppet = JAP }\r
+ 	random = 25\r
+@@ -2819,10 +3041,17 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
++	OR = { \r
+ 	event = { id = 22600006 days = 90 } # 第二次昭和恐慌\r
++	event = { id = 3432012 days = 90 } # 国家経済の再建\r
++	}\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -2833,10 +3062,17 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
++	OR = { \r
+ 	event = 22600006 # 第二次昭和恐慌\r
++	event = 3432012 # 国家経済の再建\r
++	}\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -2849,10 +3085,17 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
++	OR = { \r
+ 	event = { id = 22600006 days = 90 } # 第二次昭和恐慌\r
++	event = { id = 3432012 days = 90 } # 国家経済の再建\r
++	}\r
+ 	not = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -3023,9 +3266,10 @@ event = {
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	OR = {\r
+ 	AND = {\r
+-	event = { id = 2260006 days = 720 }\r
+-	event = { id = 22600027 days = 720 }\r
++	event = { id = 2260006 days = 720 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 22600027 days = 720 } # 尊皇討奸 ― 海軍の粛清\r
+ 	}\r
++	event = { id = 3432004 days = 720 } # 尊皇討奸 ― 中央派の粛清\r
+ 	year = 1938\r
+ 	NOT = { control = { province = 1552 data = JAP } } # 東京\r
+ 	lost_national = { country = JAP value = 30 }\r
+@@ -3065,9 +3309,10 @@ event = {
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	OR = {\r
+ 	AND = {\r
+-	event = { id = 2260006 days = 1440 }\r
+-	event = { id = 22600027 days = 1440 }\r
++	event = { id = 2260006 days = 1440 } # 尊皇討奸 ― 統制派の粛清\r
++	event = { id = 22600027 days = 1440 } # 尊皇討奸 ― 海軍の粛清\r
+ 	}\r
++	event = { id = 3432004 days = 1440 } # 尊皇討奸 ― 中央派の粛清\r
+ 	year = 1942\r
+ 	lost_national = { country = JAP value = 50 }\r
+ 	}\r
+@@ -3422,8 +3667,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	NOT = {	exists = KOR }\r
+ 	NOT = {	event = 2011028 }\r
+@@ -3440,8 +3689,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	NOT = {	exists = KOR }\r
+ 	NOT = {	event = 2011028 }\r
+@@ -3458,8 +3711,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	NOT = {	exists = KOR }\r
+ 	NOT = {	event = 2011028 }\r
+@@ -3651,8 +3908,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	NOT = {	exists = KOR }\r
+ 	NOT = {	event = 2011028 }\r
+@@ -3668,8 +3929,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	NOT = {	exists = KOR }\r
+ 	NOT = {	event = 2011028 }\r
+@@ -3686,8 +3951,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	NOT = {	exists = KOR }\r
+ 	NOT = {	event = 2011028 }\r
+@@ -3880,8 +4149,12 @@ event = {
+ 	event = 2011006 # 226事件\r
+ 	event = 2260005 # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 22600007 # 第二次昭和恐慌 ― 経済再建\r
+@@ -3895,8 +4168,12 @@ event = {
+ 	event = 2011006 # 226事件\r
+ 	event = 2260005 # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	#local_flag = koudou # 昭和維新が成功している\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 22600007 # 第二次昭和恐慌 ― 経済再建\r
+@@ -3914,8 +4191,12 @@ event = {
+ 	event = 2011006 # 226事件\r
+ 	event = 2260005 # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 22600007 # 第二次昭和恐慌 ― 経済再建\r
+@@ -4060,8 +4341,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260007 # 皇道維新内閣の組閣\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -4096,6 +4381,7 @@ event = {
+ 	command = { type = sleepminister which = 50424 } # 安部磯雄 白色テロル\r
+ 	command = { type = sleepminister which = 50562 }\r
+ 	command = { type = sleepminister which = 50027 } # 鈴木喜三郞 銃殺\r
++	command = { type = sleepminister which = 50399 }\r
+ 	command = { type = sleepminister which = 50028 } # 幣原喜重郞 銃殺\r
+ 	command = { type = sleepminister which = 50036 }\r
+ 	command = { type = sleepminister which = 50058 }\r
+@@ -4146,6 +4432,7 @@ event = {
+ 	command = { type = sleepminister which = 50329 } # 河田烈 銃殺\r
+ 	command = { type = sleepminister which = 50334 } # 石渡莊太郞 銃殺\r
+ 	command = { type = sleepminister which = 50401 } # 三土忠造 銃殺\r
++	command = { type = sleepminister which = 50400 }\r
+ 	command = { type = sleepminister which = 50402 } # 松野鶴平 銃殺\r
+ 	command = { type = sleepminister which = 50403 } # 川村竹治 銃殺\r
+ 	command = { type = sleepminister which = 50408 } # 前田米蔵 銃殺\r
+@@ -4329,8 +4616,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 22600006 # 第二次昭和恐慌\r
+ 	technology = 1396 # 1935年型自動車化\r
+@@ -4345,8 +4636,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600006 days = 90 } # 第二次昭和恐慌\r
+ 	technology = 1396 # 1935年型自動車化\r
+@@ -4364,8 +4659,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600006 days = 90 } # 第二次昭和恐慌\r
+ 	technology = 1396 # 1935年型自動車化\r
+@@ -4431,8 +4730,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 22600049 days = 1080 }\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -4485,8 +4788,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 180 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -4497,8 +4804,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -4509,8 +4820,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 180 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -4561,8 +4876,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = {\r
+ 	AND = { random = 30 event = 22600028 } # 尊皇討奸 ― 更なる粛清が発生している\r
+ 	AND = { random = 15 NOT = { event = 22600028 } } # 尊皇討奸 ― 更なる粛清が発生していない\r
+@@ -4665,10 +4984,17 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
++	OR = { \r
+ 	event = { id = 22600006 days = 90 } # 第二次昭和恐慌\r
++	event = { id = 3432012 days = 90 } # 国家経済の再建\r
++	}\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	NOT = { local_flag = women_work }\r
+@@ -4679,10 +5005,17 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
++	OR = { \r
+ 	event = { id = 22600006 days = 180 } # 第二次昭和恐慌\r
++	event = { id = 3432012 days = 180 } # 国家経済の再建\r
++	}\r
+ 	money = 300\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+@@ -4695,10 +5028,17 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
++	OR = { \r
+ 	event = { id = 22600006 days = 180 } # 第二次昭和恐慌\r
++	event = { id = 3432012 days = 180 } # 国家経済の再建\r
++	}\r
+ 	not = { ispuppet = JAP }\r
+ 	local_flag = koudou # 昭和維新が成功している\r
+ 	NOT = { local_flag = women_work }\r
+@@ -4749,8 +5089,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 22600016 # 国家安全保障法\r
+ 	event = 22600029 # 憲兵隊の拡充\r
+ 	event = 22600053 # 華族制度の解体\r
+@@ -4763,8 +5107,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 22600016 # 国家安全保障法\r
+ 	event = 22600029 # 憲兵隊の拡充\r
+ 	event = 22600053 # 華族制度の解体\r
+@@ -4776,8 +5124,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 22600016 # 国家安全保障法\r
+ 	event = 22600029 # 憲兵隊の拡充\r
+ 	event = 22600053 # 華族制度の解体\r
+@@ -4842,8 +5194,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 22600016 # 国家安全保障法\r
+ 	event = 22600029 # 憲兵隊の拡充\r
+ 	event = 22600053 # 華族制度の解体\r
+@@ -4910,8 +5266,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	NOT = { exists = UER } # 東ロシア\r
+ 	NOT = { war = { country = JAP country = SOV } } # 東ロシア\r
+ 	NOT = { event = 2007033 } # The Bitter Peace\r
+@@ -5077,8 +5437,12 @@ event = {
+ 	event = 2011006 # 226事件\r
+ 	event = 2260005 # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	NOT = { event = { id = 2011006 days = 4 } } # 226事件\r
+ 	NOT = { event = { id = 2260005 days = 4 } } # 二月蜂起 ― 昭和維新\r
+ 	NOT = { event = { id = 22600001 days = 4 } } # 昭和維新\r
+@@ -5206,8 +5570,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	OR = {\r
+ 	headofstate = 50011 # 秩父宮雍仁親王\r
+ 	headofstate = 50568\r
+@@ -5229,28 +5597,80 @@ event = {
+ \r
+ 	action = { # 日本改造、達成セリ！\r
+ 	name = "ACTIONNAME22600064A"\r
+-	trigger = { ai = no }\r
+-	command = { type = dissent value = -50 }\r
+-	command = { type = research_mod value = 20 }\r
+-	command = { type = ground_def_eff value = 0.1 when = 1 }\r
+-	command = { type = morale which = land value = 30 }\r
+-	command = { type = morale which = naval value = 30 }\r
+-	command = { type = morale which = air value = 30 }\r
++	command = { type = dissent value = -10 }\r
++	command = { type = research_mod value = 10 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { type = morale which = naval value = 10 }\r
++	command = { type = morale which = air value = 10 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 日本改造、達成セリ！\r
+-	name = "ACTIONNAME22600064A"\r
+-	trigger = { ai = yes }\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = morale which = land value = 30 }\r
+-	command = { type = morale which = naval value = 30 }\r
+-	command = { type = morale which = air value = 30 }\r
+-	ai_chance = 100\r
++	action = { # 臣民は神類へと神化した！\r
++	name = "ACTIONNAME22600064B"\r
++	trigger = { minister = 50569 }\r
++	command = { type = dissent value = -100 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 1 }\r
++	command = { type = set_domestic which = freedom value = 1 }\r
++\r
++	command = { type = wakeminister which = 51031 }\r
++	command = { type = wakeminister which = 51032 }\r
++	command = { type = wakeminister which = 51033 }\r
++	command = { type = wakeminister which = 51034 }\r
++	command = { type = wakeminister which = 51035 }\r
++	command = { type = wakeminister which = 51036 }\r
++	command = { type = wakeminister which = 51037 }\r
++	command = { type = wakeminister which = 51038 }\r
++	command = { type = wakeminister which = 51039 }\r
++\r
++	command = { trigger = { minister = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 51031 } # 神類たる臣民\r
++	command = { type = foreignminister which = 51032 } # 神類たる臣民\r
++	command = { type = armamentminister which = 51033 } # 神類たる臣民\r
++	command = { type = ministerofsecurity which = 51034 } # 神類たる臣民\r
++	command = { type = ministerofintelligence which = 51035 } # 神類たる臣民\r
++	command = { type = chiefofstaff which = 51036 } # 神類たる臣民\r
++	command = { type = chiefofarmy which = 51037 } # 神類たる臣民\r
++	command = { type = chiefofnavy which = 51038 } # 神類たる臣民\r
++	command = { type = chiefofair which = 51039 } # 神類たる臣民\r
++\r
++	command = { type = sleepevent which = 2260008 } # 天誅組事件 ― 荒木貞夫暗殺未遂\r
++	command = { type = sleepevent which = 2500036 } # 突然の政府交代\r
++	command = { type = sleepevent which = 2500037 }\r
++	command = { type = sleepevent which = 2500038 }\r
++	command = { type = sleepevent which = 2500039 }\r
++	command = { type = sleepevent which = 2500040 }\r
++	command = { type = sleepevent which = 2900162 } # 選挙イベント（1954年）\r
++	command = { type = sleepevent which = 2900163 } # 選挙イベント（1956年）\r
++	command = { type = sleepevent which = 2900164 } # 選挙イベント（1957年）\r
++	command = { type = sleepevent which = 2900165 } # 選挙イベント（1960年）\r
++	command = { type = sleepevent which = 9999460 } # AI閣僚変更イベント\r
++	command = { type = sleepevent which = 9999461 }\r
++	command = { type = sleepevent which = 9999462 }\r
++	command = { type = sleepevent which = 9999463 }\r
++	command = { type = sleepevent which = 9999464 }\r
++	command = { type = sleepevent which = 9999465 }\r
++	command = { type = sleepevent which = 9999466 }\r
++	command = { type = sleepevent which = 9999467 }\r
++	command = { type = sleepevent which = 9999468 }\r
++	command = { type = sleepevent which = 9999469 }\r
++	command = { type = sleepevent which = 9999470 }\r
++	command = { type = sleepevent which = 9999471 }\r
++	command = { type = sleepevent which = 9999472 }\r
++	command = { type = sleepevent which = 9999473 }\r
++	command = { type = sleepevent which = 9999474 }\r
++	command = { type = sleepevent which = 9999475 }\r
++	command = { type = sleepevent which = 9999476 }\r
++	command = { type = sleepevent which = 9999477 }\r
++	command = { type = sleepevent which = 9999478 }\r
++	command = { type = sleepevent which = 9999479 }\r
++	command = { type = sleepevent which = 9999480 }\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 必要ない\r
+-	name = "ACTIONNAME22600064B"\r
++	name = "ACTIONNAME22600064C"\r
+ 	command = { type = dissent value = -1 }\r
+ 	ai_chance = 0\r
+ 	}\r
+@@ -5273,8 +5693,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260007 # 皇道維新内閣の組閣\r
+ 	event = { id = 22600049 days = 10 }\r
+ 	not = { ispuppet = JAP }\r
+@@ -5606,6 +6030,179 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  石原莞爾の現役復帰\r
++# 石原莞爾は、満州事変の首謀者、「世界最終戦論」など軍事思想家として知られる陸軍軍人である。\r
++# 皇道派のクーデターが起こると、事件の鎮圧に動いたため、皇道派維新政府が成立後、予備役に追いやられた。\r
++# しかしながら有能な戦術家であると同時に指揮官として兵士から慕われていることから、現役復帰の要望が上がっている。\r
++# （石原莞爾は満州事変を起こし、満州国を建国した陸軍軍人である。\r
++# 二・二六事件においては参謀本部作戦課長と東京警備司令部参謀を兼務、反乱軍の鎮圧の先頭に立った。\r
++# しかし一方で石原莞爾は、事件中に満井佐吉、橋本欣五郎と帝国ホテルにおいて集まり、善後処置を協議し、\r
++# 反乱軍の大赦を条件に反乱軍を降伏させたのち、軍事革命政権を樹立することで政治的混乱を収束させることを考えるなど、\r
++# 反乱軍に同情的な行動もとっていた。）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 22600069\r
++	random = no\r
++	country = JAP\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	OR = { \r
++	event = 2011006  # 2.26事件\r
++	event = 2260005  # 二月蜂起 ― 昭和維新\r
++	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
++	}\r
++	OR = { \r
++	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
++	local_flag = koudou # 昭和維新が成功している\r
++	OR = {\r
++	not = { leader = 50065 }\r
++	not = { minister = 50548 }\r
++	}\r
++	not = { ispuppet = JAP }\r
++	random = 15\r
++	}\r
++\r
++	name = "EVT_22600069_NAME"\r
++	desc = "EVT_22600069_DESC"\r
++	style = 2\r
++	picture = "Ishihara_Kanzi"\r
++\r
++	date = { day = 0 month = 0 year = 1937 }\r
++	offset = 12\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = { # 現役復帰を認めよう\r
++	name = "ACTIONNAME22600069A"\r
++	command = { type = domestic which = freedom value = 1 }\r
++	command = { type = wakeminister which = 50548 } #石原莞爾 \r
++	command = { type = wakeminister which = 50723 }\r
++	command = { type = wakeminister which = 50724 }\r
++	command = { type = wakeminister which = 50747 }\r
++	command = { type = wakeleader which = 50065 }\r
++	command = { type = waketeam which = 50102 }\r
++	command = { type = local_setflag which = Ishiwara_Geneki }\r
++	ai_chance = 40\r
++	}\r
++\r
++\r
++	action_a = { # やつなど必要ない！\r
++	name = "ACTIONNAME22600069B"\r
++	command = { type = dissent value = 2 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = sleepminister which = 50548 } #石原莞爾 粛清\r
++	command = { type = sleepminister which = 50723 }\r
++	command = { type = sleepminister which = 50724 }\r
++	command = { type = sleepminister which = 50747 }\r
++	command = { type = sleepleader which = 50065 }\r
++	command = { type = sleepteam which = 50102 }\r
++	ai_chance = 60\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  命令第44号\r
++# 大日本帝国の首都である東京が、突然陸軍部隊によって封鎖されたという連絡を最後に、情報がほとんど途絶えた。\r
++# 時折流れてくるニュースや放送では、磯部浅一大佐が率いる部隊が国会議事堂や皇居を占領し、\r
++# 皇道派の将軍であり、過激な軍国主義者である牟田口廉也大将が強大な皇国の首相に選ばれたことが伝えられている。\r
++# 大政翼賛会の近衛文麿が反逆罪で逮捕され、国粋主義の政治家である平沼騏一郎が、陰謀を図ったとして銃殺されたという報告もある。\r
++# これが日本と現在遂行中の戦争と関連があるか不明だが、牟田口廉也新首相は国家転覆の陰謀と裏切り者は破滅したことを宣言しており、\r
++# 神州皇国の栄光が光り輝く時が来ることを約束した。\r
++# しかし未確認の噂によれば、町の裏通りや路地で陸軍の小隊による処刑が公然と行われ、\r
++# 夜間外出禁止令を破ったことで捕まった人々がどこかに連れ去られていったこと、\r
++# 国会でこの反乱に反対した議員がその場で撃たれたということであり、破壊行為がいつ終わるのかは不透明だ。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 22600070\r
++	random = no\r
++	country = JAP\r
++\r
++	trigger = {\r
++	OR = {\r
++	dissent = 50\r
++	lost_national = { country = JAP value = 20 }\r
++	}\r
++	OR = {\r
++	war = { country = JAP country = USA }\r
++	war = { country = JAP country = SOV }\r
++	}\r
++	OR = { \r
++	event = 2011006  # 2.26事件\r
++	event = 2260005  # 二月蜂起 ― 昭和維新\r
++	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
++	}\r
++	OR = { \r
++	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
++	local_flag = koudou # 昭和維新が成功している\r
++	NOT = { ispuppet = JAP }\r
++	random = 15\r
++	}\r
++\r
++	name = "EVT_22600070_NAME"\r
++	desc = "EVT_22600070_DESC"\r
++	style = 2\r
++ 	picture = "Japan_Army3"\r
++	\r
++	date = { day = 0 month = 0 year = 1941 }\r
++	offset = 40\r
++	deathdate = { day = 29 month = 11 year = 1946 }\r
++\r
++	action = { # 地獄へようこそ\r
++	name = "ACTIONNAME22600070A"\r
++	command = { type = dissent value = -50 }\r
++	command = { type = belligerence which = JAP value = 10 }\r
++	command = { type = manpowerpool value = -100 }\r
++	command = { type = relative_manpower value = -20 }\r
++	command = { type = name where = JAP which = "日本維新政府" }\r
++	command = { type = flag_ext where = JAP which = "_koudou" }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 1 }\r
++	command = { type = set_domestic which = free_market value = 1 }\r
++	command = { type = set_domestic which = freedom value = 1 }\r
++	command = { type = set_domestic which = defense_lobby value = 10 }\r
++	command = { type = set_domestic which = interventionism value = 10 }\r
++	command = { type = wakeminister which = 50924 } # 牟田口廉也\r
++	command = { type = wakeminister which = 50925 }\r
++	command = { type = wakeminister which = 50926 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50924 } # 牟田口廉也\r
++	command = { type = foreignminister which = 50594 } # 磯部浅一\r
++	command = { type = armamentminister which = 50598 } # 村中孝次\r
++	command = { type = ministerofsecurity which = 50601 } # 相沢三郎\r
++	command = { type = ministerofintelligence which = 50605 } # 橋本欣五郎\r
++	command = { type = chiefofstaff which = 50925 } # 牟田口廉也\r
++	command = { type = chiefofarmy which = 50671 } # 磯部浅一\r
++	command = { type = chiefofnavy which = 50678 } # 三上卓\r
++	command = { type = chiefofair which = 50680 } # 河野壽\r
++	command = { type = sleepminister which = 50014 } # 近衞文麿\r
++	command = { type = sleepminister which = 50041 }\r
++	command = { type = sleepminister which = 50170 }\r
++	command = { type = sleepminister which = 50099 } # 平沼騏一郞\r
++	command = { type = sleepminister which = 50398 }\r
++	command = { type = sleepminister which = 50089 } # 木戸幸一\r
++	command = { type = sleepminister which = 50397 }\r
++	ai_chance = 99\r
++	}\r
++\r
++	action = { # クーデター成功\r
++	name = "ACTION_NAME_COUP_SUCCEEDS"\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { trigger = { ai = yes } type = dissent value = 25 }\r
++	command = { trigger = { ai = no } type = dissent value = 35 }\r
++	ai_chance = 0\r
++	}\r
++}\r
+ \r
+ #########################################################################\r
+ #  国家の生産的組織の設立\r
+@@ -5624,8 +6221,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	}\r
+@@ -5635,8 +6236,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 2260010 days = 60 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+@@ -5647,8 +6252,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = { id = 2260010 days = 60 } # 財閥解体\r
+ 	not = { ispuppet = JAP }\r
+ 	random = 20\r
+@@ -5696,8 +6305,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 180 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -5742,8 +6355,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 180 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -5793,8 +6410,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 180 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -5843,8 +6464,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 180 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -5891,8 +6516,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 360 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -5942,8 +6571,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 360 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -5992,8 +6625,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 360 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -6048,8 +6685,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = 22600100 # 国家の生産的組織の設立\r
+ 	atwar = no\r
+@@ -6061,8 +6702,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 240 } # 国家の生産的組織の設立\r
+ 	atwar = no\r
+@@ -6074,8 +6719,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 240 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -6109,6 +6758,12 @@ event = {
+       	command = { type = building_prod_mod which = infrastructure value = -5 }\r
+       	command = { type = building_prod_mod which = rocket_test value = -5 }\r
+       	command = { type = building_prod_mod which = nuclear_reactor value = -5 }\r
++	command = { type = build_time which = land when = on_upgrade where = relative value = 5 }\r
++	command = { type = build_time which = naval when = on_upgrade where = relative value = 5 }\r
++	command = { type = build_time which = air when = on_upgrade where = relative value = 5 }\r
++	command = { type = build_cost which = land when = on_upgrade where = relative value = 5 }\r
++	command = { type = build_cost which = naval when = on_upgrade where = relative value = 5 }\r
++	command = { type = build_cost which = air when = on_upgrade where = relative value = 5 }\r
+ 	command = { type = event which = 22600109 where = JAP when = 540 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -6136,6 +6791,12 @@ event = {
+       	command = { type = building_prod_mod which = infrastructure value = 5 }\r
+       	command = { type = building_prod_mod which = rocket_test value = 5 }\r
+       	command = { type = building_prod_mod which = nuclear_reactor value = 5 }\r
++	command = { type = build_time which = land when = on_upgrade where = relative value = -10 }\r
++	command = { type = build_time which = naval when = on_upgrade where = relative value = -10 }\r
++	command = { type = build_time which = air when = on_upgrade where = relative value = -10 }\r
++	command = { type = build_cost which = land when = on_upgrade where = relative value = -10 }\r
++	command = { type = build_cost which = naval when = on_upgrade where = relative value = -10 }\r
++	command = { type = build_cost which = air when = on_upgrade where = relative value = -10 }\r
+ 	command = { type = local_setflag which = Nihon_Kaizou when = 1 value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -6164,8 +6825,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600100 days = 90 } # 国家の生産的組織の設立\r
+ 	not = { ispuppet = JAP }\r
+@@ -6212,8 +6877,12 @@ event = {
+ 	event = 2011006  # 2.26事件\r
+ 	event = 2260005  # 二月蜂起 ― 昭和維新\r
+ 	event = 22600001 # 昭和維新\r
++	event = 3432003 # 青年将校による蹶起\r
+ 	}\r
++	OR = { \r
+ 	event = 2260006 # 尊皇討奸 ― 統制派の粛清\r
++	event = 3432004 # 尊皇討奸 ― 中央派の粛清\r
++	}\r
+ 	event = 2260010 # 財閥解体\r
+ 	event = { id = 22600110 days = 1080 } # 国家の生産的組織の設立 ― 内務省解体\r
+ 	not = { ispuppet = JAP }\r
+@@ -7841,8 +8510,8 @@ event = {
+ 	#command = { type = chiefofair which = 55111 } # 劉粋剛（リュウ・ツェイガン）\r
+ \r
+ 	command = { type = event which = 22600215 where = CHI when = 10 }\r
+-	command = { type = event which = 22600215 where = CHC when = 10 }\r
+ 	command = { type = event which = 22600215 where = CXB when = 10 }\r
++	command = { type = event which = 22600215 where = CHC when = 11 }\r
+ 	command = { type = event which = 22600216 where = CHI when = 90 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -7901,6 +8570,8 @@ event = {
+ 	name = "ACTIONNAME22600215B"\r
+ 	trigger = { country = CHC }\r
+ 	command = { type = dissent value = -2 }\r
++	command = { type = end_non_aggression which = CXB where = CHC }\r
++	command = { type = war which = CXB }\r
+ 	command = { type = belligerence which = CHC value = 2 }\r
+ 	command = { type = relation which = CHC value = 50 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -7915,7 +8586,6 @@ event = {
+ 	command = { type = add_division value = cavalry when = 2 }\r
+ 	command = { type = add_division value = cavalry when = 2 }\r
+ 	command = { type = add_division value = cavalry when = 2 }\r
+-	command = { trigger = { ai = yes } type = ai_prepare_war which = CXB }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r

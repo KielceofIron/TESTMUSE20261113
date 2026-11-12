@@ -1,0 +1,1468 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Italia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Italia_events.txt [cp932]
+@@ -5,15 +5,15 @@
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+ #id = 1226001 中立の代償\r
+-#id = 1226002 イタリア極左運動の拡大\r
++#id = 1226002 名誉なき中立国\r
+ #id = 1226003 暗殺！\r
+ #id = 1226004 暗殺！\r
+ #id = 1226005 労働者ストライキ\r
+ #id = 1226006 汚職\r
+ #id = 1226007 マフィアの暗躍\r
+-#id = 1226008 暗殺！\r
+-#id = 1226009 マフィアとの闘争\r
+-#id = 1226010 マフィアとの闘争 ― 作戦の結果\r
++#id = 1226008 首相暗殺事件\r
++#id = 1226009 陸海軍の先鋭化\r
++#id = 1226010 ボローニャにて共産主義が勝利\r
+ #id = 1226011 ポルテッラ・デッラ・ジネストラの虐殺\r
+ #id = 1226012 『清掃』の実行\r
+ #id = 1226013 ローマ革命\r
+@@ -41,22 +41,58 @@
+ #id = 1226038 政治的分裂の行方 ― 極左が有利\r
+ #id = 1226039 政治的分裂の行方 ― 極右が有利\r
+ #id = 1226040 政治的分裂の行方 ― 分裂の激化\r
+-#id = 1226041 未来派運動\r
++#id = 1226041 未来派宣言←変更\r
+ #id = 1226042 ジュリオ・ドゥーエの航空艦隊\r
+ #id = 1226043 都市自警団の形成\r
+ #id = 1226044 マフィア経済\r
+ #id = 1226045 バドリオの寝返り\r
+ #id = 1226046 エンリコ・フェルミの帰国\r
++#id = 1226047 財務省命令334\r
++#id = 1226048 ピエロ・スラッファの金融サーカス\r
++#id = 1226049 研究機関への資本投下\r
++#id = 1226050 陸軍戦術方針会議\r
++#id = 1226051 万国の労働者よ集結せよ！\r
++\r
++\r
++#########################################################################\r
++###### ダンヌンツィオルート############\r
++#########################################################################\r
++\r
++#id = 1226100 電撃作戦\r
++#id = 1226101 経済の国有化\r
++#id = 1226102 軍事改革\r
++#id = 1226103 空軍VS海軍論争\r
++#id = 1226104 パスタ禁止令\r
++#id = 1226105 パスタ禁止令の不成立\r
++#id = 1226106 科学者の帰順\r
++#id = 1226107\r
++#id = 1226108\r
++#id = 1226109\r
++#id = 1226110\r
++#id = 1226111\r
++#id = 1226112\r
++#id = 1226113\r
++#id = 1226114\r
++#id = 1226115\r
++#id = 1226116\r
++#id = 1226117\r
++#id = 1226118\r
++#id = 1226119\r
++\r
++#id = 1226201\r
++#id = 1226202\r
++#id = 1226203\r
+ ##########################################################################\r
+ #  中立の代償\r
+ # 第一次世界大戦においてイタリア王国は中立を維持した。\r
+ # 世界初の総力戦に身を投ずることなく、平和裏に過ごしてきたと言えば聞こえは良いが、国民には不満が残った。\r
+ # 不満の根本的原因は、第一次世界大戦において中立を守ったがために手に入れることの出来なかった『未回収のイタリア』である。\r
+-# これを大いに不満とした文学者ガブリエーレ・ダンヌンツィオは第一次世界大戦末期に自ら私兵を率いてフィウーメを占拠した。\r
+-# イタリア政府は軍をもってこれを鎮圧し、彼を逮捕したことで、国民から不興を買い、政府への不信感を残した。\r
+-# その後もイタリアは中立を維持して工業化を推進し、地中海の支配者としての地位を確立したが、\r
+-# 工業化の過程で汚職が蔓延し、民衆からの支持を受けた政治的過激派らが政治家に対し『実力行使』を行うようになる。\r
+-###########################################################################\r
++# これを大いに不満とした文学者ガブリエーレ・ダンヌンツィオは第一次世界大戦末期に自ら私兵を率いてフィウーメを占拠するが\r
++# イタリア王国政府は軍をもってこれを鎮圧、彼を逮捕したことで、国民から不興を買った。\r
++# 無論、イタリア王国は中立を維持して以降も工業化を推進し、地中海の支配者としての地位を確立したが、世界大恐慌の影響を受けて\r
++# イタリア王国は欧州大国の中でも特別、大きな損害を被った。\r
++# 以後、イタリアでは汚職が蔓延し、民衆からの支持を受けた政治的過激派らが政治家に対し『実力行使』を行うようになる。\r
++############################################################################\r
+ \r
+ event = {\r
+ 	id = 1226001\r
+@@ -82,14 +118,14 @@ event = {
+ \r
+ ##########################################################################\r
+ #  名誉なき中立国\r
+-# イタリア共産党は、欧州に存在する社会主義政党の中でももっとも戦闘的であることで有名であった。\r
+-# 彼らはロシアの社会革命党とその武装組織『社会革命党戦闘団』を模範とし、イタリア王国に存在する腐敗したと見做された政治家を暗殺するために、武装組織『赤い旅団』を編成した。\r
+-# これに対抗しているのが、かつて第一次世界大戦末期に成立したカルナーロ＝イタリア執政府のリーダーであり、\r
+-# 現在は収監されてい文学者ガブリエーレ・ダンヌンツィオを信奉する人々によって指揮されるイタリア愛国党、その準軍事組織『百人隊』である。\r
+-# イタリア愛国党及び『百人隊』の現在の公的な指導者は元イタリア社会党員のアルチェステ・デ・アンブリスとアンジェロ・オリベッティであり、\r
+-# この二つの政治勢力は、世界恐慌によってイタリアが経済的混乱に見舞われると急速に勢力を拡大し、イタリア全土で衝突を繰り返した。\r
+-# 政治的対立によって労働者や市民は共産派と愛国派に分断され、暴動やデモが頻発。\r
+-# この混乱を受けて政府の官憲は、バチカンの聖職者やシチリアンマフィアと手を組み、これらの鎮圧に臨む構えを見せている。\r
++# イタリア共産党は、欧州に存在する社会主義政党の中で最も戦闘的であることで有名である。\r
++# 彼らはロシアの社会革命党とその武装組織『社会革命戦闘団』を模範とし、イタリア王国に存在する腐敗した（と見做された）政治家への\r
++# 『実力行使』のために、武装組織『赤い旅団』を編成している。\r
++# これに対抗しているのが、かつて第一次世界大戦末期に成立したカルナーロ＝イタリア執政府のリーダーであり、現在は収監されている\r
++# 文学者ガブリエーレ・ダンヌンツィオを信奉する人々によって指揮されるイタリア愛国党とその準軍事組織『百人隊』である。\r
++# イタリア愛国党及び『百人隊』の現在の公的な指導者は元イタリア社会党員のアルチェステ・デ・アンブリスとアンジェロ・オリベッティである。\r
++# 彼らはイタリア全土で衝突を繰り返しており、労働者は共産派と愛国派によって分断され、これらが実施するデモや、しばしば起こった暴動\r
++# に際しイタリア王国の官憲はバチカンの聖職者やシチリアンマフィアと手を組み、これらの鎮圧に臨む構えを見せている。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+@@ -102,18 +138,32 @@ event = {
+ 	style = 2\r
+ 	picture = "Italian_Communist"\r
+ \r
+-	action = { # 壇上には乱暴者とロクデナシしかいない！\r
++ 	action = { # 壇上に上がるものが悪役か乱暴者しか居ない\r
+ 	name = "ACTIONNAME1226002A"\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = event which = 1226044 where = ITA when = 5 }\r
++	command = {  }\r
++	ai_chance = 100\r
+ 	}\r
++\r
++ 	action = { # そんな時……\r
++	name = "ACTIONNAME1226002B"\r
++	command = {  }\r
++	ai_chance = 0\r
++	}\r
++\r
++ 	action = { # 果たして、観客はどちらを応援すればよいのか？\r
++	name = "ACTIONNAME1226002C"\r
++	command = {  }\r
++	ai_chance = 0\r
++	}\r
++\r
+ }\r
+ \r
+ ##########################################################################\r
+ #  暗殺！\r
+-# なんということだ！\r
++# なんということだ！\n\r
+ # イタリア自由党の政治家であり、首相経験者でもあるジョヴァンニ・ジョリッティが暗殺されてしまった！\r
+-# イタリア共産党の戦闘組織『赤い旅団』は犯行声明を発表し、イタリアの売国奴にして妥協主義者であるジョヴァンニ・ジョリッティを暗殺したと声明文で記述している。\r
++# イタリア共産党の戦闘組織『赤い旅団』は犯行声明を発表し、イタリアの売国奴にして妥協主義者であるジョヴァンニ・ジョリッティを暗殺した\r
++# と声明文で記述している。\r
+ # ジョヴァンニ・ジョリッティは第一次世界大戦においてイタリア王国の中立を宣言した首相であり、選挙戦術の達人であった。\r
+ # 彼が築き上げた"ジョリッティ体制"によってイタリア王国では一応の政治的安定が図られていたが、これを機に連立は崩壊。\r
+ # イタリア王国の政治はさらに混乱していくこととなる。\r
+@@ -147,16 +197,16 @@ event = {
+ \r
+ ##########################################################################\r
+ #  暗殺！\r
+-# なんということだ！\r
+-# イタリアの外交官を長く務めてきた政治家、ヴィットーリオ・エマヌエーレ・オルランドが暗殺されてしまった！\r
++# なんということだ！\n\r
++# イタリアの外交官を長く務めてきた政治家、ヴィットーリオ・エマヌエーレ・オルランドが暗殺されてしまった！\n\r
+ # 彼はイタリアの自由主義政治家であり『未回収のイタリア』の確保を叫んできた政治家であったが、第一次世界大戦中立時の内閣では外務大臣を務めていた。\r
+ # イタリア共産党の武装組織『赤い旅団』は犯行声明を発表。\r
+ # シチリアマフィアと繋がりを持ち、政治に腐敗を持ち込んだ売国奴を殺害したと声明文に記述している。\r
+ # （ヴィットーリオ・エマヌエーレ・オルランドは史実第一次世界大戦において首相を務め"勝利の首相"と呼ばれた。\r
+ # しかし、アメリカのウッドロウ・ウィルソン大統領の民族自決の方針から、未回収のイタリアを回収することが出来ず\r
+ # 突如講和会議から退席。結局翌月にはヴェルサイユ条約にしぶしぶ署名した。\r
+-# 話によれば講和会議で彼は号泣し、フランスの首相ジョルジュ・クレマンソーからは『泣き虫』と言われ、オルランド自身\r
+-# 「あの時……我々の要求が全く受け入れられないと分かった時……私は床にうずくまった。頭を何度も壁にぶつけた。泣いた。死にたかった」\r
++# 話によれば講和会議で彼は号泣し、フランスの首相ジョルジュ・クレマンソーからは『泣き虫』と言われ、オルランド自身\n\r
++# 「あの時……我々の要求が全く受け入れられないと分かった時……私は床にうずくまった。頭を何度も壁にぶつけた。泣いた。死にたかった」\n\r
+ # と呟いたとされ、パリ講和会議で要求を押し通せなかったことで政治的発言力が著しく弱まったという。）\r
+ ###########################################################################\r
+ event = {\r
+@@ -216,7 +266,7 @@ event = {
+ 	action = { # この国はもはや腐り果てた\r
+ 	name = "ACTIONNAME1226005A"\r
+ 	command = { type = dissent value = 1 }\r
+-	command = { type = supplies value = -50 }\r
++	command = { type = supplies value = -1500 }\r
+ 	}\r
+ }\r
+ \r
+@@ -331,13 +381,13 @@ event = {
+ ##########################################################################\r
+ #  陸海軍の先鋭化\r
+ # イタリア王国における過激派の様々な運動は良い意味でも悪い意味でも世間の衆目を集めた。\r
+-# こうした政治的過激派の思想は労働者からホワイトカラーにまで浸透しつつあり、\r
+-# 極左・極右による政治的分断はここに極まった。\r
+-# 軍隊でさえもこれは例外ではなく、陸軍においては極右・イタリア愛国党の勢力が強く、\r
+-# 海軍においては保守王党派の支持が存在し、空軍のみが政治的中立を保った。\r
++# こうした政治的過激派の思想は労働者からホワイトカラーにまで浸透しつつあり、極左・極右\r
++# による政治的分断はここに極まった。\r
++# 軍隊でさえもこれは例外ではなく、陸軍においては極右・イタリア愛国党の勢力が強く、海軍においては\r
++# 保守王党派の支持が存在し、空軍のみが政治的中立を保った。\r
+ # これは第一次世界大戦における中立政策をとったイタリア王国における予算分配も関係していた。\r
+-# イタリア王国は軍人ジュリオ・ドゥーエの主張した航空艦隊理論を支持し、\r
+-# 空軍へ予算増強を行う傍らで陸海軍の予算を削減を実施したのである。\r
++# イタリア王国は軍人ジュリオ・ドゥーエの主張した航空艦隊理論を支持し、空軍へ予算増強を行う傍らで\r
++# 陸海軍の予算を削減していた。\r
+ # こうした予算削減は確かにイタリア王国の経済発展に寄与した反面、陸海軍の政治的先鋭化をも招いたのである。\r
+ ###########################################################################\r
+ \r
+@@ -362,7 +412,7 @@ event = {
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action = { # 正確には、ドゥーエが空軍以外に興味を持たなかっただけだが\r
++	action = { # 正確を期するならば、軍人ジュリオ・ドゥーエは空軍以外に興味を持たなかったのである\r
+ 	name = "ACTIONNAME1226009A"\r
+ 	command = { type = dissent value = 1 }\r
+ 	}\r
+@@ -445,8 +495,8 @@ event = {
+ # ポルテッラ・デッラ・ジネストラの虐殺を受けて、イタリア王国政府は『清掃』と称する軍事作戦を計画した。\r
+ # この計画では南イタリアに根付くマフィアと、イタリア共産党員達を陸軍でもって鎮圧することを目指したものであった。\r
+ # しかし、この計画案はマフィア・共産党員双方に漏れ出すと、彼らは政府に対する批判を強くした。\r
+-# ここで問題になったのは、軍部にも共産党にシンパシーを持つ人々が多数居たことである。\r
+-# もはや『清掃』どころではなく、現状では寧ろ政府が崩壊する可能性すらあったのである。\r
++# 皮肉なことに、普段対立しているマフィア・極左は政府の弾圧に際し『協同で』反発し、抵抗した。\r
++# もはや『清掃』どころではなく、現状のイタリア王国内では寧ろ政府が本土から追い出される可能性すらあったのである。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+@@ -459,7 +509,7 @@ event = {
+ 	style = 2\r
+ 	picture = "Spanish_Civil_War"\r
+ \r
+-	action_a = { # もはや限界だ\r
++	action_a = { # ここまでか……。\r
+ 	name = "ACTIONNAME1226012A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = revolt which = 396 }\r
+@@ -502,7 +552,10 @@ event = {
+ \r
+ 	action = { # 民心は共産党の方にある。サルディニア島へ逃れるしかない…\r
+ 	name = "ACTIONNAME1226013A"\r
+-	trigger = { OR = { event = 1226038 event = 1226040 } }\r
++	trigger = { OR = { \r
++	event = 1226038 \r
++	event = 1226040 \r
++	} }\r
+ 	command = { trigger = { division_exists = { type = 23500 id = 26 } } type = remove_division which = 23500 value = 26 }\r
+ 	command = { trigger = { division_exists = { type = 23500 id = 28 } } type = remove_division which = 23500 value = 28 }\r
+ 	command = { trigger = { division_exists = { type = 23500 id = 30 } } type = remove_division which = 23500 value = 30 }\r
+@@ -573,7 +626,10 @@ event = {
+ \r
+ 	action = { # ダンヌンツィオを解放し、共産党と対決する\r
+ 	name = "ACTIONNAME1226013B"\r
+-	trigger = { OR = { event = 1226039 event = 1226040 } }\r
++	trigger = { OR = { \r
++	event = 1226039 \r
++	event = 1226040 \r
++	} }\r
+ 	command = { trigger = { division_exists = { type = 23500 id = 26 } } type = remove_division which = 23500 value = 26 }\r
+ 	command = { trigger = { division_exists = { type = 23500 id = 28 } } type = remove_division which = 23500 value = 28 }\r
+ 	command = { trigger = { division_exists = { type = 23500 id = 30 } } type = remove_division which = 23500 value = 30 }\r
+@@ -630,6 +686,7 @@ event = {
+ 	command = { type = secedeprovince which = UC6 value = 435 when = 0 }\r
+ 	command = { type = secedearea which = UD9 value = "Sicilian Gap" when = 0 }\r
+ 	command = { type = setflag which = ITA_Dannunzio }\r
++	command = { type = local_setflag which = ITA_Dannunzio_local }\r
+ 	command = { type = event which = 1226014 where = UC3 when = 1 }\r
+ 	command = { type = event which = 1226014 where = UC6 when = 1 }\r
+ 	command = { type = event which = 1226014 where = UD9 when = 1 }\r
+@@ -813,7 +870,7 @@ event = {
+ 	decision_picture = "decision_spread_revolution"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1939 }\r
+ \r
+ 	action = { # 革命を守ろう！\r
+@@ -905,7 +962,7 @@ event = {
+ 	decision_picture = "decision_Rhineland"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 2\r
++	offset = 4\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 圧力をかけよう\r
+@@ -1018,7 +1075,7 @@ event = {
+ 	decision_picture = "decision_spread_revolution"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 教皇庁は無言をもってこれに応じた\r
+@@ -1108,7 +1165,7 @@ event = {
+ 	decision_picture = "decision_spread_revolution"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 労働者諸君よ来たれ！そして自ら判断せよ！\r
+@@ -1148,7 +1205,7 @@ event = {
+ 	picture = "Vaticanae"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 腐敗した宗教は徹底して浄化しなくてはならない！\r
+@@ -1216,7 +1273,7 @@ event = {
+ 	picture = "new_deal"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = {\r
+@@ -1747,7 +1804,7 @@ event = {
+ 	picture = "new_deal"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+ 	action = { # 産業を立て直すのだ\r
+@@ -1804,8 +1861,11 @@ event = {
+ 	save_date = yes\r
+ 	\r
+ 	trigger = {\r
++	OR = { \r
+ 	event = 3327008\r
+-	random = 35\r
++	event = 3327010\r
++	event = 3327011\r
++	}\r
+ 	}\r
+ 	\r
+ 	name = "EVT_1226038_NAME"\r
+@@ -1838,7 +1898,6 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	event = 3327009\r
+-	random = 35\r
+ 	}\r
+ 	\r
+ 	name = "EVT_1226039_NAME"\r
+@@ -1872,6 +1931,8 @@ event = {
+ 	save_date = yes\r
+ 	\r
+ 	trigger = {\r
++	ai = no\r
++	ai = yes\r
+ 	OR = {\r
+ 	event = 3327010\r
+ 	event = 3327011\r
+@@ -1896,14 +1957,17 @@ event = {
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  未来派運動\r
+-# 未来派とは、フトゥリズモ（伊: Futurismo）とも呼ばれ、過去の芸術の徹底破壊と機械化によって実現された近代社会の速さを称えるもので、\r
+-# 20世紀初頭にイタリアを中心として起こった前衛芸術運動である。\r
+-# この運動は文学、美術、建築、音楽と広範な分野で展開され、好戦的で戦争や破壊を新しい美とする部分の認識で共通していた極右の政治運動と結びついた。\r
+-# また未来派は「国王及び教皇の追放」や「パスタの廃止」などを要求したことから、政府からも危険視されることもあった。\r
+-# しかし現在、政府にも未来派運動が浸透したことで彼らの要求が実現しつつあった。\r
+-#########################################################################\r
++\r
++##########################################################################\r
++#  未来派宣言\r
++# 未来派宣言はイタリアの詩人フィリッポ・トンマーゾ・マリネッティにより、１９０９年に\r
++# フィガロ紙上で発表されたこの芸術思想文書はかのカール・マルクスの共産党宣言にならい\r
++# 『宣言』の文言が使用された。\r
++# 十一箇条の奮激を隠さぬ情緒的な文章の連なりによって構成されたこの宣言文は\r
++# イタリアにおける未来派運動の始まりを告げるに足るだけの影響を及ぼすこととなった。\r
++##########################################################################\r
++\r
++\r
+ \r
+ event = {\r
+ 	id = 1226041\r
+@@ -1911,27 +1975,26 @@ event = {
+ 	country = ITA\r
+ 	\r
+ 	trigger = {\r
+-	flag = ITA_Dannunzio\r
+-	incabinet = 25302\r
+-	random = 20\r
++\r
+ 	}\r
+ 	\r
+ 	name = "EVT_1226041_NAME"\r
+ 	desc = "EVT_1226041_DESC"\r
+ 	style = 2\r
+-	picture = "Anti_Pasta"\r
++	picture = "Futurismo"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
++	date = { day = 0 month = 3 year = 1933 }\r
++	offset = 22\r
++	deathdate = { day = 29 month = 11 year = 1935 }\r
+ \r
+-	action = { # パスタは重くて残忍な食べ物なのだ！\r
+-	name = "ACTIONNAME1226041A"\r
+-	command = { type = dissent value = 3 }\r
+-	command = { type = research_mod value = 5 }\r
++	action = { # ＜咆哮する自動車は、サモトラケのニケより美しい。……＞\r
++	name = "ACTIONNAME1226039A"\r
++	command = { }\r
+ 	}\r
+ }\r
+ \r
++\r
++\r
+ ##########################################################################\r
+ #  ジュリオ・ドゥーエの航空艦隊\r
+ # イタリア軍士官ジュリオ・ドゥーエはイタリア空軍の父として知られている。\r
+@@ -2022,6 +2085,7 @@ event = {
+ \r
+ 	action = { # 愛国心よりも愛郷心だ\r
+ 	name = "ACTIONNAME1226043A"\r
++	command = { type = supply_consumption which = militia value = -0.2 }\r
+ 	command = { type = morale which = militia value = 30 }\r
+ 	command = { type = morale which = garrison value = 10 }\r
+ 	command = { type = max_organization which = militia value = 20 }\r
+@@ -2034,12 +2098,13 @@ event = {
+ 	command = { type = swamp_defense which = militia value = 40 }\r
+ 	command = { type = desert_defense which = militia value = 40 }\r
+ 	command = { type = urban_defense which = militia value = 40 }\r
+-	command = { trigger = { ai = yes } type = build_division which = militia when = 40 cost = -0.1 }\r
++	#command = { trigger = { ai = yes } type = build_division which = militia when = 40 cost = -0.1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 自警団を正式に認めよう\r
+ 	name = "ACTIONNAME1226043B"\r
++	command = { type = supply_consumption which = militia value = -0.2 }\r
+ 	command = { type = morale which = militia value = 10 }\r
+ 	command = { type = morale which = garrison value = 10 }\r
+ 	command = { type = max_organization which = militia value = 10 }\r
+@@ -2067,7 +2132,7 @@ event = {
+ 	command = { type = swamp_defense which = militia value = 40 }\r
+ 	command = { type = desert_defense which = militia value = 40 }\r
+ 	command = { type = urban_defense which = militia value = 40 }\r
+-	command = { trigger = { ai = yes } type = build_division which = militia when = 40 cost = -0.1 }\r
++	#command = { trigger = { ai = yes } type = build_division which = militia when = 40 cost = -0.1 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -2202,4 +2267,1016 @@ event = {
+ 	command = { type = dissent value = 1 }\r
+ 	ai_chance = 0\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r
++\r
++\r
++#id = 1226047 財務省命令334\r
++#id = 1226048 ピエロ・スラッファの金融サーカス\r
++#id = 1226049 研究機関への資本投下\r
++#id = 1226050 陸軍戦術方針会議\r
++#id = 1226051 万国の労働者よ集結せよ！\r
++\r
++##########################################################################\r
++#  財務省命令334\r
++# リソジルメントの達成から普仏戦争、普墺戦争を終え現在に至るまで、イタリア王国は殆ど実戦経験を持っていないと言っても\r
++# 過言ではない状態にあった。\r
++# 一つにはイタリア財務省の主張した財政均衡論、加えてイタリア北部工業地帯の資本家たちの要請による所得税緩和政策続行のための財源確保、\r
++# それら内政上の要請に加え、イタリア王国においては元陸軍軍人ジュリオ・ドゥーエ氏の提唱する『航空艦隊構想』に乗り、現在の\r
++# イタリア王国における軍事予算の殆どは空軍へと注がれ、海軍・陸軍ともに著しく弱体化しているのが現状である。\r
++##########################################################################\r
++event = {\r
++	id = 1226047\r
++	random = no\r
++	country = U14\r
++\r
++\r
++	name = "EVT_1226047_NAME"\r
++	desc = "EVT_1226047_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 2 year = 1933 }\r
++\r
++	action = { # 王国政府は軍事に理解がないらしい\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { type = supply_consumption which = land value = -0.2 }\r
++	command = { type = deactivate which = 6000300 }\r
++	command = { type = deactivate which = 6000500 }\r
++	command = { type = deactivate which = 6570 }\r
++	command = { type = deactivate which = 6210 }\r
++	command = { type = deactivate which = 6000100 }\r
++	command = { type = deactivate which = 6390 }\r
++	command = { type = deactivate which = 6560 }\r
++	command = { type = deactivate which = 6010 }\r
++	ai_chance = 100\r
++	}\r
++\r
++}\r
++\r
++##########################################################################\r
++#  ピエロ・スラッファの金融サーカス\r
++# かつてのイタリア王国はＷＷ１における中立政策の結果、協商・同盟双方に軍民を問わない物資を販売することで大規模な利益を得た。\r
++# 終戦後においても米国の代替として世界中の工業需要を受け持っていた英国が拾い切れなかった工業需要を獲得することで、イタリア王国は\r
++# 経済発展を遂げてきた。しかしこれらの政策は世界の動向に依存した非主体的・場当たり的な好景気であり、先の世界恐慌の結果、\r
++# 世界全体の需要が萎むことで、イタリア王国は著しく経済を減退させた。――世界国家が風邪をひいた時、イタリア王国は肺炎となったのである。\r
++# 現在、イタリアはアントニオ・グラムシをリーダーとする共産主義国家となっており、その経済担当大臣に座ったのが、かつて英国で\r
++# ジョン・メイナード・ケインズに師事した経済学者ピエロ・スラッファであった。\r
++# 彼は困窮した祖国の救済を至上命題とし、社会主義経済と市場経済を組み合わせ配分を行い、対外的には信用蓄積を主眼においた\r
++# 持続可能な貿易と経済発展に進んだ。これら一連の政策はアントニオ・グラムシという一人の巨人が全面的に支持・補助することで成立したもの\r
++# ではあったが、ローマ共和国はこれにより短期間での経済回復に成功し、その後の社会主義国家の経済モデルとして讃えられるようになる。\r
++# これらの政策は後世において『ピエロ・スラッファの金融サーカス』と呼称され、長きに渡り研究対象となったのである。\r
++##########################################################################\r
++\r
++# ＜我々は奇蹟を信じない。これは人民の力が成し得た偉業なのだ＞\r
++# 資金＋\r
++# 工場＋\r
++\r
++\r
++event = {\r
++	id = 1226048\r
++	random = no\r
++	country = U14\r
++\r
++	trigger = {\r
++	event = { id = 1226015 #ローマ共和国の成立\r
++	days = 45 }\r
++\r
++	}\r
++\r
++	name = "EVT_1226048_NAME"\r
++	desc = "EVT_1226048_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # ＜我々は奇蹟を信じない。これは人民の力が成し得た偉業なのだ＞\r
++	name = "ACTIONNAME1226048A"\r
++	command = { type = money value = 1400 }\r
++	command = { type = construct which = ic where = 411 value = 3 }\r
++	command = { type = building_prod_mod which = ic value = 20 }\r
++	}\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#  万国の労働者よ、集結せよ！\r
++# 「万国の労働者よ、団結せよ！」\n\r
++# これはマルクス＆エンゲルスによる『共産党宣言』の文面に引用されたもっとも著名な文言の一つである。\r
++# 現在、イタリアにおいては王制が廃止され、イタリア共産党によるプロレタリア独裁体制が構築されつつあった。\r
++# そこでイタリア共産党指導者アントニオ・グラムシは、地中海周辺の共産主義者たちを招来し、共にこの新しく生まれ変わった\r
++# イタリア国家の運営を行っていくことを内外に宣言した。\r
++# この宣言に共産主義者のみならず、本国で自由な研究を行うことを許されない人物や、また以前はイタリア王国政府の要人として\r
++# 数えられていた人物も含まれていたが、イタリア共産党及びローマ共和国政府はそれら一切を不問とし、積極的な採用を行った。\r
++##########################################################################\r
++\r
++event = {\r
++	id = 1226049\r
++	random = no\r
++	country = U14\r
++	decision = {\r
++	event = { id = 1226015 #ローマ共和国の成立\r
++	days = 0 }\r
++\r
++	}\r
++	decision_trigger = {\r
++	event = { id = 1226015 #ローマ共和国の成立\r
++	days = 30 }\r
++\r
++	}\r
++	trigger = {\r
++	event = { id = 1226015 #ローマ共和国の成立\r
++	days = 30 }\r
++\r
++	}\r
++\r
++	name = "EVT_1226048_NAME"\r
++	desc = "EVT_1226048_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 28 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 労働者の故郷がここにある！\r
++	name = "ACTIONNAME1226049A"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = manpowerpool value = 500 }\r
++	command = { type = free_manpower value = 0.1 }\r
++	command = { type = sleepteam which = 885017 }\r
++	command = { type = waketeam which = 885018 }\r
++	command = { type = waketeam which = 885019 }\r
++	command = { type = waketeam which = 885020 }\r
++	command = { type = waketeam which = 885021 }\r
++	command = { type = waketeam which = 885022 }\r
++	command = { type = waketeam which = 885023 }\r
++	command = { type = waketeam which = 885024 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = infantry when = 6 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = event which = 1226049 when = 60 where = U14 }\r
++	command = { type = event which = 1226050 when = 90 where = U14 }\r
++	}\r
++\r
++}\r
++\r
++\r
++\r
++##########################################################################\r
++#  研究機関への資本投下\r
++# 世界中から革命に参加する人々を募る第一プロジェクトは無事完了した！\r
++# その中でも特別優秀と見做された人々を判定したローマ共和国政府と共産党総本部は\r
++# 彼らに心赴くままに研究が行えるよう、新たな施設を構築し、彼らに提供したのである。\r
++##########################################################################\r
++\r
++event = {\r
++	id = 1226050\r
++	random = no\r
++	country = U14\r
++	name = "EVT_1226048_NAME"\r
++	desc = "EVT_1226048_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	action = { # 我々は同志だ！　そうだろう？\r
++	name = "ACTIONNAME1226050A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = money value = -100 }\r
++	command = { type = waketeam which = 885025 }\r
++	command = { type = waketeam which = 885026 }\r
++	}\r
++\r
++}\r
++##########################################################################\r
++#  陸軍戦術方針会議\r
++# ローマ共和国の成立とイタリア革命の実現は、同時に敵対する勢力をも生み出した。\r
++# 典型的なのは未だイタリア民族の領土を持つオーストリア帝国であるが、それ以外にも革命国家が持つ敵は多く、数え切れないほどである。\r
++# そこでローマ共和国革命政府は、かつての産業偏重の財政変革に加え、陸軍への大幅予算増額を認めた。\r
++# これを受けて共和国陸軍参謀本部では、既に他国ではある程度実現し、研究が進んでいる複数の戦術案をだし、政府に採択を求めたのである。\r
++\r
++##########################################################################\r
++event = {\r
++	id = 1226051\r
++	random = no\r
++	country = U14\r
++	name = "EVT_1226048_NAME"\r
++	desc = "EVT_1226048_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	action = { # ＜現実を直視しよう。ゲリラ戦を選択するしかない＞\r
++	name = "ACTIONNAME1226051A"\r
++	command = { type = relative_manpower value = 60 }\r
++	command = { type = activate which = 6000300 }\r
++	command = { type = gain_tech which = 6000300 }\r
++	command = { type = gain_tech which = 6000310 }\r
++	command = { type = gain_tech which = 6000320 }\r
++	command = { type = gain_tech which = 6000330 }\r
++	command = { type = gain_tech which = 6000340 }\r
++	command = { type = gain_tech which = 6000350 }\r
++	command = { type = gain_tech which = 6000360 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = hq when = 3 }\r
++	ai_chance = 50\r
++	}\r
++	action = { # ＜正規軍の道を捨てるな！　歩兵戦の伝統へ回帰せよ！＞\r
++	name = "ACTIONNAME1226051B"\r
++	command = { type = activate which = 6390 }\r
++	command = { type = gain_tech which = 6390 }\r
++	command = { type = gain_tech which = 6400 }\r
++	command = { type = gain_tech which = 6410 }\r
++	command = { type = gain_tech which = 6420 }\r
++	command = { type = gain_tech which = 6430 }\r
++	command = { type = add_division value = infantry when = 3 }\r
++	command = { type = add_division value = infantry when = 3 }\r
++	command = { type = add_division value = infantry when = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = hq when = 3 } #\r
++	ai_chance = 0\r
++	}\r
++	action = { # ＜一か八か……新戦術に託してみよう＞\r
++	name = "ACTIONNAME1226051C"\r
++	command = { type = activate which = 6210 }\r
++	command = { type = gain_tech which = 6210 }\r
++	command = { type = gain_tech which = 6220 }\r
++	command = { type = gain_tech which = 6250 }\r
++	command = { type = gain_tech which = 6900 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = light_armor when = 1 }\r
++	command = { type = add_division value = light_armor when = 1 }\r
++	command = { type = build_time which = armor when = on_upgrade where = relative value = -8 }\r
++	command = { type = build_time which = light_armor when = on_upgrade where = relative value = -8 }\r
++	ai_chance = 0\r
++	}\r
++	action = { # ＜我が半島そのものが一種の防壁なのだ！　地形を有効活用せよ！＞\r
++	name = "ACTIONNAME1226051D"\r
++	command = { type = relative_manpower value = 50 }\r
++	command = { type = activate which = 6000500 } # 都市蜂起戦術\r
++	command = { type = gain_tech which = 6000500 } # 都市蜂起戦術\r
++	command = { type = gain_tech which = 6000510 } # 農村ゲリラ戦術\r
++	command = { type = gain_tech which = 6000520 } # 便衣兵ドクトリン\r
++	command = { type = gain_tech which = 6000530 } # 白兵戦ドクトリン\r
++	command = { type = gain_tech which = 6000540 } # 昼夜兼行人海戦術\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 } #\r
++	ai_chance = 50\r
++	}\r
++\r
++}\r
++# ＜現実を直視しよう。ゲリラ戦を選択するしかない＞\r
++# 連続作戦理論、大規模包囲、飽和攻撃、ゲリラ戦、山岳戦、山岳戦闘、徹底抗戦、焦土戦術まで青写真\r
++# 民兵＋１５、司令部＋１\r
++# \r
++# ＜正規軍の道を捨てるな！　歩兵戦の伝統へ回帰せよ！＞\r
++# 軽歩兵ドクトリン、大規模戦闘計画、塹壕戦ドクトリン、大規模強襲、防衛計画事前策定まで青写真\r
++# 司令部＋２、歩兵＋３\r
++# \r
++# ＜一か八か……新戦術に託してみよう＞\r
++# 機動重視、先鋒突撃、装甲化重心攻撃、電撃戦まで青写真\r
++# 軽戦車＋１、司令部＋１\r
++# \r
++# ＜我が半島そのものが一種の防壁なのだ！　地形を有効活用せよ！＞\r
++# 都市蜂起戦術、農村ゲリラ戦術、便衣兵ドクトリン、白兵戦ドクトリン、昼夜兼行人海戦術まで青写真\r
++# 民兵＋３０\r
++\r
++\r
++##########################################################################\r
++#  電撃作戦\r
++# かつてフィウメを占拠し逮捕・勾留された文学者ガブリエーレ・ダンヌンツィオが収容所から呼び出されたのは他でもない。\r
++# 今やイタリア国内は右派と左派の対立が激化し、双方が双方に多数の支持者を抱えるが故に民主的な解決手段を用いることが出来ない状態にあったからだ。\r
++# これを理解していたガブリエーレ・ダンヌンツィオはかつてフィウメにおいて墺伊の砲撃を耐えた蜂起軍の面々を呼び出し、\r
++# 私財をはたいて購入した自動車に彼らを積み込み、電撃的にイタリア共産党指導部を占拠。これらを同時多発的に破壊したのである！\r
++# これを見て、かつてから共産主義に敵対的であった資本家及び民衆は歓喜し、ダンヌンツィオは「フィウメの敗残者」から「救国の英雄」へと評価を一転させたのである。\r
++# この行動の後、ダンヌンツィオはあえて共産主義者らを追撃することをせず、寧ろ国外逃亡を推奨し、船まで用意した。\r
++# これは彼自身の騎士道精神も原因だが、何よりもイタリア本土に禍根を残さないことを重視したのが最大の理由だとされている。\r
++# \r
++# ＜ダンヌンツィオ！　救国の英雄よ！＞\r
++# 国民不満度－３０\r
++# 資金＋１０００\r
++##########################################################################\r
++\r
++\r
++event = {\r
++	id = 1226101\r
++	random = no\r
++	country = ITA\r
++	save_date = yes\r
++	trigger = {\r
++	local_flag = ITA_Dannunzio_local\r
++	}\r
++\r
++	name = "EVT_1226101_NAME"\r
++	desc = "EVT_1226101_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # ダンヌンツィオ！　救国の英雄よ！\r
++	name = "ACTIONNAME12260101A"\r
++	command = { type = money value = 1000 }\r
++	command = { type = dissent value = -30 }\r
++	}\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#  経済の国有化\r
++# かつてのイタリア王国はＷＷ１における中立政策の結果、協商・同盟双方に軍民を問わない物資を販売することで大規模な利益を得た。\r
++# 終戦後においても米国の代替として世界中の工業需要を受け持っていた英国が拾い切れなかった工業需要を獲得することで、イタリア王国は\r
++# 経済発展を遂げてきた。しかしこれらの政策は世界の動向に依存した非主体的・場当たり的な好景気であり、先の世界恐慌の結果、\r
++# 世界全体の需要が萎むことで、イタリア王国は著しく経済を減退させた。――世界国家が風邪をひいた時、イタリア王国は肺炎となったのである。\r
++# この状況に立ち向かうのは、ユダヤ系でありダンヌンツィオの政治運動の支持者で、収容所に居るダンヌンツィオを支援し続けてきた財界人グイド・ユングである。\r
++# 一連の不況はイタリア王国における各企業の野放図な拡大と生産を制御出来なかった政府に原因があるとし、市場経済をそのまま維持しながら、\r
++# 彼は各企業の設備を国有化し、代わりに財政優遇や補助金制度を強化することで国家と企業の合一をはかった。\r
++# これらの財源としてイタリア産業復興特務公社を設立。国有化と中央集権化にかかる費用を先払いにしながら、企業救済を実行。\r
++# 結果、軍需産業や電気事業などのかなりの割合を国有化することに成功し、軍事ケインズ理論を基礎とした軍拡を実践した。\r
++# 対外政策としては輸入関税を一挙に引き上げ、イタリア王国自体を一つの経済ブロックとして外界と遮断することで国内産業防衛に務めた。\r
++# 一連の政策は国家構造を歪にし、イタリア王国を戦争へと突き進める結果にもなったが、半ば奇跡とも捉えられるような経済回復を遂げたのもまた、事実である。\r
++# \r
++##########################################################################\r
++\r
++# ＜奇跡は我々の手の下にある！　神の加護を！＞\r
++# 国民不満度―\r
++# 工場＋\r
++# 資金＋\r
++# 統制経済へ移動\r
++# （数値はキエルツェ氏に委任）\r
++\r
++\r
++\r
++event = {\r
++	id = 1226102\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	event = { id = 1226101 days = 35 }\r
++	}\r
++\r
++	name = "EVT_1226102_NAME"\r
++	desc = "EVT_1226102_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 奇跡は我々の手の下にある！　神の加護を！\r
++	name = "ACTIONNAME1226102A"\r
++	command = { type = money value = 300 }\r
++	command = { type = dissent value = -5 }\r
++	command = { type = construct which = ic where = 398 value = 2 }\r
++	command = { type = construct which = ic where = 400 value = 2 }\r
++	command = { type = construct which = ic where = 407 value = 2 }\r
++	command = { type = construct which = ic where = 408 value = 2 }\r
++	command = { type = construct which = ic where = 410 value = 2 }\r
++	command = { type = construct which = ic where = 411 value = 2 }\r
++	command = { type = construct which = ic where = 412 value = 2 }\r
++	command = { type = domestic which = free_market value = -2 }\r
++	}\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#  軍事改革\r
++# 財務相グイード・ユングによってイタリア王国は経済回復を成し遂げた。\r
++# そこでガブリエーレ・ダンヌンツィオは長年放置され続けてきたイタリア王国の軍事改革に着手した。\r
++# イタリア軍は酷い有様であった。先進的な装備であり、国際競争力を発展させるという名目の下、歪なまでにその\r
++# 軍備は航空機に偏重し、海軍の戦艦はフジツボだらけであり、陸軍兵士は食い扶持が足りないので飲食店でパスタを茹でている始末であった！\r
++# まずダンヌンツィオは自身の支持者を含む、民間における準軍事組織を一箇所に集め、職業斡旋を行い、希望者は陸軍に参加させることとした。\r
++# 無論、それだけでは量は改善出来ても、質を改善することは出来ない。\r
++# そこでダンヌンツィオはイタリア軍の将軍らを集め、今後の軍備方針を模索することとしたのである……。\r
++# \r
++# ＜地形を活かそう！ -防御重視-＞\r
++# 研究機関：\r
++# ウーゴ・カヴァッレーロ＠スキル６。管理、訓練、歩兵重視、集中実行、技術効率\r
++# 北イタリアの一部に要塞追加。400 393 395司令部＋３\r
++# 防御重視系統に青写真\r
++# 25063→25102\r
++# ＜新兵器・戦車は全てを変える！ -戦車重視-＞\r
++# 研究機関：\r
++# ジョヴァンニ・メッセ＠スキル５。訓練、電撃戦戦術、機動戦術、諸兵科連合部隊重視、分散実行\r
++# 軽戦車＋３\r
++# 戦車、電撃戦、自動車化歩兵、騎兵に青写真\r
++# 25017→25103\r
++# ＜火力こそ全てである！ -火砲重視-＞\r
++# 研究機関：\r
++# エットーレ・バスティコ＠スキル５。訓練、歩兵重視、小規模部隊戦術、分散実行、技術効率\r
++# 司令部＋３　歩兵＋９\r
++# 砲兵、対戦車砲兵、火力優勢に青写真\r
++# \r
++# ＜総合的な物量に全てをかけるべきだ -物量重視-＞\r
++# 研究機関：\r
++# ロドルフォ・グラツィアーニ＠スキル５。各自の勇気、大規模部隊戦術、集中実行、訓練、歩兵重視\r
++# 司令部＋３、歩兵＋９、民兵＋１５\r
++# 砲兵、自動車化歩兵、戦車、人的重視に青写真\r
++# 25020→25105\r
++##########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 1226103\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	local_flag = ITA_Dannunzio_local\r
++	\r
++	event = { id = 1226101 days = 81 }\r
++	}\r
++\r
++	name = "EVT_1226101_NAME"\r
++	desc = "EVT_1226101_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 地形を活かそう！ -防御重視-\r
++	name = "ACTIONNAME1226103A"\r
++	command = { type = sleepteam which = 25063 }\r
++	command = { type = waketeam which = 25102 }\r
++	command = { type = construct which = land_fort where = 393 value = 3 }\r
++	command = { type = construct which = land_fort where = 395 value = 3 }\r
++	command = { type = construct which = land_fort where = 400 value = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = activate which = 6560 } # 防御重視\r
++	command = { type = gain_tech which = 6560 } # 防御重視\r
++	command = { type = gain_tech which = 6030 } # 大規模戦闘計画\r
++	command = { type = gain_tech which = 6120 } # 塹壕戦ドクトリン\r
++	command = { type = gain_tech which = 6110 } # 大規模強襲\r
++	\r
++	}\r
++\r
++	action = { # 新兵器・戦車は全てを変える！ -戦車重視-\r
++	name = "ACTIONNAME1226103B"\r
++	command = { type = sleepteam which = 25017 }\r
++	command = { type = waketeam which = 25103 }\r
++	command = { type = activate which = 6210 } # 機動重視\r
++	command = { type = gain_tech which = 6210 } # 機動重視\r
++	command = { type = gain_tech which = 6220 } # 先鋒突撃\r
++	command = { type = gain_tech which = 6250 } # 装甲化重心攻撃\r
++	command = { type = gain_tech which = 1370 }\r
++	command = { type = gain_tech which = 1380 }\r
++	command = { type = gain_tech which = 1390 }\r
++\r
++	command = { type = gain_tech which = 1396 } #自動車化歩兵\r
++	command = { type = gain_tech which = 1400 }\r
++	command = { type = gain_tech which = 1410 }\r
++\r
++	command = { trigger = { NOT = { technology = 2030 } } type = gain_tech which = 2030 } # 1936年型軽戦車\r
++	command = { trigger = { NOT = { technology = 2040 } } type = gain_tech which = 2040 } # 1938年型軽戦車\r
++	command = { trigger = { NOT = { technology = 2050 } } type = gain_tech which = 2050 } # 1939年型軽戦車\r
++	command = { trigger = { NOT = { technology = 2070 } } type = gain_tech which = 2070 } # 1939年型中戦車\r
++	command = { trigger = { NOT = { technology = 2080 } } type = gain_tech which = 2080 } # 1941年型中戦車\r
++	command = { type = add_division value = light_armor when = 0 }\r
++	command = { type = add_division value = light_armor when = 0 }\r
++	command = { type = add_division value = light_armor when = 0 }\r
++	}\r
++\r
++	action = { # 火力こそ全てである！ -火砲重視-\r
++	name = "ACTIONNAME1226103C"\r
++	command = { type = waketeam which = 25104 }\r
++\r
++	command = { type = gain_tech which = 2910 } #砲兵\r
++	command = { type = gain_tech which = 2920 }\r
++	command = { type = gain_tech which = 2930 }\r
++	command = { type = gain_tech which = 2940 }\r
++	command = { type = gain_tech which = 2320 }\r
++	command = { type = gain_tech which = 2330 }\r
++\r
++	command = { type = gain_tech which = 2400 }\r
++	command = { type = gain_tech which = 2410 }\r
++	command = { type = gain_tech which = 2420 }\r
++\r
++	command = { type = activate which = 6010 } # 火力重視\r
++	command = { type = gain_tech which = 6010 } # 火力重視\r
++	command = { type = gain_tech which = 6020 } # 火力優勢\r
++	command = { type = gain_tech which = 6040 } # 遅延戦術\r
++	command = { type = gain_tech which = 6050 } # 機動防御\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	command = { type = add_division value = infantry when = 9 where = artillery }\r
++	}\r
++\r
++	action = { # 総合的な物量に全てをかけるべきだ -物量重視-\r
++	name = "ACTIONNAME1226103D"\r
++	command = { type = sleepteam which = 25020 }\r
++	command = { type = waketeam which = 25105 }\r
++	command = { type = gain_tech which = 2910 } #砲兵\r
++	command = { type = gain_tech which = 2920 }\r
++	command = { type = gain_tech which = 2930 }\r
++	command = { type = gain_tech which = 2940 }\r
++	command = { type = gain_tech which = 2320 }\r
++	command = { type = gain_tech which = 2330 }\r
++	command = { type = gain_tech which = 1396 } #自動車化歩兵\r
++	command = { type = gain_tech which = 1400 }\r
++	command = { type = gain_tech which = 1410 }\r
++\r
++	command = { trigger = { NOT = { technology = 2030 } } type = gain_tech which = 2030 } # 1936年型軽戦車\r
++	command = { trigger = { NOT = { technology = 2040 } } type = gain_tech which = 2040 } # 1938年型軽戦車\r
++	command = { trigger = { NOT = { technology = 2050 } } type = gain_tech which = 2050 } # 1939年型軽戦車\r
++	command = { trigger = { NOT = { technology = 2070 } } type = gain_tech which = 2070 } # 1939年型中戦車\r
++	command = { trigger = { NOT = { technology = 2080 } } type = gain_tech which = 2080 } # 1941年型中戦車\r
++\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = hq when = 3 }\r
++	command = { type = add_division value = infantry when = 5 }\r
++	command = { type = add_division value = infantry when = 5 }\r
++	command = { type = add_division value = infantry when = 5 }\r
++	command = { type = add_division value = infantry when = 5 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++	command = { type = add_division value = militia when = 3 }\r
++\r
++	}\r
++\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#  空軍vs海軍論争\r
++# イタリア王国において長く権力を保ち続け、軍の中の軍、国家内国家とまで呼ばれた集団がある。イタリア王立空軍である。\r
++# 彼らは航空艦隊を主張するジュリオ・ドゥーエと彼の理論を支持する・しないに関わらず、空軍拡大のためにこのジュリオ・ドゥーエなる\r
++# 正負に渡り強烈な印象を与える人物を盾に様々な要求を突きつける、いわば独立勢力なのであった。\r
++# 彼らの政治力の発露によってもっとも損害を被ったのはイタリア王立海軍であり、戦艦はロクに動かず、\r
++# 一部の艦艇は一般の漁師に混じって量に出て、独自に稼ぎを見出している始末である。\r
++# この現状を見てダンヌンツィオは空軍のリーダーであるジュリオ・ドゥーエと海軍の代表者であるカンピオーニ提督を呼び出した。\r
++# 彼らは顔を突き合わせるなり互いのことを罵倒し始め、カンピオーニに至ってはドゥーエを傾国の徒であるとまで罵ったのである。\r
++# これを見てダンヌンツィオは……\r
++##########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 1226104\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	local_flag = ITA_Dannunzio_local\r
++\r
++	event = { id = 1226101 days = 95 }\r
++	}\r
++\r
++	name = "EVT_1226104_NAME"\r
++	desc = "EVT_1226104_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++# ＜ドゥーエが全て正しい。ドゥーエに任せておけ！＞\r
++# 空母生産効率－８０％\r
++# 航空ユニット生産効率＋２０％\r
++# \r
++	action = { # ドゥーエが全て正しい。ドゥーエに任せておけ！\r
++	name = "ACTIONNAME1226104A"\r
++	command = { type = build_cost which = air value = -20 where = relative }\r
++	command = { type = build_time which = air value = -10 where = relative }\r
++	command = { type = build_cost which = carrier value = 800 where = relative }\r
++	command = { type = build_time which = carrier value = 15 where = relative }\r
++	command = { type = build_cost which = escort_carrier value = 2000 where = relative }\r
++	command = { type = build_time which = escort_carrier value = 300 where = relative }\r
++	command = { type = build_cost which = light_carrier value = 1000 where = relative }\r
++	command = { type = build_time which = light_carrier value = 150 where = relative }\r
++	ai_chance = 100\r
++	}\r
++\r
++# ＜……空母ぐらいは許してやれよ＞\r
++# 空母、海上航空隊、水上機に青写真。\r
++# 国民不満度－８\r
++\r
++	action = { # ……空母ぐらいは許してやれよ\r
++	name = "ACTIONNAME1226104B"\r
++	command = { trigger = { NOT = { technology = 12120 } } type = gain_tech which = 12120 } # 1920年型軽空母\r
++	command = { trigger = { NOT = { technology = 12130 } } type = gain_tech which = 12130 } # 1929年型軽空母\r
++	command = { trigger = { NOT = { technology = 12140 } } type = gain_tech which = 12140 } # 1941年型軽空母\r
++	command = { trigger = { NOT = { technology = 3520 } } type = gain_tech which = 3520 } # 1930年型空母\r
++	command = { trigger = { NOT = { technology = 3530 } } type = gain_tech which = 3530 } # 1934年型空母\r
++	command = { trigger = { NOT = { technology = 3540 } } type = gain_tech which = 3540 } # 1937年型空母\r
++	command = { trigger = { NOT = { technology = 3550 } } type = gain_tech which = 3550 } # 1940年型空母\r
++	command = { type = gain_tech which = 4850 }\r
++	command = { type = gain_tech which = 4860 }\r
++	command = { type = dissent value = -8 }\r
++	ai_chance = 0\r
++	}\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#設定ミス！\r
++\r
++##########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 1226105\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	local_flag = ITA_Dannunzio_local\r
++	}\r
++\r
++	name = "EVT_1226101_NAME"\r
++	desc = "EVT_1226101_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1965 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # ダンヌンツィオ！　救国の英雄よ！\r
++	name = "ACTIONNAME1226101"\r
++	command = { type = money value = 1000 }\r
++	command = { type = dissent value = -30 }\r
++	}\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#  パスタ禁止令\r
++# イタリアの政治中枢が右翼文士ガブリエーレ・ダンヌンツィオによって差配されることが\r
++# 決定的になると、イタリアにおいて未来派芸術運動を先導していた詩人\r
++# フィリッポ・トンマーゾ・マリネッティによって様々な提言がなされた。\r
++# 大半は――彼自身のテキストと同様に――ハイテンションな文章によって行われる\r
++# 芸術分野や政治運動分野に関する物であったが、その中に一つ異様な（言い方を変えれば"間抜け"な）\r
++# 提言が差し込まれていた。\r
++# 曰く\n\r
++# 「我が国におけるパスタは悲観主義の母体となるものであり、これを食うことによってイタリア人は軟弱になった」\n\r
++# 「そのため我が国ではパスタを禁止することで、イタリア国民の愛国的情緒を育むべきである」\r
++# この提言を政府はあまり真面目に受け取らなかったが、マリネッティ自身は真剣そのものといった感じで\r
++# 各方面へ工作を開始し、他の複数の提言に交じる形でどさくさ紛れに法案が成立する手前まで事態は進展することになる。\r
++##########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 1226106\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	event = 1226041\r
++	}\r
++\r
++	name = "EVT_1226106_NAME"\r
++	desc = "EVT_1226106_DESC"\r
++  	style = 2\r
++	picture = "Anti_Pasta"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++# ＜たかがパスタでこいつは何を騒いでいるんだ……？＞\r
++	action = { # \r
++	name = "ACTIONNAME1226106A"\r
++	command = { type = dissent value = 2 }\r
++	}\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#  パスタ禁止令の不成立\r
++# 未来派詩人フィリッポ・トンマーゾ・マリネッティ主導で立案されようとしていた\r
++# 通称・パスタ禁止令は、イタリア国民にその内実が知れ渡ると、猛烈な反対運動が巻き起こった。\r
++# 加えて、これを主張したマリネッティ本人がとある飲食店でパスタを食べているところが目撃され、\r
++# 一大ニュースとして新聞紙面に踊った。\r
++# 最終的には、現在のイタリアの一大指導者として知られるガブリエーレ・ダンヌンツィオ氏が\n\r
++# 「彼はあのように言うが、私はパスタは好きである」\n\r
++# と語り、一時は成立するかと思われていたパスタ禁止令は完全に不成立となり、忘れ去られることとなる。\r
++##########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 1226107\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	event = 1226106\r
++	}\r
++\r
++	name = "EVT_1226107_NAME"\r
++	desc = "EVT_1226107_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++\r
++	action = { # ＜パスタは永久に不滅である。＞\r
++	name = "ACTIONNAME1226107A"\r
++	command = { type = dissent value = -3 }\r
++	}\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++#  科学者の帰順\r
++# 欧州において保守政治は反ユダヤ主義と結びつくことが多々あった。\r
++# その中にあってダンヌンツィオはあくまで反ユダヤ主義とは距離を取り、\r
++# 愛国者でさえあればどのような人物でも採用すると豪語した。\r
++# それらの約束は果たされ、現在もユダヤ人を含むイタリア人たちは\r
++# "政府に歯向かわない限りは"国民として扱われ続けた。\r
++# そうした現状を見て、隣国スイスやオーストリアに一時避難していた科学者たちは\r
++# イタリアへと帰還し、政府支持を宣言した上で研究室へと帰還していった。\r
++# その中には特別優秀な科学者も存在しており、彼らの存在はイタリア王国に多大な利益を齎し得ると断言することができたのである。\r
++##########################################################################\r
++\r
++\r
++\r
++event = {\r
++	id = 1226108\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	local_flag = ITA_Dannunzio_local\r
++	}\r
++\r
++	name = "EVT_1226108_NAME"\r
++	desc = "EVT_1226108_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 5 year = 1936 }\r
++	offset = 29 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # ＜諸君らを歓迎しよう！＞\r
++	name = "ACTIONNAME1226108A"\r
++	command = { type = money value = 1000 }\r
++	command = { type = waketeam which = 25106 }\r
++	command = { type = waketeam which = 25107 }\r
++	command = { type = waketeam which = 25108 }\r
++	command = { type = waketeam which = 25109 }\r
++	command = { type = waketeam which = 25110 }\r
++\r
++	}\r
++\r
++\r
++}\r
++\r
++\r
++##########################################################################\r
++# 拡張（ヴェネツィア）UC3 RSI UD9\r
++#\r
++##########################################################################\r
++\r
++\r
++#形成優先度\r
++#イタリア亡命政府（RSI）＞シチリア＞ヴェネツィア\r
++#RSIが形成しない場合シチリアが形成、首都はローマに移転。ヴェネツィアは別。\r
++#同盟している場合同盟相手を兵力受け継ぎ併合。ヴェネツィアに限り属国形成。\r
++#左右イタリアタグの場合、同盟を条件に無条件併合。\r
++\r
++event = {\r
++	id = 1226201\r
++	random = no\r
++	tag = { UC3 RSI UD9 }\r
++	persistent = yes\r
++	trigger = {\r
++	NOT = { local_flag = Italy_kakuchou }\r
++	OR = { NOT = { exists = ITA } NOT = { ispuppet = ITA } }\r
++	OR = { NOT = { exists = U14 } NOT = { ispuppet = U14 } }\r
++	region = { region = Italy country = -3 data = 1 value = 70 }\r
++	control = { province = 419 data = -3 }\r
++	NOT = { alliance = { country = ITA } }\r
++	NOT = { alliance = { country = U14 } }\r
++	}\r
++\r
++	name = "EVT_1226201_NAME"\r
++	desc = "EVT_1226201_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 5 year = 1936 }\r
++	offset = 29 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # ＜諸君らを歓迎しよう！＞\r
++	name = "ACTIONNAME1226201A"\r
++	command = { trigger = { country = UC3 } type = industrial_modifier which = total value = 10 }\r
++	command = { trigger = { country = UC3 } type = industrial_modifier which = supplies value = 100 }\r
++	command = { trigger = { country = UC3 } type = industrial_modifier which = money value = 200 }\r
++	command = { trigger = { NOT = { country = UC3 } } type = add_core_region which = Italy }\r
++	command = { trigger = { country = RSI } type = secedeprovince which = -3 value = 419 when = 2 }\r
++	command = { trigger = { country = RSI } type = capital which = 419 }\r
++	command = { trigger = { country = UD9 NOT = { exists = RSI } } type = capital which = 419 }\r
++	command = { trigger = { country = RSI NOT = { alliance = { country = UC3 } } alliance = { country = UD9 } } type = inherit which = UD9 value = 1 }\r
++	command = { trigger = { country = UC3 alliance = { country = RSI } } type = make_puppet which = RSI }\r
++	command = { trigger = { country = UC3 alliance = { country = UD9 } } type = make_puppet which = UD9 }\r
++	command = { type = local_setflag which = Italy_kakuchou }\r
++	}\r
++\r
++\r
++}\r
++\r
++\r
++\r
++\r
++event = {\r
++	id = 1226202\r
++	random = no\r
++	tag = { ITA U14 }\r
++	persistent = no\r
++	trigger = {\r
++	ispuppet = no\r
++	OR = { \r
++	alliance = { country = U14 country = ITA }\r
++	alliance = { country = -1 country = UC4 }\r
++	alliance = { country = -1 country = UD9 }\r
++	alliance = { country = -1 country = RSI }\r
++	}\r
++	}\r
++\r
++	name = "EVT_1226201_NAME"\r
++	desc = "EVT_1226201_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 5 year = 1936 }\r
++	offset = 29 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # ＜諸君らを歓迎しよう！＞\r
++	name = "ACTIONNAME1226201A"\r
++	command = { trigger = { country = U14 alliance = { country = U14 country = ITA } } type = inherit which = ITA value = 1 }\r
++	command = { trigger = { country = ITA alliance = { country = U14 country = ITA } } type = inherit which = U14 value = 1 }\r
++	command = { trigger = { alliance = { country = -1 country = UC4 } } type = inherit which = UC4 value = 1 }\r
++	command = { trigger = { alliance = { country = -1 country = UD9 } } type = inherit which = UD9 value = 1 }\r
++	command = { trigger = { alliance = { country = -1 country = RSI } } type = inherit which = RSI value = 1 }\r
++	}\r
++\r
++\r
++}\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\r
++##########################################################################\r
++\r
++\
+\ No newline at end of file

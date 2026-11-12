@@ -1,0 +1,770 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
+@@ -105,6 +105,19 @@
+ #id = 45680223 横濱陥落\r
+ #id = 45680224 中華民国との連携\r
+ #id = 45680225 ハノイ連携協定\r
++#id = 45680226 ドイツ本国の誤算\r
++#id = 45680227 東亜総合商社のインドシナ統治 ― 統治方針の再検討\r
++#id = 45680228 東亜総合商社のインドシナ統治 ― 文化政策\r
++#id = 45680229 東亜総合商社のインドシナ統治 ― 農村政策\r
++#id = 45680230 東亜総合商社のインドシナ統治 ― 工業政策\r
++#id = 45680231 東亜総合商社のインドシナ統治 ― 天国と地獄\r
++#id = 45680232 インドシナ油田の探索\r
++#id = 45680233 インドシナ油田の発見\r
++#id = 45680234 バクホー油田の完成\r
++#id = 45680235 東亜総合商社の四国統治\r
++#id = 45680236 東亜総合商社の四国統治 ― 浄化作戦\r
++#id = 45680237 東亜総合商社の四国統治 ― 作戦名『タンホイザー』\r
++#id = 45680238 東亜総合商社の四国統治 ― 新プローラ\r
+ ##########################################################################\r
+ #  ヴィルヘルム2世の死去\r
+ ###########################################################################\r
+@@ -395,7 +408,6 @@ event = {
+ 	command = { type = sleepevent which = 2003152 }\r
+ 	command = { type = sleepevent which = 2003153 }\r
+ 	command = { type = sleepevent which = 2003155 }\r
+-	command = { type = sleepevent which = 2003090 } #フリッチュイベント\r
+ 	}\r
+ }\r
+ \r
+@@ -1540,7 +1552,6 @@ event = {
+ 	control = { province = 668 data = -3 } #Kuybyshev\r
+ 	control = { province = 672 data = -3 } #Kazan\r
+ 	control = { province = 706 data = -3 } #Astrakhan\r
+-	NOT = { lost_national = { country = UTC value = 70 } }\r
+ 	}\r
+ 	\r
+ 	name = EVT_45680024_NAME\r
+@@ -1839,7 +1850,6 @@ event = {
+ 	command = { type = secedearea which = U37 value = "Latvia" when = 1 }\r
+ 	command = { type = make_puppet which = U37 }\r
+ 	command = { type = alliance which = U37 }\r
+-	command = { trigger = { ai = U37 } type = event which = 45690013 where = U37 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1886,7 +1896,6 @@ event = {
+ 	command = { type = secedeprovince which = LIT value = 255 when = 1 }\r
+ 	command = { type = make_puppet which = LIT }\r
+ 	command = { type = alliance which = LIT }\r
+-	command = { trigger = { ai = LIT } type = event which = 45690014 where = LIT when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1939,7 +1948,6 @@ event = {
+ 	command = { type = secedeprovince which = POL value = 254 when = 1 } #Bialystock\r
+ 	command = { type = make_puppet which = POL }\r
+ 	command = { type = alliance which = POL }\r
+-	command = { trigger = { ai = POL } type = event which = 45690015 where = POL when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1997,7 +2005,6 @@ event = {
+ 	command = { type = secedeprovince which = BLR value = 599 when = 1 } #Minsk\r
+ 	command = { type = make_puppet which = BLR }\r
+ 	command = { type = alliance which = BLR }\r
+-	command = { trigger = { ai = BLR } type = event which = 45690016 where = BLR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2046,7 +2053,6 @@ event = {
+ 	command = { type = secedeprovince which = UKR value = 249 when = 1 } #Sarny\r
+ 	command = { type = make_puppet which = UKR }\r
+ 	command = { type = alliance which = UKR }\r
+-	command = { trigger = { ai = UKR } type = event which = 45690017 where = UKR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2303,7 +2309,7 @@ event = {
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = add_division which = "第1予備戦車団" value = light_armor when = 0 }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "第2予備戦車団" value = light_armor when = 0 }\r
+-	command = { trigger = { ai = yes } type = add_division which = "第3予備戦車団" value = light_armor when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "第3予備洗車団" value = light_armor when = 0 }\r
+ 	command = { type = add_division which = "第1予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第2予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第3予備歩兵師団" value = infantry when = 5 }\r
+@@ -2508,13 +2514,9 @@ event = {
+ 	command = { type = gain_tech which = 5000110 }\r
+ 	command = { type = gain_tech which = 5130 }\r
+ 	command = { type = gain_tech which = 5100 }\r
+-	#command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
+-		#command = {  trigger = { ai = yes }  type = local_setflag which = do_not_demob }\r
+-		#command = {  trigger = { ai = yes }  type = local_clrflag which = demob }\r
+-		#command = { trigger = { ai = yes } type = trigger which = 8300107 }\r
+-		#command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
+-		command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
+-	#command = { trigger = { ai = yes } type = event which = }\r
++	command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
++	command = { trigger = { ai = yes }  type = trigger which = 130031 }\r
++	command = { trigger = { ai = yes exists = FRA } type = sleepevent which = 130033 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2710,7 +2712,7 @@ event = {
+ 	command = { type = domestic which  = defense_lobby value = 1 }\r
+ 	command = { type = domestic which  = interventionism value = 1 }\r
+ 	command = { type = setflag which = Central_Allies } \r
+-	ai_chance = 100 #85\r
++	ai_chance = 85\r
+ 	}\r
+ \r
+ 	action = { # 我々には新秩序が必要だ\r
+@@ -2738,7 +2740,7 @@ event = {
+ 	command = { trigger = { country = U09 } type = event which = 45680045 where = U09 when = 1 } \r
+ 	command = { trigger = { country = UB8 } type = event which = 45680045 where = UB8 when = 1 } \r
+ 	command = { trigger = { country = GER } type = event which = 45680044 where = AUS when = 2 } \r
+-	ai_chance = 0 #15\r
++	ai_chance = 15\r
+ 	}\r
+ }\r
+ \r
+@@ -2991,7 +2993,6 @@ event = {
+ 	name = "ACTIONNAME45680050A"\r
+ 	command = { type = money value = -30 } \r
+ 	command = { type = trigger which = 45680051 }\r
+-	ai_chance = 100\r
+ 	}\r
+ }\r
+ 	\r
+@@ -3283,7 +3284,6 @@ event = {
+ 	#command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
+-	command = { type = strength which = land when = 0 where = 0 value = 0.3 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -5649,4 +5649,629 @@ event = {
+ 	command = { type = relation which = HOL value = -30 }\r
+ 	ai_chance = 0\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r
++\r
++\r
++#########################################################################\r
++#  ドイツ本国の誤算\r
++# 東亜総合商社は勅許会社であると同時に前線拠点でもある。\r
++# その性質を明確に表しているのが同企業における人員配置であり、\r
++# WW1で活躍した陸軍軍人ハンス・フォン・ゼークトが同企業のトップとして君臨しているおり、また実務領域では海軍から派遣された新進気鋭の軍人ラインハルト・ハイドリヒがその有能さを遺憾なく発揮している。\r
++# この両者の存在は、東亜総合商社がアジアにおけるドイツの前線拠点としての機能を持ち合わせていることを明確に表している。\r
++# 問題なのは、このゼークト及びハイドリヒの両名が、現在政治的混乱状態にあるドイツ本国を尻目に『独自の政策』を打ち出し始め、徐々にドイツ本国のコントロールから逃れ始めていることであった……。\r
++#########################################################################\r
++event = { \r
++	id = 45680226\r
++	random = no\r
++	country = UD6\r
++\r
++	trigger = {\r
++	exists = GER\r
++	event = { id = 45680101 days = 45 } # 世界恐慌による政治的混乱\r
++	}\r
++\r
++	name = "EVT_45680226_NAME"\r
++	desc = "EVT_45680226_DESC"\r
++	style = 2\r
++	picture = "Heydrich"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 我々は祖国ドイツのために働くのみである\r
++	name = "ACTIONNAME45680226A" \r
++	command = { type = ministerofintelligence which = 632227 } # ラインハルト・ハイドリヒ\r
++	command = { type = gain_tech which = 82300 } # 基本型強襲上陸戦術\r
++	command = { type = gain_tech which = 82310 } # 改良型海上侵攻戦術\r
++	command = { type = gain_tech which = 82320 } # 発展型海上侵攻戦術\r
++	command = { type = gain_tech which = 3820 } # 基本型兵員輸送艦\r
++	command = { type = gain_tech which = 3830 } # 改良型兵員輸送艦\r
++	command = { type = gain_tech which = 1560 } # 1922年型海兵師団\r
++	command = { type = gain_tech which = 1570 } # 1925年型海兵師団\r
++	command = { type = gain_tech which = 1580 } # 1931年型海兵師団\r
++	command = { type = gain_tech which = 1590 } # 1937年型海兵師団\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社のインドシナ統治 ― 統治方針の再検討\r
++# 1920年代後半から、独立運動が激しくなったインドシナの新たな統治方針を策定・実行したのは、1932年に左遷同然で配属された海軍軍人ラインハルト・ハイドリヒである。\r
++# 彼は現地の独立運動家をリストアップし、その中でも富裕層に位置する人々を重点的に摘発した。\r
++# 同時に、農場や工場における労働環境を改善し『摘発のたびに』ボーナスを支給した。\r
++# これらの政策から東亜総合商社は現地労働者達から支持を受け、独立運動家達は商社の摘発以上に労働者達の密告を恐れるようになった……。\r
++#########################################################################\r
++event = { \r
++	id = 45680227\r
++	random = no\r
++	country = UD6\r
++	save_date = yes\r
++\r
++	decision = {\r
++	event = { id = 45680101 days = 90 } # 世界恐慌による政治的混乱\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	decision_trigger = {\r
++	incabinet = 632227 # ラインハルト・ハイドリヒ\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 45680101 days = 90 } # 世界恐慌による政治的混乱\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	name = "EVT_45680227_NAME"\r
++	desc = "EVT_45680227_DESC"\r
++	style = 2\r
++	picture = "Heydrich"\r
++	decision_picture = "decision_anticominternpact"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # この政策は第一段階に過ぎない\r
++	name = "ACTIONNAME45680227A"\r
++	command = { type = ministerofintelligence which = 632227 } # ラインハルト・ハイドリヒ\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = manpowerpool value = -1 }\r
++	command = { type = money value = 4000 }\r
++	command = { type = industrial_modifier which = total value = 10 }\r
++	command = { type = province_revoltrisk which = 1391 value = -10 } # インドシナ\r
++	command = { type = province_revoltrisk which = 1392 value = -10 }\r
++	command = { type = province_revoltrisk which = 1393 value = -10 }\r
++	command = { type = province_revoltrisk which = 1394 value = -10 }\r
++	command = { type = province_revoltrisk which = 1395 value = -10 }\r
++	command = { type = province_revoltrisk which = 1396 value = -10 }\r
++	command = { type = province_revoltrisk which = 1397 value = -10 }\r
++	command = { type = province_revoltrisk which = 1398 value = -10 }\r
++	command = { type = province_revoltrisk which = 1399 value = -10 }\r
++	command = { type = province_revoltrisk which = 1400 value = -10 }\r
++	command = { type = province_revoltrisk which = 1401 value = -10 }\r
++	command = { type = province_revoltrisk which = 1402 value = -10 }\r
++	command = { type = province_revoltrisk which = 1403 value = -10 }\r
++	command = { type = province_revoltrisk which = 1404 value = -10 }\r
++	command = { type = province_revoltrisk which = 1405 value = -10 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社のインドシナ統治 ― 文化政策\r
++# 徹底した同化政策をとったフランスとは真逆の文化政策を東亜総合商社は実施した。\r
++# かつてのフランス語教育は無論のこと、ドイツ語教育も行わず、現地越南語による教育を徹底させ、識字率を向上させた。\r
++# しかし同時に、大学等の高等教育施設を閉鎖し、現地人がエリートコースに入るためには事実上ドイツ語の修学が必要不可欠な状態に落とし込んだ。\r
++# これは、識字率の向上は労働者の労働効率を向上させるものと見込んだ東亜総合商社の狙いが背景にある。\r
++#########################################################################\r
++event = { \r
++	id = 45680228\r
++	random = no\r
++	country = UD6\r
++	save_date = yes\r
++\r
++	decision = {\r
++	event = { id = 45680227 days = 90 } # 東亜総合商社のインドシナ統治 ― 統治方針の再検討\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 45680227 # 東亜総合商社のインドシナ統治 ― 統治方針の再検討\r
++	incabinet = 632227 # ラインハルト・ハイドリヒ\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	money = 300\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 45680227 days = 90 } # 東亜総合商社のインドシナ統治 ― 統治方針の再検討\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	name = "EVT_45680228_NAME"\r
++	desc = "EVT_45680228_DESC"\r
++	style = 2\r
++	picture = "invest_research"\r
++	decision_picture = "decision_new_deal"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 今やインドシナの人々は家畜とされつつある……\r
++	name = "ACTIONNAME45680228A"\r
++	command = { type = ministerofintelligence which = 632227 } # ラインハルト・ハイドリヒ\r
++	command = { type = dissent value = -5 }\r
++	command = { trigger = { ai = no } type = money value = -300 }\r
++	command = { type = industrial_modifier which = total value = 2 }\r
++	command = { type = research_mod value = 5 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社のインドシナ統治 ― 農村政策\r
++# インドシナにおける労働人口の過半数以上が農業等の第一次産業従事者である。\r
++# それら農村の基礎を作ったのは欧州系の大地主達であったが、東亜総合商社はこれら地主層を補助金と引き換えに下請事業者の地位につけ、中央の出す法令を遵守させる下地を作り出した。\r
++# これによって小作人達の労働環境は改善され、また不正な取引についても東亜総合商社が摘発を行ったため、農村領域においても支持を伸ばした。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680229\r
++	random = no\r
++	country = UD6\r
++	save_date = yes\r
++\r
++	decision = {\r
++	event = { id = 45680228 days = 90 } # 東亜総合商社のインドシナ統治 ― 文化政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = { id = 45680228 days = 90 } # 東亜総合商社のインドシナ統治 ― 文化政策\r
++	incabinet = 632227 # ラインハルト・ハイドリヒ\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	money = 300\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 45680228 days = 90 } # 東亜総合商社のインドシナ統治 ― 文化政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	name = "EVT_45680229_NAME"\r
++	desc = "EVT_45680229_DESC"\r
++	style = 2\r
++	picture = "agreforma"\r
++	decision_picture = "decision_new_deal"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 農業はインドシナの基礎である\r
++	name = "ACTIONNAME45680229A"\r
++	command = { type = ministerofintelligence which = 632227 } # ラインハルト・ハイドリヒ\r
++	command = { type = dissent value = -5 }\r
++	command = { trigger = { ai = no } type = money value = -300 }\r
++	command = { type = industrial_modifier which = supplies value = 10 }\r
++	command = { type = industrial_modifier which = money value = 10 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社のインドシナ統治 ― 工業政策\r
++# インドシナは農業と繊維業、フランス統治時代に開発された鉱山が主な産業として挙げられるが、\r
++# ここで東亜総合商社はインドシナにおける同社の『自営自活』を目的として工業化政策を打ち出した。\r
++# そもそもが熱帯に属し、開けた土地の少ないインドシナにおいて、東亜総合商社は都市圏における旧大学施設等を破壊或いは居抜きで工場を作ったのである。\r
++# この政策により、東亜総合商社は次に来る大戦を戦い抜くことができたが、後のインドシナにおける独立国家全てに悪影響を残した。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680230\r
++	random = no\r
++	country = UD6\r
++	save_date = yes\r
++\r
++	decision = {\r
++	event = { id = 45680229 days = 60 } # 東亜総合商社のインドシナ統治 ― 農村政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = { id = 45680229 days = 60 } # 東亜総合商社のインドシナ統治 ― 農村政策\r
++	incabinet = 632227 # ラインハルト・ハイドリヒ\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	money = 1000\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 45680229 days = 60 } # 東亜総合商社のインドシナ統治 ― 農村政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	name = "EVT_45680230_NAME"\r
++	desc = "EVT_45680230_DESC"\r
++	style = 2\r
++	picture = "industry"\r
++	decision_picture = "decision_new_deal"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 嗚呼、伝統あるフエ大学すら工場になってしまった\r
++	name = "ACTIONNAME45680230A"\r
++	command = { type = dissent value = 2 }\r
++	command = { trigger = { ai = no } type = money value = -1000 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = construct which = ic where = 1392 value = 2 } # ハイフォン\r
++	command = { type = construct which = ic where = 1395 value = 2 } # ハノイ\r
++	command = { type = construct which = ic where = 1399 value = 2 } # サイゴン\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社のインドシナ統治 ― 天国と地獄\r
++# 東亜総合商社の統治によって、インドシナの人々は二つの層に二分された。\r
++# 労働者階級が完全に東亜総合商社によって統治される中で、かつての富裕層は徹底した弾圧と収奪を受け、\r
++# 一部は移民となってインドシナを脱し、或いは労働者階級へと移り身をやつす。\r
++# インドシナで独立運動を行なっていた人々は英領香港を経由し英仏へ脱し、海外で独立運動を継続した。\r
++# 元富裕層の人々の一部は東亜総合商社幹部の身請という名の事実上の奴隷と化す場面さえ出てきたが、それでも民衆は東亜総合商社を支持した。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680231\r
++	random = no\r
++	country = UD6\r
++\r
++	trigger = {\r
++	event = { id = 45680230 days = 180 } # 東亜総合商社のインドシナ統治 ― 工業政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	name = "EVT_45680231_NAME"\r
++	desc = "EVT_45680231_DESC"\r
++	style = 2\r
++	picture = "industry2"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 今やインドシナには肉屋を支持する家畜しかいない！\r
++	name = "ACTIONNAME45680231A"\r
++	command = { type = dissent value = 8 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = industrial_modifier which = total value = 8 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  インドシナ油田の探索\r
++# ある時、ドイツ本国の地質学者が東亜総合商社に対し一つの意見を提出した。\r
++# その地質学者が言うには、インドシナの海には油田があるかもしれず、これを発見・開発すれば多量の石油が手に入るとのことだった。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680232\r
++	random = no\r
++	country = UD6\r
++\r
++	decision = {\r
++	event = 45680230 # 東亜総合商社のインドシナ統治 ― 工業政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = { id = 45680230 days = 90 } # 東亜総合商社のインドシナ統治 ― 工業政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	money = 1000\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 45680230 days = 90 } # 東亜総合商社のインドシナ統治 ― 工業政策\r
++	OR = {\r
++	area = { area = "Indochine" country = GER data = 1 value = 70 }\r
++	area = { area = "Indochine" country = UD6 data = 1 value = 70 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	name = "EVT_45680232_NAME"\r
++	desc = "EVT_45680232_DESC"\r
++	style = 2\r
++	picture = "oil_mosul"\r
++	decision_picture = "decision_new_deal"\r
++\r
++	date = { day = 0 month = 0 year = 1934 }\r
++	offset = 12\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 油田開発に投資する\r
++	name = "ACTIONNAME45680232A"\r
++	command = { type = dissent value = 4 }\r
++	command = { trigger = { ai = no } type = money value = -1000 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = event which = 45680233 where = UD6 when = 1080 } # インドシナ油田の発見\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 単なる与太話だ\r
++	name = "ACTIONNAME45680232B"\r
++	command = { type = dissent value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  インドシナ油田の発見\r
++# 朗報だ！\r
++# サイゴン沖で大規模な海底油田が発見された。\r
++# これを開発すれば石油が手に入るのは間違いのないことであろう！\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680233\r
++	random = no\r
++	country = UD6\r
++\r
++	name = "EVT_45680233_NAME"\r
++	desc = "EVT_45680233_DESC"\r
++	style = 2\r
++	picture = "oil_mosul"\r
++\r
++	action = { # 更なる投資を！\r
++	name = "ACTIONNAME45680233A"\r
++	command = { trigger = { ai = no } type = money value = -2000 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = event which = 45680234 where = UD6 when = 1080 } # インドシナ油田の発見\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  バクホー油田の完成\r
++# 油田の探索から年月が経ち、とうとう現在に至りバクホー油田の採掘プラットフォームが完成した！\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680234\r
++	random = no\r
++	country = UD6\r
++\r
++	name = "EVT_45680234_NAME"\r
++	desc = "EVT_45680234_DESC"\r
++	style = 2\r
++	picture = "oil_mosul"\r
++\r
++	action = { # 次の戦争のために！\r
++	name = "ACTIONNAME45680234A"\r
++	command = { type = dissent value = -10 }\r
++	command = { type = add_prov_resource which = 1399 value = 30 where = oil } # サイゴン\r
++	command = { type = domestic which = free_market value = -2 }\r
++	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = industrial_modifier which = oil value = 15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社の四国統治\r
++# 日本列島分割に参加した東亜総合商社は、四国全土を手中に収めた。\r
++# 四国は山がちで、資源や工場も乏しく、インフラ開発にも多量の資金と時間が必要となる。\r
++# そこで東亜総合商社は四国を富裕者むけのリゾート地として開発することを決定した。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680235\r
++	random = no\r
++	country = UD6\r
++\r
++	decision = {\r
++	event = 2991312 # 日本分割 ― 誇りなき繁栄\r
++	AND = {\r
++	control = { province = 1559 data = UD6 } # 四国\r
++	control = { province = 2781 data = UD6 }\r
++	control = { province = 2782 data = UD6 }\r
++	control = { province = 2783 data = UD6 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	decision_trigger = {\r
++	AND = {\r
++	control = { province = 1559 data = UD6 } # 四国\r
++	control = { province = 2781 data = UD6 }\r
++	control = { province = 2782 data = UD6 }\r
++	control = { province = 2783 data = UD6 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	}\r
++\r
++	trigger = {\r
++	event = 2991312 # 日本分割 ― 誇りなき繁栄\r
++	AND = {\r
++	control = { province = 1559 data = UD6 } # 四国\r
++	control = { province = 2781 data = UD6 }\r
++	control = { province = 2782 data = UD6 }\r
++	control = { province = 2783 data = UD6 }\r
++	}\r
++	NOT = { atwar = UD6 }\r
++	random = 20\r
++	}\r
++\r
++	name = "EVT_45680235_NAME"\r
++	desc = "EVT_45680235_DESC"\r
++	style = 2\r
++	picture = "SS_Infantry"\r
++	decision_picture = "decision_anticominternpact"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # これこそが、不幸の始まりであった\r
++	name = "ACTIONNAME45680235A"\r
++	command = { type = event which = 45680236 where = UD6 when = 90 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  東亜総合商社の四国統治 ― 浄化作戦\r
++# 「我々はこの『土地を利用する』にあたって、果断な政策をもって事にあたる必要がある」\r
++# 東亜総合商社の事実上のトップとなった海軍軍人ラインハルト・ハイドリヒはそう宣言した。\r
++# つまり、四国をリゾート地とするにあたり、そこの住民である日本人は邪魔であると宣言したのである。\r
++# ハイドリヒから任務を与えられた海兵隊員達は四国において女性のみを攫い、一箇所に集め、最終的に彼女らを種子島へ隔離し『下準備』を完了した。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680236\r
++	random = no\r
++	country = UD6\r
++\r
++	name = "EVT_45680236_NAME"\r
++	desc = "EVT_45680236_DESC"\r
++	style = 2\r
++	picture = "Heydrich"\r
++\r
++	action = { # こいつらは一体何をするつもりなんだ!?\r
++	name = "ACTIONNAME45680236A"\r
++	command = { type = event which = 45680237 where = UD6 when = 180 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社の四国統治 ― 作戦名『タンホイザー』\r
++# 東亜総合商社は表向きには「未だに当局に抵抗の意思を示すゲリラを殲滅するため」と発表しながら、四国において無差別な虐殺を開始した。見えやすいところでは銃を、洞窟などへ逃げ込んだ人々に対しては毒ガスを使用し、四国の住民を悉く抹殺した。\r
++# 無論、日本本州に残る政府はこの東亜総合商社の蛮行に抗議こそしたが、最終的には黙殺され、諸外国の殆どがアジア情勢に介入することが出来ない状態にあり、この歴史に残る大蛮行は『スムーズに』行われることとなった。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680237\r
++	random = no\r
++	country = UD6\r
++\r
++	name = "EVT_45680237_NAME"\r
++	desc = "EVT_45680237_DESC"\r
++	style = 2\r
++	picture = "Heydrich"\r
++\r
++	action = { # ……邪魔だったからな\r
++	name = "ACTIONNAME45680237A"\r
++	command = { type = construct which = ic where = 1559 value = -10 } # 四国\r
++	command = { type = construct which = infrastructure where = 1559 value = -100 }\r
++	command = { type = construct which = ic where = 2781 value = -10 }\r
++	command = { type = construct which = infrastructure where = 2781 value = -100 }\r
++	command = { type = construct which = ic where = 2782 value = -10 }\r
++	command = { type = construct which = infrastructure where = 2782 value = -100 }\r
++	command = { type = construct which = ic where = 2783 value = -10 }\r
++	command = { type = construct which = infrastructure where = 2783 value = -100 }\r
++	command = { type = construct which = infrastructure where = 1559 value = 10 } # 四国\r
++	command = { type = construct which = infrastructure where = 2781 value = 10 }\r
++	command = { type = construct which = infrastructure where = 2782 value = 10 }\r
++	command = { type = construct which = infrastructure where = 2783 value = 10 }\r
++	command = { type = province_manpower which = 1559 value = -10 }\r
++	command = { type = province_manpower which = 2781 value = -10 }\r
++	command = { type = province_manpower which = 2782 value = -10 }\r
++	command = { type = province_manpower which = 2783 value = -10 }\r
++	command = { type = event which = 45680238 where = UD6 when = 180 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東亜総合商社の四国統治 ― 新プローラ\r
++# 四国における一大掃討作戦『タンホイザー』が無事完遂されると、現地ではドイツ資本によるリゾート地の開発が行われ、また当地の『様々な産業の従事者』として、種子島に隔離されていた旧日本人女性達が動員された。\r
++# 東亜総合商社は四国を、バルト海に存在するリゾート地の名前を取り『新プローラ』と命名したのである。\r
++#########################################################################\r
++\r
++event = { \r
++	id = 45680238\r
++	random = no\r
++	country = UD6\r
++\r
++	name = "EVT_45680238_NAME"\r
++	desc = "EVT_45680238_DESC"\r
++	style = 2\r
++	picture = "Heydrich"\r
++\r
++	action = { # 頑張って働いてくれ\r
++	name = "ACTIONNAME45680238A"\r
++	command = { type = relation which = GER value = 50 }\r
++	command = { type = industrial_modifier which = money value = 10 } # 四国\r
++	command = { type = industrial_modifier which = supplies value = 10 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r

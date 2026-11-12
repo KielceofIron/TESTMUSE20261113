@@ -1,0 +1,806 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
+@@ -5,7 +5,7 @@
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+ #id = 6959001 北伐失敗後の混乱\r
+-#id = 6959002 中華共和国人民革命政府\r
++#id = 6959002 紅い整風\r
+ #id = 6959003 衰えた安徽派\r
+ #id = 6959004 不安定な北京政府\r
+ #id = 6959005 保境安民\r
+@@ -97,11 +97,19 @@
+ #id = 6959240 タイが中国と同盟を結ぶ\r
+ #id = 6959241 タイが中国の圧力に抵抗する\r
+ # 中華共和国（CHC）イベント\r
+-#id = 6959301 中央書記処の再編\r
++#id = 6959301 中央評議会の開催\r
+ #id = 6959302 軍国主義者のクーデター\r
+ #id = 6959303 八・一宣言\r
+ #id = 6959304 八・一宣言 ― 軍閥の反応\r
+ #id = 6959305 革命軍事委員会の設置\r
++#id = 6959306 中独合作（DDR）\r
++#id = 6959307 中独合作（CHC）\r
++#id = 6959308 軍閥における共産党の蜂起（CHC）\r
++#id = 6959309 軍閥における共産党の蜂起（CSX CGX CYN CXB）\r
++#id = 6959310 軍閥における共産党の蜂起 ― 山西軍閥\r
++#id = 6959311 軍閥における共産党の蜂起 ― 両広軍閥\r
++#id = 6959312 軍閥における共産党の蜂起 ― 雲南軍閥\r
++#id = 6959313 軍閥における共産党の蜂起 ― 西北三馬\r
+ # 安徽派（U74）イベント\r
+ #id = 6959401 三・一八事件\r
+ #id = 6959402 三・一八事件 ― デモ鎮圧\r
+@@ -208,13 +216,12 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  中華共和国人民革命政府\r
++#  紅い整風\r
+ # 1920年代に成立した中国共産党は、軍閥および北京政府に対抗する共同戦線である国共合作を成立させ、国民党に参加した。\r
+-# だがこれは1926年の北伐のさなか、蒋介石が共産党の大弾圧を開始したことで崩壊。\r
+-# その後、共産党は蒋介石に反発した国民党左派と合流するも、また弾圧の危機にさらされたため、武装蜂起。\r
+-# 国民党左派を追放するとともに、合作の終了を宣言した。\r
+-# 共産党はこの地に共和国政府を樹立し、いずれ来るであろう国民党との激しい戦いに備えて、力を蓄え続けた。\r
+-# 国民党は今もなお反共産党の意思を示しており、いずれにしても激しい内戦は避けられそうにない。\r
++# だがこれは1926年の北伐のさなか、蒋介石が共産党の摘発・処刑を開始したことで崩壊。\r
++# 弾圧に晒された共産党や社会主義者は、国民党左派の影響が強かった武漢に集結し、再起を図った。\r
++# そして北伐が北京政府の反撃によって失敗すると、気を伺っていた社会主義者は武装蜂起し、湖北省を奪取することに成功した。\r
++# 現在、中国における革命の主導権を握るべく、権力闘争が起きており、内部対立が深刻なまでに悪化している。\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -576,14 +583,14 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = CHI data = 1 value = 70 }\r
++	region = { region = "China" country = CHI data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = CHI data = 1 value = 70 }\r
++	region = { region = "China" country = CHI data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+@@ -678,14 +685,14 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = CHC data = 1 value = 70 }\r
++	region = { region = "China" country = CHC data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = CHC data = 1 value = 70 }\r
++	region = { region = "China" country = CHC data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+@@ -760,14 +767,14 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 70 }\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 70 }\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	atwar = no\r
+@@ -857,7 +864,7 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 70 }\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	NOT = { ispuppet = yes }\r
+@@ -865,7 +872,7 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	region = { region = "China" country = -1 data = 1 value = 70 }\r
++	region = { region = "China" country = -1 data = 1 value = 50 }\r
+ 	owned = { province = 1247 data = -1 } # 北京（ベイジン）\r
+ 	owned = { province = 1337 data = -1 } # 南京（ナンキン）\r
+ 	NOT = { exists = U87 }\r
+@@ -3535,6 +3542,10 @@ event = {
+ 	action = { # 雲南軍閥と交渉する\r
+ 	trigger = {\r
+ 	exists = CYN\r
++	OR = {\r
++	NOT = { exists = CXB }\r
++	NOT = { exists = CGX }\r
++	}\r
+ 		OR = {\r
+ 		ai = no\r
+ 		relation = { which = CYN value = 50 }\r
+@@ -3562,6 +3573,10 @@ event = {
+ 	action = { # 雲南軍閥へ攻撃する\r
+ 	trigger = {\r
+ 	exists = CYN\r
++	OR = {\r
++	NOT = { exists = CXB }\r
++	NOT = { exists = CGX }\r
++	}\r
+ 	OR = { \r
+ 		ai = no\r
+ 		AND = {\r
+@@ -3718,6 +3733,10 @@ event = {
+ 	action = { # 西北三馬と交渉する\r
+ 	trigger = {\r
+ 	exists = CXB\r
++	OR = {\r
++	NOT = { exists = CSX }\r
++	NOT = { exists = CGX }\r
++	}\r
+ 		OR = {\r
+ 		ai = no\r
+ 		relation = { which = CXB value = 50 }\r
+@@ -3745,6 +3764,10 @@ event = {
+ 	action = { # 西北三馬へ攻撃する\r
+ 	trigger = {\r
+ 	exists = CXB\r
++	OR = {\r
++	NOT = { exists = CSX }\r
++	NOT = { exists = CGX }\r
++	}\r
+ 	OR = { \r
+ 		ai = no\r
+ 		AND = {\r
+@@ -7009,6 +7032,15 @@ event = {
+ 	trigger = {\r
+ 	exists = U67\r
+ 	OR = {\r
++	year = 1941\r
++	ai = no\r
++	}\r
++	NOT = {\r
++	exists = TIB\r
++	exists = SIK\r
++	exists = UPE\r
++	}\r
++	OR = {\r
+ 	NOT = { ispuppet = U67 }\r
+ 	puppet = { country = U67 country = -1 }\r
+ 	}\r
+@@ -7049,6 +7081,15 @@ event = {
+ 	trigger = {\r
+ 	exists = U67\r
+ 	OR = {\r
++	year = 1941\r
++	ai = no\r
++	}\r
++	NOT = {\r
++	exists = TIB\r
++	exists = SIK\r
++	exists = UPE\r
++	}\r
++	OR = {\r
+ 	NOT = { ispuppet = U67 }\r
+ 	puppet = { country = U67 country = -1 }\r
+ 	}\r
+@@ -10702,7 +10743,6 @@ event = {
+ 	trigger = {\r
+ 	exists = GER\r
+ 	exists = CHI\r
+-	NOT = { exists = CHC }\r
+ 	atwar = no\r
+ 	random = 20\r
+ 	}\r
+@@ -10729,6 +10769,8 @@ event = {
+ 	command = { type = trade which = GER where = CHI supplies = -3.5 rare_materials = 10 value = 1 }\r
+ 	command = { type = trade which = GER where = CHI supplies = -3.5 rare_materials = 10 value = 1 }\r
+ 	command = { type = event which = 6959209 where = CHI when = 0 }\r
++	command = { type = sleepevent which = 6959306 }\r
++	command = { type = sleepevent which = 6959307 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -10771,9 +10813,9 @@ event = {
+         command = { type = add_prov_resource which = metal where = 1358 value = 3 } # 福州（フーヂョウ）\r
+         command = { type = add_prov_resource which = metal where = 1360 value = 3 } # 廈門（シャーメン）\r
+ 	# 工場\r
+-        command = { type = construct which = ic where = 1346 value = 1 } # 寧波（ニンポー）\r
+-        command = { type = construct which = ic where = 1358 value = 1 } # 福州（フーヂョウ）\r
+-        command = { type = construct which = ic where = 1360 value = 1 } # 廈門（シャーメン）\r
++        command = { type = construct which = ic where = 1346 value = 2 } # 寧波（ニンポー）\r
++        command = { type = construct which = ic where = 1358 value = 2 } # 福州（フーヂョウ）\r
++        command = { type = construct which = ic where = 1360 value = 2 } # 廈門（シャーメン）\r
+ 	# インフラ\r
+         command = { type = construct which = infrastructure where = 1349 value = 10 } # 江西省\r
+         command = { type = construct which = infrastructure where = 1350 value = 10 }\r
+@@ -12180,6 +12222,7 @@ event = {
+ 	command = { type = relation which = AST value = -10 }\r
+ 	command = { type = relation which = NZL value = -10 }\r
+ 	command = { type = relation which = GER value = 10 }\r
++	command = { type = setflag which = ITAtripartite }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -12238,14 +12281,14 @@ event = {
+ 	command = { type = relation which = FRA value = -10 }\r
+ 	command = { type = relation which = USA value = -10 }\r
+ 	command = { type = trigger which = 6959235 }\r
+-	ai_chance = 97\r
++	ai_chance = 50\r
+ 	}\r
+ \r
+ 	action = { # 要求しない\r
+ 	name = "ACTIONNAME6959234B"\r
+ 	command = { type = relation which = FRA value = 5 }\r
+ 	command = { type = relation which = USA value = 5 }\r
+-	ai_chance = 0\r
++	ai_chance = 50\r
+ 	}\r
+ }\r
+ \r
+@@ -12271,7 +12314,7 @@ event = {
+ 	command = { type = relation which = ENG value = -25 }\r
+ 	command = { type = relation which = USA value = -25 }\r
+ 	command = { type = trigger which = 6959236 }\r
+-	ai_chance = 96\r
++	ai_chance = 60\r
+ 	}\r
+ \r
+ 	action = { # 拒否\r
+@@ -12279,7 +12322,7 @@ event = {
+ 	command = { type = relation which = CHI value = -30 }\r
+ 	command = { type = relation which = GER value = -30 }\r
+ 	command = { type = trigger which = 6959237 }\r
+-	ai_chance = 4\r
++	ai_chance = 40\r
+ 	}\r
+ }\r
+ \r
+@@ -12526,8 +12569,10 @@ event = {
+ #########################################################################\r
+ #  中華共和国（CHC）イベント\r
+ #########################################################################\r
+-#  中央書記処の再編\r
+-# 政権というものは時折、不幸な出来事が続いたり、選挙に敗北したりすると、総辞職して、国民の高い支持を得た新たな政権に権力を譲ることがある。\r
++#  中央評議会の開催\r
++# 中華共和国では、中央評議会で諸政党・諸派閥が議論することで政策などの意思決定が行われていた。\r
++# 1933年、長年にわたる軍閥問題や列強諸国による中国への侵略問題を解決するため、今後の方針についての重大な会議が開かれた。\r
++# 政治の混乱の渦中にある中、いくつかの勢力は、革命の主導権を握るべく、準備を整えた。\r
+ #########################################################################\r
+ event = {\r
+ 	id = 6959301\r
+@@ -12540,7 +12585,7 @@ event = {
+ 	}\r
+ \r
+ 	name = "EVT_6959301_NAME"\r
+-	desc = "EVT_120_DESC"\r
++	desc = "EVT_6959301_DESC"\r
+ 	style = 2\r
+  	picture = "news_paper"\r
+ \r
+@@ -12548,67 +12593,64 @@ event = {
+ 	offset = 10\r
+ 	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+-	action = { # 林伯渠を指名\r
++	action = { # 王明が反対派を追放する\r
+ 	name = "ACTIONNAME6959301A"\r
++	command = { type = name where = CHC which = "中華共和国" }\r
++	command = { type = flag_ext where = CHC which = "_2" }\r
++	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 9 }\r
+-	command = { type = set_domestic which = freedom value = 4 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 260815 } # 林伯渠(リン・ボーチュー)\r
+-	command = { type = headofgovernment which = 260816 } # 林伯渠(リン・ボーチュー)\r
+-	command = { type = foreignminister which = 260865 } # 王稼祥(ワン・チアシアン)\r
+-	command = { type = armamentminister which = 260821 } # 徐向前(シュー・シャンツェン)\r
+-	command = { type = ministerofsecurity which = 260818 } # 謝覚哉(シー・チューツァイ)\r
+-	command = { type = ministerofintelligence which = 260818 } # 謝覚哉(シー・チューツァイ)\r
+-	command = { type = chiefofstaff which = 260820 } # 徐向前(シュー・シャンツェン)\r
+-	command = { type = chiefofarmy which = 260877 } # 葉剣英(イェー・ジアンイン)\r
+-	command = { type = chiefofnavy which = 260806 } # 賀竜(ホー・ロン)\r
+-	command = { type = chiefofair which = 260808 } # 葉挺(イェー・ティン)\r
+-	command = { type = dissent value = -5 }\r
+-	ai_chance = 25\r
++	command = { type = headofstate which = 260838 } # 王明(ワン・ミン)\r
++	command = { type = headofgovernment which = 260839 } # 王明(ワン・ミン)\r
++	command = { type = foreignminister which = 260833 } # 瞿秋白(チュー・チウバイ)\r
++	command = { type = armamentminister which = 260883 } # 徐向前(シュー・シャンツェン)\r
++	command = { type = ministerofsecurity which = 260884 } # 任弼時(レン・ビーシー)\r
++	command = { type = ministerofintelligence which = 260892 } # 薄一波(ボー・イーボー)\r
++	command = { type = chiefofstaff which = 260828 } # 張国トウ(ヂャン・グオタオ)\r
++	command = { type = chiefofarmy which = 260888 } # 林彪(リン・ピャオ)\r
++	command = { type = chiefofnavy which = 260872 } # 蕭勁光(シャオ・チンクワン)\r
++	command = { type = chiefofair which = 260874 } # 方子翼(ファン・ツェイ)\r
++	ai_chance = 33\r
+ 	}\r
+ \r
+-	action = { # 李先念を指名\r
++	action = { # 陳独秀が書記長に選出される\r
+ 	name = "ACTIONNAME6959301B"\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
+-	command = { type = set_domestic which = political_left value = 7 }\r
+-	command = { type = set_domestic which = freedom value = 2 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 260894 } # 李先念(リー・シエンニエン)\r
+-	command = { type = headofgovernment which = 260899 } # 彭徳懐(ポン・デウアイ)\r
+-	command = { type = foreignminister which = 260865 } # 王稼祥(ワン・チアシアン)\r
+-	command = { type = armamentminister which = 260866 } # 彭徳懐(ポン・デウアイ)\r
+-	command = { type = ministerofsecurity which = 260862 } # 王稼祥(ワン・チアシアン)\r
+-	command = { type = ministerofintelligence which = 260822 } # 彭真(ポン・ヂェン)\r
+-	command = { type = chiefofstaff which = 260900 } # 彭徳懐(ポン・デウアイ)\r
+-	command = { type = chiefofarmy which = 260895 } # 李先念(リー・シエンニエン)\r
+-	command = { type = chiefofnavy which = 260896 } # 蒋先雲(ジャン・シエンユン)\r
+-	command = { type = chiefofair which = 260874 } # 方子翼(ファン・ツェイ)\r
++	command = { type = name where = CHC which = "中華共和国" }\r
++	command = { type = flag_ext where = CHC which = "_3" }\r
+ 	command = { type = dissent value = 5 }\r
+-	ai_chance = 25\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 7 }\r
++	command = { type = headofstate which = 260800 } # 陳独秀(チェン・ドゥーシウ)\r
++	command = { type = headofgovernment which = 261002 } # 李大ショウ(リー・ダーヂャオ)\r
++	command = { type = foreignminister which = 261009 } # 向忠発(シャン・ヂョンファー)\r
++	command = { type = armamentminister which = 261005 } # 王尽美(ワン・ジンメイ)\r
++	command = { type = ministerofsecurity which = 260817 } # 林伯渠(リン・ボーチュー)\r
++	command = { type = ministerofintelligence which = 260819 } # 謝覚哉(シー・チューツァイ)\r
++	command = { type = chiefofstaff which = 260820 } # 徐向前(シュー・シャンツェン)\r
++	command = { type = chiefofarmy which = 260877 } # 葉剣英(イェー・ジアンイン)\r
++	command = { type = chiefofnavy which = 260806 } # 賀竜(ホー・ロン)\r
++	command = { type = chiefofair which = 260808 } # 葉挺(イェー・ティン)\r
++	ai_chance = 34\r
+ 	}\r
+ \r
+-	action = { # 王明を指名\r
++	action = { # 大同党が評議会で多数派となる\r
+ 	name = "ACTIONNAME6959301C"\r
+-	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = name where = CHC which = "中華大同国" }\r
++	command = { type = flag_ext where = CHC which = "_Dai" }\r
++	command = { type = dissent value = 5 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 9 }\r
+-	command = { type = set_domestic which = freedom value = 3 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 260838 } # 王明(ワン・ミン)\r
+-	command = { type = headofgovernment which = 260839 } # 王明(ワン・ミン)\r
+-	command = { type = foreignminister which = 260865 } # 王稼祥(ワン・チアシアン)\r
+-	command = { type = armamentminister which = 260883 } # 高崗(ガオ・ガン)\r
+-	command = { type = ministerofsecurity which = 260889 } # 銭瑛(チェン・イン)\r
+-	command = { type = ministerofintelligence which = 260892 } # 薄一波(ボー・イーボー)\r
+-	command = { type = chiefofstaff which = 260805 } # 賀竜(ホー・ロン)\r
+-	command = { type = chiefofarmy which = 260897 } # 陳剛(チェン・ガン)\r
++	command = { type = headofstate which = 261013 } # 姚作賓(ヤオ・ズォビン)\r
++	command = { type = headofgovernment which = 261015 } # 黄介民(フゥァン・ジェミン)\r
++	command = { type = foreignminister which = 261016 } # 黄介民(フゥァン・ジェミン)\r
++	command = { type = armamentminister which = 261017 } # 許德コウ(シュ・デェアハン)\r
++	command = { type = ministerofsecurity which = 261014 } # 姚作賓(ヤオ・ズォビン)\r
++	command = { type = ministerofintelligence which = 261018 } # 許德コウ(シュ・デェアハン)\r
++	command = { type = chiefofstaff which = 260876 } # 葉剣英(イェー・ジアンイン)\r
++	command = { type = chiefofarmy which = 260807 } # 葉挺(イェー・ティン)\r
+ 	command = { type = chiefofnavy which = 260806 } # 賀竜(ホー・ロン)\r
+-	command = { type = chiefofair which = 260874 } # 方子翼(ファン・ツェイ)\r
+-	command = { type = dissent value = 5 }\r
+-	ai_chance = 50\r
++	command = { type = chiefofair which = 260808 } # 葉挺(イェー・ティン)\r
++	ai_chance = 33\r
+ 	}\r
+ }\r
+ \r
+@@ -12623,6 +12665,7 @@ event = {
+ 	country = CHC\r
+ \r
+ 	trigger = {\r
++	event = 6959301 # 中央評議会の開催\r
+ 	random = 15\r
+ 	}\r
+ \r
+@@ -12811,6 +12854,347 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  中独合作（DDR）\r
++# ドイツで共産党政権が誕生すると、それまで協力関係にあった中華民国との関係は自然消滅し、代わって中国共産党との軍事的・経済的協力関係が急速に深まった。\r
++# 第一次世界大戦で敗戦したドイツは、軍需資源の確保を求め、特に中国で産出されるタングステンとアンチモンを重視しており、\r
++# 中国共産党も革命の成就のための近代化と工業化を進めるためにドイツの支援を求めていたことから思惑が一致し、両国の蜜月関係が築かれたのである。\r
++# ドイツの援助は、人材育成と組織整備だけでなく、軍需物資提供に及び、ドイツの最新鋭兵器が多く提供された。\r
++# またドイツ会社が建設した多くの工場で小銃や装甲車、野砲等の近代戦に必要な兵器が生産され、人民軍は大きく近代化を進めることになる。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959306\r
++	random = no\r
++	country = DDR\r
++\r
++	trigger = {\r
++	exists = DDR\r
++	exists = CHC\r
++	atwar = no\r
++	random = 20\r
++	}\r
++\r
++	name = "EVT_6959306_NAME"\r
++	desc = "EVT_6959306_DESC"\r
++	style = 2\r
++	picture = "ccip_wjw"\r
++\r
++	date = { day = 0 month = 6 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = industrial_modifier which = total value = 2 }\r
++	command = { type = relation which = CHC value = 100 }\r
++	command = { type = relation which = CHI value = -150 }\r
++	command = { type = relation which = UCH value = -50 }\r
++	command = { type = relation which = U74 value = -50 }\r
++	command = { type = relation which = JAP value = -50 }\r
++	command = { type = trade which = DDR where = CHC supplies = -2 money = 0.75 value = 1 }\r
++	command = { type = trade which = DDR where = CHC supplies = -2 money = 0.75 value = 1 }\r
++	command = { type = trade which = DDR where = CHC supplies = -3.5 rare_materials = 10 value = 1 }\r
++	command = { type = trade which = DDR where = CHC supplies = -3.5 rare_materials = 10 value = 1 }\r
++	command = { type = event which = 6959307 where = CHC when = 0 }\r
++	command = { type = sleepevent which = 6959208 }\r
++	command = { type = sleepevent which = 6959209 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  中独合作（CHC）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959307\r
++	random = no\r
++	country = CHI\r
++\r
++	name = "EVT_6959306_NAME"\r
++	desc = "EVT_6959306_DESC"\r
++	style = 2\r
++	picture = "ccip_wjw"\r
++\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = industrial_modifier which = total value = 5 }\r
++        # 軍団\r
++	command = { type = add_division which = "徳国戦闘航空師" value = interceptor when = 6 }\r
++	command = { type = add_division which = "徳国戦闘航空師" value = interceptor when = 6 }\r
++	command = { type = add_division which = "徳国爆撃航空師" value = tactical_bomber when = 4 }\r
++	command = { type = add_division which = "徳国爆撃航空師" value = tactical_bomber when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = add_division value = militia when = 4 }\r
++	command = { type = manpowerpool value = 100 }\r
++        # 軍備\r
++        command = { type = build_cost which = land when = on_upgrade where = relative value = -5 }\r
++	# 希少資源\r
++        command = { type = add_prov_resource which = rare_materials where = 1354 value = 3 } # カン州（ガンヂョウ）\r
++        command = { type = add_prov_resource which = rare_materials where = 1355 value = 3 } # 吉安（ジーアン）\r
++        command = { type = add_prov_resource which = metal where = 1358 value = 3 } # 福州（フーヂョウ）\r
++        command = { type = add_prov_resource which = metal where = 1360 value = 3 } # 廈門（シャーメン）\r
++	# 工場\r
++        command = { type = construct which = ic where = 1313 value = 2 } # 沙市（シャーシー）\r
++        command = { type = construct which = ic where = 1317 value = 2 } # 武漢（ウーハン）\r
++        command = { type = construct which = ic where = 1318 value = 2 } # 黄石（ファンシー）\r
++	# インフラ\r
++        command = { type = construct which = infrastructure where = 1313 value = 10 } # 湘北省\r
++        command = { type = construct which = infrastructure where = 1314 value = 10 }\r
++        command = { type = construct which = infrastructure where = 1315 value = 10 }\r
++        command = { type = construct which = infrastructure where = 1316 value = 10 }\r
++        command = { type = construct which = infrastructure where = 1317 value = 10 }\r
++        command = { type = construct which = infrastructure where = 1318 value = 10 }\r
++	# 青写真\r
++	command = { type = gain_tech which = 1070 } # 1921年型歩兵師団\r
++	command = { type = gain_tech which = 1080 } # 1926年型歩兵師団\r
++	command = { type = gain_tech which = 1090 } # 1931年型歩兵師団\r
++	command = { type = gain_tech which = 1340 } # 1921年型騎兵師団\r
++	command = { type = gain_tech which = 1350 } # 1924年型騎兵師団\r
++	command = { type = gain_tech which = 1360 } # 1928年型騎兵師団\r
++	command = { type = gain_tech which = 1370 } # 1932年型騎兵師団\r
++	command = { type = gain_tech which = 4010 } # 1924年型迎撃機\r
++	command = { type = gain_tech which = 4020 } # 1930年型迎撃機\r
++	command = { type = gain_tech which = 4330 } # 1926年型戦闘機\r
++	command = { type = gain_tech which = 4340 } # 1932年型戦闘機\r
++	command = { type = gain_tech which = 4120 } # 1924年型戦術爆\r
++	command = { type = gain_tech which = 4130 } # 1932年型戦術爆\r
++	command = { type = gain_tech which = 5070 } # 1915年型生産\r
++	command = { type = gain_tech which = 5050 } # 1920年型生産\r
++	command = { type = gain_tech which = 5830 } # 1925年型生産\r
++	command = { type = gain_tech which = 5060 } # 1930年型生産\r
++	command = { type = gain_tech which = 5080 } # 1910年型建設\r
++	command = { type = gain_tech which = 5090 } # 1930年型建設\r
++	command = { type = gain_tech which = 5310 } # 人口統計調査\r
++	command = { type = gain_tech which = 54010 } # 自動給紙作表機\r
++	command = { type = gain_tech which = 54020 } # ｱﾅﾛｸﾞ式火器管制\r
++	command = { type = gain_tech which = 54030 } # 会計処理機械\r
++	command = { type = gain_tech which = 5326 } # テレプリンタ\r
++	command = { type = gain_tech which = 5327 } # 初期型暗号解読\r
++	command = { type = gain_tech which = 5600 } # 初期型抗生物質\r
++	command = { type = gain_tech which = 5610 } # 輸血\r
++	command = { type = gain_tech which = 5700 } # 1910年型農業\r
++	command = { type = gain_tech which = 5710 } # 1915年型農業.\r
++	command = { type = gain_tech which = 5010 } # 1922年型農業\r
++	command = { type = gain_tech which = 5020 } # 1928年型農業\r
++	command = { type = gain_tech which = 5470 } # 原爆開発チーム\r
++	command = { type = gain_tech which = 5480 } # 原爆開発研究所\r
++	command = { type = gain_tech which = 5490 } # 核開発チーム\r
++	command = { type = gain_tech which = 5500 } # 同位元素分離施設\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  軍閥における共産党の蜂起（CHC）\r
++# ドイツで共産党政権が誕生すると、それまで協力関係にあった中華民国との関係は自然消滅し、代わって中国共産党との軍事的・経済的協力関係が急速に深まった。\r
++# ドイツの支援を受け取った中国共産党は急速に勢力を回復するばかりか、各軍閥における影響力を大きく拡大させた。\r
++# 今なら共産党シンパを味方につけることで、軍閥を取り込むことができるかもしれない。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959308\r
++	random = no\r
++	country = CHC\r
++\r
++	decision = {\r
++	event = 6959307 # 中独合作（CHC）\r
++	NOT = { ispuppet = yes }\r
++	exists = DDR\r
++	OR = {\r
++	exists = CSX\r
++	exists = CGX\r
++	exists = CYN\r
++	exists = CXB\r
++	}\r
++	atwar = no\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 6959307 # 中独合作（CHC）\r
++	atwar = no\r
++	NOT = { dissent = 30 }\r
++	}\r
++\r
++	trigger = {\r
++	event = 6959307 # 中独合作（CHC）\r
++	NOT = { ispuppet = yes }\r
++	exists = DDR\r
++	OR = {\r
++	exists = CSX\r
++	exists = CGX\r
++	exists = CYN\r
++	exists = CXB\r
++	}\r
++	atwar = no\r
++	random = 20\r
++	}\r
++\r
++	name = "EVT_6959308_NAME"\r
++	desc = "EVT_6959308_DESC"\r
++	style = 2\r
++	picture = "Chinese_Fighting"\r
++	decision_picture = "decision_ccip_21d"\r
++\r
++	date = { day = 0 month = 1 year = 1934 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 蜂起させるのだ\r
++	name = "ACTIONNAME6959308A"\r
++	command = { type = relation which = CHI value = -150 }\r
++	command = { type = relation which = UCH value = -50 }\r
++	command = { type = relation which = U74 value = -50 }\r
++	command = { type = relation which = CSX value = -50 }\r
++	command = { type = relation which = CGX value = -50 }\r
++	command = { type = relation which = CYN value = -50 }\r
++	command = { type = relation which = CXB value = -50 }\r
++	command = { type = event which = 6959309 where = CSX when = 5 }\r
++	command = { type = event which = 6959309 where = CGX when = 10 }\r
++	command = { type = event which = 6959309 where = CYN when = 15 }\r
++	command = { type = event which = 6959309 where = CXB when = 20 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  軍閥における共産党の蜂起（CSX CGX CYN CXB）\r
++# ドイツで共産党政権が誕生すると、それまで協力関係にあった中華民国との関係は自然消滅し、代わって中国共産党との軍事的・経済的協力関係が急速に深まった。\r
++# ドイツの支援を受け取った中国共産党は急速に勢力を回復するばかりか、各軍閥における影響力を大きく拡大させた。\r
++# そしてついに共産党シンパが、支配領域内で蜂起した！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959309\r
++	random = no\r
++	TAG = { CSX CGX CYN CXB }\r
++	persistent = yes\r
++\r
++	name = "EVT_6959309_NAME"\r
++	desc = "EVT_6959309_DESC"\r
++	style = 2\r
++	picture = "Chinese_Fighting"\r
++\r
++	action = { # 共産党に加わろう（ゲーム終了）\r
++	name = "ACTIONNAME6959309A"\r
++	trigger = {\r
++	NOT = {\r
++	country = CSX\r
++	country = CYN\r
++	country = CXB\r
++	}\r
++	}\r
++	command = { type = leave_alliance when = 1 }\r
++	command = { type = end_puppet }\r
++	command = { trigger = { country = CSX } type = event which = 6959310 where = CHC when = 0 }\r
++	command = { trigger = { country = CGX } type = event which = 6959311 where = CHC when = 0 }\r
++	command = { trigger = { country = CYN } type = event which = 6959312 where = CHC when = 0 }\r
++	command = { trigger = { country = CXB } type = event which = 6959313 where = CHC when = 0 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 共産党員を粛清せよ\r
++	name = "ACTIONNAME6959309B"\r
++	command = { type = relation which = CHC value = -50 }\r
++	command = { trigger = { country = CSX } type = sleepevent which = 6959310 }\r
++	command = { trigger = { country = CGX } type = sleepevent which = 6959311 }\r
++	command = { trigger = { country = CYN } type = sleepevent which = 6959312 }\r
++	command = { trigger = { country = CXB } type = sleepevent which = 6959313 }\r
++	ai_chance = 50\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  軍閥における共産党の蜂起 ― 山西軍閥\r
++# 軍閥における共産党員の蜂起は成功し、共産党への加入を求めている！\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959310\r
++	random = no\r
++	country = CHC\r
++\r
++	name = "EVT_6959310_NAME"\r
++	desc = "EVT_6959310_DESC"\r
++	style = 2\r
++	picture = "Chinese_Fighting"\r
++\r
++	action = { # 万歳！\r
++	name = "ACTION_NAME_HURRAH"\r
++	command = { type = inherit which = CSX value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  軍閥における共産党の蜂起 ― 両広軍閥\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959311\r
++	random = no\r
++	country = CHC\r
++\r
++	name = "EVT_6959311_NAME"\r
++	desc = "EVT_6959311_DESC"\r
++	style = 2\r
++	picture = "Chinese_Fighting"\r
++\r
++	action = { # 万歳！\r
++	name = "ACTION_NAME_HURRAH"\r
++	command = { type = inherit which = CGX value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  軍閥における共産党の蜂起 ― 雲南軍閥\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959312\r
++	random = no\r
++	country = CHC\r
++\r
++	name = "EVT_6959312_NAME"\r
++	desc = "EVT_6959312_DESC"\r
++	style = 2\r
++	picture = "Chinese_Fighting"\r
++\r
++	action = { # 万歳！\r
++	name = "ACTION_NAME_HURRAH"\r
++	command = { type = inherit which = CYN value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  軍閥における共産党の蜂起 ― 西北三馬\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959313\r
++	random = no\r
++	country = CHC\r
++\r
++	name = "EVT_6959313_NAME"\r
++	desc = "EVT_6959313_DESC"\r
++	style = 2\r
++	picture = "Chinese_Fighting"\r
++\r
++	action = { # 万歳！\r
++	name = "ACTION_NAME_HURRAH"\r
++	command = { type = inherit which = CXB value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  安徽派（U74）イベント\r
+ #########################################################################\r
+@@ -14032,7 +14416,7 @@ event = {
+ 	command = { type = event which = 6959508 where = UCH when = 0 }\r
+ 	command = { type = sleepevent which = 6959509 } # 北京政府再建会議 ― 安徽派主導の北京政府\r
+ 	command = { type = sleepevent which = 6959510 } # 北京政府再建会議 ― 会談の失敗\r
+-	ai_chance = 35\r
++	ai_chance = 40\r
+ 	}\r
+ \r
+ 	action = { # 安徽派が北京政府で主導権を握る\r
+@@ -14044,7 +14428,7 @@ event = {
+ 	command = { type = event which = 6959509 where = U74 when = 0 }\r
+ 	command = { type = sleepevent which = 6959508 } # 北京政府再建会議 ― 直隷派主導の北京政府\r
+ 	command = { type = sleepevent which = 6959510 } # 北京政府再建会議 ― 会談の失敗\r
+-	ai_chance = 35\r
++	ai_chance = 40\r
+ 	}\r
+ \r
+ 	action = { # 直隷派が北京政府で主導権を握る\r
+@@ -14055,7 +14439,7 @@ event = {
+ 	command = { type = event which = 6959508 where = UCH when = 0 }\r
+ 	command = { type = sleepevent which = 6959509 } # 北京政府再建会議 ― 安徽派主導の北京政府\r
+ 	command = { type = sleepevent which = 6959510 } # 北京政府再建会議 ― 会談の失敗\r
+-	ai_chance = 35\r
++	ai_chance = 80\r
+ 	}\r
+ \r
+ 	action = { # 安徽派が北京政府で主導権を握る\r
+@@ -14066,7 +14450,7 @@ event = {
+ 	command = { type = event which = 6959509 where = U74 when = 0 }\r
+ 	command = { type = sleepevent which = 6959508 } # 北京政府再建会議 ― 直隷派主導の北京政府\r
+ 	command = { type = sleepevent which = 6959510 } # 北京政府再建会議 ― 会談の失敗\r
+-	ai_chance = 65\r
++	ai_chance = 80\r
+ 	}\r
+ \r
+ 	action = { # 会談は決裂した\r
+@@ -14080,7 +14464,7 @@ event = {
+ 	command = { type = event which = 6959510 where = USA when = 0 }\r
+ 	command = { type = sleepevent which = 6959508 } # 北京政府再建会議 ― 直隷派主導の北京政府\r
+ 	command = { type = sleepevent which = 6959509 } # 北京政府再建会議 ― 安徽派主導の北京政府\r
+-	ai_chance = 35\r
++	ai_chance = 20\r
+ 	}\r
+ }\r
+ \r

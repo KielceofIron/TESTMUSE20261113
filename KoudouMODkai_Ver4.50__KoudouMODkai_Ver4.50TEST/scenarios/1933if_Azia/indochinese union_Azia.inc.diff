@@ -1,0 +1,339 @@
+--- A/scenarios/1933if_Azia/indochinese union_Azia.inc [cp932]
++++ B/scenarios/1933if_Azia/indochinese union_Azia.inc [cp932]
+@@ -1,140 +1,202 @@
++##############################\r
++# Country definition for U03 #\r
++##############################\r
+ \r
+-############################## \r
+-# Country definition for U03 INDOCHINESUNION # \r
+-############################## \r
++#####################\r
++# Country main data #\r
++#####################\r
+ \r
+-##################### \r
+-# Country main data # \r
+-##################### \r
+- country = \r
+- {  tag                    = U03 \r
+-	ai = "u03_1936.ai"\r
+-	ai_settings	= { flags = { MOB1 = yes MOB2 = yes } }\r
+-	dissent = 20\r
+-	capital                = 1395 \r
+-	puppet                 = FRA \r
+-	# Resource Reserves \r
+-	energy                 = 420\r
+-	metal                  = 210\r
+-	rare_materials         = 105\r
+-	oil                    = 500 \r
+-	supplies               = 2000 \r
+-	money                  = 50 \r
+-	manpower               = 26 \r
+-	transports             = 100 \r
+-	escorts                = 10 \r
+-      \r
+-   diplomacy = \r
+-   {   \r
+-   relation = {  tag = FRA value = 50 access = yes  }  \r
+-    } \r
+-   SpyInfo                = {  country = "U03" NumberOfSpies = 3  } \r
+-  \r
+-    \r
+-   nationalprovinces      = { 1391 1392 1393 1394 1395 1396 1397 1398 1399 1400 1401 1402 1403 1404 1405 2770 2798 2823 } \r
+-   ownedprovinces         = { 1391 1392 1393 1394 1395 1396 1397 1398 1399 1400 1401 1402 1403 1404 1405 2770 2798 2823 }\r
+-   controlledprovinces    = { 1391 1392 1393 1394 1395 1396 1397 1398 1399 1400 1401 1402 1403 1404 1405 2770 2798 2823 }\r
+-   \r
+-  # FRA 1936 techs \r
+-   # ###################### \r
+-   techapps               = {  \r
+- #Great War Infantry Division  \r
+- 1010  1020 1030 1040 1050 1060   \r
+- #Early Mountain Division \r
+- 1160  1170 1180 1190 1200 1210 1220 1230 1240  \r
+- #Interbellum 1930 Supply \r
+- 1910 1920 1930 1940 1950 1960 \r
++country = {\r
++  tag                = U03\r
++  puppet             = FRA\r
++  ai                 = "IFazia/U03_if_Azia.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes } }\r
++  capital            = 1395 # ハノイ\r
++  dissent            = 20\r
++  manpower           = 26\r
++  # Resource Reserves\r
++  energy         = 420\r
++  metal          = 210\r
++  rare_materials = 105\r
++  oil            = 500\r
++  supplies       = 2000\r
++  money          = 50\r
++  transports     = 100\r
++  escorts        = 10\r
+ \r
+- #1930 Cavalry Division  \r
+- 13060 13070 13080 1310 1320 1330 1340 1350 1360 1370  \r
+- #Basic Armoured Car  \r
+- 2860 2870 2880 2020  \r
+- #Great War Heavy Field Artillery \r
+- 2290 2300 2310 \r
+-#Early Static Anti-Air Artillery \r
+-2800 2450\r
+-#SW Tank \r
+-7600 7610\r
+-#Great War Destroyer \r
+-3010 3020 3030 3040\r
+-#Interwar Light Cruiser \r
+-3110 3120 3130 3140\r
+-#Early Heavy Cruiser \r
+-3210 3220 3230\r
+-#Interwar Fighter  \r
+-4500 4510 4520 4530 4540 4550 4010 \r
+-#Interwar Bomber \r
+-4600 4610 4620 4630 4120\r
+-#Improved Construction Engineering\r
+-5800 5080  \r
+-#Engineers\r
+-1830 1840 \r
++  diplomacy = {\r
++    relation = { tag = FRA value = 50 access = yes }\r
++  }\r
++  SpyInfo                = { country = "U03" NumberOfSpies = 3 }\r
++\r
++  nationalprovinces      = { 1391 1392 1393 1394 1395 1396 1397 1398 1399 1400 1401 1402 1403 1404 1405 2770 2798 2823 }\r
++  ownedprovinces         = { 1391 1392 1393 1394 1395 1396 1397 1398 1399 1400 1401 1402 1403 1404 1405 2770 2798 2823 }\r
++  controlledprovinces    = { 1391 1392 1393 1394 1395 1396 1397 1398 1399 1400 1401 1402 1403 1404 1405 2770 2798 2823 }\r
+ \r
+-#Torpedo & ASW 18\r
+-3720 3730 3736 3740 3750 3900\r
+-#Troopships\r
+-3810\r
+-#Medicine\r
+-5600 5610\r
+-# Great War Land Doctrines (entente)\r
+-6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-#Naval Doctrines\r
+-8010 8020 8050 \r
+-#Air Doctrines - ww2 techs\r
+-27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010\r
+-  } \r
+-inventions = { 3000027 }    \r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 4 \r
+-     political_left    = 3 \r
+-     free_market       = 8 \r
+-     freedom           = 10 \r
+-     professional_army = 2 \r
+-     defense_lobby     = 7 \r
+-     interventionism   = 5 \r
+-    } \r
++  techapps               = { 1010 1020 1030 1040 1050 1060 1160 1170 1180 1190 1200 1210 1220 1230 1910 1920 1930 1940 1950 1960 13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 2860 2870 2880 2020 2290 2300 2310 2800 2450 7600 7610 3010 3020 3030 3040 3110 3120 3130 3140 3210 3220 3230 4500 4510 4520 4530 4540 4550 4010 4600 4610 4620 4630 4120 5800 5080 1830 1840 3720 3730 3736 3740 3750 3900 3810 5600 5610 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 8010 8020 8050 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 1070 1080 1850 1970 2900 2910 2920 21180 2810 2820 2620 2010 2630 2640 3410 3420 3430 3440 3450 3456 3460 3310 3610 3620 3630 3640 3050 3240 4300 4320 4310 4330 4700 4710 4740 4750 4770 4760 4290 5810 5820 }\r
++  inventions             = { 3000027 }\r
++\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 4\r
++    political_left    = 3\r
++    freedom           = 10\r
++    free_market       = 8\r
++    professional_army = 2\r
++    defense_lobby     = 7\r
++    interventionism   = 5\r
++  }\r
++\r
++  landunit = {\r
++    id       = { type = 13510 id = 1 }\r
++    name     = "トンキン師団"\r
++    location = 1395\r
++    division = {\r
++      id             = { type = 13510 id = 2 }\r
++      name           = "トンキン師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = engineer\r
++      brigade_model  = 1\r
++      strength       = 100\r
++      experience     = 15\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13510 id = 3 }\r
++    name     = "コーチシナ=カンボジア師団"\r
++    location = 1399\r
++    division = {\r
++      id             = { type = 13510 id = 4 }\r
++      name           = "コーチシナ=カンボジア師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = artillery\r
++      brigade_model  = 3\r
++      strength       = 100\r
++      experience     = 15\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13510 id = 5 }\r
++    name     = "アンナン師団"\r
++    location = 1397\r
++    division = {\r
++      id             = { type = 13510 id = 6 }\r
++      name           = "アンナン師団"\r
++      type           = infantry\r
++      model          = 6\r
++      extra          = armored_car\r
++      brigade_model  = 2\r
++      strength       = 100\r
++      experience     = 15\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13510 id = 7 }\r
++    name     = "サイゴン防衛隊"\r
++    location = 1399\r
++    division = {\r
++      id             = { type = 13510 id = 8 }\r
++      name           = "第1インドシナ防衛隊"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 50\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 13510 id = 9 }\r
++      name           = "第2インドシナ防衛隊"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 50\r
++      experience     = 10\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13510 id = 10 }\r
++    name     = "ラオス防衛隊"\r
++    location = 1404\r
++    division = {\r
++      id             = { type = 13510 id = 11 }\r
++      name           = "第3インドシナ防衛隊"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 50\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 13510 id = 12 }\r
++      name           = "第4インドシナ防衛隊"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 50\r
++      experience     = 10\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13510 id = 13 }\r
++    name     = "ハイフォン防衛隊"\r
++    location = 1392\r
++    division = {\r
++      id             = { type = 13510 id = 14 }\r
++      name           = "第5インドシナ防衛隊"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 50\r
++      experience     = 10\r
++    }\r
++    division = {\r
++      id             = { type = 13510 id = 15 }\r
++      name           = "第6インドシナ防衛隊"\r
++      type           = militia\r
++      model          = 3\r
++      strength       = 50\r
++      experience     = 10\r
++    }\r
++  }\r
++\r
++  navalunit = {\r
++    id       = { type = 13510 id = 201 }\r
++    name     = "インドシナ艦隊"\r
++    location = 1395\r
++    base     = 1395\r
++    division = {\r
++      id             = { type = 13510 id = 202 }\r
++      name           = "ラモット・ピケ"\r
++      type           = light_cruiser\r
++      model          = 3\r
++    }\r
++    division = {\r
++      id             = { type = 13510 id = 203 }\r
++      name           = "第1駆逐隊"\r
++      type           = destroyer\r
++      model          = 1\r
++    }\r
++    division = {\r
++      id             = { type = 13510 id = 204 }\r
++      name           = "第2駆逐隊"\r
++      type           = destroyer\r
++      model          = 1\r
++    }\r
++  }\r
+ \r
+-  # ################# \r
+-   # ### OOB #### \r
+-   # ################# \r
+-     \r
+-    landunit = \r
+-   {  id       = {  type = 13500 id = 2001  } \r
+-     name     = "フランス領インドシナ駐屯軍" \r
+-     location = 1395 \r
+-     Division = \r
+-     {  id       = {  type = 13500 id = 2002  } \r
+-       name     = "トンキン師団" \r
+-	   model    = 6\r
+-       strength = 100 \r
+-       type     = infantry \r
+-       extra    = engineer \r
+-	   brigade_model = 1\r
+-      } \r
+-     } \r
+-    landunit = \r
+-   {  id       = {  type = 13500 id = 2003  } \r
+-     name     = "コーチシナ=カンボジア師団" \r
+-     location = 1399 \r
+-    Division = \r
+-     {  id       = {  type = 13500 id = 2004  } \r
+-       name     = "コーチシナ=カンボジア師団" \r
+-       strength = 100 \r
+-       type     = garrison\r
+-	   model    = 3\r
+-      } \r
+-  } \r
+-    landunit = \r
+-   {  id       = {  type = 13500 id = 2005  } \r
+-     name     = "アンナン分遣隊" \r
+-     location = 1397 \r
+-     Division = \r
+-     {  id       = {  type = 13500 id = 2006  } \r
+-       name     = "アンナン分遣隊" \r
+-       strength = 100 \r
+-       type     = militia\r
+-	   model    = 4\r
+-      }  \r
+-    } \r
++  airunit = { \r
++    id       = { type = 13510 id = 301 }\r
++    name     = "インドシナ航空隊"\r
++    location = 1395\r
++    base     = 1395\r
++    division = {\r
++      id             = { type = 13510 id = 302 }\r
++      name           = "第1戦闘航空隊"\r
++      type           = multi_role\r
++      model          = 3\r
++    }\r
++    division = {\r
++      id             = { type = 13510 id = 303 }\r
++      name           = "第1爆撃航空隊"\r
++      type           = tactical_bomber\r
++      model          = 4\r
++    }\r
+   }\r
++}\r

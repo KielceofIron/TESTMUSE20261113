@@ -1,0 +1,303 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_generic_decisions.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_generic_decisions.txt [utf-8]
+@@ -30,6 +30,9 @@
+ # ロシア\r
+ #id = 9991501 攻勢チット（反撃戦）\r
+ #id = 9991502 攻勢チット期間の終了（反撃戦）\r
++# ドイツ（DDR）\r
++#id = 9991601 攻勢チット（対フランス戦）\r
++#id = 9991602 攻勢チット期間の終了（対フランス戦）\r
+ #########################################################################\r
+ #  日本\r
+ #########################################################################\r
+@@ -298,19 +301,6 @@ event = {
+ 	command = { type = sce_frequency value = 0.3 }\r
+ 	command = { type = attrition_mod value = 2 }\r
+ 	command = { type = trickleback_mod value = 5 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = local_setflag which = 55468_attack }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = plain_attack which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = plain_defense which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = plain_move which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = forest_attack which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = forest_defense which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = forest_move which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = hill_attack which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = hill_defense which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = hill_move which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = mountain_attack which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = mountain_defense which = land value = 50 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = mountain_move which = land value = 50 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { trigger = { ai = no } type = event which = 9991102 where = -1 when = 120 }\r
+ 	command = { trigger = { ai = yes } type = event which = 9991102 where = -1 when = 180 }\r
+@@ -347,18 +337,6 @@ event = {
+ 	command = { type = sce_frequency value = -0.3 }\r
+ 	command = { type = attrition_mod value = -2 }\r
+ 	command = { type = trickleback_mod value = -5 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = plain_attack which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = plain_defense which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = plain_move which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = forest_attack which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = forest_defense which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = forest_move which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = hill_attack which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = hill_defense which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = hill_move which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = mountain_attack which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = mountain_defense which = land value = -50 }\r
+-	command = { trigger = { local_flag = 55468_attack } type = mountain_move which = land value = -50 }\r
+ 	}\r
+ }\r
+ \r
+@@ -412,12 +390,9 @@ event = {
+ \r
+ 	action = {\r
+ 	name = "GrandOffensiveText"\r
+-	command = { trigger = { ai = no } type = surprise which = land value = 10 }\r
+-	command = { trigger = { ai = no } type = surprise which = air value = 10 }\r
+-	command = { trigger = { ai = no } type = surprise which = naval value = 10 }\r
+-	command = { trigger = { ai = yes } type = surprise which = land value = 40 }\r
+-	command = { trigger = { ai = yes } type = surprise which = air value = 40 }\r
+-	command = { trigger = { ai = yes } type = surprise which = naval value = 40 }\r
++	command = { trigger = { ai = yes } type = surprise which = land value = 10 }\r
++	command = { trigger = { ai = yes } type = surprise which = air value = 10 }\r
++	command = { trigger = { ai = yes } type = surprise which = naval value = 10 }\r
+ 	command = { type = max_organization which = land value = 10 }\r
+ 	command = { type = morale which = land value = 10 }\r
+ 	command = { type = morale which = naval value = 10 }\r
+@@ -464,12 +439,9 @@ event = {
+ \r
+ 	action = {\r
+ 	name = ACTION_NAME_OK\r
+-	command = { trigger = { ai = no } type = surprise which = land value = -10 }\r
+-	command = { trigger = { ai = no } type = surprise which = air value = -10 }\r
+-	command = { trigger = { ai = no } type = surprise which = naval value = -10 }\r
+-	command = { trigger = { ai = yes } type = surprise which = land value = -40 }\r
+-	command = { trigger = { ai = yes } type = surprise which = air value = -40 }\r
+-	command = { trigger = { ai = yes } type = surprise which = naval value = -40 }\r
++	command = { trigger = { ai = yes } type = surprise which = land value = -10 }\r
++	command = { trigger = { ai = yes } type = surprise which = air value = -10 }\r
++	command = { trigger = { ai = yes } type = surprise which = naval value = -10 }\r
+ 	command = { type = max_organization which = land value = -10 }\r
+ 	command = { type = morale which = land value = -10 }\r
+ 	command = { type = morale which = naval value = -10 }\r
+@@ -545,46 +517,6 @@ event = {
+ 	command = { type = sce_frequency value = 0.3 }\r
+ 	command = { type = attrition_mod value = 2 }\r
+ 	command = { type = trickleback_mod value = 5 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = local_setflag which = 55468_attack_Allies }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = plain_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = plain_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = plain_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = forest_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = forest_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = forest_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = hill_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = hill_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = hill_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = mountain_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = mountain_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = mountain_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = jungle_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = jungle_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = jungle_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = clear_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = clear_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = clear_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = rain_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = rain_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = rain_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = muddy_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = muddy_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = muddy_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = storm_attack which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = storm_defense which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = storm_move which = land value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = clear_attack which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = clear_defense which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = clear_move which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = rain_attack which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = rain_defense which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = rain_move which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = muddy_attack which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = muddy_defense which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = muddy_move which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = storm_attack which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = storm_defense which = naval value = 30 }\r
+-	command = { trigger = { ai = yes headofstate = 55468 } type = storm_move which = naval value = 30 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { trigger = { ai = no } type = event which = 9991106 where = -1 when = 180 }\r
+ 	command = { trigger = { ai = yes } type = event which = 9991106 where = -1 when = 240 }\r
+@@ -621,45 +553,6 @@ event = {
+ 	command = { type = sce_frequency value = -0.3 }\r
+ 	command = { type = attrition_mod value = -2 }\r
+ 	command = { type = trickleback_mod value = -5 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = plain_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = plain_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = plain_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = forest_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = forest_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = forest_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = hill_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = hill_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = hill_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = mountain_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = mountain_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = mountain_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = jungle_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = jungle_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = jungle_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = clear_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = clear_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = clear_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = rain_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = rain_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = rain_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = muddy_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = muddy_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = muddy_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = storm_attack which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = storm_defense which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = storm_move which = land value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = clear_attack which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = clear_defense which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = clear_move which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = rain_attack which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = rain_defense which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = rain_move which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = muddy_attack which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = muddy_defense which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = muddy_move which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = storm_attack which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = storm_defense which = naval value = -30 }\r
+-	command = { trigger = { local_flag = 55468_attack_Allies } type = storm_move which = naval value = -30 }\r
+ 	}\r
+ }\r
+ #########################################################################\r
+@@ -1229,4 +1122,125 @@ event = {
+ 	command = { type = snow_move which = land value = -13 }\r
+ 	command = { type = snow_attack which = land value = -13 }\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  ドイツ（DDR）\r
++#########################################################################\r
++#  攻勢チット（対フランス戦）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 9991601\r
++	random = no\r
++	country = DDR\r
++	\r
++	decision = { \r
++	atwar = yes \r
++	}\r
++\r
++	decision_trigger = { \r
++	supplies = 10000\r
++	}\r
++\r
++	trigger = {\r
++	OR = {\r
++	ai = yes\r
++	supplies = 10000\r
++	}\r
++	OR = {\r
++	war = { country = GER country = FRA }\r
++	lost_national = { country = GER value = 5 }\r
++	}\r
++	}\r
++\r
++	name = "GrandOffensiveName"\r
++	desc = "GrandOffensiveDesc" \r
++	style = 2\r
++	picture = "Wehrmacht"\r
++	decision_picture = "decision_grand_offensive"\r
++\r
++	date = { day = 0 month = 0 year = 1914 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	name = "GrandOffensiveText"\r
++	command = { type = max_organization which = land value = 10 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { trigger = { ai = yes } type = morale which = land value = 10 }\r
++	command = { type = morale which = naval value = 10 }\r
++	command = { type = morale which = air value = 10 }\r
++	command = { type = speed which = land value = 2 }\r
++	command = { type = counterattack value = 2 }\r
++	command = { type = assault value = 2 }\r
++	command = { type = ambush value = 2 }\r
++	command = { type = breakthrough value = 2 }\r
++	command = { type = encirclement value = 2 }\r
++	command = { type = hq_supply_eff value = 2 }\r
++	command = { type = sce_frequency value = 0.3 }\r
++	command = { type = attrition_mod value = 2 }\r
++	command = { type = trickleback_mod value = 5 }\r
++	command = { trigger = { ai = yes } type = clear_attack which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = clear_defense which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = clear_move which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = rain_attack which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = rain_defense which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = rain_move which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = muddy_attack which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = muddy_defense which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = muddy_move which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = storm_attack which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = storm_defense which = land value = 60 }\r
++	command = { trigger = { ai = yes } type = storm_move which = land value = 60 }\r
++	command = { trigger = { ai = no } type = supplies value = -10000 }\r
++	command = { trigger = { ai = no } type = event which = 9991602 where = -1 when = 90 }\r
++	command = { trigger = { ai = yes } type = event which = 9991602 where = -1 when = 180 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  攻勢チット期間の終了（対フランス戦）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 9991602\r
++	random = no\r
++	country = DDR\r
++\r
++	name = "GrandOffensiveOverName"\r
++	desc = "GrandOffensiveDesc" \r
++	style = 2\r
++	picture = "Wehrmacht"\r
++\r
++	action = {\r
++	name = ACTION_NAME_OK\r
++	command = { type = max_organization which = land value = -10 }\r
++	command = { type = morale which = land value = -10 }\r
++	command = { trigger = { ai = yes } type = morale which = land value = -10 }\r
++	command = { type = morale which = naval value = -10 }\r
++	command = { type = morale which = air value = -10 }\r
++	command = { type = speed which = land value = -2 }\r
++	command = { type = counterattack value = -2 }\r
++	command = { type = assault value = -2 }\r
++	command = { type = ambush value = -2 }\r
++	command = { type = breakthrough value = -2 }\r
++	command = { type = encirclement value = -2 }\r
++	command = { type = hq_supply_eff value = -2 }\r
++	command = { type = sce_frequency value = -0.3 }\r
++	command = { type = attrition_mod value = -2 }\r
++	command = { type = trickleback_mod value = -5 }\r
++	command = { trigger = { ai = yes } type = clear_attack which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = clear_defense which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = clear_move which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = rain_attack which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = rain_defense which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = rain_move which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = muddy_attack which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = muddy_defense which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = muddy_move which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = storm_attack which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = storm_defense which = land value = -60 }\r
++	command = { trigger = { ai = yes } type = storm_move which = land value = -60 }\r
++	}\r
+ }
+\ No newline at end of file

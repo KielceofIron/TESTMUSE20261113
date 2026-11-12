@@ -1,0 +1,261 @@
+--- A/db/events/AdditionalEvents_if_Japan/AI/if_India_AI_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Japan/AI/if_India_AI_events.txt [utf-8]
+@@ -1,129 +1,129 @@
+-#####################################\r
+-################\r
+-#インド陸軍注力\r
+-#############################################\r
+-event = {\r
+-	id = 4657007\r
+-	random = no \r
+-	tag = { U02 IND }\r
+-	persistent = yes\r
+-	trigger = {\r
+-	ai = yes\r
+-	NOT = { local_flag = IND_CHI }\r
+-	war = { country = CHI }\r
+-	lost_national = { value = 5 }\r
+-	NOT = { lost_national = { value = 20 } }\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1938 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = {\r
+-	command = { trigger = { ai = yes } type = ai which = "IFswitch/IND_CHI.ai" }\r
+-	command = { type = local_setflag which =IND_CHI }\r
+-	command = { type = local_clrflag which =IND_CHI_m }\r
+-	command = { type = local_clrflag which = IND_CHI_1 }\r
+-	}\r
+-}\r
+-\r
+-################\r
+-#インド陸軍注力解除\r
+-#############################################\r
+-event = {\r
+-	id = 4657008\r
+-	random = no \r
+-	tag = { U02 IND }\r
+-	persistent = yes\r
+-	trigger = {\r
+-	ai = yes\r
+-	NOT = { local_flag = IND_CHI_1 }\r
+-	OR = {\r
+-	local_flag = IND_CHI\r
+-	local_flag = IND_CHI_m\r
+-	}\r
+-	OR = {\r
+-	NOT = { war = { country = CHI } }\r
+-	NOT = { lost_national = { value = 5 } }\r
+-	}\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1938 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = {\r
+-	command = { trigger = { ai = yes } type = ai which = "IF/U02_if.ai" }\r
+-	command = { type = local_clrflag which = IND_CHI }\r
+-	command = { type = local_clrflag which = IND_CHI_m }\r
+-	command = { type = local_setflag which = IND_CHI_1 }\r
+-	}\r
+-}\r
+-\r
+-################\r
+-#インド民兵ラッシュ\r
+-#############################################\r
+-event = {\r
+-	id = 4657009\r
+-	random = no \r
+-	tag = { U02 IND }\r
+-	persistent = yes\r
+-	trigger = {\r
+-	ai = yes\r
+-	OR = { \r
+-	NOT = { local_flag = IND_CHI_m }\r
+-	NOT = { event = 4657007 }\r
+-	}\r
+-	war = { country = CHI }\r
+-	lost_national = { value = 20 }\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1938 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = {\r
+-	command = { trigger = { ai = yes } type = ai which = "IFswitch/IND_CHI_m.ai" }\r
+-	command = { type = local_clrflag which =IND_CHI }\r
+-	command = { type = local_setflag which =IND_CHI_m }\r
+-	command = { type = local_clrflag which = IND_CHI_1 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 4657010\r
+-	random = no \r
+-	tag = { ENG }\r
+-	persistent = no\r
+-	trigger = {\r
+-	ai = yes\r
+-	atwar = yes\r
+-	OR = {\r
+-	alliance = { country = IND }\r
+-	alliance = { country = U02 }\r
+-	}\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 15\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = { trigger = { alliance = { country = U02 } }\r
+-	command = { type = trade which = U02 where = ENG supplies = 150 when = 1500 value = 1 }\r
+-	}\r
+-	action_b = { trigger = { alliance = { country = IND } }\r
+-	command = { type = trade which = U02 where = ENG supplies = 150 when = 1500 value = 1 }\r
+-	}\r
+-}\r
++#####################################
++################
++#インド陸軍注力
++#############################################
++event = {
++	id = 4657007
++	random = no 
++	tag = { U02 IND }
++	persistent = yes
++	trigger = {
++	ai = yes
++	NOT = { local_flag = IND_CHI }
++	war = { country = CHI }
++	lost_national = { value = 5 }
++	NOT = { lost_national = { value = 20 } }
++	}
++
++	name = "AI_EVENT"
++	style = 0	
++	
++	date = { day = 0 month = 0 year = 1938 }
++	offset = 15
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action_a = {
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/IND_CHI.ai" }
++	command = { type = local_setflag which =IND_CHI }
++	command = { type = local_clrflag which =IND_CHI_m }
++	command = { type = local_clrflag which = IND_CHI_1 }
++	}
++}
++
++################
++#インド陸軍注力解除
++#############################################
++event = {
++	id = 4657008
++	random = no 
++	tag = { U02 IND }
++	persistent = yes
++	trigger = {
++	ai = yes
++	NOT = { local_flag = IND_CHI_1 }
++	OR = {
++	local_flag = IND_CHI
++	local_flag = IND_CHI_m
++	}
++	OR = {
++	NOT = { war = { country = CHI } }
++	NOT = { lost_national = { value = 5 } }
++	}
++	}
++
++	name = "AI_EVENT"
++	style = 0	
++	
++	date = { day = 0 month = 0 year = 1938 }
++	offset = 15
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action_a = {
++	command = { trigger = { ai = yes } type = ai which = "IF/U02_if.ai" }
++	command = { type = local_clrflag which = IND_CHI }
++	command = { type = local_clrflag which = IND_CHI_m }
++	command = { type = local_setflag which = IND_CHI_1 }
++	}
++}
++
++################
++#インド民兵ラッシュ
++#############################################
++event = {
++	id = 4657009
++	random = no 
++	tag = { U02 IND }
++	persistent = yes
++	trigger = {
++	ai = yes
++	OR = { 
++	NOT = { local_flag = IND_CHI_m }
++	NOT = { event = 4657007 }
++	}
++	war = { country = CHI }
++	lost_national = { value = 20 }
++	}
++
++	name = "AI_EVENT"
++	style = 0	
++	
++	date = { day = 0 month = 0 year = 1938 }
++	offset = 15
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action_a = {
++	command = { trigger = { ai = yes } type = ai which = "IFswitch/IND_CHI_m.ai" }
++	command = { type = local_clrflag which =IND_CHI }
++	command = { type = local_setflag which =IND_CHI_m }
++	command = { type = local_clrflag which = IND_CHI_1 }
++	}
++}
++
++event = {
++	id = 4657010
++	random = no 
++	tag = { ENG }
++	persistent = no
++	trigger = {
++	ai = yes
++	atwar = yes
++	OR = {
++	alliance = { country = IND }
++	alliance = { country = U02 }
++	}
++	}
++
++	name = "AI_EVENT"
++	style = 0	
++	
++	date = { day = 0 month = 0 year = 1930 }
++	offset = 15
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action_a = { trigger = { alliance = { country = U02 } }
++	command = { type = trade which = U02 where = ENG supplies = 150 when = 1500 value = 1 }
++	}
++	action_b = { trigger = { alliance = { country = IND } }
++	command = { type = trade which = U02 where = ENG supplies = 150 when = 1500 value = 1 }
++	}
++}

@@ -1,0 +1,44 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_India_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_India_events.txt [cp932]
+@@ -60,7 +60,7 @@ event = {
+ 	country = U02\r
+ \r
+ 	trigger = {\r
+-	event = 4656104 # オルタナティブ・プラン ―  アジア独立\r
++	#event = 4656104 # オルタナティブ・プラン ―  アジア独立\r
+ 	puppet = { country = U02 country = ENG }\r
+ 	headofstate = 825201 # ガンガー・シン\r
+ 	}\r
+@@ -609,6 +609,8 @@ event = {
+ 	command = { type = chiefofarmy which = 2510099 } # スバス・チャンドラ・ボース\r
+ 	command = { type = chiefofnavy which = 2510107 } # アダル・クマル・チャッテルジー\r
+ 	command = { type = chiefofair which = 2510108 } # ラヴィンドラ・ダルシャン・シン\r
++	command = { trigger = { ai = yes } type = ai which = "IF/U02_if.ai" }\r
++	command = { type = end_puppet }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+@@ -666,6 +668,10 @@ event = {
+ 	command = { type = chiefofarmy which = 2510099 } # スバス・チャンドラ・ボース\r
+ 	command = { type = chiefofnavy which = 2510107 } # アダル・クマル・チャッテルジー\r
+ 	command = { type = chiefofair which = 2510108 } # ラヴィンドラ・ダルシャン・シン\r
++	command = { type = remove_core_area which = "Pakistan" where = IND }\r
++	command = { type = remove_core_region which = "Indochina" where = IND }\r
++	command = { type = remove_core_area which = "Bengal" where = IND }\r
++	command = { type = remove_core_area which = "East Bengal" where = IND }\r
+ 	command = { trigger = { NOT = { exists = BUR } } type = independence which = BUR value = 1 when = 0 }\r
+ 	command = { trigger = { NOT = { exists = PAK } } type = independence which = PAK value = 1 when = 0 }\r
+ 	command = { trigger = { NOT = { exists = NEP } } type = independence which = NEP value = 1 when = 0 }\r
+@@ -675,7 +681,11 @@ event = {
+ 	command = { type = make_puppet which = PAK }\r
+ 	command = { type = make_puppet which = NEP }\r
+ 	command = { type = make_puppet which = BHU }\r
+-	command = { type = make_puppet which = UD0 }\r
++	command = { type = make_puppet which = UD0 } \r
++	command = { type = secedearea which = UD0 value = "East Bengal" }\r
++	command = { type = secedearea which = UD0 value = "Bengal" }\r
++	command = { trigger = { ai = yes } type = ai which = "IF/U02_if.ai" }\r
++	command = { type = end_puppet }\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r

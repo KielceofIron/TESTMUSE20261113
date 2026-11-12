@@ -1,0 +1,449 @@
+--- A/db/events/Yokoyama_events/Y_events.txt [utf-8]
++++ B/db/events/Yokoyama_events/Y_events.txt [utf-8]
+@@ -1,10 +1,29 @@
+ #########################################################################\r
+ #\r
+-#		Yイベント   by　横山大佐\r
++#		Yイベント   by　横山大佐（製作中）\r
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+ #id = 15500001 架空人物の起用\r
++#id = 15500002 ありえざる彗星の出現\r
++#日本ルート\r
++#id = 15500101 \r
++#イギリスルート\r
++#id = 15500201 \r
++#フランスルート\r
++#id = 15500301 \r
++#アメリカルート\r
++#id = 15500401 \r
++#ドイツルート\r
++#id = 15500501 \r
++#イタリアルート\r
++#id = 15500601 \r
++#ソ連ルート\r
++#id = 15500701 \r
++#ロシアルート\r
++#id = 15500801 \r
++#中国ルート\r
++#id = 15500901 \r
+ #########################################################################\r
+ #  架空人物の起用\r
+ # このディシジョンは、架空小説などに出てくる人物を登場させるかどうかを選択できます。\r
+@@ -108,10 +127,9 @@ event = {
+ 	command = { type = wakeminister which = 52046 }\r
+ 	command = { type = wakeminister which = 52047 }\r
+ 	command = { type = local_setflag which = JAPAN_IF }\r
+-	ai_chance = 0 # AIはこの選択肢を100％の確率で選択\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+-\r
+ 	action = { # 皇道派の影が見えた\r
+ 	name = "ACTIONNAME15500001B"\r
+ 	command = { type = intelligence which = us value = 35 }\r
+@@ -186,9 +204,402 @@ event = {
+ 	command = { type = local_setflag which = Koudou_226_IF }\r
+ 	ai_chance = 0\r
+ 	}\r
++\r
+ 	action = { # このディシジョンは必要ない\r
+ 	name = "ACTIONNAME15500001C"\r
+ 	command = { }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++#########################################################################\r
++#  ありえざる彗星の出現\r
++# 1933年初頭、全世界的に彗星が観測された。\r
++# この彗星は日中でも肉眼で見えるほどの明るさだったが、奇妙なことにその前日まではまったく発見されていなかった。\r
++# 世界中の天文学者やコメットハンター（彗星捜索家）は口を揃えて「前夜まではたしかに存在していなかった」と主張している。\r
++# こうしたことから、彗星ではなく一種の気象現象であるという説や某国の秘密兵器であるという説が飛び交い、中には神の奇跡だと主張する者や火星人が攻めてきたのだとパニックになる者までいた。\r
++# それでも多くの人々はこの突然の天体ショーを純粋に楽しんでいるが、この現象の原因については謎に包まれたままである。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500002\r
++	country = -1\r
++	random = no\r
++	save_date = yes\r
++\r
++	decision = {\r
++	ai = no\r
++	}\r
++\r
++	decision_trigger = { \r
++	ai = no\r
++	}\r
++\r
++	trigger = { \r
++	ai = no\r
++	}\r
++\r
++	name = "EVT_15500002_NAME"\r
++	desc = "EVT_15500002_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++	decision_picture = "decision_diplomatic_campaign"\r
++\r
++	date = { day = 0 month = 0 year = 1999 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1999 }\r
++\r
++	action = { # いずれ進歩した科学がこの謎を解明するだろう\r
++	name = "ACTIONNAME15500002A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # これは予兆に違いないぞ……\r
++	name = "ACTIONNAME15500002B"\r
++	command = { type = setflag which = Hoi2_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  日本ルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500101\r
++	random = no\r
++	country = JAP\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500101_NAME"\r
++	desc = "EVT_15500101_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500101A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500101B"\r
++	command = { type = local_setflag which = JAP_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  イギリスルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500201\r
++	random = no\r
++	country = ENG\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500201_NAME"\r
++	desc = "EVT_15500201_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500201A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500201B"\r
++	command = { type = local_setflag which = ENG_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  フランスルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500301\r
++	random = no\r
++	country = FRA\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500301_NAME"\r
++	desc = "EVT_15500301_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500301A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500301B"\r
++	command = { type = local_setflag which = FRA_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  アメリカルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500401\r
++	random = no\r
++	country = USA\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500401_NAME"\r
++	desc = "EVT_15500401_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500401A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500401B"\r
++	command = { type = local_setflag which = USA_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ドイツルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500501\r
++	random = no\r
++	country = GER\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500501_NAME"\r
++	desc = "EVT_15500501_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500501A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500501B"\r
++	command = { type = local_setflag which = GER_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  イタリアルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500601\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500601_NAME"\r
++	desc = "EVT_15500601_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500601A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500601B"\r
++	command = { type = local_setflag which = ITA_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ソ連ルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500701\r
++	random = no\r
++	country = SOV\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500701_NAME"\r
++	desc = "EVT_15500701_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500701A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500701B"\r
++	command = { type = local_setflag which = SOV_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  ロシアルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500801\r
++	random = no\r
++	country = RUS\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500801_NAME"\r
++	desc = "EVT_15500801_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500801A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500801B"\r
++	command = { type = local_setflag which = RUS_occult }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  中国ルート\r
++#########################################################################\r
++#  \r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 15500901\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = { \r
++	flag = Hoi2_occult\r
++	}\r
++\r
++	name = "EVT_15500901_NAME"\r
++	desc = "EVT_15500901_DESC"\r
++	style = 2\r
++        picture = "comet"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 2 year = 1933 }\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500901A"\r
++	command = { }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # \r
++	name = "ACTIONNAME15500901B"\r
++	command = { type = local_setflag which = CHI_occult }\r
++	ai_chance = 0\r
++	}\r
+ }
+\ No newline at end of file

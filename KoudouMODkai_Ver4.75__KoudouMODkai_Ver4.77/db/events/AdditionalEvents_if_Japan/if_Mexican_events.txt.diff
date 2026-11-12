@@ -1,0 +1,511 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Mexican_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Mexican_events.txt [cp932]
+@@ -1,254 +1,254 @@
+-#########################################################################\r
+-#\r
+-#		メキシコ（ビリャ派）イベント  by 横山大佐\r
+-#########################################################################\r
+-###### 追加イベント一覧 ############\r
+-#########################################################################\r
+-#id = 22500500 虐げられし人々\r
+-#id = 22500501 イベロアメリカによる北米侵食\r
+-#id = 22500502 北米同君連合王国による領土要求\r
+-#id = 22500503 政治的亡命者\r
+-#id = 22500504 ヴィルヘルム・ライヒと愉快な仲間たち\r
+-#id = 22500505 \r
+-#id = 22500506\r
+-#id = 22500507\r
+-#id = 22500508\r
+-#id = 22500509\r
+-#id = 22500510\r
+-#id = 22500511\r
+-#id = 22500512\r
+-#id = 22500513\r
+-#id = 22500514\r
+-#id = 22500515\r
+-#id = 22500516\r
+-#id = 22500517\r
+-#id = 22500518\r
+-#id = 22500519\r
+-#id = 22500520\r
+-#id = 22500521\r
+-#id = 22500522\r
+-#id = 22500523\r
+-#id = 22500524\r
+-#id = 22500525\r
+-#id = 22500526\r
+-#id = 22500527\r
+-#id = 22500528\r
+-#id = 22500529\r
+-#id = 22500530\r
+-#id = 22500531\r
+-#id = 22500532\r
+-#id = 22500533\r
+-#id = 22500534\r
+-#id = 22500535\r
+-#id = 22500536\r
+-#id = 22500537\r
+-#id = 22500538\r
+-\r
+-\r
+-##########################################################################\r
+-#  虐げられし人々\r
+-# 旧称・メキシコ合衆国がイベロアメリカ合衆国として再出発を切ったのには複数の\r
+-# 理由が存在している。現在のアメリカ合衆国は長期に渡る不況に苦しんでおり、以前\r
+-# はメキシコ系移民が米国へ渡る状態であったのが、現在ではアメリカに住む人々の一\r
+-# 部がメキシコへ渡るようにまでなっている。ではメキシコの経済状況はどうなのかと\r
+-# 言えば――決して好調とは言えない。米国側の需要に対応する形で変動するメキシコ\r
+-# 経済は、米国の不況の煽りを受けている。またチアパス州においては過去のメキシコ\r
+-# 革命において活躍したエミリアーノ・サパタの名を冠し、彼の活動を継承し、ジョン\r
+-# ・パーシング将軍率いる懲罰軍を撃退したパンチョ・ビリャを含むサパティスタらが\r
+-# 割拠し、事実上の独立勢力となっている。そこで、不況への対応策として中央集権的\r
+-# な政策を打ち出しつつある米国との差別化を念頭に置き"真に自由な合衆国"の地位を\r
+-# 築くために編み出された答えが『イベロアメリカ合衆国』だったのである。現在の米\r
+-# 国ではインディアン含む先住民族たちや黒人への弾圧の動きも多く存在しており、そ\r
+-# うした中でイベロアメリカ合衆国は彼ら先住民族に"エクソダス<脱出>"を推進する立\r
+-# 場を取っているのである。これらは現段階においてはあくまで宣言に過ぎないが、時\r
+-# 間が経つ毎に彼らは言葉通りの政策を打ち出し、徐々に効果を生み出しつつある。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 22500500\r
+-	random = no\r
+-	country = MEX\r
+-	trigger = { }\r
+-\r
+-	name = "EVT_22500500_NAME"\r
+-	desc = "EVT_22500500_DESC"\r
+-	style = 1\r
+-	picture = "Mexico"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 14\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 新たなる先住民の故郷を！\r
+-	name = "ACTIONNAME22500500A"\r
+-	command = {  } \r
+-	}\r
+-}\r
+-##########################################################################\r
+-#  イベロアメリカによる北米侵食\r
+-# 政治不安と不況が続くアメリカ合衆国において、旧メキシコ領土であり、現在も隣接する合衆国の州となっている\r
+-# 複数の州がアメリカ合衆国から離脱。\r
+-# イベロアメリカ合衆国への合流を決定した。\r
+-###########################################################################\r
+-event = {\r
+-	id = 22500501\r
+-	country = MEX\r
+-	persistent = no\r
+-\r
+-	trigger = { \r
+-	event = { id = 1299010 days = 24 }\r
+-	}\r
+-\r
+-	\r
+-	name = "EVT_22500501_NAME"\r
+-	desc = "EVT_22500501_DESC" \r
+-	style = 2\r
+-	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 14\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-	\r
+-	action = { # 素晴らしい日だ！\r
+-	name = "ACTIONNAME22500501A"\r
+-	command = { trigger = { region = { region = "Southwest US" country = USA data = 2 value = 100 } } type = secederegion which = MEX value = "Southwest US" when = 2 }\r
+-	command = { trigger = { area = { area = "California" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "California" when = 2 }\r
+-	command = { trigger = { area = { area = "New Mexico" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "New Mexico" when = 2 }\r
+-	command = { trigger = { area = { area = "Arizona" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "Arizona" when = 2 }\r
+-	command = { trigger = { area = { area = "Utah" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "Utah" when = 2 }\r
+-	command = { trigger = { owned = { province = 1922 data =  USA } } type = secedeprovince which = MEX value = 1922 }\r
+-	command = { trigger = { control = { province = 1922 data =  USA } } type = control which = MEX value = 1922 }\r
+-	command = { trigger = { owned = { province = 1923 data =  USA } } type = secedeprovince which = MEX value = 1923 }\r
+-	command = { trigger = { control = { province = 1923 data =  USA } } type = control which = MEX value = 1923 }\r
+-	command = { trigger = { owned = { province = 1926 data =  USA } } type = secedeprovince which = MEX value = 1926 }\r
+-	command = { trigger = { control = { province = 1926 data =  USA } } type = control which = MEX value = 1926 }\r
+-	command = { trigger = { owned = { province = 1898 data =  USA } } type = secedeprovince which = MEX value = 1898 }\r
+-	command = { trigger = { control = { province = 1898 data =  USA } } type = control which = MEX value = 1898 }\r
+-	command = { type = add_core_area which = "Southwest US" when = 2 }\r
+-	command = { type = add_core_area which = "California" when = 2 }\r
+-	command = { type = add_core_area which = "New Mexico" when = 2 }\r
+-	command = { type = add_core_area which = "Arizona" when = 2 }\r
+-	command = { type = add_core_area which = "Colorado" when = 2 }\r
+-	command = { type = add_core_area which = "Utah" when = 2 }\r
+-	command = { trigger = { owned = { province = 1922 data = MEX } } type = addcore which = 1922 }\r
+-	command = { trigger = { owned = { province = 1923 data = MEX } } type = addcore which = 1923 }\r
+-	command = { trigger = { owned = { province = 1926 data = MEX } } type = addcore which = 1926 }\r
+-	command = { trigger = { owned = { province = 1898 data = MEX } } type = addcore which = 1898 }\r
+-	command = { type = event which = 1299020 where = USA when = 1 } #\r
+-	}\r
+-}\r
+-##########################################################################\r
+-#  北米同君連合王国による領土要求\r
+-# 第二次アメリカ内戦がカナダを中心とした英国軍によって制圧されると、先の第二次アメリカ内戦開始前夜に\r
+-# イベロアメリカ合衆国へ合流を決定した州のうち、幾つかの州の返還を求めてきた。\r
+-# イベロアメリカ合衆国政府はカナダが今後構築するであろう北米国家との友好関係を重視し、\r
+-# 不可侵条約の締結と引き換えに、二州の割譲を容認した。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 22500502\r
+-	country = MEX\r
+-	save_date = yes\r
+-\r
+-	name = "EVT_22500502_NAME"\r
+-	desc = "EVT_22500502_DESC" \r
+-	style = 2\r
+-	picture = "negotiaton"\r
+-	\r
+-	action = {\r
+-	name = "ACTION_NAME_OK"\r
+-	command = { type = non_aggression which = MEX where = CAN when = 1800 }\r
+-	command = { type = secedearea which = CAN value = "Utah" when = 1 }\r
+-	command = { type = secedearea which = CAN value = "Colorado" when = 1 }\r
+-	command = { type = secedearea which = CAN value = "Wyoming" when = 1 }\r
+-	command = { type = relation which = CAN value = 50 }\r
+-	command = { type = relation which = ENG value = 50 }\r
+-	\r
+-	}\r
+-	action = {\r
+-	name = "ACTION_NAME_REFUSE" #\r
+-	command = { type = war which = CAN }\r
+-	\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  政治的亡命者\r
+-# 第二次アメリカ内戦の勃発とその終結によって、北米では多数の政治的亡命者が現れ、そのうちのかなりの割合が\r
+-# イベロアメリカ合衆国への亡命を望んだ。\r
+-# 彼らは旧アメリカ合衆国領土となっていた地域へ入植し、幾つかの村落をつくりあげたのみならず、\r
+-# そのうちの何割かは投資家であったり、或いは発明家、軍人であったりした。\r
+-# 彼らはアメリカ合衆国亡き今、次のアメリカ的風土をイベロアメリカ合衆国に求め、イベロアメリカ合衆国は\r
+-# インディヘニスモを中心に人種統合の意識を持っており、彼らを大いに歓迎したのである。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 22500503\r
+-	country = MEX\r
+-	persistent = no\r
+-   	\r
+-	trigger = { event = { id = 22500502 days = 120 } }\r
+-	name = "EVT_22500503_NAME"\r
+-	desc = "EVT_22500503_DESC" \r
+-	style = 2\r
+-	picture = "news_paper"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 14\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-	action = {\r
+-	name = "ACTION_NAME_22500503A" #\r
+-	command = { type = manpowerpool value = 400 }\r
+-	command = { type = construct which = ic where = 1880 value = 5 } #サンディエゴ\r
+-	command = { type = construct which = ic where = 1887 value = 5 } #ロス・アンジェルス\r
+-	command = { type = construct which = ic where = 1889 value = 5 } #サンフランシスコ\r
+-	command = { type = set_domestic which = free_market value = 10 }\r
+-	command = { type = wakeleader which = 170408 }\r
+-	command = { type = wakeleader which = 170409 }\r
+-	command = { type = wakeleader which = 170410 }\r
+-	command = { type = waketeam which = 170057 }\r
+-	command = { type = waketeam which = 170058 }\r
+-	command = { type = waketeam which = 170059 }\r
+-	command = { type = waketeam which = 170060 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  ヴィルヘルム・ライヒと愉快な仲間たち\r
+-# 第二次アメリカ内戦で生じた亡命者のうち、変わり種とも言うべき人々が現れた。\r
+-# 彼らはニューヨーク州マンハッタンにおいてマンハッタン・コミューンを名乗る共同体を構築した人々であり、\r
+-# その中心に居たのは発明家ヴィルヘルム・ライヒであった。\r
+-# もっとも、ライヒ自身はまるで「魂を別世界へ持っていかれた」かのように呆けてしまっており、\r
+-# 頼りにはなりそうもない状態であったが、彼を中心とした複数の科学者と発明家には優秀な人物がいた。\r
+-# 彼らはカリフォルニアへの入植を希望し、イベロアメリカ合衆国政府はそれを承認した。\r
+-###########################################################################\r
+-\r
+-\r
+-event = {\r
+-	id = 22500504\r
+-	country = MEX\r
+-   \r
+-	name = "EVT_22500504_NAME"\r
+-	desc = "EVT_22500504_DESC" \r
+-	style = 2\r
+-	\r
+-\r
+-	trigger = { event = { id = 22500502 days = 180 } }\r
+-\r
+-	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 14\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-\r
+-	action = {\r
+-	name = "ACTION_NAME22500504" #……で、そのライヒとやらは使い物になるのか？\r
+-	command = { type = set_domestic which = freedom value = 10 }\r
+-	command = { type = construct which = ic where = 1883 value = 5 } #フレズノ\r
+-	command = { type = waketeam which = 170061 }\r
+-	command = { type = waketeam which = 170062 }\r
+-	command = { type = waketeam which = 170063 }\r
+-	command = { type = waketeam which = 170064 }\r
+-	\r
+-	}\r
+-}\r
++#########################################################################
++#
++#		メキシコ（ビリャ派）イベント  by 横山大佐
++#########################################################################
++###### 追加イベント一覧 ############
++#########################################################################
++#id = 22500500 虐げられし人々
++#id = 22500501 イベロアメリカによる北米侵食
++#id = 22500502 北米同君連合王国による領土要求
++#id = 22500503 政治的亡命者
++#id = 22500504 ヴィルヘルム・ライヒと愉快な仲間たち
++#id = 22500505 
++#id = 22500506
++#id = 22500507
++#id = 22500508
++#id = 22500509
++#id = 22500510
++#id = 22500511
++#id = 22500512
++#id = 22500513
++#id = 22500514
++#id = 22500515
++#id = 22500516
++#id = 22500517
++#id = 22500518
++#id = 22500519
++#id = 22500520
++#id = 22500521
++#id = 22500522
++#id = 22500523
++#id = 22500524
++#id = 22500525
++#id = 22500526
++#id = 22500527
++#id = 22500528
++#id = 22500529
++#id = 22500530
++#id = 22500531
++#id = 22500532
++#id = 22500533
++#id = 22500534
++#id = 22500535
++#id = 22500536
++#id = 22500537
++#id = 22500538
++
++
++##########################################################################
++#  虐げられし人々
++# 旧称・メキシコ合衆国がイベロアメリカ合衆国として再出発を切ったのには複数の
++# 理由が存在している。現在のアメリカ合衆国は長期に渡る不況に苦しんでおり、以前
++# はメキシコ系移民が米国へ渡る状態であったのが、現在ではアメリカに住む人々の一
++# 部がメキシコへ渡るようにまでなっている。ではメキシコの経済状況はどうなのかと
++# 言えば――決して好調とは言えない。米国側の需要に対応する形で変動するメキシコ
++# 経済は、米国の不況の煽りを受けている。またチアパス州においては過去のメキシコ
++# 革命において活躍したエミリアーノ・サパタの名を冠し、彼の活動を継承し、ジョン
++# ・パーシング将軍率いる懲罰軍を撃退したパンチョ・ビリャを含むサパティスタらが
++# 割拠し、事実上の独立勢力となっている。そこで、不況への対応策として中央集権的
++# な政策を打ち出しつつある米国との差別化を念頭に置き"真に自由な合衆国"の地位を
++# 築くために編み出された答えが『イベロアメリカ合衆国』だったのである。現在の米
++# 国ではインディアン含む先住民族たちや黒人への弾圧の動きも多く存在しており、そ
++# うした中でイベロアメリカ合衆国は彼ら先住民族に"エクソダス<脱出>"を推進する立
++# 場を取っているのである。これらは現段階においてはあくまで宣言に過ぎないが、時
++# 間が経つ毎に彼らは言葉通りの政策を打ち出し、徐々に効果を生み出しつつある。
++###########################################################################
++
++event = {
++	id = 22500500
++	random = no
++	country = MEX
++	trigger = { }
++
++	name = "EVT_22500500_NAME"
++	desc = "EVT_22500500_DESC"
++	style = 1
++	picture = "Mexico"
++	
++	date = { day = 0 month = 0 year = 1930 }
++	offset = 14
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++	action = { # 新たなる先住民の故郷を！
++	name = "ACTIONNAME22500500A"
++	command = {  } 
++	}
++}
++##########################################################################
++#  イベロアメリカによる北米侵食
++# 政治不安と不況が続くアメリカ合衆国において、旧メキシコ領土であり、現在も隣接する合衆国の州となっている
++# 複数の州がアメリカ合衆国から離脱。
++# イベロアメリカ合衆国への合流を決定した。
++###########################################################################
++event = {
++	id = 22500501
++	country = MEX
++	persistent = no
++
++	trigger = { 
++	event = { id = 1299010 days = 24 }
++	}
++
++	
++	name = "EVT_22500501_NAME"
++	desc = "EVT_22500501_DESC" 
++	style = 2
++	
++	
++	date = { day = 0 month = 0 year = 1930 }
++	offset = 14
++	deathdate = { day = 29 month = 11 year = 1964 }
++	
++	action = { # 素晴らしい日だ！
++	name = "ACTIONNAME22500501A"
++	command = { trigger = { region = { region = "Southwest US" country = USA data = 2 value = 100 } } type = secederegion which = MEX value = "Southwest US" when = 2 }
++	command = { trigger = { area = { area = "California" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "California" when = 2 }
++	command = { trigger = { area = { area = "New Mexico" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "New Mexico" when = 2 }
++	command = { trigger = { area = { area = "Arizona" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "Arizona" when = 2 }
++	command = { trigger = { area = { area = "Utah" country = USA data = 2 value = 100 } } type = secedearea which = MEX value = "Utah" when = 2 }
++	command = { trigger = { owned = { province = 1922 data =  USA } } type = secedeprovince which = MEX value = 1922 }
++	command = { trigger = { control = { province = 1922 data =  USA } } type = control which = MEX value = 1922 }
++	command = { trigger = { owned = { province = 1923 data =  USA } } type = secedeprovince which = MEX value = 1923 }
++	command = { trigger = { control = { province = 1923 data =  USA } } type = control which = MEX value = 1923 }
++	command = { trigger = { owned = { province = 1926 data =  USA } } type = secedeprovince which = MEX value = 1926 }
++	command = { trigger = { control = { province = 1926 data =  USA } } type = control which = MEX value = 1926 }
++	command = { trigger = { owned = { province = 1898 data =  USA } } type = secedeprovince which = MEX value = 1898 }
++	command = { trigger = { control = { province = 1898 data =  USA } } type = control which = MEX value = 1898 }
++	command = { type = add_core_area which = "Southwest US" when = 2 }
++	command = { type = add_core_area which = "California" when = 2 }
++	command = { type = add_core_area which = "New Mexico" when = 2 }
++	command = { type = add_core_area which = "Arizona" when = 2 }
++	command = { type = add_core_area which = "Colorado" when = 2 }
++	command = { type = add_core_area which = "Utah" when = 2 }
++	command = { trigger = { owned = { province = 1922 data = MEX } } type = addcore which = 1922 }
++	command = { trigger = { owned = { province = 1923 data = MEX } } type = addcore which = 1923 }
++	command = { trigger = { owned = { province = 1926 data = MEX } } type = addcore which = 1926 }
++	command = { trigger = { owned = { province = 1898 data = MEX } } type = addcore which = 1898 }
++	command = { type = event which = 1299020 where = USA when = 1 } #
++	}
++}
++##########################################################################
++#  北米同君連合王国による領土要求
++# 第二次アメリカ内戦がカナダを中心とした英国軍によって制圧されると、先の第二次アメリカ内戦開始前夜に
++# イベロアメリカ合衆国へ合流を決定した州のうち、幾つかの州の返還を求めてきた。
++# イベロアメリカ合衆国政府はカナダが今後構築するであろう北米国家との友好関係を重視し、
++# 不可侵条約の締結と引き換えに、二州の割譲を容認した。
++###########################################################################
++
++event = {
++	id = 22500502
++	country = MEX
++	save_date = yes
++
++	name = "EVT_22500502_NAME"
++	desc = "EVT_22500502_DESC" 
++	style = 2
++	picture = "negotiaton"
++	
++	action = {
++	name = "ACTION_NAME_OK"
++	command = { type = non_aggression which = MEX where = CAN when = 1800 }
++	command = { type = secedearea which = CAN value = "Utah" when = 1 }
++	command = { type = secedearea which = CAN value = "Colorado" when = 1 }
++	command = { type = secedearea which = CAN value = "Wyoming" when = 1 }
++	command = { type = relation which = CAN value = 50 }
++	command = { type = relation which = ENG value = 50 }
++	
++	}
++	action = {
++	name = "ACTION_NAME_REFUSE" #
++	command = { type = war which = CAN }
++	
++	}
++}
++
++##########################################################################
++#  政治的亡命者
++# 第二次アメリカ内戦の勃発とその終結によって、北米では多数の政治的亡命者が現れ、そのうちのかなりの割合が
++# イベロアメリカ合衆国への亡命を望んだ。
++# 彼らは旧アメリカ合衆国領土となっていた地域へ入植し、幾つかの村落をつくりあげたのみならず、
++# そのうちの何割かは投資家であったり、或いは発明家、軍人であったりした。
++# 彼らはアメリカ合衆国亡き今、次のアメリカ的風土をイベロアメリカ合衆国に求め、イベロアメリカ合衆国は
++# インディヘニスモを中心に人種統合の意識を持っており、彼らを大いに歓迎したのである。
++###########################################################################
++
++event = {
++	id = 22500503
++	country = MEX
++	persistent = no
++   	
++	trigger = { event = { id = 22500502 days = 120 } }
++	name = "EVT_22500503_NAME"
++	desc = "EVT_22500503_DESC" 
++	style = 2
++	picture = "news_paper"
++	
++	date = { day = 0 month = 0 year = 1930 }
++	offset = 14
++	deathdate = { day = 29 month = 11 year = 1964 }
++	action = {
++	name = "ACTION_NAME_22500503A" #
++	command = { type = manpowerpool value = 400 }
++	command = { type = construct which = ic where = 1880 value = 5 } #サンディエゴ
++	command = { type = construct which = ic where = 1887 value = 5 } #ロス・アンジェルス
++	command = { type = construct which = ic where = 1889 value = 5 } #サンフランシスコ
++	command = { type = set_domestic which = free_market value = 10 }
++	command = { type = wakeleader which = 170408 }
++	command = { type = wakeleader which = 170409 }
++	command = { type = wakeleader which = 170410 }
++	command = { type = waketeam which = 170057 }
++	command = { type = waketeam which = 170058 }
++	command = { type = waketeam which = 170059 }
++	command = { type = waketeam which = 170060 }
++	}
++}
++
++
++##########################################################################
++#  ヴィルヘルム・ライヒと愉快な仲間たち
++# 第二次アメリカ内戦で生じた亡命者のうち、変わり種とも言うべき人々が現れた。
++# 彼らはニューヨーク州マンハッタンにおいてマンハッタン・コミューンを名乗る共同体を構築した人々であり、
++# その中心に居たのは発明家ヴィルヘルム・ライヒであった。
++# もっとも、ライヒ自身はまるで「魂を別世界へ持っていかれた」かのように呆けてしまっており、
++# 頼りにはなりそうもない状態であったが、彼を中心とした複数の科学者と発明家には優秀な人物がいた。
++# 彼らはカリフォルニアへの入植を希望し、イベロアメリカ合衆国政府はそれを承認した。
++###########################################################################
++
++
++event = {
++	id = 22500504
++	country = MEX
++   
++	name = "EVT_22500504_NAME"
++	desc = "EVT_22500504_DESC" 
++	style = 2
++	
++
++	trigger = { event = { id = 22500502 days = 180 } }
++
++	date = { day = 0 month = 0 year = 1930 }
++	offset = 14
++	deathdate = { day = 29 month = 11 year = 1964 }
++
++
++	action = {
++	name = "ACTION_NAME22500504" #……で、そのライヒとやらは使い物になるのか？
++	command = { type = set_domestic which = freedom value = 10 }
++	command = { type = construct which = ic where = 1883 value = 5 } #フレズノ
++	command = { type = waketeam which = 170061 }
++	command = { type = waketeam which = 170062 }
++	command = { type = waketeam which = 170063 }
++	command = { type = waketeam which = 170064 }
++	
++	}
++}

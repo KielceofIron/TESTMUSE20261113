@@ -1,0 +1,213 @@
+--- A/ai/IFswitch/AST_Attack_U05.ai [utf-8]
++++ B/ai/IFswitch/AST_Attack_U05.ai [utf-8]
+@@ -1,105 +1,105 @@
+-# AST is planning D-Day so lets help\r
+-\r
+-exp_force_ratio = 0.20\r
+-exp_force_ratios = { } \r
+-no_exp_forces_to = { }\r
+-\r
+-\r
+-construction = { \r
+-	max_factor = 0.00\r
+-\r
+-	AA_batteries = no\r
+-	radar_station = no\r
+-	air_base = no\r
+-	naval_base = no\r
+-	ic_at_war = no\r
+-	force_ic_until = 1936\r
+-	ic_end_year = 1936\r
+-}\r
+-\r
+-\r
+-###################################\r
+-# Ground Combat, Leaders and Garrisons\r
+-###################################\r
+-garrison = {\r
+-	defend_overseas_beaches = yes\r
+-	home_multiplier 	= 1.0\r
+-	overseas_multiplier 	= 0.01\r
+-	home_peace_cap 		= 2\r
+-	war_zone_odds 		= 2.0\r
+-	key_point_prio_mult	= 0.3\r
+-	revolt_risk_mult	= 0.3\r
+-\r
+-	# PRIORITIES:\r
+-	beach			= 20	# Beach level 2\r
+-	capital			= 20	# Our capital\r
+-	human_border	= 0		# Ignored for allied human players\r
+-	war_target		= 50	# The next country targeted for attack by this AI\r
+-	\r
+-	opposing_alliance	= 20	# For neutrals, all alliances are "opposing"\r
+-	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+-	unstable_border		= 0	# Bordering countries at war with someone else get this\r
+-\r
+-	province_priorities = {\r
+-		1632 = 150\r
+-		1636 = 150\r
+-		1642 = 150\r
+-		1647 = 150\r
+-		1653 = 150\r
+-		1659 = 150\r
+-	}\r
+-	area_multiplier = {\r
+-		1632 = 2.0\r
+-		1636 = 2.0\r
+-		1642 = 2.0\r
+-		1647 = 2.0\r
+-		1653 = 2.0\r
+-		1659 = 2.0\r
+-	}\r
+-}\r
+-###################################\r
+-# Invasions and Naval\r
+-###################################\r
+-invasion = {\r
+-\r
+-	invasion			= yes\r
+- 	base				= 10000	#Relative modifier. (lower = specific targets much more important.)# was 0.1\r
+-	random				= 100.0	#How big a random range.  (1.0 = 1%)\r
+-	coastal				= 0.1	#increase to avoid coastal forts more.\r
+-	beach				= 0.01	#higher, avoid worst beaches.\r
+-	max_distance   		= 150.0  \r
+-	max_staging_distance = 150	# How far should the staging area be from the target invasion point\r
+-	distance			= 0.01	#higher = avoid long distance.   # was 0.1 06mar\r
+-	pocket				= 0.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
+-	island				= 0.1	#prioritise taking pure islands.\r
+-	enemy				= 0.1	#higher = much more vary of troops in province.\r
+-	adjacentenemy 		= 0.2	#higher = much more vary of troops nearby\r
+-	air_base			= 0.1\r
+-   	naval_base 			= 0.1 \r
+-   	#air_support 		= 0.1 \r
+-   	redirect 			= priority\r
+-	ignore				= yes\r
+-	help_allies 	= no\r
+-	staging_province = {\r
+-		1694  #追加\r
+-		1697  #追加\r
+-		1647  #追加\r
+-		1653  #追加\r
+-	}\r
+-\r
+-	target = {\r
+-	#インドネシア\r
+-	1647 = 9000\r
+-	1649 = 9000\r
+-	1653 = 9000\r
+-	1627 = 9000\r
+-	1631 = 9000\r
+-	1632 = 9000\r
+-	1635 = 9000\r
+-	1636 = 9000\r
+-	1657 = 9000\r
+-	1659 = 9000\r
+-	1596 = 9000\r
+-	1600 = 9000\r
+-	}\r
++# AST is planning D-Day so lets help
++
++exp_force_ratio = 0.20
++exp_force_ratios = { } 
++no_exp_forces_to = { }
++
++
++construction = { 
++	max_factor = 0.00
++
++	AA_batteries = no
++	radar_station = no
++	air_base = no
++	naval_base = no
++	ic_at_war = no
++	force_ic_until = 1936
++	ic_end_year = 1936
++}
++
++
++###################################
++# Ground Combat, Leaders and Garrisons
++###################################
++garrison = {
++	defend_overseas_beaches = yes
++	home_multiplier 	= 1.0
++	overseas_multiplier 	= 0.01
++	home_peace_cap 		= 2
++	war_zone_odds 		= 2.0
++	key_point_prio_mult	= 0.3
++	revolt_risk_mult	= 0.3
++
++	# PRIORITIES:
++	beach			= 20	# Beach level 2
++	capital			= 20	# Our capital
++	human_border	= 0		# Ignored for allied human players
++	war_target		= 50	# The next country targeted for attack by this AI
++	
++	opposing_alliance	= 20	# For neutrals, all alliances are "opposing"
++	claim_threat		= 0	# If we are neutral, countries with claims on us get this
++	unstable_border		= 0	# Bordering countries at war with someone else get this
++
++	province_priorities = {
++		1632 = 150
++		1636 = 150
++		1642 = 150
++		1647 = 150
++		1653 = 150
++		1659 = 150
++	}
++	area_multiplier = {
++		1632 = 2.0
++		1636 = 2.0
++		1642 = 2.0
++		1647 = 2.0
++		1653 = 2.0
++		1659 = 2.0
++	}
++}
++###################################
++# Invasions and Naval
++###################################
++invasion = {
++
++	invasion			= yes
++ 	base				= 10000	#Relative modifier. (lower = specific targets much more important.)# was 0.1
++	random				= 100.0	#How big a random range.  (1.0 = 1%)
++	coastal				= 0.1	#increase to avoid coastal forts more.
++	beach				= 0.01	#higher, avoid worst beaches.
++	max_distance   		= 150.0  
++	max_staging_distance = 150	# How far should the staging area be from the target invasion point
++	distance			= 0.01	#higher = avoid long distance.   # was 0.1 06mar
++	pocket				= 0.0	#prioritise pockets, ie provinces with no adjacent controlled by same.
++	island				= 0.1	#prioritise taking pure islands.
++	enemy				= 0.1	#higher = much more vary of troops in province.
++	adjacentenemy 		= 0.2	#higher = much more vary of troops nearby
++	air_base			= 0.1
++   	naval_base 			= 0.1 
++   	#air_support 		= 0.1 
++   	redirect 			= priority
++	ignore				= yes
++	help_allies 	= no
++	staging_province = {
++		1694  #追加
++		1697  #追加
++		1647  #追加
++		1653  #追加
++	}
++
++	target = {
++	#インドネシア
++	1647 = 9000
++	1649 = 9000
++	1653 = 9000
++	1627 = 9000
++	1631 = 9000
++	1632 = 9000
++	1635 = 9000
++	1636 = 9000
++	1657 = 9000
++	1659 = 9000
++	1596 = 9000
++	1600 = 9000
++	}
+ }
+\ No newline at end of file

@@ -1,0 +1,146 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_USA_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_USA_events.txt [cp932]
+@@ -88,7 +88,7 @@
+ #id = 1299097 モルモン戦争 ─ 講和の提案\r
+ #id = 1299098 モルモン戦争 ─ 講和を受け入れた\r
+ #id = 1299099 ホワイトハウスの南軍旗\r
+-#id = 1299101 ニューヨク崩壊\r
++#id = 1299101 ニューヨーク崩壊\r
+ #id = 1299103 アメリカの民主主義の死\r
+ #id = 1299104 アイゼンハワーの退役\r
+ #id = 1299105 禁酒法の行方\r
+@@ -703,7 +703,7 @@ event = {
+ 	flag = American_Civi_War\r
+ 	event = { id = 1299010 days = 35 }\r
+ 	}\r
+-	war = { country = U00 }\r
++	#war = { country = U00 } #Kielce削除\r
+ 	}\r
+ 	}\r
+ \r
+@@ -739,7 +739,8 @@ event = {
+ 	command = { type = secedeprovince which = U00 value = 1845 }\r
+ 	command = { type = secedeprovince which = U00 value = 1848 }\r
+ 	command = { type = secedeprovince which = U00 value = 1822 }\r
+-	command = { type = event which = 1299012 where = U00 when = 1 }\r
++	command = { type = event which = 1299012 where = U00 when = 0 }\r
++	command = { type = money value = -1000 }\r
+ 	}\r
+ }\r
+ \r
+@@ -798,6 +799,7 @@ event = {
+ 	command = { type = event which = 1299013 where = U00 when = 0 }\r
+ 	command = { type = event which = 1299014 where = U00 when = 0 }\r
+ 	command = { type = event which = 1299055 where = USA when = 2 }\r
++	command = { type = money value = 1000 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1160,6 +1162,7 @@ event = {
+ 	command = { type = secedeprovince which = UE0 value = 1804 }\r
+ 	command = { type = secedeprovince which = UE0 value = 1805 }\r
+ 	command = { type = trigger which = 1299016 }\r
++	command = { type = money value = -200 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1191,6 +1194,7 @@ event = {
+ 	command = { type = add_division which = "コミューン防衛隊" value = militia when = 4 }\r
+ 	command = { type = add_division which = "コミューン防衛隊" value = militia when = 4 }\r
+ 	command = { type = add_division which = "コミューン防衛隊" value = militia when = 4 }\r
++	command = { type = money value = 200 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1307,6 +1311,7 @@ event = {
+ 	command = { type = secedearea which = CSA value = "Louisiana" when = 2 }\r
+ 	command = { type = secederegion which = CSA value = "Southeast US" when = 2 }\r
+ 	command = { type = trigger which = 1299020 }\r
++	command = { type = money value = -1000 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1402,6 +1407,7 @@ event = {
+ 	command = { type = deactivate which = 6390 }\r
+ 	command = { type = deactivate which = 6560 }\r
+ 	command = { type = deactivate which = 6010 }\r
++	command = { type = money value = 1000 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1437,6 +1443,7 @@ event = {
+ 	command = { type = secedearea which = TEX value = "Kansas" when = 2 }\r
+ 	command = { type = capital which = 1925 }\r
+ 	command = { type = trigger which = 1299022 }\r
++	command = { type = money value = -200 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1482,6 +1489,7 @@ event = {
+ 	command = { type = add_division which = "テキサス義勇民兵隊" value = militia when = 4 }\r
+ 	command = { type = add_division which = "テキサス航空隊" value = interceptor when = 5 }\r
+ 	command = { type = add_division which = "テキサス航空隊" value = tactical_bomber when = 4 }\r
++	command = { type = money value = 200 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1522,6 +1530,7 @@ event = {
+ 	command = { type = secedearea which = CAL value = "Washington" when = 2 }\r
+ 	command = { type = secedearea which = CAL value = "Oregon" when = 2 }\r
+ 	command = { type = trigger which = 1299024 }\r
++	command = { type = money value = -1000 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1570,6 +1579,7 @@ event = {
+ 	command = { type = deactivate which = 6390 }\r
+ 	command = { type = deactivate which = 6560 }\r
+ 	command = { type = deactivate which = 6010 }\r
++	command = { type = money value = 1000 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2744,7 +2754,7 @@ event = {
+ 	name = "ACTIONNAME1299049A"	\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = event which = 1299050 where = CSA when = 1 }\r
+-	command = { type = event which = 1299051 where = CSA when = 1 }\r
++	command = { type = event which = 1299051 where = CSA when = 2 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -4457,12 +4467,16 @@ event = {
+ 	decision = {\r
+ 	event = 1299080\r
+ 	atwar = no\r
++	exists = JAP\r
++	NOT = { ispuppet = JAP }\r
+ 	}\r
+ 	\r
+ 	decision_trigger = {\r
+ 	event = { id = 1299080 days = 120 }\r
+ 	NOT = { alliance = { country = JAP country = USA } }\r
+ 	NOT = { alliance = { country = JAP country = CHI } }\r
++	exists = JAP\r
++	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+@@ -4470,6 +4484,8 @@ event = {
+ 	event = { id = 1299080 days = 120 }\r
+ 	NOT = { alliance = { country = JAP country = USA } }\r
+ 	NOT = { alliance = { country = JAP country = CHI } }\r
++	exists = JAP\r
++	NOT = { ispuppet = JAP }\r
+ 	atwar = no\r
+ 	random = 15\r
+ 	}\r
+@@ -5223,7 +5239,7 @@ event = {
+ }\r
+ \r
+ ##########################################################################\r
+-#  ニューヨク崩壊\r
++#  ニューヨーク崩壊\r
+ # アメリカ内戦最初期における労働者とアナキストの武装蜂起によって成立したマンハッタン自治区は、\r
+ # 港湾施設を含む広範囲にわたり支配地域を広げた。\r
+ # 特にマンハッタンではアナキストが摩天楼を要塞化、また富裕層が早期に脱出したため、\r

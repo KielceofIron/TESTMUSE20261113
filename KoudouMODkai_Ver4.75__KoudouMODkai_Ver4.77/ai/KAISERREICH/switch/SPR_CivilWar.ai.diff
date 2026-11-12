@@ -1,0 +1,231 @@
+--- A/ai/KAISERREICH/switch/SPR_CivilWar.ai [ascii]
++++ B/ai/KAISERREICH/switch/SPR_CivilWar.ai [ascii]
+@@ -1,114 +1,114 @@
+-############################\r
+-# Reworked for CNT-FAI by Kibbles     DB\r
+-# Republic Spain 1936 AI File by Lothos\r
+-############################\r
+-\r
+-switch = no # [yes/no]\r
+-max_front_ratio = 1.2\r
+-max_garrison_prop = 0.0\r
+-min_garrison_prop = 0.0\r
+-neutrality = 110\r
+-war = 0\r
+-strat_redeploy_threshold = 25\r
+-exp_force_ratio = 0.750\r
+-exp_force_ratios = { } \r
+-no_exp_forces_to = { }\r
+-use_offensive_supply = no\r
+-\r
+-###################################\r
+-# Construction and Tech Research\r
+-###################################\r
+-#Default values\r
+-construction = { \r
+-	max_factor = 0.00 \r
+-}\r
+-military = { \r
+-	#### Divisions etc...\r
+-	infantry 			= 55\r
+-	cavalry 			= 0\r
+-	motorized 		= 0\r
+-	mechanized 		= 0\r
+-	light_armor 		= 0\r
+-	armor 			= 0\r
+-	paratrooper 		= 0\r
+-	marine 			= 0\r
+-	bergsjaeger 		= 25\r
+-	garrison			= 0\r
+-    	hq 			= 3\r
+-	militia 			= 0\r
+-#				83 %\r
+-	interceptor 		= 5\r
+-	multi_role 		= 0\r
+-\r
+-	cas 			= 7\r
+-	strategic_bomber 		= 0\r
+-	tactical_bomber 		= 5\r
+-	naval_bomber 		= 0\r
+-	transport_plane		= 0\r
+-	flying_bomb 		= 0\r
+-	flying_rocket 		= 0\r
+-#				17 %\r
+-	battleship 		= 0\r
+-	carrier 			= 0\r
+-	destroyer 			= 0\r
+-	light_cruiser 		= 0\r
+-	heavy_cruiser 		= 0\r
+-	battlecruiser 		= 0\r
+-	submarine 		= 0\r
+-	transports 		= 0\r
+-#				0 %\r
+-}\r
+-###################################\r
+-# Ground Combat, Leaders and Garrisons\r
+-###################################\r
+-garrison = {\r
+-	defend_overseas_beaches 		= no\r
+-	home_multiplier 			= 2.0\r
+-	overseas_multiplier 			= 0.1\r
+-	home_peace_cap 			= 50\r
+-	war_zone_odds 			= 2.0\r
+-	key_point_prio_mult		= 0\r
+-	revolt_risk_mult			= 0\r
+-\r
+-	# PRIORITIES:\r
+-	beach				= 30		# Beach level 2\r
+-	capital				= 60	# Our capital\r
+-	human_border			= 0		# Ignored for allied human players\r
+-	war_target			= 50	# The next country targeted for attack by this AI\r
+-	\r
+-	opposing_alliance			= 0	# For neutrals, all alliances are "opposing"\r
+-	claim_threat			= 0	# If we are neutral, countries with claims on us get this\r
+-	unstable_border			= 0	# Bordering countries at war with someone else get this\r
+-\r
+-	# Borders with specific countries\r
+-	country_priorities = {\r
+-		FRA = -1\r
+-		POR = -1\r
+-		EUS = 150\r
+-		SPA = 150\r
+-	}\r
+-	province_priorities = {	}\r
+-	area_multiplier = { }\r
+-}\r
+-front = { \r
+-	recklessness 			= 0 # 0-3\r
+-	distrib_vs_ai 			= op_defensive\r
+-	distrib_vs_human 			= op_defensive\r
+-\r
+-	enemy_reinf_days			= 4\r
+-	reserve_prop			= 0.2\r
+-	panic_ratio_vs_ai			= 2.5\r
+-	panic_ratio_vs_human 		= 2.5\r
+-	base_attack_odds			= 1.3\r
+-	min_attack_odds			= 1.1\r
+-	max_attack_odds			= 3.0\r
+-	reinforce_odds			= 1.2\r
+-	withdraw_odds			= 0.75\r
+-\r
+-   	enemy_handicap = {\r
+-\r
+-	} \r
+-   	passivity = {\r
+-\r
+-	} \r
++############################
++# Reworked for CNT-FAI by Kibbles     DB
++# Republic Spain 1936 AI File by Lothos
++############################
++
++switch = no # [yes/no]
++max_front_ratio = 1.2
++max_garrison_prop = 0.0
++min_garrison_prop = 0.0
++neutrality = 110
++war = 0
++strat_redeploy_threshold = 25
++exp_force_ratio = 0.750
++exp_force_ratios = { } 
++no_exp_forces_to = { }
++use_offensive_supply = no
++
++###################################
++# Construction and Tech Research
++###################################
++#Default values
++construction = { 
++	max_factor = 0.00 
++}
++military = { 
++	#### Divisions etc...
++	infantry 			= 55
++	cavalry 			= 0
++	motorized 		= 0
++	mechanized 		= 0
++	light_armor 		= 0
++	armor 			= 0
++	paratrooper 		= 0
++	marine 			= 0
++	bergsjaeger 		= 25
++	garrison			= 0
++    	hq 			= 3
++	militia 			= 0
++#				83 %
++	interceptor 		= 5
++	multi_role 		= 0
++
++	cas 			= 7
++	strategic_bomber 		= 0
++	tactical_bomber 		= 5
++	naval_bomber 		= 0
++	transport_plane		= 0
++	flying_bomb 		= 0
++	flying_rocket 		= 0
++#				17 %
++	battleship 		= 0
++	carrier 			= 0
++	destroyer 			= 0
++	light_cruiser 		= 0
++	heavy_cruiser 		= 0
++	battlecruiser 		= 0
++	submarine 		= 0
++	transports 		= 0
++#				0 %
++}
++###################################
++# Ground Combat, Leaders and Garrisons
++###################################
++garrison = {
++	defend_overseas_beaches 		= no
++	home_multiplier 			= 2.0
++	overseas_multiplier 			= 0.1
++	home_peace_cap 			= 50
++	war_zone_odds 			= 2.0
++	key_point_prio_mult		= 0
++	revolt_risk_mult			= 0
++
++	# PRIORITIES:
++	beach				= 30		# Beach level 2
++	capital				= 60	# Our capital
++	human_border			= 0		# Ignored for allied human players
++	war_target			= 50	# The next country targeted for attack by this AI
++	
++	opposing_alliance			= 0	# For neutrals, all alliances are "opposing"
++	claim_threat			= 0	# If we are neutral, countries with claims on us get this
++	unstable_border			= 0	# Bordering countries at war with someone else get this
++
++	# Borders with specific countries
++	country_priorities = {
++		FRA = -1
++		POR = -1
++		EUS = 150
++		SPA = 150
++	}
++	province_priorities = {	}
++	area_multiplier = { }
++}
++front = { 
++	recklessness 			= 0 # 0-3
++	distrib_vs_ai 			= op_defensive
++	distrib_vs_human 			= op_defensive
++
++	enemy_reinf_days			= 4
++	reserve_prop			= 0.2
++	panic_ratio_vs_ai			= 2.5
++	panic_ratio_vs_human 		= 2.5
++	base_attack_odds			= 1.3
++	min_attack_odds			= 1.1
++	max_attack_odds			= 3.0
++	reinforce_odds			= 1.2
++	withdraw_odds			= 0.75
++
++   	enemy_handicap = {
++
++	} 
++   	passivity = {
++
++	} 
+ }
+\ No newline at end of file

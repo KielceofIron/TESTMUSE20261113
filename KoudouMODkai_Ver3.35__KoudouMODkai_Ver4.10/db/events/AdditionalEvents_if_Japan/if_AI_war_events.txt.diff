@@ -1,0 +1,113 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_AI_war_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_AI_war_events.txt [cp932]
+@@ -738,3 +738,110 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
++#############################################\r
++# 戦時生産AI ― フランス\r
++#############################################\r
++event = {\r
++	id = 9994001\r
++	random = no \r
++	country = FRA\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		NOT = { manpower = 1000 } \r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFswitch/fra_LowManpower.ai" }\r
++	command = { type = local_setflag which = Lowmanpowerfra }\r
++	}\r
++}\r
++\r
++#############################################\r
++# 戦時生産AI ― フランス\r
++#############################################\r
++event = {\r
++	id = 9994002\r
++	random = no \r
++	country = FRA\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		manpower = 1000 \r
++		local_flag = Lowmanpowerfra\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFswitch/Build_Standard_FRA.ai" }\r
++	command = { type = local_clrflag which = Lowmanpowerfra }\r
++	}\r
++}\r
++\r
++#############################################\r
++# 生産AI ― ドイツ【低人的】\r
++#############################################\r
++event = {\r
++	id = 9995001\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		NOT = { manpower = 1000 } \r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFswitch/ger_LowManpower.ai" }\r
++	command = { type = local_setflag which = Lowmanpowerger }\r
++	}\r
++}\r
++\r
++#############################################\r
++# 戦時生産AI ― ドイツ（人的高い\r
++#############################################\r
++event = {\r
++	id = 9995002\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++		ai = yes\r
++		manpower = 1000 \r
++		local_flag = Lowmanpowerger\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/GER_Build_Land.ai" }\r
++	command = { type = local_clrflag which = Lowmanpowerger }\r
++	}\r
++}\r
++\r

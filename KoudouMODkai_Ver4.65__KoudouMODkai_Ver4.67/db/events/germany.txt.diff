@@ -1,0 +1,20 @@
+--- A/db/events/germany.txt [cp932]
++++ B/db/events/germany.txt [cp932]
+@@ -519,7 +519,7 @@ event = {
+ 		command = { type = chiefofair which = 115010 }\r
+ 		command = { type = dissent value = -1 }\r
+ 		command = { type = setflag which = Anschluss } # 追加\r
+-		command = { type = ai which = "switch/aus_Anschluss.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/aus_Anschluss.ai" }\r
+ 		command = { type = relation which = GER value = 100 }\r
+ 		command = { trigger = { NOT = { relation = { which = GER value = 0 } } } type = set_relation which = GER value = 0 } \r
+ 		command = { type = trigger which = 2003009 }\r
+@@ -5701,7 +5701,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_setflag which = GERInvadeNorway }\r
+ 		command = { type = local_clrflag which = GERSubPatrol }\r
+-		command = { type = ai which = "switch/GER_Norway.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/GER_Norway.ai" }\r
+ 	}\r
+ }\r
+ \r

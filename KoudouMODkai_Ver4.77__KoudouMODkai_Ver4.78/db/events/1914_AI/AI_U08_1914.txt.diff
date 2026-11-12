@@ -1,0 +1,52 @@
+--- A/db/events/1914_AI/AI_U08_1914.txt [ascii]
++++ B/db/events/1914_AI/AI_U08_1914.txt [ascii]
+@@ -21,25 +21,25 @@ event = {
+ 	action = {		 # Konprinz Plan\r
+ 		ai_chance = 10\r
+ 		command = { type = local_setflag which = Kronprinz }\r
+-		command = { type = ai which = "switch/U08_1914_Kronprinz.ai" } 	\r
++		command = { trigger = { ai = yes } type = ai which = "switch/U08_1914_Kronprinz.ai" } 	\r
+ 		}\r
+ 		\r
+ 	action = {		# Schlieffen Plan\r
+ 		ai_chance = 60\r
+ 		command = { type = local_setflag which = Schlieffen } \r
+-		command = { type = ai which = "switch/U08_1914_Schlieffen.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/U08_1914_Schlieffen.ai" }\r
+ 		}\r
+ 		\r
+ 	action = { 		# Expanded Schlieffen Plan\r
+ 		ai_chance =  20\r
+ 		command = { type = local_setflag which = SchlieffenExp } \r
+-		command = { type = ai which = "switch/U08_1914_SchlieffenExp.ai" }		\r
++		command = { trigger = { ai = yes } type = ai which = "switch/U08_1914_SchlieffenExp.ai" }		\r
+ 		}\r
+ 		\r
+ 	action = {		# Rupprecht Plan\r
+ 		ai_chance =  10\r
+ 		command = { type = local_setflag which = Rupprecht }\r
+-		command = { type = ai which = "switch/U08_1914_Rupprecht.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/U08_1914_Rupprecht.ai" }\r
+ 		}\r
+ }\r
+ \r
+@@ -142,7 +142,7 @@ event = {
+ 	action = { \r
+ 		name = "EVT1914_2191505_ACTIONA" # Konprinz Plan\r
+ 		command = { trigger = { NOT = { policy = { type = professional_army value = 8 } } } type = trigger which = 8300108 } #Mobilize?\r
+-		command = { type = ai which = "switch/U08_1914_Kronprinz.ai" } \r
++		command = { trigger = { ai = yes } type = ai which = "switch/U08_1914_Kronprinz.ai" } \r
+ 		command = { type = clrflag which = 1915_WWI }\r
+ 		command = { type = local_clrflag which = Kronprinz }\r
+ 		command = { type = local_clrflag which = Schlieffen }		\r
+@@ -173,8 +173,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1925 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/U09_1914ExpForcesToGER.ai" }\r
+-		command = { type = ai which = "switch/U09_garrison.ai" }	\r
++		command = { trigger = { ai = yes } type = ai which = "switch/U09_1914ExpForcesToGER.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/U09_garrison.ai" }	\r
+ 		#command = { type = military_control which = U08 where = U09 value = 1 }	\r
+ 	}\r
+ }\r

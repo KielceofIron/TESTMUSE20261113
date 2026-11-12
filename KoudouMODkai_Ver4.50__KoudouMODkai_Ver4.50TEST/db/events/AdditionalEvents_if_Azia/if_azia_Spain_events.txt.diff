@@ -1,0 +1,722 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Spain_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Spain_events.txt [cp932]
+@@ -14,8 +14,16 @@
+ #id = 2052108 スペイン内戦 ― 朝鮮の介入\r
+ #id = 2052109 スペイン内戦 ― 義勇兵の帰国（KOR）\r
+ #id = 2052110 スペイン内戦 ― 義勇兵の帰還（KOR）\r
+-#id = 2052111 スペイン内戦 ― 義勇兵の帰還（SPR）\r
+-#id = 2052112 スペイン内戦 ― 義勇兵の帰還（SPA）\r
++#id = 2052111 スペイン内戦 ― 介入（UER）\r
++#id = 2052112 スペイン内戦 ― ロシアの介入\r
++#id = 2052113 スペイン内戦 ― 義勇兵の帰国（UER）\r
++#id = 2052114 スペイン内戦 ― 義勇兵の帰還（UER）\r
++#id = 2052115 スペイン内戦 ― 介入（ITA）\r
++#id = 2052116 スペイン内戦 ― イタリアの介入\r
++#id = 2052117 スペイン内戦 ― 義勇兵の帰国（ITA）\r
++#id = 2052118 スペイン内戦 ― 義勇兵の帰還（ITA）\r
++#id = 2052119 スペイン内戦 ― 義勇兵の帰還（SPR）\r
++#id = 2052120 スペイン内戦 ― 義勇兵の帰還（SPA）\r
+ #########################################################################\r
+ #  スペイン内戦 ― 介入（JAP）\r
+ # 1936年初頭、社会党が選挙で勝利をおさめると、大衆は社会的平等を求め始め、それが宗教界、大地主、王党派を敵とする革命的な運動に発展する。\r
+@@ -307,7 +315,7 @@ event = {
+ 	command = { type = steal_tech which = JAP }\r
+ 	command = { type = steal_tech which = JAP }\r
+ 	command = { trigger = { country = SPR } type = setflag which = JAP_Intervention_SPR_civi_war }\r
+-	command = { trigger = { country = SPA } type = setflag which = JAP_Intervention_SPA_civi_war  }\r
++	command = { trigger = { country = SPA } type = setflag which = JAP_Intervention_SPA_civi_war }\r
+ 	}\r
+ }\r
+ \r
+@@ -723,7 +731,7 @@ event = {
+ 	command = { type = steal_tech which = KOR }\r
+ 	command = { type = steal_tech which = KOR }\r
+ 	command = { trigger = { country = SPR } type = setflag which = KOR_Intervention_SPR_civi_war }\r
+-	command = { trigger = { country = SPA } type = setflag which = KOR_Intervention_SPA_civi_war  }\r
++	command = { trigger = { country = SPA } type = setflag which = KOR_Intervention_SPA_civi_war }\r
+ 	}\r
+ }\r
+ \r
+@@ -848,13 +856,596 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
++#########################################################################\r
++#  スペイン内戦 ― 介入（UER）\r
++#########################################################################\r
++event = {\r
++	id = 2052111\r
++	random = no\r
++	country = UER\r
++\r
++	decision = {\r
++	war = { country = SPA country = SPR }\r
++	event = 2052002 # スペイン内戦\r
++	NOT = {\r
++	OR = {\r
++	war = { country = UER country = SPA }\r
++	war = { country = UER country = SOV }\r
++	war = { country = UER country = ENG }\r
++	war = { country = UER country = USA }\r
++	}\r
++	}\r
++	}\r
++\r
++	decision_trigger = { \r
++	manpower = 10\r
++	supplies = 1000 \r
++	money = 200\r
++	}\r
++	\r
++	trigger = {\r
++	war = { country = SPA country = SPR }\r
++	event = 2052002 # スペイン内戦\r
++	NOT = {\r
++	OR = {\r
++	war = { country = UER country = SPA }\r
++	war = { country = UER country = SOV }\r
++	war = { country = UER country = ENG }\r
++	war = { country = UER country = USA }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_2052111_NAME"\r
++	desc = "EVT_2052111_DESC"\r
++	style = 2\r
++	picture = "Condor_Legion"\r
++	decision_picture = "decision_SCW_German"\r
++\r
++	date = { day = 19 month = july year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++\r
++	#民主主義&左派独裁\r
++	action = { # 義勇兵と物資を送る\r
++	name = "ACTIONNAME2052111A"\r
++	trigger = { \r
++	OR = { \r
++	government = democratic\r
++	government = communist \r
++	}\r
++	}\r
++	command = { type = relation which = SPR value = 60 }\r
++	command = { type = relation which = SPA value = -60 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = ITA value = -10 }\r
++	command = { type = relation which = POR value = -10 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = manpowerpool value = -10 }\r
++	command = { trigger = { ai = no } type = supplies value = -1000 }\r
++	command = { trigger = { ai = no } type = money value = -200 }\r
++	command = { type = event which = 2052112 where = SPR when = 0 }\r
++	command = { type = belligerence which = UER value = 1 }\r
++	}\r
++\r
++	action = { # 志願兵を送れ\r
++	name = "ACTIONNAME2052111B"\r
++	trigger = { \r
++	OR = { \r
++	government = democratic\r
++	government = communist \r
++	}\r
++	}\r
++	command = { type = relation which = SPR value = 60 }\r
++	command = { type = relation which = SPA value = -60 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = ITA value = -10 }\r
++	command = { type = relation which = POR value = -10 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = manpowerpool value = -10 }\r
++	command = { trigger = { ai = no } type = supplies value = -2000 }\r
++	command = { trigger = { ai = no } type = money value = -400 }\r
++	command = { type = event which = 2052112 where = SPR when = 0 }\r
++	command = { type = belligerence which = UER value = 3 }\r
++	command = { type = military_control which = UER where = SPR value = 1 }\r
++	command	= { type = local_setflag which = military_control_SPR }\r
++	}\r
++\r
++	action = { # 介入しない\r
++	name = "ACTIONNAME2052111C"\r
++	trigger = { \r
++	OR = { \r
++	government = democratic\r
++	government = communist \r
++	}\r
++	}\r
++	command = { type = dissent value = 1 }\r
++	command = { type = relation which = SPR value = -20 }\r
++	command = { type = relation which = SPA value = 20 }\r
++	command = { type = relation which = FRA value = 5 }\r
++	command = { type = relation which = ENG value = 5 }\r
++	command = { type = relation which = ITA value = 5 }\r
++	command = { type = relation which = POR value = 5 }\r
++	command = { type = belligerence which = UER value = -1 }\r
++	command = { type = sleepevent which = 2052112 }\r
++	command = { type = sleepevent which = 2052113 }\r
++	command = { type = sleepevent which = 2052114 }\r
++	ai_chance = 30\r
++	}\r
++\r
++\r
++	#右派独裁\r
++	action = { # 義勇兵と物資を送る\r
++	name = "ACTIONNAME2052111A"\r
++	trigger = { government = fascist }\r
++	command = { type = relation which = SPA value = 60 }\r
++	command = { type = relation which = SPR value = -60 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = ITA value = -10 }\r
++	command = { type = relation which = POR value = -10 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = manpowerpool value = -10 }\r
++	command = { trigger = { ai = no } type = supplies value = -1000 }\r
++	command = { trigger = { ai = no } type = money value = -200 }\r
++	command = { type = event which = 2052112 where = SPA when = 0 }\r
++	command = { type = belligerence which = UER value = 1 }\r
++	}\r
++\r
++	action = { # 志願兵を送れ\r
++	name = "ACTIONNAME2052111B"\r
++	trigger = { government = fascist }\r
++	command = { type = relation which = SPA value = 60 }\r
++	command = { type = relation which = SPR value = -60 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = ITA value = -10 }\r
++	command = { type = relation which = POR value = -10 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = manpowerpool value = -10 }\r
++	command = { trigger = { ai = no } type = supplies value = -2000 }\r
++	command = { trigger = { ai = no } type = money value = -400 }\r
++	command = { type = event which = 2052112 where = SPA when = 0 }\r
++	command = { type = belligerence which = UER value = 3 }\r
++	command = { type = military_control which = UER where = SPA value = 1 }\r
++	command	= { type = local_setflag which = military_control_SPA }\r
++	}\r
++\r
++	action = { # 介入しない\r
++	name = "ACTIONNAME2052111C"\r
++	trigger = { government = fascist }\r
++	command = { type = dissent value = 1 }\r
++	command = { type = relation which = SPA value = -20 }\r
++	command = { type = relation which = SPR value = 20 }\r
++	command = { type = relation which = FRA value = 5 }\r
++	command = { type = relation which = ENG value = 5 }\r
++	command = { type = relation which = ITA value = 5 }\r
++	command = { type = relation which = POR value = -5 }\r
++	command = { type = belligerence which = UER value = -1 }\r
++	command = { type = sleepevent which = 2052112 }\r
++	command = { type = sleepevent which = 2052113 }\r
++	command = { type = sleepevent which = 2052114 }\r
++	ai_chance = 30\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スペイン内戦 ― ロシアの介入\r
++#########################################################################\r
++event = {\r
++	id = 2052112\r
++	random = no\r
++	TAG = { SPA SPR }\r
++\r
++	name = "EVT_2052112_NAME"\r
++	desc = "EVT_2052111_DESC"\r
++	style = 2\r
++	picture = "Condor_Legion"\r
++	\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = supplies value = 2000 }\r
++	command = { type = add_division value = militia when = 5 }\r
++	command = { type = add_division value = militia when = 5 }\r
++	command = { type = add_division which = "ロシア義勇戦車兵団" value = light_armor when = 0 }\r
++	command = { type = add_division which = "ロシア義勇歩兵兵団" value = infantry when = 7 }\r
++	command = { type = add_division which = "ロシア義勇戦闘隊" value = interceptor when = 5 }\r
++	command = { type = add_division which = "ロシア義勇爆撃隊" value = tactical_bomber when = 4 }\r
++	command = { type = gain_tech which = 1100 } #1936年型歩兵師団\r
++	command = { type = gain_tech which = 2030 } #1936年型軽戦車\r
++       	command = { type = steal_tech which = UER }\r
++	command = { type = steal_tech which = UER }\r
++	command = { trigger = { country = SPR } type = setflag which = UER_Intervention_SPR_civi_war }\r
++	command = { trigger = { country = SPA } type = setflag which = UER_Intervention_SPA_civi_war }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スペイン内戦 ― 義勇兵の帰国（UER）\r
++# ロシアはスペイン政府に援助を与え、膨大な量の武器を売却した。\r
++# その内訳は航空機1000機、装甲車300両、戦車900両、火砲1500門あまり、そして数十万丁の小火器、3万トンの弾薬などである。\r
++# ただし不良品も一部に含まれていた。\r
++# 当時のスペイン政府は7億5千万ドル相当の金塊を保有しており、武器購入のために5億ドルを使った。\r
++# また「軍事顧問」と呼ばれる集団もロシアから多数派遣された。\r
++# スペイン内乱は当時のロシアとドイツにとって、完成して間もない新型の戦車や航空機を実戦でテストできる唯一の戦場であった。\r
++# 実際、ロシアはこの戦いに試作戦闘機や実験戦車を投入している。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2052113\r
++	random = no\r
++	country = UER\r
++\r
++	trigger = {\r
++	event = 2052111 # スペイン内戦 ― ロシアの介入\r
++	OR = {\r
++	AND = {\r
++	government = communist\r
++	flag = UER_Intervention_SPR_civi_war # スペイン内戦にロシアが介入\r
++	event = 2052010 # スペイン内戦 ― 勝利！（共和派）\r
++	}\r
++	AND = {\r
++	government = democratic\r
++	flag = UER_Intervention_SPR_civi_war # スペイン内戦にロシアが介入\r
++	event = 2052010 # スペイン内戦 ― 勝利！（共和派）\r
++	}\r
++	AND = {\r
++	government = fascist\r
++	flag = UER_Intervention_SPA_civi_war # スペイン内戦にロシアが介入\r
++	event = 2008008 # スペイン内戦 ― 勝利！（国粋派）\r
++	}\r
++	}\r
++	NOT = {\r
++	OR = {\r
++	war = { country = UER country = SPA }\r
++	war = { country = UER country = SPR }\r
++	war = { country = UER country = SOV }\r
++	war = { country = UER country = ENG }\r
++	war = { country = UER country = USA }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_2052113_NAME"\r
++	desc = "EVT_2052113_DESC"\r
++	style = 2\r
++	picture = "scw"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action_a = { # 素晴らしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { trigger = { government = communist } type = relation which = SPR value = 30 }\r
++	command = { trigger = { government = democratic } type = relation which = SPR value = 30 }\r
++	command = { trigger = { government = fascist } type = relation which = SPA value = 30 }\r
++	command = { type = manpowerpool value = 5 }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = gain_tech which = -1 }\r
++	command = { type = gain_tech which = -1 }\r
++	command = { type = gain_tech which = -2 }\r
++	command = { type = gain_tech which = -2 }\r
++	command = { type = money value = 2000 }\r
++	command = { trigger = { local_flag = military_control_SPR } type = military_control which = UER where = SPR value = 0 }\r
++	command = { trigger = { local_flag = military_control_SPR } type = local_clrflag which = military_control_SPR }\r
++	command = { trigger = { local_flag = military_control_SPA } type = military_control which = UER where = SPA value = 0 }\r
++	command = { trigger = { local_flag = military_control_SPA } type = local_clrflag which = military_control_SPA }\r
++	command = { type = sleepevent which = 2052114 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スペイン内戦 ― 義勇兵の帰還（UER）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2052114\r
++	random = no\r
++	country = UER\r
++\r
++	trigger = {\r
++	event = 2052111 # スペイン内戦 ― ロシアの介入\r
++	OR = {\r
++	AND = {\r
++	government = communist\r
++	flag = UER_Intervention_SPR_civi_war # スペイン内戦にロシアが介入\r
++	event = 2008008 # スペイン内戦 ― 勝利！（国粋派）\r
++	}\r
++	AND = {\r
++	government = democratic\r
++	flag = UER_Intervention_SPR_civi_war # スペイン内戦にロシアが介入\r
++	event = 2008008 # スペイン内戦 ― 勝利！（国粋派）\r
++	}\r
++	AND = {\r
++	government = fascist\r
++	flag = UER_Intervention_SPA_civi_war # スペイン内戦にロシアが介入\r
++	event = 2052010 # スペイン内戦 ― 勝利！（共和派）\r
++	}\r
++	}\r
++	NOT = {\r
++	OR = {\r
++	war = { country = UER country = SPA }\r
++	war = { country = UER country = SPR }\r
++	war = { country = UER country = SOV }\r
++	war = { country = UER country = ENG }\r
++	war = { country = UER country = USA }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_2052114_NAME"\r
++	desc = "EVT_2052113_DESC"\r
++	style = 2\r
++	picture = "scw"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { trigger = { government = communist } type = relation which = SPA value = -30 }\r
++	command = { trigger = { government = democratic } type = relation which = SPA value = -30 }\r
++	command = { trigger = { government = fascist } type = relation which = SPR value = -30 }\r
++	command = { type = manpowerpool value = 2 }\r
++	command = { trigger = { ai = no } type = dissent value = 1 }\r
++	command = { type = gain_tech which = -1 }\r
++	command = { type = gain_tech which = -2 }\r
++	command = { type = money value = 1000 }\r
++	command = { trigger = { local_flag = military_control_SPR } type = military_control which = UER where = SPR value = 0 }\r
++	command = { trigger = { local_flag = military_control_SPR } type = local_clrflag which = military_control_SPR }\r
++	command = { trigger = { local_flag = military_control_SPA } type = military_control which = UER where = SPA value = 0 }\r
++	command = { trigger = { local_flag = military_control_SPA } type = local_clrflag which = military_control_SPA }\r
++	command = { type = sleepevent which = 2052113 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スペイン内戦 ― 介入（ITA）\r
++#########################################################################\r
++\r
++event = { \r
++	id = 2052115\r
++	random = no\r
++	country = ITA\r
++	\r
++	decision = {\r
++	war = { country = SPA country = SPR }\r
++	event = 2052002 # スペイン内戦\r
++	NOT = {\r
++	OR = {\r
++	war = { country = ITA country = SPA }\r
++	war = { country = ITA country = UER }\r
++	war = { country = ITA country = SOV }\r
++	war = { country = ITA country = ENG }\r
++	war = { country = ITA country = USA }\r
++	}\r
++	}\r
++	}\r
++\r
++	decision_trigger = { 		\r
++	manpower = 10\r
++	supplies = 1000 \r
++	money = 200 \r
++	}\r
++\r
++	trigger = {\r
++	war = { country = SPA country = SPR }\r
++	event = 2052002 # スペイン内戦\r
++	NOT = {\r
++	OR = {\r
++	war = { country = ITA country = SPA }\r
++	war = { country = ITA country = UER }\r
++	war = { country = ITA country = SOV }\r
++	war = { country = ITA country = ENG }\r
++	war = { country = ITA country = USA }\r
++	}\r
++	}\r
++	}\r
++	\r
++	name = "EVT_2052115_NAME"\r
++	desc = "EVT_2052115_DESC"\r
++	style = 2\r
++	picture = "Corpo_truppe_Volontarie"\r
++\r
++	date = { day = 19 month = july year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = december year = 1963 }\r
++	\r
++	action = { # 装備と義勇兵を送る\r
++	name = "ACTIONNAME2052115A"\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = relation which = SPR value = 20 }\r
++	command = { type = relation which = SPA value = -20 }\r
++	command = { type = relation which = FRA value = -5 }\r
++	command = { type = relation which = ENG value = -5 }\r
++	command = { type = relation which = UER value = -5 }\r
++	command = { type = relation which = SOV value = -5 }\r
++	command = { type = relation which = U08 value = -5 }\r
++	command = { type = manpowerpool value = -30 }\r
++	command = { trigger = { ai = no } type = trade which = SPR where = ITA supplies = 20 when = 1080 value = 1 }\r
++	command = { type = money value = -200 }\r
++	command = { type = trigger which = 2052116 }\r
++	command = { type = belligerence which = ITA value = 1 }\r
++	}\r
++\r
++	action = { # 志願兵を送れ\r
++	trigger = { \r
++	ai = no \r
++	supplies = 2000 \r
++	money = 400\r
++	}\r
++	name = "ACTIONNAME2052115B"\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = relation which = SPR value = 20 }\r
++	command = { type = relation which = SPA value = -20 }\r
++	command = { type = relation which = FRA value = -5 }\r
++	command = { type = relation which = ENG value = -5 }\r
++	command = { type = relation which = SOV value = -5 }\r
++	command = { type = relation which = U08 value = 5 }\r
++	command = { type = manpowerpool value = -30 }\r
++	command = { type = trade which = SPR where = ITA supplies = 20 when = 1080 value = 1 }\r
++	command = { type = money value = -400 }\r
++	command = { type = trigger which = 2052116 }\r
++	command = { type = belligerence which = ITA value = 3 }\r
++	command = { type = military_control which = ITA where = SPR value = 1 }\r
++	command	= { type = local_setflag which = military_control }\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  スペイン内戦 ― イタリアの介入\r
++#########################################################################\r
++event = {\r
++	id = 2052116\r
++	random = no\r
++	country = SPR\r
++\r
++	name = "EVT_2052116_NAME"\r
++	desc = "EVT_2052115_DESC"\r
++	style = 2\r
++	picture = "Corpo_truppe_Volontarie"\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = manpowerpool value = 10 }\r
++	command = { type = supplies value = 2000 }\r
++	command = { type = add_division value = destroyer when = 4 }\r
++	command = { type = add_division value = submarine when = 3 }\r
++	command = { type = add_corps which = "スペイン遠征軍" value = land when = 35028 where = 451 }\r
++	command = { type = add_division which = "義勇自動車化歩兵旅団「リットリオ」" value = motorized when = 0 where = light_armor_brigade }\r
++	command = { type = add_division which = "義勇歩兵旅団「レオーネ」" value = infantry when = 7 }\r
++	command = { type = add_division which = "義勇歩兵旅団「フィウメ」" value = infantry when = 7 }\r
++	command = { type = add_division which = "義勇歩兵旅団「カロッチョ」" value = infantry when = 7 }\r
++	command = { type = add_corps which = "航空軍団" value = air where = 441 }\r
++	command = { type = add_division which = "イタリア義勇爆撃隊" value = tactical_bomber when = 3 }\r
++	command = { type = add_division which = "イタリア義勇攻撃隊" value = cas when = 1 }\r
++	command = { type = add_division which = "イタリア義勇戦闘隊" value = interceptor when = 6 }	\r
++	command = { type = transport_pool which = SPR value = 25 }\r
++       	command = { type = steal_tech which = ITA }\r
++       	command = { type = steal_tech which = ITA }\r
++       	command = { type = steal_tech which = ITA }\r
++       	command = { type = steal_tech which = ITA }\r
++	command = { trigger = { country = SPR } type = setflag which = ITA_Intervention_SPR_civi_war }\r
++	command = { trigger = { country = SPA } type = setflag which = ITA_Intervention_SPA_civi_war }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スペイン内戦 ― 義勇軍団の帰国（ITA）\r
++# 1937年1月、スペインにておよそ45000人のイタリア兵が義勇軍団（Corpo Truppe Volontari）の名で戦っていた。\r
++# この軍団は4個師団で構成され、それぞれリットリオ、レオーネ、フィウメ、カロッチョと呼ばれていた。\r
++# さらにスペイン兵を含む混成旅団も2つ編成されていた。\r
++# 確かにこの軍団には民主主義を支持する義勇兵もいたが、完全に騙されて加わったものもいた。\r
++# 義勇軍団の各師団は装備もかなり充実し、戦車や装甲車だけでなく、野戦砲連隊（x 10）、対戦車砲、対空砲中隊（x 4）を擁していた。\r
++# 3月には戦闘員の数が50000人を超えた。リットリオ以外の師団はどれも甚大な被害をこうむり、再編成を余儀なくされた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2052117\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	event = 2052115 # スペイン内戦 ― イタリアの介入\r
++	event = 2052010 # スペイン内戦 - 勝利(SPR)\r
++	NOT = {\r
++	OR = {\r
++	war = { country = ITA country = SPA }\r
++	war = { country = ITA country = SPR }\r
++	war = { country = ITA country = UER }\r
++	war = { country = ITA country = SOV }\r
++	war = { country = ITA country = ENG }\r
++	war = { country = ITA country = USA }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_2052117_NAME"\r
++	desc = "EVT_2052117_DESC"\r
++	style = 2\r
++	picture = "scw"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action_a = { # 素晴らしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = relation which = SPR value = 30 }\r
++	command = { type = manpowerpool value = 5 }\r
++	command = { type = dissent value = -1 }\r
++	command = { type = gain_tech which = -1 }\r
++	command = { type = gain_tech which = -1 }\r
++	command = { type = gain_tech which = -2 }\r
++	command = { type = gain_tech which = -2 }\r
++	command = { type = money value = 2000 }\r
++	command = { trigger = { local_flag = military_control } type = military_control which = ITA where = SPR value = 0 }\r
++	command = { trigger = { local_flag = military_control } type = local_clrflag which = military_control }\r
++	command = { type = sleepevent which = 2052118 }\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  スペイン内戦 ― 義勇軍団の帰還（ITA）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2052118\r
++	random = no\r
++	country = ITA\r
++\r
++	trigger = {\r
++	event = 2052115 # スペイン内戦 ― イタリアの介入\r
++	event = 2008008	# スペイン内戦 - 勝利(SPA)\r
++	NOT = {\r
++	OR = {\r
++	war = { country = ITA country = SPA }\r
++	war = { country = ITA country = SPR }\r
++	war = { country = ITA country = UER }\r
++	war = { country = ITA country = SOV }\r
++	war = { country = ITA country = ENG }\r
++	war = { country = ITA country = USA }\r
++	}\r
++	}\r
++	}\r
++\r
++	name = "EVT_2052118_NAME"\r
++	desc = "EVT_2052117_DESC"\r
++	style = 2\r
++	picture = "scw"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 了解\r
++	name = "ACTION_NAME_OK"\r
++	command = { type = relation which = SPA value = -30 }\r
++	command = { type = manpowerpool value = 2 }\r
++	command = { trigger = { ai = no } type = dissent value = 1 }\r
++	command = { type = gain_tech which = -1 }\r
++	command = { type = gain_tech which = -2 }\r
++	command = { type = sleepevent which = 2052117 }\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  スペイン内戦 ― 義勇兵の帰還（SPR）\r
+ # スペイン内戦に勝利したことで、国内に来ていた義勇兵が次々に帰国していった。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 2052111\r
++	id = 2052119\r
+ 	random = no\r
+ 	country = SPR\r
+ \r
+@@ -864,13 +1455,17 @@ event = {
+ 	flag = JAP_Intervention_SPA_civi_war # スペイン内戦に朝鮮が介入\r
+ 	flag = KOR_Intervention_SPR_civi_war # スペイン内戦に朝鮮が介入\r
+ 	flag = KOR_Intervention_SPA_civi_war # スペイン内戦に朝鮮が介入\r
++	flag = UER_Intervention_SPR_civi_war # スペイン内戦にロシアが介入\r
++	flag = UER_Intervention_SPA_civi_war # スペイン内戦にロシアが介入\r
++	flag = ITA_Intervention_SPR_civi_war # スペイン内戦にイタリアが介入\r
++	flag = ITA_Intervention_SPA_civi_war # スペイン内戦にイタリアが介入\r
+ 	}\r
+ 	event = 2052010 # スペイン内戦 ― 勝利！（共和派）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_2052111_NAME"\r
+-	desc = "EVT_2052111_DESC"\r
++	name = "EVT_2052119_NAME"\r
++	desc = "EVT_2052119_DESC"\r
+ 	style = 2\r
+ 	picture = "scw"\r
+ \r
+@@ -886,6 +1481,17 @@ event = {
+ 	command = { type = remove_division which = "朝鮮義勇戦闘航空隊" value = SPR }\r
+ 	command = { type = remove_division which = "朝鮮義勇歩兵師団" value = SPR }\r
+ 	command = { type = remove_division which = "朝鮮義勇山岳師団" value = SPR }\r
++	command = { type = remove_division which = "ロシア義勇戦車兵団" value = SPR }\r
++	command = { type = remove_division which = "ロシア義勇歩兵兵団" value = SPR }\r
++	command = { type = remove_division which = "ロシア義勇戦闘隊" value = SPR }\r
++	command = { type = remove_division which = "ロシア義勇爆撃隊" value = SPR }\r
++	command = { type = remove_division which = "義勇自動車化歩兵旅団「リットリオ」" value = SPR }\r
++	command = { type = remove_division which = "義勇歩兵旅団「レオーネ」" value = SPR }\r
++	command = { type = remove_division which = "義勇歩兵旅団「フィウメ」" value = SPR }\r
++	command = { type = remove_division which = "義勇歩兵旅団「カロッチョ」" value = SPR }\r
++	command = { type = remove_division which = "イタリア義勇爆撃隊" value = SPR }\r
++	command = { type = remove_division which = "イタリア義勇攻撃隊" value = SPR }\r
++	command = { type = remove_division which = "イタリア義勇戦闘隊" value = SPR }\r
+ 	}\r
+ }\r
+ \r
+@@ -895,7 +1501,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 2052112\r
++	id = 2052120\r
+ 	random = no\r
+ 	country = SPA\r
+ \r
+@@ -905,13 +1511,17 @@ event = {
+ 	flag = JAP_Intervention_SPA_civi_war # スペイン内戦に朝鮮が介入\r
+ 	flag = KOR_Intervention_SPR_civi_war # スペイン内戦に朝鮮が介入\r
+ 	flag = KOR_Intervention_SPA_civi_war # スペイン内戦に朝鮮が介入\r
++	flag = UER_Intervention_SPR_civi_war # スペイン内戦にロシアが介入\r
++	flag = UER_Intervention_SPA_civi_war # スペイン内戦にロシアが介入\r
++	flag = ITA_Intervention_SPR_civi_war # スペイン内戦にイタリアが介入\r
++	flag = ITA_Intervention_SPA_civi_war # スペイン内戦にイタリアが介入\r
+ 	}\r
+ 	event = 2008008 # スペイン内戦 ― 勝利！（国粋派）\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_2052112_NAME"\r
+-	desc = "EVT_2052112_DESC"\r
++	name = "EVT_2052120_NAME"\r
++	desc = "EVT_2052120_DESC"\r
+ 	style = 2\r
+ 	picture = "scw"\r
+ \r
+@@ -927,5 +1537,16 @@ event = {
+ 	command = { type = remove_division which = "朝鮮義勇戦闘航空隊" value = SPA }\r
+ 	command = { type = remove_division which = "朝鮮義勇歩兵師団" value = SPA }\r
+ 	command = { type = remove_division which = "朝鮮義勇山岳師団" value = SPA }\r
++	command = { type = remove_division which = "ロシア義勇戦車兵団" value = SPA }\r
++	command = { type = remove_division which = "ロシア義勇歩兵兵団" value = SPA }\r
++	command = { type = remove_division which = "ロシア義勇戦闘隊" value = SPA }\r
++	command = { type = remove_division which = "ロシア義勇爆撃隊" value = SPA }\r
++	command = { type = remove_division which = "義勇自動車化歩兵旅団「リットリオ」" value = SPA }\r
++	command = { type = remove_division which = "義勇歩兵旅団「レオーネ」" value = SPA }\r
++	command = { type = remove_division which = "義勇歩兵旅団「フィウメ」" value = SPA }\r
++	command = { type = remove_division which = "義勇歩兵旅団「カロッチョ」" value = SPA }\r
++	command = { type = remove_division which = "イタリア義勇爆撃隊" value = SPA }\r
++	command = { type = remove_division which = "イタリア義勇攻撃隊" value = SPA }\r
++	command = { type = remove_division which = "イタリア義勇戦闘隊" value = SPA }\r
+ 	}\r
+ }
+\ No newline at end of file

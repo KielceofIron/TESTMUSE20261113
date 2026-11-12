@@ -1,0 +1,110 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_CSA_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_CSA_events.txt [cp932]
+@@ -10,7 +10,7 @@ event = {
+ 	name = "EVT_1299500_NAME"\r
+ 	desc = "EVT_1299500_DESC"\r
+ 	style = 2\r
+-	picture = ""\r
++	#picture = ""\r
+ \r
+ 	action_a = { # ディキシーを歌え！　我々はアメリカ連合国なり！\r
+ 	name = "ACTIONNAME1299500A"\r
+@@ -295,10 +295,15 @@ event = {
+ 	command = { type = add_core_region which = "Northwest US" }\r
+ 	command = { type = add_core_region which = "Midwest US" }\r
+ 	command = { type = add_core_region which = "Southcentral US" }\r
+-	command = { type = add_core_region which = "Eastern Canada" }\r
+-	command = { type = add_core_region which = "Western Canada" }\r
+-	command = { type = add_core_region which = "Northern Canada" }\r
+-	command = { type = add_core_region which = "Canada" }\r
++	command = { trigger = { NOT = { OR = { flag = GER_ACW exists = GER } } } type = add_core_region which = "Eastern Canada" }\r
++	command = { trigger = { NOT = { OR = { flag = GER_ACW exists = GER } } } type = add_core_region which = "Western Canada" }\r
++	command = { trigger = { NOT = { OR = { flag = GER_ACW exists = GER } } } type = add_core_region which = "Northern Canada" }\r
++	command = { trigger = { NOT = { OR = { flag = GER_ACW exists = GER } } } type = add_core_region which = "Canada" }\r
++	command = { trigger = { flag = GER_ACW exists = GER } type = secederegion which = GER value = "Eastern Canada" when = 1 }\r
++	command = { trigger = { flag = GER_ACW exists = GER } type = secederegion which = GER value = "Western Canada" when = 1 }\r
++	command = { trigger = { flag = GER_ACW exists = GER } type = secederegion which = GER value = "Northern Canada" when = 1 }\r
++	command = { trigger = { flag = GER_ACW exists = GER } type = secederegion which = GER value = "Canada" when = 1 }\r
++	command = { trigger = { flag = GER_ACW exists = GER } type = secederegion which = GER value = "Alaska" when = 1 }\r
+ 	command = { type = add_core_region which = "Mexico" }\r
+ 	command = { trigger = { region = { region = "Alaska" country = CSA data = 1 value = 1 } } type = add_core_region which = "Alaska" }\r
+ 	command = { trigger = { NOT = { region = { region = "Alaska" country = CSA data = 1 value = 1 } } } type = remove_core_region which = "Alaska" }\r
+@@ -383,4 +388,76 @@ event = {
+ 		name = ACTIONNAME1299506A # 彼らは軍隊ではない――野蛮人だ！\r
+ 	command = { trigger = { war = { country = MEX } } type = peace which = MEX }\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r
++\r
++\r
++#########################################################################\r
++#  アメリカ内戦の終結（CSA優勢）\r
++# 大英帝国の降伏に伴い、ヒューイ・ロング率いるアメリカ連合国\r
++# の優勢で推移しつつあったアメリカ内戦（英側名称：「英領北アメリカ内戦」）は終結し、\r
++# 独米両政府の協議の結果、ケベックをドイツの傀儡国、カナダを連合国\r
++# の傀儡国として独立させることとなった。\r
++########################################################################\r
++event = {\r
++	id = 1299507\r
++	random = no	\r
++	country = GER\r
++	\r
++	trigger = {\r
++	flag = CAN_ACW\r
++	exists = CAN\r
++	NOT = { exists = U00 }\r
++	NOT = { exists = USA }\r
++	exists = CSA\r
++	}\r
++	\r
++	name = EVT_1299507_NAME\r
++	desc = EVT_1299507_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 14\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME1299507A"\r
++	command = { type = inherit which = CAN }\r
++	command = { type = independence which = QUE }\r
++	command = { type = independence which = UA9 }\r
++	command = { type = independence which = CAN }\r
++	command = { type = make_puppet which = QUE }\r
++	command = { type = make_puppet which = CAN }\r
++	command = { type = alliance which = CSA }\r
++	command = { type = reation which = CSA value  200 }\r
++	command = { type = event which = 1299508 where = CSA when = 0 }\r
++	command = { trigger = { exists = UE0 } type = war which = UE0 }\r
++	ai_chance = 100\r
++	}\r
++}	\r
++\r
++event = {\r
++	id = 1299508\r
++	random = no	\r
++	country = CSA\r
++	\r
++	\r
++	name = EVT_1299507_NAME\r
++	desc = EVT_1299507_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME1299717A"\r
++	command = { type = make_puppet which = CAN }\r
++	command = { type = independence which = UA9 }\r
++	command = { type = make_puppet which = UA9 }\r
++	command = { trigger = { exists = UE0 } type = war which = UE0 }\r
++	ai_chance = 100\r
++	}\r
++}	\r
++\r
++\r
++\r
++\r

@@ -1,0 +1,949 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Columbia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Columbia_events.txt [ascii]
+@@ -1,946 +0,0 @@
+-#########################################################################\r
+-#\r
+-#		コロンビアイベント  by 横山大佐\r
+-#########################################################################\r
+-###### 追加イベント一覧 ############\r
+-#########################################################################\r
+-#id = 4434001 グラン・コロンビア革命\r
+-#id = 4434002 グラン・コロンビア革命の達成\r
+-#id = 4434003 グラン・コロンビア革命戦争 ― ベネズエラ\r
+-#id = 4434004 グラン・コロンビア革命戦争 ― エクアドル侵攻\r
+-#id = 4434005 グラン・コロンビアが隣国に侵攻\r
+-#id = 4434006 農地改革法\r
+-#id = 4434007 農地改革 ― 第一段階\r
+-#id = 4434008 農地改革 ― 改革の達成\r
+-#id = 4434009 グランコロンビアの産業再編\r
+-#id = 4434010 グランコロンビア革命軍\r
+-#id = 4434101 攻勢チャット（対ベネズエラ）\r
+-#id = 4434103 攻勢チャット（対エクアドル）\r
+-##########################################################################\r
+-#  グラン・コロンビア革命\r
+-# コロンビア・ペルー戦争において火が付いたナショナリズムは、そのまま講和を締結した政府への不満に転換した。\r
+-# コロンビアでは1819年にスペインから独立して以降、自由党と保守党による二大政党制による議会政治が行われてきたのだが、\r
+-# 反面、二大政党以外の政治勢力による政治参加が阻害され、今回の講和では継戦派が排除されるという形になったのだ。\r
+-# 寡頭体制から排除された農民や貧困層は、かねてから経済的問題もあり、不満を募らせ反政府武装闘争を展開。\r
+-# 北部に存在する企業国家のユナイテッド・フルーツ社の排除や農地改革、富の再分配を掲げた革命軍は、\r
+-# 民衆から圧倒的な支持を受けたこともあり、首都を陥落させることに成功。\r
+-# 彼らはグランコロンビア全体の革命を目指す革命政権を樹立し、新体制を築き上げた。\r
+-###########################################################################\r
+-event = {\r
+-	id = 4434001\r
+-	random = no\r
+-	country = COL\r
+-	save_date = yes\r
+-	\r
+-	decision = {\r
+-	government = democratic\r
+-	event = 211004\r
+-	NOT = { event = 2900040 }\r
+-	NOT = { war = { country = PRU country = COL } }\r
+-	NOT = { ispuppet = COL }\r
+-	NOT = { exists = U77 }\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	government = democratic\r
+-	event = 211004\r
+-	NOT = { event = 2900040 }\r
+-	NOT = { war = { country = PRU country = COL } }\r
+-	NOT = { ispuppet = COL }\r
+-	NOT = { exists = U77 }\r
+-	}\r
+-\r
+-	trigger = {\r
+-	government = democratic\r
+-	event = 211004\r
+-	NOT = { event = 2900040 }\r
+-	NOT = { war = { country = PRU country = COL } }\r
+-	NOT = { ispuppet = COL }\r
+-	NOT = { exists = U77 }\r
+-	random = 45\r
+-	}\r
+-	\r
+-	name = "EVT_4434001_NAME"\r
+-	desc = "EVT_4434001_DESC"\r
+-	style = 2\r
+-	picture = "Guerra_col_per"\r
+-	decision_picture = "decision_winter_equipment_start"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 革命万歳！\r
+-	name = "ACTIONNAME4434001A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = country which = U77 }\r
+-	command = { type = flag_ext where = U77 which = "_Com" }\r
+-	command = { type = name where = U77 which = "グランコロンビア社会主義連邦"}\r
+-	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = domestic which = free_market value = -3 }\r
+-	command = { type = domestic which = defense_lobby value = 2 }\r
+-	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { type = headofstate which = 1200086 }\r
+-	command = { type = headofgovernment which = 1200087 }\r
+-	command = { type = foreignminister which = 1200019 }\r
+-	command = { type = armamentminister which = 1200088 }\r
+-	command = { type = ministerofsecurity which = 1200089 }\r
+-	command = { type = ministerofintelligence which = 1200090 }\r
+-	command = { type = chiefofstaff which = 1200091 }\r
+-	command = { type = chiefofarmy which = 1200092 }\r
+-	command = { type = chiefofnavy which = 1200093 }\r
+-	command = { type = chiefofair which = 1200094 }\r
+-	command = { type = sleepevent which = 2900040 }\r
+-	command = { type = sleepevent which = 2900041 }\r
+-	command = { type = sleepevent which = 2900042 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  グラン・コロンビア革命の達成\r
+-# グラン・コロンビア（Gran Colombia）は、1819年から1831年まで南アメリカ北部にあったコロンビア共和国を指す。\r
+-# 大コロンビアとも呼ばれ、その領域は現在のベネズエラ、コロンビア、エクアドル、パナマの全域と、ガイアナ、ブラジル、ペルーの一部に相当する。\r
+-# これは南米に統一国家を築こうとしたシモン・ボリバルがヌエバグラナダとベネズエラの統一を提唱したのが、大コロンビアの起源である。\r
+-# この構想は、他の諸国がコロンビアの強大化、コロンビア内部における分離運動によって失敗に終わったが、\r
+-# 現在、コロンビアはかつて支配していた領域において『革命闘争』を成功させた。\r
+-# 革命万歳！\r
+-###########################################################################\r
+-event = {\r
+-	id = 4434002\r
+-	random = no\r
+-	TAG = { COL U77 }\r
+-	save_date = yes\r
+-	\r
+-	decision = {\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Quito" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Panaman Ridge" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Maracaibo" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Caracas" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Quito" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Panaman Ridge" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Maracaibo" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Caracas" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	}\r
+-\r
+-	trigger = {\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Quito" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Panaman Ridge" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Maracaibo" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Caracas" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	}\r
+-	\r
+-	name = "EVT_4434002_NAME"\r
+-	desc = "EVT_4434002_DESC"\r
+-	style = 2\r
+-	picture = "Gran_Colombia"\r
+-	decision_picture = "decision_Gran_Colombia"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 立て人民よ！革命だ！\r
+-	name = "ACTIONNAME4434002A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = set_domestic which = democratic value = 1 }\r
+-	command = { type = set_domestic which = political_left value = 10 }\r
+-	command = { trigger = { country = COL } type = country which = U77 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = wakeminister which = 1200001 }\r
+-	command = { type = wakeminister which = 1200002 }\r
+-	command = { type = wakeminister which = 1200005 }\r
+-	command = { type = wakeminister which = 1200006 }\r
+-	command = { type = wakeminister which = 1200007 }\r
+-	command = { type = wakeminister which = 1200008 }\r
+-	command = { type = wakeminister which = 1200009 }\r
+-	command = { type = wakeminister which = 1200010 }\r
+-	command = { type = wakeminister which = 1200011 }\r
+-	command = { type = wakeminister which = 1200012 }\r
+-	command = { type = wakeminister which = 1200013 }\r
+-	command = { type = wakeminister which = 1200014 }\r
+-	command = { type = wakeminister which = 1200020 }\r
+-	command = { type = wakeminister which = 1200024 }\r
+-	command = { type = wakeminister which = 1200027 }\r
+-	command = { type = wakeminister which = 1200028 }\r
+-	command = { type = wakeminister which = 1200029 }\r
+-	command = { type = wakeminister which = 1200030 }\r
+-	command = { type = wakeminister which = 1200031 }\r
+-	command = { type = wakeminister which = 1200032 }\r
+-	command = { type = wakeminister which = 1200033 }\r
+-	command = { type = wakeminister which = 1200034 }\r
+-	command = { type = wakeminister which = 1200035 }\r
+-	command = { type = wakeminister which = 1200036 }\r
+-	command = { type = wakeminister which = 1200037 }\r
+-	command = { type = wakeminister which = 1200038 }\r
+-	command = { type = wakeminister which = 1200039 }\r
+-	command = { type = wakeminister which = 1200043 }\r
+-	command = { type = wakeminister which = 1200047 }\r
+-	command = { type = wakeminister which = 1200048 }\r
+-	command = { type = wakeminister which = 1200049 }\r
+-	command = { type = wakeminister which = 1200050 }\r
+-	command = { type = wakeminister which = 1200053 }\r
+-	command = { type = wakeminister which = 1200054 }\r
+-	command = { type = wakeminister which = 1200055 }\r
+-	command = { type = wakeminister which = 1200056 }\r
+-	command = { type = wakeminister which = 1200058 }\r
+-	command = { type = wakeminister which = 1200059 }\r
+-	command = { type = wakeminister which = 1200060 }\r
+-	command = { type = wakeminister which = 1200061 }\r
+-	command = { type = wakeminister which = 1200062 }\r
+-	command = { type = wakeminister which = 1200063 }\r
+-	command = { type = wakeminister which = 1200064 }\r
+-	command = { type = wakeminister which = 1200067 }\r
+-	command = { type = wakeminister which = 1200070 }\r
+-	command = { type = wakeminister which = 1200071 }\r
+-	command = { type = wakeminister which = 1200072 }\r
+-	command = { type = wakeminister which = 1200074 }\r
+-	command = { type = wakeminister which = 1200075 }\r
+-	command = { type = wakeleader which = 9977044 }\r
+-	command = { type = wakeleader which = 9977045 }\r
+-	command = { type = wakeleader which = 9977046 }\r
+-	command = { type = wakeleader which = 9977047 }\r
+-	command = { type = wakeleader which = 9977048 }\r
+-	command = { type = wakeleader which = 9977049 }\r
+-	command = { type = wakeleader which = 9977050 }\r
+-	command = { type = wakeleader which = 9977051 }\r
+-	command = { type = wakeleader which = 9977052 }\r
+-	command = { type = wakeleader which = 9977053 }\r
+-	command = { type = wakeleader which = 9977054 }\r
+-	command = { type = wakeleader which = 9977055 }\r
+-	command = { type = wakeleader which = 9977056 }\r
+-	command = { type = wakeleader which = 9977057 }\r
+-	command = { type = wakeleader which = 9977058 }\r
+-	command = { type = wakeleader which = 9977059 }\r
+-	command = { type = wakeleader which = 9977060 }\r
+-	command = { type = wakeleader which = 9977061 }\r
+-	command = { type = wakeleader which = 9977062 }\r
+-	command = { type = wakeleader which = 9977063 }\r
+-	command = { type = wakeleader which = 9977064 }\r
+-	command = { type = wakeleader which = 9977065 }\r
+-	command = { type = wakeleader which = 9977066 }\r
+-	command = { type = wakeleader which = 9977067 }\r
+-	command = { type = wakeleader which = 9977068 }\r
+-	command = { type = wakeleader which = 9977069 }\r
+-	command = { type = wakeleader which = 9977070 }\r
+-	command = { type = wakeleader which = 9977071 }\r
+-	command = { type = wakeleader which = 9977072 }\r
+-	command = { type = wakeleader which = 9977073 }\r
+-	command = { type = wakeleader which = 9977074 }\r
+-	command = { type = wakeleader which = 9977075 }\r
+-	command = { type = wakeleader which = 9977076 }\r
+-	command = { type = wakeleader which = 9977077 }\r
+-	command = { type = wakeleader which = 9977078 }\r
+-	command = { type = wakeleader which = 9977079 }\r
+-	command = { type = wakeleader which = 9977080 }\r
+-	command = { type = wakeleader which = 9977081 }\r
+-	command = { type = wakeleader which = 9977082 }\r
+-	command = { type = wakeleader which = 9977083 }\r
+-	command = { type = wakeleader which = 9977084 }\r
+-	command = { type = wakeleader which = 9977085 }\r
+-	command = { type = wakeleader which = 9977086 }\r
+-	command = { type = wakeleader which = 9977087 }\r
+-	command = { type = wakeleader which = 9977088 }\r
+-	command = { type = wakeleader which = 9977089 }\r
+-	command = { type = wakeleader which = 9977090 }\r
+-	command = { type = wakeleader which = 9977091 }\r
+-	command = { type = wakeleader which = 9977092 }\r
+-	command = { type = wakeleader which = 9977093 }\r
+-	command = { type = wakeleader which = 9977094 }\r
+-	command = { type = wakeleader which = 9977095 }\r
+-	command = { type = wakeleader which = 9977096 }\r
+-	command = { type = wakeleader which = 9977097 }\r
+-	command = { type = wakeleader which = 9977098 }\r
+-	command = { type = wakeleader which = 9977099 }\r
+-	command = { type = wakeleader which = 9977100 }\r
+-	command = { type = wakeleader which = 9977101 }\r
+-	command = { type = wakeleader which = 9977102 }\r
+-	command = { type = wakeleader which = 9977103 }\r
+-	command = { type = wakeleader which = 9977104 }\r
+-	command = { type = wakeleader which = 9977105 }\r
+-	command = { type = wakeleader which = 9977106 }\r
+-	command = { type = wakeleader which = 9977107 }\r
+-	command = { type = wakeleader which = 9977108 }\r
+-	command = { type = wakeleader which = 9977109 }\r
+-	command = { type = wakeleader which = 9977110 }\r
+-	command = { type = wakeleader which = 9977111 }\r
+-	command = { type = wakeleader which = 9977112 }\r
+-	command = { type = wakeleader which = 9977113 }\r
+-	command = { type = wakeleader which = 9977114 }\r
+-	command = { type = wakeleader which = 9977115 }\r
+-	command = { type = wakeleader which = 9977116 }\r
+-	command = { type = wakeleader which = 9977117 }\r
+-	command = { type = wakeleader which = 9977118 }\r
+-	command = { type = wakeleader which = 9977119 }\r
+-	command = { type = wakeleader which = 9977120 }\r
+-	command = { type = wakeleader which = 9977121 }\r
+-	command = { type = waketeam  which = 1200011 }\r
+-	command = { type = waketeam  which = 1200012 }\r
+-	command = { type = waketeam  which = 1200013 }\r
+-	command = { type = waketeam  which = 1200014 }\r
+-	command = { type = waketeam  which = 1200015 }\r
+-	command = { type = waketeam  which = 1200016 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  グラン・コロンビア革命戦争 ― ベネズエラ侵攻\r
+-# グランコロンビア全体の革命を目指す革命政権が樹立されたコロンビアは、地域統一を掲げていたが、ついに行動に移す準備ができた。\r
+-# グランコロンビアの実現のためには、鉄と血が必要なのだ！\r
+-###########################################################################\r
+-event = {\r
+-	id = 4434003\r
+-	random = no\r
+-	country = U77\r
+-	\r
+-	decision = {\r
+-	OR = { \r
+-	event = 4434001\r
+-	event = 4434002\r
+-	}\r
+-	NOT = { war = { country = U77 country = VEN } }\r
+-	NOT = { war = { country = U77 country = ECU } }\r
+-	NOT = { ispuppet = U77 }\r
+-	exists = VEN\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = { \r
+-	event = { id = 4434001 days = 300 }\r
+-	event = { id = 4434002 days = 300 }\r
+-	}\r
+-	NOT = { war = { country = U77 country = VEN } }\r
+-	NOT = { war = { country = U77 country = ECU } }\r
+-	NOT = { ispuppet = U77 }\r
+-	exists = VEN\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = { \r
+-	event = { id = 4434001 days = 300 }\r
+-	event = { id = 4434002 days = 300 }\r
+-	}\r
+-	NOT = { war = { country = U77 country = VEN } }\r
+-	NOT = { war = { country = U77 country = ECU } }\r
+-	NOT = { ispuppet = U77 }\r
+-	exists = VEN\r
+-	random = 45\r
+-	}\r
+-	\r
+-	name = "EVT_4434003_NAME"\r
+-	desc = "EVT_4434003_DESC"\r
+-	style = 2\r
+-	picture = "Guerra_col_per"\r
+-	decision_picture = "decision_winter_equipment_start"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 進撃せよ！\r
+-	name = "ACTIONNAME4434003A"\r
+-	command = { type = end_access which = VEN when = 0 }\r
+-	command = { type = end_access which = VEN when = 1 }\r
+-	command = { type = end_non_aggression which = U77 where = VEN }\r
+-	command = { type = end_non_aggression which = VEN where = U77 }\r
+-	command = { type = end_guarantee which = USA where = VEN }\r
+-	command = { type = end_guarantee which = U77 where = VEN }\r
+-	command = { type = war which = VEN }\r
+-	command = { type = relation which = USA value = -50 }\r
+-	command = { type = relation which = VEN value = -150 }\r
+-	command = { type = relation which = ECU value = -150 }\r
+-	command = { type = event which = 4434005 where = USA when = 1 }\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  グラン・コロンビア革命戦争 ― エクアドル侵攻\r
+-###########################################################################\r
+-event = {\r
+-	id = 4434004\r
+-	random = no\r
+-	country = U77\r
+-	\r
+-	decision = {\r
+-	OR = { \r
+-	event = 4434001\r
+-	event = 4434002\r
+-	}\r
+-	NOT = { war = { country = U77 country = VEN } }\r
+-	NOT = { war = { country = U77 country = ECU } }\r
+-	NOT = { ispuppet = U77 }\r
+-	exists = ECU\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = { \r
+-	event = { id = 4434001 days = 360 }\r
+-	event = { id = 4434002 days = 360 }\r
+-	}\r
+-	NOT = { war = { country = U77 country = VEN } }\r
+-	NOT = { war = { country = U77 country = ECU } }\r
+-	NOT = { ispuppet = U77 }\r
+-	exists = ECU\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = { \r
+-	event = { id = 4434001 days = 360 }\r
+-	event = { id = 4434002 days = 360 }\r
+-	}\r
+-	NOT = { war = { country = U77 country = VEN } }\r
+-	NOT = { war = { country = U77 country = ECU } }\r
+-	NOT = { ispuppet = U77 }\r
+-	exists = ECU\r
+-	random = 45\r
+-	}\r
+-	\r
+-	name = "EVT_4434004_NAME"\r
+-	desc = "EVT_4434003_DESC"\r
+-	style = 2\r
+-	picture = "Guerra_col_per"\r
+-	decision_picture = "decision_winter_equipment_start"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = {\r
+-	name = "ACTIONNAME4434003A"\r
+-	command = { type = end_access which = ECU when = 0 }\r
+-	command = { type = end_access which = ECU when = 1 }\r
+-	command = { type = end_non_aggression which = U77 where = ECU }\r
+-	command = { type = end_non_aggression which = ECU where = U77 }\r
+-	command = { type = end_guarantee which = USA where = ECU }\r
+-	command = { type = end_guarantee which = U77 where = ECU }\r
+-	command = { type = war which = ECU }\r
+-	command = { type = relation which = USA value = -50 }\r
+-	command = { type = relation which = VEN value = -150 }\r
+-	command = { type = relation which = ECU value = -150 }\r
+-	command = { type = event which = 4434005 where = USA when = 1 }\r
+-	}\r
+-}\r
+-\r
+-\r
+-##########################################################################\r
+-#  グラン・コロンビアが隣国に侵攻\r
+-# コロンビアの革命政権は、隣国へ侵攻を始めた。連中は南米北部の統一を掲げており、放っておけば強力な革命政権が生まれかねない。\r
+-# しかし世論は南米の戦争より、国内問題の解決を求めている……\r
+-###########################################################################\r
+-event = {\r
+-	id = 4434005\r
+-	random = no\r
+-	country = USA\r
+-	persistent = yes\r
+-	\r
+-	name = "EVT_4434005_NAME"\r
+-	desc = "EVT_4434005_DESC"\r
+-	style = 2\r
+-	picture = "Guerra_col_per"\r
+-\r
+-	action = { # 介入する必要はない\r
+-	name = "ACTIONNAME4434005A"\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = belligerence which = USA value = -1 }\r
+-	command = { type = relation which = U77 value = 10 }\r
+-	command = { type = domestic which  = defense_lobby value = -1 }\r
+-	command = { type = domestic which  = interventionism value = -1 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 戦争だ！\r
+-	name = "ACTIONNAME4434005B"\r
+-	command = { type = dissent value = 35 }\r
+-	command = { type = belligerence which = USA value = 10 }\r
+-	command = { type = relation which = U77 value = -150 }\r
+-	command = { type = relation which = BRA value = -80 }\r
+-	command = { type = relation which = PRU value = -80 }\r
+-	command = { type = relation which = CHL value = -80 }\r
+-	command = { type = relation which = VEN value = -80 }\r
+-	command = { type = relation which = ECU value = -80 }\r
+-	command = { type = relation which = BOL value = -80 }\r
+-	command = { type = relation which = PAR value = -80 }\r
+-	command = { type = domestic which  = defense_lobby value = 1 }\r
+-	command = { type = domestic which  = interventionism value = 1 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  農地改革法\r
+-# グランコロンビアの革命政権の支持母体は農民・労働者であり、支持を得るためにも農地改革の実行は急務である。\r
+-# 今までは、財閥・教会・地主が改革を阻んだが、彼らに抵抗する力はほとんどない。\r
+-# この農地改革法は土地の所有を制限し、貧しい農民に農地を与えることを計画している。\r
+-# この法律は今後4年以内に、不在地主が所有する全ての土地及び在地地主が所有する5ヘクタールを超える土地の再分配を執行する。\r
+-# 地主は補償金として購入代金に加えて国債を受け取ることになる。\r
+-# これは、数世代に渡って我が国を蝕んでいる農村部の貧困を終わらせるための大きな一歩となることだろう。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 4434006\r
+-	random = no\r
+-	country = U77\r
+-\r
+-	decision = {\r
+-	government = communist\r
+-	OR = { \r
+-	event = 4434001\r
+-	event = 4434002\r
+-	}\r
+-	not = { ispuppet = U77 }\r
+-	atwar = no\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	government = communist\r
+-	OR = { \r
+-	event = { id = 4434001 days = 90 }\r
+-	event = { id = 4434002 days = 90 }\r
+-	}\r
+-	not = { ispuppet = U77 }\r
+-	atwar = no\r
+-	money = 500\r
+-	}\r
+-\r
+-	trigger = {\r
+-	government = communist\r
+-	OR = { \r
+-	event = { id = 4434001 days = 90 }\r
+-	event = { id = 4434002 days = 90 }\r
+-	}\r
+-	not = { ispuppet = U77 }\r
+-	atwar = no\r
+-	random = 50\r
+-	}\r
+-\r
+-	name = "EVT_4434006_NAME"\r
+-	desc = "EVT_4434006_DESC"\r
+-	style = 2\r
+-  	picture = "new_deal"\r
+-	decision_picture = "decision_new_deal"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = { # 実行せよ\r
+-	name = "ACTIONNAME4434006A"\r
+-	command = { trigger = { ai = no } type = money value = -500 }\r
+-	command = { type = industrial_modifier which = supplies value = 1 }\r
+-	command = { type = dissent value = 5 }\r
+-	command = { type = event which = 4434007 where = -1 when = 720 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  農地改革 ― 第一段階\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 4434007\r
+-	random = no\r
+-	country = U77\r
+-\r
+-	name = "EVT_4434007_NAME"\r
+-	desc = "EVT_4434006_DESC"\r
+-	style = 2\r
+-  	picture = "new_deal"\r
+-\r
+-	action_a = { # 計画を続けよ\r
+-	name = "ACTIONNAME4434007A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = industrial_modifier which = supplies value = 5 }\r
+-	command = { type = event which = 4434008 where = -1 when = 720 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  農地改革 ― 改革の達成\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 4434008\r
+-	random = no\r
+-	country = U77\r
+-\r
+-	name = "EVT_4434008_NAME"\r
+-	desc = "EVT_4434008_DESC"\r
+-	style = 2\r
+-  	picture = "new_deal"\r
+-\r
+-	action_a = { # 素晴らしい！\r
+-	name = "ACTIONNAME4434008A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = industrial_modifier which = total value = 10 }\r
+-	command = { type = construct which = ic where = -1 value = 1 }\r
+-	command = { type = construct which = ic where = -1 value = 1 }\r
+-	command = { type = construct which = ic where = -1 value = 1 }\r
+-	command = { type = construct which = ic where = -1 value = 1 }\r
+-	command = { type = construct which = ic where = -1 value = 1 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  グランコロンビアの産業再編\r
+-# グランコロンビアが統一された現在、地域統合のためにも経済的格差を初めとする問題の解消が急務であった。\r
+-# グランコロンビア革命政府は、格差の原因である財閥や企業が保有していた工場を国有化し、産業の効率化を図っている。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 4434009\r
+-	random = no\r
+-	country = U77\r
+-\r
+-	decision = {\r
+-	event = 4434002\r
+-	owned = { province = 1991 data = U77 }\r
+-	owned = { province = 2042 data = U77 }\r
+-	owned = { province = 1993 data = U77 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Quito" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Panaman Ridge" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Maracaibo" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Caracas" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	NOT = { ispuppet = U77 }\r
+-	atwar = no\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	event = { id = 4434002 days = 30 }\r
+-	owned = { province = 1991 data = U77 }\r
+-	owned = { province = 2042 data = U77 }\r
+-	owned = { province = 1993 data = U77 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Quito" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Panaman Ridge" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Maracaibo" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Caracas" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	NOT = { ispuppet = U77 }\r
+-	atwar = no\r
+-	supplies = 2500\r
+-	money = 500\r
+-	}\r
+-\r
+-	trigger = {\r
+-	event = { id = 4434002 days = 30 }\r
+-	owned = { province = 1991 data = U77 }\r
+-	owned = { province = 2042 data = U77 }\r
+-	owned = { province = 1993 data = U77 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Quito" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Panaman Ridge" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Maracaibo" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Caracas" country = -1 data = 1 value = 80 }\r
+-	area = { area = "Iquitos" country = -1 data = 1 value = 80 }\r
+-	NOT = { ispuppet = U77 }\r
+-	atwar = no\r
+-	random = 45\r
+-	}\r
+-\r
+-	name = "EVT_4434009_NAME"\r
+-	desc = "EVT_4434009_DESC"\r
+-	style = 2\r
+-  	picture = "Scarce_Resources"\r
+-	decision_picture = "decision_new_deal"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 産業を再編せよ\r
+-	name = "ACTIONNAME4434009A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { trigger = { ai = no } type = supplies value = -2500 }\r
+-	command = { trigger = { ai = no } type = money value = -500 }\r
+-	command = { type = industrial_modifier which = total value = 5 }\r
+-	command = { type = construct which = ic where = 1986 value = 2 }\r
+-	command = { type = construct which = ic where = 1987 value = 2 }\r
+-	command = { type = construct which = ic where = 2040 value = 1 }\r
+-	command = { type = construct which = ic where = 2042 value = 1 }\r
+-	command = { type = construct which = ic where = 2043 value = 1 }\r
+-	command = { type = construct which = ic where = 1988 value = 1 }\r
+-	command = { type = construct which = ic where = 1989 value = 1 }\r
+-	command = { type = construct which = ic where = 1990 value = 1 }\r
+-	command = { type = construct which = ic where = 1993 value = 1 }\r
+-	command = { type = construct which = infrastructure where = 1986 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 1987 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 2040 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 2042 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 2043 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 1988 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 1989 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 1990 value = 10 }\r
+-	command = { type = construct which = infrastructure where = 1993 value = 10 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  グランコロンビア革命軍\r
+-# コロンビアの革命政権は、地域統一に向けて革命軍の編成に乗り出した。\r
+-# 農民を中心に志願兵が集まり、強力な軍隊が生まれることだろう。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 4434010\r
+-	random = no\r
+-	country = U77\r
+-\r
+-	decision = {\r
+-	event = 4434001\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = { \r
+-	war = { country = VEN }\r
+-	war = { country = ECU }\r
+-	war = { country = COL }\r
+-	war = { country = UE5 }\r
+-	supplies = 1000\r
+-	}\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = { \r
+-	war = { country = VEN }\r
+-	war = { country = ECU }\r
+-	war = { country = COL }\r
+-	war = { country = UE5 }\r
+-	supplies = 1000\r
+-	}\r
+-	}\r
+-\r
+-	name = EVT_4434010_NAME\r
+-	desc = EVT_4434010_DESC\r
+-	style = 2\r
+-	picture = "Wehrmacht"\r
+-	decision_picture = "decision_Rhineland"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action = { # 編成しよう\r
+-	name = "ACTIONNAME4434010A"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = manpowerpool value = 100 }\r
+-	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-	command = { type = add_division which = "第1予備戦車団" value = light_armor when = 0 }\r
+-	command = { type = add_division which = "第1予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第2予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第3予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第4予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第5予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第6予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第7予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第8予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第9予備歩兵師団" value = infantry when = 5 }\r
+-	command = { type = add_division which = "第1特殊作戦師団" value = bergsjaeger when = 5 }\r
+-	command = { type = add_division which = "第2特殊作戦師団" value = bergsjaeger when = 5 }\r
+-	command = { type = add_division which = "第3特殊作戦師団" value = bergsjaeger when = 5 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-# Grand Offensive - U77\r
+-#########################################################################\r
+-event = {\r
+-	id = 4434101\r
+-	random = no\r
+-	country = U77\r
+-	\r
+-	decision = { \r
+-	atwar = yes \r
+-	}\r
+-\r
+-	decision_trigger = { \r
+-	supplies = 3000\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	ai = yes\r
+-	supplies = 3000\r
+-	}\r
+-	war = { country = U77 country = VEN }\r
+-	}\r
+-\r
+-	name = "GrandOffensiveName"\r
+-	desc = "GrandOffensiveDesc" \r
+-	style = 2\r
+-	picture = "Wehrmacht"\r
+-	decision_picture = "decision_grand_offensive"\r
+-\r
+-	date = { day = 0 month = january year = 1914 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1999 }\r
+-\r
+-	action = {\r
+-	name = "GrandOffensiveText"\r
+-	command = { type = max_organization which = land value = 10 }\r
+-	command = { type = morale which = land value = 10 }\r
+-	command = { trigger = { ai = yes } type = max_organization which = land value = 10 }\r
+-	command = { trigger = { ai = yes } type = morale which = land value = 10 }\r
+-	command = { type = morale which = naval value = 10 }\r
+-	command = { type = morale which = air value = 10 }\r
+-	command = { type = speed which = land value = 3 }\r
+-	command = { type = forest_move which = land value = 10 }\r
+-	command = { type = jungle_move which = land value = 10 }\r
+-	command = { type = hill_move which = land value = 10 }\r
+-	command = { type = mountain_move which = land value = 10 }\r
+-	command = { type = counterattack value = 2 }\r
+-	command = { type = assault value = 2 }\r
+-	command = { type = ambush value = 2 }\r
+-	command = { type = breakthrough value = 2 }\r
+-	command = { type = encirclement value = 2 }\r
+-	command = { type = hq_supply_eff value = 2 }\r
+-	command = { type = sce_frequency value = 0.3 }\r
+-	command = { type = attrition_mod value = 2 }\r
+-	command = { type = trickleback_mod value = 5 }\r
+-	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+-	command = { trigger = { ai = no } type = event which = 4434102 where = -1 when = 30 }\r
+-	command = { trigger = { ai = yes } type = event which = 4434102 where = -1 when = 120 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 4434102\r
+-	random = no\r
+-	country = U77\r
+-\r
+-	name = "GrandOffensiveOverName"\r
+-	desc = "GrandOffensiveDesc" \r
+-	style = 2\r
+-	picture = "Wehrmacht"\r
+-\r
+-	action = {\r
+-	name = ACTION_NAME_OK\r
+-	command = { type = max_organization which = land value = -10 }\r
+-	command = { type = morale which = land value = -10 }\r
+-	command = { trigger = { ai = yes } type = max_organization which = land value = -10 }\r
+-	command = { trigger = { ai = yes } type = morale which = land value = -10 }\r
+-	command = { type = morale which = naval value = -10 }\r
+-	command = { type = morale which = air value = -10 }\r
+-	command = { type = speed which = land value = -3 }\r
+-	command = { type = forest_move which = land value = -10 }\r
+-	command = { type = jungle_move which = land value = -10 }\r
+-	command = { type = hill_move which = land value = -10 }\r
+-	command = { type = mountain_move which = land value = -10 }\r
+-	command = { type = counterattack value = -2 }\r
+-	command = { type = assault value = -2 }\r
+-	command = { type = ambush value = -2 }\r
+-	command = { type = breakthrough value = -2 }\r
+-	command = { type = encirclement value = -2 }\r
+-	command = { type = hq_supply_eff value = -2 }\r
+-	command = { type = sce_frequency value = -0.3 }\r
+-	command = { type = attrition_mod value = -2 }\r
+-	command = { type = trickleback_mod value = -5 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 4434103\r
+-	random = no\r
+-	country = U77\r
+-	\r
+-	decision = { \r
+-	atwar = yes \r
+-	}\r
+-\r
+-	decision_trigger = { \r
+-	supplies = 3000\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	ai = yes\r
+-	supplies = 3000\r
+-	}\r
+-	war = { country = U77 country = ECU }\r
+-	}\r
+-\r
+-	name = "GrandOffensiveName"\r
+-	desc = "GrandOffensiveDesc" \r
+-	style = 2\r
+-	picture = "Wehrmacht"\r
+-	decision_picture = "decision_grand_offensive"\r
+-\r
+-	date = { day = 0 month = january year = 1914 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = december year = 1999 }\r
+-\r
+-	action = {\r
+-	name = "GrandOffensiveText"\r
+-	command = { type = max_organization which = land value = 10 }\r
+-	command = { type = morale which = land value = 10 }\r
+-	command = { trigger = { ai = yes } type = max_organization which = land value = 10 }\r
+-	command = { trigger = { ai = yes } type = morale which = land value = 10 }\r
+-	command = { type = morale which = naval value = 10 }\r
+-	command = { type = morale which = air value = 10 }\r
+-	command = { type = speed which = land value = 3 }\r
+-	command = { type = forest_move which = land value = 10 }\r
+-	command = { type = jungle_move which = land value = 10 }\r
+-	command = { type = hill_move which = land value = 10 }\r
+-	command = { type = mountain_move which = land value = 10 }\r
+-	command = { type = counterattack value = 2 }\r
+-	command = { type = assault value = 2 }\r
+-	command = { type = ambush value = 2 }\r
+-	command = { type = breakthrough value = 2 }\r
+-	command = { type = encirclement value = 2 }\r
+-	command = { type = hq_supply_eff value = 2 }\r
+-	command = { type = sce_frequency value = 0.3 }\r
+-	command = { type = attrition_mod value = 2 }\r
+-	command = { type = trickleback_mod value = 5 }\r
+-	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+-	command = { trigger = { ai = no } type = event which = 4434104 where = -1 when = 30 }\r
+-	command = { trigger = { ai = yes } type = event which = 4434104 where = -1 when = 120 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 4434104\r
+-	random = no\r
+-	country = U77\r
+-\r
+-	name = "GrandOffensiveOverName"\r
+-	desc = "GrandOffensiveDesc" \r
+-	style = 2\r
+-	picture = "Wehrmacht"\r
+-\r
+-	action = {\r
+-	name = ACTION_NAME_OK\r
+-	command = { type = max_organization which = land value = -10 }\r
+-	command = { type = morale which = land value = -10 }\r
+-	command = { trigger = { ai = yes } type = max_organization which = land value = -10 }\r
+-	command = { trigger = { ai = yes } type = morale which = land value = -10 }\r
+-	command = { type = morale which = naval value = -10 }\r
+-	command = { type = morale which = air value = -10 }\r
+-	command = { type = speed which = land value = -3 }\r
+-	command = { type = forest_move which = land value = -10 }\r
+-	command = { type = jungle_move which = land value = -10 }\r
+-	command = { type = hill_move which = land value = -10 }\r
+-	command = { type = mountain_move which = land value = -10 }\r
+-	command = { type = counterattack value = -2 }\r
+-	command = { type = assault value = -2 }\r
+-	command = { type = ambush value = -2 }\r
+-	command = { type = breakthrough value = -2 }\r
+-	command = { type = encirclement value = -2 }\r
+-	command = { type = hq_supply_eff value = -2 }\r
+-	command = { type = sce_frequency value = -0.3 }\r
+-	command = { type = attrition_mod value = -2 }\r
+-	command = { type = trickleback_mod value = -5 }\r
+-	}\r
+-}\r
+-\r

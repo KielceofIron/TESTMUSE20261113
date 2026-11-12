@@ -1,0 +1,553 @@
+--- A/db/events/AdditionalEvents_if_Japan/BigeventplanifJapan.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/BigeventplanifJapan.txt [cp932]
+@@ -41,7 +41,7 @@
+ #19310016\r
+ #暗黒の日\r
+ #19310017\r
+-#ドイツ政体決定\r
++#ドイツ政体決定（右）\r
+ #19310018\r
+ #フランス政体決定（極左\r
+ #19310019\r
+@@ -61,19 +61,24 @@
+ #19310026\r
+ #中華民国の核開発\r
+ #19310027\r
++#アメリカ内戦\r
++#19310028\r
++#北米連合王国の成立（未実装）\r
++#19310029\r
++#合衆国勝利\r
++#19310030\r
++#南部勝利\r
++#19310031\r
++#新ソビエト連邦の誕生\r
++#19310032\r
++#ドイツ政体決定（左）\r
++#19310033\r
+ #\r
+-#19310020\r
+-#\r
+-#\r
+-#\r
++#19310028\r
+ #\r
+ #\r
+ #\r
+ #\r
+-#\r
+-#\r
+-#\r
+-\r
+ #########################################################################\r
+ ##ドイツ滅亡（帝政）\r
+ #########################################################################\r
+@@ -1033,7 +1038,7 @@ event = {
+ 	NOT = {	local_flag = Bigeventflag0018 }\r
+ 	 #新規独立国などでの発生防止\r
+ 	}\r
+-	name = "1937年のドイツ帝国議会選挙" #てきとう\r
++	name = "ドイツで国家共産主義政党『コンスル』政権誕生" #てきとう\r
+ 	desc = " " #てきとう\r
+ 	style = 2 #新聞\r
+ 	#picture = ""\r
+@@ -1723,8 +1728,499 @@ event = {
+ \r
+ \r
+ \r
++#アメリカ内戦\r
++#フラグ判定イベント\r
++event = {\r
++	id = 19310028\r
++	random = no\r
++	save_date = yes\r
++	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう\r
++	\r
++	trigger = {\r
++	\r
++	exists = USA\r
++	exists = CSA\r
++	exists = U00\r
++	NOT = { flag = WorldBigeventflag0028 }  #発生済判定\r
++	OR = { \r
++	war = { country = USA country = CSA }\r
++	war = { country = USA country = U00 }\r
++	war = { country = U00 country = CSA }\r
++	}\r
++	#\r
++	\r
++	}\r
++	name = AI_EVENT #イベント一覧に出て欲しくないし\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = setflag which = WorldBigeventflag0028 } \r
++	}\r
++}\r
++event = {\r
++	id = 19320028\r
++#1932→音源流しイベント、1933→画像つきイベント\r
++#プレイヤー国のイベントによって発生する場合\r
++#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？\r
++#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います\r
++#\r
++	random = no\r
++	persistent = yes\r
++	trigger = {\r
++	ai = no\r
++	flag = WorldBigeventflag0028\r
++	NOT = { event = { id = 19310028 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし\r
++	NOT = {	local_flag = Bigeventflag0028 }\r
++	 #新規独立国などでの発生防止\r
++	}\r
++	name = "アメリカ内戦" #てきとう\r
++	desc = " " #てきとう\r
++	style = 2 #新聞\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = local_setflag which = Bigeventflag0028 } #イベントが起きたことを示す、再発防止\r
++	command = { type = songs which = "Special/0028.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む\r
++	command = { type = trigger which = 19330028 when = 0 } #画像つき本イベントを起こす\r
++	}\r
++}\r
++#画像イベント\r
++event = {\r
++	id = 19330028 #1932→発生判定＋音源流し、1933→画像つきイベント\r
++	random = no\r
++	persistent = yes\r
++\r
++	name = " " #名無しイベント\r
++	desc = " "\r
++	style = 1\r
++	picture = "Big/0028" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる\r
++#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。\r
++	action = { # \r
++	name = "OK"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++#北米連合王国の成立\r
++\r
++#フラグ判定イベント\r
++event = {\r
++	id = 19310029\r
++	random = no\r
++	save_date = yes\r
++	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう\r
++	\r
++	trigger = {\r
++	\r
++	\r
++	NOT = { flag = WorldBigeventflag0029 }  #発生済判定\r
++	OR = { \r
++	flag = CAN_Victory_America\r
++	flag = UK_Victory_America\r
++	}\r
++	exists = CAN \r
++	exists = ENG\r
++	}\r
++	name = AI_EVENT #イベント一覧に出て欲しくないし\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = setflag which = WorldBigeventflag0029 } \r
++	}\r
++}\r
++event = {\r
++	id = 19320029\r
++#1932→音源流しイベント、1933→画像つきイベント\r
++#プレイヤー国のイベントによって発生する場合\r
++#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？\r
++#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います\r
++#\r
++# 英領カナダ政府は北米地域の大半を手中に収めたことにより、国号を北米同君\r
++# 連合王国と変え、第二次アメリカ内戦の終結を内外に宣言した。首都はオタワに\r
++# 決定され、北米の歴史においては、１７７５年に「英領アメリカ内戦」が発生し\r
++# 、革命国家を名乗る叛徒の集団が暴虐を尽くした後、１９４３年の現在にようや\r
++# く「英領アメリカ内戦」が終結したと記述されることとなる。この期間を「悲惨な\r
++# る168年」と呼ぶ新たな北米史が誕生することとなる……。\r
++	random = no\r
++	persistent = yes\r
++	trigger = {\r
++	ai = no\r
++	flag = WorldBigeventflag0029\r
++	NOT = { event = { id = 19310029 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし\r
++	NOT = {	local_flag = Bigeventflag0029 }\r
++	 #新規独立国などでの発生防止\r
++	}\r
++	name = "北米同君連合王国の成立" #てきとう\r
++	desc = "EVT_4660013_DESC" #てきとう\r
++	style = 2 #新聞\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1999 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = local_setflag which = Bigeventflag0029 } #イベントが起きたことを示す、再発防止\r
++	command = { type = songs which = "Special/0029.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む\r
++	command = { type = trigger which = 19330029 when = 0 } #画像つき本イベントを起こす\r
++	}\r
++}\r
++#画像イベント\r
++event = {\r
++	id = 19330029 #1932→発生判定＋音源流し、1933→画像つきイベント\r
++	random = no\r
++	persistent = yes\r
++\r
++	name = "" #名無しイベント\r
++	desc = ""\r
++	style = 1\r
++	picture = "Big/0029" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる\r
++#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。\r
++	action = { # \r
++	name = "OK"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++\r
++\r
++\r
++\r
++\r
++\r
++#合衆国勝利\r
++#フラグ判定イベント\r
++event = {\r
++	id = 19310030\r
++	random = no\r
++	save_date = yes\r
++	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう\r
++	\r
++	trigger = {\r
++	\r
++	\r
++	NOT = { flag = WorldBigeventflag0030 }  \r
++	flag = USA_Victory_America\r
++	\r
++	}\r
++	name = AI_EVENT #イベント一覧に出て欲しくないし\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = setflag which = WorldBigeventflag0030 } \r
++	}\r
++}\r
++event = {\r
++	id = 19320030\r
++#1932→音源流しイベント、1933→画像つきイベント\r
++#プレイヤー国のイベントによって発生する場合\r
++#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？\r
++#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います\r
++#\r
++	random = no\r
++	persistent = yes\r
++	trigger = {\r
++	ai = no\r
++	flag = WorldBigeventflag0030\r
++	NOT = { event = { id = 19310030 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし\r
++	NOT = {	local_flag = Bigeventflag0030 }\r
++	 #新規独立国などでの発生防止\r
++	}\r
++	name = "アメリカ合衆国が内戦に勝利" #てきとう\r
++	desc = "" #てきとう\r
++	style = 2 #新聞\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = local_setflag which = Bigeventflag0030 } #イベントが起きたことを示す、再発防止\r
++	command = { type = songs which = "Special/0030.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む\r
++	command = { type = trigger which = 19330030 when = 0 } #画像つき本イベントを起こす\r
++	}\r
++}\r
++#画像イベント\r
++event = {\r
++	id = 19330030 #1932→発生判定＋音源流し、1933→画像つきイベント\r
++	random = no\r
++	persistent = yes\r
++\r
++	name = "" #名無しイベント\r
++	desc = ""\r
++	style = 1\r
++	picture = "Big/0030" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる\r
++#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。\r
++	action = { # \r
++	name = "OK"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++\r
++\r
++\r
++\r
++#南部勝利\r
++#フラグ判定イベント\r
++event = {\r
++	id = 19310031\r
++	random = no\r
++	save_date = yes\r
++	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう\r
++	\r
++	trigger = {\r
++	\r
++	\r
++	flag = CSA_Victory_America\r
++	NOT = { flag = WorldBigeventflag0031 }  #発生済判定\r
++	\r
++	}\r
++	name = AI_EVENT #イベント一覧に出て欲しくないし\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
+ \r
++	action = { # \r
++	name = "OK"\r
++	command = { type = setflag which = WorldBigeventflag0031 } \r
++	}\r
++}\r
++event = {\r
++	id = 19320031\r
++#1932→音源流しイベント、1933→画像つきイベント\r
++#プレイヤー国のイベントによって発生する場合\r
++#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？\r
++#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います\r
++#\r
++	random = no\r
++	persistent = yes\r
++	trigger = {\r
++	ai = no\r
++	flag = WorldBigeventflag0031\r
++	NOT = { event = { id = 19310031 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし\r
++	NOT = {	local_flag = Bigeventflag0031 }\r
++	 #新規独立国などでの発生防止\r
++	}\r
++	name = "アメリカ連合国がアメリカ内戦に勝利" #てきとう\r
++	desc = "" #てきとう\r
++	style = 2 #新聞\r
++	#picture = ""\r
+ \r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = local_setflag which = Bigeventflag0031 } #イベントが起きたことを示す、再発防止\r
++	command = { type = songs which = "Special/0031.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む\r
++	command = { type = trigger which = 19330031 when = 0 } #画像つき本イベントを起こす\r
++	}\r
++}\r
++#画像イベント\r
++event = {\r
++	id = 19330031 #1932→発生判定＋音源流し、1933→画像つきイベント\r
++	random = no\r
++	persistent = yes\r
++\r
++	name = "" #名無しイベント\r
++	desc = ""\r
++	style = 1\r
++	picture = "Big/0031" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる\r
++#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。\r
++	action = { # \r
++	name = "OK"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++\r
++\r
++\r
++\r
++#新ソビエト連邦の誕生\r
++#フラグ判定イベント\r
++event = {\r
++	id = 19310032\r
++	random = no\r
++	save_date = yes\r
++	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう\r
++	\r
++	trigger = {\r
++	\r
++	flag = SOV_Victory_America\r
++	NOT = { flag = WorldBigeventflag0032 }  #発生済判定\r
++\r
++	#ドイツの開幕共産化のときには起こって欲しくない\r
++	\r
++	}\r
++	name = AI_EVENT #イベント一覧に出て欲しくないし\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = setflag which = WorldBigeventflag0032 } \r
++	}\r
++}\r
++event = {\r
++	id = 19320032\r
++#1932→音源流しイベント、1933→画像つきイベント\r
++#プレイヤー国のイベントによって発生する場合\r
++#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？\r
++#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います\r
++#\r
++	random = no\r
++	persistent = yes\r
++	trigger = {\r
++	ai = no\r
++	flag = WorldBigeventflag0032\r
++	NOT = { event = { id = 19310032 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし\r
++	NOT = {	local_flag = Bigeventflag0032 }\r
++	 #新規独立国などでの発生防止\r
++	}\r
++	name = 名前 #てきとう\r
++	desc = 説明 #てきとう\r
++	style = 2 #新聞\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = local_setflag which = Bigeventflag0032 } #イベントが起きたことを示す、再発防止\r
++	command = { type = songs which = "Special/0032.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む\r
++	command = { type = trigger which = 19330032 when = 0 } #画像つき本イベントを起こす\r
++	}\r
++}\r
++#画像イベント\r
++event = {\r
++	id = 19330032 #1932→発生判定＋音源流し、1933→画像つきイベント\r
++	random = no\r
++	persistent = yes\r
++\r
++	name = "" #名無しイベント\r
++	desc = ""\r
++	style = 1\r
++	picture = "Big/0032" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる\r
++#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。\r
++	action = { # \r
++	name = "OK"\r
++	command = {  }\r
++	}\r
++}\r
++\r
++\r
++\r
++\r
++\r
++#ドイツ政体決定（左）\r
++#フラグ判定イベント\r
++event = {\r
++	id = 19310033\r
++	random = no\r
++	save_date = yes\r
++	country = REB #基本は全国家で起こしたいから、プレイヤーが入ら無さそうな国家にしましょう\r
++	\r
++	trigger = {\r
++	\r
++	\r
++	NOT = { flag = WorldBigeventflag0033 }  #発生済判定	\r
++	flag = German_Communism\r
++	#ドイツの開幕共産化のときには起こって欲しくない\r
++	\r
++	}\r
++	name = AI_EVENT #イベント一覧に出て欲しくないし\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = setflag which = WorldBigeventflag0033 } \r
++	}\r
++}\r
++event = {\r
++	id = 19320033\r
++#1932→音源流しイベント、1933→画像つきイベント\r
++#プレイヤー国のイベントによって発生する場合\r
++#プレイヤーイベントで音源再生コマンドを仕込んで、1933番台イベントを直接起こしても良いでしょう！開戦とかね？\r
++#その場合非プレイヤー国家なら、プレイヤーイベント→REBで1931を起こす→1932（他国）→1933イベになると思います\r
++#\r
++	random = no\r
++	persistent = yes\r
++	trigger = {\r
++	ai = no\r
++	flag = WorldBigeventflag0033\r
++	NOT = { event = { id = 19310033 days = 2 } } #一日ごと判定なら2日くらいで判定可能でしょうか？プレイヤー入らないし\r
++	NOT = {	local_flag = Bigeventflag0033 }\r
++	 #新規独立国などでの発生防止\r
++	}\r
++	name = "ドイツ革命の成立" #てきとう\r
++	desc = "とうとうカール・マルクスの予言は実現した!欧州において対立し続けてきた先進各国の殆どが社会主義を実現し、欧州大陸は今やインターナショナルによって支配されている!" #てきとう\r
++	style = 2 #新聞\r
++	#picture = ""\r
++\r
++	date = { day = 5 month = 3 year = 1 }\r
++	offset = 1\r
++	deathdate = { day = 29 month = 4 year = 9999 }\r
++\r
++	action = { # \r
++	name = "OK"\r
++	command = { type = local_setflag which = Bigeventflag0033 } #イベントが起きたことを示す、再発防止\r
++	command = { type = songs which = "Special/0033.txt" } #音源流し、管理しやすくするためmusic\special\にtxtとmp3突っ込む\r
++	command = { type = trigger which = 19330033 when = 0 } #画像つき本イベントを起こす\r
++	}\r
++}\r
++#画像イベント\r
++event = {\r
++	id = 19330033 #1932→発生判定＋音源流し、1933→画像つきイベント\r
++	random = no\r
++	persistent = yes\r
++\r
++	name = "" #名無しイベント\r
++	desc = ""\r
++	style = 1\r
++	picture = "Big/0033" #ドイツが滅んでそうな画像を突っ込むファイル整理のためevents_pics\Big\ でやってる\r
++#このイベントの見た目を他と変えるために、gfx\interface\のpaperファイルを変えてイベント文の長さと画像の大きさをすべて管理する必要があります。\r
++	action = { # \r
++	name = "OK"\r
++	command = {  }\r
++	}\r
++}\r
+ \r
+ \r
+ \r

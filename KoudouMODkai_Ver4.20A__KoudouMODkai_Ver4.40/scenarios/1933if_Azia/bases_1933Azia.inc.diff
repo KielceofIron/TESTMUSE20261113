@@ -1,0 +1,410 @@
+--- A/scenarios/1933if_Azia/bases_1933Azia.inc [utf-8]
++++ B/scenarios/1933if_Azia/bases_1933Azia.inc [utf-8]
+@@ -1,51 +1,62 @@
+ #Japan\r
+ #樺太\r
+-province = { id = 1541 infra = 0.1 ic = 1 air_base = { size = 1 current_size = 1 } name = PROV1541_JAPAN }\r
++province = { id = 1541 infra = 0.1 ic = 1 air_base = { size = 1 current_size = 1 } name = PROV1541_AZIA }\r
+ province = { id = 1542 infra = 0.1 ic = 1 naval_base = { size = 2 current_size = 2 } air_base = { size = 2 current_size = 2 } }\r
+-province = { id = 2792 infra = 0.1 name = PROV2792_JAPAN }\r
++province = { id = 2792 infra = 0.1 name = PROV2792_AZIA }\r
+ province = { id = 2793 infra = 0.1 }\r
+ #北海道\r
+-province = { id = 1544 ic = 1 air_base = { size = 1 current_size = 1 } }\r
+-province = { id = 1545 infra = 0.1 ic = 1 air_base = { size = 4 current_size = 4 } }\r
+-province = { id = 2773 infra = 0.1 }\r
++province = { id = 1544 ic = 1 air_base = 1 }\r
++province = { id = 1545 infra = 0.1 ic = 1 air_base = 4 points = 1 }\r
++province = { id = 2773 infra = 0.1 naval_base = 4 air_base = 4 points = 1 }\r
+ #東北\r
+ province = { id = 1012 infra = 0.1 ic = 1 }\r
+-province = { id = 1547 infra = 0.1 ic = 1 }\r
+-province = { id = 1549 infra = 0.1 }\r
+-province = { id = 2464 infra = 0.1 }\r
++province = { id = 1547 ic = 1 }\r
++province = { id = 1549 air_base = 5 points = 1 }\r
++province = { id = 2464 infra = 0.1 air_base = 4 naval_base = 2 }\r
+ province = { id = 2768 infra = 0.1 }\r
+ province = { id = 2772 infra = 0.1 }\r
++#関東\r
++province = { id = 1550 naval_base = 10 air_base = 10 points = 1 infra = -0.1 }\r
++province = { id = 2760 naval_base = 4 air_base = 4 }\r
+ #北陸\r
+ province = { id = 2771 infra = 0.1 ic = 1 }\r
+ #中部\r
+-province = { id = 2765 infra = 0.1 ic = 1 }\r
++province = { id = 1546 air_base = 4 }\r
++province = { id = 1557 infra = -0.1 }\r
++province = { id = 1558 points = 1 }\r
++province = { id = 2765 infra = 0.1 ic = 1 air_base = 4 }\r
+ province = { id = 2766 infra = 0.1 ic = 1 }\r
+-province = { id = 2769 infra = 0.1 }\r
++province = { id = 2769 infra = 0.1 air_base = 4 }\r
+ province = { id = 2774 infra = 0.1 }\r
+ #山陰道\r
++province = { id = 1554 points = 1 }\r
++province = { id = 1555 naval_base = 4 }\r
+ province = { id = 2778 infra = 0.1 ic = 1 }\r
+-province = { id = 2780 infra = 0.1 ic = 1 }\r
++province = { id = 2780 infra = 0.1 ic = 1 points = 1 }\r
+ #四国\r
+ province = { id = 2781 infra = 0.1 }\r
+-province = { id = 1559 ic = 1 }\r
++province = { id = 1559 ic = 1 points = 1 }\r
+ #九州\r
+ province = { id = 1560 ic = 1 }\r
++province = { id = 1561 points = 1 }\r
++province = { id = 2784 air_base = 4 }\r
++province = { id = 2787 naval_base = 10 air_base = 10 points = 1 }\r
+ #沖縄\r
+ province = { id = 1564 ic = 1 }\r
+ province = { id = 2794 infra = 0.1 }\r
+ province = { id = 2795 infra = 0.1 }\r
+ #台湾\r
+-province = { id = 1361 ic = 2 }\r
+-province = { id = 1362 ic = 2 }\r
++province = { id = 1361 ic = 2 anti_air = 4 air_base = 8 }\r
++province = { id = 1362 ic = 2 anti_air = 4 }\r
+ province = { id = 1363 ic = 2 }\r
+ province = { id = 1364 ic = 1 }\r
+ \r
+ #Korea\r
+-province = { id = 1221 ic = 2 energy = 10 metal = 10 naval_base = { size = 4 current_size = 4 } }\r
++province = { id = 1221 ic = 2 energy = 10 metal = 10 air_base = 4 naval_base = 4 }\r
+ province = { id = 1222 ic = 4 rare_materials = 20 }\r
+ province = { id = 1223 ic = 3 }\r
+ province = { id = 1224 ic = 2 metal = 5 rare_materials = 5  landfort = 4 }\r
+-province = { id = 1225 ic = 1 metal = 15 landfort = 4 }\r
++province = { id = 1225 ic = 1 metal = 15 landfort = 4 air_base = 4 }\r
+ province = { id = 1226 ic = 2 landfort = 4 }\r
+ province = { id = 1227 ic = 2 naval_base = { size = 4 current_size = 4 } landfort = 4 }\r
+ province = { id = 1228 ic = 2 air_base = { size = 2 current_size = 2 } }\r
+@@ -56,10 +67,10 @@ province = { id = 1233 ic = 2 }
+ \r
+ #Mukden\r
+ province = { id = 1199 ic = 2 }\r
+-province = { id = 1203 ic = 5 infra = 0.1 oil = 50 }\r
++province = { id = 1203 ic = 5 infra = 0.1 oil = 50 air_base = 4 }\r
+ province = { id = 1206 points = 1 }\r
+ province = { id = 1207 ic = 2 infra = -0.1 }\r
+-province = { id = 1208 ic = 2 name = PROV1208_CHINA }\r
++province = { id = 1208 ic = 2 air_base = 4 name = PROV1208_AZIA }\r
+ province = { id = 1214 infra = -0.1 }\r
+ province = { id = 1218 infra = -0.1 naval_base = { size = 4 current_size = 4 } }\r
+ province = { id = 1219 ic = 3 }\r
+@@ -70,102 +81,258 @@ province = { id = 1245 infra = -0.2 }
+ province = { id = 1247 infra = -0.2 }\r
+ \r
+ #Shanxi\r
+-province = { id = 1243 air_base = { size = 2 current_size = 2 } }\r
++province = { id = 1240 infra = 0.2 }\r
+ province = { id = 1244 landfort = 2 }\r
+-province = { id = 1252 air_base = { size = 4 current_size = 4 } }\r
++province = { id = 1260 points = -1 }\r
++province = { id = 1251 ic = 1 points = 1 }\r
++province = { id = 1252 ic = 1 points = 1 air_base = { size = 4 current_size = 4 } }\r
+ province = { id = 1321 landfort = 2 }\r
+ province = { id = 1323 landfort = 2 air_base = { size = 2 current_size = 2 } }\r
+ \r
+ #China nationalist\r
+ province = { id = 1317 air_base = { size = 4 current_size = 4 } }\r
+-province = { id = 1337 air_base = { size = 6 current_size = 6 } }\r
+-province = { id = 1338 air_base = { size = 4 current_size = 4 } }\r
++province = { id = 1346 ic = 1 naval_base = { size = 4 current_size = 4 } }\r
++province = { id = 1354 ic = 1 }\r
++province = { id = 1358 ic = 2 points = 1 naval_base = { size = 4 current_size = 4 } }\r
+ \r
+ #Xibei\r
+ province = { id = 1264 air_base = { size = 4 current_size = 4 } }\r
++province = { id = 1283 points = -1 }\r
++province = { id = 1284 points = 1 }\r
+ \r
+ #China communist\r
+-province = { id = 1346 naval_base = { size = 4 current_size = 4 } }\r
+-province = { id = 1358 naval_base = { size = 4 current_size = 4 } }\r
++province = { id = 1317 ic = 2 }\r
+ \r
+ #Guangxi\r
+ province = { id = 1301 ic = -1 }\r
++province = { id = 1305 points = 1 }\r
+ province = { id = 1310 ic = -1 }\r
+-province = { id = 1365 points = -1 }\r
+ province = { id = 1369 ic = -2 }\r
+ province = { id = 1375 ic = -1 }\r
++province = { id = 1078 points = 1 }\r
+ province = { id = 1380 ic = -1 }\r
+ province = { id = 1383 ic = -1 }\r
+ \r
+ #Yunnan\r
+-province = { id = 1293 landfort = 3 }\r
+-province = { id = 1390 landfort = 3 ic = -3 }\r
+-province = { id = 1388 landfort = 3 }\r
+-province = { id = 1297 landfort = 3 ic = -2 }\r
+-province = { id = 1298 landfort = 3 }\r
+-province = { id = 1299 landfort = 3 ic = -2 }\r
++province = { id = 1390 ic = -3 }\r
++province = { id = 1296 points = -1 }\r
++province = { id = 1297 ic = -2 }\r
++province = { id = 1299 ic = -2 }\r
++\r
++#Anhui\r
++province = { id = 1241 ic = 1 }\r
++province = { id = 1243 air_base = { size = 2 current_size = 2 } ic = 1 }\r
++province = { id = 1247 ic = 1 }\r
++province = { id = 1328 ic = 1 }\r
++province = { id = 1334 ic = -1 }\r
++province = { id = 1340 points = 1 }\r
++\r
++#Zhili\r
++province = { id = 1328 points = 1 }\r
++province = { id = 1329 infra = -0.1 }\r
++province = { id = 1332 infra = 0.1 }\r
++province = { id = 1337 air_base = { size = 6 current_size = 6 } }\r
++province = { id = 1338 air_base = { size = 4 current_size = 4 } }\r
++\r
++#Tibet\r
++province = { id = 1289 points = 1 }\r
++\r
++#Mongolia\r
++province = { id = 1119 ic = 4 infra = 0.3 air_base = 2 }\r
++province = { id = 1120 ic = 1 infra = 0.2 }\r
++province = { id = 1124 ic = 1 infra = 0.3 air_base = 5 }\r
++province = { id = 1125 ic = 1 infra = 0.2 }\r
+ \r
+ # North Russia\r
+-province = { id = 544 ic = -1 }\r
+-province = { id = 546 ic = -1 }\r
+-province = { id = 671 ic = -1 }\r
+-province = { id = 672 ic = -2 }\r
+-province = { id = 676 ic = -1 }\r
+-province = { id = 680 ic = -1 }\r
+-province = { id = 685 ic = -1 }\r
+-# Central Russia\r
+-province = { id = 553 infra = -0.2 ic = -3 name = PROV_PETROGRAD }\r
+-province = { id = 572 infra = -0.2 ic = -5 }\r
+-province = { id = 656 ic = -1 }\r
+-province = { id = 675 ic = -1 }\r
+-province = { id = 679 ic = -1 }\r
+-province = { id = 682 ic = -1 }\r
+-province = { id = 683 ic = -1 }\r
++province = { id = 672 ic = -1 }\r
++#province = { id = 680 ic = -1 }\r
++province = { id = 684 ic = -1 }\r
++province = { id = 688 ic = -1 }\r
++# Russia\r
++province = { id = 553 infra = -0.1 name = PROV_PETROGRAD }\r
++province = { id = 572 infra = -0.1 ic = -4 }\r
++province = { id = 668 ic = -1 }\r
+ # Western Russia\r
+-province = { id = 560 infra = -0.1 }\r
++#province = { id = 560 infra = -0.1 }\r
+ province = { id = 566 infra = -0.1 }\r
+ # South Russia\r
+ province = { id = 644 infra = -0.1 ic = -2 }\r
+-province = { id = 650 ic = -1 }\r
+-province = { id = 652 ic = -1 }\r
+-province = { id = 658 ic = -1 }\r
+-province = { id = 663 infra = -0.2 ic = -2 name = PROV_TSARITSYN }\r
+-province = { id = 669 ic = -1 }\r
++province = { id = 663 infra = -0.1 ic = -2 name = PROV_TSARITSYN }\r
++province = { id = 669 ic = -2 }\r
+ # East Russia\r
+ province = { id = 666 infra = -0.1 name = PROV_POKROVSK }\r
+ province = { id = 690 ic = -1 }\r
+ province = { id = 1131 infra = -0.1 ic = -1 }\r
+ province = { id = 1132 infra = -0.1 ic = -1 }\r
+-province = { id = 1133 ic = -1 }\r
+-province = { id = 1134 ic = -1 }\r
++#province = { id = 1133 ic = -1 }\r
++#province = { id = 1134 ic = -1 }\r
+ # Whitesea Tundra\r
+-province = { id = 535 ic = -1 }\r
+ province = { id = 536 ic = -1 }\r
+ province = { id = 539 infra = -0.1 }\r
+-province = { id = 541 ic = -1 }\r
+ # Ural\r
+-province = { id = 687 ic = -3 }\r
+-province = { id = 1127 infra = -0.1 }\r
++province = { id = 687 ic = -2 }\r
++province = { id = 1128 ic = -1 }\r
+ province = { id = 1129 ic = -1 }\r
+ province = { id = 1130 ic = -1 }\r
+ province = { id = 1151 infra = -0.1 }\r
+ # Caucasus\r
+-province = { id = 694 ic = -1 }\r
+-province = { id = 695 ic = -1 }\r
+-province = { id = 698 ic = -1 }\r
+-province = { id = 703 ic = -1 }\r
+-province = { id = 704 ic = -1 }\r
++province = { id = 706 ic = -1 }\r
++province = { id = 709 ic = -1 }\r
++province = { id = 711 ic = -1 points = 1 }\r
++province = { id = 713 ic = -1 }\r
+ # Ukraine\r
+-province = { id = 610 ic = -1 }\r
+-province = { id = 617 ic = -3 }\r
+-province = { id = 622 ic = -1 }\r
+-province = { id = 627 ic = -1 }\r
+-province = { id = 630 ic = -1 }\r
+-province = { id = 631 ic = -1 }\r
+-province = { id = 632 ic = -1 }\r
++province = { id = 624 ic = -1 }\r
++province = { id = 626 ic = -1 }\r
+ province = { id = 633 ic = -1 }\r
+ province = { id = 634 ic = -1 }\r
+-province = { id = 635 ic = -2 }\r
++province = { id = 635 ic = -1 }\r
++province = { id = 641 ic = -1 }\r
++province = { id = 1151 ic = -1 }\r
+ # Kazakhstan\r
+-province = { id = 501 ic = -1 }\r
+-province = { id = 502 ic = -1 }
+\ No newline at end of file
++province = { id = 502 ic = -1 }\r
++province = { id = 503 ic = -1 }\r
++province = { id = 504 ic = -1 }\r
++province = { id = 1113 ic = -1 }\r
++province = { id = 1118 ic = -1 }\r
++# East Russia\r
++province = { id = 1097 ic = -1 }\r
++province = { id = 1098 ic = -1 }\r
++province = { id = 1099 ic = -1 }\r
++province = { id = 1100 ic = -1 }\r
++province = { id = 1131 ic = -1 }\r
++province = { id = 1132 ic = -1 }\r
++province = { id = 1134 ic = -1 }\r
++# Central Asia\r
++province = { id = 1008 ic = -1 }\r
++# Krasnoyarsk\r
++province = { id = 1119 ic = -1 }\r
++province = { id = 1156 ic = -1 }\r
++# Novosibirsk\r
++province = { id = 1137 ic = -1 }\r
++#province = { id = 1138 ic = -1 }\r
++province = { id = 1140 ic = -1 }\r
++province = { id = 1142 ic = -1 }\r
++province = { id = 1144 ic = -1 }\r
++province = { id = 1145 ic = -1 }\r
++# Tomsk\r
++#province = { id = 1148 ic = -1 }\r
++# Tomsk\r
++province = { id = 1162 ic = -1 }\r
++# Far East Siberia\r
++#province = { id = 1170 ic = -1 }\r
++\r
++# Mexico\r
++province = { id = 1968 ic = 2 naval_base = { size = 4 current_size = 4 } }\r
++province = { id = 1975 infra = 0.1 ic = 2 }\r
++province = { id = 1976 infra = 0.1 ic = 2 }\r
++province = { id = 1977 air_base = { size = 3 current_size = 3 } }\r
++province = { id = 1981 infra = 0.1 ic = 2 }\r
++province = { id = 1982 air_base = { size = 3 current_size = 3 } }\r
++\r
++# Central America\r
++province = { id = 889 infra = 0.3 }\r
++province = { id = 2077 infra = 0.2 ic = 2 }\r
++province = { id = 2078 infra = 0.1 }\r
++province = { id = 2080 infra = 0.1 air_base = { size = 4 current_size = 4 } }\r
++province = { id = 2085 infra = 0.1 }\r
++province = { id = 2088 air_base = { size = 2 current_size = 2 } }\r
++\r
++# Cuba\r
++province = { id = 1775 infra = 0.1 ic = 1 }\r
++province = { id = 1776 naval_base = 2 air_base = 4 }\r
++province = { id = 1777 infra = 0.1 ic = 1 }\r
++province = { id = 1779 infra = 0.1 ic = 1 }\r
++\r
++# Dominican republic\r
++province = { id = 1780 infra = 0.1 ic = 1 naval_base = 4 air_base = 4 }\r
++province = { id = 1781 infra = 0.1 ic = 1 }\r
++\r
++# Albania\r
++province = { id = 334 ic = 1 infra = 0.1 }\r
++province = { id = 359 ic = 1 infra = 0.3 coastalfort = 3 naval_base = { size = 6 current_size = 6 } air_base = { size = 6 current_size = 6 } manpower = 1 }\r
++province = { id = 360 infra = 0.3 }\r
++province = { id = 361 ic = 1 infra = 0.2 }\r
++province = { id = 362 ic = 2 infra = 0.3 air_base = { size = 3 current_size = 3 } manpower = 1 }\r
++\r
++# Yugoslavia\r
++province = { id = 332 ic = 2 }\r
++province = { id = 338 ic = 2 infra = 0.2 }\r
++province = { id = 349 ic = 1 }\r
++province = { id = 350 ic = 1 }\r
++province = { id = 352 ic = 1 infra = 0.1 air_base = { size = 4 current_size = 4 } }\r
++province = { id = 355 ic = 1 infra = 0.1 air_base = { size = 4 current_size = 4 } }\r
++province = { id = 356 ic = 1 }\r
++\r
++#Iran\r
++province = { id = 1083 points = 1 }\r
++province = { id = 1086 points = 1 }\r
++province = { id = 1089 points = 1 }\r
++\r
++#Turky\r
++province = { id = 1056 points = 1 }\r
++province = { id = 1063 points = 1 }\r
++province = { id = 1067 points = 1 }\r
++province = { id = 1076 points = 1 }\r
++province = { id = 1077 points = 1 }\r
++\r
++#Oman\r
++province = { id = 2814 ic = 4 anti_air = 2 air_base = 3 naval_base = 2 points = 1 }\r
++\r
++#Yemen\r
++province = { id = 1052 ic = -2 } \r
++\r
++#Puerto Rico\r
++province = { id = 1765 ic = 1 naval_base = 1 }\r
++\r
++#Buruma\r
++province = { id = 1409 ic = 1 }\r
++province = { id = 1410 ic = 2 }\r
++province = { id = 1415 ic = 4 infra = 0.1 }\r
++province = { id = 1417 ic = 1 infra = 0.1 }\r
++\r
++#India\r
++province = { id = 1487 ic = 1 }\r
++province = { id = 1490 ic = 1 }\r
++province = { id = 1497 ic = 1 }\r
++province = { id = 1500 ic = 1 }\r
++province = { id = 1502 ic = 1 }\r
++province = { id = 1507 ic = 1 }\r
++province = { id = 1529 ic = 1 }\r
++province = { id = 1533 ic = 4 }\r
++province = { id = 1534 ic = 3 }\r
++province = { id = 1537 ic = 1 }\r
++province = { id = 1540 ic = 2 infra = 0.1 }\r
++\r
++#Australia\r
++province = { id = 1690 ic = 1 }\r
++province = { id = 1691 ic = 1 }\r
++province = { id = 1694 ic = 1 }\r
++province = { id = 1697 ic = 1 infra = 0.1 }\r
++province = { id = 1698 ic = 1 infra = 0.1 }\r
++province = { id = 1703 ic = 2 }\r
++province = { id = 1704 ic = 2 }\r
++province = { id = 1705 ic = 2 }\r
++province = { id = 1707 ic = 2 }\r
++province = { id = 1708 ic = 1 }\r
++province = { id = 1709 ic = 1 }\r
++\r
++#New Zealand\r
++province = { id = 1718 ic = 1 infra = 0.2 }\r
++province = { id = 1719 ic = 1 infra = 0.2 }\r
++province = { id = 1720 ic = 1 infra = 0.2 }\r
++province = { id = 1721 ic = 1 infra = 0.2 }\r
++province = { id = 1722 ic = 1 infra = 0.1 }\r
++\r
++#Indonesia\r
++province = { id = 1624 ic = 1 infra = 0.1 }\r
++province = { id = 1625 ic = 1 infra = 0.1 }\r
++province = { id = 1631 ic = 1 infra = 0.1 }\r
++province = { id = 1632 ic = 1 infra = 0.1 }\r
++province = { id = 1647 ic = 1 }\r
++province = { id = 1653 ic = 1 }\r
++province = { id = 1657 ic = 1 infra = 0.1 }\r
++province = { id = 1659 ic = 1 infra = 0.1 }\r
++\r
++#Siam\r
++province = { id = 1422 ic = 1 }\r
++province = { id = 1424 ic = 2 }
+\ No newline at end of file

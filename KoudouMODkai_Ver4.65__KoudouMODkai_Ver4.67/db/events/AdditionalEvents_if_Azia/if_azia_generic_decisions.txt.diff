@@ -1,0 +1,309 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_generic_decisions.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_generic_decisions.txt [utf-8]
+@@ -33,6 +33,8 @@
+ # ドイツ（DDR）\r
+ #id = 9991601 攻勢チット（対フランス戦）\r
+ #id = 9991602 攻勢チット期間の終了（対フランス戦）\r
++# フィンランド\r
++#id = 9991701 フィンランド軍婦人補助部隊\r
+ #########################################################################\r
+ #  日本\r
+ #########################################################################\r
+@@ -45,7 +47,10 @@ event = {
+ 	country = JAP\r
+ \r
+ 	decision = {\r
+-	atwar = yes \r
++	OR = {\r
++	war = { country = JAP country = UF1 } \r
++	war = { country = JAP country = KOR } \r
++	}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -155,7 +160,12 @@ event = {
+ 	country = JAP\r
+ \r
+ 	decision = {\r
+-	atwar = yes \r
++	OR = {\r
++	war = { country = JAP country = CHI }\r
++	war = { country = JAP country = CHC }\r
++	war = { country = JAP country = U36 }\r
++	war = { country = JAP country = U74 }\r
++	} \r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -171,7 +181,7 @@ event = {
+ 	OR = {\r
+ 	war = { country = JAP country = CHI }\r
+ 	war = { country = JAP country = CHC }\r
+-	war = { country = JAP country = UCH }\r
++	war = { country = JAP country = U36 }\r
+ 	war = { country = JAP country = U74 }\r
+ 	lost_national = { country = JAP value = 10 }\r
+ 	}\r
+@@ -255,7 +265,10 @@ event = {
+ 	country = CHI\r
+ \r
+ 	decision = {\r
+-	atwar = yes \r
++	OR = {\r
++	war = { country = CHI country = U36 }\r
++	war = { country = CHI country = U74 }\r
++	}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -269,7 +282,7 @@ event = {
+ 	supplies = 5000\r
+ 	}\r
+ 	OR = {\r
+-	war = { country = CHI country = UCH }\r
++	war = { country = CHI country = U36 }\r
+ 	war = { country = CHI country = U74 }\r
+ 	}\r
+ 	random = 20\r
+@@ -350,6 +363,11 @@ event = {
+ 	country = CHI\r
+ \r
+ 	decision = {\r
++	NOT = {\r
++	exists = CHC\r
++	exists = U36\r
++	exists = U74 \r
++	}\r
+ 	OR = {\r
+ 	war = { country = CHI country = JAP }\r
+ 	war = { country = CHI country = KOR }\r
+@@ -367,9 +385,9 @@ event = {
+ 	supplies = 5000\r
+ 	}\r
+ 	NOT = {\r
+-	NOT = { exists = CHC }\r
+-	NOT = { exists = UCH }\r
+-	NOT = { exists = U74 }\r
++	exists = CHC\r
++	exists = U36\r
++	exists = U74 \r
+ 	}\r
+ 	OR = {\r
+ 	war = { country = CHI country = JAP }\r
+@@ -470,7 +488,11 @@ event = {
+ 	country = CHI\r
+ \r
+ 	decision = {\r
+-	atwar = yes \r
++	OR = {\r
++	war = { country = CHI country = ENG }\r
++	war = { country = CHI country = FRA }\r
++	war = { country = CHI country = USA }\r
++	} \r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -564,18 +586,18 @@ event = {
+ event = {\r
+ 	id = 9991201\r
+ 	random = no\r
+-	TAG = { UCH U74 }\r
++	TAG = { U36 U74 }\r
+ \r
+ 	decision = {\r
+ 	OR = {\r
+ 	AND = {\r
+-	country = UCH\r
++	country = U36\r
+ 	NOT = { exists = U74 }\r
+-	war = { country = UCH country = CHI }\r
++	war = { country = U36 country = CHI }\r
+ 	}\r
+ 	AND = {\r
+ 	country = U74\r
+-	NOT = { exists = UCH }\r
++	NOT = { exists = U36 }\r
+ 	war = { country = U74 country = CHI }\r
+ 	}\r
+ 	}\r
+@@ -593,13 +615,13 @@ event = {
+ 	trigger = {\r
+ 	OR = {\r
+ 	AND = {\r
+-	country = UCH\r
++	country = U36\r
+ 	NOT = { exists = U74 }\r
+-	war = { country = UCH country = CHI }\r
++	war = { country = U36 country = CHI }\r
+ 	}\r
+ 	AND = {\r
+ 	country = U74\r
+-	NOT = { exists = UCH }\r
++	NOT = { exists = U36 }\r
+ 	war = { country = U74 country = CHI }\r
+ 	}\r
+ 	}\r
+@@ -654,7 +676,7 @@ event = {
+ event = {\r
+ 	id = 9991202\r
+ 	random = no\r
+-	TAG = { UCH U74 }\r
++	TAG = { U36 U74 }\r
+ \r
+ 	name = "GrandOffensiveOverName"\r
+ 	desc = "GrandOffensiveDesc" \r
+@@ -687,19 +709,19 @@ event = {
+ event = {\r
+ 	id = 9991203\r
+ 	random = no\r
+-	TAG = { UCH U74 }\r
++	TAG = { U36 U74 }\r
+ \r
+ 	decision = {\r
+ 	OR = {\r
+ 	AND = {\r
+-	country = UCH\r
++	country = U36\r
+ 	NOT = { exists = U74 }\r
+-	war = { country = UCH country = JAP }\r
+-	war = { country = UCH country = KOR }\r
++	war = { country = U36 country = JAP }\r
++	war = { country = U36 country = KOR }\r
+ 	}\r
+ 	AND = {\r
+ 	country = U74\r
+-	NOT = { exists = UCH }\r
++	NOT = { exists = U36 }\r
+ 	war = { country = U74 country = JAP }\r
+ 	war = { country = U74 country = KOR }\r
+ 	}\r
+@@ -722,14 +744,14 @@ event = {
+ 	}\r
+ 	OR = {\r
+ 	AND = {\r
+-	country = UCH\r
++	country = U36\r
+ 	NOT = { exists = U74 }\r
+-	war = { country = UCH country = JAP }\r
+-	war = { country = UCH country = KOR }\r
++	war = { country = U36 country = JAP }\r
++	war = { country = U36 country = KOR }\r
+ 	}\r
+ 	AND = {\r
+ 	country = U74\r
+-	NOT = { exists = UCH }\r
++	NOT = { exists = U36 }\r
+ 	war = { country = U74 country = JAP }\r
+ 	war = { country = U74 country = KOR }\r
+ 	}\r
+@@ -791,7 +813,7 @@ event = {
+ event = {\r
+ 	id = 9991204\r
+ 	random = no\r
+-	TAG = { UCH U74 }\r
++	TAG = { U36 U74 }\r
+ \r
+ 	name = "GrandOffensiveOverName"\r
+ 	desc = "GrandOffensiveDesc" \r
+@@ -837,7 +859,10 @@ event = {
+ 	country = U67\r
+ \r
+ 	decision = {\r
+-	atwar = yes\r
++	OR = { \r
++	war = { country = U67 country = UER }\r
++	war = { country = U67 country = KOR }\r
++	}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -934,7 +959,14 @@ event = {
+ 	country = KOR\r
+ \r
+ 	decision = {\r
+-	atwar = yes\r
++	OR = { \r
++	war = { country = KOR country = UER }\r
++	war = { country = KOR country = JAP }\r
++	war = { country = KOR country = CHI }\r
++	war = { country = KOR country = U36 }\r
++	war = { country = KOR country = U74 }\r
++	war = { country = KOR country = U67 }\r
++	}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -946,7 +978,7 @@ event = {
+ 	war = { country = KOR country = UER }\r
+ 	war = { country = KOR country = JAP }\r
+ 	war = { country = KOR country = CHI }\r
+-	war = { country = KOR country = UCH }\r
++	war = { country = KOR country = U36 }\r
+ 	war = { country = KOR country = U74 }\r
+ 	war = { country = KOR country = U67 }\r
+ 	}\r
+@@ -1036,6 +1068,7 @@ event = {
+ \r
+ 	decision = {\r
+ 	atwar = yes\r
++	lost_national = { country = UER value = 15 }\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+@@ -1136,7 +1169,10 @@ event = {
+ 	country = DDR\r
+ 	\r
+ 	decision = { \r
+-	atwar = yes \r
++	OR = {\r
++	war = { country = GER country = FRA }\r
++	lost_national = { country = GER value = 5 }\r
++	}\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
+@@ -1243,4 +1279,42 @@ event = {
+ 	command = { trigger = { ai = yes } type = storm_defense which = land value = -60 }\r
+ 	command = { trigger = { ai = yes } type = storm_move which = land value = -60 }\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r
++\r
++#########################################################################\r
++#  フィンランド\r
++#########################################################################\r
++# フィンランド軍婦人補助部隊\r
++#########################################################################\r
++event = {\r
++	id = 9991701\r
++	random = no\r
++	country = FIN\r
++	\r
++	trigger = { \r
++	NOT = { government = communist }\r
++	}\r
++\r
++	name = "EVT_2030096_NAME" \r
++	desc = "EVT_2030096_DESC"\r
++	style = 2\r
++	picture = "lotta"\r
++	\r
++	date = { day = 0 month = 3 year = 1938 }\r
++	\r
++	action = { # Great!\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = domestic which = political_left value = -1 }\r
++	command = { type = chiefofstaff which = 145102 } # カール・G・マンネルへイム\r
++	command = { type = chiefofarmy which = 145106 } # K・L・オーシュ\r
++	command = { type = relation which = UER value = -10 }\r
++	command = { type = relation which = SOV value = -10 }\r
++	command = { type = relation which = SWE value = 5 }\r
++	command = { type = relation which = NOR value = 5 }\r
++	command = { trigger = { ai = FIN } type = ai which = "switch/FIN_reinforce.ai" }\r
++	command = { type = manpowerpool value = 100 }\r
++	command = { type = sleepevent which = 2030096 }\r
++	command = { type = sleepevent which = 2030097 }\r
++	command = { type = sleepevent which = 2030001 }\r
++	}\r
++}\r

@@ -1,0 +1,130 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Italia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Italia_events.txt [cp932]
+@@ -44,6 +44,9 @@
+ #id = 1226041 未来派運動\r
+ #id = 1226042 ジュリオ・ドゥーエの航空艦隊\r
+ #id = 1226043 都市自警団の形成\r
++#id = 1226044 マフィア経済\r
++#id = 1226045 バドリオの寝返り\r
++#id = 1226046 エンリコ・フェルミの帰国\r
+ ##########################################################################\r
+ #  中立の代償\r
+ # 第一次世界大戦においてイタリア王国は中立を維持した。\r
+@@ -62,7 +65,7 @@ event = {
+ \r
+ 	name = "EVT_1226001_NAME"\r
+ 	desc = "EVT_1226001_DESC"\r
+-	style = 2\r
++	style = 1\r
+ 	picture = "diplomatic_campaign"\r
+ \r
+ 	action = { # イタリア王国という名のソドムの市\r
+@@ -674,7 +677,6 @@ event = {
+ 	command = { trigger = { war = { country = U14 } } type = peace which = U14 value = 0 }\r
+ 	command = { trigger = { war = { country = CHI } } type = peace which = CHI value = 0 }\r
+ 	command = { trigger = { country = UC3 } type = set_domestic which = democratic value = 7 }\r
+-	command = { trigger = { country = UC3 ai = yes } type = ai which = "IF/UC3_if.ai" }\r
+ 	command = { trigger = { country = UC3 } type = set_domestic which = political_left value = 3 }\r
+ 	command = { trigger = { country = UC3 } type = add_division which = "ヴェネツィア防衛隊" value = militia when = 4 }\r
+ 	command = { trigger = { country = UC3 } type = add_division which = "ヴェネツィア防衛隊" value = militia when = 4 }\r
+@@ -1971,9 +1973,9 @@ event = {
+ 	command = { type = task_efficiency which = naval_strike value = 0.1 }\r
+ 	command = { type = task_efficiency which = convoy_air_raiding value = 0.1 }\r
+ 	command = { type = task_efficiency which = port_strike value = 0.1 }\r
+-	command = { type = task_efficiency which = logistical_strike value = 0.2 }\r
+-	command = { type = task_efficiency which = strategic_bombardment value = 0.2 }\r
+-	command = { type = task_efficiency which = installation_strike value = 0.2 }\r
++	command = { type = task_efficiency which = logistical_strike value = 0.5 }\r
++	command = { type = task_efficiency which = strategic_bombardment value = 0.5 }\r
++	command = { type = task_efficiency which = installation_strike value = 0.5 }\r
+ 	command = { type = task_efficiency which = runway_cratering value = 0.1 }\r
+ 	command = { type = task_efficiency which = air_supply value = 0.1 }\r
+ 	command = { type = task_efficiency which = airborne_assault value = 0.1 }\r
+@@ -2099,3 +2101,86 @@ event = {
+ 	command = { type = construct which = infrastructure where = 407 value = 10 }\r
+ 	}\r
+ }\r
++\r
++##########################################################################\r
++#  バドリオの寝返り\r
++# ローマ革命がおこると、多くの貴族や王族は国外に逃れたが、革命政府に参加したものも少なからずいた。\r
++# ピエトロ・バドリオは、第一次世界大戦では歩兵師団の参謀長や軍団長などを歴任し、1926年には元帥に昇進した。\r
++# しかし、しばしば政府を批判する発言を行うなどしたことから冷遇され、閉職に追いやられていた。\r
++# そのため、革命がおこると革命政府に寝返り、反王政の宣伝上の象徴として政府に参加した。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1226045\r
++	random = no\r
++	country = U14\r
++\r
++	trigger = {\r
++	event = 1226015 #ローマ共和国の成立\r
++	random = 15\r
++	}\r
++\r
++	name = "EVT_1226045_NAME"\r
++	desc = "EVT_1226045_DESC"\r
++  	style = 2\r
++  	picture = "Vlassov"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { type = wakeminister which = 885058 } # ピエトロ・バドリオ\r
++	command = { type = wakeminister which = 885059 }\r
++	command = { type = wakeminister which = 885060 }\r
++	command = { type = wakeminister which = 885061 }\r
++	command = { type = wakeleader which = 885102 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 拒否\r
++	name = "ACTION_NAME_REFUSE"\r
++	command = { type = dissent value = -2 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  エンリコ・フェルミの帰国\r
++# エンリコ・フェルミは、イタリア、ローマ出身の物理学者である。\r
++# 統計力学、量子力学および原子核物理学の分野で顕著な業績を残した世界最高レベルの科学者であった。\r
++# イタリアで政治的混乱が深まると、国外へ脱出していたが、ある程度落ち着いたことでイタリアに帰国してきた。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 1226046\r
++	random = no\r
++	country = U14\r
++\r
++	trigger = {\r
++	event = 1226015 #ローマ共和国の成立\r
++	random = 15\r
++	}\r
++\r
++	name = "EVT_1226046_NAME"\r
++	desc = "EVT_1226046_DESC"\r
++  	style = 2\r
++  	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 30 \r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { type = waketeam which = 885017 } # エンリコ・フェルミ\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 拒否\r
++	name = "ACTION_NAME_REFUSE"\r
++	command = { type = dissent value = 1 }\r
++	ai_chance = 0\r
++	}\r
++}
+\ No newline at end of file

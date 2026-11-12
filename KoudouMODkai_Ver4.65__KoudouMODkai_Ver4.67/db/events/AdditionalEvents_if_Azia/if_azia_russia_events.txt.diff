@@ -1,0 +1,236 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_russia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_russia_events.txt [cp932]
+@@ -4828,15 +4828,6 @@ event = {
+ 	name = "ACTION_NAME_ACCEPT"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+-	command = { type = build_division which = battleship when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = battleship when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = battleship when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = heavy_cruiser when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = heavy_cruiser when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = light_cruiser when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = light_cruiser when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = destroyer when = 1 cost = -0.2 where = 360 }\r
+-	command = { type = build_division which = destroyer when = 1 cost = -0.2 where = 360 }\r
+ 	command = { trigger = { exists = GER } type = trade which = UER where = GER oil = -10 supplies = 5 value = 1 } \r
+ 	command = { trigger = { exists = GER } type = relation which = GER value = 20 }\r
+ 	command = { trigger = { exists = DDR } type = trade which = UER where = DDR oil = -10 supplies = 5 value = 1 } \r
+@@ -8453,7 +8444,6 @@ event = {
+ 	action = { # 戦いの準備に時間が稼げる\r
+ 	name = "ACTIONNAME7060423A"\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+-	command = { type = build_division which = heavy_cruiser when = 1 cost = -0.2 name = "Petropavlovsk" where = 360 }\r
+ 	command = { type = trade which = SOV where = GER oil = -10 supplies = 5 value = 1 } \r
+ 	command = { type = relation which = GER value = 20 }\r
+ 	ai_chance = 100\r
+@@ -12975,11 +12965,10 @@ event = {
+ \r
+ 	action = { # 樺太を守るのだ！\r
+ 	name = "ACTIONNAME7060620A"\r
+-	command = { type = end_non_aggression which = JAP where = UER }\r
+-	command = { type = war which = UER }\r
+ 	command = { trigger = { division_exists = { type = 13016 id = 62 } } type = remove_division which = 13016 value = 62 }\r
+ 	command = { type = control which = UER value = 1541 }\r
+ 	command = { type = control which = UER value = 2792 }\r
++	command = { type = event which = 7060624 where = UER when = 0 }\r
+ 	ai_chance = 40\r
+ 	}\r
+ \r
+@@ -13084,7 +13073,7 @@ event = {
+ \r
+ #########################################################################\r
+ #  ロシアの樺太要求 ― 同盟条件の提示\r
+-# 樺太問題に置いて、ロシアと同盟することを提案することで問題解決を図ったが、ロシアは条件を提示してきた。\r
++# 樺太問題において、ロシアと同盟することを提案することで問題解決を図ったが、ロシアは条件を提示してきた。\r
+ # 樺太を割譲しなければ、ロシアは提案を受け入れることができないとのことだ。\r
+ #########################################################################\r
+ \r
+@@ -13143,16 +13132,38 @@ event = {
+ 	action = { # ロシアは日本を侮辱した。開戦だ！\r
+ 	name = "ACTIONNAME7060623C"\r
+ 	command = { type = relation which = UER value = -200 }\r
+-	command = { type = end_non_aggression which = JAP where = UER }\r
+-	command = { type = war which = UER }\r
+ 	command = { trigger = { division_exists = { type = 13016 id = 62 } } type = remove_division which = 13016 value = 62 }\r
+ 	command = { type = control which = UER value = 1541 }\r
+ 	command = { type = control which = UER value = 2792 }\r
+-	command = { type = setflag which = Karafuto_War }\r
++	command = { type = event which = 7060624 where = UER when = 0 }\r
+ 	ai_chance = 5\r
+ 	}\r
+ }\r
+ \r
++\r
++#########################################################################\r
++#  ロシアの樺太要求 ― 日本が要求を拒否\r
++# 樺太問題において、日ロ間は交渉を重ねたが、交渉は決裂してしまい、日露間で戦争が勃発した。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 7060624\r
++	random = no\r
++	country = JAP\r
++\r
++	name = "EVT_7060624_NAME"\r
++	desc = "EVT_7060624_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++\r
++	action = { # 戦争だ！\r
++	name = "ACTIONNAME7060624A"\r
++	command = { type = end_non_aggression which = JAP where = UER }\r
++	command = { type = war which = JAP }\r
++	command = { type = setflag which = Karafuto_War }\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  樺太戦争の終結\r
+ # ロシアは国内を再建すると、日本にロシア内戦期に占領された樺太の返還を要求する最後通牒を突き付け、これを日本が拒絶したことで樺太を巡る戦いが起きた。\r
+@@ -13161,16 +13172,13 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7060624\r
++	id = 7060625\r
+ 	random = no\r
+ 	country = JAP\r
+ \r
+ 	trigger = {\r
+ 	flag = Karafuto_War # 樺太問題で戦争が勃発\r
+-	OR = {\r
+-	event = { id = 7060620 days = 180 } # ロシアの樺太要求 ― ロシア軍が樺太に到達\r
+-	event = { id = 7060623 days = 180 } # ロシアの樺太要求 ― 同盟条件の提示\r
+-	}\r
++	event = { id = 7060624 days = 240 } # ロシアの樺太要求 ― 日本が要求を拒否\r
+ 	war = { country = JAP country = UER }\r
+ 	NOT = { war = { country = GER country = UER } }\r
+ 	NOT = { war = { country = DDR country = UER } }\r
+@@ -13185,8 +13193,8 @@ event = {
+ 	}\r
+ 	}\r
+ \r
+-	name = "EVT_7060624_NAME"\r
+-	desc = "EVT_7060624_DESC"\r
++	name = "EVT_7060625_NAME"\r
++	desc = "EVT_7060625_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+@@ -13195,7 +13203,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 降伏しよう…\r
+-	name = "ACTIONNAME7060624A"\r
++	name = "ACTIONNAME7060625A"\r
+ 	command = { type = peace which = UER value = 0 }\r
+ 	command = { type = end_puppet }\r
+ 	command = { type = leave_alliance }\r
+@@ -13220,7 +13228,7 @@ event = {
+ 	command = { type = removeclaim which = 2793 }\r
+ 	command = { trigger = { division_exists = { type = 13016 id = 62 } } type = remove_division which = 13016 value = 62 }\r
+ 	command = { trigger = { division_exists = { type = 13016 id = 64 } } type = remove_division which = 13016 value = 64 }\r
+-	command = { type = trigger which = 7060625 }\r
++	command = { type = trigger which = 7060626 }\r
+ 	}\r
+ }\r
+ \r
+@@ -13229,20 +13237,20 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7060625\r
++	id = 7060626\r
+ 	random = no\r
+ 	country = UER\r
+ \r
+-	name = "EVT_7060625_NAME"\r
+-	desc = "EVT_7060624_DESC"\r
++	name = "EVT_7060626_NAME"\r
++	desc = "EVT_7060625_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+ 	action = { # 了解\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = money value = 500 }\r
+-	command = { type = sleepevent which = 7060626 }\r
+ 	command = { type = sleepevent which = 7060627 }\r
++	command = { type = sleepevent which = 7060628 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -13255,16 +13263,13 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7060626\r
++	id = 7060627\r
+ 	random = no\r
+ 	country = UER\r
+ \r
+ 	trigger = {\r
+ 	flag = Karafuto_War # 樺太問題で戦争が勃発\r
+-	OR = {\r
+-	event = { id = 7060620 days = 180 } # ロシアの樺太要求 ― ロシア軍が樺太に到達\r
+-	event = { id = 7060623 days = 180 } # ロシアの樺太要求 ― 同盟条件の提示\r
+-	}\r
++	event = { id = 7060624 days = 240 } # ロシアの樺太要求 ― 日本が要求を拒否\r
+ 	war = { country = JAP country = UER }\r
+ 	NOT = { war = { country = GER country = UER } }\r
+ 	NOT = { war = { country = DDR country = UER } }\r
+@@ -13291,8 +13296,8 @@ event = {
+ 	NOT = { alliance = { country = ITA country = JAP } }\r
+ 	}\r
+ \r
+-	name = "EVT_7060626_NAME"\r
+-	desc = "EVT_7060626_DESC"\r
++	name = "EVT_7060627_NAME"\r
++	desc = "EVT_7060627_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+@@ -13301,7 +13306,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 講和だ！今は国内問題に対処しなくては…\r
+-	name = "ACTIONNAME7060626A"\r
++	name = "ACTIONNAME7060627A"\r
+ 	command = { type = dissent value = 50 }\r
+ 	command = { type = relation which = JAP value = -50 }\r
+ 	command = { type = relation which = GER value = -20 }\r
+@@ -13313,7 +13318,7 @@ event = {
+ 	command = { type = domestic which = defense_lobby value = -1 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+ 	command = { type = peace which = JAP value = 0 }\r
+-	command = { type = trigger which = 7060627 }\r
++	command = { type = trigger which = 7060628 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -13323,12 +13328,12 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 7060627\r
++	id = 7060628\r
+ 	random = no\r
+ 	country = JAP\r
+ \r
+-	name = "EVT_7060627_NAME"\r
+-	desc = "EVT_7060626_DESC"\r
++	name = "EVT_7060628_NAME"\r
++	desc = "EVT_7060627_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+@@ -13337,6 +13342,8 @@ event = {
+ 	command = { type = dissent value = -30 }\r
+ 	command = { type = industrial_modifier which = total value = 5 }\r
+ 	command = { type = money value = 1000 }\r
++	command = { type = sleepevent which = 7060625 }\r
++	command = { type = sleepevent which = 7060626 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r

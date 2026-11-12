@@ -1,0 +1,100 @@
+--- A/db/events/AdditionalEvents_if_Japan/AI/if_France_AI_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Japan/AI/if_France_AI_events.txt [utf-8]
+@@ -14,7 +14,7 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1938 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+@@ -44,7 +44,7 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+@@ -70,7 +70,7 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { trigger = { event = 3327008 }\r
+@@ -102,7 +102,7 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { trigger = { local_flag = People }\r
+@@ -146,7 +146,7 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+@@ -174,7 +174,7 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1930 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+@@ -201,11 +201,41 @@ event = {
+ 	style = 0	\r
+ 	\r
+ 	date = { day = 0 month = 3 year = 1941 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = {\r
+ 	command = { trigger = { ai = yes } type = ai which = "IFswitch/FRA/front/fra_hol.ai" }\r
+ 	command = { type = war which = HOL }\r
+ 	}\r
++}\r
++##########################################################################\r
++#  オランダ侵攻AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 3328008\r
++	random = no \r
++	country = FRA\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	 war = { country = FRA country = UB8 } \r
++	OR = {\r
++	alliance = { country = FRA country = ITA }\r
++	alliance = { country = FRA country = U14 }\r
++	}\r
++	NOT = { war = { country = FRA country = UC3 } }\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 3 year = 1941 }\r
++	offset = 6\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = {\r
++	command = { type = war which = UC3 }\r
++	}\r
+ }
+\ No newline at end of file

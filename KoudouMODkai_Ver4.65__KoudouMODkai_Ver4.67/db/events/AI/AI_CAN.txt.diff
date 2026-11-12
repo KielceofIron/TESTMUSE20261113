@@ -1,0 +1,49 @@
+--- A/db/events/AI/AI_CAN.txt [ascii]
++++ B/db/events/AI/AI_CAN.txt [ascii]
+@@ -30,8 +30,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/CAN_Dday.ai" }\r
+-		command = { type = ai which = "Air_Ground.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/CAN_Dday.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -59,7 +59,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_setflag which = CANGroundAir }\r
+ 		command = { type = local_clrflag which = CANStrategicAir }\r
+-		command = { type = ai which = "Air_Ground.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ event = {\r
+@@ -84,7 +84,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = CANGroundAir }\r
+ 		command = { type = local_setflag which = CANStrategicAir }\r
+-		command = { type = ai which = "Air_Strategic.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Strategic.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -114,7 +114,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/Minor_Gear_Up.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/Minor_Gear_Up.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -139,6 +139,6 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/Can_atwar.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/Can_atwar.ai" }\r
+ 	}\r
+ }
+\ No newline at end of file

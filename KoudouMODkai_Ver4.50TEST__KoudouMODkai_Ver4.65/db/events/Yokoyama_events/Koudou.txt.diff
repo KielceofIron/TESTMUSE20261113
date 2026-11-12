@@ -1,0 +1,839 @@
+--- A/db/events/Yokoyama_events/Koudou.txt [cp932]
++++ B/db/events/Yokoyama_events/Koudou.txt [cp932]
+@@ -130,7 +130,7 @@ event = {
+ 		ai_chance = 1\r
+ 		command = { type = dissent value = 6 }\r
+ 		# command = { type = chiefofstaff which = 50007 }\r
+-		command = { type = chiefofarmy which = 50577 } # 眞崎甚三郎\r
++		command = { type = chiefofarmy which = 50610 } # 眞崎甚三郎\r
+ 	}\r
+ \r
+ 	action = { # 荒木貞夫を陸相職に留任させる\r
+@@ -164,7 +164,7 @@ event = {
+ \r
+ 	trigger = {\r
+ 		Not = { incabinet  = 50361 } # 荒木貞夫 chiefofarmy\r
+-		Not = { incabinet  = 50577 } # 眞崎甚三郎 chiefofarmy\r
++		Not = { incabinet  = 50610 } # 眞崎甚三郎 chiefofarmy\r
+ 		Not = { ispuppet = JAP }\r
+ \r
+ \r
+@@ -189,8 +189,10 @@ event = {
+ 		ai_chance = 90\r
+ 		command = { type = domestic which = democratic value = 1 }\r
+ 		command = { type = dissent value = -1 }\r
+-		command = { type = sleepminister which = 50576 } # 眞崎甚三郎(政府首班)\r
+-		command = { type = sleepminister which = 50577 } # 眞崎甚三郎\r
++		command = { type = sleepminister which = 50607 } # 眞崎甚三郎\r
++		command = { type = sleepminister which = 50608 }\r
++		command = { type = sleepminister which = 50609 }\r
++		command = { type = sleepminister which = 50610 }\r
+ 	}\r
+ \r
+ 	action = { # 皇道派を刺激するのは不味いだろう\r
+@@ -206,7 +208,7 @@ event = {
+ 		command = { type = dissent value = 8 }\r
+ 		# command = { type = trigger which = 2260003 }\r
+ 		command = { type = domestic which = democratic value = -1 }\r
+-		command = { type = chiefofarmy which = 50577 } # 眞崎甚三郎\r
++		command = { type = chiefofarmy which = 50610 } # 眞崎甚三郎\r
+ 	}\r
+ }\r
+ \r
+@@ -230,7 +232,7 @@ event = {
+ 			And = { year = 1935 \r
+ 				incabinet  = 50361 } #陸軍大臣が荒木貞夫\r
+ 			And = { year = 1935 \r
+-				incabinet  = 50903 } #陸軍大臣が眞崎甚三郎\r
++				incabinet  = 50610 } #陸軍大臣が眞崎甚三郎\r
+ 			flag = JAP_NorthStrategy # 北進論選択時\r
+ 			And = { Not = { event = 2991001 }\r
+ 				dissent = 45 }\r
+@@ -256,20 +258,21 @@ event = {
+ 		command = { type = set_domestic which = democratic value = 3 }\r
+ 		command = { type = set_domestic which = political_left value = 3 }\r
+ 		# command = { type = headofgovernment which = 50328 } # 大日本帝国mod 荒木貞夫(政府首班)\r
+-		command = { type = headofgovernment which = 50572 } # 荒木貞夫(政府首班)\r
+-		command = { type = foreignminister which = 50639 }\r
+-		command = { type = armamentminister which = 50591 }\r
+-		command = { type = ministerofsecurity which = 50588 }\r
+-		command = { type = ministerofintelligence which = 50122 }\r
+-		command = { type = chiefofstaff which = 50573 }\r
+-		command = { type = chiefofarmy which = 50577 } # 眞崎甚三郎\r
+-		command = { type = chiefofnavy which = 50674 } # 山本英輔\r
+-		command = { type = chiefofair which = 50679 } # 堀丈夫\r
+-		command = { type = sleepminister which = 50013 } # 林銑十郞(首相)\r
+-		command = { type = sleepminister which = 50047 } # 林銑十郞(外務)\r
+-		command = { type = sleepminister which = 50362 } # 林銑十郞(陸軍大臣)\r
++		command = { type = headofgovernment which = 50605 } # 荒木貞夫(政府首班)\r
++		command = { type = foreignminister which = 50615 } # 柳川平助\r
++		command = { type = armamentminister which = 50072 } # 勝田主計\r
++		command = { type = ministerofsecurity which = 50644 } # 北一輝\r
++		command = { type = ministerofintelligence which = 50122 } # 荒木貞夫\r
++		command = { type = chiefofstaff which = 50606 } # 荒木貞夫\r
++		command = { type = chiefofarmy which = 50610 } # 眞崎甚三郎\r
++		command = { type = chiefofnavy which = 50715 } # 山本英輔\r
++		command = { type = chiefofair which = 50720 } # 堀丈夫\r
++		command = { type = sleepminister which = 50013 } # 林銑十郞\r
++		command = { type = sleepminister which = 50047 }\r
++		command = { type = sleepminister which = 50362 }\r
++		command = { type = sleepminister which = 50374 }\r
+ 		command = { type = sleepleader which = 101336 }\r
+-		command = { type = sleepminister which = 50535 } # 渡辺錠太郎\r
++		command = { type = sleepminister which = 50540 } # 渡辺錠太郎\r
+ 		command = { type = sleepleader which = 101334 }\r
+ 		command = { type = sleepteam which = 50057 }\r
+ 		command = { type = sleepevent which = 1330120016 } # 相沢事件\r
+@@ -366,20 +369,18 @@ event = {
+ 		command = { type = domestic which = defense_lobby value = 1 }\r
+ 		command = { type = relation which = SOV value = -10 }\r
+ 		command = { type = relation which = CHI value = -10 }\r
+-		command = { type = sleepminister which = 50002 } # id = 50002 の閣僚を死亡（使用不能）させる　岡田啓介\r
+-		command = { type = sleepminister which = 50035 } # id = 50035 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50227 } # id = 50227 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50269 } # id = 50269 の閣僚を死亡（使用不能）させる　高橋是清\r
+-		command = { type = sleepminister which = 50300 } # id = 50300 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる　斎藤実\r
+-		command = { type = sleepminister which = 50323 } # id = 50323 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる　斎藤実\r
+-		command = { type = sleepminister which = 50323 } # id = 50323 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50119 } # id = 50119 の閣僚を死亡（使用不能）させる  鈴木貫太郎\r
+-		command = { type = sleepminister which = 50171 } # id = 50171 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50017 } # id = 50017 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50253 } # id = 50253 の閣僚を死亡（使用不能）させる  牧野伸顕\r
+-		command = { type = sleepminister which = 50535 } # 渡辺錠太郎\r
++		command = { type = sleepminister which = 50002 } # 岡田啓介\r
++		command = { type = sleepminister which = 50035 }\r
++		command = { type = sleepminister which = 50227 }\r
++		command = { type = sleepminister which = 50269 } # 高橋是清\r
++		command = { type = sleepminister which = 50300 }\r
++		command = { type = sleepminister which = 50229 } # 齋藤實\r
++		command = { type = sleepminister which = 50323 }\r
++		command = { type = sleepminister which = 50017 } # 鈴木貫太郎\r
++		command = { type = sleepminister which = 50119 }\r
++		command = { type = sleepminister which = 50171 }\r
++		command = { type = sleepminister which = 50253 } # 牧野伸顕\r
++		command = { type = sleepminister which = 50540 } # 渡辺錠太郎\r
+ 		command = { type = sleepleader which = 101334 }\r
+ 		command = { type = sleepteam which = 50057 }\r
+ 		# command = { type = trigger which = 2260006 }\r
+@@ -436,15 +437,16 @@ event = { # triggered by 226
+ 	command = { type = morale which = land value = -20 }\r
+ 	command = { type = sleepevent which = 2500039 } # 東條英機による政府交代イベント\r
+ 	command = { type = sleepevent which = 22600026 } # 粛軍人事 ― 皇道派の粛清\r
+-	command = { type = waketeam which = 50103 } # 小畑敏四郎\r
++	command = { type = waketeam which = 50088 } # 小畑敏四郎\r
+ 	#command = { type = sleepminister which = 50016 } #米内光政 粛清\r
+ 	#command = { type = sleepminister which = 50071 }\r
+ 	#command = { type = sleepminister which = 50516 }\r
+-	#command = { type = sleepleader which = 50295 }\r
++	#command = { type = sleepleader which = 101273 }\r
+ \r
+ 	command = { type = sleepminister which = 50013 } # 林銑十郞\r
+ 	command = { type = sleepminister which = 50047 }\r
+ 	command = { type = sleepminister which = 50362 }\r
++	command = { type = sleepminister which = 50374 }\r
+ 	command = { type = sleepleader which = 101336 }\r
+ 	command = { type = sleepminister which = 50022 } #東條英機 粛清\r
+ 	command = { type = sleepminister which = 50074 }\r
+@@ -455,36 +457,36 @@ event = { # triggered by 226
+ 	command = { type = sleepminister which = 50166 }\r
+ 	command = { type = sleepleader which = 101160 }\r
+ 	command = { type = sleepleader which = 101307 }\r
+-	command = { type = sleepteam which = 50054 }\r
+-	command = { type = sleepminister which = 50695 } #永田鉄山\r
+-	command = { type = sleepminister which = 50696 }\r
+-	command = { type = sleepminister which = 50697 }\r
+-	command = { type = sleepminister which = 50698 }\r
++	command = { type = sleepteam which = 50081 }\r
++	command = { type = sleepminister which = 50380 } #永田鉄山\r
++	command = { type = sleepminister which = 50381 }\r
++	command = { type = sleepminister which = 50382 }\r
++	command = { type = sleepminister which = 50383 }\r
+ 	command = { type = sleepleader which = 101395 }\r
+-	command = { type = sleepteam which = 50053 }\r
+-	command = { type = sleepminister which = 50548 } #石原莞爾 粛清\r
+-	command = { type = sleepminister which = 50723 }\r
+-	command = { type = sleepminister which = 50724 }\r
++	command = { type = sleepteam which = 50084 }\r
++	command = { type = sleepminister which = 50973 } #石原莞爾 粛清\r
++	command = { type = sleepminister which = 50974 }\r
++	command = { type = sleepminister which = 50975 }\r
+ 	command = { type = sleepleader which = 101057 }\r
+-	command = { type = sleepteam which = 50102 }\r
++	command = { type = sleepteam which = 50087 }\r
+ 	command = { type = sleepminister which = 50019 } # 寺内壽一 統制派。軍籍剥奪\r
+ 	command = { type = sleepminister which = 50070 }\r
+ 	command = { type = sleepminister which = 50364 }\r
++	command = { type = sleepminister which = 50376 }\r
+ 	command = { type = sleepleader which = 101159 }\r
+-	command = { type = sleepteam which = 50111 }\r
++	command = { type = sleepteam which = 50080 }\r
+ 	command = { type = sleepleader which = 101177 } # 山田乙三 余波。粛清\r
+-	command = { type = sleepteam which = 50109 }\r
++	command = { type = sleepteam which = 50094 }\r
+ 	command = { type = sleepleader which = 101116 } # 西尾壽造 余波。粛清\r
+-	command = { type = sleepteam which = 50107 }\r
+-	\r
+-	#command = { type = sleepminister which = 50152 } #井上成美 粛清\r
+-	#command = { type = sleepminister which = 50523 }\r
+-	#command = { type = sleepleader which = 101210 }\r
+-	#command = { type = sleepleader which = 101211 }\r
+-	#command = { type = sleepteam which = 50079 }\r
+-	command = { type = sleepminister which = 50023 } # 小磯国昭 宇垣閥。 軍籍剥奪\r
++	command = { type = sleepteam which = 50092 }\r
++	command = { type = sleepminister which = 50152 } #井上成美 粛清\r
++	command = { type = sleepminister which = 50523 }\r
++	command = { type = sleepleader which = 101210 }\r
++	command = { type = sleepleader which = 101211 }\r
++	command = { type = sleepteam which = 50079 }\r
++	command = { type = sleepminister which = 50023 } # 小磯國昭 宇垣閥。 軍籍剥奪\r
+ 	command = { type = sleepminister which = 50124 }\r
+-	command = { type = sleepminister which = 50746 }\r
++	command = { type = sleepminister which = 50991 }\r
+ 	command = { type = sleepleader which = 101086 }\r
+ 	command = { type = sleepminister which = 50026 } # 宇垣一成 軍縮がない？からどうなんだろうというのはある。死亡\r
+ 	command = { type = sleepminister which = 50040 }\r
+@@ -496,47 +498,53 @@ event = { # triggered by 226
+ 	command = { type = sleepminister which = 50133 } # 杉山元 宇垣閥。軍籍剥奪\r
+ 	command = { type = sleepminister which = 50142 }\r
+ 	command = { type = sleepleader which = 101145 }\r
+-	command = { type = sleepteam which = 50110 }\r
++	command = { type = sleepteam which = 50095 }\r
+ 	command = { type = sleepminister which = 50338 } # 二宮治重 宇垣閥。予備役\r
+ 	command = { type = sleepleader which = 101399 }\r
+ 	command = { type = sleepminister which = 50339 } # 建川美次 宇垣閥。予備役\r
+-	command = { type = sleepminister which = 50737 }\r
++	command = { type = sleepminister which = 50982 }\r
+ 	command = { type = sleepleader which = 101396 }\r
+ 	command = { type = sleepminister which = 50346 } # 武藤章 統制派。 予備役\r
+ 	command = { type = sleepminister which = 50504 }\r
+ 	command = { type = sleepminister which = 50505 }\r
++	command = { type = sleepminister which = 50995 }\r
++	command = { type = sleepminister which = 50996 }\r
+ 	command = { type = sleepleader which = 101108 }\r
+-	command = { type = sleepminister which = 50554 } # 池田純久 統制派。\r
++	command = { type = sleepminister which = 50384 } # 池田純久 統制派。\r
+ 	command = { type = sleepleader which = 101398 }\r
+-	command = { type = sleepminister which = 50133 } # 梅津美治郞 満州派。 予備役\r
++	command = { type = sleepminister which = 50135 } # 梅津美治郞 満州派。 予備役\r
+ 	command = { type = sleepminister which = 50144 }\r
+ 	command = { type = sleepleader which = 101171 }\r
+ 	command = { type = sleepleader which = 101311 }\r
+ 	command = { type = sleepminister which = 50096 } # 中島今朝吾 226事件早期鎮圧を提言。粛清\r
+ 	command = { type = sleepleader which = 101113 }\r
+ 	command = { type = sleepminister which = 50366 } # 板垣征四郎 満州派。 予備役\r
++	command = { type = sleepminister which = 50377 }\r
+ 	command = { type = sleepleader which = 101060 }\r
+-	command = { type = sleepminister which = 50564 } # 片倉衷 統制派。 射殺\r
++	command = { type = sleepminister which = 50386 } # 片倉衷 統制派。 射殺\r
+ 	command = { type = sleepleader which = 101068 }\r
+ 	command = { type = sleepleader which = 101376 } # 根本博 統制派。粛清\r
+ 	command = { type = sleepleader which = 101135 } # 佐藤幸徳 統制派。粛清\r
+ 	command = { type = sleepminister which = 50162 } # 阿南惟幾 226事件を批判。粛清\r
+ 	command = { type = sleepminister which = 50368 }\r
++	command = { type = sleepminister which = 50379 }\r
+ 	command = { type = sleepleader which = 101007 }\r
+-	command = { type = sleepleader which = 101411 }\r
+-	command = { type = sleepminister which = 50565 } # 辻政信 統制派。粛清\r
+-	command = { type = sleepminister which = 50566 }\r
+ 	command = { type = sleepleader which = 101168 }\r
+-	command = { type = sleepleader which = 101585 } # 岩越恒一\r
+-	command = { type = sleepleader which = 101070 } # 香月清司\r
+-	command = { type = sleepleader which = 101603 } # 秦雅尚\r
+-	command = { type = sleepleader which = 101604 } # 井上政吉\r
+-	command = { type = sleepleader which = 101605 } # 河村恭輔\r
+-	command = { type = sleepleader which = 101606 } # 小泉恭次\r
+-	command = { type = sleepleader which = 101607 } # 関亀治\r
+-	command = { type = sleepleader which = 101608 } # 湯浅政雄\r
+-	command = { type = sleepleader which = 101609 } # 菊池門也\r
+-	command = { type = sleepleader which = 101082 } # 北島騏子雄\r
++	command = { type = sleepminister which = 50387 } # 辻政信 統制派。粛清\r
++	command = { type = sleepminister which = 50388 }\r
++	command = { type = sleepminister which = 50997 }\r
++	command = { type = sleepminister which = 50998 }\r
++	command = { type = sleepleader which = 101168 }\r
++	command = { type = sleepleader which = 101585 } # 岩越恒一 史実では二・二六事件に予備役\r
++	command = { type = sleepleader which = 101070 } # 香月清司 史実では二・二六事件後に近衛師団長。\r
++	command = { type = sleepleader which = 101603 } # 秦雅尚 史実では二・二六事件後に近衛歩兵第2旅団長。\r
++	command = { type = sleepleader which = 101604 } # 井上政吉 史実では二・二六事件後に近衛歩兵第3連隊長。\r
++	command = { type = sleepleader which = 101605 } # 河村恭輔 史実では二・二六事件後に第1師団長。\r
++	command = { type = sleepleader which = 101606 } # 小泉恭次 史実では二・二六事件後に歩兵第1旅団長。\r
++	command = { type = sleepleader which = 101607 } # 関亀治 史実では二・二六事件後に歩兵第2旅団長。\r
++	command = { type = sleepleader which = 101608 } # 湯浅政雄 史実では二・二六事件後に歩兵第3連隊長。\r
++	command = { type = sleepleader which = 101609 } # 菊池門也 史実では二・二六事件後に野戦重砲兵第3旅団長。\r
++	command = { type = sleepleader which = 101082 } # 北島騏子雄 史実では二・二六事件後に野戦重砲兵第7連隊長。\r
+ 	# command = { type = country which = U56 }\r
+ 	# command = { type = trigger which = 2260007 }\r
+ 	command = { type = event which = 2260007 where = -1 when = 0 }\r
+@@ -574,15 +582,15 @@ event = {
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 		# command = { type = headofgovernment which = 50328 } # 大日本帝国mod 荒木貞夫(政府首班)\r
+-		command = { type = headofgovernment which = 50572 } # 荒木貞夫\r
+-		command = { type = foreignminister which = 50639 } # 白鳥敏夫\r
+-		command = { type = armamentminister which = 50575 } # 眞崎甚三郎\r
+-		command = { type = ministerofsecurity which = 50610 } # 北一輝\r
++		command = { type = headofgovernment which = 50605 } # 荒木貞夫\r
++		command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
++		command = { type = armamentminister which = 50608 } # 眞崎甚三郎\r
++		command = { type = ministerofsecurity which = 50644 } # 北一輝\r
+ 		command = { type = ministerofintelligence which = 50122 } # 荒木貞夫\r
+-		command = { type = chiefofstaff which = 50573 } # 荒木貞夫\r
+-		command = { type = chiefofarmy which = 50577 } # 眞崎甚三郎\r
++		command = { type = chiefofstaff which = 50606 } # 荒木貞夫\r
++		command = { type = chiefofarmy which = 50610 } # 眞崎甚三郎\r
+ 		command = { type = chiefofnavy which = 50228 } # 伏見宮博恭王\r
+-		command = { type = chiefofair which = 50593 } # 鈴木率道\r
++		command = { type = chiefofair which = 50626 } # 鈴木率道\r
+ 		command = { type = event which = 22600027 where = -1 when = 10 }\r
+ 	}\r
+ \r
+@@ -593,15 +601,15 @@ event = {
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-		command = { type = headofgovernment which = 50574 } # 眞崎甚三郎\r
+-		command = { type = foreignminister which = 50639 } # 白鳥敏夫\r
++		command = { type = headofgovernment which = 50607 } # 眞崎甚三郎\r
++		command = { type = foreignminister which = 50675 } # 白鳥敏夫\r
+ 		command = { type = armamentminister which = 50072 } # 勝田主計\r
+-		command = { type = ministerofsecurity which = 50610 } # 北一輝\r
++		command = { type = ministerofsecurity which = 50643 } # 北一輝\r
+ 		command = { type = ministerofintelligence which = 50657 } # 小笠原長生\r
+-		command = { type = chiefofstaff which = 50573 } # 荒木貞夫\r
+-		command = { type = chiefofarmy which = 50584 } # 柳川平助\r
++		command = { type = chiefofstaff which = 50606 } # 荒木貞夫\r
++		command = { type = chiefofarmy which = 50617 } # 柳川平助\r
+ 		command = { type = chiefofnavy which = 50228 } # 伏見宮博恭王\r
+-		command = { type = chiefofair which = 50679 } # 堀丈夫\r
++		command = { type = chiefofair which = 50720 } # 堀丈夫\r
+ 		command = { type = event which = 22600027 where = -1 when = 10 }\r
+ 	}\r
+ \r
+@@ -612,14 +620,14 @@ event = {
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-		command = { type = headofgovernment which = 50630 } # 山本英輔\r
+-		command = { type = foreignminister which = 50041 } # 近衞文麿\r
+-		command = { type = armamentminister which = 50616 } # 西田税\r
+-		command = { type = ministerofsecurity which = 50603 } # 三上卓\r
+-		command = { type = chiefofstaff which = 50589 } # 本庄繁\r
+-		command = { type = chiefofarmy which = 50577 } # 眞崎甚三郎\r
+-		command = { type = chiefofnavy which = 50675 } # 末次信正\r
+-		command = { type = chiefofair which = 50593 } # 鈴木率道\r
++		command = { type = headofgovernment which = 50665 } # 山本英輔\r
++		command = { type = foreignminister which = 50676 } # 大川周明\r
++		command = { type = armamentminister which = 50650 } # 西田税\r
++		command = { type = ministerofsecurity which = 50636 } # 三上卓\r
++		command = { type = chiefofstaff which = 50622 } # 本庄繁\r
++		command = { type = chiefofarmy which = 50610 } # 眞崎甚三郎\r
++		command = { type = chiefofnavy which = 50716 } # 末次信正\r
++		command = { type = chiefofair which = 50626 } # 鈴木率道\r
+ 		#command = { type = event which = 22600027 where = -1 when = 10 }\r
+ 	}\r
+ \r
+@@ -631,14 +639,14 @@ event = {
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 		command = { type = headofgovernment which = 50021 } # 平沼騏一郎\r
+-		command = { type = foreignminister which = 50041 } # 近衞文麿\r
+-		command = { type = armamentminister which = 50591 } # 山岡重厚\r
++		command = { type = foreignminister which = 51033 } # 近衞文麿\r
++		command = { type = armamentminister which = 50624 } # 山岡重厚\r
+ 		command = { type = ministerofsecurity which = 50413 } # 塩野季彦\r
+-		command = { type = ministerofintelligence which = 50657 } # 小笠原長生\r
+-		command = { type = chiefofstaff which = 50573 } # 荒木貞夫\r
+-		command = { type = chiefofarmy which = 50577 } # 眞崎甚三郎\r
+-		command = { type = chiefofnavy which = 50674 } # 山本英輔\r
+-		command = { type = chiefofair which = 50679 } # 堀丈夫\r
++		command = { type = ministerofintelligence which = 50695 } # 小笠原長生\r
++		command = { type = chiefofstaff which = 50606 } # 荒木貞夫\r
++		command = { type = chiefofarmy which = 50610 } # 眞崎甚三郎\r
++		command = { type = chiefofnavy which = 50715 } # 山本英輔\r
++		command = { type = chiefofair which = 50720 } # 堀丈夫\r
+ 		command = { type = event which = 22600027 where = -1 when = 10 }\r
+ 	}\r
+ 	action = { # 天皇制社会主義ルート\r
+@@ -647,40 +655,7 @@ event = {
+ 		ai_chance = 0\r
+ 		command = { type = event which = 26600001 where = -1 when = 0 }\r
+ 		command = { type = event which = 22600027 where = -1 when = 10 }\r
+-		command = { type = sleepminister which = 50568 } # 以下右派皇道派閣僚\r
+-		command = { type = sleepminister which = 50569 }\r
+-		command = { type = sleepminister which = 50570 }\r
+-		command = { type = sleepminister which = 50571 }\r
+-		command = { type = sleepminister which = 50572 }\r
+-		command = { type = sleepminister which = 50573 }\r
+-		command = { type = sleepminister which = 50574 }\r
+-		command = { type = sleepminister which = 50575 }\r
+-		command = { type = sleepminister which = 50576 }\r
+-		command = { type = sleepminister which = 50577 }\r
+-		command = { type = sleepminister which = 50578 }\r
+-		command = { type = sleepminister which = 50579 }\r
+-		command = { type = sleepminister which = 50580 }\r
+-		command = { type = sleepminister which = 50581 }\r
+-		command = { type = sleepminister which = 50582 }\r
+-		command = { type = sleepminister which = 50583 }\r
+-		command = { type = sleepminister which = 50584 }\r
+-		command = { type = sleepminister which = 50585 }\r
+-		command = { type = sleepminister which = 50586 }\r
+-		command = { type = sleepminister which = 50587 }\r
+-		command = { type = sleepminister which = 50588 }\r
+-		command = { type = sleepminister which = 50589 }\r
+-		command = { type = sleepminister which = 50590 }\r
+-		command = { type = sleepminister which = 50591 }\r
+-		command = { type = sleepminister which = 50592 }\r
+-		command = { type = sleepminister which = 50593 }\r
+-		command = { type = sleepminister which = 50594 }\r
+-		command = { type = sleepminister which = 50595 }\r
+-		command = { type = sleepminister which = 50596 }\r
+-		command = { type = sleepminister which = 50597 }\r
+-		command = { type = sleepminister which = 50598 }\r
+-		command = { type = sleepminister which = 50599 }\r
+-		command = { type = sleepminister which = 50600 }\r
+-		command = { type = sleepminister which = 50601 }\r
++		command = { type = sleepminister which = 50601 } # 以下皇道派右派閣僚\r
+ 		command = { type = sleepminister which = 50602 }\r
+ 		command = { type = sleepminister which = 50603 }\r
+ 		command = { type = sleepminister which = 50604 }\r
+@@ -768,26 +743,121 @@ event = {
+ 		command = { type = sleepminister which = 50686 }\r
+ 		command = { type = sleepminister which = 50687 }\r
+ 		command = { type = sleepminister which = 50688 }\r
++		command = { type = sleepminister which = 50689 }\r
++		command = { type = sleepminister which = 50690 }\r
+ 		command = { type = sleepminister which = 50691 }\r
+ 		command = { type = sleepminister which = 50692 }\r
+ 		command = { type = sleepminister which = 50693 }\r
+ 		command = { type = sleepminister which = 50694 }\r
+ 		command = { type = sleepminister which = 50695 }\r
+ 		command = { type = sleepminister which = 50696 }\r
++		command = { type = sleepminister which = 50697 }\r
++		command = { type = sleepminister which = 50698 }\r
+ 		command = { type = sleepminister which = 50699 }\r
+ 		command = { type = sleepminister which = 50700 }\r
+ 		command = { type = sleepminister which = 50701 }\r
+ 		command = { type = sleepminister which = 50702 }\r
+ 		command = { type = sleepminister which = 50703 }\r
+ 		command = { type = sleepminister which = 50704 }\r
+-		command = { type = sleepminister which = 50723 }\r
+-		command = { type = sleepminister which = 50724 }\r
+-		command = { type = sleepminister which = 50725 }\r
+-		#command = { type = sleepminister which = 50726 } # 尾崎秀実\r
+-		command = { type = sleepminister which = 50727 }\r
+-		#command = { type = sleepminister which = 50728 } # リヒャルト・ゾルゲ\r
+-		command = { type = sleepminister which = 50729 }\r
+-		command = { type = wakeminister which = 50800 } # 以下左派皇道派閣僚\r
++		command = { type = sleepminister which = 50705 }\r
++		command = { type = sleepminister which = 50706 }\r
++		command = { type = sleepminister which = 50707 }\r
++		command = { type = sleepminister which = 50708 }\r
++		command = { type = sleepminister which = 50709 }\r
++		command = { type = sleepminister which = 50710 }\r
++		command = { type = sleepminister which = 50711 }\r
++		command = { type = sleepminister which = 50712 }\r
++		command = { type = sleepminister which = 50713 }\r
++		command = { type = sleepminister which = 50714 }\r
++		command = { type = sleepminister which = 50715 }\r
++		command = { type = sleepminister which = 50716 }\r
++		command = { type = sleepminister which = 50717 }\r
++		command = { type = sleepminister which = 50718 }\r
++		command = { type = sleepminister which = 50719 }\r
++		command = { type = sleepminister which = 50720 }\r
++		command = { type = sleepminister which = 50721 }\r
++		#command = { type = sleepminister which = 50803 } # 尾崎秀実\r
++		command = { type = sleepminister which = 50976 }\r
++		#command = { type = sleepminister which = 50977 } # リヒャルト・ゾルゲ\r
++		command = { type = wakeminister which = 50722 } # 以下左派皇道派閣僚\r
++		command = { type = wakeminister which = 50723 }\r
++		command = { type = wakeminister which = 50724 }\r
++		command = { type = wakeminister which = 50725 }\r
++		command = { type = wakeminister which = 50726 }\r
++		command = { type = wakeminister which = 50727 }\r
++		command = { type = wakeminister which = 50728 }\r
++		command = { type = wakeminister which = 50729 }\r
++		command = { type = wakeminister which = 50730 }\r
++		command = { type = wakeminister which = 50731 }\r
++		command = { type = wakeminister which = 50732 }\r
++		command = { type = wakeminister which = 50733 }\r
++		command = { type = wakeminister which = 50734 }\r
++		command = { type = wakeminister which = 50735 }\r
++		command = { type = wakeminister which = 50736 }\r
++		command = { type = wakeminister which = 50737 }\r
++		command = { type = wakeminister which = 50738 }\r
++		command = { type = wakeminister which = 50739 }\r
++		command = { type = wakeminister which = 50740 }\r
++		command = { type = wakeminister which = 50741 }\r
++		command = { type = wakeminister which = 50742 }\r
++		command = { type = wakeminister which = 50743 }\r
++		command = { type = wakeminister which = 50744 }\r
++		command = { type = wakeminister which = 50745 }\r
++		command = { type = wakeminister which = 50746 }\r
++		command = { type = wakeminister which = 50747 }\r
++		command = { type = wakeminister which = 50748 }\r
++		command = { type = wakeminister which = 50749 }\r
++		command = { type = wakeminister which = 50750 }\r
++		command = { type = wakeminister which = 50751 }\r
++		command = { type = wakeminister which = 50752 }\r
++		command = { type = wakeminister which = 50753 }\r
++		command = { type = wakeminister which = 50754 }\r
++		command = { type = wakeminister which = 50755 }\r
++		command = { type = wakeminister which = 50756 }\r
++		command = { type = wakeminister which = 50757 }\r
++		command = { type = wakeminister which = 50758 }\r
++		command = { type = wakeminister which = 50759 }\r
++		command = { type = wakeminister which = 50760 }\r
++		command = { type = wakeminister which = 50761 }\r
++		command = { type = wakeminister which = 50762 }\r
++		command = { type = wakeminister which = 50763 }\r
++		command = { type = wakeminister which = 50764 }\r
++		command = { type = wakeminister which = 50765 }\r
++		command = { type = wakeminister which = 50766 }\r
++		command = { type = wakeminister which = 50767 }\r
++		command = { type = wakeminister which = 50768 }\r
++		command = { type = wakeminister which = 50769 }\r
++		command = { type = wakeminister which = 50770 }\r
++		command = { type = wakeminister which = 50771 }\r
++		command = { type = wakeminister which = 50772 }\r
++		command = { type = wakeminister which = 50773 }\r
++		command = { type = wakeminister which = 50774 }\r
++		command = { type = wakeminister which = 50775 }\r
++		command = { type = wakeminister which = 50776 }\r
++		command = { type = wakeminister which = 50777 }\r
++		command = { type = wakeminister which = 50778 }\r
++		command = { type = wakeminister which = 50779 }\r
++		command = { type = wakeminister which = 50780 }\r
++		command = { type = wakeminister which = 50781 }\r
++		command = { type = wakeminister which = 50782 }\r
++		command = { type = wakeminister which = 50783 }\r
++		command = { type = wakeminister which = 50784 }\r
++		command = { type = wakeminister which = 50785 }\r
++		command = { type = wakeminister which = 50786 }\r
++		command = { type = wakeminister which = 50787 }\r
++		command = { type = wakeminister which = 50788 }\r
++		command = { type = wakeminister which = 50789 }\r
++		command = { type = wakeminister which = 50790 }\r
++		command = { type = wakeminister which = 50791 }\r
++		command = { type = wakeminister which = 50792 }\r
++		command = { type = wakeminister which = 50793 }\r
++		command = { type = wakeminister which = 50794 }\r
++		command = { type = wakeminister which = 50795 }\r
++		command = { type = wakeminister which = 50796 }\r
++		command = { type = wakeminister which = 50797 }\r
++		command = { type = wakeminister which = 50798 }\r
++		command = { type = wakeminister which = 50799 }\r
++		command = { type = wakeminister which = 50800 }\r
+ 		command = { type = wakeminister which = 50801 }\r
+ 		command = { type = wakeminister which = 50802 }\r
+ 		command = { type = wakeminister which = 50803 }\r
+@@ -811,82 +881,6 @@ event = {
+ 		command = { type = wakeminister which = 50821 }\r
+ 		command = { type = wakeminister which = 50822 }\r
+ 		command = { type = wakeminister which = 50823 }\r
+-		command = { type = wakeminister which = 50824 }\r
+-		command = { type = wakeminister which = 50825 }\r
+-		command = { type = wakeminister which = 50826 }\r
+-		command = { type = wakeminister which = 50827 }\r
+-		command = { type = wakeminister which = 50828 }\r
+-		command = { type = wakeminister which = 50829 }\r
+-		command = { type = wakeminister which = 50830 }\r
+-		command = { type = wakeminister which = 50831 }\r
+-		command = { type = wakeminister which = 50832 }\r
+-		command = { type = wakeminister which = 50833 }\r
+-		command = { type = wakeminister which = 50834 }\r
+-		command = { type = wakeminister which = 50835 }\r
+-		command = { type = wakeminister which = 50836 }\r
+-		command = { type = wakeminister which = 50837 }\r
+-		command = { type = wakeminister which = 50838 }\r
+-		command = { type = wakeminister which = 50839 }\r
+-		command = { type = wakeminister which = 50840 }\r
+-		command = { type = wakeminister which = 50841 }\r
+-		command = { type = wakeminister which = 50842 }\r
+-		command = { type = wakeminister which = 50843 }\r
+-		command = { type = wakeminister which = 50844 }\r
+-		command = { type = wakeminister which = 50845 }\r
+-		command = { type = wakeminister which = 50846 }\r
+-		command = { type = wakeminister which = 50847 }\r
+-		command = { type = wakeminister which = 50848 }\r
+-		command = { type = wakeminister which = 50849 }\r
+-		command = { type = wakeminister which = 50850 }\r
+-		command = { type = wakeminister which = 50851 }\r
+-		command = { type = wakeminister which = 50852 }\r
+-		command = { type = wakeminister which = 50853 }\r
+-		command = { type = wakeminister which = 50854 }\r
+-		command = { type = wakeminister which = 50855 }\r
+-		command = { type = wakeminister which = 50856 }\r
+-		command = { type = wakeminister which = 50857 }\r
+-		command = { type = wakeminister which = 50858 }\r
+-		command = { type = wakeminister which = 50859 }\r
+-		command = { type = wakeminister which = 50860 }\r
+-		command = { type = wakeminister which = 50861 }\r
+-		command = { type = wakeminister which = 50862 }\r
+-		command = { type = wakeminister which = 50863 }\r
+-		command = { type = wakeminister which = 50864 }\r
+-		command = { type = wakeminister which = 50865 }\r
+-		command = { type = wakeminister which = 50866 }\r
+-		command = { type = wakeminister which = 50867 }\r
+-		command = { type = wakeminister which = 50868 }\r
+-		command = { type = wakeminister which = 50869 }\r
+-		command = { type = wakeminister which = 50870 }\r
+-		command = { type = wakeminister which = 50871 }\r
+-		command = { type = wakeminister which = 50872 }\r
+-		command = { type = wakeminister which = 50873 }\r
+-		command = { type = wakeminister which = 50874 }\r
+-		command = { type = wakeminister which = 50875 }\r
+-		command = { type = wakeminister which = 50876 }\r
+-		command = { type = wakeminister which = 50877 }\r
+-		command = { type = wakeminister which = 50878 }\r
+-		command = { type = wakeminister which = 50879 }\r
+-		command = { type = wakeminister which = 50880 }\r
+-		command = { type = wakeminister which = 50881 }\r
+-		command = { type = wakeminister which = 50882 }\r
+-		command = { type = wakeminister which = 50883 }\r
+-		command = { type = wakeminister which = 50884 }\r
+-		command = { type = wakeminister which = 50885 }\r
+-		command = { type = wakeminister which = 50886 }\r
+-		command = { type = wakeminister which = 50887 }\r
+-		command = { type = wakeminister which = 50888 }\r
+-		command = { type = wakeminister which = 50889 }\r
+-		command = { type = wakeminister which = 50890 }\r
+-		command = { type = wakeminister which = 50891 }\r
+-		command = { type = wakeminister which = 50892 }\r
+-		command = { type = wakeminister which = 50893 }\r
+-		command = { type = wakeminister which = 50894 }\r
+-		command = { type = wakeminister which = 50895 }\r
+-		command = { type = wakeminister which = 50896 }\r
+-		command = { type = wakeminister which = 50897 }\r
+-		command = { type = wakeminister which = 50898 }\r
+-		command = { type = wakeminister which = 50899 }\r
+ 	}\r
+ }\r
+ \r
+@@ -906,7 +900,7 @@ event = {
+ \r
+ 	trigger = {\r
+ 		local_flag = koudou # 尊皇討奸 ― 統制派の粛清\r
+-		minister = 50572 # 荒木貞夫が使用可能\r
++		minister = 50605 # 荒木貞夫が使用可能\r
+ \r
+ 		# ideology = { country = JAP type = nazi }\r
+ 		# atwar = no\r
+@@ -929,64 +923,80 @@ event = {
+ 	action = { # 小畑敏四郎を指名\r
+ 		name = "ACTIONNAME_OBATA" # \r
+ 		command = { type = dissent value = 2 }\r
+-		command = { type = sleepminister which = 50572 } # 荒木貞夫\r
+-		command = { type = sleepminister which = 50573 }\r
+-		command = { type = sleepminister which = 50122 }\r
++		command = { type = sleepminister which = 50122 } # 荒木貞夫\r
+ 		command = { type = sleepminister which = 50361 }\r
++		command = { type = sleepminister which = 50605 }\r
++		command = { type = sleepminister which = 50606 }\r
++		command = { type = sleepleader which = 101012 }\r
++		command = { type = sleepleader which = 103022 }\r
++		command = { type = sleepteam which = 50086 }\r
++		command = { type = sleepteam which = 50212 }\r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+-		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-		command = { type = headofgovernment which = 50578 }\r
+-		command = { type = chiefofstaff which = 50583 }\r
+-		command = { type = chiefofarmy which = 50580 }\r
++		command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { type = headofgovernment which = 50611 } # 小畑敏四郎\r
++		command = { type = chiefofstaff which = 50616 } # 柳川平助\r
++		command = { type = chiefofarmy which = 50620 } # 山下奉文\r
+ 		ai_chance = 40\r
+ 	}\r
+ \r
+ 	action = { # 北一輝を指名\r
+ 		name = "ACTIONNAME_KITA"\r
+ 		command = { type = dissent value = 2 }\r
+-		command = { type = sleepminister which = 50572 } # 荒木貞夫\r
+-		command = { type = sleepminister which = 50573 }\r
+-		command = { type = sleepminister which = 50122 }\r
++		command = { type = sleepminister which = 50122 } # 荒木貞夫\r
+ 		command = { type = sleepminister which = 50361 }\r
++		command = { type = sleepminister which = 50605 }\r
++		command = { type = sleepminister which = 50606 }\r
++		command = { type = sleepleader which = 101012 }\r
++		command = { type = sleepleader which = 103022 }\r
++		command = { type = sleepteam which = 50086 }\r
++		command = { type = sleepteam which = 50212 }\r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+-		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-		command = { type = headofgovernment which = 50608 }\r
+-		command = { type = chiefofstaff which = 50586 }\r
+-		command = { type = chiefofarmy which = 50584 }\r
++		command = { trigger = { incabinet = 50601 } type = headofstate which = 50601 } # 秩父宮雍仁親王\r
++		command = { trigger = { incabinet = 50602 } type = headofstate which = 50602 } # 雍仁天皇\r
++		command = { type = headofgovernment which = 50642 } # 北一輝\r
++		command = { type = chiefofstaff which = 50612 } # 小畑敏四郎\r
++		command = { type = chiefofarmy which = 50617 } # 柳川平助\r
+ 		ai_chance = 20\r
+ 	}\r
+ \r
+ 	action = { # 近衞文麿を指名\r
+ 		name = "ACTIONNAME_KONOE"\r
+ 		command = { type = dissent value = 2 }\r
+-		command = { type = sleepminister which = 50572 } # 荒木貞夫\r
+-		command = { type = sleepminister which = 50573 }\r
+-		command = { type = sleepminister which = 50122 }\r
++		command = { type = sleepminister which = 50122 } # 荒木貞夫\r
+ 		command = { type = sleepminister which = 50361 }\r
++		command = { type = sleepminister which = 50605 }\r
++		command = { type = sleepminister which = 50606 }\r
++		command = { type = sleepleader which = 101012 }\r
++		command = { type = sleepleader which = 103022 }\r
++		command = { type = sleepteam which = 50086 }\r
++		command = { type = sleepteam which = 50212 }\r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-		command = { type = headofgovernment which = 50014 }\r
+-		command = { type = chiefofstaff which = 50583 }\r
+-		command = { type = chiefofarmy which = 50580 }\r
++		command = { type = headofgovernment which = 50014 } # 近衞文麿\r
++		command = { type = chiefofstaff which = 50612 } # 小畑敏四郎\r
++		command = { type = chiefofarmy which = 50617 } # 柳川平助\r
+ 		ai_chance = 20\r
+ 	}\r
+ \r
+ 	action = { # 勝田主計を指名\r
+ 		name = "ACTIONNAME_SHOUDA"\r
+ 		command = { type = dissent value = 2 }\r
+-		command = { type = sleepminister which = 50572 } # 荒木貞夫\r
+-		command = { type = sleepminister which = 50573 }\r
+-		command = { type = sleepminister which = 50122 }\r
++		command = { type = sleepminister which = 50122 } # 荒木貞夫\r
+ 		command = { type = sleepminister which = 50361 }\r
++		command = { type = sleepminister which = 50605 }\r
++		command = { type = sleepminister which = 50606 }\r
++		command = { type = sleepleader which = 101012 }\r
++		command = { type = sleepleader which = 103022 }\r
++		command = { type = sleepteam which = 50086 }\r
++		command = { type = sleepteam which = 50212 }\r
+ 		command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 		command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 		command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-		command = { type = headofgovernment which = 50411 }\r
+-		command = { type = chiefofstaff which = 50583 }\r
+-		command = { type = chiefofarmy which = 50580 }\r
++		command = { type = headofgovernment which = 50411 } # 勝田主計\r
++		command = { type = chiefofstaff which = 50612 } # 小畑敏四郎\r
++		command = { type = chiefofarmy which = 50617 } # 柳川平助\r
+ 		ai_chance = 20\r
+ 	}\r
+ }\r
+@@ -1060,30 +1070,35 @@ event = {
+ 	command = { type = build_cost which = land when = now where = relative value = 20 }\r
+ 	command = { type = build_cost which = naval when = now where = relative value = 20 }\r
+ 	command = { type = build_cost which = air when = now where = relative value = 20 }\r
+-	command = { type = waketeam which = 50032 } # 軍需省\r
++	command = { type = waketeam which = 50152 } # 軍需省\r
+ 	command = { trigger = { event = 2991001 }  type = sleepteam which = 50000 } # 鈴木商店\r
+-	command = { type = sleepteam which = 50001 } # 三菱財閥\r
+-	command = { type = sleepteam which = 50002 } # 住友財閥\r
++	command = { type = sleepteam which = 50001 } # 住友財閥\r
++	command = { type = sleepteam which = 50002 } # 三井財閥\r
+ 	command = { type = sleepteam which = 50003 } # 三井財閥\r
+-	command = { type = sleepteam which = 50004 } # 川崎財閥\r
+-	command = { type = sleepteam which = 50005 } # 安田財閥\r
+-	command = { type = sleepteam which = 50024 } # 古河財閥\r
+-	command = { type = sleepteam which = 50007 } # 日野自動車\r
+-	command = { type = sleepteam which = 50011 } # 沖電氣。1930年に浅野財閥の浅野泰治郎が会長に。\r
+-	command = { type = sleepteam which = 50012 } # 日本電氣。住友系\r
+-	command = { type = sleepteam which = 50016 } # 東京瓦斯電氣工業\r
+-	command = { type = sleepteam which = 50019 } # 日産自動車\r
+-	command = { type = sleepteam which = 50023 } # 日本製鐵。住友系の半国策会社\r
+-	command = { type = sleepteam which = 50025 } # 日本無線。日電財閥\r
+-	command = { type = sleepteam which = 50026 } # 昭和電工\r
+-	command = { type = sleepteam which = 50031 } # 三菱重工長崎造船所\r
+-	command = { type = sleepteam which = 50033 } # 愛知時計電機\r
+-	command = { type = sleepteam which = 50034 } # 中島飛行機\r
+-	command = { type = sleepteam which = 50035 } # 川崎航空機工業\r
+-	command = { type = sleepteam which = 50037 } # 昭和飛行機工業\r
+-	command = { type = sleepteam which = 50038 } # 川西航空機\r
+-	command = { type = sleepteam which = 50052 } # 九州飛行機\r
+-	command = { type = sleepteam which = 50080 } # 石川島重工業\r
++	command = { type = sleepteam which = 50004 } # 三菱財閥\r
++	command = { type = sleepteam which = 50005 } # 川崎財閥\r
++	command = { type = sleepteam which = 50006 } # 古河財閥\r
++	command = { type = sleepteam which = 50007 } # 安田財閥\r
++	command = { type = sleepteam which = 50008 } # 浅野財閥\r
++	command = { type = sleepteam which = 50037 } # 日野自動車\r
++	command = { type = sleepteam which = 50009 } # 沖電氣。1930年に浅野財閥の浅野泰治郎が会長に。\r
++	command = { type = sleepteam which = 50010 } # 日本電氣。住友系\r
++	command = { type = sleepteam which = 50020 } # 東京瓦斯電氣工業\r
++	command = { type = sleepteam which = 50036 } # 日産自動車\r
++	command = { type = sleepteam which = 50030 } # 日本製鋼所。三井系の半国策会社\r
++	command = { type = sleepteam which = 50013 } # 日本無線。日電財閥\r
++	command = { type = sleepteam which = 50014 } # 昭和電工\r
++	command = { type = sleepteam which = 50045 } # 三菱長崎造船所\r
++	command = { type = sleepteam which = 50046 } # 愛知航空機\r
++	command = { type = sleepteam which = 50047 } # 三菱航空機\r
++	command = { type = sleepteam which = 50048 } # 三菱航空機\r
++	command = { type = sleepteam which = 50049 } # 中島飛行機\r
++	command = { type = sleepteam which = 50050 } # 中島飛行機\r
++	command = { type = sleepteam which = 50051 } # 川崎航空機\r
++	command = { type = sleepteam which = 50052 } # 川崎航空機\r
++	command = { type = sleepteam which = 50055 } # 昭和飛行機工業\r
++	command = { type = sleepteam which = 50056 } # 川西航空機\r
++	command = { type = sleepteam which = 50032 } # 石川島重工業\r
+ 	command = { type = sleepminister which = 50062 } # 川崎卓吉 銃殺\r
+ 	command = { type = sleepminister which = 50063 } # 池田成彬 財閥関係者。爆殺\r
+ 	command = { type = sleepminister which = 50336 }\r
+@@ -1092,14 +1107,14 @@ event = {
+ 	command = { type = sleepminister which = 50331 } # 小倉正恆 財閥関係者。銃殺\r
+ 	command = { type = sleepminister which = 50333 } # 結城豐太郞 財閥関係者。銃殺\r
+ 	command = { type = sleepminister which = 50456 } # 小坂善太郎 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50738 } # 津雲国利 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50738 } # 津雲国利 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50739 } # 内田信也 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50740 } # 三好英之 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50741 } # 勝正憲 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50742 } # 堤康次郎 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50744 } # 小笠原三九郎 財閥関係者。銃殺\r
+-	command = { type = sleepminister which = 50745 } # 五島慶太 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50983 } # 津雲国利 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 51069 }\r
++	command = { type = sleepminister which = 50984 } # 内田信也 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50985 } # 三好英之 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50986 } # 勝正憲 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50987 } # 堤康次郎 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50989 } # 小笠原三九郎 財閥関係者。銃殺\r
++	command = { type = sleepminister which = 50990 } # 五島慶太 財閥関係者。銃殺\r
+ 	command = { type = local_setflag which = Nihon_Kaizou when = 1 value = 1 }\r
+ 	}\r
+ }\r
+@@ -1245,16 +1260,16 @@ event = {
+ 		command = { type = construct which = ic where = 1555 value = 1 } # 皇道派MOD限定強化\r
+ 		command = { type = construct which = ic where = 1559 value = 1 } # 皇道派MOD限定強化\r
+ \r
+-		command = { type = waketeam which = 50201 }\r
+-		command = { type = waketeam which = 50202 }\r
+-		command = { type = waketeam which = 50203 }\r
+-		command = { type = waketeam which = 50204 }\r
+-		command = { type = waketeam which = 50205 }\r
+-		command = { type = waketeam which = 50206 }\r
+-		command = { type = waketeam which = 50207 }\r
+-		command = { type = waketeam which = 50208 }\r
+-		command = { type = waketeam which = 50209 }\r
+-		command = { type = waketeam which = 50210 }\r
++		#command = { type = waketeam which = 50201 } # 天皇顧問院\r
++		command = { type = waketeam which = 50202 } # 西日本重工\r
++		command = { type = waketeam which = 50203 } # 中部日本重工\r
++		command = { type = waketeam which = 50204 } # 東日本重工\r
++		command = { type = waketeam which = 50205 } # 玉川向製造所\r
++		command = { type = waketeam which = 50206 } # 伊藤庸二\r
++		command = { type = waketeam which = 50207 } # 第1造兵廠\r
++		command = { type = waketeam which = 50208 } # 第2造兵廠\r
++		command = { type = waketeam which = 50209 } # 帝国航空\r
++		command = { type = waketeam which = 50210 } # 日本飛行機製造\r
+ 		command = { type = local_setflag which = Nihon_Kaizou when = 1 value = 1 }\r
+ 	}\r
+ }\r

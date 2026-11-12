@@ -1,0 +1,539 @@
+--- A/scenarios/1933/switzerland.inc [cp932]
++++ B/scenarios/1933/switzerland.inc [cp932]
+@@ -1,5 +1,4 @@
+-\r
+-############################ ##\r
++##############################\r
+ # Country definition for SCH #\r
+ ##############################\r
+ \r
+@@ -7,299 +6,233 @@
+ # Country main data #\r
+ #####################\r
+ \r
+-country =\r
+-{  tag                    = SCH\r
+-	ai = "sch_1936.ai"\r
+-	ai_settings	= { flags = { MOB1 = yes MOB2 = yes MOB3 = yes } }\r
+-	dissent = 20\r
+-	capital                = 392\r
+-	manpower               = 12 # 6\r
+-	# Resource Reserves\r
+-	energy                 = 840\r
+-	metal                  = 420\r
+-	rare_materials         = 210\r
+-	oil                    = 500 \r
+-	supplies               = 500 \r
+-	money                  = 25 \r
+-      \r
+-   policy = \r
+-   {  date              = {  year = 0 month = january day = 0  } \r
+-     democratic        = 10 \r
+-     political_left    = 2 \r
+-     freedom           = 7 \r
+-     free_market       = 9 \r
+-     professional_army = 3 \r
+-     defense_lobby     = 8 \r
+-     interventionism   = 1 \r
+-    } \r
+-\r
+-   nationalprovinces      = {  389 390 391 392  } \r
+-   ownedprovinces         = {  389 390 391 392  } \r
+-   controlledprovinces    = {  389 390 391 392  } \r
+-   # Western Minor Tech '36 \r
+-   # Group C 1936 techs \r
+-   # ###################### \r
+-   techapps               = {  \r
+-#Early Fighter  \r
+-4500 4510 4520 4530 4540 4550 4010 4020\r
+-#Multirole fighter\r
+-4300 4310 4320 4330\r
+-#Early Anti-Tank Artillery \r
+-#2400\r
+-#Basic Armoured Car  \r
+-2860 2870 2880 2020\r
+-#Great War Heavy Field Artillery \r
+-2290 2300 2310\r
+-#Early Static Anti-Air Artillery \r
+-2800 2450 21180 21190 21200\r
+-#Basic Anti-Air Artillery Brigade \r
+-2810 2820 2510\r
+-#Great War Infantry Division  \r
+-1010  1020 1030 1040 1050 1060 1070 1080\r
+-#Interbellum 1930 Supply \r
+-1910 1920 1930 1940 1950 1960 1970 1980\r
+-#Great War Cavalry Division  \r
+-13060 13070 13080 1310 1320 1330 1340\r
+-#Early Mountain Division \r
+-1160  1170 1180 1190 1200 1210 1220 1230 1240\r
+-#Engineers\r
+-1830 1840 1850 1860\r
+-#Manufactoring\r
+-5810 5820 5050 5830\r
+-#Mechanized Agriculture \r
+-5700 5710 5010 5020\r
+-#Computers & cryptografi\r
+-5310 54010 54020 54030 5316 5326\r
+-#Improved Construction Engineering \r
+-5800 5080  5090\r
+-#Basic Oil Refining \r
+-#5190\r
+-\r
+-#Firepower Focus Doctrine 6\r
+-# 6010 6020\r
+-\r
+-6210 6220  #  電撃戦に変更\r
+-\r
+-\r
+-14000 14010 14020\r
+-\r
+-\r
+-\r
+-\r
+-#Great War Tank \r
+-7600 7610 2620 2010 2630  \r
+-#Medicine\r
+-5600 5610 5620 5630\r
+-# Land Doctrines WWI - Entente Line\r
+-6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910\r
+-#Landdoctrine WWII - none?\r
+-\r
+-#Air Doctrines - ww2 techs\r
+-27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010\r
+-\r
+-    } \r
+-	blueprints = { 6230 6240 }\r
+-	inventions = { 3000027 }\r
+-   diplomacy = \r
+-   {  relation = {  tag = ENG value = 50  } \r
+-     relation = {  tag = FRA value = 1  } \r
+-     relation = {  tag = GER value = 50  } \r
+-     relation = {  tag = AUS value = 50  } \r
+-     relation = {  tag = ITA value = 1  } \r
+-     relation = {  tag = SCH value = 1  } \r
+-     relation = {  tag = USA value = 1  } \r
+-    } \r
+-   SpyInfo                = {  country = "SCH" NumberOfSpies = 7 } #  \r
+-   headofstate            = {  type = 9 id = 80001  } \r
+-   headofgovernment       = {  type = 9 id = 80002  } \r
+-   foreignminister        = {  type = 9 id = 80003  } \r
+-   armamentminister       = {  type = 9 id = 80004  } \r
+-   ministerofsecurity     = {  type = 9 id = 80005  } \r
+-   ministerofintelligence = {  type = 9 id = 80006  } \r
+-   chiefofstaff           = {  type = 9 id = 80007  } \r
+-   chiefofarmy            = {  type = 9 id = 80008  } \r
+-   chiefofnavy            = {  type = 9 id = 80009  } \r
+-   chiefofair             = {  type = 9 id = 80010  } \r
+-   # Superior Firepower \r
+-   # #################### \r
+-   # ###Swiss 33 OOB#### \r
+-   # #################### \r
+-\r
+-   landunit = \r
+-   {  id       = {  type = 30600 id = 51  } \r
+-     location = 391 \r
+-     name     = "スイス陸軍" \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 52  } \r
+-       name     = "スイス陸軍最高司令部" \r
+-       strength = 100\r
+-       type     = hq\r
+-	   model = 2\r
+-      } \r
+-     }\r
+-\r
+-\r
+-   landunit = \r
+-   {  id       = {  type = 30600 id = 1  } \r
+-     location = 391 \r
+-     name     = "第1軍団" \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 2  } \r
+-       name     = "第1歩兵師団" \r
+-       strength = 25 \r
+-       type     = infantry\r
+-	   model = 7\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 3  } \r
+-       name     = "第2歩兵師団" \r
+-       strength = 15 \r
+-       type     = infantry\r
+-	   model = 7\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 4  } \r
+-       name     = "第3歩兵師団" \r
+-       strength = 15 \r
+-       type     = infantry\r
+-	   model = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 5  } \r
+-       name     = "第1山岳旅団" \r
+-       strength = 15 \r
+-	   model = 7\r
+-       type     = bergsjaeger \r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 6  } \r
+-       name     = "第2山岳旅団" \r
+-       strength = 15 \r
+-	   model = 6 # 2\r
+-       type     = bergsjaeger # garrison\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 7  } \r
+-       name     = "第1騎兵旅団" \r
+-       strength = 20 \r
+-	   model = 8\r
+-       type     = cavalry\r
+-      } \r
+-    } \r
+-   landunit = \r
+-   {  id       = {  type = 30600 id = 8  } \r
+-     location = 392 \r
+-     name     = "第2軍団" \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 9  } \r
+-       name     = "第4歩兵師団" \r
+-       strength = 25 \r
+-       type     = infantry\r
+-	   model = 7\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 10  } \r
+-       name     = "第5歩兵師団" \r
+-       strength = 15 \r
+-       type     = infantry\r
+-	   model = 7\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 11  } \r
+-       name     = "第9歩兵師団" \r
+-       strength = 15 \r
+-       type     = infantry\r
+-	   model = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 12  } \r
+-       name     = "第3山岳旅団" \r
+-       strength = 15 \r
+-	   model = 7\r
+-       type     = bergsjaeger \r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 13  } \r
+-       name     = "第4山岳旅団" \r
+-       strength = 15 \r
+-	   model = 6 # 2\r
+-       type     = bergsjaeger # garrison\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 14  } \r
+-       name     = "第2騎兵旅団" \r
+-       strength = 20 \r
+-	   model = 8\r
+-       type     = cavalry\r
+-      } \r
+-    } \r
+-   landunit = \r
+-   {  id       = {  type = 30600 id = 15  } \r
+-     location = 389 \r
+-     name     = "第3軍団" \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 16  } \r
+-       name     = "第6歩兵師団" \r
+-       strength = 25 \r
+-       type     = infantry\r
+-	   model = 7\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 17  } \r
+-       name     = "第7歩兵師団" \r
+-       strength = 15 \r
+-       type     = infantry\r
+-	   model = 7\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 18  } \r
+-       name     = "第8歩兵師団" \r
+-       strength = 15 \r
+-       type     = infantry\r
+-	   model = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 19  } \r
+-       name     = "第5山岳旅団" \r
+-       strength = 15 \r
+-	   model = 7\r
+-       type     = bergsjaeger \r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 20  } \r
+-       name     = "第6山岳旅団" \r
+-       strength = 15 \r
+-	   model = 6 # 2\r
+-       type     = bergsjaeger # garrison\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 21  } \r
+-       name     = "第3騎兵旅団" \r
+-       strength = 20 \r
+-	   model = 8\r
+-       type     = cavalry\r
+-      } \r
+-    } \r
+-\r
+-   airunit = \r
+-   {  id       = {  type = 30600 id = 22  } \r
+-     location = 392 \r
+-     base     = 392 \r
+-     name     = "スイス空軍" \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 23  } \r
+-       name     = "第1航空団" \r
+-       strength = 85 \r
+-       type     = interceptor \r
+-       model    = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 30600 id = 24  } \r
+-       name     = "第2航空団" \r
+-       strength = 85 \r
+-       type     = interceptor \r
+-       model    = 6\r
+-      }\r
+-    } \r
+-  } \r
+- \r
++country = {\r
++  tag                = SCH\r
++  ai                 = "sch_1936.ai"\r
++  ai_settings        = { flags = { MOB1 = yes MOB2 = yes MOB3 = yes } }\r
++  capital            = 392 # ベルン\r
++  dissent            = 20\r
++  manpower           = 12\r
++  # Resource Reserves\r
++  energy         = 840\r
++  metal          = 420\r
++  rare_materials = 210\r
++  oil            = 500\r
++  supplies       = 500\r
++  money          = 25\r
++\r
++  diplomacy = {\r
++    relation = { tag = ENG value = 50 }\r
++    relation = { tag = FRA value = 1 }\r
++    relation = { tag = GER value = 50 }\r
++    relation = { tag = AUS value = 50 }\r
++    relation = { tag = ITA value = 1 }\r
++    relation = { tag = SCH value = 1 }\r
++    relation = { tag = USA value = 1 }\r
++  }\r
++  SpyInfo                = { country = "SCH" NumberOfSpies = 7 }\r
++\r
++  nationalprovinces      = { 389 390 391 392 }\r
++  ownedprovinces         = { 389 390 391 392 }\r
++  controlledprovinces    = { 389 390 391 392 }\r
++\r
++  techapps               = { 4500 4510 4520 4530 4540 4550 4010 4020 4300 4310 4320 4330 2860 2870 2880 2020 2290 2300 2310 2800 2450 21180 21190 21200 2810 2820 2510 1010 1020 1030 1040 1050 1060 1070 1080 1910 1920 1930 1940 1950 1960 1970 1980 13060 13070 13080 1310 1320 1330 1340 1160 1170 1180 1190 1200 1210 1220 1230 1240 1830 1840 1850 1860 5810 5820 5050 5830 5700 5710 5010 5020 5310 54010 54020 54030 5316 5326 5800 5080 5090 6210 6220 14000 14010 14020 7600 7610 2620 2010 2630 5600 5610 5620 5630 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010 }\r
++  blueprints             = { 6230 6240 }\r
++  inventions             = { 3000027 }\r
++\r
++  policy = {\r
++    date              = { year = 0 month = january day = 0 }\r
++    democratic        = 10\r
++    political_left    = 7\r
++    freedom           = 7\r
++    free_market       = 9\r
++    professional_army = 3\r
++    defense_lobby     = 8\r
++    interventionism   = 1\r
++  }\r
++  headofstate            = { type = 9 id = 80139 } # エドムント・シュルテス\r
++  headofgovernment       = { type = 9 id = 80206 } # エドムント・シュルテス\r
++  foreignminister        = { type = 9 id = 80003 } # ジュゼッペ・モタ\r
++  armamentminister       = { type = 9 id = 80150 } # ジャン=マリー・ムシー\r
++  ministerofsecurity     = { type = 9 id = 80154 } # ハインリヒ・ハーベリン\r
++  ministerofintelligence = { type = 9 id = 80006 } # ロジェ・マッソン\r
++  chiefofstaff           = { type = 9 id = 80007 } # ヤコブ・I・フーバー\r
++  chiefofarmy            = { type = 9 id = 80008 } # ヨハン・アウグスト・ズター\r
++  chiefofnavy            = { type = 9 id = 80009 } # ルネ・フォン・グラフェンリート\r
++  chiefofair             = { type = 9 id = 80010 } # オスカー・ビダー\r
++\r
++  landunit = {\r
++    id       = { type = 30600 id = 51 }\r
++    name     = "スイス陸軍"\r
++    location = 391\r
++    division = {\r
++      id             = { type = 30600 id = 52 }\r
++      name           = "スイス陸軍最高司令部"\r
++      type           = hq\r
++      model          = 2\r
++      strength       = 100\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30600 id = 1 }\r
++    name     = "第1軍団"\r
++    location = 391\r
++    division = {\r
++      id             = { type = 30600 id = 2 }\r
++      name           = "第1歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 25\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 3 }\r
++      name           = "第2歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 4 }\r
++      name           = "第3歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 5 }\r
++      name           = "第1山岳旅団"\r
++      type           = bergsjaeger\r
++      model          = 7\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 6 }\r
++      name           = "第2山岳旅団"\r
++      type           = bergsjaeger\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 7 }\r
++      name           = "第1騎兵旅団"\r
++      type           = cavalry\r
++      model          = 8\r
++      strength       = 20\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30600 id = 8 }\r
++    name     = "第2軍団"\r
++    location = 392\r
++    division = {\r
++      id             = { type = 30600 id = 9 }\r
++      name           = "第4歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 25\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 10 }\r
++      name           = "第5歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 11 }\r
++      name           = "第9歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 12 }\r
++      name           = "第3山岳旅団"\r
++      type           = bergsjaeger\r
++      model          = 7\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 13 }\r
++      name           = "第4山岳旅団"\r
++      type           = bergsjaeger\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 14 }\r
++      name           = "第2騎兵旅団"\r
++      type           = cavalry\r
++      model          = 8\r
++      strength       = 20\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 30600 id = 15 }\r
++    name     = "第3軍団"\r
++    location = 389\r
++    division = {\r
++      id             = { type = 30600 id = 16 }\r
++      name           = "第6歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 25\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 17 }\r
++      name           = "第7歩兵師団"\r
++      type           = infantry\r
++      model          = 7\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 18 }\r
++      name           = "第8歩兵師団"\r
++      type           = infantry\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 19 }\r
++      name           = "第5山岳旅団"\r
++      type           = bergsjaeger\r
++      model          = 7\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 20 }\r
++      name           = "第6山岳旅団"\r
++      type           = bergsjaeger\r
++      model          = 6\r
++      strength       = 15\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 21 }\r
++      name           = "第3騎兵旅団"\r
++      type           = cavalry\r
++      model          = 8\r
++      strength       = 20\r
++    }\r
++  }\r
++\r
++  airunit = { \r
++    id       = { type = 30600 id = 22 }\r
++    name     = "スイス空軍"\r
++    location = 392\r
++    base     = 392\r
++    division = {\r
++      id             = { type = 30600 id = 23 }\r
++      name           = "第1航空団"\r
++      type           = interceptor\r
++      model          = 6\r
++      strength       = 85\r
++    }\r
++    division = {\r
++      id             = { type = 30600 id = 24 }\r
++      name           = "第2航空団"\r
++      type           = interceptor\r
++      model          = 6\r
++      strength       = 85\r
++    }\r
++  }\r
++}\r

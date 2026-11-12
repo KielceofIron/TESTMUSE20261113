@@ -1,0 +1,323 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_China_events.txt [cp932]
+@@ -15,6 +15,9 @@
+ #id = 6959009 三国同盟（GER）\r
+ #id = 6959010 三国同盟（CHI）\r
+ #id = 6959011 三国同盟（ITA）\r
++#id = 6959012 新生活運動\r
++#id = 6959013 新文化運動\r
++#id = 6959014 国策映画『阿片戦争』\r
+ # 国民党ルート\r
+ #id = 6959101 先安内後攘外\r
+ #id = 6959102 中独合作（GER）\r
+@@ -305,6 +308,9 @@ event = {
+ 	command = { type = domestic which = political_left value = -1 }\r
+ 	command = { type = end_non_aggression which = CHI where = CHC }\r
+ 	command = { type = war which = CHC }\r
++	command = { type = strength which = land when = 1 where = 0 value = 10 }\r
++	command = { type = strength which = naval when = 1 where = 0 value = 10 }\r
++	command = { type = strength which = air when = 1 where = 0 value = 10 }\r
+ 	command = { type = setflag which = Fujiken_Incident }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -404,6 +410,7 @@ event = {
+ 	id = 6959007\r
+ 	random = no\r
+ 	country = CHI\r
++	save_date = yes\r
+ \r
+ 	trigger = {\r
+ 	event = 6959002 # 北伐失敗後の混乱\r
+@@ -419,35 +426,73 @@ event = {
+ 	offset = 10\r
+ 	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+-	action = { # 蒋介石派が返り咲いた\r
++	action = { # 新生活運動が実権を握る\r
+ 	name = "ACTIONNAME6959007A"\r
++	command = { type = name where = CHI which = "中華国家再生委員会" }\r
++	command = { type = flag_ext where = CHI which = "_NS" }\r
+ 	command = { type = sleepminister which = 55020 } # 汪兆銘（ワン・ヂャオミン）\r
+ 	command = { type = sleepminister which = 55021 }\r
+ 	command = { type = sleepminister which = 55400 }\r
+ 	command = { type = sleepminister which = 55401 }\r
+ 	command = { type = sleepminister which = 55805 }\r
+ 	command = { type = sleepminister which = 55806 }\r
+-	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = wakeminister which = 55501 } # 胡適（フー・シー）（超国家主義）\r
++	command = { type = wakeminister which = 55502 }\r
++	command = { type = wakeminister which = 55503 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 1 }\r
+ 	command = { type = set_domestic which = freedom value = 1 }\r
++	command = { type = set_domestic which = free_market value = 1 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	command = { type = domestic which = interventionism value = 2 }\r
+-	command = { type = headofstate which = 55022 } # 林森（リン・セン）\r
+-	command = { type = headofgovernment which = 55009 } # 蒋介石（チアン・カイシェク）\r
+-	command = { type = foreignminister which = 55029 } # 張群（ヂャン・チュン）\r
+-	command = { type = armamentminister which = 55031 } # 張群（ヂャン・チュン）\r
+-	command = { type = ministerofsecurity which = 55065 } # 戴笠（タイ・リー）\r
+-	command = { type = ministerofintelligence which = 55066 } # 戴笠（タイ・リー）\r
++	command = { type = headofstate which = 55501 } # 胡適（フー・シー）\r
++	command = { type = headofgovernment which = 55504 } # 孫科（スン・コー）\r
++	command = { type = foreignminister which = 55510 } # 施肇基（シー・ジャオジー）\r
++	command = { type = armamentminister which = 55505 } # 孫科（スン・コー）\r
++	command = { type = ministerofsecurity which = 55506 } # 胡蘭成（フー・ランチョン）\r
++	command = { type = ministerofintelligence which = 55507 } # 胡蘭成（フー・ランチョン）\r
+ 	command = { type = chiefofstaff which = 55013 } # 何応欽（ホー・インチン）\r
+-	command = { type = chiefofarmy which = 55321 } # 蒋介石（チアン・カイシェク）\r
++	command = { type = chiefofarmy which = 55101 } # 陳誠（チェン・チェン）\r
+ 	command = { type = chiefofnavy which = 55019 } # 陳紹寛（チェン・シャオクアン）\r
+ 	command = { type = chiefofair which = 55108 } # 毛邦初（マオ・バンチュウ）\r
+ 	command = { type = dissent value = -10 }\r
+ 	ai_chance = 70\r
+ 	}\r
+ \r
+-	action = { # 汪兆銘派が政府を再編\r
++	action = { # 新文化運動が実権を握る\r
+ 	name = "ACTIONNAME6959007B"\r
++	command = { type = name where = CHI which = "自由中国" }\r
++	command = { type = sleepminister which = 55020 } # 汪兆銘（ワン・ヂャオミン）\r
++	command = { type = sleepminister which = 55021 }\r
++	command = { type = sleepminister which = 55400 }\r
++	command = { type = sleepminister which = 55401 }\r
++	command = { type = sleepminister which = 55805 }\r
++	command = { type = sleepminister which = 55806 }\r
++	command = { type = wakeminister which = 55514 } # 胡適（フー・シー）（自由主義）\r
++	command = { type = wakeminister which = 55515 }\r
++	command = { type = wakeminister which = 55516 }\r
++	command = { type = set_domestic which = democratic value = 10 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = set_domestic which = freedom value = 8 }\r
++	command = { type = set_domestic which = free_market value = 10 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = headofstate which = 55514 } # 胡適（フー・シー）\r
++	command = { type = headofgovernment which = 55518 } # 魯迅（ルー・シュン）\r
++	command = { type = foreignminister which = 55524 } # 周作人（ヂョウ・ズオレン）\r
++	command = { type = armamentminister which = 55520 } # 銭玄同（チェン・シュアントン）\r
++	command = { type = ministerofsecurity which = 55523 } # 黄侃（ホアン・カン）\r
++	command = { type = ministerofintelligence which = 55521 } # 銭玄同（チェン・シュアントン）\r
++	command = { type = chiefofstaff which = 55086 } # 徐祖貽（シュー・ツーイー）\r
++	command = { type = chiefofarmy which = 55087 } # 顧祝同（ク・チュートゥン）\r
++	command = { type = chiefofnavy which = 55098 } # チェン・ツォ\r
++	command = { type = chiefofair which = 55260 } # 王叔銘（ワン・シュウミン）\r
++	command = { type = dissent value = -10 }\r
++	ai_chance = 10\r
++	}\r
++\r
++	action = { # 汪兆銘派が政府を再編\r
++	name = "ACTIONNAME6959007C"\r
+ 	command = { type = sleepminister which = 55001 } # 蒋介石（チアン・カイシェク）\r
+ 	command = { type = sleepminister which = 55009 }\r
+ 	command = { type = sleepminister which = 55320 }\r
+@@ -478,7 +523,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 孔祥煕派が実権を握った\r
+-	name = "ACTIONNAME6959007C"\r
++	name = "ACTIONNAME6959007D"\r
+ 	command = { type = sleepminister which = 55001 } # 蒋介石（チアン・カイシェク）\r
+ 	command = { type = sleepminister which = 55009 }\r
+ 	command = { type = sleepminister which = 55320 }\r
+@@ -511,7 +556,7 @@ event = {
+ 	command = { type = chiefofnavy which = 55097 } # 曽以鼎（ツオン・イーディン）\r
+ 	command = { type = chiefofair which = 55411 } # 許崇智（シュー・チョンジー\r
+ 	command = { type = dissent value = 5 }\r
+-	ai_chance = 10\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -777,6 +822,189 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  新生活運動\r
++# 政敵を退け、中華民国大総統に就任した思想家・外交官である胡適は、\r
++# 中国に新たな国家体制を築くため、大規模な精神運動を開始した。\r
++# 国民の規律化、組織化、軍事化を推進し、国民党独裁と全体主義を掲げ、\r
++# 来るべき日本と奉天共和国との最終戦争を遂行できる体制を作り上げるのだ。\r
++# 民族的復讐を果たすことで、反中国の存在の痕跡を全て消し去り、アジアの秩序は大再編されるだろう。\r
++# （史実では1934年に蒋介石が開始した社会運動。\r
++# 共産党の浸透を防ぐためのファシズム運動の様相が濃かった。）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959012\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = {\r
++	event = { id = 6959007 days = 30 } # 中華民国における政府交代\r
++	headofstate = 55501 # 胡適（フー・シー）\r
++	NOT = { ispuppet = CHI }\r
++	}\r
++\r
++	name = "EVT_6959012_NAME"\r
++	desc = "EVT_6959012_DESC"\r
++	style = 2\r
++	picture = "ccip_may4riot"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 殺絶敵国、殺絶漢奸\r
++	name = "ACTIONNAME6959012A"\r
++	command = { type = intelligence which = us value = 5 }\r
++	command = { type = intelligence which = them value = -5 }\r
++	command = { type = army_detection which = us value = 3 }\r
++	command = { type = army_detection which = them value = -3 }\r
++	command = { type = research_mod value = 5 }\r
++	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = peacetime_ic_mod value = 5 }\r
++	command = { type = wartime_ic_mod value = 5 }\r
++	command = { type = relative_manpower value = -20 }\r
++	command = { type = repair_mod value = 5 }\r
++	command = { type = trickleback_mod value = 5 }\r
++	command = { type = ground_def_eff value = 0.1 when = 1 }\r
++	command = { type = max_organization which = land value = 10 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { type = build_cost which = land value = -5 where = relative }\r
++	command = { type = build_time which = land value = -5 where = relative }\r
++	command = { type = suppression which = land value = 3 }\r
++	command = { type = building_prod_mod which = ic value = 5 }\r
++	command = { type = building_prod_mod which = infrastructure value = 5 }\r
++	command = { type = building_prod_mod which = land_fort value = 5 }\r
++	command = { type = building_prod_mod which = coastal_fort value = 5 }\r
++	command = { type = building_prod_mod which = flak value = 5 }\r
++	command = { type = building_prod_mod which = radar_station value = 5 }\r
++	command = { type = building_prod_mod which = naval_base value = 5 }\r
++	command = { type = building_prod_mod which = air_base value = 5 }\r
++	command = { type = building_prod_mod which = rocket_test value = 5 }\r
++	command = { type = building_prod_mod which = nuclear_reactor value = 5 }\r
++	command = { type = sleepevent which = 6959013 } # 新文化運動\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  新文化運動\r
++# 国民や知識層から絶大な支持を集めて、中華民国大総統に就任した思想家・外交官である胡適は、\r
++# 中国に新たな国家体制を築くため、大規模な社会運動を開始した。\r
++# 儒教に代表される旧道徳・旧文化を打破し、人道的で進歩的な新文化を樹立することで、古くなった中国の再生を目指す時が来た。\r
++# 民主主義と科学を中心とした新文化、再び中国を中心とするアジア秩序を生み出すだろう。\r
++# （史実では1898年から始まった中国の旧文化の打破を目指した文化運動。\r
++# 五四運動のために思想上と組織上の準備をした。）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959013\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = {\r
++	event = { id = 6959007 days = 30 } # 中華民国における政府交代\r
++	headofstate = 55514 # 胡適（フー・シー）\r
++	NOT = { ispuppet = CHI }\r
++	}\r
++\r
++	name = "EVT_6959013_NAME"\r
++	desc = "EVT_6959013_DESC"\r
++	style = 2\r
++	picture = "ccip_may4riot"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 10\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 旧文化、旧体制を打破せよ\r
++	name = "ACTIONNAME6959013A"\r
++	command = { type = intelligence which = us value = 5 }\r
++	command = { type = intelligence which = them value = -5 }\r
++	command = { type = army_detection which = us value = 3 }\r
++	command = { type = army_detection which = them value = -3 }\r
++	command = { type = research_mod value = 5 }\r
++	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = peacetime_ic_mod value = 5 }\r
++	command = { type = wartime_ic_mod value = 5 }\r
++	command = { type = relative_manpower value = -20 }\r
++	command = { type = repair_mod value = 5 }\r
++	command = { type = trickleback_mod value = 5 }\r
++	command = { type = ground_def_eff value = 0.1 when = 1 }\r
++	command = { type = max_organization which = land value = 10 }\r
++	command = { type = morale which = land value = 10 }\r
++	command = { type = build_cost which = land value = -5 where = relative }\r
++	command = { type = build_time which = land value = -5 where = relative }\r
++	command = { type = suppression which = land value = 3 }\r
++	command = { type = building_prod_mod which = ic value = 5 }\r
++	command = { type = building_prod_mod which = infrastructure value = 5 }\r
++	command = { type = building_prod_mod which = land_fort value = 5 }\r
++	command = { type = building_prod_mod which = coastal_fort value = 5 }\r
++	command = { type = building_prod_mod which = flak value = 5 }\r
++	command = { type = building_prod_mod which = radar_station value = 5 }\r
++	command = { type = building_prod_mod which = naval_base value = 5 }\r
++	command = { type = building_prod_mod which = air_base value = 5 }\r
++	command = { type = building_prod_mod which = rocket_test value = 5 }\r
++	command = { type = building_prod_mod which = nuclear_reactor value = 5 }\r
++	command = { type = sleepevent which = 6959012 } # 新生活運動\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  国策映画『阿片戦争』\r
++# 国策映画『阿片戦争』は、政府要人であり作家でもある胡蘭成が製作した映画で、1934年1月14日に封切られた。\r
++# 大規模なオープンセットや大勢のエキストラを動員した映画であり、中国の愛国主義を広げるプロパガンダとして好評を博した。\r
++# また映画では、胡蘭成の妻である余愛珍の紹介をにより、上海で活躍していた女優の李雲鶴を抜擢され、大きな注目を浴びた。\r
++# しかし彼女について、胡蘭成との交際関係が噂されており、政界への進出という話も出ている。\r
++# （映画「阿片戦争」は、史実では1943年1月14日に東宝映画が製作・公開した。\r
++# また李雲鶴は、史実では上海で女優「藍蘋」として活躍したのち、「江青」と名前を変えて、中国共産党の指導者である毛沢東の夫人となった。\r
++# 中華人民共和国成立後、文化大革命を主導し、文革末期には中国共産党内で影響力を持ったが、毛沢東の死後に逮捕され、処刑される。）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6959014\r
++	random = no\r
++	country = CHI\r
++\r
++	trigger = {\r
++	headofstate = 55501 # 胡適（フー・シー）\r
++	OR = {\r
++	incabinet = 55506 # 胡蘭成（フー・ランチョン）\r
++	incabinet = 55507 # 胡蘭成（フー・ランチョン）\r
++	}\r
++	OR = {\r
++	minister = 55508 # 李雲鶴（リー・ユンフェア）\r
++	minister = 55509 # 李雲鶴（リー・ユンフェア）\r
++	}\r
++	control = { province = 1337 data = CHI } # 南京（ナンキン）\r
++	control = { province = 1338 data = CHI } # 上海（シャンハイ）\r
++	NOT = { ispuppet = CHI }\r
++	}\r
++\r
++	name = "EVT_6959014_NAME"\r
++	desc = "EVT_6959014_DESC"\r
++	style = 2\r
++	picture = "ccip_vict"\r
++\r
++	date = { day = 13 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1933 }\r
++\r
++	action = { # 素晴らしい！\r
++	name = "ACTIONNAME6959014A"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = money value = 100 }\r
++	command = { type = manpowerpool value = 30 }\r
++	}\r
++\r
++	action = { # 彼女は政府でも活躍できるだろう\r
++	name = "ACTIONNAME6959014B"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = money value = 100 }\r
++	command = { type = manpowerpool value = 30 }\r
++	command = { type = ministerofintelligence which = 55509 } # 李雲鶴（リー・ユンフェア）\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ # 国民党ルート\r
+ #########################################################################\r

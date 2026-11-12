@@ -1,0 +1,38 @@
+--- A/db/events/Japan/1933-JAP-Domestic.txt [cp932]
++++ B/db/events/Japan/1933-JAP-Domestic.txt [cp932]
+@@ -30,7 +30,7 @@ event = {
+ 	#	command = { type = dissent value = 2 }\r
+ 	#}\r
+ \r
+-	action = { # 徹底的に事件を処理する\r
++	action = { # 首謀者を更迭する\r
+ 		name = ACTIONNAME1330120015A\r
+ 		command = { type = dissent value = 2 }\r
+ 		command = { type = sleepminister which = 50594 } # 磯部浅一\r
+@@ -182,6 +182,26 @@ event = {
+ 		command = { type = sleepminister which = 50601 } # 相沢三郎\r
+ 		command = { type = sleepminister which = 50602 }\r
+ 		command = { type = sleepleader which = 103017 }\r
++		command = { type = set_leader_skill which = 101307 value = 1 } # 東條英機\r
++		command = { type = set_leader_skill which = 101160 value = 1 }\r
++		command = { type = set_leader_skill which = 101068 value = 1 } # 片倉衷\r
++		#command = { type = sleepevent which = 227002 } # 永田軍政の再開\r
++		command = { type = sleepevent which = 22600017 } # 相沢事件の判決\r
++		command = { type = local_setflag which = Nagata_Coup }\r
++	}\r
++\r
++	action = { # 永田鉄山は相沢三郎を返り討ちにした\r
++		name = ACTIONNAME1330120016D\r
++		trigger = { local_flag = Ngata_Inbou }\r
++		ai_chance = 30\r
++		command = { type = dissent value = 1 }\r
++		command = { type = domestic which = freedom value = -2 } #Kodoha gains more influence, resulting in a shift toward military dictatorship\r
++		#command = { type = domestic which = political_left value = -1 }\r
++		#command = { type = domestic which = democratic value = -1 }\r
++		command = { type = sleepminister which = 50601 } # 相沢三郎\r
++		command = { type = sleepminister which = 50602 }\r
++		command = { type = sleepleader which = 103017 }\r
++		command = { type = set_leader_skill which = 101395 value = 1 } # 永田鉄山\r
+ 		#command = { type = sleepevent which = 227002 } # 永田軍政の再開\r
+ 		command = { type = sleepevent which = 22600017 } # 相沢事件の判決\r
+ 		command = { type = local_setflag which = Nagata_Coup }\r

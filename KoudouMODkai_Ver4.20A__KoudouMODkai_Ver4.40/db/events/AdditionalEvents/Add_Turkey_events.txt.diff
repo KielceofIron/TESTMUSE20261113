@@ -1,0 +1,2828 @@
+--- A/db/events/AdditionalEvents/Add_Turkey_events.txt [cp932]
++++ B/db/events/AdditionalEvents/Add_Turkey_events.txt [cp932]
+@@ -64,7 +64,6 @@
+ # 全国民に一気に「創姓」を義務付けたのであった。またトルコ議会からケマルに姓が贈られることになった。アタテュルク、「トルコの父」を意味する。\r
+ #########################################################################\r
+ \r
+-\r
+ event = {\r
+ 	id = 220001\r
+ 	random = no\r
+@@ -72,49 +71,35 @@ event = {
+ 	tag = { TUR OTT }\r
+ \r
+ 	decision = {\r
+-		NOT = {\r
+-			ispuppet = -1\r
+-		}\r
++		NOT = { ispuppet = yes }\r
+ 		atwar = no\r
+-\r
+ 		OR  = { \r
+ 			And = { \r
+ 				country = TUR\r
+-				headofstate = 45001\r
++				headofstate = 45001 # ケマル\r
+ 				}\r
+-\r
+ 			And = { \r
+ 				country = OTT\r
+-				headofgovernment = 720701\r
++				headofgovernment = 720701 #ケマル\r
+ 				}\r
+ 			}\r
+-\r
+ 	}\r
+ 	decision_trigger = { \r
+-\r
+-\r
+-		# supplies = 2000\r
+ 		money = 100\r
+-\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-\r
+-		NOT = {\r
+-			ispuppet = -1 # TUR\r
+-		}\r
++		NOT = { ispuppet = yes }\r
+ 		atwar = no\r
+ 		random = 20\r
+-\r
+ 		OR  = { \r
+ 			And = { \r
+ 				country = TUR\r
+-				headofstate = 45001\r
++				headofstate = 45001 # ケマル\r
+ 				}\r
+-\r
+ 			And = { \r
+ 				country = OTT\r
+-				headofgovernment = 720701\r
++				headofgovernment = 720701 #ケマル\r
+ 				}\r
+ 			}\r
+ 	}\r
+@@ -137,9 +122,7 @@ event = {
+ 		# command = { type = manpowerpool value = 8 when = 1 }\r
+ 		command = { type = manpowerpool value = 8 }\r
+ 		command = { trigger = { ai = no } type = money value = -100 }\r
+-\r
+ 	}\r
+-\r
+ }\r
+ \r
+ \r
+@@ -159,11 +142,8 @@ event = {
+ 	tag = { TUR OTT }\r
+ \r
+ 	decision = {\r
+-		NOT = {\r
+-			ispuppet = -1\r
+-		}\r
++		NOT = { ispuppet = yes }\r
+ 		atwar = no\r
+-\r
+ 		OR  = { \r
+ 			And = { \r
+ 				country = TUR\r
+@@ -177,25 +157,16 @@ event = {
+ 			}\r
+ 	}\r
+ 	decision_trigger = { \r
+-\r
+-		# supplies = 2000\r
+ 		money = 50\r
+-\r
+ 	}\r
+-\r
+ 	trigger = {\r
+-\r
+-		NOT = {\r
+-			ispuppet = -1\r
+-		}\r
++		NOT = { ispuppet = yes }\r
+ 		atwar = no\r
+-\r
+ 		OR  = { \r
+ 			And = { \r
+ 				country = TUR\r
+ 				headofstate = 45001\r
+ 				}\r
+-\r
+ 			And = { \r
+ 				country = OTT\r
+ 				headofgovernment = 720701\r
+@@ -222,15 +193,13 @@ event = {
+ 		command = { type = manpowerpool value = 1.0 when = 1 }\r
+ 		command = { type = relative_manpower value = 4 }\r
+ 		command = { trigger = { ai = no } type = money value = -50 }\r
+-\r
+ 	}\r
+-\r
+ }\r
+ \r
+ \r
+ \r
+ #########################################################################\r
+-#  トルコの近代化 ― 五か年計画の投資の結果\r
++#  トルコの近代化 ― ケマルの五か年計画\r
+ #  ケマルの改革は経済にも及んだ。世界恐慌後、トルコ経済はその影響を大きく受けたが、ソ連のヨシフ・スターリンから\r
+ # 1932年に巨額の融資と経済顧問団を派遣うけ、1934年5月からトルコも五カ年計画を導入した。\r
+ # しかし、「国民の幸せ」を最優先するケマルは、ソ連のような重工業化政策はとらなかった。\r
+@@ -243,10 +212,10 @@ event = {
+ # 1928年には８万トンだったセメントの生産量は、1952年には100万トンを超えていた。\r
+ # 景気回復とそれに伴う未来への希望は、出生率の増加と人口の急増をもたらし、10年足らずでの300万人の人口増加、\r
+ # それが新築ブームをもたらし、都市部のインフラ設備も大きく改善された。\r
++# 『重要情報』\r
++# このディシジョンは五ヵ年に渡り国土が段階的に開発されるディシジョンです。五ヵ年の間に他国との戦争状態に突入した場合、計画が途中で中断される可能性があります。\r
+ #########################################################################\r
+ \r
+-\r
+-\r
+ event = {\r
+ 	id = 220003\r
+ 	random = no\r
+@@ -256,38 +225,26 @@ event = {
+ 	save_date = yes\r
+ \r
+ 	decision = {\r
+-\r
+-		NOT = {\r
+-			ispuppet = TUR\r
+-		}\r
++		# NOT = { ispuppet = yes }\r
+ 		atwar = no\r
+-\r
+-\r
+ 		OR  = { \r
+-			And = { \r
+-				country = TUR\r
++			And = { country = TUR\r
+ 				headofstate = 45001\r
+ 				}\r
+ \r
+-			And = { \r
+-				country = OTT\r
++			And = { country = OTT\r
+ 				headofgovernment = 720701\r
+ 				}\r
+ 			}\r
+-\r
+-\r
+-\r
+-		}\r
++	}\r
+ \r
+ 	decision_trigger = {\r
+-		supplies = 2000\r
+-		money = 1500\r
+-\r
+-		 }\r
+-\r
++		supplies = 3000\r
++		money = 2000\r
++	}\r
+ \r
+ 	trigger = {\r
+-\r
++		# NOT = { ispuppet = yes }\r
+ 		OR  = { \r
+ 			And = { \r
+ 				country = TUR\r
+@@ -299,29 +256,19 @@ event = {
+ 				headofgovernment = 720701\r
+ 				}\r
+ 			}\r
+-\r
+ 		OR = { \r
+-			AND = {\r
+-				year = 1933\r
++			AND = { year = 1933\r
+ 				month = 7\r
+ 				random = 1\r
+ 				} \r
+-			AND = {\r
+-				year = 1934\r
++			AND = { year = 1934\r
+ 				random = 10\r
+ 				} \r
+-			AND = {\r
+-				year = 1935\r
++			AND = { year = 1935\r
+ 				random = 20\r
+ 				} \r
+ 			}\r
+-\r
+-		NOT = {\r
+-			ispuppet = TUR\r
+-		}\r
+ 		atwar = no\r
+-\r
+-		\r
+ 	}\r
+ \r
+ 	date = { day = 1 month = january year = 1933 }\r
+@@ -331,34 +278,22 @@ event = {
+ 	name = "EVT_220003_NAME"\r
+ 	desc = "EVT_220003_DESC"\r
+ 	picture = "invest_infrastructures"\r
+-\r
+ 	decision_picture = "decision_convoys"\r
+ \r
+-	action_a = { # 私のやり方は、決して間違っていなかったのだ\r
++	action = { # 私のやり方は、決して間違っていなかったのだ\r
+ 		name = "ACTIONNAME220003A"\r
+ 		# ai_chance = 90\r
+ 		command = { type = event which = 220004 where = -1 when = 360 }\r
+-\r
+ 		command = { type = domestic which = free_market value = -1 } \r
+ 		command = { type = building_prod_mod which = infrastructure value = 5 }\r
+ 		command = { type = building_prod_mod which = ic value = 3 }\r
+-\r
+ 		command = { type = industrial_modifier which = supplies value = 10 }\r
+- \r
+-		command = { trigger = { ai = no } type = supplies value = -2000 }\r
+-		command = { trigger = { ai = no } type = money value = -1500 }\r
+-		# command = { trigger = { ai = Yes } type = ai which = "AddSwitch/MAN_Change_naval.ai" }\r
+-\r
+-		\r
+-\r
++		command = { trigger = { ai = no } type = supplies value = -3000 }\r
++		command = { trigger = { ai = no } type = money value = -2000 }\r
+ 	}\r
+-\r
+-\r
+ }\r
+ \r
+ \r
+-\r
+-\r
+ event = {\r
+ 	id = 220004\r
+ 	random = no\r
+@@ -371,11 +306,9 @@ event = {
+ 	desc = "EVT_220004_DESC"\r
+ 	picture = "invest_infrastructures"\r
+ \r
+-\r
+ 	action = { # まだまだトルコは発展する！  # 初年度\r
+ 		trigger = {\r
+ 			Not = {\r
+-				\r
+ 				lost_national = { country = -1 value = 10 }\r
+ 				war = { country = -1 country = JAP }\r
+ 				war = { country = -1 country = SOV }\r
+@@ -386,44 +319,30 @@ event = {
+ 				war = { country = -1 country = DDR }\r
+ 				war = { country = -1 country = U08 }\r
+ 				war = { country = -1 country = FRA }\r
+-\r
+-				event = { id = 220003 days = 1800 } #Nanjing Decade 10 years ago\r
++				event = { id = 220003 days = 1800 } #五か年計画発動から1800日以内\r
+ 				year = 1939\r
+ 				}\r
+-\r
+ 			Not = { event = { id = 220003 days = 370 }  } # 369日以下\r
+-			}\r
+-\r
++		}\r
+ 		name = "ACTIONNAME220004A"\r
+ 		command = { type = event which = 220004 where = -1 when = 360 }\r
+-\r
+ 		command = { type = gain_tech which = -1 }\r
+-\r
+ 		command = { type = add_prov_resource which = 1068 value = 5 where = energy }\r
+ 		command = { type = add_prov_resource which = 1079 value = 3 where = energy }\r
+-\r
+ 		command = { type = add_prov_resource which = 1079 value = 1 where = rare_materials }\r
+ 		command = { type = add_prov_resource which = 1078 value = 1 where = rare_materials }\r
+-\r
+ 		command = { type = add_prov_resource which = 384 value = 2 where = metal }\r
+ 		command = { type = add_prov_resource which = 1056 value = 1 where = metal }\r
+ 		command = { type = add_prov_resource which = 1055 value = 1 where = metal }\r
+ 		command = { type = add_prov_resource which = 1067 value = 1 where = metal }\r
+-\r
+-\r
+ 		command = { type = construct which = ic where = 1075 value = 1 }\r
+-\r
+ 		command = { type = construct which = infrastructure where = 1068 value = 10 }\r
+ 		command = { type = construct which = infrastructure where = 1078 value = 10 }\r
+ 		command = { type = construct which = infrastructure where = 1079 value = 10 }\r
+-\r
+ 		# command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 		# command = { type = construct which = infrastructure where = -1 value = 10 }\r
+-\r
+ 	}\r
+ \r
+-\r
+-\r
+ 	action = { # まだまだトルコは発展する！\r
+ 		trigger = {\r
+ 			Not = {\r
+@@ -437,46 +356,31 @@ event = {
+ 				war = { country = -1 country = DDR }\r
+ 				war = { country = -1 country = U08 }\r
+ 				war = { country = -1 country = FRA }\r
+-\r
+-				event = { id = 220003 days = 1800 } #Nanjing Decade 10 years ago\r
++				event = { id = 220003 days = 1800 } #五か年計画発動から1800日以内\r
+ 				year = 1939\r
+ 				}\r
+ \r
+ 			event = { id = 220003 days = 370 }\r
+ 			}\r
+-\r
+ 		name = "ACTIONNAME220004A"\r
+ 		command = { type = event which = 220004 where = -1 when = 360 }\r
+-\r
+-\r
+ 		command = { type = gain_tech which = -1 }\r
+-\r
+ 		command = { type = add_prov_resource which = 1068 value = 5 where = energy }\r
+ 		command = { type = add_prov_resource which = 1079 value = 3 where = energy }\r
+-\r
+ 		command = { type = add_prov_resource which = 1079 value = 1 where = rare_materials }\r
+ 		command = { type = add_prov_resource which = 1078 value = 1 where = rare_materials }\r
+-\r
+ 		command = { type = add_prov_resource which = 384 value = 2 where = metal }\r
+ 		command = { type = add_prov_resource which = 1056 value = 1 where = metal }\r
+ 		command = { type = add_prov_resource which = 1055 value = 1 where = metal }\r
+ 		command = { type = add_prov_resource which = 1067 value = 1 where = metal }\r
+-\r
+-\r
+ 		command = { type = construct which = ic where = -4 value = 1 }\r
+-\r
+ 		command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 		command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 		command = { type = construct which = infrastructure where = -1 value = 10 }\r
+-\r
+ 		# command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 		# command = { type = construct which = infrastructure where = -1 value = 10 }\r
+-\r
+ 	}\r
+ \r
+-\r
+-\r
+-\r
+ 	action = { # もう十分だ\r
+ 		trigger = {\r
+ 			or = {\r
+@@ -490,49 +394,30 @@ event = {
+ 				war = { country = -1 country = DDR }\r
+ 				war = { country = -1 country = U08 }\r
+ 				war = { country = -1 country = FRA }\r
+-\r
+-				event = { id = 220003 days = 1800 } #Nanjing Decade 10 years ago\r
++				event = { id = 220003 days = 1800 } #五か年計画発動から1800日以降\r
+ 				year = 1939\r
+ 				}\r
+ 			}\r
+ 		name = "ACTIONNAME220004B"\r
+-\r
+ 		command = { type = sleepevent which = 220004 }\r
+-\r
+-\r
+ 		command = { type = domestic which = free_market value = -1 } \r
+-\r
+ 		command = { type = building_prod_mod which = infrastructure value = -5 }\r
+ 		command = { type = building_prod_mod which = ic value = -3 }\r
+-\r
+ 		command = { type = industrial_modifier which = supplies value = -10 }\r
+-\r
+ 		command = { type = gain_tech which = -1 }\r
+-\r
+ 		command = { type = add_prov_resource which = 1068 value = 5 where = energy }\r
+ 		command = { type = add_prov_resource which = 1079 value = 3 where = energy }\r
+-\r
+ 		command = { type = add_prov_resource which = 1079 value = 1 where = rare_materials }\r
+ 		command = { type = add_prov_resource which = 1078 value = 1 where = rare_materials }\r
+-\r
+ 		command = { type = add_prov_resource which = 384 value = 2 where = metal }\r
+ 		command = { type = add_prov_resource which = 1056 value = 1 where = metal }\r
+ 		command = { type = add_prov_resource which = 1055 value = 1 where = metal }\r
+ 		command = { type = add_prov_resource which = 1067 value = 1 where = metal }\r
+-\r
+-\r
+ 		command = { type = construct which = ic where = -4 value = 1 }\r
+-\r
+ 		command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 		command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 		command = { type = construct which = infrastructure where = -1 value = 10 }\r
+-\r
+-\r
+-\r
+-\r
+ 	}\r
+-\r
+-\r
+ }\r
+ \r
+ \r
+@@ -563,17 +448,17 @@ event = {
+ 	desc = "EVT_220005_DESC"\r
+ 	picture = "Kemal"\r
+ \r
+-	action_a = {\r
++	action = {\r
+ 		name = "ACTIONNAME220005A" #改革は続く、私がいる限り\r
+ 		ai_chance = 70\r
+ 		command = { type = sleepevent which = 220007 }\r
+ 		}\r
+ \r
+ \r
+-	action_b = {\r
++	action = {\r
+ 		name = "ACTIONNAME220005B" # 大統領代理職をイノニュに任せ、休養する\r
+ 		ai_chance = 30\r
+-		command = { type = dissent value = 5 }\r
++		command = { type = dissent value = 6 }\r
+ 		command = { type = sleepevent which = 220006 }\r
+ 		command = { type = set_domestic which = democratic value = 5 }\r
+ 		command = { type = set_domestic which = political_left value = 3 }\r
+@@ -613,7 +498,7 @@ event = {
+ 	desc = "EVT_345_DESC"\r
+ 	picture = "minister_died"\r
+ \r
+-	action_a = {\r
++	action = {\r
+ 		name = "EVT_362_ACTC"\r
+ 		command = { type = set_domestic which = democratic value = 5 }\r
+ 		command = { type = set_domestic which = political_left value = 3 }\r
+@@ -655,21 +540,17 @@ event = {
+ 	style = 2\r
+ \r
+ 	trigger = { \r
+-		minister = 45001\r
+-\r
++		minister = 45001 # ケマル・アタテュルク\r
+ 		Not = { headofstate = 45001 }\r
+-		Not = { event = 2010003 }\r
+-		Not = { event = 220006 }\r
++		Not = { event = 2010003 } #ケマルの死バニラ\r
++		Not = { event = 220006 } #ケマルの死fullkai\r
+ 		OR = { \r
+-\r
+-\r
+-				war = { country = ENG country = UF9 } # オーバーロード用\r
++				war = { country = ENG country = UF9 } # オーバーロードシナリオ用\r
+ 				war = { country = ENG country = GER }\r
+ 				war = { country = SOV country = GER }\r
+ 				atwar = yes\r
+ 			}\r
+-		}\r
+-\r
++	}\r
+ \r
+ 	date = { day = 1 month = january year = 1939 }\r
+ 	offset = 5\r
+@@ -679,13 +560,12 @@ event = {
+ 	desc = "EVT_220007_DESC"\r
+ 	picture = "Kemal"\r
+ \r
+-	action_a = {\r
++	action = { # もっとはっきりと言おう、私がトルコだ！\r
+ 		name = "ACTIONNAME220007A"\r
+ 		# command = { type = set_domestic which = democratic value = 5 }\r
+ 		# command = { type = set_domestic which = political_left value = 3 }\r
+ 		command = { type = headofstate which = 45001 }\r
+ 		command = { type = headofgovernment which = 45002 }\r
+-\r
+ 		command = { type = domestic which = free_market value = -1 } \r
+ 		command = { type = domestic which  = defense_lobby value = 1 }\r
+ 		command = { type = dissent value = -10 }\r
+@@ -715,19 +595,12 @@ event = {
+ 	style = 2\r
+ \r
+ 	trigger = { \r
+-		# minister = 45001\r
+-\r
+-		# headofstate = 45001\r
+-		# Not = { event = 2010003 }\r
+-		# Not = { event = 220006 }\r
+-		OR = { \r
+-\r
+-				war = { country = ENG country = UF9 } # オーバーロード用\r
++		OR = {		war = { country = ENG country = UF9 } # オーバーロード用\r
+ 				war = { country = ENG country = GER }\r
+ 				war = { country = SOV country = GER }\r
+ 				atwar = yes\r
+ 			}\r
+-		}\r
++	}\r
+ \r
+ \r
+ 	date = { day = 1 month = 2 year = 1940 }\r
+@@ -738,27 +611,23 @@ event = {
+ 	desc = "EVT_220008_DESC"\r
+ 	picture = "Kemal"\r
+ \r
+-	action = {\r
++	action = { # 準備を急がせろ\r
+ 		trigger = { Not = { headofstate = 45001 } }\r
+ 		name = "ACTIONNAME220008A"\r
+ 		command = { type = dissent value = 1 }\r
+-\r
+ 		command = { type = manpowerpool value = 5.0 when = 1 }\r
+ 		command = { type = domestic which  = defense_lobby value = 1 }\r
+ 		}\r
+ \r
+-	action = {\r
++	action = { # 大統領はより強い動員を指示した\r
+ 		trigger = { headofstate = 45001 }\r
+-		name = "ACTIONNAME220008A"\r
++		name = "ACTIONNAME220008B"\r
+ 		command = { type = dissent value = 5 }\r
+ 		command = { type = add_division value = infantry when = 9 }\r
+ 		command = { type = add_division value = infantry when = 9 }\r
+-\r
+ 		command = { type = construct which = land_fort where = 409 value = 2 } # イスタンブール\r
+ 		command = { type = construct which = land_fort where = 386 value = 2 } # カルス\r
+ 		command = { type = construct which = land_fort where = 1067 value = 2 } # トラブゾン\r
+-\r
+-\r
+ 		command = { type = manpowerpool value = 5.0 when = 1 }\r
+ 		command = { type = domestic which  = defense_lobby value = 1 }\r
+ 		command = { type = domestic which = free_market value = -1 } \r
+@@ -766,24 +635,6 @@ event = {
+ 	}\r
+ \r
+ \r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+-\r
+ #########################################################################\r
+ # アッシリア事件\r
+ #  20世紀初頭、ムスリムなどから迫害を受けたアッシリア人は中東に大きな影響力を持っていたイギリスからの援助を得ようとした他、\r
+@@ -815,11 +666,9 @@ event = {
+ \r
+ 	trigger = { \r
+ 		atwar = no\r
+-\r
+-			control = { province = 1029 data = OTT }\r
+-			control = { province = 1027 data = OTT }\r
+-\r
+-			random = 50\r
++		control = { province = 1029 data = OTT }\r
++		control = { province = 1027 data = OTT }\r
++		random = 50\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = 9 year = 1933 }\r
+@@ -830,7 +679,6 @@ event = {
+ 		ai_chance = 100 \r
+ 		name = "ACTIONNAME220501A" # 逆賊に死を！\r
+ 		command = { type = dissent value = 10 }\r
+-\r
+ 		command = { type = belligerence which = OTT value = 3 }\r
+ 		command = { type = relation which = ENG value = -50 }\r
+ 		command = { type = province_revoltrisk which = 1029 value = 10 }\r
+@@ -838,9 +686,7 @@ event = {
+ 		command = { type = province_revoltrisk which = 1027 value = 10 }\r
+ 		command = { type = revolt which = 1027 }\r
+ 		command = { type = domestic which = democratic value = -1 }\r
+-		# command = { type = chiefofstaff which = 365007 } #シドキ\r
+-\r
+-		# command = { type = add_corps which = "王立イラク空軍" value = air  where = 1035  }\r
++		command = { type = domestic which = freedom value = -1 }\r
+ 		command = { type = add_division which = "第1爆撃航空隊" value = interceptor  when = 4 }\r
+ 		command = { type = add_division which = "第1戦闘航空隊" value = tactical_bomber when = 6 }\r
+ 	}\r
+@@ -867,8 +713,6 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 		OR = {\r
+-			# headofstate = 365160 #Faisal I SC\r
+-			# headofstate = 365161 #Faisal I FA\r
+ 			minister = 720053 #アブデュル・メジト2世 SC\r
+ 			minister = 720702 #アブデュル・メジト2世 FA\r
+ 		}\r
+@@ -886,26 +730,16 @@ event = {
+ 		command = { trigger = { headofstate = 720053 } type = headofstate which = 720703 } #アフメト4世 SC\r
+ 		command = { trigger = { headofstate = 720702 } type = headofstate which = 720704 } #アフメト4世 FA\r
+ 		command = { type = sleepminister which = 720053 } #アブデュル・メジト2世\r
+-\r
+ 	}\r
+ }\r
+ \r
+-\r
+-#######################################################\r
+-\r
+-\r
+-\r
+-\r
+-\r
+ #########################################################################\r
+-# オスマン帝国皇帝アブデュル・メジト二世逝去\r
+-#  1944年8月23日、オスマン帝国皇帝アブデュルメジト2世逝去。\r
+-# 史実においてアブデュルメジト2世（1868年5月29日 - 1944年8月23日）は、イスラム世界で承認された最後のカリフ。\r
+-# オスマン帝国第32代皇帝であるアブデュルアズィズの息子。従兄のメフメト6世が第36代皇帝として即位するのと同時に、アブデュルメジトは皇太子となった。\r
+-# トルコ革命の結果、メフメト6世は廃位され、スルタン政は廃止された。トルコ大国民議会は皇太子アブデュルメジトをカリフに選出した。\r
+-# 世俗的支配者パーディシャーとしての実権は有さず、宗教的指導者としてのカリフのみをアブデュルメジトが継承したことになる。\r
+-# 芸術家肌の教養人であるアブデュルメジト自身も、世俗の権力にはまったく興味がなかったと言われる。\r
+-# 近代化を進めるトルコ共和国は政教分離を採用したため、1924年3月3日にカリフ制も廃止され、アブデュルメジトはオスマン家の一族と共に国外に追放されている。\r
++# オスマン帝国皇帝アフメト4世逝去\r
++#  1954年6月4日、オスマン帝国皇帝アフメト4世逝去。\r
++# 史実においてアフメト・ニハト・オスマンオウル（1883年7月5日 - 1954年6月4日）は、オスマン帝国の帝家であったオスマン家の第38代家長で、帝位（パーディシャーおよびカリフ）請求者。\r
++# 第33代皇帝ムラト5世とその第1夫人エルル・メヴヒベ・バシュ・ハトゥンとの間の長男シェフザデ・メフメト・セラハディン・エフェンディ皇子の子。\r
++# トルコの共和制移行に伴い、1924年に他の皇族とともに国外に退去した。\r
++# 1944年、アブデュルメジト2世の死去に伴い名目上の皇帝「アフメト4世」を名乗った。\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -916,8 +750,6 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 		OR = {\r
+-			# headofstate = 365160 #Faisal I SC\r
+-			# headofstate = 365161 #Faisal I FA\r
+ 			minister = 720703 #アフメト4世 SC\r
+ 			minister = 720704 #アフメト4世 FA\r
+ 		}\r
+@@ -935,7 +767,6 @@ event = {
+ 		command = { trigger = { headofstate = 720703 } type = headofstate which = 720705 } #オスマン4世 SC\r
+ 		command = { trigger = { headofstate = 720704 } type = headofstate which = 720706 } #オスマン4世 FA\r
+ 		command = { type = sleepminister which = 720703 } #アブデュル・メジト2世\r
+-\r
+ 	}\r
+ }\r
+ \r
+@@ -1249,10 +1080,6 @@ event = {
+ 		command = { type = sleepevent which = 220506 }\r
+ 	}\r
+ \r
+-\r
+-\r
+-\r
+-\r
+ 	action = { \r
+ 		trigger = { \r
+ 			alliance = { country = GER country = SOV } \r
+@@ -1271,9 +1098,6 @@ event = {
+ 		command = { type = relation which = GER value = -25 }\r
+ 		command = { type = sleepevent which = 220506 }\r
+ 	}\r
+-\r
+-\r
+-\r
+ }\r
+ \r
+ event = {\r
+@@ -1344,11 +1168,8 @@ event = {
+ 	country = ENG\r
+ 	\r
+ 	decision = {\r
+-\r
+-\r
+ 		exists = OTT\r
+ 		NOT = { ispuppet = OTT }\r
+-\r
+ 		# control = { province = 163 data = GER } # Berlin\r
+ 		war = { country = GER country = ENG }\r
+ 		NOT = { alliance = { country = OTT country = ENG } }\r
+@@ -1358,32 +1179,24 @@ event = {
+ 		NOT = { war = { country = OTT country = SOV } }\r
+ 		NOT = { war = { country = SOV country = ENG } }\r
+ 		NOT = { alliance = { country = OTT country = JAP } }\r
+-\r
+-\r
+ 		OR = { \r
+ 			control = { province = 55 data = -3 } # Paris\r
+ 			alliance = { country = FRA country = ENG }\r
+-\r
+-\r
+ 			AND = { \r
+ 				war = { country = OTT country = GER }\r
+ 				war = { country = ENG country = GER }\r
+ 				}\r
+-\r
+ 			AND = { \r
+ 				control = { province = 900 data = -3 } # スエズ\r
+ 				alliance = { country = ITA country = ENG }\r
+ 				}\r
+-\r
+ 			AND = { \r
+ 				control = { province = 900 data = -3 } # スエズ\r
+ 				control = { province = 419 data = -3 } # ローマ\r
+ 				}\r
+ 			}\r
+-\r
+ 	}\r
+ 	decision_trigger = {\r
+-\r
+ 		OR = { \r
+ 			event = 2001052  # Allied diplomatic offensive\r
+ 			AND = { \r
+@@ -1392,22 +1205,16 @@ event = {
+ 				NOT = { control = { province = 116 data = -2 } } # Brussels\r
+ 				lost_national = { country = GER value = 20 }\r
+ 			}\r
+-\r
+-\r
+ 			alliance = { country = PER country = ENG }\r
+-\r
+ 			AND = { \r
+ 				control = { province = 1085 data = -3 } # テヘラン\r
+ 				control = { province = 1089 data = -3 } # アフヴァーズ\r
+ 				}\r
+-\r
+ 			AND = { \r
+ 				control = { province = 1085 data = SOV } # テヘラン\r
+ 				control = { province = 1089 data = SOV } # アフヴァーズ\r
+ 				Not = { exists = PER }\r
+ 				}\r
+-\r
+-\r
+ 			AND = { \r
+ 				war = { country = OTT country = GER }\r
+ 				war = { country = ENG country = GER }\r
+@@ -1550,10 +1357,10 @@ event = {
+ # 1927年に行われた帝国議会選挙では自由共和党のタラート・パシャが国民からの任期もあり大宰相再任の形となったが、\r
+ # 大不況の煽りにも諸民族の反乱運動にも有効な手が打てず国民からの信頼を失っていた。\r
+ # 1933年に行われた第二回帝国議会選挙での候補は以下のとおりである。\r
+-#  諸民族の自治独立と欧化絶対推進からの「オスマン連邦」独立を掲げる共和人民党のケマル・パシャ、\r
++#  諸民族の自治独立と欧化絶対推進からの「オスマン連邦」樹立を掲げる共和人民党のケマル・パシャ、\r
+ # テュルク民族全ての統一を掲げる統一進歩党のエンヴェル・パシャ、\r
+ # 熱烈なオスマン主義者でありアラブ人との融和を掲げる自由共和党のシャキーブ・アルスラーン、\r
+-# そしてソ連との有効を訴える進歩共和党のヒュセイン・ラウフである。\r
++# そしてソ連との友好を訴える進歩共和党のヒュセイン・ラウフである。\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -1563,30 +1370,21 @@ event = {
+ 	style = 2\r
+ 	\r
+ 	trigger = {\r
+-			# minister = 365002 #ハーシミー\r
+-\r
+ 		atwar = no\r
+ 	}\r
+ \r
+ 	date = { day = 3 month = April year = 1933 }		 \r
+-	# offset = 10\r
+-	# deathdate = { day = 29 month = september year = 1934 }	\r
+-\r
+-	# name = "EVT_101_NAME"\r
+-	# desc = "EVT_101_DESC"\r
+ 	name = "EVT_220509_NAME"\r
+ 	desc = "EVT_220509_DESC"\r
+-	# picture = "minister_died"\r
+ \r
+ 	picture = "news_paper"\r
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME220509A" #共和人民党のケマルに大宰相を任せる\r
+-\r
+ 		ai_chance = 100\r
+-\r
++		command = { type = dissent value = -3 }\r
+ 		command = { type = domestic which = democratic value = 1 }\r
+-\r
++		command = { type = domestic which  = defense_lobby value = 1 }\r
+ 		command = { type = headofstate which = 720053 } # アブデュル・メジト2世\r
+ 		command = { type = headofgovernment which = 720701 } # ケマル・アタテュルク\r
+ 		# command = { type = foreignminister which = 45015 }\r
+@@ -1599,19 +1397,14 @@ event = {
+ 		#command = { type = chiefofnavy which = 45053 }\r
+ 		#command = { type = chiefofair which = 45010 }\r
+ 		# command = { type = sleepminister which = 365002 } #ハシーミー\r
+-\r
+-\r
+-		command = { type = dissent value = -3 }\r
+-\r
+ 		# command = { type = sleepminister which = 45001 }\r
+ 		# command = { type = sleepteam which = 45050 } #追加研究機関スリープ\r
+ 	}\r
+ \r
+-\r
+ #	action = {\r
+ #		name = "ACTIONNAME220509B" #統一進歩党のエンヴェルが政権に返り咲く！\r
+ #		ai_chance = 0\r
+-#\r
++#		command = { type = dissent value = 15 }\r
+ #		command = { type = domestic which = democratic value = -1 }\r
+ #		command = { type = domestic which  = defense_lobby value = 2 }\r
+ #\r
+@@ -1625,22 +1418,17 @@ event = {
+ #		#command = { type = chiefofnavy which = 45053 }\r
+ #		#command = { type = chiefofair which = 45010 }\r
+ #		command = { type = sleepminister which = 720701 } #ケマル\r
+-#\r
+-#\r
+-#		command = { type = dissent value = 15 }\r
+-#\r
+ #		# command = { type = sleepminister which = 45001 }\r
+ #		# command = { type = sleepteam which = 45050 } #追加研究機関スリープ\r
+ #	}\r
+ \r
+-\r
+ 	action = {\r
+ 		name = "ACTIONNAME220509C" #自由共和党のシャキーブが政権を握る\r
+-\r
+ 		ai_chance = 0\r
+-\r
+-		command = { type = domestic which = democratic value = 1 }\r
+-\r
++		command = { type = dissent value = 3 }\r
++		command = { type = domestic which = democratic value = 2 }\r
++		command = { type = domestic which = free_market value = 1 }\r
++		command = { type = domestic which  = defense_lobby value = -1 }\r
+ 		command = { type = headofstate which = 720053 } # アブデュル・メジト2世\r
+ 		command = { type = headofgovernment which = 720709 } # シャキーブ・アルスラーン\r
+ 		command = { type = foreignminister which = 720710 } # シャキーブ・アルスラーン\r
+@@ -1648,26 +1436,22 @@ event = {
+ 		#command = { type = ministerofsecurity which = 45005 }\r
+ 		#command = { type = ministerofintelligence which = 45043 }\r
+ 		# command = { type = chiefofstaff which = 365007 } #シドキ\r
+-\r
+ 		#command = { type = chiefofarmy which = 45008 }\r
+ 		#command = { type = chiefofnavy which = 45053 }\r
+ 		#command = { type = chiefofair which = 45010 }\r
+ 		# command = { type = sleepminister which = 365002 } #ハシーミー\r
+-\r
+-\r
+ 		command = { type = dissent value = 3 }\r
+-\r
+ 		# command = { type = sleepminister which = 45001 }\r
+ 		# command = { type = sleepteam which = 45050 } #追加研究機関スリープ\r
+ 	}\r
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME220509D" #進歩共和党のヒュセインこそ首相に相応しい\r
+-\r
+ 		ai_chance = 0\r
+-\r
+-		command = { type = domestic which = democratic value = 2 }\r
+-\r
++		command = { type = dissent value = 5 }\r
++		command = { type = domestic which = democratic value = 1 }\r
++		command = { type = domestic which = political_left value = 2 }\r
++		command = { type = relation which = SOV value = 25 }\r
+ 		command = { type = headofstate which = 720053 } # アブデュル・メジト2世\r
+ 		command = { type = headofgovernment which = 720708 } # ヒュセイン・ラウフ・オルバイ\r
+ 		# command = { type = foreignminister which = 720710 } # シャキーブ・アルスラーン\r
+@@ -1675,27 +1459,19 @@ event = {
+ 		#command = { type = ministerofsecurity which = 45005 }\r
+ 		#command = { type = ministerofintelligence which = 45043 }\r
+ 		# command = { type = chiefofstaff which = 365007 } #シドキ\r
+-\r
+ 		#command = { type = chiefofarmy which = 45008 }\r
+ 		#command = { type = chiefofnavy which = 45053 }\r
+ 		#command = { type = chiefofair which = 45010 }\r
+ 		# command = { type = sleepminister which = 365002 } #ハシーミー\r
+-\r
+-\r
+-		command = { type = dissent value = 5 }\r
+-\r
+ 		# command = { type = sleepminister which = 45001 }\r
+ 		# command = { type = sleepteam which = 45050 } #追加研究機関スリープ\r
+ 	}\r
+ \r
+-\r
+ 	action = {\r
+ 		name = "ACTIONNAME220509E" #現職のタラート・パシャに任せる\r
+-\r
+ 		ai_chance = 0\r
+-\r
++		command = { type = dissent value = 8 }\r
+ 		command = { type = domestic which = democratic value = -1 }\r
+-\r
+ 		command = { type = headofstate which = 720053 } # アブデュル・メジト2世\r
+ 		command = { type = headofgovernment which = 720002 } # アブドュルハミト・タラート・パシャ\r
+ 		# command = { type = foreignminister which = 720710 } # シャキーブ・アルスラーン\r
+@@ -1703,19 +1479,12 @@ event = {
+ 		#command = { type = ministerofsecurity which = 45005 }\r
+ 		#command = { type = ministerofintelligence which = 45043 }\r
+ 		# command = { type = chiefofstaff which = 365007 } #シドキ\r
+-\r
+ 		#command = { type = chiefofarmy which = 45008 }\r
+ 		#command = { type = chiefofnavy which = 45053 }\r
+ 		#command = { type = chiefofair which = 45010 }\r
+-		# command = { type = sleepminister which = 365002 } #ハシーミー\r
+-\r
+-\r
+-		command = { type = dissent value = 8 }\r
+-\r
+ 		# command = { type = sleepminister which = 45001 }\r
+ 		# command = { type = sleepteam which = 45050 } #追加研究機関スリープ\r
+ 	}\r
+-\r
+ }\r
+ \r
+ \r
+@@ -1742,24 +1511,16 @@ event = {
+ 	country = OTT\r
+ \r
+ 	trigger = {\r
+-		# ai = no\r
+-\r
+ 		headofgovernment = 720701 # ケマル\r
+-\r
+ 		event = 220501 # アッシリア事件\r
+-\r
+-			Not = { exists = KUR # クルジスタン\r
+-				ispuppet = OTT\r
+-				 }\r
+-\r
+-\r
++		Not = { exists = KUR } # クルジスタン\r
++		NOT = { ispuppet = yes }\r
+ 		# government = democratic\r
+ 		OR = {\r
+ 			control = { province = 1036 data = OTT } #キルクーク\r
+ 			control = { province = 1027 data = OTT } #\r
+ 			control = { province = 1029 data = OTT } #\r
+ 			}\r
+-\r
+ 		random = 30\r
+ 	}\r
+ \r
+@@ -1776,11 +1537,8 @@ event = {
+ 	action = {\r
+ 		name = "ACTIONNAME220510A" # クルディスタンの全面的な独立を認める\r
+ 		ai_chance = 2\r
+-\r
+-		command = { type = sleepevent which = 220513 }\r
+-\r
++		command = { type = sleepevent which = 220513 } # クルド蜂起\r
+ 		command = { type = belligerence which = OTT value = -10 }\r
+-\r
+ 		command = { type = domestic which = democratic value = 2 }\r
+ 		command = { type = domestic which  = defense_lobby value = -1 }\r
+ 		command = { type = dissent value = 12 }\r
+@@ -1788,42 +1546,31 @@ event = {
+ 		command = { type = removecore which = 1036 }\r
+ 		command = { type = removecore which = 1027 }\r
+ 		command = { type = removecore which = 1029 }\r
+-\r
+ 		command = { type = removecore which = 1060 }\r
+ 		command = { type = removecore which = 1062 }\r
+ 		command = { type = removecore which = 1063 }\r
+ 		command = { type = removecore which = 1064 }\r
+-\r
+ 		command = { type = removecore which = 1082 }\r
+ 		command = { type = removecore which = 1084 }\r
+ 		command = { type = independence which = KUR value = 1 }\r
+-\r
+-\r
+ 		command = { type = secedeprovince which = KUR value = 1015 }\r
+ 		command = { type = secedeprovince which = KUR value = 1036 }\r
+ 		command = { type = secedeprovince which = KUR value = 1027 }\r
+ 		command = { type = secedeprovince which = KUR value = 1029 }\r
+-\r
+ 		command = { type = secedeprovince which = KUR value = 1060 }\r
+ 		command = { type = secedeprovince which = KUR value = 1062 }\r
+ 		command = { type = secedeprovince which = KUR value = 1063 }\r
+ 		command = { type = secedeprovince which = KUR value = 1064 }\r
+ 		command = { type = secedeprovince which = KUR value = 1082 }\r
+ 		command = { type = secedeprovince which = KUR value = 1084 }\r
+-\r
+-		# command = { type = secederegion which = OTT value = "Anatolia"  when = 1 }\r
+-\r
+ 		command = { type = trigger which = 220511 }\r
+ 	}\r
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME220510B" # アナトリアを除く限定的な自治のみを認める\r
+ 		ai_chance = 8\r
+-\r
+-		command = { type = sleepevent which = 220513 }\r
+-\r
++		command = { type = sleepevent which = 220513 } # クルド蜂起\r
+ 		command = { type = belligerence which = OTT value = -5 }\r
+-\r
+ 		command = { type = domestic which = democratic value = 1 }\r
+ 		command = { type = dissent value = 8 }\r
+ 		command = { type = removecore which = 1015 }\r
+@@ -1835,9 +1582,7 @@ event = {
+ 		command = { type = secedeprovince which = KUR value = 1036 }\r
+ 		command = { type = secedeprovince which = KUR value = 1027 }\r
+ 		command = { type = secedeprovince which = KUR value = 1029 }\r
+-\r
+ 		command = { type = secederegion which = OTT value = "Anatolia"  when = 1 }\r
+-\r
+ 		command = { type = trigger which = 220511 }\r
+ 	}\r
+ \r
+@@ -1845,20 +1590,16 @@ event = {
+ 	 	name = "ACTIONNAME220520C" # 帝国は唯一にして不可分である\r
+ 		ai_chance = 90\r
+ 		command = { type = dissent value = -1 }\r
++		command = { type = domestic which  = defense_lobby value = 1 }\r
+ 		# command = { type = revolt which = 443 }\r
+ 	}\r
+ \r
+ }\r
+ \r
+-\r
+-\r
+-\r
+ event = { # \r
+ 	id = 220511\r
+ 	random = no\r
+ 	country = KUR\r
+-\r
+-\r
+ 	name = "EVT_220511_NAME"\r
+ 	desc = "EVT_220510_DESC"\r
+ 	style = 2\r
+@@ -1889,29 +1630,21 @@ event = { #
+ 		command = { type = add_division value = infantry when = 6 }\r
+ 		command = { type = alliance which = OTT }\r
+ 		command = { type = access which = OTT }\r
+-\r
+ 		command = { type = trigger which = 220512 }\r
+ 	}\r
+ \r
+ }\r
+ \r
+-\r
+-\r
+-\r
+-\r
+ event = {\r
+ 	id = 220512\r
+ 	random = no\r
+ 	country = OTT\r
+-\r
+-\r
+ 	name = "EVT_220510_NAME"\r
+ 	desc = "EVT_220510_DESC"\r
+ 	style = 2\r
+ 	picture = "KUR_independence"\r
+ 	action = {\r
+ 		name = "ACTION_NAME_OK" # \r
+-\r
+ 		command = { type = make_puppet which = KUR }\r
+ 		command = { type = access which = KUR }\r
+ 		command = { type = relation which = KUR value = 200 }\r
+@@ -1920,9 +1653,6 @@ event = {
+ }\r
+ \r
+ \r
+-\r
+-\r
+-\r
+ ##################################################\r
+ # クルド蜂起\r
+ # 16世紀にクルド人居住区は、長い戦いの後サファヴィー朝とオスマン帝国に分割された。\r
+@@ -1935,30 +1665,21 @@ event = {
+ # あるいは強大な軍事力の行使によるクルド人の屈服を実現しようとしてきた。そしていよいよクルド人居住区での大規模な蜂起に繋がったのである。\r
+ ##################################################\r
+ \r
+-\r
+-\r
+ event = {\r
+ 	id = 220513\r
+ 	random = no\r
+ 	country = OTT\r
+ \r
+ 	trigger = {\r
+-\r
+ 		# headofgovernment = 720701 # ケマル\r
+-\r
+ 		event = 220501 # アッシリア事件\r
+-\r
+-			Not = { exists = KUR # クルジスタン\r
+-				ispuppet = OTT\r
+-				 }\r
+-\r
+-\r
++		Not = { exists = KUR } # クルジスタン\r
++		NOT = { ispuppet = yes }\r
+ 		OR = {\r
+ 			control = { province = 1036 data = OTT } #キルクーク\r
+ 			control = { province = 1027 data = OTT } #\r
+ 			control = { province = 1029 data = OTT } #\r
+ 			}\r
+-\r
+ 		OR = {\r
+ 			And = {\r
+ 				atwar = yes\r
+@@ -1989,56 +1710,42 @@ event = {
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME220513A" # なんてこった！\r
+-		ai_chance = 2\r
+-\r
+ 		# command = { type = belligerence which = OTT value = -10 }\r
+-\r
+ 		# command = { type = domestic which = democratic value = -1 }\r
+ 		command = { type = dissent value = 7 }\r
+ 		command = { type = removecore which = 1015 }\r
+ 		command = { type = removecore which = 1036 }\r
+ 		command = { type = removecore which = 1027 }\r
+ 		command = { type = removecore which = 1029 }\r
+-\r
+ 		command = { type = removecore which = 1060 }\r
+ 		command = { type = removecore which = 1062 }\r
+ 		command = { type = removecore which = 1063 }\r
+ 		command = { type = removecore which = 1064 }\r
+-\r
+ 		command = { type = removecore which = 1082 }\r
+ 		command = { type = removecore which = 1084 }\r
+ 		command = { type = independence which = KUR value = 1 }\r
+-\r
+-\r
+ 		command = { type = secedeprovince which = KUR value = 1015 }\r
+ 		command = { type = secedeprovince which = KUR value = 1036 }\r
+ 		command = { type = secedeprovince which = KUR value = 1027 }\r
+ 		command = { type = secedeprovince which = KUR value = 1029 }\r
+-\r
+ 		command = { type = secedeprovince which = KUR value = 1060 }\r
+ 		command = { type = secedeprovince which = KUR value = 1062 }\r
+ 		command = { type = secedeprovince which = KUR value = 1063 }\r
+ 		command = { type = secedeprovince which = KUR value = 1064 }\r
+ 		command = { type = secedeprovince which = KUR value = 1082 }\r
+ 		command = { type = secedeprovince which = KUR value = 1084 }\r
+-\r
+-command = { type = control which = KUR value = 1029 }\r
+-command = { type = control which = KUR value = 1036 }\r
+-command = { type = control which = KUR value = 1063 }\r
+-command = { type = control which = KUR value = 1064 }\r
+-command = { type = control which = KUR value = 1060 }\r
+-command = { type = control which = KUR value = 1027 }\r
+-command = { type = control which = KUR value = 1062 }\r
+-command = { type = control which = KUR value = 1014 }\r
+-command = { type = control which = KUR value = 1015 }\r
+-command = { type = setflag which = KUR_OTTUPR }\r
+-# command = { type = trigger which = 15010 }\r
+-\r
+-		# command = { type = secederegion which = OTT value = "Anatolia"  when = 1 }\r
+-\r
++		command = { type = control which = KUR value = 1029 }\r
++		command = { type = control which = KUR value = 1036 }\r
++		command = { type = control which = KUR value = 1063 }\r
++		command = { type = control which = KUR value = 1064 }\r
++		command = { type = control which = KUR value = 1060 }\r
++		command = { type = control which = KUR value = 1027 }\r
++		command = { type = control which = KUR value = 1062 }\r
++		command = { type = control which = KUR value = 1014 }\r
++		command = { type = control which = KUR value = 1015 }\r
++		command = { type = setflag which = KUR_OTTUPR }\r
+ 		command = { type = trigger which = 220514 }\r
+ 	}\r
+-\r
+ }\r
+ \r
+ \r
+@@ -2049,7 +1756,6 @@ event = { # 
+ 	random = no\r
+ 	country = KUR\r
+ \r
+-\r
+ 	name = "EVT_220514_NAME"\r
+ 	desc = "EVT_220513_DESC"\r
+ 	style = 2\r
+@@ -2059,7 +1765,6 @@ event = { # 
+ 		name = "ACTIONNAME220514A" # よし！\r
+ 		trigger = { event = 220518 } # ソ連の支援有り\r
+ 		command = { type = addcore which = 1082 }\r
+-\r
+ #		command = { type = headofstate which = 100001 } #Jos・Antonio Aguirre\r
+ #		command = { type = headofgovernment which = 100002 } #Jos・Antonio Aguirre\r
+ #		command = { type = armamentminister which = 100004 } #Heliodoro Latorre\r
+@@ -2070,17 +1775,14 @@ event = { # 
+ #		command = { type = chiefofarmy which = 100008  }\r
+ #		command = { type = chiefofnavy which = 100009 } \r
+ #		command = { type = chiefofair which = 100010 }\r
+-\r
+ 		command = { type = set_domestic which = democratic value = 2 }\r
+ 		command = { type = set_domestic which = political_left value = 7 }\r
+-\r
+-\r
+ 		command = { type = add_division which = "クルド警察" value = militia when = 5 }\r
+ 		command = { type = add_division which = "クルディスタン軍" value = infantry when = 6 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+-		command = { type = add_division value = infantry when = 6 }\r
+-\r
++		command = { type = add_division value = militia when = 5 }\r
++		command = { type = add_division value = militia when = 5 }\r
+ 		command = { type = event which = 220515 where = OTT when = 2 }\r
+ 		# command = { type = trigger which = 220515 }\r
+ 	}\r
+@@ -2088,13 +1790,7 @@ event = { # 
+ 	action = {\r
+ 		name = "ACTIONNAME220514A" # よし！\r
+ 		trigger = { Not = { event = 220518 }  } # ソ連の支援なし\r
+-		#command = { type = addcore which = 446 }\r
+-		#command = { type = domestic which = democratic value = -1 }\r
+-		#command = { type = domestic which = free_market value = -1 }\r
+-		#command = { type = domestic which = political_left value = -2 }\r
+-		#command = { type = domestic which = freedom value = -1 }\r
+-		# command = { type = domestic which = professional_army value = -2 }\r
+-		# command = { type = domestic which = interventionism value = 1 }\r
++#		command = { type = addcore which = 446 }\r
+ #		command = { type = headofstate which = 100001 } #Jos・Antonio Aguirre\r
+ #		command = { type = headofgovernment which = 100002 } #Jos・Antonio Aguirre\r
+ #		command = { type = armamentminister which = 100004 } #Heliodoro Latorre\r
+@@ -2105,39 +1801,32 @@ event = { # 
+ #		command = { type = chiefofarmy which = 100008  }\r
+ #		command = { type = chiefofnavy which = 100009 } \r
+ #		command = { type = chiefofair which = 100010 }\r
+-\r
+ 		command = { type = set_domestic which = democratic value = 2 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-\r
+-\r
+ 		command = { type = add_division which = "クルド警察" value = militia when = 5 }\r
+ 		command = { type = add_division which = "クルディスタン軍" value = infantry when = 6 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+-\r
+ 		command = { type = event which = 220515 where = OTT when = 2 }\r
+ 		# command = { type = trigger which = 220515 }\r
+ 	}\r
+-\r
+ }\r
+ \r
+ \r
+ \r
+ \r
+-\r
+ event = { # クルド蜂起　―  弾圧か容認か\r
+ 	id = 220515\r
+ 	random = no\r
+ 	country = OTT\r
+ \r
+-\r
+ 	name = "EVT_220515_NAME"\r
+ 	desc = "EVT_220513_DESC"\r
+ 	style = 2\r
+ 	picture = "KUR_independence"\r
+ 	action = {\r
+ 		name = "ACTIONNAME220515A" # 奴らを叩き潰せ！\r
+-\r
++		ai_chance = 100\r
+ 		command = { type = belligerence which = OTT value = 10 }\r
+ 		command = { type = domestic which = democratic value = -1 }\r
+ 		command = { type = dissent value = 3 }\r
+@@ -2145,16 +1834,12 @@ event = { # 
+ 		command = { type = addclaim which = 1036 }\r
+ 		command = { type = addclaim which = 1027 }\r
+ 		command = { type = addclaim which = 1029 }\r
+-\r
+ 		command = { type = addclaim which = 1060 }\r
+ 		command = { type = addclaim which = 1062 }\r
+ 		command = { type = addclaim which = 1063 }\r
+ 		command = { type = addclaim which = 1064 }\r
+-\r
+ 		command = { type = addclaim which = 1082 }\r
+ 		command = { type = addclaim which = 1084 }\r
+-\r
+-\r
+ 		command = { type = war which = KUR }\r
+ 		#command = { type = make_puppet which = KUR }\r
+ 		#command = { type = access which = KUR }\r
+@@ -2162,7 +1847,7 @@ event = { # 
+ 	}\r
+ \r
+ 	action = {\r
+-		name = "ACTIONNAME220515A" # 認めるしかない……\r
++		name = "ACTIONNAME220515B" # 認めるしかない……\r
+ 		ai_chance = 0\r
+ 		command = { type = dissent value = 8 }\r
+ 		command = { type = domestic which  = defense_lobby value = -1 }\r
+@@ -2172,7 +1857,6 @@ event = { # 
+ \r
+ }\r
+ \r
+-\r
+ ##################################################\r
+ # クルド人の独立闘争\r
+ # クルド人は、中東のクルディスタンに住むイラン系山岳民族。\r
+@@ -2182,32 +1866,28 @@ event = { # 
+ # 近年では、各国の枠組みの中でより広範な自治権獲得を目指したり、当事者間による共存のための対話を模索する動きもある。\r
+ ##################################################\r
+ \r
+-\r
+-\r
+ event = { # \r
+ 	id = 220516\r
+ 	random = no\r
+ 	country = KUR\r
+ \r
+ 	trigger = {\r
++		exists = KUR \r
++		OR = { \r
++			Not = { ispuppet = KUR }\r
++			puppet = { country = SOV country = KUR }\r
++			}\r
+ \r
+-			exists = KUR \r
+-			OR = { \r
+-				Not = { ispuppet = KUR }\r
+-				puppet = { country = SOV country = KUR }\r
+-				}\r
+-\r
+-			OR = { \r
+-				war = { country = KUR country = ENG }\r
+-				war = { country = KUR country = GER }\r
+-				# country = KUR country = SOV\r
+-\r
+-				war = { country = KUR country = OTT }\r
+-				war = { country = KUR country = TUR }\r
+-				war = { country = KUR country = PER }\r
+-				war = { country = KUR country = USA }\r
+-				war = { country = KUR country = JAP }\r
+-				}\r
++		OR = { \r
++			war = { country = KUR country = ENG }\r
++			war = { country = KUR country = GER }\r
++			# country = KUR country = SOV\r
++			war = { country = KUR country = OTT }\r
++			war = { country = KUR country = TUR }\r
++			war = { country = KUR country = PER }\r
++			war = { country = KUR country = USA }\r
++			war = { country = KUR country = JAP }\r
++			}\r
+ 	}\r
+ \r
+ \r
+@@ -2236,9 +1916,7 @@ event = { #
+ 		command = { trigger = { control = { province = 1015 data = KUR } } type = construct which = land_fort where = 1015 value = 2 }\r
+ 		command = { type = manpowerpool value = 50 }\r
+ 		command = { type = supplies value = 3500 }\r
+-\r
+ 		command = { type = relation which = SOV value = 150 }\r
+-\r
+ 		command = { trigger = { control = { province = 1029 data = KUR } } type = add_corps which = "第1クルド軍" value = land when = -1 where = 1029 }\r
+ 		command = { trigger = { control = { province = 1029 data = KUR } } type = add_division which = "第1歩兵師団" value = infantry when = 8 }\r
+ 		command = { trigger = { control = { province = 1029 data = KUR } } type = add_division which = "第2歩兵師団" value = infantry when = 8 }\r
+@@ -2262,7 +1940,6 @@ event = { #
+ 		command = { trigger = { control = { province = 1014 data = KUR } } type = add_division which = "第9歩兵師団" value = militia when = 4 }\r
+ 		command = { trigger = { control = { province = 1015 data = KUR } } type = add_corps which = "第9クルド軍" value = land when = -1 where = 1015 }\r
+ 		command = { trigger = { control = { province = 1015 data = KUR } } type = add_division which = "第10歩兵師団" value = militia when = 4 }\r
+-\r
+ 		# イラン領土\r
+ 		command = { trigger = { control = { province = 1082 data = KUR } } type = add_corps which = "第10クルド軍" value = land when = -1 where = 1082 }\r
+ 		command = { trigger = { control = { province = 1082 data = KUR } } type = add_division which = "第11歩兵師団" value = militia when = 4 }\r
+@@ -2286,7 +1963,6 @@ event = { #
+ 		command = { trigger = { control = { province = 1015 data = KUR } } type = construct which = land_fort where = 1015 value = 1 }\r
+ 		command = { type = manpowerpool value = 50 }\r
+ 		command = { type = supplies value = 1000 }\r
+-\r
+ 		command = { trigger = { control = { province = 1029 data = KUR } } type = add_corps which = "第1クルド軍" value = land when = -1 where = 1029 }\r
+ 		command = { trigger = { control = { province = 1029 data = KUR } } type = add_division which = "第14歩兵師団" value = militia when = 4 }\r
+ 		command = { trigger = { control = { province = 1029 data = KUR } } type = add_corps which = "第2モスル軍" value = land when = -1 where = 1029 }\r
+@@ -2339,16 +2015,16 @@ event = { #
+ 	country = OTT\r
+ \r
+ 	trigger = {\r
+-\r
+-			control = { province = 1029 data = KUR } # モスル\r
+-			OR = {\r
+-				control = { province = 1075 data = -2 } # アンカラ\r
+-				control = { province = 409 data = -2 } # イスタンブール\r
+-				}\r
+-			random = 25\r
+-			exists = KUR \r
+-			Not = { ispuppet = KUR }\r
+-			war = { country = OTT country = KUR }\r
++		Not = { ispuppet = yes }\r
++		control = { province = 1029 data = KUR } # モスル\r
++		OR = {\r
++			control = { province = 1075 data = -2 } # アンカラ\r
++			control = { province = 409 data = -2 } # イスタンブール\r
++			}\r
++		random = 25\r
++		exists = KUR \r
++		Not = { ispuppet = KUR }\r
++		war = { country = OTT country = KUR }\r
+ 	}\r
+ \r
+ \r
+@@ -2367,22 +2043,16 @@ event = { #
+ 		name = "ACTIONNAME220517A" # クルディスタンの独立を認める		\r
+ 		command = { type = dissent value = 5 }\r
+ 		command = { type = peace which = KUR value = 0 }\r
+-\r
+-\r
+ 		command = { type = removecore which = 1015 }\r
+ 		command = { type = removecore which = 1036 }\r
+ 		command = { type = removecore which = 1027 }\r
+ 		command = { type = removecore which = 1029 }\r
+-\r
+ 		command = { type = removecore which = 1060 }\r
+ 		command = { type = removecore which = 1062 }\r
+ 		command = { type = removecore which = 1063 }\r
+ 		command = { type = removecore which = 1064 }\r
+-\r
+ 		command = { type = removecore which = 1082 }\r
+ 		command = { type = removecore which = 1084 }\r
+-\r
+-\r
+ 		command = { type = secedeprovince which = KUR value = 1015 }\r
+ 		command = { type = secedeprovince which = KUR value = 1036 }\r
+ 		command = { type = secedeprovince which = KUR value = 1027 }\r
+@@ -2393,14 +2063,12 @@ event = { #
+ 		command = { type = secedeprovince which = KUR value = 1064 }\r
+ 		command = { type = secedeprovince which = KUR value = 1082 }\r
+ 		command = { type = secedeprovince which = KUR value = 1084 }\r
+-\r
+ 		command = { type = set_relation which = KUR value = -50 }\r
+ 	}\r
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME220517B" # ありえん！	\r
+ 		command = { type = dissent value = 2 }\r
+-\r
+ 		command = { type = relation which = KUR value = -50 }\r
+ 	}\r
+ \r
+@@ -2445,8 +2113,6 @@ event = { #
+ 					control = { province = 1081 data = SOV }\r
+ 					}\r
+ 				}\r
+-\r
+-\r
+ 			Not = { exists = KUR }\r
+ \r
+ 	}\r
+@@ -2457,22 +2123,19 @@ event = { #
+ 	}\r
+ \r
+ 	trigger = {\r
+-\r
+ 			Not = { exists = KUR }\r
+-\r
+ 			OR = { \r
+-					And = {\r
++				And = {\r
+ 					exists = OTT\r
+ 					Not = { war = { country = OTT country = SOV } }\r
+-					}\r
++				}\r
+ \r
+-					And = {\r
++				And = {\r
+ 					exists = PER\r
+ 					Not = { war = { country = PER country = SOV } }\r
+ 					control = { province = 1081 data = SOV }\r
+-					}\r
+ 				}\r
+-\r
++			}\r
+ 			random = 25\r
+ 	}\r
+ \r
+@@ -2491,11 +2154,10 @@ event = { #
+ 	action = {\r
+ 		name = "ACTIONNAME220518A" # クルド人の支援を約束する	\r
+ 		# command = { type = dissent value = 5 }\r
+-		command = { type = belligerence which = SOV value = 3 }\r
++		command = { type = belligerence which = SOV value = 2 }\r
+ 		command = { trigger = { ai = no } type = supplies value = -2500 }\r
+ 		command = { trigger = { ai = no } type = money value = -100 }\r
+-\r
+-		command = { type = manpowerpool value = 3 }\r
++		command = { type = manpowerpool value = 5 }\r
+ 		command = { type = relation which = ENG value = -10 }\r
+ 		command = { type = relation which = TUR value = -25 }\r
+ 		command = { type = relation which = OTT value = -25 }\r
+@@ -2528,12 +2190,11 @@ event = { #
+ 	country = OTT\r
+ \r
+ 	trigger = {\r
+-\r
++			Not = { ispuppet = yes }\r
+ 			Not = { exists = KUR }\r
+ 			control = { province = 1029 data = -1 } # モスル\r
+ 			control = { province = 1075 data = -1 } # アンカラ\r
+ 			control = { province =  409 data = -1 } # イスタンブール\r
+-\r
+ 			OR = { 	Not = { core = { province = 1019 data = OTT } }\r
+ 				Not = { core = { province = 1036 data = OTT } }\r
+ 				Not = { core = { province = 1027 data = OTT } }\r
+@@ -2545,10 +2206,7 @@ event = { #
+ 				Not = { core = { province = 1082 data = OTT } }\r
+ 				Not = { core = { province = 1084 data = OTT } }\r
+ 				}\r
+-			\r
+ 			random = 25\r
+-\r
+-			Not = { ispuppet = OTT }\r
+ 	}\r
+ \r
+ \r
+@@ -2567,7 +2225,6 @@ event = { #
+ 		name = "ACTIONNAME220519A" # よかろう	\r
+ 		command = { type = dissent value = 2 }\r
+ 		# command = { type = peace which = KUR value = 0 }\r
+-\r
+ 		command = { type = addcore which = 1015 }\r
+ 		command = { type = addcore which = 1036 }\r
+ 		command = { type = addcore which = 1027 }\r
+@@ -2578,8 +2235,6 @@ event = { #
+ 		command = { type = addcore which = 1064 }\r
+ 		command = { type = addcore which = 1082 }\r
+ 		command = { type = addcore which = 1084 }\r
+-\r
+-\r
+ 		# command = { type = set_relation which = KUR value = -50 }\r
+ 	}\r
+ \r
+@@ -2610,19 +2265,11 @@ event = {
+ 	country = OTT\r
+ \r
+ 	trigger = {\r
+-		# ai = no\r
+-\r
++		NOT = { ispuppet = yes }\r
+ 		headofgovernment = 720701 # ケマル\r
+-\r
+ 		event = 220510 # クルド人の自治独立　　　　 220501 # アッシリア事件\r
+-\r
+-			Not = { exists = PAL # パレスチナ\r
+-				ispuppet = OTT\r
+-				 }\r
+-\r
+-\r
++		Not = { exists = PAL } # パレスチナ\r
+ 		# government = democratic\r
+-\r
+ 		OR = {\r
+ 			control = { province = 1008 data = OTT } # パレスチナ\r
+ 			control = { province = 1010 data = OTT } #\r
+@@ -2647,19 +2294,16 @@ event = {
+ 		ai_chance = 1 # 2\r
+ 		trigger = { Not = { exists = ARA } }\r
+ 		command = { type = sleepevent which = 220523 }\r
+-\r
+ 		command = { type = belligerence which = OTT value = -10 }\r
+-\r
+ 		command = { type = domestic which = democratic value = 1 }\r
+ 		command = { type = domestic which  = defense_lobby value = -1 }\r
+-		command = { type = dissent value = 20 }\r
++		command = { type = dissent value = 15 }\r
+ 		command = { type = removecore which = 1008 } # パレスチナ\r
+ 		command = { type = removecore which = 1009 }\r
+ 		command = { type = removecore which = 1010 }\r
+ 		command = { type = removecore which = 1011 }\r
+ 		command = { type = removecore which = 1013 }\r
+ 		command = { type = removecore which = 1172 }\r
+-\r
+ 		command = { type = removecore which = 1020 } #シリア\r
+ 		command = { type = removecore which = 1023 }\r
+ 		command = { type = removecore which = 1014 }\r
+@@ -2668,7 +2312,6 @@ event = {
+ 		command = { type = removecore which = 1017 }\r
+ 		command = { type = removecore which = 1019 } # レバノン\r
+ 		command = { type = removecore which = 1018 }\r
+-\r
+ 		command = { type = removecore which = 1028 } # イラク\r
+ 		command = { type = removecore which = 1030 }\r
+ 		command = { type = removecore which = 1031 }\r
+@@ -2679,9 +2322,7 @@ event = {
+ 		command = { type = removecore which = 1036 }\r
+ 		command = { type = removecore which = 1037 }\r
+ 		# command = { type = removecore which = 1041 } # クウェート\r
+-\r
+ 		command = { type = independence which = ARA value = 1 }\r
+-\r
+ 		command = { type = secederegion which = ARA value = "Middle East"  when = 1 }\r
+ 		command = { type = secederegion which = OTT value = "Anatolia"  when = 1 }\r
+ 		command = { type = event which = 220521 where = ARA when = 1 }\r
+@@ -2689,21 +2330,17 @@ event = {
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME220520B" # パレスチナのみに限定した自治を認める\r
+-		ai_chance = 3\r
++		ai_chance = 4\r
+ 		command = { type = sleepevent which = 220523 }\r
+-\r
+ 		command = { type = belligerence which = OTT value = -3 }\r
+-\r
+ 		command = { type = domestic which = democratic value = 1 }\r
+-		command = { type = dissent value = 25 }\r
+-\r
++		command = { type = dissent value = 20 }\r
+ 		command = { type = removecore which = 1008 } # パレスチナ\r
+ 		command = { type = removecore which = 1009 }\r
+ 		command = { type = removecore which = 1010 }\r
+ 		command = { type = removecore which = 1011 }\r
+ 		command = { type = removecore which = 1013 }\r
+ 		command = { type = removecore which = 1172 }\r
+-\r
+ 		command = { type = independence which = PAL value = 1 }\r
+ 		command = { type = secedeprovince which = PAL value = 1008 }\r
+ 		command = { type = secedeprovince which = PAL value = 1009 }\r
+@@ -2711,16 +2348,14 @@ event = {
+ 		command = { type = secedeprovince which = PAL value = 1011 }\r
+ 		command = { type = secedeprovince which = PAL value = 1013 }\r
+ 		command = { type = secedeprovince which = PAL value = 1172 }\r
+-\r
+ 		command = { type = secederegion which = OTT value = "Anatolia"  when = 1 }\r
+-\r
+ 		command = { type = event which = 220521 where = PAL when = 1 }\r
+ 	}\r
+ \r
+ \r
+ 	action = {\r
+ 	 	name = "ACTIONNAME220520C" # 帝国は唯一にして不可分である\r
+-		ai_chance = 96\r
++		ai_chance = 95\r
+ 		command = { type = dissent value = 1 }\r
+ 		# command = { type = revolt which = 443 }\r
+ 	}\r
+@@ -2761,7 +2396,6 @@ event = { #
+ #		command = { type = chiefofarmy which = 100008  }\r
+ #		command = { type = chiefofnavy which = 100009 } \r
+ #		command = { type = chiefofair which = 100010 }\r
+-\r
+ 		command = { type = add_division which = "アラブ警察" value = militia when = 5 }\r
+ 		command = { type = add_division which = "アラブ軍" value = hq when = 1 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+@@ -2803,7 +2437,6 @@ event = { #
+ 		command = { type = add_division value = infantry when = 6 }\r
+ 		command = { type = alliance which = OTT }\r
+ 		command = { type = access which = OTT }\r
+-\r
+ 		command = { type = trigger which = 220522 }\r
+ 	}\r
+ \r
+@@ -2818,18 +2451,15 @@ event = {
+ 	random = no\r
+ 	country = OTT\r
+ \r
+-\r
+ 	name = "EVT_220520_NAME"\r
+ 	desc = "EVT_220520_DESC"\r
+ 	style = 2\r
+ 	picture = "Palestine1920"\r
+ 	action = {\r
+ 		name = "ACTION_NAME_OK" # \r
+-\r
+ 		command = { type = make_puppet which = PAL }\r
+ 		command = { type = access which = PAL }\r
+ 		command = { type = relation which = PAL value = 200 }\r
+-\r
+ 		command = { type = make_puppet which = ARA }\r
+ 		command = { type = access which = ARA }\r
+ 		command = { type = relation which = ARA value = 200 }\r
+@@ -2863,17 +2493,11 @@ event = {
+ 	random = no\r
+ 	country = OTT\r
+ \r
+-	trigger = {\r
+-\r
+-		# headofgovernment = 720701 # ケマル\r
+-\r
+-		# event = 220501 # アッシリア事件\r
+-\r
+-			Not = { exists = PAL\r
+-				exists = ARA\r
+-				ispuppet = OTT\r
+-				 }\r
+-\r
++	trigger = {\r
++		NOT = { ispuppet = yes }\r
++		Not = { exists = PAL\r
++			exists = ARA\r
++			 }\r
+ 		OR = {\r
+ 			control = { province = 1008 data = OTT } # パレスチナ\r
+ 			control = { province = 1009 data = OTT } #\r
+@@ -2881,8 +2505,6 @@ event = {
+ 			control = { province = 1011 data = OTT } #\r
+ 			control = { province = 1172 data = OTT } #\r
+ 			}\r
+-\r
+-\r
+ 		OR = {\r
+ 			And = {\r
+ 				atwar = yes\r
+@@ -2914,22 +2536,17 @@ event = {
+ 	action = {\r
+ 		name = "ACTIONNAME220523A" # なんてこった！\r
+ 		ai_chance = 2\r
+-\r
+ 		# command = { type = belligerence which = OTT value = -10 }\r
+-\r
+ 		# command = { type = domestic which = democratic value = -1 }\r
+ 		command = { type = dissent value = 7 }\r
+-\r
+ 		command = { type = removecore which = 1008 } # パレスチナ\r
+ 		command = { type = removecore which = 1009 }\r
+ 		command = { type = removecore which = 1010 }\r
+ 		command = { type = removecore which = 1011 }\r
+ 		command = { type = removecore which = 1172 }\r
+-\r
+ 		command = { type = removecore which = 1020 } #シリア\r
+ 		command = { type = removecore which = 1021 }\r
+ 		command = { type = removecore which = 1023 }\r
+-\r
+ 		command = { type = removecore which = 1013 }\r
+ 		command = { type = removecore which = 1014 }\r
+ 		command = { type = removecore which = 1015 }\r
+@@ -2937,7 +2554,6 @@ event = {
+ 		command = { type = removecore which = 1017 }\r
+ 		command = { type = removecore which = 1019 } # レバノン\r
+ 		command = { type = removecore which = 1018 }\r
+-\r
+ 		#command = { type = removecore which = 1028 } # イラク\r
+ 		#command = { type = removecore which = 1030 }\r
+ 		#command = { type = removecore which = 1031 }\r
+@@ -2948,20 +2564,15 @@ event = {
+ 		#command = { type = removecore which = 1036 }\r
+ 		#command = { type = removecore which = 1037 }\r
+ 		#command = { type = removecore which = 1041 } # クウェート\r
+-\r
+ 		command = { type = independence which = PAL value = 1 }\r
+-\r
+-\r
+ 		command = { type = secedeprovince which = PAL value = 1008 }\r
+ 		command = { type = secedeprovince which = PAL value = 1009 }\r
+ 		command = { type = secedeprovince which = PAL value = 1010 }\r
+ 		command = { type = secedeprovince which = PAL value = 1011 }\r
+ 		command = { type = secedeprovince which = PAL value = 1172 }\r
+-\r
+ 		command = { type = secedeprovince which = PAL value = 1020 }\r
+ 		# command = { type = secedeprovince which = PAL value = 1021 }\r
+ 		command = { type = secedeprovince which = PAL value = 1023 }\r
+-\r
+ 		command = { type = secedeprovince which = PAL value = 1013 }\r
+ 		# command = { type = secedeprovince which = PAL value = 1014 }\r
+ 		# command = { type = secedeprovince which = PAL value = 1015 }\r
+@@ -2969,10 +2580,7 @@ event = {
+ 		# command = { type = secedeprovince which = PAL value = 1017 }\r
+ 		command = { type = secedeprovince which = PAL value = 1019 }\r
+ 		command = { type = secedeprovince which = PAL value = 1018 }\r
+-\r
+-\r
+ 		command = { type = setflag which = PAL_OTTUPR }\r
+-\r
+ 		command = { type = trigger which = 220524 }\r
+ 	}\r
+ \r
+@@ -2986,7 +2594,6 @@ event = { # 
+ 	random = no\r
+ 	country = PAL\r
+ \r
+-\r
+ 	name = "EVT_220524_NAME"\r
+ 	desc = "EVT_220523_DESC"\r
+ 	style = 2\r
+@@ -2995,8 +2602,7 @@ event = { # 
+ 	action = {\r
+ 		name = "ACTIONNAME220524A" # よし！\r
+ 		trigger = { event = 220528 } # ドイツの支援有り\r
+-\r
+-#		command = { type = headofstate which = 100001 } #Jos・Antonio Aguirre\r
++		command = { type = headofstate which = 510011 } #ハジ・アミン・アル・フセイン\r
+ #		command = { type = headofgovernment which = 100002 } #Jos・Antonio Aguirre\r
+ #		command = { type = armamentminister which = 100004 } #Heliodoro Latorre\r
+ #		command = { type = foreignminister which = 100003 } #Luis Arana\r
+@@ -3006,13 +2612,8 @@ event = { # 
+ #		command = { type = chiefofarmy which = 100008  }\r
+ #		command = { type = chiefofnavy which = 100009 } \r
+ #		command = { type = chiefofair which = 100010 }\r
+-\r
+ 		command = { type = set_domestic which = democratic value = 2 }\r
+ 		command = { type = set_domestic which = political_left value = 1 }\r
+-\r
+-\r
+-\r
+-\r
+ 		command = { type = addcore which = 1020 } #シリア\r
+ 		command = { type = addcore which = 1021 }\r
+ 		command = { type = addcore which = 1023 }\r
+@@ -3023,14 +2624,10 @@ event = { # 
+ 		command = { type = addcore which = 1017 }\r
+ 		command = { type = addcore which = 1019 } # レバノン\r
+ 		command = { type = addcore which = 1018 }\r
+-\r
+-\r
+-\r
+ 		command = { type = add_division which = "パレスチナ警察" value = militia when = 4 }\r
+ 		command = { type = add_division which = "パレスチナ軍" value = infantry when = 6 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+-\r
+ 		command = { type = event which = 220525 where = OTT when = 2 }\r
+ 		# command = { type = trigger which = 220515 }\r
+ 	}\r
+@@ -3054,13 +2651,8 @@ event = { # 
+ #		command = { type = chiefofarmy which = 100008  }\r
+ #		command = { type = chiefofnavy which = 100009 } \r
+ #		command = { type = chiefofair which = 100010 }\r
+-\r
+ 		command = { type = set_domestic which = democratic value = 3 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-\r
+-\r
+-\r
+-\r
+ 		command = { type = addcore which = 1020 } #シリア\r
+ 		command = { type = addcore which = 1021 }\r
+ 		command = { type = addcore which = 1023 }\r
+@@ -3071,13 +2663,9 @@ event = { # 
+ 		command = { type = addcore which = 1017 }\r
+ 		command = { type = addcore which = 1019 } # レバノン\r
+ 		command = { type = addcore which = 1018 }\r
+-\r
+-\r
+-\r
+ 		command = { type = add_division which = "パレスチナ警察" value = militia when = 4 }\r
+ 		command = { type = add_division which = "パレスチナ軍" value = infantry when = 6 }\r
+ 		command = { type = add_division value = infantry when = 6 }\r
+-\r
+ 		command = { type = event which = 220525 where = OTT when = 2 }\r
+ 		# command = { type = trigger which = 220515 }\r
+ 	}\r
+@@ -3085,15 +2673,11 @@ event = { # 
+ }\r
+ \r
+ \r
+-\r
+-\r
+-\r
+ event = { # パレスチナ独立戦争　―  弾圧か容認か\r
+ 	id = 220525\r
+ 	random = no\r
+ 	country = OTT\r
+ \r
+-\r
+ 	name = "EVT_220525_NAME"\r
+ 	desc = "EVT_220523_DESC"\r
+ 	style = 2\r
+@@ -3104,17 +2688,14 @@ event = { # 
+ 		command = { type = belligerence which = OTT value = 10 }\r
+ 		command = { type = domestic which = democratic value = -1 }\r
+ 		command = { type = dissent value = 3 }\r
+-\r
+ 		command = { type = addclaim which = 1008 } # パレスチナ\r
+ 		command = { type = addclaim which = 1009 }\r
+ 		command = { type = addclaim which = 1010 }\r
+ 		command = { type = addclaim which = 1011 }\r
+ 		command = { type = addclaim which = 1172 }\r
+-\r
+ 		command = { type = addclaim which = 1020 } #シリア\r
+ 		command = { type = addclaim which = 1021 }\r
+ 		command = { type = addclaim which = 1023 }\r
+-\r
+ 		command = { type = addclaim which = 1013 }\r
+ 		command = { type = addclaim which = 1014 }\r
+ 		command = { type = addclaim which = 1015 }\r
+@@ -3122,7 +2703,6 @@ event = { # 
+ 		command = { type = addclaim which = 1017 }\r
+ 		command = { type = addclaim which = 1019 } # レバノン\r
+ 		command = { type = addclaim which = 1018 }\r
+-\r
+ 		command = { type = war which = PAL }\r
+ 		#command = { type = make_puppet which = PAL }\r
+ 		#command = { type = access which = PAL }\r
+@@ -3162,10 +2742,8 @@ event = { #
+ 	country = PAL\r
+ \r
+ 	trigger = {\r
+-\r
+ 			exists = PAL \r
+-			OR = { \r
+-				Not = { ispuppet = PAL }\r
++			OR = {  Not = { ispuppet = PAL }\r
+ 				puppet = { country = GER country = PAL }\r
+ 				}\r
+ \r
+@@ -3197,9 +2775,6 @@ event = { #
+ 	action = {\r
+ 		name = "ACTIONNAME220526A" # 今こそ聖戦の時！\r
+ 		trigger = { event = 220528 } # ドイツの支援有り\r
+-\r
+-\r
+-\r
+ 		#command = { trigger = { control = { province = 1008 data = PAL } } type = construct which = land_fort where = 1008 value = 3 }\r
+ 		#command = { trigger = { control = { province = 1009 data = PAL } } type = construct which = land_fort where = 1009 value = 2 }\r
+ 		#command = { trigger = { control = { province = 1010 data = PAL } } type = construct which = land_fort where = 1010 value = 2 }\r
+@@ -3211,19 +2786,15 @@ event = { #
+ 		#command = { trigger = { control = { province = 1018 data = PAL } } type = construct which = land_fort where = 1018 value = 2 }\r
+ 		command = { type = manpowerpool value = 50 }\r
+ 		command = { type = supplies value = 3500 }\r
+-\r
+ 		command = { type = relation which = GER value = 175 }\r
+-\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_corps which = "第1パレスチナ軍" value = land when = -1 where = 1172 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第1歩兵師団" value = infantry when = 8 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第2歩兵師団" value = infantry when = 8 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第13歩兵師団" value = militia when = 5 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第14歩兵師団" value = militia when = 5 }\r
+-\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_corps which = "聖地守備隊" value = land when = -1 where = 1172 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第1エルサレム守備隊" value = garrison when = 4 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第2エルサレム守備隊" value = garrison when = 4 }\r
+-\r
+ 		command = { trigger = { control = { province = 1008 data = PAL } } type = add_corps which = "第2パレスチナ軍" value = land when = -1 where = 1008 }\r
+ 		command = { trigger = { control = { province = 1008 data = PAL } } type = add_division which = "第3歩兵師団" value = militia when = 4 }\r
+ 		command = { trigger = { control = { province = 1009 data = PAL } } type = add_corps which = "第3パレスチナ軍" value = land when = -1 where = 1009 }\r
+@@ -3232,9 +2803,6 @@ event = { #
+ 		command = { trigger = { control = { province = 1010 data = PAL } } type = add_division which = "第5歩兵師団" value = militia when = 4 }\r
+ 		command = { trigger = { control = { province = 1011 data = PAL } } type = add_corps which = "第5パレスチナ軍" value = land when = -1 where = 1011 }\r
+ 		command = { trigger = { control = { province = 1011 data = PAL } } type = add_division which = "第6歩兵師団" value = militia when = 4 }\r
+-\r
+-\r
+-\r
+ 		command = { trigger = { control = { province = 1016 data = PAL } } type = add_corps which = "ダマスカス軍" value = land when = -1 where = 1016 }\r
+ 		command = { trigger = { control = { province = 1016 data = PAL } } type = add_division which = "第7歩兵師団" value = infantry when = 7 }\r
+ 		command = { trigger = { control = { province = 1016 data = PAL } } type = add_division which = "第8歩兵師団" value = militia when = 4 }\r
+@@ -3248,7 +2816,6 @@ event = { #
+ 	action = {\r
+ 		name = "ACTIONNAME220526A" # 今こそ聖戦の時！\r
+ 		trigger = { Not = { event = 220528 } } # ドイツの支援なし\r
+-\r
+ 		#command = { trigger = { control = { province = 1008 data = PAL } } type = construct which = land_fort where = 1008 value = 3 }\r
+ 		#command = { trigger = { control = { province = 1009 data = PAL } } type = construct which = land_fort where = 1009 value = 2 }\r
+ 		#command = { trigger = { control = { province = 1010 data = PAL } } type = construct which = land_fort where = 1010 value = 2 }\r
+@@ -3260,17 +2827,14 @@ event = { #
+ 		#command = { trigger = { control = { province = 1018 data = PAL } } type = construct which = land_fort where = 1018 value = 2 }\r
+ 		command = { type = manpowerpool value = 50 }\r
+ 		command = { type = supplies value = 1000 }\r
+-\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_corps which = "第1パレスチナ軍" value = land when = -1 where = 1172 }\r
+ 		#command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第1歩兵師団" value = infantry when = 8 }\r
+ 		#command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第2歩兵師団" value = infantry when = 8 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第13歩兵師団" value = militia when = 4 }\r
+ 		# command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第14歩兵師団" value = militia when = 5 }\r
+-\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_corps which = "聖地守備隊" value = land when = -1 where = 1172 }\r
+ 		command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第1エルサレム守備隊" value = garrison when = 4 }\r
+ 		#command = { trigger = { control = { province = 1172 data = PAL } } type = add_division which = "第2エルサレム守備隊" value = garrison when = 4 }\r
+-\r
+ 		command = { trigger = { control = { province = 1008 data = PAL } } type = add_corps which = "第2パレスチナ軍" value = land when = -1 where = 1008 }\r
+ 		command = { trigger = { control = { province = 1008 data = PAL } } type = add_division which = "第3歩兵師団" value = militia when = 4 }\r
+ 		command = { trigger = { control = { province = 1009 data = PAL } } type = add_corps which = "第3パレスチナ軍" value = land when = -1 where = 1009 }\r
+@@ -3279,9 +2843,6 @@ event = { #
+ 		command = { trigger = { control = { province = 1010 data = PAL } } type = add_division which = "第5歩兵師団" value = militia when = 4 }\r
+ 		command = { trigger = { control = { province = 1011 data = PAL } } type = add_corps which = "第5パレスチナ軍" value = land when = -1 where = 1011 }\r
+ 		command = { trigger = { control = { province = 1011 data = PAL } } type = add_division which = "第6歩兵師団" value = militia when = 4 }\r
+-\r
+-\r
+-\r
+ 		command = { trigger = { control = { province = 1016 data = PAL } } type = add_corps which = "ダマスカス軍" value = land when = -1 where = 1016 }\r
+ 		#command = { trigger = { control = { province = 1016 data = PAL } } type = add_division which = "第7歩兵師団" value = infantry when = 7 }\r
+ 		command = { trigger = { control = { province = 1016 data = PAL } } type = add_division which = "第8歩兵師団" value = militia when = 4 }\r
+@@ -3319,32 +2880,29 @@ event = { #
+ 	country = OTT\r
+ \r
+ 	trigger = {\r
+-\r
+-			lost_national = { country = OTT value = 25 }\r
+-			OR = {\r
+-				control = { province = 1075 data = -2 } # アンカラ\r
+-				control = { province = 409 data = -2 } # イスタンブール\r
++		NOT = { ispuppet = yes }\r
++		lost_national = { country = OTT value = 25 }\r
++		random = 25\r
++		OR = {\r
++			control = { province = 1075 data = -2 } # アンカラ\r
++			control = { province = 409 data = -2 } # イスタンブール\r
++			}\r
++		OR = { \r
++			And = { \r
++				control = { province = 1172 data = PAL } # エルサレム\r
++				exists = PAL \r
++				Not = { ispuppet = PAL }\r
++				war = { country = OTT country = PAL }\r
+ 				}\r
+-			random = 25\r
+-			OR = { \r
+-				And = { \r
+-					control = { province = 1172 data = PAL } # エルサレム\r
+-					exists = PAL \r
+-					Not = { ispuppet = PAL }\r
+-					war = { country = OTT country = PAL }\r
+-					}\r
+-\r
+-				And = { \r
+-					control = { province = 1049 data = SAU } # メッカ\r
+-					exists = SAU\r
+-					Not = { ispuppet = SAU }\r
+-					war = { country = OTT country = SAU }\r
+-					}\r
++			And = { \r
++				control = { province = 1049 data = SAU } # メッカ\r
++				exists = SAU\r
++				Not = { ispuppet = SAU }\r
++				war = { country = OTT country = SAU }\r
+ 				}\r
+-\r
++			}\r
+ 	}\r
+ \r
+-\r
+ 	name = "EVT_220527_NAME"\r
+ 	desc = "EVT_220527_DESC"\r
+ 	style = 2\r
+@@ -3360,7 +2918,7 @@ event = { #
+ 		name = "ACTIONNAME220517A" # パレスチナの独立を認めよう	\r
+ 		ai_chance = 100\r
+ 		command = { type = dissent value = 5 }\r
+-\r
++		command = { type = domestic which  = defense_lobby value = -1 }\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = removeclaim which = 1008 } # パレスチナ\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = removeclaim which = 1009 }\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = removeclaim which = 1010 }\r
+@@ -3376,8 +2934,6 @@ event = { #
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = removeclaim which = 1017 }\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = removeclaim which = 1019 } # レバノン\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = removeclaim which = 1018 }\r
+-\r
+-\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = secedeprovince which = PAL value = 1008 }\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = secedeprovince which = PAL value = 1009 }\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = secedeprovince which = PAL value = 1010 }\r
+@@ -3408,9 +2964,6 @@ event = { #
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = removeclaim which = 1036 }\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = removeclaim which = 1037 }\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = removeclaim which = 1041 } # クウェート\r
+-\r
+-\r
+-\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = secedeprovince which = SAU value = 1022 } # ヨルダン\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = secedeprovince which = SAU value = 1024 }\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = secedeprovince which = SAU value = 1025 }\r
+@@ -3425,26 +2978,18 @@ event = { #
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = secedeprovince which = SAU value = 1036 }\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = secedeprovince which = SAU value = 1037 }\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = secedeprovince which = SAU value = 1041 } # クウェート\r
+-\r
+-\r
+-\r
+ 		command = { trigger = { war = { country = OTT country = PAL } } type = peace which = PAL value = 0 }\r
+-\r
+ 		command = { trigger = { war = { country = OTT country = SAU } } type = peace which = SAU value = 0 }\r
+-\r
+ 		command = { type = set_relation which = PAL value = -50 }\r
+ 	}\r
+ \r
+ 	action = {\r
+ 		name = "ACTIONNAME220517B" # カリフに逆らう愚か者め！\r
+ 		ai_chance = 0\r
+-		command = { type = dissent value = 2 }\r
+-\r
++		command = { type = dissent value = 10 }\r
+ 		command = { type = relation which = PAL value = -50 }\r
+ 		command = { type = relation which = SAU value = -50 }\r
+ 	}\r
+-\r
+-\r
+ }\r
+ \r
+ \r
+@@ -3477,57 +3022,47 @@ event = { #
+ \r
+ \r
+ 	decision = {\r
+-			OR = { \r
+-					And = {\r
+-						exists = OTT\r
+-						Not = { alliance = { country = OTT country = GER } }\r
++		NOT = { ispuppet = yes }\r
++		OR = { \r
++			And = { exists = OTT\r
++				Not = { alliance = { country = OTT country = GER } }\r
+ 					}\r
+-					event = 2001094 # バニラアラブの反乱\r
+-					event = 202001 # fullkai、ai用アラブの反乱\r
+-				}\r
+-\r
+-			OR = { \r
+-				And = { exists = OTT year = 1937 }\r
+-				war = { country = ENG country = IRQ }\r
+-				war = { country = ENG country = ARA }\r
+-				war = { country = ENG country = PER }\r
+-				}\r
+-\r
+-\r
+-\r
+-			Not = { exists = PAL }\r
++			event = 2001094 # バニラアラブの反乱\r
++			event = 202001 # fullkai、ai用アラブの反乱\r
++			}\r
++		OR = { \r
++			And = { exists = OTT year = 1937 }\r
++			war = { country = ENG country = IRQ }\r
++			war = { country = ENG country = ARA }\r
++			war = { country = ENG country = PER }\r
++			}\r
++		Not = { exists = PAL }\r
+ \r
+ 	}\r
+ 	decision_trigger = { \r
+ 		supplies = 3000 # 2500\r
+ 		money = 100\r
+-\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-\r
+-			Not = { exists = PAL }\r
+-\r
+-			OR = { \r
+-					And = {\r
+-						exists = OTT\r
+-						Not = { alliance = { country = OTT country = GER } }\r
++		NOT = { ispuppet = yes }\r
++		OR = { \r
++			And = { exists = OTT\r
++				Not = { alliance = { country = OTT country = GER } }\r
+ 					}\r
+-					event = 2001094 # バニラアラブの反乱\r
+-					event = 202001 # fullkai、ai用アラブの反乱\r
+-				}\r
+-\r
+-			OR = { \r
+-				And = { exists = OTT year = 1937 }\r
+-				war = { country = ENG country = IRQ }\r
+-				war = { country = ENG country = ARA }\r
+-				war = { country = ENG country = PER }\r
+-				}\r
+-\r
+-			random = 25\r
++			event = 2001094 # バニラアラブの反乱\r
++			event = 202001 # fullkai、ai用アラブの反乱\r
++			}\r
++		OR = { \r
++			And = { exists = OTT year = 1937 }\r
++			war = { country = ENG country = IRQ }\r
++			war = { country = ENG country = ARA }\r
++			war = { country = ENG country = PER }\r
++			}\r
++		Not = { exists = PAL }\r
++		random = 25\r
+ 	}\r
+ \r
+-\r
+ 	name = "EVT_220528_NAME"\r
+ 	desc = "EVT_220528_DESC"\r
+ 	style = 2\r
+@@ -3543,25 +3078,20 @@ event = { #
+ 		name = "ACTIONNAME220528A" # アラブ人の支援を約束する\r
+ \r
+ 		command = { type = add_division which = "第13SS武装山岳師団" value = bergsjaeger when = 9 }\r
+-\r
+ 		# command = { type = dissent value = 5 }\r
+-		command = { type = belligerence which = GER value = 3 }\r
++		command = { type = belligerence which = GER value = 2 }\r
+ 		command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 		command = { trigger = { ai = no } type = money value = -100 }\r
+-\r
+ 		# command = { type = manpowerpool value = 3 }\r
+ 		command = { type = relation which = ENG value = -10 }\r
+ 		command = { type = relation which = TUR value = -25 }\r
+ 		command = { type = relation which = OTT value = -25 }\r
+-		command = { type = relation which = PER value = -25 }\r
++		command = { type = relation which = SOV value = -25 }\r
+ 		command = { type = relation which = IRQ value =  25 }\r
+ 		command = { type = relation which = ARA value =  25 }\r
+ 	}\r
+ }\r
+ \r
+-\r
+-\r
+-\r
+ ##################################################\r
+ # アラブ人の独立闘争の終焉\r
+ #  「アラブ人」という概念は人種的存在とは言えない。\r
+@@ -3577,39 +3107,33 @@ event = { #
+ # アミーン・フサイニーに虐殺され続けたユダヤ人遺族はこの報に涙したという……\r
+ ##################################################\r
+ \r
+-\r
+-\r
+ event = { # \r
+ 	id = 220529\r
+ 	random = no\r
+ 	country = OTT\r
+ \r
+ 	trigger = {\r
+-\r
+-			Not = { exists = PAL }\r
+-			control = { province = 1172 data = -1 } # エルサレム\r
+-			control = { province = 1075 data = -1 } # アンカラ\r
+-			control = { province =  409 data = -1 } # イスタンブール\r
+-\r
+-			OR = { 	Not = { core = { province = 1008 data = OTT } }\r
+-				Not = { core = { province = 1009 data = OTT } }\r
+-				Not = { core = { province = 1010 data = OTT } }\r
+-				Not = { core = { province = 1011 data = OTT } }\r
+-				Not = { core = { province = 1172 data = OTT } }\r
+-				Not = { core = { province = 1020 data = OTT } }\r
+-				Not = { core = { province = 1021 data = OTT } }\r
+-				Not = { core = { province = 1023 data = OTT } }\r
+-				Not = { core = { province = 1014 data = OTT } }\r
+-				Not = { core = { province = 1015 data = OTT } }\r
+-				Not = { core = { province = 1016 data = OTT } }\r
+-				Not = { core = { province = 1017 data = OTT } }\r
+-				Not = { core = { province = 1018 data = OTT } }\r
+-				Not = { core = { province = 1019 data = OTT } }\r
+-				}\r
+-			\r
+-			random = 25\r
+-\r
+-			Not = { ispuppet = OTT }\r
++		NOT = { ispuppet = yes }\r
++		Not = { exists = PAL }\r
++		control = { province = 1172 data = -1 } # エルサレム\r
++		control = { province = 1075 data = -1 } # アンカラ\r
++		control = { province =  409 data = -1 } # イスタンブール\r
++		OR = { 	Not = { core = { province = 1008 data = OTT } }\r
++			Not = { core = { province = 1009 data = OTT } }\r
++			Not = { core = { province = 1010 data = OTT } }\r
++			Not = { core = { province = 1011 data = OTT } }\r
++			Not = { core = { province = 1172 data = OTT } }\r
++			Not = { core = { province = 1020 data = OTT } }\r
++			Not = { core = { province = 1021 data = OTT } }\r
++			Not = { core = { province = 1023 data = OTT } }\r
++			Not = { core = { province = 1014 data = OTT } }\r
++			Not = { core = { province = 1015 data = OTT } }\r
++			Not = { core = { province = 1016 data = OTT } }\r
++			Not = { core = { province = 1017 data = OTT } }\r
++			Not = { core = { province = 1018 data = OTT } }\r
++			Not = { core = { province = 1019 data = OTT } }\r
++			}\r
++		random = 25\r
+ 	}\r
+ \r
+ \r
+@@ -3626,7 +3150,6 @@ event = { #
+ 	action = {\r
+ 		name = "ACTIONNAME220529A" # よかろう	\r
+ 		command = { type = dissent value = 2 }\r
+-\r
+ 		command = { type = addcore which = 1008 } # パレスチナ\r
+ 		command = { type = addcore which = 1009 }\r
+ 		command = { type = addcore which = 1010 }\r
+@@ -3635,7 +3158,6 @@ event = { #
+ 		command = { type = addcore which = 1020 } #シリア\r
+ 		command = { type = addcore which = 1021 }\r
+ 		command = { type = addcore which = 1023 }\r
+-\r
+ 		command = { type = addcore which = 1013 }\r
+ 		command = { type = addcore which = 1014 }\r
+ 		command = { type = addcore which = 1015 }\r
+@@ -3643,12 +3165,7 @@ event = { #
+ 		command = { type = addcore which = 1017 }\r
+ 		command = { type = addcore which = 1019 } # レバノン\r
+ 		command = { type = addcore which = 1018 }\r
+-\r
+-\r
+-		# command = { type = set_relation which = KUR value = -50 }\r
+ 	}\r
+-\r
+-\r
+ }\r
+ \r
+ \r
+@@ -3724,14 +3241,11 @@ event = {
+ 		command = { type = relation which = FRA value = -10 }\r
+ 		command = { type = relation which = ENG value = -25 } # -10\r
+ 		command = { type = relation which = SOV value = -50 }\r
+-\r
+ 		command = { type = relation which = GER value = 20 }\r
+-\r
+ 		command = { trigger = { flag = PER_Anti_comintern_pact } type = relation which = PER value = 10 }\r
+ 		command = { trigger = { flag = UER_Anti_comintern_pact } type = relation which = UER value = 10 }\r
+ 		command = { trigger = { flag = JAP_Anti_comintern_pact } type = relation which = JAP value = 10 }\r
+ 		command = { trigger = { flag = ITA_Anti_comintern_pact } type = relation which = ITA value = 10 }\r
+-\r
+ 		command = { type = sleepevent which = 220507 }\r
+ 		command = { type = setflag which = OTT_Anti_comintern_pact }\r
+ 		# command = { type = trigger which = 2003008 }\r
+@@ -3744,11 +3258,11 @@ event = {
+ #  イスマイル・エンヴェル・パシャはオスマン帝国末期の軍人・政治家。\r
+ # 青年トルコ革命の指導者であり、1913年以降オスマン帝国陸軍大臣・参謀総長としてジェマル、タラートらとともに「三頭政治」を主導する。\r
+ # 第一次世界大戦ではエンヴェル・パシャは親ドイツ派としてオスマン帝国の中央同盟国加入を頑なに主張した。\r
+-# エンヴェルは大攻勢「サルカムシュ」を計画し陣頭指揮を執るが、補給や装備の杜撰さもありオスマン帝国軍は壊滅、\r
+-# このように失策が重なったこともありエンヴェルは徐々に影響力を失い失脚していた。\r
++# エンヴェルは大攻勢「サルカムシュ」を計画し陣頭指揮を執るが、補給や装備の杜撰さもありオスマン帝国軍は壊滅の憂き目にあう。\r
++# このように失策が重なったこともあり、エンヴェルは徐々に政府内での影響力を失い、失脚していた。\r
+ # エンヴェルは復権を果たすべく、ドイツなどから援助を得たうえで、バクーで開かれた東方諸民族大会に出席しイスラーム革命団体連合を結成するなど、\r
+-# 広範な汎テュルク汎イスラームの団結を呼びかけ、外部からアナトリアに乗り込み政権掌握を目論んだ。\r
+-# エンヴェルは帝国選挙の混乱に乗じ、不遇をかこっていたアブデュルケリム・エフェンディを擁立したクーデターを画策した。\r
++# 広範な汎テュルク汎イスラームの団結を呼びかけ、外部からアナトリアに乗り込むことでの政権掌握を目論んだ。\r
++# エンヴェルは帝国選挙の混乱に乗じ、不遇をかこっていた皇子アブデュルケリム・エフェンディを擁立したクーデターを画策した。\r
+ # しかし計画は国軍を掌握しているムスタファ・ケマルに早々に露見しており、クーデターは失敗、エンヴェルはトルキスタンに逃亡した。\r
+ #########################################################################\r
+ \r
+@@ -3763,10 +3277,8 @@ event = {
+ 			event = 220509 # 議会選挙\r
+ 	}\r
+ \r
+-	date = { day = 5 month = April year = 1933 }\r
++	date = { day = 7 month = April year = 1933 }\r
+ \r
+-	# name = "EVT_101_NAME"\r
+-	# desc = "EVT_101_DESC"\r
+ 	name = "EVT_220531_NAME"\r
+ 	desc = "EVT_220531_DESC"\r
+ 	picture = "ENPER"\r
+@@ -3774,64 +3286,44 @@ event = {
+ 	action = {\r
+ 		name = "ACTIONNAME220531A" #クーデターは失敗した\r
+ 		ai_chance = 99\r
+-		command = { type = dissent value = 5 }\r
++		command = { type = dissent value = 2 }\r
+ 		command = { type = event which = 220532 where = UPE when = 30 }\r
+ 		command = { type = sleepminister which = 720714 } #アブデュルケリム・エフェンディ\r
+ 		command = { type = sleepminister which = 720706 } #イスマイル・エンヴェル・パシャ\r
+ 		command = { type = sleepleader which = 720023 } # エンヴェル・パシャ\r
+ 		command = { type = sleepleader which = 720091 } # エンヴェル\r
+-\r
+ 	}\r
+ \r
+-\r
+ 	action = {\r
+ 		name = "ACTIONNAME220531B" #エンヴェル・パシャが政権を握った！\r
+ 		ai_chance = 1\r
+ 		command = { type = dissent value = 15 }\r
+-\r
+ 		command = { type = domestic which = democratic value = -2 }\r
+ 		command = { type = domestic which = political_left value = -2 } \r
+-\r
+-\r
+ 		command = { type = relation which = GER value = 25 }\r
+ 		command = { type = relation which = FRA value = -25 }\r
+ 		command = { type = relation which = ENG value = -25 }\r
+ 		command = { type = relation which = SOV value = -25 }\r
+-\r
+-		command = { type = sleepevent which = 210001 } # オスマン皇族来日 # 日本東トルキスタン関連イベント\r
+-		command = { type = sleepevent which = 210002 } # オスマン皇族の出国\r
+-\r
+-\r
+ 		command = { type = headofstate which = 720714 } # アブデュルケリム・エフェンディ\r
+ 		command = { type = headofgovernment which = 720706 } # イスマイル・エンヴェル・パシャ\r
+ 		command = { type = chiefofarmy which = 720707 } # イスマイル・エンヴェル・パシャ\r
+-\r
+ 		command = { type = sleepminister which = 720701 } #ケマル\r
+ 		command = { type = sleepminister which = 720711 } #イスメト・イノニュ・パシャ\r
+ 		command = { type = sleepminister which = 720043 } #フェヴズィ・トゥリン\r
+ 		command = { type = sleepminister which = 720103 } #フェヴズィ・ジャクマーク\r
+ 		command = { type = sleepminister which = 720708 } #ヒュセイン・ラウフ\r
+ 		command = { type = sleepminister which = 720710 } #シャキーブ・アルスラーン\r
+-\r
+ 			command = { type = sleepteam which = 720150 } # ケマル・アタテュルク\r
+ 			command = { type = sleepteam which = 720025 } # フェヴズィ・チャクマク\r
+ 			command = { type = sleepteam which = 720153 } # ヒュセイン・ラウフ\r
+-\r
+ 		command = { type = sleepleader which = 720036 } # ケマル・パシャ\r
+ 		command = { type = sleepleader which = 720097 } # ムスタファ・ケマル\r
+ 		command = { type = sleepleader which = 720073 } # ラウフ\r
+ 		command = { type = sleepleader which = 720249 } # ラウフ\r
+ 		command = { type = sleepleader which = 720033 } # イノニュ\r
+-\r
+ 		command = { type = sleepleader which = 720106 } #アフメト・フェヴズィ\r
+-\r
+-\r
+-\r
+-		# command = { type = add_corps which = "国家改革軍" value = air where = 1034  } # バグダット\r
+-		# command = { type = add_division  value = hq  when = 1 where = -70 }\r
+-		# command = { type = add_division  value = infantry  when = 7 where = -70 }\r
+-\r
+-\r
++		command = { type = sleepevent which = 210001 } # オスマン皇族来日 # 日本東トルキスタン関連イベント\r
++		command = { type = sleepevent which = 210002 } # オスマン皇族の出国\r
+ 	}\r
+ }\r
+ \r
+@@ -3849,7 +3341,7 @@ event = {
+ event = {\r
+ 	id = 220532\r
+ 	random = no\r
+-	country = UPE\r
++	country = UPE # 東トルキスタン\r
+ 	style = 2\r
+ \r
+ 	name = "EVT_220532_NAME"\r
+@@ -3860,46 +3352,28 @@ event = {
+ 		name = "ACTIONNAME220532A" #エンヴェル・パシャを軍事顧問に迎える\r
+ 		ai_chance = 100\r
+ 		command = { type = dissent value = -2 }\r
+-	\r
+-\r
+ 		command = { type = domestic which = democratic value = -1 }\r
+ 		#command = { type = domestic which = political_left value = -2 } \r
+-\r
+-\r
+ 		command = { type = wakeminister which = 1400120 }\r
+ 		command = { type = chiefofarmy  which = 1400120 } # イスマイル・エンヴェル・パシャ\r
+-\r
+ 		command = { type = wakeleader which = 99892768 } # エンヴェル\r
+-\r
+ 		command = { type = waketeam which = 6189 } # エンヴェル\r
+-\r
+ 		command = { type = add_corps which = "大トゥラン革命軍" value = land when = 0 where = 1279 } # Kashgar\r
+ 		command = { type = add_division  value = infantry  when = 6 where = -60 }\r
+ 		command = { type = add_division  value = infantry  when = 5 where = -60 }\r
+ 		# command = { type = add_division  value = hq  when = 1 where = -30 }\r
+ 		# command = { type = add_division  value = infantry  when = 6 where = -30 }\r
+-\r
+ 		command = { type = relation which = TUR value =  -10 }\r
+ 		command = { type = relation which = OTT value =  -15 }\r
+ 		command = { type = relation which = CHI value =  -20 }\r
+ 		command = { type = relation which = SIK value =  -50 }\r
+ 		command = { type = relation which = ENG value =  -15 }\r
+ 		command = { type = relation which = SOV value =  -50 }\r
+-\r
+-\r
+-\r
+-\r
+-		# command = { type = sleepminister which = 720714 } #アブデュルケリム・エフェンディ\r
+-		# command = { type = sleepminister which = 720706 } #イスマイル・エンヴェル・パシャ\r
+-		# command = { type = sleepleader which = 720023 } # エンヴェル・パシャ\r
+-		# command = { type = sleepleader which = 720091 } # エンヴェル\r
+-\r
+ 	}\r
+ #	action = {\r
+ #		name = "ACTIONNAME220532B" #彼は不要だ\r
+ #		ai_chance = 0\r
+ #		command = { type = dissent value = 5 }\r
+-#\r
+ #		#command = { type = domestic which = democratic value = -2 }\r
+ # 		#command = { type = domestic which = political_left value = -2 } \r
+ #		command = { type = relation which = TUR value =  10 }\r
+@@ -3940,11 +3414,11 @@ event = {
+ 	style = 2\r
+ 	\r
+ 	trigger = {\r
+-			# minister = 720004 # エンヴェル\r
+-			event = 220532 # 納得しなかった男 ― エンヴェル最後の戦い\r
+-			Not = { exists = UPE } # 東トルキスタン\r
+-			Not = { exists = UTL } # 統一トルキスタン\r
+-			# random = 50\r
++		# minister = 720004 # エンヴェル\r
++		event = 220532 # 納得しなかった男 ― エンヴェル最後の戦い\r
++		Not = { exists = UPE } # 東トルキスタン\r
++		Not = { exists = UTL } # 統一トルキスタン\r
++		# random = 50\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = january year = 1933 }\r
+@@ -3960,19 +3434,13 @@ event = {
+ 	action = {\r
+ 		name = "ACTIONNAME220533A" #彼は夢想家だった……\r
+ 		command = { type = dissent value = -2 }\r
+-\r
+-\r
+ 		command = { type = gain_tech which = -1 } # エンヴェルの行動で得た経験\r
+-\r
+ 		# command = { type = event which = 220532 where = UPE when = 30 }\r
+ 		# command = { type = sleepminister which = 720714 } #アブデュルケリム・エフェンディ\r
+ 		command = { type = sleepminister which = 720706 } #イスマイル・エンヴェル・パシャ\r
+-\r
+ 		command = { type = sleepleader which = 720023 } # エンヴェル・パシャ\r
+ 		command = { type = sleepleader which = 720091 } # エンヴェル\r
+-\r
+ 	}\r
+-\r
+ }\r
+ \r
+ \r
+@@ -3998,7 +3466,7 @@ event = {
+ 		money = 500\r
+ 	}\r
+ 	trigger = {\r
+-			random = 10\r
++		random = 10\r
+ 	}\r
+ 	\r
+ 	name = "2011038name"\r
+@@ -4007,13 +3475,12 @@ event = {
+ 	picture = "new_deal"\r
+ 	decision_picture = "decision_new_deal"\r
+ \r
+-	date = { day = 0 month = 6 year = 1933 }\r
++	date = { day = 0 month = 1 year = 1933 }\r
+ 	offset = 17\r
+ 	deathdate = { day = 29 month = december year = 1964 }\r
+ \r
+ 	action = {\r
+ 		name = "2011038a"\r
+-\r
+ 		# GER\r
+ 		#command = { type = industrial_modifier which = total value = 5 }\r
+ 		#command = { type = dissent value = -5 } # -3\r
+@@ -4092,7 +3559,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action_a = { # 恐れていた事態だ……\r
++	action = { # 恐れていた事態だ……\r
+ 		name = "ACTIONNAME220551A"\r
+ 		command = { type = dissent value = 2 }\r
+ 		command = { type = relation which = ARM value = 10 }\r
+@@ -4108,18 +3575,16 @@ event = {
+ 	trigger = {\r
+ 		# atwar = no\r
+ 		OR = { \r
+-		event = 206025\r
+-		event = 2003025    ####MR協定\r
+-		event = 2003027\r
++			event = 206025\r
++			event = 2003025    ####MR協定\r
++			event = 2003027\r
+ 		}\r
+ \r
+ 		OR = {\r
+ 			non_aggression = { country = GER country = SOV }\r
+ 			alliance = { country = GER country = SOV }\r
+ 			}\r
+-\r
+ 		exists = SOV\r
+-\r
+ 		Not = { alliance = { country = OTT country = SOV } }\r
+ 		Not = { alliance = { country = OTT country = GER } }\r
+ \r
+@@ -4133,7 +3598,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action_a = { # 恐れていた事態だ……\r
++	action = { # 恐れていた事態だ……\r
+ 		name = "ACTIONNAME220551A"\r
+ 		command = { type = dissent value = 2 }\r
+ 		command = { type = relation which = ARM value = 10 }\r
+@@ -4160,11 +3625,11 @@ event = {
+ 	country = SOV\r
+ \r
+ 	decision = {\r
++		NOT = { ispuppet = yes }\r
++		NOT = { ispuppet = OTT }\r
++		exists = OTT\r
+ 		event = 2007020  # Eastern Poland has been given to the USSR\r
+ 		NOT = { event = 2007033 } #Bitter Peace\r
+-\r
+-		exists = OTT\r
+-\r
+ 		NOT = {\r
+ 			war = { country = OTT country = SOV }\r
+ 			war = { country = ARM country = SOV }\r
+@@ -4172,26 +3637,22 @@ event = {
+ 			alliance = { country = SOV country = OTT }\r
+ 			alliance = { country = SOV country = ARM }\r
+ 		}\r
+-\r
+-			owned = { province = 304 data = SOV }\r
+-			owned = { province = 306 data = SOV }\r
+-			owned = { province = 303 data = SOV }\r
+-			owned = { province = 305 data = SOV } # ベッサラビア回収済み\r
+-\r
+-\r
++		owned = { province = 304 data = SOV }\r
++		owned = { province = 306 data = SOV }\r
++		owned = { province = 303 data = SOV }\r
++		owned = { province = 305 data = SOV } # ベッサラビア回収済み\r
+ 		NOT = { # ソ連が持ってない\r
+ 			control = { province = 714 }\r
+ 			control = { province = 711 } # アルメニア\r
+ 			control = { province = 386 } # トルコ北東\r
+ 		}\r
+-\r
+ 		OR = {\r
+ 			owned = { province = 714 data = OTT }\r
+ 			owned = { province = 711 data = OTT }\r
+ 			And = { owned = { province = 711 data = ARM } \r
+ 				puppet = { country = ARM country = OTT } }\r
+ 		}\r
+-			owned = { province = 386 data = OTT } # トルコ北東\r
++		owned = { province = 386 data = OTT } # トルコ北東\r
+ \r
+ 	}\r
+ 	decision_trigger = { \r
+@@ -4199,11 +3660,11 @@ event = {
+ 	}\r
+ 	\r
+ 	trigger = {\r
++		NOT = { ispuppet = yes }\r
++		NOT = { ispuppet = OTT }\r
+ 		event = 2007020  # Eastern Poland has been given to the USSR\r
+ 		NOT = { event = 2007033 } #Bitter Peace\r
+-\r
+ 		exists = OTT\r
+-\r
+ 		NOT = {\r
+ 			war = { country = OTT country = SOV }\r
+ 			war = { country = ARM country = SOV }\r
+@@ -4211,20 +3672,15 @@ event = {
+ 			alliance = { country = SOV country = OTT }\r
+ 			alliance = { country = SOV country = ARM }\r
+ 		}\r
+-\r
+-\r
+-			owned = { province = 304 data = SOV }\r
+-			owned = { province = 306 data = SOV }\r
+-			owned = { province = 303 data = SOV }\r
+-			owned = { province = 305 data = SOV } # ベッサラビア回収済み\r
+-\r
+-\r
++		owned = { province = 304 data = SOV }\r
++		owned = { province = 306 data = SOV }\r
++		owned = { province = 303 data = SOV }\r
++		owned = { province = 305 data = SOV } # ベッサラビア回収済み\r
+ 		NOT = {\r
+ 			control = { province = 714 }\r
+ 			control = { province = 711 } # アルメニア\r
+ 			control = { province = 386 } # トルコ北東\r
+ 		}\r
+-\r
+ 		OR = {\r
+ 			owned = { province = 714 data = OTT }\r
+ 			owned = { province = 711 data = OTT }\r
+@@ -4246,33 +3702,27 @@ event = {
+ 	action = {\r
+ 		name = "ACTIONNAME220553A" # アルメニアを要求\r
+ 		ai_chance = 100\r
+-\r
+ 		command = { type = addcore which = 714 }\r
+ 		command = { type = addcore which = 711 }\r
+ 		command = { type = addclaim which = 386 }\r
+ 		command = { type = relation which = OTT value = -10 }\r
+ 		command = { type = relation which = ARM value = -10 }\r
+-\r
+ 		command = { type = end_non_aggression which = SOV where = OTT }\r
+ 		command = { type = end_non_aggression which = SOV where = ARM }\r
+ 		command = { type = trigger which = 220554 }\r
+ 	}\r
+ \r
+-\r
+ 	action = {\r
+ 		name = "ACTIONNAME220553B" # 奴らを社会主義化するのだ！\r
+ 		ai_chance = 0\r
+ 		command = { type = addcore which = 714 }\r
+ 		command = { type = addcore which = 711 }\r
+ 		command = { type = addclaim which = 386 }\r
+-\r
+-\r
+ 		command = { type = end_non_aggression which = SOV where = OTT }\r
+ 		command = { type = end_non_aggression which = SOV where = ARM }\r
+ 		command = { type = belligerence which = SOV value = 10 }\r
+ 		command = { type = war which = OTT } \r
+ 		command = { type = war which = ARM } \r
+-\r
+ 		command = { type = relation which = OTT value = -150 }\r
+ 		command = { type = relation which = ARM value = -150 }\r
+ 		command = { type = relation which = ENG value = -100 }\r
+@@ -4311,11 +3761,9 @@ event = {
+ 		command = { type = secedeprovince which = SOV value = 714 }\r
+ 		command = { type = secedeprovince which = SOV value = 711 }\r
+ 		command = { type = secedeprovince which = SOV value = 386 }\r
+-\r
+ 		command = { type = relation which = SOV value = 15 }\r
+ 		command = { type = relation which = ARM value = -100 }\r
+ 		command = { type = end_mastery which = ARM }\r
+-\r
+ 		command = { type = dissent value = 10 }\r
+ 		command = { type = domestic which = democratic value = -1 }\r
+ 		command = { type = trigger which = 220555 } # SOV\r
+@@ -4324,9 +3772,7 @@ event = {
+ 		trigger = { OR = { atwar = no ai = no } }\r
+ 		name = "ACTIONNAME220554B" # 第13次露土戦争の時間だ！\r
+ 		ai_chance = 0\r
+-\r
+ 		# command = { type = leave_alliance when = 1 } # 追加\r
+-\r
+ 		command = { type = war which = SOV } \r
+ 		command = { type = domestic which = political_left value = -2 }\r
+ 		command = { type = domestic which = interventionism value = 1 }\r
+@@ -4340,9 +3786,6 @@ event = { # 
+ 	id = 220555\r
+ 	random = no\r
+ 	country = ARM\r
+-\r
+-	# Triggered by ROM 2023003\r
+-\r
+ 	name = "EVT_220555_NAME"\r
+ 	desc = "EVT_220554_DESC"\r
+ 	style = 2\r
+@@ -4357,22 +3800,15 @@ event = { # 
+ 		command = { type = domestic which = interventionism value = 1 }\r
+ 		command = { type = relation which = SOV value = -25 }\r
+ 		command = { type = relation which = GER value = 15 }\r
+-\r
+-\r
+ 		# command = { type = trigger which = 220556 } # SOV\r
+ 	}\r
+ \r
+-\r
+ 	action = {\r
+ 		name = "ACTIONNAME220555B" # もうどうすることもできない(ゲーム終了)\r
+ 		ai_chance = 98\r
+-		# command = { type = belligerence which = SOV value = 1 }\r
+-\r
+-\r
+ 		command = { type = secedeprovince which = SOV value = 714 }\r
+ 		command = { type = secedeprovince which = SOV value = 711 }\r
+ 		command = { type = secedeprovince which = SOV value = 386 }\r
+-\r
+ 		command = { type = trigger which = 220556 } # SOV\r
+ 	}\r
+ }\r
+@@ -4387,15 +3823,14 @@ event = {
+ 	random = no\r
+ 	country = SOV\r
+ \r
+-\r
+ 	name = "EVT_220556_NAME"\r
+ 	desc = "EVT_220556_DESC"\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action_a = {\r
++	action = {\r
+ 		name = "ACTIONNAME220556A" # 素晴らしい！\r
+-\r
++		command = { type = dissent value = -5 }\r
+ 		command = { type = inherit which = ARM value = 1 }\r
+ 		command = { type = belligerence which = SOV value = 2 }\r
+ 	}\r
+@@ -4420,7 +3855,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action_a = {\r
++	action = {\r
+ 		name = ACTION_NAME_OK # トルコは戦うつもりだ！\r
+ 		command = { }\r
+ 	}\r
+@@ -4473,13 +3908,13 @@ event = {
+ 	offset = 7 \r
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+-	action_a = {\r
++	action = {\r
+ 		name = "ACTIONNAME220558A" # すでに要求している条件で講和する\r
+ 		ai_chance = 98\r
+ 		command = { type = trigger which = 220559}\r
+ 		command = { type = relation which = OTT value = 10 }\r
+ 	}\r
+-	action_b = {\r
++	action = {\r
+ 		name = "ACTIONNAME220558B" # 奴らを社会主義化するのだ！\r
+ 		ai_chance = 2\r
+ 		command = { type = relation which = OTT value = -150 }\r
+@@ -4502,7 +3937,7 @@ event = {
+ event = {\r
+ 	id = 220559\r
+ 	random = no\r
+-	country = FIN\r
++	country = OTT\r
+ \r
+ 	# Triggered by SOV 2007035\r
+ \r
+@@ -4511,12 +3946,10 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+-	action_a = {\r
++	action = {\r
+ 		name = "ACTIONNAME220559A" # ソ連の要求に屈する\r
+ 		ai_chance = 100\r
+-		command = { trigger = { exists = U20 war = { country = FIN country = U20 } } type = inherit which = U20 }\r
+-\r
+-\r
++		command = { trigger = { exists =  U34 war = { country = OTT country =  U34 } } type = inherit which =  U34 }\r
+ 		command = { type = secedeprovince which = SOV value = 714 }\r
+ 		command = { type = secedeprovince which = SOV value = 711 }\r
+ 		command = { type = secedeprovince which = SOV value = 386 }\r
+@@ -4531,7 +3964,7 @@ event = {
+ 		command = { type = domestic which = interventionism value = 2 }\r
+ 		command = { type = trigger which = 220560 } #SOV\r
+ 	}\r
+-	action_b = {\r
++	action = {\r
+ 		name = "ACTIONNAME220559B" # 決して屈するものか！\r
+ 		ai_chance = 0\r
+ 		command = { type = trigger which = 220561 } #SOV\r
+@@ -4561,7 +3994,6 @@ event = {
+ \r
+ 	action = {\r
+ 		name = "ACTION_NAME_GOOD" # Good!\r
+-\r
+ 		command = { type = inherit which = ARM value = 1 }\r
+ 		command = { type = peace which = OTT value = 0 }\r
+ 		command = { type = dissent value = -10 }\r
+@@ -4583,7 +4015,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	action_a = {\r
++	action = {\r
+ 		name = "ACTIONNAME220561A" # 彼らは代償を支払わねばならない\r
+ 		command = { type = dissent value = 5 }\r
+ 		command = { type = domestic which = interventionism value = 1 }\r

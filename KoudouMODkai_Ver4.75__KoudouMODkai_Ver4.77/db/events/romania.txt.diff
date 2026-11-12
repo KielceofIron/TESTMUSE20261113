@@ -1,0 +1,25 @@
+--- A/db/events/romania.txt [cp932]
++++ B/db/events/romania.txt [cp932]
+@@ -35,10 +35,10 @@ event = {
+ 	\r
+ 	action_a = {\r
+ 		trigger = {\r
+-		OR = {\r
++		AND = {\r
+ 		Not = { event = 219105 } # 追加 鉄衛団時は承諾が選択できない＝必ず開戦\r
+-		exists = ALS # ブリュンヒルド公国が存在する\r
+-		minister = 110301 # 望月冬夜\r
++		Not = { exists = ALS } # ブリュンヒルド公国が存在する\r
++		Not = { minister = 110301 } # 望月冬夜\r
+ 		}\r
+ 		} \r
+ 		name = "ACTION_NAME_ACCEPT" # Accept\r
+@@ -66,7 +66,7 @@ event = {
+ 		name = "ACTION_NAME_REFUSE" # Refuse\r
+ 		ai_chance = 2\r
+ \r
+-		command = { type = leave_alliance when = 1 } # 追加\r
++		command = { trigger = { NOT = { alliance = { country = ALS country = ROM } } } type = leave_alliance when = 1 } # 追加\r
+ \r
+ \r
+ \r

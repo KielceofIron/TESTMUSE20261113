@@ -1,0 +1,33 @@
+--- A/ai/IFswitch/CAN_ACW.ai [utf-8]
++++ B/ai/IFswitch/CAN_ACW.ai [utf-8]
+@@ -160,8 +160,8 @@ leader_ratio = {
+ 	air_lt_General 		=0.11\r
+ }\r
+ garrison = {\r
+-	defend_overseas_beaches = yes\r
+-	home_multiplier 	= 0.1 # 1.0\r
++	defend_overseas_beaches = no\r
++	home_multiplier 	= 10.0 # 1.0\r
+ 	overseas_multiplier = 0 # 0.5\r
+ 	home_peace_cap 		= 100\r
+ 	war_zone_odds 		= 2.0\r
+@@ -171,7 +171,7 @@ garrison = {
+ 	# PRIORITIES:\r
+ 	beach			= 2	# Beach level 2\r
+ 	capital			= 40	# Our capital\r
+-	human_border		= 0	# Ignored for allied human players\r
++	human_border		= 50	# Ignored for allied human players\r
+ 	war_target		= 50	# The next country targeted for attack by this AI\r
+ 	\r
+ 	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"\r
+@@ -194,7 +194,9 @@ garrison = {
+ 		MEX = -1\r
+ \r
+ 	}\r
+-	province_priorities = {	}\r
++	province_priorities = {\r
++	2137 = -1\r
++}\r
+ 	area_multiplier = { }\r
+ }\r
+ front = { \r

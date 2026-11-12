@@ -1,0 +1,409 @@
+--- A/ai/IFswitch/JAP_HondoKessen_prepare.ai [cp932]
++++ B/ai/IFswitch/JAP_HondoKessen_prepare.ai [cp932]
+@@ -1,203 +1,203 @@
+-# Japan 1914 AI File by Jaegerfeld\r
+-# v0.48rc1 by spocky\r
+-\r
+-upgrading = 1.0000 \r
+-###################################\r
+-# Ground Combat, Leaders and Garrisons\r
+-###################################\r
+-garrison = {\r
+-\r
+-	# Borders with specific countries\r
+-	country_priorities = {\r
+-		CHI = 300\r
+-		UD6 = 300\r
+-		U67 = 100\r
+-		PRI = 100\r
+-		U02 = 50\r
+-        	U00 = 80 # 追加\r
+-		U38 = 80 # 追加\r
+-        	U64 = 80 # 追加\r
+-		UE4 = 80 # 追加\r
+-        	U56 = 80 # 追加\r
+-		U64 = 80 # 追加\r
+-        	U66 = 80 # 追加\r
+-		U68 = 80 # 追加\r
+-		U69 = 80 # 追加\r
+-	}\r
+-	province_priorities = {\r
+-		1550 = 100	#横浜\r
+-		1551 = 400	#新潟\r
+-		1552 = 100	#東京\r
+-		2789 = 1000	#佐渡\r
+-		1545 = 50	#札幌\r
+-		1553 = 30	#大阪\r
+-		1554 = 30	#広島\r
+-		#1555 = 300	#神戸\r
+-		1556 = 100	#金沢\r
+-		1557 = 30	#名古屋\r
+-		1558 = 30	#京都\r
+-		2780 = 400	#山口\r
+-		1559 = 100	#高知\r
+-		1560 = 300	#福岡\r
+-		1561 = 300	#鹿児島\r
+-		2761 = 10	#千葉\r
+-		2760 = 10	#茨城\r
+-		1546 = 10	#静岡\r
+-		2785 = 100	#熊本\r
+-	}\r
+-\r
+-	area_multiplier = {\r
+-		1221 = 0.3\r
+-		1230 = 0.3\r
+-		1364 = 0.8\r
+-		1661 = 0.8\r
+-		1684 = 0.5\r
+-		1564 = 0.6\r
+-		1666 = 0.5\r
+-		1669 = 0.5\r
+-		1671 = 0.4\r
+-		1677 = 0.2\r
+-		\r
+-		1216 = 4\r
+-		1236 = 5\r
+-		1240 = 4\r
+-		1245 = 5\r
+-		\r
+-		\r
+-	}\r
+-}\r
+-front = { \r
+-	recklessness 		= 0 # 0-3\r
+-	distrib_vs_ai 		= even\r
+-	distrib_vs_human 	= even\r
+-\r
+-	enemy_reinf_days	= 6\r
+-	reserve_prop		= 0.0\r
+-	panic_ratio_vs_ai	= 2.5\r
+-	panic_ratio_vs_human= 2.5\r
+-	base_attack_odds	= 0.8 # 1.1\r
+-	min_attack_odds		= 0.4 # 0.8\r
+-	max_attack_odds		= 3.0\r
+-	reinforce_odds		= 1.2\r
+-	withdraw_odds		= 0.6\r
+-\r
+-	strength 		= 1.0\r
+-	organisation 	= 1.0\r
+-	soft_attack 	= 1.0\r
+-	hard_attack 	= 1.0\r
+-	ground_defense 	= 1.0\r
+-	dig_in 			= 1.0 # Against defender\r
+-\r
+-	frozen_attack 	= 1.0\r
+-	snow_attack 	= 1.0\r
+-	blizzard_attack = 1.0\r
+-	storm_attack 	= 1.0\r
+-	muddy_attack 	= 1.0\r
+-\r
+-	\r
+-	\r
+-	occupied 	= 0.7\r
+-	owned 		= 0.7\r
+-\r
+-	jungle_attack 	= 1.0\r
+-	mountain_attack = 1.0\r
+-	swamp_attack 	= 1.0\r
+-	forest_attack 	= 1.0\r
+-	hill_attack 	= 1.0\r
+-	urban_attack 	= 1.0\r
+-	river 			= 1.0\r
+-\r
+-	enemy_handicap = {\r
+-	} \r
+-	\r
+-	passivity = {\r
+-	} \r
+-} \r
+-\r
+-\r
+-###################################\r
+-# Construction and Tech Research\r
+-###################################\r
+-#Default values\r
+-construction = { \r
+-	max_factor = 0.0\r
+-\r
+-}\r
+-military = { \r
+-	relative_build_scheme 	= yes\r
+-	max_batch_peace 		= 900 \r
+-	max_batch_war 			= 680\r
+-	max_batch_home_front	= 300\r
+-	extra_convoys_war		= 0.0500 \r
+-	extra_convoys_peace		= 0.0500 \r
+-\r
+-\r
+-\r
+-	#### Divisions etc...\r
+-   	infantry     	= 76 \r
+-	cavalry 		= 5\r
+-	motorized 		= 0\r
+-	mechanized 		= 0\r
+-	light_armor 	= 0\r
+-	armor 			= 5\r
+-   	paratrooper		= 0 \r
+-	marine 			= 0\r
+-	bergsjaeger 	= 2\r
+-	garrison		= 0\r
+-   	hq 				= 1\r
+-	militia 		= 0\r
+-#				63 #45 %\r
+-	interceptor 	= 1 #1\r
+-	multi_role 		= 0\r
+-	cas 			= 0\r
+-	strategic_bomber = 0\r
+-	tactical_bomber = 0\r
+-	naval_bomber 	= 0\r
+-   	transport_plane = 0 \r
+-	flying_bomb 	= 0\r
+-	flying_rocket 	= 0\r
+-#				4 #20 %\r
+-	battleship 		= 0 #4\r
+-	carrier 		= 0\r
+-	escort_carrier	= 0\r
+-   	destroyer		= 5 #10 \r
+-   	light_cruiser   = 0 #8 \r
+-	heavy_cruiser 	= 0 #8\r
+-	battlecruiser 	= 0\r
+-	submarine 		= 4\r
+-	nuclear_submarine = 0\r
+-	transports 		= 1\r
+-#				10 #35 %\r
+-\r
+-	#### Brigades\r
+-	artillery 			= 50\r
+-	sp_artillery 		= 0\r
+-	cavalry_brigade		= 20 \r
+-	sp_anti_air			= 0\r
+-	medium_armor		= 10\r
+-	tank_destroyer 		= 0\r
+-	light_armor_brigade = 0\r
+-	heavy_armor 		= 0\r
+-	super_heavy_armor 	= 0\r
+-	armored_car 		= 15\r
+-	anti_air 			= 0\r
+-	police 				= 0\r
+-	engineer 			= 30 \r
+-\r
+-	cag		= 100\r
+-	escort	= 100\r
+-\r
+-	naval_asw				= 20\r
+-	naval_anti_air_s		= 20\r
+-	naval_radar_s			= 20\r
+-	naval_fire_controll_s	= 20\r
+-	naval_improved_hull_s	= 10\r
+-	naval_torpedoes_s		= 10\r
+-	naval_anti_air_l		= 0\r
+-	naval_radar_l			= 0\r
+-	naval_fire_controll_l	= 0\r
+-	naval_improved_hull_l	= 0\r
+-	floatplane				= 10\r
+-}\r
+-\r
+-\r
++# Japan 1914 AI File by Jaegerfeld
++# v0.48rc1 by spocky
++
++upgrading = 1.0000 
++###################################
++# Ground Combat, Leaders and Garrisons
++###################################
++garrison = {
++
++	# Borders with specific countries
++	country_priorities = {
++		CHI = 300
++		UD6 = 300
++		U67 = 100
++		PRI = 100
++		U02 = 50
++        	U00 = 80 # 追加
++		U38 = 80 # 追加
++        	U64 = 80 # 追加
++		UE4 = 80 # 追加
++        	U56 = 80 # 追加
++		U64 = 80 # 追加
++        	U66 = 80 # 追加
++		U68 = 80 # 追加
++		U69 = 80 # 追加
++	}
++	province_priorities = {
++		1550 = 100	#横浜
++		1551 = 400	#新潟
++		1552 = 100	#東京
++		2789 = 1000	#佐渡
++		1545 = 50	#札幌
++		1553 = 30	#大阪
++		1554 = 30	#広島
++		#1555 = 300	#神戸
++		1556 = 100	#金沢
++		1557 = 30	#名古屋
++		1558 = 30	#京都
++		2780 = 400	#山口
++		1559 = 100	#高知
++		1560 = 300	#福岡
++		1561 = 300	#鹿児島
++		2761 = 10	#千葉
++		2760 = 10	#茨城
++		1546 = 10	#静岡
++		2785 = 100	#熊本
++	}
++
++	area_multiplier = {
++		1221 = 0.3
++		1230 = 0.3
++		1364 = 0.8
++		1661 = 0.8
++		1684 = 0.5
++		1564 = 0.6
++		1666 = 0.5
++		1669 = 0.5
++		1671 = 0.4
++		1677 = 0.2
++		
++		1216 = 4
++		1236 = 5
++		1240 = 4
++		1245 = 5
++		
++		
++	}
++}
++front = { 
++	recklessness 		= 0 # 0-3
++	distrib_vs_ai 		= even
++	distrib_vs_human 	= even
++
++	enemy_reinf_days	= 6
++	reserve_prop		= 0.0
++	panic_ratio_vs_ai	= 2.5
++	panic_ratio_vs_human= 2.5
++	base_attack_odds	= 0.8 # 1.1
++	min_attack_odds		= 0.4 # 0.8
++	max_attack_odds		= 3.0
++	reinforce_odds		= 1.2
++	withdraw_odds		= 0.6
++
++	strength 		= 1.0
++	organisation 	= 1.0
++	soft_attack 	= 1.0
++	hard_attack 	= 1.0
++	ground_defense 	= 1.0
++	dig_in 			= 1.0 # Against defender
++
++	frozen_attack 	= 1.0
++	snow_attack 	= 1.0
++	blizzard_attack = 1.0
++	storm_attack 	= 1.0
++	muddy_attack 	= 1.0
++
++	
++	
++	occupied 	= 0.7
++	owned 		= 0.7
++
++	jungle_attack 	= 1.0
++	mountain_attack = 1.0
++	swamp_attack 	= 1.0
++	forest_attack 	= 1.0
++	hill_attack 	= 1.0
++	urban_attack 	= 1.0
++	river 			= 1.0
++
++	enemy_handicap = {
++	} 
++	
++	passivity = {
++	} 
++} 
++
++
++###################################
++# Construction and Tech Research
++###################################
++#Default values
++construction = { 
++	max_factor = 0.0
++
++}
++military = { 
++	relative_build_scheme 	= yes
++	max_batch_peace 		= 900 
++	max_batch_war 			= 680
++	max_batch_home_front	= 300
++	extra_convoys_war		= 0.0500 
++	extra_convoys_peace		= 0.0500 
++
++
++
++	#### Divisions etc...
++   	infantry     	= 76 
++	cavalry 		= 5
++	motorized 		= 0
++	mechanized 		= 0
++	light_armor 	= 0
++	armor 			= 5
++   	paratrooper		= 0 
++	marine 			= 0
++	bergsjaeger 	= 2
++	garrison		= 0
++   	hq 				= 1
++	militia 		= 0
++#				63 #45 %
++	interceptor 	= 1 #1
++	multi_role 		= 0
++	cas 			= 0
++	strategic_bomber = 0
++	tactical_bomber = 0
++	naval_bomber 	= 0
++   	transport_plane = 0 
++	flying_bomb 	= 0
++	flying_rocket 	= 0
++#				4 #20 %
++	battleship 		= 0 #4
++	carrier 		= 0
++	escort_carrier	= 0
++   	destroyer		= 5 #10 
++   	light_cruiser   = 0 #8 
++	heavy_cruiser 	= 0 #8
++	battlecruiser 	= 0
++	submarine 		= 4
++	nuclear_submarine = 0
++	transports 		= 1
++#				10 #35 %
++
++	#### Brigades
++	artillery 			= 50
++	sp_artillery 		= 0
++	cavalry_brigade		= 20 
++	sp_anti_air			= 0
++	medium_armor		= 10
++	tank_destroyer 		= 0
++	light_armor_brigade = 0
++	heavy_armor 		= 0
++	super_heavy_armor 	= 0
++	armored_car 		= 15
++	anti_air 			= 0
++	police 				= 0
++	engineer 			= 30 
++
++	cag		= 100
++	escort	= 100
++
++	naval_asw				= 20
++	naval_anti_air_s		= 20
++	naval_radar_s			= 20
++	naval_fire_controll_s	= 20
++	naval_improved_hull_s	= 10
++	naval_torpedoes_s		= 10
++	naval_anti_air_l		= 0
++	naval_radar_l			= 0
++	naval_fire_controll_l	= 0
++	naval_improved_hull_l	= 0
++	floatplane				= 10
++}
++
++

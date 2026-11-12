@@ -1,0 +1,75 @@
+--- A/db/events/japan.txt [cp932]
++++ B/db/events/japan.txt [cp932]
+@@ -99,15 +99,15 @@ event = {
+ 		command = { type = sleepminister which = 50300 } # id = 50300 の閣僚を死亡（使用不能）させる\r
+ 		command = { type = sleepminister which = 50229 } # id = 50229 の閣僚を死亡（使用不能）させる 斎藤実\r
+ 		command = { type = sleepminister which = 50323 } # id = 50323 の閣僚を死亡（使用不能）させる\r
+-		command = { type = sleepminister which = 50535 } # 渡辺錠太郎\r
+-		command = { type = sleepleader which = 50544 }\r
+-		command = { type = sleepteam which = 50057 }\r
+-		command = { type = sleepminister which = 50695 } #永田鉄山\r
+-		command = { type = sleepminister which = 50696 }\r
+-		command = { type = sleepminister which = 50697 }\r
+-		command = { type = sleepminister which = 50698 }\r
+-		command = { type = sleepleader which = 50637 }\r
+-		command = { type = sleepteam which = 50038 }\r
++		command = { type = sleepminister which = 50631 } # 渡辺錠太郎\r
++		command = { type = sleepleader which = 101334 }\r
++		command = { type = sleepteam which = 50127 }\r
++		command = { type = sleepminister which = 50380 } #永田鉄山\r
++		command = { type = sleepminister which = 50381 }\r
++		command = { type = sleepminister which = 50382 }\r
++		command = { type = sleepminister which = 50383 }\r
++		command = { type = sleepleader which = 101395 }\r
++		command = { type = sleepteam which = 50084 }\r
+ 		command = { type = event which = 22600026 where = JAP when = 3 }\r
+ 		# 追加終わり\r
+ 	}\r
+@@ -149,14 +149,15 @@ event = {
+ 		command = { type = sleepminister which = 50171 } # id = 50171 の閣僚を死亡（使用不能）させる\r
+ 		command = { type = sleepminister which = 50017 } # id = 50017 の閣僚を死亡（使用不能）させる\r
+ 		command = { type = sleepminister which = 50253 } # id = 50253 の閣僚を死亡（使用不能）させる  牧野伸顕\r
+-		command = { type = sleepminister which = 50535 } # 渡辺錠太郎\r
+-		command = { type = sleepleader which = 50544 }\r
+-		command = { type = sleepminister which = 50695 } #永田鉄山\r
+-		command = { type = sleepminister which = 50696 }\r
+-		command = { type = sleepminister which = 50697 }\r
+-		command = { type = sleepminister which = 50698 }\r
+-		command = { type = sleepleader which = 50637 }\r
+-		command = { type = sleepteam which = 50038 }\r
++		command = { type = sleepminister which = 50631 } # 渡辺錠太郎\r
++		command = { type = sleepleader which = 101334 }\r
++		command = { type = sleepteam which = 50127 }\r
++		command = { type = sleepminister which = 50380 } #永田鉄山\r
++		command = { type = sleepminister which = 50381 }\r
++		command = { type = sleepminister which = 50382 }\r
++		command = { type = sleepminister which = 50383 }\r
++		command = { type = sleepleader which = 101395 }\r
++		command = { type = sleepteam which = 50084 }\r
+ 		command = { type = trigger which = 2260006 }\r
+ 		# 追加終わり\r
+ 	}\r
+@@ -1808,16 +1809,16 @@ event = {
+ 	#Triggered by JAP 2011018\r
+ \r
+ 	action_a = {\r
+-		name = "EVT_3825_ACTA" #
+-		command = { }
++		name = "EVT_3825_ACTA" #\r
++		command = { }\r
+ 		#KOR is released as JAP puppet so that in next event CHI or CHC can puppet it\r
+ 		command = { trigger = { NOT = { exists = KOR } } type = setflag which = KOR_FROM_JAP_TO_CHI }\r
+-		command = { trigger = { NOT = { exists = KOR } } type = local_setflag which = KOR_JAP_PUPPET }
+-		command = { trigger = { local_flag = KOR_JAP_PUPPET } type = independence which = KOR value = 1 when = 0 }
+-		command = { trigger = { local_flag = KOR_JAP_PUPPET } type = make_puppet which = KOR }
++		command = { trigger = { NOT = { exists = KOR } } type = local_setflag which = KOR_JAP_PUPPET }\r
++		command = { trigger = { local_flag = KOR_JAP_PUPPET } type = independence which = KOR value = 1 when = 0 }\r
++		command = { trigger = { local_flag = KOR_JAP_PUPPET } type = make_puppet which = KOR }\r
+ 		command = { trigger = { local_flag = KOR_JAP_PUPPET } type = local_clrflag which = KOR_JAP_PUPPET }\r
+-		command = { trigger = { NOT = { exists = KOR } } type = clrflag which = KOR_FROM_JAP_TO_CHI } #removes it if KOR couldn't be created
+-		command = { trigger = { flag = fs_kmt } type = event which = 2012005 where = CHI when = 0 }
++		command = { trigger = { NOT = { exists = KOR } } type = clrflag which = KOR_FROM_JAP_TO_CHI } #removes it if KOR couldn't be created\r
++		command = { trigger = { flag = fs_kmt } type = event which = 2012005 where = CHI when = 0 }\r
+ 		command = { trigger = { flag = fs_ccp } type = event which = 2012005 where = CHC when = 0 }\r
+ 	}\r
+ }\r

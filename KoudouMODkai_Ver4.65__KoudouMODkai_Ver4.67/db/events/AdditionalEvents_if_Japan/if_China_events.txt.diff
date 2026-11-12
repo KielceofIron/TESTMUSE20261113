@@ -1,0 +1,267 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
+@@ -221,14 +221,14 @@ event = {
+ 	command = { trigger = { ai = yes } type = dissent value = 20 }\r
+ 	command = { type = research_mod value = -30 }\r
+ 	command = { trigger = { ai = no } type = industrial_modifier which = total value = -40 }\r
+-	command = { trigger = { ai = yes }  type = industrial_modifier which = total value = -20 }\r
++	#command = { trigger = { ai = yes }  type = industrial_modifier which = total value = -20 }\r
+ 	command = { type = money value = -3000 }\r
+ 	command = { trigger = { ai = no }  type = speed which = land value = -4 }\r
+ 	command = { trigger = { ai = yes }  type = speed which = land value = -1 }\r
+-	command = { type = extra_tc value = -500 }\r
++	#command = { type = extra_tc value = -500 }\r
+       #command = { type = task_efficiency which = attack value = -0.04 }\r
+       #command = { type = task_efficiency which = support_attack value = -0.04 }\r
+-	command = { type = supply_consumption which = land value = -1 }\r
++	command = { type = supply_consumption which = land value = 1 }\r
+ 	#command = { type = task_efficiency which = attack value = -0.2 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = -0.2 when = 1 }\r
+ 	#command = { type = task_efficiency which = strat_redeploy value = -0.2 when = 1 }\r
+@@ -293,7 +293,7 @@ event = {
+ 	action = {\r
+ 	name = "ACTIONNAME1891004A"\r
+ 	command = { trigger = { ai = yes } type = research_mod value = 30 }\r
+-	command = { trigger = { ai = yes } type = industrial_modifier which = total value = 40 }\r
++	#command = { trigger = { ai = yes } type = industrial_modifier which = total value = 40 }\r
+ 	command = { trigger = { ai = no } type = research_mod value = 10 }\r
+ 	command = { trigger = { ai = no } type = industrial_modifier which = total value = 20 }\r
+ 	command = { type = dissent value = -20 }\r
+@@ -306,7 +306,7 @@ event = {
+ 	#command = { type = extra_tc value = 500 }\r
+      # command = { trigger = { local_flag = mobidoctorine country = CHI } type = build_cost which = land where = relative value = -10 }\r
+      # command = { trigger = { local_flag = mobidoctorine country = CHI } type = build_time which = land where = relative value = -10 }\r
+-	#command = { type = supply_consumption which = land value = -1 }\r
++	command = { type = supply_consumption which = land value = -1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -618,7 +618,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+-	command = { type = add_division which = "総統衛士隊第21師団" value = d_01 when = 0 }\r
++	command = { type = add_division which = "総統衛士隊第21師団" value = infantry when = 0 }\r
+ \r
+ 	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第2方面軍" value = land where = 1560 } #1(7)師団\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 8 where = armored_car }\r
+@@ -628,7 +628,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+-	command = { type = add_division which = "総統衛士隊第22師団" value = d_01 when = 0 }\r
++	command = { type = add_division which = "総統衛士隊第22師団" value = infantry when = 0 }\r
+ \r
+ 	command = { type = add_corps which = "中華民国日本征討第3方面軍" value = land where = 2780 } #3(8)師団\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+@@ -638,7 +638,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+-	command = { type = add_division which = "総統衛士隊第23師団" value = d_01 when = 0 }\r
++	command = { type = add_division which = "総統衛士隊第23師団" value = infantry when = 0 }\r
+ \r
+ 	command = { type = add_corps which = "中華民国日本征討陽動第1軍" value = land where = 1559 } #2(7)師団\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+@@ -660,8 +660,9 @@ event = {
+ \r
+ 	command = { trigger = { ai = no } type = demobilize which = infantry when = 0 where = 1 value = -14 } #\r
+ 	#command = { trigger = { ai = yes ai = JAP } type = demobilize which = infantry when = 0 where = 1 value = -41 } #\r
+-	command = { trigger = { ai = yes ai = JAP } type = demobilize which = infantry when = 0 where = 1 value = -41 } #\r
++	#command = { trigger = { ai = yes ai = JAP } type = demobilize which = infantry when = 0 where = 1 value = -41 } #\r
+ 	command = { trigger = { ai = yes } type = ai which = "IFswitch/CHI_Japan.ai" }\r
++	command = { trigger = { ai = yes } type = strength which = all when = 1 where = 0 org = 200 value = 200 }\r
+   	}\r
+ }\r
+ \r
+@@ -701,7 +702,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+-	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第24師団" value = d_01 when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第24師団" value = infantry when = 0 }\r
+ \r
+ 	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第5方面軍" value = land where = 1560 } #0(8)師団\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+@@ -711,7 +712,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+-	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第25師団" value = d_01 when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第25師団" value = infantry when = 0 }\r
+ \r
+ 	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第6方面軍" value = land where = 2780 } #0(8)師団\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+@@ -721,7 +722,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = cavalry_brigade }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+-	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第26師団" value = d_01 when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第26師団" value = infantry when = 0 }\r
+ \r
+ 	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第7方面軍" value = land where = 1551 } #0(8)師団\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+@@ -760,6 +761,7 @@ event = {
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3018 }\r
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3019 }\r
+ 	#command = { trigger = { ai = yes ai = JAP } type = demobilize which = infantry when = 0 where = 1 value = -36 } #\r
++	command = { trigger = { ai = yes NOT = { ai = JAP } } type = strength which = all when = 1 where = 0 org = 200 value = 200 }\r
+   	}\r
+ }\r
+ \r
+@@ -1056,7 +1058,7 @@ event = {
+ 	command = { type = sleepminister which = 50362 }\r
+ 	command = { type = sleepleader which = 50546 }\r
+ 	command = { type = sleepminister which = 50011 } # 秩父宮雍仁親王\r
+-	command = { type = sleepminister which = 50568 }\r
++	command = { type = sleepminister which = 50601 }\r
+ 	command = { type = sleepminister which = 50569 }\r
+ 	command = { type = sleepminister which = 50570 }\r
+ 	command = { type = sleepminister which = 50571 }\r
+@@ -2014,7 +2016,7 @@ event = {
+ 	command = { type = sleepleader which = 50565 }\r
+ 	command = { type = sleepleader which = 50566 }\r
+ 	command = { type = sleepleader which = 50567 }\r
+-	command = { type = sleepleader which = 50568 }\r
++	command = { type = sleepleader which = 50601 }\r
+ 	command = { type = sleepleader which = 50569 }\r
+ 	command = { type = sleepleader which = 50570 }\r
+ 	command = { type = sleepleader which = 50571 }\r
+@@ -2464,7 +2466,7 @@ event = {
+ 	\r
+ 	action = {\r
+ 	name = "ACTIONNAME1891020A"\r
+-	ai_chance = 1000\r
++	ai_chance = 100\r
+ 	command = { type = dissent value = -15 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 1554 when = 1 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 1555 when = 1 }\r
+@@ -2534,7 +2536,9 @@ event = {
+ \r
+ 	decision = {\r
+ 	exists = CHI\r
+-	war = { country = GER country = UER }\r
++	OR = { war = { country = GER country = UER }\r
++	war = { country = DDR country = UER } \r
++		}\r
+ 	NOT = {\r
+ 	OR = {\r
+ 	war = { country = UER country = CHI }\r
+@@ -2548,7 +2552,9 @@ event = {
+ 	}\r
+ 	}\r
+ 	decision_trigger = { \r
+-	war = { country = GER country = UER }\r
++	OR = { war = { country = GER country = UER }\r
++	war = { country = DDR country = UER } \r
++		}\r
+ 	atwar = no\r
+ 	NOT = { exists = CHC }\r
+ 	OR = {\r
+@@ -2559,7 +2565,9 @@ event = {
+ \r
+ 	trigger = {\r
+ 	exists = CHI\r
+-	war = { country = GER country = UER }\r
++	OR = { war = { country = GER country = UER }\r
++	war = { country = DDR country = UER } \r
++		}\r
+ 	NOT = {\r
+ 	OR = {\r
+ 	war = { country = UER country = CHI }\r
+@@ -2863,6 +2871,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = marine when = 1 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = marine when = 1 }\r
++	command = { trigger = { ai = yes } type = strength which = all when = 1 where = 0 org = 200 value = 200 }\r
+ 	ai_chance = 80\r
+ 	}\r
+ \r
+@@ -4927,7 +4936,7 @@ event = {
+ 	name = "ACTIONNAME1891064A"\r
+ 	command = { trigger = { country = UER } type = dissent value = 3 }\r
+ 	command = { trigger = { country = UER } type = set_relation which = PRI value = -200 }\r
+-	command = { trigger = { country = UER } type = non_aggression which = PRI where = UER when = 9999 }\r
++	command = { trigger = { country = UER } type = non_aggression which = PRI where = UER when = 1200 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = JAP value = 10 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = FRA value = 75 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = U00 value = 75 }\r
+@@ -4935,9 +4944,9 @@ event = {
+ 	command = { trigger = { country = PRI } type = set_relation which = ENG value = -200 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = USA value = -200 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = CSA value = -200 }\r
+-	command = { trigger = { country = PRI } type = non_aggression which = PRI where = JAP when = 9999 }\r
+-	command = { trigger = { country = PRI } type = non_aggression which = PRI where = CHI when = 9999 }\r
+-	command = { trigger = { country = PRI } type = non_aggression which = PRI where = FRA when = 9999 }\r
++	command = { trigger = { country = PRI } type = non_aggression which = PRI where = JAP when = 1080 }\r
++	#command = { trigger = { country = PRI } type = non_aggression which = PRI where = CHI when = 9999 }\r
++	command = { trigger = { country = PRI } type = non_aggression which = PRI where = FRA when = 3600 }\r
+ 	command = { trigger = { country = PRI } type = set_domestic which = democratic value = 3 }\r
+ 	command = { trigger = { country = PRI } type = set_domestic which = political_left value = 8 }\r
+ 	command = { trigger = { country = PRI } type = set_domestic which = free_market value = 10 }\r
+@@ -4956,6 +4965,8 @@ event = {
+ 	command = { trigger = { country = PRI } type = chiefofair which = 730236 } # ヴィクトル・スタルヒン\r
+ 	command = { trigger = { country = PRI } type = max_organization which = cavalry value = 20 }\r
+ 	command = { trigger = { country = PRI } type = morale which = cavalry value = 20 }\r
++	command = { trigger = { country = PRI } type = speed which = cavalry value = 2 }\r
++	command = { trigger = { country = PRI } type = supply_consumption which = cavalry value = -4.5 }\r
+ 	command = { trigger = { country = PRI } type = max_organization which = militia value = 20 }\r
+ 	command = { trigger = { country = PRI } type = morale which = militia value = 20 }\r
+ 	command = { trigger = { country = PRI } type = max_organization which = cavalry_brigade value = 10 }\r
+@@ -4975,7 +4986,20 @@ event = {
+ 	command = { trigger = { country = PRI } type = muddy_move which = land value = 3 }\r
+ 	command = { trigger = { country = PRI } type = muddy_attack which = land value = 5 }\r
+ 	command = { trigger = { country = PRI } type = muddy_defense which = land value = 5 }\r
+-	command = { trigger = { country = PRI } type = supply_consumption which = land value = -0.1 }\r
++	command = { trigger = { country = PRI } type = supply_consumption which = land value = -0.5 }\r
++	command = { trigger = { country = PRI } type = no_supplies_combat_mod which = land value = 0.6 }\r
++	command = { trigger = { country = PRI } type = no_fuel_combat_mod which = land value = 0.6 }\r
++	command = { trigger = { country = PRI } type = ground_def_eff value = 0.05 when = 1 }\r
++	#command = { trigger = { country = PRI } type = trickleback_mod value = 50 }\r
++	#command = { trigger = { country = PRI } type = ambush value = 50 }\r
++	#command = { trigger = { country = PRI } type = encirclement value = 50 }\r
++\r
++	command = { trigger = { country = PRI } type = add_core_region which = "Korea" }\r
++	command = { trigger = { country = PRI } type = add_core_area which = "Liaoning" }\r
++	command = { trigger = { country = PRI } type = add_core_area which = "Jilin" }\r
++	command = { trigger = { country = PRI } type = add_core_area which = "Liaoning" }\r
++	command = { trigger = { country = PRI } type = add_core_area which = "Heilongjiang" }\r
++	command = { trigger = { country = PRI ai = yes } type = ai which = "IF/PRI_if.ai" }\r
+ 	command = { trigger = { country = PRI } type = free_ic value = 15 }\r
+ 	command = { trigger = { country = PRI } type = free_energy value = 30 }\r
+ 	command = { trigger = { country = PRI } type = free_metal value = 15 }\r
+@@ -5349,7 +5373,7 @@ event = {
+ # しかし今現在、開発できる土地がなくなったため、それも難しくなり、海外への移住も限界がある。そこで新たな生存圏を確保し、過剰人口を移住させるべきだとしたのである。\r
+ # また三民主義の一つである民族主義に基づき、漢民族が他民族ともに繁栄するために師の立場にならなければならないとしながらも、場合によっては「指導」が難しい少数民族については徹底的に排除しなければならないとし、中華民国による生存圏拡大の正当性を訴えた。\r
+ # 生存圏について、彼は\r
+-# 1.日本　2.シベリア　3.インドシナ\r
++# 1.日本 2.シベリア 3.インドシナ\r
+ # を絶対民族圏として、これら地域の併合は中華民族の権利であると主張。\r
+ # 最後に三民主義についても言及し、衆愚政治に陥りやすい等の民主主義の弱点を指摘し、一人の指導者が政治を導く民主集中制こそ最も道徳的で知性の高い社会の実現を可能にすると主張した。\r
+ # この思想は「新華夷秩序」と呼ばれ、中華ナショナリズム発展に大きな影響を与えた。\r
+@@ -5450,7 +5474,7 @@ event = {
+ 	command = { type = relation which = GER value = 10 }\r
+ 	command = { type = secedeprovince which = CHI value = 2797 }\r
+ 	command = { type = trigger which = 1891072 }\r
+-	ai_chance = 90\r
++	ai_chance = 95\r
+ 	}\r
+ \r
+ 	action = { # 陸戦隊による反撃を認める！\r
+@@ -5463,7 +5487,7 @@ event = {
+ 	command = { type = relation which = FRA value = -25 }\r
+ 	command = { type = relation which = USA value = -25 }\r
+ 	command = { type = trigger which = 1891073 }\r
+-	ai_chance = 10\r
++	ai_chance = 5\r
+ 	}\r
+ }\r
+ \r
+@@ -5521,6 +5545,7 @@ event = {
+ 	command = { type = sleepevent which = 1891018 }\r
+ 	command = { type = sleepevent which = 1891025 }\r
+ 	command = { type = event which = 1891010 where = CHI when = 1 }\r
++	command = { trigger = { ai = JAP } type = remove_units which = all where = JAP when = 2 value = "Japan" }\r
+ 	ai_chance = 40\r
+ 	}\r
+ }\r

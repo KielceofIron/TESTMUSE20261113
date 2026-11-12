@@ -1,0 +1,178 @@
+--- A/db/events/USA.txt [cp932]
++++ B/db/events/USA.txt [cp932]
+@@ -679,7 +679,6 @@ event = {
+ 	action = {\r
+ 		name = "3702b"\r
+ 		ai_chance = 0\r
+-		command = { type = trigger which = 2049025 }\r
+ 		command = { type = flag_ext where = JAP }\r
+ 		command = { type = name where = JAP }\r
+ 		command = { type = relation which = USA value = 150 }\r
+@@ -698,42 +697,132 @@ event = {
+ 		command = { type = peace which = LIB value = 1 }\r
+ 		command = { type = access which = USA }\r
+ 		command = { type = access which = ENG }\r
+-		command = { type = dissent value = 20 }\r
++		command = { type = dissent value = 40 }\r
++		command = { type = demobilize which = land when = 0 where = 1 value = 25 }\r
++		command = { type = demobilize which = air when = 0 where = 1 value = 4 }\r
++		command = { type = demobilize which = battleship when = 1 where = 1 value = 4 }\r
++		command = { type = demobilize which = battlecruiser when = 1 where = 1 value = 0 }\r
++		command = { type = demobilize which = carrier when = 1 where = 1 value = 2 }\r
++		command = { type = demobilize which = escort_carrier when = 1 where = 1 value = 0 }\r
++		command = { type = demobilize which = light_carrier when = 1 where = 1 value = 0 }\r
++		command = { type = demobilize which = heavy_cruiser when = 1 where = 1 value = 4 }\r
++		command = { type = demobilize which = light_cruiser when = 1 where = 1 value = 4 }\r
++		command = { type = demobilize which = destroyer when = 1 where = 1 value = 6 }\r
++		command = { type = demobilize which = nuclear_submarine when = 1 where = 1 value = 0 }\r
++		command = { type = demobilize which = submarine when = 1 where = 1 value = 2 }\r
++		command = { type = demobilize which = transport when = 1 where = 1 value = 2 }\r
+ \r
+ 		command = { type = domestic which = democratic value = 5 }\r
+ 		command = { type = domestic which = political_left value = 4 }\r
+ 		command = { type = domestic which = free_market value = 5 }\r
+ 		command = { type = domestic which = freedom value = 3 }\r
+ 		#command = { type = set_domestic which = professional_army value = 2 }\r
+-		command = { type = domestic which = defense_lobby value = -5 }\r
+-		command = { type = domestic which = interventionism value = -6 }\r
+-\r
++		command = { type = domestic which = defense_lobby value = -9 }\r
++		command = { type = domestic which = interventionism value = -9 }\r
++\r
++		command = { type = headofstate which = 50173 } # 裕仁天皇\r
++		command = { type = headofgovernment which = 50028 } # 幣原喜重郞\r
++		command = { type = foreignminister which = 50038 } # 吉田茂\r
++		command = { type = armamentminister which = 50061 } # 小笠原三九郞\r
++		command = { type = ministerofsecurity which = 50084 } # 堀切善次郞\r
++		command = { type = ministerofintelligence which = 50113 } # 堀切善次郞\r
++		command = { type = chiefofstaff which = 50128 } # 林田博嗣\r
++		command = { type = chiefofarmy which = 50719 } # 長村河鹿\r
++		command = { type = chiefofnavy which = 50721 } # 中澤佑\r
++		command = { type = chiefofair which = 50722 } # 河合明\r
++\r
++		command = { trigger = { OR = { puppet = { country = MAN } alliance = { country = MAN } } } type = inherit which = MAN } # 追加\r
++		command = { trigger = { OR = { puppet = { country = MEN } alliance = { country = MEN } } } type = inherit which = MEN } # 追加\r
++		command = { trigger = { OR = { puppet = { country = CSX } alliance = { country = CSX } } } type = inherit which = CSX } # 追加\r
++		command = { trigger = { OR = { puppet = { country = CGX } alliance = { country = CGX } } } type = inherit which = CGX } # 追加\r
++		command = { trigger = { OR = { puppet = { country = CYN } alliance = { country = CYN } } } type = inherit which = CYN } # 追加\r
++		command = { trigger = { OR = { puppet = { country = CXB } alliance = { country = CXB } } } type = inherit which = CXB } # 追加\r
++		command = { trigger = { OR = { puppet = { country = SIK } alliance = { country = SIK } } } type = inherit which = SIK } # 追加\r
++		command = { trigger = { OR = { puppet = { country = UPE } alliance = { country = UPE } } } type = inherit which = UPE } # 追加\r
++		command = { trigger = { OR = { puppet = { country = U74 } alliance = { country = U74 } } } type = inherit which = U74 } # 追加\r
++		command = { trigger = { OR = { puppet = { country = U87 } alliance = { country = U87 } } } type = inherit which = U87 } # 追加\r
++\r
++		command = { trigger = { NOT = { exists = CHI } } type = independence which = CHI value = 1 when = 1 }\r
+ 		command = { type = secederegion which = CHI value = "China" }\r
+ \r
+ 		command = { type = end_mastery which = MAN } \r
+ 		command = { type = end_mastery which = MEN } \r
+ 		command = { type = end_mastery which = KOR } \r
+ 		command = { type = end_mastery which = CHI } \r
+-		command = { type = end_mastery which = U87 } \r
++		command = { type = end_mastery which = U87 }\r
++\r
++		#Asian Pacific\r
++		command = { type = secederegion which = USA value = "Asian Pacific" } # 追加\r
++		command = { type = remove_core_region which = "Asian Pacific" } # 追加\r
++		command = { type = remove_claim_region which = "Asian Pacific" } # 追加\r
++		command = { type = secedearea which = USA value = "Bonin" } # 追加\r
++		command = { type = remove_core_area which = "Bonin" } # 追加\r
++		command = { type = remove_claim_area which = "Bonin" } # 追加\r
++		command = { type = add_claim_area which = "Bonin" } # 追加\r
++\r
++		#Sakhalin Kuriles\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secedearea which = SOV value = "Sakhalin_Kuriles" } # 追加\r
++		command = { trigger = { war = { country = SOV country = USA } } type = secedearea which = USA value = "Sakhalin_Kuriles" } # 追加\r
++		command = { type = remove_core_area which = "Sakhalin_Kuriles" } # 追加\r
++		command = { type = remove_claim_area which = "Sakhalin_Kuriles" } # 追加\r
+ \r
+ 		#Korea\r
+-		command = { type = removecore which = 1234 } # Jeju - Korea\r
+-		command = { type = removecore which = 1230 } # Gwangju - Korea\r
+-		command = { type = removecore which = 1231 } # Daegu - Korea\r
+-		command = { type = removecore which = 1232 } # Busan - Korea\r
+-		command = { type = removecore which = 1233 } # Chuncheon - Korea\r
+-		command = { type = removecore which = 1228 } # Seoul - Korea\r
+-		command = { type = removecore which = 1229 } # Daejeon - Korea\r
+-		command = { type = removecore which = 1224 } # Sinuiju - Korea\r
+-		command = { type = removecore which = 1226 } # Ganggye - Korea\r
+-		command = { type = removecore which = 1225 } # Cheongjin - Korea\r
+-		command = { type = removecore which = 1227 } # Hamheung - Korea\r
+-		command = { type = removecore which = 1223 } # Wonsan - Korea\r
+-		command = { type = removecore which = 1221 } # Pyeongyang - Korea\r
+-		command = { type = removecore which = 1222 } # Sariwon - Korea\r
++		command = { trigger = { NOT = { exists = KOR ispuppet = KOR } } type = setflag which = KOR_hull } # 追加\r
++		command = { type = remove_core_region which = "Korea" } # 追加\r
++		command = { type = remove_claim_region which = "Korea" } # 追加\r
++		command = { trigger = { NOT = { exists = KOR ispuppet = KOR } } type = independence which = KOR value = 1 } # 追加\r
++		command = { type = secederegion which = KOR value = "Korea" when = 1 } # 追加\r
++		command = { type = secedeprovince which = KOR value = 2790 when = 1 } # 追加\r
++		command = { type = removecore which = 2790 } # 追加\r
++		command = { type = removeclaim which = 2790 } # 追加\r
++		command = { type = secedeprovince which = KOR value = 2796 when = 1 } # 追加\r
++		command = { type = removecore which = 2796 } # 追加\r
++		command = { type = removeclaim which = 2796 } # 追加\r
++\r
++		#Russia\r
++		command = { trigger = { puppet = { country = PRI } } type = inherit which = PRI } # 追加\r
++		command = { trigger = { puppet = { country = SIB } } type = inherit which = SIB } # 追加\r
++		command = { trigger = { puppet = { country = UER } } type = inherit which = UER } # 追加\r
++		command = { trigger = { puppet = { country = KAZ } } type = inherit which = KAZ } # 追加\r
++		command = { trigger = { puppet = { country = KYG } } type = inherit which = KYG } # 追加\r
++		command = { trigger = { puppet = { country = TAJ } } type = inherit which = TAJ } # 追加\r
++		command = { trigger = { puppet = { country = TRK } } type = inherit which = TRK } # 追加\r
++		command = { trigger = { puppet = { country = UZB } } type = inherit which = UZB } # 追加\r
++		command = { trigger = { puppet = { country = UTL } } type = inherit which = UTL } # 追加\r
++\r
++		command = { type = end_mastery which = PRI } # 追加 \r
++		command = { type = end_mastery which = SIB } # 追加\r
++		command = { type = end_mastery which = TAN } # 追加 \r
++		command = { type = end_mastery which = UER } # 追加 \r
++		command = { type = end_mastery which = U62 } # 追加 \r
++		command = { type = end_mastery which = KAZ } # 追加 \r
++		command = { type = end_mastery which = KYG } # 追加 \r
++		command = { type = end_mastery which = TAJ } # 追加 \r
++		command = { type = end_mastery which = TRK } # 追加 \r
++		command = { type = end_mastery which = UZB } # 追加 \r
++		command = { type = end_mastery which = UTL } # 追加 \r
++\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Northern Permafrost" } # 追加\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Far East Siberia" } # 追加\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Irkutsk" } # 追加\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Krasnoyarsk" } # 追加\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Novosibirsk" } # 追加\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Tomsk" } # 追加\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Kazakstan" } # 追加\r
++		command = { trigger = { NOT = { war = { country = SOV country = USA } } } type = secederegion which = SOV value = "Central Asia" } # 追加\r
++\r
++		command = { type = secederegion which = USA value = "Northern Permafrost" } # 追加\r
++		command = { type = secederegion which = USA value = "Far East Siberia" } # 追加\r
++		command = { type = secederegion which = USA value = "Irkutsk" } # 追加\r
++		command = { type = secederegion which = USA value = "Krasnoyarsk" } # 追加\r
++		command = { type = secederegion which = USA value = "Novosibirsk" } # 追加\r
++		command = { type = secederegion which = USA value = "Tomsk" } # 追加\r
++		command = { type = secederegion which = USA value = "Kazakstan" } # 追加\r
++		command = { type = secederegion which = USA value = "Central Asia" } # 追加\r
+ \r
+ 		command = { type = non_aggression which = JAP where = CHI }\r
+ 		command = { type = non_aggression which = JAP where = USA }\r
++		command = { type = trigger which = 2049025 }\r
+ 	}\r
+ }\r
+ \r
+@@ -743,6 +832,7 @@ event = {
+ 	id = 2049025\r
+ 	random = no\r
+ 	country = USA\r
++	save_date = yes\r
+ \r
+ 	name = "3703name"\r
+ 	desc = "EVT_3701_DESC"\r
+@@ -752,6 +842,7 @@ event = {
+ 	action = {\r
+ 		name = ACTION_NAME_OK\r
+ 		command = { type = make_puppet which = JAP }\r
++		command = { trigger = { flag = KOR_hull } type = make_puppet which = KOR }\r
+ 		command = { type = dissent value = -10 }\r
+ 	}\r
+ }\r

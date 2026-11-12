@@ -1,0 +1,52 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_CSA_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_CSA_events.txt [cp932]
+@@ -19,7 +19,13 @@ event = {
+ 	command = { type = add_claim_region which = "Southeast US" }\r
+ 	command = { type = add_claim_region which = "Southwest US" }\r
+ 	command = { type = add_claim_region which = "Midwest US" }\r
+-	command = { type = add_claim_region which = "Southcentral US" }	\r
++	command = { type = add_claim_region which = "Southcentral US" }\r
++	command = { type = supplies value = 2500 }\r
++	command = { type = oilpool value = 1000 }\r
++	command = { type = rarematerialspool value = 500 }\r
++	command = { type = metalpool value = 750 }\r
++	command = { type = energypool value = 1000 }\r
++	command = { type = manpowerpool value = 500 }	\r
+ 	command = { type = deactivate which = 6000300 }\r
+ 	command = { type = deactivate which = 6000500 }\r
+ 	command = { type = deactivate which = 6570 }\r
+@@ -254,7 +260,25 @@ event = {
+ 	random = no\r
+ 	country = CSA\r
+ 	save_date = yes\r
+-	trigger = {  }\r
++	\r
++\r
++	trigger = {\r
++	event = 1299136 #内戦勃発\r
++	NOT = { exists = USA }\r
++	NOT = { exists = U00 }\r
++	NOT = { exists = UE0 }\r
++	OR = { NOT = { alliance = { country = CAN country = ENG } } NOT = { war = { country = CAN } } }\r
++	NOT = { flag = USA_Victory_America }\r
++	NOT = { flag = CSA_Victory_America }\r
++	NOT = { flag = SOV_Victory_America }\r
++	NOT = { flag = CAN_Victory_America }\r
++	NOT = { flag = UK_Victory_America }\r
++	}\r
++\r
++\r
++	date = { day = 0 month = 2 year = 1936 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	name = "EVT_1299504_NAME"\r
+ 	desc = "EVT_1299504_DESC" \r
+@@ -263,6 +287,7 @@ event = {
+ \r
+ 	action = {\r
+ 		name = ACTIONNAME1299504A # アメリカ連合国万歳！　『自由』万歳！　万歳！\r
++	command = { type = setflag which = CSA_Victory_America }\r
+ 	command = { type = dissent value = -15 }\r
+ 	command = { type = add_core_region which = "Southeast US" }\r
+ 	command = { type = add_core_region which = "Southwest US" }\r

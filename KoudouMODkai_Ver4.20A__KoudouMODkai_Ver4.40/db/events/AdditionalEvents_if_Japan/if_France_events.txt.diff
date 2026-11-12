@@ -1,0 +1,753 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_France_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_France_events.txt [cp932]
+@@ -85,6 +85,8 @@
+ #id = 3327304 太陽王計画\r
+ #id = 3327306 1938年労働総取引所選挙\r
+ #id = 3327307 太陽王計画の終了\r
++#id = 3327308 国際汎ヨーロッパ連合\r
++#id = 3327309 ジョルジュ・ヴァロワの謎めいた死\r
+ #  王党派ルート\r
+ #id = 3327401 1938年フランス王国選挙\r
+ #id = 3327402 国家元首の逝去（ジャン3世）\r
+@@ -97,6 +99,10 @@
+ #id = 3327507 ジャン＝ポール・サルトル、平和の訴え\r
+ #id = 3327508 1938年労働総取引所選挙\r
+ #id = 3327509 平和への宥和政策\r
++#  プレイヤー限定イベント\r
++#id = 3327601 サン＝ベルナール作戦\r
++#id = 3327602 ドルヒシュトース作戦\r
++#id = 3327603 ドルヒシュトース作戦 ― 前線兵士の反乱\r
+ ##########################################################################\r
+ #  共和国の残骸\r
+ # フランス・コミューンと呼ばれている現在の政治体制は、第一次世界大戦後に大統領となったジャン・ジョレスが極右王党派の暴動を警戒し、\r
+@@ -106,33 +112,33 @@
+ # 彼の後を継いだレオン・ブルムは各地の労働組合を政府に統合することでこの体制を強固なものとしようとしたが、反対派によってこの独裁体制はフランス・コミューンと皮肉られている。\r
+ # 現在、フランスはレオン・ブルムに代表される穏健な現状維持派、より強固な独裁体制を望む極左、そしてパリ伯ジャンを推戴する極右王党派の三者がにらみ合いを続け、政治的混乱は収まる気配がない。\r
+ ###########################################################################\r
+-\r
+-event = {\r
+-	id = 3327001\r
+-	random = no\r
+-	country = FRA\r
+-\r
+-	name = "EVT_3327001_NAME"\r
+-	desc = "EVT_3327001_DESC"\r
+-	style = 2\r
+-	picture = "Commune_France"\r
+-\r
+-	action = { # 共和政に価値はあるのか？\r
+-	name = "ACTIONNAME3327001A"\r
+-	command = { type = dissent value = 15 }\r
+-	command = { type = deactivate which = 6000300 }\r
+-	command = { type = deactivate which = 6000500 }\r
+-	command = { type = deactivate which = 6570 }\r
+-	command = { type = deactivate which = 6210 }\r
+-	command = { type = deactivate which = 6000100 }\r
+-	command = { type = deactivate which = 6390 }\r
+-	command = { type = deactivate which = 6560 }\r
+-	command = { type = deactivate which = 6010 }\r
+-	command = { type = sleepevent which = 2002076 }\r
+-	command = { type = sleepevent which = 2002077 }\r
+-	}\r
+-}\r
+-\r
++#\r
++#event = {\r
++#	id = 3327001\r
++#	random = no\r
++#	country = FRA\r
++#\r
++#	name = "EVT_3327001_NAME"\r
++#	desc = "EVT_3327001_DESC"\r
++#	style = 1\r
++#	picture = "Commune_France"\r
++#\r
++#	action = { # 共和政に価値はあるのか？\r
++#	name = "ACTIONNAME3327001A"\r
++#	command = { type = dissent value = 15 }\r
++#	command = { type = deactivate which = 6000300 }\r
++#	command = { type = deactivate which = 6000500 }\r
++#	command = { type = deactivate which = 6570 }\r
++#	command = { type = deactivate which = 6210 }\r
++#	command = { type = deactivate which = 6000100 }\r
++#	command = { type = deactivate which = 6390 }\r
++#	command = { type = deactivate which = 6560 }\r
++#	command = { type = deactivate which = 6010 }\r
++#	command = { type = sleepevent which = 2002076 }\r
++#	command = { type = sleepevent which = 2002077 }\r
++#	}\r
++#}\r
++#\r
+ ##########################################################################\r
+ #  1934年労働総取引所選挙\r
+ # 現在、フランスはレオン・ブルムに代表される穏健な現状維持派、より強固な独裁体制を望む極左、そしてパリ伯ジャンを推戴する極右王党派の三者がにらみ合いを続け、政治的混乱は収まる気配がない。\r
+@@ -159,6 +165,7 @@ event = {
+ 	action = { # 選挙の時間だ！\r
+ 	name = "ACTIONNAME3327002A"\r
+ 	command = { type = dissent value = -5 }\r
++	command = { type = sleepevent which = 2002079 }\r
+ 	}\r
+ }\r
+ \r
+@@ -197,7 +204,6 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_COM when = 1 value = 1 }\r
+ 	command = { type = setflag which = FRA_Mli }\r
+-	command = { type = local_setflag which = People } \r
+ 	}\r
+ \r
+ 	action = { # 極左：労働組合党案 ― 郷土防衛軍の権限強化\r
+@@ -211,7 +217,6 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_COM when = 1 value = 1 }\r
+ 	command = { type = setflag which = FRA_Mli }\r
+-	command = { type = local_setflag which = Lightinfantry } \r
+ 	}\r
+ \r
+ 	action = { # 穏健：社会党案 ― バランスの取れた常備軍\r
+@@ -224,7 +229,6 @@ event = {
+ 	command = { type = gain_tech which = 6000320 }\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = setflag which = FRA_SOC when = 1 value = 1 }\r
+-	command = { type = local_setflag which = CHI_doctorine } \r
+ 	}\r
+ \r
+ 	action = { # 穏健：自由主義案 ― 専守防衛\r
+@@ -237,7 +241,6 @@ event = {
+ 	command = { type = gain_tech which = 6110 }\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = setflag which = FRA_SOC when = 1 value = 1 }\r
+-	command = { type = local_setflag which = Defensivearmy } \r
+ 	}\r
+ \r
+ 	action = { # 極右：王党派 ― 火力優勢\r
+@@ -250,7 +253,6 @@ event = {
+ 	command = { type = gain_tech which = 6050 }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_EMP when = 1 value = 1 }\r
+-	command = { type = local_setflag which = Fire } \r
+ 	}\r
+ \r
+ 	action = { # 極右：ソレル主義者 ― 装甲部隊による速度戦\r
+@@ -263,7 +265,6 @@ event = {
+ 	command = { type = gain_tech which = 6900 }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_EMP when = 1 value = 1 }\r
+-	command = { type = local_setflag which = Mobility } \r
+ 	}\r
+ }\r
+ \r
+@@ -796,16 +797,16 @@ event = {
+ 	name = "ACTIONNAME3327008A"\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 10 }\r
+-	command = { type = headofstate which = 5013 }\r
+-	command = { type = headofgovernment which = 5019 }\r
+-	command = { type = foreignminister which = 5047 }\r
+-	command = { type = armamentminister which = 5075 }\r
+-	command = { type = ministerofsecurity which = 5802 }\r
+-	command = { type = ministerofintelligence which = 5118 }\r
+-	command = { type = chiefofstaff which = 5805 }\r
+-	command = { type = chiefofarmy which = 5135 }\r
+-	command = { type = chiefofnavy which = 5143 }\r
+-	command = { type = chiefofair which = 5152 }\r
++	command = { type = headofstate which = 5013 } # モーリス・トレーズ\r
++	command = { type = headofgovernment which = 5019 } # カミーユ・ショータン\r
++	command = { type = foreignminister which = 5047 } # ジャック・デュクロ\r
++	command = { type = armamentminister which = 5075 } # ブノワ・フラション\r
++	command = { type = ministerofsecurity which = 5802 } # ルイ・アラゴン\r
++	command = { type = ministerofintelligence which = 5118 } # ワルデック・ロシェ\r
++	command = { type = chiefofstaff which = 5805 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5135 } # ピエール・ファビアン\r
++	command = { type = chiefofnavy which = 5143 } # シャルル・ティロン\r
++	command = { type = chiefofair which = 5152 } # マルセル・ジットン\r
+ 	command = { type = setflag which = FRA_Commune }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = sleepevent which = 3327009 }\r
+@@ -823,16 +824,16 @@ event = {
+ 	name = "ACTIONNAME3327008B"\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = headofstate which = 5013 }\r
+-	command = { type = headofgovernment which = 5810 }\r
+-	command = { type = foreignminister which = 5811 }\r
+-	command = { type = armamentminister which = 5056 }\r
+-	command = { type = ministerofsecurity which = 5812 }\r
+-	command = { type = ministerofintelligence which = 5804 }\r
+-	command = { type = chiefofstaff which = 5805 }\r
+-	command = { type = chiefofarmy which = 5135 }\r
+-	command = { type = chiefofnavy which = 5143 }\r
+-	command = { type = chiefofair which = 5152 }\r
++	command = { type = headofstate which = 5013 } # モーリス・トレーズ\r
++	command = { type = headofgovernment which = 5810 } # ダニエル・ゲラン\r
++	command = { type = foreignminister which = 5811 } # アリスティド・ブリアン\r
++	command = { type = armamentminister which = 5056 } # アルベール・サロー\r
++	command = { type = ministerofsecurity which = 5812 } # パブロ・ピカソ\r
++	command = { type = ministerofintelligence which = 5804 } # アルベール・カミュ\r
++	command = { type = chiefofstaff which = 5805 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5135 } # ピエール・ファビアン\r
++	command = { type = chiefofnavy which = 5143 } # シャルル・ティロン\r
++	command = { type = chiefofair which = 5152 } # マルセル・ジットン\r
+ 	command = { type = setflag which = Gamelin_coup }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = sleepevent which = 3327009 }\r
+@@ -850,16 +851,16 @@ event = {
+ 	name = "ACTIONNAME3327008C"\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 10 }\r
+-	command = { type = headofstate which = 5809 }\r
+-	command = { type = headofgovernment which = 5818 }\r
+-	command = { type = foreignminister which = 5811 }\r
+-	command = { type = armamentminister which = 5074 }\r
+-	command = { type = ministerofsecurity which = 5812 }\r
+-	command = { type = ministerofintelligence which = 5104 }\r
+-	command = { type = chiefofstaff which = 5805 }\r
+-	command = { type = chiefofarmy which = 5135 }\r
+-	command = { type = chiefofnavy which = 5143 }\r
+-	command = { type = chiefofair which = 5152 }\r
++	command = { type = headofstate which = 5809 } # ダニエル・ゲラン\r
++	command = { type = headofgovernment which = 5818 } # セバスチャン・フォール\r
++	command = { type = foreignminister which = 5811 } # アリスティド・ブリアン\r
++	command = { type = armamentminister which = 5074 } # ジャン・ジェローム\r
++	command = { type = ministerofsecurity which = 5812 } # パブロ・ピカソ\r
++	command = { type = ministerofintelligence which = 5104 } # ロジェ・サレングロ\r
++	command = { type = chiefofstaff which = 5805 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5135 } # ピエール・ファビアン\r
++	command = { type = chiefofnavy which = 5143 } # シャルル・ティロン\r
++	command = { type = chiefofair which = 5152 } # マルセル・ジットン\r
+ 	command = { type = setflag which = FRA_Syndicalisme }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = sleepevent which = 3327009 }\r
+@@ -906,16 +907,16 @@ event = {
+ 	name = "ACTIONNAME3327009A"\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = headofstate which = 5383 }\r
+-	command = { type = headofgovernment which = 5394 }\r
+-	command = { type = foreignminister which = 5819 }\r
+-	command = { type = armamentminister which = 5817 }\r
+-	command = { type = ministerofsecurity which = 5213 }\r
+-	command = { type = ministerofintelligence which = 5218 }\r
+-	command = { type = chiefofstaff which = 5125 }\r
+-	command = { type = chiefofarmy which = 5136 }\r
+-	command = { type = chiefofnavy which = 5009 }\r
+-	command = { type = chiefofair which = 5196 }\r
++	command = { type = headofstate which = 5383 } # ジャン3世\r
++	command = { type = headofgovernment which = 5394 } # シャルル・モーラス\r
++	command = { type = foreignminister which = 5819 } # アンジェロ・タスカ\r
++	command = { type = armamentminister which = 5817 } # ロジェ・ラントノワ\r
++	command = { type = ministerofsecurity which = 5213 } # ピエール・ラヴァル\r
++	command = { type = ministerofintelligence which = 5218 } # ピエール・ラヴァル\r
++	command = { type = chiefofstaff which = 5125 } # ポール・ル・ジェンティローム\r
++	command = { type = chiefofarmy which = 5136 } # マキシム・ウェイガン\r
++	command = { type = chiefofnavy which = 5009 } # フランソワ・ダルラン\r
++	command = { type = chiefofair which = 5196 } # ジャン・マリー・ベルゲレ\r
+ 	command = { type = setflag which = FRA_Kingdom }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = sleepevent which = 3327008 }\r
+@@ -934,16 +935,16 @@ event = {
+ 	name = "ACTIONNAME3327009B"\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 5820 }\r
+-	command = { type = headofgovernment which = 5821 }\r
+-	command = { type = foreignminister which = 5803 }\r
+-	command = { type = armamentminister which = 5004 }\r
+-	command = { type = ministerofsecurity which = 5213 }\r
+-	command = { type = ministerofintelligence which = 5822 }\r
+-	command = { type = chiefofstaff which = 5125 }\r
+-	command = { type = chiefofarmy which = 5136 }\r
+-	command = { type = chiefofnavy which = 5009 }\r
+-	command = { type = chiefofair which = 5196 }\r
++	command = { type = headofstate which = 5820 } # ジョルジュ・ヴァロワ\r
++	command = { type = headofgovernment which = 5821 } # ジャン3世\r
++	command = { type = foreignminister which = 5803 } # モーリス・ブランショ\r
++	command = { type = armamentminister which = 5004 } # ヴァンサン・オリオール\r
++	command = { type = ministerofsecurity which = 5213 } # ピエール・ラヴァル\r
++	command = { type = ministerofintelligence which = 5822 } # リュシアン・ルバテ\r
++	command = { type = chiefofstaff which = 5125 } # ポール・ル・ジェンティローム\r
++	command = { type = chiefofarmy which = 5136 } # マキシム・ウェイガン\r
++	command = { type = chiefofnavy which = 5009 } # フランソワ・ダルラン\r
++	command = { type = chiefofair which = 5196 } # ジャン・マリー・ベルゲレ\r
+ 	command = { type = setflag which = Gamelin_coup }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = sleepevent which = 3327008 }\r
+@@ -961,16 +962,16 @@ event = {
+ 	name = "ACTIONNAME3327009C"\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 5820 }\r
+-	command = { type = headofgovernment which = 5197 } #Kielce保守主義→国家協同主義\r
+-	command = { type = foreignminister which = 5803 }\r
+-	command = { type = armamentminister which = 5823 }\r
+-	command = { type = ministerofsecurity which = 5824 }\r
+-	command = { type = ministerofintelligence which = 5825 }\r
+-	command = { type = chiefofstaff which = 5125 }\r
+-	command = { type = chiefofarmy which = 5136 }\r
+-	command = { type = chiefofnavy which = 5009 }\r
+-	command = { type = chiefofair which = 5196 }\r
++	command = { type = headofstate which = 5820 } # ジョルジュ・ヴァロワ\r
++	command = { type = headofgovernment which = 5023 } # ピエール・ラヴァル\r
++	command = { type = foreignminister which = 5803 } # モーリス・ブランショ\r
++	command = { type = armamentminister which = 5823 } # ジャック・ドリオ\r
++	command = { type = ministerofsecurity which = 5824 } # ジャック・ラカン\r
++	command = { type = ministerofintelligence which = 5825 } # ピエール・ドリュ＝ラ＝ロシェル\r
++	command = { type = chiefofstaff which = 5125 } # ポール・ル・ジェンティローム\r
++	command = { type = chiefofarmy which = 5136 } # マキシム・ウェイガン\r
++	command = { type = chiefofnavy which = 5009 } # フランソワ・ダルラン\r
++	command = { type = chiefofair which = 5196 } # ジャン・マリー・ベルゲレ\r
+ 	command = { type = setflag which = FRA_Sole }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = sleepevent which = 3327008 }\r
+@@ -1013,16 +1014,16 @@ event = {
+ 	name = "ACTIONNAME3327010A"\r
+ 	command = { type = set_domestic which = democratic value = 6 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = headofstate which = 5801 }\r
+-	command = { type = headofgovernment which = 5049 }\r
+-	command = { type = foreignminister which = 5037 }\r
+-	command = { type = armamentminister which = 5813 }\r
+-	command = { type = ministerofsecurity which = 5083 }\r
+-	command = { type = ministerofintelligence which = 5104 }\r
+-	command = { type = chiefofstaff which = 5805 }\r
+-	command = { type = chiefofarmy which = 5806 }\r
+-	command = { type = chiefofnavy which = 5009 }\r
+-	command = { type = chiefofair which = 5196 }\r
++	command = { type = headofstate which = 5801 } # レオン・ブルム\r
++	command = { type = headofgovernment which = 5020 } # エドゥアール・ダラディエ\r
++	command = { type = foreignminister which = 5037 } # ポール・レイノー\r
++	command = { type = armamentminister which = 5813 } # レオン・ヴィクトール・ブルジョア\r
++	command = { type = ministerofsecurity which = 5083 } # ポール・ラマディエール\r
++	command = { type = ministerofintelligence which = 5104 } # ロジェ・サレングロ\r
++	command = { type = chiefofstaff which = 5805 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5806 } # モーリス・ガムラン\r
++	command = { type = chiefofnavy which = 5009 } # フランソワ・ダルラン\r
++	command = { type = chiefofair which = 5196 } # ジャン・マリー・ベルゲレ\r
+ 	command = { type = setflag which = FRA_Center }\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = sleepevent which = 3327008 }\r
+@@ -1040,16 +1041,16 @@ event = {
+ 	name = "ACTIONNAME3327010B"\r
+ 	command = { type = set_domestic which = democratic value = 7 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = headofstate which = 5815 }\r
+-	command = { type = headofgovernment which = 5154 }\r
+-	command = { type = foreignminister which = 5037 }\r
+-	command = { type = armamentminister which = 5813 }\r
+-	command = { type = ministerofsecurity which = 5814 }\r
+-	command = { type = ministerofintelligence which = 5804 }\r
+-	command = { type = chiefofstaff which = 5805 }\r
+-	command = { type = chiefofarmy which = 5806 }\r
+-	command = { type = chiefofnavy which = 5009 }\r
+-	command = { type = chiefofair which = 5196 }\r
++	command = { type = headofstate which = 5815 } # ポール・ラマディエール\r
++	command = { type = headofgovernment which = 5154 } # ロベール・シューマン\r
++	command = { type = foreignminister which = 5037 } # ポール・レイノー\r
++	command = { type = armamentminister which = 5813 } # レオン・ヴィクトール・ブルジョア\r
++	command = { type = ministerofsecurity which = 5814 } # クロード・レヴィ＝ストロース\r
++	command = { type = ministerofintelligence which = 5804 } # アルベール・カミュ\r
++	command = { type = chiefofstaff which = 5805 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5806 } # モーリス・ガムラン\r
++	command = { type = chiefofnavy which = 5009 } # フランソワ・ダルラン\r
++	command = { type = chiefofair which = 5196 } # ジャン・マリー・ベルゲレ\r
+ 	command = { type = setflag which = FRA_Center }\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = sleepevent which = 3327008 }\r
+@@ -1067,16 +1068,16 @@ event = {
+ 	name = "ACTIONNAME3327010C"\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
+-	command = { type = headofstate which = 5801 }\r
+-	command = { type = headofgovernment which = 5018 }\r
+-	command = { type = foreignminister which = 5816 }\r
+-	command = { type = armamentminister which = 5004 }\r
+-	command = { type = ministerofsecurity which = 5814 }\r
+-	command = { type = ministerofintelligence which = 5804 }\r
+-	command = { type = chiefofstaff which = 5805 }\r
+-	command = { type = chiefofarmy which = 5806 }\r
+-	command = { type = chiefofnavy which = 5009 }\r
+-	command = { type = chiefofair which = 5196 }\r
++	command = { type = headofstate which = 5801 } # レオン・ブルム\r
++	command = { type = headofgovernment which = 5018 } # ポール・ラマディエール\r
++	command = { type = foreignminister which = 5816 } # ジャン＝ポール・サルトル\r
++	command = { type = armamentminister which = 5004 } # ヴァンサン・オリオール\r
++	command = { type = ministerofsecurity which = 5814 } # クロード・レヴィ＝ストロース\r
++	command = { type = ministerofintelligence which = 5804 } # アルベール・カミュ\r
++	command = { type = chiefofstaff which = 5805 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5806 } # モーリス・ガムラン\r
++	command = { type = chiefofnavy which = 5009 } # フランソワ・ダルラン\r
++	command = { type = chiefofair which = 5196 } # ジャン・マリー・ベルゲレ\r
+ 	command = { type = setflag which = FRA_Center }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = sleepevent which = 3327008 }\r
+@@ -1120,8 +1121,8 @@ event = {
+ \r
+ 	action = { # 政治的混乱はますます酷いものになる・・・\r
+ 	name = "ACTIONNAME3327011A"\r
+-	command = { type = chiefofstaff which = 5805 }\r
+-	command = { type = chiefofarmy which = 5806 }\r
++	command = { type = chiefofstaff which = 5805 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5806 } # モーリス・ガムラン\r
+ 	command = { type = dissent value = 30 }\r
+ 	command = { type = setflag which = Gamelin_coup }\r
+ 	command = { type = sleepevent which = 3327008 }\r
+@@ -1622,16 +1623,16 @@ event = {
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { type = domestic which = defense_lobby value = 3 }\r
+ 	command = { type = domestic which = interventionism value = 3 }\r
+-	command = { type = headofstate which = 5828 }\r
+-	command = { type = headofgovernment which = 5829 }\r
+-	command = { type = foreignminister which = 5819 }\r
+-	command = { type = armamentminister which = 5817 }\r
+-	command = { type = ministerofsecurity which = 5213 }\r
+-	command = { type = ministerofintelligence which = 5218 }\r
+-	command = { type = chiefofstaff which = 5826 }\r
+-	command = { type = chiefofarmy which = 5827 }\r
+-	command = { type = chiefofnavy which = 5375 }\r
+-	command = { type = chiefofair which = 5196 }\r
++	command = { type = headofstate which = 5828 } # モーリス・ガムラン\r
++	command = { type = headofgovernment which = 5829 } # モーリス・ガムラン\r
++	command = { type = foreignminister which = 5819 } # アンジェロ・タスカ\r
++	command = { type = armamentminister which = 5817 } # ロジェ・ラントノワ\r
++	command = { type = ministerofsecurity which = 5213 } # ピエール・ラヴァル\r
++	command = { type = ministerofintelligence which = 5218 } # ピエール・ラヴァル\r
++	command = { type = chiefofstaff which = 5826 } # モーリス・ガムラン\r
++	command = { type = chiefofarmy which = 5827 } # モーリス・ガムラン\r
++	command = { type = chiefofnavy which = 5375 } # ジャン=マリー・シャルル・アブリアル\r
++	command = { type = chiefofair which = 5196 } # ジャン・マリー・ベルゲレ\r
+ 	command = { type = sleepminister which = 5804 } # アルベール・カミュ\r
+ 	command = { type = sleepminister which = 5816 } # ジャン＝ポール・サルトル\r
+ 	command = { type = sleepminister which = 5812 } # パブロ・ピカソ\r
+@@ -2025,7 +2026,6 @@ event = {
+ 	name = "ACTIONNAME3327028A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = war which = FRA }\r
+-	command = { type = activate which = 6900 }\r
+ 	command = { type = songs which = "Special/0003.txt" } #音源流し\r
+ 	command = { type = trigger which = 19330003 when = 0 } #本イベントを起こす\r
+ 	command = { type = event which = 19310003 where = REB when = 0 }\r
+@@ -3229,7 +3229,7 @@ event = {
+ 	action = { # フランス海軍戦略思想を決定づけたのは、彼らである\r
+ 	name = "ACTIONNAME3327053A"\r
+ 	command = { type = surprise which = naval value = 10 }\r
+-	command = { type = waketeam which = 5103 }\r
++	command = { type = waketeam which = 5104 }\r
+ 	}\r
+ }\r
+ \r
+@@ -5275,6 +5275,62 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  ジョルジュ・ヴァロワの謎めいた死\r
++# フランス・コミューンにおける政争が極右の勝利に終わると、\r
++# フランス国家の象徴はかつて革命的サンディカリズムのイデオローグとされていたジョルジュ・ソレルと直接の交流を持ち、\r
++# 自身もソレル主義を支持するジョルジュ・ヴァロワとなった。\r
++# しかし、極右勢力の勝利後、実務の面でフランスを支配したのは、影の人物として表舞台に積極的に顔を出そうとしない"顔のない男"モーリス・ブランショであった。\r
++# 今やフランスで存在を許される唯一の政党となった『フランス未来運動』の書記長に就任した彼は、\r
++# 他の政治思想を持っていた人々を「オルグ」し、同党の党員を増やすことで、本来ジョルジュ・ヴァロワの支持層であった人々を少数派へと追いやった。\r
++# そうして、同党における実権を失い始めたジョルジュ・ヴァロワは昨夜、\r
++# パリ第十四区のカフェで珈琲を飲んでいる途中に爆殺されてしまったのである。\r
++# 人々はこの犯行の実行者が誰であるかについて、大まかな見当がつきこそしたが、\r
++# 今や彼はフランス・コミューンの『唯一にして至上の指導者』として君臨していたのである。\r
++# 彼はジョルジュ・ヴァロワの死に際し、白々しくも弔辞を述べて見せ、演説の最後をこう締めくくった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 3327309\r
++	random = no\r
++	country = FRA\r
++	\r
++	trigger = {\r
++	flag = FRA_Sole # ソレル主義者の勝利\r
++	event = 3327009 # 労働総取引所選挙 ― 極右が優位\r
++	AND = {\r
++	event = 3327301 # 血の選別\r
++	event = 3327302 # 神話的価値の理論\r
++	event = 3327303 # 音楽の代わりに荒唐無稽\r
++	}\r
++	government = fascist\r
++	headofstate = 5820 # ジョルジュ・ヴァロワ\r
++	exists = FRA\r
++	atwar = no\r
++	random = 25\r
++	}\r
++\r
++	name = "EVT_3327309_NAME"\r
++	desc = "EVT_3327309_DESC"\r
++	style = 2\r
++	picture = "1934 crisis"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 18\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 最高存在の祭典よ再び！至高者万歳！神話的国家万歳！\r
++	name = "ACTIONNAME3327309A"\r
++	command = { type = dissent value = -10 }\r
++	command = { type = belligerence which = FRA value = 3 }\r
++	command = { type = sleepminister which = 5820 } # ジョルジュ・ヴァロワ\r
++	command = { type = wakeminister which = 5836 } # モーリス・ブランショ\r
++	command = { type = wakeminister which = 5837 } # リュシアン・ルバテ\r
++	command = { type = headofstate which = 5836 } # モーリス・ブランショ\r
++	command = { type = headofgovernment which = 5837 } # リュシアン・ルバテ\r
++	}\r
++}\r
++\r
+ ##########################################################################\r
+ #  1938年フランス王国選挙\r
+ # 1938年フランス王国選挙において勝利したのは、王党派及び一部ソレル主義者の連立『新フランス運動』であった。\r
+@@ -5801,4 +5857,251 @@ event = {
+ 	command = { type = relation which = UTC value = 5 }\r
+ 	command = { type = relation which = U00 value = 5 }\r
+ 	}\r
++}\r
++\r
++##########################################################################\r
++#  プレイヤー限定イベント\r
++##########################################################################\r
++#  サン＝ベルナール作戦\r
++# 我らが永年の宿敵たるゲルマンとの対決の日がとうとう訪れた！\r
++# 我が国がかの屈辱的な和平条約から、栄光を取り戻す現在に至るまで軍備増強に励んだのと同様に、\r
++# かの国家もまた国境線に長い長い防衛線を構築している！\r
++# そこで我が国の偉大なる指導者は、かのナポレオンや、数多の名将たちが実現した『アルプス越え』を作戦基軸に据え、\r
++# アルザス・ロレーヌ大要塞を迂回する作戦プランを計画した！\r
++# 今やこの作戦は、実行するか否か――ただそれのみが問題である！\r
++###########################################################################\r
++\r
++event = { \r
++	id = 3327601\r
++	random = no\r
++	country = FRA\r
++\r
++	decision = {\r
++	event = 3327033 # スイスがロマンディ地方の割譲を認める\r
++	control = { province = 391 data = FRA } # ジュネーヴ\r
++	government = fascist # 極右\r
++	war = { country = GER country = FRA }\r
++	exists = SCH\r
++	NOT = { war = { country = GER country = SCH } }\r
++	NOT = { event = 3327023 } # フランスの敗北\r
++	NOT = { event = 45680111 } # ドイツ敗戦\r
++	ai = no\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 3327033 # スイスがロマンディ地方の割譲を認める\r
++	control = { province = 391 data = FRA } # ジュネーヴ\r
++	government = fascist # 極右\r
++	war = { country = GER country = FRA }\r
++	exists = SCH\r
++	NOT = { war = { country = GER country = SCH } }\r
++	NOT = { event = 3327023 } # フランスの敗北\r
++	NOT = { event = 45680111 } # ドイツ敗戦\r
++	ai = no\r
++	}\r
++\r
++	trigger = {\r
++	event = 3327033 # スイスがロマンディ地方の割譲を認める\r
++	control = { province = 391 data = FRA } # ジュネーヴ\r
++	government = fascist # 極右\r
++	war = { country = GER country = FRA }\r
++	exists = SCH\r
++	NOT = { war = { country = GER country = SCH } }\r
++	NOT = { event = 3327023 } # フランスの敗北\r
++	NOT = { event = 45680111 } # ドイツ敗戦\r
++	ai = no\r
++	}\r
++\r
++	name = "EVT_3327601_NAME"\r
++	desc = "EVT_3327601_DESC"\r
++	style = 2\r
++	picture = "FRA_Army"\r
++	decision_picture = "decision_fall_gelb"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # サン＝ベルナール作戦、発動！\r
++	name = "ACTIONNAME3327601A"	\r
++	command = { type = end_non_aggression which = FRA where = SCH }\r
++	command = { type = war which = SCH }\r
++	command = { type = mountain_move which = infantry value = 5 }\r
++	command = { type = forest_move which = infantry value = 5 }\r
++	command = { type = mountain_defense which = infantry value = 3 }\r
++	command = { type = forest_defense which = infantry value = 3 }\r
++	command = { type = mountain_move which = militia value = 5 }\r
++	command = { type = forest_move which = militia value = 5 }\r
++	command = { type = mountain_defense which = militia value = 3 }\r
++	command = { type = forest_defense which = militia value = 3 }\r
++	command = { type = mountain_move which = bergsjaeger value = 5 }\r
++	command = { type = forest_move which = bergsjaeger value = 5 }\r
++	command = { type = mountain_defense which = bergsjaeger value = 3 }\r
++	command = { type = forest_defense which = bergsjaeger value = 3 }\r
++	command = { type = add_corps which = "サン＝ベルナール作戦行動軍団" value = land where = 391 }\r
++	command = { type = add_division value = infantry when = 10 where = artillery }\r
++	command = { type = add_division value = infantry when = 10 where = artillery }\r
++	command = { type = add_division value = bergsjaeger when = 10 where = engineer }\r
++	command = { type = add_division value = bergsjaeger when = 10 where = engineer }\r
++	command = { type = add_division value = bergsjaeger when = 10 where = engineer }\r
++	command = { type = add_division value = bergsjaeger when = 10 where = engineer }\r
++	command = { type = add_division value = militia when = 5 where = cavalry_brigade }\r
++	command = { type = add_division value = militia when = 5 where = cavalry_brigade }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドルヒシュトース作戦\r
++# かくして戦争は始まった！\r
++# 我が国がかの屈辱的な和平条約から、革命と革新を経た末に手にしたこの美しい均衡を、\r
++# かのプロイセン的軍事主義者たちはいとも簡単に崩壊を起こしてみせた。\r
++# 事ここに至り、我がフランス・コミューンが取るべき行動とは、自由と解放の精神により、\r
++# 彼らを『平和的』にオルガナイズすることのみである！\r
++# そこで我々は、我が国の革命細胞を多数の地点から浸透させ、彼らに決起を促す一連の政治的作戦『ドルヒシュトース』の準備を行った。\r
++# 今やこの作戦は、実行するか否か――ただ、それのみである！\r
++###########################################################################\r
++\r
++event = { \r
++	id = 3327602\r
++	random = no\r
++	country = FRA\r
++	save_date = yes\r
++\r
++	decision = {\r
++	event = 45680053 # 防衛計画『ラインの護り』\r
++	flag = Die_Wacht_am_Rhein # 要塞案を採用\r
++	OR = {\r
++	government = democratic\r
++	government = communist\r
++	}\r
++	war = { country = GER country = FRA }\r
++	NOT = { event = 3327023 } # フランスの敗北\r
++	NOT = { event = 45680111 } # ドイツ敗戦\r
++	ai = no\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 45680053 # 防衛計画『ラインの護り』\r
++	OR = {\r
++	government = democratic\r
++	government = communist\r
++	}\r
++	war = { country = GER country = FRA }\r
++	NOT = { event = 3327023 } # フランスの敗北\r
++	NOT = { event = 45680111 } # ドイツ敗戦\r
++	ai = no\r
++	}\r
++\r
++	trigger = {\r
++	event = 45680053 # 防衛計画『ラインの護り』\r
++	flag = Die_Wacht_am_Rhein # 要塞案を採用\r
++	OR = {\r
++	government = democratic\r
++	government = communist\r
++	}\r
++	war = { country = GER country = FRA }\r
++	NOT = { event = 3327023 } # フランスの敗北\r
++	NOT = { event = 45680111 } # ドイツ敗戦\r
++	ai = no\r
++	}\r
++\r
++	name = "EVT_3327602_NAME"\r
++	desc = "EVT_3327602_DESC"\r
++	style = 2\r
++	picture = "FRA_Army"\r
++	decision_picture = "decision_fall_gelb"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 革命のために前線へと浸透せよ！\r
++	name = "ACTIONNAME3327602A"	\r
++	command = { trigger = { ai = no } type = money value = -500 }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  ドルヒシュトース作戦 ― 前線兵士の反乱\r
++# なんということだ！\r
++# 戦争が数年にわたり長期化したことで、最前線で兵士の不満が頂点に達した。\r
++# フランス方面の最前線で、多くの兵士が反乱を起こし、またドイツ本土においても民衆が蜂起している。\r
++###########################################################################\r
++\r
++event = { \r
++	id = 3327603\r
++	random = no\r
++	country = GER\r
++\r
++	trigger = {\r
++	event = { id = 3327602 days = 720 }\r
++	war = { country = GER country = FRA }\r
++	OR = {\r
++	control = { province = 110 data = GER } # 対仏国境\r
++	control = { province = 126 data = GER }\r
++	control = { province = 109 data = GER }\r
++	control = { province = 131 data = GER }\r
++	control = { province = 104 data = GER }\r
++	control = { province = 107 data = GER }\r
++	control = { province = 105 data = GER }\r
++	}\r
++	NOT = { event = 3327023 } # フランスの敗北\r
++	NOT = { event = 45680111 } # ドイツ敗戦\r
++	}\r
++\r
++	name = "EVT_3327603_NAME"\r
++	desc = "EVT_3327603_DESC"\r
++	style = 2\r
++	picture = "FRA_Army"\r
++	decision_picture = "decision_fall_gelb"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 反乱だ！\r
++	name = "ACTIONNAME3327603A"	\r
++	command = { type = dissent value = 20 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { type = revolt which = -2 when = 0 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1003 } } type = remove_division which = 14510 value = 1003 } # 西部方面第1軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1004 } } type = remove_division which = 14510 value = 1004 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1005 } } type = remove_division which = 14510 value = 1005 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1008 } } type = remove_division which = 14510 value = 1008 } # 西部方面第2軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1009 } } type = remove_division which = 14510 value = 1009 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1010 } } type = remove_division which = 14510 value = 1010 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1013 } } type = remove_division which = 14510 value = 1013 } # 西部方面第3軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1014 } } type = remove_division which = 14510 value = 1014 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1015 } } type = remove_division which = 14510 value = 1015 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1018 } } type = remove_division which = 14510 value = 1018 } # 西部方面第4軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1019 } } type = remove_division which = 14510 value = 1019 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1020 } } type = remove_division which = 14510 value = 1020 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1023 } } type = remove_division which = 14510 value = 1023 } # 西部方面第5軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1024 } } type = remove_division which = 14510 value = 1024 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1025 } } type = remove_division which = 14510 value = 1025 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1028 } } type = remove_division which = 14510 value = 1028 } # 西部方面第6軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1029 } } type = remove_division which = 14510 value = 1029 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1030 } } type = remove_division which = 14510 value = 1030 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1033 } } type = remove_division which = 14510 value = 1033 } # 西部方面第7軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1034 } } type = remove_division which = 14510 value = 1034 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1034 } } type = remove_division which = 14510 value = 1035 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1036 } } type = remove_division which = 14510 value = 1038 } # 西部方面第8軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1037 } } type = remove_division which = 14510 value = 1039 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1037 } } type = remove_division which = 14510 value = 1040 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1043 } } type = remove_division which = 14510 value = 1043 } # 西部方面第9軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1044 } } type = remove_division which = 14510 value = 1044 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1045 } } type = remove_division which = 14510 value = 1045 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1048 } } type = remove_division which = 14510 value = 1048 } # 西部方面第10軍\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1049 } } type = remove_division which = 14510 value = 1049 }\r
++	command = { trigger = { flag = Die_Wacht_am_Rhein division_exists = { type = 14510 id = 1050 } } type = remove_division which = 14510 value = 1050 }\r
++	}\r
+ }
+\ No newline at end of file

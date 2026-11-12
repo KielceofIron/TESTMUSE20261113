@@ -1,0 +1,97 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_AI_events.txt [cp932]
+@@ -283,83 +283,7 @@
+ \r
+ \r
+ \r
+-#############################################\r
+-# AI再配置促進用海底トンネルイベント\r
+-#############################################\r
+-event = {\r
+-	id = 99980000\r
+-	random = no\r
+-	country = CHI\r
+-	name = "AI_EVENT"\r
+-	trigger = {\r
+-	ai = yes\r
+-	atwar = no\r
+-	control = { province = 1232 data = -3 }\r
+-	control = { province = 2790 data = -3 }\r
+-	control = { province = 2787 data = -3 }\r
+-	}\r
+-	persistent = no\r
+-	date = { day = 0 month = 0 year = 1964 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action_a = {\r
+-	command = { type = local_setflag which = Tsushimastraits }\r
+-	command = { type = event which = 99980001 where = REB when = 0 }\r
+-	}\r
+-}\r
+-event = {\r
+-	id = 99980001\r
+-	random = no\r
+-	country = REB\r
+-	name = "AI_EVENT"\r
+-	\r
+-\r
+-\r
+-	action_a = {\r
+-	command = { type = switch_allegiance which = 22300 value = 5 where = URU }\r
+-	command = { type = switch_allegiance which = 22300 value = 7 where = URU }\r
+-	}\r
+-}\r
+-event = {\r
+-	id = 99980002\r
+-	random = no\r
+-	country = CHI\r
+-	name = "AI_EVENT"\r
+-	trigger = {\r
+-	ai = yes\r
+-	local_flag = Tsushimastraits\r
+-	year = 1939\r
+-	  OR = {\r
+-	 NOT = {  atwar = no }\r
+-	  NOT = { control = { province = 1232 data = -3 } }\r
+-	  NOT = { control = { province = 2790 data = -3 } }\r
+-	  NOT = { control = { province = 2787 data = -3 } }\r
+-	  \r
+-	 }\r
+-	}\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+-	action_a = {\r
+-	command = { type = local_clrflag which = Tsushimastraits }\r
+-	command = { type = event which = 99980003 where = URU when = 0 }\r
+-	}\r
+-}\r
+-event = {\r
+-	id = 99980003\r
+-	random = no\r
+-	persistent = yes\r
+-	country = URU\r
+-\r
+-	name = "AI_EVENT"\r
+-\r
+-	action_a = {\r
+-\r
+-	command = { type = switch_allegiance which = naval which = 22300 value = 5 where = REB }\r
+-	command = { type = switch_allegiance which = naval which = 22300 value = 7 where = REB }\r
+-	}\r
+-}\r
+ event = {\r
+ 	id = 99980004\r
+ 	random = no\r
+@@ -440,6 +364,9 @@ event = {
+ \r
+ 	action_a = {\r
+ 	name = "ACTIONNAME_SHAJI" \r
+-		command = {  }\r
++	command = {  }\r
+ 	}\r
+ }\r
++\r
++\r
++\r

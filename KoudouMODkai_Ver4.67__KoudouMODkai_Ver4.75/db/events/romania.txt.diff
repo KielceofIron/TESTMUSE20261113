@@ -1,0 +1,17 @@
+--- A/db/events/romania.txt [cp932]
++++ B/db/events/romania.txt [cp932]
+@@ -34,7 +34,13 @@ event = {
+ 	picture = "news_paper"\r
+ 	\r
+ 	action_a = {\r
+-		trigger = { Not = { event = 219105 } } # 追加 鉄衛団時は承諾が選択できない＝必ず開戦\r
++		trigger = {\r
++		OR = {\r
++		Not = { event = 219105 } # 追加 鉄衛団時は承諾が選択できない＝必ず開戦\r
++		exists = ALS # ブリュンヒルド公国が存在する\r
++		minister = 110301 # 望月冬夜\r
++		}\r
++		} \r
+ 		name = "ACTION_NAME_ACCEPT" # Accept\r
+ 		ai_chance = 98\r
+ 		command = { type = secedeprovince which = SOV value = 304 } # Chisinau - Romania\r

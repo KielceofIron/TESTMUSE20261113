@@ -1,0 +1,358 @@
+--- A/ai/IF/fra_if.ai [cp932]
++++ B/ai/IF/fra_if.ai [cp932]
+@@ -1,10 +1,10 @@
+ # France 1936 AI File by Lothos\r
+ \r
+ switch = no # [yes/no]\r
+-max_front_ratio = 1.0\r
++max_front_ratio = 10.0\r
+ max_front_ratios = { \r
+-	GER = 2.0\r
+-	UTC = 2.0\r
++	GER = 3.0\r
++	UER = 2.0\r
+ 	AUS = 2.0\r
+ 	U09 = 2.0\r
+ 	UB8 = 2.0\r
+@@ -23,8 +23,8 @@ upgrading = 0.0 # 0.10
+ reinforcement = 0.0 # 0.10\r
+ strat_redeploy_threshold = 50\r
+ max_redeploying = 0.05\r
+-exp_force_ratio = 0.0 # 0.50\r
+-exp_force_ratios = { } \r
++exp_force_ratio = 0.5 # 0.50\r
++exp_force_ratios = { U14 = 0.5 U29 = 0.5 ITA = 0.5} \r
+ no_exp_forces_to = { ENG CAN AST NZL SAF NEP BHU NOR POL DEN CZE }\r
+ \r
+ ###################################\r
+@@ -34,9 +34,33 @@ combat = { }
+ \r
+ claim_acceptance = -69\r
+ \r
+-liberate = { BEL HOL LUX DEN NOR POL YUG SPR POR SCH ITA ENG ROM BUL HUN CZE GRE FIN TUR \r
+-U10 U11 U12 U13 U14 U15 U16 U17 U18 U19 U20 U21 U22 U26 U31 U32 U33 U34 U35 U38 CHC PRK \r
+-SOV U00\r
++liberate = { \r
++ SPR #スペイン共和国\r
++ U10 #オランダ社会主義連邦\r
++ U12 #イングランド共和国\r
++ U13 #ハンガリー社会主義共和国\r
++ U14 #イタリア連邦\r
++ U15 #ポルトガル社会主義共和国\r
++ U16 #オーストリア民主共和国\r
++ U17 #ベルギー人民共和国\r
++ U18 #ルクセンブルク民主共和国\r
++ U19 #ノルウェー人民共和国\r
++ U20 #フィンランド民主共和国\r
++ U21 #スウェーデン社会主義連邦\r
++ U22 #デンマーク人民共和国\r
++ U26 #スイス社会主義共和国\r
++ U29 #ブルガリア人民共和国\r
++ U31 #チェコスロバキア社会主義共和国\r
++ U32 #ポーランド人民共和国\r
++ U34 #トルコ社会主義共和国\r
++ U38 #カナダ人民共和国\r
++ UAP #東南アジア諸国連合\r
++ UES #アフリカ統一機構\r
++ CHC #中華ソビエト共和国\r
++ PRK #朝鮮民主主義人民共和国\r
++ SOV #ソビエト連邦\r
++ U00 #アメリカ社会主義合衆国\r
++\r
+ \r
+ }\r
+ \r
+@@ -199,6 +223,158 @@ tech_sharing = {
+ 		1230 = 100\r
+ 		1240 = 100\r
+ 		1250 = 100\r
++\r
++		# 戦車\r
++		2620 = 100\r
++		2010 = 100\r
++		2630 = 100\r
++		2640 = 100\r
++		2646 = 100\r
++		2650 = 100\r
++		2030 = 100\r
++		2040 = 100\r
++		2050 = 100\r
++		2060 = 100\r
++		2070 = 100\r
++		2080 = 100\r
++		2090 = 100\r
++		2140 = 100\r
++		11000 = 100\r
++		2660 = 100\r
++		11010 = 100\r
++		2670 = 100\r
++		\r
++		# 陸ドク\r
++		6500	 = 200\r
++		6510	 = 200\r
++		6530	 = 200\r
++		6580	 = 200\r
++		6590	 = 200\r
++		6600	 = 200\r
++		6610	 = 200\r
++		6680	 = 200\r
++		6620	 = 200\r
++		6630	 = 200\r
++		6690	 = 200\r
++		6640	 = 200\r
++		6700	 = 200\r
++		6650	 = 200\r
++		6660	 = 200\r
++		6710	 = 200\r
++		6670	 = 200\r
++		6540	 = 200\r
++		6550	 = 200\r
++		6910	 = 200\r
++		6210	 = 200\r
++		6220	 = 200\r
++		6250	 = 200\r
++		6260	 = 200\r
++		6230	 = 200\r
++		6240	 = 200\r
++		6270	 = 200\r
++		6290	 = 200\r
++		6280	 = 200\r
++		14100	 = 200\r
++		6720	 = 200\r
++		6740	 = 200\r
++		6810	 = 200\r
++		6820	 = 200\r
++		6830	 = 200\r
++		6570	 = 200\r
++		6300	 = 200\r
++		6310	 = 200\r
++		6320	 = 200\r
++		6330	 = 200\r
++		6340	 = 200\r
++		6350	 = 200\r
++		6370	 = 200\r
++		6360	 = 200\r
++		14060	 = 200\r
++		6770	 = 200\r
++		6780	 = 200\r
++		6860	 = 200\r
++		6870	 = 200\r
++		6840	 = 200\r
++		6010	 = 200\r
++		6020	 = 200\r
++		6040	 = 200\r
++		6050	 = 200\r
++		6060	 = 200\r
++		6070	 = 200\r
++		6080	 = 200\r
++		6100	 = 200\r
++		6090	 = 200\r
++		14050	 = 200\r
++		6790	 = 200\r
++		6800	 = 200\r
++		6880	 = 200\r
++		6890	 = 200\r
++		6850	 = 200\r
++		6560	 = 200\r
++		6030	 = 200\r
++		6120	 = 200\r
++		6110	 = 200\r
++		6130	 = 200\r
++		6140	 = 200\r
++		6150	 = 200\r
++		6170	 = 200\r
++		6180	 = 200\r
++		6200	 = 200\r
++		14070	 = 200\r
++		6390	 = 200\r
++		6400	 = 200\r
++		6420	 = 200\r
++		6410	 = 200\r
++		6430	 = 200\r
++		6440	 = 200\r
++		6450	 = 200\r
++		6160	 = 200\r
++		6460	 = 200\r
++		6190	 = 200\r
++		6490	 = 200\r
++		6730	 = 200\r
++		6750	 = 200\r
++		6760	 = 200\r
++		6000300	 = 200\r
++		6000330	 = 200\r
++		6000320	 = 200\r
++		6000310	 = 200\r
++		6000340	 = 200\r
++		6000350	 = 200\r
++		6000360	 = 200\r
++		6000390	 = 200\r
++		6000400	 = 200\r
++		6000410	 = 200\r
++		6000500	 = 200\r
++		6000510	 = 200\r
++		6000520	 = 200\r
++		6000530	 = 200\r
++		6000540	 = 200\r
++		6000550	 = 200\r
++		6000570	 = 200\r
++		6000580	 = 200\r
++		6000600	 = 200\r
++		6000610	 = 200\r
++		6000100	 = 200\r
++		6000110	 = 200\r
++		6000120	 = 200\r
++		6000130	 = 200\r
++		6000140	 = 200\r
++		6000150	 = 200\r
++		6000160	 = 200\r
++		6000170	 = 200\r
++		6000210	 = 200\r
++\r
++		\r
++		\r
++		\r
++		\r
++		\r
++		\r
++		\r
++\r
++\r
++\r
+ 	}\r
+ }\r
+ ###################################\r
+@@ -243,7 +419,7 @@ spyprefs =
+ 		steal_blueprint 	= 1\r
+ 		minister_assassination 		= 1\r
+ 		smear_campaign 		= 3\r
+-		coup 				= 1\r
++		coup 				= 0\r
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans		= 1\r
+@@ -275,7 +451,7 @@ spyprefs =
+ 		found_partisans		= 2\r
+ 		massmedia 			= 2\r
+ 		disrupt_techteam 	= 5\r
+-		country 			= UTC\r
++		country 			= UER\r
+ 	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 6\r
+@@ -362,7 +538,7 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= no\r
+ 	max_batch_peace 	= 680 \r
+-	max_batch_war 		= 320 \r
++	max_batch_war 			= 490 \r
+ 	max_batch_home_front 	= 180\r
+         extra_convoys_war = 0.0000 \r
+        	extra_convoys_peace = 0.0000\r
+@@ -541,7 +717,7 @@ garrison = {
+ \r
+ 	# PRIORITIES:\r
+ 	beach			= 5 # 10	# Beach level 2\r
+-	capital			= 80 # 50	# Our capital\r
++	capital			= -1 # 50	# Our capital\r
+ 	human_border	= 0		# Ignored for allied human players\r
+ 	war_target		= 20 # 50	# The next country targeted for attack by this AI\r
+ 	\r
+@@ -553,8 +729,10 @@ garrison = {
+ 	country_priorities = {\r
+ 		BEL = 80 # 130\r
+ 		LUX = 110\r
+-		GER = 120\r
+-		UTC = 120\r
++		GER = 1200\r
++		WLL = 1200\r
++		FLA = 1200\r
++		UER = 120\r
+ 		AUS = 120\r
+ 		U09 = 120\r
+ 		UB8 = 120\r
+@@ -690,6 +868,12 @@ garrison = {
+ 		# Asia\r
+ 		1395 = 10 # Hanoi\r
+ 		1399 = 10 # Saigon\r
++		109 = 300\r
++110 = 300\r
++104 = 300\r
++105 = 300\r
++107 = 300\r
++389 = 300\r
+ 	}\r
+ 	area_multiplier = {\r
+ 		# Africa\r
+@@ -701,14 +885,15 @@ garrison = {
+ 		1019 = 0.10 # Beirut\r
+ 		\r
+ 		# Asia\r
+-		1395 = 0.3 # Hanoi\r
+-		1399 = 0.3 # Saigon\r
++		#1395 = 0.3 # Hanoi\r
++		#1399 = 0.3 # Saigon\r
+ 	}\r
+ }\r
+ front = { \r
+-	recklessness 		= 2 # 0-3\r
+-	distrib_vs_ai 		= even\r
++	recklessness 		= 3 # 0-3\r
++	distrib_vs_ai 		= OP_defensive\r
+ 	distrib_vs_human 	= even\r
++	front_leader_home	= 100\r
+ \r
+ 	enemy_reinf_days	= 6\r
+ 	reserve_prop		= 0.1\r
+@@ -744,7 +929,7 @@ front = {
+ 	urban_attack 	= 1.0\r
+ 	river 		= 1.0\r
+ \r
+-	largefort 	= 1.0\r
++	largefort 	= 0.93\r
+ 	smallfort 	= 1.0\r
+ \r
+     enemy_handicap = {\r
+@@ -765,16 +950,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 50.0 # 30.0\r
+-	groundattackdesirability 		= 40.0\r
+-	inderdictiondesirability 		= 20.0\r
+-	logisticalstrikedesirability 	= 2.0\r
+-	runwaycrateringdesirability 	= 1.0 # 10.0\r
+-	strategicstrikedesirability 	= 10.0\r
+-	installationstrikedesirability 	= 1.0 # 5.0\r
+-	navalstrikedesirability 		= 15.0\r
+-	portstrikedesirability 			= 20.0 # 9.0\r
+-	convoyraiddesirability			= 0.5 # 9.0\r
++	airsuperioritydesirability 		= 50000.0 # 30.0\r
++	groundattackdesirability 		= 40000.0\r
++	inderdictiondesirability 		= 20000\r
++	logisticalstrikedesirability 		= 2000\r
++	runwaycrateringdesirability 		= 1000 # 10.0\r
++	strategicstrikedesirability 		= 10000\r
++	installationstrikedesirability 		= 1000 # 5.0\r
++	navalstrikedesirability 		= 15000\r
++	portstrikedesirability 		= 20000 # 9.0\r
++	convoyraiddesirability 		= 500 # 9.0\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -796,7 +981,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+@@ -807,6 +992,7 @@ air_marshal = {
+ # Invasions and Naval\r
+ ###################################\r
+ invasion = { \r
++	invasion			= yes\r
+  	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)\r
+ 	random		= 8.0	#How big a random range.  (1.0 = 1%)\r
+ 	coastal		= 0.1	#increase to avoid coastal forts more.\r

@@ -1,0 +1,578 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
+@@ -53,6 +53,24 @@
+ #id = 6656426 親ロシア傀儡AI（POL）\r
+ #id = 6656427 親ロシア傀儡AI（ROM）\r
+ #id = 6656428 親ロシア傀儡AI（YUG）\r
++#ドイツ\r
++#id = 6656501 海軍建設AIイベント\r
++#id = 6656502 ドイツ研究AI\r
++#id = 6656503 ドイツ戦時研究AI\r
++#id = 6656504 ドイツアシカ作戦AI\r
++#id = 6656505 ドイツ原発建設AIイベント\r
++#id = 6656506 ドイツ飛行爆弾青写真AIイベント\r
++#id = 6656507 ドイツ戦略ロケット青写真AIイベント\r
++#id = 6656508 ドイツ弾道ミサイル青写真AIイベント\r
++#id = 6656509 ドイツICBM青写真AIイベント\r
++#id = 6656510 ドイツ飛行爆弾生産AIイベント\r
++#id = 6656511 ドイツ戦略爆撃機生産AIイベント\r
++#id = 6656512 ドイツ迎撃機生産AIイベント\r
++#id = 6656513 ドイツ戦術爆撃機生産AIイベント\r
++#id = 6656514 ドイツ海軍爆撃機生産AIイベント\r
++#id = 6656515 リトアニア枢軸加盟AI\r
++#id = 6656516 ラトビア枢軸加盟AI\r
++#id = 6656517 エストニア枢軸加盟AI\r
+ ##########################################################################\r
+ #  中華民国\r
+ ##########################################################################\r
+@@ -1756,6 +1774,550 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  ドイツ\r
++##########################################################################\r
++#  海軍建設AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656501\r
++	random = no\r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	technology = 3470 # 1934年型戦艦(ビスマルク級戦艦）\r
++	technology = 3340 # 1934年型巡戦\r
++	technology = 3260 # 1934年型重巡\r
++	technology = 3160 # 1935年型軽巡\r
++	technology = 3060 # 1933年型駆逐艦\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = carrier value = cag cost = 0.1 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l when = 3 cost = 0.1 where = 3 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battleship value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battlecruiser value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = battlecruiser value = naval_improved_hull_l cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = heavy_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = light_cruiser value = naval_improved_hull_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = build_division which = destroyer value = naval_fire_controll_s cost = 0.1 }\r
++	command = { type = max_positioning which = carrier value = 0.05 }\r
++	command = { type = min_positioning which = carrier value = 0.05 }\r
++	command = { type = max_positioning which = light_carrier value = 0.05 }\r
++	command = { type = min_positioning which = light_carrier value = 0.05 }\r
++	command = { type = max_positioning which = escort_carrier value = 0.05 }\r
++	command = { type = min_positioning which = escort_carrier value = 0.05 }\r
++	command = { type = max_positioning which = battleship value = 0.05 }\r
++	command = { type = min_positioning which = battleship value = 0.05 }\r
++	command = { type = max_positioning which = battlecruiser value = 0.05 }\r
++	command = { type = min_positioning which = battlecruiser value = 0.05 }\r
++	command = { type = max_positioning which = heavy_cruiser value = 0.05 }\r
++	command = { type = min_positioning which = heavy_cruiser value = 0.05 }\r
++	command = { type = max_positioning which = light_cruiser value = 0.05 }\r
++	command = { type = min_positioning which = light_cruiser value = 0.05 }\r
++	command = { type = max_positioning which = destroyer value = 0.05 }\r
++	command = { type = min_positioning which = destroyer value = 0.05 }\r
++	command = { type = max_positioning which = submarine value = 0.05 }\r
++	command = { type = min_positioning which = submarine value = 0.05 }\r
++	command = { type = max_positioning which = nuclear_submarine value = 0.05 }\r
++	command = { type = min_positioning which = nuclear_submarine value = 0.05 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ研究AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656502\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = research_mod value = 5 }\r
++	command = { type = gain_tech which = 5470 } # 核技術\r
++	command = { type = gain_tech which = 5480 }\r
++	command = { type = gain_tech which = 5490 }\r
++	command = { type = gain_tech which = 5500 }\r
++	command = { type = gain_tech which = 5510 }\r
++	command = { type = gain_tech which = 5520 }\r
++	command = { type = gain_tech which = 5530 }\r
++	command = { type = gain_tech which = 5540 }\r
++	command = { type = gain_tech which = 7170 } # 核兵器\r
++	command = { type = gain_tech which = 7180 }\r
++	command = { type = gain_tech which = 7190 }\r
++	command = { type = gain_tech which = 16010 }\r
++	command = { type = gain_tech which = 16020 }\r
++	command = { type = ai which = "IFazia/switch/GER_Research_IF.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ戦時研究AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656503\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	atwar = yes\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1940 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/GER_Research_IF.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツアシカ作戦AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656504\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	event = 2003003 # ヴィシー政権\r
++	war = { country = ENG }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1940 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/GER_Sealion.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ原発建設AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656505\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	technology = 5540 # 原子力発電\r
++	is_tech_active = 7170 # 核廃棄物爆弾\r
++	owned = { province = 177 data = GER } # ニュルンベルク\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1938 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { trigger = { NOT = { technology = { country = GER value = 7170 } } } type = gain_tech which = 7170 } # 核兵器\r
++	command = { trigger = { NOT = { technology = { country = GER value = 7180 } } } type = gain_tech which = 7180 }\r
++	command = { trigger = { NOT = { technology = { country = GER value = 7190 } } } type = gain_tech which = 7190 }\r
++	command = { trigger = { NOT = { technology = { country = GER value = 16010 } } } type = gain_tech which = 16010 }\r
++	command = { trigger = { NOT = { technology = { country = GER value = 16020 } } } type = gain_tech which = 16020 }\r
++	command = { type = construct which = nuclear_reactor where = 177 value = 10 } # ニュルンベルク\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ飛行爆弾青写真AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656506\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	is_tech_active = 7100 # 飛行爆弾\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = gain_tech which = 7100 } # 飛行爆弾\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  ドイツ戦略ロケット青写真AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656507\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	is_tech_active = 7110 # 戦略ロケット\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = gain_tech which = 7110 } # 戦略ロケット\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ弾道ミサイル青写真AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656508\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	is_tech_active = 7120 # 弾道ミサイル\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = gain_tech which = 7120 } # 弾道ミサイル\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツICBM青写真AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656509\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	is_tech_active = 7130 # 大陸間弾道ミサイル\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = gain_tech which = 7130 } # 大陸間弾道ミサイル\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ飛行爆弾生産AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656510\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	technology = 7100 # 飛行爆弾\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = build_division which = flying_bomb when = 20 cost = 0.1 }\r
++	command = { type = build_division which = flying_bomb when = 20 cost = 0.1 }\r
++	command = { type = build_division which = flying_bomb when = 20 cost = 0.1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ戦略爆撃機生産AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656511\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	technology = 4230 # 1939年型戦略爆撃機\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = build_division which = strategic_bomber when = 2 cost = 0.1 }\r
++	command = { type = build_division which = strategic_bomber when = 2 cost = 0.1 }\r
++	command = { type = build_division which = strategic_bomber when = 2 cost = 0.1 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ迎撃機生産AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656512\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	technology = 4030 # 1937年型迎撃機\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 where = 0.5 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 where = 0.5 }\r
++	command = { type = build_division which = interceptor when = 3 cost = 0.1 where = 0.5 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ドイツ戦術爆撃機生産AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656513\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	technology = 4140 # 1938年型戦術爆撃機\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 where = 0.5 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 where = 0.5 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = 0.1 where = 0.5 }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  ドイツ海軍爆撃機生産AIイベント\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656514\r
++	random = no \r
++	country = GER\r
++	\r
++	trigger = {\r
++	technology = 4190 # 1938年型海軍爆撃機\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1938 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = build_division which = naval_bomber when = 3 when = 3 cost = 0.1 where = 0.75 }\r
++	command = { type = build_division which = naval_bomber when = 3 when = 3 cost = 0.1 where = 0.75 }\r
++	command = { type = build_division which = naval_bomber when = 3 when = 3 cost = 0.1 where = 0.75 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  リトアニア枢軸加盟AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656515\r
++	random = no \r
++	country = LIT\r
++	\r
++	trigger = {\r
++	NOT = { war = { country = GER } }\r
++	NOT = { war = { country = UER } }\r
++	NOT = { alliance = { country = LIT country = GER } }\r
++	NOT = { alliance = { country = LIT country = UER } }\r
++	NOT = { alliance = { country = LIT country = SOV } }\r
++	NOT = { alliance = { country = LIT country = ENG } }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1941 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/LIT_Axis.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  ラトビア枢軸加盟AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656516\r
++	random = no \r
++	country = LAT\r
++	\r
++	trigger = {\r
++	NOT = { war = { country = GER } }\r
++	NOT = { war = { country = UER } }\r
++	NOT = { alliance = { country = LAT country = GER } }\r
++	NOT = { alliance = { country = LAT country = UER } }\r
++	NOT = { alliance = { country = LAT country = SOV } }\r
++	NOT = { alliance = { country = LAT country = ENG } }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1941 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/LAT_Axis.ai" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  エストニア枢軸加盟AI\r
++###########################################################################\r
++\r
++event = {\r
++	id = 6656517\r
++	random = no \r
++	country = EST\r
++	\r
++	trigger = {\r
++	NOT = { war = { country = GER } }\r
++	NOT = { war = { country = UER } }\r
++	NOT = { alliance = { country = EST country = GER } }\r
++	NOT = { alliance = { country = EST country = UER } }\r
++	NOT = { alliance = { country = EST country = SOV } }\r
++	NOT = { alliance = { country = EST country = ENG } }\r
++	ai = yes\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0	\r
++	\r
++	date = { day = 0 month = 0 year = 1941 }\r
++	offset = 3\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = {\r
++	command = { type = ai which = "IFazia/switch/EST_Axis.ai" }\r
++	}\r
++}\r
+ \r
+ ##########################################################################\r
+ #  謝辞イベント\r

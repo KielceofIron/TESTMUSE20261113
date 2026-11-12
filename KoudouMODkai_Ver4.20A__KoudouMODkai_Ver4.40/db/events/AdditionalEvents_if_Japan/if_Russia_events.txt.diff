@@ -1,0 +1,529 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Russia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Russia_events.txt [cp932]
+@@ -123,7 +123,7 @@ event = {
+ \r
+ 	name = "EVT_5951001_NAME"\r
+ 	desc = "EVT_5951001_DESC"\r
+-	style = 2\r
++	style = 1\r
+ 	picture = "strikesruspetro"\r
+ \r
+ 	action = { # ロシアは一体、どうなってしまうのだろうか？\r
+@@ -1685,19 +1685,15 @@ event = {
+ 	command = { type = sleepminister which = 1337014 }\r
+ 	command = { type = sleepminister which = 1337015 }\r
+ 	command = { type = sleepteam which = 1336058 }\r
+-	command = { type = activate which = 6570 } #人的\r
++	command = { type = activate which = 6570 }\r
+ 	command = { type = gain_tech which = 6570  }\r
+ 	command = { type = gain_tech which = 6300 }\r
+ 	command = { type = gain_tech which = 6310 }\r
+ 	command = { type = gain_tech which = 6320 }\r
+-	#command = { type = ground_def_eff value = -0.1 when = 1 }\r
++	command = { type = ground_def_eff value = 0.1 when = 1 }\r
+ 	command = { type = morale which = land value = 5 }\r
+ 	command = { type = morale which = naval value = 5 }\r
+ 	command = { type = morale which = air value = 5 }\r
+-	command = { type = local_setflag which = People }\r
+-	#\r
+-      #command = { type = build_time which = land when = on_upgrade where = relative value = -10 }\r
+-      #command = { type = build_cost which = land when = on_upgrade where = relative value = -10 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+@@ -1707,19 +1703,15 @@ event = {
+ 	command = { type = chiefofstaff which = 1337027 }\r
+ 	command = { type = sleepminister which = 1336007 }\r
+ 	command = { type = sleepteam which = 1336047 }\r
+-	command = { type = activate which = 6210 } #機動\r
++	command = { type = activate which = 6210 }\r
+ 	command = { type = gain_tech which = 6210 }\r
+ 	command = { type = gain_tech which = 6220 }\r
+ 	command = { type = gain_tech which = 6250 }\r
+ 	command = { type = gain_tech which = 6900 }\r
+-	#command = { type = ground_def_eff value = -0.1 when = 1 }\r
++	command = { type = ground_def_eff value = 0.1 when = 1 }\r
+ 	command = { type = morale which = land value = 5 }\r
+ 	command = { type = morale which = naval value = 5 }\r
+ 	command = { type = morale which = air value = 5 }\r
+-	command = { type = local_setflag which = Mobility }\r
+-	command = { trigger = { ai = yes } type = ai which = "IFswitch/UTC/Mobility/UTC_if.ai" }\r
+-     #command = { type = build_time which = land when = on_upgrade where = relative value = -10 }\r
+-      #command = { type = build_cost which = land when = on_upgrade where = relative value = -10 }\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r
+@@ -1743,7 +1735,6 @@ event = {
+ 	control = { province = 163 data = GER }\r
+ 	NOT = { war = { country = GER country = UTC } }\r
+ 	NOT = { alliance = { country = GER country = UTC } }\r
+-	OR = { ai = no war = { country = GER country = FRA } }\r
+ 	}\r
+ 	\r
+ 	decision_trigger = {\r
+@@ -1752,7 +1743,6 @@ event = {
+ 	control = { province = 163 data = GER }\r
+ 	NOT = { war = { country = GER country = UTC } }\r
+ 	NOT = { alliance = { country = GER country = UTC } }\r
+-	OR = { ai = no war = { country = GER country = FRA } }\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+@@ -1762,7 +1752,6 @@ event = {
+ 	control = { province = 163 data = GER }\r
+ 	NOT = { war = { country = GER country = UTC } }\r
+ 	NOT = { alliance = { country = GER country = UTC } }\r
+-	OR = { ai = no war = { country = GER country = FRA } }\r
+ 	}\r
+ \r
+ 	date = { day = 0 month = 9 year = 1939 }\r
+@@ -1779,44 +1768,6 @@ event = {
+ 	name = "evt_4700a"\r
+ 	command = { type = war which = GER }\r
+ 	command = { type = end_non_aggression which = GER where = UTC }\r
+-	command = { trigger = { ai = yes } type = dissent value = -10 }\r
+-	command = { trigger = { ai = FRA local_flag = people } type = ground_def_eff value = 0.3 when = 1 }\r
+-	command = { trigger = { ai = FRA local_flag = Mobility } type = plain_attack which = light_armor value = 40 }\r
+-	command = { trigger = { ai = FRA local_flag = Mobility } type = plain_attack which = armor value = 40 }\r
+-	command = { trigger = { ai = FRA local_flag = Mobility } type = plain_move which = light_armor value = 10 }\r
+-	command = { trigger = { ai = FRA local_flag = Mobility } type = plain_move which = armor value = 10 }\r
+-	command = { trigger = { ai = FRA local_flag = Mobility } type = plain_defense which = light_armor value = -40 }\r
+-	command = { trigger = { ai = FRA local_flag = Mobility } type = plain_defense which = armor value = -40 }\r
+-	command = { type = setflag which = Suvorov }\r
+-      	command = { type = surprise which = land value = 30 }\r
+-      	command = { type = surprise which = naval value = 30 }\r
+-      	command = { type = surprise which = air value = 30 }\r
+-	command = { type = max_organization which = land value = 20 }\r
+-	command = { type = morale which = land value = 10 }\r
+-	command = { type = morale which = naval value = 10 }\r
+-	command = { type = morale which = air value = 10 }\r
+-	command = { type = max_organization which = land value = 10 }\r
+-	command = { type = max_organization which = naval value = 10 }\r
+-	command = { type = max_organization which = air value = 10 }\r
+-	command = { type = speed which = land value = 2 }\r
+-	command = { type = counterattack value = -20 }\r
+-	command = { type = tactical_withdrawal value = -20 }\r
+-	command = { type = delay value = -20 }\r
+-	command = { type = ambush value = -20 }\r
+-	command = { type = assault value = 12 }\r
+-	command = { type = breakthrough value = 12 }\r
+-	command = { type = encirclement value = 12 }\r
+-	command = { type = hq_supply_eff value = 2 }\r
+-	command = { type = sce_frequency value = 0.3 }\r
+-	command = { type = attrition_mod value = 2 }\r
+-	command = { type = trickleback_mod value = 5 }\r
+-	command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+-	command = { trigger = { ai = yes } type = ai which = "IFSwitch/UTC/Suvorov.ai" }\r
+-	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+-	command = { trigger = { ai = no } type = event which = 5952031 where = -1 when = 30 }\r
+-	command = { trigger = { ai = yes local_flag = Mobility } type = event which = 5952031 where = -1 when = 100 }\r
+-	command = { trigger = { ai = yes local_flag = People } type = event which = 5952031 where = -1 when = 180 }\r
+-	command = { type = strength which = all when = 1 where = 0 org = 1 value = 1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1845,33 +1796,12 @@ event = {
+ 	NOT = { war = { country = CHI country = GER } }\r
+ 	NOT = { war = { country = UTC country = GER } }\r
+ 	region = { region = "China" country = -1 value = 70 }\r
+-	OR = {\r
+-	AND = {\r
+ 	control = { province = 1162 data = -3 }\r
+ 	control = { province = 1169 data = -3 }\r
+ 	control = { province = 1142 data = -3 }\r
+ 	control = { province = 1143 data = -3 }\r
+ 	control = { province = 1103 data = -3 }\r
+ 	control = { province = 1138 data = -3 }\r
+-	NOT = { event = 19310001 } #ドイツ滅亡判定\r
+-	NOT = { region = { region = "Germany" country = -2 value = 40 } }\r
+-	}\r
+-	AND = {\r
+-	OR = { \r
+-	event = 19310001  #ドイツ滅亡判定\r
+-	region = { region = "Germany" country = -2 value = 40 }\r
+-	}\r
+-	control = { province = 1162 data = -3 }\r
+-	control = { province = 1169 data = -3 }\r
+-	control = { province = 1142 data = -3 }\r
+-	control = { province = 1143 data = -3 }\r
+-	control = { province = 1103 data = -3 }\r
+-	control = { province = 1138 data = -3 }\r
+-	control = { province = 1151 data = -3 }\r
+-	control = { province = 1133 data = -3 }\r
+-	control = { province = 1134 data = -3 }\r
+-	}\r
+-	}\r
+ 	random = 50\r
+ 	}\r
+ \r
+@@ -1908,7 +1838,6 @@ event = {
+ 	action_a = { # 中国に慈悲があることを祈ろう\r
+ 	name = "ACTIONNAME5951035A"\r
+ 	command = { type = peace which = CHI value = 0 }\r
+-	command = { trigger = { alliance = { country = CHI country = UD6 } } type = peace which = UD6 value = 0 }\r
+ 	command = { type = peace which = CHC value = 0 }\r
+ 	command = { type = peace which = CGX value = 0 }\r
+ 	command = { type = peace which = CSX value = 0 }\r
+@@ -2001,7 +1930,7 @@ event = {
+ 	command = { trigger = { core = { province = 1240 } } type = removecore which = 1240 } #Sili-yin Qota \r
+ 	command = { trigger = { core = { province = 1245 } } type = removecore which = 1245 } #Tangshan\r
+ 		   \r
+-	command = { type = non_aggression which = UTC where = CHI }\r
++	command = { type = non_aggression which = SOV where = CHI }\r
+ \r
+ 	command = { trigger = { exists = MON } type = inherit which = MON }\r
+ 	command = { trigger = { exists = TAN } type = inherit which = TAN }\r
+@@ -3011,7 +2940,7 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-# ツァーリが講和を提案 ― 日本の敗北\r
++#　ツァーリが講和を提案 ― 日本の敗北\r
+ # 我が祖国と日本との戦争において、日本軍どもを日本列島で撃破するに至った！\r
+ # しかし日本列島との戦闘は補給線の問題がある限り困難であると考えられる。\r
+ # 今こそ講和提案の好機であろう。\r
+@@ -4145,7 +4074,6 @@ event = {
+     	command = { trigger = { country = FIN ai = yes } type = ai which = "IF/fin_1936.ai" }\r
+     	command = { trigger = { country = LIT ai = yes } type = ai which = "lit_1936.ai" }\r
+     	command = { trigger = { country = POL ai = yes } type = ai which = "pol_1936.ai" }\r
+-	command = { type = strength which = land when = 0 where = 0 value = 20 }\r
+ 	}\r
+ }\r
+ \r
+@@ -4384,7 +4312,7 @@ event = {
+ 	command = { trigger = { exists = AZB NOT = { alliance = { country = AZB } } } type = event which = 5951068 where = AZB when = 3 }\r
+ 	command = { trigger = { exists = UE7 NOT = { alliance = { country = UE7 } } } type = event which = 5951068 where = UE7 when = 3 }\r
+ 	command = { trigger = { exists = GEO NOT = { alliance = { country = GEO } } } type = event which = 5951068 where = GEO when = 3 }\r
+-	command = { type = ai which = "IFswitch/UTC/UTC_Kavkaz.ai" }\r
++	command = { type = ai which = "IFswitch/UTC_Kavkaz.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4579,7 +4507,7 @@ event = {
+ 	command = { trigger = { exists = EST NOT = { alliance = { country = EST } } } type = event which = 5951073 where = EST when = 3 }\r
+ 	command = { trigger = { exists = LAT NOT = { alliance = { country = LAT } } } type = event which = 5951073 where = LAT when = 3 }\r
+ 	command = { trigger = { exists = LIT NOT = { alliance = { country = LIT } } } type = event which = 5951073 where = LIT when = 3 }\r
+-	command = { type = ai which = "IFswitch/UTC/UTC_Baltic.ai" }\r
++	command = { type = ai which = "IFswitch/UTC_Baltic.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4755,8 +4683,7 @@ event = {
+ 	command = { type = relation which = SWE value = -30 }\r
+ 	command = { type = relation which = U21 value = -30 }\r
+ 	command = { type = trigger which = 5951078 }\r
+-		command = { trigger = { ai = yes local_flag = People } type = ai which = "IFswitch/UTC/UTC_fin.ai" }\r
+-		command = { trigger = { ai = yes local_flag = Mobility } type = ai which = "IFswitch/UTC/Mobility/UTC_fin.ai" }\r
++	command = { trigger = { ai = yes } type = ai which = "IF/UTC_if.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -4796,8 +4723,7 @@ event = {
+ 	command = { type = local_setflag which = Bigeventflag0010 } #イベントが起きたことを示す\r
+ 	command = { type = songs which = "Special/0010.txt" } #音源流し\r
+ 	command = { type = trigger which = 19330010 when = 0 } #本イベントを起こす\r
+-	command = { type = strength which = land when = 0 where = 0 value = 1.0 org = 1.0 }\r
+-	ai_chance = 100\r
++	ai_chance = 80\r
+ 	}\r
+ \r
+ 	action = { # 要求を受け入れる\r
+@@ -4807,7 +4733,7 @@ event = {
+ 	command = { type = relation which = GER value = -15 }\r
+ 	command = { type = relation which = SWE value = -10 }\r
+ 	command = { type = trigger which = 5951080 }\r
+-	ai_chance = 00\r
++	ai_chance = 20\r
+ 	}\r
+ }\r
+ \r
+@@ -4879,7 +4805,7 @@ event = {
+ 	NOT = { control = { province = 525 data = FIN } }\r
+ 	NOT = { control = { province = 527 data = FIN } }\r
+ 	NOT = { control = { province = 531 data = FIN } }\r
+-	region = { region = "Finland" country = UTC data = 1 value = 95 }\r
++	region = { region = "Finland" country = UTC data = 1 value = 30 }\r
+ 	}\r
+ 	\r
+ 	name = EVT_5951081_NAME\r
+@@ -5098,7 +5024,7 @@ event = {
+ 	action = { # 皇帝陛下万歳！！\r
+ 	name = "ACTIONNAME5951087A"\r
+ 	command = { type = dissent value = -3 } # -1\r
+-	command = { type = ground_def_eff value = 0.2 when = 1 }\r
++	command = { type = ground_def_eff value = 0.3 when = 1 }\r
+ 	command = { type = morale which = land value = 10 }\r
+ 	command = { type = morale which = naval value = 10 }\r
+ 	command = { type = morale which = air value = 10 }\r
+@@ -5120,66 +5046,66 @@ event = {
+ 	command = { type = add_division value = motorized when = 0 }\r
+ 	command = { type = add_division value = motorized when = 0 }\r
+ 	command = { type = add_division value = motorized when = 0 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
+-	#command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
++	command = { type = add_division value = infantry when = 9 }\r
+ 	command = { type = add_division value = interceptor when = 7 }\r
+ 	command = { type = add_division value = interceptor when = 7 }\r
+ 	command = { type = add_division value = interceptor when = 7 }\r
+@@ -5188,7 +5114,6 @@ event = {
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 }\r
+-	command = { type = strength which = land when = 0 where = 0 value = 0.3 }\r
+ \r
+ 	}\r
+ }\r
+@@ -5267,93 +5192,38 @@ event = {
+ 	control = { province = 572 data = UTC }\r
+ 	OR = {\r
+ 	lost_national = { country = UTC value = 10 }\r
+-	AND = { \r
+-	lost_national = { country = UTC value = 20 }\r
+-	atwar = yes\r
+-	}\r
+ 	event = 5951088\r
+ 	}\r
+ 	}\r
+ \r
+-	decision_trigger =  { \r
+-	atwar = yes\r
++	decision_trigger = { \r
+ 	OR = {\r
+-	#AND = {\r
+-	#	OR = {\r
+-	#	war = { country = UTC country = GER }\r
+-	#	war = { country = UTC country = CHI }\r
+-	#	war = { country = UTC country = ENG }\r
+-	#	war = { country = UTC country = FRA }\r
+-	#	war = { country = UTC country = USA }\r
+-	#	war = { country = UTC country = JAP }\r
+-	#	}\r
+-	#	OR = {\r
+-	#	NOT = { control = { province = 572 data = UTC } } #モスクワ\r
+-	##	NOT = { control = { province = 1142 data = UTC } } #ノヴォシビルスク\r
+-	#	NOT = { control = { province = 1138 data = UTC } } #オムスク\r
+-	#	NOT = { control = { province = 713 data = UTC } } #バクー\r
+-	#	NOT = { control = { province = 663 data = UTC } } #ツァリーツィン\r
+-	#	NOT = { control = { province = 553 data = UTC } } #ペテルブルク\r
+-	#	#region = { region = Poland country = -2 value = 80 data = 1 }\r
+-	#	region = { region = Ukraine country = -2 value = 80 data = 1 }\r
+-	#	region = { region = Belarus country = -2 value = 80 data = 1 }\r
+-	#	#region = { region = "Baltic States" country = -2 value = 80 data = 1 }\r
+-	#	region = { region = "Central Asia" country = -2 value = 30 data = 1 }\r
+-	#	region = { region = Kazakstan country = -2 value = 30 data = 1 }\r
+-	#	#lost_national = { country = UTC value = 35 }\r
+-	#	}\r
+-	#	}\r
+-	region = { region = "Eastern Russia" country = -2 value = 1 data = 1 }\r
+-	region = { region = "Northern Russia" country = -2 value = 1 data = 1 }\r
+-	region = { region = Russia country = -2 value = 1 data = 1 }\r
+-	region = { region = "Southern Russia" country = -2 value = 1 data = 1  }\r
+-	region = { region = "Western Russia" country = -2 value = 90 data = 1 }\r
+-	region = { region = Urals country = -2 value = 1 data = 1 }\r
+-	region = { region = Novosibirsk country = -2  value = 90 data = 1}\r
++	war = { country = UTC country = GER }\r
++	war = { country = UTC country = CHI }\r
++	war = { country = UTC country = ENG }\r
++	war = { country = UTC country = FRA }\r
++	war = { country = UTC country = USA }\r
++	war = { country = UTC country = JAP }\r
+ 	}\r
++	control = { province = 572 data = UTC }\r
++	lost_national = { country = UTC value = 35 }\r
+ 	event = 5951088\r
+ 	}\r
+ \r
+-	trigger = { \r
+-	atwar = yes\r
++	trigger = {\r
+ 	OR = {\r
+-	#AND = {\r
+-	#	OR = {\r
+-	#	war = { country = UTC country = GER }\r
+-	#	war = { country = UTC country = CHI }\r
+-	#	war = { country = UTC country = ENG }\r
+-	#	war = { country = UTC country = FRA }\r
+-	#	war = { country = UTC country = USA }\r
+-	#	war = { country = UTC country = JAP }\r
+-	#	}\r
+-	#	OR = {\r
+-	#	NOT = { control = { province = 572 data = UTC } } #モスクワ\r
+-	##	NOT = { control = { province = 1142 data = UTC } } #ノヴォシビルスク\r
+-	#	NOT = { control = { province = 1138 data = UTC } } #オムスク\r
+-	#	NOT = { control = { province = 713 data = UTC } } #バクー\r
+-	#	NOT = { control = { province = 663 data = UTC } } #ツァリーツィン\r
+-	#	NOT = { control = { province = 553 data = UTC } } #ペテルブルク\r
+-	#	#region = { region = Poland country = -2 value = 80 data = 1 }\r
+-	#	region = { region = Ukraine country = -2 value = 80 data = 1 }\r
+-	#	region = { region = Belarus country = -2 value = 80 data = 1 }\r
+-	#	#region = { region = "Baltic States" country = -2 value = 80 data = 1 }\r
+-	#	region = { region = "Central Asia" country = -2 value = 30 data = 1 }\r
+-	#	region = { region = Kazakstan country = -2 value = 30 data = 1 }\r
+-	#	#lost_national = { country = UTC value = 35 }\r
+-	#	}\r
+-	#	}\r
+-	region = { region = "Eastern Russia" country = -2 value = 1 data = 1 }\r
+-	region = { region = "Northern Russia" country = -2 value = 1 data = 1 }\r
+-	region = { region = Russia country = -2 value = 1 data = 1 }\r
+-	region = { region = "Southern Russia" country = -2 value = 1 data = 1  }\r
+-	region = { region = "Western Russia" country = -2 value = 100 data = 1 }\r
+-	region = { region = Urals country = -2 value = 1 data = 1 }\r
+-	region = { region = Novosibirsk country = -2  value = 90 data = 1}\r
++	war = { country = UTC country = GER }\r
++	war = { country = UTC country = CHI }\r
++	war = { country = UTC country = ENG }\r
++	war = { country = UTC country = FRA }\r
++	war = { country = UTC country = USA }\r
++	war = { country = UTC country = JAP }\r
+ 	}\r
++	control = { province = 572 data = UTC }\r
++	lost_national = { country = UTC value = 35 }\r
+ 	event = 5951088\r
+ 	}\r
+ 	\r
+-\r
+ 	name = EVT_5951089_NAME\r
+ 	desc = EVT_5951089_DESC\r
+ 	style = 2\r
+@@ -5366,24 +5236,11 @@ event = {
+ 	\r
+ 	action = { # 祖国の名誉と栄光のために！\r
+ 	name = "ACTIONNAME5951089A"\r
+-	command = { type = ground_def_eff value = 0.1 when = 1 }\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = local_setflag which = Bigeventflag0007 } #イベントが起きたことを示す\r
+ 	command = { type = songs which = "Special/0007.txt" } #音源流し\r
+ 	command = { type = trigger which = 19330007 when = 0 } #本イベントを起こす\r
+ 	command = { type = event which = 19310007 where = REB when = 0 }\r
+-	command = { type = snow_attack which = land value = 15 }\r
+-	command = { type = snow_defense which = land value = 15 }\r
+-	command = { type = snow_move which = land value = 15 }\r
+-	command = { type = frozen_attack which = land value = 15 }\r
+-	command = { type = frozen_defense which = land value = 15 }\r
+-	command = { type = frozen_move which = land value = 15 }\r
+-	command = { type = blizzard_attack which = land value = 15 }\r
+-	command = { type = blizzard_defense which = land value = 15 }\r
+-	command = { type = blizzard_move which = land value = 15 }\r
+-	command = { type = counterattack value = 10 }\r
+-	#command = { type = build_time which = land when = on_upgrade where = relative value = -10 }\r
+-	#command = { type = build_cost which = land when = on_upgrade where = relative value = -10 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r

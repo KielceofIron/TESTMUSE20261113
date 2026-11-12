@@ -1,0 +1,1377 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Japan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Japan_events.txt [cp932]
+@@ -148,7 +148,9 @@
+ #id = 6757144 腐敗した政治権力の粛清\r
+ #id = 6757145 皇軍の回復（維新派）\r
+ #id = 6757146 荒木貞夫の運命\r
+-#id = 6757147 キリスト教禁教令\r
++#id = 6757147 内閣総辞職\r
++#id = 6757148 キリスト教禁教令\r
++#id = 6757149 東京進軍\r
+ #id = 6757151 突然の政府交代（1940年）\r
+ #id = 6757152 突然の政府交代（1946年）\r
+ #id = 6757153 突然の政府交代（1952年）\r
+@@ -258,6 +260,8 @@ event = {
+ 	command = { type = relation which = UER value = -25 }\r
+ 	command = { type = relation which = SOV value = -25 }\r
+ 	command = { type = relation which = CHI value = -25 }\r
++	command = { type = sleepevent which = 2049029 } # 中国が日本の影響下に入った！\r
++	command = { type = sleepevent which = 1918029 } # 日本の社会主義革命\r
+ 	command = { type = sleepevent which = 2500036 } # 閣僚変更イベント（突然の政府交代）\r
+ 	command = { type = sleepevent which = 2500037 }\r
+ 	command = { type = sleepevent which = 2500038 }\r
+@@ -288,6 +292,16 @@ event = {
+ 	command = { type = sleepevent which = 9999478 }\r
+ 	command = { type = sleepevent which = 9999479 }\r
+ 	command = { type = sleepevent which = 9999480 }\r
++	command = { type = sleepevent which = 315231 } # FullkaiAIイベント\r
++	command = { type = sleepevent which = 315232 }\r
++	command = { type = sleepevent which = 315233 }\r
++	command = { type = sleepevent which = 315234 }\r
++	command = { type = sleepevent which = 315235 }\r
++	command = { type = sleepevent which = 315236 }\r
++	command = { type = sleepevent which = 315237 }\r
++	command = { type = sleepevent which = 315238 }\r
++	command = { type = sleepevent which = 315239 }\r
++	command = { type = sleepevent which = 315240 }\r
+ 	command = { type = event which = 6757002 where = JAP when = 2 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -382,6 +396,23 @@ event = {
+ \r
+ 	action = { # 軍部が戒厳令を施行する！\r
+ 	name = "ACTIONNAME6757004A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_fascist # 右派独裁を選択する\r
++	flag = Japan_democratic # 民主主義を選択する\r
++	flag = Japan_communist # 左派独裁を選択する\r
++	}\r
++	AND = {\r
++	flag = Japan_fascist # 右派独裁を選択する\r
++	NOT = {\r
++	#flag = Japan_fascist # 右派独裁を選択する\r
++	flag = Japan_democratic # 民主主義を選択する\r
++	flag = Japan_communist # 左派独裁を選択する\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = revolt which = 1552 }\r
+ 	command = { type = revolt which = 1552 }\r
+ 	command = { type = revolt which = 1552 }\r
+@@ -394,6 +425,23 @@ event = {
+ \r
+ 	action = { # 内閣が総辞職し、挙国一致内閣を立ち上げた！\r
+ 	name = "ACTIONNAME6757004B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_fascist # 右派独裁を選択する\r
++	flag = Japan_democratic # 民主主義を選択する\r
++	flag = Japan_communist # 左派独裁を選択する\r
++	}\r
++	AND = {\r
++	flag = Japan_democratic # 民主主義を選択する\r
++	NOT = {\r
++	flag = Japan_fascist # 右派独裁を選択する\r
++	#flag = Japan_democratic # 民主主義を選択する\r
++	flag = Japan_communist # 左派独裁を選択する\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = revolt which = 1552 }\r
+ 	command = { type = revolt which = 1552 }\r
+ 	command = { type = revolt which = 1552 }\r
+@@ -407,6 +455,23 @@ event = {
+ \r
+ 	action = { # 政府が陥落し、労働者の革命が起きた！\r
+ 	name = "ACTIONNAME6757004C"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_fascist # 右派独裁を選択する\r
++	flag = Japan_democratic # 民主主義を選択する\r
++	flag = Japan_communist # 左派独裁を選択する\r
++	}\r
++	AND = {\r
++	flag = Japan_communist # 左派独裁を選択する\r
++	NOT = {\r
++	flag = Japan_fascist # 右派独裁を選択する\r
++	flag = Japan_democratic # 民主主義を選択する\r
++	#flag = Japan_communist # 左派独裁を選択する\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = revolt which = 1552 }\r
+ 	command = { type = revolt which = 1552 }\r
+ 	command = { type = revolt which = 1552 }\r
+@@ -1306,18 +1371,9 @@ event = {
+ 	command = { type = add_division value = infantry when = 7 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 7 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 7 where = artillery }\r
+-	command = { type = add_division value = infantry when = 7 where = artillery }\r
+-	command = { type = add_division value = infantry when = 7 where = artillery }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+-	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+ 	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+ 	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
++	command = { type = add_division value = infantry when = 7 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+ 	command = { type = add_division value = infantry when = 7 where = cavalry_brigade }\r
+ 	command = { type = add_division value = cavalry when = 7 where = engineer }\r
+@@ -6807,6 +6863,21 @@ event = {
+ \r
+ 	action = { # 維新派こそ、真の武士道の本道への回帰をもたらすだろう\r
+ 	name = "ACTIONNAME6757101A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_fascist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_fascist_2\r
++	}\r
++	AND = {\r
++	flag = Japan_fascist_1 # 維新派ルート\r
++	NOT = {\r
++	#flag = Japan_fascist_1 # 維新派ルート\r
++	flag = Japan_fascist_2 # 中央派ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = local_setflag which = Japan_koudou }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 2 } \r
+@@ -6832,6 +6903,21 @@ event = {
+ \r
+ 	action = { # 中央派こそ、日本を主義できる勢力だろう\r
+ 	name = "ACTIONNAME6757101B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_fascist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_fascist_2\r
++	}\r
++	AND = {\r
++	flag = Japan_fascist_2 # 中央派ルート\r
++	NOT = {\r
++	flag = Japan_fascist_1 # 維新派ルート\r
++	#flag = Japan_fascist_2 # 中央派ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = local_setflag which = Japan_Tousei }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+@@ -9780,6 +9866,29 @@ event = {
+ \r
+ 	action = { # 辞任するが、軍事政権は維持する\r
+ 	name = "ACTIONNAME6757146A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_ISHIN_2\r
++	flag = Japan_ISHIN_3\r
++	flag = Japan_ISHIN_4\r
++	flag = Japan_ISHIN_5\r
++	flag = Japan_ISHIN_6\r
++	}\r
++	AND = {\r
++	flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	NOT = {\r
++	#flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	flag = Japan_ISHIN_2 # 東方会ルート\r
++	flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = sleepminister which = 50572 } # 荒木貞夫\r
+ 	command = { type = sleepminister which = 50573 }\r
+@@ -9812,6 +9921,26 @@ event = {
+ \r
+ 	action = { # 辞任し、軍政を終了する\r
+ 	name = "ACTIONNAME6757146B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_ISHIN_2\r
++	flag = Japan_ISHIN_3\r
++	flag = Japan_ISHIN_4\r
++	flag = Japan_ISHIN_5\r
++	flag = Japan_ISHIN_6\r
++	}\r
++	OR = {\r
++	#flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	flag = Japan_ISHIN_2 # 東方会ルート\r
++	flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	#flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = sleepminister which = 50572 } # 荒木貞夫\r
+ 	command = { type = sleepminister which = 50573 }\r
+@@ -9825,27 +9954,51 @@ event = {
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { type = set_domestic which = free_market value = 3 }\r
+ 	command = { type = set_domestic which = freedom value = 4 }\r
+-	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+-	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+-	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50631 } # 久原房之助\r
+-	command = { type = foreignminister which = 50640 } # 大川周明\r
+-	command = { type = armamentminister which = 50733 } # 小川平吉\r
+-	command = { type = ministerofsecurity which = 50099 } # 平沼騏一郞\r
+-	command = { type = ministerofintelligence which = 50661 } # 井上日召\r
+-	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
+-	command = { type = chiefofarmy which = 50580 } # 小畑敏四郎\r
+-	command = { type = chiefofnavy which = 50675 } # 末次信正\r
+-	command = { type = chiefofair which = 50593 } # 鈴木率道\r
++	#command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	#command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	#command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	#command = { type = headofgovernment which = 50631 } # 久原房之助\r
++	#command = { type = foreignminister which = 50640 } # 大川周明\r
++	#command = { type = armamentminister which = 50733 } # 小川平吉\r
++	#command = { type = ministerofsecurity which = 50099 } # 平沼騏一郞\r
++	#command = { type = ministerofintelligence which = 50661 } # 井上日召\r
++	#command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
++	#command = { type = chiefofarmy which = 50580 } # 小畑敏四郎\r
++	#command = { type = chiefofnavy which = 50675 } # 末次信正\r
++	#command = { type = chiefofair which = 50593 } # 鈴木率道\r
+ 	command = { type = sleepevent which = 6757151 }\r
+ 	command = { type = sleepevent which = 6757152 }\r
+ 	command = { type = sleepevent which = 6757153 }\r
++	command = { type = event which = 6757147 where = JAP when = 0 }\r
+ 	command = { type = local_setflag which = Koudou_Democracy }\r
+ 	ai_chance = 45\r
+ 	}\r
+ \r
+ 	action = { # 荒木軍政を維持する\r
+ 	name = "ACTIONNAME6757146C"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_ISHIN_2\r
++	flag = Japan_ISHIN_3\r
++	flag = Japan_ISHIN_4\r
++	flag = Japan_ISHIN_5\r
++	flag = Japan_ISHIN_6\r
++	}\r
++	AND = {\r
++	flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	flag = Japan_ISHIN_2 # 東方会ルート\r
++	flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	#flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = dissent value = 2 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+@@ -9870,6 +10023,200 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  内閣総辞職\r
++# 荒木貞夫の軍事政権は、軍部以外から見捨てられた末に総辞職した。\r
++# 軍政の失敗により、政治的主導権は再び議会に戻ったものの、政党政治復権とはならず、議会内部で対立が生じている。\r
++# 軍部や右派の影響力が未だに健在の中、既存の政党に代わり、いくつかの政治勢力が実権を握るために政治闘争を行っている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6757147\r
++	random = no\r
++	country = JAP\r
++\r
++	name = "EVT_6757147_NAME"\r
++	desc = "EVT_6757147_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	action = { # 中野正剛率いる東方会が支持を固める\r
++	name = "ACTIONNAME6757147A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_ISHIN_2\r
++	flag = Japan_ISHIN_3\r
++	flag = Japan_ISHIN_4\r
++	flag = Japan_ISHIN_5\r
++	flag = Japan_ISHIN_6\r
++	}\r
++	AND = {\r
++	flag = Japan_ISHIN_2 # 東方会ルート\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	#flag = Japan_ISHIN_2 # 東方会ルート\r
++	flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 1 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50634 } # 中野正剛\r
++	command = { type = foreignminister which = 50646 } # 中野正剛\r
++	command = { type = armamentminister which = 50609 } # 北一輝\r
++	command = { type = ministerofsecurity which = 50958 } # 三田村武夫\r
++	command = { type = ministerofintelligence which = 50605 } # 橋本欣五郎\r
++	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
++	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
++	command = { type = chiefofnavy which = 50675 } # 末次信正\r
++	command = { type = chiefofair which = 50593 } # 鈴木率道\r
++	command = { type = local_setflag which = Koudou_Democracy_1 } # 東方会フラグ\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 麻生久と社会大衆党が支持を固める\r
++	name = "ACTIONNAME6757147B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_ISHIN_2\r
++	flag = Japan_ISHIN_3\r
++	flag = Japan_ISHIN_4\r
++	flag = Japan_ISHIN_5\r
++	flag = Japan_ISHIN_6\r
++	}\r
++	AND = {\r
++	flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	flag = Japan_ISHIN_2 # 東方会ルート\r
++	#flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50939 } # 麻生久\r
++	command = { type = foreignminister which = 50947 } # 河上丈太郎\r
++	command = { type = armamentminister which = 50783 } # 赤松克麿\r
++	command = { type = ministerofsecurity which = 50941 } # 麻生久\r
++	command = { type = ministerofintelligence which = 50605 } # 橋本欣五郎\r
++	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
++	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
++	command = { type = chiefofnavy which = 50675 } # 末次信正\r
++	command = { type = chiefofair which = 50593 } # 鈴木率道\r
++	command = { type = local_setflag which = Koudou_Democracy_2 } # 社会大衆党フラグ\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 近衞文麿と大政翼賛会が支持を固める\r
++	name = "ACTIONNAME6757147C"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_ISHIN_2\r
++	flag = Japan_ISHIN_3\r
++	flag = Japan_ISHIN_4\r
++	flag = Japan_ISHIN_5\r
++	flag = Japan_ISHIN_6\r
++	}\r
++	AND = {\r
++	flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	flag = Japan_ISHIN_2 # 東方会ルート\r
++	flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	#flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
++	command = { type = foreignminister which = 50639 } # 白鳥敏夫\r
++	command = { type = armamentminister which = 50647 } # 徳川義親\r
++	command = { type = ministerofsecurity which = 50090 } # 安井英二\r
++	command = { type = ministerofintelligence which = 50657 } # 小笠原長生\r
++	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
++	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
++	command = { type = chiefofnavy which = 50675 } # 末次信正\r
++	command = { type = chiefofair which = 50593 } # 鈴木率道\r
++	command = { type = local_setflag which = Koudou_Democracy_3 } # 大政翼賛会フラグ\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 久原房之助と立憲政友会が支持を固める\r
++	name = "ACTIONNAME6757147D"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_ISHIN_2\r
++	flag = Japan_ISHIN_3\r
++	flag = Japan_ISHIN_4\r
++	flag = Japan_ISHIN_5\r
++	flag = Japan_ISHIN_6\r
++	}\r
++	AND = {\r
++	flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	NOT = {\r
++	flag = Japan_ISHIN_1 # 軍部独裁ルート\r
++	flag = Japan_ISHIN_2 # 東方会ルート\r
++	flag = Japan_ISHIN_3 # 社会大衆党ルート\r
++	flag = Japan_ISHIN_4 # 大政翼賛会ルート\r
++	#flag = Japan_ISHIN_5 # 立憲政友会（久原派）ルート\r
++	flag = Japan_ISHIN_6 # 荒木独裁ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50631 } # 久原房之助\r
++	command = { type = foreignminister which = 50640 } # 大川周明\r
++	command = { type = armamentminister which = 50650 } # 石原広一郎\r
++	command = { type = ministerofsecurity which = 50099 } # 平沼騏一郞\r
++	command = { type = ministerofintelligence which = 50762 } # 里見甫\r
++	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
++	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
++	command = { type = chiefofnavy which = 50675 } # 末次信正\r
++	command = { type = chiefofair which = 50593 } # 鈴木率道\r
++	command = { type = local_setflag which = Koudou_Democracy_4 } # 立憲政友会（久原派）フラグ\r
++	ai_chance = 25\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  キリスト教禁教令\r
+ # 維新体制下で軍国主義のイデオロギーとして国家神道が利用されるようになると、神道以外の宗教団体は強い圧力を受けるようになった。\r
+@@ -9881,7 +10228,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 6757147\r
++	id = 6757148\r
+ 	random = no\r
+ 	country = JAP\r
+ \r
+@@ -9893,8 +10240,8 @@ event = {
+ 	random = 20\r
+ 	}\r
+ \r
+-	name = "EVT_6757147_NAME"\r
+-	desc = "EVT_6757147_DESC"\r
++	name = "EVT_6757148_NAME"\r
++	desc = "EVT_6757148_DESC"\r
+ 	style = 2\r
+ 	picture = "Khristos_Persecution"\r
+ \r
+@@ -9903,7 +10250,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # キリスト教は安寧秩序を妨げる\r
+-	name = "ACTIONNAME6757147A"\r
++	name = "ACTIONNAME6757148A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = belligerence which = JAP value = 3 }\r
+ 	command = { type = relation which = ENG value = -25 }\r
+@@ -9916,12 +10263,62 @@ event = {
+ 	command = { type = relation which = KOR value = -25 }\r
+ 	command = { type = relation which = U67 value = -25 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
++	ai_chance = 80\r
+ 	}\r
+ \r
+ 	action = { # 禁教令は時代錯誤だ\r
+-	name = "ACTIONNAME6757147B"\r
++	name = "ACTIONNAME6757148B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = domestic which = freedom value = 2 }\r
++	ai_chance = 20\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  東京進軍\r
++# 中野正剛は、反軍派政党人として名を馳せた政治家の一人であった。\r
++# しかし政治的混乱や経済不況などを受け、挙国一致内閣・強力な指導者による独裁制を提唱し、国家主義政党である東方会を結成し自ら総裁となった。\r
++# また農地改革や労働改革を主張したことで支持を集め、旧左翼系人物を取込むことで巨大な政治勢力を作り上げることに成功した。\r
++# そして軍政の失敗で国内が混乱する中、中野正剛と東方会は直接行動による政権奪取を狙い、党の民兵組織を動員し、議会へ侵入。\r
++# 議会に対して臨時の挙国一致内閣の創設を要求し、反対者を議会から退席させると、強力な権限を持つ一党独裁制を成立させた。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 6757149\r
++	random = no\r
++	country = JAP\r
++\r
++	trigger = {\r
++	event = 6757147 # 内閣総辞職\r
++	local_flag = Koudou_Democracy_1 # 東方会フラグ\r
++	headofgovernment = 50634 # 中野正剛\r
++	atwar = no\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	name = "EVT_6757149_NAME"\r
++	desc = "EVT_6757149_DESC"\r
++	style = 2\r
++	picture = "Japan_Parliament"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 『大東亜帝国』と国号を改める\r
++	name = "ACTIONNAME6757149A"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = name where = JAP which = "大東亜帝国" }\r
++	command = { type = flag_ext where = JAP which = "_flag13" }\r
++	command = { type = sleepevent which = 6757034 } # 国号の統一\r
++	command = { type = sleepevent which = 6757035 } # 国旗の選定\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # 国号を変更する必要はない\r
++	name = "ACTIONNAME6757149B"\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -10112,7 +10509,14 @@ event = {
+ 	trigger = {\r
+ 	local_flag = Japan_koudou # 維新派が政権を獲得\r
+ 	local_flag = Koudou_Democracy # 軍政断念\r
+-	NOT = { ispuppet = JAP }\r
++	OR = {\r
++	local_flag = Koudou_Democracy_1 # 東方会\r
++	local_flag = Koudou_Democracy_2 # 社会大衆党\r
++	local_flag = Koudou_Democracy_3 # 大政翼賛会\r
++	local_flag = Koudou_Democracy_4 # 立憲政友会\r
++	ai = no\r
++	}\r
++	NOT = { ispuppet = JAP }\r
+ 	random = 30\r
+ 	}\r
+ \r
+@@ -10123,54 +10527,98 @@ event = {
+ \r
+ 	date = { day = 20 month = 1 year = 1939 }\r
+ \r
+-	action_a = {\r
+-	name = "ELECT_A"\r
++	action = { # 中野正剛（東方会）\r
++	name = "ELECT_TOUHOU"\r
++	trigger = {\r
++	OR = { \r
++	local_flag = Koudou_Democracy_1 # 東方会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 	command = { type = headofgovernment which = 50634 } # 中野正剛\r
+ 	command = { type = foreignminister which = 50646 } # 中野正剛\r
+-	command = { type = armamentminister which = 50748 } # 頭山満\r
+-	command = { type = ministerofsecurity which = 50610 } # 北一輝\r
+-	command = { type = ministerofintelligence which = 50659 } # 徳川義親\r
++	command = { type = armamentminister which = 50609 } # 北一輝\r
++	command = { type = ministerofsecurity which = 50958 } # 三田村武夫\r
++	command = { type = ministerofintelligence which = 50605 } # 橋本欣五郎\r
+ 	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
+ 	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
+ 	command = { type = chiefofnavy which = 50675 } # 末次信正\r
+ 	command = { type = chiefofair which = 50593 } # 鈴木率道\r
+-	ai_chance = 30\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+-	action_b = {\r
+-	name = "ELECT_B"\r
++	action = { # 麻生久（社会大衆党）\r
++	name = "ELECT_TAISHU_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_2 # 社会大衆党\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
+-	command = { type = foreignminister which = 50641 } # 蓑田胸喜\r
+-	command = { type = armamentminister which = 50075 } # 中島知久平\r
+-	command = { type = ministerofsecurity which = 50087 } # 末次信正\r
+-	command = { type = ministerofintelligence which = 50659 } # 徳川義親\r
++	command = { type = headofgovernment which = 50939 } # 麻生久\r
++	command = { type = foreignminister which = 50949 } # 河上丈太郎\r
++	command = { type = armamentminister which = 50783 } # 赤松克麿\r
++	command = { type = ministerofsecurity which = 50941 } # 麻生久\r
++	command = { type = ministerofintelligence which = 50605 } # 橋本欣五郎\r
+ 	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
+ 	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
+ 	command = { type = chiefofnavy which = 50675 } # 末次信正\r
+ 	command = { type = chiefofair which = 50593 } # 鈴木率道\r
+-	ai_chance = 30\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+-	action_c = {\r
+-	name = "KEEPCURRENT"\r
++	action = { # 近衞文麿（翼賛会）\r
++	name = "ELECT_YOKUSAN_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_3 # 大政翼賛会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
++	command = { type = foreignminister which = 50639 } # 白鳥敏夫\r
++	command = { type = armamentminister which = 50647 } # 徳川義親\r
++	command = { type = ministerofsecurity which = 50090 } # 安井英二\r
++	command = { type = ministerofintelligence which = 50657 } # 小笠原長生\r
++	command = { type = chiefofstaff which = 50576 } # 眞崎甚三郎\r
++	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
++	command = { type = chiefofnavy which = 50675 } # 末次信正\r
++	command = { type = chiefofair which = 50593 } # 鈴木率道\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 久原房之助（政友会）\r
++	name = "ELECT_SEIYU_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_4 # 立憲政友会\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 	command = { type = headofgovernment which = 50631 } # 久原房之助\r
+ 	command = { type = foreignminister which = 50640 } # 大川周明\r
+ 	command = { type = armamentminister which = 50650 } # 石原広一郎\r
+@@ -10180,7 +10628,8 @@ event = {
+ 	command = { type = chiefofarmy which = 50584 } # 柳川平助\r
+ 	command = { type = chiefofnavy which = 50675 } # 末次信正\r
+ 	command = { type = chiefofair which = 50593 } # 鈴木率道\r
+-	ai_chance = 40\r
++	command = { type = local_setflag which = Koudou_Democracy_4 } # 立憲政友会（久原派）フラグ\r
++	ai_chance = 25\r
+ 	}\r
+ }\r
+ \r
+@@ -10207,28 +10656,66 @@ event = {
+ \r
+ 	date = { day = 20 month = 1 year = 1944 }\r
+ \r
+-	action_a = {\r
+-	name = "ELECT_A"\r
++	action = { # 中野正剛（東方会）\r
++	name = "ELECT_TOUHOU"\r
++	trigger = {\r
++	OR = { \r
++	local_flag = Koudou_Democracy_1 # 東方会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 	command = { type = headofgovernment which = 50634 } # 中野正剛\r
+ 	command = { type = foreignminister which = 50643 } # 宮崎龍介\r
+-	command = { type = armamentminister which = 50647 } # 徳川義親\r
+-	command = { type = ministerofsecurity which = 50610 } # 北一輝\r
+-	command = { type = ministerofintelligence which = 50660 } # 小野寺信\r
++	command = { type = armamentminister which = 50704 } # 星野直樹\r
++	command = { type = ministerofsecurity which = 50622 } # 赤尾敏\r
++	command = { type = ministerofintelligence which = 50658 } # 岩畔豪雄\r
+ 	command = { type = chiefofstaff which = 50583 } # 柳川平助\r
+ 	command = { type = chiefofarmy which = 50580 } # 小畑敏四郎\r
+ 	command = { type = chiefofnavy which = 50676 } # 新見政一\r
+ 	command = { type = chiefofair which = 50774 } # 源田實\r
+-	ai_chance = 30\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+-	action_b = {\r
+-	name = "ELECT_B"\r
++	action = { # 赤松克麿（社会大衆党）\r
++	name = "ELECT_TAISHU_B"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_2 # 社会大衆党\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50782 } # 赤松克麿\r
++	command = { type = foreignminister which = 50948 } # 山名義鶴\r
++	command = { type = armamentminister which = 50783 } # 赤松克麿\r
++	command = { type = ministerofsecurity which = 50734 } # 平野力三\r
++	command = { type = ministerofintelligence which = 50658 } # 岩畔豪雄\r
++	command = { type = chiefofstaff which = 50583 } # 柳川平助\r
++	command = { type = chiefofarmy which = 50580 } # 小畑敏四郎\r
++	command = { type = chiefofnavy which = 50676 } # 新見政一\r
++	command = { type = chiefofair which = 50774 } # 源田實\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 近衞文麿（翼賛会）\r
++	name = "ELECT_YOKUSAN_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_3 # 大政翼賛会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+@@ -10244,11 +10731,17 @@ event = {
+ 	command = { type = chiefofarmy which = 50580 } # 小畑敏四郎\r
+ 	command = { type = chiefofnavy which = 50676 } # 新見政一\r
+ 	command = { type = chiefofair which = 50774 } # 源田實\r
+-	ai_chance = 30\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+-	action_c = {\r
+-	name = "KEEPCURRENT"\r
++	action = { # 久原房之助（政友会）\r
++	name = "ELECT_SEIYU_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_4 # 立憲政友会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+@@ -10291,28 +10784,66 @@ event = {
+ \r
+ 	date = { day = 20 month = 1 year = 1949 }\r
+ \r
+-	action_a = {\r
+-	name = "ELECT_A"\r
++	action = { # 中野正剛（東方会）\r
++	name = "ELECT_TOUHOU"\r
++	trigger = {\r
++	OR = { \r
++	local_flag = Koudou_Democracy_1 # 東方会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50632 } # 徳川義親\r
+-	command = { type = foreignminister which = 50446 } # 来栖三郎\r
+-	command = { type = armamentminister which = 50626 } # 四元義隆\r
++	command = { type = headofgovernment which = 50634 } # 中野正剛\r
++	command = { type = foreignminister which = 50957 } # 本領信治郎\r
++	command = { type = armamentminister which = 50704 } # 星野直樹\r
+ 	command = { type = ministerofsecurity which = 50622 } # 赤尾敏\r
+-	command = { type = ministerofintelligence which = 50604 } # 三上卓\r
++	command = { type = ministerofintelligence which = 50658 } # 岩畔豪雄\r
+ 	command = { type = chiefofstaff which = 50579 } # 小畑敏四郎\r
+ 	command = { type = chiefofarmy which = 50587 } # 山下奉文\r
+ 	command = { type = chiefofnavy which = 50676 } # 新見政一\r
+ 	command = { type = chiefofair which = 50160 } # 山下奉文\r
+-	ai_chance = 60\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+-	action_b = {\r
+-	name = "ELECT_B"\r
++	action = { # 赤松克麿（社会大衆党）\r
++	name = "ELECT_TAISHU_B"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_2 # 社会大衆党\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50782 } # 赤松克麿\r
++	command = { type = foreignminister which = 50949 } # 棚橋小虎\r
++	command = { type = armamentminister which = 50952 } # 浅沼稲次郎\r
++	command = { type = ministerofsecurity which = 50734 } # 平野力三\r
++	command = { type = ministerofintelligence which = 50658 } # 岩畔豪雄\r
++	command = { type = chiefofstaff which = 50579 } # 小畑敏四郎\r
++	command = { type = chiefofarmy which = 50587 } # 山下奉文\r
++	command = { type = chiefofnavy which = 50676 } # 新見政一\r
++	command = { type = chiefofair which = 50160 } # 山下奉文\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 近衞文麿（翼賛会）\r
++	name = "ELECT_YOKUSAN_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_3 # 大政翼賛会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+@@ -10320,19 +10851,25 @@ event = {
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
+-	command = { type = foreignminister which = 50446 } # 来栖三郎\r
++	command = { type = foreignminister which = 50901 } # 近衞文麿\r
+ 	command = { type = armamentminister which = 50628 } # 徳川義親\r
+ 	command = { type = ministerofsecurity which = 50613 } # 斎藤瀏\r
+-	command = { type = ministerofintelligence which = 50604 } # 三上卓\r
++	command = { type = ministerofintelligence which = 50660 } # 小野寺信\r
+ 	command = { type = chiefofstaff which = 50579 } # 小畑敏四郎\r
+ 	command = { type = chiefofarmy which = 50587 } # 山下奉文\r
+ 	command = { type = chiefofnavy which = 50676 } # 新見政一\r
+ 	command = { type = chiefofair which = 50160 } # 山下奉文\r
+-	ai_chance = 30\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+-	action_c = {\r
+-	name = "KEEPCURRENT"\r
++	action = { # 久原房之助（政友会）\r
++	name = "ELECT_SEIYU_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_4 # 立憲政友会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+@@ -10343,7 +10880,7 @@ event = {
+ 	command = { type = foreignminister which = 50446 } # 来栖三郎\r
+ 	command = { type = armamentminister which = 50933} # 東条貞\r
+ 	command = { type = ministerofsecurity which = 50936 } # 岡田忠彦\r
+-	command = { type = ministerofintelligence which = 50604 } # 三上卓\r
++	command = { type = ministerofintelligence which = 50660 } # 小野寺信\r
+ 	command = { type = chiefofstaff which = 50579 } # 小畑敏四郎\r
+ 	command = { type = chiefofarmy which = 50587 } # 山下奉文\r
+ 	command = { type = chiefofnavy which = 50676 } # 新見政一\r
+@@ -10375,39 +10912,104 @@ event = {
+ \r
+ 	date = { day = 20 month = 1 year = 1954 }\r
+ \r
+-	action_a = {\r
+-	name = "ELECT_A"\r
+-	command = { type = dissent value = -3 }\r
++\r
++	action = { # 中野正剛（東方会）\r
++	name = "ELECT_TOUHOU"\r
++	trigger = {\r
++	OR = { \r
++	local_flag = Koudou_Democracy_1 # 東方会\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -1 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+-	command = { type = headofgovernment which = 50752 } # 岸信介\r
+-	command = { type = foreignminister which = 50758 } # 椎名悦三郎\r
+-	command = { type = armamentminister which = 50447 } # 石井光次郎\r
+-	command = { type = ministerofsecurity which = 50094 } # 安倍源基\r
+-	command = { type = ministerofintelligence which = 50449 } # 迫水久常\r
++	command = { type = headofgovernment which = 50634 } # 中野正剛\r
++	command = { type = foreignminister which = 50957 } # 本領信治郎\r
++	command = { type = armamentminister which = 50626 } # 四元義隆\r
++	command = { type = ministerofsecurity which = 50932 } # 小島玄之\r
++	command = { type = ministerofintelligence which = 50629 } # 菱沼五郎\r
+ 	command = { type = chiefofstaff which = 50579 } # 満井佐吉\r
+ 	command = { type = chiefofarmy which = 50667 } # 有末精三\r
+ 	command = { type = chiefofnavy which = 50677 } # 眞崎勝次\r
+ 	command = { type = chiefofair which = 50160 } # 山下奉文\r
+-	ai_chance = 50\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 浅沼稲次郎（社会大衆党）\r
++	name = "ELECT_TAISHU_B"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_2 # 社会大衆党\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50951 } # 浅沼稲次郎\r
++	command = { type = foreignminister which = 50949 } # 棚橋小虎\r
++	command = { type = armamentminister which = 50952 } # 浅沼稲次郎\r
++	command = { type = ministerofsecurity which = 50953 } # 浅沼稲次郎\r
++	command = { type = ministerofintelligence which = 50604 } # 三上卓\r
++	command = { type = chiefofstaff which = 50579 } # 小畑敏四郎\r
++	command = { type = chiefofarmy which = 50587 } # 山下奉文\r
++	command = { type = chiefofnavy which = 50676 } # 新見政一\r
++	command = { type = chiefofair which = 50160 } # 山下奉文\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+-	action_b = {\r
+-	name = "ELECT_B"\r
++	action = { # 近衞文麿（翼賛会）\r
++	name = "ELECT_YOKUSAN_A"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_3 # 大政翼賛会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
+ 	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
+ 	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50170 } # 近衞文麿\r
++	command = { type = foreignminister which = 50901 } # 近衞文麿\r
++	command = { type = armamentminister which = 50067 } # 岸信介\r
++	command = { type = ministerofsecurity which = 50959 } # 木村篤太郎\r
++	command = { type = ministerofintelligence which = 50629 } # 菱沼五郎\r
++	command = { type = chiefofstaff which = 50579 } # 満井佐吉\r
++	command = { type = chiefofarmy which = 50667 } # 有末精三\r
++	command = { type = chiefofnavy which = 50677 } # 眞崎勝次\r
++	command = { type = chiefofair which = 50160 } # 山下奉文\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # 鮎川義介（政友会）\r
++	name = "ELECT_SEIYU_B"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_4 # 立憲政友会\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
+ 	command = { type = headofgovernment which = 50938 } # 鮎川義介\r
+ 	command = { type = foreignminister which = 50645 } # 大島浩\r
+ 	command = { type = armamentminister which = 50935 } # 松浦伊平\r
+ 	command = { type = ministerofsecurity which = 50937 } # 津雲国利\r
+-	command = { type = ministerofintelligence which = 50604 } # 三上卓\r
++	command = { type = ministerofintelligence which = 50629 } # 菱沼五郎\r
+ 	command = { type = chiefofstaff which = 50579 } # 満井佐吉\r
+ 	command = { type = chiefofarmy which = 50667 } # 有末精三\r
+ 	command = { type = chiefofnavy which = 50677 } # 眞崎勝次\r
+@@ -10439,8 +11041,67 @@ event = {
+ \r
+ 	date = { day = 20 month = 1 year = 1959 }\r
+ \r
+-	action_a = {\r
+-	name = "ELECT_A"\r
++	action = { # 中野正剛（東方会）\r
++	name = "ELECT_TOUHOU"\r
++	trigger = {\r
++	OR = { \r
++	local_flag = Koudou_Democracy_1 # 東方会\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50634 } # 中野正剛\r
++	command = { type = foreignminister which = 50957 } # 本領信治郎\r
++	command = { type = armamentminister which = 50626 } # 四元義隆\r
++	command = { type = ministerofsecurity which = 50932 } # 小島玄之\r
++	command = { type = ministerofintelligence which = 50629 } # 菱沼五郎\r
++	command = { type = chiefofstaff which = 50666 } # 有末精三\r
++	command = { type = chiefofarmy which = 50669 } # 小野寺信\r
++	command = { type = chiefofnavy which = 50533 } # 神重徳\r
++	command = { type = chiefofair which = 50543 } # 小園安名\r
++	ai_chance = 60\r
++	}\r
++\r
++	action = { # 浅沼稲次郎（社会大衆党）\r
++	name = "ELECT_TAISHU_B"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_2 # 社会大衆党\r
++	ai = no\r
++	}\r
++	}\r
++	command = { type = dissent value = -3 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { trigger = { incabinet = 50001 } type = headofstate which = 50001 } # 昭和天皇\r
++	command = { trigger = { incabinet = 50568 } type = headofstate which = 50568 } # 秩父宮雍仁親王\r
++	command = { trigger = { incabinet = 50569 } type = headofstate which = 50569 } # 雍仁天皇\r
++	command = { type = headofgovernment which = 50951 } # 浅沼稲次郎\r
++	command = { type = foreignminister which = 50949 } # 棚橋小虎\r
++	command = { type = armamentminister which = 50952 } # 浅沼稲次郎\r
++	command = { type = ministerofsecurity which = 50953 } # 浅沼稲次郎\r
++	command = { type = ministerofintelligence which = 50604 } # 三上卓\r
++	command = { type = chiefofstaff which = 50666 } # 有末精三\r
++	command = { type = chiefofarmy which = 50669 } # 小野寺信\r
++	command = { type = chiefofnavy which = 50533 } # 神重徳\r
++	command = { type = chiefofair which = 50543 } # 小園安名\r
++	ai_chance = 25\r
++	}\r
++\r
++\r
++	action = { # 岸信介（翼賛会）\r
++	name = "ELECT_YOKUSAN_B"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_3 # 大政翼賛会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
+@@ -10459,8 +11120,14 @@ event = {
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+-	action_b = {\r
+-	name = "ELECT_B"\r
++	action = { # 鮎川義介（政友会）\r
++	name = "ELECT_SEIYU_B"\r
++	trigger = { \r
++	OR = { \r
++	local_flag = Koudou_Democracy_4 # 立憲政友会\r
++	ai = no\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+@@ -10471,7 +11138,7 @@ event = {
+ 	command = { type = foreignminister which = 50645 } # 大島浩\r
+ 	command = { type = armamentminister which = 50935 } # 松浦伊平\r
+ 	command = { type = ministerofsecurity which = 50937 } # 津雲国利\r
+-	command = { type = ministerofintelligence which = 50604 } # 三上卓\r
++	command = { type = ministerofintelligence which = 50629 } # 菱沼五郎\r
+ 	command = { type = chiefofstaff which = 50666 } # 有末精三\r
+ 	command = { type = chiefofarmy which = 50669 } # 小野寺信\r
+ 	command = { type = chiefofnavy which = 50533 } # 神重徳\r
+@@ -11187,8 +11854,8 @@ event = {
+ 	command = { type = sleepminister which = 50172 }\r
+ 	command = { type = sleepminister which = 50173 }\r
+ 	command = { type = sleepminister which = 50283 }\r
+-	command = { type = wakeminister which = 52027 } # 裕仁天皇（傀儡）\r
+-	command = { type = headofstate which = 52027 } # 裕仁天皇（傀儡）\r
++	command = { type = wakeminister which = 52054 } # 裕仁天皇（傀儡）\r
++	command = { type = headofstate which = 52054 } # 裕仁天皇（傀儡）\r
+ 	command = { type = wakeminister which = 50696 } # 永田鉄山\r
+ 	command = { type = headofgovernment which = 50696 } # 永田鉄山\r
+ 	command = { type = sleepevent which = 6757167 } # 突然の政府交代（1940年）\r
+@@ -12057,7 +12724,7 @@ event = {
+ 		name = "ACTIONNAME6757202C"\r
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 5 }\r
+-		command = { type = set_domestic which = political_left value = 3 }\r
++		command = { type = set_domestic which = political_left value = 2 }\r
+ 		command = { type = headofgovernment which = 50407 } # 中島知久平\r
+ 		command = { type = foreignminister which = 50055 } # 小川鄕太郞\r
+ 		command = { type = armamentminister which = 50408 } # 前田米蔵\r
+@@ -12074,7 +12741,7 @@ event = {
+ 		name = "ACTIONNAME6757202D"\r
+ 		command = { type = dissent value = -3 }\r
+ 		command = { type = set_domestic which = democratic value = 5 }\r
+-		command = { type = set_domestic which = political_left value = 10 }\r
++		command = { type = set_domestic which = political_left value = 2 }\r
+ 		command = { type = headofgovernment which = 50411 } # 勝田主計\r
+ 		command = { type = foreignminister which = 50412 } # 駒井徳三\r
+ 		command = { type = armamentminister which = 50056 } # 伍堂卓雄\r
+@@ -13830,7 +14497,7 @@ event = {
+ 	ai_chance = 50\r
+ 	}\r
+ \r
+-	action = { # 軍を効率的に運用するため、統合参謀本部を設立する\r
++	action = { # 軍部の暴走を抑えるため、解体する\r
+ 	name = "ACTIONNAME6757226B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { trigger = { ai = no } type = money value = -300 }\r
+@@ -13841,9 +14508,14 @@ event = {
+ 	command = { type = morale which = naval value = 3 }\r
+ 	command = { type = max_organization which = air value = 3 }\r
+ 	command = { type = morale which = air value = 3 }\r
+-	command = { type = sleepteam which = 50070 } # 陸軍参謀本部\r
++	command = { type = sleepteam which = 50069 } # 陸軍軍醫學校\r
++	command = { type = sleepteam which = 50070 } # 陸軍大學校\r
++	command = { type = sleepteam which = 50071 } # 陸軍大學校\r
++	command = { type = sleepteam which = 50120 } # 帝國陸軍飛行大隊\r
++	command = { type = sleepteam which = 50121 } # 帝國陸軍飛行大隊\r
++	command = { type = sleepteam which = 50122 } # 帝國海軍航空隊\r
++	command = { type = sleepteam which = 50123 } # 帝國海軍航空隊\r
+ 	command = { type = sleepteam which = 50047 } # 聯合艦隊司令部\r
+-	command = { type = waketeam which = 50075 } # 統合幕僚監部\r
+ 	ai_chance = 50\r
+ 	}\r
+ }\r
+@@ -13872,6 +14544,22 @@ event = {
+ \r
+ 	action = { # 共産主義と人民がついに勝利した\r
+ 	name = "ACTIONNAME6757301A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_communist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_communist_2\r
++	flag = Japan_communist_3\r
++	flag = Japan_communist_4\r
++	flag = Japan_communist_5\r
++	}\r
++	flag = Japan_communist_1 # 野坂派ルート\r
++	flag = Japan_communist_2 # 山川派ルート\r
++	flag = Japan_communist_3 # 福本派ルート\r
++	flag = Japan_communist_4 # 無政府主義ルート\r
++	#flag = Japan_communist_5 # 維新革命ルート\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = leave_alliance when = 1 }\r
+ 	command = { type = add_core_region which = "Japan" where = UF8 } # 日本本土\r
+@@ -13914,6 +14602,27 @@ event = {
+ \r
+ 	action = { # 青年将校が人民のために決起した\r
+ 	name = "ACTIONNAME6757301B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_communist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_communist_2\r
++	flag = Japan_communist_3\r
++	flag = Japan_communist_4\r
++	flag = Japan_communist_5\r
++	}\r
++	AND = {\r
++	flag = Japan_communist_4 # 無政府主義ルート\r
++	NOT = {\r
++	flag = Japan_communist_1 # 野坂派ルート\r
++	flag = Japan_communist_2 # 山川派ルート\r
++	flag = Japan_communist_3 # 福本派ルート\r
++	flag = Japan_communist_4 # 無政府主義ルート\r
++	#flag = Japan_communist_5 # 維新革命ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = local_setflag which = Japan_Tousei }\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = sleepminister which = 50568 } # 以下右派皇道派閣僚\r
+@@ -14184,6 +14893,27 @@ event = {
+ \r
+ 	action = { # 野坂派が労働者の圧倒的支持を受ける！\r
+ 	name = "ACTIONNAME6757302A"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_communist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_communist_2\r
++	flag = Japan_communist_3\r
++	flag = Japan_communist_4\r
++	flag = Japan_communist_5\r
++	}\r
++	AND = {\r
++	flag = Japan_communist_1 # 野坂派ルート\r
++	NOT = {\r
++	#flag = Japan_communist_1 # 野坂派ルート\r
++	flag = Japan_communist_2 # 山川派ルート\r
++	flag = Japan_communist_3 # 福本派ルート\r
++	flag = Japan_communist_4 # 無政府主義ルート\r
++	flag = Japan_communist_5 # 維新革命ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = name where = JAP which = "日本人民共和国" }\r
+ 	command = { type = flag_ext where = JAP which = "_flag12" }\r
+@@ -14211,6 +14941,27 @@ event = {
+ \r
+ 	action = { # 山川派が政府を掌握した\r
+ 	name = "ACTIONNAME6757302B"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_communist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_communist_2\r
++	flag = Japan_communist_3\r
++	flag = Japan_communist_4\r
++	flag = Japan_communist_5\r
++	}\r
++	AND = {\r
++	flag = Japan_communist_2 # 山川派ルート\r
++	NOT = {\r
++	flag = Japan_communist_1 # 野坂派ルート\r
++	#flag = Japan_communist_2 # 山川派ルート\r
++	flag = Japan_communist_3 # 福本派ルート\r
++	flag = Japan_communist_4 # 無政府主義ルート\r
++	flag = Japan_communist_5 # 維新革命ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = name where = JAP which = "日本人民共和国" }\r
+ 	command = { type = flag_ext where = JAP which = "_flag12" }\r
+@@ -14238,6 +14989,27 @@ event = {
+ \r
+ 	action = { # 福本派が新たな人民政府を樹立する\r
+ 	name = "ACTIONNAME6757302C"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_communist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_communist_2\r
++	flag = Japan_communist_3\r
++	flag = Japan_communist_4\r
++	flag = Japan_communist_5\r
++	}\r
++	AND = {\r
++	flag = Japan_communist_3 # 福本派ルート\r
++	NOT = {\r
++	flag = Japan_communist_1 # 野坂派ルート\r
++	flag = Japan_communist_2 # 山川派ルート\r
++	#flag = Japan_communist_3 # 福本派ルート\r
++	flag = Japan_communist_4 # 無政府主義ルート\r
++	flag = Japan_communist_5 # 維新革命ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = name where = JAP which = "日本人民共和国" }\r
+ 	command = { type = flag_ext where = JAP which = "_flag12" }\r
+@@ -14265,6 +15037,27 @@ event = {
+ \r
+ 	action = { # 無政府主義者が自由地区を打ち立てる\r
+ 	name = "ACTIONNAME6757302D"\r
++	trigger = {\r
++	OR = {\r
++	NOT = {\r
++	flag = Japan_communist_1 # 分岐イベントフラグが立っていない\r
++	flag = Japan_communist_2\r
++	flag = Japan_communist_3\r
++	flag = Japan_communist_4\r
++	flag = Japan_communist_5\r
++	}\r
++	AND = {\r
++	flag = Japan_communist_4 # 無政府主義ルート\r
++	NOT = {\r
++	flag = Japan_communist_1 # 野坂派ルート\r
++	flag = Japan_communist_2 # 山川派ルート\r
++	flag = Japan_communist_3 # 福本派ルート\r
++	#flag = Japan_communist_4 # 無政府主義ルート\r
++	flag = Japan_communist_5 # 維新革命ルート\r
++	}\r
++	}\r
++	}\r
++	}\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = name where = JAP which = "日本自由地区" }\r
+ 	command = { type = flag_ext where = JAP which = "_Ana" }\r

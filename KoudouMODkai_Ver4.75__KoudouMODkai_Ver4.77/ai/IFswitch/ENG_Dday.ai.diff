@@ -1,0 +1,239 @@
+--- A/ai/IFswitch/ENG_Dday.ai [ascii]
++++ B/ai/IFswitch/ENG_Dday.ai [ascii]
+@@ -1,118 +1,118 @@
+-# USA is planning D-Day so lets help\r
+-\r
+-\r
+-\r
+-\r
+-construction = { \r
+-	max_factor = 0.15\r
+-\r
+-	AA_batteries = yes\r
+-	radar_station = yes\r
+-	air_base = yes\r
+-	naval_base = yes\r
+-	ic_at_war = no\r
+-	force_ic_until = 1936\r
+-	ic_end_year = 1936\r
+-}\r
+-\r
+-###################################\r
+-# Ground Combat, Leaders and Garrisons\r
+-###################################\r
+-garrison = {\r
+-	defend_overseas_beaches = yes\r
+-	home_multiplier 	= 1.0\r
+-	overseas_multiplier 	= 0.01\r
+-	home_peace_cap 		= 2\r
+-	war_zone_odds 		= 2.0\r
+-	key_point_prio_mult	= 0.3\r
+-	revolt_risk_mult	= 0.3\r
+-\r
+-	# PRIORITIES:\r
+-	beach			= 1	# Beach level 2\r
+-	capital			= 0	# Our capital\r
+-	human_border	= 0		# Ignored for allied human players\r
+-	war_target		= 50	# The next country targeted for attack by this AI\r
+-	\r
+-	opposing_alliance	= 20	# For neutrals, all alliances are "opposing"\r
+-	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+-	unstable_border		= 0	# Bordering countries at war with someone else get this\r
+-\r
+-	province_priorities = {\r
+-		#348 = 30 # Gibraltar\r
+-		#429   = 30  #Malta\r
+-		#790  = 30  #Alexandria\r
+-		#20 = 10 # Exeter\r
+-	}\r
+-	area_multiplier = {\r
+-		#348 = 2.0 # Gibraltar\r
+-		#429   = 2.0  #Malta\r
+-		#790  = 1.5  #Alexandria\r
+-	}\r
+-}\r
+-###################################\r
+-# Invasions and Naval\r
+-###################################\r
+-invasion = { \r
+-	invasion	= yes\r
+-	help_allies = no\r
+-      	random				= 4.0\r
+-	staging_province = {\r
+-		23  	#Plymouth\r
+-		27  	#Portsmouth\r
+-		26  	#Dover\r
+-		25		#Norwich	\r
+-		}\r
+-		\r
+-	target = {\r
+-		#England\r
+-		26  = 9000  #Dover\r
+-		25  = 9000  #Norwich\r
+-		27  = 9000  #Portsmouth\r
+-		23  = 9000  #Plymouth\r
+-		22  = 9000  #Cardif\r
+-		36  = 9000  #Belfast\r
+-		17  = 9000  #Manchester\r
+-		12  = 9000  #Edinburgh\r
+-		11  = 9000  #Glasgow\r
+-\r
+-		#Denmark\r
+-		217	= 1000  #Arborg\r
+-		220	= 1000  #Arhus\r
+-		219	= 1000	#Odense\r
+-		\r
+-		#Norway\r
+-		491	= 3000	#Alesund\r
+-		485	= 3000	#Kristiansand\r
+-		483	= 3000	#Oslo\r
+-		493	= 1000	#Trondheim\r
+-		495	= 1000	#Narvik\r
+-		\r
+-		#Germany\r
+-		152 = 100   #Kiel\r
+-		147	= 100	#Wilhelmshaven\r
+-		153	= 100	#Rostock\r
+-		158	= 100	#Stettin\r
+-\r
+-	\r
+-		#France\r
+-		49	= 8000  #Calais\r
+-		53	= 8000  #Dieppe\r
+-		44	= 8000  #Caen\r
+-		37	= 8000  #Brest\r
+-		39	= 8000  #Lorient\r
+-		68  = 8000  #Bordeaux\r
+-		69	= 8000	#La Rochelle\r
+-		46	= 8000	#Bayeux\r
+-		51	= 8000	#Dunkirk\r
+-		82	= 3000	#Montpellier\r
+-		86	= 3000	#Marseille\r
+-	\r
+-		# Belgium\r
+-		114	= 8000  #Bruges\r
+-		115	= 8000	#Antwerpen	\r
+-\r
+-		#Holland\r
+-		125	= 8000	#Rotterdam\r
+-		122	= 8000	#Amsterdam\r
+-		}\r
++# USA is planning D-Day so lets help
++
++
++
++
++construction = { 
++	max_factor = 0.15
++
++	AA_batteries = yes
++	radar_station = yes
++	air_base = yes
++	naval_base = yes
++	ic_at_war = no
++	force_ic_until = 1936
++	ic_end_year = 1936
++}
++
++###################################
++# Ground Combat, Leaders and Garrisons
++###################################
++garrison = {
++	defend_overseas_beaches = yes
++	home_multiplier 	= 1.0
++	overseas_multiplier 	= 0.01
++	home_peace_cap 		= 2
++	war_zone_odds 		= 2.0
++	key_point_prio_mult	= 0.3
++	revolt_risk_mult	= 0.3
++
++	# PRIORITIES:
++	beach			= 1	# Beach level 2
++	capital			= 0	# Our capital
++	human_border	= 0		# Ignored for allied human players
++	war_target		= 50	# The next country targeted for attack by this AI
++	
++	opposing_alliance	= 20	# For neutrals, all alliances are "opposing"
++	claim_threat		= 0	# If we are neutral, countries with claims on us get this
++	unstable_border		= 0	# Bordering countries at war with someone else get this
++
++	province_priorities = {
++		#348 = 30 # Gibraltar
++		#429   = 30  #Malta
++		#790  = 30  #Alexandria
++		#20 = 10 # Exeter
++	}
++	area_multiplier = {
++		#348 = 2.0 # Gibraltar
++		#429   = 2.0  #Malta
++		#790  = 1.5  #Alexandria
++	}
++}
++###################################
++# Invasions and Naval
++###################################
++invasion = { 
++	invasion	= yes
++	help_allies = no
++      	random				= 4.0
++	staging_province = {
++		23  	#Plymouth
++		27  	#Portsmouth
++		26  	#Dover
++		25		#Norwich	
++		}
++		
++	target = {
++		#England
++		26  = 9000  #Dover
++		25  = 9000  #Norwich
++		27  = 9000  #Portsmouth
++		23  = 9000  #Plymouth
++		22  = 9000  #Cardif
++		36  = 9000  #Belfast
++		17  = 9000  #Manchester
++		12  = 9000  #Edinburgh
++		11  = 9000  #Glasgow
++
++		#Denmark
++		217	= 1000  #Arborg
++		220	= 1000  #Arhus
++		219	= 1000	#Odense
++		
++		#Norway
++		491	= 3000	#Alesund
++		485	= 3000	#Kristiansand
++		483	= 3000	#Oslo
++		493	= 1000	#Trondheim
++		495	= 1000	#Narvik
++		
++		#Germany
++		152 = 100   #Kiel
++		147	= 100	#Wilhelmshaven
++		153	= 100	#Rostock
++		158	= 100	#Stettin
++
++	
++		#France
++		49	= 8000  #Calais
++		53	= 8000  #Dieppe
++		44	= 8000  #Caen
++		37	= 8000  #Brest
++		39	= 8000  #Lorient
++		68  = 8000  #Bordeaux
++		69	= 8000	#La Rochelle
++		46	= 8000	#Bayeux
++		51	= 8000	#Dunkirk
++		82	= 3000	#Montpellier
++		86	= 3000	#Marseille
++	
++		# Belgium
++		114	= 8000  #Bruges
++		115	= 8000	#Antwerpen	
++
++		#Holland
++		125	= 8000	#Rotterdam
++		122	= 8000	#Amsterdam
++		}
+ } 
+\ No newline at end of file

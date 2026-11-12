@@ -1,0 +1,46 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Sweden_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Sweden_events.txt [cp932]
+@@ -557,7 +557,7 @@ event = {
+ 	picture = "Civi_War_Win"\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+@@ -624,7 +624,7 @@ event = {
+ 	picture = "Civi_War_Win"\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action_a = {\r
+@@ -1844,10 +1844,11 @@ event = {
+ 	id = 2198121\r
+ 	random = no\r
+ 	country = FIN\r
+-\r
+ 	trigger = {\r
++	OR = {\r
+ 	region = { region ="Sweden" country = FIN data = 2 value = 1 }\r
+ 	region = { region ="Norway" country = FIN data = 2 value = 1 }\r
++	}\r
+ 	atwar = no\r
+ 	}\r
+ \r
+@@ -1862,8 +1863,10 @@ event = {
+ \r
+ 	action_a = {\r
+ 		name = "ACTION_NAME_OK" \r
+-		command = { type = secederegion which = SWE value = "Sweden" when = 0 }\r
+-		command = { type = secederegion which = NOR value = "Norway" when = 0 }\r
++		command = { trigger = { exists = SWE } type = secederegion which = SWE value = "Sweden" when = 1 }\r
++		command = { trigger = { exists = NOR } type = secederegion which = NOR value = "Norway" when = 1 }\r
++		command = { trigger = { exists = SCA } type = secederegion which = SCA value = "Sweden" when = 1 }\r
++		command = { trigger = { exists = SCA } type = secederegion which = SCA value = "Norway" when = 1 }\r
+ 		ai_chance = 100\r
+ 	}\r
+ 	action_b = {\r

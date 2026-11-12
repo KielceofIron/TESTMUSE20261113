@@ -1,0 +1,2330 @@
+--- A/db/events/Yokoyama_events/Soviet_Civiwar_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Soviet_Civiwar_events.txt [cp932]
+@@ -16,35 +16,35 @@
+ #id = 32700101 二度目の封印列車\r
+ #id = 32700102 反ソ運動の組織化\r
+ #id = 32700103 報復兵器\r
+-#id = 32700104 ロシア黒色同盟\r
+-#id = 32700105 ソビエト内戦の終結 ─ ソ連の勝利\r
+-#id = 32700106 ソビエト内戦の終結 ─ タボリツキーの勝利\r
+-#id = 32700107 神聖ロシア帝国の成立\r
+-#id = 32700108 第3のラーゲリ\r
+-#id = 32700109 タボリツキーの子\r
+-#id = 32700110 秘密警察の再編\r
+-#id = 32700111 アンドレイ・ウラソフの粛清\r
+-#id = 32700112 ツァレボージニキ運動とロシア帝室の反発\r
+-#id = 32700113 タボリツキー体制の混乱\r
+-#id = 32700114 タボリツキーの粛清が始まる\r
+-#id = 32700115 国境集落への強制移住\r
+-#id = 32700116 ドイツとの対立\r
+-#id = 32700117 ドイツとの国境を封鎖\r
+-#id = 32700118 国外亡命の増加\r
+-#id = 32700119 神聖ロシア帝国が国境を封鎖\r
+-#id = 32700120 神聖ロシア帝国の孤立の打開\r
+-#id = 32700121 神聖ロシア帝国の提案\r
+-#id = 32700122 アメリカが提案を拒否\r
+-#id = 32700123 ロシア問題交渉\r
+-#id = 32700124 ロシア問題交渉 ─ ドイツの驚くべき提案\r
+-#id = 32700125 ロシア問題交渉 ─ 日本が受諾\r
+-#id = 32700126 ロシア問題交渉 ─ 日本が拒否\r
+-#id = 32700127 タボリツキーの子の動員\r
+-#id = 32700128 神聖ロシア帝国の終焉\r
+-#id = 32700129 神聖ロシア帝国の降伏\r
+-#id = 32700130 ある親衛隊将校の追放\r
+-#id = 32700131 ある親衛隊将校の来訪\r
+-#id = 32700132 ディルレヴァンガー師団の略奪\r
++#id = 32700104 ソビエト内戦の終結 ─ ソ連の勝利\r
++#id = 32700105 ソビエト内戦の終結 ─ タボリツキーの勝利\r
++#id = 32700106 神聖ロシア帝国の成立\r
++#id = 32700107 第3のラーゲリ\r
++#id = 32700108 タボリツキーの子\r
++#id = 32700109 秘密警察の再編\r
++#id = 32700110 アンドレイ・ウラソフの粛清\r
++#id = 32700111 ツァレボージニキ運動とロシア帝室の反発\r
++#id = 32700112 タボリツキー体制の混乱\r
++#id = 32700113 タボリツキーの粛清が始まる\r
++#id = 32700114 国境集落への強制移住\r
++#id = 32700115 ドイツとの対立\r
++#id = 32700116 ドイツとの国境を封鎖\r
++#id = 32700117 国外亡命の増加\r
++#id = 32700118 神聖ロシア帝国が国境を封鎖\r
++#id = 32700119 神聖ロシア帝国の孤立の打開\r
++#id = 32700120 神聖ロシア帝国の提案\r
++#id = 32700121 アメリカが提案を拒否\r
++#id = 32700122 ロシア問題交渉\r
++#id = 32700123 ロシア問題交渉 ─ ドイツの驚くべき提案\r
++#id = 32700124 ロシア問題交渉 ─ 日本が受諾\r
++#id = 32700125 ロシア問題交渉 ─ 日本が拒否\r
++#id = 32700126 タボリツキーの子の動員\r
++#id = 32700127 神聖ロシア帝国の終焉\r
++#id = 32700128 神聖ロシア帝国の降伏\r
++#id = 32700129 ある親衛隊将校の追放\r
++#id = 32700130 ある親衛隊将校の来訪\r
++#id = 32700131 ディルレヴァンガー師団の略奪（REB）\r
++#id = 32700132 マグニドゴルスクの怪しい科学者\r
+ #########################################################################\r
+ #  ビターピース内戦イベント\r
+ #########################################################################\r
+@@ -587,6 +587,7 @@ event = {
+ 	event = 32700001 # 崩壊するソヴィエト\r
+ 	event = 32700006 # 崩壊するソヴィエト ─ ソビエト内戦\r
+ 	event = 2007033 # ビターピース\r
++	NOT = { exists = RUS } # ロシア\r
+ 	NOT = { exists = UER } # 東ロシア\r
+ 	}\r
+ 	\r
+@@ -595,6 +596,7 @@ event = {
+ 	event = 2007033 # ビターピース\r
+ 	event = { id = 32700006 days = 10 } # 壊するソヴィエト ─ ソビエト内戦\r
+ 	war = { country = SOV country = TRA }\r
++	NOT = { exists = RUS } # ロシア\r
+ 	NOT = { exists = UER } # 東ロシア\r
+ 	}\r
+ 	\r
+@@ -603,6 +605,7 @@ event = {
+ 	event = 2007033 # ビターピース\r
+ 	event = { id = 32700006 days = 10 } # 壊するソヴィエト ─ ソビエト内戦\r
+ 	war = { country = SOV country = TRA }\r
++	NOT = { exists = RUS } # ロシア\r
+ 	NOT = { exists = UER } # 東ロシア\r
+ 	random = 20\r
+ 	}\r
+@@ -664,6 +667,7 @@ event = {
+ 	command = { type = sleepevent which = 32700130 }\r
+ 	command = { type = sleepevent which = 32700131 }\r
+ 	command = { type = sleepevent which = 32700132 }\r
++	command = { type = sleepevent which = 32700133 }\r
+ 	ai_chance = 98\r
+ 	}\r
+ }\r
+@@ -691,17 +695,18 @@ event = {
+ \r
+ 	action = { # 確固たる平和を打ち立てるのだ\r
+ 	name = "ACTIONNAME32700102A"\r
+-	command = { type = country which = UE1 }\r
+-	command = { type = name where = UE1 which = "ロシア再生委員会" }\r
++	command = { type = country which = RUS }\r
++	command = { type = name where = RUS which = "ロシア解放軍" }\r
++	command = { type = flag_ext where = RUS which = "_Poa" }\r
+ 	command = { type = dissent value = -30 }\r
+-	command = { type = belligerence which = UE1 value = 5 }\r
++	command = { type = belligerence which = RUS value = 5 }\r
+ 	command = { type = war which = SOV }\r
+-	command = { trigger = { exists = GER } type = non_aggression which = UE1 where = GER }\r
+-	command = { trigger = { exists = JAP } type = non_aggression which = UE1 where = JAP }\r
+-	command = { trigger = { exists = PRI } type = non_aggression which = UE1 where = PRI }\r
+-	command = { trigger = { exists = SIB } type = non_aggression which = UE1 where = SIB }\r
+-	command = { trigger = { exists = RUS } type = non_aggression which = UE1 where = RUS }\r
+-	command = { trigger = { exists = UER } type = non_aggression which = UE1 where = UER }\r
++	command = { trigger = { exists = GER } type = non_aggression which = RUS where = GER }\r
++	command = { trigger = { exists = JAP } type = non_aggression which = RUS where = JAP }\r
++	command = { trigger = { exists = PRI } type = non_aggression which = RUS where = PRI }\r
++	command = { trigger = { exists = SIB } type = non_aggression which = RUS where = SIB }\r
++	command = { trigger = { exists = RUS } type = non_aggression which = RUS where = RUS }\r
++	command = { trigger = { exists = UER } type = non_aggression which = RUS where = UER }\r
+ 	command = { trigger = { exists = GER } type = set_relation which = GER value = -200 }\r
+ 	command = { trigger = { exists = JAP } type = set_relation which = JAP value = -100 }\r
+ 	command = { trigger = { exists = PRI } type = set_relation which = PRI value = -200 }\r
+@@ -720,18 +725,35 @@ event = {
+ 	command = { trigger = { exists = FRA } type = set_relation which = FRA value = -200 }\r
+ 	command = { trigger = { exists = SOV } type = set_relation which = SOV value = -200 }\r
+ 	command = { trigger = { exists = USA } type = set_relation which = USA value = -200 }\r
++	command = { type = wakeminister which = 515301 }\r
++	command = { type = wakeminister which = 515302 }\r
++	command = { type = wakeminister which = 515303 }\r
++	command = { type = wakeminister which = 515304 }\r
++	command = { type = wakeminister which = 515305 }\r
++	command = { type = wakeminister which = 515306 }\r
++	command = { type = wakeminister which = 515307 }\r
++	command = { type = wakeminister which = 515308 }\r
++	command = { type = wakeminister which = 515309 }\r
++	command = { type = wakeminister which = 515310 }\r
++	command = { type = wakeminister which = 515311 }\r
++	command = { type = wakeminister which = 515312 }\r
++	command = { type = wakeminister which = 515313 }\r
++	command = { type = wakeminister which = 515314 }\r
++	command = { type = wakeminister which = 515315 }\r
++	command = { type = wakeminister which = 515316 }\r
++	command = { type = wakeminister which = 515317 }\r
+ 	command = { type = set_domestic which = democratic value = 1 }\r
+ 	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { type = headofstate which = 909644 } # セルゲイ・タボリツキー\r
+-	command = { type = headofgovernment which = 909649 } # ヴィクトル・ラリオノフ\r
+-	command = { type = foreignminister which = 909652 } # アンドレイ・ディキイ\r
+-	command = { type = armamentminister which = 909654 } # ニコライ・タルバーグ\r
+-	command = { type = ministerofsecurity which = 909659 } # ユーリ・エヴトゥコビッチ\r
+-	command = { type = ministerofintelligence which = 909505 } # ミハイル・メアンドロフ\r
+-	command = { type = chiefofstaff which = 909647 } # セルゲイ・タボリツキー\r
+-	command = { type = chiefofarmy which = 909657 } # イワン・メルキフ\r
+-	command = { type = chiefofnavy which = 909553 } # オレグ・マイケルキン\r
+-	command = { type = chiefofair which = 909631 } # イヴァン・タウベ\r
++	command = { type = headofstate which = 515301 } # セルゲイ・タボリツキー\r
++	command = { type = headofgovernment which = 515306 } # ヴィクトル・ラリオノフ\r
++	command = { type = foreignminister which = 515309 } # アンドレイ・ディキイ\r
++	command = { type = armamentminister which = 515311 } # ニコライ・タルバーグ\r
++	command = { type = ministerofsecurity which = 515316 } # ユーリ・エヴトゥコビッチ\r
++	command = { type = ministerofintelligence which = 515312 } # ニコライ・タルバーグ\r
++	command = { type = chiefofstaff which = 515304 } # セルゲイ・タボリツキー\r
++	command = { type = chiefofarmy which = 515082 } # アンドレイ・A・ヴラソフ\r
++	command = { type = chiefofnavy which = 515090 } # イヴァン・ブラゴヴェスチェンスキー\r
++	command = { type = chiefofair which = 515092 } # ヴィクトール・I・マリツェフ\r
+ 	command = { type = supplies value = 3000 }\r
+ 	command = { type = oilpool value = 3000 }\r
+ 	command = { type = metalpool value = 5000 }\r
+@@ -798,7 +820,7 @@ event = {
+ event = {\r
+ 	id = 32700103\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	decision = {\r
+ 	event = 32700102 # 反ソ運動の組織化\r
+@@ -807,14 +829,14 @@ event = {
+ 	decision_trigger = {\r
+ 	event = { id = 32700102 days = 30 } # 反ソ運動の組織化\r
+ 	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	region = { region = "Urals" country = UE1 data = 1 value = 50 }\r
++	region = { region = "Urals" country = RUS data = 1 value = 50 }\r
+ 	supplies = 1500\r
+ 	}\r
+ \r
+ 	trigger = {\r
+ 	event = { id = 32700102 days = 30 } # 反ソ運動の組織化\r
+ 	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	region = { region = "Urals" country = UE1 data = 1 value = 50 }\r
++	region = { region = "Urals" country = RUS data = 1 value = 50 }\r
+ 	supplies = 1500\r
+ 	random = 25\r
+ 	}\r
+@@ -832,7 +854,7 @@ event = {
+ 	action = { # 死が全てを解決するのだ\r
+ 	name = "ACTIONNAME32700103A"\r
+ 	command = { type = dissent value = 10 }\r
+-	command = { type = belligerence which = UE1 value = 10 }\r
++	command = { type = belligerence which = RUS value = 10 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -1500 }\r
+ 	command = { type = gas_attack }\r
+ 	command = { type = gas_protection }\r
+@@ -858,98 +880,6 @@ event = {
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  ロシア黒色同盟\r
+-# ダボリツキーの起こした反乱を歓迎した勢力の一つに、独ソ戦の苦い講和後も抵抗を継続した元赤軍兵士で構成された軍団がいた。\r
+-# 理由があろうとも、彼らは唾棄すべきナチスへの抵抗をあきらめたソビエト政府に深く失望し、独自の判断でドイツへの抵抗をつづけた。\r
+-# 無論、ソ連はこうした赤軍兵士に対し、裏ではともかく、表向きには彼らをソ連政府に従わない無法者として、関係がないことを明言。\r
+-# また戦後の政府再編の混乱によって、密かに行われた支援すら打ち切られると、彼らは祖国に見捨てられたと考え、\r
+-# ソ連赤軍から多くの兵士が離脱、純粋な反ナチス・反ドイツを掲げ、報復を唱える連合組織、ロシア黒色同盟が結成された。\r
+-# ロシア黒色同盟の指導者となったドミトリー・カルビシェフと彼の黒い軍団は、ネズミと地下水が蔓延る地下壕、ドイツの爆撃で破壊された廃墟、\r
+-# ウラル山脈の地下に建設された要塞に密かに広がっていた。\r
+-# そしてついに彼らは、帝国カルトのタボリツキーが、蛆虫が湧いた死体同然のソ連に対して内戦を仕掛けるとこれに呼応した。\r
+-# 地下の深淵から出撃したロシア黒色同盟の軍団は、軟弱なソビエト政府に与する人間を片っ端から処刑し、町や村をいくつも焼き払った。\r
+-# また彼らはダボリツキーに対し、政府の参画と引き換えにソ連との戦争に対する協力を突き付け、聖なるロシア帝国の再建に共闘する姿勢を見せている。\r
+-#########################################################################\r
+-\r
+-\r
+-event = {\r
+-	id = 32700104\r
+-	random = no\r
+-	country = UE1\r
+-\r
+-	decision = {\r
+-	event = 32700102 # 反ソ運動の組織化\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	event = { id = 32700102 days = 90 } # 反ソ運動の組織化\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	supplies = 1000\r
+-	}\r
+-\r
+-	trigger = {\r
+-	event = { id = 32700102 days = 90 } # 反ソ運動の組織化\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	supplies = 1000\r
+-	random = 25\r
+-	}\r
+-\r
+-	name = "EVT_32700104_NAME"\r
+-	desc = "EVT_32700104_DESC"\r
+-	style = 2\r
+-  	picture = "Black_League"\r
+-\r
+-	action = { # 彼らと共闘するのだ\r
+-	name = "ACTIONNAME32700104A"\r
+-	command = { type = domestic which = defense_lobby value = 2 }\r
+-	command = { trigger = { year = 1945 } type = chiefofarmy which = 909671 } # ドミトリー・ヤゾフ\r
+-	command = { trigger = { NOT = { year = 1945 } } type = chiefofarmy which = 909668 } # ドミトリー・カルビシェフ\r
+-	command = { type = supplies value = 3000 }\r
+-	command = { type = manpowerpool value = 300 }\r
+-	command = { type = add_division value = infantry when = 11 }\r
+-	command = { type = add_division value = infantry when = 11 }\r
+-	command = { type = add_division value = infantry when = 11 }\r
+-	command = { type = add_division value = infantry when = 11 }\r
+-	command = { type = add_division value = infantry when = 11 }\r
+-	command = { type = add_division value = armor when = 2 }\r
+-	command = { type = add_division value = motorized when = 3 }\r
+-	command = { type = local_setflag which = Black_League }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-\r
+-	action = { # 恥晒し連中と手を組む必要はない\r
+-	name = "ACTIONNAME32700104B"\r
+-	command = { type = domestic which = defense_lobby value = -1 }\r
+-	command = { type = sleepminister which = 909661 } # ドミトリー・カルビシェフ\r
+-	command = { type = sleepminister which = 909666 }\r
+-	command = { type = sleepminister which = 909667 }\r
+-	command = { type = sleepleader which = 909614 }\r
+-	command = { type = sleepminister which = 909662 } # ドミトリー・ヤゾフ\r
+-	command = { type = sleepminister which = 909669 }\r
+-	command = { type = sleepminister which = 909670 }\r
+-	command = { type = sleepminister which = 909671 }\r
+-	command = { type = sleepleader which = 909615 }\r
+-	command = { type = sleepminister which = 909663 } # アレクサンドル・サハロフスキー\r
+-	command = { type = sleepleader which = 909616 }\r
+-	command = { type = sleepminister which = 909664 } # セルゲイ・ブルコネンコ\r
+-	command = { type = sleepminister which = 909665 } # ユーリー・ドロズドフ\r
+-	command = { type = sleepleader which = 909617 }\r
+-	command = { type = revolt which = 1129 }\r
+-	command = { type = revolt which = 1129 }\r
+-	command = { type = revolt which = 1129 }\r
+-	command = { type = revolt which = 1130 }\r
+-	command = { type = revolt which = 1130 }\r
+-	command = { type = revolt which = 1130 }\r
+-	command = { type = revolt which = 664 }\r
+-	command = { type = revolt which = 664 }\r
+-	command = { type = revolt which = 667 }\r
+-	command = { type = revolt which = 667 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+ #########################################################################\r
+ #  ソビエト内戦の終結 ─ ソ連の勝利\r
+ # 独ソ戦後に勃発したソ連内戦は、ソ連側がどうにか体制を立て直したことで勝利した。\r
+@@ -958,21 +888,21 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700105\r
++	id = 32700104\r
+ 	random = no\r
+ 	country = SOV\r
+ \r
+ 	trigger = {\r
+ 	event = 32700102 # 反ソ運動の組織化\r
+-	NOT = { exists = UE1 }\r
+-	NOT = { war = { country = SOV country = UE1 } }\r
+-	NOT = { event = 32700106 } # ソビエト内戦の終結 ─ タボリツキーの勝利\r
++	NOT = { exists = RUS }\r
++	NOT = { war = { country = SOV country = RUS } }\r
++	NOT = { event = 32700105 } # ソビエト内戦の終結 ─ タボリツキーの勝利\r
+ 	NOT = { ispuppet = SOV }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_32700105_NAME"\r
+-	desc = "EVT_32700105_DESC"\r
++	name = "EVT_32700104_NAME"\r
++	desc = "EVT_32700104_DESC"\r
+ 	style = 2\r
+   	picture = "soviet_reinforcements"\r
+ \r
+@@ -981,10 +911,10 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 体制を整えなければ\r
+-	name = "ACTIONNAME32700012A"\r
++	name = "ACTIONNAME32700104A"\r
+ 	command = { type = province_keypoints which = 1129 value = -1 }\r
+ 	command = { type = dissent value = -10 }\r
+-	command = { type = sleepevent which = 32700013 } # ソビエト内戦の終結 ─ 反体制派の勝利\r
++	command = { type = sleepevent which = 32700105 } # ソビエト内戦の終結 ─ タボリツキーの勝利\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1001,22 +931,22 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700106\r
++	id = 32700105\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ 	save_date = yes\r
+ \r
+ 	trigger = {\r
+ 	event = 32700102 # 反ソ運動の組織化\r
+ 	NOT = { exists = SOV }\r
+-	NOT = { war = { country = SOV country = UE1 } }\r
+-	NOT = { event = 32700105 } # ソビエト内戦の終結 ─ ソ連の勝利\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { war = { country = SOV country = RUS } }\r
++	NOT = { event = 32700104 } # ソビエト内戦の終結 ─ ソ連の勝利\r
++	NOT = { ispuppet = RUS }\r
+ 	atwar = no\r
+ 	}\r
+ \r
+-	name = "EVT_32700106_NAME"\r
+-	desc = "EVT_32700106_DESC"\r
++	name = "EVT_32700105_NAME"\r
++	desc = "EVT_32700105_DESC"\r
+ 	style = 2\r
+   	picture = "Taboritsky"\r
+ \r
+@@ -1025,11 +955,11 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 苦しみと涙、それもまた人生なのだ\r
+-	name = "ACTIONNAME32700106A"\r
++	name = "ACTIONNAME32700105A"\r
+ 	command = { type = province_keypoints which = 1129 value = -1 }\r
+ 	command = { type = dissent value = -20 }\r
+ 	command = { type = manpowerpool value = 100 }\r
+-	command = { type = sleepevent which = 32700105 } # ソビエト内戦の終結 ─ ソ連の勝利\r
++	command = { type = sleepevent which = 32700104 } # ソビエト内戦の終結 ─ ソ連の勝利\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1046,28 +976,28 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700107\r
++	id = 32700106\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ 	save_date = yes\r
+ \r
+ 	decision = {\r
+-	event = 32700106 # ソビエト内戦の終結 ─ タボリツキーの勝利\r
++	event = 32700105 # ソビエト内戦の終結 ─ タボリツキーの勝利\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = { id = 32700106 days = 60 } # ソビエト内戦の終結 ─ タボリツキーの勝利\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
++	event = { id = 32700105 days = 60 } # ソビエト内戦の終結 ─ タボリツキーの勝利\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700106 days = 60 } # ソビエト内戦の終結 ─ タボリツキーの勝利\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
++	event = { id = 32700105 days = 60 } # ソビエト内戦の終結 ─ タボリツキーの勝利\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_32700107_NAME"\r
+-	desc = "EVT_32700107_DESC"\r
++	name = "EVT_32700106_NAME"\r
++	desc = "EVT_32700106_DESC"\r
+ 	style = 2\r
+   	picture = "Taboritsky_Flag"\r
+ \r
+@@ -1076,37 +1006,37 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 正義はなされよ、よしや世界が滅ぶとも\r
+-	name = "ACTIONNAME32700107A"\r
++	name = "ACTIONNAME32700106A"\r
+ 	command = { type = dissent value = -30 }\r
+-	command = { type = name where = UE1 which = "神聖ロシア帝国" }\r
+-	command = { type = flag_ext where = UE1 which = "_Holy" }\r
++	command = { type = name where = RUS which = "神聖ロシア帝国" }\r
++	command = { type = flag_ext where = RUS which = "_Holy" }\r
+ 	command = { type = domestic which = freedom value = -4 }\r
+-	command = { type = wakeminister which = 909672 }\r
+-	command = { type = wakeminister which = 909673 }\r
+-	command = { type = wakeminister which = 909674 }\r
+-	command = { type = headofstate which = 909672 }\r
+-	command = { type = headofgovernment which = 909673 }\r
+-	command = { type = add_core_region which = "White Sea Tundra" where = UE1 }\r
+-	command = { type = add_core_region which = "Northern Russia" where = UE1 }\r
+-	command = { type = add_core_region which = "Urals" where = UE1 }\r
+-	command = { type = add_core_region which = "Eastern Russia" where = UE1 }\r
+-	command = { type = add_core_region which = "Novosibirsk" where = UE1 }\r
+-	command = { type = add_core_region which = "Tomsk" where = UE1 }\r
+-	command = { type = add_core_region which = "Northern Permafrost" where = UE1 }\r
+-	command = { type = add_core_region which = "Far East Siberia" where = UE1 }\r
+-	command = { type = add_core_region which = "Irkutsk" where = UE1 }\r
+-	command = { type = add_core_region which = "Krasnoyarsk" where = UE1 }\r
+-	command = { type = add_claim_region which = "Kazakstan" where = UE1 }\r
+-	command = { type = add_claim_region which = "Central Asia" where = UE1 }\r
+-	command = { type = add_claim_region which = "Kaukasus" where = UE1 }\r
+-	command = { type = add_claim_region which = "Ukraine" where = UE1 }\r
+-	command = { type = add_claim_region which = "Belarus" where = UE1 }\r
+-	command = { type = add_claim_region which = "Finland" where = UE1 }\r
+-	command = { type = add_claim_region which = "Baltic States" where = UE1 }\r
+-	command = { type = add_claim_region which = "Poland" where = UE1 }\r
+-	command = { type = add_claim_area which = "East Prussia" where = UE1 }\r
+-	command = { type = add_claim_area which = "Sakhalin_Kuriles" where = UE1 }\r
+-	command = { type = add_claim_area which = "Bessarabia" where = UE1 }\r
++	command = { type = wakeminister which = 515318 }\r
++	command = { type = wakeminister which = 515319 }\r
++	command = { type = wakeminister which = 515320 }\r
++	command = { type = headofstate which = 515318 } # 救世主ニコライ\r
++	command = { type = headofgovernment which = 515319 } # セルゲイ・タボリツキー\r
++	command = { type = add_core_region which = "White Sea Tundra" where = RUS }\r
++	command = { type = add_core_region which = "Northern Russia" where = RUS }\r
++	command = { type = add_core_region which = "Urals" where = RUS }\r
++	command = { type = add_core_region which = "Eastern Russia" where = RUS }\r
++	command = { type = add_core_region which = "Novosibirsk" where = RUS }\r
++	command = { type = add_core_region which = "Tomsk" where = RUS }\r
++	command = { type = add_core_region which = "Northern Permafrost" where = RUS }\r
++	command = { type = add_core_region which = "Far East Siberia" where = RUS }\r
++	command = { type = add_core_region which = "Irkutsk" where = RUS }\r
++	command = { type = add_core_region which = "Krasnoyarsk" where = RUS }\r
++	command = { type = add_claim_region which = "Kazakstan" where = RUS }\r
++	command = { type = add_claim_region which = "Central Asia" where = RUS }\r
++	command = { type = add_claim_region which = "Kaukasus" where = RUS }\r
++	command = { type = add_claim_region which = "Ukraine" where = RUS }\r
++	command = { type = add_claim_region which = "Belarus" where = RUS }\r
++	command = { type = add_claim_region which = "Finland" where = RUS }\r
++	command = { type = add_claim_region which = "Baltic States" where = RUS }\r
++	command = { type = add_claim_region which = "Poland" where = RUS }\r
++	command = { type = add_claim_area which = "East Prussia" where = RUS }\r
++	command = { type = add_claim_area which = "Sakhalin_Kuriles" where = RUS }\r
++	command = { type = add_claim_area which = "Bessarabia" where = RUS }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1121,42 +1051,42 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700108\r
++	id = 32700107\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	decision = {\r
+-	event = 32700107 # 神聖ロシア帝国の成立\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = { id = 32700107 days = 30 } # 神聖ロシア帝国の成立\r
++	event = { id = 32700106 days = 30 } # 神聖ロシア帝国の成立\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	supplies = 2000\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 30 } # 神聖ロシア帝国の成立\r
++	event = { id = 32700106 days = 30 } # 神聖ロシア帝国の成立\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_32700108_NAME"\r
+-	desc = "EVT_32700108_DESC"\r
++	name = "EVT_32700107_NAME"\r
++	desc = "EVT_32700107_DESC"\r
+ 	style = 2\r
+ 	picture = "Gulag"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -1166,7 +1096,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 監獄に入ったことのない者は、実はその国を知りはしない\r
+-	name = "ACTIONNAME32700108A"\r
++	name = "ACTIONNAME32700107A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -2000 }\r
+@@ -1188,42 +1118,42 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700109\r
++	id = 32700108\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	decision = {\r
+-	event = 32700107 # 神聖ロシア帝国の成立\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = { id = 32700107 days = 90 } # 神聖ロシア帝国の成立\r
++	event = { id = 32700106 days = 90 } # 神聖ロシア帝国の成立\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	money = 300\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 30 } # 神聖ロシア帝国の成立\r
++	event = { id = 32700106 days = 30 } # 神聖ロシア帝国の成立\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_32700109_NAME"\r
+-	desc = "EVT_32700109_DESC"\r
++	name = "EVT_32700108_NAME"\r
++	desc = "EVT_32700108_DESC"\r
+ 	style = 2\r
+ 	picture = "Child_White_Armies"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -1233,7 +1163,7 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 慈善は、それが犠牲である場合のみ慈善である\r
+-	name = "ACTIONNAME32700109A"\r
++	name = "ACTIONNAME32700108A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { trigger = { ai = no } type = money value = -300 }\r
+ 	command = { type = manpowerpool value = 150 }\r
+@@ -1256,45 +1186,45 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700110\r
++	id = 32700109\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	decision = {\r
+-	event = 32700107 # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = { id = 32700107 days = 45 } # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
++	event = { id = 32700106 days = 45 } # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	supplies = 1000\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 45 } # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
++	event = { id = 32700106 days = 45 } # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	random = 25\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700110_NAME"\r
+-	desc = "EVT_32700110_DESC"\r
++	name = "EVT_32700109_NAME"\r
++	desc = "EVT_32700109_DESC"\r
+ 	style = 2\r
+ 	picture = "Oxpaha"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -1304,12 +1234,12 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # オフラーナを再建せよ！\r
+-	name = "ACTIONNAME32700110A"\r
++	name = "ACTIONNAME32700109A"\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-	command = { type = wakeminister which = 909675 }\r
+-	command = { type = wakeminister which = 909676 }\r
+-	command = { type = ministerofintelligence which = 909676 }\r
++	command = { type = wakeminister which = 515321 }\r
++	command = { type = wakeminister which = 515322 }\r
++	command = { type = ministerofintelligence which = 515322 }\r
+ 	command = { type = soft_attack which = police value = 1 }\r
+ 	command = { type = suppression which = police value = 3 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+@@ -1339,26 +1269,26 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700111\r
++	id = 32700110\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 240 } # 神聖ロシア帝国の成立\r
+-	event = 32700110 # 秘密警察の再編\r
++	event = { id = 32700106 days = 240 } # 神聖ロシア帝国の成立\r
++	event = 32700109 # 秘密警察の再編\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	random = 25\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700111_NAME"\r
+-	desc = "EVT_32700111_DESC"\r
++	name = "EVT_32700110_NAME"\r
++	desc = "EVT_32700110_DESC"\r
+ 	style = 2\r
+ 	picture = "Taboritsky_Purge"\r
+ \r
+@@ -1367,9 +1297,9 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 陰謀は未然に防がれた\r
+-	name = "ACTIONNAME32700111A"\r
++	name = "ACTIONNAME32700110A"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = belligerence which = UE1 value = 5 }\r
++	command = { type = belligerence which = RUS value = 5 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+ 	command = { type = morale which = land value = -10 }\r
+ 	command = { type = max_organization which = land value = -10 }\r
+@@ -1377,27 +1307,30 @@ event = {
+ 	command = { type = max_organization which = naval value = -10 }\r
+ 	command = { type = morale which = air value = -10 }\r
+ 	command = { type = max_organization which = air value = -10 }\r
+-	command = { type = sleepminister which = 909500 } # アンドレイ・ウラソフ\r
+-	command = { type = sleepminister which = 909514 }\r
+-	command = { type = sleepminister which = 909544 }\r
+-	command = { type = sleepminister which = 909550 }\r
+-	command = { type = sleepleader which = 909562 }\r
+-	command = { type = sleepteam which = 909505 }\r
+-	command = { type = sleepminister which = 909502 } # グリゴリー・N・ジレンコフ\r
+-	command = { type = sleepminister which = 909510 }\r
+-	command = { type = sleepminister which = 909588 }\r
+-	command = { type = sleepminister which = 909504 } # ヒョードル・トルキン\r
+-	command = { type = sleepminister which = 909506 }\r
+-	command = { type = sleepminister which = 909543 }\r
+-	command = { type = sleepminister which = 909579 }\r
+-	command = { type = sleepleader which = 909591 }\r
+-	command = { type = sleepminister which = 909567 } # パーヴェル・R・ベルモント=アヴァロフ\r
+-	command = { type = sleepminister which = 909569 }\r
+-	command = { type = sleepminister which = 909570 }\r
+-	command = { type = sleepleader which = 909586 }\r
+-	command = { type = sleepleader which = 909594 } # マリシキン\r
+-	command = { type = sleepleader which = 909600 } # メアンドロフ\r
+-	command = { type = sleepleader which = 909601 } # ブニャチェンコ\r
++	command = { type = sleepminister which = 515001 } # アンドレイ・ウラソフ\r
++	command = { type = sleepminister which = 515012 }\r
++	command = { type = sleepminister which = 515067 }\r
++	command = { type = sleepminister which = 515082 }\r
++	command = { type = sleepleader which = 516925 }\r
++	command = { type = sleepteam which = 515056 }\r
++	command = { type = sleepminister which = 515011 } # グリゴリー・N・ジレンコフ\r
++	command = { type = sleepminister which = 515237 }\r
++	command = { type = sleepminister which = 515066 } # フョードル・I・トルヒーン\r
++	command = { type = sleepminister which = 515083 }\r
++	command = { type = sleepteam which = 515091 }\r
++	command = { type = sleepminister which = 515049 } # パーヴェル・R・ベルモント=アヴァロフ\r
++	command = { type = sleepminister which = 515070 }\r
++	command = { type = sleepminister which = 515084 }\r
++	command = { type = sleepleader which = 515292 }\r
++	command = { type = sleepteam which = 515033 }\r
++	command = { type = sleepminister which = 515054 } # ミハイル・A・メーンドロフ\r
++	command = { type = sleepteam which = 515089 }\r
++	command = { type = sleepminister which = 515053 } # ブニャチェンコ\r
++	command = { type = sleepminister which = 515076 }\r
++	command = { type = sleepminister which = 515232 }\r
++	command = { type = sleepminister which = 515235 }\r
++	command = { type = sleepleader which = 516926 }\r
++	command = { type = sleepteam which = 515090 }\r
+ 	command = { type = sleepleader which = -1 } # ランダム粛清\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+@@ -1408,14 +1341,7 @@ event = {
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+-	command = { type = wakeleader which = 909557 }\r
+-	command = { type = wakeleader which = 909611 }\r
+-	command = { type = wakeleader which = 909612 }\r
+-	command = { type = wakeleader which = 909613 }\r
+-	command = { type = wakeleader which = 909614 }\r
+-	command = { type = wakeleader which = 909615 }\r
+-	command = { type = wakeleader which = 909616 }\r
+-	command = { type = wakeleader which = 909617 }\r
++	command = { trigger = { flag = Dirlewanger } type = wakeleader which = 909557 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -1432,18 +1358,18 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700112\r
++	id = 32700111\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 80 } # 神聖ロシア帝国の成立\r
+-	NOT = { event = 32700105 } # ソビエト内戦の終結 ─ ソ連の勝利\r
+-	event = 32700110 # 秘密警察の再編\r
++	event = { id = 32700106 days = 80 } # 神聖ロシア帝国の成立\r
++	NOT = { event = 32700104 } # ソビエト内戦の終結 ─ ソ連の勝利\r
++	event = 32700109 # 秘密警察の再編\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700112_NAME"\r
+-	desc = "EVT_32700112_DESC"\r
++	name = "EVT_32700111_NAME"\r
++	desc = "EVT_32700111_DESC"\r
+ 	style = 2\r
+   	picture = "Ipatiev_House"\r
+ \r
+@@ -1452,9 +1378,9 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 今更やつらに何ができるというのだ？\r
+-	name = "ACTIONNAME32700019A"\r
++	name = "ACTIONNAME32700111A"\r
+ 	command = { type = dissent value = 1 }\r
+-	command = { type = belligerence which = UE1 value = 1 }\r
++	command = { type = belligerence which = RUS value = 1 }\r
+ 	command = { type = relation which = RUS value = -5 }\r
+ 	command = { type = relation which = UER value = -5 }\r
+ 	command = { type = relation which = SIB value = -5 }\r
+@@ -1463,9 +1389,9 @@ event = {
+         }\r
+ \r
+ 	action = { # では皆様を我々の聖地に案内しよう、イパチェフ館にな！\r
+-	name = "ACTIONNAME32700019B"\r
++	name = "ACTIONNAME32700111B"\r
+ 	command = { type = dissent value = -3 }\r
+-	command = { type = belligerence which = UE1 value = 5 }\r
++	command = { type = belligerence which = RUS value = 5 }\r
+ 	command = { type = manpowerpool value = -1 }\r
+ 	command = { type = relation which = RUS value = -50 }\r
+ 	command = { type = relation which = UER value = -50 }\r
+@@ -1474,9 +1400,10 @@ event = {
+ 	command = { type = relation which = FRA value = -50 }\r
+ 	command = { type = relation which = SIB value = -50 }\r
+ 	command = { type = relation which = PRI value = -50 }\r
+-	command = { type = sleepminister which = 909512 } # ウラジーミル・キリロヴィチ・ロマノフ\r
+-	command = { type = sleepminister which = 909535 } # フェリックス・ユスポフ\r
+-	command = { type = sleepminister which = 909537 }\r
++	command = { type = sleepminister which = 515099 } # キリル・ヴラジーミロヴィッチ大公\r
++	command = { type = sleepminister which = 515100 }\r
++	command = { type = sleepminister which = 515103 } # ヴラジーミル・キリロヴィッチ大公\r
++	command = { type = sleepminister which = 515104 }\r
+ 	ai_chance = 97\r
+         }\r
+ }\r
+@@ -1489,23 +1416,23 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700113\r
++	id = 32700112\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 360 } # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
+-	event = 32700109 # タボリツキーの子\r
+-	event = 32700110 # 秘密警察の再編\r
+-	event = 32700111 # アンドレイ・ウラソフの粛清\r
+-	NOT = { event = { id = 32700107 days = 3601 } } # 神聖ロシア帝国の成立から10年以内 \r
++	event = { id = 32700106 days = 360 } # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
++	event = 32700108 # タボリツキーの子\r
++	event = 32700109 # 秘密警察の再編\r
++	event = 32700110 # アンドレイ・ウラソフの粛清\r
++	NOT = { event = { id = 32700106 days = 3601 } } # 神聖ロシア帝国の成立から10年以内 \r
+ 	random = 50\r
+ 	}\r
+ \r
+-	name = "EVT_32700113_NAME"\r
+-	desc = "EVT_32700113_DESC"\r
++	name = "EVT_32700112_NAME"\r
++	desc = "EVT_32700112_DESC"\r
+ 	style = 2\r
+ 	picture = "1934 crisis"\r
+ \r
+@@ -1514,16 +1441,18 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 批判など無視してしまえ！\r
+-	name = "ACTIONNAME32700113A"\r
++	name = "ACTIONNAME32700112A"\r
+ 	command = { type = dissent value = 4 }\r
+ 	command = { type = setflag which = Taboritsky_Purge }\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 見かけの改革を行う\r
+-	name = "ACTIONNAME32700113B"\r
++	name = "ACTIONNAME32700112B"\r
+ 	trigger = { ai = no money = 100 }\r
+ 	command = { type = money value = -100 }\r
+ 	command = { type = dissent value = 1 }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -1537,30 +1466,30 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700114\r
++	id = 32700113\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ 	save_date = yes\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 480 } # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
+-	event = 32700110 # 秘密警察の再編\r
+-	event = 32700111 # アンドレイ・ウラソフの粛清\r
++	event = { id = 32700106 days = 480 } # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
++	event = 32700109 # 秘密警察の再編\r
++	event = 32700110 # アンドレイ・ウラソフの粛清\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	random = 25\r
+ 	flag = Taboritsky_Purge # タボリツキー体制の混乱で批判を無視する\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700114_NAME"\r
+-	desc = "EVT_32700114_DESC"\r
++	name = "EVT_32700113_NAME"\r
++	desc = "EVT_32700113_DESC"\r
+ 	style = 2\r
+ 	picture = "Taboritsky"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -1570,10 +1499,10 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 今では子供さえも、彼の粛清から安全ではない\r
+-	name = "ACTIONNAME32700114A"\r
++	name = "ACTIONNAME32700113A"\r
+ 	command = { type = dissent value = 30 }\r
+-	command = { type = sleepevent which = 32700113 }\r
+-	command = { type = belligerence which = UE1 value = 10 }\r
++	command = { type = sleepevent which = 32700112 }\r
++	command = { type = belligerence which = RUS value = 10 }\r
+ 	command = { type = manpowerpool value = -200 }\r
+ 	command = { type = research_mod value = -30 }\r
+ 	command = { type = morale which = land value = -10 }\r
+@@ -1602,14 +1531,7 @@ event = {
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+-	command = { type = wakeleader which = 909557 }\r
+-	command = { type = wakeleader which = 909611 }\r
+-	command = { type = wakeleader which = 909612 }\r
+-	command = { type = wakeleader which = 909613 }\r
+-	command = { type = wakeleader which = 909614 }\r
+-	command = { type = wakeleader which = 909615 }\r
+-	command = { type = wakeleader which = 909616 }\r
+-	command = { type = wakeleader which = 909617 }\r
++	command = { trigger = { flag = Dirlewanger } type = wakeleader which = 909557 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -1624,45 +1546,45 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700115\r
++	id = 32700114\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	decision = {\r
+ 	event = 2007033 # ビターピース\r
+-	event = 32700107 # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
+-	event = 32700114 # タボリツキーの粛清が始まる\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
++	event = 32700113 # タボリツキーの粛清が始まる\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+ 	event = 2007033 # ビターピース\r
+-	event = 32700107 # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
+-	event = { id = 32700114 days = 45 } # タボリツキーの粛清が始まる\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
++	event = { id = 32700113 days = 45 } # タボリツキーの粛清が始まる\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	OR = {\r
+-	control = { province = 1113 data = UE1 }\r
+-	control = { province = 660 data = UE1 }\r
+-	control = { province = 664 data = UE1 }\r
+-	control = { province = 666 data = UE1 }\r
+-	control = { province = 667 data = UE1 }\r
+-	control = { province = 672 data = UE1 }\r
+-	control = { province = 673 data = UE1 }\r
+-	control = { province = 680 data = UE1 }\r
+-	control = { province = 681 data = UE1 }\r
+-	control = { province = 544 data = UE1 }\r
+-	control = { province = 684 data = UE1 }\r
+-	control = { province = 685 data = UE1 }\r
+-	control = { province = 690 data = UE1 }\r
+-	control = { province = 1134 data = UE1 }\r
++	control = { province = 1113 data = RUS }\r
++	control = { province = 660 data = RUS }\r
++	control = { province = 664 data = RUS }\r
++	control = { province = 666 data = RUS }\r
++	control = { province = 667 data = RUS }\r
++	control = { province = 672 data = RUS }\r
++	control = { province = 673 data = RUS }\r
++	control = { province = 680 data = RUS }\r
++	control = { province = 681 data = RUS }\r
++	control = { province = 544 data = RUS }\r
++	control = { province = 684 data = RUS }\r
++	control = { province = 685 data = RUS }\r
++	control = { province = 690 data = RUS }\r
++	control = { province = 1134 data = RUS }\r
+ 	}\r
+ 	OR = {\r
+ 	exists = U40\r
+@@ -1675,32 +1597,32 @@ event = {
+ \r
+ 	trigger = {\r
+ 	event = 2007033 # ビターピース\r
+-	event = 32700107 # 神聖ロシア帝国の成立\r
+-	event = 32700108 # 第3のラーゲリ\r
+-	event = { id = 32700114 days = 45 } # タボリツキーの粛清が始まる\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
++	event = 32700107 # 第3のラーゲリ\r
++	event = { id = 32700113 days = 45 } # タボリツキーの粛清が始まる\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	OR = {\r
+-	control = { province = 1113 data = UE1 }\r
+-	control = { province = 660 data = UE1 }\r
+-	control = { province = 664 data = UE1 }\r
+-	control = { province = 666 data = UE1 }\r
+-	control = { province = 667 data = UE1 }\r
+-	control = { province = 672 data = UE1 }\r
+-	control = { province = 673 data = UE1 }\r
+-	control = { province = 680 data = UE1 }\r
+-	control = { province = 681 data = UE1 }\r
+-	control = { province = 544 data = UE1 }\r
+-	control = { province = 684 data = UE1 }\r
+-	control = { province = 685 data = UE1 }\r
+-	control = { province = 690 data = UE1 }\r
+-	control = { province = 1134 data = UE1 }\r
++	control = { province = 1113 data = RUS }\r
++	control = { province = 660 data = RUS }\r
++	control = { province = 664 data = RUS }\r
++	control = { province = 666 data = RUS }\r
++	control = { province = 667 data = RUS }\r
++	control = { province = 672 data = RUS }\r
++	control = { province = 673 data = RUS }\r
++	control = { province = 680 data = RUS }\r
++	control = { province = 681 data = RUS }\r
++	control = { province = 544 data = RUS }\r
++	control = { province = 684 data = RUS }\r
++	control = { province = 685 data = RUS }\r
++	control = { province = 690 data = RUS }\r
++	control = { province = 1134 data = RUS }\r
+ 	}\r
+ 	OR = {\r
+ 	exists = U40\r
+@@ -1711,8 +1633,8 @@ event = {
+ 	random = 25\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700115_NAME"\r
+-	desc = "EVT_32700115_DESC"\r
++	name = "EVT_32700114_NAME"\r
++	desc = "EVT_32700114_DESC"\r
+ 	style = 2\r
+ 	picture = "Gulag"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -1722,24 +1644,24 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 国防上、必要なのだ\r
+-	name = "ACTIONNAME32700115A"\r
++	name = "ACTIONNAME32700114A"\r
+ 	command = { type = dissent value = -8 }\r
+ 	command = { type = manpowerpool value = -30 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+-	command = { trigger = { control = { province = 1113 data = UE1 } } type = construct which = land_fort where = 1113 value = 2 }\r
+-	command = { trigger = { control = { province = 660 data = UE1 } } type = construct which = land_fort where = 660 value = 2 }\r
+-	command = { trigger = { control = { province = 664 data = UE1 } } type = construct which = land_fort where = 664 value = 2 }\r
+-	command = { trigger = { control = { province = 666 data = UE1 } } type = construct which = land_fort where = 666 value = 2 }\r
+-	command = { trigger = { control = { province = 667 data = UE1 } } type = construct which = land_fort where = 667 value = 2 }\r
+-	command = { trigger = { control = { province = 672 data = UE1 } } type = construct which = land_fort where = 672 value = 2 }\r
+-	command = { trigger = { control = { province = 673 data = UE1 } } type = construct which = land_fort where = 673 value = 2 }\r
+-	command = { trigger = { control = { province = 680 data = UE1 } } type = construct which = land_fort where = 680 value = 2 }\r
+-	command = { trigger = { control = { province = 681 data = UE1 } } type = construct which = land_fort where = 681 value = 2 }\r
+-	command = { trigger = { control = { province = 544 data = UE1 } } type = construct which = land_fort where = 544 value = 2 }\r
+-	command = { trigger = { control = { province = 684 data = UE1 } } type = construct which = land_fort where = 684 value = 2 }\r
+-	command = { trigger = { control = { province = 685 data = UE1 } } type = construct which = land_fort where = 685 value = 2 }\r
+-	command = { trigger = { control = { province = 690 data = UE1 } } type = construct which = land_fort where = 690 value = 2 }\r
+-	command = { trigger = { control = { province = 1134 data = UE1 } } type = construct which = land_fort where = 1134 value = 2 }\r
++	command = { trigger = { control = { province = 1113 data = RUS } } type = construct which = land_fort where = 1113 value = 2 }\r
++	command = { trigger = { control = { province = 660 data = RUS } } type = construct which = land_fort where = 660 value = 2 }\r
++	command = { trigger = { control = { province = 664 data = RUS } } type = construct which = land_fort where = 664 value = 2 }\r
++	command = { trigger = { control = { province = 666 data = RUS } } type = construct which = land_fort where = 666 value = 2 }\r
++	command = { trigger = { control = { province = 667 data = RUS } } type = construct which = land_fort where = 667 value = 2 }\r
++	command = { trigger = { control = { province = 672 data = RUS } } type = construct which = land_fort where = 672 value = 2 }\r
++	command = { trigger = { control = { province = 673 data = RUS } } type = construct which = land_fort where = 673 value = 2 }\r
++	command = { trigger = { control = { province = 680 data = RUS } } type = construct which = land_fort where = 680 value = 2 }\r
++	command = { trigger = { control = { province = 681 data = RUS } } type = construct which = land_fort where = 681 value = 2 }\r
++	command = { trigger = { control = { province = 544 data = RUS } } type = construct which = land_fort where = 544 value = 2 }\r
++	command = { trigger = { control = { province = 684 data = RUS } } type = construct which = land_fort where = 684 value = 2 }\r
++	command = { trigger = { control = { province = 685 data = RUS } } type = construct which = land_fort where = 685 value = 2 }\r
++	command = { trigger = { control = { province = 690 data = RUS } } type = construct which = land_fort where = 690 value = 2 }\r
++	command = { trigger = { control = { province = 1134 data = RUS } } type = construct which = land_fort where = 1134 value = 2 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -1758,28 +1680,28 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700116\r
++	id = 32700115\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700114 days = 540 } # タボリツキーの粛清が始まる\r
++	event = { id = 32700113 days = 540 } # タボリツキーの粛清が始まる\r
+ 	event = 2007033 # ビターピース\r
+ 	NOT = { event = 2003183 } # ヒトラーの自決\r
+ 	exists = GER\r
+-	exists = UE1\r
+-	NOT = { war = { country = GER country = UE1 } }\r
+-	NOT = { alliance = { country = GER country = UE1 } }\r
++	exists = RUS\r
++	NOT = { war = { country = GER country = RUS } }\r
++	NOT = { alliance = { country = GER country = RUS } }\r
+ 	NOT = { ispuppet = GER }\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { ispuppet = RUS }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	OR = {\r
+ 	exists = U40\r
+@@ -1790,8 +1712,8 @@ event = {
+ 	random = 25\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700116_NAME"\r
+-	desc = "EVT_32700116_DESC"\r
++	name = "EVT_32700115_NAME"\r
++	desc = "EVT_32700115_DESC"\r
+ 	style = 2\r
+ 	picture = "Taboritsky"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -1801,45 +1723,45 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 国境を封鎖せよ\r
+-	name = "ACTIONNAME32700116A"\r
++	name = "ACTIONNAME32700115A"\r
+ 	command = { type = dissent value = 3 }\r
+-	command = { type = belligerence which = UE1 value = 3 }\r
++	command = { type = belligerence which = RUS value = 3 }\r
+ 	command = { type = manpowerpool value = -100 }\r
+-	command = { type = embargo which = UE1 where = GER value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = U40 } } type = embargo which = UE1 where = U40 value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = U41 } } type = embargo which = UE1 where = U41 value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = U42 } } type = embargo which = UE1 where = U42 value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = U43 } } type = embargo which = UE1 where = U43 value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = ITA } } type = embargo which = UE1 where = ITA value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = HUN } } type = embargo which = UE1 where = HUN value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = FIN } } type = embargo which = UE1 where = FIN value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = YUG } } type = embargo which = UE1 where = YUG value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = ROM } } type = embargo which = UE1 where = ROM value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = BUL } } type = embargo which = UE1 where = BUL value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = AUS } } type = embargo which = UE1 where = AUS value = 3 }\r
+-	command = { trigger = { alliance = { country = GER country = U09 } } type = embargo which = UE1 where = U09 value = 3 }\r
++	command = { type = embargo which = RUS where = GER value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = U40 } } type = embargo which = RUS where = U40 value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = U41 } } type = embargo which = RUS where = U41 value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = U42 } } type = embargo which = RUS where = U42 value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = U43 } } type = embargo which = RUS where = U43 value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = ITA } } type = embargo which = RUS where = ITA value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = HUN } } type = embargo which = RUS where = HUN value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = FIN } } type = embargo which = RUS where = FIN value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = YUG } } type = embargo which = RUS where = YUG value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = ROM } } type = embargo which = RUS where = ROM value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = BUL } } type = embargo which = RUS where = BUL value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = AUS } } type = embargo which = RUS where = AUS value = 3 }\r
++	command = { trigger = { alliance = { country = GER country = U09 } } type = embargo which = RUS where = U09 value = 3 }\r
+ 	command = { type = relation which = JAP value = -150 }\r
+ 	command = { type = relation which = PRI value = -150 }\r
+ 	command = { type = relation which = SIB value = -150 }\r
+-	command = { type = event which = 32700117 where = GER when = 1 }\r
++	command = { type = event which = 32700116 where = GER when = 1 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+ \r
+ event = {\r
+-	id = 32700117\r
++	id = 32700116\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_32700117_NAME"\r
+-	desc = "EVT_32700117_DESC"\r
++	name = "EVT_32700116_NAME"\r
++	desc = "EVT_32700116_DESC"\r
+ 	style = 2\r
+ 	picture = "Taboritsky"\r
+ \r
+ 	action = { # 狂気の帝国は抑制の効かない不穏地域になりつつある\r
+-	name = "ACTIONNAME32700024A"\r
++	name = "ACTIONNAME32700016A"\r
+ 	command = { type = manpowerpool value = -100 }\r
+-	command = { type = relation which = UE1 value = -150 }\r
++	command = { type = relation which = RUS value = -150 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -1853,29 +1775,29 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700118\r
++	id = 32700117\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700114 days = 720 } # タボリツキーの粛清が始まる\r
++	event = { id = 32700113 days = 720 } # タボリツキーの粛清が始まる\r
+ 	event = 2007033 # ビターピース\r
+ 	NOT = { event = 2011018 } # 陰る太陽\r
+ 	NOT = { event = 2011028 } # 日本降伏\r
+ 	exists = JAP\r
+-	exists = UE1\r
+-	NOT = { war = { country = JAP country = UE1 } }\r
+-	NOT = { alliance = { country = JAP country = UE1 } }\r
++	exists = RUS\r
++	NOT = { war = { country = JAP country = RUS } }\r
++	NOT = { alliance = { country = JAP country = RUS } }\r
+ 	NOT = { ispuppet = JAP }\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { ispuppet = RUS }\r
+ 	NOT = { lost_national = { country = JAP value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	OR = {\r
+ 	OR = {\r
+@@ -1906,8 +1828,8 @@ event = {
+ 	random = 25\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700118_NAME"\r
+-	desc = "EVT_32700118_DESC"\r
++	name = "EVT_32700117_NAME"\r
++	desc = "EVT_32700117_DESC"\r
+ 	style = 2\r
+ 	picture = "Taboritsky"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -1917,19 +1839,19 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 国境を封鎖せよ\r
+-	name = "ACTIONNAME32700118A"\r
++	name = "ACTIONNAME32700117A"\r
+ 	command = { type = dissent value = 3 }\r
+-	command = { type = belligerence which = UE1 value = 3 }\r
++	command = { type = belligerence which = RUS value = 3 }\r
+ 	command = { type = manpowerpool value = -100 }\r
+-	command = { type = embargo which = UE1 where = JAP value = 3 }\r
+-	command = { trigger = { alliance = { country = JAP country = PRI } } type = embargo which = UE1 where = PRI value = 3 }\r
+-	command = { trigger = { alliance = { country = JAP country = SIB } } type = embargo which = UE1 where = SIB value = 3 }\r
++	command = { type = embargo which = RUS where = JAP value = 3 }\r
++	command = { trigger = { alliance = { country = JAP country = PRI } } type = embargo which = RUS where = PRI value = 3 }\r
++	command = { trigger = { alliance = { country = JAP country = SIB } } type = embargo which = RUS where = SIB value = 3 }\r
+ 	command = { type = relation which = JAP value = -150 }\r
+ 	command = { type = relation which = PRI value = -150 }\r
+ 	command = { type = relation which = SIB value = -150 }\r
+-	command = { type = event which = 32700119 where = JAP when = 1 }\r
+-	command = { trigger = { alliance = { country = JAP country = PRI } } type = event which = 32700026 where = PRI when = 1 }\r
+-	command = { trigger = { alliance = { country = JAP country = SIB } } type = event which = 32700026 where = SIB when = 1 }\r
++	command = { type = event which = 32700118 where = JAP when = 1 }\r
++	command = { trigger = { alliance = { country = JAP country = PRI } } type = event which = 32700018 where = PRI when = 1 }\r
++	command = { trigger = { alliance = { country = JAP country = SIB } } type = event which = 32700018 where = SIB when = 1 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -1943,20 +1865,20 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700119\r
++	id = 32700118\r
+ 	random = no\r
+ 	TAG = { JAP PRI SIB }\r
+ 	persistent = yes\r
+ \r
+-	name = "EVT_32700119_NAME"\r
+-	desc = "EVT_32700119_DESC"\r
++	name = "EVT_32700118_NAME"\r
++	desc = "EVT_32700118_DESC"\r
+ 	style = 2\r
+ 	picture = "Taboritsky"\r
+ \r
+ 	action = { # 「兄弟性、強さ、そして不屈の精神...険悪な夜をものともしない」\r
+-	name = "ACTIONNAME32700119A"\r
++	name = "ACTIONNAME32700118A"\r
+ 	command = { type = manpowerpool value = -100 }\r
+-	command = { type = relation which = UE1 value = -150 }\r
++	command = { type = relation which = RUS value = -150 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -1968,19 +1890,19 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700120\r
++	id = 32700119\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ \r
+ 	decision = {\r
+-	event = 32700117 # ドイツとの国境を封鎖\r
+-	event = 32700119 # 神聖ロシア帝国が国境を封鎖\r
++	event = 32700116 # ドイツとの国境を封鎖\r
++	event = 32700117 # 神聖ロシア帝国が国境を封鎖\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = 32700117 # ドイツとの国境を封鎖\r
+-	event = 32700119 # 神聖ロシア帝国が国境を封鎖\r
++	event = 32700116 # ドイツとの国境を封鎖\r
++	event = 32700117 # 神聖ロシア帝国が国境を封鎖\r
+ 	event = 2007033 # ビターピース\r
+ 	NOT = { event = 2003183 } # ヒトラーの自決\r
+ 	NOT = { event = 2011018 } # 陰る太陽\r
+@@ -1988,32 +1910,32 @@ event = {
+ 	exists = GER\r
+ 	exists = JAP\r
+ 	exists = USA\r
+-	exists = UE1\r
+-	NOT = { war = { country = GER country = UE1 } }\r
+-	NOT = { war = { country = JAP country = UE1 } }\r
+-	NOT = { war = { country = USA country = UE1 } }\r
+-	NOT = { alliance = { country = GER country = UE1 } }\r
+-	NOT = { alliance = { country = JAP country = UE1 } }\r
+-	NOT = { alliance = { country = USA country = UE1 } }\r
++	exists = RUS\r
++	NOT = { war = { country = GER country = RUS } }\r
++	NOT = { war = { country = JAP country = RUS } }\r
++	NOT = { war = { country = USA country = RUS } }\r
++	NOT = { alliance = { country = GER country = RUS } }\r
++	NOT = { alliance = { country = JAP country = RUS } }\r
++	NOT = { alliance = { country = USA country = RUS } }\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = JAP }\r
+ 	NOT = { ispuppet = USA }\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { ispuppet = RUS }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	NOT = { lost_national = { country = JAP value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 32700117 # ドイツとの国境を封鎖\r
+-	event = 32700119 # 神聖ロシア帝国が国境を封鎖\r
++	event = 32700116 # ドイツとの国境を封鎖\r
++	event = 32700117 # 神聖ロシア帝国が国境を封鎖\r
+ 	event = 2007033 # ビターピース\r
+ 	NOT = { event = 2003183 } # ヒトラーの自決\r
+ 	NOT = { event = 2011018 } # 陰る太陽\r
+@@ -2021,32 +1943,32 @@ event = {
+ 	exists = GER\r
+ 	exists = JAP\r
+ 	exists = USA\r
+-	exists = UE1\r
+-	NOT = { war = { country = GER country = UE1 } }\r
+-	NOT = { war = { country = JAP country = UE1 } }\r
+-	NOT = { war = { country = USA country = UE1 } }\r
+-	NOT = { alliance = { country = GER country = UE1 } }\r
+-	NOT = { alliance = { country = JAP country = UE1 } }\r
+-	NOT = { alliance = { country = USA country = UE1 } }\r
++	exists = RUS\r
++	NOT = { war = { country = GER country = RUS } }\r
++	NOT = { war = { country = JAP country = RUS } }\r
++	NOT = { war = { country = USA country = RUS } }\r
++	NOT = { alliance = { country = GER country = RUS } }\r
++	NOT = { alliance = { country = JAP country = RUS } }\r
++	NOT = { alliance = { country = USA country = RUS } }\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = JAP }\r
+ 	NOT = { ispuppet = USA }\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { ispuppet = RUS }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	NOT = { lost_national = { country = JAP value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	random = 25\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700120_NAME"\r
+-	desc = "EVT_32700120_DESC"\r
++	name = "EVT_32700119_NAME"\r
++	desc = "EVT_32700119_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ 	decision_picture = "decision_negotiaton"\r
+@@ -2056,10 +1978,10 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 外交官を送ろう\r
+-	name = "ACTIONNAME32700027A"\r
+-	command = { type = belligerence which = UE1 value = -1 }\r
++	name = "ACTIONNAME32700119A"\r
++	command = { type = belligerence which = RUS value = -1 }\r
+ 	command = { type = relation which = USA value = 10 }\r
+-	command = { type = event which = 32700121 where = USA when = 1 }\r
++	command = { type = event which = 32700120 where = USA when = 1 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -2075,31 +1997,31 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700121\r
++	id = 32700120\r
+ 	random = no\r
+ 	country = USA\r
+ \r
+-	name = "EVT_32700121_NAME"\r
+-	desc = "EVT_32700121_DESC"\r
++	name = "EVT_32700120_NAME"\r
++	desc = "EVT_32700120_DESC"\r
+ 	style = 2\r
+ 	picture = "Taboritsky"\r
+ \r
+ 	action = { # 援助など与える必要はない\r
+-	name = "ACTIONNAME32700121A"\r
++	name = "ACTIONNAME32700120A"\r
+ 	command = { type = manpowerpool value = -100 }\r
+-	command = { type = relation which = UE1 value = -150 }\r
+-	command = { type = event which = 32700122 where = UE1 when = 0 }\r
++	command = { type = relation which = RUS value = -150 }\r
++	command = { type = event which = 32700121 where = RUS when = 0 }\r
+ 	ai_chance = 100\r
+         }\r
+ \r
+ 	action = { # 無条件で援助を行うことを約束する\r
+-	name = "ACTIONNAME32700121B"\r
+-	command = { type = relation which = UE1 value = 150 }\r
+-	command = { type = non_aggression which = UE1 where = USA }\r
+-	command = { type = alliance which = UE1 }\r
+-	command = { type = guarantee which = UE1 where = USA }\r
+-	command = { type = guarantee which = USA where = UE1 }\r
+-	command = { type = sleepevent which = 32700029 }\r
++	name = "ACTIONNAME32700120B"\r
++	command = { type = relation which = RUS value = 150 }\r
++	command = { type = non_aggression which = RUS where = USA }\r
++	command = { type = alliance which = RUS }\r
++	command = { type = guarantee which = RUS where = USA }\r
++	command = { type = guarantee which = USA where = RUS }\r
++	command = { type = sleepevent which = 32700121 }\r
+ 	ai_chance = 0\r
+         }\r
+ }\r
+@@ -2115,24 +2037,24 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700122\r
++	id = 32700121\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+-	name = "EVT_32700122_NAME"\r
+-	desc = "EVT_32700122_DESC"\r
++	name = "EVT_32700121_NAME"\r
++	desc = "EVT_32700121_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+ 	action = { # おのれ！！\r
+-	name = "ACTIONNAME32700122A"\r
+-	command = { type = belligerence which = UE1 value = 1 }\r
++	name = "ACTIONNAME32700121A"\r
++	command = { type = belligerence which = RUS value = 1 }\r
+ 	command = { type = relation which = USA value = -350 }\r
+-	command = { type = embargo which = UE1 where = USA value = 3 }\r
+-	command = { type = end_guarantee which = UE1 where = USA }\r
+-	command = { type = end_guarantee which = USA where = UE1 }\r
+-	command = { type = end_non_aggression which = UE1 where = USA }\r
+-	command = { type = end_non_aggression which = USA where = UE1 }\r
++	command = { type = embargo which = RUS where = USA value = 3 }\r
++	command = { type = end_guarantee which = RUS where = USA }\r
++	command = { type = end_guarantee which = USA where = RUS }\r
++	command = { type = end_non_aggression which = RUS where = USA }\r
++	command = { type = end_non_aggression which = USA where = RUS }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -2146,45 +2068,45 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700123\r
++	id = 32700122\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ \r
+ 	decision = {\r
+-	event = 32700117 # ドイツとの国境を封鎖\r
+-	event = 32700119 # 神聖ロシア帝国が国境を封鎖\r
+-	event = 32700122 # アメリカが提案を拒否\r
++	event = 32700116 # ドイツとの国境を封鎖\r
++	event = 32700117 # 神聖ロシア帝国が国境を封鎖\r
++	event = 32700121 # アメリカが提案を拒否\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = 32700117 # ドイツとの国境を封鎖\r
+-	event = 32700119 # 神聖ロシア帝国が国境を封鎖\r
+-	event = 32700122 # アメリカが提案を拒否\r
++	event = 32700116 # ドイツとの国境を封鎖\r
++	event = 32700117 # 神聖ロシア帝国が国境を封鎖\r
++	event = 32700121 # アメリカが提案を拒否\r
+ 	event = 2007033 # ビターピース\r
+ 	NOT = { event = 2003183 } # ヒトラーの自決\r
+ 	NOT = { event = 2011018 } # 陰る太陽\r
+ 	NOT = { event = 2011028 } # 日本降伏\r
+ 	exists = GER\r
+ 	exists = JAP\r
+-	exists = UE1\r
+-	NOT = { war = { country = GER country = UE1 } }\r
+-	NOT = { war = { country = JAP country = UE1 } }\r
++	exists = RUS\r
++	NOT = { war = { country = GER country = RUS } }\r
++	NOT = { war = { country = JAP country = RUS } }\r
+ 	NOT = { war = { country = GER country = JAP } }\r
+-	NOT = { alliance = { country = GER country = UE1 } }\r
+-	NOT = { alliance = { country = JAP country = UE1 } }\r
++	NOT = { alliance = { country = GER country = RUS } }\r
++	NOT = { alliance = { country = JAP country = RUS } }\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = JAP }\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { ispuppet = RUS }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	NOT = { lost_national = { country = JAP value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	OR = {\r
+ 	OR = {\r
+@@ -2221,33 +2143,33 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 32700117 # ドイツとの国境を封鎖\r
+-	event = 32700119 # 神聖ロシア帝国が国境を封鎖\r
+-	event = 32700122 # アメリカが提案を拒否\r
++	event = 32700116 # ドイツとの国境を封鎖\r
++	event = 32700117 # 神聖ロシア帝国が国境を封鎖\r
++	event = 32700121 # アメリカが提案を拒否\r
+ 	event = 2007033 # ビターピース\r
+ 	NOT = { event = 2003183 } # ヒトラーの自決\r
+ 	NOT = { event = 2011018 } # 陰る太陽\r
+ 	NOT = { event = 2011028 } # 日本降伏\r
+ 	exists = GER\r
+ 	exists = JAP\r
+-	exists = UE1\r
+-	NOT = { war = { country = GER country = UE1 } }\r
+-	NOT = { war = { country = JAP country = UE1 } }\r
++	exists = RUS\r
++	NOT = { war = { country = GER country = RUS } }\r
++	NOT = { war = { country = JAP country = RUS } }\r
+ 	NOT = { war = { country = GER country = JAP } }\r
+-	NOT = { alliance = { country = GER country = UE1 } }\r
+-	NOT = { alliance = { country = JAP country = UE1 } }\r
++	NOT = { alliance = { country = GER country = RUS } }\r
++	NOT = { alliance = { country = JAP country = RUS } }\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = JAP }\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { ispuppet = RUS }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	NOT = { lost_national = { country = JAP value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	OR = {\r
+ 	OR = {\r
+@@ -2284,8 +2206,8 @@ event = {
+ 	random = 15\r
+ 	}\r
+ 	\r
+-	name = "EVT_32700123_NAME"\r
+-	desc = "EVT_32700123_DESC"\r
++	name = "EVT_32700122_NAME"\r
++	desc = "EVT_32700122_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ 	decision_picture = "decision_negotiaton"\r
+@@ -2295,44 +2217,44 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+         \r
+ 	action = { # 提案しよう\r
+-	name = "ACTIONNAME32700123A"\r
++	name = "ACTIONNAME32700122A"\r
+ 	command = { type = belligerence which = GER value = 1 }\r
+ 	command = { type = relation which = JAP value = 10 }\r
+-	command = { type = event which = 32700124 where = JAP when = 30 }\r
++	command = { type = event which = 32700123 where = JAP when = 30 }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+ \r
+ event = {\r
+-	id = 32700124\r
++	id = 32700123\r
+ 	random = no\r
+ 	country = JAP\r
+ \r
+-	name = "EVT_32700124_NAME"\r
+-	desc = "EVT_32700124_DESC"\r
++	name = "EVT_32700123_NAME"\r
++	desc = "EVT_32700123_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+ 	action = { # タボリツキーは危険だ\r
+-	name = "ACTIONNAME32700124A"\r
++	name = "ACTIONNAME32700123A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = belligerence which = JAP value = 2 }\r
+ 	command = { type = relation which = GER value = 25 }\r
+-	command = { type = relation which = UE1 value = -25 }\r
+-	command = { type = end_non_aggression which = UE1 where = JAP }\r
+-	command = { type = war which = UE1 }\r
+-	command = { type = event which = 32700125 where = GER when = 0 }\r
+-	command = { type = sleepevent which = 32700126 }\r
++	command = { type = relation which = RUS value = -25 }\r
++	command = { type = end_non_aggression which = RUS where = JAP }\r
++	command = { type = war which = RUS }\r
++	command = { type = event which = 32700124 where = GER when = 0 }\r
++	command = { type = sleepevent which = 32700125 }\r
+ 	ai_chance = 97\r
+         }\r
+ \r
+ 	action = { # 介入の必要はない\r
+-	name = "ACTIONNAME32700031B"\r
++	name = "ACTIONNAME32700123B"\r
+ 	command = { type = dissent value = 15 }\r
+ 	command = { type = relation which = GER value = -10 }\r
+-	command = { type = relation which = UE1 value = 10 }\r
+-	command = { type = event which = 32700126 where = GER when = 0 }\r
+-	command = { type = sleepevent which = 32700125 }\r
++	command = { type = relation which = RUS value = 10 }\r
++	command = { type = event which = 32700125 where = GER when = 0 }\r
++	command = { type = sleepevent which = 32700124 }\r
+ 	ai_chance = 3\r
+         }\r
+ }\r
+@@ -2342,23 +2264,23 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700125\r
++	id = 32700124\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_32700125_NAME"\r
+-	desc = "EVT_32700125_DESC"\r
++	name = "EVT_32700124_NAME"\r
++	desc = "EVT_32700124_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+-	action = { # よろしい！\r
+-	name = "ACTIONNAME32700125A"\r
++	action = { # さぁ戦争だ！\r
++	name = "ACTIONNAME32700124A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = belligerence which = GER value = 2 }\r
+ 	command = { type = relation which = JAP value = 25 }\r
+-	command = { type = relation which = UE1 value = -25 }\r
+-	command = { type = end_non_aggression which = UE1 where = JAP }\r
+-	command = { type = war which = UE1 }\r
++	command = { type = relation which = RUS value = -25 }\r
++	command = { type = end_non_aggression which = RUS where = JAP }\r
++	command = { type = war which = RUS }\r
+ 	ai_chance = 100\r
+         }\r
+ }\r
+@@ -2368,27 +2290,27 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700126\r
++	id = 32700125\r
+ 	random = no\r
+ 	country = GER\r
+ \r
+-	name = "EVT_32700126_NAME"\r
+-	desc = "EVT_32700126_DESC"\r
++	name = "EVT_32700125_NAME"\r
++	desc = "EVT_32700125_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
+ \r
+ 	action = { # 我が国だけで解決する\r
+-	name = "ACTIONNAME32700126A"\r
++	name = "ACTIONNAME32700125A"\r
+ 	command = { type = dissent value = 3 }\r
+ 	command = { type = belligerence which = GER value = 8 }\r
+ 	command = { type = relation which = JAP value = -25 }\r
+-	command = { type = end_non_aggression which = UE1 where = GER }\r
+-	command = { type = war which = UE1 }\r
++	command = { type = end_non_aggression which = RUS where = GER }\r
++	command = { type = war which = RUS }\r
+ 	ai_chance = 50\r
+         }\r
+ \r
+ 	action = { # 開戦を延期する\r
+-	name = "ACTIONNAME32700126B"\r
++	name = "ACTIONNAME32700125B"\r
+ 	command = { type = dissent value = 6 }\r
+ 	ai_chance = 50\r
+         }\r
+@@ -2405,55 +2327,55 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700127\r
++	id = 32700126\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	decision = {\r
+-	event = 32700109 # タボリツキーの子\r
++	event = 32700108 # タボリツキーの子\r
+ 	OR = {\r
+-	war = { country = UE1 country = JAP }\r
+-	war = { country = UE1 country = GER }\r
++	war = { country = RUS country = JAP }\r
++	war = { country = RUS country = GER }\r
+ 	}\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = 32700109 # タボリツキーの子\r
++	event = 32700108 # タボリツキーの子\r
+ 	OR = {\r
+-	war = { country = UE1 country = JAP }\r
+-	war = { country = UE1 country = GER }\r
++	war = { country = RUS country = JAP }\r
++	war = { country = RUS country = GER }\r
+ 	}\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	supplies = 1500\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 32700109 # タボリツキーの子\r
++	event = 32700108 # タボリツキーの子\r
+ 	OR = {\r
+-	war = { country = UE1 country = JAP }\r
+-	war = { country = UE1 country = GER }\r
++	war = { country = RUS country = JAP }\r
++	war = { country = RUS country = GER }\r
+ 	}\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	supplies = 1500\r
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_32700127_NAME"\r
+-	desc = "EVT_32700127_DESC"\r
++	name = "EVT_32700126_NAME"\r
++	desc = "EVT_32700126_DESC"\r
+ 	style = 2\r
+ 	picture = "Scorched_Earth_Campaign"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -2463,7 +2385,7 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 動員する\r
+-	name = "ACTIONNAME32700127A"\r
++	name = "ACTIONNAME32700126A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -1500 }\r
+ 	command = { type = manpowerpool value = 100 }\r
+@@ -2492,18 +2414,18 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700128\r
++	id = 32700127\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	trigger = {\r
+ 	OR = {\r
+-	owned = { province = 1138 data = UE1 }\r
+-	NOT = { control = { province = 1138 data = UE1 } }\r
++	owned = { province = 1138 data = RUS }\r
++	NOT = { control = { province = 1138 data = RUS } }\r
+ 	}\r
+ 	OR = {\r
+-	war = { country = UE1 country = JAP }\r
+-	war = { country = UE1 country = GER }\r
++	war = { country = RUS country = JAP }\r
++	war = { country = RUS country = GER }\r
+ 	}\r
+ 	OR = {\r
+ 	exists = GER\r
+@@ -2511,17 +2433,17 @@ event = {
+ 	}\r
+ 	NOT = { ispuppet = GER }\r
+ 	NOT = { ispuppet = JAP }\r
+-	NOT = { ispuppet = UE1 }\r
++	NOT = { ispuppet = RUS }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	NOT = { lost_national = { country = JAP value = 15 } }\r
+-	lost_national = { country = UE1 value = 85 }\r
++	lost_national = { country = RUS value = 85 }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	OR = {\r
+ 	control = { province = 163 data = SOV }\r
+@@ -2529,8 +2451,8 @@ event = {
+ 	}\r
+ 	}\r
+ \r
+-	name = "EVT_32700128_NAME"\r
+-	desc = "EVT_32700128_DESC"\r
++	name = "EVT_32700127_NAME"\r
++	desc = "EVT_32700127_DESC"\r
+ 	style = 2\r
+ 	picture = "Russia_Defeat"\r
+ \r
+@@ -2539,33 +2461,58 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+ \r
+ 	action = { # タボリツキーが死んだ！\r
+-	name = "ACTIONNAME32700128A"\r
+-	command = { trigger = { control = { province = 1138 data = GER } } type = event which = 32700129 where = GER when = 0 }\r
+-	command = { trigger = { control = { province = 1138 data = JAP } } type = event which = 32700129 where = JAP when = 0 }\r
++	name = "ACTIONNAME32700127A"\r
++	command = { type = sleepminister which = 515301 } # セルゲイ・タボリツキー\r
++	command = { type = sleepminister which = 515302 }\r
++	command = { type = sleepminister which = 515303 }\r
++	command = { type = sleepminister which = 515304 }\r
++	command = { type = sleepminister which = 515305 } # ヴィクトル・ラリオノフ\r
++	command = { type = sleepminister which = 515306 }\r
++	command = { type = sleepminister which = 515307 }\r
++	command = { type = sleepminister which = 515308 }\r
++	command = { type = sleepminister which = 515309 } # アンドレイ・I・ザンケヴィチ\r
++	command = { type = sleepminister which = 515310 }\r
++	command = { type = sleepminister which = 515311 } # ニコライ・タルバーグ\r
++	command = { type = sleepminister which = 515312 }\r
++	command = { type = sleepminister which = 515313 } # イワン・メルキフ\r
++	command = { type = sleepminister which = 515314 }\r
++	command = { type = sleepminister which = 515315 }\r
++	command = { type = sleepminister which = 515316 } # ユーリ・エヴトゥコビッチ\r
++	command = { type = sleepminister which = 515317 }\r
++	command = { type = sleepminister which = 515318 } # 救世主ニコライ\r
++	command = { type = sleepminister which = 515319 } # セルゲイ・タボリツキー\r
++	command = { type = sleepminister which = 515320 } # ヴィクトル・ラリオノフ\r
++	command = { type = sleepminister which = 515323 } # オスカール・ディルレヴァンガー\r
++	command = { type = sleepleader which = 516941 }\r
++	command = { type = sleepteam which = 515098 }\r
++	command = { type = sleepminister which = 515324 } # トロフィム・ルイセンコ\r
++	command = { type = sleepteam which = 515099 }\r
++	command = { trigger = { control = { province = 1138 data = GER } } type = event which = 32700128 where = GER when = 0 }\r
++	command = { trigger = { control = { province = 1138 data = JAP } } type = event which = 32700128 where = JAP when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 聖なるロシア帝国は耐えなければならない\r
+-	name = "ACTIONNAME32700128B"\r
++	name = "ACTIONNAME32700127B"\r
+ 	command = { type = dissent value = 20 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+-	id = 32700129\r
++	id = 32700128\r
+ 	random = no\r
+ 	tag = { GER JAP }\r
+ \r
+-	name = "EVT_32700129_NAME"\r
+-	desc = "EVT_32700129_DESC"\r
++	name = "EVT_32700128_NAME"\r
++	desc = "EVT_32700128_DESC"\r
+ 	style = 2\r
+ 	picture = "Russia_Defeat"\r
+ \r
+ 	action = { # 帝国カルトもこれで終わりだ\r
+-	name = "ACTIONNAME32700036A"\r
++	name = "ACTIONNAME32700128A"\r
+ 	command = { type = dissent value = -5 }\r
+-	command = { type = inherit which = UE1 when = 3 value = 0 }\r
++	command = { type = inherit which = RUS when = 3 value = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -2583,48 +2530,48 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700130\r
++	id = 32700129\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+ 	decision = {\r
+-	event = 32700107 # 神聖ロシア帝国の成立\r
+-	NOT = { war = { country = GER country = UE1 } }\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
++	NOT = { war = { country = GER country = RUS } }\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	event = { id = 32700107 days = 60 } # 神聖ロシア帝国の成立\r
++	event = { id = 32700106 days = 60 } # 神聖ロシア帝国の成立\r
+ 	NOT = { event = 2003183 } # ヒトラーの自決\r
+-	NOT = { war = { country = GER country = UE1 } }\r
++	NOT = { war = { country = GER country = RUS } }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 32700107 days = 60 } # 神聖ロシア帝国の成立\r
++	event = { id = 32700106 days = 60 } # 神聖ロシア帝国の成立\r
+ 	NOT = { event = 2003183 } # ヒトラーの自決\r
+-	NOT = { war = { country = GER country = UE1 } }\r
++	NOT = { war = { country = GER country = RUS } }\r
+ 	NOT = { lost_national = { country = GER value = 15 } }\r
+ 	OR = {\r
+-	headofstate = 909644 # セルゲイ・タボリツキー\r
+-	headofstate = 909672 # 救世主ニコライ\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
+ 	}\r
+ 	OR = {\r
+-	headofgovernment = 909673 # セルゲイ・タボリツキー\r
+-	headofgovernment = 909674 # ヴィクトル・ラリオノフ\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
+ 	}\r
+ 	random = 25\r
+ 	}\r
+ \r
+-	name = "EVT_32700130_NAME"\r
+-	desc = "EVT_32700130_DESC"\r
++	name = "EVT_32700129_NAME"\r
++	desc = "EVT_32700129_DESC"\r
+ 	style = 2\r
+ 	picture = "Dirlewanger"\r
+ 	decision_picture = "decision_Taboritsky"\r
+@@ -2634,11 +2581,11 @@ event = {
+         deathdate = { day = 20 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 武装親衛隊の面汚しは行方不明となった\r
+-	name = "ACTIONNAME32700130A"\r
++	name = "ACTIONNAME32700129A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = belligerence which = GER value = -1 }\r
+ 	command = { type = manpowerpool value = -10 }\r
+-	command = { type = event which = 32700131 where = UE1 when = 30 }\r
++	command = { type = event which = 32700130 where = RUS when = 30 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -2654,22 +2601,23 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700131\r
++	id = 32700130\r
+ 	random = no\r
+-	country = UE1\r
++	country = RUS\r
+ \r
+-	name = "EVT_32700131_NAME"\r
+-	desc = "EVT_32700131_DESC"\r
++	name = "EVT_32700130_NAME"\r
++	desc = "EVT_32700130_DESC"\r
+ 	style = 2\r
+ 	picture = "Dirlewanger"\r
+ \r
+ 	action = { # 我々はあなたを歓迎しますよ、ディルレヴァンガー博士\r
+-	name = "ACTIONNAME32700131A"\r
++	name = "ACTIONNAME32700130A"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = wakeminister which = 909677 }\r
+-	command = { type = wakeleader which = 909618 }\r
+-	command = { type = waketeam which = 909535 }\r
+-	command = { type = ministerofsecurity which = 909677 }\r
++	command = { type = setflag which = Dirlewanger }\r
++	command = { type = wakeminister which = 515323 }\r
++	command = { type = wakeleader which = 516941 }\r
++	command = { type = waketeam which = 515098 }\r
++	command = { type = ministerofsecurity which = 515323 }\r
+ 	command = { type = add_division which = "ディルレヴァンガー第1師団" value = infantry when = 11 where = artillery }\r
+ 	command = { type = add_division which = "ディルレヴァンガー第2師団" value = infantry when = 11 where = artillery }\r
+ 	command = { type = add_division which = "ディルレヴァンガー第3師団" value = infantry when = 11 where = artillery }\r
+@@ -2677,28 +2625,108 @@ event = {
+ 	}\r
+ \r
+ 	action = { # とっとと失せろ、犯罪者め！\r
+-	name = "ACTIONNAME32700131B"\r
++	name = "ACTIONNAME32700130B"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { type = event which = 32700132 where = REB when = 0 }\r
++	command = { type = event which = 32700131 where = REB when = 0 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+-	id = 32700132\r
++	id = 32700131\r
+ 	random = no\r
+ 	country = REB\r
+ \r
+-	name = "EVT_32700132_NAME"\r
+-	desc = "EVT_32700132_DESC"\r
++	name = "EVT_32700131_NAME"\r
++	desc = "EVT_32700131_DESC"\r
+ 	style = 2\r
+ 	picture = "Dirlewanger"\r
+ \r
+ 	action = { # そうか\r
+-	name = "ACTIONNAME32700132A"\r
++	name = "ACTIONNAME32700131A"\r
+ 	command = { type = add_corps which = "ディルレヴァンガー軍団" value = land where = 1134 }\r
+ 	command = { type = add_division value = infantry when = 11 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 11 where = artillery }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  マグニドゴルスクの怪しい科学者\r
++# タボリツキーの軍団が各地を平定していく中、鉱山都市マグニドゴルスクで奇妙な集団と会合した。\r
++# 当初は殲滅対象であるソ連の残党かと思われたが、その正体はあのソ連アカデミーの技術を引き継いだ科学者集団であった。\r
++# この集団はあの有名な科学者トロフィム・ルイセンコが率いており、山の地下の施設でロシアを守るための様々な実験を行っていた。\r
++# それは科学界からタブー視されていた人体実験であり、しかも奇妙な薬物の投与、拷問、人体改造など、ほぼ全てが非人道的な実験であった。\r
++# これら実験は、ルイセンコにとって、自身の学んだ遺伝学を応用しているにすぎず、「新ロシア人」を生み出すためのささやかな犠牲に過ぎないと考えている。\r
++# この技術者集団について、タボリツキーは特にルイセンコの研究に興味を示しており、仮にもし彼らを味方にできれば、多くの有用な技術や研究成果を得ることができるかもしれない。\r
++# それらの研究成果が間違っていなければ、の話だが。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 32700132\r
++	random = no\r
++	country = RUS\r
++\r
++	decision = {\r
++	event = 32700106 # 神聖ロシア帝国の成立\r
++	NOT = { war = { country = GER country = RUS } }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = { id = 32700106 days = 150 } # 神聖ロシア帝国の成立}\r
++	OR = {\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
++	}\r
++	OR = {\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
++	}\r
++	NOT = { exists = SOV }\r
++	control = { province = 1132 data = RUS } # チェリャビンスク\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 32700106 days = 150 } # 神聖ロシア帝国の成立\r
++	OR = {\r
++	headofstate = 515305 # セルゲイ・タボリツキー\r
++	headofstate = 515318 # 救世主ニコライ\r
++	}\r
++	OR = {\r
++	headofgovernment = 515319 # セルゲイ・タボリツキー\r
++	headofgovernment = 515320 # ヴィクトル・ラリオノフ\r
++	}\r
++	NOT = { exists = SOV }\r
++	control = { province = 1132 data = RUS } # チェリャビンスク\r
++	random = 25\r
++	}\r
++\r
++	name = "EVT_32700132_NAME"\r
++	desc = "EVT_32700132_DESC"\r
++	style = 2\r
++	picture = "Lysenko"\r
++	decision_picture = "decision_Taboritsky"\r
++\r
++        date = { day = 0 month = 0 year = 1930 }\r
++        offset = 12\r
++        deathdate = { day = 20 month = 11 year = 1964 }\r
++\r
++	action = { # 彼は100年後には称えられる偉大な科学者だ！\r
++	name = "ACTIONNAME32700132A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = research_mod value = -2 }\r
++	command = { type = wakeminister which = 515324 }\r
++	command = { type = waketeam which = 515099 }\r
++	command = { type = armamentminister which = 515324 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # エセ科学者など、我が国には不要だ\r
++	name = "ACTIONNAME32700132B"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = sleepminister which = 515324 }\r
++	command = { type = sleepteam which = 515099 }\r
++	ai_chance = 0\r
++	}\r
+ }
+\ No newline at end of file

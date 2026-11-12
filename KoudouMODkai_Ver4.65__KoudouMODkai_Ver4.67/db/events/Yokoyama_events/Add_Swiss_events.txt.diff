@@ -1,0 +1,74 @@
+--- A/db/events/Yokoyama_events/Add_Swiss_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Add_Swiss_events.txt [cp932]
+@@ -1051,6 +1051,63 @@ event = {
+ \r
+ 	action = { # まさか国民同盟が第一党を確保するとは！\r
+ 	name = "ACTIONNAME29110104A"\r
++	trigger = { NOT = { exists = UER } } # 正史シナリオ\r
++	command = { type = dissent value = 5 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = set_domestic which = free_market value = 4 }\r
++	command = { type = set_domestic which = freedom value = 4 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = headofstate which = 80210 } # ロルフ・ヘン\r
++	command = { type = headofgovernment which = 80214 } # ロベルト・トブラー\r
++	command = { type = foreignminister which = 80089 } # ヤコブ・ローレンツ\r
++	command = { type = armamentminister which = 80090 } # ハンス・エーラー\r
++	command = { type = ministerofsecurity which = 80216 } # フランツ・ブリ\r
++	command = { type = ministerofintelligence which = 80092 } # アルフレート・サラシン\r
++	command = { type = chiefofstaff which = 80093 } # オイゲン・ビルヒャー\r
++	command = { type = chiefofarmy which = 80094 } # オイゲン・ビルヒャー\r
++	command = { type = chiefofnavy which = 80095 } # ハンス・エーラー\r
++	command = { type = chiefofair which = 80096 } # アルフレート・サラシン\r
++	command = { type = sleepevent which = 9999768 } # AI閣僚変更イベント\r
++	ai_chance = 5\r
++	}\r
++\r
++	action = { # 共産党が労働者の圧倒的支持を集めた\r
++	name = "ACTIONNAME29110104B"\r
++	trigger = { NOT = { exists = UER } } # 正史シナリオ\r
++	command = { type = dissent value = 5 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = set_domestic which = free_market value = 4 }\r
++	command = { type = set_domestic which = freedom value = 4 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
++	command = { type = headofstate which = 80097 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = headofgovernment which = 80098 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = foreignminister which = 80099 } # ヘルマン・ヘッセル=ローレンツ\r
++	command = { type = armamentminister which = 80100 } # エミール・フライ\r
++	command = { type = ministerofsecurity which = 80062 } # ハインリヒ・アベック\r
++	command = { type = ministerofintelligence which = 80101 } # テオ・マイアー\r
++	command = { type = chiefofstaff which = 80102 } # トラウゴット・マイヤー\r
++	command = { type = chiefofarmy which = 80103 } # エミール・フライ\r
++	command = { type = chiefofnavy which = 80104 } # ヘルマン・ヘッセル=ローレンツ\r
++	command = { type = chiefofair which = 80105 } # ヨーゼフ・ヴィクトル・ヴィドマン\r
++	command = { type = sleepevent which = 1918014 } # Fullkai革命イベント\r
++	command = { type = sleepevent which = 9999768 } # AI閣僚変更イベント\r
++	ai_chance = 5\r
++	}\r
++\r
++	action = { # 現政権を維持する\r
++	name = "elec_keep"\r
++	trigger = { exists = UER NOT = { exists = GER exists = DDR } } # 架空シナリオ\r
++	command = { type = dissent value = -1 }\r
++	ai_chance = 90\r
++	}\r
++\r
++	action = { # まさか国民同盟が第一党を確保するとは！\r
++	name = "ACTIONNAME29110104A"\r
++	trigger = { exists = UER  exists = GER } # 架空シナリオ\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+@@ -1074,6 +1131,7 @@ event = {
+ \r
+ 	action = { # 共産党が労働者の圧倒的支持を集めた\r
+ 	name = "ACTIONNAME29110104B"\r
++	trigger = { exists = UER exists = DDR } # 架空シナリオ\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r

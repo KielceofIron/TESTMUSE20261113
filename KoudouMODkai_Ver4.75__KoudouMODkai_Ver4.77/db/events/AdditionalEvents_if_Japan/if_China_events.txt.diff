@@ -1,0 +1,105 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
+@@ -165,7 +165,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 	name = "ACTIONNAME1891002A"\r
+-		command = { type = building_prod_mod which = ic value = 15 }\r
++		command = { type = building_prod_mod which = ic value = 10 }\r
++		command = { type = building_prod_mod which = infrastructure value = 20 }\r
+ 	command = { type = dissent value = -25 }\r
+ 	command = { type = domestic which = freedom value = -3 }\r
+ 	command = { type = domestic which = free_market value = -3 }\r
+@@ -227,7 +228,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 	name = "ACTIONNAME1891003A"\r
+-		command = { type = building_prod_mod which = ic value = -50 }\r
++		command = { type = building_prod_mod which = ic value = -30 }\r
+ 		command = { type = building_prod_mod which = infrastructure value = -50 }\r
+ 	command = { type = ground_def_eff value = -0.05 when = 1 }\r
+ 	command = { trigger = { ai = no } type = dissent value = 20 }\r
+@@ -382,46 +383,6 @@ event = {
+ 	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
+ 	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
+ 	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
+-	command = { trigger = { ai = yes } type = build_time which = carrier value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = escort_carrier value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = battleship value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = battlecruiser value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = heavy_cruiser value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = light_cruiser value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = destroyer value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = submarine value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = light_carrier value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = nuclear_submarine value = -50 }\r
+-	command = { trigger = { ai = yes } type = build_time which = transport value = -10 }\r
+-	command = { trigger = { ai = yes } type = build_time which = air value = -30 }\r
+-	command = { trigger = { ai = yes } type = build_cost which = air value = -10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = heavy_cruiser when = 25 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = light_cruiser when = 25 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = light_cruiser when = 25 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = heavy_cruiser when = 25 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
+-		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
+-		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
+   	}\r
+ }\r
+ \r
+@@ -2391,9 +2352,7 @@ event = {
+ 	command = { type = morale which = air value = 3 }\r
+ 	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_prepare.ai" }\r
+ 	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_prepare_m.ai" }\r
+-	command = { type = build_time which = land value = -50 }\r
+-	command = { type = build_time which = naval value = -50 }\r
+-	command = { type = build_time which = air value = -50 }\r
++	\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1551 value = 3 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1555 value = 6 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 2775 value = 3 } #\r
+@@ -2401,7 +2360,6 @@ event = {
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1557 value = 3 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1548 value = 3 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1552 value = 3 } #\r
+-	\r
+ 	}\r
+ }\r
+ \r
+@@ -2527,9 +2485,6 @@ event = {
+ 	name = "ACTIONNAME1891020A"\r
+ 	ai_chance = 100\r
+ 	command = { type = dissent value = -15 }\r
+-	command = { type = build_time which = land value = 50 }\r
+-	command = { type = build_time which = naval value = 50 }\r
+-	command = { type = build_time which = air value = 50 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 1554 when = 1 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 1555 when = 1 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 2777 when = 1 }\r
+@@ -5610,7 +5565,6 @@ event = {
+ 	\r
+ 	action_a = { # 鐡道強国を成し遂げた！\r
+ 	name = "ACTIONNAME1891074A"\r
+-	command = { type = building_prod_mod which = infrastructure value = 20 }\r
+ 	command = { type = belligerence which = CHI value = 2 }\r
+ 	command = { type = relation which = JAP value = -30 }\r
+ 	command = { type = construct which = ic where = 1337 value = 1 }\r

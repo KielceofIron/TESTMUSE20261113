@@ -1,0 +1,722 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Balkan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Balkan_events.txt [cp932]
+@@ -14,15 +14,7 @@
+ #id = 7734001 ピュロスの勝利\r
+ #id = 7734002 ロシア・セルビア軍事協定\r
+ #id = 7734004 アレクサンダル1世暗殺事件\r
+-#ルーマニア\r
+-#id = 7735000 ロムニアの再生\r
+-#id = 7735001 恐怖のパレード\r
+-#id = 7735002 ルーマニア生産協会\r
+-#id = 7735003 浄化機関\r
+-#id = 7735004 暗闇からの見えざる手\r
+-#id = 7735005 鉄衛団の最後通牒\r
+-#id = 7735006 平和のためのラストチャンス（鉄衛団）\r
+-#id = 7735007 フランスとの同盟……？\r
++#ルーマニア→Romaniaに移転\r
+ ##########################################################################\r
+ #  バルカン半島の明確な敗北者\r
+ # ブルガリアは２０世紀初頭におけるバルカン半島の明確な敗北者である。\r
+@@ -46,7 +38,7 @@ event = {
+ 	style = 1\r
+ 	picture = "diplomatic_campaign"\r
+ \r
+-	action = { # バルカン連邦のほかに、頼るものは存在しない…\r
++	action = { # それでも我々はやらなければならんのだ。これ以外にもはや我々に頼るものは存在しないのだから\r
+ 	name = "ACTIONNAME7733001A"\r
+ 	command = { type = defensiveness which = land value = -40 }\r
+ 	command = { type = mountain_attack which = land value = 30 }\r
+@@ -100,6 +92,7 @@ event = {
+ 	command = { type = relation which = U29 value = 30 }\r
+ 	command = { trigger = { ai = no } type = money value = -50 }\r
+ 	command = { type = trigger which = 7733003 }\r
++	command = { type = guarantee which = FRA where = U29 }\r
+ 	}\r
+ }\r
+ \r
+@@ -115,6 +108,7 @@ event = {
+ \r
+ 	action = { # 革命の友よ、ありがとう！\r
+ 	name = "ACTIONNAME7733003A"\r
++	command = { type = guarantee which = FRA where = U29 }\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = industrial_modifier which = total value = 10 }\r
+ 	command = { type = building_prod_mod which = ic value = 10 }\r
+@@ -126,13 +120,18 @@ event = {
+ }\r
+ \r
+ #########################################################################\r
+-#  バルカン共産主義連邦\r
+-# ブルガリア共産党指導者ゲオルギ・ディミトロフの掲げた「バルカン連邦」構想がある。\r
+-# ロシアの失敗した革命蜂起における思想的流れを汲むこの構想は、バルカンにおける民族的自治と軍事・経済の一体化を目指す独自のものであり、\r
+-# 思想としてはウラジーミル・レーニンとオーストロ・マルクスの系譜にある。\r
+-# 当初は夢物語と語られていたが、バルカン半島において極右政権が続々と誕生する中、\r
+-# バルカン各地の社会主義者が続々とブルガリアに集うようになると、この連邦構想に現実味が帯びてきた。\r
+-# 幾度かの検討の末、ブルガリア共産党臨時党大会において、ゲオルギ・ディミトロフは連邦結成とバルカン解放のために戦うことを宣言した。\r
++#  バルカン連邦宣言\r
++# 先のバルカン戦争最大の敗者であるブルガリアでは１９２９年に発生した革命により、\r
++# 王制の廃止が決定され、現在はブルガリア共産党人民委員会議長ゲオルギ・ディミトロフによって指導がなされている。\r
++# 今はブルガリアは危機に瀕している。共産党を支持する人物もしない人物もそれぞれに共通していたのはこの、ブルガリア\r
++# 消滅の可能性が高いという実態への焦燥感であった。\r
++# しかし、ゲオルギ・ディミトロフはあえてこう宣言した。――ブルガリアという国家は今日をもって、消滅するのだ、と。\r
++# 彼は言った。かつてロシアで発生したロシア革命（一般呼称・ソビエト蜂起）は失敗に終わるが、その理念とは複数の民族集団が\r
++# 同一の評議会において意見を発する全く平等な連邦国家を構築することであった。\r
++# 我々はこの理念を引き継ぎ、ブルガリア共産党を、新たに建設する民族集団『バルカン連邦』の一議会として数える。\r
++# 今は我々しか存在しないこの議会に、アルバニア、アルーマニア、ボシュニャク、クロアチア、ゴーラ、ギリシャ、マケドニア、\r
++# モンテネグロ、セルビア、スロヴェニア、ルーマニア、トルコ、そしてロマ、アッシュカリーの人々が参画する日を、私は夢想する。\r
++# 故に私は宣言する。ブルガリア共和国は消滅し、今日この日から――\r
+ #########################################################################\r
+ \r
+ event = {\r
+@@ -177,7 +176,7 @@ event = {
+ 	offset = 10\r
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+-	action = { # バルカンの兄弟よ、団結せよ！\r
++	action = { # バルカン連邦が誕生するのだ、と\r
+ 	name = "ACTIONNAME7733004A"\r
+ 	command = { type = domestic which = democratic value = -2 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+@@ -185,13 +184,17 @@ event = {
+ 	command = { type = manpowerpool value = 100 }\r
+ 	command = { type = free_manpower value = 0.01 }\r
+ 	command = { type = dissent value = -15 }\r
++	command = { type = remove_claim_region which = "Balkan" }\r
++	command = { type = remove_claim_region which = "Romania" }\r
+ 	command = { type = add_core_region which = "Balkan" }\r
+ 	command = { type = add_core_region which = "Romania" }\r
++	command = { type = add_core_region which = "Hungary" }\r
+ 	command = { type = addcore which = 384 }\r
+ 	command = { type = addcore which = 385 }\r
+ 	command = { type = addcore which = 409 }\r
+ 	command = { type = flag_ext where = U29 which = "_Balkan" }\r
+-	command = { type = name where = U29 which = "バルカン共産主義連邦" }\r
++	command = { type = name where = U29 which = "バルカン社会主義連邦" }\r
++	command = { type = add_leader_skill which = 960038 value = 1 }\r
+ 	command = { type = wakeleader which = 960101 }\r
+ 	command = { type = wakeleader which = 960102 }\r
+ 	command = { type = wakeleader which = 960103 }\r
+@@ -245,6 +248,9 @@ event = {
+ 	command = { type = wakeleader which = 960151 }\r
+ 	command = { type = wakeleader which = 960152 }\r
+ 	command = { type = wakeleader which = 960153 }\r
++	command = { type = wakeleader which = 960154 }\r
++	command = { type = wakeleader which = 960155 }\r
++	command = { type = wakeleader which = 960156 }\r
+ 	command = { type = waketeam which = 960103 }\r
+ 	command = { type = waketeam which = 960104 }\r
+ 	command = { type = waketeam which = 960105 }\r
+@@ -260,6 +266,14 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  バルカンの孤児\r
++# 先のバルカン連邦建設宣言は、追い詰められたこのブルガリア国家の最後のあがきであった。\r
++# フランス・コミューン労働取引所総選挙は唾棄すべきソレル主義者らの勝利に終わり、フランスは\r
++# 鉄衛団と同盟を結んだ。\r
++# 今やバルカン連邦は単なる小ブルガリアであり、バルカン最弱にして最小の、孤立した国家と化してしまった。\r
++#########################################################################\r
++\r
+ event = {\r
+ 	id = 7733005\r
+ 	random = no\r
+@@ -267,25 +281,33 @@ event = {
+ \r
+ 	trigger = {\r
+ 	event = 3327009\r
+-	alliance = { country = FRA }\r
++	alliance = { country = FRA country = ROM }\r
+ 	}\r
+ \r
+ 	name = "EVT_7733005_NAME"\r
+ 	desc = "EVT_7733005_DESC"\r
+ 	style = 2\r
+-	picture = "invest_research"\r
++	#picture = "invest_research"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-	action = { # 協定を結ぼう\r
++	action = { # それでも我々は独立していなければならない\r
+ 	name = "ACTIONNAME7733005A"\r
+ 	command = { type = leave_alliance }\r
+ 	command = { type = relation which = FRA value = -200 }\r
+ 	}\r
+ }\r
+ \r
++\r
++#########################################################################\r
++#  ルーマニアに勝利！（仮題）\r
++# \r
++# \r
++#########################################################################\r
++\r
++#効果：ブカレスト、ヤシ、キシニョフを支配でそれぞれ100ずつMP追加\r
+ event = {\r
+ 	id = 7733006\r
+ 	random = no\r
+@@ -295,16 +317,16 @@ event = {
+ 	trigger = {\r
+ 	NOT = { exists = ROM }\r
+ 	OR = {\r
+-	control = { province = 316 data = -1 }\r
+-	control = { province = 297 data = -1 }\r
+-	control = { province = 304 data = -1 }\r
++	control = { province = 316 data = -1 } #\r
++	control = { province = 297 data = -1 } #\r
++	control = { province = 304 data = -1 } #\r
+ 	}\r
+ 	}\r
+ \r
+ 	name = "EVT_7733005_NAME"\r
+ 	desc = "EVT_7733005_DESC"\r
+ 	style = 2\r
+-	picture = "invest_research"\r
++	#picture = "invest_research"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 15\r
+@@ -312,12 +334,142 @@ event = {
+ \r
+ 	action = { # 協定を結ぼう\r
+ 	name = "ACTIONNAME7733006A"\r
+-	command = { trigger = { control = { province = 316 data = -1 } } type = manpowerpool value = 200 }\r
+-	command = { trigger = { control = { province = 297 data = -1 } } type = manpowerpool value = 200 }\r
+-	command = { trigger = { control = { province = 304 data = -1 } } type = manpowerpool value = 200 }\r
++	command = { trigger = { control = { province = 316 data = -1 } } type = manpowerpool value = 100 }\r
++	command = { trigger = { control = { province = 297 data = -1 } } type = manpowerpool value = 100 }\r
++	command = { trigger = { control = { province = 304 data = -1 } } type = manpowerpool value = 100 }\r
++	}\r
++}\r
++\r
++\r
++\r
++#########################################################################\r
++#  フランス軍事顧問団の派遣\r
++# バルカン連邦における新たな軍団編成に力を発揮したのは陸軍軍人キモン・ゲオルギエフであった。\r
++# 彼は先の王制廃止に伴う軍部掌握において主導権を握った軍人であり、先のバルカン戦争において片目を\r
++# 失いながらも戦闘を継続した英雄であった。\r
++# 彼は単身フランス・コミューンへと渡り、バルカン連邦の現状について詳細に説明した。\r
++# その結果、フランス・コミューン政府は軍事顧問団を派遣し、バルカン連邦において指導することを決定したのである。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 7733008\r
++	random = no\r
++	country = FRA\r
++	\r
++	trigger = {\r
++	OR = {\r
++	NOT = { event = 3327009 } #右派\r
++	NOT = { government = fascist }\r
++	}\r
++	}\r
++	\r
++	name = EVT_7733008_NAME\r
++	desc = EVT_7733008_DESC\r
++	style = 2\r
++	picture = "Balkan_Federation"\r
++	\r
++	date = { day = 0 month = 0 year = 1937 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 5 year = 1937 }\r
++	\r
++	action = { # 派遣しよう\r
++	name = "ACTIONNAMEIDA"\r
++	command = { type = trigger which = 7733009 }\r
++	command = { type = supplies value = -1000 }\r
++	ai_chance = 100\r
++	}\r
++	action = { # 必要ない\r
++	name = "ACTIONNAMEIDB"\r
++	command = {  }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  フランス軍事顧問団の到着\r
++# バルカン連邦における新たな軍団編成に力を発揮したのは陸軍軍人キモン・ゲオルギエフであった。\r
++# 彼は先の王制廃止に伴う軍部掌握において主導権を握った軍人であり、先のバルカン戦争において片目を\r
++# 失いながらも戦闘を継続した英雄であった。\r
++# 彼は単身フランス・コミューンへと渡り、バルカン連邦の現状について詳細に説明した。\r
++# その結果、フランス・コミューン政府は軍事顧問団を派遣し、バルカン連邦において指導することを決定したのである。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 7733009\r
++	random = no\r
++	country = U29\r
++	\r
++	\r
++	name = EVT_7733009_NAME\r
++	desc = EVT_7733009_DESC\r
++	style = 2\r
++	picture = "Commune_France"\r
++	\r
++	\r
++	action = { # 派遣しよう\r
++	name = "ACTIONNAMEIDA"\r
++	command = { type = setflag which = FRA_advisors_U29 }\r
++	command = { type = local_setflag which = FRA_advisors_us }\r
++	command = { type = ground_def_eff value = 0.02 when = 1 }\r
++	command = { type = waketeam ehich = 960116 }\r
++	command = { type = wakeleader which = 960157 }\r
++	command = { type = wakeleader which = 960158 }\r
++	command = { type = wakeleader which = 960159 }\r
++	command = { trigger = { NOT = { tech = 1220 } tech = 1180 } type = gain_tech which = 1220 }\r
++	command = { trigger = { NOT = { tech = 1230 } tech = 1190 } type = gain_tech which = 1230 }\r
++	command = { trigger = { NOT = { tech = 1240 } tech = 1200 } type = gain_tech which = 1240 }\r
++	command = { trigger = { NOT = { tech = 1250 } tech = 1210 } type = gain_tech which = 1250 }\r
++	command = { trigger = { NOT = { tech = 1260 } tech = 1220 } type = gain_tech which = 1260 }\r
++	command = { trigger = { NOT = { tech = 1270 } tech = 1230 } type = gain_tech which = 1270 }\r
++	command = { trigger = { NOT = { tech = 1280 } tech = 1240 } type = gain_tech which = 1280 }\r
++	command = { trigger = { NOT = { tech = 1290 } tech = 1250 } type = gain_tech which = 1290 }\r
++	command = { trigger = { NOT = { tech = 1300 } tech = 1260 } type = gain_tech which = 1300 }\r
++	\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++#  鉄衛団の最後通牒 -ブルガリアの反応-\r
++# ルーマニア政府はブルガリア連邦共和国に対し最後通牒を突きつける。\r
++# その条件とは、国家総生産ベースから幾らかの割合の利益をルーマニアへ収めることや、軍権の剥奪、ルーマニア軍の駐留などといったものであり、これらは到底受け入れられるものではなかった。\r
++# ブルガリア連邦要人らは軍人たちと協議した上で、ブルガリア全軍の三倍以上の兵力を有するルーマニア鉄衛団と対決する姿勢を打ち出した。\r
++# 外交文書には、このように記載がなされているーー。\r
++# \r
++event = {\r
++	id = EVENTID\r
++	random = no\r
++	country = TAG\r
++	\r
++	trigger = {\r
++	\r
++	}\r
++	\r
++	name = EVT_ID_NAME\r
++	desc = EVT_ID_DESC\r
++	style = 2\r
++	picture = "ROM_Nazi"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # かかってこい。相手になってやる！\r
++	name = "ACTIONNAMEIDA"\r
++	command = { }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
++\r
++# バルカン連邦は将来的な戦争に備えるために、ある秘策をうっていた。\r
++# 今や全土が山岳で覆われ、国家自体が巨大な要害と化したバルカン連邦において、\r
++# 山岳訓練を受けた兵士は最強の兵種と言える。\r
++# そこで、民間レベルで山岳訓練を受けさせた成人男性……１８～５０に至るまでの\r
++# 全ての名簿を登録し、この日に備えていたのである。\r
++# 動員令は発せられ、軍団はただちに招集がなされた！\r
++# \r
++\r
++#ルーマニアの宣戦イベント発生で起こるやつ\r
+ event = {\r
+ 	id = 7733007\r
+ 	random = no\r
+@@ -326,10 +478,10 @@ event = {
+ 	name = "EVT_7733005_NAME"\r
+ 	desc = "EVT_7733005_DESC"\r
+ 	style = 2\r
+-	picture = "invest_research"\r
++	picture = "German_mobilization"\r
+ \r
+ \r
+-	action = { # 協定を結ぼう\r
++	action = { # 諸君らにバルカンの未来は託された！\r
+ 	name = "ACTIONNAME7733006A"\r
+ 	command = { type = trigger which = 7735006 }\r
+ 	command = { type = add_division  value = bergsjaeger when = 10 }\r
+@@ -343,7 +495,6 @@ event = {
+ 	command = { type = add_division  value = bergsjaeger when = 10 }\r
+ 	}\r
+ }\r
+-\r
+ ##########################################################################\r
+ #  ピュロスの勝利\r
+ # 第一次世界大戦におけるセルビア王国は確かに勝利を勝ち得た――しかし、これはピュロスの勝利であった。\r
+@@ -520,373 +671,3 @@ event = {
+ 	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  ロムニアの再生\r
+-# ルーマニア王国は第一次世界大戦及び第三次バルカン戦争における勝利者である。\r
+-# 大戦末期のロシアにおける混乱のどさくさに紛れてベッサラビアを、戦後に起きたバルカン戦争でブルガリアから奪い去ったドブロジャはルーマニア王国の手中にある。\r
+-# しかし、そうした故地の奪還のためにルーマニア王国が支払った代償は大きい。\r
+-# 戦争に勝利を収めれば収めるほど外交的に孤立し、経済的混乱を招いた。\r
+-# この混乱によって王家は支持を失い、その後釜を引き継いだのは偉大な党であるルーマニア鉄衛団であったことだ。\r
+-# 鉄衛団はバルカン半島の一小国が持つには明らかに過大な陸軍を揃え、\r
+-# 軍事技術においては先進国と同水準を維持し続けている。\r
+-# 彼らの強固な民族防衛の意志はあらゆる陰謀を打ち破り、民族の敵を一人残らず焼き払い、蹂躙するだろう。\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 7735001\r
+-	random = no\r
+-	country = ROM\r
+-\r
+-	name = "EVT_7735001_NAME"\r
+-	desc = "EVT_7735001_DESC"\r
+-	style = 1\r
+-	picture = "ROM_Nazi"\r
+-\r
+-	action = { # 旗を高く掲げよ！！\r
+-	name = "ACTIONNAME7735001A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = embargo which = UB8 where = ROM value = 0 }\r
+-	command = { type = embargo which = FRA where = ROM value = 0 }\r
+-	command = { type = local_setflag which = Iron_Guard }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  絶滅計画\r
+-# ルーマニアの王族と鉄衛団の関係は表面上は、長きにわたり平穏を保ってきた。\r
+-# これは極左勢力を抑えるには鉄衛団しかいなかった国王側の事情と、王族を排除したことによる鉄衛団への反発を警戒した幹部の判断によるものが大きかった。\r
+-# しかし世界大恐慌の余波にルーマニアが巻き込まれたことで、鉄衛団は汚らわしいユダヤ人どもや売国奴による党への陰謀があること察知。\r
+-# 鉄衛団はこの窮状を解決すべく直ちに行動した。\r
+-# 名ばかりであった議会を解散させ、これ以上売国奴が国政に関われないように法改正を行い、来るべき粛清計画を遂行した。\r
+-# 王族一族は、軟禁先の別荘で民族に対する罪を宣告され、銃殺の後に硫酸で死体を溶かされ、川に捨て去られた。\r
+-# さらには僅かにいた王党派を一人残らず襲撃し、徹底的な粛清で排除することにも成功。\r
+-# 国内の危機を取り払った鉄衛団は、国内に居住するユダヤ人の基本的人権及び財産の剥奪、都市住民によるユダヤ人街の襲撃の容認、\r
+-# さらには絶滅収容所への移送を行うといった鉄衛団が以前から提案されていたユダヤ人絶滅計画の実行に移ろうとしていた。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 7735002\r
+-\r
+-	country = ROM\r
+-	persistent = no\r
+-	save_date = yes\r
+-\r
+-	decision = { \r
+-	ideology = nazi \r
+-	event = 7735001\r
+-	local_flag = Iron_Guard\r
+-	OR = { \r
+-	headofstate = 110016 # コドレアヌ\r
+-	headofgovernment = 110155 # コドレアヌ\r
+-	headofstate = 110018 # ホリア・シマ\r
+-	headofgovernment = 110030 # ホリア・シマ\r
+-	}\r
+-	}\r
+-	decision_trigger = {\r
+-	event = 7735001\r
+-	supplies = 3000\r
+-	money = 100\r
+-	}\r
+-\r
+-	trigger = { \r
+-	ideology = nazi \r
+-	local_flag = Iron_Guard\r
+-	OR = { \r
+-	headofstate = 110016 # コドレアヌ\r
+-	headofgovernment = 110155 # コドレアヌ\r
+-	headofstate = 110018 # ホリア・シマ\r
+-	headofgovernment = 110030 # ホリア・シマ\r
+-	}\r
+-	random = 15\r
+-	}\r
+-\r
+-	name = "EVT_7735002_NAME"\r
+-	desc = "EVT_7735002_DESC"\r
+-	style = 2\r
+-	picture = "ROM_Nazi"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 25\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-	\r
+-	action = { # 理由？そんなものが必要だとは私は思わない。\r
+-	name = "ACTIONNAME7735002A"\r
+-	command = { type = domestic which = democratic value = -1 }\r
+-	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = belligerence which = ROM value = 5 }\r
+-	command = { type = manpowerpool value = -10 }\r
+-	command = { type = dissent value = -5 }\r
+-	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+-	command = { trigger = { ai = no } type = money value = -100 }\r
+-	command = { type = add_division which = "緑シャツ隊" value = militia when = 4 where = -90 }\r
+-	command = { type = add_division which = "緑シャツ隊" value = militia when = 4 where = -90 }\r
+-	command = { type = add_division which = "緑シャツ隊" value = militia when = 4 where = -90 }\r
+- 	command = { type = add_division which = "鉄衛団武装親衛隊" value = militia when = 4 where = -90 where = police }\r
+-	command = { type = add_division which = "鉄衛団武装親衛隊" value = militia when = 4 where = -90 where = police }\r
+-	command = { type = add_division which = "鉄衛団武装親衛隊" value = militia when = 4 where = -90 where = police }\r
+-	command = { type = sleepminister which = 110001 } # カロル2世\r
+-	command = { type = sleepminister which = 110011 }\r
+-	command = { type = sleepminister which = 110012 }\r
+-	command = { type = sleepminister which = 110013 } # ミハイ1世\r
+-	command = { type = sleepminister which = 110014 }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  人種改良計画\r
+-# 絶え間ない戦争が、我らを豊かにしてくれる。戦争とは、人類の進化の手段であり、実りある果実なのである。\r
+-# 衰退を防ぐために、絶えず戦い続けなければ。そのためには労働力が必要だ。\r
+-# しかし我が国の国家計画を遂行するにあたり、人的資源の不足は極めて悪性の慢性病変であった。\r
+-# ルーマニア人が純粋に足りないのだ。ルーマニア人の出生率は少ない。何故ルーマニア人は少ないのか。\r
+-# ある鉄衛団幹部は言った。\r
+-# 「そう考えるのは敗北主義者の発想だ。足りないなら増やせばいい。人間は、支配地に腐るほど居るのだ。\r
+-#   奴らをルーマニア人に『改良』してしまえば、今まで実施してきた断種政策のかわりになることだろう。」\r
+-#########################################################################\r
+-\r
+-\r
+-event = {\r
+-	id = 7735003\r
+-	random = no\r
+-	country = ROM\r
+-\r
+-	decision = { \r
+-	ideology = nazi \r
+-	event = 7735002\r
+-	local_flag = Iron_Guard\r
+-	technology = 5630 # 1932薬理学\r
+-	OR = { \r
+-	headofstate = 110016 # コドレアヌ\r
+-	headofgovernment = 110155 # コドレアヌ\r
+-	headofstate = 110018 # ホリア・シマ\r
+-	headofgovernment = 110030 # ホリア・シマ\r
+-	}\r
+-	}\r
+-	decision_trigger = {\r
+-	ideology = nazi\r
+-	event = { id = 7735002 days = 120 }\r
+-	local_flag = Iron_Guard\r
+-	supplies = 1000\r
+-	money = 200\r
+-	technology = 5630 # 1932薬理学\r
+-	}\r
+-\r
+-\r
+-	trigger = {\r
+-	ideology = nazi\r
+-	event = { id = 7735002 days = 120 }\r
+-	local_flag = Iron_Guard\r
+-	supplies = 1000\r
+-	money = 200\r
+-	technology = 5630 # 1932薬理学\r
+-	OR = { \r
+-	headofstate = 110016 # コドレアヌ\r
+-	headofgovernment = 110155 # コドレアヌ\r
+-	headofstate = 110018 # ホリア・シマ\r
+-	headofgovernment = 110030 # ホリア・シマ\r
+-	}\r
+-	random = 50\r
+-	}\r
+-\r
+-\r
+-	name = "EVT_7735003_NAME"\r
+-	desc = "EVT_7735003_DESC"\r
+-	style = 2\r
+-	picture = "ROM_Nazi"\r
+-\r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-\r
+-	action = { # 欧州全域の人間が一等民族ダキア人に進化することも夢ではないだろう\r
+-	name = "ACTIONNAME7735003A" \r
+-	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+-	command = { trigger = { ai = no } type = money value = -200 }\r
+-	command = { type = event which = 7735004 where = -1 when = 300 }\r
+-	ai_chance = 100\r
+-	}\r
+-\r
+-	action = { # 汚染しきった血は必要ない\r
+-	name = "ACTIONNAME7735003B" \r
+-	command = { type = money value = 10 }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  人種改良実験\r
+-#  平素よりお世話になっております。同施設において被験者0820(以降被験者と表記)に対し以下の処置を実施しました。\r
+-# 前頭葉切除術、向精神薬の投与、骨延長術、テストステロン投与。\r
+-# 2度目の人種改良手術の結果、被験者の習性に変化が見られるようになりました。\r
+-# 同族に対し強い侮蔑心を持つようになり、また、睡眠のスケジュールにも変化が見られ、\r
+-# 2時間毎に覚醒とレム睡眠を繰り返すようになりました。被験者は暴力的な行動が目立つようになり、周囲の患者との協調性に難が見られます。\r
+-# 性的指向や食生活の好みも変化し、ホモセクシュアルの傾向も現れました。\r
+-# ホルモン剤の投与による筋骨量の増加傾向は見られたものの有意な差は当科において認められませんでした。\r
+-# これらの症状は被験者0802から0888までの被験者にも共通して現れているため、この処置を実施した場合の平均的な結果であると思われます。\r
+-# 0820固有の症状として、興奮時のホルモンバランスにも変調が見られますが、症状の再現性が明確では無いため、引き続き観察を続けます。\r
+-# 鉄衛団の要望を確認する限りでは、”戦闘時に興奮状態を維持し、恐慌状態を克服する”とありますが、\r
+-# 現時点で患者が感情をコントロール出来ておらず激昂状態の継続が見られることから、\r
+-# 緊急時の鎮静方法として鎮静薬の吸入、あるいは麻酔薬の静脈投与が必要かと考えられます。\r
+-#   以上の観察結果から、前頭葉除切によって目標を達成する事は、現時点で難しいと言わざるえません。\r
+-# 投薬費用も考慮するとコストパフォーマンスも悪いため、処置方式の改良が必要だと考えています。\r
+-# 近々そちらに向かいたいと思いますので、ヤシで実施されている暗示処置の研究データを提供頂きたい次第です。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 7735004\r
+-	random = no\r
+-	country = ROM\r
+-\r
+-	name = "EVT_7735004_NAME"\r
+-	desc = "EVT_7735004_DESC"\r
+-	style = 2\r
+-	picture = "ROM_Nazi"\r
+-\r
+-	action = { # 民族の改良は着々と進んでいる\r
+-	name = "ACTIONNAME7735004A" \r
+-	command = { type = manpowerpool value = 2 }\r
+-	}\r
+-\r
+-}\r
+-\r
+-#########################################################################\r
+-#  神兵計画\r
+-# 警告！この取扱説明書には、神兵の取り扱いに関する重要な説明が書かれています。\r
+-# ここに書かれた方法以外で取り扱った場合、あなたの生命を危険にさらす可能性があります。\r
+-# ここに書かれた方法以外で取り扱った場合、あなた以外の周りの方の生命にも危険が及ぶ可能性があります。\r
+-# 暗示状態に入った神兵は、命令指示後に必ず暗示状態から解除して下さい。神兵は配属直後、待機状態で各セクションに届けられます。\r
+-# 本書の指示に従いセットアップを行い、命令系統を正しくインプットさせて下さい。\r
+-# 神兵への命令指示には、細心の注意を払ってください。神兵の運用期限は個体差がありますが、二週間です。\r
+-# 運用期限の過ぎた神兵は、後述の方法で廃棄して下さい。運用期間中は、機能維持のため神兵の体重に応じて、\r
+-# 60kg以上の場合は0.5mg錠を1日3回、60kg以下の場合は0.5mg錠を1日2回の割合で添付した錠剤を投与してください。\r
+-# 投与直後、被験者に以下のような症状がでることがありますが、異常ではありません。\r
+-# 発汗、呼吸の乱れ、興奮または錯乱状態。\r
+-# 神兵が不適合、かつ処分が困難な場合は、別紙に記載のセクションへ連絡してください。\r
+-#########################################################################\r
+-\r
+-event = {\r
+-	id = 7735005\r
+-	persistent = no\r
+-	country = ROM\r
+-\r
+-	decision = { \r
+-	OR = {\r
+-	AND = { exists = BUL NOT = { ispuppet = BUL } }\r
+-	AND = { exists = U29 NOT = { ispuppet = U29 } }\r
+-	}\r
+-	}\r
+-\r
+-	decision_trigger = {\r
+-	OR = {\r
+-	AND = { exists = BUL NOT = { ispuppet = BUL } }\r
+-	AND = { exists = U29 NOT = { ispuppet = U29 } }\r
+-	}\r
+-	}\r
+-\r
+-	trigger = {\r
+-	OR = {\r
+-	AND = { exists = BUL NOT = { ispuppet = BUL } }\r
+-	AND = { exists = U29 NOT = { ispuppet = U29 } }\r
+-	}\r
+-	}\r
+-\r
+-\r
+-	name = "EVT_7735005_NAME"\r
+-	desc = "EVT_7735005_DESC"\r
+-	style = 2\r
+-	picture = "ROM_Nazi"\r
+-\r
+-	date = { day = 0 month = 3 year = 1937 }\r
+-	offset = 25\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-	\r
+-	action = { # 計画を実行せよ\r
+-	name = "ACTIONNAME7735005A" \r
+-	command = { type = trigger which = 7733007 }\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 7735006\r
+-	persistent = no\r
+-	country = ROM\r
+-\r
+-	name = "EVT_7735006_NAME"\r
+-	desc = "EVT_7735005_DESC"\r
+-	style = 2\r
+-	picture = "ROM_Nazi"\r
+-\r
+-	action = { # 鉄衛団万歳！！\r
+-	name = "ACTIONNAME7735006A" \r
+-	command = { trigger = { NOT = { ispuppet = U29 } } type = war which = U29 }\r
+-	command = { trigger = { NOT = { ispuppet = BUL } } type = war which = BUL }\r
+-	}\r
+-}\r
+-\r
+-#########################################################################\r
+-#  『民族戦線』結成\r
+-# 敵がいよいよルーマニア本土に侵攻してきた。\r
+-# この民族の危機に、鉄衛団とルーマニア国民は立ち上がった。\r
+-# 各地で兵士として敵に身を投げ打った夫や息子の意思を守るため、後方に残っていた児童や婦人、老人を中心とする『民族戦線』が結成されたのである。\r
+-# 時がたち、その結果生じていた生産力の低下は解消された。\r
+-#########################################################################\r
+-\r
+-\r
+-event = {\r
+-	id = 7735007\r
+-	random = no\r
+-	country = ROM\r
+-	save_date = yes\r
+-\r
+-	trigger = { \r
+-	event = 3327009 #労働総取引所選挙 ― 極右が優位\r
+-	}\r
+-\r
+-	name = "EVT_7735007_NAME"\r
+-	desc = "EVT_7735007_DESC"\r
+-	style = 2\r
+-	picture = "ROM_Nazi"\r
+-\r
+-	date = { day = 0 month = 0 year = 1934 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-	\r
+-	action = { # 国家社会主義の団結の強さを見よ！！\r
+-	name = "ACTIONNAME7735007A" \r
+-	command = { type = alliance which = FRA } #\r
+-	command = { type = relation which = FRA value = 200 } #\r
+-	command = { type = relation which = UB8 value = -200 } #\r
+-	command = { type = relation which = GER value = -200 } #\r
+-\r
+-	}\r
+-}\r
+-\r
+-event = {\r
+-	id = 7735008\r
+-	random = no\r
+-	country = ROM\r
+-\r
+-	trigger = { \r
+-	event = { id = 7735007 days = 18000 }\r
+-	}\r
+-\r
+-	name = "EVT_7735007_NAME"\r
+-	desc = "EVT_7735007_DESC"\r
+-	style = 2\r
+-	picture = "news_paper"\r
+-\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 10\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-\r
+-	action = { # 了解\r
+-	name = "ACTION_NAME_OK"\r
+-	# command = { type = manpowerpool value = -250 }\r
+-	command = { type = dissent value = 2 }\r
+-	command = { type = morale which = militia value = -10 } \r
+-	command = { type = max_organization which = militia value = 10 }\r
+-	command = { type = peacetime_ic_mod value = 30 }\r
+-	command = { type = wartime_ic_mod value = 30 }\r
+-	}\r
+-}\r
+-\r

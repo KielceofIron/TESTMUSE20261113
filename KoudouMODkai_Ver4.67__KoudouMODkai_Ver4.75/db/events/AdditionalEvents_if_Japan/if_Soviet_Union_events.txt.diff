@@ -1,0 +1,63 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Soviet_Union_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Soviet_Union_events.txt [cp932]
+@@ -299,10 +299,17 @@ event = {
+ 	country = U00\r
+ \r
+ 	trigger = {\r
++	event = 1299136 #内戦勃発\r
+ 	NOT = { exists = USA }\r
+ 	NOT = { exists = CSA }\r
+ 	NOT = { exists = UE0 }\r
+ 	OR = { NOT = { alliance = { country = CAN country = ENG } } NOT = { war = { country = CAN } } }\r
++\r
++	NOT = { flag = USA_Victory_America }\r
++	NOT = { flag = CSA_Victory_America }\r
++	NOT = { flag = SOV_Victory_America }\r
++	NOT = { flag = CAN_Victory_America }\r
++	NOT = { flag = UK_Victory_America }\r
+ 	}\r
+ \r
+ 	name = "EVT_1299704_NAME"\r
+@@ -310,12 +317,13 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	date = { day = 0 month = 2 year = 1934 }\r
+-	offset = 2\r
++	date = { day = 0 month = 2 year = 1936 }\r
++	offset = 4\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # これは左翼冒険主義だ！ ー検閲された発言ー\r
+ 	name = "ACTIONNAME1299704A"\r
++	command = { type = setflag which = SOV_Victory_America }\r
+ 	command = { trigger = { war = { country = ENG } } type = peace which = ENG value = 0 }\r
+ 	command = { trigger = { war = { country = GER } } type = peace which = GER value = 0 }\r
+ 	command = { trigger = { war = { country = FRA } } type = peace which = FRA value = 0 }\r
+@@ -791,7 +799,7 @@ event = {
+ 	name = "ACTIONNAME1299712A"\r
+ 	command = { type = setflag which = CPUSA_International }\r
+ 	command = { type = non_aggression which = COL where = U00 when = 7200 }\r
+-	ai_chance = 0 #100\r
++	ai_chance = 100 #100\r
+ 	}\r
+ 	action = { # 世界革命の敵は何者であっても排除される！\r
+ 	name = "ACTIONNAME1299712B"\r
+@@ -806,7 +814,7 @@ event = {
+ 	command = { type = war which = VEN }\r
+ 	command = { type = war which = UE5 }\r
+ 	command = { type = war which = U77 }\r
+-	ai_chance = 100 #0\r
++	ai_chance = 0 #0\r
+ 	}\r
+ }\r
+ \r
+@@ -842,7 +850,7 @@ event = {
+ 	}\r
+ 	action = { # 拒否する\r
+ 	name = "ACTIONNAME1299713B"\r
+-	trigger = { OR = { government = fascist ideology = social_conservative ideology = market_liberal } }\r
++	trigger = { OR = { ai = no government = fascist ideology = social_conservative ideology = market_liberal } }\r
+ 	command = {  }\r
+ 	ai_chance = 100\r
+ 	}\r

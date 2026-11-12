@@ -1,0 +1,460 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_GreatDepression_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Japan/if_GreatDepression_events.txt [utf-8]
+@@ -23,9 +23,9 @@
+ #平時戦時補正早見表\r
+ #\r
+ #イギリス\r
+-#初期値													1933/3/1	-70％\r
+-#戦時体制への移行（スウェーデン内戦）		(+7%)		1933/3末	-63%\r
+-#1929002　 暗黒の日 ― イギリスへの波及		(-30%)		1933/4		-93％\r
++#初期値									1933/3/1	-70％\r
++#戦時体制への移行（スウェーデン内戦）			(+7%)		1933/3末	-63%\r
++#1929002　 暗黒の日 ― イギリスへの波及			(-30%)		1933/4		-93％\r
+ #戦時体制への移行（東三省事変）				(+13%)		1933/6/4	-80%\r
+ #戦時体制への移行（AOGタイ併合）			(+5%)		1933～34	-75%\r
+ #戦時体制への移行（日中戦争）				(+15%)		1936/4~6	-60%\r
+@@ -35,22 +35,22 @@
+ #\r
+ #\r
+ #ドイツ\r
+-#初期値													1933/3/1	-10％\r
+-#1929003　 暗黒の日 ― ドイツへの波及		(-30%)		1933/4		-40％\r
+-#45680048　経済の回復						(+20%)		1937～		-10%\r
+-#45680049　失業率の大幅低下					(+10%)		1939～		-0%\r
++#初期値									1933/3/1	-10％\r
++#1929003　 暗黒の日 ― ドイツへの波及			(-30%)		1933/4		-40％\r
++#45680048　経済の回復					(+20%)		1937～		-10%\r
++#45680049　失業率の大幅低下				(+10%)		1939～		-0%\r
+ #\r
+ #\r
+ #ロシア\r
+-#初期値													1933/3/1	-15％\r
+-#1929004　 暗黒の日 ― ロシアへの波及		(-25%)		1933/4		-40％\r
+-#5951004　五カ年計画の始動					(+5%)		1934		-35%\r
++#初期値									1933/3/1	-15％\r
++#1929004　 暗黒の日 ― ロシアへの波及			(-25%)		1933/4		-40％\r
++#5951004　五カ年計画の始動				(+5%)		1934		-35%\r
+ #5951005　五カ年計画 ― 一年目				(+5%)		1935		-30%\r
+ #5951006　五カ年計画 ― 二年目				(+5%)		1936		-25%\r
+ #5951007　五カ年計画 ― 三年目				(+5%)		1937		-20%\r
+ #5951008　五カ年計画 ― 四年目				(+5%)		1938		-15%\r
+ #5951009　五カ年計画 ― 五年目				(+5%)		1939		-10%\r
+-#5951089　大祖国戦争						(+10%)		1940～		-0%\r
++#5951089　大祖国戦争					(+10%)		1940～		-0%\r
+ #\r
+ #\r
+ #\r
+@@ -71,9 +71,6 @@ event = {
+ 	country = USA\r
+ 	save_date = yes\r
+ 	\r
+-	trigger = {\r
+-	}\r
+-\r
+ 	name = "EVT_1929001_NAME"\r
+ 	desc = "EVT_1929001_DESC"\r
+ 	style = 2\r
+@@ -84,7 +81,7 @@ event = {
+ 	action = { # ここから先は人類史の悲惨だ！\r
+ 	name = "ACTIONNAME1929001A"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { type = money value = -8000 }\r
++	command = { type = money value = -24000 }\r
+ 	command = { type = peacetime_ic_mod value = -50 }\r
+ 	command = { type = wartime_ic_mod value = -50 }\r
+ 	command = { type = sleepevent which = 2049041 }\r
+@@ -107,10 +104,7 @@ event = {
+ 	country = ENG\r
+ 	save_date = yes\r
+ 	\r
+-	trigger = {\r
+-	event = { id = 1929001 days = 5 }\r
+-	}\r
+-\r
++	trigger = {  }\r
+ 	name = "EVT_1929002_NAME"\r
+ 	desc = "EVT_1929002_DESC"\r
+ 	style = 2\r
+@@ -123,10 +117,11 @@ event = {
+ 	action = { # もうやめてくれ！素寒貧になってしまう！！\r
+ 	name = "ACTIONNAME1929002A"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { trigger = { country = ENG } type = money value = -2000 }\r
+-	command = { trigger = { NOT = { country = ENG } } type = money value = -1000 }\r
++	command = { trigger = { country = ENG } type = money value = -8000 }\r
++	command = { trigger = { NOT = { country = ENG } } type = money value = -2000 }\r
+ 	command = { type = peacetime_ic_mod value = -30 }\r
+ 	command = { type = wartime_ic_mod value = -30 }\r
++	command = { type = local_setflag which = ic_mod value = -30 when = 1 }\r
+ 	command = { type = local_setflag which = GreatDepression }\r
+ 	}\r
+ }\r
+@@ -143,19 +138,13 @@ event = {
+ 	random = no\r
+ 	country = GER\r
+ 	save_date = yes\r
+-	\r
+-	trigger = {\r
+-	event = { id = 1929001 days = 10 }\r
+-	}\r
+-\r
++	trigger = { }\r
+ 	name = "EVT_1929003_NAME"\r
+ 	desc = "EVT_1929003_DESC"\r
+ 	style = 2\r
+ 	picture = "Bank_Run"\r
+-\r
+-	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
++date = { day = 15 month = 3 year = 1933 }\r
++	deathdate = { day = 15 month = 3 year = 1933  }\r
+ \r
+ 	action = { # ロンドンでは空から人が落ちてくると言うではないか！\r
+ 	name = "ACTIONNAME1929003A"\r
+@@ -180,18 +169,13 @@ event = {
+ 	country = UER\r
+ 	save_date = yes\r
+ 	\r
+-	trigger = {\r
+-	event = { id = 1929001 days = 12 }\r
+-	}\r
+ \r
+ 	name = "EVT_1929004_NAME"\r
+ 	desc = "EVT_1929004_DESC"\r
+ 	style = 2\r
+ 	picture = "Bank_Run"\r
+-\r
+-	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
++date = { day = 17 month = 3 year = 1933 }\r
++deathdate = { day = 17 month = 3 year = 1933 }\r
+ \r
+ 	action = { # それでも損害は大きい\r
+ 	name = "ACTIONNAME1929004A"\r
+@@ -217,18 +201,12 @@ event = {
+ 	country = JAP\r
+ 	save_date = yes\r
+ 	\r
+-	trigger = {\r
+-	event = { id = 1929001 days = 14 }\r
+-	}\r
+-\r
+ 	name = "EVT_1929005_NAME"\r
+ 	desc = "EVT_1929005_DESC"\r
+ 	style = 2\r
+ 	picture = "Bank_Run"\r
+-\r
+-	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
++date = { day = 19 month = 3 year = 1933 }\r
++deathdate = { day = 19 month = 3 year = 1933 }\r
+ \r
+ 	action = { # 東京は今日も雨が降る\r
+ 	name = "ACTIONNAME1929005A"\r
+@@ -253,23 +231,18 @@ event = {
+ 	country = CHI\r
+ 	save_date = yes\r
+ 	\r
+-	trigger = {\r
+-	event = { id = 1929001 days = 14 }\r
+-	}\r
+-\r
+ 	name = "EVT_1929006_NAME"\r
+ 	desc = "EVT_1929006_DESC"\r
+ 	style = 2\r
+ 	picture = "Bank_Run"\r
++date = { day = 21 month = 3 year = 1933 }\r
+ \r
+-	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+ 	action = { # 喜んでいいものか、悲しむべきなのだろうか……\r
+ 	name = "ACTIONNAME1929006A"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = money value = -100 }\r
++	command = { type = industrial_modifier which = money value = -2 }\r
+ 	command = { type = local_setflag which = GreatDepression }\r
+ 	}\r
+ }\r
+@@ -287,18 +260,12 @@ event = {
+ 	country = FRA\r
+ 	save_date = yes\r
+ 	\r
+-	trigger = {\r
+-	event = { id = 1929001 days = 16 }\r
+-	}\r
+ \r
+ 	name = "EVT_1929007_NAME"\r
+ 	desc = "EVT_1929007_DESC"\r
+ 	style = 2\r
+ 	picture = "Bank_Run"\r
+-\r
+-	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
++date = { day = 22 month = 3 year = 1933 }\r
+ \r
+ 	action = { # これはコミューンの思想的・経済的勝利の第一歩に過ぎないのである\r
+ 	name = "ACTIONNAME1929007A"\r
+@@ -320,19 +287,14 @@ event = {
+ 	random = no\r
+ 	country = ITA\r
+ 	save_date = yes\r
+-	\r
+-	trigger = {\r
+-	event = { id = 1929001 days = 16 }\r
+-	}\r
+ \r
+ 	name = "EVT_1929008_NAME"\r
+ 	desc = "EVT_1929008_DESC"\r
+ 	style = 2\r
+ 	picture = "Bank_Run"\r
+ \r
+-	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 1\r
+-	deathdate = { day = 29 month = 11 year = 1940 }\r
++date = { day = 19 month = 3 year = 1933 }\r
++\r
+ \r
+ 	action = { # 後の共産党躍進の原因がここにはあった\r
+ 	name = "ACTIONNAME1929008A"\r
+@@ -354,16 +316,15 @@ event = {
+ event = {\r
+ 	id = 1929009\r
+ 	random = no\r
+-	TAG = { AFG ALB ALG ANG ARA ARG ARM AST AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CAN CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GRE GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR NZL OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAF SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
++	TAG = { AFG ALB ALG ANG ARA ARG ARM AST AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CAN CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR NZL OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAF SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
+ 		U00 U01 U02 U03 U04 U05 U06 U07 U08 U09 U10 U11 U12 U13 U15 U16 U17 U18 U19 U20 U21 U22 U23 U24 U25 U26 U27 U28 U29 U30 U31 U32 U33 U34 U35 U36 U37 U38 U39 U40 U41 U42 U43 U44 U45 U46 U47 U48 U49 U50 U51 U52 U53 U54 U55 U56 U57 U58 U59 U60 U61 U62 U63 U64 U65 U66 U67 U68 U69 U70 U71 U72 U73 U74 U75 U76 U77 U78 U79 U80 U81 U82 U83 U84 U85 U86 U87 U88 U89 U90 U91 U92 U93 U94 U95 U96 U97 U98 U99 UCH  UGS UPE UTC UAP UAU UBO UCS\r
+ 		UES UIC UIR UPR UPS URO USN UTL UTO \r
+ 		UA0 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UB4 UB5 UB6 UB7 UB8 UB9 UC0 UC1 UC2 UC3 UC4 UC5 UC6 UC7 UC8 UC9 UD0 UD1 UD2 UD3 UD4 UD5 UD6 UD7 UD8 UD9 \r
+-		UF0 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
++		 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
+ 	save_date = yes\r
+ 	persistent = yes\r
+ 	\r
+ 	trigger = {\r
+-	event = { id = 1929001 days = 20 }\r
+ 	NOT = { local_flag = GreatDepression }\r
+ 	NOT = { ispuppet = yes }\r
+ 	}\r
+@@ -373,20 +334,39 @@ event = {
+ 	style = 2\r
+ 	picture = "Bank_Run"\r
+ \r
+-	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 3\r
+-	deathdate = { day = 29 month = 4 year = 1933 }\r
++date = { day = 25 month = 3 year = 1933 }\r
++deathdate = { day = 25 month = 3 year = 1933 }\r
+ \r
+ 	action = { # 何ということだ！\r
++	trigger = {\r
++	OR = {\r
++	government = fascist\r
++	government = democratic\r
++	}\r
++	}\r
++\r
+ 	name = "ACTIONNAME1929009A"\r
+ 	command = { type = dissent value = 5 }\r
+-	command = { trigger = { IC = 80 } type = money value = -600 }\r
+-	command = { trigger = { IC = 50 NOT = { IC = 80 } } type = money value = -400 }\r
+-	command = { trigger = { IC = 15 NOT = { IC = 50 } } type = money value = -200 }\r
+-	command = { trigger = { NOT = { IC = 15 } } type = money value = -100 }\r
++	command = { trigger = { IC = 480 } type = money value = -10000 }\r
++	command = { trigger = { IC = 240 NOT = { IC = 480 } } type = money value = -7000 }\r
++	command = { trigger = { IC = 150 NOT = { IC = 240 } } type = money value = -4000 }\r
++	command = { trigger = { IC = 80 NOT = { IC = 150 } } type = money value = -1800 }\r
++	command = { trigger = { IC = 50 NOT = { IC = 80 } } type = money value = -1200 }\r
++	command = { trigger = { IC = 15 NOT = { IC = 50 } } type = money value = -600 }\r
++	command = { trigger = { NOT = { IC = 15 } } type = money value = -300 }\r
+ 	command = { type = peacetime_ic_mod value = -20 }\r
+ 	command = { type = wartime_ic_mod value = -20 }\r
++	command = { type = industrial_modifier which = supplies value = -20 }\r
++	command = { type = industrial_modifier which = money value = -50 }\r
++	command = { type = local_setflag which = GreatDepression }\r
++	}\r
++\r
++	action = { # 何ということだ！\r
++	name = "ACTIONNAME1929009B"\r
++	trigger = { government = communist }\r
++	command = { type = dissent value = -5 }\r
+ 	command = { type = local_setflag which = GreatDepression }\r
++	command = { type = local_setflag which = GreatDepression_Recovery }\r
+ 	}\r
+ }\r
+ \r
+@@ -397,11 +377,11 @@ event = {
+ event = {\r
+ 	id = 1929010\r
+ 	random = no\r
+-	TAG = { AFG ALB ALG ANG ARA ARG ARM AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GRE GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAF SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
++	TAG = { AFG ALB ALG ANG ARA ARG ARM AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAF SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
+ 		U00 U01 U03 U04 U05 U06 U07 U08 U09 U10 U11 U12 U13 U15 U16 U17 U18 U19 U20 U21 U22 U23 U24 U25 U26 U27 U28 U29 U30 U31 U32 U33 U34 U35 U36 U37 U38 U39 U40 U41 U42 U43 U44 U45 U46 U47 U48 U49 U50 U51 U52 U53 U54 U55 U56 U57 U58 U59 U60 U61 U62 U63 U64 U65 U66 U67 U68 U69 U70 U71 U72 U73 U74 U75 U76 U77 U78 U79 U80 U81 U82 U83 U84 U85 U86 U87 U88 U89 U90 U91 U92 U93 U94 		U95 U96 U97 U98 U99 UCH  UGS UPE UTC UAP UAU UBO UCS\r
+ 		UES UIC UIR UPR UPS URO USN UTL UTO \r
+ 		UA0 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UB4 UB5 UB6 UB7 UB9 UC0 UC1 UC2 UC3 UC4 UC5 UC6 UC7 UC8 UC9 UD0 UD1 UD2 UD3 UD4 UD5 UD6 UD7 UD8 UD9 \r
+-		UF0 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
++		 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
+ 	persistent = yes\r
+ \r
+ \r
+@@ -413,31 +393,40 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++	year = 1935\r
+ 	OR = {\r
+-		money = 600\r
+-		AND = {\r
+-		NOT = { IC = 80 }\r
+-		money = 400\r
+-		}\r
+-		AND = {\r
+-		NOT = { IC = 50 }\r
+-		money = 200\r
+-		}\r
+-		AND = {\r
+-		NOT = { IC = 15 }\r
+-		money = 100\r
+-		}	\r
++		money = 8000\r
++		AND = {	NOT = { IC = 320 } money = 6000 }\r
++		AND = {	NOT = { IC = 240 } money = 4000 }\r
++		AND = {	NOT = { IC = 150 } money = 2400 }\r
++		AND = {	NOT = { IC = 90 } money = 1500 }\r
++		AND = {	NOT = { IC = 60 } money = 1000 }\r
++		AND = {	NOT = { IC = 30 } money = 400 }\r
++		AND = {	NOT = { IC = 15 } money = 200 }\r
++		AND = {	NOT = { IC = 5 } money = 100 }\r
+ 	}\r
+ 	atwar = no\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+-	event = { id = 1929001 days = 1800 }\r
++	year = 1935\r
+ 	local_flag = GreatDepression\r
+ 	NOT = { local_flag = GreatDepression_War }\r
+ 	NOT = { local_flag = GreatDepression_Recovery }\r
+ 	NOT = { local_flag = GreatDepression_Recovery_Yes }\r
+-	random = 15\r
++	\r
++	OR = {\r
++		money = 8000\r
++		AND = {	NOT = { IC = 320 } money = 6000 }\r
++		AND = {	NOT = { IC = 240 } money = 4000 }\r
++		AND = {	NOT = { IC = 150 } money = 2400 }\r
++		AND = {	NOT = { IC = 90 } money = 1500 }\r
++		AND = {	NOT = { IC = 60 } money = 1000 }\r
++		AND = {	NOT = { IC = 30 } money = 400 }\r
++		AND = {	NOT = { IC = 15 } money = 200 }\r
++		AND = {	NOT = { IC = 5 } money = 100 }\r
++	}\r
++	atwar = no\r
+ 	}\r
+ \r
+ 	name = "2011038name"\r
+@@ -446,17 +435,22 @@ event = {
+ 	picture = "new_deal"\r
+ 	decision_picture = "decision_new_deal"\r
+ \r
+-	date = { day = 0 month = 6 year = 1933 }\r
+-	offset = 30\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 31\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 強固な経済を必要としている\r
+ 	name = "2011038a"\r
+ 	command = { type = dissent value = -10 }\r
+-	command = { trigger = { IC = 80 } type = money value = -600 }\r
+-	command = { trigger = { IC = 50 NOT = { IC = 80 } } type = money value = -400 }\r
+-	command = { trigger = { IC = 15 NOT = { IC = 50 } } type = money value = -200 }\r
+-	command = { trigger = { NOT = { IC = 15 } } type = money value = -100 }\r
++	command = { trigger = { IC = 320 } type = money value = -8000 }\r
++	command = { trigger = { IC = 240 NOT = { IC = 320 } } type = money value = -6000 }\r
++	command = { trigger = { IC = 150 NOT = { IC = 240 } } type = money value = -4000 }\r
++	command = { trigger = { IC = 90 NOT = { IC = 150 } } type = money value = -2400 }\r
++	command = { trigger = { IC = 60 NOT = { IC = 90 } } type = money value = -1500 }\r
++	command = { trigger = { IC = 30 NOT = { IC = 60 } } type = money value = -1000 }\r
++	command = { trigger = { IC = 15 NOT = { IC = 30 } } type = money value = -400 }\r
++	command = { trigger = { IC = 5 NOT = { IC = 15 } } type = money value = -200 }\r
++	command = { trigger = { NOT = { IC = 5 } } type = money value = -100 }\r
+ 	command = { type = peacetime_ic_mod value = 10 }\r
+ 	command = { type = wartime_ic_mod value = 10 }\r
+ 	command = { type = energypool value = 200 }\r
+@@ -464,6 +458,8 @@ event = {
+ 	command = { type = rarematerialspool value = 75 }\r
+ 	command = { type = oilpool value = 100 }\r
+ 	command = { type = supplies value = 100 }\r
++	command = { type = industrial_modifier which = supplies value = 20 }\r
++	command = { type = industrial_modifier which = money value = 20 }\r
+ 	command = { type = local_setflag which = GreatDepression_Recovery }\r
+ 	}\r
+ }\r
+@@ -471,11 +467,11 @@ event = {
+ event = {\r
+ 	id = 1929011\r
+ 	random = no\r
+-	TAG = { AFG ALB ALG ANG ARA ARG ARM AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GRE GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
++	TAG = { AFG ALB ALG ANG ARA ARG ARM AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
+ 		U00 U01 U03 U04 U05 U06 U07 U08 U09 U10 U11 U12 U13 U15 U16 U17 U18 U19 U20 U21 U22 U23 U24 U25 U26 U27 U28 U29 U30 U31 U32 U33 U34 U35 U36 U37 U38 U39 U40 U41 U42 U43 U44 U45 U46 U47 U48 U49 U50 U51 U52 U53 U54 U55 U56 U57 U58 U59 U60 U61 U62 U63 U64 U65 U66 U67 U68 U69 U70 U71 U72 U73 U74 U75 U76 U77 U78 U79 U80 U81 U82 U83 U84 U85 U86 U87 U88 U89 U90 U91 U92 U93 U94 		U95 U96 U97 U98 U99 UCH  UGS UPE UTC UAP UAU UBO UCS\r
+ 		UES UIC UIR UPR UPS URO USN UTL UTO \r
+ 		UA0 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UB4 UB5 UB6 UB7 UB9 UC0 UC1 UC2 UC3 UC4 UC5 UC6 UC7 UC8 UC9 UD0 UD1 UD2 UD3 UD4 UD5 UD6 UD7 UD8 UD9 \r
+-		UF0 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
++		 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+@@ -501,6 +497,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 10 }\r
+ 	command = { type = peacetime_ic_mod value = 10 }\r
++	command = { type = industrial_modifier which = money value = 30 }\r
+ 	command = { type = local_setflag which = GreatDepression_Recovery_Yes }\r
+ 	}\r
+ }\r
+@@ -509,11 +506,11 @@ event = {
+ event = {\r
+ 	id = 1929012\r
+ 	random = no\r
+-	TAG = { AFG ALB ALG ANG ARA ARG ARM AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GRE GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
++	TAG = { AFG ALB ALG ANG ARA ARG ARM AUS AZB BEL BEN BHU BLR BOL BOS BRA BRU BUL BUR CAL CAM CGX CHC CHL CMB COL CON COS CRO CSA CSX CUB CXB CYN CYP CZE DDR DEN DFR DOM EAF ECU EGY EQA EST ETH EUS FIN FLA GAB GEO GLD GUA GUI GUY HAI HOL HON HUN ICL IDC IND INO IRE IRQ ISR JOR KAZ KOR KUR KYG LAO LAT LBY LEB LIB LIT LUX MAD MAL MAN MEN MEX MLY MON MOR MOZ MTN NAM NEP NIC NIG NOR OMN OTT PAK PAL PAN PAR PER PHI POL POR PRI PRK PRU QUE RHO ROM RSI SAL SAR SAU SCA SCH SCO SER SIA SIB SIE SIK SLO SLV SOM SOV SPA SPR SUD SWE SYR TAJ TAN TEX TIB TRA TRK TUN TUR UKR URU UZB VEN VIE WLL YEM YUG \r
+ 		U00 U01 U03 U04 U05 U06 U07 U08 U09 U10 U11 U12 U13 U15 U16 U17 U18 U19 U20 U21 U22 U23 U24 U25 U26 U27 U28 U29 U30 U31 U32 U33 U34 U35 U36 U37 U38 U39 U40 U41 U42 U43 U44 U45 U46 U47 U48 U49 U50 U51 U52 U53 U54 U55 U56 U57 U58 U59 U60 U61 U62 U63 U64 U65 U66 U67 U68 U69 U70 U71 U72 U73 U74 U75 U76 U77 U78 U79 U80 U81 U82 U83 U84 U85 U86 U87 U88 U89 U90 U91 U92 U93 U94 		U95 U96 U97 U98 U99 UCH  UGS UPE UTC UAP UAU UBO UCS\r
+ 		UES UIC UIR UPR UPS URO USN UTL UTO \r
+ 		UA0 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UB4 UB5 UB6 UB7 UB9 UC0 UC1 UC2 UC3 UC4 UC5 UC6 UC7 UC8 UC9 UD0 UD1 UD2 UD3 UD4 UD5 UD6 UD7 UD8 UD9 \r
+-		UF0 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
++		 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
+ 	persistent = yes\r
+ \r
+ 	trigger = {\r
+@@ -540,6 +537,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 20 }\r
+ 	command = { type = peacetime_ic_mod value = 20 }\r
++	command = { type = industrial_modifier which = money value = 30 }\r
+ 	command = { type = local_setflag which = GreatDepression_War }\r
+ 	}\r
+ }\r
+@@ -559,7 +557,7 @@ event = {
+ 		U00 U01 U02 U03 U04 U05 U06 U07 U08 U09 U10 U11 U12 U13 U15 U16 U17 U18 U19 U20 U21 U22 U23 U24 U25 U26 U27 U28 U29 U30 U31 U32 U33 U34 U35 U36 U37 U38 U39 U40 U41 U42 U43 U44 U45 U46 U47 U48 U49 U50 U51 U52 U53 U54 U55 U56 U57 U58 U59 U60 U61 U62 U63 U64 U65 U66 U67 U68 U69 U70 U71 U72 U73 U74 U75 U76 U77 U78 U79 U80 U81 U82 U83 U84 U85 U86 U87 U88 U89 U90 U91 U92 U93 U94 U95 U96 U97 U98 U99 UCH  UGS UPE UTC UAP UAU UBO UCS\r
+ 		UES UIC UIR UPR UPS URO USN UTL UTO \r
+ 		UA0 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UB4 UB5 UB6 UB7 UB8 UB9 UC0 UC1 UC2 UC3 UC4 UC5 UC6 UC7 UC8 UC9 UD0 UD1 UD2 UD3 UD4 UD5 UD6 UD7 UD8 UD9 \r
+-		UF0 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
++		 UF1 UF2 UF3 UF4 UF5 UF6 UF7 UF8 ALS AXI }\r
+ 	\r
+ 	trigger = {\r
+ 	event = 1929001\r
+@@ -585,7 +583,7 @@ event = {
+ 	picture = "Credit_flow"\r
+ \r
+ 	date = { day = 5 month = 3 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1936 }\r
+ \r
+ 	action = { # ありがたい…！\r

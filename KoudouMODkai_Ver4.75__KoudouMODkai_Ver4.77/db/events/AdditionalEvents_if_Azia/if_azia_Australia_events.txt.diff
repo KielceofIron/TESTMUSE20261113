@@ -1,0 +1,100 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Australia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Australia_events.txt [cp932]
+@@ -34,6 +34,7 @@
+ #id = 2144027 橿原丸事件（AST）\r
+ #id = 2144028 橿原丸事件 ― 賠償金の支払い\r
+ #id = 2144029 橿原丸撃沈事件 ― 賠償金支払いを拒否\r
++#id = 2144030 白豪主義\r
+ # オーストラリア選挙\r
+ #id = 2144101 選挙（1937年）\r
+ #id = 2144102 選挙（1941年）\r
+@@ -1763,6 +1764,89 @@ event = {
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  白豪主義\r
++# 『白豪主義（英: White Australia policy）』とは、オーストラリアにおける白人最優先主義とそれに基づく非白人への排除政策である。\r
++# オーストラリアは、長年にわたり白人の優位を維持するために、先住民への弾圧やアジア系外国人労働者に制限を設けてきた。\r
++# 1901年には、移住制限法や帰化法を成立させることで、白豪主義政策を完成させた。\r
++# しかし、こうした差別的な政策は、日本や中国などとの間に外交的摩擦を持つことになった。\r
++# オーストラリアが自立した現在、労働力や市場を支えるために白豪主義政策を見直す声が高まっている。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 2144030\r
++	random = no\r
++	country = AST\r
++\r
++\r
++	decision = {\r
++	flag = Eureka # イギリスから分離独立\r
++	atwar = yes\r
++	NOT = { ispuppet = AST }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 2144004 # 失業率15パーセント低下\r
++	atwar = yes\r
++	NOT = { ispuppet = AST }\r
++	}\r
++\r
++	trigger = {\r
++	flag = Eureka # イギリスから分離独立\r
++	event = 2144004 # 失業率15パーセント低下\r
++	NOT = { ispuppet = AST }\r
++	random = 25\r
++	}\r
++\r
++	name = EVT_2144030_NAME # White Australasia\r
++	desc = EVT_2144030_DESC # \r
++	style = 2\r
++	picture = "White_Australasia"\r
++	decision_picture = "decision_fireside_chat"\r
++\r
++	date = { day = 0 month = 0 year = 1937 }\r
++	offset = 50\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 政策を終わらせる時が来た！\r
++	name = "ACTIONNAME2144030A"\r
++	command = { type = industrial_modifier which = total value = 4 }\r
++	command = { type = relative_manpower value = 15 }\r
++	command = { type = manpowerpool value = 50 }\r
++	command = { type = domestic which = freedom value = 2 }\r
++	command = { type = dissent value = 20 }\r
++	command = { type = relation which = CHI value = 50 }\r
++	command = { type = relation which = CHC value = 50 }\r
++	command = { type = relation which = U67 value = 50 }\r
++	command = { type = relation which = U36 value = 50 }\r
++	command = { type = relation which = U74 value = 50 }\r
++	command = { type = relation which = JAP value = 50 }\r
++	command = { type = relation which = KOR value = 50 }\r
++	command = { type = relation which = PRK value = 50 }\r
++	command = { type = relation which = INO value = 50 }\r
++	ai_chance = 15\r
++	} \r
++\r
++	action = { # 白豪主義は守られなくてはならない！\r
++	name = "ACTIONNAME2144030B"\r
++	command = { type = industrial_modifier which = total value = -2 }\r
++	command = { type = relative_manpower value = -5 }\r
++	command = { type = manpowerpool value = -50 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = dissent value = -3 }\r
++	command = { type = relation which = CHI value = -50 }\r
++	command = { type = relation which = CHC value = -50 }\r
++	command = { type = relation which = U67 value = -50 }\r
++	command = { type = relation which = U36 value = -50 }\r
++	command = { type = relation which = U74 value = -50 }\r
++	command = { type = relation which = JAP value = -50 }\r
++	command = { type = relation which = KOR value = -50 }\r
++	command = { type = relation which = PRK value = -50 }\r
++	command = { type = relation which = INO value = -50 }\r
++	ai_chance = 85\r
++	} \r
++}\r
++\r
+ #########################################################################\r
+ #  オーストラリア選挙\r
+ #########################################################################\r

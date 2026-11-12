@@ -1,0 +1,154 @@
+--- A/ai/IF/CHI_if.ai [utf-8]
++++ B/ai/IF/CHI_if.ai [utf-8]
+@@ -247,7 +247,7 @@ spyprefs =
+ 		steal_blueprint 	= 0\r
+ 		minister_assassination          = 7\r
+ 		smear_campaign 		= 7\r
+-		coup 				= 1\r
++		coup 				= 0\r
+ 		sabotage_industry 	= 6\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans		= 0\r
+@@ -380,7 +380,7 @@ spyprefs =
+ construction = { \r
+ 	max_factor = 0.70 \r
+ \r
+-	AA_batteries = yes\r
++	AA_batteries = no #yes\r
+ 	max_AA_level = 5\r
+ 	AA_provs = {\r
+     	1299 # 重慶\r
+@@ -394,7 +394,7 @@ construction = {
+ 	max_coastal_level = 3\r
+ 	coastal_fort_provs = { } \r
+ \r
+-	radar_station = yes \r
++	radar_station = no #yes \r
+ 	max_radar = 5 \r
+ 	radar_provs = {\r
+     	1299 # 重慶\r
+@@ -404,7 +404,7 @@ construction = {
+ 	1338 # 上海\r
+ 	} \r
+ \r
+-	air_base = yes\r
++	air_base = no #yes\r
+ 	max_air_base = 5\r
+ 	air_base_provs = {\r
+ 	1198 # 布特哈\r
+@@ -423,7 +423,7 @@ construction = {
+ 	1390 # 昆明\r
+ 	}\r
+ \r
+-	naval_base = yes\r
++	naval_base = no #yes\r
+ 	max_naval_base = 5 \r
+ 	naval_base_provs = {\r
+ 	1328 # 青島\r
+@@ -433,7 +433,7 @@ construction = {
+ 	1369 # 廣州\r
+ 	} \r
+ \r
+-	land_fort = yes\r
++	land_fort = no #yes\r
+ 	max_land_level = 5\r
+ 	fort_provs	= {\r
+ 	1197 # 鶴崗\r
+@@ -457,7 +457,7 @@ construction = {
+ 	1345 # 杭洲\r
+ 	1351 # 上饒\r
+ 	}\r
+-	fort_borders = { UTC } \r
++	fort_borders = {  } \r
+ \r
+ 	ic_at_war = yes\r
+ 	force_ic_until = 1937\r
+@@ -472,19 +472,19 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= no # yes\r
+ 	max_batch_peace 		= 500 # 1200 \r
+-	max_batch_war 			= 360 # 270 \r
++	max_batch_war 			= 550 # 270 \r
+ 	max_batch_home_front 	= 270\r
+ 	extra_convoys_war 		= 0.0000 \r
+ 	extra_convoys_peace 	= 0.0000 \r
+ \r
+ \r
+ 	#### Divisions etc...\r
+-	infantry 		= 30\r
+-	cavalry 		= 6\r
+-	motorized 		= 10\r
++	infantry 		= 10\r
++	cavalry 		= 0\r
++	motorized 		= 0\r
+ 	mechanized 		= 0\r
+-	light_armor 	= 6\r
+-	armor 			= 6\r
++	light_armor 	= 0\r
++	armor 			= 0\r
+ 	paratrooper 	= 0\r
+ 	marine 			= 0\r
+ 	bergsjaeger 	= 10\r
+@@ -502,14 +502,14 @@ military = {
+ 	flying_bomb 	= 0\r
+ 	flying_rocket 	= 0\r
+ #				#17 %\r
+-	battleship 		= 0\r
+-	carrier 		= 0\r
++	battleship 		= 10\r
++	carrier 		= 10\r
+ 	destroyer 		= 4\r
+ 	light_cruiser 	= 2\r
+ 	heavy_cruiser 	= 0\r
+ 	battlecruiser 	= 0\r
+ 	submarine 		= 4\r
+-	transports 		= 2\r
++	transports 		= 30\r
+ #				12 %\r
+ \r
+ 	#### Brigades\r
+@@ -627,7 +627,7 @@ garrison = {
+ 	defend_overseas_beaches = yes\r
+ 	home_multiplier 	= 0.7\r
+ 	overseas_multiplier = 0.9\r
+-	home_peace_cap 		= 10\r
++	home_peace_cap 		= 3\r
+ 	war_zone_odds 		= 3.0\r
+ 	key_point_prio_mult	= 0.1\r
+ 	revolt_risk_mult	= 0.3\r
+@@ -729,16 +729,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30.0\r
+-	groundattackdesirability 		= 40.0\r
+-	inderdictiondesirability 		= 20.0\r
+-	logisticalstrikedesirability 	= 2.0\r
+-	runwaycrateringdesirability 	= 10.0\r
+-	strategicstrikedesirability 	= 10.0\r
+-	installationstrikedesirability 	= 5.0\r
+-	navalstrikedesirability 		= 15.0\r
+-	portstrikedesirability 			= 9.0\r
+-	convoyraiddesirability			= 9.0\r
++	airsuperioritydesirability 		= 30000.0\r
++	groundattackdesirability 		= 40000.0\r
++	inderdictiondesirability 		= 20000\r
++	logisticalstrikedesirability 		= 2000\r
++	runwaycrateringdesirability 		= 10000\r
++	strategicstrikedesirability 		= 10000\r
++	installationstrikedesirability 		= 5000\r
++	navalstrikedesirability 		= 15000\r
++	portstrikedesirability 		= 9000\r
++	convoyraiddesirability 		= 9000\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -760,7 +760,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r

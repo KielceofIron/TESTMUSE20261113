@@ -1,0 +1,615 @@
+--- A/ai/KAISERREICH/switch/JAP_China.ai [ascii]
++++ B/ai/KAISERREICH/switch/JAP_China.ai [ascii]
+@@ -1,306 +1,306 @@
+-# reworked by Kibbles for Kaiserreich#   Dr Bob
+-# based on the original files (HoI2 1.1) by Lothos
+-# reuse is welcome as long as file origin is correctly stated
+-
+-max_garrison_prop = 0.20
+-min_garrison_prop = 0.10
+-reinforcement = 0.01
+-upgrading = 0.1
+-
+-###################################
+-# Diplomacy
+-###################################
+-combat = {
+-				CSX = 200
+-				CHC = 150
+-				CYN = 50
+-}
+-trade = {
+-	cancel_deal_threshold	= 1.6
+-	energy 			= -1
+-	rare_materials 		= -1
+-	metal 			= -1
+-	oil 			= -1
+-	supplies 			= 11
+-	money 			= -1
+-}
+-target = {
+-				1337 = 150
+-				1336 = 150
+-				1249 = 150
+-				1419 = 150
+-				1415 = 150
+-				1254 = 150
+-}
+-
+-###################################
+-# Construction and Tech Research
+-###################################
+-#Default values
+-construction = {
+-	max_factor = 0.000
+-
+-}
+-military = {
+-	relative_build_scheme 	= no
+-	max_batch_peace 		= 540
+-	max_batch_war 		= 540
+-	max_batch_home_front 	= 540
+-
+-	#### Divisions etc...
+-	infantry 		= 30
+-	cavalry 		= 10
+-	motorized 		= 0
+-	mechanized 		= 0
+-	light_armor 		= 0
+-	armor 			= 5
+-	paratrooper 		= 0
+-	marine 			= 15
+-	bergsjaeger 		= 15
+-	garrison		= 0
+-      	hq 			= 5
+-	militia 		= 0
+-
+-#				80 %
+-	interceptor 		= 3
+-	multi_role 		= 2
+-	cas 			= 0
+-	strategic_bomber 		= 0
+-	tactical_bomber		= 4
+-	naval_bomber 		= 1
+-	transport_plane 		= 0
+-	flying_bomb 		= 0
+-	flying_rocket 		= 0
+-#				10 %
+-	battleship 		= 0
+-	carrier 			= 10
+-	escort_carrier		= 0
+-	destroyer 			= 0
+-	light_cruiser 		= 0
+-	heavy_cruiser 		= 0
+-	battlecruiser 		= 0
+-	submarine 		= 0
+-
+-	transports 		= 0
+-#				10 %
+-
+-
+-	#### Brigades
+-	artillery 			= 40
+-	sp_artillery 		= 0
+-	rocket_artillery		= 0
+-	sp_rct_artillery 		= 0
+-	anti_tank 		= 0
+-	tank_destroyer 		= 0
+-	light_armor_brigade 	= 0
+-	heavy_armor 		= 0
+-	super_heavy_armor 		= 0
+-	armored_car 		= 20
+-	anti_air 			= 0
+-	police 			= 10
+-	engineer 			= 10
+-
+-	cag 			= 100.000
+-}
+-###################################
+-# Ground Combat, Leaders and Garrisons
+-###################################
+-garrison = {
+-	defend_overseas_beaches 	= yes
+-	home_multiplier 		= 0.5
+-	overseas_multiplier 		= 1.0
+-	home_peace_cap 		= 31
+-	war_zone_odds 		= 1.5
+-	key_point_prio_mult	= 0
+-	revolt_risk_mult		= 0.1
+-
+-	# PRIORITIES:
+-	beach			= 20	# Beach level 2
+-	capital			= 20	# Our capital
+-	human_border		= 50	# Ignored for allied human players
+-	war_target		= 100	# The next country targeted for attack by this AI
+-
+-	opposing_alliance		= 50	# For neutrals, all alliances are "opposing"
+-	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+-	unstable_border		= 0	# Bordering countries at war with someone else get this
+-
+-	# Borders with specific countries
+-	country_priorities = {
+-		CSX = 200 #Qing
+-		GER = 100
+-		CGX = 90 #AOG
+-		CHC = 90 #Shangqing Tiango
+-		RUS = 25
+-		CYN = 20 #Yunnan
+-		MON = 20
+-		HOL = 10
+-		USA = 10
+-		PRI = -1 #Transmur
+-		EAF = -1 #Legation Cities
+-		MAN = -1
+-		SIA = -1
+-		POR = -1
+-	}
+-}
+-front = {
+-	recklessness 		= 2 # 0-3
+-	distrib_vs_ai 		= op_defensive
+-	distrib_vs_human 		= op_defensive
+-
+-	enemy_reinf_days		= 4
+-
+-	panic_ratio_vs_ai		= 2.5
+-	panic_ratio_vs_human	= 2.5
+-	base_attack_odds		= 1.333
+-	min_attack_odds		= 1.1
+-	max_attack_odds		= 2.5
+-	reinforce_odds		= 1.2
+-	withdraw_odds		= 0.75
+-
+-	reserve_prop 		= 0.2
+-
+-      	passivity = {
+-		CYN = 100
+-	}
+-}
+-###################################
+-# Invasions and Naval
+-###################################
+-invasion = {
+-	invasion		= yes
+- 	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)
+-	random		= 0.01	#How big a random range.  (1.0 = 1%)
+-	coastal		= 0.1	#increase to avoid coastal forts more.
+-	beach		= 0.1	#higher, avoid worst beaches.
+-	distance		= 20.0	#higher = avoid long distance.
+-	pocket		= 20.0	#prioritise pockets, ie provinces with no adjacent controlled by same.
+-	island		= 0.1	#prioritise taking pure islands.
+-	enemy		= 2.0	#higher = much more vary of troops in province.
+-	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby
+-	air_base		= 1.5 
+-      	naval_base 	= 0.1 
+-      	air_support 	= 3.0 
+-      	redirect 		= priority
+-	ignore		= no
+-
+-	staging_province = {
+-		1236 # Changde
+-		1239 # Erenhot
+-
+-	}
+-	target = {
+-		1415 = 1000
+-	}
+-}
+-admiral = {
+-	min_org			=100	# NEW: Percent of org gained back before the unit can leave port
+-	min_dmg			=28    # NEW: Percent of dmg gained back before the unit can leave port
+-	return_org 		=60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships
+-	return_dmg 		=80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships
+-	min_core_attack_fleets 	= 1		# Minimum amount of attack fleets to defend CORE provinces (default 0)
+-	num_attack_fleets		= 2 	# ENG/USA default 3, JAP default 2 everyone else is 1
+-
+-
+-ignore = {
+-
+-# Mediterranean
+-"Adriatic Sea"
+-"Aegean Sea"
+-"Black Sea"
+-"Tyrrhenian Sea"
+-"Costa del Sol"
+-"Algerian Coast"
+-"Egyptian Coast"
+-"Gulf of Lyon"
+-
+-
+-# Caribbean
+-"Yucatan Strait"
+-"Central Carribean"
+-"Windward Islands"
+-"West Gulf of Mexico"
+-"East Gulf of Mexico"
+-"Florida Strait"
+-
+-# Baltic Sea
+-"Bothnian Bay"
+-"Northern Baltic"
+-"Southern Baltic"
+-
+-
+-# North Sea
+-"Kattegat"
+-"English Channel"
+-"Southeast Northsea"
+-"West Northsea"
+-"Central Northsea"
+-"Norwegian Sea"
+-"Western Approaches"
+-"Greenland Coast"
+-"Faroes Gap"
+-"North Atlantic"
+-"Bay of Biscay"
+-"Azores"
+-"Portugese Coast"
+-"Cap St Vincent"
+-"Cape Finisterre"
+-"Irish West Coast"
+-"The Hebreides"
+-
+-# North Atlantic
+-"Barents Sea"
+-"Irish Sea"
+-"Denmark Strait"
+-"Central Atlantic"
+-"Hudson Bay"
+-"Bermuda Triangle"
+-"Northern Sea of Labrador"
+-"Southern Sea of Labrador"
+-"Grand Banks"
+-"The Seamounts"
+-"Canadian Maritimes"
+-"US Maritimes"
+-"Central Mid-Atlantic Ridge"
+-"East North Sea"
+-"Arctic Ocean"
+-
+-# South Atlantic
+-"Coast of Brazil"
+-"Cap Verde"
+-"Gulf of Guinea"
+-"Coast of Africa"
+-"Coast of Bissao"
+-"Guiana Basin"
+-"South-Central Mid-Atlantic Ridge"
+-"Atlantic-Indian Ridge"
+-"Coast of South Africa"
+-"Coast of Angola-Namibia"
+-"Angola Plain"
+-"Argentine Plain"
+-"Coast of Argentina"
+-"Coast of Uruguay"
+-"Coast of Guyana"
+-"Coast of Recife"
+-"Pernambuco Plain"
+-"Ascension Fracture Zone"
+-	}
+-
+-	target = {
+-		2518 = 200
+-		2517 = 200
+-		2515 = 200
+-		2516 = 150
+-		2523 = 100
+-		2524 = 100
+-	}
+-	core = {
+-		2491
+-		2492
+-		2489
+-		2497
+-		2498
+-		2494
+-		2515
+-	}
+-	base = { 1553 }
++# reworked by Kibbles for Kaiserreich#   Dr Bob\r
++# based on the original files (HoI2 1.1) by Lothos\r
++# reuse is welcome as long as file origin is correctly stated\r
++\r
++max_garrison_prop = 0.20\r
++min_garrison_prop = 0.10\r
++reinforcement = 0.01\r
++upgrading = 0.1\r
++\r
++###################################\r
++# Diplomacy\r
++###################################\r
++combat = {\r
++				CSX = 200\r
++				CHC = 150\r
++				CYN = 50\r
++}\r
++trade = {\r
++	cancel_deal_threshold	= 1.6\r
++	energy 			= -1\r
++	rare_materials 		= -1\r
++	metal 			= -1\r
++	oil 			= -1\r
++	supplies 			= 11\r
++	money 			= -1\r
++}\r
++target = {\r
++				1337 = 150\r
++				1336 = 150\r
++				1249 = 150\r
++				1419 = 150\r
++				1415 = 150\r
++				1254 = 150\r
++}\r
++\r
++###################################\r
++# Construction and Tech Research\r
++###################################\r
++#Default values\r
++construction = {\r
++	max_factor = 0.000\r
++\r
++}\r
++military = {\r
++	relative_build_scheme 	= no\r
++	max_batch_peace 		= 540\r
++	max_batch_war 		= 540\r
++	max_batch_home_front 	= 540\r
++\r
++	#### Divisions etc...\r
++	infantry 		= 30\r
++	cavalry 		= 10\r
++	motorized 		= 0\r
++	mechanized 		= 0\r
++	light_armor 		= 0\r
++	armor 			= 5\r
++	paratrooper 		= 0\r
++	marine 			= 15\r
++	bergsjaeger 		= 15\r
++	garrison		= 0\r
++      	hq 			= 5\r
++	militia 		= 0\r
++\r
++#				80 %\r
++	interceptor 		= 3\r
++	multi_role 		= 2\r
++	cas 			= 0\r
++	strategic_bomber 		= 0\r
++	tactical_bomber		= 4\r
++	naval_bomber 		= 1\r
++	transport_plane 		= 0\r
++	flying_bomb 		= 0\r
++	flying_rocket 		= 0\r
++#				10 %\r
++	battleship 		= 0\r
++	carrier 			= 10\r
++	escort_carrier		= 0\r
++	destroyer 			= 0\r
++	light_cruiser 		= 0\r
++	heavy_cruiser 		= 0\r
++	battlecruiser 		= 0\r
++	submarine 		= 0\r
++\r
++	transports 		= 0\r
++#				10 %\r
++\r
++\r
++	#### Brigades\r
++	artillery 			= 40\r
++	sp_artillery 		= 0\r
++	rocket_artillery		= 0\r
++	sp_rct_artillery 		= 0\r
++	anti_tank 		= 0\r
++	tank_destroyer 		= 0\r
++	light_armor_brigade 	= 0\r
++	heavy_armor 		= 0\r
++	super_heavy_armor 		= 0\r
++	armored_car 		= 20\r
++	anti_air 			= 0\r
++	police 			= 10\r
++	engineer 			= 10\r
++\r
++	cag 			= 100.000\r
++}\r
++###################################\r
++# Ground Combat, Leaders and Garrisons\r
++###################################\r
++garrison = {\r
++	defend_overseas_beaches 	= yes\r
++	home_multiplier 		= 0.5\r
++	overseas_multiplier 		= 1.0\r
++	home_peace_cap 		= 31\r
++	war_zone_odds 		= 1.5\r
++	key_point_prio_mult	= 0\r
++	revolt_risk_mult		= 0.1\r
++\r
++	# PRIORITIES:\r
++	beach			= 20	# Beach level 2\r
++	capital			= 20	# Our capital\r
++	human_border		= 50	# Ignored for allied human players\r
++	war_target		= 100	# The next country targeted for attack by this AI\r
++\r
++	opposing_alliance		= 50	# For neutrals, all alliances are "opposing"\r
++	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
++	unstable_border		= 0	# Bordering countries at war with someone else get this\r
++\r
++	# Borders with specific countries\r
++	country_priorities = {\r
++		CSX = 200 #Qing\r
++		GER = 100\r
++		CGX = 90 #AOG\r
++		CHC = 90 #Shangqing Tiango\r
++		RUS = 25\r
++		CYN = 20 #Yunnan\r
++		MON = 20\r
++		HOL = 10\r
++		USA = 10\r
++		PRI = -1 #Transmur\r
++		EAF = -1 #Legation Cities\r
++		MAN = -1\r
++		SIA = -1\r
++		POR = -1\r
++	}\r
++}\r
++front = {\r
++	recklessness 		= 2 # 0-3\r
++	distrib_vs_ai 		= op_defensive\r
++	distrib_vs_human 		= op_defensive\r
++\r
++	enemy_reinf_days		= 4\r
++\r
++	panic_ratio_vs_ai		= 2.5\r
++	panic_ratio_vs_human	= 2.5\r
++	base_attack_odds		= 1.333\r
++	min_attack_odds		= 1.1\r
++	max_attack_odds		= 2.5\r
++	reinforce_odds		= 1.2\r
++	withdraw_odds		= 0.75\r
++\r
++	reserve_prop 		= 0.2\r
++\r
++      	passivity = {\r
++		CYN = 100\r
++	}\r
++}\r
++###################################\r
++# Invasions and Naval\r
++###################################\r
++invasion = {\r
++	invasion		= yes\r
++ 	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)\r
++	random		= 0.01	#How big a random range.  (1.0 = 1%)\r
++	coastal		= 0.1	#increase to avoid coastal forts more.\r
++	beach		= 0.1	#higher, avoid worst beaches.\r
++	distance		= 20.0	#higher = avoid long distance.\r
++	pocket		= 20.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
++	island		= 0.1	#prioritise taking pure islands.\r
++	enemy		= 2.0	#higher = much more vary of troops in province.\r
++	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby\r
++	air_base		= 1.5 \r
++      	naval_base 	= 0.1 \r
++      	air_support 	= 3.0 \r
++      	redirect 		= priority\r
++	ignore		= no\r
++\r
++	staging_province = {\r
++		1236 # Changde\r
++		1239 # Erenhot\r
++\r
++	}\r
++	target = {\r
++		1415 = 1000\r
++	}\r
++}\r
++admiral = {\r
++	min_org			=100	# NEW: Percent of org gained back before the unit can leave port\r
++	min_dmg			=28    # NEW: Percent of dmg gained back before the unit can leave port\r
++	return_org 		=60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships\r
++	return_dmg 		=80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships\r
++	min_core_attack_fleets 	= 1		# Minimum amount of attack fleets to defend CORE provinces (default 0)\r
++	num_attack_fleets		= 2 	# ENG/USA default 3, JAP default 2 everyone else is 1\r
++\r
++\r
++ignore = {\r
++\r
++# Mediterranean\r
++"Adriatic Sea"\r
++"Aegean Sea"\r
++"Black Sea"\r
++"Tyrrhenian Sea"\r
++"Costa del Sol"\r
++"Algerian Coast"\r
++"Egyptian Coast"\r
++"Gulf of Lyon"\r
++\r
++\r
++# Caribbean\r
++"Yucatan Strait"\r
++"Central Carribean"\r
++"Windward Islands"\r
++"West Gulf of Mexico"\r
++"East Gulf of Mexico"\r
++"Florida Strait"\r
++\r
++# Baltic Sea\r
++"Bothnian Bay"\r
++"Northern Baltic"\r
++"Southern Baltic"\r
++\r
++\r
++# North Sea\r
++"Kattegat"\r
++"English Channel"\r
++"Southeast Northsea"\r
++"West Northsea"\r
++"Central Northsea"\r
++"Norwegian Sea"\r
++"Western Approaches"\r
++"Greenland Coast"\r
++"Faroes Gap"\r
++"North Atlantic"\r
++"Bay of Biscay"\r
++"Azores"\r
++"Portugese Coast"\r
++"Cap St Vincent"\r
++"Cape Finisterre"\r
++"Irish West Coast"\r
++"The Hebreides"\r
++\r
++# North Atlantic\r
++"Barents Sea"\r
++"Irish Sea"\r
++"Denmark Strait"\r
++"Central Atlantic"\r
++"Hudson Bay"\r
++"Bermuda Triangle"\r
++"Northern Sea of Labrador"\r
++"Southern Sea of Labrador"\r
++"Grand Banks"\r
++"The Seamounts"\r
++"Canadian Maritimes"\r
++"US Maritimes"\r
++"Central Mid-Atlantic Ridge"\r
++"East North Sea"\r
++"Arctic Ocean"\r
++\r
++# South Atlantic\r
++"Coast of Brazil"\r
++"Cap Verde"\r
++"Gulf of Guinea"\r
++"Coast of Africa"\r
++"Coast of Bissao"\r
++"Guiana Basin"\r
++"South-Central Mid-Atlantic Ridge"\r
++"Atlantic-Indian Ridge"\r
++"Coast of South Africa"\r
++"Coast of Angola-Namibia"\r
++"Angola Plain"\r
++"Argentine Plain"\r
++"Coast of Argentina"\r
++"Coast of Uruguay"\r
++"Coast of Guyana"\r
++"Coast of Recife"\r
++"Pernambuco Plain"\r
++"Ascension Fracture Zone"\r
++	}\r
++\r
++	target = {\r
++		2518 = 200\r
++		2517 = 200\r
++		2515 = 200\r
++		2516 = 150\r
++		2523 = 100\r
++		2524 = 100\r
++	}\r
++	core = {\r
++		2491\r
++		2492\r
++		2489\r
++		2497\r
++		2498\r
++		2494\r
++		2515\r
++	}\r
++	base = { 1553 }\r
+ }
+\ No newline at end of file

@@ -1,0 +1,70 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Sweden_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Sweden_events.txt [cp932]
+@@ -594,7 +594,7 @@ event = {
+ 	command = { type = remove_division which = "マルクス統一党闘争隊" value = SWE }\r
+ 	command = { type = remove_division which = "労働運動資料保存会武装警備隊" value = SWE }\r
+ 	command = { type = strength which = militia when = 0 where = 1 value = 0.0 }\r
+-	command = { type = sleepevent which = 2198012 }\r
++	command = { type = sleepevent which = 2198013 }\r
+ 	}	\r
+ }\r
+ \r
+@@ -1046,7 +1046,7 @@ event = {
+ 		command = { type = supplies value = 2500 }\r
+ 		command = { type = add_division value = militia when = 5 }\r
+ 		command = { type = add_division value = militia when = 5 }\r
+-		command = { type = add_division which = "ドイツ義勇装甲軍団「ヴァルキリア」" value = d_01 when = 0 }\r
++		command = { type = add_division which = "ドイツ義勇装甲軍団「ヴァルキリア」" value = armor when = 0 }\r
+ 		command = { type = add_division which = "ドイツ義勇歩兵師団「エインヘリヤル」" value = infantry when = 7 }\r
+ 		command = { type = add_division which = "ドイツ義勇歩兵師団「ムースペッル」" value = infantry when = 7 }\r
+ 		command = { type = add_division which = "ドイツ義勇戦闘隊「ガルム」" value = interceptor when = 5 }\r
+@@ -1822,8 +1822,8 @@ event = {
+ 		}\r
+ 	}\r
+ \r
+-	name = "EVT_2198112_NAME"\r
+-	desc = "EVT_2198112_DESC"\r
++	name = "EVT_2198107_NAME"\r
++	desc = "EVT_2198107_DESC"\r
+ 	style = 2\r
+ 	picture = "scw"\r
+ \r
+@@ -1838,4 +1838,37 @@ event = {
+ 		command = { type = gain_tech which = -2 } \r
+ 		command = { type = money value = 250 }\r
+ 	}\r
++}\r
++\r
++event = {\r
++	id = 2198121\r
++	random = no\r
++	country = FIN\r
++\r
++	trigger = {\r
++	region = { region ="Sweden" country = FIN data = 2 value = 1 }\r
++	region = { region ="Norway" country = FIN data = 2 value = 1 }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_2198121_NAME"\r
++	desc = "EVT_2198121_DESC"\r
++	style = 2\r
++	picture = "scw"\r
++\r
++	date = { day = 0 month = 3 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action_a = {\r
++		name = "ACTION_NAME_OK" \r
++		command = { type = secederegion which = SWE value = "Sweden" when = 0 }\r
++		command = { type = secederegion which = NOR value = "Norway" when = 0 }\r
++		ai_chance = 100\r
++	}\r
++	action_b = {\r
++		name = "ACTION_NAME_REFUSE" \r
++		command = { }\r
++		ai_chance = 0\r
++	}\r
+ }
+\ No newline at end of file

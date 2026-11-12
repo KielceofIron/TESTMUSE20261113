@@ -1,0 +1,93 @@
+--- A/db/events/germany.txt [cp932]
++++ B/db/events/germany.txt [cp932]
+@@ -337,7 +337,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action = {\r
+-		name = EVT_71_ACTA\r
++		name = "協定を結ぶ"\r
+ 		command = { type = domestic which = freedom value = -1 }\r
+ 		command = { type = domestic which = interventionism value = 1 }\r
+ 		command = { type = relation which = SOV value = -50 }\r
+@@ -357,7 +357,7 @@ event = {
+ 	country = ITA\r
+ \r
+ 	decision = {\r
+-		event = 2003007\r
++		#event = 2003007\r
+ 		exists = GER\r
+ 		exists = SOV\r
+ 		NOT = {\r
+@@ -481,8 +481,7 @@ event = {
+ 	country = AUS\r
+ \r
+ 	trigger = {\r
+-		#OR = { random = 4 AND = { random = 55 year = 1938 } year = 1939 }\r
+-		OR = { random = 45 AND = { random = 55 year = 1938 } year = 1939 }\r
++		OR = { random = 4 AND = { random = 55 year = 1938 } year = 1939 }\r
+ 		OR = {\r
+ 			#AND = {\r
+ 			#	NOT = { guarantee = { country = ITA country = AUS } }\r
+@@ -552,7 +551,7 @@ event = {
+ 	save_date = yes\r
+ 	country = GER\r
+ 	\r
+-	decision = { year = 1937 }\r
++	decision = { year = 1938 }\r
+ 	\r
+ 	decision_trigger = {\r
+ 		event = 2003009\r
+@@ -568,7 +567,7 @@ event = {
+ 					#relation = { which = AUS value = 200 }\r
+ 					relation = { which = AUS value = 150 } # 追加\r
+ 				}\r
+-				event = 2003008 \r
++				#event = 2003008 \r
+ 			}\r
+ 		}\r
+ 	}\r
+@@ -584,7 +583,7 @@ event = {
+ 				flag = Anschluss\r
+ 				alliance = { country = GER country = AUS }\r
+ 			}\r
+-			event = 2003008 # 追加\r
++			#event = 2003008\r
+ 		}\r
+ 	}\r
+ 	\r
+@@ -595,7 +594,7 @@ event = {
+ 	decision_picture = "decision_anschluss"\r
+ 	decision_desc = "EVT_2001_DESC_DECISION"\r
+ \r
+-	date = { day = 0 month = march year = 1936 }\r
++	date = { day = 0 month = february year = 1938 }\r
+ 	offset = 15\r
+ 	deathdate = { day = 12 month = march year = 1966 }\r
+ 	\r
+@@ -820,6 +819,7 @@ event = {
+ 		flag = Munich\r
+ 		atwar = no\r
+ 		exists = CZE\r
++		event = 2003010\r
+ 		OR = {\r
+ 			control = { province = 197 data = CZE }\r
+ 			control = { province = 205 data = CZE }\r
+@@ -836,7 +836,8 @@ event = {
+ 		}		\r
+ 		OR = { \r
+ 			year = 1939 		\r
+-			random = 10 \r
++			random = 10\r
++			event = 2003010\r
+ 			AND = { \r
+ 				month = september \r
+ 				year = 1938 \r
+@@ -858,7 +859,7 @@ event = {
+ 	picture = "Munich"\r
+ 	decision_picture = "decision_Munich"\r
+ \r
+-	date = { day = 0 month = january year = 1936 }\r
++	date = { day = 0 month = february year = 1938 }\r
+ 	offset = 10\r
+ 	deathdate = { day = 12 month = march year = 1966 }\r
+ \r

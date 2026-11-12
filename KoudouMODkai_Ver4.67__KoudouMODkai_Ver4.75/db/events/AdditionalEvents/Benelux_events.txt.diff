@@ -1,0 +1,25 @@
+--- A/db/events/AdditionalEvents/Benelux_events.txt [cp932]
++++ B/db/events/AdditionalEvents/Benelux_events.txt [cp932]
+@@ -2008,10 +2008,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		name = "EVT_362_ACTC"\r
+-		command = { trigger = { headofstate = 9545001 } type = headofstate which = 9545137 } # Queen Juliana\r
+-		command = { trigger = { headofstate = 9545011 } type = headofstate which = 9545137 } # Queen Juliana\r
+-		command = { trigger = { headofstate = 9545174 } type = headofstate which = 9545137 } # Queen Juliana\r
+-		command = { trigger = { headofstate = 9545175 } type = headofstate which = 9545137 } # Queen Juliana\r
++		command = { trigger = { OR = { headofstate = 9545001 headofstate = 9545011 headofstate = 9545174 headofstate = 9545175 } } type = headofstate which = 9545137 } # Queen Juliana\r
+ 		command = { trigger = { headofstate = 9545135 } type = headofstate which = 9545136 } # Queen Juliana\r
+ 		command = { type = sleepminister which = 9545001 }\r
+ 		}\r
+@@ -2048,8 +2045,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		name = "EVT_362_ACTC"\r
+-		command = { trigger = { headofstate = 9546001 } type = headofstate which = 9546012 }\r
+-		command = { trigger = { headofstate = 9546087 } type = headofstate which = 9546012 }\r
++		command = { trigger = { OR = { headofstate = 9546001 \r
++									   headofstate = 9546087 } } type = headofstate which = 9546012 }\r
+ 		command = { trigger = { headofstate = 9546114 } type = headofstate which = 9546115 }\r
+ 		command = { type = dissent value = -1 }\r
+ 		}\r

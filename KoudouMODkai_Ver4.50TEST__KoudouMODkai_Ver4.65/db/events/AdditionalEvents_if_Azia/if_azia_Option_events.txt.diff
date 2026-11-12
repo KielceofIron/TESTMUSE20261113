@@ -1,0 +1,695 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Option_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Option_events.txt [cp932]
+@@ -12,6 +12,17 @@
+ #id = 8761105 Option ― 日本のルート分岐\r
+ #id = 8761106 Option ― 日本ルートの細部分岐\r
+ #id = 8761107 Option ― 日本右派独裁のルート分岐\r
++#id = 8761108 Option ― 中国のルート分岐\r
++#id = 8761109 Option ― 中国国民党のルート分岐\r
++#id = 8761110 Option ― 中国共産党のルート分岐\r
++#id = 8761111 Option ― 北京政府（安徽派）のルート分岐\r
++#id = 8761112 Option ― 北京政府（直隷派）のルート分岐\r
++#id = 8761113 Option ― 北京政府のルート分岐\r
++#id = 8761114 Option ― 中国軍閥のルート分岐\r
++#id = 8761115 Option ― 山西軍閥のルート分岐\r
++#id = 8761116 Option ― 雲南軍閥のルート分岐\r
++#id = 8761117 Option ― 両広軍閥のルート分岐\r
++#id = 8761118 Option ― 軍閥統一戦線のルート分岐\r
+ #########################################################################\r
+ #  Optionイベント\r
+ #########################################################################\r
+@@ -26,6 +37,10 @@ event = {
+ 	country = -1\r
+ \r
+ 	decision = {\r
++	NOT = {\r
++	country = UER\r
++	country = SOV\r
++	}\r
+ 	ai = no # AI操作でない\r
+ 	}\r
+ \r
+@@ -45,7 +60,7 @@ event = {
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 45\r
+-	deathdate = { day = 29 month = 11 year = 1933 }\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
+ \r
+ 	action = { # 右派独裁を選択する\r
+ 	name = "ACTIONNAME8761101A"\r
+@@ -202,6 +217,10 @@ event = {
+ 	country = -1\r
+ \r
+ 	decision = {\r
++	NOT = {\r
++	country = UER\r
++	country = SOV\r
++	}\r
+ 	ai = no # AI操作でない\r
+ 	flag = Russia_fascist # 右派独裁を選択する\r
+ 	NOT = { flag = Russia_fascist_6 } # ウンゲルン・ルートを選択していない\r
+@@ -225,7 +244,7 @@ event = {
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 45\r
+-	deathdate = { day = 29 month = 11 year = 1933 }\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
+ \r
+ 	action = { # キリル大公（帝政）・ルート\r
+ 	name = "ACTIONNAME8761103A"\r
+@@ -392,6 +411,9 @@ event = {
+ 	country = -1\r
+ \r
+ 	decision = {\r
++	NOT = {\r
++	country = JAP\r
++	}\r
+ 	ai = no # AI操作でない\r
+ 	}\r
+ \r
+@@ -411,7 +433,7 @@ event = {
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 45\r
+-	deathdate = { day = 29 month = 11 year = 1933 }\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
+ \r
+ 	action = { # 右派独裁を選択する\r
+ 	name = "ACTIONNAME8761105A"\r
+@@ -596,3 +618,614 @@ event = {
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
++\r
++#########################################################################\r
++#  Option ― 中国のルート分岐\r
++# このディシジョンは、架空世界における中国が多くの分岐を抱えているため、特定のルートを選べるようにするものです。\r
++# 何かおかしいと感じましたらご一報ください。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761108\r
++	random = no\r
++	country = -1\r
++	persistent = yes\r
++\r
++	decision = {\r
++	NOT = {\r
++	country = CHI\r
++	country = CHC\r
++	country = UCH\r
++	country = U74\r
++	}\r
++	NOT = {\r
++	AND = {\r
++	flag = China_nationalist # 中国国民党のルート分岐を選択する\r
++	flag = China_communist # 中国共産党のルート分岐を選択する\r
++	flag = China_anhui # 北京政府（安徽派）のルート分岐を選択する\r
++	flag = China_zhili # 北京政府（直隷派）のルート分岐を選択する\r
++	}\r
++	}\r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	decision_trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	name = "EVT_8761108_NAME"\r
++	desc = "EVT_8761108_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	decision_picture = "decision_diplomatic_campaign"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 45\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
++\r
++	action = { # 中国国民党のルート分岐を選択する\r
++	name = "ACTIONNAME8761108A"\r
++	trigger = {\r
++	NOT = {\r
++	flag = China_nationalist # 中国国民党のルート分岐を選択する\r
++	event = 6959201 # 国民党臨時国民大会\r
++	}\r
++	}\r
++	command = { type = setflag which = China_nationalist }\r
++	command = { type = event which = 8761109 where = -1 when = 0 } # \r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 中国共産党のルート分岐を選択する\r
++	name = "ACTIONNAME8761108B"\r
++	trigger = {\r
++	NOT = {\r
++	flag = China_communist # 中国共産党のルート分岐を選択する\r
++	event = 6959301 # 中央評議会の開催\r
++	}\r
++	}\r
++	command = { type = setflag which = China_communist }\r
++	command = { type = event which = 8761110 where = -1 when = 0 } # \r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 北京政府（安徽派）のルート分岐を選択する\r
++	name = "ACTIONNAME8761108C"\r
++	trigger = {\r
++	NOT = {\r
++	flag = China_anhui # 北京政府（安徽派）のルート分岐を選択する\r
++	event = 6959404 # 段祺瑞の失脚\r
++	}\r
++	}\r
++	command = { type = setflag which = China_anhui }\r
++	command = { type = event which = 8761111 where = -1 when = 0 } # \r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 北京政府（直隷派）のルート分岐を選択する\r
++	name = "ACTIONNAME8761108D"\r
++	trigger = {\r
++	NOT = {\r
++	flag = China_zhili # 北京政府（直隷派）のルート分岐を選択する\r
++	event = 6959501 # 北京政変\r
++	}\r
++	}\r
++	command = { type = setflag which = China_zhili }\r
++	command = { type = event which = 8761112 where = -1 when = 0 } # \r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # このディシジョンは必要ない\r
++	name = "ACTIONNAME8761108E"\r
++	command = { type = sleepevent which = 8761108 } # Option ― 中国のルート分岐\r
++	command = { type = sleepevent which = 8761109 } # Option ― 中国国民党のルート分岐\r
++	command = { type = sleepevent which = 8761110 } # Option ― 中国共産党のルート分岐\r
++	command = { type = sleepevent which = 8761111 } # Option ― 北京政府（安徽派）のルート分岐\r
++	command = { type = sleepevent which = 8761112 } # Option ― 北京政府（直隷派）のルート分岐\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 中国国民党のルート分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761109\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761109_NAME"\r
++	desc = "EVT_8761109_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # 宋子文派ルート\r
++	name = "ACTIONNAME8761109A"\r
++	command = { type = setflag which = China_nationalist_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 孔祥煕派ルート\r
++	name = "ACTIONNAME8761109B"\r
++	command = { type = setflag which = China_nationalist_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 国際派ルート\r
++	name = "ACTIONNAME8761109C"\r
++	command = { type = setflag which = China_nationalist_3 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 中国青年党ルート\r
++	name = "ACTIONNAME8761109D"\r
++	command = { type = setflag which = China_nationalist_4 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # CC団ルート\r
++	name = "ACTIONNAME8761109E"\r
++	command = { type = setflag which = China_nationalist_5 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 藍衣社ルート\r
++	name = "ACTIONNAME8761109F"\r
++	command = { type = setflag which = China_nationalist_6 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  Option ― 中国共産党のルート分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761110\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761110_NAME"\r
++	desc = "EVT_8761110_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # 王明ルート\r
++	name = "ACTIONNAME8761110A"\r
++	command = { type = setflag which = China_communist_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 陳独秀ルート\r
++	name = "ACTIONNAME8761110B"\r
++	command = { type = setflag which = China_communist_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 軍部独裁ルート\r
++	name = "ACTIONNAME8761110C"\r
++	command = { type = setflag which = China_communist_3 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 北京政府（安徽派）のルート分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761111\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761111_NAME"\r
++	desc = "EVT_8761111_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # 徐樹錚ルート\r
++	name = "ACTIONNAME8761111A"\r
++	command = { type = setflag which = China_anhui_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # キン雲鵬ルート\r
++	name = "ACTIONNAME8761111B"\r
++	command = { type = setflag which = China_anhui_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 傅良佐ルート\r
++	name = "ACTIONNAME8761111C"\r
++	command = { type = setflag which = China_anhui_3 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 呉光新ルート\r
++	name = "ACTIONNAME8761111D"\r
++	command = { type = setflag which = China_anhui_3 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  Option ― 北京政府（直隷派）のルート分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761112\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761112_NAME"\r
++	desc = "EVT_8761112_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # 呉佩孚ルート\r
++	name = "ACTIONNAME8761112A"\r
++	command = { type = setflag which = China_zhili_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 孫伝芳ルート\r
++	name = "ACTIONNAME8761112B"\r
++	command = { type = setflag which = China_zhili_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 曹コンルート\r
++	name = "ACTIONNAME8761112C"\r
++	command = { type = setflag which = China_zhili_3 }\r
++	ai_chance = 0\r
++	}\r
++\r
++\r
++	action = { # 斉燮元ルート\r
++	name = "ACTIONNAME8761112D"\r
++	command = { type = setflag which = China_zhili_4 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 北京政府のルート分岐\r
++# このディシジョンは、架空世界における中国が多くの分岐を抱えているため、特定のルートを選べるようにするものです。\r
++# 何かおかしいと感じましたらご一報ください。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761113\r
++	random = no\r
++	country = -1\r
++\r
++	decision = {\r
++	NOT = {\r
++	country = UCH\r
++	country = U74\r
++	}\r
++	NOT = {\r
++	event = 6959504 # 安徽軍閥・直隷派の対立の調停\r
++	event = 6959511 # 天津会議\r
++	}\r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	decision_trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	name = "EVT_8761113_NAME"\r
++	desc = "EVT_8761113_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	decision_picture = "decision_diplomatic_campaign"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 45\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
++\r
++	action = { # 直隷派主導の北京政府ルート\r
++	name = "ACTIONNAME8761113A"\r
++	command = { type = setflag which = China_anhui_zhili_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 安徽派主導の北京政府ルート\r
++	name = "ACTIONNAME8761113B"\r
++	command = { type = setflag which = China_anhui_zhili_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 北京政府統合失敗ルート\r
++	name = "ACTIONNAME8761113C"\r
++	command = { type = setflag which = China_anhui_zhili_3 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # このディシジョンは必要ない\r
++	name = "ACTIONNAME8761113D"\r
++	command = { type = sleepevent which = 8761113 } # Option ― 北京政府のルート分岐\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 中国軍閥のルート分岐\r
++# このディシジョンは、架空世界における中国が多くの分岐を抱えているため、特定のルートを選べるようにするものです。\r
++# 何かおかしいと感じましたらご一報ください。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761114\r
++	random = no\r
++	country = -1\r
++	persistent = yes\r
++\r
++	decision = {\r
++	NOT = {\r
++	country = CSX\r
++	country = CYN\r
++	country = CGX\r
++	country = CXB\r
++	}\r
++	NOT = {\r
++	AND = {\r
++	flag = china_shanxi # 山西軍閥の分岐を選択\r
++	flag = china_yunan # 雲南軍閥の分岐を選択\r
++	flag = china_guangxi # 両広軍閥の分岐を選択\r
++	}\r
++	}\r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	decision_trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	name = "EVT_8761114_NAME"\r
++	desc = "EVT_8761114_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	decision_picture = "decision_diplomatic_campaign"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 45\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
++\r
++	action = { # 山西軍閥の分岐を選択\r
++	name = "ACTIONNAME8761114A"\r
++	trigger = { \r
++	NOT = { flag = china_shanxi }\r
++	}\r
++	command = { type = setflag which = china_shanxi }\r
++	command = { type = event which = 8761115 where = -1 when = 0 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 雲南軍閥の分岐を選択\r
++	name = "ACTIONNAME8761114B"\r
++	trigger = { \r
++	NOT = { flag = china_yunan }\r
++	}\r
++	command = { type = setflag which = china_yunan }\r
++	command = { type = event which = 8761116 where = -1 when = 0 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 両広軍閥の分岐を選択\r
++	name = "ACTIONNAME8761114C"\r
++	trigger = { \r
++	NOT = { flag = china_guangxi }\r
++	}\r
++	command = { type = setflag which = china_guangxi }\r
++	command = { type = event which = 8761117 where = -1 when = 0 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # このディシジョンは必要ない\r
++	name = "ACTIONNAME8761114D"\r
++	trigger = { \r
++	OR = { \r
++	NOT = { flag = china_shanxi }\r
++	NOT = { flag = china_yunan }\r
++	NOT = { flag = china_guangxi }\r
++	}\r
++	}\r
++	command = { type = sleepevent which = 8761114 } # Option ― 中国軍閥のルート分岐\r
++	command = { type = sleepevent which = 8761115 } # Option ― 山西軍閥のルート分岐\r
++	command = { type = sleepevent which = 8761116 } # Option ― 雲南軍閥のルート分岐\r
++	command = { type = sleepevent which = 8761117 } # Option ― 両広軍閥のルート分岐\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 山西軍閥のルート分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761115\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761115_NAME"\r
++	desc = "EVT_8761115_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # 閻錫山（通常）ルート\r
++	name = "ACTIONNAME8761115A"\r
++	command = { type = setflag which = china_shanxi_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 閻錫山（共和）ルート\r
++	name = "ACTIONNAME8761115B"\r
++	command = { type = setflag which = china_shanxi_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 閻錫山反対派ルート\r
++	name = "ACTIONNAME8761115C"\r
++	command = { type = setflag which = china_shanxi_3 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 雲南軍閥のルート分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761116\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761116_NAME"\r
++	desc = "EVT_8761116_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # 唐継尭ルート\r
++	name = "ACTIONNAME8761116A"\r
++	command = { type = setflag which = china_yunan_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 龍雲（通常）ルート\r
++	name = "ACTIONNAME8761116B"\r
++	command = { type = setflag which = china_yunan_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 龍雲（護国軍）ルート\r
++	name = "ACTIONNAME8761116C"\r
++	command = { type = setflag which = china_yunan_3 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 両広軍閥のルート分岐\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761117\r
++	random = no\r
++	country = -1\r
++\r
++	name = "EVT_8761117_NAME"\r
++	desc = "EVT_8761117_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++\r
++	action = { # 李宗仁ルート\r
++	name = "ACTIONNAME8761117A"\r
++	command = { type = setflag which = china_guangxi_1 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 陳済棠ルート\r
++	name = "ACTIONNAME8761117B"\r
++	command = { type = setflag which = china_guangxi_2 }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 聯省自治派ルート\r
++	name = "ACTIONNAME8761117C"\r
++	command = { type = setflag which = china_guangxi_3 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  Option ― 軍閥統一戦線のルート分岐\r
++# このディシジョンは、架空世界における中国が多くの分岐を抱えているため、特定のルートを選べるようにするものです。\r
++# 何かおかしいと感じましたらご一報ください。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 8761118\r
++	random = no\r
++	country = -1\r
++\r
++	decision = {\r
++	NOT = {\r
++	country = CSX\r
++	country = CYN\r
++	country = CGX\r
++	country = CXB\r
++	}\r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	decision_trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	trigger = { \r
++	ai = no # AI操作でない\r
++	}\r
++\r
++	name = "EVT_8761118_NAME"\r
++	desc = "EVT_8761118_DESC"\r
++	style = 2\r
++	picture = "diplomatic_campaign"\r
++	decision_picture = "decision_diplomatic_campaign"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 45\r
++	deathdate = { day = 29 month = 3 year = 1933 }\r
++\r
++	action = { # 山西軍閥主導の統一戦線ルート\r
++	name = "ACTIONNAME8761118A"\r
++	command = { type = setflag which = china_warlord_alliance_shanxi }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 雲南軍閥主導の統一戦線ルート\r
++	name = "ACTIONNAME8761118B"\r
++	command = { type = setflag which = china_warlord_alliance_yunan }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 両広軍閥主導の統一戦線ルート\r
++	name = "ACTIONNAME8761118C"\r
++	command = { type = setflag which = china_warlord_alliance_guangxi }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 西北三馬主導の統一戦線ルート\r
++	name = "ACTIONNAME8761118D"\r
++	command = { type = setflag which = china_warlord_alliance_xibei }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # 統一戦線非結成ルート\r
++	name = "ACTIONNAME8761118E"\r
++	command = { type = setflag which = china_warlord_alliance_no }\r
++	ai_chance = 0\r
++	}\r
++\r
++	action = { # このディシジョンは必要ない\r
++	name = "ACTIONNAME8761118F"\r
++	command = { type = sleepevent which = 8761118 } # Option ― 軍閥統一戦線のルート分岐\r
++	ai_chance = 0\r
++	}\r
++}
+\ No newline at end of file

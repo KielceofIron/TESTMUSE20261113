@@ -1,0 +1,186 @@
+--- A/db/events/Yokoyama_events/ITA_Allies.txt [utf-8]
++++ B/db/events/Yokoyama_events/ITA_Allies.txt [utf-8]
+@@ -14,6 +14,9 @@
+ ###### ムッソリーニの後継者イベント ############\r
+ #id = 9221101 ファシストの継承者\r
+ #id = 9221102 ファシストの追放\r
++###### 西オーストラリアイベント ############\r
++#id = 9231001 西オーストラリア分離主義運動\r
++#id = 9231003 西オーストラリア分離主義運動の達成\r
+ ##########################################################################\r
+ #  アルバニア侵攻の断念\r
+ # イタリア統一運動より長らく、アルバニア地方はイタリアにとっての地政学上の戦略的要地で有り続けた。\r
+@@ -524,4 +527,172 @@ event = {
+ 	command = { type = sleepminister which = 25256 }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++##########################################################################\r
++#  西オーストラリア分離主義運動\r
++# 1901年、事実上のイギリスからの独立であったオーストラリア連邦成立直後から、西オーストラリアでは分離主義運動が巻き起こっていた。\r
++# 彼らは東部オーストラリアなどの人口が多い州と比べて、西オーストラリア州が予算や待遇面で不利な扱い、もしくは無視されていると主張した。\r
++# また西オーストラリア州では20世紀初頭にゴールドラッシュによる金から生み出された富による繁栄が終わり、経済が再び羊毛と小麦に依存するようになったため、\r
++# 大恐慌で羊毛と小麦の価格が劇的に下落すると、州の経済が崩壊、分離主義運動に拍車をかけた。\r
++# 1930年、新聞記者のジェームズ・マッカラム・スミスが分離主義者であった政治家のキース・ワトソンと『自治領連盟（英:Dominion League）』を結成し、キャンペーンを開始。\r
++# 運動は拡大し続け、1933年4月8日、州議会選挙と並行して脱退に関する国民投票が行われた。\r
++# 有権者の68％が脱退に賛成票を投じたが、熱心な連邦主義者が住む鉱山地区の有権者は反対票を投じた。\r
++# 選挙結果を受けて西オーストラリア分離主義者は、イギリスの議会に対して交渉を持ち掛けたが、18ヶ月にわたる交渉の末、イギリス議会は脱退を認めることを拒否。\r
++# この交渉の失敗と経済復興の結果として、この分離主義運動は徐々に支持を失い、1938年には自然消滅した。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 9231001\r
++	random = no\r
++	country = AST\r
++\r
++	trigger = {\r
++	area = { area = "Perth" country = AST data = 1 value = 70 }\r
++	government = democratic\r
++	atwar = no\r
++	}\r
++\r
++	name = EVT_9231001_NAME\r
++	desc = EVT_9231001_DESC\r
++	style = 2\r
++	picture = "Secessionism_Western_Australia"\r
++\r
++	date = { day = 7 month = 3 year = 1933 }\r
++\r
++	action = { # 独立は拒否された\r
++	name = "ACTIONNAME9231001A"\r
++	trigger = { NOT = { dissent = 20 } }\r
++	command = { type = dissent value = 1 }\r
++	command = { type = relation which = ENG value = -5 }\r
++	ai_chance = 95\r
++	}\r
++\r
++	action = { # 分離主義運動が成功した\r
++	name = "ACTIONNAME9231001B"\r
++	trigger = { dissent = 20 }\r
++	command = { type = dissent value = 5 }\r
++	command = { type = relation which = ENG value = -20 }\r
++	command = { type = independence which = UC9 value = 1 when = 0 }\r
++	command = { type = secedeprovince which = UC9 value = 1688 }\r
++	command = { type = secedeprovince which = UC9 value = 1689 }\r
++	command = { type = secedeprovince which = UC9 value = 1690 }\r
++	command = { type = secedeprovince which = UC9 value = 1691 }\r
++	command = { type = secedeprovince which = UC9 value = 1692 }\r
++	command = { type = secedeprovince which = UC9 value = 1693 }\r
++	command = { type = secedeprovince which = UC9 value = 1694 }\r
++	command = { type = secedeprovince which = UC9 value = 1695 }\r
++	command = { type = secedeprovince which = UC9 value = 1698 }\r
++	command = { type = domestic which = democratic value = 1 }\r
++	command = { type = domestic which = defense_lobby value = -1 }\r
++	command = { type = event which = 9231002 where = ENG when = 0 }\r
++	command = { type = event which = 9231003 where = UC9 when = 0 }\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 9231002\r
++	random = no\r
++	country = AST\r
++\r
++	name = EVT_9231001_NAME\r
++	desc = EVT_9231001_DESC\r
++	style = 2\r
++	picture = "Secessionism_Western_Australia"\r
++\r
++	action = { # なんてこった！\r
++	name = "ACTION_NAME_DAMN"\r
++	command = { type = dissent value = 1 }\r
++	command = { type = relation which = AST value = -15 }\r
++	command = { type = relation which = UC9 value = 15 }\r
++	command = { type = non_aggression which = UC9 where = ENG }\r
++	ai_chance = 95\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  西オーストラリア分離主義運動の達成\r
++# 1901年、事実上のイギリスからの独立であったオーストラリア連邦成立直後から、西オーストラリアでは分離主義運動が巻き起こっていた。\r
++# 彼らは東部オーストラリアなどの人口が多い州と比べて、西オーストラリア州が予算や待遇面で不利な扱い、もしくは無視されていると主張した。\r
++# また西オーストラリア州では20世紀初頭にゴールドラッシュによる金から生み出された富による繁栄が終わり、経済が再び羊毛と小麦に依存するようになったため、\r
++# 大恐慌で羊毛と小麦の価格が劇的に下落すると、州の経済が崩壊、分離主義運動に拍車をかけた。\r
++# 1930年、新聞記者のジェームズ・マッカラム・スミスが分離主義者であった政治家のキース・ワトソンと『自治領連盟（英:Dominion League）』を結成し、キャンペーンを開始。\r
++# 運動は拡大し続け、1933年4月8日、州議会選挙と並行して脱退に関する国民投票が行われた。\r
++# 有権者の68％が脱退に賛成票を投じたが、熱心な連邦主義者が住む鉱山地区の有権者は反対票を投じた。\r
++# 選挙結果を受けて西オーストラリア分離主義者は、オーストラリア連邦からの分離独立を宣言した。\r
++###########################################################################\r
++\r
++\r
++event = {\r
++	id = 9231003\r
++	random = no\r
++	country = AST\r
++\r
++	name = EVT_9231003_NAME\r
++	desc = EVT_9231001_DESC\r
++	style = 2\r
++	picture = "Secessionism_Western_Australia"\r
++\r
++	action = { # 独立万歳！\r
++	name = "ACTIONNAME9231003A"\r
++	command = { type = dissent value = -2 }\r
++	command = { type = alliance which = ENG }\r
++	command = { type = relation which = ENG value = -15 }\r
++	command = { type = relation which = AST value = -15 }\r
++	command = { type = relation which = NZL value = -15 }\r
++	command = { type = relation which = CAN value = -15 }\r
++	command = { type = relation which = U02 value = -15 }\r
++	command = { type = relation which = SAF value = -15 }\r
++	command = { type = non_aggression which = UC9 where = AST }\r
++\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = flag_ext where = UC9 which = "_eng" }\r
++\r
++	command = { type = headofstate which = 268000 } # ウィリアム・カンピオン\r
++	command = { type = headofgovernment which = 268001 } # ジェームズ・ミッチェル\r
++	command = { type = foreignminister which = 268002 } # アルバート・ホーク\r
++	command = { type = armamentminister which = 268036 } # クロード・デ・ベルナレス\r
++	command = { type = ministerofsecurity which = 268014 } # アルバート・ホーク\r
++	command = { type = ministerofintelligence which = 268015 } # ロス・マクラーティ\r
++	command = { type = chiefofstaff which = 268037 } # フレデリック・ベル\r
++	command = { type = chiefofarmy which = 268007 } # チャールズ・ゲアドナー\r
++	command = { type = chiefofnavy which = 268018 } # アディソン\r
++	command = { type = chiefofair which = 268009 } # ジョージ・ピアース\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # コモンウェルスからも離脱する\r
++	name = "ACTIONNAME9231003B"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = end_puppet }\r
++	command = { type = leave_alliance }\r
++	command = { type = end_access which = ENG }\r
++	command = { type = end_access which = AST }\r
++	command = { type = relation which = ENG value = -75 }\r
++	command = { type = relation which = AST value = -75 }\r
++	command = { type = relation which = NZL value = -75 }\r
++	command = { type = relation which = CAN value = -75 }\r
++	command = { type = relation which = U02 value = -75 }\r
++	command = { type = relation which = SAF value = -75 }\r
++	command = { type = domestic which = defense_lobby value = -3 }\r
++	command = { type = domestic which = interventionism value = -3 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 8 }\r
++\r
++	command = { type = headofstate which = 268033 } # ジェームズ・マッカラム・スミス\r
++	command = { type = headofgovernment which = 268029 } # キース・ワトソン\r
++	command = { type = foreignminister which = 268030 } # R・ヒックス\r
++	command = { type = armamentminister which = 268035 } # ジェームズ・マッカラム・スミス\r
++	command = { type = ministerofsecurity which = 268004 } # フィリップ・コリア\r
++	command = { type = ministerofintelligence which = 268025 } # ヒューイー・エドワーズ\r
++	command = { type = chiefofstaff which = 268026 } # ジョージ・ピアース\r
++	command = { type = chiefofarmy which = 268027 } # ジョージ・ピアース\r
++	command = { type = chiefofnavy which = 268027 } # ジョージ・ピアース\r
++	command = { type = chiefofair which = 268019 } # ヒューイー・エドワーズ\r
++\r
++	command = { type = event which = 9231004 where = UC9 when = 180 }\r
++	ai_chance = 50\r
++	}\r
+ }
+\ No newline at end of file

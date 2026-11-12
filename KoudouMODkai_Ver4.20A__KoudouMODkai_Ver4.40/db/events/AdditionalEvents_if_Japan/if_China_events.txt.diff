@@ -1,0 +1,276 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
+@@ -93,7 +93,7 @@ event = {
+ \r
+ 	name = "EVT_1891001_NAME"\r
+ 	desc = "EVT_1891001_DESC"\r
+-	style = 2\r
++	style = 1\r
+ 	picture = "diplomatic_campaign"\r
+ \r
+ 	action = {\r
+@@ -229,9 +229,6 @@ event = {
+ 	command = { trigger = { ai = no }  type = speed which = land value = -4 }\r
+ 	command = { trigger = { ai = yes }  type = speed which = land value = -1 }\r
+ 	command = { type = extra_tc value = -500 }\r
+-      #command = { type = task_efficiency which = attack value = -0.04 }\r
+-      #command = { type = task_efficiency which = support_attack value = -0.04 }\r
+-	command = { type = supply_consumption which = land value = -1 }\r
+ 	#command = { type = task_efficiency which = attack value = -0.2 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = -0.2 when = 1 }\r
+ 	#command = { type = task_efficiency which = strat_redeploy value = -0.2 when = 1 }\r
+@@ -306,10 +303,6 @@ event = {
+ 	command = { trigger = { ai = no NOT = { IC = 15 } } type = money value = -8000 }\r
+ 	command = { trigger = { ai = no }  type = speed which = land value = 4 }\r
+ 	command = { trigger = { ai = yes }  type = speed which = land value = 2 }\r
+-	#command = { type = extra_tc value = 500 }\r
+-     # command = { trigger = { local_flag = mobidoctorine country = CHI } type = build_cost which = land where = relative value = -10 }\r
+-     # command = { trigger = { local_flag = mobidoctorine country = CHI } type = build_time which = land where = relative value = -10 }\r
+-	#command = { type = supply_consumption which = land value = -1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -598,18 +591,16 @@ event = {
+       	command = { type = surprise which = air value = 30 }\r
+       	command = { type = no_supplies_combat_mod which = land value = 0.5 }\r
+       	command = { type = no_fuel_combat_mod which = land value = 0.2 }\r
+-	command = { type = shore_attack which = land value = 67 }\r
+-	command = { type = shore_attack which = cavalry value = 8 }\r
+ 	command = { type = supplies value = 250 where = 1560 }\r
+ 	command = { type = oilpool value = 20 where = 1560 }\r
+-	command = { type = add_corps which = "中華民国日本征討空挺軍" value = land where = 2790 } #6師団\r
++	command = { type = add_corps which = "中華民国日本征討空挺軍" value = land where = 2790 }\r
+ 	command = { type = add_division value = infantry when = 10  }\r
+ 	command = { type = add_division value = infantry when = 10  }\r
+ 	command = { type = add_division value = infantry when = 10  }\r
+ 	command = { type = add_division value = infantry when = 10  }\r
+ 	command = { type = add_division value = infantry when = 10  }\r
+ 	command = { type = add_division value = infantry when = 10  }\r
+-	command = { type = add_corps which = "中華民国日本征討第1方面軍" value = land where = 1560 } #6(12)師団\r
++	command = { type = add_corps which = "中華民国日本征討第1方面軍" value = land where = 1560 }\r
+ 	command = { type = add_division which = "中華民国征討軍司令部" value = hq when = 2 where = engineer }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+@@ -623,7 +614,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { type = add_division which = "総統衛士隊第21師団" value = d_01 when = 0 }\r
+ \r
+-	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第2方面軍" value = land where = 1560 } #1(7)師団\r
++	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第2方面軍" value = land where = 1560 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 8 where = armored_car }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 8 where = armored_car }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = anti_air }\r
+@@ -633,7 +624,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { type = add_division which = "総統衛士隊第22師団" value = d_01 when = 0 }\r
+ \r
+-	command = { type = add_corps which = "中華民国日本征討第3方面軍" value = land where = 2780 } #3(8)師団\r
++	command = { type = add_corps which = "中華民国日本征討第3方面軍" value = land where = 2780 }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = light_armor_brigade }\r
+@@ -643,7 +634,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { type = add_division which = "総統衛士隊第23師団" value = d_01 when = 0 }\r
+ \r
+-	command = { type = add_corps which = "中華民国日本征討陽動第1軍" value = land where = 1559 } #2(7)師団\r
++	command = { type = add_corps which = "中華民国日本征討陽動第1軍" value = land where = 1559 }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = anti_air }\r
+@@ -652,7 +643,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = marine when = 1 }\r
+ \r
+-	command = { type = add_corps which = "中華民国日本征討陽動第2軍" value = land where = 1561 } #2(7)師団 合計14(AI41)師団増加\r
++	command = { type = add_corps which = "中華民国日本征討陽動第2軍" value = land where = 1561 }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = anti_air }\r
+@@ -661,9 +652,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = marine when = 1 }\r
+ \r
+-	command = { trigger = { ai = no } type = demobilize which = infantry when = 0 where = 1 value = -14 } #\r
+-	#command = { trigger = { ai = yes ai = JAP } type = demobilize which = infantry when = 0 where = 1 value = -41 } #\r
+-	command = { trigger = { ai = yes ai = JAP } type = demobilize which = infantry when = 0 where = 1 value = -41 } #\r
++	command = { trigger = { ai = yes } type = demobilize which = infantry when = 0 where = 1 value = -30 }\r
+ 	command = { trigger = { ai = yes } type = ai which = "IFswitch/CHI_Japan.ai" }\r
+   	}\r
+ }\r
+@@ -696,7 +685,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 	name = "ACTIONNAME1891010A"\r
+-	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第4方面軍" value = land where = 1560 } #0(8)師団\r
++	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第4方面軍" value = land where = 1560 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = cavalry_brigade }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = cavalry_brigade }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = anti_air }\r
+@@ -706,7 +695,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第24師団" value = d_01 when = 0 }\r
+ \r
+-	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第5方面軍" value = land where = 1560 } #0(8)師団\r
++	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第5方面軍" value = land where = 1560 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = anti_air }\r
+@@ -716,7 +705,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第25師団" value = d_01 when = 0 }\r
+ \r
+-	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第6方面軍" value = land where = 2780 } #0(8)師団\r
++	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第6方面軍" value = land where = 2780 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = anti_air }\r
+@@ -726,7 +715,7 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "総統衛士隊第26師団" value = d_01 when = 0 }\r
+ \r
+-	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第7方面軍" value = land where = 1551 } #0(8)師団\r
++	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討第7方面軍" value = land where = 1551 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = cavalry when = 7 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = anti_air }\r
+@@ -735,15 +724,15 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 9 where = engineer }\r
+ \r
+-	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討装甲第1軍" value = land where = 1560 } #0(2)師団\r
++	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討装甲第1軍" value = land where = 1560 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = medium_armor }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = medium_armor }\r
+ \r
+-	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討装甲第2軍" value = land where = 2780 } #0(2)師団\r
++	command = { trigger = { ai = yes } type = add_corps which = "中華民国日本征討装甲第2軍" value = land where = 2780 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = medium_armor }\r
+ 	command = { trigger = { ai = yes } type = add_division value = infantry when = 10 where = medium_armor }\r
+ \r
+-	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3001 } #19師団\r
++	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3001 }\r
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3002 }\r
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3003 }\r
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3004 }\r
+@@ -762,7 +751,6 @@ event = {
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3017 }\r
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3018 }\r
+ 	command = { trigger = { flag = CHI_Sado } type = unlock_division which = 22000 value = 3019 }\r
+-	#command = { trigger = { ai = yes ai = JAP } type = demobilize which = infantry when = 0 where = 1 value = -36 } #\r
+   	}\r
+ }\r
+ \r
+@@ -2383,7 +2371,7 @@ event = {
+ 	name = "ACTIONNAME1891018A"\r
+ 	command = { trigger = { ai = yes } type = ai_prepare_war which = JAP }\r
+ 	command = { type = dissent value = -3 }\r
+- 	command = { type = task_efficiency which = amphibious_assault value = 0.35 }\r
++ 	command = { type = task_efficiency which = amphibious_assault value = 0.1 }\r
+       	command = { type = max_amphib_mod value = 20 when = 1 }\r
+ 	command = { type = belligerence which = CHI value = 10 }\r
+ 	command = { type = war which = JAP }\r
+@@ -2546,7 +2534,7 @@ event = {
+ 	alliance = { country = UTC country = CHI }\r
+ 	event = 5951034 # \r
+ 	event = 5951037 # \r
+-	event = 45680024 # ブレスト＝リトフスク条約\r
++	event = 45680037 # ブレスト＝リトフスク条約\r
+ 	}\r
+ 	}\r
+ 	}\r
+@@ -2571,7 +2559,7 @@ event = {
+ 	alliance = { country = UTC country = CHI }\r
+ 	event = 5951034\r
+ 	event = 5951037\r
+-	event = 45680024 # ブレスト＝リトフスク条約\r
++	event = 45680037 # ブレスト＝リトフスク条約\r
+ 	}\r
+ 	}\r
+ 	atwar = no\r
+@@ -2590,7 +2578,7 @@ event = {
+  	picture = "CHI_Tank"\r
+ 	decision_picture = "decision_CHI_Tank"\r
+ \r
+-	date = { day = 0 month = 10 year = 1939 }\r
++	date = { day = 0 month = 0 year = 1939 }\r
+ 	offset = 7\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+@@ -2608,12 +2596,7 @@ event = {
+ 	command = { type = relation which = UTC value = -50 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+-	command = { type = setflag which = CHI_GER_alliance }\r
+-      command = { trigger = { local_flag = mobidoctorine country = CHI } type = urban_defense which = land value = 100 }\r
+-      command = { trigger = { local_flag = mobidoctorine country = CHI } type = mountain_defense which = land value = 40 }\r
+-command = { trigger = { local_flag = mobidoctorine country = CHI } type = mountain_move which = land value = 30 }\r
+-command = { trigger = { local_flag = mobidoctorine country = CHI } type = mountain_attack which = land value = 10 }\r
+-      	}\r
++	}\r
+ }\r
+ \r
+ ##########################################################################\r
+@@ -2853,10 +2836,6 @@ event = {
+       	command = { type = surprise which = air value = -30 }\r
+       	command = { type = no_supplies_combat_mod which = land value = -0.5 }\r
+       	command = { type = no_fuel_combat_mod which = land value = -0.3 }\r
+-	command = { type = shore_attack which = land value = -67 }\r
+-	command = { type = shore_attack which = cavalry value = -8 }\r
+- 	command = { type = task_efficiency which = amphibious_assault value = -0.25 }\r
+-      	command = { type = max_amphib_mod value = -20 when = 1 }\r
+ 	command = { type = add_corps which = "中華民国日本征討増援軍" value = land where = 1556 }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+ 	command = { type = add_division value = infantry when = 10 where = artillery }\r
+@@ -2876,8 +2855,6 @@ event = {
+       	command = { type = surprise which = air value = -30 }\r
+       	command = { type = no_supplies_combat_mod which = land value = -0.5 }\r
+       	command = { type = no_fuel_combat_mod which = land value = -0.3 }\r
+- 	command = { type = task_efficiency which = amphibious_assault value = -0.25 }\r
+-      	command = { type = max_amphib_mod value = -20 when = 1 }\r
+ 	command = { type = add_corps which = "中華民国日本征討空挺軍" value = land where = 1553 }\r
+ 	command = { type = add_division value = paratrooper when = 0 where = glider_armor }\r
+ 	command = { type = add_division value = paratrooper when = 0 where = glider_artillery }\r
+@@ -3590,7 +3567,6 @@ event = {
+ 	command = { trigger = { ai = yes } type = activate_division which = 22000 value = 9019 where = 1299 when = 0 }\r
+ 	command = { trigger = { ai = yes } type = add_corps which = "青海20号" value = air where = 1299 }\r
+ 	command = { trigger = { ai = yes } type = activate_division which = 22000 value = 9020 where = 1299 when = 0 }\r
+-	\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -4119,7 +4095,6 @@ event = {
+ 	command = { type = belligerence which = CHI value = 5 }\r
+ 	command = { type = relation which = JAP value = -50 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+-	command = { trigger = { ai = JAP NOT = { ai = CHI } } type = demobilize which = infantry when = 0 where = 1 value = -19 } #\r
+ \r
+ 	command = { type = add_corps which = "特別軍区" value = land where = 2789 }\r
+ 	command = { type = activate_division which = 22000 value = 3001 where = 2789 when = 1 }\r
+@@ -5420,7 +5395,7 @@ event = {
+ 	\r
+ 	name = "EVT_1891070_NAME"\r
+ 	desc = "EVT_1891070_DESC"\r
+-	style = 2\r
++	style = 1\r
+  	picture = "Convoys"\r
+ \r
+ 	action = { # これは自衛のための行動だ！\r
+@@ -5477,7 +5452,7 @@ event = {
+ 	\r
+ 	name = "EVT_1891072_NAME"\r
+ 	desc = "EVT_1891071_DESC"\r
+-	style = 2\r
++	style = 1\r
+  	picture = "Convoys"\r
+ \r
+ 	action_a = { # もはや日本は張子の虎だな\r
+@@ -5493,7 +5468,7 @@ event = {
+ 	\r
+ 	name = "EVT_1891073_NAME"\r
+ 	desc = "EVT_1891073_DESC"\r
+-	style = 2\r
++	style = 1\r
+  	picture = "Convoys"\r
+ \r
+ 	action_a = { # おのれ！\r

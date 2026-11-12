@@ -1,0 +1,110 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_USA_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_USA_events.txt [cp932]
+@@ -186,7 +186,7 @@ event = {
+ 	name = "EVT_1299000_NAME"\r
+ 	desc = "EVT_1299000_DESC"\r
+ 	style = 2\r
+-	picture = ""\r
++	picture = "USA_IFJAPAN"\r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 1\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+@@ -5212,7 +5212,7 @@ event = {
+ \r
+ 	action = { # 「今や北米は一大戦場となり果てた！」人民戦争理論序文より\r
+ 	name = "ACTIONNAME1299133A"\r
+-	command = { type = add_leader_skill which = 905317 value = 1 }\r
++	command = { type = add_leader_skill which = 240250 value = 1 }\r
+ 	command = { type = sleepleader which = 240250 }\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -6704,6 +6704,89 @@ event = {
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
++\r
++\r
++#########################################################################\r
++#  アメリカ内戦の終結（USA優勢）\r
++# 大英帝国の降伏に伴い、マッカーサー率いる\r
++# アメリカ合衆国の優勢で推移しつつあった北米戦争（英側名称：「英領北アメリカ内戦」）は終結し、\r
++# 独米両政府の協議の結果、カナダはプリンスエドワード島、ニューファンドランドをドイツに\r
++# オタワ川以東をドイツ傀儡政権のケベックに割譲、合衆国はサン・フアン国境紛争(1923)に獲得した領土に加え、\r
++# ロッキー山脈以西の地域とニューブランズウィック州、ノヴァスコシア州の大陸部分を獲得することとなった。\r
++########################################################################\r
++event = {\r
++	id = 1299143\r
++	random = no	\r
++	country = GER\r
++	\r
++	trigger = {\r
++	flag = CAN_ACW\r
++	alliance ={ country = CAN }\r
++	exists = USA\r
++	NOT = { exists = CSA }\r
++	NOT = { exists = U00 }\r
++	}\r
++	\r
++	name = EVT_1299143_NAME\r
++	desc = EVT_1299143_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 14\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME1299143A"\r
++	command = { type = inherit which = CAN }\r
++	command = { type = addclaim which = 2133 }\r
++	command = { type = addclaim which = 2136 }\r
++	command = { type = addclaim which = 2137 }\r
++	command = { type = addclaim which = 2138 }\r
++	command = { trigger = { owned = { province = 2132 data = -3 } } type = secedeprovince which = USA value = 2132 when = 2 }\r
++	command = { trigger = { owned = { province = 2134 data = -3 } } type = secedeprovince which = USA value = 2134 when = 2 }\r
++	command = { trigger = { owned = { province = 2128 data = -3 } } type = secedeprovince which = USA value = 2128 when = 2 }\r
++	command = { trigger = { owned = { province = 2130 data = -3 } } type = secedeprovince which = USA value = 2130 when = 2 }\r
++	command = { trigger = { owned = { province = 2131 data = -3 } } type = secedeprovince which = USA value = 2131 when = 2 }\r
++	command = { type = secedearea which = USA value = "British Columbia" when = 1 }\r
++	command = { type = secedearea which = USA value = "Yukon" when = 1 }\r
++	command = { type = relation which = USA value = 50 }\r
++	command = { type = event which = 1299144 where = USA when = 0 }\r
++	command = { type = independence which = QUE }\r
++	command = { type = make_puppet = QUE }\r
++	command = { type = independence which = CAN }\r
++	command = { type = make_puppet which = CAN }\r
++	command = { type = non_aggression which = USA when = 1080 }\r
++	ai_chance = 100\r
++	}\r
++}	\r
++\r
++event = {\r
++	id = 1299144\r
++	random = no	\r
++	country = USA\r
++	\r
++	\r
++	name = EVT_1299143_NAME\r
++	desc = EVT_1299143_DESC\r
++	style = 2	\r
++	#picture = "picture"	\r
++	\r
++	\r
++	action = { # 	\r
++	name = "ACTIONNAME1299143A"\r
++	command = { type = dissent value = -10 }\r
++	command = { type = add_core_area which = "British Columbia" }\r
++	command = { type = add_core_area which = "Yukon" }\r
++	command = { type = add_core_area which = "New Brunswick" }\r
++	command = { type = add_core_area which = "Nova Scotia" }\r
++	ai_chance = 100\r
++	}\r
++}	\r
++\r
++\r
++\r
++\r
+ ##########################################################################\r
+ #  アメリカ内戦 ― ロシアの介入\r
+ # 1936年、ついにアメリカで社会主義者が蜂起したことをきっかけに内戦が勃発した。\r

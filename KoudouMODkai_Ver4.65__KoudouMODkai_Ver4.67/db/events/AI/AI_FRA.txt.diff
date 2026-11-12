@@ -1,0 +1,128 @@
+--- A/db/events/AI/AI_FRA.txt [ascii]
++++ B/db/events/AI/AI_FRA.txt [ascii]
+@@ -38,8 +38,8 @@ event = {
+ 	deathdate = { day = 29 month = may year = 1948 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/FRA_Poland.ai" }\r
+-		command = { type = ai which = "Air_Strategic.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Poland.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Strategic.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -64,8 +64,8 @@ event = {
+ 	deathdate = { day = 29 month = may year = 1948 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/FRA_Germany.ai" }\r
+-		command = { type = ai which = "Air_Ground.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Germany.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 		command = { type = sleepevent which = 3002005 }\r
+ 	}\r
+ }\r
+@@ -90,8 +90,8 @@ event = {
+ 	deathdate = { day = 29 month = may year = 1948 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/FRA_Free.ai" }\r
+-		command = { type = ai which = "Air_Supremecy.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Free.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Supremecy.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -118,7 +118,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/FRA_GER_Atwar.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_GER_Atwar.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -159,8 +159,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/FRA_Offensive.ai" }\r
+-		command = { type = ai which = "Air_Ground.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Offensive.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -173,7 +173,7 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 		ai = yes\r
+-		war = { country = SOV }\r
++		OR = { war = { country = SOV }  war = { country = RUS } war = { country = UER }  war = { country = UTC }  }\r
+ 	}\r
+ \r
+ 	name = "AI_EVENT"\r
+@@ -184,8 +184,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/EXP_ALIvsSOV.ai" }\r
+-		command = { type = ai which = "Air_Ground.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/EXP_ALIvsSOV.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -224,7 +224,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_setflag which = FRASpanishFront }\r
+-		command = { type = ai which = "switch/FRA_Defense_Spain.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Defense_Spain.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -263,7 +263,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = FRASpanishFront }\r
+-		command = { type = ai which = "switch/FRA_Defense_Standard.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Defense_Standard.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -309,7 +309,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_setflag which = FRABuildStandard }\r
+ 		command = { type = local_clrflag which = FRABuildLand }\r
+-		command = { type = ai which = "switch/FRA_Build_Standard.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Build_Standard.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -351,7 +351,7 @@ event = {
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = FRABuildStandard }\r
+ 		command = { type = local_setflag which = FRABuildLand }\r
+-		command = { type = ai which = "switch/FRA_Build_Land.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Build_Land.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -393,7 +393,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_setflag which = FRAHomeland }\r
+-		command = { type = ai which = "switch/FRA_Homeland.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Homeland.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -432,6 +432,6 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = FRAHomeland }\r
+-		command = { type = ai which = "switch/FRA_Homeland_Rescind.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/FRA_Homeland_Rescind.ai" }\r
+ 	}\r
+ }\r

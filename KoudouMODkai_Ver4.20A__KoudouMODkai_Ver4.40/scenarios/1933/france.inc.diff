@@ -1,0 +1,258 @@
+--- A/scenarios/1933/france.inc [cp932]
++++ B/scenarios/1933/france.inc [cp932]
+@@ -91,6 +91,8 @@
+       } \r
+      relation = {  tag = U03 value = 50 access = yes  }  \r
+      relation = {  tag = U04 value = 50 access = yes  }  \r
++     relation = {  tag = MAD value = 50 access = yes  } # mod  \r
++     relation = {  tag = MOR value = 75 access = yes  } # mod\r
+      relation = {  tag = USA value = 65  } \r
+      relation = {  tag = YEM value = 150  } \r
+      relation = \r
+@@ -102,17 +104,19 @@
+    SpyInfo                = {  country = "FRA" NumberOfSpies = 9  } \r
+    # Togoland \r
+    # Metropolitan France \r
+-   nationalprovinces      = { 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 } \r
++   nationalprovinces      = { 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 \r
++          \r
++                             } \r
+    # Metropolitan France \r
+-   ownedprovinces         = {  37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 717 718 719 720 721 722 723 724 725 726 727 728 729 730 731 732 733 734 735 736 737 738 739 740 741 742 743 744 745 746 747 748 749 833 907 908 909 910 911 914 915 917 918 919 920 921 922 923 924 925 926 927 928 942 943 944 945 946 947 948 949 950 951 957 958 959 960 961 962 965 966 967 968 970 971 972 973 974 975 976 977 978 980 981 982 983 984 985 986 1581 1582 1583 1584 1585 1586 1730 1740 1743 1744 1752 1767 1768 2000 2135 \r
++   ownedprovinces         = {  37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 727 728 729 730 731 732 733 734 735 736 737 738 739 740 741 742 743 744 745 746 747 748 749 833 907 908 909 910 911 914 915 917 918 919 920 921 922 923 924 925 926 927 928 942 943 944 945 946 947 948 949 950 951 957 958 959 960 961 962 965 966 967 968 970 971 972 973 974 975 976 977 978 980 981 982 983 984 985 986 1581 1582 1583 1584 1585 1586 1730 1740 1743 1744 1752 1767 1768 2000 2135 \r
+ 	127 # Saar occupation\r
+-        } \r
++                             } \r
+    # Togoland \r
+    # Metropolitan France \r
+-   controlledprovinces    = {  37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 717 718 719 720 721 722 723 724 725 726 727 728 729 730 731 732 733 734 735 736 737 738 739 740 741 742 743 744 745 746 747 748 749 833 907 908 909 910 911 914 915 917 918 919 920 921 922 923 924 925 926 927 928 942 943 944 945 946 947 948 949 950 951 957 958 959 960 961 962 965 966 967 968 970 971 972 973 974 975 976 977 978 980 981 982 983 984 985 986 1581 1582 1583 1584 1585 1586 1730 1740 1743 1744 1752 1767 1768 2000 2135 \r
++   controlledprovinces    = {  37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 727 728 729 730 731 732 733 734 735 736 737 738 739 740 741 742 743 744 745 746 747 748 749 833 907 908 909 910 911 914 915 917 918 919 920 921 922 923 924 925 926 927 928 942 943 944 945 946 947 948 949 950 951 957 958 959 960 961 962 965 966 967 968 970 971 972 973 974 975 976 977 978 980 981 982 983 984 985 986 1581 1582 1583 1584 1585 1586 1730 1740 1743 1744 1752 1767 1768 2000 2135 \r
+ 	127 # Saar occupation\r
+-        }\r
+-\r
++                             }\r
++		#  719 720 721 717 724 718 722 725 726 723 モロッコ部位削除\r
+ 		#  996 999 1000 1001 1002 1003のマダガスカル部位削除\r
+ \r
+ 	claimedprovinces = {\r
+@@ -137,7 +141,8 @@
+                             1752 1767 1768 #French West Indies\r
+                             1581 1582 1583 1584 1585 1586 1730 1740 1743 1744 #French Pacific Island\r
+                             2135 #Saint Pierre island near Newfoundland\r
+-			    2823 }\r
++			    2823 #Kouang-Tcheou-Wan \r
++			    }		 \r
+ 		 \r
+    # FRA 1933 techs \r
+    # ###################### \r
+@@ -1044,71 +1049,128 @@ inventions = { 3000027 }
+ 	   model = 5\r
+       } \r
+     } \r
+-   landunit = \r
+-   {  id       = {  type = 13500 id = 112  } \r
+-     name     = "モロッコ軍" \r
+-     location = 717 \r
+-     Division = \r
+-     {  id       = {  type = 13500 id = 113  } \r
+-       name     = "第1モロッコ師団" \r
+-       strength = 40 \r
+-       type     = infantry \r
+-	   model = 5\r
+-       extra    = cavalry_brigade \r
+-	   brigade_model = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 13500 id = 114  } \r
+-       name     = "第2モロッコ師団" \r
+-       strength = 40 \r
+-       type     = infantry \r
+-	   model = 5\r
+-       extra    = cavalry_brigade \r
+-	   brigade_model = 6\r
+-      } \r
+-     Division = \r
+-     {  id       = {  type = 13500 id = 115  } \r
+-       name     = "第3モロッコ師団" \r
+-       strength = 40 \r
+-       type     = infantry \r
+-	   model = 5\r
+-       extra    = cavalry_brigade \r
+-	   brigade_model = 6\r
+-      } \r
++#   landunit = \r
++#   {  id       = {  type = 13500 id = 112  } \r
++#     name     = "モロッコ軍" \r
++#     location = 717 \r
++#     Division = \r
++#     {  id       = {  type = 13500 id = 113  } \r
++#       name     = "第1モロッコ師団" \r
++#       strength = 40 \r
++#       type     = infantry \r
++#	   model = 5\r
++#       extra    = cavalry_brigade \r
++#	   brigade_model = 6\r
++#      } \r
++#     Division = \r
++#     {  id       = {  type = 13500 id = 114  } \r
++#       name     = "第2モロッコ師団" \r
++#       strength = 40 \r
++#       type     = infantry \r
++#	   model = 5\r
++#       extra    = cavalry_brigade \r
++#	   brigade_model = 6\r
++#      } \r
++#     Division = \r
++#     {  id       = {  type = 13500 id = 115  } \r
++#       name     = "第3モロッコ師団" \r
++#       strength = 40 \r
++#       type     = infantry\r
++#	   model = 5\r
++#       extra    = cavalry_brigade \r
++#	   brigade_model = 6\r
++#      } \r
++#    } \r
++#   landunit = \r
++#   {  id       = {  type = 13500 id = 116  } \r
++#     name     = "フェズ師団" \r
++#     location = 721 \r
++#     Division = \r
++#     {  id   = {  type = 13500 id = 117  } \r
++#       name = "フェズ師団" \r
++#       type = garrison \r
++#	   model = 3\r
++#      }\r
++#    } \r
++#   landunit = \r
++#   {  id       = {  type = 13500 id = 318  } \r
++#     name     = "マラケッシュ師団" \r
++#     location = 722 \r
++#     Division = \r
++#     {  id   = {  type = 13500 id = 319  } \r
++#       name = "マラケッシュ師団" \r
++#       type = garrison\r
++#	   model = 3\r
++#      }\r
++#    } \r
++#   landunit = \r
++#   {  id       = {  type = 13500 id = 320  } \r
++#     name     = "メクネス師団" \r
++#     location = 717 \r
++#     Division = \r
++#     {  id   = {  type = 13500 id = 321  } \r
++#       name = "メクネス師団" \r
++#       type = garrison \r
++#	   model = 3\r
++#      }\r
++#    } \r
++\r
++landunit = # mods from ww1\r
++  {  id    = {  type = 13500 id = 6001  } \r
++   name   = "モロッコ派遣軍" \r
++   location = 718\r
++   Division = \r
++   {  id  = {  type = 13500 id = 6002  } \r
++    name = "モロッコ西部師団" \r
++    type = infantry # garrison\r
++	model = 5 # 1\r
++    strength = 100\r
++ 	experience = 10\r
+     } \r
+-   landunit = \r
+-   {  id       = {  type = 13500 id = 116  } \r
+-     name     = "フェズ師団" \r
+-     location = 721 \r
+-     Division = \r
+-     {  id   = {  type = 13500 id = 117  } \r
+-       name = "フェズ師団" \r
+-       type = garrison \r
+-	   model = 3\r
+-      }\r
++   } \r
++  landunit = \r
++  {  id    = {  type = 13500 id = 6003  } \r
++   name   = "モロッコ東部師団" \r
++   location = 724\r
++   Division = \r
++   {  id  = {  type = 13500 id = 6004  } \r
++    name = "モロッコ東部師団" \r
++    type = infantry # garrison\r
++	model = 5 # 1\r
++    strength = 100\r
++	experience = 10\r
+     } \r
+-   landunit = \r
+-   {  id       = {  type = 13500 id = 318  } \r
+-     name     = "マラケッシュ師団" \r
+-     location = 722 \r
+-     Division = \r
+-     {  id   = {  type = 13500 id = 319  } \r
+-       name = "マラケッシュ師団" \r
+-       type = garrison \r
+-	   model = 3\r
+-      }\r
++   } \r
++  landunit = \r
++  {  id    = {  type = 13500 id = 6005  } \r
++   name   = "モロッコ占領軍団" \r
++   location = 717\r
++   Division = \r
++   {  id  = {  type = 13500 id = 6006  } \r
++    name = "モロッコ師団" \r
++    type = infantry \r
++	model = 5 #1\r
++    strength = 10\r
++	experience = 10\r
+     } \r
+-   landunit = \r
+-   {  id       = {  type = 13500 id = 320  } \r
+-     name     = "メクネス師団" \r
+-     location = 717 \r
+-     Division = \r
+-     {  id   = {  type = 13500 id = 321  } \r
+-       name = "メクネス師団" \r
+-       type = garrison \r
+-	   model = 3\r
+-      }\r
++   Division = \r
++   {  id  = {  type = 13500 id = 6007  } \r
++    name = "モロッコ現地軍" \r
++    type = militia\r
++	model = 4 # 1\r
++    strength = 50\r
++	experience = 10\r
++    } \r
++   Division = \r
++   {  id  = {  type = 13500 id = 6008  } \r
++    name = "グミエ" \r
++    type = militia\r
++	model = 4 # 1\r
++    strength = 30\r
++	experience = 10\r
+     } \r
++   } \r
++\r
+    landunit = \r
+    {  id       = {  type = 13500 id = 322  } \r
+      name     = "カサブランカ予備師団" \r
+@@ -1136,13 +1198,13 @@ inventions = { 3000027 }
+ 	   model = 3\r
+ 	strength = 80\r
+       }\r
+-     Division = \r
+-     {  id   = {  type = 13500 id = 338  } \r
+-       name = "パルチザン" \r
+-       type = militia \r
+-	   model = 3\r
+-	strength = 20\r
+-      }\r
++#     Division = \r
++#     {  id   = {  type = 13500 id = 338  } \r
++#       name = "パルチザン" \r
++#       type = militia \r
++#	   model = 3\r
++#	strength = 20\r
++#      }\r
+     } \r
+    landunit = \r
+    {  id       = {  type = 13500 id = 325  } \r

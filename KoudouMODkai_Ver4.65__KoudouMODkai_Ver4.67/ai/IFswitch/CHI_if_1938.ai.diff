@@ -1,0 +1,513 @@
+--- A/ai/IFswitch/CHI_if_1938.ai [utf-8]
++++ B/ai/IFswitch/CHI_if_1938.ai [utf-8]
+@@ -4,7 +4,7 @@ switch = no # [yes/no]
+ max_front_ratio = 1.5\r
+ max_front_ratios = {\r
+ 	CHC = 1.0\r
+-	JAP = 1.0\r
++	JAP = -1.0\r
+ 	UER = 3.0\r
+ 	CAN = 2.0\r
+ 	USA = 1.5\r
+@@ -250,7 +250,7 @@ spyprefs =
+ 		steal_blueprint 	= 0\r
+ 		minister_assassination          = 7\r
+ 		smear_campaign 		= 7\r
+-		coup 				= 1\r
++		coup 				= 0\r
+ 		sabotage_industry 	= 6\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans		= 0\r
+@@ -381,9 +381,9 @@ spyprefs =
+ ###################################\r
+ #Default values\r
+ construction = { \r
+-	max_factor = 0.00 \r
++	max_factor = 1.0 \r
+ \r
+-	AA_batteries = yes\r
++	AA_batteries = atwar\r
+ 	max_AA_level = 5\r
+ 	AA_provs = {\r
+     	1299 # 重慶\r
+@@ -397,7 +397,7 @@ construction = {
+ 	max_coastal_level = 3\r
+ 	coastal_fort_provs = { } \r
+ \r
+-	radar_station = yes \r
++	radar_station = no \r
+ 	max_radar = 5 \r
+ 	radar_provs = {\r
+     	1299 # 重慶\r
+@@ -407,7 +407,7 @@ construction = {
+ 	1338 # 上海\r
+ 	} \r
+ \r
+-	air_base = yes\r
++	air_base = no\r
+ 	max_air_base = 5\r
+ 	air_base_provs = {\r
+ 	1198 # 布特哈\r
+@@ -426,7 +426,7 @@ construction = {
+ 	1390 # 昆明\r
+ 	}\r
+ \r
+-	naval_base = yes\r
++	naval_base = no\r
+ 	max_naval_base = 5 \r
+ 	naval_base_provs = {\r
+ 	1328 # 青島\r
+@@ -436,7 +436,7 @@ construction = {
+ 	1369 # 廣州\r
+ 	} \r
+ \r
+-	land_fort = yes\r
++	land_fort = no\r
+ 	max_land_level = 5\r
+ 	fort_provs	= {\r
+ 	1197 # 鶴崗\r
+@@ -460,10 +460,10 @@ construction = {
+ 	1345 # 杭洲\r
+ 	1351 # 上饒\r
+ 	}\r
+-	fort_borders = { UER } \r
++	fort_borders = { } \r
+ \r
+ 	ic_at_war = yes\r
+-	force_ic_until = 1937\r
++	force_ic_until = 1939\r
+ 	ic_end_year = 1939\r
+ 	IC_provs = { } \r
+ \r
+@@ -475,28 +475,28 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= no # yes\r
+ 	max_batch_peace 		= 500 # 1200 \r
+-	max_batch_war 			= 360 # 270 \r
++	max_batch_war 			= 550 # 270 \r
+ 	max_batch_home_front 	= 270\r
+ 	extra_convoys_war 		= 0.0000 \r
+ 	extra_convoys_peace 	= 0.0000 \r
+ \r
+ \r
+ 	#### Divisions etc...\r
+-	infantry 		= 30\r
+-	cavalry 		= 6\r
+-	motorized 		= 10\r
++	infantry 		= 0\r
++	cavalry 		= 0\r
++	motorized 		= 5\r
+ 	mechanized 		= 0\r
+ 	light_armor 	= 6\r
+ 	armor 			= 6\r
+ 	paratrooper 	= 0\r
+ 	marine 			= 0\r
+-	bergsjaeger 	= 10\r
++	bergsjaeger 	= 0\r
+ 	garrison		= 0\r
+     hq 				= 3\r
+ 	militia 		= 0\r
+ #				#66 %\r
+-	interceptor 	= 8\r
+-	multi_role 		= 0\r
++	interceptor 	= 2\r
++	multi_role 		= 6\r
+ 	cas 			= 0\r
+ 	strategic_bomber = 3\r
+ 	tactical_bomber = 6\r
+@@ -505,14 +505,14 @@ military = {
+ 	flying_bomb 	= 0\r
+ 	flying_rocket 	= 0\r
+ #				#17 %\r
+-	battleship 		= 0\r
+-	carrier 		= 0\r
+-	destroyer 		= 4\r
+-	light_cruiser 	= 2\r
+-	heavy_cruiser 	= 0\r
+-	battlecruiser 	= 0\r
++	battleship 		= 13\r
++	carrier 		= 13\r
++	destroyer 		= 7\r
++	light_cruiser 	= 6\r
++	heavy_cruiser 	= 6\r
++	battlecruiser 	= 7\r
+ 	submarine 		= 4\r
+-	transports 		= 2\r
++	transports 		= 7\r
+ #				12 %\r
+ \r
+ 	#### Brigades\r
+@@ -629,15 +629,15 @@ leader_ratio = {
+ garrison = {\r
+ 	defend_overseas_beaches = yes\r
+ 	home_multiplier 	= 0.7\r
+-	overseas_multiplier = 0\r
+-	home_peace_cap 		= 10\r
++	overseas_multiplier = 0.2\r
++	home_peace_cap 		= 3\r
+ 	war_zone_odds 		= 3.0\r
+ 	key_point_prio_mult	= 0.1\r
+ 	revolt_risk_mult	= 0.3\r
+ \r
+ 	# PRIORITIES:\r
+ 	beach			= 5 # 20 # 50	# Beach level 2\r
+-	capital		= 30	# Our capital\r
++	capital		= 5	# Our capital\r
+ 	human_border	= 30		# Ignored for allied human players\r
+ 	war_target		= 50	# The next country targeted for attack by this AI\r
+ 	reserves 		= 2\r
+@@ -654,7 +654,7 @@ garrison = {
+ 		SIA = 40\r
+ 		ENG = 40\r
+ 		POR = 40\r
+-		JAP = 1\r
++		JAP = -1\r
+ 		CHC = 100\r
+ 		MAN = 20\r
+ 		CSX = 20\r
+@@ -669,9 +669,11 @@ garrison = {
+ 		U02 = 50\r
+ 	}\r
+ 	province_priorities = {	1241 = 250 1328 = 250 1333 = 250 1334 = 250 1338 = 250 1358 = 250 1367 = 250 1369 = 250 1331 = -1 \r
+-#日本部分削除1552 = 250 1553 = 250 1559 = 150 1560 = 150 2780 = 150 \r
++1552 = -250 1553 = -250 1555 = -250 1559 = -150 1560 = -150 2780 = -150 #日本部分削除\r
+ }\r
+-	area_multiplier = {	}\r
++	area_multiplier = {\r
++1552 = -250 1553 = -250 1555 = -250 1559 = -150 1560 = -150 2780 = -150 #日本部分削除\r
++	}\r
+ }\r
+ front = { \r
+ 	recklessness 		= 2 # 0 # 0-3\r
+@@ -734,16 +736,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30.0\r
+-	groundattackdesirability 		= 40.0\r
+-	inderdictiondesirability 		= 20.0\r
+-	logisticalstrikedesirability 	= 2.0\r
+-	runwaycrateringdesirability 	= 10.0\r
+-	strategicstrikedesirability 	= 10.0\r
+-	installationstrikedesirability 	= 5.0\r
+-	navalstrikedesirability 		= 15.0\r
+-	portstrikedesirability 			= 9.0\r
+-	convoyraiddesirability			= 9.0\r
++	airsuperioritydesirability 		= 30000.0\r
++	groundattackdesirability 		= 40000.0\r
++	inderdictiondesirability 		= 20000\r
++	logisticalstrikedesirability 		= 2000\r
++	runwaycrateringdesirability 		= 10000\r
++	strategicstrikedesirability 		= 10000\r
++	installationstrikedesirability 		= 5000\r
++	navalstrikedesirability 		= 15000\r
++	portstrikedesirability 		= 9000\r
++	convoyraiddesirability 		= 9000\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -765,7 +767,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+@@ -778,11 +780,11 @@ air_marshal = {
+ invasion = { \r
+ 	invasion         = yes\r
+  	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)\r
+-	random		= 8.0	#How big a random range.  (1.0 = 1%)\r
++	random		= 15.0	#How big a random range.  (1.0 = 1%)\r
+ 	coastal		= 0.0	#increase to avoid coastal forts more.\r
+ 	beach		= 0.0	#higher, avoid worst beaches.\r
+-	distance	= 2.0	#higher = avoid long distance.\r
+-	max_distance    = 600\r
++	distance	= 0.1	#higher = avoid long distance.\r
++	max_distance    = 250\r
+ 	pocket		= 10.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
+ 	island		= 0.1	#prioritise taking pure islands.\r
+ 	enemy		= 2.0	#higher = much more vary of troops in province.\r
+@@ -790,141 +792,150 @@ invasion = {
+ 	air_base	= 1.5 \r
+       	naval_base 	= 0.1 \r
+       	air_support 	= 3.0 \r
+-      	redirect 	= priority\r
++      	redirect 	= nearest\r
+ 	ignore		= yes\r
++}\r
++\r
++admiral = {\r
+       \r
+ 	target = { \r
++		# Japanese Heartland\r
++		1562  = 4000  #Amami\r
++		1564  = 4000  #Okinawa\r
++		1362  = 4000  #Taibei\r
++		1361  = 4000  #Gaoxiong\r
++		1662  = 4000  #Bonin Islands\r
++		1661  = 4000  #Iwo Jima\r
++		1543  = 4000  #Etorufu\r
++		1542  = 4000  #Toyohara\r
++		1541  = 4000  #Okha  (Soviet Controlled)\r
++\r
++		#Philippines\r
++		1567  = 3750  #Lingayen Gulf\r
++		1568  = 3750  #Lamon Bay\r
++		1577  = 3750  #Legaspi\r
++		1579  = 3750  #Davao\r
++		1575  = 3500  #Samar\r
++		1573  = 3500  #Leyte\r
++		1574  = 3500  #Negros\r
++		1576  = 3500  #Panay\r
++		1571  = 3500  #Mindoro\r
++		1572  = 3500  #Palawan\r
++\r
++		#Outer Japanese Islands\r
++		1686  = 3250  #Saipan\r
++		1685  = 3250  #Tinian\r
++		1684  = 3250  #Rota\r
++		1683  = 3250  #Guam\r
++		1670  = 3250  #Palau\r
++		1672  = 3250  #Marcus Island\r
++\r
++		#Netherlands East Indies\r
++		1649  = 3000  #Semarang\r
++		1656  = 3000  #Madura\r
++		1636  = 2750  #Palembang\r
++		1635  = 2750  #Dumai\r
++\r
++		#Borneo\r
++		1625  = 2500  #Mini\r
++		1624  = 2500  #Kuching\r
++		1631  = 2500  #Pontianak\r
++		1632  = 2500  #Balikpapan\r
++		1627  = 2500  #Tarakan\r
++\r
++		#Singapore\r
++		1436  = 2500  #Kota Bahru\r
++		1435  = 2500  #Alor Star\r
++		1432  = 2500  #Singapore\r
++\r
++		#China\r
++		1241  = 2500  #Tianjin\r
++		1328  = 2500  #Qingdao\r
++		1338  = 2500  #Shanghai\r
++		1333  = 2500  #Nanton\r
++		1334  = 2500  #Lianyuang\r
++		1358  = 2400  #Fuzhou\r
++\r
++		#USA\r
++		1673  = 2250  #Wake Island\r
++		1736  = 2250  #Hawai\r
++\r
++		#Britain\r
++		1371  = 2250  #Hong Kong\r
++\r
++		#Far Outer Rim Japanese Islands\r
++		1675  = 2250  #Eniwetok\r
++		1674  = 2250  #Bikini\r
++		1676  = 2250  #Wotje\r
++		1681  = 2250  #Kwajalein\r
++		1677  = 2250  #Maloelap\r
++		1678  = 2250  #Majuro\r
++		1680  = 2250  #Jaluit\r
++		1679  = 2250  #Mili\r
++		1687  = 2250  #Ponape\r
++		1728  = 2250  #Kosrae\r
++		1669  = 2250  #Ngulu\r
++		1668  = 2250  #Yap\r
++		1667  = 2250  #Ulithi\r
++		1665  = 2250  #Wolelai\r
++		1666  = 2250  #Woleai\r
++		1634  = 2250  #Pulusok\r
++		1647  = 2250  #Truk\r
++\r
++		#Indonesia\r
++		1659  = 2000  #Menado\r
++		1657  = 2000  #Makassar\r
++\r
++		#New Britain\r
++		1726  = 2000  #Rabaul\r
++\r
++		#Indonesia\r
++		1620  = 1750  #Helmahera\r
++		1621  = 1750  #Buru\r
++		1622  = 1750  #Ceram\r
++\r
++		#North New Guinea\r
++		1639  = 1750  #Biak Island\r
++		1600  = 1750  #Babo\r
++		1642  = 1750  #Arare\r
++		1596  = 1750  #Hollandia\r
++		1604  = 1750  #Lae\r
++\r
++		#North Solomon Islands\r
++		1724  = 1750  #Admirality Islands\r
++		1725  = 1750  #New Ireland\r
++		1607  = 1750  #Buka Island\r
++		1587  = 1750  #Bougainville\r
++\r
++		# NEI Last Remaining Islands\r
++		1643  = 1500  #Bali\r
++		1619  = 1500  #Lombok\r
++		1644  = 1500  #Sumbawa\r
++		1615  = 1500  #Flores\r
++		1645  = 1500  #Sumba\r
++		1616  = 1500  #West Timor\r
++\r
++		# USA Alaska\r
++		2150  = 1500  #Attu Island\r
++		2151  = 1500\r
++		2142  = 1500  #Anchorage\r
++\r
++		# South Solomon Islands\r
++		1589  = 1250  #Shortland Island\r
++		1588  = 1250  #Vella Lavella\r
++		1590  = 1250  #Kolombangara\r
++		1591  = 1250  #New Georgia\r
++		1592  = 1250  #Guadalcanal\r
++\r
++		# Australia/New Zealand\r
++		1697  = 1500\r
++		1708  = 1500\r
++		1720  = 1500\r
++		1721  = 1500\r
++		1694  = 1500\r
++		1704  = 1500\r
+ 	} \r
+-} \r
+-admiral = { \r
+-	min_org		= 100	# NEW: Percent of org gained back before the unit can leave port\r
+-	min_dmg		= 28    # NEW: Percent of dmg gained back before the unit can leave port\r
+-	return_org 	= 10 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships\r
+-	return_dmg 	= 10 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships\r
+ \r
+-	ignore = {\r
+-		#Baltic Area\r
+-		"Northern Baltic"\r
+-		"Southern Baltic" \r
+-		"Bothnian Bay"\r
+-		\r
+-		#Murmansk/Archangel\r
+-		"Barents Sea"\r
+-		"Arctic Ocean"\r
+-		\r
+-		#Norway Coast (Denmark Coast)\r
+-		"Norwegian Sea"\r
+-		"East North Sea"\r
+-		"Kattegat"\r
+-		\r
+-		#North Sea, East Coast of England\r
+-		"Central Northsea"\r
+-		"West Northsea"\r
+-		"Southeast Northsea"\r
+-		\r
+-		#England/France border Sea Areas\r
+-		"English Channel"\r
+-		"Bay of Biscay"\r
+-		"Cape Finisterre"\r
+-		\r
+-		#Spanish Coast (Atlantic Side)\r
+-		"Portugese Coast"\r
+-		"Cap St Vincent"\r
+-		\r
+-		#Iceland\r
+-		"Faroes Gap"\r
+-		"Denmark Strait"\r
+-		\r
+-		#Ireland/West Coast of England\r
+-		"Irish Sea"\r
+-		"The Hebreides"\r
+-		"Irish West Coast"\r
+-		\r
+-		#Greenland\r
+-		"Greenland Coast"\r
+-		"Northern Sea of Labrador" \r
+-		"Southern Sea of Labrador"\r
+-		\r
+-		#Canada East Coast\r
+-		"Hudson Bay"\r
+-		"Grand Banks"\r
+-		"Canadian Maritimes"\r
+-		\r
+-		#Western Mediterranean\r
+-		"Costa del Sol"\r
+-		"Gulf of Lyon"\r
+-		"Algerian Coast"\r
+-		\r
+-		#Central Mediterranean\r
+-		"Tyrrhenian Sea"\r
+-		"Adriatic Sea"\r
+-		\r
+-		#Eastern Mediterranean\r
+-		"Black Sea"\r
+-		"Aegean Sea"\r
+-		"Egyptian Coast"\r
+-		\r
+-		#North Atlantic\r
+-		"North Atlantic"\r
+-		"Western Approaches"\r
+-		"The Seamounts"\r
+-		"Azores"\r
+-		\r
+-		#Central Atlantic\r
+-		"Central Atlantic"\r
+-		"Central Mid-Atlantic Ridge"\r
+-		"Bermuda Triangle"\r
+-		"Guiana Basin"\r
+-		"South-Central Mid-Atlantic Ridge"\r
+-		"Cap Verde"\r
+-		\r
+-		#South Atlantic\r
+-		"Pernambuco Plain"\r
+-		"Ascension Fracture Zone"\r
+-		"Argentine Plain"\r
+-		"Angola Plain"\r
+-		\r
+-		#Caribbean Sea and Guilf of Mexico\r
+-		"West Gulf of Mexico"\r
+-		"East Gulf of Mexico" \r
+-		"Florida Strait"\r
+-		"Yucatan Strait"\r
+-		"Windward Islands"\r
+-		"Central Carribean"\r
+-		\r
+-		#Brazil and Argentina Coast\r
+-		"Coast of Guyana"\r
+-		"Coast of Recife" \r
+-		"Coast of Uruguay"\r
+-		"Coast of Brazil"\r
+-		"Coast of Argentina"\r
+-		\r
+-		# West Africa\r
+-		"Coast of Africa"\r
+-		"Coast of Bissao" \r
+-		\r
+-		#Equitorial Africa\r
+-		"Gulf of Guinea"\r
+-		"Coast of Angola-Namibia"\r
+-		\r
+-		#South Africa\r
+-		"Coast of South Africa"\r
+-		"Atlantic-Indian Ridge"\r
+-		\r
+-		\r
+-		\r
+-		#Japanese Coast\r
+-		#"Sea of Japan"\r
+-		#"Ryukyus"\r
+-		#"Coast of Japan"\r
+-		#"South Sea of Okhotsk"\r
+-		#"West Sea of Okhotsk" \r
+-		#"East Sea of Okhotsk" \r
+-		\r
+-	}\r
+-	target = {\r
+-\r
+-	} \r
+ 	core = { \r
+ 		2524 \r
+ 		2514 \r

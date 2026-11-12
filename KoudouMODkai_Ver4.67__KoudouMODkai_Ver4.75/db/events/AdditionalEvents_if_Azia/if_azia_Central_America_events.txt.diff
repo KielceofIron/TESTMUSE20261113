@@ -1,0 +1,235 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Central_America_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Central_America_events.txt [utf-8]
+@@ -23,6 +23,7 @@
+ #id = 8272005 パナマ病の流行 ― 新品種の無免疫\r
+ #id = 8272006 パナマ病の流行 ― 新たな経済\r
+ #id = 8272007 中央アメリカ・ナショナリズム\r
++#id = 8272008 国立宮殿の建設\r
+ # ドミニカ共和国\r
+ #id = 8283001 パセリ事件\r
+ #########################################################################\r
+@@ -680,6 +681,7 @@ event = {
+ 	id = 8272002\r
+ 	random = no\r
+ 	country = U78\r
++	save_date = yes\r
+ \r
+ 	trigger = {\r
+ 	event = { id = 8272001 days = 90 } # 不安定なバナナ連邦\r
+@@ -696,7 +698,7 @@ event = {
+ \r
+ 	action = { # ホンジュラスのアンディーノが不正選挙で当選\r
+ 	name = "ACTIONNAME8272002A"\r
+-	command = { type = capital which = 2085 } # テグシガルパ\r
++	#command = { type = capital which = 2085 } # テグシガルパ\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = manpowerpool value = -10 }\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+@@ -704,63 +706,86 @@ event = {
+ 	command = { type = domestic which = freedom value = -2 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 1205087 } # ティブルシオ・カリアス・アンディーノ\r
+-	command = { type = headofgovernment which = 1205088 } # カルロス・アルベルト・ウクレス\r
+-	command = { type = foreignminister which = 1205101 } # ラウレアノ・ライネス・エスピノサ\r
+-	command = { type = armamentminister which = 1205090 } # ロベルト・ミチェリェティ・バイン\r
+-	command = { type = ministerofsecurity which = 1205105 } # ミゲル・A・ナバロ\r
+-	command = { type = ministerofintelligence which = 1205092 } # ライムンド・ストチレル・ガルシア\r
+-	command = { type = chiefofstaff which = 1205093 } # ティブルシオ・カリアス・アンディーノ\r
+-	command = { type = chiefofarmy which = 1205094 } # ライムンド・ストチレル・ガルシア\r
+-	command = { type = chiefofnavy which = 1205095 } # カルロス・バウペル・コメサ\r
+-	command = { type = chiefofair which = 1205096 } # グスタボ・シュミット\r
+-	ai_chance = 34\r
++	command = { type = headofstate which = 1205019 } # ティブルシオ・カリアス・アンディーノ\r
++	command = { type = headofgovernment which = 1205032 } # カルロス・アルベルト・ウクレス\r
++	command = { type = foreignminister which = 1205046 } # ラウレアノ・ライネス・エスピノサ\r
++	command = { type = armamentminister which = 1205060 } # ロベルト・ミチェリェティ・バイン\r
++	command = { type = ministerofsecurity which = 1205074 } # カルロス・アルベルト・ウクレス\r
++	command = { type = ministerofintelligence which = 1205088 } # ライムンド・ストチレル・ガルシア\r
++	command = { type = chiefofstaff which = 1205103 } # ティブルシオ・カリアス・アンディーノ\r
++	command = { type = chiefofarmy which = 1205117 } # ライムンド・ストチレル・ガルシア\r
++	command = { type = chiefofnavy which = 1205129 } # カルロス・バウペル・コメサ\r
++	command = { type = chiefofair which = 1205140 } # グスタボ・シュミット\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # ニカラグアのソモサがクーデターを行う\r
+ 	name = "ACTIONNAME8272002B"\r
+-	command = { type = capital which = 2080 } # マナグア\r
++	#command = { type = capital which = 2080 } # マナグア\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = manpowerpool value = -10 }\r
+-	command = { type = set_domestic which = democratic value = 3 }\r
++	command = { type = set_domestic which = democratic value = 5 }\r
+ 	command = { type = set_domestic which = political_left value = 4 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 1205053 } # アナスタシオ・G・ソモサ\r
+-	command = { type = headofgovernment which = 1205063 } # レオン・カブラレス\r
+-	command = { type = foreignminister which = 1205066 } # ダリオ・ダリオ・イ・デバイレ\r
+-	command = { type = armamentminister which = 1205069 } # トマス・フランシスコ・メディナ\r
+-	command = { type = ministerofsecurity which = 1205057 } # アナスタシオ・G・ソモサ\r
+-	command = { type = ministerofintelligence which = 1205075 } # フランシスコ・エストラサ\r
+-	command = { type = chiefofstaff which = 1205078 } # アウグスト・カラバル・アントニオ\r
+-	command = { type = chiefofarmy which = 1205080 } # アウグスト・カラバル・アントニオ\r
+-	command = { type = chiefofnavy which = 1205084 } # グスタボ・フロレス・メンディエンタ\r
+-	command = { type = chiefofair which = 1205085 } # ギジェルモ・R・クアドラ\r
+-	ai_chance = 33\r
++	command = { type = headofstate which = 1205017 } # アナスタシオ・G・ソモサ\r
++	command = { type = headofgovernment which = 1205030 } # レオン・カブラレス\r
++	command = { type = foreignminister which = 1205044 } # ダリオ・ダリオ・イ・デバイレ\r
++	command = { type = armamentminister which = 1205058 } # ニコラス・フアレス・セフド\r
++	command = { type = ministerofsecurity which = 1205072 } # ヴィクトール・ラモン・イ・レイエス\r
++	command = { type = ministerofintelligence which = 1205086 } # レオナルド・アルゲリョ・ビンセス\r
++	command = { type = chiefofstaff which = 1205100 } # アウグスト・カラバル・アントニオ\r
++	command = { type = chiefofarmy which = 1205115 } # アナスタシオ・G・ソモサ\r
++	command = { type = chiefofnavy which = 1205127 } # グスタボ・フロレス・メンディエンタ\r
++	command = { type = chiefofair which = 1205138 } # ギジェルモ・R・クアドラ\r
++	ai_chance = 25\r
+ 	}\r
+ \r
+ 	action = { # エルサルバドルのマルティネスが戒厳令を敷く\r
+ 	name = "ACTIONNAME8272002C"\r
+-	command = { type = capital which = 2079 } # サンサルバドル\r
++	#command = { type = capital which = 2079 } # サンサルバドル\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = manpowerpool value = -10 }\r
+-	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = democratic value = 1 }\r
++	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = domestic which = freedom value = -2 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = headofstate which = 1205022 } # マキシミリアノ・エルナンデス・マルティネス\r
++	command = { type = headofgovernment which = 1205036 } # マキシミリアノ・エルナンデス・マルティネス\r
++	command = { type = foreignminister which = 1205050 } # ミゲル・アンヘル・アラウジョ\r
++	command = { type = armamentminister which = 1205064 } # アルベルト・ゴメス・サラテ\r
++	command = { type = ministerofsecurity which = 1205078 } # フィデル・クリスティノ・ガライ\r
++	command = { type = ministerofintelligence which = 1205092 } # オスカル・A・ボラノス\r
++	command = { type = chiefofstaff which = 1205107 } # マルコ・A・モリナ\r
++	command = { type = chiefofarmy which = 1205121 } # マキシミリアノ・エルナンデス・マルティネス\r
++	command = { type = chiefofnavy which = 1205131 } # ラウル・ロドルフィ・サンチェス\r
++	command = { type = chiefofair which = 1205143 } # ウンベルト・アベール\r
++	ai_chance = 25\r
++	}\r
++\r
++	action = { # グアテマラのウビコが首都に進軍\r
++	name = "ACTIONNAME8272002D"\r
++	#command = { type = capital which = 2088 } # グアテマラシティ\r
++	command = { type = dissent value = 5 }\r
++	command = { type = manpowerpool value = -10 }\r
++	command = { type = set_domestic which = democratic value = 3 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 1205031 } # マキシミリアノ・エルナンデス・マルティネス\r
+-	command = { type = headofgovernment which = 1205036 } # アンドレス・イグナシオ・メネンデス\r
+-	command = { type = foreignminister which = 1205038 } # ミゲル・アンヘル・アラウジョ\r
+-	command = { type = armamentminister which = 1205040 } # アルベルト・ゴメス・サラテ\r
+-	command = { type = ministerofsecurity which = 1205042 } # フィデル・クリスティノ・ガライ\r
+-	command = { type = ministerofintelligence which = 1205044 } # オスカル・A・ボラノス\r
+-	command = { type = chiefofstaff which = 1205046 } # マルコ・A・モリナ\r
+-	command = { type = chiefofarmy which = 1205033 } # マキシミリアノ・エルナンデス・マルティネス\r
+-	command = { type = chiefofnavy which = 1205049 } # オラシオ・カルネホ・イバネス\r
+-	command = { type = chiefofair which = 1205051 } # ウンベルト・アベール\r
+-	ai_chance = 33\r
++	command = { type = headofstate which = 1205020 } # ホルヘ・ウビコ・カスタネダ\r
++	command = { type = headofgovernment which = 1205034 } # ホルヘ・ウビコ・カスタネダ\r
++	command = { type = foreignminister which = 1205048 } # アルフレド・スキナー・クレー\r
++	command = { type = armamentminister which = 1205062 } # ギジェルモ・フロレス・アレンダノ\r
++	command = { type = ministerofsecurity which = 1205076 } # T・カストロ・ドミンゲス\r
++	command = { type = ministerofintelligence which = 1205090 } # エドゥアルド・ビジャグラン・アリサ\r
++	command = { type = chiefofstaff which = 1205105 } # フェデリコ・ポンセ・バイデス\r
++	command = { type = chiefofarmy which = 1205119 } # ホルヘ・ウビコ・カスタネダ\r
++	command = { type = chiefofnavy which = 1205130 } # トマス・メンドーサ・ウリベ\r
++	command = { type = chiefofair which = 1205142 } # R・ブエナベントゥレ・ピネ\r
++	ai_chance = 25\r
+ 	}\r
+ }\r
+ \r
+@@ -1000,6 +1025,83 @@ event = {
+ 	ai_chance = 60\r
+ 	}\r
+ }\r
++\r
++#########################################################################\r
++#  国立宮殿の建設\r
++# 中央アメリカが建国されて以来、大きな問題となっていたのが、中央政府の所在地があいまいな事であった。\r
++# そこで新政権は、自己の権力の誇示も兼ねて、新たなシンボルとなる行政機関の建物を建設することを推し進めた。\r
++# 建設された建物は、国立宮殿と呼ばれ、新政府の象徴となった。\r
++#########################################################################\r
++event = {\r
++	id = 8272008\r
++	random = no\r
++	country = U78\r
++	save_date = yes\r
++\r
++	decision = {\r
++	event = 8272002 # 1933年大統領選挙\r
++	OR = {\r
++	headofstate = 1205087 # ティブルシオ・カリアス・アンディーノ\r
++	headofstate = 1205053 # アナスタシオ・G・ソモサ\r
++	headofstate = 1205031 # マキシミリアノ・エルナンデス・マルティネス\r
++	headofstate = 1205133 # ホルヘ・ウビコ・カスタネダ\r
++	}\r
++	NOT = { ispuppet = U78 }\r
++	atwar = no\r
++	}\r
++\r
++	decision_trigger = { \r
++	supplies = 5000\r
++	money = 500\r
++	NOT = { ispuppet = U78 }\r
++	atwar = no\r
++	}\r
++\r
++	trigger = {\r
++	event = { id = 8272002 days = 180 } # 1933年大統領選挙\r
++	OR = {\r
++	headofstate = 1205087 # ティブルシオ・カリアス・アンディーノ\r
++	headofstate = 1205053 # アナスタシオ・G・ソモサ\r
++	headofstate = 1205031 # マキシミリアノ・エルナンデス・マルティネス\r
++	headofstate = 1205133 # ホルヘ・ウビコ・カスタネダ\r
++	}\r
++	NOT = { ispuppet = U78 }\r
++	atwar = no\r
++	random = 20\r
++	}\r
++\r
++	name = "EVT_8272008_NAME"\r
++	desc = "EVT_8272008_DESC"\r
++	style = 2\r
++ 	picture = "new_deal"\r
++ 	decision_picture = "decision_new_deal"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 18\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++\r
++	action = { # 国民宮殿を建設するのだ\r
++	name = "ACTIONNAME8272008A"\r
++	command = { trigger = { headofstate = 1205087 } type = capital which = 2085 } # テグシガルパ\r
++	command = { trigger = { headofstate = 1205087 } type = province_keypoints which = 2085 value = 1 } # テグシガルパ\r
++	command = { trigger = { headofstate = 1205087 } type = construct which = infrastructure where = 2085 value = 10 } # テグシガルパ\r
++	command = { trigger = { headofstate = 1205053 } type = capital which = 2080 } # マナグア\r
++	command = { trigger = { headofstate = 1205053 } type = province_keypoints which = 2080 value = 1 } # マナグア\r
++	command = { trigger = { headofstate = 1205053 } type = construct which = infrastructure where = 2080 value = 10 } # マナグア\r
++	command = { trigger = { headofstate = 1205031 } type = capital which = 2079 } # サンサルバドル\r
++	command = { trigger = { headofstate = 1205031 } type = province_keypoints which = 2079 value = 1 } # サンサルバドル\r
++	command = { trigger = { headofstate = 1205031 } type = construct which = infrastructure where = 2079 value = 10 } # サンサルバドル\r
++	command = { trigger = { headofstate = 1205133 } type = capital which = 2088 } # グアテマラシティ\r
++	command = { trigger = { headofstate = 1205133 } type = province_keypoints which = 2088 value = 1 } # グアテマラシティ\r
++	command = { trigger = { headofstate = 1205133 } type = construct which = infrastructure where = 2088 value = 10 } # グアテマラシティ\r
++	command = { type = dissent value = -3 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = manpowerpool value = -10 }\r
++	command = { type = supplies value = -5000 }\r
++	command = { type = money value = -500 }\r
++	ai_chance = 100\r
++	}\r
++}\r
+ #########################################################################\r
+ #  ドミニカ共和国\r
+ #########################################################################\r

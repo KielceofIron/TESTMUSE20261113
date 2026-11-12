@@ -1,0 +1,273 @@
+--- A/db/events/Yokoyama_events/Soviet_Civiwar_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Soviet_Civiwar_events.txt [cp932]
+@@ -7,7 +7,11 @@
+ #id = 32700001 崩壊するソヴィエト\r
+ #id = 32700003 崩壊するソヴィエト ─ 中央アジア反乱\r
+ #id = 32700005 崩壊するソヴィエト ─ 最後の機会\r
+-#id = 32700006 崩壊するソヴィエト ─ ソビエト内戦\r
++#id = 32700006 崩壊するソヴィエト ─ ベリヤが体制を維持\r
++#id = 32700007 崩壊するソヴィエト ─ 軍部によるクーデター\r
++#id = 32700008 崩壊するソヴィエト ─ 民主勢力による体制の崩壊\r
++#id = 32700009 崩壊するソヴィエト ─ ソビエト内戦(SOV)\r
++#id = 32700010 崩壊するソヴィエト ─ ソビエト内戦(SIB AND TRA)\r
+ ###### タボリツキーイベント ############\r
+ #id = 32700101 二度目の封印列車\r
+ #id = 32700102 反ソ運動の組織化\r
+@@ -230,9 +234,8 @@ event = {
+ #  崩壊するソヴィエト ─ 最後の機会\r
+ # 独ソ戦で敗北を喫し、屈辱的な講和条約を受け入れたソ連政府の求心力は日を追うごとに低下している。\r
+ # もはや、ソ連における行政機能は停止寸前となっており、まともに活動しているのは秘密警察だけであった。\r
+-# 共産党上層部は保身に走り、改革は挫折。労働者ストライキが全国で発生し、市民デモも多発していた。\r
+-# 軍部はソ連を立て直すべく、上層部排除を中心とした『国家非常事態委員会』と称するグループが軍事クーデターを起こしたが、\r
+-# ベリヤと権限が強化された秘密警察によって防がれてしまい、参加者の多くが処刑された。\r
++# ソ連が崩壊に向かう中、秘密警察と恐怖政治が支配するソ連政府、ドイツに対する反撃を目論む軍部、\r
++# 独ソ戦後に、中央シベリアに逃れてきた知識人の民主勢力の3つが新たな支配者として君臨することを目論んでいる。\r
+ #########################################################################\r
+ event = {\r
+ 	id = 32700005\r
+@@ -256,31 +259,8 @@ event = {
+ 	offset = 20\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+-\r
+-	action = { # クーデター派が政府を掌握した\r
++	action = { # 政府が支配を維持した\r
+ 	name = "ACTIONNAME32700005A"\r
+-	trigger = { minister = 30300 }\r
+-	command = { type = coup_nation which = SOV }\r
+-	command = { type = domestic which = democratic value = 1 }\r
+-	command = { type = domestic which = political_left value = -2 }\r
+-	command = { type = headofstate which = 30300 }\r
+-	command = { type = headofgovernment which = 30016 }\r
+-	command = { type = foreignminister which = 30021 }\r
+-	command = { type = armamentminister which = 30023 }\r
+-	command = { type = ministerofsecurity which = 30031 }\r
+-	command = { type = ministerofintelligence which = 30034 }\r
+-	command = { type = chiefofstaff which = 30040 } \r
+-	command = { type = chiefofarmy which = 30072 } \r
+-	command = { type = chiefofnavy which = 30049 } \r
+-	command = { type = chiefofair which = 30143 } \r
+-	command = { type = sleepminister which = 30017 }\r
+-	command = { type = sleepminister which = 30028 }\r
+-	command = { type = dissent value = -20 }\r
+-	ai_chance = 2\r
+-	}\r
+-\r
+-	action = { # クーデターは鎮圧された\r
+-	name = "ACTIONNAME32700005B"\r
+ 	command = { type = sleepminister which = 30040 }\r
+ 	command = { type = sleepminister which = 30089 }\r
+ 	command = { type = sleepminister which = 30300 }\r
+@@ -292,9 +272,138 @@ event = {
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+ 	command = { type = sleepleader which = -1 }\r
+-	command = { type = dissent value = 5 }\r
++	command = { type = event which = 32700006 where = SOV when = 0 }\r
++	ai_chance = 30\r
++	}\r
++\r
++	action = { # クーデター派が政府を掌握した\r
++	name = "ACTIONNAME32700005B"\r
++	trigger = { minister = 30300 }\r
++	command = { type = coup_nation which = SOV }\r
++	command = { type = sleepminister which = 30017 }\r
++	command = { type = sleepminister which = 30028 }\r
++	command = { type = event which = 32700007 where = SOV when = 0 }\r
++	ai_chance = 30\r
++	}\r
++\r
++	action = { # 知識人と市民の団結が体制を粉砕する\r
++	name = "ACTIONNAME32700005C"\r
++	command = { type = sleepminister which = 30017 }\r
++	command = { type = sleepminister which = 30028 }\r
++	command = { type = event which = 32700008 where = SOV when = 0 }\r
++	ai_chance = 40\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  崩壊するソヴィエト ─ ベリヤが体制を維持\r
++# 崩壊寸前のソ連内部で最後の勝利を収めたのは、現在のソ連政府を支配するベリヤであった。\r
++# 彼は独ソ戦後のクーデターで権力を強化して、自身に従わない反逆者を僻地の強制収容所に送り続けた。\r
++# このため、ベリヤに反対する勢力は常に弱り続け、反対派が仕掛けた起死回生の反乱も秘密警察によって打ち砕かれた。\r
++# 今やベリヤが目指す構想、即ち今までにない監視・恐怖政治の構築という成功へとソ連が向かいつつある。\r
++#########################################################################\r
++event = {\r
++	id = 32700006\r
++	random = no\r
++	country = SOV\r
++\r
++	name = "EVT_32700006_NAME"\r
++	desc = "EVT_32700006_DESC"\r
++	style = 2\r
++  	picture = "NKVD"\r
++\r
++	action = { # 史上かつてない恐怖政治が、すぐそばまで迫っている…\r
++	name = "ACTIONNAME32700006A"\r
++	command = { type = dissent value = -10 }\r
+ 	command = { type = setflag which = Soviet_Civi_War }\r
+-	ai_chance = 98\r
++	ai_chance = 30\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  崩壊するソヴィエト ─ 軍部によるクーデター\r
++# 崩壊寸前のソ連内部で最後の勝利を収めたのは、現在のソ連を護る最後の砦、赤軍であった。\r
++# 独ソ戦後もウラル以東で強大な軍事力を維持していた赤軍は、ベリヤによる国家の破壊、民主派の裏切りに強い危機感を抱いていた。\r
++# もしソ連がこのまま崩壊した場合、労働者の祖国は永久に葬り去られると感じた軍部は、内部でかつてない団結を取り戻した。\r
++# 忠実なソビエトの将軍達は秘密警察の妨害にあってもなお、反乱計画を進め、ついには計画を実行した。\r
++# 政府主要施設はあっけなく制圧され、一部で起きた秘密警察の抵抗を除けば、クーデターは成功裏に終わった。\r
++# 軍部は臨時政府の設置を行い、ドイツへの抵抗の為にあらゆる努力を行うことを宣言している。\r
++#########################################################################\r
++event = {\r
++	id = 32700007\r
++	random = no\r
++	country = SOV\r
++\r
++	name = "EVT_32700007_NAME"\r
++	desc = "EVT_32700007_DESC"\r
++	style = 2\r
++  	picture = "soviet_replacement"\r
++\r
++	action = { # 赤軍よ、前へ！\r
++	name = "ACTIONNAME32700007A"\r
++	command = { type = dissent value = -20 }\r
++	command = { type = domestic which = democratic value = 1 }\r
++	command = { type = domestic which = political_left value = -2 }\r
++	command = { type = headofstate which = 30300 } # ゲオルギー・K・ジューコフ\r
++	command = { type = headofgovernment which = 30094 } # ゲオルギー・M・マレンコフ\r
++	command = { type = foreignminister which = 30021 } # ヴャチェスラフ・M・モロトフ\r
++	command = { type = armamentminister which = 30023 } # ゲオルギー・D・バジレヴィッチ\r
++	command = { type = ministerofsecurity which = 30031 } # アレクセイ・P・パンフィロフ\r
++	command = { type = ministerofintelligence which = 30034 } # フィリップ・I・ゴリコフ\r
++	command = { type = chiefofstaff which = 30040 } # ゲオルギー・K・ジューコフ\r
++	command = { type = chiefofarmy which = 30045 } # セミョーン・K・チモシェンコ\r
++	command = { type = chiefofnavy which = 30049 } # ニコライ・G・クズネツォフ\r
++	command = { type = chiefofair which = 30143 } # パーヴェル・F・ジガレフ\r
++	ai_chance = 30\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  崩壊するソヴィエト ─ 民主勢力による体制の崩壊\r
++# 崩壊寸前のソ連内部で最後の勝利を収めたのは、知識人で構成された民主勢力であった。\r
++# 独ソ戦後の混乱の最中、多くの芸術家、科学者、学者、その他の文学者がファシストの前進から逃れ、ウラル山脈を越えた。\r
++# 最終的に彼らは現在のソ連の限界を訴え、体制の大きな変革を訴える民主化勢力に成長。\r
++# 市民の圧倒的な支持を受けながら、ついにソ連の失敗した独裁体制を打ち砕いた。\r
++# ソ連共産党は市民の圧力を受けて解党され、軍もまた反乱を起こすことなく、ドイツの再侵攻を警戒し続けている。\r
++# 新たな指導者にはアレクサンドル・ポクルィシュキンが選出され、彼は演説で市民への感謝を述べたのち、民主化と安定を進めることを誓っている。\r
++#########################################################################\r
++event = {\r
++	id = 32700008\r
++	random = no\r
++	country = SOV\r
++\r
++	name = "EVT_32700008_NAME"\r
++	desc = "EVT_32700008_DESC"\r
++	style = 2\r
++  	picture = "strike1"\r
++\r
++	action = { # 市民の勝利だ\r
++	name = "ACTIONNAME32700008A"\r
++	command = { type = dissent value = -50 }\r
++	command = { type = country which = UGS }\r
++	command = { type = name where = UGS which = "中央シベリア共和国" }\r
++	command = { type = flag_ext where = UGS which = "_Cen" }\r
++	command = { type = set_domestic which = democratic value = 10 }\r
++	command = { type = set_domestic which = political_left value = 6 }\r
++	command = { type = headofstate which = 1340101 } # ボリス・パステルナーク\r
++	command = { type = headofgovernment which = 1340102 } # ニコライ・アセーエフ\r
++	command = { type = foreignminister which = 1340103 } # コンスタンチン・パウストフスキー\r
++	command = { type = armamentminister which = 1340104 } # セルゲイ・ボブロフ\r
++	command = { type = ministerofsecurity which = 1340105 } # エカテリーナ・ペシュコバ\r
++	command = { type = ministerofintelligence which = 1340106 } # ウラジーミル・ペトロフ\r
++	command = { type = chiefofstaff which = 1340107 } # マトヴェイ・シャポシニコフ\r
++	command = { type = chiefofarmy which = 1340108 } # イヴァン・フェディウニンスキ\r
++	command = { type = chiefofnavy which = 1340109 } # ミハイル・ゴートスキー\r
++	command = { type = chiefofair which = 1340110 } # アレクサンドル・ポクルィシュキン\r
++	command = { type = add_core_region which = "Urals" where = UGS }\r
++	command = { type = add_core_region which = "Novosibirsk" where = UGS }\r
++	command = { type = add_core_region which = "Tomsk" where = UGS }\r
++	command = { type = add_core_region which = "Northern Permafrost" where = UGS }\r
++	command = { type = add_core_region which = "Far East Siberia" where = UGS }\r
++	command = { type = add_core_region which = "Irkutsk" where = UGS }\r
++	command = { type = add_core_region which = "Krasnoyarsk" where = UGS }\r
++	ai_chance = 30\r
+ 	}\r
+ }\r
+ \r
+@@ -307,7 +416,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 32700006\r
++	id = 32700009\r
+ 	random = no\r
+ 	country = SOV\r
+ 	save_date = yes\r
+@@ -320,8 +429,8 @@ event = {
+ 	random = 35\r
+ 	}\r
+ \r
+-	name = "EVT_32700006_NAME"\r
+-	desc = "EVT_32700006_DESC"\r
++	name = "EVT_32700009_NAME"\r
++	desc = "EVT_32700009_DESC"\r
+ 	style = 2\r
+   	picture = "Moscow_Army"\r
+ \r
+@@ -331,7 +440,7 @@ event = {
+ \r
+ \r
+ 	action = { # 第二次ロシア内戦だ\r
+-	name = "ACTIONNAME32700006A"\r
++	name = "ACTIONNAME32700009A"\r
+ 	command = { type = independence which = TRA value = 0 when = 0 }\r
+ 	command = { type = secederegion which = TRA value = "Urals" when = 1 }\r
+ 	command = { type = secederegion which = TRA value = "Northern Russia" when = 1 }\r
+@@ -340,8 +449,8 @@ event = {
+ 	command = { type = secederegion which = SIB value = "Far East Siberia" when = 1 }\r
+ 	command = { type = secederegion which = SIB value = "Irkutsk" when = 1 }\r
+ 	command = { type = secedearea which = SIB value = "Yakutsk" when = 1 }\r
+-	command = { type = event which = 32700007 where = TRA when = 1 }\r
+-	command = { type = event which = 32700007 where = SIB when = 1 }\r
++	command = { type = event which = 32700010 where = TRA when = 1 }\r
++	command = { type = event which = 32700010 where = SIB when = 1 }\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = revolt which = -1 }\r
+ 	command = { type = revolt which = -1 }\r
+@@ -368,18 +477,18 @@ event = {
+ }\r
+ \r
+ event = {\r
+-	id = 32700007\r
++	id = 32700010\r
+ 	random = no\r
+ 	TAG = { TRA SIB }\r
+ 	persistent = yes\r
+ \r
+-	name = "EVT_32700006_NAME"\r
+-	desc = "EVT_32700006_DESC"\r
++	name = "EVT_32700009_NAME"\r
++	desc = "EVT_32700009_DESC"\r
+ 	style = 2\r
+   	picture = "Moscow_Army"\r
+ \r
+ 	action = { # 第二次ロシア内戦だ\r
+-	name = "ACTIONNAME32700006A"\r
++	name = "ACTIONNAME32700009A"\r
+ 	trigger = {\r
+ 	country = TRA\r
+ 	}\r
+@@ -411,7 +520,7 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 第二次ロシア内戦だ\r
+-	name = "ACTIONNAME32700006A"\r
++	name = "ACTIONNAME32700009A"\r
+ 	trigger = {\r
+ 	country = SIB\r
+ 	}\r

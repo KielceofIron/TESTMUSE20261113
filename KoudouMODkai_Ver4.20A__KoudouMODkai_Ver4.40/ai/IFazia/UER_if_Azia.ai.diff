@@ -1,0 +1,156 @@
+--- A/ai/IFazia/UER_if_Azia.ai [cp932]
++++ B/ai/IFazia/UER_if_Azia.ai [cp932]
+@@ -13,7 +13,7 @@ max_front_ratios = {
+ max_garrison_prop = 0.40\r
+ min_garrison_prop = 0.30\r
+ neutrality = 95.000 \r
+-war = 10\r
++war = 0\r
+ reinforcement = 0.0000\r
+ upgrading = 0.2000\r
+ strat_redeploy_threshold = 20\r
+@@ -30,17 +30,21 @@ combat = {
+ 	SOV = 10\r
+  }\r
+ \r
+-claim_acceptance = -69\r
++claim_acceptance = -59\r
++\r
++liberate = { AFG ALB AUS AXI BEL BHU BRU BUL BUR CAL CAN U87 CMB CRO CSA DFR EGY EUS FIN FLA GRE HOL HUN IDC IND INO IRE IRQ \r
++	     JAP JOR LAO LBY LUX MAD MON MEX MLY MTN NEP NOR NZL OMN PAK PAL PER PHI QUE ROM RSI SAF SAR SCH SCO SER SIA SLO\r
++	     SLV SOM SPA SPR SWE SYR TEX TIB TUR VIC VIE WLL YEM YUG U07 U56 U63 U64 U65 U66 U68 U69 U71 U73 U75 U76 U77 U80\r
++	     U83 U87 UA0 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UD0 }\r
+ \r
+-# Special resistance against "influence" by the listed nations. Value range = [0 - 10]  \r
+ resistance = {  \r
+-	SOV = 6\r
+-	GER = 5\r
+-	ITA = 5\r
+-	ENG = 5\r
+-	FRA = 5\r
+-	USA = 5\r
+-	JAP = 5\r
++	SOV = 5\r
++	GER = 4\r
++	ITA = 4\r
++	ENG = 4\r
++	FRA = 4\r
++	USA = 4\r
++	JAP = 4\r
+ 	U67 = 4\r
+ 	CHI = 3\r
+ 	CHC = 3\r
+@@ -122,9 +126,6 @@ trade = {
+ 		USA = 50\r
+ 		ROM = 50\r
+ 		SER = 50\r
+-		USA = 100\r
+-		U62 = 100\r
+-		U67 = 100\r
+ 		KOR = 50\r
+ 		U67 = 50\r
+ 	}\r
+@@ -140,9 +141,6 @@ tech_sharing = {
+ 		USA = 50\r
+ 		ROM = 50\r
+ 		SER = 50\r
+-		USA = 100\r
+-		U62 = 100\r
+-		U67 = 100\r
+ 		KOR = 50\r
+ 		U67 = 50\r
+ 	}\r
+@@ -366,8 +364,8 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= no\r
+ 	max_batch_peace 		= 680 \r
+-	max_batch_war 			= 780 \r
+-	max_batch_home_front = 300\r
++	max_batch_war 			= 500 \r
++	max_batch_home_front	= 180\r
+ 	extra_convoys_war		= 0.0500 \r
+ 	extra_convoys_peace		= 0.0500 \r
+ \r
+@@ -731,16 +729,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30000.0\r
+-	groundattackdesirability 		= 40000.0\r
+-	inderdictiondesirability 		= 20000\r
+-	logisticalstrikedesirability 		= 2000\r
+-	runwaycrateringdesirability 		= 10000\r
+-	strategicstrikedesirability 		= 10000\r
+-	installationstrikedesirability 		= 5000\r
+-	navalstrikedesirability 		= 15000\r
+-	portstrikedesirability 		= 9000\r
+-	convoyraiddesirability 		= 9000\r
++	airsuperioritydesirability 		= 30.0\r
++	groundattackdesirability 		= 40.0\r
++	inderdictiondesirability 		= 20.0\r
++	logisticalstrikedesirability 	= 2.0\r
++	runwaycrateringdesirability 	= 10.0\r
++	strategicstrikedesirability 	= 10.0\r
++	installationstrikedesirability 	= 5.0\r
++	navalstrikedesirability 		= 15.0\r
++	portstrikedesirability 			= 9.0\r
++	convoyraiddesirability			= 9.0\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -762,7 +760,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+@@ -788,27 +786,32 @@ invasion = {
+ 	redirect 	= priority\r
+ 	ignore		= no\r
+ \r
++	staging_province = {\r
++	1191  # ウラジオストック\r
++	553  # レニングラード\r
++	}\r
++\r
+ 	target = { \r
+-		#Norway\r
+-		483 = 4000 # Oslo\r
+-		485 = 4000 # Kristiansand\r
+-		491 = 4000 # Alesund\r
+-		493 = 3750 # Trondheim\r
+-		495 = 3750 # Narvik\r
+-\r
+-		#Sweden\r
++	#Norway\r
++	483 = 4000 # Oslo\r
++	485 = 4000 # Kristiansand\r
++	491 = 4000 # Alesund\r
++	493 = 3750 # Trondheim\r
++	495 = 3750 # Narvik\r
++\r
++	#Sweden\r
+      	2153 = 4000 # Goterborg \r
+      	2152 = 4000 # Malmo \r
+      	2159 = 3750 # Stockholm \r
+-		2158 = 3750 # Uppsala\r
++	2158 = 3750 # Uppsala\r
+      	2162 = 3750 # Gavle \r
+      	2166 = 4000 # Lulea  \r
+ \r
+-		#Finland\r
+-		525 = 2000 # Helsinki\r
+-		524 = 2000 # Turku\r
+-		521 = 2000 # Vaasa\r
+-		516 = 1750 # Tornio\r
++	#Finland\r
++	525 = 2000 # Helsinki\r
++	524 = 2000 # Turku\r
++	521 = 2000 # Vaasa\r
++	516 = 1750 # Tornio\r
+ 	} \r
+ } \r
+ admiral = { \r

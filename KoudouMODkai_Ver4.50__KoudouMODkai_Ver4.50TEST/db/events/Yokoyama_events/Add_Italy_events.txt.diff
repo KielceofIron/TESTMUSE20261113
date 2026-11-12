@@ -1,0 +1,349 @@
+--- A/db/events/Yokoyama_events/Add_Italy_events.txt [cp932]
++++ B/db/events/Yokoyama_events/Add_Italy_events.txt [cp932]
+@@ -395,10 +395,10 @@ event = {
+ 	country = ITA\r
+ 	\r
+ 	decision = {\r
+-	OR = { \r
+-	event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
+-	event = 99660039 # ドイツ共和国軍の動員（DDR）\r
+-	}\r
++	#OR = { \r
++	#event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
++	#event = 99660039 # ドイツ共和国軍の動員（DDR）\r
++	#}\r
+ 	NOT = { \r
+ 	war = { country = ITA country = GER }\r
+ 	war = { country = ITA country = ENG }\r
+@@ -415,10 +415,10 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	OR = { \r
+-	event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
+-	event = 99660039 # ドイツ共和国軍の動員（DDR）\r
+-	}\r
++	#OR = { \r
++	#event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
++	#event = 99660039 # ドイツ共和国軍の動員（DDR）\r
++	#}\r
+ 	NOT = { \r
+ 	war = { country = ITA country = GER }\r
+ 	war = { country = ITA country = ENG }\r
+@@ -435,10 +435,10 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	OR = { \r
+-	event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
+-	event = 99660039 # ドイツ共和国軍の動員（DDR）\r
+-	}\r
++	#OR = { \r
++	#event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
++	#event = 99660039 # ドイツ共和国軍の動員（DDR）\r
++	#}\r
+ 	NOT = { \r
+ 	war = { country = ITA country = GER }\r
+ 	war = { country = ITA country = ENG }\r
+@@ -532,6 +532,7 @@ event = {
+ 	TAG = { GER DDR }\r
+ 	\r
+ 	decision = {\r
++	event = 9221004 # ストレーザ戦線\r
+ 	OR = { \r
+ 	event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
+ 	event = 99660039 # ドイツ共和国軍の動員（DDR）\r
+@@ -560,6 +561,7 @@ event = {
+ 	}\r
+ \r
+ 	decision_trigger = {\r
++	event = 9221004 # ストレーザ戦線\r
+ 	OR = { \r
+ 	event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
+ 	event = 99660039 # ドイツ共和国軍の動員（DDR）\r
+@@ -588,6 +590,7 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
++	event = 9221004 # ストレーザ戦線\r
+ 	OR = { \r
+ 	event = 2003139 # ドイツ国防軍（ヴェアマハト）設立（GER）\r
+ 	event = 99660039 # ドイツ共和国軍の動員（DDR）\r
+@@ -622,7 +625,7 @@ event = {
+ 	decision_picture = "decision_league_of_nations"\r
+ \r
+ 	date = { day = 17 month = 5 year = 1935 }\r
+-	offset = 5\r
++	offset = 15\r
+ 	deathdate = { day = 29 month = 11 year = 1936 }\r
+ \r
+ 	action = { # 協定を提案する\r
+@@ -681,21 +684,21 @@ event = {
+ 	\r
+ 	trigger = {\r
+ 	flag = Stresa # ストレーザ戦線を構築\r
+-	flag = ENG_GER_Naval_Agreement # 英独海軍協定が締結される\r
+-	OR = { \r
+ 	event = 9221004 # ストレーザ戦線\r
+-	event = 9221006 # 英独海軍協定\r
+-	}\r
+ 	OR = {\r
+ 		AND = {\r
+-			country = GER\r
++			exists = GER\r
+ 			NOT = { exists = DDR }\r
+ 		}\r
+ 		AND = {\r
+-			country = DDR\r
++			exists = DDR\r
+ 			NOT = { exists = GER }\r
+ 		}\r
+ 	}\r
++	OR = {\r
++	flag = ENG_GER_Naval_Agreement # 英独海軍協定が締結される\r
++	alliance = { country = ENG country = GER }\r
++	}\r
+ 	NOT = { \r
+ 	war = { country = ITA country = ENG }\r
+ 	war = { country = ITA country = GER }\r
+@@ -715,7 +718,7 @@ event = {
+ 	picture = "diplomatic_campaign"\r
+ 	decision_picture = "decision_league_of_nations"\r
+ \r
+-	date = { day = 10 month = 0 year = 1933 }\r
++	date = { day = 17 month = 5 year = 1935 }\r
+ 	offset = 5\r
+ 	deathdate = { day = 29 month = 11 year = 1938 }\r
+ \r
+@@ -728,6 +731,7 @@ event = {
+ 	headofgovernment = 25188 # ベニート・ムッソリーニ\r
+ 	government = fascist\r
+ 	}\r
++	NOT = { exists = UER }\r
+ 	}\r
+ 	command = { type = relation which = GER value = 20 }\r
+ 	command = { type = relation which = ENG value = -10 }\r
+@@ -748,6 +752,7 @@ event = {
+ 	headofgovernment = 25188 # ベニート・ムッソリーニ\r
+ 	government = fascist\r
+ 	}\r
++	NOT = { exists = UER }\r
+ 	}\r
+ 	command = { type = relation which = ENG value = 10 }\r
+ 	command = { type = relation which = FRA value = 10 }\r
+@@ -767,6 +772,7 @@ event = {
+ 	government = democratic\r
+ 	government = communist\r
+ 	}\r
++	NOT = { exists = UER }\r
+ 	}\r
+ 	command = { type = relation which = GER value = 20 }\r
+ 	command = { type = relation which = ENG value = -10 }\r
+@@ -790,12 +796,95 @@ event = {
+ 	government = democratic\r
+ 	government = communist\r
+ 	}\r
++	NOT = { exists = UER }\r
+ 	}\r
+ 	command = { type = relation which = ENG value = 10 }\r
+ 	command = { type = relation which = FRA value = 10 }\r
+ 	command = { type = relation which = GER value = -10 }\r
+ 	ai_chance = 95\r
+ 	}\r
++\r
++	action = { # 戦線は崩壊した\r
++	name = "ACTIONNAME9221008A"\r
++	trigger = {\r
++	OR = {\r
++	headofgovernment = 25002 # ベニート・ムッソリーニ\r
++	headofgovernment = 25024 # ベニート・ムッソリーニ\r
++	headofgovernment = 25188 # ベニート・ムッソリーニ\r
++	government = fascist\r
++	}\r
++	exists = UER\r
++	}\r
++	command = { type = relation which = GER value = 20 }\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = end_guarantee which = ENG where = ITA }\r
++	command = { type = end_guarantee which = FRA where = ITA }\r
++	command = { type = sleepevent which = 9221009 }\r
++	command = { type = clrflag which = Stresa }\r
++	ai_chance = 2\r
++	}\r
++\r
++	action = { # 戦線を維持する\r
++	name = "ACTIONNAME9221008B"\r
++	trigger = {\r
++	OR = {\r
++	headofgovernment = 25002 # ベニート・ムッソリーニ\r
++	headofgovernment = 25024 # ベニート・ムッソリーニ\r
++	headofgovernment = 25188 # ベニート・ムッソリーニ\r
++	government = fascist\r
++	}\r
++	exists = UER\r
++	}\r
++	command = { type = relation which = ENG value = 10 }\r
++	command = { type = relation which = FRA value = 10 }\r
++	command = { type = relation which = GER value = -10 }\r
++	ai_chance = 98\r
++	}\r
++\r
++	action = { # 戦線は崩壊した\r
++	name = "ACTIONNAME9221008A"\r
++	trigger = {\r
++	NOT = {\r
++	headofgovernment = 25002 # ベニート・ムッソリーニ\r
++	headofgovernment = 25024 # ベニート・ムッソリーニ\r
++	headofgovernment = 25188 # ベニート・ムッソリーニ\r
++	}\r
++	OR = {\r
++	government = democratic\r
++	government = communist\r
++	}\r
++	exists = UER\r
++	}\r
++	command = { type = relation which = GER value = 20 }\r
++	command = { type = relation which = ENG value = -10 }\r
++	command = { type = relation which = FRA value = -10 }\r
++	command = { type = end_guarantee which = ENG where = ITA }\r
++	command = { type = end_guarantee which = FRA where = ITA }\r
++	command = { type = sleepevent which = 9221009 }\r
++	command = { type = clrflag which = Stresa }\r
++	ai_chance = 2\r
++	}\r
++\r
++	action = { # 戦線を維持する\r
++	name = "ACTIONNAME9221008B"\r
++	trigger = {\r
++	NOT = {\r
++	headofgovernment = 25002 # ベニート・ムッソリーニ\r
++	headofgovernment = 25024 # ベニート・ムッソリーニ\r
++	headofgovernment = 25188 # ベニート・ムッソリーニ\r
++	}\r
++	OR = {\r
++	government = democratic\r
++	government = communist\r
++	}\r
++	exists = UER\r
++	}\r
++	command = { type = relation which = ENG value = 10 }\r
++	command = { type = relation which = FRA value = 10 }\r
++	command = { type = relation which = GER value = -10 }\r
++	ai_chance = 98\r
++	}\r
+ }\r
+ \r
+ ##########################################################################\r
+@@ -815,12 +904,27 @@ event = {
+ 	decision = {\r
+ 	flag = Stresa # ストレーザ戦線を構築\r
+ 	event = 9221004 # ストレーザ戦線\r
++	OR = { \r
+ 	war = { country = ENG country = GER }\r
++	war = { country = ENG country = DDR }\r
++	}\r
++	OR = { \r
++	AND = { \r
++	exists = GER\r
++	NOT = { exists = DDR }\r
++	}\r
++	AND = { \r
++	exists = DDR\r
++	NOT = { exists = GER }\r
++	}\r
++	}\r
+ 	NOT = { \r
+ 	war = { country = ITA country = GER }\r
++	war = { country = ITA country = DDR }\r
+ 	war = { country = ITA country = ENG }\r
+ 	war = { country = ITA country = FRA }\r
+ 	alliance = { country = ITA country = GER }\r
++	alliance = { country = ITA country = DDR }\r
+ 	alliance = { country = ITA country = ENG }\r
+ 	alliance = { country = ITA country = FRA }\r
+ 	}\r
+@@ -843,12 +947,27 @@ event = {
+ \r
+ 	decision_trigger = {\r
+ 	event = 9221004 # ストレーザ戦線\r
++	OR = { \r
+ 	war = { country = ENG country = GER }\r
++	war = { country = ENG country = DDR }\r
++	}\r
++	OR = { \r
++	AND = { \r
++	exists = GER\r
++	NOT = { exists = DDR }\r
++	}\r
++	AND = { \r
++	exists = DDR\r
++	NOT = { exists = GER }\r
++	}\r
++	}\r
+ 	NOT = { \r
+ 	war = { country = ITA country = GER }\r
++	war = { country = ITA country = DDR }\r
+ 	war = { country = ITA country = ENG }\r
+ 	war = { country = ITA country = FRA }\r
+ 	alliance = { country = ITA country = GER }\r
++	alliance = { country = ITA country = DDR }\r
+ 	alliance = { country = ITA country = ENG }\r
+ 	alliance = { country = ITA country = FRA }\r
+ 	}\r
+@@ -872,12 +991,27 @@ event = {
+ 	trigger = {\r
+ 	flag = Stresa # ストレーザ戦線を構築\r
+ 	event = 9221004 # ストレーザ戦線\r
++	OR = { \r
+ 	war = { country = ENG country = GER }\r
++	war = { country = ENG country = DDR }\r
++	}\r
++	OR = { \r
++	AND = { \r
++	exists = GER\r
++	NOT = { exists = DDR }\r
++	}\r
++	AND = { \r
++	exists = DDR\r
++	NOT = { exists = GER }\r
++	}\r
++	}\r
+ 	NOT = { \r
+ 	war = { country = ITA country = GER }\r
++	war = { country = ITA country = DDR }\r
+ 	war = { country = ITA country = ENG }\r
+ 	war = { country = ITA country = FRA }\r
+ 	alliance = { country = ITA country = GER }\r
++	alliance = { country = ITA country = DDR }\r
+ 	alliance = { country = ITA country = ENG }\r
+ 	alliance = { country = ITA country = FRA }\r
+ 	}\r
+@@ -904,9 +1038,9 @@ event = {
+ 	picture = "diplomatic_campaign"\r
+ 	decision_picture = "decision_league_of_nations"\r
+ \r
+-	date = { day = 10 month = 3 year = 1935 }\r
++	date = { day = 0 month = 0 year = 1933 }\r
+ 	offset = 5\r
+-	deathdate = { day = 29 month = 11 year = 1936 }\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 宣戦布告をする\r
+ 	name = "ACTIONNAME9221009A"\r
+@@ -924,9 +1058,12 @@ event = {
+ 	command = { type = relation which = POL value = 50 }\r
+ 	command = { type = relation which = DEN value = 50 }\r
+ 	command = { type = relation which = CZE value = 50 }\r
+-	command = { type = relation which = GER value = -10 }\r
+-	command = { type = end_non_aggression which = ITA where = GER }\r
+-	command = { type = war which = GER }\r
++	command = { type = relation which = GER value = -100 }\r
++	command = { type = relation which = DDR value = -100 }\r
++	command = { trigger = { exists = GER } type = end_non_aggression which = ITA where = GER }\r
++	command = { trigger = { exists = GER } type = war which = GER }\r
++	command = { trigger = { exists = DDR } type = end_non_aggression which = ITA where = DDR }\r
++	command = { trigger = { exists = DDR } type = war which = DDR }\r
+ 	}\r
+ }\r
+ ##########################################################################\r

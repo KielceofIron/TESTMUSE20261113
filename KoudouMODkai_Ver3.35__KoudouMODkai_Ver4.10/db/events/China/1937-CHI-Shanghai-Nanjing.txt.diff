@@ -1,0 +1,121 @@
+--- A/db/events/China/1937-CHI-Shanghai-Nanjing.txt [cp932]
++++ B/db/events/China/1937-CHI-Shanghai-Nanjing.txt [cp932]
+@@ -184,8 +184,9 @@ event = {
+ 		}\r
+ 		name = ACTION_NAME_DAMN\r
+ 		command = { trigger = { NOT = { dissent = 20 } } type = dissent value = 10 }\r
+-		command = { type = max_organization which = land value = -15 }\r
+-		command = { type = morale which = land value = -10 }\r
++		#command = { type = max_organization which = land value = -15 }\r
++		#command = { type = morale which = land value = -10 }\r
++		command = { type = ground_def_eff value = -0.2 when = 1 } # 追加\r
+ 		command = { type = local_setflag which = 1330110082 }\r
+ 		command = { trigger = {\r
+ 						NOT = {\r
+@@ -234,8 +235,8 @@ event = {
+ 		ai_chance = 99\r
+ 		name = EVT_1330110083_ACTION1 #Defend Nanjing at all costs!\r
+ 		command = { type = dissent value = -5 }\r
+-		command = { type = morale which = land value = -10 }\r
+-        command = { type = max_organization which = land value = -15 }\r
++		command = { type = morale which = land value = -20 }\r
++        	command = { type = max_organization which = land value = -20 }\r
+ 		command = { type = local_setflag which = 1330110083 }\r
+ 	}\r
+ \r
+@@ -270,47 +271,28 @@ event = {
+ 	country = CHI\r
+ \r
+ 	trigger = {\r
+-		or = { 	event = 1330110082\r
++		OR = { 	event = 1330110082\r
+ 			event = 1330110083\r
+ 			}\r
+ \r
+-		or = {\r
+-			random = 2\r
+-			and = {\r
+-				random = 3\r
+-				event = 2012001 # Nanjing Massacre\r
++		OR = {\r
++			lost_national = { value = 50 }\r
++			event = { id = 1330110081 days = 360 }  #JAP Bloody Saturday\r
++			OR = { \r
++			control = { province = 1322 data = JAP }\r
++			control = { province = 1325 data = JAP }\r
++			control = { province = 1316 data = JAP }\r
++			control = { province = 1313 data = JAP }\r
++			control = { province = 1308 data = JAP }\r
++			control = { province = 1317 data = JAP }\r
++			control = { province = 1311 data = JAP }\r
++			control = { province = 1378 data = JAP }\r
++			control = { province = 1380 data = JAP }\r
++			control = { province = 1382 data = JAP }\r
+ 			}\r
+-			and = {\r
+-				random = 2\r
+-				not = { lost_national = { value = 40 } }\r
+-			}\r
+-			and = {\r
+-				random = 3\r
+-				event = { id = 1330110081 days = 180 } #JAP Bloody Saturday\r
+-			}\r
+-			and = {\r
+-				ai = yes\r
+-				not = { ai = JAP }\r
+-				random = 15\r
+-			}\r
+-			and = {\r
+-				ai = yes\r
+-				lost_national = { value = 40 }\r
+-				random = 10\r
+-			}\r
+-			and = {\r
+-				ai = yes\r
+-				lost_national = { value = 20 }\r
+-				not = { ai = JAP }\r
+-				random = 30\r
+-			}\r
+-			event = { id = 1330110081 days = 240 } # 360 #JAP Bloody Saturday\r
++			random = 4\r
+ 		}\r
+-\r
+-		or = {\r
+-			event = { id = 1330110081 days = 30 }  #JAP Bloody Saturday\r
+-			lost_national = { value = 40 }\r
+-			}\r
++			\r
+ 	}\r
+ 	\r
+ 	picture = "ccip_gmd"\r
+@@ -320,18 +302,21 @@ event = {
+ 	desc = EVT_1330110084_DESC\r
+ \r
+ 	date = { day = 2 month = january year = 1933 }\r
+-	offset = 14\r
++	offset = 30\r
+ 	deathdate = { day = 29 month = december year = 1964 }\r
+ \r
+ 	action = {\r
+ 		name = ACTION_NAME_GREAT\r
+-		command = { type = dissent value = -1 }\r
+-		command = { trigger = { local_flag = 1330110082 } type = morale which = land value = 10 }\r
+-		command = { trigger = { local_flag = 1330110083 } type = morale which = land value = 10 }\r
+-		command = { trigger = { local_flag = 1330110082 } type = max_organization which = land value = 15 }\r
+-		command = { trigger = { local_flag = 1330110083 } type = max_organization which = land value = 15 }\r
+-\r
+-		command = { type = strength which = land when = 1 where = 0 org = 0.7 value = 0.10 } # 戦線の兵士が10%回復\r
++		command = { type = dissent value = -15 }\r
++		command = { type = free_ic value = 10 } # 追加\r
++		command = { type = free_supplies value = 15 } # 追加\r
++		command = { type = extra_tc value = 50 } # 追加\r
++		#command = { trigger = { local_flag = 1330110082 } type = morale which = land value = 20 }\r
++		command = { trigger = { local_flag = 1330110083 } type = morale which = land value = 20 }\r
++		#command = { trigger = { local_flag = 1330110082 } type = max_organization which = land value = 20 }\r
++		command = { trigger = { local_flag = 1330110083 } type = max_organization which = land value = 20 }\r
++		command = { trigger = { local_flag = 1330110082 } type = ground_def_eff value = 0.15 when = 1 }\r
++		command = { type = strength which = land when = 1 where = 0 org = 0.2 value = 0.10 } # 戦線の兵士が10%回復\r
+ \r
+ 	}\r
+ }
+\ No newline at end of file

@@ -1,0 +1,412 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Greece_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Greece_events.txt [cp932]
+@@ -182,7 +182,7 @@ event = {
+ \r
+ \r
+ \r
+-#  ギリシャ共和国の成立――共和派の勝利！\r
++\r
+ # 先に行われた国民投票の結果、ビザンツ・ギリシャは共和制国家として再スタートを切ることが決定的となった。\r
+ # ギリシャ王室は一時ドイツ帝国へと退き、エレフテリオス・ヴェニゼロスは国民投票実施以前から温めていた\r
+ # ギリシャ共和国の制度案を検討、これが無事裁可され、ギリシャ共和国の初代大統領の地位につくこととなった。\r
+@@ -192,22 +192,29 @@ event = {
+ 	random = no\r
+ 	country = GRE\r
+ 	\r
++	trigger = {\r
++	\r
++	}\r
++	\r
+ 	name = EVT_7736003_NAME\r
+ 	desc = EVT_7736003_DESC\r
+ 	style = 2\r
+-	picture = "news_paper"\r
++	picture = "picture"\r
+ 	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # 見え透いた茶番だな……\r
+-	name = "ACTIONNAME7736003A"\r
+-	command = { type = name where = GRE which = "ビザンツ・ギリシャ共和国" }\r
+-	command = { type = headofstate which = 90306 }\r
+-	ai_chance = 100\r
++	name = "ACTIONNAMEIDA"\r
++	command = { type = name where = GRE which = "ギリシャ共和国" }\r
++	command = { }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ # 国家元首：エレフテリオス・ヴェニゼロス→ワンマン政治家90306\r
+ \r
+-#  暗黒の日 ― ビザンツ・ギリシャへの波及\r
++\r
+ # 大変なことが起きた！\r
+ # アメリカで発生した株価大暴落の波は海を超えて欧州に至り、地中海にまで波及した。\r
+ # ビザンツ・ギリシャは国力の過半を軍事費に注ぎ込んでおり、軍備拡大の財源は専ら英独伊が\r
+@@ -225,27 +232,27 @@ event = {
+ 	random = no\r
+ 	country = GRE\r
+ 	\r
+-	trigger = {  }\r
+-	name = EVT_7736003_NAME\r
+-	desc = EVT_7736003_DESC\r
++	trigger = {\r
++	\r
++	}\r
++	\r
++	name = EVT_773600_NAME\r
++	desc = EVT_773600_DESC\r
+ 	style = 2\r
+-	picture = "money_devaluation"\r
+-	date = { day = 25 month = 3 year = 1933 }\r
+-\r
++	picture = "picture"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # 赤字隠し……は、ないようだな\r
+-	name = "ACTIONNAME7736004A"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = peacetime_ic_mod value = -10 }\r
+-	command = { type = wartime_ic_mod value = -10 }\r
+-	command = { type = money value = -500 }\r
+-	command = { type = free_money value = -8 }\r
+-	command = { type = industrial_modifier which = money value = -80 }\r
++	name = "ACTIONNAMEIDA"\r
++	command = {  }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
++# 既存世界大恐慌イベントに差し替え。効果は同じ\r
+ \r
+-#  財政破綻秒読み段階\r
+ # 事ここに至り、エレフテリオス・ヴェニゼロスは国債償還期限の延長と財政支援依頼のため英独伊各国へと交渉に出向いた。\r
+ # しかし、各国の反応は如何にも鈍いものであった。\r
+ # イタリア王国は地中海随一の経済大国として知られていたが、その経済は北イタリア工業地帯の生産物輸出に強く依存していた。\r
+@@ -264,39 +271,32 @@ event = {
+ # だが。\r
+ # \r
+ event = {\r
+-	id = 7736004\r
++	id = 773600\r
+ 	random = no\r
+-	country = GRE\r
++	country = TAG\r
+ 	\r
+ 	trigger = {\r
+-	OR = {\r
+-	dissent = 40\r
+-	month = 6\r
+-	NOT = { money = 200 }\r
+-	}\r
++	\r
+ 	}\r
+ 	\r
+-	name = EVT_7736004_NAME\r
+-	desc = EVT_7736004_DESC\r
++	name = EVT_773600_NAME\r
++	desc = EVT_773600_DESC\r
+ 	style = 2\r
+ 	picture = "picture"\r
+ 	\r
+-	date = { day = 0 month = 3 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1900 }\r
+ 	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1933 }\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # ドイツ帝国はこの時点で、全てを知っていたようである……\r
+-	name = "ACTIONNAME7736004A"\r
+-	command = { type = relation where = GER value = 20 }\r
+-	command = { type = relation where = ITA value = 2 }\r
+-	command = { type = relation where = ENG value = 2 }\r
+-	command = { type = money value = 15 }\r
+-	command = { type = free_money value = 5 }\r
++	name = "ACTIONNAMEIDA"\r
++	command = {  }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ \r
+-#  王党派クーデター\r
++\r
+ # エレフテリオス・ヴェニゼロス含むギリシャ外交団が欧州へ交渉に向かう中、ビザンツ・ギリシャにおいては一大政変が巻き起ころうとしていた。\r
+ # 王党派で知られるギリシャ陸軍軍人イオニアス・メタクサスを中心に、同じく陸軍軍人アレクサンドル・パパゴス、海軍のトップであったアレクサンドロス・サケラリオウ、軍部の重鎮であるゲオルギオス・コンディリスらを中核とする王党派軍人グループによってビザンツ・ギリシャは王政復古を実現することとなった。\r
+ # 世界大恐慌によってヴェニゼロス自身が欧州へ交渉に向かうとなれば、ギリシャ本土の権力は一時空白となるであろうし、もし仮に\r
+@@ -319,16 +319,16 @@ event = {
+ # これらは全くの嘘っぱちであったが――ギリシャ国民は、新生ビザンツ・ギリシャ王国を熱狂的に支持した。\r
+ # \r
+ event = {\r
+-	id = 7736005\r
++	id = 773600\r
+ 	random = no\r
+-	country = GRE\r
++	country = TAG\r
+ 	\r
+ 	trigger = {\r
+-	event = 7736004\r
++	\r
+ 	}\r
+ 	\r
+-	name = EVT_7736005_NAME\r
+-	desc = EVT_7736005_DESC\r
++	name = EVT_773600_NAME\r
++	desc = EVT_773600_DESC\r
+ 	style = 2\r
+ 	picture = "picture"\r
+ 	\r
+@@ -337,9 +337,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # 国民とはタチの悪い女のようなものである\r
+-	name = "ACTIONNAME7736005A"\r
+-	command = { type = dissent value = -25 }\r
+-\r
++	name = "ACTIONNAMEIDA"\r
++	command = {  }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -347,7 +346,7 @@ event = {
+ # 体制が国家協同主義に\r
+ # 国家元首：ゲオルギオス二世→臆病な頑固者\r
+ # 政府首班：ゲオルギオス・コンディリス→元陸軍大将\r
+-# 軍需大臣：アリストテレス・オナシス90309\r
++# 軍需大臣：アリストテレス・オナシス\r
+ # →固有特性名＠海運王\r
+ # アリストテレス・ソクラテス・オナシスはギリシャの実業家、海運王である。\r
+ # 旧オスマン帝国スミルナでギリシャ系中流家庭に生まれた彼は、ギリシャ王国によるオスマン内戦介入により\r
+@@ -367,7 +366,7 @@ event = {
+ # 外交コスト＋１０％\r
+ # 宣戦布告するのに必要な好戦性＋２０％\r
+ # 情報大臣：イオニアス・メタクサス→政治分析の専門家\r
+-# 外務大臣：スタブロス・ニアルコス90310\r
++# 外務大臣：スタブロス・ニアルコス\r
+ # →固有特性名＠新進気鋭の海運企業家\r
+ # スタブロス・スピロス・ニアルコスはギリシャの企業家、海運王、富豪である。\r
+ # アメリカ人の両親を持ちながらアテネで生まれた彼は、アテネ大学で法学を学んだ後、実業家に転身。\r
+@@ -385,7 +384,7 @@ event = {
+ # 輸送能力＋５％\r
+ # 外交コスト＋１０％\r
+ # 宣戦布告するのに必要な好戦性＋２０％\r
+-# 内務大臣：スタブロス・Ｇ・リバノス90311\r
++# 内務大臣：スタブロス・Ｇ・リバノス\r
+ # →固有特性名＠抜け目ないビジネスマン\r
+ # スタブロス・ゲオルグ・リバノスはギリシャの企業家、富豪である。\r
+ # 彼は船乗りの家系の三代目としてヒオス島に生まれ、第一次世界大戦からオスマン内戦においては海運事業で利益を獲得した。\r
+@@ -403,10 +402,9 @@ event = {
+ # 宣戦布告するのに必要な好戦性＋２０％\r
+ # 統合参謀長：イオニアス・メタクサス→人海戦術論者\r
+ # 陸軍大臣：アレクサンドル・パパゴス→静的防御ドクトリン\r
+-# 海軍大臣：アレクサンドロス・サケラリオウ90009\r
+-# 空軍大臣：スピリドン・パパリゴポウロス90236\r
++# 海軍大臣：アレクサンドロス・サケラリオウ\r
++# 空軍大臣：スピリドン・パパリゴポウロス\r
+ \r
+-#  \r
+ # 世界大恐慌直後に軍事クーデターを起こし王政復古を成し遂げた軍人、ゲオルギオス・コンディリスが心臓発作で亡くなった。\r
+ # 彼自身は王党派とも共和派とも言えない単なる機会主義者に過ぎず、その中核には常にイデオローグが存在していた。\r
+ # 彼は過去にはヴェニゼロスと彼の政治主張を支持しながら、世界大恐慌前夜には右派に転向するという思想的転回を見せており、\r
+@@ -427,35 +425,31 @@ event = {
+ # と呼称されることとなる……。\r
+ # \r
+ event = {\r
+-	id = 7736006\r
++	id = 773600\r
+ 	random = no\r
+-	country = GRE\r
++	country = TAG\r
+ 	\r
+ 	trigger = {\r
+-	ispuppet = no\r
++	\r
+ 	}\r
+ 	\r
+-	name = EVT_7736006_NAME\r
+-	desc = EVT_7736006_DESC\r
++	name = EVT_773600_NAME\r
++	desc = EVT_773600_DESC\r
+ 	style = 2\r
+-	picture = "Metaxasdic"\r
++	picture = "picture"\r
+ 	\r
+-	date = { day = 3 month = 7 year = 1936 }\r
+-	deathdate = { day = 3 month = 7 year = 1936 }\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
+ 	\r
+ 	action = { # 我々には二つの事物が残された！　即ち、『自由か死』か！\r
+ 	name = "ACTIONNAMEIDA"\r
+-		command = {  }\r
+-		command = { type = set_domestic which = democratic value = 2 }\r
+-		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { type = set_domestic which = free_market value = 7 }\r
+-		command = { type = set_domestic which = freedom value = 2 }\r
+-		command = { type = set_domestic which = defense_lobby value = 7 }\r
+-		command = { type = set_domestic which = interventionism value = 4 }\r
++	command = {  }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ # 体制、指導者原理に\r
+-# 政府首班：イオニアス・メタクサス90315\r
++# 政府首班：イオニアス・メタクサス\r
+ # →固有特性名＠誇り高き元職業軍人\r
+ # イオニアス・メタクサスはビザンツ・ギリシャの政治家、軍人である。\r
+ # １８９７年に起きた希土戦争で初の実践を経験し、ギリシャ陸軍の後進性を目の当たりにした彼は\r
+@@ -473,148 +467,3 @@ event = {
+ # ユニットの士気＋５％\r
+ # 国民不満度上昇率＋２５％\r
+ \r
+-# ギリシャ王国は名宰相エレフテリオス・ヴェニゼロスの就任から彼の失脚後の現在まで軍備改革に勤しんできた。\r
+-# メガリ・イデアの実現、ビザンツ・ギリシャの成立はそうした努力が実ったが故のいわば果実であった。\r
+-# しかし、一連の軍事改革と同時に進められてきた軍備拡大はギリシャ王国の財政を明確に圧迫し、世界大恐慌におけるヴェニゼロス失脚の一因にもなった。\r
+-# だが、ヴェニゼロスを追い出した王党派グループの背景には他でもない拡大した軍とそれを差配する軍部の存在があり、ビザンツ・ギリシャは軍備増強と赤字からの脱却の両方を実現しなければいけなくなってしまった。\r
+-# そこでビザンツ・ギリシャ救国内閣はまず国債をドイツ帝国に一本化し、ドイツ帝国との連携を強めた。\r
+-# 装備の充実や規模の拡大は予算の都合だが、それ以上に問題なのは旧態然とした戦術であり、陸戦は無論、海戦戦術は装甲艦レベルに達しておらず、\r
+-# 航空機に至っては機体のみであり、運用技術や戦術などは考えられる状態にもなかった。\r
+-# そこでビザンツ・ギリシャ政府はドイツ帝国に軍事顧問団の派遣を要求し、ドイツ帝国はこれを快く受諾した。\r
+-# \r
+-event = {\r
+-	id = EVENTID\r
+-	random = no\r
+-	country = TAG\r
+-	\r
+-	trigger = {\r
+-	\r
+-	}\r
+-	\r
+-	name = EVT_ID_NAME\r
+-	desc = EVT_ID_DESC\r
+-	style = 2\r
+-	picture = "picture"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1900 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-	\r
+-	action = { # 戦術を改革し、次の戦争に備えよ！\r
+-	name = "ACTIONNAMEIDA"\r
+-	command = {  }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-# 連続イベント、ドイツ軍事顧問団の到着につながる\r
+-# 資金、物資を用意。これを消費する\r
+-\r
+-# 朗報だ！\r
+-# 複数の資本家の投資によって建造途上にあった施設『メガリ・イデア海軍造船所』の建設が完了した！\r
+-# 同施設においては潜水艦や駆逐艦、輸送艦などの小型艦船から民間船までを建造する半官半民の造船所となる。\r
+-# この計画はヴェニゼロス宰相の時代から予定されていたものであり、本当であれば名称も『ヴェニゼロス記念造船所』となる予定であった。\r
+-# しかし、ギリシャ政府も彼を追い出した手前、その名前を引用することはできず、民族の悲願であったメガリ・イデアの名称を付与することとなった。\r
+-# また、造船所の目的も、最初期段階では駆逐艦や軽巡洋艦などの水上艦を主として建造する予定であったはずが、軍の要請から潜水艦建造にシフトしたため、\r
+-# 出資者であった海運企業家の一人からは\r
+-# 「海運屋が海運業者の船を撃沈する潜水艦建造のために金を出していたとは滑稽だ」\r
+-# と批判を加える結果にも繋がった。\r
+-# \r
+-event = {\r
+-	id = EVENTID\r
+-	random = no\r
+-	country = TAG\r
+-	\r
+-	trigger = {\r
+-	\r
+-	}\r
+-	\r
+-	name = EVT_ID_NAME\r
+-	desc = EVT_ID_DESC\r
+-	style = 2\r
+-	picture = "picture"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1900 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-	\r
+-	action = { # 何はともあれ、完成したんだから、良いではないか\r
+-	name = "ACTIONNAMEIDA"\r
+-	command = {  }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-# メガリ・イデア海軍造船所＠スキル５\r
+-# 海軍工学、潜水艦設計、機械工学、電子工学\r
+-\r
+-# ドイツ軍事顧問団にまず最初に要求されたのは、航空機運用戦術と生産技術の伝来であった。\r
+-# 地域大国として成立したビザンツ・ギリシャの工業力は未だ大国に見劣りするものであり、\r
+-# これはドイツ帝国の軍産企業の支社招来も含みに入れたものとなった。\r
+-# 派遣された軍人ヴァルター・フォン・ビューロウ＝ボートカンプは第一次世界大戦におけるドイツ軍のエースパイロットであり、\r
+-# 防空戦を基礎とした航空戦術全般を担当する。\r
+-# \r
+-event = {\r
+-	id = EVENTID\r
+-	random = no\r
+-	country = TAG\r
+-	\r
+-	trigger = {\r
+-	\r
+-	}\r
+-	\r
+-	name = EVT_ID_NAME\r
+-	desc = EVT_ID_DESC\r
+-	style = 2\r
+-	picture = "picture"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1900 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-	\r
+-	action = { # ありがたい！\r
+-	name = "ACTIONNAMEIDA"\r
+-	command = {  }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-# ヴァルター・フォン・ビューロウ＝ボートカンプ＠スキル４\r
+-# 航空機試験、沿岸航法、戦闘機戦術、分散実行\r
+-# ハインケル地中海支社＠スキル４\r
+-# 航空学、電子工学、火砲、爆撃機設計\r
+-# 追加。\r
+-# 防空系に青写真追加\r
+-\r
+-# ドイツ軍事顧問団に要求された二番目の項目は、海軍運用戦術であった。\r
+-# 現在のビザンツ・ギリシャ海軍は地中海という限定的な海域で言えばもっとも大きな海軍を所有する国家であり、\r
+-# その予算を空軍に注ぎ込んだイタリア王国海軍など相手にならず、もし仮にフランス海軍が全力を向けてきたとしても壊滅はしないだけの戦力を有している。\r
+-# しかしそれはあくまで艦船の数に限った話であって、海軍の運用技術という面ではギリシャ海軍はイタリア、オーストリアに劣り、陸軍国家イスラエルと同程度である。\r
+-# 現在、ギリシャ王国の海運王複数人の出資によって造船所が建築されようとしているが、戦術面においても大きな改革が必要となるであろう。\r
+-# そこで、ドイツ帝国海軍は第一次世界大戦時にＵボート運用を経験し、インド洋で活躍したオットー・エドゥアルト・ヴェディゲン将軍を派遣した。\r
+-# 彼はドイツ帝国海軍の艦隊温存と間接アプローチへの理解が深く、ギリシャ王国へドイツ帝国海軍の戦術思想をいわば『布教』しにきた立場にある。\r
+-# \r
+-event = {\r
+-	id = EVENTID\r
+-	random = no\r
+-	country = TAG\r
+-	\r
+-	trigger = {\r
+-	\r
+-	}\r
+-	\r
+-	name = EVT_ID_NAME\r
+-	desc = EVT_ID_DESC\r
+-	style = 2\r
+-	picture = "picture"\r
+-	\r
+-	date = { day = 0 month = 0 year = 1900 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1999 }\r
+-	\r
+-	action = { # 大艦隊は温存せよ！　潜水艦こそ海軍の最突端である！\r
+-	name = "ACTIONNAMEIDA"\r
+-	command = {  }\r
+-	ai_chance = 0\r
+-	}\r
+-}\r
+-# オットー・ヴェディゲン＠スキル５\r
+-# 潜水艦戦術、操船術、海軍訓練、小規模機動部隊戦術\r
+-# 潜水艦戦術に青写真
+\ No newline at end of file

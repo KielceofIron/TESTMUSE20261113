@@ -1,0 +1,340 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_Balkan_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_Balkan_events.txt [utf-8]
+@@ -4,6 +4,16 @@
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
++# ブルガリア\r
++#id = 5837001 軍国主義者のクーデター\r
++#id = 5837002 右翼クーデター\r
++#id = 5837003 新閣僚の就任（1939年 フェルディナンド1世）\r
++#id = 5837004 新閣僚の就任（1943年 フェルディナンド1世）\r
++#id = 5837005 国家元首の逝去（フェルディナンド1世）\r
++# ユーゴスラビア\r
++#id = 5838001 マルセイユ事件（YUG）\r
++#id = 5838002 マルセイユ事件（FRA）\r
++# アルバニア\r
+ #id = 5839001 アルバニアの不確かな未来\r
+ #id = 5839002 国家元首の逝去（スカンデルベグ2世）\r
+ #id = 5839003 第二次アルバニア会議\r
+@@ -13,6 +23,320 @@
+ #id = 5839103 1951年総選挙\r
+ #id = 5839104 1957年総選挙\r
+ #id = 5839105 1963年総選挙\r
++#########################################################################\r
++#  ブルガリア\r
++#########################################################################\r
++#  軍国主義者のクーデター\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5837001\r
++	random = no\r
++	country = BUL\r
++\r
++	trigger = {\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_111_NAME"\r
++	desc = "EVT_111_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 19 month = 4 year = 1934 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1934 }\r
++\r
++	action = { # クーデター成功\r
++	name = "ACTION_NAME_COUP_SUCCEEDS"\r
++	command = { type = dissent value = 3 }\r
++	command = { type = set_domestic which = democratic value = 2 }\r
++	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = headofstate which = 95275 } # フリスト・ルコフ\r
++	command = { type = headofgovernment which = 95277 } # ニコラ・ジェコフ\r
++	command = { type = foreignminister which = 95035 } # パルヴァン・ドラガノフ\r
++	command = { type = armamentminister which = 95050 } # ボグダン・フィロフ\r
++	command = { type = ministerofsecurity which = 95065 } # ディミタール・ペシェフ\r
++	command = { type = ministerofintelligence which = 95077 } # キリル・スタンチェフ\r
++	command = { type = chiefofstaff which = 95088 } # イヴァン・ヴァルコフ\r
++	command = { type = chiefofarmy which = 95099 } # フリスト・ルコフ\r
++	command = { type = chiefofnavy which = 95108 } # アタナス・シャラパトフ\r
++	command = { type = chiefofair which = 95113 } # チュドミール・トプロドルスキ\r
++	command = { type = sleepminister which = 95401 } # アレクサンダル・スタンボリスキ\r
++	command = { type = sleepminister which = 95403 }\r
++	command = { type = sleepminister which = 95405 }\r
++	command = { type = sleepminister which = 95402 } # ライコ・ダスカロフ\r
++	command = { type = sleepminister which = 95404 }\r
++	command = { type = sleepminister which = 95406 }\r
++	ai_chance = 50\r
++	}\r
++\r
++	action = { # クーデター失敗\r
++	name = "ACTION_NAME_COUP_FAILS"\r
++	command = { trigger = { ai = yes } type = dissent value = 5 }\r
++	command = { trigger = { ai = no } type = dissent value = 10 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	command = { type = headofstate which = 95402 } # ライコ・ダスカロフ\r
++	command = { type = headofgovernment which = 95028 } # キモン・ゲオルギエフ\r
++	command = { type = foreignminister which = 95041 } # ペトコ・スタイノフ\r
++	command = { type = sleepminister which = 95401 } # アレクサンダル・スタンボリスキ\r
++	command = { type = sleepminister which = 95403 }\r
++	command = { type = sleepminister which = 95405 }\r
++	ai_chance = 50\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  右翼クーデター\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5837002\r
++	random = no\r
++	country = BUL\r
++\r
++	trigger = {\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_110_NAME"\r
++	desc = "EVT_110_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 20 month = 3 year = 1935 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1935 }\r
++\r
++	action = { # クーデター成功\r
++	name = "ACTION_NAME_COUP_SUCCEEDS"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 95205 } # フェルディナンド1世\r
++	command = { type = headofgovernment which = 95002 } # ゲオルギ・キオセイヴァノフ\r
++	command = { type = foreignminister which = 95003 } # ゲオルギ・キオセイヴァノフ\r
++	command = { type = armamentminister which = 95004 } # ボグダン・フィロフ\r
++	command = { type = ministerofsecurity which = 95005 } # ディミタール・ペシェフ\r
++	command = { type = ministerofintelligence which = 95006 } # ディミタール・ペシェフ\r
++	command = { type = chiefofstaff which = 95088 } # イヴァン・ヴァルコフ\r
++	command = { type = chiefofarmy which = 95008 } # トドール・ジョルジエフ\r
++	command = { type = chiefofnavy which = 95009 } # サヴァ・イヴァノフ\r
++	command = { type = chiefofair which = 95010 } # ヴァシル・ボイデフ\r
++	ai_chance = 30\r
++	}\r
++\r
++	action = { # クーデター失敗\r
++	name = "ACTION_NAME_COUP_FAILS"\r
++	command = { trigger = { ai = yes } type = dissent value = 5 }\r
++	command = { trigger = { ai = no } type = dissent value = 3 }\r
++	command = { type = domestic which = freedom value = -1 }\r
++	ai_chance = 70\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  新閣僚の就任（1939年）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5837003\r
++	random = no\r
++	country = BUL\r
++\r
++	trigger = {\r
++	headofstate = 95205 # フェルディナンド1世\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_2003149_ACT"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 0 month = 3 year = 1939 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 95205 } # フェルディナンド1世\r
++	command = { type = headofgovernment which = 95021 } # ボグダン・フィロフ\r
++	command = { type = foreignminister which = 95031 } # アレクサンデル・ニコライエフ\r
++	command = { type = armamentminister which = 95047 } # ゲオルギ・サポフ\r
++	command = { type = ministerofsecurity which = 95061 } # ニコライ・ニコラエフ\r
++	command = { type = ministerofintelligence which = 95074 } # キリル・グネフ\r
++	command = { type = chiefofstaff which = 95084 } # テオドシ・ダスカロフ\r
++	command = { type = chiefofarmy which = 95095 } # ニコラ・ハジペトコフ\r
++	command = { type = chiefofnavy which = 95106 } # イヴァン・ヴァリクレチコフ\r
++	command = { type = chiefofair which = 95010 } # ヴァシル・ボイデフ\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 拒否\r
++	name = "ACTION_NAME_REFUSE"\r
++	command = { type = dissent value = 3 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  新閣僚の就任（1943年）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5837004\r
++	random = no\r
++	country = BUL\r
++\r
++	trigger = {\r
++	headofstate = 95205 # フェルディナンド1世\r
++	NOT = { ispuppet = yes }\r
++	atwar = no\r
++	}\r
++\r
++	name = "EVT_2003149_ACT"\r
++	desc = "EVT_120_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++\r
++	date = { day = 1 month = 8 year = 1943 }\r
++	offset = 20\r
++	deathdate = { day = 29 month = 11 year = 1943 }\r
++\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { type = dissent value = -1 }\r
++	command = { type = set_domestic which = democratic value = 4 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = headofstate which = 95205 } # フェルディナンド1世\r
++	command = { type = headofgovernment which = 95022 } # ドブリ・ボジロフ\r
++	command = { type = foreignminister which = 95033 } # ディミタール・シシュマノフ\r
++	command = { type = armamentminister which = 95048 } # サヴァ・キーロフ\r
++	command = { type = ministerofsecurity which = 95063 } # ドチョ・リストフ\r
++	command = { type = ministerofintelligence which = 95075 } # ステファン・ノイコフ\r
++	command = { type = chiefofstaff which = 95086 } # ルッシ・ルセフ\r
++	command = { type = chiefofarmy which = 95097 } # コンスタンチン・ルカシュ\r
++	command = { type = chiefofnavy which = 95107 } # アセン・ツァネフ\r
++	command = { type = chiefofair which = 95112 } # ディミタール・アイリャノフ\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 拒否\r
++	name = "ACTION_NAME_REFUSE"\r
++	command = { type = dissent value = 3 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++\r
++#########################################################################\r
++#  国家元首の逝去（フェルディナンド1世）\r
++#########################################################################\r
++event = {\r
++	id = 5837005\r
++	random = no\r
++	country = BUL\r
++	\r
++	trigger = {\r
++	minister = 95205 # フェルディナンド1世\r
++	}\r
++\r
++	name = "EVT_101_NAME"\r
++	desc = "EVT_101_DESC"\r
++	style = 2\r
++	picture = "minister_died"\r
++\r
++	date = { day = 9 month = 8 year = 1948 }\r
++\r
++	action = { # いなくなると寂しい\r
++	name = "EVT_362_ACTC"\r
++	command = { trigger = { headofstate = 95205 }  type = headofstate which = 95011 } # プレスラフ公キリル\r
++	command = { type = sleepminister which = 95205 } # フェルディナンド1世\r
++	}\r
++}\r
++#########################################################################\r
++#  ユーゴスラビア\r
++#########################################################################\r
++#  マルセイユ事件（YUG）\r
++# 1934年10月9日、マルセイユを訪問したアレクサンダル1世はフランス外相ルイ・バルトゥーと面会したが、\r
++# この場に潜伏していた狙撃手ヴラド・チェルノセムスキーにより、バルトゥーと共に乗車していた車内で銃撃された。\r
++# この犯行の黒幕はクロアチアの民族主義団体ウスタシャであったとも、\r
++# マケドニアのブルガリアへの帰属を求めるブルガリアの民族主義団体内部マケドニア革命組織であったとも言われるが、\r
++# 真相は現在でも不明である。\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5838001\r
++	random = no\r
++	country = YUG\r
++	\r
++	trigger = {\r
++	headofstate = 100086 # アレクサンダル1世\r
++	}\r
++\r
++\r
++	name = "EVT_5838001_NAME"\r
++	desc = "EVT_5838001_DESC"\r
++	style = 2\r
++	picture = "assassinationofker"\r
++\r
++	date = { day = 8 month = 9 year = 1934 }\r
++\r
++	action = { # 国王は暗殺を免れた\r
++	name = "ACTIONNAME5838001A"\r
++	command = { type = relation which = FRA value = -5 }\r
++	command = { type = relation which = BUL value = -15 }\r
++	command = { type = headofstate which = 100086 } # アレクサンダル1世\r
++	command = { type = headofgovernment which = 100093 } # ボゴリュブ・エヴチッチ\r
++	command = { type = trigger which = 5838002 } # マルセイユ事件（FRA）\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 国王は暗殺された！\r
++	name = "ACTIONNAME5838001A"\r
++	command = { type = relation which = FRA value = -5 }\r
++	command = { type = relation which = BUL value = -25 }\r
++	command = { type = headofstate which = 100001 } # パヴレ・カラジョルジェヴィッチ公\r
++	command = { type = headofgovernment which = 100093 } # ボゴリュブ・エヴチッチ\r
++	command = { type = sleepminister which = 100086 } # アレクサンダル1世\r
++	command = { type = trigger which = 5838002 } # マルセイユ事件（FRA）\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++#########################################################################\r
++#  マルセイユ事件（FRA）\r
++#########################################################################\r
++\r
++event = {\r
++	id = 5838002\r
++	random = no\r
++	country = FRA\r
++\r
++	name = "EVT_5838002_NAME"\r
++	desc = "EVT_5838002_DESC"\r
++	style = 2\r
++	picture = "assassinationofker"\r
++\r
++	action = { # いなくなると寂しい\r
++	name = "EVT_362_ACTC"\r
++	command = { type = relation which = YUG value = -5 }\r
++	command = { type = relation which = BUL value = -15 }\r
++	command = { type = sleepminister which = 5050 } # ルイ・バルトゥー\r
++	command = { type = sleepminister which = 5277 }\r
++	command = { type = sleepminister which = 5289 }\r
++	command = { type = sleepminister which = 5342 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  アルバニア\r
+ #########################################################################\r

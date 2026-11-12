@@ -1,0 +1,144 @@
+--- A/db/events/DayofDecision.txt [cp932]
++++ B/db/events/DayofDecision.txt [cp932]
+@@ -1,6 +1,9 @@
+ #  2003130 共産ifシナリオ時にドイツが共産化する選択肢を選ぶように変更。\r
+ #  2003168 ai時に開戦する年月を1939年以降に。\r
+ #  2011042 被害を受けるプロヴィンスを追加\r
++#  2049108 フィリピン独立イベントの為に、領有主張解除コマンドを追加\r
++#  2049094 イベントが起こりやすいよう調整\r
++#  2049102 イベントが起こりやすいよう調整\r
+ \r
+ ### 2049086  USA  First New Deal\r
+ ### 2049087  USA  Emergency Banking Act\r
+@@ -345,18 +348,20 @@ event = {
+ 	country = USA\r
+ 	\r
+ 	decision = {\r
+-			event = 2049092\r
++			#event = 2049092\r
+ 			headofstate = 240001 # FDR\r
+ 			event = { id = 2049086 days = 450 }\r
+ 	}\r
+ 	decision_trigger = {\r
+-			event = 2049092\r
++			#event = 2049092\r
+ 			money = 1000\r
+ 			headofstate = 240001 # FDR\r
++			event = { id = 2049086 days = 450 }\r
+ 	}\r
+ 	trigger = {\r
+-			event = 2049092\r
++			#event = 2049092\r
+ 			headofstate = 240001 # FDR\r
++			event = { id = 2049086 days = 450 }\r
+ 	}\r
+ 	\r
+ 	name = "2049093name"\r
+@@ -385,9 +390,9 @@ event = {
+ 	country = USA\r
+ \r
+ 	trigger = {\r
+-			event = 2049093\r
+-			random = 2\r
+-			headofstate = 240001 # FDR\r
++			#event = 2049093\r
++			random = 30\r
++			#headofstate = 240001 # FDR\r
+ 	}\r
+ 	\r
+ 	name = "2049094name"\r
+@@ -395,8 +400,8 @@ event = {
+ 	style = 2\r
+ 	picture = "public_jobs"\r
+ \r
+-	date = { day = 0 month = january year = 1933 }\r
+-	offset = 30\r
++	date = { day = 0 month = january year = 1934 }\r
++	offset = 15\r
+ 	deathdate = { day = 29 month = december year = 1964 }\r
+ \r
+ 	action = {\r
+@@ -613,11 +618,12 @@ event = {
+ 	trigger = {\r
+ 		event = 2049094 # Industrial production back to 1928 levels\r
+ 		atwar = no\r
+-		OR = { random = 50 AND = { year = 1939 random = 80 } }\r
++		#OR = { random = 50 AND = { year = 1939 random = 80 } }\r
++		random = 60\r
+ 		}\r
+ \r
+-	date = { day = 0 month = january year = 1933 }\r
+-	offset = 15\r
++	date = { day = 0 month = 3 year = 1937 }\r
++	offset = 20\r
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	name = "2049102name"\r
+@@ -627,7 +633,8 @@ event = {
+ \r
+ 	action = {\r
+ 		name = "ACTION_NAME_DAMN"\r
+-		command = { type = industrial_modifier which = total value = -5 }\r
++		#command = { type = industrial_modifier which = total value = -5 }\r
++		command = { type = industrial_modifier which = total value = -10 }\r
+ 		command = { trigger = { ai = no } type = dissent value = 10 }\r
+ 		command = { trigger = { ai = no } type = money value = -1000 }\r
+ 	}\r
+@@ -772,10 +779,22 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1935 }\r
+ 	picture = "philippines_independence"\r
+ 	decision_picture = "decision_diplomatic_campaign"\r
+-	action = {\r
+-		name = "ACTION_NAME_OK"\r
++	action = { # 独立を与えよう\r
++		name = "EVT_127_ACTA"\r
++		command = { type = remove_claim_region which = "Philippines" } # 追加\r
++		command = { type = remove_core_region which = "Philippines" } # 追加\r
+ 		command = { type = independence which = PHI value = 1 when = 0 }\r
+ 		command = { type = make_puppet which = PHI }\r
++		command = { type = secederegion which = PHI value = "Philippines" when = 1 } # 追加\r
++		ai_chance = 97\r
++	}\r
++	action = { # 拒否\r
++		name = "ACTION_NAME_REFUSE"\r
++		command = { type = belligerence which = USA value = 5 }\r
++		command = { type = relation which = JAP value = -35 }\r
++		command = { type = relation which = MAN value = -35 }\r
++		command = { type = relation which = CHI value = -15 }\r
++		ai_chance = 3\r
+ 	}\r
+ }\r
+ # Found the California Arabian Standard Oil Co.\r
+@@ -3082,6 +3101,11 @@ event = {
+ 		command = { type = sleepminister which = 30142 } # Bukharin\r
+ 		command = { type = sleepminister which = 30211 } # Bukharin\r
+ 		command = { type = sleepminister which = 30207 } # Kamenev\r
++		command = { type = sleepminister which = 30153 } # Kamenev\r
++		command = { type = sleepminister which = 30154 } # Kamenev\r
++		command = { type = sleepminister which = 30155 } # Zinoviev\r
++		command = { type = sleepminister which = 30156 } # Zinoviev\r
++		command = { type = sleepminister which = 30157 } # Zinoviev\r
+ 		command = { type = sleepminister which = 30114 } # Ordzhonikidze\r
+ 		command = { type = sleepminister which = 30209 } # Ordzhonikidze\r
+ 		command = { type = sleepminister which = 30098 } # Rykov\r
+@@ -3156,6 +3180,11 @@ event = {
+ 		command = { type = sleepminister which = 30142 } # Bukharin\r
+ 		command = { type = sleepminister which = 30211 } # Bukharin\r
+ 		command = { type = sleepminister which = 30207 } # Kamenev\r
++		command = { type = sleepminister which = 30153 } # Kamenev\r
++		command = { type = sleepminister which = 30154 } # Kamenev\r
++		command = { type = sleepminister which = 30155 } # Zinoviev\r
++		command = { type = sleepminister which = 30156 } # Zinoviev\r
++		command = { type = sleepminister which = 30157 } # Zinoviev\r
+ 		command = { type = sleepminister which = 30114 } # Ordzhonikidze\r
+ 		command = { type = sleepminister which = 30209 } # Ordzhonikidze\r
+ 		command = { type = sleepminister which = 30098 } # Rykov\r
+@@ -3257,7 +3286,7 @@ event = {
+ \r
+ 		command = { type = set_domestic which = democratic value = 1 }\r
+ 		command = { type = set_domestic which = political_left value = 4 }\r
+-		command = { type = name where = SOV which = "_empier" }\r
++		command = { type = name where = SOV which = "SOV_empier" }\r
+ 		command = { type = flag_ext where = SOV which = "_nazi" }\r
+ 		command = { type = headofstate which = 30305 } # ヴラヂーミル・クラシンスキイ（皇帝アレクサンドル2世の曾孫。ソビエト連邦との戦争でドイツ人を支援することを拒否）\r
+ 		command = { type = headofgovernment which = 30306 } # アレクサーンドル・カゼムベーク\r

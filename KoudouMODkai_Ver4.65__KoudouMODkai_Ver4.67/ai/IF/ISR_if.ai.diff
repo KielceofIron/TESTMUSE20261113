@@ -1,0 +1,108 @@
+--- A/ai/IF/ISR_if.ai [utf-8]
++++ B/ai/IF/ISR_if.ai [utf-8]
+@@ -35,7 +35,7 @@ befriend = {
+ 	GER = 80\r
+ 	ENG = 70\r
+ 	FRA = 30\r
+-	UTC = 50\r
++	UER = 50\r
+ 	RUS = 50\r
+ 	SOV = 10\r
+ 	KUR = 80\r
+@@ -77,7 +77,7 @@ trade = {
+ 		GER = 80\r
+ 		ENG = 50\r
+ 		FRA = 30\r
+-		UTC = 50\r
++		UER = 50\r
+ 		RUS = 50\r
+ 		USA = 70\r
+ 		KUR = 80\r
+@@ -94,7 +94,7 @@ tech_sharing = {
+ 	favored = {\r
+ 		CHI = 80\r
+ 		GER = 80\r
+-		UTC = 50\r
++		UER = 50\r
+ 		RUS = 50\r
+ 		USA = 70\r
+ 		GRE = 70\r
+@@ -191,7 +191,7 @@ spyprefs =
+ 		found_partisans 	= 0\r
+ 		massmedia 			= 2\r
+ 		disrupt_techteam	= 0\r
+-		country 			= UTC\r
++		country 			= UER\r
+ 	}\r
+ 	spyprefsdata = {\r
+ 		country_priorities	= 5\r
+@@ -336,19 +336,19 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= no\r
+ 	max_batch_peace 		= 1080 \r
+-	max_batch_war 			= 480 \r
+-	max_batch_home_front = 360\r
++	max_batch_war 			= 740 \r
++	max_batch_home_front = 550\r
+ 	extra_convoys_war = 0.0500 \r
+ 	extra_convoys_peace = 0.0500\r
+ \r
+ \r
+ 	#### Divisions etc...\r
+-	infantry 		= 30\r
++	infantry 		= 10\r
+ 	cavalry 		= 0\r
+ 	motorized 		= 10\r
+ 	mechanized 		= 0\r
+-	light_armor 		= 0\r
+-	armor 			= 7\r
++	light_armor 		= 20\r
++	armor 			= 17\r
+ 	paratrooper 		= 0\r
+ 	marine 			= 0\r
+ 	bergsjaeger 		= 0\r
+@@ -356,7 +356,7 @@ military = {
+     	hq 			= 3\r
+ 	militia 		= 0\r
+ #				50 %\r
+-	interceptor 	= 13\r
++	interceptor 	= 3\r
+ 	multi_role 		= 0\r
+ 	cas 			= 0\r
+ 	strategic_bomber = 0\r
+@@ -567,16 +567,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30.0\r
+-	groundattackdesirability 		= 40.0\r
+-	inderdictiondesirability 		= 20.0\r
+-	logisticalstrikedesirability 	= 2.0\r
+-	runwaycrateringdesirability 	= 10.0\r
+-	strategicstrikedesirability 	= 10.0\r
+-	installationstrikedesirability 	= 5.0\r
+-	navalstrikedesirability 		= 15.0\r
+-	portstrikedesirability 			= 9.0\r
+-	convoyraiddesirability			= 9.0\r
++	airsuperioritydesirability 		= 30000.0\r
++	groundattackdesirability 		= 40000.0\r
++	inderdictiondesirability 		= 20000\r
++	logisticalstrikedesirability 		= 2000\r
++	runwaycrateringdesirability 		= 10000\r
++	strategicstrikedesirability 		= 10000\r
++	installationstrikedesirability 		= 5000\r
++	navalstrikedesirability 		= 15000\r
++	portstrikedesirability 		= 9000\r
++	convoyraiddesirability 		= 9000\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -598,7 +598,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r

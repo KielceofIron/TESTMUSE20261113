@@ -1,0 +1,1025 @@
+--- A/ai/KAISERREICH/Bengal.ai [ascii]
++++ B/ai/KAISERREICH/Bengal.ai [ascii]
+@@ -1,511 +1,511 @@
+-# Bengal AI File by Kibbles\r
+-# Based off Lothus' original AI File\r
+-# tweaked by Milites 2015   Dr bob\r
+-\r
+-switch = no # [yes/no]\r
+-max_front_ratio = 1.2 \r
+-max_garrison_prop = 0.30\r
+-min_garrison_prop = 0.20\r
+-neutrality = 100\r
+-war = 0\r
+-\r
+-strat_redeploy_threshold = 25\r
+-\r
+-exp_force_ratio = 0.750\r
+-exp_force_ratios = { } \r
+-no_exp_forces_to = { }\r
+-\r
+-###################################\r
+-# Diplomacy\r
+-###################################\r
+-combat = { \r
+-PAK = 50\r
+-IND = 50\r
+-}\r
+-\r
+-claim_acceptance = -150\r
+-\r
+-# Special resistance against "influence" by the listed nations. Value range = [0 - 10]  \r
+-resistance = {  \r
+-GER = 10\r
+-CAN = 9\r
+-JAP = 9\r
+-CSX = 8\r
+-PAK = 8	\r
+-IND = 8\r
+-TIB = 7\r
+-MON = 7\r
+-AST = 6\r
+-USA = 6\r
+-}\r
+-befriend = {\r
+-	SOV = 25\r
+-	FRA = 100\r
+-	ENG = 100\r
+-	BUR = 10\r
+-	SIA = 10\r
+-	GEO = 10\r
+-	RSI = 10\r
+-}\r
+-protect = { \r
+-\r
+-}\r
+-target = { \r
+-	# India\r
+-	1459 = 150 # Delhi\r
+-	1533 = 150 # Karachi\r
+-	1487 = 150 # Hyderabad\r
+-	1500 = 100 # Madras\r
+-	1502 = 80 # Bangalore\r
+-	1504 = 80 # Madurai\r
+-	1507 = 80 # Mysore\r
+-}\r
+-trade = {\r
+-	cancel_deal_threshold = 1.7\r
+-\r
+-	energy 		= -1\r
+-	rare_materials 	= -1\r
+-	metal 		= -1\r
+-	oil 		= -1\r
+-	supplies 	= -1\r
+-	money 		= -1\r
+-\r
+-	favored = {\r
+-		SOV = 250\r
+-		FRA = 200\r
+-		ENG = 200\r
+-		RSI = 100\r
+-		GEO = 100\r
+-	}\r
+-	embargo = { PAK IND GER }\r
+-}\r
+-tech_sharing = {\r
+-	favored = {\r
+-		SOV = 200\r
+-		FRA = 200\r
+-		ENG = 200\r
+-		RSI = 100\r
+-		GEO = 100\r
+-	\r
+-	}\r
+-	embargo = { PAK IND GER }\r
+-	not = { }\r
+-	prioritized = {\r
+-		# Arcriculture\r
+-		5020 = 100\r
+-		5030 = 100\r
+-		5040 = 100\r
+-\r
+-		# Inf support\r
+-		1310 = 100\r
+-		1320 = 100\r
+-		1330 = 100\r
+-		1340 = 100\r
+-		1350 = 100\r
+-		1360 = 100\r
+-\r
+-		# Production\r
+-		5050 = 100\r
+-		5060 = 100\r
+-		5070 = 100\r
+-		5080 = 100\r
+-		5090 = 100\r
+-		5100 = 100\r
+-		5110 = 100\r
+-		5120 = 100\r
+-		5130 = 100\r
+-		5150 = 100\r
+-		5180 = 100\r
+-	}\r
+-}\r
+-\r
+-###################################\r
+-# Spying\r
+-###################################\r
+-spyprefs =\r
+-{\r
+-	percentage_on_spies 		= 0.1\r
+-	percentage_foreign_mission 	= 0.5\r
+-\r
+-	# Used for Homeland Defense Spying\r
+-	spyprefsdata = \r
+-	{\r
+-		NumberOfSpies = 5\r
+-		counter_espionage =  10\r
+-		country = PRK\r
+-	}\r
+-	# Defaul Spy parms used for countries the AI is atwar with but has no specific entry\r
+-	spyprefsdata = {\r
+-		country_priorities	= 3\r
+-		NumberOfSpies		= 3\r
+-		min_number_of_spies = 1\r
+-		steal_blueprint 	= 10\r
+-		minister_assassination = 1\r
+-		smear_campaign 		= 3\r
+-		coup 				= 0\r
+-		sabotage_industry 	= 5\r
+-		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 			= 3\r
+-		counter_espionage 	= 5\r
+-		disrupt_techteam	= 5\r
+-		country 			= PAK\r
+-	}\r
+-}\r
+-\r
+-###################################\r
+-# Construction and Tech Research\r
+-###################################\r
+-#Default values\r
+-construction = { \r
+-	max_factor = 0.050 \r
+-\r
+-\r
+-	AA_batteries = no\r
+-	max_AA_level = 3\r
+-	AA_provs = {\r
+-\r
+-	} \r
+-\r
+-	coastal_fort = no\r
+-	max_coastal_level = 2\r
+-	coastal_fort_provs = { } \r
+-\r
+-	radar_station = no \r
+-	max_radar = 5 \r
+-	radar_provs = { } \r
+-\r
+-	air_base = no\r
+-	max_air_base = 2\r
+-	air_base_provs = { } \r
+-\r
+-	naval_base = no\r
+-	max_naval_base = 2\r
+-	naval_base_provs = { } \r
+-\r
+-	land_fort = no\r
+-	max_land_level = 2\r
+-	fort_borders = { } \r
+-\r
+-	ic_at_war = no\r
+-	force_ic_until = 1930\r
+-	ic_end_year = 1936\r
+-	IC_provs = {\r
+-	} \r
+-}\r
+-military = { \r
+-	relative_build_scheme 	= no\r
+-	max_batch_peace 		= 860 \r
+-	max_batch_war 		= 680 \r
+-	max_batch_home_front 	= 380\r
+-\r
+-	#### Divisions etc...\r
+-	infantry 	= 20\r
+-	cavalry 	= 52\r
+-	motorized 	= 5\r
+-	mechanized 	= 0\r
+-	light_armor 	= 0\r
+-	armor 		= 0\r
+-	paratrooper 	= 0\r
+-	marine 		= 0\r
+-	bergsjaeger 	= 0\r
+-	garrison		= 0\r
+-      	hq 		= 4\r
+-	militia 	= 2\r
+-	d_01		= 0\r
+-#				83 %\r
+-	interceptor 	= 5\r
+-	multi_role 	= 0\r
+-\r
+-	cas 		= 0\r
+-	strategic_bomber = 0\r
+-	tactical_bomber = 5\r
+-	naval_bomber 	= 0\r
+-	transport_plane = 0\r
+-	flying_bomb 	= 0\r
+-	flying_rocket 	= 0\r
+-#				10 %\r
+-	battleship 	= 0\r
+-	carrier 	= 0\r
+-\r
+-	destroyer 	= 5\r
+-	light_cruiser 	= 2\r
+-	heavy_cruiser 	= 0\r
+-	battlecruiser 	= 0\r
+-	submarine 	= 0\r
+-\r
+-	transports 	= 0\r
+-#				7 %\r
+-\r
+-	#### Brigades\r
+-	artillery 			= 20\r
+-	sp_artillery 		= 0\r
+-	rocket_artillery		= 0\r
+-	sp_rct_artillery 		= 0\r
+-	anti_tank 		= 0\r
+-	tank_destroyer 		= 0\r
+-	light_armor_brigade 	= 0\r
+-	heavy_armor 		= 0\r
+-	super_heavy_armor 		= 0\r
+-	armored_car 		= 0\r
+-	anti_air 			= 0\r
+-	police 			= 0\r
+-	engineer 			= 10 \r
+-\r
+-	cag = 100.000 \r
+-	    escort = 100.0000\r
+-\r
+-            naval_asw = 10.0000 \r
+-            naval_anti_air_s = 20.0000 \r
+-            naval_radar_s = 10.0000 \r
+-            naval_fire_controll_s = 20.0000 \r
+-            naval_improved_hull_s = 10.0000 \r
+-            naval_torpedoes_s = 10.0000 \r
+-            naval_anti_air_l = 10.0000 \r
+-            naval_radar_l = 0.0000 \r
+-            naval_fire_controll_l = 10.0000 \r
+-            naval_improved_hull_l = 0.0000 \r
+-            naval_torpedoes_l = 0.0000\r
+-}\r
+-\r
+-technology = { \r
+-	endgoal 	= {\r
+-	\r
+-	}\r
+-	preference = { \r
+-		# Tools\r
+-		5810 5820 5050 5830 5060 5070 5130 5840 5850 5860\r
+-\r
+-		# Engineering\r
+-		5800 5080 5090 5100 5900 5910\r
+-\r
+-		#Asembly lines\r
+-		5140 5150 5160 5180\r
+-		\r
+-		# Computers\r
+-		5310 54010 54020 54030 5320 5330 5340\r
+-		\r
+-		# MEDICINE\r
+-		5600 5610 5620 5630 5640 5650 5660 5670\r
+-\r
+-		# Electronic Computers\r
+-		7140 7150 7160 16000 16040\r
+-\r
+-		#Infantry\r
+-		1010 1020 1030 1040 1050 1060 1070 1080 1090 1100 1110 1120 1130 1140 1150 13000 13010 13020\r
+-\r
+-		# Naval Doctrines\r
+-		8120 8310 8160\r
+-\r
+-		# Land Doctrines\r
+-		6130 6140 14070 6150 6900\r
+-		\r
+-		# Engagement Tactics - Fleet-in-Being colum\r
+-		8900 8910 8920 8930 8940 8950 8960 8970 8980 81050 81060 81070 81080 81090 81100 81110 81120\r
+-\r
+-		# Air Doctrines\r
+-		9050 9060 9080 9090 9130 9190 9240 9250 9270 9280 9300 9310 9320 9350 9360 9390 9400 9420 \r
+-\r
+-		# CAS\r
+-		4400 4170 4280 4450 4180 15120 15130 \r
+-		\r
+-		# Marines\r
+-		1560 1570 1580 1590 1600 1610 1620 1630 1640 1650 1660\r
+-		\r
+-		# Mechanized\r
+-		1470 1480 1490 1510 1520\r
+-\r
+-		# Cavalry\r
+-		13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 1380 1390\r
+-		\r
+-		# Air Transports\r
+-		4290 4250 4260 4270 15180 15190\r
+-\r
+-		# Naval Bomber\r
+-		4700 4710 4190 4200 4210 15140 15150\r
+-\r
+-		# Strategic bombers\r
+-		4220 4230 4240\r
+-\r
+-		# Multirole Fighters\r
+-		4040 4070 4100\r
+-		\r
+-		# Armoured Cars\r
+-		2860 2870 2880 2020 2150 2160 2890 11110\r
+-\r
+-		# Submarines\r
+-		3410 3420 3430 3440 3450\r
+-		\r
+-		#EQUIPMENT Winter / Jungle / Desert\r
+-		5920 5930 5940 5950 5960 5970\r
+-		\r
+-		# Super Heavy BB\r
+-		3310\r
+-\r
+-	} \r
+-	ignore 	= {\r
+-		\r
+-\r
+-		# Rocket Assembly\r
+-		5170\r
+-\r
+-		# Airborne\r
+-		1670 1680 1690 1700 1710 1720 1730 1740\r
+-\r
+-		\r
+-\r
+-		\r
+-\r
+-		# Oil Refining\r
+-		5190 5200 5210 5220 5230 5240\r
+-		\r
+-		# Atomic Research\r
+-		5470 5480 5490 5500 5510 5520 5530 5540\r
+-\r
+-		# Test and Research\r
+-		5560 7550 7560 7570 7580 7590\r
+-\r
+-		# Bas Decimetric\r
+-		5410 5420 5430 5440 5450 5460\r
+-\r
+-		\r
+-		\r
+-		# Carrier Air groups\r
+-		4900 4910 4920 4930 4940 4950 4960 \r
+-\r
+-		# Heavy Tanks and Semi-Modern Tank\r
+-		2620 2100 2110 2120\r
+-\r
+-		# SP guns\r
+-		2220 2230 2240 2250 11030 11040 2960\r
+-\r
+-		# SP Rocket Artillery\r
+-		2980 2260 2270 2280 11050 11060 2990 \r
+-\r
+-		# Battle Cruiser\r
+-		3310 3320 3330 3340 3350 12030\r
+-\r
+-		# Carrier\r
+-		3510 3520 3530 3540 3550 12060 3560 3570\r
+-\r
+-		# Light Carrier\r
+-		12100 12110 12120 12130 12140 12150\r
+-\r
+-		# Tank destroyers\r
+-		2170 2180 2850 2190 2200 2210 11020\r
+-		\r
+-		# Static Anti-Air\r
+-		2800 2450 2460 2470 2480 2490 2500 11080\r
+-		\r
+-		\r
+-		# Trade Interdiction Submarine\r
+-		8600 8610 8620 8630 8640 8650 8660 8700 8710 8720 8730 8740 8750\r
+-		\r
+-		# Strategic Air Doctrines 9140\r
+-		9150 9160 9170 9180 9430 9440 9450 9460\r
+-	}\r
+- \r
+-	armor 		= 2\r
+-	infantry 	= 4\r
+-	industry 	= 4\r
+-	aircraft 	= 1\r
+-	naval 		= 1\r
+-	land_doctrines 	= 2\r
+-	secret_weapons 	= 0\r
+-	air_doctrines 	= 1\r
+-	naval_doctrines = 0\r
+-}  \r
+-\r
+-###################################\r
+-# Ground Combat, Leaders and Garrisons\r
+-###################################\r
+-leader_ratio = {\r
+-	land_field_marshal 	=0.02\r
+-	land_general 		=0.031\r
+-	land_lt_general 	=0.41\r
+-\r
+-	sea_grand_admiral 	=0.02\r
+-	sea_admiral 		=0.061\r
+-	sea_vice_admiral 	=0.401\r
+-\r
+-	air_marshal 		=0.02\r
+-	air_general 		=0.091\r
+-	air_lt_General 		=0.11\r
+-}\r
+-garrison = {\r
+-	defend_overseas_beaches = yes\r
+-	home_multiplier 	= 4.0\r
+-	overseas_multiplier 	= 0.5\r
+-	home_peace_cap 		= 60\r
+-	war_zone_odds 		= 2.0\r
+-	key_point_prio_mult	= 0\r
+-	revolt_risk_mult	= 1.0\r
+-\r
+-	# PRIORITIES:\r
+-	beach			= 30	# Beach level 2\r
+-	capital			= 80	# Our capital\r
+-	human_border		= 0	# Ignored for allied human players\r
+-	war_target		= 50	# The next country targeted for attack by this AI\r
+-	\r
+-	opposing_alliance	= 0	# For neutrals, all alliances are "opposing"\r
+-	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+-	unstable_border		= 0	# Bordering countries at war with someone else get this\r
+-\r
+-	# Borders with specific countries\r
+-	country_priorities = {\r
+-		IND = 250\r
+-		PAK = 200\r
+-		BUR = 25\r
+-		TIB = 25\r
+-		SIA = 25\r
+-	}\r
+-	ignore = {\r
+-\r
+-	}\r
+-	province_priorities = {	}\r
+-	area_multiplier = { }\r
+-}\r
+-front = { \r
+-	recklessness 		= 1 # 0-3\r
+-	distrib_vs_ai 		= op_defensive\r
+-	distrib_vs_human 	= op_defensive\r
+-\r
+-	enemy_reinf_days	= 4\r
+-	reserve_prop		= 0.25\r
+-	panic_ratio_vs_ai	= 2.5\r
+-	panic_ratio_vs_human	= 2.5\r
+-	base_attack_odds	= 1.3\r
+-	min_attack_odds		= 1.1\r
+-	max_attack_odds		= 3.0\r
+-	reinforce_odds		= 1.2\r
+-	withdraw_odds		= 0.8\r
+-\r
+-	strength 	= 1.0\r
+-	organisation 	= 1.0\r
+-	soft_attack 	= 1.0\r
+-	hard_attack 	= 1.0\r
+-	ground_defense 	= 1.0\r
+-	dig_in 		= 1.0 # Against defender\r
+-\r
+-	frozen_attack 	= 1.0\r
+-	snow_attack 	= 1.0\r
+-	blizzard_attack = 1.0\r
+-	storm_attack 	= 1.0\r
+-	muddy_attack 	= 1.0\r
+-\r
+-	\r
+-	\r
+-	occupied 	= 0.7\r
+-	owned 		= 0.7\r
+-\r
+-	jungle_attack 	= 1.0\r
+-	mountain_attack = 1.0\r
+-	swamp_attack 	= 1.0\r
+-	forest_attack 	= 1.0\r
+-	hill_attack 	= 1.0\r
+-	urban_attack 	= 1.0\r
+-	river 		= 1.0\r
+-\r
+-      	enemy_handicap = { } \r
+-      	passivity = { } \r
++# Bengal AI File by Kibbles
++# Based off Lothus' original AI File
++# tweaked by Milites 2015   Dr bob
++
++switch = no # [yes/no]
++max_front_ratio = 1.2 
++max_garrison_prop = 0.30
++min_garrison_prop = 0.20
++neutrality = 100
++war = 0
++
++strat_redeploy_threshold = 25
++
++exp_force_ratio = 0.750
++exp_force_ratios = { } 
++no_exp_forces_to = { }
++
++###################################
++# Diplomacy
++###################################
++combat = { 
++PAK = 50
++IND = 50
++}
++
++claim_acceptance = -150
++
++# Special resistance against "influence" by the listed nations. Value range = [0 - 10]  
++resistance = {  
++GER = 10
++CAN = 9
++JAP = 9
++CSX = 8
++PAK = 8	
++IND = 8
++TIB = 7
++MON = 7
++AST = 6
++USA = 6
++}
++befriend = {
++	SOV = 25
++	FRA = 100
++	ENG = 100
++	BUR = 10
++	SIA = 10
++	GEO = 10
++	RSI = 10
++}
++protect = { 
++
++}
++target = { 
++	# India
++	1459 = 150 # Delhi
++	1533 = 150 # Karachi
++	1487 = 150 # Hyderabad
++	1500 = 100 # Madras
++	1502 = 80 # Bangalore
++	1504 = 80 # Madurai
++	1507 = 80 # Mysore
++}
++trade = {
++	cancel_deal_threshold = 1.7
++
++	energy 		= -1
++	rare_materials 	= -1
++	metal 		= -1
++	oil 		= -1
++	supplies 	= -1
++	money 		= -1
++
++	favored = {
++		SOV = 250
++		FRA = 200
++		ENG = 200
++		RSI = 100
++		GEO = 100
++	}
++	embargo = { PAK IND GER }
++}
++tech_sharing = {
++	favored = {
++		SOV = 200
++		FRA = 200
++		ENG = 200
++		RSI = 100
++		GEO = 100
++	
++	}
++	embargo = { PAK IND GER }
++	not = { }
++	prioritized = {
++		# Arcriculture
++		5020 = 100
++		5030 = 100
++		5040 = 100
++
++		# Inf support
++		1310 = 100
++		1320 = 100
++		1330 = 100
++		1340 = 100
++		1350 = 100
++		1360 = 100
++
++		# Production
++		5050 = 100
++		5060 = 100
++		5070 = 100
++		5080 = 100
++		5090 = 100
++		5100 = 100
++		5110 = 100
++		5120 = 100
++		5130 = 100
++		5150 = 100
++		5180 = 100
++	}
++}
++
++###################################
++# Spying
++###################################
++spyprefs =
++{
++	percentage_on_spies 		= 0.1
++	percentage_foreign_mission 	= 0.5
++
++	# Used for Homeland Defense Spying
++	spyprefsdata = 
++	{
++		NumberOfSpies = 5
++		counter_espionage =  10
++		country = PRK
++	}
++	# Defaul Spy parms used for countries the AI is atwar with but has no specific entry
++	spyprefsdata = {
++		country_priorities	= 3
++		NumberOfSpies		= 3
++		min_number_of_spies = 1
++		steal_blueprint 	= 10
++		minister_assassination = 1
++		smear_campaign 		= 3
++		coup 				= 0
++		sabotage_industry 	= 5
++		nuclear_sabotage 	= 0
++		found_partisans 	= 0
++		massmedia 			= 3
++		counter_espionage 	= 5
++		disrupt_techteam	= 5
++		country 			= PAK
++	}
++}
++
++###################################
++# Construction and Tech Research
++###################################
++#Default values
++construction = { 
++	max_factor = 0.050 
++
++
++	AA_batteries = no
++	max_AA_level = 3
++	AA_provs = {
++
++	} 
++
++	coastal_fort = no
++	max_coastal_level = 2
++	coastal_fort_provs = { } 
++
++	radar_station = no 
++	max_radar = 5 
++	radar_provs = { } 
++
++	air_base = no
++	max_air_base = 2
++	air_base_provs = { } 
++
++	naval_base = no
++	max_naval_base = 2
++	naval_base_provs = { } 
++
++	land_fort = no
++	max_land_level = 2
++	fort_borders = { } 
++
++	ic_at_war = no
++	force_ic_until = 1930
++	ic_end_year = 1936
++	IC_provs = {
++	} 
++}
++military = { 
++	relative_build_scheme 	= no
++	max_batch_peace 		= 860 
++	max_batch_war 		= 680 
++	max_batch_home_front 	= 380
++
++	#### Divisions etc...
++	infantry 	= 20
++	cavalry 	= 52
++	motorized 	= 5
++	mechanized 	= 0
++	light_armor 	= 0
++	armor 		= 0
++	paratrooper 	= 0
++	marine 		= 0
++	bergsjaeger 	= 0
++	garrison		= 0
++      	hq 		= 4
++	militia 	= 2
++	d_01		= 0
++#				83 %
++	interceptor 	= 5
++	multi_role 	= 0
++
++	cas 		= 0
++	strategic_bomber = 0
++	tactical_bomber = 5
++	naval_bomber 	= 0
++	transport_plane = 0
++	flying_bomb 	= 0
++	flying_rocket 	= 0
++#				10 %
++	battleship 	= 0
++	carrier 	= 0
++
++	destroyer 	= 5
++	light_cruiser 	= 2
++	heavy_cruiser 	= 0
++	battlecruiser 	= 0
++	submarine 	= 0
++
++	transports 	= 0
++#				7 %
++
++	#### Brigades
++	artillery 			= 20
++	sp_artillery 		= 0
++	rocket_artillery		= 0
++	sp_rct_artillery 		= 0
++	anti_tank 		= 0
++	tank_destroyer 		= 0
++	light_armor_brigade 	= 0
++	heavy_armor 		= 0
++	super_heavy_armor 		= 0
++	armored_car 		= 0
++	anti_air 			= 0
++	police 			= 0
++	engineer 			= 10 
++
++	cag = 100.000 
++	    escort = 100.0000
++
++            naval_asw = 10.0000 
++            naval_anti_air_s = 20.0000 
++            naval_radar_s = 10.0000 
++            naval_fire_controll_s = 20.0000 
++            naval_improved_hull_s = 10.0000 
++            naval_torpedoes_s = 10.0000 
++            naval_anti_air_l = 10.0000 
++            naval_radar_l = 0.0000 
++            naval_fire_controll_l = 10.0000 
++            naval_improved_hull_l = 0.0000 
++            naval_torpedoes_l = 0.0000
++}
++
++technology = { 
++	endgoal 	= {
++	
++	}
++	preference = { 
++		# Tools
++		5810 5820 5050 5830 5060 5070 5130 5840 5850 5860
++
++		# Engineering
++		5800 5080 5090 5100 5900 5910
++
++		#Asembly lines
++		5140 5150 5160 5180
++		
++		# Computers
++		5310 54010 54020 54030 5320 5330 5340
++		
++		# MEDICINE
++		5600 5610 5620 5630 5640 5650 5660 5670
++
++		# Electronic Computers
++		7140 7150 7160 16000 16040
++
++		#Infantry
++		1010 1020 1030 1040 1050 1060 1070 1080 1090 1100 1110 1120 1130 1140 1150 13000 13010 13020
++
++		# Naval Doctrines
++		8120 8310 8160
++
++		# Land Doctrines
++		6130 6140 14070 6150 6900
++		
++		# Engagement Tactics - Fleet-in-Being colum
++		8900 8910 8920 8930 8940 8950 8960 8970 8980 81050 81060 81070 81080 81090 81100 81110 81120
++
++		# Air Doctrines
++		9050 9060 9080 9090 9130 9190 9240 9250 9270 9280 9300 9310 9320 9350 9360 9390 9400 9420 
++
++		# CAS
++		4400 4170 4280 4450 4180 15120 15130 
++		
++		# Marines
++		1560 1570 1580 1590 1600 1610 1620 1630 1640 1650 1660
++		
++		# Mechanized
++		1470 1480 1490 1510 1520
++
++		# Cavalry
++		13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 1380 1390
++		
++		# Air Transports
++		4290 4250 4260 4270 15180 15190
++
++		# Naval Bomber
++		4700 4710 4190 4200 4210 15140 15150
++
++		# Strategic bombers
++		4220 4230 4240
++
++		# Multirole Fighters
++		4040 4070 4100
++		
++		# Armoured Cars
++		2860 2870 2880 2020 2150 2160 2890 11110
++
++		# Submarines
++		3410 3420 3430 3440 3450
++		
++		#EQUIPMENT Winter / Jungle / Desert
++		5920 5930 5940 5950 5960 5970
++		
++		# Super Heavy BB
++		3310
++
++	} 
++	ignore 	= {
++		
++
++		# Rocket Assembly
++		5170
++
++		# Airborne
++		1670 1680 1690 1700 1710 1720 1730 1740
++
++		
++
++		
++
++		# Oil Refining
++		5190 5200 5210 5220 5230 5240
++		
++		# Atomic Research
++		5470 5480 5490 5500 5510 5520 5530 5540
++
++		# Test and Research
++		5560 7550 7560 7570 7580 7590
++
++		# Bas Decimetric
++		5410 5420 5430 5440 5450 5460
++
++		
++		
++		# Carrier Air groups
++		4900 4910 4920 4930 4940 4950 4960 
++
++		# Heavy Tanks and Semi-Modern Tank
++		2620 2100 2110 2120
++
++		# SP guns
++		2220 2230 2240 2250 11030 11040 2960
++
++		# SP Rocket Artillery
++		2980 2260 2270 2280 11050 11060 2990 
++
++		# Battle Cruiser
++		3310 3320 3330 3340 3350 12030
++
++		# Carrier
++		3510 3520 3530 3540 3550 12060 3560 3570
++
++		# Light Carrier
++		12100 12110 12120 12130 12140 12150
++
++		# Tank destroyers
++		2170 2180 2850 2190 2200 2210 11020
++		
++		# Static Anti-Air
++		2800 2450 2460 2470 2480 2490 2500 11080
++		
++		
++		# Trade Interdiction Submarine
++		8600 8610 8620 8630 8640 8650 8660 8700 8710 8720 8730 8740 8750
++		
++		# Strategic Air Doctrines 9140
++		9150 9160 9170 9180 9430 9440 9450 9460
++	}
++ 
++	armor 		= 2
++	infantry 	= 4
++	industry 	= 4
++	aircraft 	= 1
++	naval 		= 1
++	land_doctrines 	= 2
++	secret_weapons 	= 0
++	air_doctrines 	= 1
++	naval_doctrines = 0
++}  
++
++###################################
++# Ground Combat, Leaders and Garrisons
++###################################
++leader_ratio = {
++	land_field_marshal 	=0.02
++	land_general 		=0.031
++	land_lt_general 	=0.41
++
++	sea_grand_admiral 	=0.02
++	sea_admiral 		=0.061
++	sea_vice_admiral 	=0.401
++
++	air_marshal 		=0.02
++	air_general 		=0.091
++	air_lt_General 		=0.11
++}
++garrison = {
++	defend_overseas_beaches = yes
++	home_multiplier 	= 4.0
++	overseas_multiplier 	= 0.5
++	home_peace_cap 		= 60
++	war_zone_odds 		= 2.0
++	key_point_prio_mult	= 0
++	revolt_risk_mult	= 1.0
++
++	# PRIORITIES:
++	beach			= 30	# Beach level 2
++	capital			= 80	# Our capital
++	human_border		= 0	# Ignored for allied human players
++	war_target		= 50	# The next country targeted for attack by this AI
++	
++	opposing_alliance	= 0	# For neutrals, all alliances are "opposing"
++	claim_threat		= 0	# If we are neutral, countries with claims on us get this
++	unstable_border		= 0	# Bordering countries at war with someone else get this
++
++	# Borders with specific countries
++	country_priorities = {
++		IND = 250
++		PAK = 200
++		BUR = 25
++		TIB = 25
++		SIA = 25
++	}
++	ignore = {
++
++	}
++	province_priorities = {	}
++	area_multiplier = { }
++}
++front = { 
++	recklessness 		= 1 # 0-3
++	distrib_vs_ai 		= op_defensive
++	distrib_vs_human 	= op_defensive
++
++	enemy_reinf_days	= 4
++	reserve_prop		= 0.25
++	panic_ratio_vs_ai	= 2.5
++	panic_ratio_vs_human	= 2.5
++	base_attack_odds	= 1.3
++	min_attack_odds		= 1.1
++	max_attack_odds		= 3.0
++	reinforce_odds		= 1.2
++	withdraw_odds		= 0.8
++
++	strength 	= 1.0
++	organisation 	= 1.0
++	soft_attack 	= 1.0
++	hard_attack 	= 1.0
++	ground_defense 	= 1.0
++	dig_in 		= 1.0 # Against defender
++
++	frozen_attack 	= 1.0
++	snow_attack 	= 1.0
++	blizzard_attack = 1.0
++	storm_attack 	= 1.0
++	muddy_attack 	= 1.0
++
++	
++	
++	occupied 	= 0.7
++	owned 		= 0.7
++
++	jungle_attack 	= 1.0
++	mountain_attack = 1.0
++	swamp_attack 	= 1.0
++	forest_attack 	= 1.0
++	hill_attack 	= 1.0
++	urban_attack 	= 1.0
++	river 		= 1.0
++
++      	enemy_handicap = { } 
++      	passivity = { } 
+ } 
+\ No newline at end of file

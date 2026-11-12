@@ -1,0 +1,345 @@
+--- A/ai/IFazia/JAP_if_Azia.ai [cp932]
++++ B/ai/IFazia/JAP_if_Azia.ai [cp932]
+@@ -1,9 +1,9 @@
+ # Japan 1936 AI File by Lothos\r
+ \r
+ switch = no # [yes/no]\r
+-max_front_ratio = 1.2 \r
+-max_garrison_prop = 0.4\r
+-min_garrison_prop = 0.3 \r
++max_front_ratio = 2.5 \r
++max_garrison_prop = 0.3\r
++min_garrison_prop = 0.2 \r
+ neutrality = 90.000 \r
+ desperation = 0.5\r
+ war = 0 \r
+@@ -36,43 +36,31 @@ liberate = { PHI BUR IND MAN SIA MEN CHI NEP PAK BHU VIE U87
+ \r
+ # Special resistance against "influence" by the listed nations. Value range = [0 - 10]  \r
+ resistance = {  \r
+-	USA = 4\r
++	USA = 5\r
+ 	ENG = 4\r
+ 	FRA = 4\r
+ 	CHI = 3\r
+ 	U67 = 3\r
+ 	KOR = 3\r
+-	UER = 3\r
+ 	SOV = 3\r
+ }\r
+ befriend = {\r
++	SIA = 100\r
++	MAN = 150\r
+ 	ENG = 75\r
+ 	FRA = 75\r
+ 	USA = 75\r
+-	UER = 75\r
+ 	SOV = 75\r
+-	GER = 75\r
+-	ITA = 75\r
+-	HOL = 50\r
+-	POR = 50\r
+ 	CHI = 50\r
+ 	CHC = 50\r
+-	CSX = 50\r
+-	CGX = 50\r
+-	CYN = 50\r
+-	CXB = 50\r
+-	SIK = 50\r
+-	UPE = 50\r
+ 	U67 = 40\r
+ 	KOR = 40\r
+ 	PRK = 40\r
+-	PHI = 40\r
+-	CAL = 40\r
+-	PHI = 40\r
+-	UE8 = 40\r
+-	UF1 = 40\r
+ }\r
+ protect = {\r
++	SIA = 100\r
++	MAN = 150\r
++	MEN = 150 # 追加\r
+ }\r
+ target = {\r
+ } \r
+@@ -87,61 +75,61 @@ trade = {
+ 	money 		= -1\r
+ \r
+ 	favored = {\r
+-	ENG = 50\r
+-	FRA = 50\r
+-	USA = 50\r
+-	UER = 50\r
+-	SOV = 50\r
+-	GER = 50\r
+-	ITA = 50\r
++	GER = 100\r
++	MAN = 100\r
++	MEN = 100\r
++	SIA = 80\r
++	USA = 60\r
++	SOV = 60\r
+ 	HOL = 50\r
+-	POR = 50\r
+-	CHI = 40\r
+-	CHC = 40\r
+-	CSX = 40\r
+-	CGX = 40\r
+-	CYN = 40\r
+-	CXB = 40\r
+-	SIK = 40\r
+-	UPE = 40\r
+-	U67 = 40\r
+-	KOR = 40\r
+-	PRK = 40\r
+-	PHI = 40\r
+-	CAL = 40\r
+-	PHI = 40\r
+-	UE8 = 40\r
+-	UF1 = 40\r
++	CAN = 40\r
++	CHI = 20\r
++	CHC = 20\r
++\r
++\r
++\r
++	UIC = 100 # 追加\r
++	U87 = 100 # 追加\r
++	UER = 100 # 追加\r
++	AST = 80 # 追加\r
++	U09 = 70 # 追加\r
++	IND = 60 # 追加\r
++	U62 = 60 # 追加\r
++	ITA = 50 # 追加\r
++	ETH = 50 # 追加\r
++	UPE = 50 # 追加\r
++	TUR = 30 # 追加\r
++	OTT = 30 # 追加\r
++	ARG = 30 # 追加\r
++	TIB = 10 # 追加\r
+ 	}\r
+ 	embargo = { }\r
+ }\r
+ tech_sharing = {\r
+ 	favored = {\r
+-	ENG = 50\r
+-	FRA = 50\r
+-	USA = 50\r
+-	UER = 50\r
+-	SOV = 50\r
+-	GER = 50\r
+-	ITA = 50\r
+-	HOL = 50\r
+-	POR = 50\r
+-	CHI = 40\r
+-	CHC = 40\r
+-	CSX = 40\r
+-	CGX = 40\r
+-	CYN = 40\r
+-	CXB = 40\r
+-	SIK = 40\r
+-	UPE = 40\r
+-	U67 = 40\r
+-	KOR = 40\r
+-	PRK = 40\r
+-	PHI = 40\r
+-	CAL = 40\r
+-	PHI = 40\r
+-	UE8 = 40\r
+-	UF1 = 40\r
++		ITA = 50\r
++		MAN = 100\r
++		MEN = 100\r
++		SIA = 100\r
++		GER = 150\r
++\r
++		U87 = 80 # 追加\r
++		U09 = 50 # 追加\r
++		ETH = 100 # 追加\r
++		UPE = 80 # 追加\r
++		TUR = 30 # 追加\r
++\r
++		OTT = 30 # 追加\r
++		ARG = 30 # 追加\r
++		TIB = 30 # 追加\r
++		IND = 60 # 追加\r
++\r
++		HOL = 50 # 追加\r
++		ENG = 20 # 追加\r
++\r
++\r
++		UER = 80 # 追加\r
++		U62 = 50 # 追加\r
+ 	}\r
+ 	embargo = { }\r
+ 	not = { }\r
+@@ -384,8 +372,8 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= yes\r
+ 	max_batch_peace 		= 1200 \r
+-	max_batch_war 			= 500 # 320\r
+-	max_batch_home_front = 180\r
++	max_batch_war 			= 780 # 320\r
++	max_batch_home_front = 300\r
+         extra_convoys_war = 0.0500 \r
+         extra_convoys_peace = 0.0500 \r
+ \r
+@@ -626,7 +614,7 @@ leader_ratio = {
+ garrison = {\r
+ 	defend_overseas_beaches = yes\r
+ 	home_multiplier 	= 1.0\r
+-	overseas_multiplier = 0.9\r
++	overseas_multiplier = 0.8\r
+ 	home_peace_cap 		= 5\r
+ 	war_zone_odds 		= 2.5\r
+ 	key_point_prio_mult		= 0\r
+@@ -663,7 +651,6 @@ garrison = {
+ 	USA = 50\r
+ 	AST = 30\r
+ 	NZL = 30\r
+-	UF1 = 50\r
+ 	}\r
+ \r
+ 	ignore = {\r
+@@ -784,16 +771,16 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 		= 30.0\r
+-	groundattackdesirability 		= 40.0\r
+-	inderdictiondesirability 		= 20.0\r
+-	logisticalstrikedesirability 	= 2.0\r
+-	runwaycrateringdesirability 	= 10.0\r
+-	strategicstrikedesirability 	= 10.0\r
+-	installationstrikedesirability 	= 5.0\r
+-	navalstrikedesirability 		= 15.0\r
+-	portstrikedesirability 			= 9.0\r
+-	convoyraiddesirability			= 9.0\r
++	airsuperioritydesirability 		= 30000.0\r
++	groundattackdesirability 		= 40000.0\r
++	inderdictiondesirability 		= 20000\r
++	logisticalstrikedesirability 		= 2000\r
++	runwaycrateringdesirability 		= 10000\r
++	strategicstrikedesirability 		= 10000\r
++	installationstrikedesirability 		= 5000\r
++	navalstrikedesirability 		= 15000\r
++	portstrikedesirability 		= 9000\r
++	convoyraiddesirability 		= 9000\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -815,7 +802,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency = 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r
+@@ -826,74 +813,29 @@ air_marshal = {
+ # Invasions and Naval\r
+ ###################################\r
+ invasion = {\r
+-	invasion		= no\r
+-	base			= 20.0	#Relative modifier. (lower = specific targets much more important.)\r
+-	random			= 1.0	#How big a random range.  (1.0 = 1%)\r
+-	coastal			= 0.1	#increase to avoid coastal forts more.\r
+-	beach			= 0.1	#higher, avoid worst beaches.\r
+-	distance		= 0.1	#higher = avoid long distance.\r
+-	max_distance    	= 200.0\r
+-	max_staging_distance 	= 200.0	# How far should the staging area be from the target invasion point\r
+-	pocket			= 1.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
+-	island			= 1.0	#prioritise taking pure islands.\r
+-	enemy			= 1.0	#higher = much more vary of troops in province.\r
+-	adjacentenemy 		= 0.1	#higher = much more vary of troops nearby\r
+-	air_base		= 0.1\r
+-	naval_base 		= 0.1\r
+-	air_support 		= 1.0\r
++	invasion	= no\r
++	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)\r
++	random		= 5.0	#How big a random range.  (1.0 = 1%)\r
++	coastal		= 0.5	#increase to avoid coastal forts more.\r
++	beach		= 0.1	#higher, avoid worst beaches.\r
++	distance	= 1.0	#higher = avoid long distance.\r
++	max_distance    = 200.0\r
++	pocket		= 2.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
++	island		= 2.0	#prioritise taking pure islands.\r
++	enemy		= 1.0	#higher = much more vary of troops in province.\r
++	adjacentenemy 	= 0.5	#higher = much more vary of troops nearby\r
++	air_base	= 0.1\r
++	naval_base 	= 0.1\r
++	air_support = 2.0\r
++\r
++\r
+ 	ignore		= no\r
+ 	help_allies	= no\r
+ 	redirect 	= priority\r
+ 	\r
+-	staging_province = {\r
+-	1560  # 福岡\r
+-	1563  # 読谷\r
+-	}\r
++	staging_province = { }\r
+ \r
+ 	target = {\r
+-	#北海道\r
+-	2803 = 300\r
+-	2804 = 300\r
+-	2805 = 300\r
+-	1544 = 300\r
+-\r
+-	#樺太・北方領土\r
+-	1542 = 300\r
+-	1543 = 300\r
+-\r
+-	#日本沿岸諸島\r
+-	2796 = 300\r
+-	2790 = 300\r
+-	2791 = 300\r
+-\r
+-	#朝鮮半島\r
+-	1221 = 90000\r
+-	1228 = 90000\r
+-\r
+-	#沖縄\r
+-	1564 = 300\r
+-	2794 = 300\r
+-\r
+-	#台湾\r
+-	2797 = 90000\r
+-	1361 = 90000\r
+-	1362 = 90000\r
+-\r
+-	#大陸（中国）\r
+-	1334 = 100\r
+-	1338 = 100\r
+-	1328 = 100\r
+-	1241 = 100\r
+-\r
+-	#大陸（沿海州）\r
+-	1185 = 100\r
+-	1191 = 100\r
+-\r
+-	#フィリピン\r
+-	1567 = 100\r
+-	1566 = 100\r
+-	1573 = 100\r
+-	1579 = 100\r
+ 	}\r
+ }\r
+ admiral = { \r
+@@ -1137,12 +1079,10 @@ admiral = {
+         2497 = 100\r
+         2498 = 100\r
+         2494 = 100\r
+-        2515 = 150\r
+ 	} \r
+     core = {\r
+         2492 \r
+         2489 \r
+-        2511\r
+         2512 \r
+         2497 \r
+         2498 \r

@@ -1,0 +1,84 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_russia_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_russia_events.txt [cp932]
+@@ -2591,7 +2591,7 @@ event = {
+ 	command = { type = sleepevent which = 7060031 }\r
+ 	command = { type = sleepevent which = 7060032 }\r
+ 	command = { type = sleepevent which = 7060033 }\r
+-	ai_chance = 50\r
++	ai_chance = 96\r
+ 	}\r
+ \r
+ 	action = { # 栄光ある孤立こそ、ロシアの道だ\r
+@@ -2649,7 +2649,7 @@ event = {
+ 	command = { type = sleepevent which = 7060079 }\r
+ 	command = { type = sleepevent which = 7060080 }\r
+ 	command = { type = sleepevent which = 7060081 }\r
+-	ai_chance = 50\r
++	ai_chance = 4\r
+ 	}\r
+ }\r
+ \r
+@@ -4383,6 +4383,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = -1 }\r
+ 	command = { type = inherit which = U06 }\r
+ 	command = { type = secedeprovince which = GER value = 181 when = 1 }\r
++	command = { type = secedeprovince which = GER value = 203 when = 1 }\r
+ 	command = { type = secedeprovince which = GER value = 221 when = 1 }\r
+ 	command = { type = secedeprovince which = GER value = 222 when = 1 }\r
+ 	command = { type = secedeprovince which = GER value = 224 when = 1 }\r
+@@ -4703,6 +4704,11 @@ event = {
+ \r
+ 	decision = {\r
+ 	exists = UER\r
++	OR = {\r
++	event = 2002008 # ヴィシー政権\r
++	NOT = { exists = FRA }\r
++	puppet = { country = FRA }\r
++	}\r
+ 	control = { province = 163 data = -3 } # Berlin\r
+ 	NOT = {\r
+ 	exists = POL\r
+@@ -4713,19 +4719,31 @@ event = {
+ 	}\r
+ 	\r
+ 	decision_trigger = {\r
+-	control = { province = 55 data = -3 } # Paris\r
++	OR = {\r
++	event = 2002008 # ヴィシー政権\r
++	NOT = { exists = FRA }\r
++	puppet = { country = FRA }\r
++	}\r
++	control = { province = 55 data = -4 } # Paris\r
+ 	}\r
+ 	\r
+ 	trigger = {\r
+ 	exists = UER\r
++	OR = {\r
++	event = 2002008 # ヴィシー政権\r
++	NOT = { exists = FRA }\r
++	puppet = { country = FRA }\r
++	}\r
+ 	NOT = { control = { province = 55 data = -2 } } # Paris\r
+-	NOT = { \r
++	NOT = {\r
++	exists = POL\r
++	exists = UF7\r
+ 	war = { country = GER country = YUG }\r
+ 	war = { country = GER country = UER }\r
+ 	control = { province = 572 data = -3 } # Moscow\r
+ 	}\r
+ 	AND = { \r
+-	year = 1940\r
++	year = 1941\r
+ 	month = 5\r
+ 	day = 21\r
+ 	}\r
+@@ -15564,7 +15582,7 @@ event = {
+ 	picture = "news_paper"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+-	offset = 38\r
++	offset = 18\r
+ 	deathdate = { day = 29 month = 11 year = 1939 }\r
+ 	\r
+ 	action = { # 彼らはロシアの大きな力になるだろう\r

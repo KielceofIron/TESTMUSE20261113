@@ -1,0 +1,78 @@
+--- A/db/events/AdditionalEvents/Soviet_invasion_of_Manchuria_events.txt [cp932]
++++ B/db/events/AdditionalEvents/Soviet_invasion_of_Manchuria_events.txt [cp932]
+@@ -1,4 +1,7 @@
+ #########################################################################\r
++#追加要素\r
++##id = 218050 講和イベントに賠償や領土割譲を追加\r
++#########################################################################\r
+ #\r
+ #		ソビエトによる対日宣戦布告イベント\r
+ #########################################################################\r
+@@ -2523,6 +2526,14 @@ event = {
+ 		command = { type = secederegion which = KOR value = "Korea" when = 1 }\r
+ 		command = { type = secedeprovince which = SOV value = 1542 }\r
+ 		command = { type = secedeprovince which = SOV value = 1543 }\r
++		command = { type = secedeprovince which = SOV value = 2792 } # 追加\r
++		command = { type = secedeprovince which = SOV value = 2793 } # 追加\r
++		command = { type = secedeprovince which = SOV value = 2773 } # 追加\r
++		command = { type = secedeprovince which = SOV value = 2787 } # 追加\r
++		command = { type = secedeprovince which = SOV value = 2770 } # 追加\r
++		command = { type = secedeprovince which = SOV value = 2797 } # 追加\r
++		command = { type = secedeprovince which = SOV value = 2798 } # 追加\r
++		command = { type = secedeprovince which = SOV value = 2796 } # 追加\r
+ \r
+ \r
+ 		command = { type = end_mastery which = MAN } \r
+@@ -2559,7 +2570,7 @@ event = {
+ 		command = { type = removeclaim which = 1221 } # Pyeongyang - Korea\r
+ 		command = { type = removeclaim which = 1222 } # Sariwon - Korea\r
+ 		    \r
+- 	    	   command = { trigger = { claims = { province = 1241 } } type = removeclaim which = 1241 } #Tianjin\r
++ 	    	command = { trigger = { claims = { province = 1241 } } type = removeclaim which = 1241 } #Tianjin\r
+ 		command = { trigger = { claims = { province = 1242 } } type = removeclaim which = 1242 } #Shijazhuang\r
+ 		command = { trigger = { claims = { province = 1243 } } type = removeclaim which = 1243 } #Baoding\r
+ 		command = { trigger = { claims = { province = 1244 } } type = removeclaim which = 1244 } #Changzhou\r
+@@ -2608,8 +2619,8 @@ event = {
+ 		command = { trigger = { claims = { province = 1240 } } type = removeclaim which = 1240 } #Sili-yin Qota \r
+ 		command = { trigger = { claims = { province = 1245 } } type = removeclaim which = 1245 } #Tangshan\r
+ \r
+-        #Taiwan\r
+- 	       command = { type = removeclaim which = 1361 }\r
++        	#Taiwan\r
++		command = { type = removeclaim which = 1361 }\r
+ 		command = { type = removeclaim which = 1362 }\r
+ 		command = { type = removeclaim which = 1363 }\r
+ 		command = { type = removeclaim which = 1364 }\r
+@@ -2618,7 +2629,31 @@ event = {
+ 		command = { type = removecore which = 1362 }\r
+ 		command = { type = removecore which = 1363 }\r
+ 		command = { type = removecore which = 1364 }\r
+-		   \r
++\r
++		command = { type = removecore which = 2770 }\r
++		command = { type = removecore which = 2797 }\r
++		command = { type = removecore which = 2798 }\r
++\r
++        	#Japan（追加）\r
++		command = { type = removecore which = 2792 }\r
++		command = { type = removecore which = 2793 }\r
++		command = { type = removecore which = 2796 }\r
++		command = { type = addclaim which = 2773 where = SOV }\r
++		command = { type = addclaim which = 2787 where = SOV }\r
++		\r
++		#賠償金（追加）\r
++		command = { type = trade which = JAP where = SOV money = -2 when = 7200 value = 1 }\r
++		command = { type = trade which = JAP where = SOV supplies = -10 when = 7200 value = 1 }\r
++		command = { type = trade which = JAP where = CHC money = -2 when = 7200 value = 1 }\r
++		command = { type = trade which = JAP where = CHC supplies = -10 when = 7200 value = 1 }\r
++		#軍縮（追加）\r
++		command = { type = demobilize which = land when = 0 where = 0 value = 10 }\r
++		command = { type = demobilize which = naval when = 0 where = 0 value = 10 }\r
++		command = { type = demobilize which = air when = 0 where = 0 value = 4 }\r
++		command = { type = strength which = land when = 0 where = 0 value = 0.33 }\r
++		command = { type = peacetime_ic_mod value = -30 }\r
++		command = { type = wartime_ic_mod value = -30 }\r
++\r
+ 		# command = { type = non_aggression which = JAP where = CHI }\r
+ 		# command = { type = non_aggression which = JAP where = CHC }\r
+ \r

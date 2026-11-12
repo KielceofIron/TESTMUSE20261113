@@ -1,0 +1,1165 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_China_events.txt [cp932]
+@@ -57,7 +57,7 @@
+ #id = 1891063 沿海州の無政府主義者\r
+ #id = 1891064 プリモルスク自由地区\r
+ #id = 1891065 孔子学院の設立 \r
+-#id = 1891066 子学院 ― 中華民国との協調\r
++#id = 1891066 孔子学院 ― 中華民国との協調\r
+ #id = 1891067 孔子学院 ― 設置の結果\r
+ #id = 1891068 孔子学院 ― 中国への研究技術流出\r
+ #id = 1891069 新華夷秩序\r
+@@ -165,6 +165,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 	name = "ACTIONNAME1891002A"\r
++		command = { type = building_prod_mod which = ic value = 15 }\r
+ 	command = { type = dissent value = -25 }\r
+ 	command = { type = domestic which = freedom value = -3 }\r
+ 	command = { type = domestic which = free_market value = -3 }\r
+@@ -173,6 +174,15 @@ event = {
+         command = { type = construct which = ic where = 1317 value = 1 }\r
+         command = { type = construct which = ic where = 1337 value = 1 }\r
+         command = { type = construct which = ic where = 1308 value = 1 }\r
++	command = { type = add_prov_resource which = 1247 value = 10 where = energy } #北京\r
++	command = { type = add_prov_resource which = 1251 value = 25 where = energy } #大同\r
++	command = { type = add_prov_resource which = 1252 value = 76 where = energy } #太原\r
++	command = { type = add_prov_resource which = 1330 value = 75 where = energy } #済南\r
++	command = { type = add_prov_resource which = 1338 value = 10 where = energy } #上海\r
++	command = { type = add_prov_resource which = 1340 value = 40 where = energy } #合肥\r
++	command = { type = add_prov_resource which = 1342 value = 25 where = energy } #宣州\r
++	command = { type = add_prov_resource which = 1342 value = 120 where = metal } #宣州\r
++	command = { type = add_prov_resource which = 1390 value = 24 where = metal } #昆明\r
+ 	command = { type = setflag which = CHI_Hyperinflation }\r
+ 	}\r
+ }\r
+@@ -217,23 +227,26 @@ event = {
+ \r
+ 	action_a = {\r
+ 	name = "ACTIONNAME1891003A"\r
+-	command = { trigger = { ai = no } type = dissent value = 30 }\r
+-	command = { trigger = { ai = yes } type = dissent value = 20 }\r
++		command = { type = building_prod_mod which = ic value = -50 }\r
++		command = { type = building_prod_mod which = infrastructure value = -50 }\r
++	command = { type = ground_def_eff value = -0.05 when = 1 }\r
++	command = { trigger = { ai = no } type = dissent value = 20 }\r
++	command = { trigger = { ai = yes } type = dissent value = 4 }\r
+ 	command = { type = research_mod value = -30 }\r
+ 	command = { trigger = { ai = no } type = industrial_modifier which = total value = -40 }\r
+-	#command = { trigger = { ai = yes }  type = industrial_modifier which = total value = -20 }\r
+-	command = { type = money value = -3000 }\r
+-	command = { trigger = { ai = no }  type = speed which = land value = -4 }\r
+-	command = { trigger = { ai = yes }  type = speed which = land value = -1 }\r
+-	#command = { type = extra_tc value = -500 }\r
++	command = { trigger = { ai = yes }  type = industrial_modifier which = total value = -10 }\r
++	command = { trigger = { ai = no } type = money value = -3000 }\r
++	command = { trigger = { ai = no }  type = speed which = land value = -3 }\r
++	#command = { trigger = { ai = yes }  type = speed which = land value = -1 }\r
++	#command = { type = extra_tc value = -200 }\r
+       #command = { type = task_efficiency which = attack value = -0.04 }\r
+       #command = { type = task_efficiency which = support_attack value = -0.04 }\r
+-	command = { type = supply_consumption which = land value = 1 }\r
++	#command = { type = supply_consumption which = land value = 1 }\r
+ 	#command = { type = task_efficiency which = attack value = -0.2 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_attack value = -0.2 when = 1 }\r
+ 	#command = { type = task_efficiency which = strat_redeploy value = -0.2 when = 1 }\r
+ 	#command = { type = task_efficiency which = support_defense value = -0.2 when = 1 }\r
+-	#command = { type = task_efficiency which = anti_partisan_duty value = -0.2 when = 1 }\r
++	command = { type = task_efficiency which = anti_partisan_duty value = -0.7 when = 1 }\r
+ 	#command = { type = task_efficiency which = planned_defense value = -0.2 when = 1 }\r
+ 	}\r
+ }\r
+@@ -292,8 +305,9 @@ event = {
+ 	\r
+ 	action = {\r
+ 	name = "ACTIONNAME1891004A"\r
++	command = { type = ground_def_eff value = 0.05 when = 1 }\r
+ 	command = { trigger = { ai = yes } type = research_mod value = 30 }\r
+-	#command = { trigger = { ai = yes } type = industrial_modifier which = total value = 40 }\r
++	command = { trigger = { ai = yes } type = industrial_modifier which = total value = 10 }\r
+ 	command = { trigger = { ai = no } type = research_mod value = 10 }\r
+ 	command = { trigger = { ai = no } type = industrial_modifier which = total value = 20 }\r
+ 	command = { type = dissent value = -20 }\r
+@@ -301,12 +315,13 @@ event = {
+ 	command = { trigger = { ai = no IC = 50 NOT = { IC = 80 } } type = money value = -12000 }\r
+ 	command = { trigger = { ai = no IC = 15 NOT = { IC = 50 } } type = money value = -10000 }\r
+ 	command = { trigger = { ai = no NOT = { IC = 15 } } type = money value = -8000 }\r
+-	command = { trigger = { ai = no }  type = speed which = land value = 4 }\r
+-	command = { trigger = { ai = yes }  type = speed which = land value = 2 }\r
+-	#command = { type = extra_tc value = 500 }\r
++	command = { trigger = { ai = no }  type = speed which = land value = 2 }\r
++	command = { trigger = { ai = yes }  type = speed which = land value = 1 }\r
++	command = { type = extra_tc value = 200 }\r
+      # command = { trigger = { local_flag = mobidoctorine country = CHI } type = build_cost which = land where = relative value = -10 }\r
+      # command = { trigger = { local_flag = mobidoctorine country = CHI } type = build_time which = land where = relative value = -10 }\r
+ 	command = { type = supply_consumption which = land value = -1 }\r
++	command = { type = task_efficiency which = anti_partisan_duty value = 0.8 when = 1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -367,6 +382,46 @@ event = {
+ 	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
+ 	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
+ 	command = { trigger = { ai = yes }  type = build_division which = transport  when = 80 }\r
++	command = { trigger = { ai = yes } type = build_time which = carrier value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = escort_carrier value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = battleship value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = battlecruiser value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = heavy_cruiser value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = light_cruiser value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = destroyer value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = submarine value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = light_carrier value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = nuclear_submarine value = -50 }\r
++	command = { trigger = { ai = yes } type = build_time which = transport value = -10 }\r
++	command = { trigger = { ai = yes } type = build_time which = air value = -30 }\r
++	command = { trigger = { ai = yes } type = build_cost which = air value = -10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = battleship when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = heavy_cruiser when = 25 } \r
++		command = {  trigger = { ai = yes } type = build_division which = light_cruiser when = 25 } \r
++		command = {  trigger = { ai = yes } type = build_division which = light_cruiser when = 25 } \r
++		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
++		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
++		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
++		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
++		command = {  trigger = { ai = yes } type = build_division which = submarine when = 99 } \r
++		command = {  trigger = { ai = yes } type = build_division which = heavy_cruiser when = 25 } \r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = destroyer when = 10 }\r
++		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
++		command = {  trigger = { ai = yes } type = build_division which = carrier value = cag when = 5 } \r
+   	}\r
+ }\r
+ \r
+@@ -2336,7 +2391,9 @@ event = {
+ 	command = { type = morale which = air value = 3 }\r
+ 	command = { trigger = { ai = yes NOT = { local_flag = kongyo } } type = ai which = "IFswitch/JAP_HondoKessen_prepare.ai" }\r
+ 	command = { trigger = { ai = yes  local_flag = kongyo } type = ai which = "IFswitch/JAP_HondoKessen_prepare_m.ai" }\r
+-	\r
++	command = { type = build_time which = land value = -50 }\r
++	command = { type = build_time which = naval value = -50 }\r
++	command = { type = build_time which = air value = -50 }\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1551 value = 3 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1555 value = 6 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 2775 value = 3 } #\r
+@@ -2344,6 +2401,7 @@ event = {
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1557 value = 3 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1548 value = 3 } #\r
+         command = { trigger = { ai = yes } type = construct which = land_fort where = 1552 value = 3 } #\r
++	\r
+ 	}\r
+ }\r
+ \r
+@@ -2433,7 +2491,8 @@ event = {
+ 	action = {\r
+ 	name = "ACTIONNAME1891019A"\r
+ 	ai_chance = 100\r
+-	command = { type = dissent value = 20 }\r
++	command = { trigger = { ai = no } type = dissent value = 20 }\r
++	command = { trigger = { ai = yes } type = dissent value = 5 }\r
+ 	command = { trigger = { control = { province = 1554 data = CHI } } type = setflag which = Japan_Hiroshima_Lost }\r
+ 	command = { trigger = { control = { province = 1559 data = CHI } } type = setflag which = Japan_Kouchi_Lost }\r
+ 	command = { trigger = { control = { province = 1560 data = CHI } } type = setflag which = Japan_Fukuoka_Lost }\r
+@@ -2468,6 +2527,9 @@ event = {
+ 	name = "ACTIONNAME1891020A"\r
+ 	ai_chance = 100\r
+ 	command = { type = dissent value = -15 }\r
++	command = { type = build_time which = land value = 50 }\r
++	command = { type = build_time which = naval value = 50 }\r
++	command = { type = build_time which = air value = 50 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 1554 when = 1 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 1555 when = 1 }\r
+ 	command = { trigger = { flag = Japan_Hiroshima_Lost } type = secedeprovince which = CHI value = 2777 when = 1 }\r
+@@ -2635,30 +2697,33 @@ event = {
+ 	country = CHI\r
+ 	\r
+ 	decision = {\r
+-	NOT = { event = 1891013 } # 中華民国との和平\r
+-	NOT = { exists = JAP }\r
+-	NOT = { exists = UF8 }\r
+-	region = { region = "Japan" country = CHI data = 2 value = 70 }\r
+-	area = { area = "Honshu" country = CHI data = 2 value = 50 }\r
+-	area = { area = "Tohoku" country = CHI data = 2 value = 50 }\r
++	OR = {\r
++		NOT = { event = 1891013 } # 中華民国との和平\r
++		AND = { NOT = { exists = JAP } NOT = { exists = UF8 } }\r
++		}\r
++	region = { region = "Japan" country = -3 data = 2 value = 70 }\r
++	area = { area = "Honshu" country = -3 data = 2 value = 50 }\r
++	area = { area = "Tohoku" country = -3 data = 2 value = 50 }\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	NOT = { event = 1891013 } # 中華民国との和平\r
+-	NOT = { exists = JAP }\r
+-	NOT = { exists = UF8 }\r
+-	region = { region = "Japan" country = CHI data = 2 value = 70 }\r
+-	area = { area = "Honshu" country = CHI data = 2 value = 50 }\r
+-	area = { area = "Tohoku" country = CHI data = 2 value = 50 }\r
++	OR = {\r
++		NOT = { event = 1891013 } # 中華民国との和平\r
++		AND = { NOT = { exists = JAP } NOT = { exists = UF8 } }\r
++		}\r
++	region = { region = "Japan" country = -3 data = 2 value = 70 }\r
++	area = { area = "Honshu" country = -3 data = 2 value = 50 }\r
++	area = { area = "Tohoku" country = -3 data = 2 value = 50 }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	NOT = { event = 1891013 } # 中華民国との和平\r
+-	NOT = { exists = JAP }\r
+-	NOT = { exists = UF8 }\r
+-	region = { region = "Japan" country = CHI data = 2 value = 70 }\r
+-	area = { area = "Honshu" country = CHI data = 2 value = 50 }\r
+-	area = { area = "Tohoku" country = CHI data = 2 value = 50 }\r
++	OR = {\r
++		NOT = { event = 1891013 } # 中華民国との和平\r
++		AND = { NOT = { exists = JAP } NOT = { exists = UF8 } }\r
++		}\r
++	region = { region = "Japan" country = -3 data = 2 value = 70 }\r
++	area = { area = "Honshu" country = -3 data = 2 value = 50 }\r
++	area = { area = "Tohoku" country = -3 data = 2 value = 50 }\r
+ 	}\r
+ 	\r
+ 	name = EVT_1891022_NAME\r
+@@ -3493,7 +3558,7 @@ event = {
+ 	picture = "ccip_unrest"\r
+ 	\r
+ 	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = {\r
+@@ -3534,7 +3599,7 @@ event = {
+ 	headofgovernment = 55802\r
+ 	}\r
+ 	OR = {\r
+-	lost_national = { country = CHI value = 65 }\r
++	lost_national = { country = CHI value = 40 }\r
+ 	year = 1944\r
+ 	technology = 7170\r
+ 	}\r
+@@ -3859,7 +3924,7 @@ event = {
+ 	decision_picture = "decision_ccip_cna"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 3\r
++	offset = 6\r
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 中華を統一する時が来た！\r
+@@ -4214,13 +4279,13 @@ event = {
+ 	picture = "purge_army"\r
+ \r
+ 	date =  { day = 0 month = 0 year = 1933 }\r
+-	offset = 2\r
++	offset = 4\r
+ 	deathdate = { day = 29 month = 11 year = 1940 }\r
+ \r
+ 	action = { # 国民党に対する陰謀は防がれた！\r
+ 	name = "ACTIONNAME1891052A"\r
+ 	command = { type = domestic which = freedom value = -2 }\r
+-	command = { type = dissent value = 15 }\r
++	command = { trigger = { ai = no } type = dissent value = 15 }\r
+ 	command = { type = max_organization which = land value = -10 }\r
+ 	command = { type = max_organization which = naval value = -10 }\r
+ 	command = { type = max_organization which = air value = -10 }\r
+@@ -4741,7 +4806,8 @@ event = {
+ \r
+ 	action = { # 恐るべき事態だ\r
+ 	name = "ACTIONNAME1891060A"\r
+-	command = { type = dissent value = 5 }\r
++	command = { type = dissent value = 7 }\r
++	command = { type = building_prod_mod which = ic value = -15 }\r
+ 	command = { type = relative_manpower value = -20 }\r
+         command = { trigger = { control = { province = 1560 data = -1 } } type = province_manpower which = 1554 value = -1 }\r
+         command = { trigger = { control = { province = 1560 data = -1 } } type = province_manpower which = 1560 value = -1 }\r
+@@ -4860,7 +4926,7 @@ event = {
+ 	id = 1891063\r
+ 	random = no\r
+ 	country = CHI\r
+-\r
++	save_date = yes\r
+ 	trigger = {\r
+ 	event = { id = 1891018 days = 60 }\r
+ 	NOT = { event = 1891015 }\r
+@@ -4888,23 +4954,18 @@ event = {
+ 	command = { type = independence which = PRI value = 1 when = 0 }\r
+ 	command = { type = name where = PRI which = "プリモルスク自由地区"  }\r
+ 	command = { type = flag_ext where = PRI which = "_if" }\r
+-	command = { type = secedeprovince which = PRI value = 1185 when = 1 }\r
+-	command = { type = secedeprovince which = PRI value = 1190 when = 1 }\r
+-	command = { type = secedeprovince which = PRI value = 1191 when = 1 }\r
+-	command = { type = secedeprovince which = PRI value = 1192 when = 1 }\r
+-	command = { type = secedeprovince which = PRI value = 1193 when = 1 }\r
+-	command = { type = secedeprovince which = PRI value = 1194 when = 1 }\r
+-	command = { type = secedeprovince which = PRI value = 1195 when = 1 }\r
+-	command = { type = secedeprovince which = PRI value = 1196 when = 1 }\r
++	command = { type = secederegion which = CHI value = "Far East Siberia" when = 2 }\r
++	command = { type = secedeprovince which = PRI value = 1187 when = 1 }\r
+ 	command = { type = secedeprovince which = UER value = 1170 when = 1 }\r
+-	command = { type = secedeprovince which = UER value = 1171 when = 1 }\r
+-	command = { type = secedeprovince which = UER value = 1174 when = 1 }\r
+-	command = { type = secedeprovince which = UER value = 1175 when = 1 }\r
+ 	command = { type = secedeprovince which = UER value = 1176 when = 1 }\r
+-	command = { type = secedeprovince which = UER value = 1186 when = 1 }\r
+-	command = { type = secedeprovince which = UER value = 1187 when = 1 }\r
+-	command = { type = secedeprovince which = UER value = 1188 when = 1 }\r
+ 	command = { type = secedeprovince which = UER value = 1189 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1171 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1178 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1179 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1181 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1183 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1184 when = 1 }\r
++	command = { type = secedeprovince which = UER value = 1186 when = 1 }\r
+ 	command = { type = event which = 1891064 where = UER when = 0 }\r
+ 	command = { type = event which = 1891064 where = PRI when = 0 }\r
+ 	ai_chance = 100\r
+@@ -4934,9 +4995,13 @@ event = {
+ \r
+ 	action = { # 謎の集団が沿海州を制圧しつつある\r
+ 	name = "ACTIONNAME1891064A"\r
++	command = { trigger = { country = UER } type = access which = PRI }\r
++	#command = { trigger = { country = PRI } type = access which = UER }\r
+ 	command = { trigger = { country = UER } type = dissent value = 3 }\r
++	command = { trigger = { country = PRI } type = free_manpower value = 0.2 }\r
+ 	command = { trigger = { country = UER } type = set_relation which = PRI value = -200 }\r
+ 	command = { trigger = { country = UER } type = non_aggression which = PRI where = UER when = 1200 }\r
++	command = { trigger = { country = PRI } type = capital which = 1187 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = JAP value = 10 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = FRA value = 75 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = U00 value = 75 }\r
+@@ -4945,7 +5010,7 @@ event = {
+ 	command = { trigger = { country = PRI } type = set_relation which = USA value = -200 }\r
+ 	command = { trigger = { country = PRI } type = set_relation which = CSA value = -200 }\r
+ 	command = { trigger = { country = PRI } type = non_aggression which = PRI where = JAP when = 1080 }\r
+-	#command = { trigger = { country = PRI } type = non_aggression which = PRI where = CHI when = 9999 }\r
++	command = { trigger = { country = PRI } type = non_aggression which = PRI where = CHI when = 2880 }\r
+ 	command = { trigger = { country = PRI } type = non_aggression which = PRI where = FRA when = 3600 }\r
+ 	command = { trigger = { country = PRI } type = set_domestic which = democratic value = 3 }\r
+ 	command = { trigger = { country = PRI } type = set_domestic which = political_left value = 8 }\r
+@@ -4966,7 +5031,6 @@ event = {
+ 	command = { trigger = { country = PRI } type = max_organization which = cavalry value = 20 }\r
+ 	command = { trigger = { country = PRI } type = morale which = cavalry value = 20 }\r
+ 	command = { trigger = { country = PRI } type = speed which = cavalry value = 2 }\r
+-	command = { trigger = { country = PRI } type = supply_consumption which = cavalry value = -4.5 }\r
+ 	command = { trigger = { country = PRI } type = max_organization which = militia value = 20 }\r
+ 	command = { trigger = { country = PRI } type = morale which = militia value = 20 }\r
+ 	command = { trigger = { country = PRI } type = max_organization which = cavalry_brigade value = 10 }\r
+@@ -4986,10 +5050,10 @@ event = {
+ 	command = { trigger = { country = PRI } type = muddy_move which = land value = 3 }\r
+ 	command = { trigger = { country = PRI } type = muddy_attack which = land value = 5 }\r
+ 	command = { trigger = { country = PRI } type = muddy_defense which = land value = 5 }\r
+-	command = { trigger = { country = PRI } type = supply_consumption which = land value = -0.5 }\r
++	#command = { trigger = { country = PRI } type = supply_consumption which = land value = -0.5 }\r
+ 	command = { trigger = { country = PRI } type = no_supplies_combat_mod which = land value = 0.6 }\r
+ 	command = { trigger = { country = PRI } type = no_fuel_combat_mod which = land value = 0.6 }\r
+-	command = { trigger = { country = PRI } type = ground_def_eff value = 0.05 when = 1 }\r
++	#command = { trigger = { country = PRI } type = ground_def_eff value = 0.05 when = 1 }\r
+ 	#command = { trigger = { country = PRI } type = trickleback_mod value = 50 }\r
+ 	#command = { trigger = { country = PRI } type = ambush value = 50 }\r
+ 	#command = { trigger = { country = PRI } type = encirclement value = 50 }\r
+@@ -5000,34 +5064,8 @@ event = {
+ 	command = { trigger = { country = PRI } type = add_core_area which = "Liaoning" }\r
+ 	command = { trigger = { country = PRI } type = add_core_area which = "Heilongjiang" }\r
+ 	command = { trigger = { country = PRI ai = yes } type = ai which = "IF/PRI_if.ai" }\r
+-	command = { trigger = { country = PRI } type = free_ic value = 15 }\r
+-	command = { trigger = { country = PRI } type = free_energy value = 30 }\r
+-	command = { trigger = { country = PRI } type = free_metal value = 15 }\r
+-	command = { trigger = { country = PRI } type = free_rare_materials value = 7.5 }\r
+ 	command = { trigger = { country = PRI } type = industrial_modifier which = money value = -50 }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク自由地区第1師団" value = infantry when = 3 where = medium_armor }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク自由地区第2師団" value = infantry when = 3 where = artillery }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク自由地区第3師団" value = infantry when = 3 where = artillery }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・馬賊第1師団" value = cavalry when = 3 where = armored_car }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・馬賊第2師団" value = cavalry when = 3 where = armored_car }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・馬賊第3師団" value = cavalry when = 3 where = engineer }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・馬賊第4師団" value = cavalry when = 3 where = engineer }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・馬賊第5師団" value = cavalry when = 3 where = engineer }\r
+ 	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第1師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第2師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第3師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第4師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第5師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第6師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第7師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第8師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第9師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第10師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第11師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第12師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第13師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第14師団" value = militia when = 2 where = cavalry_brigade }\r
+-	command = { trigger = { country = PRI } type = add_division which = "プリモルスク・アナキスト民兵第15師団" value = militia when = 2 where = cavalry_brigade }\r
+ 	}\r
+ }\r
+ \r
+@@ -5572,6 +5610,7 @@ event = {
+ 	\r
+ 	action_a = { # 鐡道強国を成し遂げた！\r
+ 	name = "ACTIONNAME1891074A"\r
++	command = { type = building_prod_mod which = infrastructure value = 20 }\r
+ 	command = { type = belligerence which = CHI value = 2 }\r
+ 	command = { type = relation which = JAP value = -30 }\r
+ 	command = { type = construct which = ic where = 1337 value = 1 }\r
+@@ -5752,9 +5791,9 @@ event = {
+ \r
+ 	trigger = {\r
+ 	atwar = yes\r
+-	NOT = { region = { region = "China" country = CHI data = 1 value = 40 } }\r
+-	NOT = { control = { province = 1247 data = CHI } }\r
+-	NOT = { control = { province = 1337 data = CHI } }\r
++	NOT = { region = { region = "China" country = CHI data = 1 value = 30 } }\r
++	#NOT = { control = { province = 1247 data = CHI } }\r
++	#NOT = { control = { province = 1337 data = CHI } }\r
+ 	NOT = { ispuppet = yes }\r
+ 	random = 20\r
+ 	}\r
+@@ -6171,7 +6210,7 @@ event = {
+ 	decision_picture = "decision_Rhineland"\r
+ 	\r
+ 	date = { day = 1 month = january year = 1933 }\r
+-	offset = 60\r
++	offset = 30\r
+ 	deathdate = { day = 29 month = december year = 1999 }\r
+ 	\r
+ 	action = {\r
+@@ -6225,31 +6264,20 @@ event = {
+ 	country = PRI\r
+ \r
+ 	decision = {\r
+-	event = 1891063 # 沿海州の無政府主義者\r
+-	exists = PRI\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UER } }\r
+-	NOT = { war = { country = CHI country = PRI } }\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
+-	event = 1891063 # 沿海州の無政府主義者\r
++	event = { id = 1891063 days = 30 } # 沿海州の無政府主義者\r
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UER } }\r
+-	NOT = { war = { country = CHI country = PRI } }\r
+-	supplies = 1000\r
++	supplies = 100\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = 1891063 # 沿海州の無政府主義者\r
++	event = { id = 1891063 days = 30 } # 沿海州の無政府主義者\r
+ 	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UER } }\r
+-	NOT = { war = { country = CHI country = PRI } }\r
+-	random = 15\r
++	\r
+ 	}\r
+ \r
+ 	name = "EVT_1891200_NAME"\r
+@@ -6258,8 +6286,8 @@ event = {
+ 	picture = "free_map"\r
+ 	decision_picture = "decision_ccip_beiyangarmy"\r
+ \r
+-	date = { day = 0 month = 8 year = 1936 }\r
+-	offset = 60\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 7\r
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ \r
+ 	action = { # 旅、未だ終わらず！\r
+@@ -6280,64 +6308,39 @@ event = {
+ # この国の名目上のリーダーは馬賊の古老。日本人・原田左之助であった。\r
+ # 極東自由地区を名乗る無政府主義者と彼等に従う馬賊によって中華民国の北部都市は幾度となく略奪が行われた。\r
+ # こうした馬賊の動きに対し中華民国は幾度となく軍隊を差し向けるが、高い機動力を持ち土地勘を持つ馬賊達を完全に追い潰すことはできず、北部都市の住民達は彼等の襲撃に怯えながら日々を過ごしている……。\r
++# \nｧ004襲撃の実行間隔は、日中露各国の状況により異なります\r
+ ###########################################################################\r
+ \r
+ event = {\r
+ 	id = 1891201\r
+ 	random = no\r
+ 	country = PRI\r
+-\r
++	persistent = yes\r
+ 	decision = {\r
+ 	event = 1891200 # 夢見るままに\r
+-	exists = PRI\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UER } }\r
+-	NOT = { war = { country = CHI country = PRI } }\r
+-	local_flag = Shinsengumi_1936\r
+-	NOT = { flag = Bazoku }\r
+ 	}\r
+ \r
+ 	decision_trigger = { \r
+ 	event = 1891200 # 夢見るままに\r
+ 	exists = PRI\r
++	local_flag = Shinsengumi_1936\r
+ 	headofstate = 730201 # 原田左之助\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UER } }\r
+-	NOT = { war = { country = CHI country = PRI } }\r
+-	OR = {\r
+-	area = { area = "Heilongjiang" country = CHI data = 1 value = 50 }\r
+-	area = { area = "Jilin" country = CHI data = 1 value = 50 }\r
+-	area = { area = "Liaoning" country = CHI data = 1 value = 50 }\r
+-	}\r
+-	OR = {\r
+-	garrison = { country = PRI province = 1190 type = land size = 1 area = no }\r
+-	garrison = { country = PRI province = 1194 type = land size = 1 area = no }\r
+-	garrison = { country = PRI province = 1196 type = land size = 1 area = no }\r
+-	garrison = { country = PRI province = 1191 type = land size = 1 area = no }\r
+-	}\r
+-	money = 100 \r
++	supplies = 100 \r
++	NOT = { flag = Bazoku }\r
++	NOT = { flag = PaintitBlack }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+ 	event = 1891200 # 夢見るままに\r
+-	exists = PRI\r
+ 	headofstate = 730201 # 原田左之助\r
+-	NOT = { war = { country = CHI country = JAP } }\r
+-	NOT = { war = { country = CHI country = UER } }\r
+-	NOT = { war = { country = CHI country = PRI } }\r
+-	OR = {\r
+-	area = { area = "Heilongjiang" country = CHI data = 1 value = 50 }\r
+-	area = { area = "Jilin" country = CHI data = 1 value = 50 }\r
+-	area = { area = "Liaoning" country = CHI data = 1 value = 50 }\r
+-	}\r
+-	OR = {\r
+-	garrison = { country = PRI province = 1190 type = land size = 1 area = no }\r
+-	garrison = { country = PRI province = 1194 type = land size = 1 area = no }\r
+-	garrison = { country = PRI province = 1196 type = land size = 1 area = no }\r
+-	garrison = { country = PRI province = 1191 type = land size = 1 area = no }\r
+-	}\r
+ 	local_flag = Shinsengumi_1936\r
+-	random = 15\r
++	NOT = { flag = PaintitBlack }\r
++	NOT = { flag = Bazoku }\r
++	OR = { \r
++	NOT = { year = 1937 } \r
++	random = 15 \r
++	\r
++	}\r
+ 	}\r
+ \r
+ 	name = "EVT_1891201_NAME"\r
+@@ -6347,16 +6350,57 @@ event = {
+ 	decision_picture = "decision_ccip_beiyangarmy"\r
+ \r
+ 	date = { day = 0 month = 8 year = 1936 }\r
+-	offset = 60\r
++	offset = 5\r
+ 	deathdate = { day = 29 month = 11 year = 1999 }\r
+ \r
+ 	action = { # 襲撃だ！\r
++	trigger = { atwar = no NOT = { OR = { war = { country = CHI country = UER } war = { country = CHI country = JAP } } } } \r
+ 	name = "ACTIONNAME1891201A"\r
+-	command = { trigger = { ai = no } type = money value = -100 }\r
++	command = { trigger = { ai = no } type = supplies value = -100 }\r
+ 	command = { type = setflag which = Bazoku }\r
+ 	command = { type = event which = 1891202 where = CHI when = 45 }\r
+ 	command = { type = event which = 1891203 where = PRI when = 45 }\r
+ 	}\r
++	action = { # 襲撃だ！\r
++	trigger = { atwar = no year = 1937 war = { country = CHI country = JAP } } \r
++	name = "ACTIONNAME1891201A"\r
++	command = { trigger = { ai = no } type = supplies value = -100 }\r
++	command = { type = setflag which = Bazoku }\r
++	command = { trigger = { ai = yes } type = event which = 1891202 where = CHI when = 30 }\r
++	command = { trigger = { ai = yes } type = event which = 1891203 where = PRI when = 30 }\r
++	command = { trigger = { ai = no } type = event which = 1891202 where = CHI when = 45 }\r
++	command = { trigger = { ai = no } type = event which = 1891203 where = PRI when = 45 }\r
++	command = { type = setflag which = BazokuA }\r
++	}\r
++	action = { # 襲撃だ！\r
++	trigger = { atwar = no OR = { event = 1891003 NOT = { year = 1937 } }  war = { country = CHI country = UER } } \r
++	name = "ACTIONNAME1891201A"\r
++	command = { trigger = { ai = no } type = supplies value = -100 }\r
++	command = { type = setflag which = Bazoku }\r
++	command = { trigger = { ai = yes } type = event which = 1891202 where = CHI when = 10 }\r
++	command = { trigger = { ai = yes } type = event which = 1891203 where = PRI when = 10 }\r
++	command = { trigger = { ai = no } type = event which = 1891202 where = CHI when = 15 }\r
++	command = { trigger = { ai = no } type = event which = 1891203 where = PRI when = 15 }\r
++	command = { type = setflag which = BazokuA }\r
++	}\r
++	action = { # 襲撃だ！\r
++	trigger = { atwar = yes NOT = { flag = PaintitBlack } } \r
++	name = "ACTIONNAME1891201A"\r
++	command = { trigger = { ai = no } type = supplies value = -100 }\r
++	command = { type = setflag which = Bazoku }\r
++	command = { type = event which = 1891202 where = CHI when = 5 }\r
++	command = { type = event which = 1891203 where = PRI when = 5 }\r
++	command = { type = setflag which = BazokuA }\r
++	}\r
++	action = { # 襲撃だ！\r
++	trigger = { atwar = yes flag = PaintitBlack } \r
++	name = "ACTIONNAME1891201A"\r
++	command = { trigger = { ai = no } type = supplies value = -100 }\r
++	command = { type = setflag which = Bazoku }\r
++	command = { type = event which = 1891202 where = CHI when = 15 }\r
++	command = { type = event which = 1891203 where = PRI when = 15 }\r
++	command = { type = setflag which = BazokuA }\r
++	}\r
+ }\r
+ \r
+ event = {\r
+@@ -6371,28 +6415,517 @@ event = {
+ 	\r
+ 	action = {\r
+ 	name = "ACTION_NAME_HORRIBLE"\r
+-	command = { type = dissent value = 0.5 }\r
++	command = { trigger = { ai = no } type = dissent value = 0.5 }\r
+ 	command = { trigger = { ai = no } type = money value = -50 }\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+ 	id = 1891203\r
+-	country = CHI\r
++	country = PRI\r
+ 	persistent = yes\r
+-\r
+ 	name = "EVT_1891203_NAME"\r
+ 	desc = "EVT_1891203_DESC" \r
+ 	style = 2\r
+ 	picture = "Bazoku"\r
+ 	\r
+ 	action = {\r
++	trigger = { NOT = { flag = BazokuA } }\r
+ 	name = "ACTION_NAME_OK"\r
+ 	command = { type = dissent value = -0.5 }\r
+ 	command = { type = money value = 50 }\r
+ 	command = { type = supplies value = 150 }\r
+-	command = { type = clrflag which = Bazoku }\r
+-	}\r
++	command = { type = clrflag which = Bazoku }		\r
++	}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1189 data = CHI } NOT = { control = { province = 1187 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1189 when = 2 }\r
++command = { type = add_corps value = land where = 1189 }\r
++command = { type = supplies value = 500 where = 1189 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1190 data = CHI } NOT = { control = { province = 1189 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1190 when = 2 }\r
++command = { type = add_corps value = land where = 1190 }\r
++command = { type = supplies value = 500 where = 1190 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1191 data = CHI } NOT = { control = { province = 1190 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1191 when = 2 }\r
++command = { type = add_corps value = land where = 1191 }\r
++command = { type = supplies value = 500 where = 1191 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1188 data = CHI } NOT = { control = { province = 1191 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1188 when = 2 }\r
++command = { type = add_corps value = land where = 1188 }\r
++command = { type = supplies value = 500 where = 1188 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1195 data = CHI } NOT = { control = { province = 1188 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1195 when = 2 }\r
++command = { type = add_corps value = land where = 1195 }\r
++command = { type = supplies value = 500 where = 1195 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1193 data = CHI } NOT = { control = { province = 1195 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1193 when = 2 }\r
++command = { type = add_corps value = land where = 1193 }\r
++command = { type = supplies value = 500 where = 1193 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1185 data = CHI } NOT = { control = { province = 1193 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1185 when = 2 }\r
++command = { type = add_corps value = land where = 1185 }\r
++command = { type = supplies value = 500 where = 1185 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1175 data = CHI } NOT = { control = { province = 1185 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1175 when = 2 }\r
++command = { type = add_corps value = land where = 1175 }\r
++command = { type = supplies value = 500 where = 1175 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1202 data = CHI } NOT = { control = { province = 1175 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1202 when = 2 }\r
++command = { type = add_corps value = land where = 1202 }\r
++command = { type = supplies value = 500 where = 1202 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1196 data = CHI } NOT = { control = { province = 1202 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1196 when = 2 }\r
++command = { type = add_corps value = land where = 1196 }\r
++command = { type = supplies value = 500 where = 1196 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1194 data = CHI } NOT = { control = { province = 1196 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1194 when = 2 }\r
++command = { type = add_corps value = land where = 1194 }\r
++command = { type = supplies value = 500 where = 1194 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1192 data = CHI } NOT = { control = { province = 1194 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1192 when = 2 }\r
++command = { type = add_corps value = land where = 1192 }\r
++command = { type = supplies value = 500 where = 1192 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1174 data = CHI } NOT = { control = { province = 1192 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1174 when = 2 }\r
++command = { type = add_corps value = land where = 1174 }\r
++command = { type = supplies value = 500 where = 1174 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1204 data = CHI } NOT = { control = { province = 1174 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1204 when = 2 }\r
++command = { type = add_corps value = land where = 1204 }\r
++command = { type = supplies value = 500 where = 1204 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1205 data = CHI } NOT = { control = { province = 1204 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1205 when = 2 }\r
++command = { type = add_corps value = land where = 1205 }\r
++command = { type = supplies value = 500 where = 1205 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1212 data = CHI } NOT = { control = { province = 1205 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1212 when = 2 }\r
++command = { type = add_corps value = land where = 1212 }\r
++command = { type = supplies value = 500 where = 1212 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1201 data = CHI } NOT = { control = { province = 1212 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1201 when = 2 }\r
++command = { type = add_corps value = land where = 1201 }\r
++command = { type = supplies value = 500 where = 1201 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1199 data = CHI } NOT = { control = { province = 1201 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1199 when = 2 }\r
++command = { type = add_corps value = land where = 1199 }\r
++command = { type = supplies value = 500 where = 1199 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1176 data = CHI } NOT = { control = { province = 1199 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1176 when = 2 }\r
++command = { type = add_corps value = land where = 1176 }\r
++command = { type = supplies value = 500 where = 1176 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1203 data = CHI } NOT = { control = { province = 1176 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1203 when = 2 }\r
++command = { type = add_corps value = land where = 1203 }\r
++command = { type = supplies value = 500 where = 1203 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1197 data = CHI } NOT = { control = { province = 1203 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1197 when = 2 }\r
++command = { type = add_corps value = land where = 1197 }\r
++command = { type = supplies value = 500 where = 1197 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1171 data = CHI } NOT = { control = { province = 1197 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1171 when = 2 }\r
++command = { type = add_corps value = land where = 1171 }\r
++command = { type = supplies value = 500 where = 1171 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1208 data = CHI } NOT = { control = { province = 1171 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1208 when = 2 }\r
++command = { type = add_corps value = land where = 1208 }\r
++command = { type = supplies value = 500 where = 1208 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1225 data = CHI } NOT = { control = { province = 1208 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1225 when = 2 }\r
++command = { type = add_corps value = land where = 1225 }\r
++command = { type = supplies value = 500 where = 1225 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1170 data = CHI } NOT = { control = { province = 1225 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1170 when = 2 }\r
++command = { type = add_corps value = land where = 1170 }\r
++command = { type = supplies value = 500 where = 1170 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1168 data = CHI } NOT = { control = { province = 1170 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1168 when = 2 }\r
++command = { type = add_corps value = land where = 1168 }\r
++command = { type = supplies value = 500 where = 1168 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1213 data = CHI } NOT = { control = { province = 1168 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1213 when = 2 }\r
++command = { type = add_corps value = land where = 1213 }\r
++command = { type = supplies value = 500 where = 1213 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1209 data = CHI } NOT = { control = { province = 1213 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1209 when = 2 }\r
++command = { type = add_corps value = land where = 1209 }\r
++command = { type = supplies value = 500 where = 1209 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1178 data = CHI } NOT = { control = { province = 1209 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1178 when = 2 }\r
++command = { type = add_corps value = land where = 1178 }\r
++command = { type = supplies value = 500 where = 1178 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1169 data = CHI } NOT = { control = { province = 1178 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1169 when = 2 }\r
++command = { type = add_corps value = land where = 1169 }\r
++command = { type = supplies value = 500 where = 1169 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1200 data = CHI } NOT = { control = { province = 1169 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1200 when = 2 }\r
++command = { type = add_corps value = land where = 1200 }\r
++command = { type = supplies value = 500 where = 1200 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1206 data = CHI } NOT = { control = { province = 1200 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1206 when = 2 }\r
++command = { type = add_corps value = land where = 1206 }\r
++command = { type = supplies value = 500 where = 1206 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1198 data = CHI } NOT = { control = { province = 1206 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1198 when = 2 }\r
++command = { type = add_corps value = land where = 1198 }\r
++command = { type = supplies value = 500 where = 1198 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA control = { province = 1207 data = CHI } NOT = { control = { province = 1198 data = CHI } } }\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = secedeprovince which = PRI value = 1207 when = 2 }\r
++command = { type = add_corps value = land where = 1207 }\r
++command = { type = supplies value = 500 where = 1207 }\r
++command = { type = add_division value = militia when = 3 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++}\r
++action = {\r
++trigger = { flag = BazokuA NOT = { control = { province = 1207 data = CHI } } \r
++NOT = { control = { province = 	1189 data = CHI } }\r
++NOT = { control = { province = 	1190 data = CHI } }\r
++NOT = { control = { province = 	1191 data = CHI } }\r
++NOT = { control = { province = 	1188 data = CHI } }\r
++NOT = { control = { province = 	1195 data = CHI } }\r
++NOT = { control = { province = 	1193 data = CHI } }\r
++NOT = { control = { province = 	1185 data = CHI } }\r
++NOT = { control = { province = 	1175 data = CHI } }\r
++NOT = { control = { province = 	1202 data = CHI } }\r
++NOT = { control = { province = 	1196 data = CHI } }\r
++NOT = { control = { province = 	1194 data = CHI } }\r
++NOT = { control = { province = 	1192 data = CHI } }\r
++NOT = { control = { province = 	1174 data = CHI } }\r
++NOT = { control = { province = 	1204 data = CHI } }\r
++NOT = { control = { province = 	1205 data = CHI } }\r
++NOT = { control = { province = 	1212 data = CHI } }\r
++NOT = { control = { province = 	1201 data = CHI } }\r
++NOT = { control = { province = 	1199 data = CHI } }\r
++NOT = { control = { province = 	1176 data = CHI } }\r
++NOT = { control = { province = 	1203 data = CHI } }\r
++NOT = { control = { province = 	1197 data = CHI } }\r
++NOT = { control = { province = 	1171 data = CHI } }\r
++NOT = { control = { province = 	1208 data = CHI } }\r
++NOT = { control = { province = 	1225 data = CHI } }\r
++NOT = { control = { province = 	1170 data = CHI } }\r
++NOT = { control = { province = 	1168 data = CHI } }\r
++NOT = { control = { province = 	1213 data = CHI } }\r
++NOT = { control = { province = 	1209 data = CHI } }\r
++NOT = { control = { province = 	1178 data = CHI } }\r
++NOT = { control = { province = 	1169 data = CHI } }\r
++NOT = { control = { province = 	1200 data = CHI } }\r
++NOT = { control = { province = 	1206 data = CHI } }\r
++NOT = { control = { province = 	1198 data = CHI } }\r
++NOT = { control = { province = 	1207 data = CHI } }\r
++\r
++}\r
++name = "ACTION_NAME_OK"\r
++command = { type = dissent value = -0.5 }\r
++command = { type = money value = 50 }\r
++command = { type = supplies value = 150 }\r
++command = { type = clrflag which = Bazoku }\r
++command = { type = clrflag which = BazokuA }\r
++command = { type = setflag which = PaintitBlack }\r
++}\r
++\r
+ }\r
+ \r
+ ##########################################################################\r
+@@ -6434,7 +6967,6 @@ event = {
+ 	NOT = { war = { country = CHI country = UER } }\r
+ 	NOT = { war = { country = CHI country = PRI } }\r
+ 	local_flag = Shinsengumi_1936\r
+-	random = 15\r
+ 	}\r
+ \r
+ 	name = "EVT_1891204_NAME"\r
+@@ -6459,4 +6991,5 @@ event = {
+ 	command = { type = max_organization which = cavalry_brigade value = 2 }\r
+ 	command = { type = speed which = land value = 1 }\r
+ 	}\r
+-}
+\ No newline at end of file
++}\r
++\r

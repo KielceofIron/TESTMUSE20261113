@@ -1,0 +1,281 @@
+--- A/ai/IFswitch/CHI_Attack_Man.ai [ascii]
++++ B/ai/IFswitch/CHI_Attack_Man.ai [ascii]
+@@ -1,139 +1,139 @@
+-# China attack Russia AI File by Lothos\r
+-max_redeploying = 0\r
+-###################################\r
+-# Ground Combat, Leaders and Garrisons\r
+-###################################\r
+-garrison = {\r
+-	defend_overseas_beaches = no\r
+-	home_multiplier 	= 0.7\r
+-	overseas_multiplier = -1\r
+-	home_peace_cap 		= 0.1\r
+-	war_zone_odds 		= 25\r
+-	key_point_prio_mult	= 0.1\r
+-	revolt_risk_mult	= 0.1\r
+-\r
+-	# PRIORITIES:\r
+-	beach			= -1 # 20 # 50	# Beach level 2\r
+-	capital		= -1	# Our capital\r
+-	human_border	= -1		# Ignored for allied human players\r
+-	war_target		= 9999	# The next country targeted for attack by this AI\r
+-	reserves 		= 1\r
+-\r
+-	# Borders with specific countries\r
+-	country_priorities = {\r
+-		UER = 99999\r
+-		SOV = 100\r
+-		MON = -10 # -1\r
+-		TIB = -1\r
+-		NEP = 20\r
+-		AFG = -1\r
+-		FRA = -1\r
+-		SIA = -1\r
+-		ENG = -1\r
+-		SIK = -1\r
+-		POR = -1\r
+-		UPE = -1\r
+-		JAP = 100\r
+-		CHC = 100\r
+-		MAN = 20\r
+-		CSX = 20\r
+-		SIK = -1\r
+-		CXB = -1\r
+-		CYN = -1\r
+-		CGX = 20\r
+-		U74 = 70\r
+-		UD6 = -1\r
+-		BUR = 50\r
+-		IND = -50\r
+-		U02 = -50\r
+-	}\r
+-	province_priorities = {	\r
+-	1158 = -1\r
+-	1157 = -1\r
+-	1155 = -1\r
+-	}\r
+-	area_multiplier = { \r
+-	1214 = 1\r
+-	1199 = 1\r
+-	1191 = 1\r
+-	1208 = 1\r
+-	1221 = 1\r
+-	1228 = 1\r
+-	1169 = -1\r
+-	1179 = -1\r
+-	}\r
+-}\r
+-front = { \r
+-	recklessness 		= 3 # 0 # 0-3\r
+-	distrib_vs_ai 		= Defensive\r
+-	distrib_vs_human 	= Defensive\r
+-\r
+-	enemy_reinf_days	= 5\r
+-	reserve_prop		= 0.2\r
+-	panic_ratio_vs_ai	= 3.0\r
+-	panic_ratio_vs_human	= 3.0\r
+-	base_attack_odds	= 1.0\r
+-	min_attack_odds		= 0.7\r
+-	max_attack_odds		= 99.0\r
+-	reinforce_odds		= 1.1\r
+-	withdraw_odds		= 0.2\r
+-	support_defense_prop 	= 0.4\r
+-\r
+-	strength 		= 0.7\r
+-	organisation 	= 0.7\r
+-	soft_attack 	= 0.7\r
+-	hard_attack 	= 0.7\r
+-	ground_defense 	= 0.7\r
+-	dig_in 			= 1.0 # Against defender\r
+-\r
+-	frozen_attack 	= 1.0\r
+-	snow_attack 	= 1.0\r
+-	blizzard_attack = 1.0\r
+-	storm_attack 	= 1.0\r
+-	muddy_attack 	= 1.0\r
+-\r
+-	occupied 	= 0.7\r
+-	owned 		= 0.7\r
+-\r
+-	jungle_attack 	= 0.7\r
+-	mountain_attack = 0.7\r
+-	swamp_attack 	= 0.7\r
+-	forest_attack 	= 0.7\r
+-	hill_attack 	= 0.7\r
+-	urban_attack 	= 0.7\r
+-	river 		= 0.7\r
+-\r
+-	largefort 	= 0.8\r
+-	smallfort 	= 0.8\r
+-\r
+-	enemy_handicap = {\r
+-	} \r
+-	passivity = {\r
+-	} \r
+-} \r
+-###################################\r
+-# Invasions and Naval\r
+-###################################\r
+-invasion = { \r
+-	invasion         = yes\r
+- 	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)\r
+-	random		= 8.0	#How big a random range.  (1.0 = 1%)\r
+-	coastal		= 0.0	#increase to avoid coastal forts more.\r
+-	beach		= 0.0	#higher, avoid worst beaches.\r
+-	distance	= 0.01	#higher = avoid long distance.\r
+-	max_distance    = 250\r
+-	pocket		= 10.0	#prioritise pockets, ie provinces with no adjacent controlled by same.\r
+-	island		= 0.1	#prioritise taking pure islands.\r
+-	enemy		= 2.0	#higher = much more vary of troops in province.\r
+-	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby\r
+-	air_base	= 1.5 \r
+-      	naval_base 	= 0.1 \r
+-      	air_support 	= 3.0 \r
+-      	redirect 	= priority\r
+-	ignore		= yes\r
+-      \r
+-	target = { \r
+-	1560		= 100000\r
+-	1564		= 100000\r
+-	} \r
++# China attack Russia AI File by Lothos
++max_redeploying = 0
++###################################
++# Ground Combat, Leaders and Garrisons
++###################################
++garrison = {
++	defend_overseas_beaches = no
++	home_multiplier 	= 0.7
++	overseas_multiplier = -1
++	home_peace_cap 		= 0.1
++	war_zone_odds 		= 25
++	key_point_prio_mult	= 0.1
++	revolt_risk_mult	= 0.1
++
++	# PRIORITIES:
++	beach			= -1 # 20 # 50	# Beach level 2
++	capital		= -1	# Our capital
++	human_border	= -1		# Ignored for allied human players
++	war_target		= 9999	# The next country targeted for attack by this AI
++	reserves 		= 1
++
++	# Borders with specific countries
++	country_priorities = {
++		UER = 99999
++		SOV = 100
++		MON = -10 # -1
++		TIB = -1
++		NEP = 20
++		AFG = -1
++		FRA = -1
++		SIA = -1
++		ENG = -1
++		SIK = -1
++		POR = -1
++		UPE = -1
++		JAP = 100
++		CHC = 100
++		MAN = 20
++		CSX = 20
++		SIK = -1
++		CXB = -1
++		CYN = -1
++		CGX = 20
++		U74 = 70
++		UD6 = -1
++		BUR = 50
++		IND = -50
++		U02 = -50
++	}
++	province_priorities = {	
++	1158 = -1
++	1157 = -1
++	1155 = -1
++	}
++	area_multiplier = { 
++	1214 = 1
++	1199 = 1
++	1191 = 1
++	1208 = 1
++	1221 = 1
++	1228 = 1
++	1169 = -1
++	1179 = -1
++	}
++}
++front = { 
++	recklessness 		= 3 # 0 # 0-3
++	distrib_vs_ai 		= Defensive
++	distrib_vs_human 	= Defensive
++
++	enemy_reinf_days	= 5
++	reserve_prop		= 0.2
++	panic_ratio_vs_ai	= 3.0
++	panic_ratio_vs_human	= 3.0
++	base_attack_odds	= 1.0
++	min_attack_odds		= 0.7
++	max_attack_odds		= 99.0
++	reinforce_odds		= 1.1
++	withdraw_odds		= 0.2
++	support_defense_prop 	= 0.4
++
++	strength 		= 0.7
++	organisation 	= 0.7
++	soft_attack 	= 0.7
++	hard_attack 	= 0.7
++	ground_defense 	= 0.7
++	dig_in 			= 1.0 # Against defender
++
++	frozen_attack 	= 1.0
++	snow_attack 	= 1.0
++	blizzard_attack = 1.0
++	storm_attack 	= 1.0
++	muddy_attack 	= 1.0
++
++	occupied 	= 0.7
++	owned 		= 0.7
++
++	jungle_attack 	= 0.7
++	mountain_attack = 0.7
++	swamp_attack 	= 0.7
++	forest_attack 	= 0.7
++	hill_attack 	= 0.7
++	urban_attack 	= 0.7
++	river 		= 0.7
++
++	largefort 	= 0.8
++	smallfort 	= 0.8
++
++	enemy_handicap = {
++	} 
++	passivity = {
++	} 
++} 
++###################################
++# Invasions and Naval
++###################################
++invasion = { 
++	invasion         = yes
++ 	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)
++	random		= 8.0	#How big a random range.  (1.0 = 1%)
++	coastal		= 0.0	#increase to avoid coastal forts more.
++	beach		= 0.0	#higher, avoid worst beaches.
++	distance	= 0.01	#higher = avoid long distance.
++	max_distance    = 250
++	pocket		= 10.0	#prioritise pockets, ie provinces with no adjacent controlled by same.
++	island		= 0.1	#prioritise taking pure islands.
++	enemy		= 2.0	#higher = much more vary of troops in province.
++	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby
++	air_base	= 1.5 
++      	naval_base 	= 0.1 
++      	air_support 	= 3.0 
++      	redirect 	= priority
++	ignore		= yes
++      
++	target = { 
++	1560		= 100000
++	1564		= 100000
++	} 
+ } 
+\ No newline at end of file

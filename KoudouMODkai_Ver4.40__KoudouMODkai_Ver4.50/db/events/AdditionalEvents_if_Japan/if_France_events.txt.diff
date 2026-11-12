@@ -1,0 +1,58 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_France_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_France_events.txt [cp932]
+@@ -204,6 +204,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_COM when = 1 value = 1 }\r
+ 	command = { type = setflag which = FRA_Mli }\r
++	command = { type = local_setflag which = People } \r
+ 	}\r
+ \r
+ 	action = { # 極左：労働組合党案 ― 郷土防衛軍の権限強化\r
+@@ -217,6 +218,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_COM when = 1 value = 1 }\r
+ 	command = { type = setflag which = FRA_Mli }\r
++	command = { type = local_setflag which = Lightinfantry } \r
+ 	}\r
+ \r
+ 	action = { # 穏健：社会党案 ― バランスの取れた常備軍\r
+@@ -229,6 +231,7 @@ event = {
+ 	command = { type = gain_tech which = 6000320 }\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = setflag which = FRA_SOC when = 1 value = 1 }\r
++	command = { type = local_setflag which = CHI_doctorine } \r
+ 	}\r
+ \r
+ 	action = { # 穏健：自由主義案 ― 専守防衛\r
+@@ -241,6 +244,7 @@ event = {
+ 	command = { type = gain_tech which = 6110 }\r
+ 	command = { type = dissent value = -1 }\r
+ 	command = { type = setflag which = FRA_SOC when = 1 value = 1 }\r
++	command = { type = local_setflag which = Defensivearmy } \r
+ 	}\r
+ \r
+ 	action = { # 極右：王党派 ― 火力優勢\r
+@@ -253,6 +257,7 @@ event = {
+ 	command = { type = gain_tech which = 6050 }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_EMP when = 1 value = 1 }\r
++	command = { type = local_setflag which = Fire } \r
+ 	}\r
+ \r
+ 	action = { # 極右：ソレル主義者 ― 装甲部隊による速度戦\r
+@@ -265,6 +270,7 @@ event = {
+ 	command = { type = gain_tech which = 6900 }\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = setflag which = FRA_EMP when = 1 value = 1 }\r
++	command = { type = local_setflag which = Mobility } \r
+ 	}\r
+ }\r
+ \r
+@@ -2026,6 +2032,7 @@ event = {
+ 	name = "ACTIONNAME3327028A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = war which = FRA }\r
++	command = { trigger = { ai = yes } type = activate which = 6900 }\r
+ 	command = { type = songs which = "Special/0003.txt" } #音源流し\r
+ 	command = { type = trigger which = 19330003 when = 0 } #本イベントを起こす\r
+ 	command = { type = event which = 19310003 where = REB when = 0 }\r

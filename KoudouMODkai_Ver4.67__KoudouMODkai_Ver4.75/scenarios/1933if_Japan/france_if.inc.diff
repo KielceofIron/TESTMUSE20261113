@@ -1,0 +1,359 @@
+--- A/scenarios/1933if_Japan/france_if.inc [cp932]
++++ B/scenarios/1933if_Japan/france_if.inc [cp932]
+@@ -15,6 +15,9 @@ country = {
+   capital            = 55 # パリ\r
+   dissent            = 3\r
+   manpower           = 80\r
++  peacetime_ic_mod       = 0.85\r
++  wartime_ic_mod         = 0.85\r
++  industrial_modifier    = 0.94\r
+   # Resource Reserves\r
+   energy         = 7440\r
+   metal          = 3720\r
+@@ -24,9 +27,6 @@ country = {
+   money          = 50\r
+   transports     = 750\r
+   escorts        = 40\r
+-  peacetime_ic_mod       = 0.85\r
+-  wartime_ic_mod       = 0.85\r
+-  industrial_modifier    = 0.9\r
+ \r
+   diplomacy = {\r
+     relation = { tag = AST value = 150 }\r
+@@ -110,9 +110,10 @@ country = {
+   ownedprovinces         = { 85 90 87 86 94 89 81 82 80 70 84 79 67 40 77 71 78 74 75 69 68 62 65 66 54 63 100 52 51 49 59 50 99 45 55 60 61 37 38 39 57 58 42 43 44 47 72 73 93 738 731 734 735 732 736 733 727 744 737 728 729 741 740 742 745 746 747 748 749 98 92 76 48 95 64 91 83 88 106 96 97 730 743 103 739 102 53 46 41 56 101 }\r
+   controlledprovinces    = { 85 90 87 86 94 89 81 82 80 70 84 79 67 40 77 71 78 74 75 69 68 62 65 66 54 63 100 52 51 49 59 50 99 45 55 60 61 37 38 39 57 58 42 43 44 47 72 73 93 738 731 734 735 732 736 733 727 744 737 728 729 741 740 742 745 746 747 748 749 98 92 76 48 95 64 91 83 88 106 96 97 730 743 103 739 102 53 46 41 56 101 }\r
+   claimedprovinces       = { 727 728 729 730 731 732 733 734 735 736 737 738 739 740 741 742 743 744 745 746 747 748 749 }\r
++\r
+   techapps               = { 2860 2870 2880 2020 7600 7610 2620 2010 2630 2640 2646 2290 2300 2310 2900 2800 2450 21180 21190 2810 2820 2510 1010 1020 1030 1040 1050 1060 1070 1080 1090 13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 1160 1170 1180 1190 1200 1210 1220 1230 1240 1560 1830 1840 1850 1860 1910 1920 1930 1940 1950 1960 1970 1980 5700 5710 5010 5810 5820 5050 5830 5060 5800 5080 5090 5310 54010 54020 54030 5316 5326 5600 5610 5620 5630 5560 3010 3020 3030 3040 3050 3110 3120 3130 3140 3150 3210 3220 3230 3240 3410 3420 3430 3440 3450 3456 3460 3510 12100 12110 3610 3620 3630 3640 3310 3320 3720 3730 3736 3740 3900 3810 3820 4500 4510 4520 4530 4540 4550 4010 4020 4600 4610 4620 4630 4120 4130 4300 4310 4320 4330 4740 4750 4760 4770 4800 4810 4820 4700 4710 4900 4910 14000 14010 14020 6500 6510 6530 6580 6600 6610 6680 6620 6630 6640 6650 6660 6670 6540 6910 8010 8020 8030 8040 8050 8060 8070 8080 82300 82500 8500 8510 8550 8600 8900 8910 8920 8930 8100 8110 8120 8150 8160 8200 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 1570 2910 2920 2930 3520 }\r
+   inventions             = { 3000027 }\r
+- deactivate = { 6000300 6000500 6570 6210 6000100 6390 6560 6010 2002076 2002077 }\r
++  deactivate             = { 6000300 6000500 6570 6210 6000100 6390 6560 6010 2002076 2002077 }\r
+ \r
+   policy = {\r
+     date              = { year = 0 month = january day = 0 }\r
+@@ -128,7 +129,7 @@ country = {
+   headofgovernment       = { type = 9 id = 5020 } # エドゥアール・ダラディエ\r
+   foreignminister        = { type = 9 id = 5003 } # ピエール・エチエンヌ・フランダン\r
+   armamentminister       = { type = 9 id = 5059 } # ジョルジュ・ボネ\r
+-  ministerofsecurity     = { type = 9 id = 5802 } # ルイ・アラゴン\r
++  ministerofsecurity     = { type = 9 id = 5802 } # ワルデック・ロシェ\r
+   ministerofintelligence = { type = 9 id = 5006 } # ジョゼフ・パガノン\r
+   chiefofstaff           = { type = 9 id = 5124 } # マキシム・ウェイガン\r
+   chiefofarmy            = { type = 9 id = 5136 } # マキシム・ウェイガン\r
+@@ -292,10 +293,10 @@ country = {
+     division = {\r
+       id             = { type = 13500 id = 17 }\r
+       name           = "第1自動車化歩兵師団"\r
+-      type           = infantry\r
+-      model          = 7\r
+-      extra          = armored_car\r
+-      brigade_model  = 1\r
++      type           = motorized\r
++      model          = 1\r
++      extra          = engineer\r
++      brigade_model  = 3\r
+       strength       = 70\r
+       experience     = 30\r
+     }\r
+@@ -357,10 +358,10 @@ country = {
+     division = {\r
+       id             = { type = 13500 id = 24 }\r
+       name           = "第2自動車化歩兵師団"\r
+-      type           = infantry\r
+-      model          = 7\r
+-      extra          = armored_car\r
+-      brigade_model  = 1\r
++      type           = motorized\r
++      model          = 1\r
++      extra          = engineer\r
++      brigade_model  = 3\r
+       strength       = 70\r
+       experience     = 30\r
+     }\r
+@@ -422,10 +423,10 @@ country = {
+     division = {\r
+       id             = { type = 13500 id = 31 }\r
+       name           = "第3自動車化歩兵師団"\r
+-      type           = infantry\r
+-      model          = 7\r
+-      extra          = armored_car\r
+-      brigade_model  = 1\r
++      type           = motorized\r
++      model          = 1\r
++      extra          = engineer\r
++      brigade_model  = 3\r
+       strength       = 70\r
+       experience     = 30\r
+     }\r
+@@ -601,10 +602,10 @@ country = {
+     division = {\r
+       id             = { type = 13500 id = 54 }\r
+       name           = "第4自動車化歩兵師団"\r
+-      type           = infantry\r
+-      model          = 7\r
+-      extra          = armored_car\r
+-      brigade_model  = 1\r
++      type           = motorized\r
++      model          = 1\r
++      extra          = engineer\r
++      brigade_model  = 3\r
+       strength       = 70\r
+       experience     = 30\r
+     }\r
+@@ -636,10 +637,10 @@ country = {
+     division = {\r
+       id             = { type = 13500 id = 58 }\r
+       name           = "第5自動車化歩兵師団"\r
+-      type           = infantry\r
+-      model          = 7\r
+-      extra          = armored_car\r
+-      brigade_model  = 1\r
++      type           = motorized\r
++      model          = 1\r
++      extra          = medium_armor\r
++      brigade_model  = 2\r
+       strength       = 70\r
+       experience     = 30\r
+     }\r
+@@ -908,6 +909,240 @@ country = {
+       strength       = 5\r
+     }\r
+   }\r
++  landunit = {\r
++    id       = { type = 13500 id = 119 }\r
++    name     = "ボルドー郷土義勇軍"\r
++    location = 68\r
++    division = {\r
++      id             = { type = 13500 id = 120 }\r
++      name           = "ボルドー郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 121 }\r
++    name     = "リヨン郷土義勇軍"\r
++    location = 85\r
++    division = {\r
++      id             = { type = 13500 id = 122 }\r
++      name           = "リヨン郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 123 }\r
++    name     = "ディジョン郷土義勇軍"\r
++    location = 97\r
++    division = {\r
++      id             = { type = 13500 id = 124 }\r
++      name           = "ディジョン郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 125 }\r
++    name     = "レンヌ郷土義勇軍"\r
++    location = 38\r
++    division = {\r
++      id             = { type = 13500 id = 126 }\r
++      name           = "レンヌ郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 127 }\r
++    name     = "オルレアン郷土義勇軍"\r
++    location = 66\r
++    division = {\r
++      id             = { type = 13500 id = 128 }\r
++      name           = "オルレアン郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 133 }\r
++    name     = "ｧ235革命的組合主義者連合ソレル主義派ｧｧ"\r
++    location = 55\r
++    division = {\r
++      id             = { type = 13500 id = 134 }\r
++      name           = "ｧ235革命的組合主義者連合ソレル主義派ｧｧ"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 131 }\r
++    name     = "ｧ216革命的共産主義者同盟防衛委員会ｧｧ"\r
++    location = 55\r
++    division = {\r
++      id             = { type = 13500 id = 132 }\r
++      name           = "ｧ216革命的共産主義者同盟防衛委員会ｧｧ"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 137 }\r
++    name     = "ｧW白百合連隊ｧｧ"\r
++    location = 55\r
++    division = {\r
++      id             = { type = 13500 id = 138 }\r
++      name           = "ｧW白百合連隊ｧｧ"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 129 }\r
++    name     = "ｧ500イル・ド・フランス都市防衛隊ｧｧ"\r
++    location = 55\r
++    division = {\r
++      id             = { type = 13500 id = 130 }\r
++      name           = "ｧ500イル・ド・フランス都市防衛隊ｧｧ"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 135 }\r
++    name     = "ｧ444モンジョワサンドニ！連隊ｧｧ"\r
++    location = 55\r
++    division = {\r
++      id             = { type = 13500 id = 136 }\r
++      name           = "ｧ666モンジョワサンドニ！連隊ｧｧ"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 139 }\r
++    name     = "オクシタニア郷土防衛隊"\r
++    location = 92\r
++    division = {\r
++      id             = { type = 13500 id = 140 }\r
++      name           = "オクシタニア郷土防衛隊"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 141 }\r
++    name     = "リール郷土義勇軍"\r
++    location = 52\r
++    division = {\r
++      id             = { type = 13500 id = 142 }\r
++      name           = "リール郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 143 }\r
++    name     = "リヨン郷土義勇軍"\r
++    location = 85\r
++    division = {\r
++      id             = { type = 13500 id = 144 }\r
++      name           = "リヨン郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 145 }\r
++    name     = "ルーアン郷土義勇軍"\r
++    location = 45\r
++    division = {\r
++      id             = { type = 13500 id = 146 }\r
++      name           = "ルーアン郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 147 }\r
++    name     = "ナント郷土義勇軍"\r
++    location = 57\r
++    division = {\r
++      id             = { type = 13500 id = 148 }\r
++      name           = "ナント郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 149 }\r
++    name     = "マルセイユ郷土義勇軍"\r
++    location = 89\r
++    division = {\r
++      id             = { type = 13500 id = 150 }\r
++      name           = "マルセイユ郷土義勇軍"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 151 }\r
++    name     = "ドーヴァー港湾労働組合"\r
++    location = 49\r
++    division = {\r
++      id             = { type = 13500 id = 152 }\r
++      name           = "ドーヴァー港湾労働組合"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
++  landunit = {\r
++    id       = { type = 13500 id = 153 }\r
++    name     = "ブレスト港湾労働組合"\r
++    location = 37\r
++    division = {\r
++      id             = { type = 13500 id = 154 }\r
++      name           = "ブレスト港湾労働組合"\r
++      type           = militia\r
++      model          = 0\r
++      strength       = 5\r
++      locked         = yes\r
++    }\r
++  }\r
+ \r
+   navalunit = {\r
+     id       = { type = 13500 id = 1001 }\r

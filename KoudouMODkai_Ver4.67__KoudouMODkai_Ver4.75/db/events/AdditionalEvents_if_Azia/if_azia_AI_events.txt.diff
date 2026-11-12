@@ -1,0 +1,109 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_AI_events.txt [cp932]
+@@ -92,9 +92,6 @@
+ #id = 6656430 対日本戦時AI\r
+ #id = 6656431 対日本戦時終了AI\r
+ #id = 6656432 ロシア戦車生産AI\r
+-#id = 6656433 対日本上陸AI\r
+-#id = 6656434 樺太・北海道上陸迎撃AI（日本AI時）\r
+-#id = 6656435 樺太・北海道上陸迎撃AI（日本非AI時）\r
+ #ドイツ（GER）\r
+ #id = 6656501 海軍建設AIイベント\r
+ #id = 6656502 ドイツ研究AI\r
+@@ -130,9 +127,6 @@
+ #id = 6656801 戦時AI\r
+ #id = 6656802 戦時終了AI\r
+ #id = 6656803 パラグアイ併合AIイベント\r
+-#イギリス\r
+-#id = 6656901 対北欧上陸AI\r
+-#id = 6656902 イギリス北欧上陸反応AI\r
+ #ドイツ（DDR）\r
+ #id = 6657001 軍建設AIイベント\r
+ #id = 6657002 海軍建設AIイベント\r
+@@ -4937,86 +4931,6 @@ event = {
+ 	}\r
+ }\r
+ \r
+-##########################################################################\r
+-#  イギリス\r
+-##########################################################################\r
+-#  対北欧上陸AI\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 6656901\r
+-	random = no \r
+-	country = ENG\r
+-	\r
+-	trigger = {\r
+-	ai = ENG\r
+-	ai = NOR\r
+-	ai = SWE\r
+-	war = { country = ENG country = NOR }\r
+-	war = { country = ENG country = SWE }\r
+-	event = 3822014 # R4計画\r
+-	}\r
+-\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-	\r
+-	date = { day = 0 month = 0 year = 1936 }\r
+-	offset = 30\r
+-	deathdate = { day = 29 month = 11 year = 1944 }\r
+-\r
+-	action = { # \r
+-	command = { type = demobilize which = infantry when = 0 where = 1 value = -15 }\r
+-	command = { type = demobilize which = hq when = 0 where = 1 value = -1 }\r
+-	command = { type = add_corps value = land where = 483 }\r
+-	command = { type = add_division value = hq when = 3 where = engineer }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-\r
+-	command = { type = add_corps value = land where = 485 }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-\r
+-	command = { type = add_corps value = land where = 491 }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-\r
+-	command = { type = add_corps value = land where = 2153 }\r
+-	command = { type = add_division value = infantry when = 10 where = artillery }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-\r
+-	command = { type = add_corps value = land where = 2153 }\r
+-	command = { type = add_division value = infantry when = 10 where = engineer }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = add_division value = infantry when = 10 }\r
+-	command = { type = event which = 6656902 where = NOR when = 0 }\r
+-	command = { type = event which = 6656902 where = SWE when = 0 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+-##########################################################################\r
+-#  イギリス北欧上陸反応AI\r
+-###########################################################################\r
+-\r
+-event = {\r
+-	id = 6656902\r
+-	random = no \r
+-	TAG = { NOR SWE }\r
+-	persistent = yes\r
+-	\r
+-	name = "AI_EVENT"\r
+-	style = 0	\r
+-\r
+-	action = { # \r
+-	command = { type = demobilize which = land when = 0 where = 1 value = 2 }\r
+-	ai_chance = 100\r
+-	}\r
+-}\r
+-\r
+ ##########################################################################\r
+ #  ドイツ（DDR）\r
+ ##########################################################################\r

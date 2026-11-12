@@ -1,0 +1,1192 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_East_Africa_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_East_Africa_events.txt [cp932]
+@@ -12,24 +12,21 @@
+ #id = 5522006 エジプト・ソマリア不可侵条約\r
+ #id = 5522007 エジプト・ソマリア不可侵条約の提案\r
+ #エチオピア\r
+-#id = 5523001 イタリア艦艇の接収（エチオピア版）\r
+-#id = 5523002 エチオピア・ソマリア戦争 ─ エチオピアの敗北\r
+-#id = 5523004 エチオピア・ソマリア戦争 ─ ソマリアの敗北\r
+-#id = 5523005 ラスタファリ運動\r
+-#id = 5523006 大規模な鉄道網の建設\r
+-#id = 5523007 大エチオピア鉄道の進展\r
+-#id = 5523008 大エチオピア鉄道の完成\r
+-#id = 5523009 帝国大学の創立\r
+-#id = 5523010 エチオピア軍再編成\r
+-#id = 5523011 ナイル危機\r
+-#id = 5523013 ナイル危機 ─ 最後の機会\r
+-#id = 5523014 ナイル危機 ─ エジプトの反応\r
+-#id = 5523015 ナイル戦争 ─ エチオピアの敗北\r
+-#id = 5523016 ナイル戦争 ─ 講和の提案\r
+-#id = 5523017 ナイル戦争 ─ カイロ条約\r
+-#id = 5523018 ナイル戦争 ─ エジプトの敗北\r
+-#id = 5523019 ナイル戦争 ─ 講和の提案\r
+-#id = 5523020 ナイル戦争 ─ アディスアベベ条約\r
++#id = 5523001 エチオピアによる中東戦争介入\r
++#id = 5523002 エリトリア国境紛争\r
++#id = 5523003 イタリア艦艇の接収（エチオピア版）\r
++#id = 5523004 エチオピア・ソマリア戦争 ─ エチオピアの敗北\r
++#id = 5523005 エチオピア・ソマリア戦争 ─ ソマリアの敗北\r
++#id = 5523006 ラスタファリ運動\r
++#id = 5523007 大規模な鉄道網の建設\r
++#id = 5523008 大エチオピア鉄道の進展\r
++#id = 5523009 大エチオピア鉄道の完成\r
++#id = 5523010 帝国大学の創立\r
++#id = 5523011 エチオピア軍再編成\r
++#id = 5523012 戦争難民の流入\r
++#id = 5523013 アフリカ戦争への介入\r
++#id = 5523014 新大陸からの義勇軍\r
++#id = 5523015 アフリカ戦争の終結\r
+ #エジプト\r
+ #id = 5524001 エジプトの独立\r
+ #id = 5524002 ファラオニズム\r
+@@ -370,44 +367,159 @@ event = {
+ \r
+ ##########################################################################\r
+ #エチオピア\r
++##########################################################################\r
++#  エチオピアによる中東戦争介入\r
++# イスラエルが自衛権の行使を名目としたエジプトへの侵攻を開始すると、アフリカ系住民が多く\r
++# 在住するスーダンの確保を目的とし、エチオピア帝国はスーダンへ進駐。\r
++# スーダンを武力でもって確保した上で『現状による講話』をエジプト政府に対して求めた。\r
++###########################################################################\r
++event = {\r
++	id = 5523001\r
++	random = no\r
++	country = ETH\r
++	trigger = {\r
++	event = 5524003\r
++	war = { country = ISR country = EGY }\r
++	}\r
++	\r
++	name = "EVT_5523001_NAME"\r
++	desc = "EVT_5523001_DESC"\r
++	style = 2\r
++	picture = "agincourt"\r
++	decision_picture = "decision_convoys"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # 二十世紀は民族自決の時代となることだろう！\r
++	name = "ACTIONNAME5523001A"\r
++	command = { type = trigger which = 5524015 }\r
++	command = { type = add_core_region which = "Sudan" }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  エリトリア国境紛争\r
++#イタリア王国内部での政治対立とそれに伴う政情不安定化は、イタリアの植民地であるエリトリ\r
++#ア・ソマリアにまで影響を及ぼした。本国での一連の政治闘争の結果、物資輸送が困難になり、イタリア領東アフリカでは植\r
++#民地兵士が農地で自給自足しなければ生活そのものが成り立たない状況となる。\r
++#そうした状況では軍事演習などは望むべくもないであろうし、まして現地人の生活に配慮する余裕などできようはずもない。\r
++#こうした状況にエチオピア皇帝は目をつけ、イタリア王国がエリトリア及びソマリアにおいて『意図的な』飢餓政策を\r
++#とっていると非難した。\r
++#これに対し、イタリア王国外務省は大いに抗議こそしたが、イタリア王国の政情そのものの安定化が見られない以上、\r
++#取り得る施策は皆無に等しく、国際派として知られていたエチオピア皇帝ハイレ・セラシエ一世はアフリカの解放を\r
++#訴える英国からの支持を取り付け、イタリア領アフリカにおける『人道的配慮』がなされない場合には\r
++#『現地住民救済のための行動を取らざるを得ない』とイタリア王国に対し最後通牒を突きつけた！\r
++#これに対し、イタリア王国は無論、北アフリカに植民地を持つフランスがエチオピア政府に対し強く抗議したのに対し、\r
++#ドイツ帝国は遺憾の意を表する範囲で収まった。\r
++#１９３５年。\r
++#イタリア領エリトリアのマッサワ港において発生した現地苦力のストライキに対し、イタリア王国植民地軍は発砲。\r
++#これを契機とし『人道介入』の名の下に、エチオピア帝国はイタリア領アフリカへと進駐した！\r
++###########################################################################\r
++event = {\r
++	id = 5523002\r
++	random = no\r
++	country = ETH\r
++	\r
++	trigger = {\r
++	OR = { exists = ITA exists = U14 }\r
++	OR = {\r
++	AND = { owned = { province = 815 data = ITA } owned = { province = 816 data = ITA } owned = { province = 817 data = ITA } }\r
++	AND = { owned = { province = 815 data = U14 } owned = { province = 816 data = U14 } owned = { province = 817 data = U14 } }\r
++	}\r
++	}\r
++	\r
++	name = "EVT_5523002_NAME"\r
++	desc = "EVT_5523002_DESC"\r
++	style = 2\r
++\r
++	date = { day = 0 month = 0 year = 1935 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # これらの行動は『人道介入』である\r
++	name = "ACTIONNAME5523002A"\r
++	command = { type = trigger which = 5523003 }\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 5523003\r
++	random = no	\r
++	country = ITA\r
++	\r
++	name = "EVT_5523002_NAME"\r
++	desc = "EVT_5523002_DESC"\r
++	style = 2\r
++\r
++\r
++	action = { # 受け入れるしか無い\r
++	name = "ACTIONNAME5523003A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = secederegion which = ETH value = "Horn of Africa" when = 0 }\r
++	command = { type = secederegion which = ETH value = "Ethiopia" when = 0 }\r
++	command = { type = trigger which = 5523004 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 宣戦布告だ！\r
++	name = "ACTIONNAME5523003B"\r
++	command = { type = war which = ETH }\r
++	command = { type = dissent value = 15 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  エリトリア国境紛争―イタリアが割譲に同意―\r
++###########################################################################\r
++event = {\r
++	id = 5523004\r
++	random = no\r
++	country = ETH\r
++	\r
++	\r
++	name = "EVT_5523004_NAME"\r
++\r
++	action = { # 素晴らしい！\r
++	name = "ACTIONNAME5523004A"\r
++	command = { type = dissent value = -5 }\r
++	}\r
++}\r
++\r
++\r
+ ##########################################################################\r
+ #  イタリア艦艇の接収（エチオピア版）\r
+ # イタリアで革命が起こるとイタリア海軍の軍艦は、革命に参加するか国外に亡命し、分裂した。\r
+ # こうした中、我が国の港に寄港したイタリアの軍艦を接収することが可能となっている。\r
+ ###########################################################################\r
+ event = {\r
+-	id = 5523001\r
++	id = 5523005\r
+ 	random = no\r
+ 	country = ETH\r
+ 	\r
+ 	decision = {\r
+-	NOT = { war = { country = ETH country = ITA } }\r
+-	NOT = { ispuppet = ETH }\r
+-	exists = U14\r
+-	event = 1226013\r
+-	control = { province = 815 data = ETH }\r
++	event = 5523004\r
+ 	}\r
+ \r
+ 	decision_trigger = {\r
+-	NOT = { war = { country = ETH country = ITA } }\r
+-	NOT = { ispuppet = ETH }\r
+-	exists = U14\r
+-	event = 1226013\r
++	event = 5523004\r
+ 	control = { province = 815 data = ETH }\r
+ 	supplies = 510\r
++	NOT = { war = { country = ITA } }\r
+ 	}\r
+ \r
+ 	trigger = {\r
+-	NOT = { war = { country = ETH country = ITA } }\r
+-	NOT = { ispuppet = ETH }\r
+-	exists = U14\r
+-	event = 1226013\r
++	event = 5523004\r
+ 	control = { province = 815 data = ETH }\r
++	NOT = { war = { country = ITA } }\r
++	supplies = 510\r
+ 	random = 35\r
+ 	}\r
+ 	\r
+-	name = "EVT_5523001_NAME"\r
+-	desc = "EVT_5523001_DESC"\r
++	name = "EVT_5523005_NAME"\r
++	desc = "EVT_5523005_DESC"\r
+ 	style = 2\r
+ 	picture = "agincourt"\r
+ 	decision_picture = "decision_convoys"\r
+@@ -448,7 +560,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 5523002\r
++	id = 5523006\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+@@ -468,8 +580,8 @@ event = {
+ 	area = { area = "Ethiopian Highland" country = SOM data = 1 value = 100 }\r
+ 	}\r
+ 	\r
+-	name = EVT_5523002_NAME\r
+-	desc = EVT_5523002_DESC\r
++	name = EVT_5523006_NAME\r
++	desc = EVT_5523006_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+@@ -478,7 +590,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = { # 講和しかない…\r
+-	name = "ACTIONNAME5523002A"\r
++	name = "ACTIONNAME5523006A"\r
+ 	command = { type = dissent value = 20 }\r
+ 	command = { type = sleepminister which = 245001 }\r
+ 	command = { type = sleepminister which = 245006 }\r
+@@ -495,24 +607,24 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 戦争継続だ！\r
+-	name = "ACTIONNAME5523002B"\r
++	name = "ACTIONNAME5523006B"\r
+ 	command = { type = dissent value = 40 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+-	id = 5523003\r
++	id = 5523007\r
+ 	random = no\r
+ 	country = SOM\r
+ 	\r
+-	name = EVT_5523002_NAME\r
+-	desc = EVT_5523002_DESC\r
++	name = EVT_5523004_NAME\r
++	desc = EVT_5523004_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+ 	action = { # 講和に応じよう\r
+-	name = "ACTIONNAME5523003A"\r
++	name = "ACTIONNAME5523005A"\r
+ 	ai_chance = 100\r
+ 	command = { type = dissent value = -15 } \r
+ 	command = { type = peace which = ETH value = 0 }\r
+@@ -544,7 +656,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 5523004\r
++	id = 5523008\r
+ 	random = no\r
+ 	country = ETH\r
+ 	save_date = yes\r
+@@ -572,8 +684,8 @@ event = {
+ 	}\r
+ 	}\r
+ 	\r
+-	name = EVT_5523004_NAME\r
+-	desc = EVT_5523004_DESC\r
++	name = EVT_5523008_NAME\r
++	desc = EVT_5523008_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+@@ -582,7 +694,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = { # 我々の勝利だ！\r
+-	name = "ACTIONNAME5523004A"\r
++	name = "ACTIONNAME5523008A"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { trigger = { exists = SOM } type = inherit which = SOM }\r
+ 	command = { type = manpowerpool value = 10 }\r
+@@ -604,19 +716,19 @@ event = {
+ # そして現在、列強の侵略を防ぎ続けた我が皇帝陛下は全黒人人種全体の希望となっている。\r
+ ###########################################################################\r
+ event = {\r
+-	id = 5523005\r
++	id = 5523009\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+ 	trigger = {\r
+-	event = 5523004\r
++	event = 5523006\r
+ 	NOT = { ispuppet = ETH }\r
+ 	control = { province = 825 data = ETH }\r
+ 	random = 35\r
+ 	}\r
+ 	\r
+-	name = "EVT_5523005_NAME"\r
+-	desc = "EVT_5523005_DESC"\r
++	name = "EVT_5523009_NAME"\r
++	desc = "EVT_5523009_DESC"\r
+ 	style = 2\r
+ 	picture = "ethiopia"\r
+ 	decision_picture = "decision_ethiopia"\r
+@@ -626,9 +738,8 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1964 }\r
+ \r
+ 	action = { # 黒人に希望を！\r
+-	name = "ACTIONNAME5523005A"\r
++	name = "ACTIONNAME5523009A"\r
+ 	command = { type = add_core_region which = "Horn of Africa" }\r
+-	command = { type = add_core_region which = "Sudan" }\r
+ 	command = { type = belligerence which = ETH value = 3 }\r
+ 	command = { type = relation which = ENG value = -30 }\r
+ 	command = { type = relation which = FRA value = -30 }\r
+@@ -637,25 +748,25 @@ event = {
+ 	command = { type = relation which = GER value = -30 }\r
+ 	command = { type = relation which = ARA value = -30 }\r
+ 	command = { type = relation which = EGY value = -30 }\r
+-	ai_chance = 70\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 東アフリカ帝国万歳！\r
+-	name = "ACTIONNAME5523005B"\r
+-	command = { type = name where = ETH which = "東アフリカ帝国"  }\r
+-	command = { type = flag_ext where = ETH which = "_east" }\r
+-	command = { type = add_core_region which = "Horn of Africa" }\r
+-	command = { type = add_core_region which = "Sudan" }\r
+-	command = { type = belligerence which = ETH value = 3 }\r
+-	command = { type = relation which = ENG value = -30 }\r
+-	command = { type = relation which = FRA value = -30 }\r
+-	command = { type = relation which = ITA value = -30 }\r
+-	command = { type = relation which = U14 value = -30 }\r
+-	command = { type = relation which = GER value = -30 }\r
+-	command = { type = relation which = ARA value = -30 }\r
+-	command = { type = relation which = EGY value = -30 }\r
+-	ai_chance = 30\r
+-	}\r
++	#action = { # 東アフリカ帝国万歳！\r
++	#name = "ACTIONNAME5523009B"\r
++	#command = { type = name where = ETH which = "東アフリカ帝国"  }\r
++	#command = { type = flag_ext where = ETH which = "_east" }\r
++	#command = { type = add_core_region which = "Horn of Africa" }\r
++	#command = { type = add_core_region which = "Sudan" }\r
++	#command = { type = belligerence which = ETH value = 3 }\r
++	#command = { type = relation which = ENG value = -30 }\r
++	#command = { type = relation which = FRA value = -30 }\r
++	#command = { type = relation which = ITA value = -30 }\r
++	#command = { type = relation which = U14 value = -30 }\r
++	#command = { type = relation which = GER value = -30 }\r
++	#command = { type = relation which = ARA value = -30 }\r
++	#command = { type = relation which = EGY value = -30 }\r
++	#ai_chance = 30\r
++	#}\r
+ }\r
+ \r
+ ##########################################################################\r
+@@ -669,7 +780,7 @@ event = {
+ ##########################################################################\r
+ \r
+ event = {\r
+-	id = 5523006\r
++	id = 5523010\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+@@ -686,13 +797,12 @@ event = {
+ 	}\r
+ \r
+ 	trigger = {\r
+-	event = { id = 204015 days = 210 }\r
+ 	control = { province = 815 data = ETH } #マッサワ\r
+ 	control = { province = 836 data = ETH } #モガデッシュ	\r
+ 	}\r
+ \r
+-	name = "EVT_5523006_NAME"\r
+-	desc = "EVT_5523006_DESC"\r
++	name = "EVT_5523010_NAME"\r
++	desc = "EVT_5523010_DESC"\r
+ 	style = 2\r
+ 	picture = "Eritrea_train"\r
+ 	decision_picture = "decision_atlantik_wall"\r
+@@ -702,20 +812,20 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1947 }\r
+ \r
+ 	action_a = { # 運送こそが国家の大事\r
+-	name = "ACTIONNAME5523006A"\r
++	name = "ACTIONNAME5523010A"\r
+ 	command = { type = waketeam which = 245050 } #エリトリア鉄道\r
+ 	command = { type = waketeam which = 245104 } #モガディシオ・ヴィラブルッチ鉄道\r
+ 	command = { type = waketeam which = 245511 } #エチオピア国鉄\r
+ 	command = { trigger = { ai = no } type = supplies value = -800 }\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+-	command = { type = event which = 5523007 where = ETH when = 400 }\r
+-	ai_chance = 99\r
++	command = { type = event which = 5523011 where = ETH when = 400 }\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action_b = { # その必要はない\r
+-	name = "ACTIONNAME5523006B"\r
++	name = "ACTIONNAME5523010B"\r
+ 	command = { type = supplies value = 10 }\r
+-	ai_chance = 1\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ }\r
+@@ -729,21 +839,22 @@ event = {
+ ##########################################################################\r
+ \r
+ event = {\r
+-	id = 5523007\r
++	id = 5523011\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+ \r
+-	name = "EVT_5523007_NAME"\r
+-	desc = "EVT_5523007_DESC"\r
++	name = "EVT_5523011_NAME"\r
++	desc = "EVT_5523011_DESC"\r
+ 	style = 2\r
+ 	picture = "Eritrea_train"\r
+ \r
+ 	action_a = { # 計画を続けよう\r
+-	name = "ACTIONNAME5523007A"\r
++	trigger = { atwar = no }\r
++	name = "ACTIONNAME5523011A"\r
+ 	command = { trigger = { ai = no } type = supplies value = -800 }\r
+ 	command = { trigger = { ai = no } type = money value = -100 }\r
+-	command = { type = event which = 5523008 where = ETH when = 400 }\r
++	command = { type = event which = 5523012 where = ETH when = 400 }\r
+ \r
+ 	command = { type = construct which = infrastructure where = 815 value = 10}\r
+ 	command = { type = construct which = infrastructure where = 817 value = 10}\r
+@@ -755,11 +866,11 @@ event = {
+ 	command = { type = construct which = infrastructure where = 835 value = 10}\r
+ 	command = { type = construct which = infrastructure where = 828 value = 10}\r
+ 	command = { type = construct which = ic where = 825 value = 1 }\r
+-	ai_chance = 90\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action_b = { # その必要はない\r
+-	name = "ACTIONNAME5523007B"\r
++	name = "ACTIONNAME5523011B"\r
+ 	command = { type = construct which = infrastructure where = 815 value = 10}\r
+ 	command = { type = construct which = infrastructure where = 817 value = 10}\r
+ 	command = { type = construct which = infrastructure where = 821 value = 10}\r
+@@ -771,7 +882,7 @@ event = {
+ 	command = { type = construct which = infrastructure where = 828 value = 10}\r
+ 	command = { type = construct which = infrastructure where = 836 value = 10}\r
+ 	command = { type = construct which = ic where = 825 value = 1 }\r
+-	ai_chance = 10\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ }\r
+@@ -784,18 +895,18 @@ event = {
+ ##########################################################################\r
+ \r
+ event = {\r
+-	id = 5523008\r
++	id = 5523012\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+ \r
+-	name = "EVT_5523008_NAME"\r
+-	desc = "EVT_5523008_DESC"\r
++	name = "EVT_5523012_NAME"\r
++	desc = "EVT_5523012_DESC"\r
+ 	style = 2\r
+ 	picture = "Eritrea_train"\r
+ \r
+ 	action_a = { # すばらしい！\r
+-	name = "ACTIONNAME204022A"\r
++	name = "ACTIONNAME5523012A"\r
+ 	command = { type = construct which = infrastructure where = 815 value = 10}\r
+ 	command = { type = construct which = infrastructure where = 817 value = 10}\r
+ 	command = { type = construct which = infrastructure where = 821 value = 10}\r
+@@ -821,15 +932,11 @@ event = {
+ ##########################################################################\r
+ \r
+ event = {\r
+-	id = 5523009\r
++	id = 5523013\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+ 	decision = {	\r
+-	NOT = { war = { country = ETH country = ITA } }\r
+-	NOT = { ispuppet = ETH }\r
+-	exists = U14\r
+-	event = 1226013\r
+ 	}\r
+ \r
+ \r
+@@ -841,14 +948,13 @@ event = {
+ 		 }\r
+ \r
+ 	trigger = {\r
+-		event = { id = 204013 days = 170 }\r
+ 		control = { province = 815 data = ETH } #マッサワ\r
+ 		control = { province = 836 data = ETH } #モガデッシュ	\r
+ \r
+ 	}\r
+ \r
+-	name = "EVT_5523009_NAME"\r
+-	desc = "EVT_5523009_DESC"\r
++	name = "EVT_5523013_NAME"\r
++	desc = "EVT_5523013_DESC"\r
+ 	style = 2\r
+ 	picture = "ccip_vict"\r
+ 	decision_picture = "decision_invest_research"\r
+@@ -858,19 +964,19 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1947 }\r
+ \r
+ 	action = { # 教育は重要である\r
+-	name = "ACTIONNAME5523009A"\r
++	name = "ACTIONNAME5523013A"\r
+ 	command = { type = waketeam which = 245005 } #アディスアベバ大学\r
+ 	command = { type = waketeam which = 245100 } #ソマリア大学\r
+ 	command = { type = waketeam which = 245103 } #モガディシオ軍事大学\r
+ 	command = { trigger = { ai = no } type = supplies value = -300 }\r
+ 	command = { trigger = { ai = no } type = money value = -50 }\r
+-	ai_chance = 99\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # その必要はない\r
+-	name = "ACTIONNAME5523009B"\r
++	name = "ACTIONNAME5523013B"\r
+ 	command = { type = supplies value = 10 }\r
+-	ai_chance = 1\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ }\r
+@@ -881,7 +987,7 @@ event = {
+ # エチオピア軍は、いずれ来るべきソマリアの侵攻に備え、準備を進めていくことになる。\r
+ ##########################################################################\r
+ event = {\r
+-	id = 5523010\r
++	id = 5523014\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+@@ -899,8 +1005,8 @@ event = {
+ 	event = { id = 5522001 days = 30 }\r
+ 	}\r
+ \r
+-	name = "EVT_5523010_NAME"\r
+-	desc = "EVT_5523010_DESC"\r
++	name = "EVT_5523014_NAME"\r
++	desc = "EVT_5523014_DESC"\r
+ 	style = 2\r
+ 	picture = "Condor_Legion"\r
+ 	decision_picture = "decision_SCW_German"\r
+@@ -910,7 +1016,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1947 }\r
+ \r
+ 	action_a = { # 近代化に力を入れねば\r
+-	name = "ACTIONNAME5523010A"\r
++	name = "ACTIONNAME5523014A"\r
+ 	command = { trigger = { ai = no } type = supplies value = -500 }\r
+ 	command = { trigger = { ai = no } type = money value = -20 }\r
+ 	command = { type = add_corps which = "帝国本営" value = land when = 0 where = 825 }\r
+@@ -921,31 +1027,83 @@ event = {
+ 	}\r
+ }\r
+ \r
++\r
+ ##########################################################################\r
+-#  ナイル危機\r
+-# 1939年、黒人の解放を唱えるエチオピアと、スーダンを領有するエジプトの関係は極度に悪化していた。\r
+-# この対立にはナイル川の水資源を巡る対立も含まれており、問題は複雑化。\r
+-# こうした中、エチオピアへの亡命を求める黒人の集団を国境付近で食い止めようとしたエジプトとこれを保護しようとするエチオピアの両軍が衝突。\r
+-# 両者にこの時点で数十人の戦傷者が発生しており、極度に緊張が高まっていった。\r
++#  戦争難民の流入\r
++# 第二次世界大戦によってアフリカ大陸においてもドイツ帝国とイギリスによる戦闘が展開されるようになると、\r
++# 英仏独のそれぞれの植民地に住んでいた黒人たちが戦禍を逃れるためにエチオピアへと流入した。\r
++# その中には欧州によるアフリカ分割に敵意を持ち、戦闘意欲を持つ者も多数おり、そうした\r
++# 人々は最終的にエチオピア軍へと参加するようになる。\r
+ ##########################################################################\r
+ event = {\r
+-	id = 5523011\r
++	id = 5523015\r
+ 	random = no\r
+ 	country = ETH\r
+ 	save_date = yes\r
++	trigger = {\r
++	war = { country = ENG country = GER }\r
++	}\r
+ \r
+-	trigger = {	\r
+-	exists = ETH\r
+-	exists = EGY\r
+-	region = { region = "Sudan" country = EGY data = 1 value = 70 }\r
+-	event = 5523004\r
+-	NOT = { ispuppet = ETH }\r
+-	NOT = { war = { country = EGY country = ETH } }\r
+-	random = 55\r
++	name = "EVT_5523015_NAME"\r
++	desc = "EVT_5523015_DESC"\r
++	style = 2\r
++	picture = "war_refugees"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1947 }\r
++\r
++	action_a = { # 今やエチオピアのみがこの大陸で平静を保っている\r
++	name = "ACTIONNAME5523015A"\r
++	command = { type = free_manpower value = 0.05 }\r
+ 	}\r
++}\r
+ \r
+-	name = "EVT_5523011_NAME"\r
+-	desc = "EVT_5523011_DESC"\r
++##########################################################################\r
++#  アフリカ戦争への介入\r
++# 第二次世界大戦の勃発は欧州・アジアのみならず、アフリカへも影響を及ぼした。\r
++# ドイツ帝国はアフリカにおいて植民地を獲得し、永く人種差別思想に基づく統治政策を実行してきた。\r
++# アフリカ大陸最南端に位置する南アフリカはドイツと同盟し、植民地解放の準備をし続けてきた英領アフリカへ\r
++# 攻撃を実行した。\r
++# 南アフリカ出身で、第一次世界大戦への参加経歴で知られているヤン・スマッツ将軍は英領アフリカの独立準備を整える\r
++# ための組織・アフリカ独立委員会のリーダーであったが、南アフリカ本国で失脚し、現在はドイツ及び南アフリカ\r
++# によるアフリカ侵攻に抵抗し続けていた。\r
++# 第二次世界大戦における英国の介入が決定的となり、アフリカが戦場と化した直後からヤン・スマッツはエチオピア帝国\r
++# に協力を要請し続けてきたが、エチオピア皇帝は過去の英国によるアフリカ分割の記憶から首肯することをしなかった。\r
++# しかし、英領アフリカの臨時首都にドイツの軍勢が迫ると、ヤン・スマッツ将軍はエチオピア皇帝に対し\r
++# 『戦後ブラックアフリカの事実上の全権委任』を条件として提示した。\r
++# この提案によって初めてエチオピア皇帝はイギリス側に立って第二次世界大戦に介入することを決定したのである。\r
++##########################################################################\r
++event = {\r
++	id = 5523016\r
++	random = no\r
++	country = ETH\r
++	save_date = yes\r
++	decision = {\r
++	war = { country = CON country = GLD }\r
++	war = { country = ENG country = GER }\r
++	ispuppet = CON ispuppet = GLD\r
++	}\r
++	\r
++	decision_trigger = {\r
++	war = { country = CON country = GLD }\r
++	war = { country = ENG country = GER }\r
++	ispuppet = CON ispuppet = GLD\r
++	NOT = { war = { country = -1 country = CON } }\r
++	NOT = { war = { country = -1 country = GER } }\r
++	}\r
++\r
++	trigger = {\r
++	war = { country = CON country = GLD }\r
++	war = { country = ENG country = GER }\r
++	ispuppet = CON ispuppet = GLD\r
++	NOT = { war = { country = -1 country = CON } }\r
++	NOT = { war = { country = -1 country = GER } }	\r
++	}\r
++\r
++\r
++	name = "EVT_5523016_NAME"\r
++	desc = "EVT_5523016_DESC"\r
+ 	style = 2\r
+ 	picture = "WW1_Offensive"\r
+ \r
+@@ -953,82 +1111,95 @@ event = {
+ 	offset = 3\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+-	action_a = { # 戦争も選択肢の一つだ\r
+-	name = "ACTIONNAME5523011A"\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = relation which = EGY value = -50 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = event which = 5523012 where = EGY when = 1 }\r
++	action = { # 黒人の未来のために！\r
++	name = "ACTIONNAME5523016A"\r
++	command = { type = alliance which = ENG }\r
++	command = { type = relation which = ENG value = 50 }\r
++	command = { type = relation which = GLD value = 50 }\r
++	ai_chance = 100\r
++	}\r
++	action = { # \r
++	name = "ACTIONNAME5523016B"\r
++	command = { type = relation which = ENG value = -50 }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
++#########################################################################\r
++#  新大陸からの義勇軍\r
++# エチオピア帝国がドイツ帝国に対し宣戦を布告すると、かねてから内戦が続いていた北米から\r
++# 戦闘経験を持つ多数の兵士が義勇軍としてエチオピア軍に参加した。\r
++# 彼らの一部はエチオピア皇帝ハイレ・セラシエ一世を神ヤハウェの化身であると捉えており、\r
++# 今回のアフリカにおける大戦を「黒人の聖戦」と捉えている。 \r
++#########################################################################\r
++\r
+ event = {\r
+-	id = 5523012\r
++	id = 5523017\r
+ 	random = no\r
+-	country = EGY\r
+-\r
+-	name = "EVT_5523011_NAME"\r
+-	desc = "EVT_5523011_DESC"\r
++	country = ETH\r
++	trigger = { \r
++	OR = {\r
++	AND = { war = { country = GER country = ETH } alliance_leader = { country = GER value = 2 } }\r
++	AND = { war = { country = UB8 country = ETH } alliance_leader = { country = UB8 value = 2 } }\r
++	AND = { war = { country = CHI country = ETH } alliance_leader = { country = CHI value = 2 } }\r
++	AND = { war = { country = UD6 country = ETH } alliance_leader = { country = UD6 value = 2 } }\r
++	}\r
++	\r
++	\r
++	 }\r
++	name = "EVT_5523017_NAME"\r
++	desc = "EVT_5523017_DESC"\r
+ 	style = 2\r
+ 	picture = "WW1_Offensive"\r
+ \r
+-	date = { day = 0 month = 8 year = 1939 }\r
++	date = { day = 0 month = 8 year = 1930 }\r
+ 	offset = 3\r
+-	deathdate = { day = 29 month = 11 year = 1945 }\r
++	deathdate = { day = 29 month = 11 year = 1995 }\r
+ \r
+-	action_a = { # 戦争も選択肢の一つだ\r
++	action_a = { # 心強い援軍だ！\r
+ 	name = "ACTIONNAME5523011A"\r
+ 	command = { type = dissent value = -2 }\r
+-	command = { type = relation which = ETH value = -50 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = add_corps which = "北米義勇軍" value = land  where = 815 }\r
++	command = { type = add_division which = "義勇軍第1師団" value = infantry when = 12 where = artillery }\r
++	command = { type = add_division which = "義勇軍第2師団" value = infantry when = 12 where = artillery }\r
++	command = { type = add_division which = "義勇軍第3師団" value = infantry when = 12 where = artillery }\r
+ 	}\r
+ }\r
+ \r
+ \r
+ #########################################################################\r
+-#  ナイル危機 ─ 最後の機会\r
+-# スーダンを巡るエチオピア・エジプトの対立はエリトリアの崩壊以後急速に加熱していった。\r
+-# この地域は過去にアクスム王国が存在した地域であり、同地域には多数の黒人同胞達が生活を続けている。\r
+-# しかし、ファラオニズムに基づいたエジプトによる支配はスーダンにも及び、同地に居住する黒人たちの地位が脅かされつつある。\r
+-# エジプト政府はスーダンを自らの領土であると主張し、軍隊でもって現地住民を虐げているのである。\r
+-# 我々は汎アフリカ主義発祥の地。黒人の守護者として彼らを救い出さなければならない義務がある。\r
++#  アフリカ戦争の終結\r
++# アフリカ大陸における大戦は英国とエチオピア帝国の連合が勝利した。\r
++# アフリカ独立委員会のリーダーであるヤン・スマッツ将軍は戦前の約定通りにエチオピアに\r
++# 赤道以南アフリカの裁量権を譲渡した。\r
++# ここに、戦前から続いていたアフリカ独立準備にエチオピア帝国皇帝ハイレ・セラシエ一世を初代とする\r
++# 立憲君主制多民族連合国家である「アフリカ立憲帝国」が成立した。\r
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 5523013\r
++	id = 5523018\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+-	decision = {\r
+-	exists = ETH\r
+-	exists = EGY\r
+-	region = { region = "Sudan" country = EGY data = 1 value = 70 }\r
+-	event = { id = 5523011 days = 30 }\r
+-	NOT = { ispuppet = ETH }\r
+-	NOT = { war = { country = EGY country = ETH } }\r
+-	}\r
+-	\r
+-	decision_trigger = {\r
+-	exists = ETH\r
+-	exists = EGY\r
+-	region = { region = "Sudan" country = EGY data = 1 value = 70 }\r
+-	event = { id = 5523011 days = 30 }\r
+-	NOT = { ispuppet = ETH }\r
+-	NOT = { war = { country = EGY country = ETH } }\r
+-	}\r
+-\r
+ 	trigger = {\r
+-	exists = ETH\r
+-	exists = EGY\r
+-	region = { region = "Sudan" country = EGY data = 1 value = 70 }\r
+-	event = { id = 5523011 days = 30 }\r
+-	NOT = { ispuppet = ETH }\r
+-	NOT = { war = { country = EGY country = ETH } }\r
+-	random = 35\r
++	event = 5523016\r
++	NOT = { exists = CON }\r
++	NOT = { region = { region = "Algeria" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Central Africa" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "East Africa" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Ethiopia" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Horn of Africa" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Libya" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Morocco" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "South Africa" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Southwest Africa" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Sudan" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "Tunisia" country = -2 data = 2 value = 1 } }\r
++	NOT = { region = { region = "West Africa" country = -2 data = 2 value = 1 } }\r
+ 	}\r
+ \r
+-	name = EVT_5523013_NAME\r
+-	desc = EVT_5523013_DESC\r
++	name = EVT_5523018_NAME\r
++	desc = EVT_5523018_DESC\r
+ 	style = 2\r
+ 	picture = "Black_Army"\r
+ 	decision_picture = "decision_Rhineland"\r
+@@ -1037,60 +1208,70 @@ event = {
+ 	offset = 3\r
+ 	deathdate = { day = 29 month = 11 year = 1945 }\r
+ \r
+-	action = { # 攻撃だ！アフリカの解放を！\r
+-	name = "ACTIONNAME5523013A"\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = belligerence which = ETH value = 5 }\r
+-	command = { type = end_non_aggression which = ETH where = EGY }\r
+-	command = { type = end_non_aggression which = EGY where = ETH }\r
+-	command = { type = war which = EGY }\r
+-	command = { type = relation which = EGY value = -350 }\r
+-	command = { type = relation which = SOM value = -50 }\r
+-	command = { type = relation which = LBY value = -50 }\r
+-	command = { type = relation which = RHO value = -50 }\r
+-	command = { type = relation which = SAF value = -50 }\r
+-	command = { type = relation which = GER value = -30 }\r
+-	command = { type = relation which = ENG value = -30 }\r
+-	command = { type = relation which = FRA value = -30 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = event which = 5523014 where = EGY when = 1 }\r
++	action = { # 黒人の故郷万歳！　ハイレ・セラシエに栄光あれ！\r
++	name = "ACTIONNAME5523018A"\r
++	command = { type = dissent value = -25 }\r
++	command = { type = add_core_region which = "South Africa" }\r
++	command = { type = add_core_region which = "East Africa" }\r
++	command = { type = add_core_region which = "Southwest Africa" }\r
++	command = { type = add_core_area which = "Cameroonian Jungle" }\r
++	command = { type = add_core_area which = "Kongolese Jungle" }\r
++	command = { type = add_core_area which = "Shaba" }\r
++	command = { type = belligerence which = ETH value = 15 }\r
++	command = { type = free_manpower value = -0.05 }\r
++	command = { type = event which = 5523019 where = GLD when = 0 }\r
++	command = { type = event which = 5523020 where = GLD when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
+ \r
+-	action = { # 作戦は見直すべきだ\r
+-	name = "ACTIONNAME5523013B"\r
+-	command = { type = relation which = EGY value = -5 }\r
+-	ai_chance = 0\r
++\r
++event = {\r
++	id = 5523019\r
++	random = no\r
++	country = GLD\r
++\r
++	name = EVT_5523018_NAME\r
++	desc = EVT_5523018_DESC\r
++	style = 2\r
++	picture = "Danzig_coup"\r
++\r
++	action = { # OK\r
++	name = "OK"\r
++	command = { type = remove_core_region which = "South Africa" }\r
++	command = { type = remove_core_region which = "East Africa" }\r
++	command = { type = remove_core_region which = "Southwest Africa" }\r
++	command = { type = remove_core_area which = "Cameroonian Jungle" }\r
++	command = { type = remove_core_area which = "Kongolese Jungle" }\r
++	command = { type = remove_core_area which = "Shaba" }\r
++		\r
++	command = { type = secederegion which = ETH value = "South Africa" when = 1 }\r
++	command = { type = secederegion which = ETH value = "East Africa" when = 1 }\r
++	command = { type = secederegion which = ETH value = "Southwest Africa" when = 1 }\r
++	command = { type = secedearea which = ETH value = "Cameroonian Jungle" when = 1 }\r
++	command = { type = secedearea which = ETH value = "Kongolese Jungle" when = 1 }\r
++	command = { type = secedearea which = ETH value = "Shaba" when = 1 }\r
+ 	}\r
+ }\r
+ \r
+-#########################################################################\r
+-#  ナイル危機 ─ エジプトの反応\r
+-# スーダンを巡るエチオピア・エジプトの対立はエリトリアの崩壊以後急速に加熱していった。\r
+-# イギリス植民地時代、そして過去は古代ヌビア諸王国に至るまでスーダンはエジプトの勢力圏であった。\r
+-# そしてスーダン領域とはナイル川の上流に位置し、我が国の水資源の動脈でもある。\r
+-# しかし同地においては汎アフリカ主義を奉ずる分離勢力が暗躍し、彼らはエチオピアとの合流を志していた。\r
+-# 我々はどうするべきか。\r
+-# 答えは単純である――エチオピア滅すべし。ただそれのみである。\r
+-#########################################################################\r
+-\r
+ event = {\r
+-	id = 5523014\r
++	id = 5523020\r
+ 	random = no\r
+-	country = EGY\r
++	country = ENG\r
+ \r
+-	name = EVT_5523014_NAME\r
+-	desc = EVT_5523014_DESC\r
++	name = EVT_5523018_NAME\r
++	desc = EVT_5523018_DESC\r
+ 	style = 2\r
+ 	picture = "Danzig_coup"\r
+ \r
+-	action = { # スーダンを断固防衛すべし！\r
+-	name = "ACTIONNAME5523014A"\r
+-	command = { type = dissent value = -2 }\r
+-	command = { type = add_corps which = "スーダン防衛軍" value = land where = 825 }\r
+-	command = { type = add_division which = "スーダン第1義勇隊" value = militia when = 2 }\r
+-	command = { type = add_division which = "スーダン第2義勇隊" value = militia when = 2 }\r
+-	command = { type = add_division which = "スーダン第3義勇隊" value = militia when = 2 }\r
++	action = { # OK		\r
++	name = "OK"\r
++	command = { type = secederegion which = ETH value = "South Africa" when = 1 }\r
++	command = { type = secederegion which = ETH value = "East Africa" when = 1 }\r
++	command = { type = secederegion which = ETH value = "Southwest Africa" when = 1 }\r
++	command = { type = secedearea which = ETH value = "Cameroonian Jungle" when = 1 }\r
++	command = { type = secedearea which = ETH value = "Kongolese Jungle" when = 1 }\r
++	command = { type = secedearea which = ETH value = "Shaba" when = 1 }\r
+ 	}\r
+ }\r
+ \r
+@@ -1104,7 +1285,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 5523015\r
++	id = 5523021\r
+ 	random = no\r
+ 	country = EGY\r
+ \r
+@@ -1121,8 +1302,8 @@ event = {
+ 	NOT = { area = { area = "North Ethiopia" country = ETH data = 1 value = 100 } }\r
+ 	}\r
+ 	\r
+-	name = EVT_5523015_NAME\r
+-	desc = EVT_5523015_DESC\r
++	name = EVT_5523021_NAME\r
++	desc = EVT_5523021_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+@@ -1131,7 +1312,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = { # 講和を提案しよう\r
+-	name = "ACTIONNAME5523015A"\r
++	name = "ACTIONNAME5523021A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = add_claim_area which = "Danakil Plateau" }\r
+ 	command = { type = add_claim_area which = "North Ethiopia" }\r
+@@ -1141,24 +1322,24 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 戦争継続だ！\r
+-	name = "ACTIONNAME5523015B"\r
++	name = "ACTIONNAME5523021B"\r
+ 	command = { type = dissent value = 10 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+-	id = 5523016\r
++	id = 5523022\r
+ 	random = no\r
+ 	country = ETH\r
+ 	\r
+-	name = EVT_5523016_NAME\r
+-	desc = EVT_5523016_DESC\r
++	name = EVT_5523022_NAME\r
++	desc = EVT_5523022_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+ 	action = { # 講和に応じるしかない\r
+-	name = "ACTIONNAME5523016A"\r
++	name = "ACTIONNAME5523022A"\r
+ 	command = { type = dissent value = 20 }\r
+ 	command = { type = peace which = EGY value = 0 }\r
+ 	command = { type = sleepminister which = 245001 }\r
+@@ -1182,19 +1363,19 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 断固拒否だ！\r
+-	name = "ACTIONNAME5523016B"\r
++	name = "ACTIONNAME5523022B"\r
+ 	command = { type = dissent value = 40 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+-	id = 5523017\r
++	id = 5523023\r
+ 	random = no\r
+ 	country = EGY\r
+ 	\r
+-	name = EVT_5523017_NAME\r
+-	desc = EVT_5523017_DESC\r
++	name = EVT_5523023_NAME\r
++	desc = EVT_5523023_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+@@ -1216,7 +1397,7 @@ event = {
+ #########################################################################\r
+ \r
+ event = {\r
+-	id = 5523018\r
++	id = 5523024\r
+ 	random = no\r
+ 	country = ETH\r
+ \r
+@@ -1235,8 +1416,8 @@ event = {
+ 	NOT = { control = { province = 805 data = EGY } }\r
+ 	}\r
+ 	\r
+-	name = EVT_5523018_NAME\r
+-	desc = EVT_5523018_DESC\r
++	name = EVT_5523024_NAME\r
++	desc = EVT_5523024_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+@@ -1245,7 +1426,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ 	\r
+ 	action = { # 講和を提案しよう\r
+-	name = "ACTIONNAME5523018A"\r
++	name = "ACTIONNAME5523024A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = add_core_region which = "Sudan" }\r
+ 	command = { type = trigger which = 5523019 }\r
+@@ -1253,24 +1434,24 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 戦争継続だ！\r
+-	name = "ACTIONNAME5523018B"\r
++	name = "ACTIONNAME5523024B"\r
+ 	command = { type = dissent value = 10 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+-	id = 5523019\r
++	id = 5523025\r
+ 	random = no\r
+ 	country = EGY\r
+ 	\r
+-	name = EVT_5523019_NAME\r
+-	desc = EVT_5523019_DESC\r
++	name = EVT_5523025_NAME\r
++	desc = EVT_5523025_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+ 	action = { # 講和に応じるしかない\r
+-	name = "ACTIONNAME5523019A"\r
++	name = "ACTIONNAME5523025A"\r
+ 	command = { type = dissent value = 20 }\r
+ 	command = { type = peace which = ETH value = 0 }\r
+ 	command = { type = secederegion which = ETH value = "Sudan" when = 1 }\r
+@@ -1281,19 +1462,19 @@ event = {
+ 	}\r
+ \r
+ 	action = { # 断固拒否だ！\r
+-	name = "ACTIONNAME5523019B"\r
++	name = "ACTIONNAME5523025B"\r
+ 	command = { type = dissent value = 40 }\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+ event = {\r
+-	id = 5523020\r
++	id = 5523026\r
+ 	random = no\r
+ 	country = ETH\r
+ 	\r
+-	name = EVT_5523020_NAME\r
+-	desc = EVT_5523019_DESC\r
++	name = EVT_5523026_NAME\r
++	desc = EVT_5523015_DESC\r
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ 	\r
+@@ -1304,6 +1485,30 @@ event = {
+ 	}\r
+ }\r
+ \r
++event = {\r
++	id = 5523027\r
++	random = no\r
++	country = ETH\r
++	\r
++	name = "EVT_2919006_NAME"\r
++	desc = "EVT_2919006_DESC"\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	action = { # 参戦する\r
++	trigger = { NOT = { ispuppet = FRA  } }\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = alliance which = ENG }\r
++	ai_chance = 100\r
++	}\r
++	action = { # 参戦しない\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = dissent value = 10 }\r
++	ai_chance = 0\r
++	}\r
++	\r
++}\r
+ \r
+ ##########################################################################\r
+ #エジプト\r
+@@ -1371,10 +1576,6 @@ event = {
+ 	offset = 3\r
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
+-	offset = 7\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
+ 	action = { # エジプトの真の独立を！\r
+ 	name = "ACTIONNAME5524002A"\r
+ 	command = { type = end_puppet }\r
+@@ -1987,4 +2188,27 @@ event = {
+ 	command = { type = sleepteam which = 340102 }\r
+ 	ai_chance = 100\r
+ 	}\r
++}\r
++\r
++event = {\r
++	id = 5524015\r
++	random = no\r
++	country = EGY\r
++	\r
++	name = EVT_5524015_NAME\r
++	desc = EVT_5524015_DESC\r
++	style = 2\r
++	picture = "negotiaton"\r
++	\r
++	action = { # 受け入れるしかない\r
++	name = "ACTIONNAME5524015A"\r
++	command = { type = dissent value = 10 }\r
++	command = { type = secederegion which = ETH value = "Sudan" when = 1 }\r
++	ai_chance = 100\r
++	}\r
++	action = { # 宣戦布告だ！\r
++	name = "ACTIONNAME5524015B"\r
++	command = { type = war which = ETH value = 0 }\r
++	ai_chance = 0\r
++	}\r
+ }
+\ No newline at end of file

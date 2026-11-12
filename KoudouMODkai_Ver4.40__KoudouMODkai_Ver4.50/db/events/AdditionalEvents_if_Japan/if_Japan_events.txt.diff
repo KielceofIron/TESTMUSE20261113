@@ -1,0 +1,127 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
+@@ -140,6 +140,7 @@
+ #id = 2991403 日本内戦\r
+ #id = 2991404 日本内戦 ― 終結\r
+ #id = 2991405 日本内戦 ― 租借地からの撤退\r
++#id = 2991406 史実中国イベントの移植\r
+ ##########################################################################\r
+ #  変容する国内情勢\r
+ # 日露戦争に敗北した日本は、開国以来の努力で得てきた『一等国』としての地位を失った。\r
+@@ -572,7 +573,7 @@ event = {
+ \r
+ 	action = { # 空母の建造を推し進めよう\r
+ 	name = "ACTIONNAME2991008A"\r
+-	ai_chance = 35\r
++	ai_chance = 0\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+@@ -615,7 +616,7 @@ event = {
+ \r
+ 	action = { # 水中艦隊にこそ活路がある\r
+ 	name = "ACTIONNAME2991008B"\r
+-	ai_chance = 30\r
++	ai_chance = 100\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -649,7 +650,7 @@ event = {
+ \r
+ 	action = { # 戦艦・重巡の強化が必要だろう\r
+ 	name = "ACTIONNAME2991008C"\r
+-	ai_chance = 35\r
++	ai_chance = 0\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -1183,7 +1184,7 @@ event = {
+ \r
+ 	action = { # 山本英輔案 ― 海軍航空隊\r
+ 	name = "ACTIONNAME2991017A"\r
+-	ai_chance = 35\r
++	ai_chance = 0\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -1217,7 +1218,7 @@ event = {
+ \r
+ 	action = { # 末次信正案 ― 潜水艦隊\r
+ 	name = "ACTIONNAME2991017B"\r
+-	ai_chance = 30\r
++	ai_chance = 100\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -1251,7 +1252,7 @@ event = {
+ \r
+ 	action = { # 中村良三案 ― 重巡増強\r
+ 	name = "ACTIONNAME2991017C"\r
+-	ai_chance = 35\r
++	ai_chance = 0\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -2337,6 +2338,10 @@ event = {
+ \r
+ 	action = { # 諸君！反撃の時はきた！\r
+ 	name = "ACTIONNAME2991036A"\r
++	command = { type = shore_attack which = land value = 67 }\r
++	command = { type = shore_attack which = cavalry value = 8 }\r
++ 	command = { type = task_efficiency which = amphibious_assault value = 0.5 }\r
++      	command = { type = max_amphib_mod value = 20 when = 1 }\r
+ 	command = { trigger = { ai = no } type = chiefofarmy which = 50945 }\r
+ 	command = { type = ground_def_eff value = 0.3 when = 1 }\r
+       	command = { type = surprise which = land value = 30 }\r
+@@ -2345,6 +2350,7 @@ event = {
+ 	command = { type = max_organization which = land value = 20 }\r
+ 	command = { type = morale which = land value = 20 }\r
+ 	command = { trigger = { ai = yes } type = morale which = land value = 20 }\r
++	command = { trigger = { ai = yes } type = morale which = land value = 20 }\r
+ 	command = { type = morale which = naval value = 20 }\r
+ 	command = { type = morale which = air value = 20 }\r
+ 	command = { type = speed which = land value = 3 }\r
+@@ -2378,6 +2384,10 @@ event = {
+ \r
+ 	action = {\r
+ 	name = ACTION_NAME_OK\r
++	command = { type = shore_attack which = land value = -67 }\r
++	command = { type = shore_attack which = cavalry value = -8 }\r
++ 	command = { type = task_efficiency which = amphibious_assault value = -0.5 }\r
++      	command = { type = max_amphib_mod value = -20 when = 1 }\r
+ 	command = { type = ground_def_eff value = -0.3 when = 1 }\r
+       	command = { type = surprise which = land value = -30 }\r
+       	command = { type = surprise which = naval value = -30 }\r
+@@ -2506,8 +2516,8 @@ event = {
+ 	control = { province = 2765 data = CHI } # 岐阜\r
+ 	#追加\r
+ 	control = { province = 1548 data = CHI } # 長野\r
+-	control = { province = 1549 data = CHI } # 仙臺\r
+-	region = { region = "Japan" country = UD6 data = 1 value = 3 }\r
++	control = { province = 1549 data = CHI } # 仙台\r
++	region = { region = JAPAN country = UD6 data = 1 value = 3 } #AOGにより領土失陥\r
+ 	#追加終わり\r
+ 	AND = {\r
+ 	control = { province = 1559 data = CHI } # 四国\r
+@@ -2943,6 +2953,21 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+ 	}\r
+ }\r
+ \r

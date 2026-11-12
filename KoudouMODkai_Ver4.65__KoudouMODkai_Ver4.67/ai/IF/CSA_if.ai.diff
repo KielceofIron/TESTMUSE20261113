@@ -1,0 +1,249 @@
+--- A/ai/IF/CSA_if.ai [utf-8]
++++ B/ai/IF/CSA_if.ai [utf-8]
+@@ -1,6 +1,6 @@
+ # USA 1936 AI File by Lothos\r
+ # Edited for Kaiserreich CSA by Andromedos and others   DB\r
+-\r
++flags = { CSAAI = no CSA_ifAI = yes }\r
+ switch = no # [yes/no]\r
+ max_front_ratio = 1.2 \r
+ max_front_ratios = {\r
+@@ -29,9 +29,6 @@ no_exp_forces_to = { }
+ # Diplomacy\r
+ ###################################\r
+ combat = {\r
+-U00 = 50\r
+-USA = 25\r
+-CAL = 10 \r
+ }\r
+ ferocity = yes\r
+ \r
+@@ -41,90 +38,15 @@ liberate = { MEX CAN FRA ENG BEL HOL LUX POL CZE SLO
+ \r
+ # Special resistance against "influence" by the listed nations. Value range = [0 - 10]  \r
+ resistance = {  \r
+-	GER = 5\r
+-	UTC = 5\r
+-	TEX = 5\r
+-	USA = 1\r
+-	CAN = 1\r
+-	VIC = 5\r
+-	ARG = 5\r
+-	FIN = 2\r
+-	GUY = 1\r
+-        CAL = 1\r
+-	AST = 4\r
+-\r
+-	CAL = 2\r
+-	U00 = 0\r
+-	UA2 = 2\r
+-	UA3 = 2\r
+-	UA4 = 2\r
+-	UA5 = 2\r
+-	UA6 = 0\r
+-	UA7 = 1\r
+-	UA8 = 1\r
++\r
+ }\r
+ befriend = {\r
+-	GER = 50\r
+-	JAP = 50\r
+-\r
+-	FRA = 30\r
+-	RSI = 10\r
+-	U31 = 20\r
+-	SPR = 20\r
+-	GEO = 10\r
+-	UTC = 10\r
+-	HOL = 10\r
+-        ENG = 50\r
+-	BOL = 25 # Bolivia\r
+-	BRA = 25 # Brazil\r
+-	GUI = 25 # Guinea\r
+-\r
+-	PAR = 25 # Paraguay\r
+-\r
+-	CAL = 50\r
+-	U00 = 0\r
+-	UA2 = 50\r
+-	UA3 = 50\r
+-	UA4 = 50\r
+-	UA5 = 50\r
+-	UA6 = 0\r
+-	UA7 = 10\r
+-	UA8 = 10\r
+-\r
+-	# CENTRAL AMERICA\r
+-	COS = 25 # Costa Rica\r
+-	CUB = 25 # Cuba\r
+-	GUA = 25 # Guatemala\r
+-	HAI = 25 # Haiti\r
+-	MEX = 25 # Mexico\r
+-	U58 = 50 # Mexico\r
+-	PAN = 25 # Panama\r
+-\r
+-	# NORTH AMERICA\r
+-	# U28 = 50\r
++\r
+ }\r
+ \r
+  # Countries listed here are considered withing our 'sphere of influence'. We will strive to guarantee their independence.\r
+ protect = {\r
+-	BOL = 25 # Bolivia\r
+-	BRA = 25 # Brazil\r
+-	GUI = 25 # Guinea\r
+-\r
+-	PAR = 25 # Paraguay\r
+ \r
+-	U00 = 0\r
+-	UA6 = 0\r
+-\r
+-\r
+-	# CENTRAL AMERICA\r
+-	COS = 25 # Costa Rica\r
+-	CUB = 25 # Cuba\r
+-	GUA = 25 # Guatemala\r
+-	HAI = 25 # Haiti\r
+-	MEX = 25 # Mexico\r
+-	PAN = 25 # Panama\r
+-\r
+-	# U28 = 50\r
+ }\r
+ \r
+ \r
+@@ -153,7 +75,7 @@ trade = {
+ 		# U31 = 20\r
+ 		SPR = 50\r
+ 		GEO = 50\r
+-		UTC = 70\r
++		UER = 70\r
+ 		HOL = 40\r
+ 		U58 = 80 # Mexico\r
+ 		# U28 = 50\r
+@@ -175,7 +97,7 @@ tech_sharing = {
+ 		#U31 = 20\r
+ 		SPR = 50\r
+ 		GEO = 50\r
+-		UTC = 70\r
++		UER = 70\r
+ 		HOL = 40\r
+ 		U58 = 80 # Mexico\r
+ 		#U28 = 50\r
+@@ -281,7 +203,7 @@ spyprefs =
+ 		found_partisans		= 6 # 2\r
+ 		massmedia 			= 3\r
+ 		disrupt_techteam 	= 5\r
+-		country 			= TEX\r
++		country 			= FRA\r
+ 	}\r
+ \r
+ 	spyprefsdata = {\r
+@@ -295,9 +217,35 @@ spyprefs =
+ 		found_partisans		= 6 # 2\r
+ 		massmedia 			= 3\r
+ 		disrupt_techteam 	= 5\r
+-		country 			= SPA\r
++		country 			= ENG\r
+ 	}\r
+ \r
++        spyprefsdata = {\r
++		country_priorities	= 10\r
++		steal_blueprint 	= 6 # 10\r
++		minister_assassination          = 1\r
++		smear_campaign 		= 4\r
++		coup 				= 0\r
++		sabotage_industry 	= 5\r
++		nuclear_sabotage 	= 0\r
++		found_partisans		= 8 # 3\r
++		massmedia 			= 3\r
++		disrupt_techteam 	= 5\r
++		country 			= U00\r
++	}\r
++        spyprefsdata = {\r
++		country_priorities	= 10\r
++		steal_blueprint 	= 6 # 10\r
++		minister_assassination          = 1\r
++		smear_campaign 		= 4\r
++		coup 				= 0\r
++		sabotage_industry 	= 5\r
++		nuclear_sabotage 	= 0\r
++		found_partisans		= 8 # 3\r
++		massmedia 			= 3\r
++		disrupt_techteam 	= 5\r
++		country 			= CAN\r
++	}\r
+         spyprefsdata = {\r
+ 		country_priorities	= 10\r
+ 		steal_blueprint 	= 6 # 10\r
+@@ -347,7 +295,7 @@ spyprefs =
+ ###################################\r
+ #Default values\r
+ construction = { \r
+-	max_factor = 0.6 \r
++	max_factor = 0 \r
+ \r
+ 	AA_batteries = no\r
+ 	max_AA_level = 4\r
+@@ -416,8 +364,8 @@ construction = {
+ 	fort_borders = { } \r
+ \r
+ 	ic_at_war = no\r
+-	force_ic_until = 1935\r
+-	ic_end_year = 1942\r
++	force_ic_until = 1900\r
++	ic_end_year = 1900\r
+ 	IC_provs = {\r
+ \r
+ 		1734  # Hawaii\r
+@@ -438,7 +386,7 @@ construction = {
+ military = { \r
+ 	relative_build_scheme 	= no\r
+ 	max_batch_peace 	= 800 \r
+-	max_batch_war 		= 500 \r
++	max_batch_war 			= 780 \r
+ 	max_batch_home_front 	= 280\r
+ \r
+ 	#### Divisions etc...\r
+@@ -477,7 +425,7 @@ military = {
+ #       new units DH and KR\r
+ 		escort_carrier	= 0\r
+ 		nuclear_submarine = 0\r
+-		d_01		= 0        #  Light Infantry\r
++#		d_01		= 0        #  Light Infantry\r
+ \r
+ 	artillery 		= 30 # 15\r
+ 	sp_artillery 		= 0\r
+@@ -731,15 +679,15 @@ air_marshal = {
+ 	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed\r
+ \r
+ 	# desirability is a multiplier used when calcualting the mission desirability\r
+-	airsuperioritydesirability 	= 10.0\r
+-	groundattackdesirability 	= 10.0\r
+-	inderdictiondesirability 	= 8.0\r
+-	logisticalstrikedesirability 	= 30.0\r
+-	runwaycrateringdesirability 	= 10.0\r
+-	strategicstrikedesirability 	= 5.0\r
+-	installationstrikedesirability 	= 2.0\r
+-	navalstrikedesirability 	= 40.0\r
+-	portstrikedesirability 		= 20.0\r
++	airsuperioritydesirability 		= 10000.0\r
++	groundattackdesirability 		= 10000\r
++	inderdictiondesirability 		= 8000\r
++	logisticalstrikedesirability 		= 30000\r
++	runwaycrateringdesirability 		= 10000\r
++	strategicstrikedesirability 		= 5000\r
++	installationstrikedesirability 		= 2000\r
++	navalstrikedesirability 		= 40000\r
++	portstrikedesirability 		= 20000\r
+ \r
+ 	# tolerance is the required kill:loss ration expected to do \r
+ 	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half\r
+@@ -760,7 +708,7 @@ air_marshal = {
+ 	strategicstrikeefficency 	= 0.01\r
+ 	installationstrikeefficency 	= 0.01\r
+ \r
+-	taskforcetype = { name = "Air Superiority" desiredratio = 0.300 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = -1000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes } \r
++	taskforcetype = { name = "Air Superiority" desiredratio = 0.300 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = -1000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes    } \r
+ 	taskforcetype = { name = "Soft Bombing" desiredratio = 0.200 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = -1000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = -1000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes } \r
+ 	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = -1000.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes } \r

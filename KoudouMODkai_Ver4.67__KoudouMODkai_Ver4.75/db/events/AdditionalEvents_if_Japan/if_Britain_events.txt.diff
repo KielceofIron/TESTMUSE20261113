@@ -1,0 +1,1167 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Britain_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Britain_events.txt [cp932]
+@@ -60,13 +60,18 @@
+ #id = 4656234 ロッテルダム条約 ― 講和の失敗\r
+ ##########################################################################\r
+ #  大英帝国の栄光\r
+-# 第一次世界大戦において大英帝国は英仏協商の立場を放棄し中立を保った。\r
+-# その結果、殆どの植民地が手つかずのまま残される形となり、今や大英帝国は並び立つ者のない一大海洋帝国となった。\r
+-# ――その上で、我々はこれからの政策についていくつかの考察をしなければならない。\r
+-# つまり、我々はかつての『栄光ある孤立』へと回帰し、パクス・ブリタニカを実現するべきか。\r
+-# それとも、さらなる覇道へと邁進し、より多くの領土、より多くの財貨をその手に収めるべきか？\r
+-# 植民地を我々の手の元に留めるべきか、民族自決の名の元に彼らを解放するべきか？\r
+-# それらを決めるのは、長きに渡り精錬されてきた国民達の意志によって決められるであろう\r
++# 「英国は７つの海を支配する」\r
++# この文言こそが英国の政治的テーマであり、この大方針は現代においても継承されているといって良い。\r
++# 第一次世界大戦において独自の距離感を保ち、欧州及び極東において、第一次世界大戦時に首相に就任した\r
++# デイヴィッド・ロイド・ジョージの外交によって英国は一定の政治的権威を今も持っている。\r
++# しかし、デイヴィッド・ロイド・ジョージによる長きに渡る政治支配は体制の硬直化を招き、また\r
++# 英国はかつてと同じ「栄光ある孤立」状態に陥った。\r
++# 確かにロイド・ジョージは偉大であった。彼の下で政治家達は誇りを持って仕事を行い続けてきた。\r
++# だが、十年以上の歳月を（幾度か他の政党による政権が断続的に組閣されたとは言え）同じ人物が\r
++# 首相を務めている状態は、民主主義の原則からしても不健全であった。\r
++# 現実としてロイド・ジョージは高齢であり、政界には彼の敵対者も多い。\r
++# 選挙が行われることは確実であり、その時にまた閣僚の顔ぶれも変わってくるであろう。\r
++# 問題は、我々が誰にこの国を託すのか……である。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+@@ -79,19 +84,23 @@ event = {
+ 	style = 1\r
+ 	picture = "diplomatic_campaign"\r
+ \r
+-	action = { # ルール・ブリタニア！\r
++	action = { # 次なる栄光の時代のために！\r
+ 	name = "ACTIONNAME4656001A"\r
+ 	#command = { type = sleepevent which = 2002076 }\r
+ 	#command = { type = sleepevent which = 2002077 }\r
+-	command = { type = event which = 4656002 where = ENG when = 2 }\r
++	command = { }\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  大選択 ―  維持か、解放か\r
+-# 1933年選挙に臨むに辺り、もっとも大きな課題がここで議論される。\r
+-# つまり、大英帝国は植民地を解放し、大英帝国の正義を示すか、植民地体制はあくまで維持し、世界帝国として君臨することを目指すか、である。\r
+-# ここで大英帝国の民衆は――\r
++#  水先案内人の下船\r
++# １９３４年、ロイド・ジョージは閣内における意志統一がはかれないことを理由に首相職を辞した。\r
++# これに対し、現在の自由党・保守党連立のうち、議席数で勝る保守党の側から、同党党首\r
++# スタンリー・ボールドウィンが首相に就任した。\r
++# この一連の出来事は英国版『水先案内人の下船』と称され、\r
++# かつてドイツ帝国初代宰相とされたオットー・フォン・ビスマルクの退陣ともイメージの重なる出来事となった。\r
++# またデイヴィッド・ロイド・ジョージの辞職に伴い、彼のブレーンとされてきたジョン・メイナード・ケインズも\r
++# また大蔵大臣の職を辞することを宣言し、後任としてボールドウィン氏が組閣を開始することとなった。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+@@ -104,229 +113,256 @@ event = {
+ 	style = 2\r
+ 	picture = "diplomatic_campaign"\r
+ \r
+-	action = { # 植民地の解放だ！\r
++	action = { # 英国の偉大なる水先案内人に敬礼を！\r
+ 	name = "ACTIONNAME4656002A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = domestic which = defense_lobby value = -1 }\r
+-	command = { type = domestic which = interventionism value = -1 }\r
+-	command = { type = setflag which = Alternative_Plans }\r
+-	command = { type = event which = 4656003 where = ENG when = 1 }\r
++	command = { type = sleepminister which = 10412 }\r
++	command = { type = sleepminister which = 10413 }\r
++	command = { type = headofgovernment which = 10002 }\r
++	command = { type = armamentminister which = 10004 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+-	action = { # 大英帝国の覇権の維持を！\r
+-	name = "ACTIONNAME4656002B"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = event which = 4656003 where = ENG when = 1 }\r
+-	ai_chance = 0\r
+-	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  大選択 ―  軍事予算案\r
+-# 1933年選挙における議論題目の一つに、軍事予算案がある。\r
+-# 無論、大英帝国の現在の国庫を持ってすれば軍拡も軍縮も可能ではあろうが、問題はその方針であった。\r
+-###########################################################################\r
+-\r
++# ＠１９３５年総選挙\r
++# 戦間期における英国の内閣は、デイヴィッド・ロイド・ジョージという一人の政治的嗅覚の鋭い政治家によって\r
++# 運営されていた。\r
++# しかし、彼が首相職を辞し、彼のブレーンであったジョン・メイナード・ケインズが同時に退任した結果、\r
++# 保守党中心での政治運営に嫌悪感を示した自由党によって保守党と自由党は喧嘩別れとなり、内閣は総辞職の上で\r
++# 次の組閣のための総選挙を行わなければならなくなった。\r
++# 保守党は自由党の一部や、最近になって勢力を伸ばしつつある愛国戦線の一部を取り込んだ保守連立を組み、\r
++# また労働党は労働組合党や社会党の人々を取り込み、人々はこの二つの大連立を主な候補として考え、選挙に\r
++# 臨む必要があった。\r
++##########################################################################\r
+ event = {\r
+ 	id = 4656003\r
+ 	random = no\r
+ 	country = ENG\r
++	style = 2\r
++	picture = "news_paper"\r
++	one_action = yes\r
++\r
++	trigger = {\r
++		NOT = { ispuppet = ENG }\r
++		}\r
+ \r
+ 	name = "EVT_4656003_NAME"\r
+ 	desc = "EVT_4656003_DESC"\r
+-	style = 2\r
+-	picture = "diplomatic_campaign"\r
+ \r
+-	action = { # モントゴメリー案 ―  優勢火力\r
++	date = { day = 13 month = november year = 1935 }\r
++\r
++\r
++# ＜保守連立の勝利だ！　英国の栄光よ永遠なれ！＞\r
++# 社会保守主義に。自由経済＋１\r
++	action = { \r
++	trigger = { OR = { ai = no NOT = { dissent = 30 } } }\r
+ 	name = "ACTIONNAME4656003A"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = activate which = 6010 }\r
+-	command = { type = gain_tech which = 6010 }\r
+-	command = { type = gain_tech which = 6020 }\r
+-	command = { type = gain_tech which = 6040 }\r
+-	command = { type = gain_tech which = 6050 }\r
+-	command = { type = waketeam which = 10101 }\r
+-	command = { type = sleepteam which = 10018 }\r
+-	command = { type = event which = 4656004 where = ENG when = 2 }\r
+-	ai_chance = 30\r
+-	}\r
+-\r
+-	action = { # アラン・ブルック案 ―  防御重視\r
++		command = { type = set_domestic which = democratic value = 8 }\r
++		command = { type = set_domestic which = political_left value = 2 }\r
++		command = { type = domestic which = free_market value = -1 }\r
++		command = { type = dissent value = -3 }\r
++		command = { type = headofgovernment which = 10420 }\r
++		command = { type = foreignminister which = 10414 }\r
++		command = { type = armamentminister which = 10421 }\r
++		command = { type = ministerofsecurity which = 10423 }\r
++		command = { type = ministerofintelligence which = 10422 }\r
++	ai_chance = 60\r
++	}\r
++\r
++\r
++# ＜労働党が勝利した。労働者の時代の幕開けだ！＞\r
++# 社会民主主義に\r
++	action = { \r
++	trigger = { OR = { ai = no NOT = { dissent = 30 } } }\r
+ 	name = "ACTIONNAME4656003B"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = activate which = 6560 }\r
+-	command = { type = gain_tech which = 6560  }\r
+-	command = { type = gain_tech which = 6030  }\r
+-	command = { type = gain_tech which = 6120 }\r
+-	command = { type = gain_tech which = 6110 }\r
+-	command = { type = event which = 4656004 where = ENG when = 2 }\r
+-	ai_chance = 35\r
+-	}\r
+-\r
+-	action = { # エドマンド・アイアンサイド案 ―  軽歩兵\r
++		command = { type = dissent value = -3 }\r
++		command = { type = set_domestic which = democratic value = 8 }\r
++		command = { type = set_domestic which = political_left value = 8 }\r
++		command = { type = headofgovernment which = 10411 }\r
++		command = { type = foreignminister which = 10425 }\r
++		command = { type = armamentminister which = 10426 }\r
++		command = { type = ministerofsecurity which = 10427 }\r
++		command = { type = ministerofintelligence which = 10409 }\r
++	ai_chance = 40\r
++	}\r
++\r
++# ＜想定外だ！　大英帝国愛国運動が単独で過半数をとってしまった！＞\r
++	action = { \r
++	trigger = { dissent = 30 }\r
+ 	name = "ACTIONNAME4656003C"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = activate which = 6390 }\r
+-	command = { type = gain_tech which = 6390  }\r
+-	command = { type = gain_tech which = 6400 }\r
+-	command = { type = gain_tech which = 6410 }\r
+-	command = { type = gain_tech which = 6420 }\r
+-	command = { type = waketeam which = 10100 }\r
+-	command = { type = sleepteam which = 10018 }\r
+-	command = { type = event which = 4656004 where = ENG when = 2 }\r
+-	ai_chance = 35\r
+-	}\r
+-\r
+-#	action = { # チャールズ・フラー案 ―  電撃戦\r
+-#	name = "ACTIONNAME4656003D"\r
+-#	command = { type = dissent value = -1 }\r
+-#	command = { type = activate which = 6210 }\r
+-#	command = { type = gain_tech which = 6210 }\r
+-#	command = { type = gain_tech which = 6220 }\r
+-#	command = { type = gain_tech which = 6250 }\r
+-#	command = { type = gain_tech which = 6900 }\r
+-#	command = { type = waketeam which = 10102 }\r
+-#	command = { type = sleepteam which = 10018 }\r
+-#	command = { type = event which = 4656004 where = ENG when = 2 }\r
+-#	ai_chance = 5\r
+-#	}\r
++		command = { type = dissent value = -50 }\r
++		command = { type = set_domestic which = democratic value = 1 }\r
++		command = { type = set_domestic which = political_left value = 1 }\r
++		command = { type = headofgovernment which = 10403 }\r
++		command = { type = foreignminister which = 10431 }\r
++		command = { type = armamentminister which = 10428 }\r
++		command = { type = ministerofsecurity which = 10430 }\r
++		command = { type = ministerofintelligence which = 10429 }\r
++	ai_chance = 100\r
++	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  大選択 ―  最後の選択\r
+-# 1933年選挙では二つの大きな争点が存在していた。\r
+-# 孤立か拡大か、植民地維持か民族自決か──\r
+-# これらを争点として選挙戦は展開され、結果……。\r
+-###########################################################################\r
++# ＠１９３９年総選挙\r
++# 国際情勢が緊迫化する昨今にあって、次に組閣される内閣はそのまま戦時内閣として運用されるであろうことは\r
++# 明白であり、人々はそうした意識を持ちながら、自身の投票先を考えなければならなかった。\r
++# 逆を言えば、そのような情勢の中にあっても粛々と議会制民主主義を遂行することこそが、\r
++# 英国人の誇りなのである。\r
++##########################################################################\r
+ \r
+ event = {\r
+ 	id = 4656004\r
+ 	random = no\r
+ 	country = ENG\r
+-	save_date = yes\r
++	style = 2\r
++	picture = "news_paper"\r
++	one_action = yes\r
++\r
++	trigger = {\r
++		NOT = { ispuppet = ENG }\r
++		}\r
+ \r
+ 	name = "EVT_4656004_NAME"\r
+ 	desc = "EVT_4656004_DESC"\r
+-	style = 2\r
+-	picture = "diplomatic_campaign"\r
+ \r
+-	action = { # 労働党のクレメント・アトリーが首相に任命された！\r
++	date = { day = 8 month = 5 year = 1939 }\r
++\r
++\r
++# ＜保守連立に全てを託そう！＞\r
++	action = { \r
++	trigger = { OR = { ai = no NOT = { dissent = 30 } } }\r
+ 	name = "ACTIONNAME4656004A"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = set_domestic which = democratic value = 8 }\r
+-	command = { type = set_domestic which = political_left value = 7 }\r
+-	command = { type = domestic which = defense_lobby value = -6 }\r
+-	command = { type = domestic which = interventionism value = -6 }\r
+-	command = { type = headofstate which = 10001 }\r
+-	command = { type = headofgovernment which = 10019 }\r
+-	command = { type = foreignminister which = 10024 }\r
+-	command = { type = armamentminister which = 10401 }\r
+-	command = { type = ministerofsecurity which = 10402 }\r
+-	command = { type = ministerofintelligence which = 10064 }\r
+-	ai_chance = 25\r
+-	}\r
+-\r
+-	action = { # 保守党のネヴィル・チェンバレンが当選した！\r
++		command = { type = dissent value = -3 }\r
++		command = { type = set_domestic which = democratic value = 10 }\r
++		command = { type = set_domestic which = political_left value = 4 }\r
++		command = { type = domestic which = free_market value = -1 }\r
++		command = { type = headofgovernment which = 10125 }\r
++		command = { type = foreignminister which = 10435 }\r
++		command = { type = armamentminister which = 10040 }\r
++		command = { type = ministerofsecurity which = 10005 }\r
++		command = { type = ministerofintelligence which = 10422 }\r
++	ai_chance = 60\r
++	}\r
++\r
++# ＜労働党こそが我々を導くに相応しい！＞\r
++	action = { \r
++	trigger = { OR = { ai = no NOT = { dissent = 30 } } }\r
+ 	name = "ACTIONNAME4656004B"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = set_domestic which = democratic value = 7 }\r
+-	command = { type = set_domestic which = political_left value = 4 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 10001 }\r
+-	command = { type = headofgovernment which = 10017 }\r
+-	command = { type = foreignminister which = 10022 }\r
+-	command = { type = armamentminister which = 10040 }\r
+-	command = { type = ministerofsecurity which = 10005 }\r
+-	command = { type = ministerofintelligence which = 10006 }\r
+-	ai_chance = 25\r
+-	}\r
+-\r
+-	action = { # 保守党のエドワード・ウッドが首相に就任！\r
++		command = { type = set_domestic which = democratic value = 10 }\r
++		command = { type = set_domestic which = political_left value = 7 }\r
++		command = { type = dissent value = -3 }\r
++		command = { type = headofgovernment which = 10019 }\r
++		command = { type = foreignminister which = 10431 }\r
++		command = { type = armamentminister which = 10428 }\r
++		command = { type = ministerofsecurity which = 10430 }\r
++		command = { type = ministerofintelligence which = 10429 }\r
++	ai_chance = 40\r
++	}\r
++# ＜想定外だ！　大英帝国愛国運動が単独で過半数をとってしまった！＞\r
++	action = { \r
++	trigger = { dissent = 30 }\r
+ 	name = "ACTIONNAME4656004C"\r
+-	command = { type = dissent value = -1 }\r
+-	command = { type = set_domestic which = democratic value = 8 }\r
+-	command = { type = set_domestic which = political_left value = 3 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = headofstate which = 10001 }\r
+-	command = { type = headofgovernment which = 10125 }\r
+-	command = { type = foreignminister which = 10003 }\r
+-	command = { type = armamentminister which = 10004 }\r
+-	command = { type = ministerofsecurity which = 10005 }\r
+-	command = { type = ministerofintelligence which = 10006 }\r
+-	ai_chance = 25\r
++		command = { type = set_domestic which = democratic value = 1 }\r
++		command = { type = set_domestic which = political_left value = 1 }\r
++		command = { type = dissent value = -50 }\r
++		command = { type = headofgovernment which = 10403 }\r
++		command = { type = foreignminister which = 10431 }\r
++		command = { type = armamentminister which = 10428 }\r
++		command = { type = ministerofsecurity which = 10430 }\r
++		command = { type = ministerofintelligence which = 10429 }\r
++	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  北海海上油田の建設\r
+-# 海上油田とは、海底から石油や天然ガスを掘削・生産するために必要な労働者や機械類を収容する人工物を指す。\r
+-# 近年高まる石油需要に対し、イギリスはあらたな油田開発に力を入れていた。\r
+-# 政府は、北海に大量の油田が今も尚眠り続けているという科学者たちの研究を元に調査を進め、ついに北海に油田を発見。\r
+-# この調査結果をもとに北海油田の開発を開始し、政府や資本家の投資の末に海上プラットフォームを建設することに成功した。\r
+-# （史実における最初の海上油田は、アメリカのスペリオル石油会社が1938年にルイジアナ州沖のメキシコ湾岸油田に最初の海上石油プラットフォームを建設した。\r
+-# この世界では第一次世界大戦にイギリスが参戦しなかったことで、大きな国力の消耗がなかったことから技術躍進があったのだろう）\r
+-###########################################################################\r
+-\r
++#  １９４３年総選挙\r
++# イギリスは今、戦争状態にある。\r
++# 現在のイギリスは戦時であるが、伝統ある王立海軍と新たに創設された王立空軍の活躍によって\r
++# 英国本土は無事安泰であり、問題となったのは今後の講和条約も視野に入れた政治方針にあった。\r
++# 基本的には二大連立によって争われる１９４３年総選挙に変化があったとすれば、双方共に\r
++# 有能な人材を党外から閣僚として参入させている部分にあるだろう。\r
++##########################################################################\r
+ event = {\r
+ 	id = 4656005\r
+ 	random = no\r
+ 	country = ENG\r
++	style = 2\r
++	picture = "news_paper"\r
++	one_action = yes\r
+ \r
+ 	trigger = {\r
+-	event = 4656004\r
+-	not = { ispuppet = ENG }\r
+-	atwar = no\r
+-	random = 8\r
+-	}\r
+-\r
+-	date = { day = 1 month = 0 year = 1930 }\r
+-	offset = 8\r
+-	deathdate = { day = 29 month = 11 year = 1964 }\r
+-\r
++		NOT = { ispuppet = ENG }\r
++		}\r
+ 	name = "EVT_4656005_NAME"\r
+ 	desc = "EVT_4656005_DESC"\r
+-	style = 2\r
+ \r
+-	action_a = { # イギリスの繁栄はさらに続くのだ！\r
++	date = { day = 4 month = 9 year = 1939 }\r
++\r
++# ＜欧州を差配するのは保守連立だ！＞\r
++	action = { \r
++	trigger = { OR = { ai = no NOT = { dissent = 30 } } }\r
+ 	name = "ACTIONNAME4656005A"\r
+-	command = { trigger = { ai = yes } type = dissent value = -5 }\r
+-	command = { trigger = { ai = no } type = dissent value = -3 }\r
+-	command = { type = add_prov_resource which = 7 value = 120 where = oil }\r
+-	command = { type = add_prov_resource which = 13 value = 80 where = oil }\r
+-	ai_chance = 100\r
++		command = { type = dissent value = -3 }\r
++		command = { type = set_domestic which = democratic value = 10 }\r
++		command = { type = set_domestic which = political_left value = 4 }\r
++		command = { type = headofgovernment which = 10159 }\r
++		command = { type = foreignminister which = 10432 }\r
++		command = { type = armamentminister which = 10040 }\r
++		command = { type = ministerofsecurity which = 10433 }\r
++		command = { type = ministerofintelligence which = 10422 }\r
++	ai_chance = 60\r
++	}\r
++\r
++# ＜欧州には平和が必要だ。労働党を！＞\r
++	action = { \r
++	trigger = { OR = { ai = no NOT = { dissent = 30 } } }\r
++	name = "ACTIONNAME4656005B"\r
++		command = { type = dissent value = -3 }\r
++		command = { type = set_domestic which = democratic value = 10 }\r
++		command = { type = set_domestic which = political_left value = 7 }\r
++		command = { type = headofgovernment which = 10434 }\r
++		command = { type = foreignminister which = 10427 }\r
++		command = { type = armamentminister which = 10040 }\r
++		command = { type = ministerofsecurity which = 10433 }\r
++		command = { type = ministerofintelligence which = 10422 }\r
++	ai_chance = 40\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  ジョージ5世死去\r
++#  北海海上油田の建設\r
++# 海上油田とは、海底から石油や天然ガスを掘削・生産するために必要な労働者や機械類を収容する人工物を指す。\r
++# 近年高まる石油需要に対し、イギリスはあらたな油田開発に力を入れていた。\r
++# 政府は、北海に大量の油田が今も尚眠り続けているという科学者たちの研究を元に調査を進め、ついに北海に油田を発見。\r
++# この調査結果をもとに北海油田の開発を開始し、政府や資本家の投資の末に海上プラットフォームを建設することに成功した。\r
++# （史実における最初の海上油田は、アメリカのスペリオル石油会社が1938年にルイジアナ州沖のメキシコ湾岸油田に最初の海上石油プラットフォームを建設した。\r
++# この世界では第一次世界大戦にイギリスが参戦しなかったことで、大きな国力の消耗がなかったことから技術躍進があったのだろう）\r
+ ###########################################################################\r
+ \r
+ event = {\r
+ 	id = 4656006\r
+ 	random = no\r
+ 	country = ENG\r
+-	\r
++\r
+ 	trigger = {\r
+-	headofstate = 10410 \r
+-	}\r
++		NOT = { ispuppet = ENG }\r
++		}\r
++\r
+ \r
+-	date = { day = 20 month = january year = 1936 }\r
++	date = { day = 3 month = march year = 1933 }\r
+ \r
+-	name = "EVT_300_NAME"\r
+-	desc = "EVT_300_DESC"\r
++	name = "EVT_4656006_NAME"\r
++	desc = "EVT_4656006_DESC"\r
+ 	style = 2\r
+-	picture = "minister_died2"\r
+ \r
+-	action_a = {\r
+-	name = "EVT_362_ACTC"\r
+-	command = { type = headofstate which = 10011 }\r
+-	command = { type = sleepminister which = 10001 }\r
+-	command = { type = sleepminister which = 10410 }\r
++	action_a = { # イギリスの繁栄はさらに続くのだ！\r
++	name = "ACTIONNAME4656006A"\r
++	command = { trigger = { ai = yes } type = dissent value = -5 }\r
++	command = { trigger = { ai = no } type = dissent value = -3 }\r
++	command = { type = add_prov_resource which = 7 value = 120 where = oil }\r
++	command = { type = add_prov_resource which = 13 value = 80 where = oil }\r
++	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+@@ -400,6 +436,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 13 }\r
+ 	command = { type = peacetime_ic_mod value = 13 }\r
++	command = { type = local_setflag which = ic_mod value = 13 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -439,6 +476,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 10 }\r
+ 	command = { type = peacetime_ic_mod value = 10 }\r
++	command = { type = local_setflag which = ic_mod value = 10 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -476,6 +514,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 12 }\r
+ 	command = { type = peacetime_ic_mod value = 12 }\r
++	command = { type = local_setflag which = ic_mod value = 12 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -518,6 +557,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 12 }\r
+ 	command = { type = peacetime_ic_mod value = 12 }\r
++	command = { type = local_setflag which = ic_mod value = 12 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -557,6 +597,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 20 }\r
+ 	command = { type = peacetime_ic_mod value = 20 }\r
++	command = { type = local_setflag which = ic_mod value = 20 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -595,8 +636,8 @@ event = {
+ 	command = { type = manpowerpool value = 100 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = wartime_ic_mod value = 20 }\r
+-	command = { type = peacetime_ic_mod value = 20 }\r
++	command = { type = wartime_ic_mod value = 100 when = 1 }\r
++	command = { type = peacetime_ic_mod value = 100 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -616,9 +657,11 @@ event = {
+ 	country = ENG\r
+ \r
+ 	trigger = {\r
++	OR = { \r
+ 	event = 1891010 # 日本征討\r
+ 	war = { country = JAP country = CHI }\r
+ 	}\r
++	}\r
+ \r
+ 	name = "EVT_4656014_NAME"\r
+ 	desc = "EVT_4656014_DESC"\r
+@@ -637,6 +680,7 @@ event = {
+ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = wartime_ic_mod value = 24 }\r
+ 	command = { type = peacetime_ic_mod value = 24 }\r
++	command = { type = local_setflag which = ic_mod value = 24 when = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -875,16 +919,17 @@ event = {
+ 	command = { type = end_non_aggression which = ENG where = ISR }\r
+ 	command = { type = war which = ISR }\r
+ 	command = { type = alliance which = ARA }\r
+-	ai_chance = 20\r
++	ai_chance = 2\r
+ 	}\r
+ \r
+ 	action = { # 中東へ介入する余力はない\r
+ 	name = "ACTIONNAME4656019B"\r
++	trigger = { NOT = { alliance = { country = FRA country = DDR } } }\r
+ 	command = { type = dissent value = 8 }\r
+ 	command = { type = belligerence which = ENG value = -1 }\r
+ 	command = { type = relation which = ISR value = 10 }\r
+ 	command = { type = relation which = ARA value = 10 }\r
+-	ai_chance = 80\r
++	ai_chance = 98\r
+ 	}\r
+ }\r
+ \r
+@@ -900,12 +945,17 @@ event = {
+ 	country = ENG\r
+ \r
+ 	trigger = {\r
++	flag = CAN_ACW\r
+ 	NOT = { exists = USA }\r
+ 	NOT = { exists = CSA }\r
+ 	NOT = { exists = U00 }\r
+ 	NOT = { exists = UE0 }	\r
+ 	OR = { NOT = { exists = CAN } flag = CAN_Victory_America }\r
+ 	\r
++	NOT = { flag = USA_Victory_America }\r
++	NOT = { flag = CSA_Victory_America }\r
++	NOT = { flag = SOV_Victory_America }\r
++	NOT = { flag = UK_Victory_America }\r
+ 	}\r
+ \r
+ 	date = { day = 1 month = 0 year = 1900 }\r
+@@ -950,6 +1000,581 @@ event = {
+ 	}\r
+ }\r
+ \r
++##################################################\r
++#  英国本土戦\r
++# 何ということだ！\r
++# かつて皇帝でさえも足を踏み入れることのかなわかった英国本土に敵国は上陸を仕掛け、\r
++# その橋頭堡を確実なものとして築きつつある。\r
++# 英国における議会はこの一件の責任をとる形で総辞職し、政治家達は挙国一致内閣の編成を\r
++# 余儀なくされている。\r
++# そうした中にあって、軍部の一部過激派達は英国の愛国者達と組み、英国議会を破壊する計画を\r
++# 立てているという噂が流れている。\r
++# 問題となるのは、人々がどちらを信じ、選択するかということにある……。\r
++##################################################\r
++\r
++event = {\r
++	id = 4656022\r
++	random = no\r
++	country = ENG\r
++\r
++	trigger = {\r
++	atwar = yes\r
++	OR = {\r
++control = { province = 5 data = -2 }\r
++control = { province = 6 data = -2 }\r
++control = { province = 7 data = -2 }\r
++control = { province = 8 data = -2 }\r
++control = { province = 10 data = -2 }\r
++control = { province = 11 data = -2 }\r
++control = { province = 12 data = -2 }\r
++control = { province = 13 data = -2 }\r
++control = { province = 14 data = -2 }\r
++control = { province = 15 data = -2 }\r
++control = { province = 16 data = -2 }\r
++control = { province = 17 data = -2 }\r
++control = { province = 18 data = -2 }\r
++control = { province = 19 data = -2 }\r
++control = { province = 20 data = -2 }\r
++control = { province = 21 data = -2 }\r
++control = { province = 22 data = -2 }\r
++control = { province = 23 data = -2 }\r
++control = { province = 24 data = -2 }\r
++control = { province = 25 data = -2 }\r
++control = { province = 26 data = -2 }\r
++control = { province = 27 data = -2 }\r
++control = { province = 28 data = -2 }\r
++control = { province = 29 data = -2 }\r
++	}\r
++	}\r
++\r
++	date = { day = 1 month = 0 year = 1900 }\r
++	offset = 8\r
++	deathdate = { day = 29 month = 11 year = 9999 }\r
++\r
++	name = "EVT_4656022_NAME"\r
++	desc = "EVT_4656022_DESC"\r
++	style = 2\r
++	picture = "news_paperl"\r
++\r
++	\r
++	action = { \r
++	name = "ACTIONNAME4656022A" # ＜チャーチルだ！　チャーチルを呼べ！＞\r
++		command = { trigger = { ai =  no } type = dissent value = 50 }\r
++		command = { type = set_domestic which = democratic value = 10 }\r
++		command = { type = set_domestic which = political_left value = 4 }\r
++		command = { type = wakeminister which = 10018 }\r
++		command = { type = headofgovernment which = 10018 }\r
++		command = { type = foreignminister which = 10003 }\r
++		command = { type = armamentminister which = 10040 }\r
++		command = { type = ministerofsecurity which = 10005 }\r
++		command = { type = ministerofintelligence which = 10422 }\r
++		command = { type = manpower value = -300 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	command = {  type = add_division value = militia when = 4 }\r
++	#command = { type = morale which = land value = 50 }\r
++	#command = { type = event which = 4656024 when = 100 where = ENG }\r
++		\r
++	ai_chance = 80\r
++	}\r
++\r
++\r
++# \r
++# ＜愛国戦線と一部軍人はロンドン議会を占拠した！＞\r
++\r
++	action = { \r
++	name = "ACTIONNAME4656022B"\r
++		command = { type = set_domestic which = democratic value = 1 }\r
++		command = { type = set_domestic which = political_left value = 1 }\r
++		command = { type = dissent value = -50 }\r
++		command = { type = headofgovernment which = 10403 }\r
++		command = { type = foreignminister which = 10431 }\r
++		command = { type = armamentminister which = 10428 }\r
++		command = { type = ministerofsecurity which = 10430 }\r
++		command = { type = ministerofintelligence which = 10429 }\r
++	#command = { type = trigger which = 4656023 }\r
++	ai_chance = 20\r
++	}\r
++\r
++}\r
++\r
++\r
++#\r
++#\r
++#\r
++##########################################################################\r
++#  スピーク・フォー・イングランド\r
++# 欧州インターナショナルの成立にもっとも過敏に反応したのは大英帝国であった。\r
++# 現内閣の首班はこの一連の革命のドミノに対し何ら策を打つことが出来ず、議会においても\r
++# 玉虫色の答えしか出すことが出来なかった。\r
++# そうした状況の中で、労働党政治家アーサー・グリーンウッドが質問をする場面になった。\r
++# しかし、暗い雰囲気が立ち込め、誰もが大英帝国の敗北を予感するこの時にあって、彼は中々口を開けずにいた。\r
++# それを見て"保守党"政治家であるレオ・エイメリーは叫んだ。\r
++# 「アーサー、スピーク・フォー・イングランド！」\r
++# この言葉の後、アーサー・グリーンウッドは口を開いた。\r
++# 事態がここに及ぶまでの政治家たちの立場を擁護しながら、そうして導き出された現在の状況を彼は強く非難し、\r
++# その責任は現政権のみならず、対立する野党にも同様の責任があると宣言した。\r
++# その上で、現政権の解散と、与野党の立場や枠組みを問わない挙国一致内閣を提言し、最後にこのように述べた――。\r
++##########################################################################\r
++\r
++event = {\r
++	id = 4656023\r
++	random = no\r
++	country = ENG\r
++	\r
++	trigger = {\r
++	event = 3327107\r
++	}\r
++	\r
++	name = EVT_4656023_NAME\r
++	desc = EVT_4656023_DESC\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 我々に必要なのは、20世紀のウィリアム・ピットである！\r
++	name = "ACTIONNAME4656023A"\r
++	command = { type = dissent value = -20 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = setflag which = UK_FRA_Revolutionary_War }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  内閣解散宣言\r
++# 先のアーサー・グリーンウッド議員による提言は、保守党・労働党の枠組みを超えた熱狂的な議論を巻き起こすに至った。\r
++# 保守党・労働党の主たる議員が集った討論会において、まず最初に労働党が党の立場を明言することとなる。\r
++# まず、労働党は欧州革命の一連の流れについてこれを全面的に否定した。\r
++# 曰く\r
++# 「欧州諸国に存在していたはずの自治と文化的伝統、これら全ては欧州革命によって潰え、消滅した」\r
++# そして保守党もまた反・欧州大陸の見解を持ち、曰く\r
++# 「政治制度と王権は手続きと伝統によって防衛されるべきであり、これは野蛮が文明を放逐した忌むべき事態である」\r
++# と宣言。英国二大政党は欧州大陸へ立ち向かうことについて合意し、挙国一致内閣組閣を宣言した！\r
++##########################################################################\r
++\r
++event = {\r
++	id = 4656024\r
++	random = no\r
++	country = ENG\r
++	\r
++	trigger = {\r
++	flag = UK_FRA_Revolutionary_War\r
++	}\r
++	\r
++	name = EVT_4656024_NAME\r
++	desc = EVT_4656024_DESC\r
++	style = 2\r
++	picture = "news_paper"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 我々は諦めない。最後には必ず勝利する\r
++	name = "ACTIONNAMEIDA"\r
++	command = { type = wakeminister which = 10437 }\r
++	command = { type = headofgovernment which = 10437 }\r
++	command = { type = event which = 4656025 when = 30 where = ENG }\r
++	}\r
++}\r
++# 政府首班：大英帝国議会\r
++# 固有特性名＠伝統ある議会\r
++# 大英帝国議会は合同法の下で成立したグレートブリテン及びアイルランド連合王国それ以前から存在する\r
++# ブリテン島の長きにわたる議会の伝統を有する一大議会です。\r
++# 同議会は様々な変遷を得ながら、根本的には英国の利益を代表するために議論を実施し続けてきた組織であり、\r
++# その成果は過去の歴史が証明しているものです。\r
++# 様々な綱渡り、様々な駆け引きが生じては多数の名政治家を輩出してきた同議会は、目の前にどのような困難が立ちふさがろうとも、\r
++# 臆せず立ち向かい続けます。何故なら彼らは、全ての選択肢の中から彼らを選びだした民衆の信任を背景に持ち、\r
++# 彼ら民衆は、英国にとっての最善の選択肢を取ることを、常に政治家たちに求め続けているからです。\r
++# 不満度の上昇率－１００％\r
++\r
++\r
++##########################################################################\r
++#  ウィンストン・チャーチルの首相就任\r
++# 挙国一致内閣の組閣は難航した。\r
++# 労働党の現党首クレメント・アトリー氏は戦間期において労働党党首を務めており、現在の事態に責任を感じ、首相の地位に就くことに消極的であった。\r
++# 保守党の状況はさらに悪く、反共主義者として知られるネヴィル・チェンバレン氏は高齢に加え病を患っており、\r
++# エドワード・ウッドは英国の孤立主義の支持者であり、アトリー氏よりさらに立場が悪かった。\r
++# そこで白羽の矢が立ったのは、徹底抗戦派で知られ、第一次世界大戦においては横浜の戦いを指揮し、戦間期においては\r
++# デビッド・ロイド・ジョージ首相のフランス革命工作に反対していた立場のウィンストン・チャーチルであった。\r
++# 年齢で言えばネヴィル・チェンバレンに負けず劣らず彼も高齢であったが、チェンバレン氏と違い政治に参加するだけの体力を有していた。\r
++# 戦間期にはＷＷ１の時代の"横浜の虐殺者"の異名が邪魔をし、明確な政治的権力を持つことが出来なかったのも、\r
++# 一連のいわば"宥和政策"と距離が遠いということにもなり、半ば彼は"消去法的な"流れで首相の地位につくこととなる。\r
++##########################################################################\r
++event = {\r
++	id = 4656025\r
++	random = no\r
++	country = ENG\r
++	\r
++	\r
++	name = EVT_4656025_NAME\r
++	desc = EVT_4656025_DESC\r
++	style = 2\r
++	picture = "Churchill"\r
++	\r
++	\r
++	action = { # チャーチルは老齢だ。本当に大丈夫なのか？\r
++	name = "ACTIONNAME4656025A"\r
++	command = { type = wakeminister which = 10438 }\r
++	command = { type = headofgovernment which = 10438 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  大陸包囲の萌芽\r
++# 欧州大陸インターナショナルが対露革命戦争を開始した！\r
++# 彼らの目的は世界革命にあると判断した英国政府はロシアとコンタクトを取り、反・革命戦争を実施するという点において同意を取り、\r
++# また現在も中立にあるオランダ王国と同盟することを決定。\r
++# 一連の外交工作をうったのはチャーチルと共に大陸強硬派を自認するアンソニー・イーデン氏であり、\r
++# 消去法で選ばれたはずのウィンストン・チャーチルとその内閣は徐々に稼働を始め、実績を伸ばしつつあった。\r
++##########################################################################\r
++event = {\r
++	id = 4656026\r
++	random = no\r
++	country = ENG\r
++	\r
++	trigger = {\r
++	flag = UK_FRA_Revolutionary_War\r
++	\r
++	war = { country = FRA country = UER }\r
++	war = { country = SPR country = UER }\r
++	war = { country = U14 country = UER }\r
++	war = { country = U29 country = UER }\r
++	war = { country = DDR country = UER }\r
++	}\r
++	\r
++	name = EVT_4656026_NAME\r
++	desc = EVT_4656026_DESC\r
++	style = 2\r
++	picture = "Churchill"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 決して屈するな。我々は打ち負かされていないのだから\r
++	name = "ACTIONNAME4656026A"\r
++	command = { trigger = { NOT = { ispuppet = HOL } } type = alliance which = HOL }\r
++	command = { type = relation where = JAP value = 100 }\r
++	command = { type = relation where = UER value = 100 }\r
++	command = { type = wartime_ic_mod value = 100 when = 1 }\r
++	command = { type = peacetime_ic_mod value = 100 when = 1 }\r
++	\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++\r
++\r
++\r
++\r
++##########################################################################\r
++#  大陸包囲の成立\r
++# アジアの大陸軍国家である中華民国がロシア帝国へと宣戦を布告した。\r
++# これを見て大英帝国は欧州インターナショナル、中華民国へと宣戦を布告し、ロシア帝国及び大日本帝国と同盟を結んだ。\r
++# 後世に言われる"大陸包囲"の成立である。\r
++# この事態に際し、ウィンストン・チャーチルは英国議会において演説。\r
++# 汎ゆる場所での戦闘を宣言し、英国が降伏しない限り、必ず英国は勝利すると、彼特有のレトリックをもって宣言。\r
++# 一連の演説は英国議会の輝かしい瞬間＜Darkest Hour＞を象徴するものとして後世に認識されることとなる。\r
++##########################################################################\r
++# \r
++event = {\r
++	id = 4656027\r
++	random = no\r
++	country = ENG\r
++	\r
++	trigger = {\r
++	flag = UK_FRA_Revolutionary_War\r
++	war = { country = CHI country = UER }\r
++	}\r
++	\r
++	name = EVT_4656027_NAME\r
++	desc = EVT_4656027_DESC\r
++	style = 2\r
++	picture = "Churchill"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 我々は屈してはならない。決して、決して、決して、決して――\r
++	name = "ACTIONNAMEIDA"\r
++	command = { type = domestic which = defense_lobby value = 10 }\r
++	command = { type = domestic which = free_market value = 10 }\r
++	command = { type = domestic which = interventionism value = 10 }\r
++	command = { type = set_domestic which = political_left value = 4 }\r
++	command = { type = set_domestic which = democratic value = 8 }\r
++	command = { type = sleepminister which = 10438 }\r
++	command = { type = wakeminister which = 10439 }\r
++	command = { type = headofgovernment which = 10439 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++# 政治スライダー、タカ派、介入、自由経済MAX。政体、自由経済に\r
++# 政府首班：ウィンストン・チャーチル\r
++# →固有特性名＠不退転の伝統主義者\r
++# サー・ウィンストン・レナード・スペンサー・チャーチルはイギリスの政治家、軍人、作家です。\r
++# ＷＷ１を戦い、戦間期において政治家の立場にありながら表舞台に現れることがなかった彼は、\r
++# この緊急事態において首相の地位につくこととなりました。\r
++# その過程で起きた様々な事象を見れば、彼の政権は盤石なものではなく、寧ろ消去法的に選択されたものであったことが理解出来ます。\r
++# しかしそれでも、この緊急事態において彼ほどの適任者は他に存在しないでしょう。\r
++# 彼は頑迷なまでに保守的で、伝統的で、そして栄誉ある英国人そのものだからです。\r
++# 彼は幾度となく叫ぶことでしょう――決して屈してはならない。我々は勝利するのだから……と。\r
++# 同盟確立＋５０％\r
++# 司令官のスキル効率－５％\r
++# 資金生産－５％\r
++# ユニット生産コスト及び時間－５％\r
++# 軍需大臣：ピーヴァーブルック卿→天才的実務家\r
++# 情報大臣：シドニー・ライリー→過去に出した固有特性そのまま\r
++# 外務大臣：アンソニー・イーデン（ゲームにあるのそのまま）\r
++# 内務大臣：サー・ジョン・サイモン（ゲームにあるのそのまま）\r
++# 軍務大臣全般、スライダーで自動的に選択されるのそのまま\r
++# \r
++# 日本、ロシア帝国と同盟。中華民国、インターナショナルへ宣戦布告\r
++\r
++\r
++event = {\r
++	id = 4656028\r
++	random = no\r
++	persistent = yes\r
++	\r
++	trigger = {\r
++	NOT = { alliance = { country = CHI } }\r
++	event = 4656027\r
++	flag = UK_FRA_Revolutionary_War\r
++	OR = {\r
++	war = { country = FRA }\r
++	war = { country = CHI }\r
++	}\r
++	NOT = { war = { country = ENG } }\r
++	NOT = { alliance = { country = ENG } }\r
++	OR = {\r
++		AND = { \r
++		continent = Europe\r
++		year = 1938\r
++		}\r
++		AND = { \r
++		continent = Asia\r
++		year = 1940\r
++		}\r
++		AND = { \r
++		continent = Africa\r
++		year = 1941\r
++		}\r
++		AND = { \r
++		continent = Oceania\r
++		year = 1941\r
++		}\r
++		\r
++		\r
++	}\r
++\r
++	}\r
++	\r
++	name = EVT_4656027_NAME\r
++	desc = EVT_4656027_DESC\r
++	style = 2\r
++	picture = "Churchill"\r
++	\r
++	date = { day = 0 month = 0 year = 1900 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1999 }\r
++	\r
++	action = { # 我々は屈してはならない。決して、決して、決して、決して――\r
++	name = "ACTIONNAMEIDA"\r
++	command = { type = alliance which = ENG when = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++###################################################\r
++##  英国の降伏\r
++## ロンドン議会を愛国戦線と一部軍人によって占拠されると、英国政府は組織の改変を余儀なくされ、程なく\r
++## 議会は停止され、憲法改正と何より敵国に対する降伏条約の条件を練る必要が出てきた。\r
++## 敵国から課せられる条件は苛烈なものであり、艦船の大量譲渡や軍港の使用権の譲渡、賠償金の支払い\r
++## などが盛り込まれたものとなった。\r
++## この日、先のロンドン議会占拠の際に崩れかけていたロンドン塔が完全に崩壊し、長く飼育され続けていた\r
++## ワタリガラスが一匹残らず居なくなっていたことが報告されていた。\r
++###################################################\r
++#\r
++## ＜……英国はこの先、どうなってしまうのだろうか？＞\r
++#\r
++#\r
++#\r
++#\r
++#\r
++#\r
++##########################################################################\r
++##  イギリスの降伏（ENG）\r
++## 我が軍は驚異的な速度でイギリス本土の大部分を占領下に置くことに成功した。\r
++## 残留している英国政府高官は、我が国に対し、かの国の降伏と我が国の条件について交渉を申し出ている。\r
++## 彼らは非常に明確な言葉でイギリス本土の国民に対して大英帝国の終焉という声明を出しており、交渉をおこなえば譲歩を引き出せるだろう。\r
++##########################################################################\r
++#\r
++#\r
++#\r
++##########################################################################\r
++##  イギリス降伏（ENG）\r
++## 我が国の敵国は要求を提示しました。我々が同意しようとしていることを次世代の人々が許しますように。\r
++##########################################################################\r
++#\r
++#event = {\r
++#	id = 46700054\r
++#	random = no\r
++#	country = ENG\r
++#	save_date = yes\r
++#\r
++#	name = "EVT_46700054_NAME"\r
++#	desc = "EVT_46700054_DESC"\r
++#	style = 2\r
++#	picture = "news_paper"\r
++#\r
++#\r
++#	action = { # 協定に調印する\r
++#	name = "ACTIONNAME46700054A"\r
++#	trigger = { flag = whitepeace }\r
++#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 }\r
++#	command = { type = secederegion which = U12 value = "England" }\r
++#	command = { type = secederegion which = U12 value = "Scotland" }\r
++#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
++#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
++#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
++#	command = { type = sleepteam which = 10006 }\r
++#	command = { type = sleepteam which = 10007 }\r
++#	command = { type = sleepteam which = 10016 }\r
++#	command = { type = trigger which = 46700055 }\r
++#	}\r
++#\r
++#	action = { # 協定に調印する\r
++#	name = "ACTIONNAME46700054A"\r
++#	trigger = { flag = lightdem }\r
++#	command = { type = secedeprovince which = DDR value = 5 } # スカパフロー\r
++#	command = { type = secedeprovince which = DDR value = 9 } # ラーウィック\r
++#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 } #units change allegiance\r
++#	command = { type = secederegion which = U12 value = "England" }\r
++#	command = { type = secedeprovince which = U12 value = 4 } # ストーノウェイ\r
++#	command = { type = secedeprovince which = U12 value = 6 } # インヴァネス\r
++#	command = { type = secedeprovince which = U12 value = 7 } # アバディーン\r
++#	command = { type = secedeprovince which = U12 value = 8 } # フォート・ウィリアム（スコットランド）\r
++#	command = { type = secedeprovince which = U12 value = 10 } # ダンフリーズ\r
++#	command = { type = secedeprovince which = U12 value = 11 } # グラスゴー\r
++#	command = { type = secedeprovince which = U12 value = 12 } # エディンバラ\r
++#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
++#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
++#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
++#	command = { type = sleepteam which = 10006 }\r
++#	command = { type = sleepteam which = 10007 }\r
++#	command = { type = sleepteam which = 10016 }\r
++#	command = { type = trigger which = 46700055 }\r
++#	}\r
++#\r
++#	action = { # 協定に調印する\r
++#	name = "ACTIONNAME46700054A"\r
++#	trigger = { flag = meddem }\r
++#	command = { type = secedeprovince which = DDR value = 4 } # ストーノウェイ\r
++#	command = { type = secedeprovince which = DDR value = 5 } # スカパフロー\r
++#	command = { type = secedeprovince which = DDR value = 6 } # インヴァネス\r
++#	command = { type = secedeprovince which = DDR value = 7 } # アバディーン\r
++#	command = { type = secedeprovince which = DDR value = 8 } # フォート・ウィリアム（スコットランド）\r
++#	command = { type = secedeprovince which = DDR value = 9 } # ラーウィック\r
++#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 } #units change allegiance\r
++#	command = { type = secederegion which = U12 value = "England" }\r
++#	command = { type = secederegion which = U12 value = "Scotland" }\r
++#	command = { type = secedeprovince which = U12 value = 10 } # ダンフリーズ\r
++#	command = { type = secedeprovince which = U12 value = 11 } # グラスゴー\r
++#	command = { type = secedeprovince which = U12 value = 12 } # エディンバラ\r
++#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
++#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
++#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
++#	command = { type = sleepteam which = 10006 }\r
++#	command = { type = sleepteam which = 10007 }\r
++#	command = { type = sleepteam which = 10016 }\r
++#	command = { type = trigger which = 46700055 }\r
++#	}\r
++#\r
++#	action = { # 協定に調印する\r
++#	name = "ACTIONNAME46700054A"\r
++#	trigger = { flag = highdem }\r
++#	command = { type = secedeprovince which = DDR value = 4 } # ストーノウェイ\r
++#	command = { type = secedeprovince which = DDR value = 5 } # スカパフロー\r
++#	command = { type = secedeprovince which = DDR value = 6 } # インヴァネス\r
++#	command = { type = secedeprovince which = DDR value = 7 } # アバディーン\r
++#	command = { type = secedeprovince which = DDR value = 8 } # フォート・ウィリアム（スコットランド）\r
++#	command = { type = secedeprovince which = DDR value = 9 } # ラーウィック\r
++#	command = { type = secedeprovince which = DDR value = 10 } # ダンフリーズ\r
++#	command = { type = secedeprovince which = DDR value = 11 } # グラスゴー\r
++#	command = { type = secedeprovince which = DDR value = 12 } # エディンバラ\r
++#	command = { trigger = { NOT = { exists = SCO } } type = independence which = SCO value = 0 }\r
++#	command = { trigger = { NOT = { ispuppet = SCO } } type = make_puppet which = SCO }\r
++#	command = { type = secederegion which = SCO value = "Scotland" }\r
++#	command = { trigger = { NOT = { exists = U12 } } type = independence which = U12 value = 0 }\r
++#	command = { type = secederegion which = U12 value = "England" }\r
++#	command = { trigger = { NOT = { exists = IRE } } type = independence which = IRE value = 0 }\r
++#	command = { trigger = { NOT = { ispuppet = IRE } } type = make_puppet which = IRE }\r
++#	command = { trigger = { exists = IRE } type = secederegion which = IRE value = "Ireland" }\r
++#	command = { type = sleepteam which = 10006 }\r
++#	command = { type = sleepteam which = 10007 }\r
++#	command = { type = sleepteam which = 10016 }\r
++#	command = { type = trigger which = 46700055 }\r
++#	}\r
++#}\r
++#\r
++#\r
++#\r
++#\r
++#\r
++#\r
++#\r
++#\r
+ \r
+ \r
+ ##########################################################################\r

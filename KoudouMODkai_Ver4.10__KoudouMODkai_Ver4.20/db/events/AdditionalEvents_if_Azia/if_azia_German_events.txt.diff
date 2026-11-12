@@ -1,0 +1,66 @@
+--- A/db/events/AdditionalEvents_if_Azia/if_azia_German_events.txt [utf-8]
++++ B/db/events/AdditionalEvents_if_Azia/if_azia_German_events.txt [utf-8]
+@@ -2166,13 +2166,15 @@ event = {
+ 	event = 7060324 # ダンツィヒか戦争か\r
+ 	flag = Danzig_or_War_NOT # ドイツがダンツィヒを要求しない\r
+ 	}\r
++	}\r
++	NOT = {\r
+ 	event = 2003038 # ダンツィヒか戦争か ― ポーランドが屈した\r
+ 	event = 7060075 # ドイツのポーランド進駐\r
+ 	event = 7060079 # ドイツへ西部ポーランドを割譲\r
+ 	event = 7060191 # ドイツのダンツィヒ要求\r
+ 	event = 7060327 # ダンツィヒか戦争か ― ポーランドが屈した\r
+-	NOT = { control = { province = 181 data = GER } } # ダンツィヒ\r
+ 	}\r
++	NOT = { control = { province = 181 data = GER } } # ダンツィヒ\r
+ 	exists = POL\r
+ 	NOT = {\r
+ 	war = { country = GER country = FRA }\r
+@@ -2207,13 +2209,15 @@ event = {
+ 	event = 7060324 # ダンツィヒか戦争か\r
+ 	flag = Danzig_or_War_NOT # ドイツがダンツィヒを要求しない\r
+ 	}\r
++	}\r
++	NOT = {\r
+ 	event = 2003038 # ダンツィヒか戦争か ― ポーランドが屈した\r
+ 	event = 7060075 # ドイツのポーランド進駐\r
+ 	event = 7060079 # ドイツへ西部ポーランドを割譲\r
+ 	event = 7060191 # ドイツのダンツィヒ要求\r
+ 	event = 7060327 # ダンツィヒか戦争か ― ポーランドが屈した\r
+-	NOT = { control = { province = 181 data = GER } } # ダンツィヒ\r
+ 	}\r
++	NOT = { control = { province = 181 data = GER } } # ダンツィヒ\r
+ 	exists = POL\r
+ 	NOT = {\r
+ 	war = { country = GER country = FRA }\r
+@@ -2289,8 +2293,8 @@ event = {
+ 	command = { type = domestic which = political_left value = -1 }\r
+ 	command = { type = domestic which = interventionism value = -1 }\r
+ 	command = { type = secedeprovince which = GER value = 181 }\r
+-	command = { type = trigger which = 45790013 }\r
+-	ai_chance = 50\r
++	command = { type = trigger which = 45790012 }\r
++	ai_chance = 0\r
+ 	}\r
+ \r
+ 	action = { # 戦争だ\r
+@@ -2298,8 +2302,8 @@ event = {
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = domestic which = political_left value = 1 }\r
+ 	command = { type = domestic which = interventionism value = 1 }\r
+-	command = { type = trigger which = 45790012 }\r
+-	ai_chance = 50\r
++	command = { type = trigger which = 45790013 }\r
++	ai_chance = 100\r
+ 	}\r
+ }\r
+ \r
+@@ -2344,6 +2348,7 @@ event = {
+ \r
+ 	action = { # 戦争だ!\r
+ 	name = "ACTIONNAME45790013A"\r
++	command = { type = end_non_aggression which = POL where = GER }\r
+ 	command = { type = war which = POL }\r
+ 	}\r
+ }\r

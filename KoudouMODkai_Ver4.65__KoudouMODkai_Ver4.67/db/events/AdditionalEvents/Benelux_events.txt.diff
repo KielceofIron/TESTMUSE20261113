@@ -1,0 +1,81 @@
+--- A/db/events/AdditionalEvents/Benelux_events.txt [cp932]
++++ B/db/events/AdditionalEvents/Benelux_events.txt [cp932]
+@@ -27,8 +27,8 @@
+ #id = 213022 フランスは我が隣国に攻撃を仕掛けた(ルクセンブルグver\r
+ #id = 213023 フランスは我が国に攻撃を仕掛けた(ベネルクスver\r
+ #id = 213024 ドイツは我が国に攻撃を仕掛けた(ベネルクスver\r
+-#id = 213201 オランダ・ベネルクス用　蘭領東インド併合イベント\r
+-#id = 213202 ベネルクス用　蘭領東インド中核州化イベント\r
++#id = 213201 オランダ・ベネルクス用 蘭領東インド併合イベント\r
++#id = 213202 ベネルクス用 蘭領東インド中核州化イベント\r
+ #id = 213203 ベネルクス本土失陥\r
+ #id = 213204 ベネルクス本土失陥(ドイツ側)\r
+ #id = 213205 ベネルクスの本国奪還\r
+@@ -1451,7 +1451,7 @@ event = {
+ \r
+ \r
+ \r
+-#　オランダ用　蘭領東インド併合イベント\r
++# オランダ用 蘭領東インド併合イベント\r
+ \r
+ event = {\r
+ 	id = 213201\r
+@@ -1555,7 +1555,7 @@ event = {
+ \r
+ \r
+ \r
+-# ベネルクス用　東インド中核化　\r
++# ベネルクス用 東インド中核化 \r
+ \r
+ event = {\r
+ 	id = 213202\r
+@@ -1641,7 +1641,7 @@ event = {
+ 	}\r
+ }\r
+ \r
+-#　ベネルクス本土失陥イベント（オランダ陥落を書き換え）\r
++# ベネルクス本土失陥イベント（オランダ陥落を書き換え）\r
+ \r
+ event = {\r
+ 	id = 213203\r
+@@ -1954,7 +1954,7 @@ event = { #
+ 		command = { type = chiefofnavy which = 9545009 }\r
+ 		command = { type = chiefofair which = 9545010 }\r
+ \r
+-		#command = { type = ai which = "aus_kuk.ai" }\r
++		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ \r
+ 	action = {\r
+@@ -1977,7 +1977,7 @@ event = { #
+ 		command = { type = chiefofnavy which = 9546009 }\r
+ 		command = { type = chiefofair which = 9546010 }\r
+ \r
+-		#command = { type = ai which = "aus_kuk.ai" }\r
++		#command = { trigger = { ai = yes } type = ai which = "aus_kuk.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -2008,7 +2008,10 @@ event = {
+ \r
+ 	action_a = {\r
+ 		name = "EVT_362_ACTC"\r
+-		command = { trigger = { OR = { headofstate = 9545001 headofstate = 9545011 headofstate = 9545174 headofstate = 9545175 } } type = headofstate which = 9545137 } # Queen Juliana\r
++		command = { trigger = { headofstate = 9545001 } type = headofstate which = 9545137 } # Queen Juliana\r
++		command = { trigger = { headofstate = 9545011 } type = headofstate which = 9545137 } # Queen Juliana\r
++		command = { trigger = { headofstate = 9545174 } type = headofstate which = 9545137 } # Queen Juliana\r
++		command = { trigger = { headofstate = 9545175 } type = headofstate which = 9545137 } # Queen Juliana\r
+ 		command = { trigger = { headofstate = 9545135 } type = headofstate which = 9545136 } # Queen Juliana\r
+ 		command = { type = sleepminister which = 9545001 }\r
+ 		}\r
+@@ -2045,8 +2048,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		name = "EVT_362_ACTC"\r
+-		command = { trigger = { OR = { headofstate = 9546001 \r
+-									   headofstate = 9546087 } } type = headofstate which = 9546012 }\r
++		command = { trigger = { headofstate = 9546001 } type = headofstate which = 9546012 }\r
++		command = { trigger = { headofstate = 9546087 } type = headofstate which = 9546012 }\r
+ 		command = { trigger = { headofstate = 9546114 } type = headofstate which = 9546115 }\r
+ 		command = { type = dissent value = -1 }\r
+ 		}\r

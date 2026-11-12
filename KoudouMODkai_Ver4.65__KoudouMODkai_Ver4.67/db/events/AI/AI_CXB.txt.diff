@@ -1,0 +1,49 @@
+--- A/db/events/AI/AI_CXB.txt [ascii]
++++ B/db/events/AI/AI_CXB.txt [ascii]
+@@ -23,7 +23,7 @@ event = {
+ 	style = 0\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/Minor_Upg_Peace.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/Minor_Upg_Peace.ai" }\r
+ 		command = { type = local_setflag which = UPGPeace }\r
+ 	}\r
+ }\r
+@@ -48,7 +48,7 @@ event = {
+ 	style = 0\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/Minor_Upg_War.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/Minor_Upg_War.ai" }\r
+ 		command = { type = local_clrflag which = UPGPeace }\r
+ 	}\r
+ }\r
+@@ -79,7 +79,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/CXB_EXP_Change.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/CXB_EXP_Change.ai" }\r
+ 		command = { type = local_setflag which = CXBAllEXPForces }\r
+ 		command = { type = local_clrflag which = CXBChinaFeeder1 }\r
+ 		command = { type = local_clrflag which = CXBChinaFeeder2 }\r
+@@ -139,7 +139,7 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/CXB_Atwar_JAP.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/CXB_Atwar_JAP.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -170,8 +170,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { type = ai which = "switch/WAR_Backoff.ai" }\r
+-		command = { type = ai which = "Air_Ground.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "switch/WAR_Backoff.ai" }\r
++		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
+ 		command = { type = local_setflag which = CXBCYNWarBackoff }\r
+ 	}\r
+ }\r

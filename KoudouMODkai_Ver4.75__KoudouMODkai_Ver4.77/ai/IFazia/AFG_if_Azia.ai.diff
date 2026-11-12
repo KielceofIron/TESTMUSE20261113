@@ -1,0 +1,106 @@
+--- A/ai/IFazia/AFG_if_Azia.ai [ascii]
++++ B/ai/IFazia/AFG_if_Azia.ai [ascii]
+@@ -374,11 +374,17 @@ military = {
+ technology = { \r
+ 	endgoal 	= { } \r
+ 	preference 	= {\r
++		# Computing Machine\r
++		5310 54010 54030 5320 5330 5340\r
++\r
+ 		# Manufacturing\r
+ 		5810 5820 5050 5830 5060 5070 5110 5120 5840 5850 5860\r
+ \r
+ 		# CONSTRUCTION\r
+-		5800 5080 5090\r
++		5800 5080 5090 5100\r
++\r
++		# Agriculture\r
++		5700 5710 5010 5020 5030 5040\r
+ \r
+ 		# Assembly Line\r
+ 		5180\r
+@@ -389,12 +395,11 @@ technology = {
+ 		# Light / Mountain\r
+ 		1160 1170 1180 1190 1200 1210 1220 1230 1240 1250 1260 1270 1280 1290 1300\r
+ \r
+-\r
+ 		# Field Artillery Support\r
+ 		2290 2300 2310 2900 2910 2920 2930 2940 2320 2330 2340 2360 2950 2350\r
+ 		\r
+ 		#Landdoctrines\r
+-		#6560 6030 6110 6120 6130 6140 14070\r
++		6000300 6000330 6000310 6000340 6000320 6000350 6000360 6000390\r
+ 	} \r
+ 	ignore 	= {\r
+ 		# Assembly Line\r
+@@ -470,11 +475,11 @@ technology = {
+ 	armor 		= 1\r
+ 	infantry 	= 6\r
+ 	industry 	= 3\r
+-	aircraft 	= 0\r
++	aircraft 	= 1\r
+ 	naval 		= 0\r
+ 	land_doctrines 	= 8\r
+-	secret_weapons 	= 0\r
+-	air_doctrines 	= 0\r
++	secret_weapons 	= 1\r
++	air_doctrines 	= 1\r
+ 	naval_doctrines = 0\r
+ }\r
+ \r
+@@ -497,10 +502,10 @@ leader_ratio = {
+ garrison = {\r
+ 	defend_overseas_beaches = no\r
+ 	home_multiplier 	= 1.0\r
+-	overseas_multiplier = 0.5\r
++	overseas_multiplier = 0.9\r
+ 	home_peace_cap 		= 20\r
+ 	war_zone_odds 		= 2.0\r
+-	key_point_prio_mult	= 0\r
++	key_point_prio_mult	= 0.5\r
+ 	revolt_risk_mult	= 1.0\r
+ \r
+ 	# PRIORITIES:\r
+@@ -520,31 +525,31 @@ garrison = {
+ 		U02 = 10\r
+ 		PER = -1\r
+ 		TUR = -1\r
+-		UER = 40\r
+-		RUS = 40\r
+-		SOV = 40\r
++		UER = 10\r
++		RUS = 10\r
++		SOV = 10\r
+ 		SAU = -1\r
+ 		CHI = 10\r
+ 		SIK = 10\r
+ 		UPE = -1\r
+ 	}\r
+ 	province_priorities = {	\r
+-     	2169 = 15 \r
+-     	2171 = 15 \r
++     	2169 = 0.2\r
++     	2171 = 0.2\r
+ 	}\r
+ 	area_multiplier = { }\r
+ }\r
+ front = { \r
+-	recklessness 		= 1 # 0-3\r
+-	distrib_vs_ai 		= even\r
+-	distrib_vs_human 	= even\r
++	recklessness 		= 3 # 0-3\r
++	distrib_vs_ai 		= offensive\r
++	distrib_vs_human 	= defensive\r
+ \r
+ 	enemy_reinf_days	= 6\r
+-	reserve_prop		= 0.1\r
++	reserve_prop		= 0.0\r
+ 	panic_ratio_vs_ai	= 2.5\r
+ 	panic_ratio_vs_human 	= 2.5\r
+-	base_attack_odds	= 1.3\r
+-	min_attack_odds		= 1.1\r
++	base_attack_odds	= 1.1\r
++	min_attack_odds		= 0.8\r
+ 	max_attack_odds		= 3.0\r
+ 	reinforce_odds		= 1.2\r
+ 	withdraw_odds		= 0.6\r

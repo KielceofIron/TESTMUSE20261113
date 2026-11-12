@@ -1,0 +1,705 @@
+--- A/ai/IFswitch/UER/UER_fin.ai [cp932]
++++ B/ai/IFswitch/UER/UER_fin.ai [cp932]
+@@ -1,351 +1,351 @@
+-# Soviet 1936 AI File by Lothos\r
+-\r
+-switch = no # [yes/no]\r
+-max_front_ratio = 20000 # 1.2 \r
+-max_front_ratios = {\r
+-	\r
+-	FIN = 25000\r
+-}\r
+-max_garrison_prop = 0.05\r
+-min_garrison_prop = 0.03\r
+-neutrality = 0.000 \r
+-war = 0\r
+-ferocity = yes\r
+-reinforcement = 1.0000\r
+-upgrading = 0.0000 \r
+-desperation = 0.01\r
+-strat_redeploy_threshold = 50\r
+-max_redeploying = 1.0\r
+-exp_force_ratio = 0.10\r
+-exp_force_ratios = { } \r
+-no_exp_forces_to = { U13 UB8 ROM }\r
+-\r
+-###################################\r
+-# Diplomacy\r
+-###################################\r
+-combat = { } \r
+-\r
+-claim_acceptance = -69\r
+-\r
+-liberate = { ARA ARG AUS BRA BUR IDC CHI CON CRO CSA DEN EAF EGY ETH EUS FIN FLA GRE HOL HUN IND IRE JAP KOR KUR MAD LUX MEX MLY MTN OTT PAK PAL PER POR ROM RSI SAF SCA SCH SER SIA SIB SLO SLV SOM SPA\r
+-	     SYR TRA TEX TIB UPE VIC WLL U07 U56 U64 U66 U68 U69 U71 U73 U76 U77 U78 U79 U80 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UB4 UB5 UB6 UB7 UB9 UC0 UC1 UC2 UC3 UC4 UC5 UC6 UC7 UC9 \r
+-	     UD0 UD8 UD9 UE1 UE2 UE3 UE4 UF1 }\r
+-\r
+-liberate_nation = {  }\r
+-\r
+-\r
+-demand_claims = {\r
+-	EST\r
+-	LAT\r
+-	ROM\r
+-	LIT\r
+-	FIN\r
+-}\r
+-\r
+-target = { \r
+-\r
+-	#Finland\r
+-	531 = 100 # Viipur\r
+-	532 = 100 # Sortavalo\r
+-} \r
+-\r
+-###################################\r
+-# Construction and Tech Research\r
+-###################################\r
+-#Default values\r
+-\r
+-\r
+-military = { \r
+-	relative_build_scheme 	= no\r
+-	max_batch_peace 		= 680 \r
+-	max_batch_war 			= 780 # 320 \r
+-	max_batch_home_front = 730 # 180\r
+-        extra_convoys_war = 0.000 \r
+-        extra_convoys_peace = 0.000 \r
+-\r
+-\r
+-	#### Divisions etc... Sov build land setting\r
+-	infantry 		= 42 # 63\r
+-	cavalry 	= 0\r
+-	motorized 		= 18 # 6\r
+-	mechanized 	= 10 # 0\r
+-	light_armor 	= 0\r
+-	armor 			= 10\r
+-	paratrooper 	= 0\r
+-	marine 		= 0\r
+-	bergsjaeger 	= 9 # 0\r
+-	garrison	= 0\r
+-    hq 				= 2\r
+-	militia 	= 0 # 0\r
+-#				91 %\r
+-	interceptor 		= 3 # 5\r
+-	multi_role 		= 2 # 5\r
+-	cas 			= 2 # 5\r
+-	strategic_bomber = 0\r
+-	tactical_bomber 	= 2 # 3\r
+-	naval_bomber 	= 0\r
+-	transport_plane = 0\r
+-	flying_bomb 	= 0\r
+-	flying_rocket 	= 0\r
+-#				9 % # 18 %\r
+-	battleship 	= 0\r
+-	carrier 	= 0\r
+-	escort_carrier	= 0\r
+-	destroyer 	= 0\r
+-	light_cruiser 	= 0\r
+-	heavy_cruiser 	= 0\r
+-	battlecruiser 	= 0\r
+-	submarine 	= 0\r
+-	nuclear_submarine = 0\r
+-	transports 	= 0\r
+-#				0 %\r
+-\r
+-\r
+-	#### Brigades\r
+-	artillery 		= 75 # 36\r
+-	sp_artillery 		= 25 # 5\r
+-	cavalry_brigade = 0 \r
+-	sp_anti_air = 5 # 0\r
+-	medium_armor 	= 15 # 0\r
+-	tank_destroyer 	= 10 # 0\r
+-	light_armor_brigade = 0\r
+-	heavy_armor 		= 2\r
+-	super_heavy_armor = 0\r
+-	armored_car 	= 0\r
+-	anti_air 		= 2\r
+-	police 		= 0\r
+-	engineer 		= 4\r
+-#				49%\r
+-\r
+-            cag = 100.000\r
+-	    escort = 100.0000\r
+-\r
+-            naval_asw = 20.0000 \r
+-            naval_anti_air_s = 20.0000 \r
+-            naval_radar_s = 20.0000 \r
+-            naval_fire_controll_s = 20.0000 \r
+-            naval_improved_hull_s = 10.0000 \r
+-            naval_torpedoes_s = 10.0000 \r
+-            naval_anti_air_l = 0.0000 \r
+-            naval_radar_l = 0.0000 \r
+-            naval_fire_controll_l = 0.0000 \r
+-            naval_improved_hull_l = 0.0000 \r
+-            floatplane = 0.0000\r
+-}\r
+-\r
+-technology = { \r
+-	endgoal 	= { } \r
+-		preference 	= { \r
+-		# Regular Infantry\r
+-		1010 1020 1030 1040 1050 1060 1070 1080 1090 1100 1110 1120 1130 1140 1150 13000 13010 13020\r
+-\r
+-		# 騎兵\r
+-		1380 1390\r
+-\r
+-		# 兵站\r
+-		1980 1990 199130 199100 199140\r
+-\r
+-		# Agriculture\r
+-		5700 5710 5010 5020 5030 5040 5720 53000 53010\r
+-\r
+-		# Engineers\r
+-		1830 1840 1850 1860 1870\r
+-\r
+-		# Mechanized Infantry\r
+-		1470 1480 1490 1510 1520\r
+-\r
+-		# Motorized Infantry\r
+-		1396 1400 1410 1420 1430 1440 1450 1460 \r
+-\r
+-		# Light tanks\r
+-		7600 7610 2010 2630 2640 2646 2650 2030 2040 2050 2060\r
+-\r
+-		# Medium tanks\r
+-		2070 2080 2090 2140 11000 2660 11010 2670\r
+-		\r
+-		# Interceptors\r
+-		4510 4520 4530 4540 4550 4010 4020 4030 4060 4090 15000 15010 15020 4560 4570 4580\r
+-\r
+-		# Close Air Support\r
+-		4400 4170 4280 4450 4180 15120 15130\r
+-\r
+-		# manufactoring\r
+-		5810 5820 5050 5830 5060 5070 5130 5110 5120 5840 5850 5860\r
+-\r
+-		# Construction Engineering\r
+-		5090\r
+-		\r
+-		# Applied Assembly lines\r
+-		5140 5150 5160 5170 5180\r
+-		\r
+-		# Computers\r
+-		5320 5330 5340\r
+-\r
+-		#EQUIPMENT Winter\r
+-		5920 5930\r
+-		\r
+-		# Land Doctrines Soviet Branch.\r
+-		6310 6320 6330 6340 6350 6360 6370 14060 6770 6780 6730 6750 6760 6860 6870 6840\r
+-		\r
+-		# Naval Doctrines\r
+-		8120 8210 8310 81380 8160 8330 8200\r
+-\r
+-		# Air Doctrines\r
+-		9070 9080 9090 9100 9110 9130 9140 9190 9200 9220 9240 9260 9270 9280 9310 9320 9330 9350\r
+-\r
+-		# 戦車単独運用\r
+-		6930\r
+-\r
+-		# Light / Mountain\r
+-		1160 1170 1180 1190 1200 1210 1220 1230 1240 1250 1260 1270 1280 1290 1300 13030 13040 13050\r
+-	} \r
+-	ignore 		= {\r
+-		# Light / Mountain\r
+-		# 1210 1220\r
+-\r
+-		# Marines\r
+-		# 1560 1570\r
+-		1560 1570 1580 1590 1600 1610 1620 1630 1640 1650 1660\r
+-\r
+-		# Airborne Infantry\r
+-		1670 1680 1690 1700 1710 1720 1730 1740\r
+-\r
+-		# Mechanized Infantry\r
+-		# 1490 1510 1520\r
+-		\r
+-		# Armoured Cars\r
+-		# 2150 2160 2890 11110\r
+-		\r
+-		# Air Transports\r
+-		4290 4250 4260 4270 15180 15190\r
+-\r
+-		# Naval Bomber\r
+-		4190 4200\r
+-\r
+-		# 水上機 # 追加\r
+-		4740 4750 4760 4770 4780 4790\r
+-		\r
+-		#EQUIPMENT Jungle / Desert\r
+-		5940 5950 5960 5970\r
+-\r
+-		# Commerce Defense\r
+-		8150 8160 8170 \r
+-		\r
+-		# Anti-Submarine Patrols\r
+-		8200 8210 8220 8230 8240 8250 8260 8300 8310 8320 8330 8340 8350 \r
+-	}\r
+- \r
+-	armor 		= 7\r
+-	infantry 	= 5\r
+-	industry 	= 6\r
+-	aircraft 	= 6\r
+-	naval 		= 3\r
+-	land_doctrines 	= 4\r
+-	secret_weapons 	= 1\r
+-	air_doctrines 	= 4\r
+-	naval_doctrines = 2\r
+-}  \r
+-\r
+-###################################\r
+-# Ground Combat, Leaders and Garrisons\r
+-###################################\r
+-leader_ratio = {\r
+-	land_field_marshal 	=0.02\r
+-	land_general 		=0.031\r
+-	land_lt_general 	=0.41\r
+-\r
+-	sea_grand_admiral 	=0.02\r
+-	sea_admiral 		=0.061\r
+-	sea_vice_admiral 	=0.401\r
+-\r
+-	air_marshal 		=0.02\r
+-	air_general 		=0.091\r
+-	air_lt_General 		=0.11\r
+-}\r
+-garrison = {\r
+-	defend_overseas_beaches = no\r
+-	home_multiplier 	= 1.0\r
+-	overseas_multiplier 	= 0.5\r
+-	home_peace_cap 		= 5\r
+-	war_zone_odds 		= 2.5\r
+-	key_point_prio_mult	= 1.0\r
+-	revolt_risk_mult	= 0.5\r
+-\r
+-	# PRIORITIES:\r
+-	beach			= 0	# Beach level 2\r
+-	capital			= 5	# Our capital\r
+-	human_border	= 0	# Ignored for allied human players\r
+-	war_target		= 500	# The next country targeted for attack by this AI\r
+-	reserves 		= 4\r
+-	\r
+-	opposing_alliance	= 5	# For neutrals, all alliances are "opposing"\r
+-	claim_threat		= 0	# If we are neutral, countries with claims on us get this\r
+-	unstable_border		= 2	# Bordering countries at war with someone else get this\r
+-\r
+-	# Borders with specific countries\r
+-	country_priorities = {\r
+-		FIN = 20000 # 追加\r
+-	}\r
+-	province_priorities = {\r
+-		553 = 50 # Leningrad\r
+-	\r
+-	}\r
+-	ignore = {\r
+-		268 # Liepaja (German Border easy surround hex)\r
+-		1541 # Okha (Bordering Japan, unimportant)\r
+-		1184 # Petropavlovsk (USSR putting units here, don't know why, far east mountain)\r
+-	}\r
+-	area_multiplier = {\r
+-	}\r
+-}\r
+-front = { \r
+-	recklessness 		= 3 # 0-3\r
+-	distrib_vs_ai 		= even\r
+-	distrib_vs_human 	= even\r
+-\r
+-	enemy_reinf_days	= 6\r
+-	reserve_prop		= 0.25\r
+-	panic_ratio_vs_ai	= 2.0\r
+-	panic_ratio_vs_human	= 2.0\r
+-	base_attack_odds	= 1.3\r
+-	min_attack_odds		= 1.1\r
+-	max_attack_odds		= 30.0\r
+-	reinforce_odds		= 1.2\r
+-	withdraw_odds		= 0.1\r
+-\r
+-	strength 	= 1.0\r
+-	organisation 	= 1.0\r
+-	soft_attack 	= 1.0\r
+-	hard_attack 	= 1.0\r
+-	ground_defense 	= 1.0\r
+-	dig_in 		= 1.0 # Against defender\r
+-\r
+-	frozen_attack 	= 1.0\r
+-	snow_attack 	= 1.0\r
+-	blizzard_attack = 1.0\r
+-	storm_attack 	= 1.0\r
+-	muddy_attack 	= 1.0\r
+-\r
+-	\r
+-	\r
+-	occupied 	= 0.7\r
+-	owned 		= 0.7\r
+-\r
+-	jungle_attack 	= 1.0\r
+-	mountain_attack = 1.0\r
+-	swamp_attack 	= 1.0\r
+-	forest_attack 	= 1.0\r
+-	hill_attack 	= 1.0\r
+-	urban_attack 	= 1.0\r
+-	river 		= 1.0\r
+-\r
+-	largefort 	= 1.0\r
+-	smallfort 	= 1.0\r
+-\r
+-      	enemy_handicap = {\r
+-	} \r
+-      	passivity = {\r
+-	}\r
+-	province_priorities = {\r
+-	}\r
++# Soviet 1936 AI File by Lothos
++
++switch = no # [yes/no]
++max_front_ratio = 20000 # 1.2 
++max_front_ratios = {
++	
++	FIN = 25000
++}
++max_garrison_prop = 0.05
++min_garrison_prop = 0.03
++neutrality = 0.000 
++war = 0
++ferocity = yes
++reinforcement = 1.0000
++upgrading = 0.0000 
++desperation = 0.01
++strat_redeploy_threshold = 50
++max_redeploying = 1.0
++exp_force_ratio = 0.10
++exp_force_ratios = { } 
++no_exp_forces_to = { U13 UB8 ROM }
++
++###################################
++# Diplomacy
++###################################
++combat = { } 
++
++claim_acceptance = -69
++
++liberate = { ARA ARG AUS BRA BUR IDC CHI CON CRO CSA DEN EAF EGY ETH EUS FIN FLA GRE HOL HUN IND IRE JAP KOR KUR MAD LUX MEX MLY MTN OTT PAK PAL PER POR ROM RSI SAF SCA SCH SER SIA SIB SLO SLV SOM SPA
++	     SYR TRA TEX TIB UPE VIC WLL U07 U56 U64 U66 U68 U69 U71 U73 U76 U77 U78 U79 U80 UA1 UA2 UA3 UA4 UA5 UA6 UA7 UA8 UA9 UB0 UB1 UB2 UB3 UB4 UB5 UB6 UB7 UB9 UC0 UC1 UC2 UC3 UC4 UC5 UC6 UC7 UC9 
++	     UD0 UD8 UD9 UE1 UE2 UE3 UE4 UF1 }
++
++liberate_nation = {  }
++
++
++demand_claims = {
++	EST
++	LAT
++	ROM
++	LIT
++	FIN
++}
++
++target = { 
++
++	#Finland
++	531 = 100 # Viipur
++	532 = 100 # Sortavalo
++} 
++
++###################################
++# Construction and Tech Research
++###################################
++#Default values
++
++
++military = { 
++	relative_build_scheme 	= no
++	max_batch_peace 		= 680 
++	max_batch_war 			= 780 # 320 
++	max_batch_home_front = 730 # 180
++        extra_convoys_war = 0.000 
++        extra_convoys_peace = 0.000 
++
++
++	#### Divisions etc... Sov build land setting
++	infantry 		= 42 # 63
++	cavalry 	= 0
++	motorized 		= 18 # 6
++	mechanized 	= 10 # 0
++	light_armor 	= 0
++	armor 			= 10
++	paratrooper 	= 0
++	marine 		= 0
++	bergsjaeger 	= 9 # 0
++	garrison	= 0
++    hq 				= 2
++	militia 	= 0 # 0
++#				91 %
++	interceptor 		= 3 # 5
++	multi_role 		= 2 # 5
++	cas 			= 2 # 5
++	strategic_bomber = 0
++	tactical_bomber 	= 2 # 3
++	naval_bomber 	= 0
++	transport_plane = 0
++	flying_bomb 	= 0
++	flying_rocket 	= 0
++#				9 % # 18 %
++	battleship 	= 0
++	carrier 	= 0
++	escort_carrier	= 0
++	destroyer 	= 0
++	light_cruiser 	= 0
++	heavy_cruiser 	= 0
++	battlecruiser 	= 0
++	submarine 	= 0
++	nuclear_submarine = 0
++	transports 	= 0
++#				0 %
++
++
++	#### Brigades
++	artillery 		= 75 # 36
++	sp_artillery 		= 25 # 5
++	cavalry_brigade = 0 
++	sp_anti_air = 5 # 0
++	medium_armor 	= 15 # 0
++	tank_destroyer 	= 10 # 0
++	light_armor_brigade = 0
++	heavy_armor 		= 2
++	super_heavy_armor = 0
++	armored_car 	= 0
++	anti_air 		= 2
++	police 		= 0
++	engineer 		= 4
++#				49%
++
++            cag = 100.000
++	    escort = 100.0000
++
++            naval_asw = 20.0000 
++            naval_anti_air_s = 20.0000 
++            naval_radar_s = 20.0000 
++            naval_fire_controll_s = 20.0000 
++            naval_improved_hull_s = 10.0000 
++            naval_torpedoes_s = 10.0000 
++            naval_anti_air_l = 0.0000 
++            naval_radar_l = 0.0000 
++            naval_fire_controll_l = 0.0000 
++            naval_improved_hull_l = 0.0000 
++            floatplane = 0.0000
++}
++
++technology = { 
++	endgoal 	= { } 
++		preference 	= { 
++		# Regular Infantry
++		1010 1020 1030 1040 1050 1060 1070 1080 1090 1100 1110 1120 1130 1140 1150 13000 13010 13020
++
++		# 騎兵
++		1380 1390
++
++		# 兵站
++		1980 1990 199130 199100 199140
++
++		# Agriculture
++		5700 5710 5010 5020 5030 5040 5720 53000 53010
++
++		# Engineers
++		1830 1840 1850 1860 1870
++
++		# Mechanized Infantry
++		1470 1480 1490 1510 1520
++
++		# Motorized Infantry
++		1396 1400 1410 1420 1430 1440 1450 1460 
++
++		# Light tanks
++		7600 7610 2010 2630 2640 2646 2650 2030 2040 2050 2060
++
++		# Medium tanks
++		2070 2080 2090 2140 11000 2660 11010 2670
++		
++		# Interceptors
++		4510 4520 4530 4540 4550 4010 4020 4030 4060 4090 15000 15010 15020 4560 4570 4580
++
++		# Close Air Support
++		4400 4170 4280 4450 4180 15120 15130
++
++		# manufactoring
++		5810 5820 5050 5830 5060 5070 5130 5110 5120 5840 5850 5860
++
++		# Construction Engineering
++		5090
++		
++		# Applied Assembly lines
++		5140 5150 5160 5170 5180
++		
++		# Computers
++		5320 5330 5340
++
++		#EQUIPMENT Winter
++		5920 5930
++		
++		# Land Doctrines Soviet Branch.
++		6310 6320 6330 6340 6350 6360 6370 14060 6770 6780 6730 6750 6760 6860 6870 6840
++		
++		# Naval Doctrines
++		8120 8210 8310 81380 8160 8330 8200
++
++		# Air Doctrines
++		9070 9080 9090 9100 9110 9130 9140 9190 9200 9220 9240 9260 9270 9280 9310 9320 9330 9350
++
++		# 戦車単独運用
++		6930
++
++		# Light / Mountain
++		1160 1170 1180 1190 1200 1210 1220 1230 1240 1250 1260 1270 1280 1290 1300 13030 13040 13050
++	} 
++	ignore 		= {
++		# Light / Mountain
++		# 1210 1220
++
++		# Marines
++		# 1560 1570
++		1560 1570 1580 1590 1600 1610 1620 1630 1640 1650 1660
++
++		# Airborne Infantry
++		1670 1680 1690 1700 1710 1720 1730 1740
++
++		# Mechanized Infantry
++		# 1490 1510 1520
++		
++		# Armoured Cars
++		# 2150 2160 2890 11110
++		
++		# Air Transports
++		4290 4250 4260 4270 15180 15190
++
++		# Naval Bomber
++		4190 4200
++
++		# 水上機 # 追加
++		4740 4750 4760 4770 4780 4790
++		
++		#EQUIPMENT Jungle / Desert
++		5940 5950 5960 5970
++
++		# Commerce Defense
++		8150 8160 8170 
++		
++		# Anti-Submarine Patrols
++		8200 8210 8220 8230 8240 8250 8260 8300 8310 8320 8330 8340 8350 
++	}
++ 
++	armor 		= 7
++	infantry 	= 5
++	industry 	= 6
++	aircraft 	= 6
++	naval 		= 3
++	land_doctrines 	= 4
++	secret_weapons 	= 1
++	air_doctrines 	= 4
++	naval_doctrines = 2
++}  
++
++###################################
++# Ground Combat, Leaders and Garrisons
++###################################
++leader_ratio = {
++	land_field_marshal 	=0.02
++	land_general 		=0.031
++	land_lt_general 	=0.41
++
++	sea_grand_admiral 	=0.02
++	sea_admiral 		=0.061
++	sea_vice_admiral 	=0.401
++
++	air_marshal 		=0.02
++	air_general 		=0.091
++	air_lt_General 		=0.11
++}
++garrison = {
++	defend_overseas_beaches = no
++	home_multiplier 	= 1.0
++	overseas_multiplier 	= 0.5
++	home_peace_cap 		= 5
++	war_zone_odds 		= 2.5
++	key_point_prio_mult	= 1.0
++	revolt_risk_mult	= 0.5
++
++	# PRIORITIES:
++	beach			= 0	# Beach level 2
++	capital			= 5	# Our capital
++	human_border	= 0	# Ignored for allied human players
++	war_target		= 500	# The next country targeted for attack by this AI
++	reserves 		= 4
++	
++	opposing_alliance	= 5	# For neutrals, all alliances are "opposing"
++	claim_threat		= 0	# If we are neutral, countries with claims on us get this
++	unstable_border		= 2	# Bordering countries at war with someone else get this
++
++	# Borders with specific countries
++	country_priorities = {
++		FIN = 20000 # 追加
++	}
++	province_priorities = {
++		553 = 50 # Leningrad
++	
++	}
++	ignore = {
++		268 # Liepaja (German Border easy surround hex)
++		1541 # Okha (Bordering Japan, unimportant)
++		1184 # Petropavlovsk (USSR putting units here, don't know why, far east mountain)
++	}
++	area_multiplier = {
++	}
++}
++front = { 
++	recklessness 		= 3 # 0-3
++	distrib_vs_ai 		= even
++	distrib_vs_human 	= even
++
++	enemy_reinf_days	= 6
++	reserve_prop		= 0.25
++	panic_ratio_vs_ai	= 2.0
++	panic_ratio_vs_human	= 2.0
++	base_attack_odds	= 1.3
++	min_attack_odds		= 1.1
++	max_attack_odds		= 30.0
++	reinforce_odds		= 1.2
++	withdraw_odds		= 0.1
++
++	strength 	= 1.0
++	organisation 	= 1.0
++	soft_attack 	= 1.0
++	hard_attack 	= 1.0
++	ground_defense 	= 1.0
++	dig_in 		= 1.0 # Against defender
++
++	frozen_attack 	= 1.0
++	snow_attack 	= 1.0
++	blizzard_attack = 1.0
++	storm_attack 	= 1.0
++	muddy_attack 	= 1.0
++
++	
++	
++	occupied 	= 0.7
++	owned 		= 0.7
++
++	jungle_attack 	= 1.0
++	mountain_attack = 1.0
++	swamp_attack 	= 1.0
++	forest_attack 	= 1.0
++	hill_attack 	= 1.0
++	urban_attack 	= 1.0
++	river 		= 1.0
++
++	largefort 	= 1.0
++	smallfort 	= 1.0
++
++      	enemy_handicap = {
++	} 
++      	passivity = {
++	}
++	province_priorities = {
++	}
+ } 
+\ No newline at end of file

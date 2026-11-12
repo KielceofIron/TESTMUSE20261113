@@ -1,0 +1,3132 @@
+--- A/db/events/Yokoyama_events/Democratic_Germany.txt [cp932]
++++ B/db/events/Yokoyama_events/Democratic_Germany.txt [cp932]
+@@ -5,6 +5,7 @@
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
++#id = 99660000 共和国軍との妥協\r
+ #id = 99660001 財政政策方針\r
+ #id = 99660002 福祉改革\r
+ ###### ドイツ社会民主党（SPD）イベント ############\r
+@@ -67,6 +68,21 @@
+ #id = 99660055 スペイン内戦 ― ドイツの介入\r
+ #id = 99660056 コンドル軍団が凱旋帰国！\r
+ #id = 99660057 コンドル旅団の帰国！\r
++#id = 99660058 中独合作\r
++#id = 99660059 中独合作 ― 日本との新たな関係\r
++#id = 99660060 中独合作 ― 更なる関係強化\r
++#id = 99660061 軍閥の易幟\r
++#id = 99660062 中国国民党軍の軍備再編\r
++#id = 99660063 国民党軍の反撃（JAP）\r
++#id = 99660064 国民党軍の反撃（CHI）\r
++#id = 99660065 軍の回復\r
++#id = 99660066 日本帝国主義への抵抗（CHI）\r
++#id = 99660067 日本帝国主義への抵抗（JAP）\r
++#id = 99660068 国共内戦の再開\r
++#id = 99660069 毛沢東の死\r
++#id = 99660070 南洋諸島の購入\r
++#id = 99660071 南洋諸島の購入 ― ドイツの提案\r
++#id = 99660072 南洋諸島の購入 ― 日本が提案を承諾\r
+ ###### 選挙イベント ############\r
+ #id = 99660101 1934年大統領選挙\r
+ #id = 99660102 内閣崩壊\r
+@@ -192,6 +208,1019 @@
+ #id = 99660298 自由ベラルーシ政府\r
+ #id = 99660299 自由ロシア政府\r
+ ##########################################################################\r
++#  共和国軍との妥協\r
++# 第一次世界大戦後、ドイツ軍は共和国政府と協調し、軍内部の左派運動を沈静化させた。\r
++# 1919年3月6日、ワイマール共和国軍は正式に発足したが、ヴェルサイユ条約に基づき、\r
++# 陸軍兵力が10万人、海軍兵力が1万5000人に制限され、大量の軍人の解雇を迫られた。\r
++# また共和国軍に戦車や軍艦などに様々な制約が課され、この軍備制限に対する反発は、やがて共和国政府に対する反感の元となった。\r
++# 現在、政府と軍の関係は緊張状態にあり、軍の将軍たちと将来の軍備再建について、妥協するか必要に迫られている。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660000\r
++	random = no\r
++	country = DFR\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	}\r
++\r
++	name = "EVT_99660000_NAME"\r
++	desc = "EVT_99660000_DESC"\r
++	style = 2\r
++	picture = "Reichswehr"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 8\r
++	deathdate = { day = 30 month = 11 year = 1964 }\r
++\r
++\r
++	action = { # 軍部と妥協し、将来的な再軍備を約束する\r
++	name = "ACTIONNAME99660000A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = max_positioning which = submarine value = 0.15 }\r
++	command = { type = speed which = land value = 1 }\r
++	command = { type = morale which = land value = 5 }\r
++	command = { type = hard_attack which = land value = 1 }\r
++	command = { type = hard_attack which = artillery value = 1 }\r
++	command = { type = hard_attack which = sp_artillery value = 1 }\r
++	command = { type = hard_attack which = tank_destroyer value = 1 }\r
++	command = { type = hard_attack which = engineer value = 1 }\r
++	command = { type = hard_attack which = heavy_armor value = 1 }\r
++	command = { type = hard_attack which = cas value = 1 }\r
++	command = { type = strategic_attack which = flying_rocket value = 5 }\r
++	command = { type = task_efficiency which = convoy_raiding value = 0.1 }\r
++	command = { type = convoy_attack which = submarine value = 2 }\r
++	command = { type = breakthrough value = 12 }\r
++	command = { type = encirclement value = 6 }\r
++	command = { type = wakeleader which = 630601 }\r
++	command = { type = wakeleader which = 630602 }\r
++	command = { type = wakeleader which = 630603 }\r
++	command = { type = wakeleader which = 630604 }\r
++	command = { type = wakeleader which = 630605 }\r
++	command = { type = wakeleader which = 630606 }\r
++	command = { type = wakeleader which = 630607 }\r
++	command = { type = wakeleader which = 630608 }\r
++	command = { type = wakeleader which = 630609 }\r
++	command = { type = wakeleader which = 630610 }\r
++	command = { type = wakeleader which = 630611 }\r
++	command = { type = wakeleader which = 630612 }\r
++	command = { type = wakeleader which = 630613 }\r
++	command = { type = wakeleader which = 630614 }\r
++	command = { type = wakeleader which = 630615 }\r
++	command = { type = wakeleader which = 630616 }\r
++	command = { type = wakeleader which = 630617 }\r
++	command = { type = wakeleader which = 630618 }\r
++	command = { type = wakeleader which = 630619 }\r
++	command = { type = wakeleader which = 630620 }\r
++	command = { type = wakeleader which = 630621 }\r
++	command = { type = wakeleader which = 630622 }\r
++	command = { type = wakeleader which = 630623 }\r
++	command = { type = wakeleader which = 630624 }\r
++	command = { type = wakeleader which = 630625 }\r
++	command = { type = wakeleader which = 630626 }\r
++	command = { type = wakeleader which = 630627 }\r
++	command = { type = wakeleader which = 630628 }\r
++	command = { type = wakeleader which = 630629 }\r
++	command = { type = wakeleader which = 630630 }\r
++	command = { type = wakeleader which = 630631 }\r
++	command = { type = wakeleader which = 630632 }\r
++	command = { type = wakeleader which = 630633 }\r
++	command = { type = wakeleader which = 630634 }\r
++	command = { type = wakeleader which = 630635 }\r
++	command = { type = wakeleader which = 630636 }\r
++	command = { type = wakeleader which = 630637 }\r
++	command = { type = wakeleader which = 630638 }\r
++	command = { type = wakeleader which = 630639 }\r
++	command = { type = wakeleader which = 630640 }\r
++	command = { type = wakeleader which = 630641 }\r
++	command = { type = wakeleader which = 630642 }\r
++	command = { type = wakeleader which = 630643 }\r
++	command = { type = wakeleader which = 630644 }\r
++	command = { type = wakeleader which = 630645 }\r
++	command = { type = wakeleader which = 630646 }\r
++	command = { type = wakeleader which = 630647 }\r
++	command = { type = wakeleader which = 630648 }\r
++	command = { type = wakeleader which = 630649 }\r
++	command = { type = wakeleader which = 630650 }\r
++	command = { type = wakeleader which = 630651 }\r
++	command = { type = wakeleader which = 630652 }\r
++	command = { type = wakeleader which = 630653 }\r
++	command = { type = wakeleader which = 630654 }\r
++	command = { type = wakeleader which = 630655 }\r
++	command = { type = wakeleader which = 630656 }\r
++	command = { type = wakeleader which = 630657 }\r
++	command = { type = wakeleader which = 630658 }\r
++	command = { type = wakeleader which = 630659 }\r
++	command = { type = wakeleader which = 630660 }\r
++	command = { type = wakeleader which = 630661 }\r
++	command = { type = wakeleader which = 630662 }\r
++	command = { type = wakeleader which = 630663 }\r
++	command = { type = wakeleader which = 630664 }\r
++	command = { type = wakeleader which = 630665 }\r
++	command = { type = wakeleader which = 630666 }\r
++	command = { type = wakeleader which = 630667 }\r
++	command = { type = wakeleader which = 630668 }\r
++	command = { type = wakeleader which = 630669 }\r
++	command = { type = wakeleader which = 630670 }\r
++	command = { type = wakeleader which = 630671 }\r
++	command = { type = wakeleader which = 630672 }\r
++	command = { type = wakeleader which = 630673 }\r
++	command = { type = wakeleader which = 630674 }\r
++	command = { type = wakeleader which = 630675 }\r
++	command = { type = wakeleader which = 630676 }\r
++	command = { type = wakeleader which = 630677 }\r
++	command = { type = wakeleader which = 630678 }\r
++	command = { type = wakeleader which = 630679 }\r
++	command = { type = wakeleader which = 630680 }\r
++	command = { type = wakeleader which = 630681 }\r
++	command = { type = wakeleader which = 630682 }\r
++	command = { type = wakeleader which = 630683 }\r
++	command = { type = wakeleader which = 630684 }\r
++	command = { type = wakeleader which = 630685 }\r
++	command = { type = wakeleader which = 630686 }\r
++	command = { type = wakeleader which = 630687 }\r
++	command = { type = wakeleader which = 630688 }\r
++	command = { type = wakeleader which = 630689 }\r
++	command = { type = wakeleader which = 630690 }\r
++	command = { type = wakeleader which = 630691 }\r
++	command = { type = wakeleader which = 630692 }\r
++	command = { type = wakeleader which = 630693 }\r
++	command = { type = wakeleader which = 630694 }\r
++	command = { type = wakeleader which = 630695 }\r
++	command = { type = wakeleader which = 630696 }\r
++	command = { type = wakeleader which = 630697 }\r
++	command = { type = wakeleader which = 630698 }\r
++	command = { type = wakeleader which = 630699 }\r
++	command = { type = wakeleader which = 630700 }\r
++	command = { type = wakeleader which = 630700 }\r
++	command = { type = wakeleader which = 630701 }\r
++	command = { type = wakeleader which = 630702 }\r
++	command = { type = wakeleader which = 630703 }\r
++	command = { type = wakeleader which = 630704 }\r
++	command = { type = wakeleader which = 630705 }\r
++	command = { type = wakeleader which = 630706 }\r
++	command = { type = wakeleader which = 630707 }\r
++	command = { type = wakeleader which = 630708 }\r
++	command = { type = wakeleader which = 630709 }\r
++	command = { type = wakeleader which = 630710 }\r
++	command = { type = wakeleader which = 630711 }\r
++	command = { type = wakeleader which = 630712 }\r
++	command = { type = wakeleader which = 630713 }\r
++	command = { type = wakeleader which = 630714 }\r
++	command = { type = wakeleader which = 630715 }\r
++	command = { type = wakeleader which = 630716 }\r
++	command = { type = wakeleader which = 630717 }\r
++	command = { type = wakeleader which = 630718 }\r
++	command = { type = wakeleader which = 630719 }\r
++	command = { type = wakeleader which = 630720 }\r
++	command = { type = wakeleader which = 630721 }\r
++	command = { type = wakeleader which = 630722 }\r
++	command = { type = wakeleader which = 630723 }\r
++	command = { type = wakeleader which = 630724 }\r
++	command = { type = wakeleader which = 630725 }\r
++	command = { type = wakeleader which = 630726 }\r
++	command = { type = wakeleader which = 630727 }\r
++	command = { type = wakeleader which = 630728 }\r
++	command = { type = wakeleader which = 630729 }\r
++	command = { type = wakeleader which = 630730 }\r
++	command = { type = wakeleader which = 630731 }\r
++	command = { type = wakeleader which = 630732 }\r
++	command = { type = wakeleader which = 630733 }\r
++	command = { type = wakeleader which = 630734 }\r
++	command = { type = wakeleader which = 630735 }\r
++	command = { type = wakeleader which = 630736 }\r
++	command = { type = wakeleader which = 630737 }\r
++	command = { type = wakeleader which = 630738 }\r
++	command = { type = wakeleader which = 630739 }\r
++	command = { type = wakeleader which = 630740 }\r
++	command = { type = wakeleader which = 630741 }\r
++	command = { type = wakeleader which = 630742 }\r
++	command = { type = wakeleader which = 630743 }\r
++	command = { type = wakeleader which = 630744 }\r
++	command = { type = wakeleader which = 630745 }\r
++	command = { type = wakeleader which = 630746 }\r
++	command = { type = wakeleader which = 630747 }\r
++	command = { type = wakeleader which = 630748 }\r
++	command = { type = wakeleader which = 630749 }\r
++	command = { type = wakeleader which = 630750 }\r
++	command = { type = wakeleader which = 630751 }\r
++	command = { type = wakeleader which = 630752 }\r
++	command = { type = wakeleader which = 630753 }\r
++	command = { type = wakeleader which = 630754 }\r
++	command = { type = wakeleader which = 630755 }\r
++	command = { type = wakeleader which = 630756 }\r
++	command = { type = wakeleader which = 630757 }\r
++	command = { type = wakeleader which = 630758 }\r
++	command = { type = wakeleader which = 630759 }\r
++	command = { type = wakeleader which = 630760 }\r
++	command = { type = wakeleader which = 630761 }\r
++	command = { type = wakeleader which = 630762 }\r
++	command = { type = wakeleader which = 630763 }\r
++	command = { type = wakeleader which = 630764 }\r
++	command = { type = wakeleader which = 630765 }\r
++	command = { type = wakeleader which = 630766 }\r
++	command = { type = wakeleader which = 630767 }\r
++	command = { type = wakeleader which = 630768 }\r
++	command = { type = wakeleader which = 630769 }\r
++	command = { type = wakeleader which = 630770 }\r
++	command = { type = wakeleader which = 630771 }\r
++	command = { type = wakeleader which = 630772 }\r
++	command = { type = wakeleader which = 630773 }\r
++	command = { type = wakeleader which = 630774 }\r
++	command = { type = wakeleader which = 630775 }\r
++	command = { type = wakeleader which = 630776 }\r
++	command = { type = wakeleader which = 630777 }\r
++	command = { type = wakeleader which = 630778 }\r
++	command = { type = wakeleader which = 630779 }\r
++	command = { type = wakeleader which = 630780 }\r
++	command = { type = wakeleader which = 630781 }\r
++	command = { type = wakeleader which = 630782 }\r
++	command = { type = wakeleader which = 630783 }\r
++	command = { type = wakeleader which = 630784 }\r
++	command = { type = wakeleader which = 630785 }\r
++	command = { type = wakeleader which = 630786 }\r
++	command = { type = wakeleader which = 630787 }\r
++	command = { type = wakeleader which = 630788 }\r
++	command = { type = wakeleader which = 630789 }\r
++	command = { type = wakeleader which = 630790 }\r
++	command = { type = wakeleader which = 630791 }\r
++	command = { type = wakeleader which = 630792 }\r
++	command = { type = wakeleader which = 630793 }\r
++	command = { type = wakeleader which = 630794 }\r
++	command = { type = wakeleader which = 630795 }\r
++	command = { type = wakeleader which = 630796 }\r
++	command = { type = wakeleader which = 630797 }\r
++	command = { type = wakeleader which = 630798 }\r
++	command = { type = wakeleader which = 630799 }\r
++	command = { type = wakeleader which = 630800 }\r
++	command = { type = wakeleader which = 630800 }\r
++	command = { type = wakeleader which = 630801 }\r
++	command = { type = wakeleader which = 630802 }\r
++	command = { type = wakeleader which = 630803 }\r
++	command = { type = wakeleader which = 630804 }\r
++	command = { type = wakeleader which = 630805 }\r
++	command = { type = wakeleader which = 630806 }\r
++	command = { type = wakeleader which = 630807 }\r
++	command = { type = wakeleader which = 630808 }\r
++	command = { type = wakeleader which = 630809 }\r
++	command = { type = wakeleader which = 630810 }\r
++	command = { type = wakeleader which = 630811 }\r
++	command = { type = wakeleader which = 630812 }\r
++	command = { type = wakeleader which = 630813 }\r
++	command = { type = wakeleader which = 630814 }\r
++	command = { type = wakeleader which = 630815 }\r
++	command = { type = wakeleader which = 630816 }\r
++	command = { type = wakeleader which = 630817 }\r
++	command = { type = wakeleader which = 630818 }\r
++	command = { type = wakeleader which = 630819 }\r
++	command = { type = wakeleader which = 630820 }\r
++	command = { type = wakeleader which = 630821 }\r
++	command = { type = wakeleader which = 630822 }\r
++	command = { type = wakeleader which = 630823 }\r
++	command = { type = wakeleader which = 630824 }\r
++	command = { type = wakeleader which = 630825 }\r
++	command = { type = wakeleader which = 630826 }\r
++	command = { type = wakeleader which = 630827 }\r
++	command = { type = wakeleader which = 630828 }\r
++	command = { type = wakeleader which = 630829 }\r
++	command = { type = wakeleader which = 630830 }\r
++	command = { type = wakeleader which = 630831 }\r
++	command = { type = wakeleader which = 630832 }\r
++	command = { type = wakeleader which = 630833 }\r
++	command = { type = wakeleader which = 630834 }\r
++	command = { type = wakeleader which = 630835 }\r
++	command = { type = wakeleader which = 630836 }\r
++	command = { type = wakeleader which = 630837 }\r
++	command = { type = wakeleader which = 630838 }\r
++	command = { type = wakeleader which = 630839 }\r
++	command = { type = wakeleader which = 630840 }\r
++	command = { type = wakeleader which = 630841 }\r
++	command = { type = wakeleader which = 630842 }\r
++	command = { type = wakeleader which = 630843 }\r
++	command = { type = wakeleader which = 630844 }\r
++	command = { type = wakeleader which = 630845 }\r
++	command = { type = wakeleader which = 630846 }\r
++	command = { type = wakeleader which = 630847 }\r
++	command = { type = wakeleader which = 630848 }\r
++	command = { type = wakeleader which = 630849 }\r
++	command = { type = wakeleader which = 630850 }\r
++	command = { type = wakeleader which = 630851 }\r
++	command = { type = wakeleader which = 630852 }\r
++	command = { type = wakeleader which = 630853 }\r
++	command = { type = wakeleader which = 630854 }\r
++	command = { type = wakeleader which = 630855 }\r
++	command = { type = wakeleader which = 630856 }\r
++	command = { type = wakeleader which = 630857 }\r
++	command = { type = wakeleader which = 630858 }\r
++	command = { type = wakeleader which = 630859 }\r
++	command = { type = wakeleader which = 630860 }\r
++	command = { type = wakeleader which = 630861 }\r
++	command = { type = wakeleader which = 630862 }\r
++	command = { type = wakeleader which = 630863 }\r
++	command = { type = wakeleader which = 630864 }\r
++	command = { type = wakeleader which = 630865 }\r
++	command = { type = wakeleader which = 630866 }\r
++	command = { type = wakeleader which = 630867 }\r
++	command = { type = wakeleader which = 630868 }\r
++	command = { type = wakeleader which = 630869 }\r
++	command = { type = wakeleader which = 630870 }\r
++	command = { type = wakeleader which = 630871 }\r
++	command = { type = wakeleader which = 630872 }\r
++	command = { type = wakeleader which = 630873 }\r
++	command = { type = wakeleader which = 630874 }\r
++	command = { type = wakeleader which = 630875 }\r
++	command = { type = wakeleader which = 630876 }\r
++	command = { type = wakeleader which = 630877 }\r
++	command = { type = wakeleader which = 630878 }\r
++	command = { type = wakeleader which = 630879 }\r
++	command = { type = wakeleader which = 630880 }\r
++	command = { type = wakeleader which = 630881 }\r
++	command = { type = wakeleader which = 630882 }\r
++	command = { type = wakeleader which = 630883 }\r
++	command = { type = wakeleader which = 630884 }\r
++	command = { type = wakeleader which = 630885 }\r
++	command = { type = wakeleader which = 630886 }\r
++	command = { type = wakeleader which = 630887 }\r
++	command = { type = wakeleader which = 630888 }\r
++	command = { type = wakeleader which = 630889 }\r
++	command = { type = wakeleader which = 630890 }\r
++	command = { type = wakeleader which = 630891 }\r
++	command = { type = wakeleader which = 630892 }\r
++	command = { type = wakeleader which = 630893 }\r
++	command = { type = wakeleader which = 630894 }\r
++	command = { type = wakeleader which = 630895 }\r
++	command = { type = wakeleader which = 630896 }\r
++	command = { type = wakeleader which = 630897 }\r
++	command = { type = wakeleader which = 630898 }\r
++	command = { type = wakeleader which = 630899 }\r
++	command = { type = wakeleader which = 630900 }\r
++	command = { type = wakeleader which = 630900 }\r
++	command = { type = wakeleader which = 630901 }\r
++	command = { type = wakeleader which = 630902 }\r
++	command = { type = wakeleader which = 630903 }\r
++	command = { type = wakeleader which = 630904 }\r
++	command = { type = wakeleader which = 630905 }\r
++	command = { type = wakeleader which = 630906 }\r
++	command = { type = wakeleader which = 630907 }\r
++	command = { type = wakeleader which = 630908 }\r
++	command = { type = wakeleader which = 630909 }\r
++	command = { type = wakeleader which = 630910 }\r
++	command = { type = wakeleader which = 630911 }\r
++	command = { type = wakeleader which = 630912 }\r
++	command = { type = wakeleader which = 630913 }\r
++	command = { type = wakeleader which = 630914 }\r
++	command = { type = wakeleader which = 630915 }\r
++	command = { type = wakeleader which = 630916 }\r
++	command = { type = wakeleader which = 630917 }\r
++	command = { type = wakeleader which = 630918 }\r
++	command = { type = wakeleader which = 630919 }\r
++	command = { type = wakeleader which = 630920 }\r
++	command = { type = wakeleader which = 630921 }\r
++	command = { type = wakeleader which = 630922 }\r
++	command = { type = wakeleader which = 630923 }\r
++	command = { type = wakeleader which = 630924 }\r
++	command = { type = wakeleader which = 630925 }\r
++	command = { type = wakeleader which = 630926 }\r
++	command = { type = wakeleader which = 630927 }\r
++	command = { type = wakeleader which = 630928 }\r
++	command = { type = wakeleader which = 630929 }\r
++	command = { type = wakeleader which = 630930 }\r
++	command = { type = wakeleader which = 630931 }\r
++	command = { type = wakeleader which = 630932 }\r
++	command = { type = wakeleader which = 630933 }\r
++	command = { type = wakeleader which = 630934 }\r
++	command = { type = wakeleader which = 630935 }\r
++	command = { type = wakeleader which = 630936 }\r
++	command = { type = wakeleader which = 630937 }\r
++	command = { type = wakeleader which = 630938 }\r
++	command = { type = wakeleader which = 630939 }\r
++	command = { type = wakeleader which = 630940 }\r
++	command = { type = wakeleader which = 630941 }\r
++	command = { type = wakeleader which = 630942 }\r
++	command = { type = wakeleader which = 630943 }\r
++	command = { type = wakeleader which = 630944 }\r
++	command = { type = wakeleader which = 630945 }\r
++	command = { type = wakeleader which = 630946 }\r
++	command = { type = wakeleader which = 630947 }\r
++	command = { type = wakeleader which = 630948 }\r
++	command = { type = wakeleader which = 630949 }\r
++	command = { type = wakeleader which = 630950 }\r
++	command = { type = wakeleader which = 630951 }\r
++	command = { type = wakeleader which = 630952 }\r
++	command = { type = wakeleader which = 630953 }\r
++	command = { type = wakeleader which = 630954 }\r
++	command = { type = wakeleader which = 630955 }\r
++	command = { type = wakeleader which = 630956 }\r
++	command = { type = wakeleader which = 630957 }\r
++	command = { type = wakeleader which = 630958 }\r
++	command = { type = wakeleader which = 630959 }\r
++	command = { type = wakeleader which = 630960 }\r
++	command = { type = wakeleader which = 630961 }\r
++	command = { type = wakeleader which = 630962 }\r
++	command = { type = wakeleader which = 630963 }\r
++	command = { type = wakeleader which = 630964 }\r
++	command = { type = wakeleader which = 630965 }\r
++	command = { type = wakeleader which = 630966 }\r
++	command = { type = wakeleader which = 630967 }\r
++	command = { type = wakeleader which = 630968 }\r
++	command = { type = wakeleader which = 630969 }\r
++	command = { type = wakeleader which = 630970 }\r
++	command = { type = wakeleader which = 630971 }\r
++	command = { type = wakeleader which = 630972 }\r
++	command = { type = wakeleader which = 630973 }\r
++	command = { type = wakeleader which = 630974 }\r
++	command = { type = wakeleader which = 630975 }\r
++	command = { type = wakeleader which = 630976 }\r
++	command = { type = wakeleader which = 630977 }\r
++	command = { type = wakeleader which = 630978 }\r
++	command = { type = wakeleader which = 630979 }\r
++	command = { type = wakeleader which = 630980 }\r
++	command = { type = wakeleader which = 630981 }\r
++	command = { type = wakeleader which = 630982 }\r
++	command = { type = wakeleader which = 630983 }\r
++	command = { type = wakeleader which = 630984 }\r
++	command = { type = wakeleader which = 630985 }\r
++	command = { type = wakeleader which = 630986 }\r
++	command = { type = wakeleader which = 630987 }\r
++	command = { type = wakeleader which = 630988 }\r
++	command = { type = wakeleader which = 630989 }\r
++	command = { type = wakeleader which = 630990 }\r
++	command = { type = wakeleader which = 630991 }\r
++	command = { type = wakeleader which = 630992 }\r
++	command = { type = wakeleader which = 630993 }\r
++	command = { type = wakeleader which = 630994 }\r
++	command = { type = wakeleader which = 630995 }\r
++	command = { type = wakeleader which = 630996 }\r
++	command = { type = wakeleader which = 630997 }\r
++	command = { type = wakeleader which = 630998 }\r
++	command = { type = wakeleader which = 630999 }\r
++	command = { type = wakeleader which = 631000 }\r
++	command = { type = wakeleader which = 631000 }\r
++	command = { type = wakeleader which = 631001 }\r
++	command = { type = wakeleader which = 631002 }\r
++	command = { type = wakeleader which = 631003 }\r
++	command = { type = wakeleader which = 631004 }\r
++	command = { type = wakeleader which = 631005 }\r
++	command = { type = wakeleader which = 631006 }\r
++	command = { type = wakeleader which = 631007 }\r
++	command = { type = wakeleader which = 631008 }\r
++	command = { type = wakeleader which = 631009 }\r
++	command = { type = wakeleader which = 631010 }\r
++	command = { type = wakeleader which = 631011 }\r
++	command = { type = wakeleader which = 631012 }\r
++	command = { type = wakeleader which = 631013 }\r
++	command = { type = wakeleader which = 631014 }\r
++	command = { type = wakeleader which = 631015 }\r
++	command = { type = wakeleader which = 631016 }\r
++	command = { type = wakeleader which = 631017 }\r
++	command = { type = wakeleader which = 631018 }\r
++	command = { type = wakeleader which = 631019 }\r
++	command = { type = wakeleader which = 631020 }\r
++	command = { type = wakeleader which = 631021 }\r
++	command = { type = wakeleader which = 631022 }\r
++	command = { type = wakeleader which = 631023 }\r
++	command = { type = wakeleader which = 631024 }\r
++	command = { type = wakeleader which = 631025 }\r
++	command = { type = wakeleader which = 631026 }\r
++	command = { type = wakeleader which = 631027 }\r
++	command = { type = wakeleader which = 631028 }\r
++	command = { type = wakeleader which = 631029 }\r
++	command = { type = wakeleader which = 631030 }\r
++	command = { type = wakeleader which = 631031 }\r
++	command = { type = wakeleader which = 631032 }\r
++	command = { type = wakeleader which = 631033 }\r
++	command = { type = wakeleader which = 631034 }\r
++	command = { type = wakeleader which = 631035 }\r
++	command = { type = wakeleader which = 631036 }\r
++	command = { type = wakeleader which = 631037 }\r
++	command = { type = wakeleader which = 631038 }\r
++	command = { type = wakeleader which = 631039 }\r
++	command = { type = wakeleader which = 631040 }\r
++	command = { type = wakeleader which = 631041 }\r
++	command = { type = wakeleader which = 631042 }\r
++	command = { type = wakeleader which = 631043 }\r
++	command = { type = wakeleader which = 631044 }\r
++	command = { type = wakeleader which = 631045 }\r
++	command = { type = wakeleader which = 631046 }\r
++	command = { type = wakeleader which = 631047 }\r
++	command = { type = wakeleader which = 631048 }\r
++	command = { type = wakeleader which = 631049 }\r
++	command = { type = wakeleader which = 631050 }\r
++	command = { type = wakeleader which = 631051 }\r
++	command = { type = wakeleader which = 631052 }\r
++	command = { type = wakeleader which = 631053 }\r
++	command = { type = wakeleader which = 631054 }\r
++	command = { type = wakeleader which = 631055 }\r
++	command = { type = wakeleader which = 631056 }\r
++	command = { type = wakeleader which = 631057 }\r
++	command = { type = wakeleader which = 631058 }\r
++	command = { type = wakeleader which = 631059 }\r
++	command = { type = wakeleader which = 631060 }\r
++	command = { type = wakeleader which = 631061 }\r
++	command = { type = wakeleader which = 631062 }\r
++	command = { type = wakeleader which = 631063 }\r
++	command = { type = wakeleader which = 631064 }\r
++	command = { type = wakeleader which = 631065 }\r
++	command = { type = wakeleader which = 631066 }\r
++	command = { type = wakeleader which = 631067 }\r
++	command = { type = wakeleader which = 631068 }\r
++	command = { type = wakeleader which = 631069 }\r
++	command = { type = wakeleader which = 631070 }\r
++	command = { type = wakeleader which = 631071 }\r
++	command = { type = wakeleader which = 631072 }\r
++	command = { type = wakeleader which = 631073 }\r
++	command = { type = wakeleader which = 631074 }\r
++	command = { type = wakeleader which = 631075 }\r
++	command = { type = wakeleader which = 631076 }\r
++	command = { type = wakeleader which = 631077 }\r
++	command = { type = wakeleader which = 631078 }\r
++	command = { type = wakeleader which = 631079 }\r
++	command = { type = wakeleader which = 631080 }\r
++	command = { type = wakeleader which = 631081 }\r
++	command = { type = wakeleader which = 631082 }\r
++	command = { type = wakeleader which = 631083 }\r
++	command = { type = wakeleader which = 631084 }\r
++	command = { type = wakeleader which = 631085 }\r
++	command = { type = wakeleader which = 631086 }\r
++	command = { type = wakeleader which = 631087 }\r
++	command = { type = wakeleader which = 631088 }\r
++	command = { type = wakeleader which = 631089 }\r
++	command = { type = wakeleader which = 631090 }\r
++	command = { type = wakeleader which = 631091 }\r
++	command = { type = wakeleader which = 631092 }\r
++	command = { type = wakeleader which = 631093 }\r
++	command = { type = wakeleader which = 631094 }\r
++	command = { type = wakeleader which = 631095 }\r
++	command = { type = wakeleader which = 631096 }\r
++	command = { type = wakeleader which = 631097 }\r
++	command = { type = wakeleader which = 631098 }\r
++	command = { type = wakeleader which = 631099 }\r
++	command = { type = wakeleader which = 631100 }\r
++	command = { type = wakeleader which = 631100 }\r
++	command = { type = wakeleader which = 631101 }\r
++	command = { type = wakeleader which = 631102 }\r
++	command = { type = wakeleader which = 631103 }\r
++	command = { type = wakeleader which = 631104 }\r
++	command = { type = wakeleader which = 631105 }\r
++	command = { type = wakeleader which = 631106 }\r
++	command = { type = wakeleader which = 631107 }\r
++	command = { type = wakeleader which = 631108 }\r
++	command = { type = wakeleader which = 631109 }\r
++	command = { type = wakeleader which = 631110 }\r
++	command = { type = wakeleader which = 631111 }\r
++	command = { type = wakeleader which = 631112 }\r
++	command = { type = wakeleader which = 631113 }\r
++	command = { type = wakeleader which = 631114 }\r
++	command = { type = wakeleader which = 631115 }\r
++	command = { type = wakeleader which = 631116 }\r
++	command = { type = wakeleader which = 631117 }\r
++	command = { type = wakeleader which = 631118 }\r
++	command = { type = wakeleader which = 631119 }\r
++	command = { type = wakeleader which = 631120 }\r
++	command = { type = wakeleader which = 631121 }\r
++	command = { type = wakeleader which = 631122 }\r
++	command = { type = wakeleader which = 631123 }\r
++	command = { type = wakeleader which = 631124 }\r
++	command = { type = wakeleader which = 631125 }\r
++	command = { type = wakeleader which = 631126 }\r
++	command = { type = wakeleader which = 631127 }\r
++	command = { type = wakeleader which = 631128 }\r
++	command = { type = wakeleader which = 631129 }\r
++	command = { type = wakeleader which = 631130 }\r
++	command = { type = wakeleader which = 631131 }\r
++	command = { type = wakeleader which = 631132 }\r
++	command = { type = wakeleader which = 631133 }\r
++	command = { type = wakeleader which = 631134 }\r
++	command = { type = wakeleader which = 631135 }\r
++	command = { type = wakeleader which = 631136 }\r
++	command = { type = wakeleader which = 631137 }\r
++	command = { type = wakeleader which = 631138 }\r
++	command = { type = wakeleader which = 631139 }\r
++	command = { type = wakeleader which = 631140 }\r
++	command = { type = wakeleader which = 631141 }\r
++	command = { type = wakeleader which = 631142 }\r
++	command = { type = wakeleader which = 631143 }\r
++	command = { type = wakeleader which = 631144 }\r
++	command = { type = wakeleader which = 631145 }\r
++	command = { type = wakeleader which = 631146 }\r
++	command = { type = wakeleader which = 631147 }\r
++	command = { type = wakeleader which = 631148 }\r
++	command = { type = wakeleader which = 631149 }\r
++	command = { type = wakeleader which = 631150 }\r
++	command = { type = wakeleader which = 631151 }\r
++	command = { type = wakeleader which = 631152 }\r
++	command = { type = wakeleader which = 631153 }\r
++	command = { type = wakeleader which = 631154 }\r
++	command = { type = wakeleader which = 631155 }\r
++	command = { type = wakeleader which = 631156 }\r
++	command = { type = wakeleader which = 631157 }\r
++	command = { type = wakeleader which = 631158 }\r
++	command = { type = wakeleader which = 631159 }\r
++	command = { type = wakeleader which = 631160 }\r
++	command = { type = wakeleader which = 631161 }\r
++	command = { type = wakeleader which = 631162 }\r
++	command = { type = wakeleader which = 631163 }\r
++	command = { type = wakeleader which = 631164 }\r
++	command = { type = wakeleader which = 631165 }\r
++	command = { type = wakeleader which = 631166 }\r
++	command = { type = wakeleader which = 631167 }\r
++	command = { type = wakeleader which = 631168 }\r
++	command = { type = wakeleader which = 631169 }\r
++	command = { type = wakeleader which = 631170 }\r
++	command = { type = wakeleader which = 631171 }\r
++	command = { type = wakeleader which = 631172 }\r
++	command = { type = wakeleader which = 631173 }\r
++	command = { type = wakeleader which = 631174 }\r
++	command = { type = wakeleader which = 631175 }\r
++	command = { type = wakeleader which = 631176 }\r
++	command = { type = wakeleader which = 631177 }\r
++	command = { type = wakeleader which = 631178 }\r
++	command = { type = wakeleader which = 631179 }\r
++	command = { type = wakeleader which = 631180 }\r
++	command = { type = wakeleader which = 631181 }\r
++	command = { type = wakeleader which = 631182 }\r
++	command = { type = wakeleader which = 631183 }\r
++	command = { type = wakeleader which = 631184 }\r
++	command = { type = wakeleader which = 631185 }\r
++	command = { type = wakeleader which = 631186 }\r
++	command = { type = wakeleader which = 631187 }\r
++	command = { type = wakeleader which = 631188 }\r
++	command = { type = wakeleader which = 631189 }\r
++	command = { type = wakeleader which = 631190 }\r
++	command = { type = wakeleader which = 631191 }\r
++	command = { type = wakeleader which = 631192 }\r
++	command = { type = wakeleader which = 631193 }\r
++	command = { type = wakeleader which = 631194 }\r
++	command = { type = wakeleader which = 631195 }\r
++	command = { type = wakeleader which = 631196 }\r
++	command = { type = wakeleader which = 631197 }\r
++	command = { type = wakeleader which = 631198 }\r
++	command = { type = wakeleader which = 631199 }\r
++	command = { type = wakeleader which = 631200 }\r
++	command = { type = wakeleader which = 631200 }\r
++	command = { type = wakeleader which = 631201 }\r
++	command = { type = wakeleader which = 631202 }\r
++	command = { type = wakeleader which = 631203 }\r
++	command = { type = wakeleader which = 631204 }\r
++	command = { type = wakeleader which = 631205 }\r
++	command = { type = wakeleader which = 631206 }\r
++	command = { type = wakeleader which = 631207 }\r
++	command = { type = wakeleader which = 631208 }\r
++	command = { type = wakeleader which = 631209 }\r
++	command = { type = wakeleader which = 631210 }\r
++	command = { type = wakeleader which = 631211 }\r
++	command = { type = wakeleader which = 631212 }\r
++	command = { type = wakeleader which = 631213 }\r
++	command = { type = wakeleader which = 631214 }\r
++	command = { type = wakeleader which = 631215 }\r
++	command = { type = wakeleader which = 631216 }\r
++	command = { type = wakeleader which = 631217 }\r
++	command = { type = wakeleader which = 631218 }\r
++	command = { type = wakeleader which = 631219 }\r
++	command = { type = wakeleader which = 631220 }\r
++	command = { type = wakeleader which = 631221 }\r
++	command = { type = wakeleader which = 631222 }\r
++	command = { type = wakeleader which = 631223 }\r
++	command = { type = wakeleader which = 631224 }\r
++	command = { type = wakeleader which = 631225 }\r
++	command = { type = wakeleader which = 631226 }\r
++	command = { type = wakeleader which = 631227 }\r
++	command = { type = wakeleader which = 631228 }\r
++	command = { type = wakeleader which = 631229 }\r
++	command = { type = wakeleader which = 631230 }\r
++	command = { type = wakeleader which = 631231 }\r
++	command = { type = wakeleader which = 631232 }\r
++	command = { type = wakeleader which = 631233 }\r
++	command = { type = wakeleader which = 631234 }\r
++	command = { type = wakeleader which = 631235 }\r
++	command = { type = wakeleader which = 631236 }\r
++	command = { type = wakeleader which = 631237 }\r
++	command = { type = wakeleader which = 631238 }\r
++	command = { type = wakeleader which = 631239 }\r
++	command = { type = wakeleader which = 631240 }\r
++	command = { type = wakeleader which = 631241 }\r
++	command = { type = wakeleader which = 631242 }\r
++	command = { type = wakeleader which = 631243 }\r
++	command = { type = wakeleader which = 631244 }\r
++	command = { type = wakeleader which = 631245 }\r
++	command = { type = wakeleader which = 631246 }\r
++	command = { type = wakeleader which = 631247 }\r
++	command = { type = wakeleader which = 631248 }\r
++	command = { type = wakeleader which = 631249 }\r
++	command = { type = wakeleader which = 631250 }\r
++	command = { type = wakeleader which = 631251 }\r
++	command = { type = wakeleader which = 631252 }\r
++	command = { type = wakeleader which = 631253 }\r
++	command = { type = wakeleader which = 631254 }\r
++	command = { type = wakeleader which = 631255 }\r
++	command = { type = wakeleader which = 631256 }\r
++	command = { type = wakeleader which = 631257 }\r
++	command = { type = wakeleader which = 631258 }\r
++	command = { type = wakeleader which = 631259 }\r
++	command = { type = wakeleader which = 631260 }\r
++	command = { type = wakeleader which = 631261 }\r
++	command = { type = wakeleader which = 631262 }\r
++	command = { type = wakeleader which = 631263 }\r
++	command = { type = wakeleader which = 631264 }\r
++	command = { type = wakeleader which = 631265 }\r
++	command = { type = wakeleader which = 631266 }\r
++	command = { type = wakeleader which = 631267 }\r
++	command = { type = wakeleader which = 631268 }\r
++	command = { type = wakeleader which = 631269 }\r
++	command = { type = wakeleader which = 631270 }\r
++	command = { type = wakeleader which = 631271 }\r
++	command = { type = wakeleader which = 631272 }\r
++	command = { type = wakeleader which = 631273 }\r
++	command = { type = wakeleader which = 631274 }\r
++	command = { type = wakeleader which = 631275 }\r
++	command = { type = wakeleader which = 631276 }\r
++	command = { type = wakeleader which = 631277 }\r
++	command = { type = wakeleader which = 631278 }\r
++	command = { type = wakeleader which = 631279 }\r
++	command = { type = wakeleader which = 631280 }\r
++	command = { type = wakeleader which = 631281 }\r
++	command = { type = wakeleader which = 631282 }\r
++	command = { type = wakeleader which = 631283 }\r
++	command = { type = wakeleader which = 631284 }\r
++	command = { type = wakeleader which = 631285 }\r
++	command = { type = wakeleader which = 631286 }\r
++	command = { type = wakeleader which = 631287 }\r
++	command = { type = wakeleader which = 631288 }\r
++	command = { type = wakeleader which = 631289 }\r
++	command = { type = wakeleader which = 631290 }\r
++	command = { type = wakeleader which = 631291 }\r
++	command = { type = wakeleader which = 631292 }\r
++	command = { type = wakeleader which = 631293 }\r
++	command = { type = wakeleader which = 631294 }\r
++	command = { type = wakeleader which = 631295 }\r
++	command = { type = wakeleader which = 631296 }\r
++	command = { type = wakeleader which = 631297 }\r
++	command = { type = wakeleader which = 631298 }\r
++	command = { type = wakeleader which = 631299 }\r
++	command = { type = wakeleader which = 631300 }\r
++	command = { type = wakeleader which = 631300 }\r
++	command = { type = wakeleader which = 631301 }\r
++	command = { type = wakeleader which = 631302 }\r
++	command = { type = wakeleader which = 631303 }\r
++	command = { type = wakeleader which = 631304 }\r
++	command = { type = wakeleader which = 631305 }\r
++	command = { type = wakeleader which = 631306 }\r
++	command = { type = wakeleader which = 631307 }\r
++	command = { type = wakeleader which = 631308 }\r
++	command = { type = wakeleader which = 631309 }\r
++	command = { type = wakeleader which = 631310 }\r
++	command = { type = wakeleader which = 631311 }\r
++	command = { type = wakeleader which = 631312 }\r
++	command = { type = wakeleader which = 631313 }\r
++	command = { type = wakeleader which = 631314 }\r
++	command = { type = wakeleader which = 631315 }\r
++	command = { type = wakeleader which = 631316 }\r
++	command = { type = wakeleader which = 631317 }\r
++	command = { type = wakeleader which = 631318 }\r
++	command = { type = wakeleader which = 631319 }\r
++	command = { type = wakeleader which = 631320 }\r
++	command = { type = wakeleader which = 631321 }\r
++	command = { type = wakeleader which = 631322 }\r
++	command = { type = wakeleader which = 631323 }\r
++	command = { type = wakeleader which = 631324 }\r
++	command = { type = wakeleader which = 631325 }\r
++	command = { type = wakeleader which = 631326 }\r
++	command = { type = wakeleader which = 631327 }\r
++	command = { type = wakeleader which = 631328 }\r
++	command = { type = wakeleader which = 631329 }\r
++	command = { type = wakeleader which = 631330 }\r
++	command = { type = wakeleader which = 631331 }\r
++	command = { type = wakeleader which = 631332 }\r
++	command = { type = wakeleader which = 631333 }\r
++	command = { type = wakeleader which = 631334 }\r
++	command = { type = wakeleader which = 631335 }\r
++	command = { type = wakeleader which = 631336 }\r
++	command = { type = wakeleader which = 631337 }\r
++	command = { type = wakeleader which = 631338 }\r
++	command = { type = wakeleader which = 631339 }\r
++	command = { type = wakeleader which = 631340 }\r
++	command = { type = wakeleader which = 631341 }\r
++	command = { type = wakeleader which = 631342 }\r
++	command = { type = wakeleader which = 631343 }\r
++	command = { type = wakeleader which = 631344 }\r
++	command = { type = wakeleader which = 631345 }\r
++	command = { type = wakeleader which = 631346 }\r
++	command = { type = wakeleader which = 631347 }\r
++	command = { type = wakeleader which = 631348 }\r
++	command = { type = wakeleader which = 631349 }\r
++	command = { type = wakeleader which = 631350 }\r
++	command = { type = wakeleader which = 631351 }\r
++	command = { type = wakeleader which = 631352 }\r
++	command = { type = wakeleader which = 631353 }\r
++	command = { type = wakeleader which = 631354 }\r
++	command = { type = wakeleader which = 631355 }\r
++	command = { type = wakeleader which = 631356 }\r
++	command = { type = wakeleader which = 631357 }\r
++	command = { type = wakeleader which = 631358 }\r
++	command = { type = wakeleader which = 631359 }\r
++	command = { type = wakeleader which = 631360 }\r
++	command = { type = wakeleader which = 631361 }\r
++	command = { type = wakeleader which = 631362 }\r
++	command = { type = wakeleader which = 631363 }\r
++	command = { type = wakeleader which = 631364 }\r
++	command = { type = wakeleader which = 631365 }\r
++	command = { type = wakeleader which = 631366 }\r
++	command = { type = wakeleader which = 631367 }\r
++	command = { type = wakeleader which = 631368 }\r
++	command = { type = wakeleader which = 631369 }\r
++	command = { type = wakeleader which = 631370 }\r
++	command = { type = wakeleader which = 631371 }\r
++	command = { type = wakeleader which = 631372 }\r
++	command = { type = wakeleader which = 631373 }\r
++	command = { type = wakeleader which = 631374 }\r
++	command = { type = wakeleader which = 631375 }\r
++	command = { type = wakeleader which = 631376 }\r
++	command = { type = wakeleader which = 631377 }\r
++	command = { type = wakeleader which = 631378 }\r
++	command = { type = wakeleader which = 631379 }\r
++	command = { type = wakeleader which = 631380 }\r
++	command = { type = wakeleader which = 631381 }\r
++	command = { type = wakeleader which = 631382 }\r
++	command = { type = wakeleader which = 631383 }\r
++	command = { type = wakeleader which = 631384 }\r
++	command = { type = wakeleader which = 631385 }\r
++	command = { type = wakeleader which = 631386 }\r
++	command = { type = wakeleader which = 631387 }\r
++	command = { type = wakeleader which = 631388 }\r
++	command = { type = wakeleader which = 631389 }\r
++	command = { type = wakeleader which = 631390 }\r
++	command = { type = wakeleader which = 631391 }\r
++	command = { type = wakeleader which = 631392 }\r
++	command = { type = wakeleader which = 631393 }\r
++	command = { type = wakeleader which = 631394 }\r
++	command = { type = wakeleader which = 631395 }\r
++	command = { type = wakeleader which = 631396 }\r
++	command = { type = wakeleader which = 631397 }\r
++	command = { type = wakeleader which = 631398 }\r
++	command = { type = wakeleader which = 631399 }\r
++	command = { type = wakeleader which = 631400 }\r
++	command = { type = wakeleader which = 631400 }\r
++	command = { type = wakeleader which = 631401 }\r
++	command = { type = wakeleader which = 631402 }\r
++	command = { type = wakeleader which = 631403 }\r
++	command = { type = wakeleader which = 631404 }\r
++	command = { type = wakeleader which = 631405 }\r
++	command = { type = wakeleader which = 631406 }\r
++	command = { type = wakeleader which = 631407 }\r
++	command = { type = wakeleader which = 631408 }\r
++	command = { type = wakeleader which = 631409 }\r
++	command = { type = wakeleader which = 631410 }\r
++	command = { type = wakeleader which = 631411 }\r
++	command = { type = wakeleader which = 631412 }\r
++	command = { type = wakeleader which = 631413 }\r
++	command = { type = wakeleader which = 631414 }\r
++	command = { type = wakeleader which = 631415 }\r
++	command = { type = wakeleader which = 631416 }\r
++	command = { type = wakeleader which = 631417 }\r
++	command = { type = wakeleader which = 631418 }\r
++	command = { type = wakeleader which = 631419 }\r
++	command = { type = wakeleader which = 631420 }\r
++	command = { type = wakeleader which = 631421 }\r
++	command = { type = wakeleader which = 631422 }\r
++	command = { type = wakeleader which = 631423 }\r
++	command = { type = wakeleader which = 631424 }\r
++	command = { type = wakeleader which = 631425 }\r
++	command = { type = wakeleader which = 631426 }\r
++	command = { type = wakeleader which = 631427 }\r
++	command = { type = wakeleader which = 631428 }\r
++	command = { type = wakeleader which = 631429 }\r
++	command = { type = wakeleader which = 631430 }\r
++	command = { type = wakeleader which = 631431 }\r
++	command = { type = wakeleader which = 631432 }\r
++	command = { type = wakeleader which = 631433 }\r
++	command = { type = wakeleader which = 631434 }\r
++	command = { type = wakeleader which = 631435 }\r
++	command = { type = wakeleader which = 631436 }\r
++	command = { type = wakeleader which = 631437 }\r
++	command = { type = wakeleader which = 631438 }\r
++	command = { type = wakeleader which = 631439 }\r
++	command = { type = wakeleader which = 631440 }\r
++	command = { type = wakeleader which = 631441 }\r
++	command = { type = wakeleader which = 631442 }\r
++	command = { type = wakeleader which = 631443 }\r
++	command = { type = wakeleader which = 631444 }\r
++	command = { type = wakeleader which = 631445 }\r
++	command = { type = wakeleader which = 631446 }\r
++	command = { type = wakeleader which = 631447 }\r
++	command = { type = wakeleader which = 631448 }\r
++	command = { type = wakeleader which = 631449 }\r
++	command = { type = wakeleader which = 631450 }\r
++	command = { type = wakeleader which = 631451 }\r
++	command = { type = wakeleader which = 631452 }\r
++	command = { type = wakeleader which = 631453 }\r
++	command = { type = wakeleader which = 631454 }\r
++	command = { type = wakeleader which = 631455 }\r
++	command = { type = wakeleader which = 631456 }\r
++	command = { type = wakeleader which = 631457 }\r
++	command = { type = wakeleader which = 631458 }\r
++	command = { type = wakeleader which = 631459 }\r
++	command = { type = wakeleader which = 631460 }\r
++	command = { type = wakeleader which = 631461 }\r
++	command = { type = wakeleader which = 631462 }\r
++	command = { type = wakeleader which = 631463 }\r
++	command = { type = wakeleader which = 631464 }\r
++	command = { type = wakeleader which = 631465 }\r
++	command = { type = wakeleader which = 631466 }\r
++	command = { type = wakeleader which = 631467 }\r
++	command = { type = wakeleader which = 631468 }\r
++	command = { type = wakeleader which = 631469 }\r
++	command = { type = wakeleader which = 631470 }\r
++	command = { type = wakeleader which = 631471 }\r
++	command = { type = wakeleader which = 631472 }\r
++	command = { type = wakeleader which = 631473 }\r
++	command = { type = wakeleader which = 631474 }\r
++	command = { type = wakeleader which = 631475 }\r
++	command = { type = wakeleader which = 631476 }\r
++	command = { type = wakeleader which = 631477 }\r
++	command = { type = wakeleader which = 631478 }\r
++	command = { type = wakeleader which = 631479 }\r
++	command = { type = wakeleader which = 631480 }\r
++	command = { type = wakeleader which = 631481 }\r
++	command = { type = wakeleader which = 631482 }\r
++	command = { type = wakeleader which = 631483 }\r
++	command = { type = wakeleader which = 631484 }\r
++	command = { type = wakeleader which = 631485 }\r
++	command = { type = wakeleader which = 631486 }\r
++	command = { type = wakeleader which = 631487 }\r
++	command = { type = wakeleader which = 631488 }\r
++	command = { type = wakeleader which = 631489 }\r
++	command = { type = wakeleader which = 631490 }\r
++	command = { type = wakeleader which = 631491 }\r
++	command = { type = wakeleader which = 631492 }\r
++	command = { type = wakeleader which = 631493 }\r
++	command = { type = wakeleader which = 631494 }\r
++	command = { type = wakeleader which = 631495 }\r
++	command = { type = wakeleader which = 631496 }\r
++	command = { type = wakeleader which = 631497 }\r
++	command = { type = wakeleader which = 631498 }\r
++	command = { type = wakeleader which = 631499 }\r
++	command = { type = wakeleader which = 631500 }\r
++	command = { type = wakeleader which = 631500 }\r
++	command = { type = wakeleader which = 631501 }\r
++	command = { type = wakeleader which = 631502 }\r
++	command = { type = wakeleader which = 631503 }\r
++	command = { type = wakeleader which = 631504 }\r
++	command = { type = wakeleader which = 631505 }\r
++	command = { type = wakeleader which = 631506 }\r
++	command = { type = wakeleader which = 631507 }\r
++	command = { type = wakeleader which = 631508 }\r
++	command = { type = wakeleader which = 631509 }\r
++	command = { type = wakeleader which = 631510 }\r
++	command = { type = wakeleader which = 631511 }\r
++	command = { type = wakeleader which = 631512 }\r
++	command = { type = wakeleader which = 631513 }\r
++	command = { type = wakeleader which = 631514 }\r
++	command = { type = wakeleader which = 631515 }\r
++	command = { type = wakeleader which = 631516 }\r
++	command = { type = wakeleader which = 631517 }\r
++	command = { type = wakeleader which = 631518 }\r
++	command = { type = wakeleader which = 631519 }\r
++	command = { type = wakeleader which = 631520 }\r
++	command = { type = wakeleader which = 631521 }\r
++	command = { type = wakeleader which = 631522 }\r
++	command = { type = wakeleader which = 631523 }\r
++	command = { type = wakeleader which = 631524 }\r
++	command = { type = wakeleader which = 631525 }\r
++	command = { type = wakeleader which = 631526 }\r
++	command = { type = wakeleader which = 631527 }\r
++	command = { type = wakeleader which = 631528 }\r
++	command = { type = wakeleader which = 631529 }\r
++	command = { type = wakeleader which = 631530 }\r
++	command = { type = wakeleader which = 631531 }\r
++	command = { type = wakeleader which = 631532 }\r
++	command = { type = wakeleader which = 631533 }\r
++	command = { type = wakeleader which = 631534 }\r
++	command = { type = wakeleader which = 631535 }\r
++	command = { type = wakeleader which = 631536 }\r
++	command = { type = wakeleader which = 631537 }\r
++	command = { type = wakeleader which = 631538 }\r
++	command = { type = wakeleader which = 631539 }\r
++	command = { type = wakeleader which = 631540 }\r
++	command = { type = wakeleader which = 631541 }\r
++	command = { type = wakeleader which = 631542 }\r
++	command = { type = wakeleader which = 631543 }\r
++	command = { type = wakeleader which = 631544 }\r
++	command = { type = wakeleader which = 631545 }\r
++	command = { type = wakeleader which = 631546 }\r
++	command = { type = wakeleader which = 631547 }\r
++	command = { type = wakeleader which = 631548 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # ワイマールの理想を理解できない将軍は不要だ\r
++	name = "ACTIONNAME99660000B"\r
++	command = { type = dissent value = 1 }\r
++	command = { type = money value = 100 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++##########################################################################\r
+ #  財政政策方針\r
+ # 世界大恐慌の直撃を受けたドイツの経済は悪化の一途をたどり続け、現時点で600万人以上のドイツ人が失業していた。\r
+ # 1930年に首相に就任したハインリヒ・ブリューニングの実施した緊縮財政とデフレーション政策は、\r
+@@ -221,6 +1250,7 @@ event = {
+ 	name = "ACTIONNAME99660001A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = money value = -1000 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	ai_chance = 70\r
+ 	}\r
+ \r
+@@ -228,6 +1258,7 @@ event = {
+ 	name = "ACTIONNAME99660001B"\r
+ 	command = { type = dissent value = 10 }\r
+ 	command = { type = money value = 1000 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = sleepevent which = 2003136 }\r
+ 	ai_chance = 30\r
+ 	}\r
+@@ -264,12 +1295,14 @@ event = {
+ 	name = "ACTIONNAME99660002A"\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { type = money value = -750 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	ai_chance = 70\r
+ 	}\r
+ \r
+ 	action = { # そんな余裕はない\r
+ 	name = "ACTIONNAME99660002B"\r
+ 	command = { type = dissent value = 5 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	ai_chance = 30\r
+ 	}\r
+ }	\r
+@@ -307,12 +1340,14 @@ event = {
+ 	name = "ACTIONNAME99660003A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = money value = 1200 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	ai_chance = 90\r
+ 	}\r
+ \r
+ 	action = { # 必要以上の税金を取り立てるべきではない\r
+ 	name = "ACTIONNAME99660003B"\r
+ 	command = { type = dissent value = -5 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	ai_chance = 10\r
+ 	}\r
+ }\r
+@@ -385,7 +1420,7 @@ event = {
+ 	command = { type = money value = -7500 }\r
+ 	command = { type = industrial_modifier which = total value = -5 }\r
+ 	command = { type = tc_mod value = 2 }\r
+-	command = { type = domestic which = free_market value = -3 }\r
++	command = { type = domestic which = free_market value = -4 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -421,12 +1456,14 @@ event = {
+ 	name = "ACTIONNAME99660005A"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = money value = 1500 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	ai_chance = 90\r
+ 	}\r
+ \r
+ 	action = { # 必要以上の税金を取り立てるべきではない\r
+ 	name = "ACTIONNAME99660005B"\r
+ 	command = { type = dissent value = -5 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	ai_chance = 10\r
+ 	}\r
+ }\r
+@@ -1760,7 +2797,7 @@ event = {
+ 	money = 500\r
+ 	}\r
+ 	trigger = {	\r
+-			random = 10\r
++	random = 20\r
+ 	}\r
+ 	\r
+ 	name = "2011038name"\r
+@@ -1770,12 +2807,15 @@ event = {
+ 	decision_picture = "decision_new_deal"\r
+ \r
+ 	date = { day = 1 month = january year = 1933 }\r
+-	offset = 15\r
++	offset = 7\r
+ 	deathdate = { day = 30 month = december year = 1935 }\r
+ \r
+ 	action = { # 強固な経済を必要としている\r
+ 	name = "2011038a"\r
+-     	command = { type = industrial_modifier which = total value = 10 }\r
++	command = { type = building_prod_mod which = ic value = 10 }\r
++	command = { type = building_prod_mod which = infrastructure value = 10 }\r
++     	command = { type = industrial_modifier which = total value = 5 }\r
++	command = { type = peacetime_ic_mod value = 10 }\r
+ 	command = { type = dissent value = -5 }\r
+ 	command = { trigger = { ai = no } type = money value = -500 }\r
+ 	command = { type = domestic which = free_market value = -1 }\r
+@@ -1818,6 +2858,8 @@ event = {
+ 	command = { type = construct which = infrastructure where = 138 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = 139 value = 20 }\r
+ 	command = { trigger = { ai = no } type = money value = -500 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1851,6 +2893,8 @@ event = {
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 	command = { type = construct which = infrastructure where = -1 value = 10 }\r
+ 	command = { trigger = { ai = no } type = money value = -500 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ }\r
+@@ -1893,6 +2937,7 @@ event = {
+ 	command = { type = dissent value = -5 }\r
+      	command = { type = industrial_modifier which = total value = 2 }\r
+ 	command = { type = trigger which = 99660035 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = sleepevent which = 2003134 } # ザール国際連盟管理地域（バニラ）\r
+ 	command = { type = sleepevent which = 2002078 }\r
+ 	ai_chance = 50\r
+@@ -1903,6 +2948,7 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+      	command = { type = industrial_modifier which = total value = 2 }\r
+ 	command = { type = trigger which = 99660036 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = sleepevent which = 2003134 } # ザール国際連盟管理地域（バニラ）\r
+ 	command = { type = sleepevent which = 2002078 }\r
+ 	ai_chance = 50\r
+@@ -1982,6 +3028,8 @@ event = {
+ 	name = "2049092a"\r
+ 	command = { type = dissent value = -10 }\r
+      	command = { type = industrial_modifier which = total value = 10 }\r
++	command = { type = domestic which = free_market value = 2 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
+ 	}\r
+ }\r
+ \r
+@@ -2042,8 +3090,8 @@ event = {
+ 	name = "ACTIONNAME99660038B"\r
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = belligerence value = 15 }\r
+-	command = { type = domestic which = defense_lobby value = 1 }\r
+-	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = relation which = ENG value = -100 }\r
+ 	command = { type = relation which = FRA value = -100 }\r
+ 	command = { type = relation which = USA value = -100 }\r
+@@ -2088,7 +3136,7 @@ event = {
+ 	name = "EVT_99660039_NAME"\r
+ 	desc = "EVT_99660039_DESC"\r
+ 	style = 2\r
+-	picture = "Wehrmacht"\r
++	picture = "Reichswehr"\r
+ 	decision_picture = "decision_Rhineland"\r
+ \r
+ 	date = { day = 0 month = 0 year = 1935 }\r
+@@ -2099,6 +3147,8 @@ event = {
+ 	name = "ACTIONNAME99660039A"\r
+ 	command = { type = dissent value = -8 }\r
+ 	command = { type = belligerence value = 5 }\r
++	command = { type = domestic which = defense_lobby value = 2 }\r
++	command = { type = domestic which = interventionism value = 2 }\r
+ 	command = { type = add_division value = light_armor when = 0 where = -80 }\r
+ 	command = { type = add_division value = light_armor when = 0 where = -80 }\r
+ 	command = { type = add_division value = light_armor when = 0 where = -80 }\r
+@@ -2138,6 +3188,26 @@ event = {
+ 	command = { type = add_division value = infantry when = 8 where = -80 }\r
+ 	command = { type = add_division value = infantry when = 8 where = -80 }\r
+ 	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
++	command = { type = add_division value = infantry when = 8 where = -80 }\r
+ 	command = { type = add_division value = interceptor when = 8 where = -30 }\r
+ 	command = { type = add_division value = interceptor when = 8 where = -30 }\r
+ 	command = { type = add_division value = interceptor when = 8 where = -30 }\r
+@@ -2146,8 +3216,6 @@ event = {
+ 	command = { type = add_division value = tactical_bomber when = 6 where = -30 }\r
+ 	command = { type = add_division value = tactical_bomber when = 6 where = -30 }\r
+ 	command = { type = add_division value = tactical_bomber when = 6 where = -30 }\r
+-	command = { type = trigger which = 2001025 } # UK Gears up for war\r
+-	command = { type = trigger which = 2002001 } # France Gears up for war\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2165,8 +3233,6 @@ event = {
+ 	command = { type = relation which = POL value = 15 }\r
+ 	command = { type = relation which = CZE value = 15 }\r
+ 	command = { type = relation which = DEN value = 15 }\r
+-	command = { type = trigger which = 2001025 } # UK Gears up for war\r
+-	command = { type = trigger which = 2002001 } # France Gears up for war\r
+ 	ai_chance = 0\r
+ 	}\r
+ }\r
+@@ -2202,6 +3268,8 @@ event = {
+      	command = { type = industrial_modifier which = total value = 1 }\r
+ 	command = { type = trade which = DFR where = SOV supplies = -5 money = -1 rare_materials = 10 metal = 10 oil = 5 value = 1 }\r
+  	command = { type = relation which = SOV value = 15 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = trigger which = 99660041 }\r
+ 	ai_chance = 95\r
+ 	}\r
+@@ -2262,6 +3330,8 @@ event = {
+      	command = { type = industrial_modifier which = total value = 1 }\r
+ 	command = { type = trade which = GER where = SOV supplies = -5 money = -1 rare_materials = 10 metal = 10 oil = 5 value = 1 }\r
+  	command = { type = relation which = SOV value = 30 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = trigger which = 99660043 }\r
+ 	ai_chance = 95\r
+ 	}\r
+@@ -2329,6 +3399,8 @@ event = {
+  	command = { type = gain_tech which = -2 }\r
+  	command = { type = gain_tech which = -2 }\r
+  	command = { type = gain_tech which = -2 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = trigger which = 99660045 }\r
+ 	}\r
+ \r
+@@ -2915,6 +3987,8 @@ event = {
+ 	command = { type = relation which = FRA value = -10 }\r
+ 	command = { type = relation which = ENG value = -10 }\r
+ 	command = { type = relation which = ITA value = -10 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = manpowerpool value = -10 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -1000 }\r
+ 	command = { trigger = { ai = no } type = money value = -200 }\r
+@@ -2929,6 +4003,8 @@ event = {
+ 	command = { type = relation which = FRA value = -10 }\r
+ 	command = { type = relation which = ENG value = -10 }\r
+ 	command = { type = relation which = ITA value = -10 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = manpowerpool value = -10 }\r
+ 	command = { type = supplies value = -2000 }\r
+ 	command = { type = money value = -400 }\r
+@@ -3059,6 +4135,1406 @@ event = {
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  中独合作\r
++# 1920年代の終わりから1930年代の終わりにかけて、軍隊と国防産業の近代化を必要とする中華民国と、\r
++# 資源の安定供給を必要としていたドイツの思惑が一致し、両国は蜜月関係を築いていた。\r
++# しかしこの関係は、日本の中国進出により、見直しが迫られている。\r
++# 具体的には、ソ連に対するけん制の為に日本と新たに手を組むか、古くからの友好国である中国と関係を維持するかである。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660058\r
++	random = no\r
++	country = DFR\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	exists = JAP\r
++	exists = CHI\r
++	NOT = { alliance = { country = DFR country = JAP } }\r
++	NOT = { alliance = { country = DFR country = CHI } }\r
++	NOT = { war = { country = DFR country = JAP } }\r
++	NOT = { war = { country = DFR country = CHI } }\r
++	atwar = no\r
++	NOT = { ispuppet = yes }\r
++	}\r
++	\r
++	name = "EVT_99660058_NAME"\r
++	desc = "EVT_99660058_DESC"\r
++	style = 2\r
++	picture = "ccip_wjw"\r
++\r
++	date = { day = 0 month = 6 year = 1933 }\r
++	\r
++	action = { # 中国との友好を深める\r
++	name = "ACTIONNAME99660058A"\r
++	command = { type = dissent value = -4 }\r
++ 	command = { type = belligerence which = DFR value = 2 }\r
++ 	command = { type = relation which = JAP value = -50 }\r
++ 	command = { type = relation which = CHI value = 50 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
++     	command = { type = industrial_modifier which = total value = 2 }\r
++	command = { type = trigger which = 99660060 }\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # 日本との友好を深める\r
++	name = "ACTIONNAME99660058B"\r
++	command = { type = dissent value = -4 }\r
++ 	command = { type = belligerence which = DFR value = 2 }\r
++ 	command = { type = relation which = JAP value = 50 }\r
++ 	command = { type = relation which = CHI value = -50 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
++     	command = { type = industrial_modifier which = total value = 2 }\r
++	command = { type = trigger which = 99660059 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中独合作 ― 日本との新たな関係\r
++# 1920年代の終わりから1930年代の終わりにかけて、軍隊と国防産業の近代化を必要とする中華民国と、\r
++# 資源の安定供給を必要としていたドイツの思惑が一致し、両国は蜜月関係を築いていた。\r
++# しかしこの関係は、日本の中国進出により、ドイツが外交政策を変更し、日本との新たな関係を築くことを選んだ。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660059\r
++	random = no\r
++	country = JAP\r
++	\r
++	name = "EVT_99660059_NAME"\r
++	desc = "EVT_99660059_DESC"\r
++	style = 2\r
++	picture = "ccip_wjw"\r
++\r
++	action = { # ドイツとの友好を受け入れよう\r
++	name = "ACTIONNAME99660059A"\r
++ 	command = { type = belligerence which = JAP value = 2 }\r
++ 	command = { type = relation which = DFR value = 30 }\r
++     	command = { type = industrial_modifier which = total value = 2 }\r
++        command = { type = construct which = ic where = 1552 value = 1 } # 東京\r
++        command = { type = construct which = ic where = 1550 value = 1 } # 横濱\r
++        command = { type = construct which = ic where = 1553 value = 1 } # 大阪\r
++        command = { type = construct which = ic where = 1554 value = 1 } # 廣島\r
++        command = { type = construct which = ic where = 1557 value = 1 } # 名古屋\r
++        command = { type = construct which = ic where = 1551 value = 1 } # 新潟\r
++        command = { type = construct which = ic where = 1560 value = 1 } # 福岡\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # ドイツとの関係を深める必要ない\r
++	name = "ACTIONNAME99660059B"\r
++ 	command = { type = relation which = DFR value = -10 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中独合作 ― 更なる関係強化\r
++# 1920年代の終わりから1930年代の終わりにかけて、軍隊と国防産業の近代化を必要とする中華民国と、\r
++# 資源の安定供給を必要としていたドイツの思惑が一致し、両国は蜜月関係を築いていた。\r
++# この関係は、日本の中国進出により、中国が近代化と国防の強化を推し進めるためにドイツの力が必要になると、更に関係が深まった。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660060\r
++	random = no\r
++	country = CHI\r
++	save_date = yes\r
++	\r
++	name = "EVT_99660060_NAME"\r
++	desc = "EVT_99660060_DESC"\r
++	style = 2\r
++	picture = "ccip_wjw"\r
++\r
++	action = { # ドイツとの昔からの友情を深めよう\r
++	name = "ACTIONNAME99660060A"\r
++ 	command = { type = setflag which = Sino-German }\r
++ 	command = { type = belligerence which = CHI value = 2 }\r
++ 	command = { type = relation which = DFR value = 30 }\r
++	command = { type = dissent value = -50 }\r
++     	command = { type = industrial_modifier which = total value = 10 }\r
++     	command = { trigger = { ai = no } type = research_mod value = 5 }\r
++     	command = { trigger = { ai = yes } type = research_mod value = 15 }\r
++	command = { type = waketeam which = 55005 when = 1 } # ファルケンハウゼン\r
++        # 陸軍生産補正\r
++        command = { type = build_cost which = infantry when = on_upgrade where = relative value = -10 }\r
++        command = { type = build_cost which = artillery when = on_upgrade where = relative value = -10 }\r
++        command = { type = build_cost which = armored_car when = on_upgrade where = relative value = -10 }\r
++	# 希少資源\r
++	command = { type = add_prov_resource which = rare_materials where = 1352 value = 2 } # 南昌（ナンチャン）\r
++        command = { type = add_prov_resource which = rare_materials where = 1347 value = 2 } # 温洲（ウェンチョウ）\r
++        command = { type = add_prov_resource which = rare_materials where = 1346 value = 2 } # 寧波（ニンポー）\r
++        command = { type = add_prov_resource which = rare_materials where = 1345 value = 2 } # 杭洲（ハンチョウ）\r
++        command = { type = add_prov_resource which = rare_materials where = 1348 value = 2 } # 金華（ジンファ）\r
++        command = { type = add_prov_resource which = rare_materials where = 1305 value = 2 } # 貴陽（コイヤン）\r
++        command = { type = add_prov_resource which = rare_materials where = 1303 value = 2 } # 安順（アンシュン）\r
++        command = { type = add_prov_resource which = rare_materials where = 1304 value = 2 } # 遵義（ツンイー）\r
++        command = { type = add_prov_resource which = rare_materials where = 1306 value = 2 } # 凱里（カイリー）\r
++	# 工場\r
++        command = { type = construct which = ic where = 1313 value = 3 } # 沙市（シャーシー）\r
++        command = { type = construct which = ic where = 1317 value = 3 } # 武漢（ウーハン）\r
++        command = { type = construct which = ic where = 1318 value = 3 } # 黄石（ファンシー）\r
++        command = { type = construct which = ic where = 1307 value = 3 } # 懐化（ファィファ）\r
++        command = { type = construct which = ic where = 1308 value = 3 } # 長沙（チャンシャー）\r
++        command = { type = construct which = ic where = 1297 value = 3 } # 成都（チェントゥー）\r
++        command = { type = construct which = ic where = 1299 value = 3 } # 重慶（チョンチン）\r
++        command = { type = construct which = ic where = 1337 value = 3 } # 南京（ナンキン）\r
++        command = { type = construct which = ic where = 1336 value = 3 } # 徐州（シュイチョウ）\r
++        command = { type = construct which = ic where = 1328 value = 3 } # 青島（チンタオ）\r
++	# インフラ\r
++        command = { type = construct which = infrastructure where = 1351 value = 30 } #Zhejiang-Guizhou\r
++        command = { type = construct which = infrastructure where = 1345 value = 30 }\r
++        command = { type = construct which = infrastructure where = 1352 value = 30 }\r
++        command = { type = construct which = infrastructure where = 1355 value = 30 }\r
++        command = { type = construct which = infrastructure where = 1311 value = 30 } \r
++        command = { type = construct which = infrastructure where = 1306 value = 30 } \r
++        command = { type = construct which = infrastructure where = 1305 value = 30 } \r
++        command = { type = construct which = infrastructure where = 1312 value = 30 }\r
++        command = { type = construct which = infrastructure where = 1317 value = 30 } #Guangzou-Hankou\r
++        command = { type = construct which = infrastructure where = 1318 value = 30 }\r
++        command = { type = construct which = infrastructure where = 1308 value = 30 }		\r
++        command = { type = construct which = infrastructure where = 1368 value = 30 }		\r
++        command = { type = construct which = infrastructure where = 1369 value = 30 }	\r
++	command = { type = construct which = infrastructure where = 1313 value = 30 } # Misc. Places (IC/Rare) # Hubei\r
++        command = { type = construct which = infrastructure where = 1307 value = 30 } # Hunan\r
++        command = { type = construct which = infrastructure where = 1297 value = 30 } # Sichuan\r
++        command = { type = construct which = infrastructure where = 1299 value = 30 }\r
++	# 装甲部隊編成ドクトリン\r
++	command = { type = activate which = 6900 }\r
++	command = { type = activate which = 6920 }\r
++	command = { type = activate which = 6930 }\r
++        # 産業技術\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5050 } } } type = gain_tech which = 5050 } # 施設設計\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5830 } } } type = gain_tech which = 5830 } # 製造支援システム\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5060 } } } type = gain_tech which = 5060 } # 工程再編\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5070 } } } type = gain_tech which = 5070 } # 生産標準化\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5700 } } } type = gain_tech which = 5700 } # 初期型農業研究\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5710 } } } type = gain_tech which = 5710 } # 初期型機械化\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5010 } } } type = gain_tech which = 5010 } # 現代農業\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5020 } } } type = gain_tech which = 5020 } # 機械化農業\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5030 } } } type = gain_tech which = 5030 } # 農業化学\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5090 } } } type = gain_tech which = 5090 } # 改良型建設技術\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5190 } } } type = gain_tech which = 5190 } # 基本的石油精製\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5200 } } } type = gain_tech which = 5200 } # 改良型石油精製\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5600 } } } type = gain_tech which = 5600 } # 初期型抗生物質\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5610 } } } type = gain_tech which = 5610 } # 輸血\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5620 } } } type = gain_tech which = 5620 } # 初期型薬理学\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5630 } } } type = gain_tech which = 5630 } # サルファ剤抗生物質\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5640 } } } type = gain_tech which = 5640 } # 基本型薬理学\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 14000 } } } type = gain_tech which = 14000 } # 初期型前大戦病院システム\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 14010 } } } type = gain_tech which = 14010 } # 改良型前大戦病院システム\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 14020 } } } type = gain_tech which = 14020 } # 初期型病院システム\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 14030 } } } type = gain_tech which = 14030 } # 基本型病院システム\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5310 } } } type = gain_tech which = 5310 } # 人口統計作表機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 54010 } } } type = gain_tech which = 54010 } # 自動給紙タビュレータ\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 54020 } } } type = gain_tech which = 54020 } # アナログ火器管制\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 54030 } } } type = gain_tech which = 54030 } # 統計処理機械\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5320 } } } type = gain_tech which = 5320 } # 基本型計算機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5316 } } } type = gain_tech which = 5316 } # 暗号作成機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5326 } } } type = gain_tech which = 5326 } # テレタイプ端末\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5327 } } } type = gain_tech which = 5327 } # 基本型暗号解読機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5350 } } } type = gain_tech which = 5350 } # 基本型暗号作成機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5360 } } } type = gain_tech which = 5360 } # 基本型暗号解読機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5560 } } } type = gain_tech which = 5560 } # ロケットエンジン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5470 } } } type = gain_tech which = 5470 } # 原爆開発チーム\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5480 } } } type = gain_tech which = 5480 } # 原爆開発研究所\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5490 } } } type = gain_tech which = 5490 } # 核開発チーム\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5500 } } } type = gain_tech which = 5500 } # 同位元素分離施設\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5510 } } } type = gain_tech which = 5510 } # 核燃料分析\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5520 } } } type = gain_tech which = 5520 } # 実験用原子炉\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5530 } } } type = gain_tech which = 5530 } # 原子炉の実用化\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 5540 } } } type = gain_tech which = 5540 } # 原子力発電\r
++        # 歩兵技術\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1080 } } } type = gain_tech which = 1080 } # 1926年型歩兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1090 } } } type = gain_tech which = 1090 } # 1931年型歩兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1100 } } } type = gain_tech which = 1100 } # 1936年型歩兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1110 } } } type = gain_tech which = 1110 } # 1939年型歩兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1240 } } } type = gain_tech which = 1240 } # 1930年型山岳師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1250 } } } type = gain_tech which = 1250 } # 1935年型山岳師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1260 } } } type = gain_tech which = 1260 } # 1939年型山岳師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1370 } } } type = gain_tech which = 1370 } # 1932年型騎兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1380 } } } type = gain_tech which = 1380 } # 1936年型騎兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1390 } } } type = gain_tech which = 1390 } # 1939年型騎兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1396 } } } type = gain_tech which = 1396 } # 1935年型自動車化歩兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1940 } } } type = gain_tech which = 1400 } # 1939年型自動車化歩兵師団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1850 } } } type = gain_tech which = 1850 } # 1921年型戦闘工兵旅団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1860 } } } type = gain_tech which = 1860 } # 1930年型戦闘工兵旅団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1870 } } } type = gain_tech which = 1870 } # 1939年型戦闘工兵旅団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1970 } } } type = gain_tech which = 1970 } # 1924年型戦間期補給\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1980 } } } type = gain_tech which = 1980 } # 1930年型戦間期補給\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 1990 } } } type = gain_tech which = 1990 } # 後方地域補給物資集積所\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 199130 } } } type = gain_tech which = 199130 } # 後方地域車両修理工場\r
++        # 戦車技術\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2920 } } } type = gain_tech which = 2920 } # 初期戦間期型野砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2930 } } } type = gain_tech which = 2930 } # 基本型戦間期野砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2940 } } } type = gain_tech which = 2940 } # 改良型戦間期野砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2320 } } } type = gain_tech which = 2320 } # 初期型野砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2800 } } } type = gain_tech which = 2800 } # 前大戦型固定対空砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2450 } } } type = gain_tech which = 2450 } # 前大戦後型固定対空砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 21180 } } } type = gain_tech which = 21180 } # 初期戦間期型固定対空砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 21190 } } } type = gain_tech which = 21190 } # 基本戦間期型固定対空砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 21200 } } } type = gain_tech which = 21200 } # 改良戦間期型固定対空砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2460 } } } type = gain_tech which = 2460 } # 初期型固定対空砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2810 } } } type = gain_tech which = 2810 } # 前大戦型対空砲旅団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2820 } } } type = gain_tech which = 2820 } # 戦間期型対空砲旅団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2510 } } } type = gain_tech which = 2510 } # 基本型対空砲旅団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2520 } } } type = gain_tech which = 2520 } # 改良型対空砲旅団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2400 } } } type = gain_tech which = 2400 } # 初期型対戦車砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2410 } } } type = gain_tech which = 2410 } # 基本型対戦車砲\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2880 } } } type = gain_tech which = 2880 } # 戦間期型装甲車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2020 } } } type = gain_tech which = 2020 } # 豆戦車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2150 } } } type = gain_tech which = 2150 } # 基本型装甲車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2630 } } } type = gain_tech which = 2630 } # 戦間期型第1世代戦車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2640 } } } type = gain_tech which = 2640 } # 戦間期型第2世代戦車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2646 } } } type = gain_tech which = 2646 } # 戦間期型第3世代戦車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2650 } } } type = gain_tech which = 2650 } # 戦間期型第4世代戦車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2030 } } } type = gain_tech which = 2030 } # 初期型戦車\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 2040 } } } type = gain_tech which = 2040 } # 基本型軽戦車\r
++	#陸軍ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 6900 } } } type = gain_tech which = 6900 } # 装甲部隊編成ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 6000330 } } } type = gain_tech which = 6000330 } # 大規模包囲ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 6000310 } } } type = gain_tech which = 6000310 } # 焦土戦術ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 6000340 } } } type = gain_tech which = 6000340 } # ゲリラ戦ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 6000320 } } } type = gain_tech which = 6000320 } # 飽和攻撃ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 6000350 } } } type = gain_tech which = 6000350 } # 徹底抗戦ドクトリン\r
++	#航空機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4550 } } } type = gain_tech which = 4550 } # 1918年型迎撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4010 } } } type = gain_tech which = 4010 } # 1924年型迎撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4020 } } } type = gain_tech which = 4020 } # 1930年型迎撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4030 } } } type = gain_tech which = 4030 } # 1937年型迎撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4320 } } } type = gain_tech which = 4320 } # 1918年型戦闘機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4330 } } } type = gain_tech which = 4330 } # 1926年型戦闘機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4340 } } } type = gain_tech which = 4340 } # 1932年型戦闘機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4040 } } } type = gain_tech which = 4040 } # 1938年型戦闘機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4050 } } } type = gain_tech which = 4050 } # 1937年型護衛戦闘機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4120 } } } type = gain_tech which = 4120 } # 1924年型戦術爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4130 } } } type = gain_tech which = 4130 } # 1932年型戦術爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4140 } } } type = gain_tech which = 4140 } # 1938年型戦術爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4710 } } } type = gain_tech which = 4710 } # 1924年型海軍爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4190 } } } type = gain_tech which = 4190 } # 1938年型海軍爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4820 } } } type = gain_tech which = 4820 } # 1930年型戦略爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4220 } } } type = gain_tech which = 4220 } # 1935年型戦略爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4230 } } } type = gain_tech which = 4230 } # 1939年型戦略爆撃機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4400 } } } type = gain_tech which = 4400 } # 1934年型近接航空支援機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4170 } } } type = gain_tech which = 4170 } # 1937年型近接航空支援機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4740 } } } type = gain_tech which = 4740 } # 初期型水上機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4750 } } } type = gain_tech which = 4750 } # 初期型前大戦型水上機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4760 } } } type = gain_tech which = 4760 } # 前大戦型水上機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4770 } } } type = gain_tech which = 4770 } # 戦間期型水上機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4780 } } } type = gain_tech which = 4780 } # 基本型水上機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4770 } } } type = gain_tech which = 4790 } # 改良型水上機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4850 } } } type = gain_tech which = 4850 } # 準現代型水上機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4900 } } } type = gain_tech which = 4900 } # 1922年型空母航空隊\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4910 } } } type = gain_tech which = 4910 } # 1930年型空母航空隊\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4920 } } } type = gain_tech which = 4920 } # 1934年型空母航空隊\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4930 } } } type = gain_tech which = 4930 } # 1937年型空母航空隊\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4290 } } } type = gain_tech which = 4290 } # 1926年型輸送機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4250 } } } type = gain_tech which = 4250 } # 1934年型輸送機\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 4260 } } } type = gain_tech which = 4260 } # 1938年型輸送機\r
++	#空軍ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9090 } } } type = gain_tech which = 9090 } # 作戦的破壊ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9100 } } } type = gain_tech which = 9100 } # 戦場阻止ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9110 } } } type = gain_tech which = 9110 } # 機銃掃射ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9120 } } } type = gain_tech which = 9120 } # 兵站攻撃ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9190 } } } type = gain_tech which = 9190 } # 先制攻撃ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9200 } } } type = gain_tech which = 9200 } # 分散戦闘ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9210 } } } type = gain_tech which = 9210 } # 前線飛行任務ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 9220 } } } type = gain_tech which = 9220 } # ベテラン戦闘機乗りの主導\r
++\r
++	#艦船\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3010 } } } type = gain_tech which = 3010 } # 水雷砲艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3020 } } } type = gain_tech which = 3020 } # 艦隊駆逐艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3030 } } } type = gain_tech which = 3030 } # 蒸気タービン式駆逐艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3040 } } } type = gain_tech which = 3040 } # 前大戦型駆逐艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3050 } } } type = gain_tech which = 3050 } # 大型駆逐艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3060 } } } type = gain_tech which = 3060 } # 改良型駆逐艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3110 } } } type = gain_tech which = 3110 } # 防護巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3120 } } } type = gain_tech which = 3120 } # 偵察巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3130 } } } type = gain_tech which = 3130 } # 初期型軽巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3140 } } } type = gain_tech which = 3140 } # 戦間期型軽巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3150 } } } type = gain_tech which = 3150 } # 改良型軽巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3210 } } } type = gain_tech which = 3210 } # 装甲フリゲート艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3220 } } } type = gain_tech which = 3220 } # 装甲巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3230 } } } type = gain_tech which = 3230 } # 改良型装甲巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3240 } } } type = gain_tech which = 3240 } # 初期期型重巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3250 } } } type = gain_tech which = 3250 } # 改良型重巡洋艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3410 } } } type = gain_tech which = 3410 } # 旋回砲塔型戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3420 } } } type = gain_tech which = 3420 } # 前ドレッドノート級\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3420 } } } type = gain_tech which = 3420 } # 前ドレッドノート級\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3430 } } } type = gain_tech which = 3430 } # ドレッドノート級\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3440 } } } type = gain_tech which = 3440 } # 超ドレッドノート級\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3450 } } } type = gain_tech which = 3450 } # 初期型戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3456 } } } type = gain_tech which = 3456 } # 高速戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3460 } } } type = gain_tech which = 3460 } # 戦間期型戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3470 } } } type = gain_tech which = 3470 } # 改良型戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3310 } } } type = gain_tech which = 3310 } # 初期型巡洋戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3320 } } } type = gain_tech which = 3320 } # 改良型巡洋戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3330 } } } type = gain_tech which = 3330 } # 重巡洋戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3340 } } } type = gain_tech which = 3340 } # 戦間期型巡洋戦艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3610 } } } type = gain_tech which = 3610 } # 潜水艇\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3620 } } } type = gain_tech which = 3620 } # ディーゼル潜水艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3630 } } } type = gain_tech which = 3630 } # 外洋潜水艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3640 } } } type = gain_tech which = 3640 } # 戦間期型潜水艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3650 } } } type = gain_tech which = 3650 } # 改良型潜水艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 12100 } } } type = gain_tech which = 12100 } # 水上機母艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 12110 } } } type = gain_tech which = 12110 } # 改装型護衛空母\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 12120 } } } type = gain_tech which = 12120 } # 初期型護衛空母\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 12130 } } } type = gain_tech which = 12130 } # 初期型軽空母\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3510 } } } type = gain_tech which = 3510 } # 改装空母\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3520 } } } type = gain_tech which = 3520 } # 初期型航空母艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3810 } } } type = gain_tech which = 3810 } # 初期型兵員輸送艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3820 } } } type = gain_tech which = 3820 } # 基本型兵員輸送艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3830 } } } type = gain_tech which = 3830 } # 改良型兵員輸送艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3720 } } } type = gain_tech which = 3720 } # 初期型魚雷\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3730 } } } type = gain_tech which = 3730 } # 基本型魚雷\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3736 } } } type = gain_tech which = 3736 } # 航空機投下型魚雷\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3740 } } } type = gain_tech which = 3740 } # 前大戦型魚雷\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3750 } } } type = gain_tech which = 3750 } # 戦間期型魚雷\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3760 } } } type = gain_tech which = 3760 } # 改良型魚雷\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3900 } } } type = gain_tech which = 3900 } # 1918年型対潜戦装備\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 3910 } } } type = gain_tech which = 3910 } # 1934年型対潜戦装備\r
++	#海軍ドクトリン（決戦理論）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8010 } } } type = gain_tech which = 8010 } # 交戦理論ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8020 } } } type = gain_tech which = 8020 } # 海軍火力ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8030 } } } type = gain_tech which = 8030 } # 空母統合ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8040 } } } type = gain_tech which = 8040 } # 潜水艦統合ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8050 } } } type = gain_tech which = 8050 } # 船団航行ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8060 } } } type = gain_tech which = 8060 } # 海軍諜報ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8070 } } } type = gain_tech which = 8070 } # 戦略地政学理論\r
++	#海軍ドクトリン（海上優勢）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8100 } } } type = gain_tech which = 8100 } # 海上優勢\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8110 } } } type = gain_tech which = 8110 } # 沿岸防衛ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8120 } } } type = gain_tech which = 8120 } # 基地防衛ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8150 } } } type = gain_tech which = 8150 } # 商船防衛ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8160 } } } type = gain_tech which = 8160 } # 船団航法ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8170 } } } type = gain_tech which = 8170 } # 船団運行ドクトリン\r
++	#海軍ドクトリン（海上阻止）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8500 } } } type = gain_tech which = 8500 } # シーレーン封鎖ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8510 } } } type = gain_tech which = 8510 } # 商船封鎖ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8520 } } } type = gain_tech which = 8520 } # 陽動ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8600 } } } type = gain_tech which = 8600 } # 通商破壊潜水艦ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8610 } } } type = gain_tech which = 8610 } # 無制限潜水艦戦ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8610 } } } type = gain_tech which = 8610 } # 無制限潜水艦戦ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8620 } } } type = gain_tech which = 8620 } # ウルフパックドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8550 } } } type = gain_tech which = 8550 } # 襲撃艦哨戒ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8560 } } } type = gain_tech which = 8560 } # 通商襲撃ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8570 } } } type = gain_tech which = 8570 } # 主力艦襲撃ドクトリン\r
++	#海軍ドクトリン（交戦戦術）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81300 } } } type = gain_tech which = 81300 } # 間接接近\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81310 } } } type = gain_tech which = 81310 } # 艦隊阻止（1910年）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81320 } } } type = gain_tech which = 81320 } # 陽動演習\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81330 } } } type = gain_tech which = 81330 } # 艦隊阻止（1918年）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81340 } } } type = gain_tech which = 81340 } # ハンターシーカー潜水艦\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81350 } } } type = gain_tech which = 81350 } # 遭遇戦集団演習\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81360 } } } type = gain_tech which = 81360 } # 任務部隊\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81370 } } } type = gain_tech which = 81370 } # 徹底阻止\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81380 } } } type = gain_tech which = 81380 } # 海軍消耗\r
++	#海軍ドクトリン（対潜戦術）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8200 } } } type = gain_tech which = 8200 } # 対潜哨戒ドクトリン\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8210 } } } type = gain_tech which = 8210 } # 対潜戦ハンターキラー集団\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 8220 } } } type = gain_tech which = 8220 } # 発展型商船防衛ドクトリン\r
++	#海軍ドクトリン（空母戦術その１）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81650 } } } type = gain_tech which = 81650 } # 補助空母任務\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81850 } } } type = gain_tech which = 81850 } # 偵察任務重視\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81860 } } } type = gain_tech which = 81860 } # 集団分散\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81870 } } } type = gain_tech which = 81870 } # 護衛監視防御\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81880 } } } type = gain_tech which = 81880 } # 発展型偵察任務\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81890 } } } type = gain_tech which = 81890 } # 主力艦護衛\r
++	#海軍ドクトリン（空母戦術その２）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81700 } } } type = gain_tech which = 81700 } # 航空優勢\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81710 } } } type = gain_tech which = 81710 } # 艦載機集中運用\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81720 } } } type = gain_tech which = 81720 } # 混成艦隊攻撃\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 81730 } } } type = gain_tech which = 81730 } # 空母戦隊\r
++	#海軍ドクトリン（強襲戦術）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 82300 } } } type = gain_tech which = 82300 } # 大規模海上侵攻戦術\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 82310 } } } type = gain_tech which = 82310 } # 改良型海上侵攻戦術\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 82320 } } } type = gain_tech which = 82320 } # 発展型海上侵攻戦術\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 82330 } } } type = gain_tech which = 82330 } # 大規模海上侵攻戦術\r
++	#海軍ドクトリン（燃油補給）\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 82500 } } } type = gain_tech which = 82500 } # 燃油補給\r
++	command = { trigger = { NOT = { technology = { country = CHI value = 82510 } } } type = gain_tech which = 82510 } # 初期型洋上補給\r
++	ai_chance = 100\r
++	}\r
++\r
++	action = { # ドイツとの関係を深める必要ない\r
++	name = "ACTIONNAME99660060B"\r
++ 	command = { type = relation which = DFR value = -10 }\r
++	ai_chance = 0\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  軍閥の易幟\r
++# 中華民国国民政府の統治地域で、ドイツの支援による近代化が急速に進むと、\r
++# 各地の軍閥は国民政府と民衆の圧力を受けて、次々に恭順した。\r
++# 地方政権は一定程度の自立性を保ったが、この易幟により、中国は国民政府により統一された。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660061\r
++	random = no\r
++	country = CHI\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	exists = DFR\r
++	OR = { \r
++	exists = CSX\r
++	exists = CXB\r
++	exists = CYN\r
++	exists = CGX\r
++	}\r
++	event = { id = 99660060 days = 90 } # 中独合作 ― 更なる関係強化\r
++	flag = Sino-German\r
++	NOT = { ispuppet = CHI }\r
++	}\r
++	\r
++	name = "EVT_99660061_NAME"\r
++	desc = "EVT_99660061_DESC"\r
++	style = 2\r
++	picture = "ccip_gmd"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1939 }\r
++	\r
++	action = { # 全ての旗を青天白日満地紅旗に換えるのだ\r
++	name = "ACTIONNAME99660061A"\r
++	command = { type = dissent value = -30 }\r
++ 	command = { type = belligerence which = CHI value = 5 }\r
++ 	command = { type = relation which = ENG value = 20 }\r
++ 	command = { type = relation which = FRA value = 20 }\r
++ 	command = { type = relation which = USA value = 20 }\r
++ 	command = { type = relation which = SOV value = 20 }\r
++ 	command = { type = relation which = DFR value = 20 }\r
++ 	command = { type = relation which = ITA value = 20 }\r
++ 	command = { type = relation which = JAP value = -50 }\r
++ 	command = { type = relation which = MAN value = -50 }\r
++ 	command = { type = domestic which = defense_lobby value = 2 }\r
++ 	command = { type = domestic which = interventionism value = 2 }\r
++     	command = { trigger = { exists = CSX NOT = { ispuppet = CSX } } type = inherit which = CSX value = 1 }\r
++	command = { trigger = { exists = CXB } type = inherit which = CXB value = 1 }\r
++	command = { trigger = { exists = CYN NOT = { ispuppet = CYN } } type = inherit which = CYN value = 1 }\r
++	command = { trigger = { exists = CGX NOT = { ispuppet = CGX } } type = inherit which = CGX value = 1 }\r
++	command = { trigger = { exists = TIB NOT = { ispuppet = TIB } } type = inherit which = TIB value = 1 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  中国国民党軍の軍備再編\r
++# ドイツの軍事援助は、人材育成と組織整備だけでなく、軍需物資提供に及んでいた。\r
++# また中独合作の一環として、兵器廠や軍事研究所の建設も進められ、国民党軍の近代化は大きく進んだ。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660062\r
++	random = no\r
++	country = CHI\r
++	\r
++	decision = {\r
++	flag = Sino-German\r
++	event = { id = 99660060 days = 120 } # 中独合作 ― 更なる関係強化\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 99660060 # 中独合作 ― 更なる関係強化\r
++	supplies = 5000\r
++	}\r
++\r
++	trigger = {\r
++	flag = Sino-German\r
++	event = { id = 99660060 days = 120 } # 中独合作 ― 更なる関係強化\r
++	}\r
++\r
++	name = "EVT_99660062_NAME"\r
++	desc = "EVT_99660062_DESC"\r
++	style = 2\r
++	picture = "China_Solder_German"\r
++	decision_picture = "decision_Rhineland"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1964 }\r
++\r
++	action = { # ドイツ式の軍備を揃えるのだ\r
++	name = "ACTIONNAME99660062A"\r
++	command = { type = sleepevent which = 1330110073 } # 小軍閥\r
++	command = { type = sleepevent which = 1330110078 } # 第二次上海事変（CHI）\r
++	command = { type = sleepevent which = 1330110079 } # 第二次上海事変（JAP）\r
++	command = { type = sleepevent which = 1330110080 } # 第二次上海事変（AIイベント）\r
++	command = { type = sleepevent which = 1330110081 } # 写真『上海南駅の赤ん坊』\r
++	command = { type = sleepevent which = 1330110082 } # 国民革命軍（国民党軍）の粉砕\r
++	command = { type = sleepevent which = 1330110083 } # 南京攻略戦\r
++	command = { type = sleepevent which = 1330110084 } # 軍の回復\r
++	command = { type = dissent value = -5 }\r
++	command = { trigger = { ai = no } type = supplies value = -5000 }\r
++	command = { type = strength which = land when = 0 where = 1 value = 0 }\r
++	command = { type = strength which = naval when = 0 where = 1 value = 0 }\r
++	command = { type = strength which = air when = 0 where = 1 value = 0 }\r
++	command = { type = add_division value = hq when = 2 }\r
++	command = { type = add_division value = hq when = 2 }\r
++	command = { type = add_division value = hq when = 2 }\r
++	command = { type = add_division value = hq when = 2 }\r
++	command = { type = add_division value = hq when = 2 }\r
++	command = { type = add_division value = hq when = 2 }\r
++	command = { type = add_division value = light_armor when = 0 where = -70 }\r
++	command = { type = add_division value = light_armor when = 0 where = -70 }\r
++	command = { type = add_division value = light_armor when = 0 where = -70 }\r
++	command = { type = add_division value = light_armor when = 0 where = -70 }\r
++	command = { type = add_division value = light_armor when = 0 where = -70 }\r
++	command = { type = add_division value = light_armor when = 0 where = -70 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = cavalry when = 10 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = infantry when = 9 where = -50 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = interceptor when = 8 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = tactical_bomber when = 6 }\r
++	command = { type = add_division value = cas when = 1 }\r
++	command = { type = add_division value = cas when = 1 }\r
++	command = { type = add_division value = cas when = 1 }\r
++	command = { type = add_division value = cas when = 1 }\r
++	command = { type = add_division value = strategic_bomber when = 3 }\r
++	command = { type = add_division value = strategic_bomber when = 3 }\r
++	command = { type = add_division value = heavy_cruiser when = 2 }\r
++	command = { type = add_division value = heavy_cruiser when = 2 }\r
++	command = { type = add_division value = heavy_cruiser when = 2 }\r
++	command = { type = add_division value = heavy_cruiser when = 2 }\r
++	command = { type = add_division value = heavy_cruiser when = 2 }\r
++	command = { type = add_division value = heavy_cruiser when = 2 }\r
++	command = { type = add_division value = light_carrier when = 2 }\r
++	command = { type = add_division value = light_carrier when = 2 }\r
++	command = { type = add_division value = light_carrier when = 2 }\r
++	command = { type = add_division value = light_carrier when = 2 }\r
++	command = { type = add_division value = light_carrier when = 2 }\r
++	command = { type = add_division value = light_carrier when = 2 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = destroyer when = 3 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = submarine when = 2 }\r
++	command = { type = add_division value = transport when = 1 }\r
++	command = { type = add_division value = transport when = 1 }\r
++	command = { type = add_division value = transport when = 1 }\r
++	command = { type = add_division value = transport when = 1 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = cavalry_brigade when = 10 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = medium_armor when = 0 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = armored_car when = 4 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = engineer when = 3 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	command = { type = add_brigade value = artillery when = 7 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  国民党軍の反撃\r
++# 国民党軍との戦争は日本軍が当初計画した通りに行かなかった。\r
++# 日本軍の戦車部隊は、中国が用意したドイツ式部隊と対戦車砲によって阻まれ、\r
++# 事前の計画を殆ど達成できないうちに攻勢が停止した。\r
++# 国民党軍は、さらなる反撃に向けて、最前線に部隊を送り込んでいる！\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660063\r
++	random = no\r
++	country = JAP\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	exists = JAP\r
++	exists = CHI\r
++	war = { country = CHI country = JAP } \r
++	event = 99660062 # 中国国民党軍の軍備再編\r
++	NOT = { ispuppet = yes }\r
++	}\r
++	\r
++	name = "EVT_99660063_NAME"\r
++	desc = "EVT_99660063_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 2\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++	\r
++	action = { # 国民党軍の抵抗は激しい\r
++	name = "ACTIONNAME99660063A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = max_organization which = land value = -15 }\r
++	command = { type = morale which = land value = -15 }\r
++	command = { type = trigger which = 99660064 }\r
++	command = { type = event which = 99660065 where = JAP when = 180 }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/recklessness_no.ai" }\r
++	command = { type = sleepevent which = 5276003 } # AIイベント\r
++	command = { type = sleepevent which = 5276004 }\r
++	command = { type = sleepevent which = 5277005 }\r
++	command = { type = sleepevent which = 5277006 }\r
++	command = { type = sleepevent which = 5277007 }\r
++	command = { type = sleepevent which = 5277008 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 99660064\r
++	random = no\r
++	country = CHI\r
++	\r
++	name = "EVT_99660063_NAME"\r
++	desc = "EVT_99660063_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++	\r
++	action = { # 国民党軍の抵抗は激しい\r
++	name = "ACTIONNAME99660063A"\r
++	command = { type = dissent value = -3 }\r
++	command = { type = morale which = land value = 2 }\r
++	command = { trigger = { ai = yes } type = ai which = "switch/recklessness_yes.ai" }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  軍の回復\r
++# 日本軍は予想以上の国民党軍による反撃から、ゆっくりと軍を立て直した。\r
++# しかし戦況は予想以上に悪化しており、今や満州防衛すら危うくなっている。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660065\r
++	random = no\r
++	country = JAP\r
++\r
++	name = "EVT_99660065_NAME"\r
++	desc = "EVT_99660065_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++	\r
++	action = { # 戦局は悪化している\r
++	name = "ACTIONNAME99660065A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = max_organization which = land value = 15 }\r
++	command = { type = morale which = land value = 15 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  日本帝国主義への抵抗\r
++# 国民党軍が予想以上に精強であったことは、日本が支配する満州や朝鮮半島、台湾に動揺を与えた。\r
++# 開戦前から、国民党軍の工作員による浸透が進んでおり、戦争がはじまると各地で日本帝国主義に抵抗するための武装蜂起が起きた。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660066\r
++	random = no\r
++	country = CHI\r
++	save_date = yes\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	exists = JAP\r
++	exists = CHI\r
++	war = { country = CHI country = JAP } \r
++	event = { id = 99660063 days = 60 } # 国民党軍の反撃\r
++	NOT = { ispuppet = yes }\r
++	}\r
++	\r
++	name = "EVT_99660066_NAME"\r
++	desc = "EVT_99660066_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++	\r
++	action = { # 武装蜂起せよ！\r
++	name = "ACTIONNAME99660066A"\r
++	command = { type = dissent value = 5 }\r
++	command = { type = add_corps value = land where = 1361 } # 高雄（カオシュン）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1362 } # 臺北（タイペイ）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1363 } # 臺中（タイチュン）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1364 } # 花蓮（ホワリェン）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1237 } # 赤峰（ウランハダ）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1198 } # 布特哈（ブトハ）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1207 } # ギリンウラ（吉林烏拉）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1221 } # 平壌（ピョンヤン）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1228 } # 京城（ソウル）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++\r
++	command = { type = add_corps value = land where = 1232 } # 釜山（プサン）\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = add_division value = militia when = 2 where = -50 }\r
++	command = { type = trigger which = 99660067 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++event = {\r
++	id = 99660067\r
++	random = no\r
++	country = JAP\r
++	\r
++	name = "EVT_99660066_NAME"\r
++	desc = "EVT_99660066_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++	\r
++	action = { # なんてこった！\r
++	name = "ACTION_NAME_DAMN"\r
++	command = { type = dissent value = 10 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  国共内戦の再開\r
++# 中国各地の軍閥が、国民政府に共住したことで、内に残る敵は共産党だけになった。\r
++# 共産主義者を国内から一掃するためにも、国共内戦を再開する時だ。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660068\r
++	random = no\r
++	country = CHI\r
++\r
++	decision = {\r
++	flag = Sino-German\r
++	event = { id = 99660061 days = 150 } # 軍閥の易幟\r
++	event = 1330110069 # 陝西へ撤退\r
++	exists = CHI\r
++	exists = CHC\r
++	NOT = { war = { country = CHI country = CHC } }\r
++	NOT = { war = { country = CHI country = JAP } }\r
++	NOT = { war = { country = CHI country = SOV } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	decision_trigger = {\r
++	event = 99660061 # 軍閥の易幟\r
++	event = 1330110069 # 陝西へ撤退\r
++	}\r
++\r
++	trigger = {\r
++	flag = Sino-German\r
++	event = { id = 99660061 days = 150 } # 軍閥の易幟\r
++	event = 1330110069 # 陝西へ撤退\r
++	exists = CHI\r
++	exists = CHC\r
++	NOT = { war = { country = CHI country = CHC } }\r
++	NOT = { war = { country = CHI country = JAP } }\r
++	NOT = { war = { country = CHI country = SOV } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++	\r
++	name = "EVT_99660068_NAME"\r
++	desc = "EVT_99660068_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 5\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++	\r
++	action = { # 共産党を倒す時が来た\r
++	name = "ACTIONNAME99660068A"\r
++	command = { type = dissent value = -5 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
++	command = { type = end_non_aggression which = CHI where = CHC }\r
++	command = { type = war which = CHC }\r
++	command = { type = strength which = land when = 1 where = 0 value = 10 }\r
++	command = { type = strength which = naval when = 1 where = 0 value = 10 }\r
++	command = { type = strength which = air when = 1 where = 0 value = 10 }\r
++	command = { type = trigger which = 99660069 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  毛沢東の死\r
++# 国共内戦が再び始まった直後、中国共産党は悲劇に見舞われた。\r
++# 偉大な指導者である同志毛沢東が、国民党軍の爆撃に巻き込まれて戦死したのである。\r
++# 幹部は共産党組織の立て直しを図っているが、望みは薄いだろう…\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660069\r
++	random = no\r
++	country = CHC\r
++	\r
++	name = "EVT_99660069_NAME"\r
++	desc = "EVT_99660069_DESC"\r
++	style = 2\r
++	picture = "ccip_cw"\r
++	\r
++	action = { # なんてこった！\r
++	name = "ACTION_NAME_DAMN"\r
++	command = { type = dissent value = 75 }\r
++	command = { type = demobilize which = land when = 0 where = 0 value = 15 }\r
++	command = { trigger = { ai = no } type = max_organization which = land value = -10 }\r
++	command = { trigger = { ai = no } type = morale which = land value = -10 }\r
++	command = { trigger = { ai = yes } type = max_organization which = land value = -30 }\r
++	command = { trigger = { ai = yes } type = morale which = land value = -30 }\r
++	command = { type = sleepminister which = 260848 } # 毛沢東(マオ・ツォートン)\r
++	command = { type = sleepminister which = 260849 }\r
++	command = { type = sleepminister which = 260850 }\r
++	command = { type = sleepminister which = 260851 }\r
++	command = { type = sleepleader which = 260032 }\r
++	command = { type = sleepteam which = 260113 }\r
++	command = { type = sleepteam which = 260114 }\r
++	command = { type = sleepteam which = 260115 }\r
++	command = { type = sleepteam which = 260116 }\r
++	command = { type = sleepteam which = 260117 }\r
++	command = { type = sleepminister which = 260855 } # 周恩来(ヂョウ・オンライ)\r
++	command = { type = sleepminister which = 260856 }\r
++	command = { type = sleepminister which = 260857 }\r
++	command = { type = sleepminister which = 260858 }\r
++	command = { type = sleepminister which = 260859 }\r
++	command = { type = sleepminister which = 260860 }\r
++	command = { type = sleepminister which = 260861 }\r
++	command = { type = sleepleader which = 260012 }\r
++	command = { type = sleepminister which = 260809 } # トウ小平(ダン・シャオピン)\r
++	command = { type = sleepminister which = 260810 }\r
++	command = { type = sleepminister which = 260811 }\r
++	command = { type = sleepminister which = 260812 }\r
++	command = { type = sleepminister which = 260813 }\r
++	command = { type = sleepleader which = 260041 }\r
++	command = { type = sleepteam which = 260100 }\r
++	command = { type = sleepteam which = 260101 }\r
++	command = { type = sleepteam which = 260102 }\r
++	command = { type = sleepteam which = 260103 }\r
++	command = { type = sleepteam which = 260104 }\r
++	command = { type = sleepteam which = 260105 }\r
++	command = { type = sleepteam which = 260106 }\r
++	command = { type = sleepteam which = 260107 }\r
++	ai_chance = 100\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  南洋諸島の購入\r
++# かつてドイツ植民地であった太平洋の南洋諸島は、現在日本に支配されている。\r
++# しかし、日本は中国との戦争に敗北したばかりで、この地域を維持する国力を残していない。\r
++# 日本が敗戦から立ち直るための復興資金を出せば、購入も不可能ではないかもしれない。\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660070\r
++	random = no\r
++	country = DFR\r
++\r
++	decision = {\r
++	flag = Weimar\r
++	event = 99660058 # 中独合作\r
++	event = 2011018 # 陰る太陽\r
++	NOT = { war = { country = CHI country = JAP } }\r
++	NOT = { war = { country = DFR country = JAP } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	decision_trigger = {\r
++	money = 4000\r
++	event = 99660058 # 中独合作\r
++	event = 2011018 # 陰る太陽\r
++	OR = {\r
++	control = { province = 1665 data = JAP }\r
++	control = { province = 1666 data = JAP }\r
++	control = { province = 1667 data = JAP }\r
++	control = { province = 1668 data = JAP }\r
++	control = { province = 1669 data = JAP }\r
++	control = { province = 1670 data = JAP }\r
++	control = { province = 1671 data = JAP }\r
++	control = { province = 1672 data = JAP }\r
++	control = { province = 1674 data = JAP }\r
++	control = { province = 1675 data = JAP }\r
++	control = { province = 1676 data = JAP }\r
++	control = { province = 1677 data = JAP }\r
++	control = { province = 1681 data = JAP }\r
++	control = { province = 1684 data = JAP }\r
++	control = { province = 1685 data = JAP }\r
++	control = { province = 1686 data = JAP }\r
++	}\r
++	NOT = { war = { country = CHI country = JAP } }\r
++	NOT = { war = { country = DFR country = JAP } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++\r
++	trigger = {\r
++	flag = Weimar\r
++	event = 99660058 # 中独合作\r
++	event = 2011018 # 陰る太陽\r
++	OR = {\r
++	control = { province = 1665 data = JAP }\r
++	control = { province = 1666 data = JAP }\r
++	control = { province = 1667 data = JAP }\r
++	control = { province = 1668 data = JAP }\r
++	control = { province = 1669 data = JAP }\r
++	control = { province = 1670 data = JAP }\r
++	control = { province = 1671 data = JAP }\r
++	control = { province = 1672 data = JAP }\r
++	control = { province = 1674 data = JAP }\r
++	control = { province = 1675 data = JAP }\r
++	control = { province = 1676 data = JAP }\r
++	control = { province = 1677 data = JAP }\r
++	control = { province = 1681 data = JAP }\r
++	control = { province = 1684 data = JAP }\r
++	control = { province = 1685 data = JAP }\r
++	control = { province = 1686 data = JAP }\r
++	}\r
++	NOT = { war = { country = CHI country = JAP } }\r
++	NOT = { war = { country = DFR country = JAP } }\r
++	NOT = { ispuppet = yes }\r
++	}\r
++	\r
++	name = "EVT_99660070_NAME"\r
++	desc = "EVT_99660070_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 15\r
++	deathdate = { day = 29 month = 11 year = 1963 }\r
++	\r
++	action = { # 購入しよう\r
++	name = "ACTIONNAME99660070A"\r
++	command = { type = dissent value = -2 }\r
++ 	command = { type = relation which = JAP value = 5 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = trigger which = 99660071 }\r
++	ai_chance = 95\r
++	}\r
++\r
++	action = { # その必要はない\r
++	name = "ACTIONNAME99660070B"\r
++ 	command = { type = relation which = JAP value = -5 }\r
++	command = { type = sleepevent which = 99660071 }\r
++	command = { type = sleepevent which = 99660072 }\r
++	ai_chance = 5\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  南洋諸島の購入 ― ドイツの提案\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660071\r
++	random = no\r
++	country = JAP\r
++	\r
++	name = "EVT_99660071_NAME"\r
++	desc = "EVT_99660070_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	\r
++	action = { # 承諾\r
++	name = "ACTION_NAME_ACCEPT"\r
++	command = { type = dissent value = -2 }\r
++ 	command = { type = relation which = DFR value = 15 }\r
++ 	command = { type = money value = 4000 }\r
++	command = { type = trigger which = 99660072 }\r
++	command = { type = secedeprovince which = DFR value = 1665 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1666 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1667 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1668 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1669 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1670 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1671 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1672 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1674 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1675 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1676 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1677 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1681 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1684 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1685 when = 1 }\r
++	command = { type = secedeprovince which = DFR value = 1686 when = 1 }\r
++	command = { type = removecore which = 1665 }\r
++	command = { type = removecore which = 1666 }\r
++	command = { type = removecore which = 1667 }\r
++	command = { type = removecore which = 1668 }\r
++	command = { type = removecore which = 1669 }\r
++	command = { type = removecore which = 1670 }\r
++	command = { type = removecore which = 1671 }\r
++	command = { type = removecore which = 1672 }\r
++	command = { type = removecore which = 1674 }\r
++	command = { type = removecore which = 1675 }\r
++	command = { type = removecore which = 1676 }\r
++	command = { type = removecore which = 1677 }\r
++	command = { type = removecore which = 1681 }\r
++	command = { type = removecore which = 1684 }\r
++	command = { type = removecore which = 1685 }\r
++	command = { type = removecore which = 1686 }\r
++	command = { type = removeclaim which = 1665 }\r
++	command = { type = removeclaim which = 1666 }\r
++	command = { type = removeclaim which = 1667 }\r
++	command = { type = removeclaim which = 1668 }\r
++	command = { type = removeclaim which = 1669 }\r
++	command = { type = removeclaim which = 1670 }\r
++	command = { type = removeclaim which = 1671 }\r
++	command = { type = removeclaim which = 1672 }\r
++	command = { type = removeclaim which = 1674 }\r
++	command = { type = removeclaim which = 1675 }\r
++	command = { type = removeclaim which = 1676 }\r
++	command = { type = removeclaim which = 1677 }\r
++	command = { type = removeclaim which = 1681 }\r
++	command = { type = removeclaim which = 1684 }\r
++	command = { type = removeclaim which = 1685 }\r
++	command = { type = removeclaim which = 1686 }\r
++\r
++	}\r
++\r
++	action = { # 拒否\r
++	name = "ACTION_NAME_REFUSE"\r
++	command = { type = dissent value = 4 }\r
++ 	command = { type = relation which = DFR value = -15 }\r
++	command = { type = sleepevent which = 99660072 }\r
++	}\r
++}\r
++\r
++##########################################################################\r
++#  南洋諸島の購入 ― 日本が提案を承諾\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660072\r
++	random = no\r
++	country = DFR\r
++	\r
++	name = "EVT_99660072_NAME"\r
++	desc = "EVT_99660070_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	\r
++	action = { # すばらしい！\r
++	name = "ACTION_NAME_GREAT"\r
++	command = { type = belligerence value = 2 }\r
++ 	command = { type = relation which = JAP value = 15 }\r
++ 	command = { trigger = { ai = no } type = money value = -4000 }\r
++	command = { type = addclaim which = 1665 }\r
++	command = { type = addclaim which = 1666 }\r
++	command = { type = addclaim which = 1667 }\r
++	command = { type = addclaim which = 1668 }\r
++	command = { type = addclaim which = 1669 }\r
++	command = { type = addclaim which = 1670 }\r
++	command = { type = addclaim which = 1671 }\r
++	command = { type = addclaim which = 1672 }\r
++	command = { type = addclaim which = 1674 }\r
++	command = { type = addclaim which = 1675 }\r
++	command = { type = addclaim which = 1676 }\r
++	command = { type = addclaim which = 1677 }\r
++	command = { type = addclaim which = 1681 }\r
++	command = { type = addclaim which = 1684 }\r
++	command = { type = addclaim which = 1685 }\r
++	command = { type = addclaim which = 1686 }\r
++	}\r
++}\r
++\r
+ #########################################################################\r
+ #  選挙イベント\r
+ ##########################################################################\r
+@@ -3141,6 +5617,8 @@ event = {
+ 	name = "ELECT_USPD"\r
+ 	command = { type = dissent value = -3 }\r
+       	command = { type = domestic which = political_left value = 1 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofstate which = 630102 } # アルトゥール・クリスピン\r
+ 	command = { type = foreignminister which = 630118 } # ルドルフ・ヒルファーディング\r
+ \r
+@@ -3150,6 +5628,8 @@ event = {
+ 	action = { # 中道の中央党が勝利\r
+ 	name = "ELECT_Zentrum"\r
+ 	command = { type = dissent value = -3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofstate which = 630103 } # ヴィルヘルム・マルクス\r
+ 	command = { type = ministerofsecurity which = 630143 } # アダム・シュテーガーヴァルト\r
+ 	ai_chance = 30\r
+@@ -3159,6 +5639,8 @@ event = {
+ 	name = "ELECT_DNVP"\r
+ 	command = { type = dissent value = -3 }\r
+       	command = { type = domestic which = political_left value = -1 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofstate which = 630104 } # オスカー・フォン・ヒンデンブルク\r
+ 	command = { type = chiefofstaff which = 630159 } # クルト・フォン・シュライヒャー\r
+ 	ai_chance = 40\r
+@@ -3169,6 +5651,8 @@ event = {
+ 	command = { type = country which = GER }\r
+ 	command = { type = set_domestic which = democratic value = 4 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = set_domestic which = free_market value = 9 }\r
++ 	command = { type = set_domestic which = defense_lobby value = 9 }\r
+ 	command = { type = dissent value = 20 }\r
+ 	command = { type = headofstate which = 1 } # アドルフ・ヒトラー\r
+ 	command = { type = headofgovernment which = 22 } # アドルフ・ヒトラー\r
+@@ -3211,6 +5695,7 @@ event = {
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = set_domestic which = democratic value = 10 }\r
+ 	command = { type = set_domestic which = political_left value = 6 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630113 } # フィリップ・シャイデマン\r
+ 	command = { type = foreignminister which = 630120 } # ヨーゼフ・ヴィルト\r
+ 	command = { type = armamentminister which = 630133 } # オイゲン・シファー\r
+@@ -3308,6 +5793,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+ 	command = { type = set_domestic which = political_left value = 7 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630113 } # フィリップ・シャイデマン\r
+ 	command = { type = foreignminister which = 630120 } # ヨーゼフ・ヴィルト\r
+ 	command = { type = armamentminister which = 630133 } # オイゲン・シファー\r
+@@ -3325,6 +5812,9 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+ 	command = { type = set_domestic which = political_left value = 5 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = headofgovernment which = 630109 } # ヨーゼフ・ヴィルト\r
+ 	command = { type = foreignminister which = 630117 } # ハンス・フォーゲル\r
+ 	command = { type = armamentminister which = 630129 } # フィリップ・シャイデマン\r
+@@ -3342,6 +5832,9 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
++ 	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = headofgovernment which = 630111 } # アルフレート・フーゲンベルク\r
+ 	command = { type = foreignminister which = 630121 } # アルフレート・フーゲンベルク\r
+ 	command = { type = armamentminister which = 630134 } # アルフレート・フーゲンベルク\r
+@@ -3359,6 +5852,8 @@ event = {
+ 	command = { type = dissent value = -10 }\r
+ 	command = { type = set_domestic which = democratic value = 2 }\r
+ 	command = { type = set_domestic which = political_left value = 2 }\r
++	command = { type = set_domestic which = free_market value = 9 }\r
++ 	command = { type = set_domestic which = defense_lobby value = 9 }\r
+ 	command = { type = foreignminister which = 630194 } # エルンスト・フォン・シュランゲ\r
+ 	command = { type = armamentminister which = 630197 } # カール・カウフマン\r
+ 	command = { type = ministerofsecurity which = 630201 } # ヨーゼフ・ゲッベルス\r
+@@ -3403,6 +5898,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+ 	command = { type = set_domestic which = political_left value = 7 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630110 } # ハンス・フォーゲル\r
+ 	command = { type = foreignminister which = 630120 } # ヨーゼフ・ヴィルト\r
+ 	command = { type = armamentminister which = 630128 } # ルドルフ・ヒルファーディング\r
+@@ -3421,6 +5918,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+ 	command = { type = set_domestic which = political_left value = 5 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630109 } # ヨーゼフ・ヴィルト\r
+ 	command = { type = foreignminister which = 630119 } # ユリウス・クルティウス\r
+ 	command = { type = armamentminister which = 630126 } # ハンス・フォーゲル\r
+@@ -3439,6 +5938,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630111 } # アルフレート・フーゲンベルク\r
+ 	command = { type = foreignminister which = 630121 } # ハインリヒ・ブリューニング\r
+ 	command = { type = armamentminister which = 630134 } # ユリウス・クルティウス\r
+@@ -3482,7 +5983,8 @@ event = {
+ 	name = "ELECT_SPD_COALITION"\r
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+-	command = { type = set_domestic which = political_left value = 7 }\r
++	command = { type = set_domestic which = political_left value = 7 }	command = { type = domestic which = free_market value = -1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630110 } # ハンス・フォーゲル\r
+ 	command = { type = foreignminister which = 630014 } # エーリヒ・オレンハウアー\r
+ 	command = { type = armamentminister which = 630127 } # ヨーゼフ・ヴィルト\r
+@@ -3500,6 +6002,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 9 }\r
+ 	command = { type = set_domestic which = political_left value = 5 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630109 } # ヨーゼフ・ヴィルト\r
+ 	command = { type = foreignminister which = 630003 } # コンラート・アデナウアー\r
+ 	command = { type = armamentminister which = 630126 } # ハンス・フォーゲル\r
+@@ -3517,6 +6021,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630111 } # アルフレート・フーゲンベルク\r
+ 	command = { type = foreignminister which = 630119 } # ユリウス・クルティウス\r
+ 	command = { type = armamentminister which = 630137 } # アルフリート・クルップ\r
+@@ -3558,6 +6064,8 @@ event = {
+ 	name = "ELECT_USPD"\r
+ 	command = { type = dissent value = -3 }\r
+       	command = { type = domestic which = political_left value = 1 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofstate which = 630102 } # アルトゥール・クリスピン\r
+ 	ai_chance = 30\r
+ 	}\r
+@@ -3565,6 +6073,8 @@ event = {
+ 	action = { # 中道の中央党が勝利\r
+ 	name = "ELECT_Zentrum"\r
+ 	command = { type = dissent value = -3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofstate which = 630103 } # ヴィルヘルム・マルクス\r
+ 	ai_chance = 30\r
+ 	}\r
+@@ -3574,6 +6084,8 @@ event = {
+ 	name = "ELECT_DNVP"\r
+ 	command = { type = dissent value = -3 }\r
+       	command = { type = domestic which = political_left value = -1 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofstate which = 630104 } # オスカー・フォン・ヒンデンブルク\r
+ 	ai_chance = 40\r
+ 	}\r
+@@ -3609,6 +6121,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = domestic which = free_market value = -1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630011 } # クルト・シューマハー\r
+ 	command = { type = foreignminister which = 630014 } # エーリヒ・オレンハウアー\r
+ 	command = { type = armamentminister which = 630078 } # フランツ・ブリュッヒャー\r
+@@ -3626,6 +6140,8 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
++ 	command = { type = domestic which = defense_lobby value = 1 }\r
+ 	command = { type = headofgovernment which = 630002 } # コンラート・アデナウアー\r
+ 	command = { type = foreignminister which = 630015 } # トーマス・デーラー\r
+ 	command = { type = armamentminister which = 630132 } # アルフレート・フーゲンベルク\r
+@@ -3667,6 +6183,7 @@ event = {
+ 	name = "ELECT_SPD"\r
+ 	command = { type = dissent value = -3 }\r
+       	command = { type = domestic which = political_left value = 1 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = headofstate which = 630079 } # オットー・グローテヴォール\r
+ 	ai_chance = 30\r
+ 	}\r
+@@ -3674,6 +6191,7 @@ event = {
+ 	action = { # 自由民主党が勝利\r
+ 	name = "ELECT_FDP"\r
+ 	command = { type = dissent value = -3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofstate which = 630051 } # テオドール・ホイス\r
+ 	ai_chance = 40\r
+ 	}\r
+@@ -3682,6 +6200,7 @@ event = {
+ 	name = "ELECT_CDU"\r
+ 	command = { type = dissent value = -3 }\r
+       	command = { type = domestic which = political_left value = -1 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofstate which = 630041 } # カール・ハインリヒ・リュプケ\r
+ 	ai_chance = 30\r
+ 	}\r
+@@ -3716,6 +6235,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = headofgovernment which = 630011 } # クルト・シューマハー\r
+ 	command = { type = foreignminister which = 630014 } # エーリヒ・オレンハウアー\r
+ 	command = { type = armamentminister which = 630018 } # ハインリヒ・ヴィルヘルム・コプ\r
+@@ -3733,6 +6253,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofgovernment which = 630002 } # コンラート・アデナウアー\r
+ 	command = { type = foreignminister which = 630015 } # トーマス・デーラー\r
+ 	command = { type = armamentminister which = 630017 } # ルートヴィヒ・エアハルト\r
+@@ -3775,6 +6296,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = headofgovernment which = 630043 } # エーリヒ・オレンハウアー\r
+ 	command = { type = foreignminister which = 630046 } # ヴィリー・ブラント\r
+ 	command = { type = armamentminister which = 630018 } # ハインリヒ・ヴィルヘルム・コプ\r
+@@ -3792,6 +6314,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofgovernment which = 630002 } # コンラート・アデナウアー\r
+ 	command = { type = foreignminister which = 630015 } # トーマス・デーラー\r
+ 	command = { type = armamentminister which = 630017 } # ルートヴィヒ・エアハルト\r
+@@ -3882,6 +6405,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = headofgovernment which = 630043 } # エーリヒ・オレンハウアー\r
+ 	command = { type = foreignminister which = 630015 } # トーマス・デーラー\r
+ 	command = { type = armamentminister which = 630081 } # ヴィリー・ブラント\r
+@@ -3899,6 +6423,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofgovernment which = 630002 } # コンラート・アデナウアー\r
+ 	command = { type = foreignminister which = 630013 } # ハリンリヒ・フォン・ブレンターノ\r
+ 	command = { type = armamentminister which = 630078 } # フランツ・ブリュッヒャー\r
+@@ -3941,6 +6466,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 8 }\r
++	command = { type = domestic which = free_market value = -1 }\r
+ 	command = { type = headofgovernment which = 630044 } # ヴィリー・ブラント\r
+ 	command = { type = foreignminister which = 630015 } # トーマス・デーラー\r
+ 	command = { type = armamentminister which = 630078 } # フランツ・ブリュッヒャー\r
+@@ -3958,6 +6484,7 @@ event = {
+ 	command = { type = dissent value = -3 }\r
+ 	command = { type = set_domestic which = democratic value = 8 }\r
+ 	command = { type = set_domestic which = political_left value = 3 }\r
++	command = { type = domestic which = free_market value = 1 }\r
+ 	command = { type = headofgovernment which = 630002 } # コンラート・アデナウアー\r
+ 	command = { type = foreignminister which = 630013 } # ハリンリヒ・フォン・ブレンターノ\r
+ 	command = { type = armamentminister which = 630048 } # カイ=ウーヴェ・フォン・ハッセル\r
+@@ -4251,7 +6778,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	date = { day = 0 month = 10 year = 1934 }\r
++	date = { day = 0 month = 8 year = 1934 }\r
+ \r
+ 	action = { # 昨日の幻想が明日の現実となるのだ\r
+ 	name = "ACTIONNAME99660121A"\r
+@@ -4285,7 +6812,7 @@ event = {
+ 	style = 2\r
+ 	picture = "news_paper"\r
+ \r
+-	date = { day = 0 month = 10 year = 1934 }\r
++	date = { day = 0 month = 9 year = 1934 }\r
+ \r
+ 	action = { # 冷酷な容赦のなさ、新たな思想こそ必要なのだ\r
+ 	name = "ACTIONNAME99660122A"\r
+@@ -4560,8 +7087,8 @@ event = {
+ 	command = { type = relation which = ENG value = 5 }\r
+ 	command = { type = relation which = FRA value = 5 }\r
+ 	command = { type = domestic which = freedom value = -1 }\r
+-	command = { type = domestic which = defense_lobby value = -1 }\r
+-	command = { type = domestic which = interventionism value = -1 }\r
++	command = { type = domestic which = defense_lobby value = 1 }\r
++	command = { type = domestic which = interventionism value = 1 }\r
+ 	command = { type = trigger which = 99660207 } # DFR\r
+ 	ai_chance = 100\r
+ 	}\r
+@@ -8895,6 +11422,13 @@ event = {
+ 	command = { type = secedeprovince which = DFR value = 109 when = 1 }\r
+ 	command = { type = secedeprovince which = DFR value = 96 when = 1 }\r
+ 	command = { type = secedeprovince which = DFR value = 106 when = 1 }\r
++	#伊仏国境\r
++	command = { type = secedeprovince which = ITA value = 90 when = 1 }\r
++	command = { type = secedeprovince which = ITA value = 91 when = 1 }\r
++	command = { type = secedeprovince which = ITA value = 87 when = 1 }\r
++	command = { type = secedeprovince which = ITA value = 92 when = 1 }\r
++	command = { type = secedeprovince which = ITA value = 93 when = 1 }\r
++	command = { type = secedeprovince which = ITA value = 86 when = 1 }\r
+ 	#植民地放棄\r
+ 	command = { type = remove_claim_region which = "Morocco" where = FRA }\r
+ 	command = { type = remove_claim_region which = "Algeria" where = FRA }\r
+@@ -10897,4 +13431,99 @@ event = {
+ 	command = { type = sleepevent which = 99660522 }\r
+ 	command = { type = sleepevent which = 99660523 }\r
+ 	}\r
++}\r
++\r
++##########################################################################\r
++#  中華民国変更AI（CHI）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660524\r
++	random = no \r
++	country = CHI\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	flag = Weimar\r
++	event = 99660060 # 中独合作 ― 更なる関係強化\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0\r
++\r
++	date = { day = 0 month = 0 year = 1933 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++\r
++	action = {\r
++	command = { type = ai which = "switch/weimar/CHI_weimar.ai" }\r
++	command = { type = ai which = "air_ground.ai" }\r
++	}\r
++}\r
++\r
++\r
++##########################################################################\r
++#  生産AI（DFR）\r
++###########################################################################\r
++\r
++event = {\r
++	id = 99660525\r
++	random = no \r
++	country = DFR\r
++	\r
++	trigger = {\r
++	ai = yes\r
++	flag = Weimar\r
++	}\r
++\r
++	name = "AI_EVENT"\r
++	style = 0\r
++\r
++	date = { day = 0 month = 0 year = 1939 }\r
++	offset = 7\r
++	deathdate = { day = 29 month = 11 year = 1945 }\r
++\r
++	action = {\r
++	command = { type = build_division which = armor when = 5 cost = -0.1 }\r
++	command = { type = build_division which = armor when = 5 cost = -0.1 }\r
++	command = { type = build_division which = motorized when = 5 cost = -0.1 }\r
++	command = { type = build_division which = motorized when = 5 cost = -0.1 }\r
++	command = { type = build_division which = motorized when = 5 cost = -0.1 }\r
++	command = { type = build_division which = motorized when = 5 cost = -0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
++	command = { type = build_division which = infantry when = 10 cost = -0.1 }\r
++	command = { type = build_division which = battleship cost = -0.1 value = naval_improved_hull_l }\r
++	command = { type = build_division which = battleship cost = -0.1 value = naval_improved_hull_l }\r
++	command = { type = build_division which = battleship cost = -0.1 value = naval_improved_hull_l }\r
++	command = { type = build_division which = battleship cost = -0.1 value = naval_improved_hull_l }\r
++	command = { type = build_division which = heavy_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = heavy_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = heavy_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = heavy_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = light_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = light_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = light_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = light_cruiser cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = destroyer when = 2 cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = destroyer when = 2 cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = destroyer when = 2 cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = destroyer when = 2 cost = -0.1 value = naval_improved_hull_s }\r
++	command = { type = build_division which = submarine when = 3 cost = -0.1 value = naval_torpedoes_s }\r
++	command = { type = build_division which = submarine when = 3 cost = -0.1 value = naval_torpedoes_s }\r
++	command = { type = build_division which = submarine when = 3 cost = -0.1 value = naval_torpedoes_s }\r
++	command = { type = build_division which = submarine when = 3 cost = -0.1 value = naval_torpedoes_s }\r
++	command = { type = build_division which = submarine when = 3 cost = -0.1 value = naval_torpedoes_s }\r
++	command = { type = build_division which = submarine when = 3 cost = -0.1 value = naval_torpedoes_s }\r
++	command = { type = build_division which = interceptor when = 3 cost = -0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = -0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = -0.1 }\r
++	command = { type = build_division which = interceptor when = 3 cost = -0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = -0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = -0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = -0.1 }\r
++	command = { type = build_division which = tactical_bomber when = 3 cost = -0.1 }\r
++	}\r
+ }
+\ No newline at end of file

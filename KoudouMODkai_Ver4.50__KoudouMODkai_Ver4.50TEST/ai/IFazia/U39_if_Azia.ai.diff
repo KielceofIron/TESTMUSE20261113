@@ -1,0 +1,742 @@
+--- A/ai/IFazia/U39_if_Azia.ai [utf-8]
++++ B/ai/IFazia/U39_if_Azia.ai [ascii]
+@@ -3,15 +3,15 @@
+ switch = no # [yes/no]\r
+ max_front_ratio = 1.2\r
+ max_front_ratios = {\r
+-	TUR = 2.5\r
+-	U34 = 2.5\r
++	TUR = 2.0\r
++	OTT = 2.0\r
+ }\r
+ max_garrison_prop = 0.30\r
+ min_garrison_prop = 0.20\r
+-neutrality = 90.000 \r
++neutrality = 95.000 \r
+ war = 0\r
+ reinforcement = 0.000 \r
+-upgrading = 0.1500 \r
++upgrading = 0.2000 \r
+ strat_redeploy_threshold = 25\r
+ exp_force_ratio = 0.05\r
+ exp_force_ratios = { } \r
+@@ -26,64 +26,32 @@ combat = { }
+ \r
+ claim_acceptance = -59\r
+ \r
+-liberate = { PER IRQ SYR LEB EGY LBY SUD SAU OMN YEM GRE BUL YUG ROM }\r
++liberate = { OMN YEM EGY JOR PAL TUR PER KUR ARM AZB GEO U55 U61 }\r
+ \r
+-resistance = {  \r
+-	SOV = 3 \r
+-	UER = 3 \r
++resistance = { \r
++	UER = 4  \r
++	SOV = 4\r
+ 	ENG = 4\r
+ 	FRA = 4\r
+-	ITA = 5\r
+-	USA = 2\r
+-	GER = 2\r
+-	JAP = 4\r
+-	CHI = 3\r
+ }\r
++\r
+ befriend = {\r
+-	GER = 100\r
+-	ITA = 80\r
+-	ENG = 100\r
+-	FRA = 80\r
+-	UER = 20\r
++	ENG = 60\r
++	FRA = 60\r
++	UER = 60\r
+ 	SOV = 40\r
+-	SAU = 20\r
++	SAU = 40\r
+ 	U50 = 40\r
+-	JAP = 50\r
+-	CHI = 50\r
+-	USA = 40\r
+-	GRE = 40\r
+-	ALB = 40\r
+-	BUL = 40\r
+-	ROM = 40\r
+-	YUG = 40\r
+-	SER = 40\r
+-	CRO = 40\r
+ 	PER = 40\r
+-	IRQ = 40\r
+-	JOR = 40\r
+-	TUR = 10 # 追加\r
+-	U34 = 10 # 追加\r
+-	KUR = 10 # 追加\r
+-	ARM = 10 # 追加\r
++	IRQ = 10\r
++	JOR = 10\r
++	TUR = 10\r
++	OTT = 10\r
++	ARM = 60\r
++	KUR = 10\r
+ }\r
+ protect = { }\r
+ target = {\r
+-	# United Kingdom\r
+-	388 = 50 # Cyprus\r
+-\r
+-	# Italy\r
+-	379 = 50 # Rhodes\r
+-	378 = 50 # Dodecanese\r
+-\r
+-	# France\r
+-	1054 = 50 # Aleppo\r
+-	1014 = 50 # Dairaz Zawr\r
+-	1017 = 50 # Hims\r
+-	1018 = 50 # Tripoli\r
+-	1016 = 50 # Damascus\r
+-	1019 = 50 # Beirut\r
+-	1020 = 50 # Golar\r
+-\r
+ 	# Turky\r
+ 	409 = 50 # Istanbul\r
+ 	1075 = 50 # Ankara\r
+@@ -101,61 +69,37 @@ trade = {
+ 	money 		= -1\r
+ \r
+ 	favored = {\r
+-	GER = 100\r
+-	ITA = 80\r
+-	ENG = 100\r
+-	FRA = 80\r
+-	UER = 20\r
++	ENG = 60\r
++	FRA = 60\r
++	UER = 60\r
+ 	SOV = 40\r
+-	SAU = 20\r
++	SAU = 40\r
+ 	U50 = 40\r
+-	JAP = 50\r
+-	CHI = 50\r
+-	USA = 40\r
+-	GRE = 40\r
+-	ALB = 40\r
+-	BUL = 40\r
+-	ROM = 40\r
+-	YUG = 40\r
+-	SER = 40\r
+-	CRO = 40\r
+ 	PER = 40\r
+ 	IRQ = 40\r
+ 	JOR = 40\r
+-	TUR = 10 # 追加\r
+-	U34 = 10 # 追加\r
+-	KUR = 10 # 追加\r
+-	ARM = 10 # 追加\r
++	TUR = 10\r
++	OTT = 10\r
++	ARM = 60\r
++	KUR = 10\r
+ 	}\r
+ 	embargo = { }\r
+ }\r
+ tech_sharing = {\r
+ 	favored = {\r
+-	GER = 100\r
+-	ITA = 80\r
+-	ENG = 100\r
+-	FRA = 80\r
+-	UER = 20\r
++	ENG = 60\r
++	FRA = 60\r
++	UER = 60\r
+ 	SOV = 40\r
+-	SAU = 20\r
++	SAU = 40\r
+ 	U50 = 40\r
+-	JAP = 50\r
+-	CHI = 50\r
+-	USA = 40\r
+-	GRE = 40\r
+-	ALB = 40\r
+-	BUL = 40\r
+-	ROM = 40\r
+-	YUG = 40\r
+-	SER = 40\r
+-	CRO = 40\r
+ 	PER = 40\r
+ 	IRQ = 40\r
+ 	JOR = 40\r
+-	TUR = 10 # 追加\r
+-	U34 = 10 # 追加\r
+-	KUR = 10 # 追加\r
+-	ARM = 10 # 追加\r
++	TUR = 10\r
++	OTT = 10\r
++	ARM = 60\r
++	KUR = 10\r
+ 	}\r
+ 	embargo = { }\r
+ 	not = { }\r
+@@ -186,20 +130,7 @@ spyprefs =
+ 		country = U39\r
+ 	}\r
+ 	spyprefsdata = {\r
+-		country_priorities	= 7\r
+-		steal_blueprint 	= 0\r
+-		minister_assassination 	= 0\r
+-		smear_campaign 		= 8\r
+-		coup 			= 0\r
+-		sabotage_industry 	= 5\r
+-		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
+-		country 		= KUR\r
+-	}\r
+-	spyprefsdata = {\r
+-		country_priorities	= 7\r
++		country_priorities	= 3\r
+ 		steal_blueprint 	= 0\r
+ 		minister_assassination 	= 0\r
+ 		smear_campaign 		= 8\r
+@@ -207,25 +138,12 @@ spyprefs =
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
+-		country 		= ARM\r
+-	}\r
+-	spyprefsdata = {\r
+-		country_priorities	= 7\r
+-		steal_blueprint 	= 10\r
+-		minister_assassination 	= 0\r
+-		smear_campaign 		= 8\r
+-		coup 			= 0\r
+-		sabotage_industry 	= 5\r
+-		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
++		massmedia 		= 2\r
++		disrupt_techteam	= 2\r
+ 		country 		= TUR\r
+ 	}\r
+ 	spyprefsdata = {\r
+-		country_priorities	= 7\r
++		country_priorities	= 3\r
+ 		steal_blueprint 	= 0\r
+ 		minister_assassination 	= 0\r
+ 		smear_campaign 		= 8\r
+@@ -233,61 +151,48 @@ spyprefs =
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+ 		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
+-		country 		= U34\r
++		massmedia 		= 2\r
++		disrupt_techteam	= 2\r
++		country 		= OTT\r
+ 	}\r
+ 	spyprefsdata = {\r
+-		country_priorities	= 4\r
+-		steal_blueprint 	= 5\r
+-		minister_assassination 	= 0\r
+-		smear_campaign 		= 8\r
+-		coup 			= 0\r
+-		sabotage_industry 	= 5\r
+-		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
+-		country 		= GRE\r
+-	}\r
+-	spyprefsdata = {\r
+-		country_priorities	= 4\r
+-		steal_blueprint 	= 5\r
++		country_priorities	= 3\r
++		steal_blueprint 	= 0\r
+ 		minister_assassination 	= 0\r
+ 		smear_campaign 		= 8\r
+ 		coup 			= 0\r
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
+-		country 		= BUL\r
++		found_partisans 	= 4\r
++		massmedia 		= 4\r
++		disrupt_techteam	= 2\r
++		country 		= IRQ\r
+ 	}\r
+ 	spyprefsdata = {\r
+-		country_priorities	= 4\r
+-		steal_blueprint 	= 10\r
++		country_priorities	= 3\r
++		steal_blueprint 	= 0\r
+ 		minister_assassination 	= 0\r
+ 		smear_campaign 		= 8\r
+ 		coup 			= 0\r
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
+-		country 		= UER\r
++		found_partisans 	= 4\r
++		massmedia 		= 4\r
++		disrupt_techteam	= 2\r
++		country 		= PER\r
+ 	}\r
+ 	spyprefsdata = {\r
+-		country_priorities	= 4\r
+-		steal_blueprint 	= 10\r
++		country_priorities	= 3\r
++		steal_blueprint 	= 0\r
+ 		minister_assassination 	= 0\r
+ 		smear_campaign 		= 8\r
+ 		coup 			= 0\r
+ 		sabotage_industry 	= 5\r
+ 		nuclear_sabotage 	= 0\r
+-		found_partisans 	= 0\r
+-		massmedia 		= 3\r
+-		disrupt_techteam	= 3\r
+-		country 		= SOV\r
++		found_partisans 	= 4\r
++		massmedia 		= 4\r
++		disrupt_techteam	= 2\r
++		country 		= KUR\r
+ 	}\r
+ }\r
+ ###################################\r
+@@ -295,14 +200,11 @@ spyprefs =
+ ###################################\r
+ #Default values\r
+ construction = { \r
+-	max_factor = 0.2000\r
++	max_factor = 0.900 \r
+ \r
+ 	AA_batteries = no\r
+ 	max_AA_level = 4\r
+-	AA_provs = {\r
+-	409 # Istanbul\r
+-     	1075 # Ankara \r
+-	} \r
++	AA_provs = { } \r
+ \r
+ 	coastal_fort = no\r
+ 	max_coastal_level = 3\r
+@@ -312,7 +214,7 @@ construction = {
+ 	max_radar = 5 \r
+ 	radar_provs = { } \r
+ \r
+-	air_base = yes\r
++	air_base = no\r
+ 	max_air_base = 4\r
+ 	air_base_provs = { } \r
+ \r
+@@ -320,31 +222,27 @@ construction = {
+ 	max_naval_base = 5 \r
+ 	naval_base_provs = { } \r
+ \r
+-	land_fort = yes\r
++	land_fort = no\r
+ 	max_land_level = 10\r
+ 	fort_borders = { } \r
+ \r
+ 	ic_at_war = no\r
+-	force_ic_until = 1938\r
+-	ic_end_year = 1942\r
+-	IC_provs = {\r
+-	409 # Istanbul\r
+-     	1075 # Ankara \r
+-	1077 # イズミル\r
+-	} \r
++	force_ic_until = 1937\r
++	ic_end_year = 1938\r
++	IC_provs = { } \r
+ }\r
+ \r
+ military = { \r
+ 	relative_build_scheme 	= no\r
+ 	max_batch_peace 		= 800 \r
+-	max_batch_war 			= 520 \r
+-	max_batch_home_front = 270\r
++	max_batch_war 			= 400 \r
++	max_batch_home_front = 320\r
+ 	extra_convoys_war = 0.0500 \r
+ 	extra_convoys_peace = 0.0500\r
+ \r
+ \r
+ 	#### Divisions etc...\r
+-	infantry 		= 50\r
++	infantry 		= 60\r
+ 	cavalry 		= 20\r
+ 	motorized 		= 0\r
+ 	mechanized 		= 0\r
+@@ -354,19 +252,19 @@ military = {
+ 	marine 			= 0\r
+ 	bergsjaeger 		= 0\r
+ 	garrison		= 0\r
+-    	hq 			= 5\r
+-	militia 		= 0\r
+-#				75 %\r
+-	interceptor 		= 13\r
++    	hq 			= 0\r
++	militia 		= 20\r
++#				100 %\r
++	interceptor 		= 0\r
+ 	multi_role 		= 0\r
+ 	cas 			= 0\r
+ 	strategic_bomber 	= 0\r
+-	tactical_bomber 	= 12\r
++	tactical_bomber 	= 0\r
+ 	naval_bomber 		= 0\r
+ 	transport_plane 	= 0\r
+ 	flying_bomb 		= 0\r
+ 	flying_rocket 		= 0\r
+-#				25 %\r
++#				0 %\r
+ 	battleship 		= 0\r
+ 	carrier 		= 0\r
+ 	escort_carrier		= 0\r
+@@ -376,15 +274,15 @@ military = {
+ 	battlecruiser 		= 0\r
+ 	submarine 		= 0\r
+ 	nuclear_submarine 	= 0\r
+-	transports 		= 5\r
++	transports 		= 0\r
+ #				0 %\r
+ \r
+ 	#### Brigades\r
+ 	artillery 		= 25\r
+ 	sp_artillery 		= 0\r
+-	cavalry_brigade		= 30\r
++	cavalry_brigade		= 10\r
+ 	sp_anti_air 		= 0\r
+-	medium_armor 		= 5\r
++	medium_armor 		= 0\r
+ 	tank_destroyer 		= 0\r
+ 	light_armor_brigade 	= 0\r
+ 	heavy_armor 		= 0\r
+@@ -392,7 +290,7 @@ military = {
+ 	armored_car 		= 0\r
+ 	anti_air 		= 0\r
+ 	police 			= 0\r
+-	engineer 		= 20 \r
++	engineer 		= 0 \r
+ \r
+ 	cag = 100.000\r
+ 	escort = 100.0000\r
+@@ -429,7 +327,10 @@ technology = {
+ 5310 54010 54020 54030 5320 5330 5340\r
+ } \r
+ \r
+-ignore 		= {\r
++	ignore 		= {\r
++# Cavalry\r
++13060 13070 13080 1310 1320 1330 1340 1350 1360 1370 1380 1390 1530 1540\r
++\r
+ # Marines\r
+ 1560 1570 1580 1590 1600 1610 1620 1630 1640 1650 1660\r
+ \r
+@@ -454,8 +355,8 @@ ignore 		= {
+ # Battlecruisers\r
+ 3310 3320 3330 3340 3350 12030\r
+ \r
+-# Super heavy Battleship\r
+-3490 12050\r
++# Battleship Super heavy Battleship\r
++3410 3420 3430 3440 3450 3460 3470 3480 12040 3490 12050\r
+ \r
+ # Aircraft Carriers\r
+ 3510 3520 3530 3540 3550 12060 3560 3570\r
+@@ -463,6 +364,9 @@ ignore 		= {
+ # Light Carrier\r
+ 12100 12110 12120 12130 12140 12150 12160\r
+ \r
++# Strategic bombers\r
++4800 4810 4820 4220 4230 4240 4246 15160 15170 16030\r
++\r
+ # Naval bombers\r
+ 4700 4710 4190 4200 4210 15140 15150\r
+ \r
+@@ -481,17 +385,19 @@ ignore 		= {
+ # Escort Fighters\r
+ 4050 4080 4110 4116 15060 15070 15080\r
+ \r
++# Nuclear\r
++5470 5480 5490 5500 5510 5520 5530 5540\r
+ }\r
+  \r
+ 	armor 		= 3\r
+ 	infantry 	= 5\r
+ 	industry 	= 4\r
+ 	aircraft 	= 1\r
+-	naval 		= 2\r
++	naval 		= 0\r
+ 	land_doctrines 	= 2\r
+-	secret_weapons 	= 1\r
++	secret_weapons 	= 0\r
+ 	air_doctrines 	= 1\r
+-	naval_doctrines = 1\r
++	naval_doctrines = 0\r
+ }  \r
+ ###################################\r
+ # Ground Combat, Leaders and Garrisons\r
+@@ -512,8 +418,8 @@ leader_ratio = {
+ garrison = {\r
+ 	defend_overseas_beaches = no\r
+ 	home_multiplier 	= 1.0\r
+-	overseas_multiplier = 0.8\r
+-	home_peace_cap 		= 10\r
++	overseas_multiplier = 0.5\r
++	home_peace_cap 		= 100\r
+ 	war_zone_odds 		= 2.0\r
+ 	key_point_prio_mult	= 1\r
+ 	revolt_risk_mult	= 1.0\r
+@@ -530,40 +436,21 @@ garrison = {
+ \r
+ 	# Borders with specific countries\r
+ 	country_priorities = {\r
+-		GER = 100\r
+-		ITA = 80\r
+-		ENG = 40\r
+-		FRA = 40\r
+-		UER = 100\r
+-		SOV = 100\r
+-		SAU = 20\r
+-		U50 = 20\r
+-		USA = 20\r
+-		GRE = 40\r
+-		ALB = 40\r
+-		BUL = 40\r
+-		ROM = 40\r
+-		YUG = 40\r
+-		SER = 40\r
+-		CRO = 40\r
+-		PER = 40\r
+-		IRQ = 40\r
+-		JOR = 40\r
+-		TUR = 100 # 追加\r
+-		U34 = 100 # 追加\r
+-		KUR = 70 # 追加\r
+-		ARM = 70 # 追加\r
++		TUR = 50\r
++		OTT = 50\r
++		PER = 10\r
++		ARM = 10\r
++		IRQ = 30\r
++		KUR = 30\r
+ 	}\r
+ 	ignore = { }\r
+-	province_priorities = {\r
+-	409 = 30 # 追加\r
+-	}\r
++	province_priorities = { }\r
+ 	area_multiplier = { }\r
+ }\r
+ front = { \r
+-	recklessness 		= 3 # 0-3\r
+-	distrib_vs_ai 		= reactive\r
+-	distrib_vs_human 	= reactive\r
++	recklessness 		= 1 # 0-3\r
++	distrib_vs_ai 		= even\r
++	distrib_vs_human 	= even\r
+ \r
+ 	enemy_reinf_days	= 6\r
+ 	reserve_prop		= 0.1\r
+@@ -601,8 +488,10 @@ front = {
+ 	urban_attack 	= 1.0\r
+ 	river 			= 1.0\r
+ \r
+-	enemy_handicap = { } \r
+-	passivity = { }\r
++	enemy_handicap = {\r
++	} \r
++	passivity = {\r
++	} \r
+ } \r
+ ###################################\r
+ # Air bombardment and defense\r
+@@ -682,172 +571,9 @@ admiral = {
+ 	return_org 	= 60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships\r
+ 	return_dmg 	= 80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships\r
+ \r
+-	ignore = {\r
+-		#Baltic Area\r
+-		"Northern Baltic"\r
+-		"Southern Baltic" \r
+-		"Bothnian Bay"\r
+-		\r
+-		#Murmansk/Archangel\r
+-		"Barents Sea"\r
+-		"Arctic Ocean"\r
+-		\r
+-		#Norway Coast (Denmark Coast)\r
+-		"Norwegian Sea"\r
+-		"East North Sea"\r
+-		"Kattegat"\r
+-		\r
+-		#North Sea, East Coast of England\r
+-		"Central Northsea"\r
+-		"West Northsea"\r
+-		"Southeast Northsea"\r
+-		\r
+-		#Western Mediterranean\r
+-		"Costa del Sol"\r
+-		"Gulf of Lyon"\r
+-		"Algerian Coast"\r
+-		\r
+-		#Central Mediterranean\r
+-		"Tyrrhenian Sea"\r
+-		"Adriatic Sea"\r
+-		\r
+-		#Eastern Mediterranean\r
+-		"Black Sea"\r
+-		"Aegean Sea"\r
+-		"Egyptian Coast"\r
+-		\r
+-		#East Africa\r
+-		"Red Sea"\r
+-		"Horn of Africa"\r
+-		\r
+-		#Madagascar Coast\r
+-		"South Mozambique Channel"\r
+-		"North Mozambique Channel" \r
+-		"Northeast Coast of Madagascar"\r
+-		"Southeast Coast of Madagascar" \r
+-		\r
+-		#North Indian Ocean (Persian Gulf)\r
+-		"Persian Gulf"\r
+-		"North Arabian Sea"\r
+-		"South Arabian Sea" \r
+-		"Coast of Ceylon"\r
+-		\r
+-		#Central/South Indian Ocean\r
+-		"Mascarene Plateau"\r
+-		"Mid-Indian Ridge" \r
+-		"Ninetyeast Ridge" \r
+-		"Southeast Indian Ocean"\r
+-		"Southwest Indian Ocean" \r
+-		\r
+-		#Bay of Bengal & West Indonesia\r
+-		"East Bay of Bengal"\r
+-		"West Bay of Bengal"\r
+-		"Malacca Strait"\r
+-		"Java Ridge"\r
+-		"Java Trench"\r
+-		\r
+-		#Indo-China, Borneo, Phillipenes\r
+-		"Gulf of Siam"\r
+-		"Coast of Indochina"\r
+-		"Spratly Sea"\r
+-		"Coast of Brunei"\r
+-		"Flores Sea"\r
+-		"Sulu Sea"\r
+-		"Celebes Sea"\r
+-		"Luzon Strait"\r
+-		\r
+-		#China Coast\r
+-		"Taiwan Strait"\r
+-		"Yellow Sea"\r
+-		\r
+-		#Japanese Coast\r
+-		"Sea of Japan"\r
+-		"Ryukyus"\r
+-		"Coast of Japan"\r
+-		"South Sea of Okhotsk"\r
+-		"West Sea of Okhotsk" \r
+-		"East Sea of Okhotsk" \r
+-		\r
+-		#Mariana Basin, Phillipenes\r
+-		"Philipine Trench"\r
+-		"Central Philippine Sea"\r
+-		"Mariana Trench"\r
+-		"East Mariana Basin"\r
+-		"Mid-Pacific Mountains"\r
+-		"North Bismarck Sea"\r
+-		\r
+-		#New Guinea, East/North Australia and New Zealan\r
+-		"Coast of New Guinea"\r
+-		"Molucca Sea"\r
+-		"Banda Sea"\r
+-		"Arafura Sea"\r
+-		"South Bismarck Sea"\r
+-		"Solomon Sea"\r
+-		"West Coral Sea"\r
+-		"East Coral Sea" \r
+-		"North Tasman Sea"\r
+-		"South Tasman Sea" \r
+-		"East Cost of New Zealand"\r
+-		\r
+-		# South and West Australia\r
+-		"Timor Sea"\r
+-		"West Coast of Australia"\r
+-		"East Great Australian Bight"\r
+-		"West Great Australian Bight" \r
+-		\r
+-		#North Pacific\r
+-		"Coast of Kamchatka"\r
+-		"East Bering Sea"\r
+-		"West Bering Sea" \r
+-		"Aleutians"\r
+-		"Northwest Pacific Basin"\r
+-		"North Northeast Pacific Basin"\r
+-		\r
+-		#Central Pacific\r
+-		"Hawaiian Rise"\r
+-		"North East Pacific Ocean"\r
+-		"Marshalls Sea"\r
+-		"South East Pacific Ocean"\r
+-		"Marianas"\r
+-		"Western Solomons"\r
+-		"Eastern Solomons"\r
+-		"US Maritimes"\r
+-		"Carolines"\r
+-		\r
+-		#South Pacific\r
+-		"Gilberts"\r
+-		"Line Islands"\r
+-		"Fiji Basin"\r
+-		"Southwest Pacific Basin"\r
+-		\r
+-		# South American West Coast\r
+-		"Southeast Pacific Basin"\r
+-		"West Coast of Chile"\r
+-		"West Coast of Peru"\r
+-		"South Southeast Pacific Ocean"\r
+-		"North Southeast Pacific Ocean"\r
+-		\r
+-		# USA West Coast\r
+-		"Gulf of Alaska"\r
+-		"West Coast of the United States"\r
+-		\r
+-		#West Coast of Mexico\r
+-		"West Coast of Mexico"\r
+-		"West Coast of Central America"\r
+-	}\r
+-	base = {\r
+-	1054\r
+-	1076 \r
+-	}\r
+-	target = {\r
+-	2741 = 100\r
+-	2743 = 100\r
+-	2744 = 100\r
+-	2745 = 100\r
+-	} \r
+-	core = {\r
+-     	397\r
+-	2742\r
+-	2729\r
+-	} \r
++	ignore = { }\r
++	#Which provinces to use as bases..\r
++	base = { }\r
++	target = { } \r
++	core = { } \r
+ }\r

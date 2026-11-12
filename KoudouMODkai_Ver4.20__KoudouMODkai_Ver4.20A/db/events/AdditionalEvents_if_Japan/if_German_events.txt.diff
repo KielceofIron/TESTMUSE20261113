@@ -1,0 +1,152 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_German_events.txt [cp932]
+@@ -395,6 +395,7 @@ event = {
+ 	command = { type = sleepevent which = 2003152 }\r
+ 	command = { type = sleepevent which = 2003153 }\r
+ 	command = { type = sleepevent which = 2003155 }\r
++	command = { type = sleepevent which = 2003090 } #フリッチュイベント\r
+ 	}\r
+ }\r
+ \r
+@@ -1539,6 +1540,7 @@ event = {
+ 	control = { province = 668 data = -3 } #Kuybyshev\r
+ 	control = { province = 672 data = -3 } #Kazan\r
+ 	control = { province = 706 data = -3 } #Astrakhan\r
++	NOT = { lost_national = { country = UTC value = 70 } }\r
+ 	}\r
+ 	\r
+ 	name = EVT_45680024_NAME\r
+@@ -1837,6 +1839,7 @@ event = {
+ 	command = { type = secedearea which = U37 value = "Latvia" when = 1 }\r
+ 	command = { type = make_puppet which = U37 }\r
+ 	command = { type = alliance which = U37 }\r
++	command = { trigger = { ai = U37 } type = event which = 45690013 where = U37 when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1883,6 +1886,7 @@ event = {
+ 	command = { type = secedeprovince which = LIT value = 255 when = 1 }\r
+ 	command = { type = make_puppet which = LIT }\r
+ 	command = { type = alliance which = LIT }\r
++	command = { trigger = { ai = LIT } type = event which = 45690014 where = LIT when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1935,6 +1939,7 @@ event = {
+ 	command = { type = secedeprovince which = POL value = 254 when = 1 } #Bialystock\r
+ 	command = { type = make_puppet which = POL }\r
+ 	command = { type = alliance which = POL }\r
++	command = { trigger = { ai = POL } type = event which = 45690015 where = POL when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -1992,6 +1997,7 @@ event = {
+ 	command = { type = secedeprovince which = BLR value = 599 when = 1 } #Minsk\r
+ 	command = { type = make_puppet which = BLR }\r
+ 	command = { type = alliance which = BLR }\r
++	command = { trigger = { ai = BLR } type = event which = 45690016 where = BLR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2040,6 +2046,7 @@ event = {
+ 	command = { type = secedeprovince which = UKR value = 249 when = 1 } #Sarny\r
+ 	command = { type = make_puppet which = UKR }\r
+ 	command = { type = alliance which = UKR }\r
++	command = { trigger = { ai = UKR } type = event which = 45690017 where = UKR when = 0 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r
+@@ -2296,7 +2303,7 @@ event = {
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = add_division which = "第1予備戦車団" value = light_armor when = 0 }\r
+ 	command = { trigger = { ai = yes } type = add_division which = "第2予備戦車団" value = light_armor when = 0 }\r
+-	command = { trigger = { ai = yes } type = add_division which = "第3予備洗車団" value = light_armor when = 0 }\r
++	command = { trigger = { ai = yes } type = add_division which = "第3予備戦車団" value = light_armor when = 0 }\r
+ 	command = { type = add_division which = "第1予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第2予備歩兵師団" value = infantry when = 5 }\r
+ 	command = { type = add_division which = "第3予備歩兵師団" value = infantry when = 5 }\r
+@@ -2501,9 +2508,13 @@ event = {
+ 	command = { type = gain_tech which = 5000110 }\r
+ 	command = { type = gain_tech which = 5130 }\r
+ 	command = { type = gain_tech which = 5100 }\r
+-	command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
+-	command = { trigger = { ai = yes }  type = trigger which = 130031 }\r
+-	command = { trigger = { ai = yes exists = FRA } type = sleepevent which = 130033 }\r
++	#command = { trigger = { ai = no }  type = trigger which = 8300107 }\r
++		#command = {  trigger = { ai = yes }  type = local_setflag which = do_not_demob }\r
++		#command = {  trigger = { ai = yes }  type = local_clrflag which = demob }\r
++		#command = { trigger = { ai = yes } type = trigger which = 8300107 }\r
++		#command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
++		command = {  trigger = { ai = yes }  type = event which = 130033 where = GER when = 1080 }\r
++	#command = { trigger = { ai = yes } type = event which = }\r
+ 	}\r
+ }\r
+ \r
+@@ -2699,7 +2710,7 @@ event = {
+ 	command = { type = domestic which  = defense_lobby value = 1 }\r
+ 	command = { type = domestic which  = interventionism value = 1 }\r
+ 	command = { type = setflag which = Central_Allies } \r
+-	ai_chance = 85\r
++	ai_chance = 100 #85\r
+ 	}\r
+ \r
+ 	action = { # 我々には新秩序が必要だ\r
+@@ -2727,7 +2738,7 @@ event = {
+ 	command = { trigger = { country = U09 } type = event which = 45680045 where = U09 when = 1 } \r
+ 	command = { trigger = { country = UB8 } type = event which = 45680045 where = UB8 when = 1 } \r
+ 	command = { trigger = { country = GER } type = event which = 45680044 where = AUS when = 2 } \r
+-	ai_chance = 15\r
++	ai_chance = 0 #15\r
+ 	}\r
+ }\r
+ \r
+@@ -2980,6 +2991,7 @@ event = {
+ 	name = "ACTIONNAME45680050A"\r
+ 	command = { type = money value = -30 } \r
+ 	command = { type = trigger which = 45680051 }\r
++	ai_chance = 100\r
+ 	}\r
+ }\r
+ 	\r
+@@ -3209,11 +3221,11 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1005 where = 110 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第2軍" value = land where = 126 }\r
+-	command = { type = activate_division which = 14510 value = 1006 where = 110 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1007 where = 110 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1008 where = 110 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1009 where = 110 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1010 where = 110 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1006 where = 126 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1007 where = 126 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1008 where = 126 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1009 where = 126 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1010 where = 126 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第3軍" value = land where = 109 }\r
+ 	command = { type = activate_division which = 14510 value = 1011 where = 109 when = 1 }\r
+@@ -3223,11 +3235,11 @@ event = {
+ 	command = { type = activate_division which = 14510 value = 1015 where = 109 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第4軍" value = land where = 131 }\r
+-	command = { type = activate_division which = 14510 value = 1016 where = 109 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1017 where = 109 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1018 where = 109 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1019 where = 109 when = 1 }\r
+-	command = { type = activate_division which = 14510 value = 1020 where = 109 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1016 where = 131 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1017 where = 131 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1018 where = 131 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1019 where = 131 when = 1 }\r
++	command = { type = activate_division which = 14510 value = 1020 where = 131 when = 1 }\r
+ \r
+ 	command = { type = add_corps which = "西部方面第5軍" value = land where = 104 }\r
+ 	command = { type = activate_division which = 14510 value = 1021 where = 104 when = 1 }\r
+@@ -3271,6 +3283,7 @@ event = {
+ 	#command = { type = activate_division which = 14510 value = 1048 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1049 where = 105 when = 1 }\r
+ 	#command = { type = activate_division which = 14510 value = 1050 where = 105 when = 1 }\r
++	command = { type = strength which = land when = 0 where = 0 value = 0.3 }\r
+ 	ai_chance = 100\r
+ 	}\r
+ \r

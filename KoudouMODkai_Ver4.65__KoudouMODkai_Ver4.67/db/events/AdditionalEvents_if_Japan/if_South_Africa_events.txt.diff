@@ -1,0 +1,473 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_South_Africa_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_South_Africa_events.txt [cp932]
+@@ -4,13 +4,16 @@
+ #########################################################################\r
+ ###### 追加イベント一覧 ############\r
+ #########################################################################\r
+-#id = 4668001 移民の増加\r
+-#id = 4668002 ネオ・アフリカーナー\r
+-#id = 4668003 ヒムラー博士の新たな発見\r
+-#id = 4668004 ブレクジット\r
+-#id = 4668005 ブレクジット ―  南アフリカが離脱した！\r
+-#id = 4668006 ブレクジット ―  ローデシアの離脱\r
+-#id = 4668008 ポルトガル植民地の分解 ―  モザンビーク併合\r
++# id = 4668001 移民の増加 \r
++# id = 4668002 南アフリカへの入植者 \r
++# id = 4668003 ヒムラー博士の新たな発見 \r
++# id = 4668004 統一党の成立と反発 \r
++# id = 4668005 新ゲルマニア党の成立 \r
++# id = 4668006 南アフリカによるポルトガル領アフリカ占領 \r
++# id = 4668007 英国による内政干渉 \r
++# id = 4668008 1939年総選挙―中間報告―\r
++# id = 4668009 1939年総選挙―結果―\r
++# id = 4668010 アフリカ戦争への介入 \r
+ ##########################################################################\r
+ #  移民の増加\r
+ # 南アフリカは、1652年にヨーロッパ人が訪れて以降、主にオランダ系移民によって発展していき、やがてケープ植民地が成立した。\r
+@@ -24,7 +27,6 @@ event = {
+ 	id = 4668001\r
+ 	random = no\r
+ 	country = SAF\r
+-\r
+ 	name = "EVT_4668001_NAME"\r
+ 	desc = "EVT_4668001_DESC"\r
+ 	style = 1\r
+@@ -39,12 +41,19 @@ event = {
+ }\r
+ \r
+ ##########################################################################\r
+-#  ネオ・アフリカーナー\r
+-# アフリカーナーとは本来、宗教的自由を求めてヨーロッパからアフリカに入植した人々が合流して形成された民族集団である。\r
+-# 第一次世界大戦終戦直後、凄惨な戦争への忌避と欧州各地で極度に悪化していた食料事情から移民が大幅に増加していた。\r
+-# 主にアジアや南アフリカがそれら移民の受け入れ先として活躍しており、南アフリカでは白人人口の増加を歓迎していたことから特に積極的であった。\r
+-# 一方で、勤勉なドイツ系移民の政治的発言力が大きくなっており、ナショナリズム政党であった国民党は、これらを「ネオ・アフリカーナー」として歓迎していた。\r
+-# 白人移民は世界恐慌によってさらに増加しており、これら人口増加は国家の発展に大きく寄与している。\r
++#  南アフリカへの入植者\r
++# 南アフリカは原住民となる黒人と、奴隷として連れ込まれた黒人。複数の白人系入植者によって構成されている。\r
++# 一年を通して温暖であり、寒暖差はありながらも広い高原を持つこの国には、最初期に現れたオランダ系移民\r
++# （現在のボーア人）を始めとして、様々な人々が入植を行っている。その中でも特筆すべき人物が幾人か居る。\r
++# 一人目はベルンハルト・フェルスターであり、哲学者フリードリヒ・ニーチェの妹であるエリーザベト・ニーチェ\r
++# の夫である。彼は非常に極端な反ユダヤ主義思想家であり、南アフリカへの入植も純粋アーリア人国家・\r
++# 新ゲルマニア建設の足がかりとして行ったものである。二人目はヒューストン・スチュアート・チェンバレン。\r
++# 強烈なワグネリアンであり、音楽家リヒャルト・ワーグナーの娘エーファと結婚し、ワーグナー一族の一員として\r
++# 数えられるようになる。彼は先述したベルンハルト・フェルスターの誘いに乗り、同じく強固な反ユダヤ主義思想\r
++# を持つ著述家であった彼はフェルスターと意気投合し、南アフリカの気候も肌に合ったようで、病弱として知られ\r
++# ていた彼は活力を取り戻し、精力的に執筆活動を行うようになる。両名がその筆頭であるように、現在の南アフリ\r
++# カでは欧州における人種主義者の主たる集合地点の一つとして数えられるようになり、そうした実態が南アフリカ\r
++# の政策にも徐々に、反映されようとしているのが現状である。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+@@ -53,8 +62,6 @@ event = {
+ 	country = SAF\r
+ 	\r
+ 	trigger = {\r
+-	event = 1929002\r
+-	event = 1929003\r
+ 	random = 15\r
+ 	}\r
+ 	\r
+@@ -67,7 +74,7 @@ event = {
+ 	offset = 4\r
+ 	deathdate = { day = 29 month = 0 year = 1964 }\r
+ \r
+-	action = { # 新たな同胞を歓迎しよう！\r
++	action = { # ……何であれ、入植者が多いのは良いことだ\r
+ 	name = "ACTIONNAME4668002A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = relation which = ENG value = 10 }\r
+@@ -132,13 +139,11 @@ event = {
+ }\r
+ \r
+ ##########################################################################\r
+-#  ブレクジット\r
+-# オーストラリアで起きた大英帝国連邦からの離脱は、南アフリカにも著しく大きな影響を与えた。\r
+-# オーストラリアの離脱は、様々な面での南アフリカの負担の増加を予見させ、\r
+-# アフリカーナーという新たなアイデンティティが形成されつつある今、\r
+-# 南アフリカをアフリカーナーの国家として生まれ変わらせることを求める声が高まっていた。\r
+-# 勿論イギリス本国も、離脱の阻止を狙っていたが、弾圧などの動きはますます離脱に拍車を賭けさせるだけであり、\r
+-# イギリス本国と国民世論で板挟みとなった政府は残留か、離脱かを求める選挙を実施することになった。\r
++#  統一党の成立と反発\r
++# 南アフリカ初代首相ルイス・ボータや英傑として知られるヤン・スマッツが余りに新英的・黒人融和的だとして批判を強めた\r
++# ジェームズ・バリー・ミューニック・ヘルツォークによってアフリカーナーの利益代弁者として結成された政党。それが国民党であっ# た。しかし、世界大恐慌の余波を受け混乱する南アフリカにおいて挙国一致体制構築のため、１９３４年にヤン・スマッツ率いる南ア# フリカ党とヘルツォーク率いる国民党は合同を発表し、統一党として再始動することが内外に宣言された。\r
++# だが、ダニエル・フランソワ・マランを筆頭とする一部政治家達はこの合同に反対し国民党を離脱。\r
++# 彼らは純正国民党を成立させ、現政権の母体となる統一党との対決姿勢を打ち出すこととなる。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+@@ -147,7 +152,6 @@ event = {
+ 	country = SAF\r
+ 	\r
+ 	trigger = {\r
+-	event = 4656014\r
+ 	not = { ispuppet = SAF }\r
+ 	random = 15\r
+ 	}\r
+@@ -157,173 +161,254 @@ event = {
+ 	style = 2\r
+ 	picture = "election_time"\r
+ \r
+-	date = { day = 0 month = 0 year = 1933 }\r
++	date = { day = 0 month = 0 year = 1934 }\r
+ 	offset = 4\r
+ 	deathdate = { day = 29 month = 0 year = 1964 }\r
+ \r
+-	action = { # 離脱だ！自分たちのコントロールを取り戻そう！\r
++	action = { # 国家の危機だと言うのに、彼らとくれば！\r
+ 	name = "ACTIONNAME4668004A"\r
+-	command = { type = dissent value = -10 }\r
+-	command = { type = relation which = ENG value = -150 }\r
+-	command = { type = relation which = CAN value = -150 }\r
+-	command = { type = relation which = NZL value = -150 }\r
+-	command = { type = relation which = U02 value = -150 }\r
+-	command = { type = leave_alliance }\r
+-	command = { type = end_puppet }\r
+-	command = { type = end_access which = ENG }\r
+-	command = { type = end_non_aggression which = ENG where = SAF }\r
+-	command = { trigger = { guarantee = { country = ENG country = SAF } } type = end_guarantee which = ENG where = SAF }\r
+-	command = { trigger = { guarantee = { country = SAF country = ENG } } type = end_guarantee which = SAF where = ENG }\r
+-	command = { trigger = { war = { country = JAP } } type = peace which = JAP value = 0 }\r
+-	command = { trigger = { war = { country = CHI } } type = peace which = CHI value = 0 }\r
+-	command = { trigger = { war = { country = UER } } type = peace which = UER value = 0 }\r
+-	command = { trigger = { war = { country = USA } } type = peace which = USA value = 0 }\r
+-	command = { trigger = { war = { country = GER } } type = peace which = GER value = 0 }\r
+-	command = { trigger = { war = { country = FRA } } type = peace which = FRA value = 0 }\r
+-	command = { trigger = { war = { country = ITA } } type = peace which = ITA value = 0 }\r
+-	command = { type = set_domestic which = democratic value = 1 }\r
+-	command = { type = set_domestic which = political_left value = 1 }\r
+-	command = { type = flag_ext where = SAF which = "_IF" }\r
+-	command = { type = name where = SAF which = "南アフリカ共和国" }\r
+-	command = { type = headofstate which = 425201 }\r
+-	command = { type = headofgovernment which = 425202 }\r
+-	command = { type = foreignminister which = 425203 }\r
+-	command = { type = armamentminister which = 425204 }\r
+-	command = { type = ministerofsecurity which = 425205 }\r
+-	command = { type = ministerofintelligence which = 425206 }\r
+-	command = { type = trigger which = 4668005 }\r
++	command = {  }\r
+ 	}\r
+ \r
+-	action = { # 必要ない\r
+-	name = "ACTIONNAME4668004B"\r
+-	command = { type = dissent value = 10 }\r
+-	ai_chance = 0\r
+-	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  ブレクジット ―  南アフリカが離脱した！\r
+-# オーストラリアで起きた大英帝国連邦からの離脱は、南アフリカにも著しく大きな影響を与えた。\r
+-# オーストラリアの離脱は、様々な面での南アフリカの負担の増加を予見させ、\r
+-# アフリカーナーという新たなアイデンティティが形成されつつある今、\r
+-# 南アフリカをアフリカーナーの国家として生まれ変わらせることを求める声が高まっていた。\r
+-# 勿論イギリス本国も、離脱の阻止を狙っていたが、弾圧などの動きはますます離脱に拍車を賭けさせるだけであり、\r
+-# イギリス本国と国民世論で板挟みとなった政府は残留か、離脱かを求める選挙を実施することになった。\r
+-# 総選挙の結果、南アフリカは圧倒的賛成の下、大英帝国連邦から離脱した。\r
+-# この結果を受け、南アフリカの一部がさらに南アフリカへ所属を表明した上、\r
+-# 孤立を恐れたローデシア地域において白人による独立運動が発生し、イギリスからの離脱を表明している。\r
++#  新ゲルマニア党の成立\r
++#国民党と南アフリカ党の合同、それへの反発から誕生した純正国民党。こうした政治動向に\r
++#敏感に反応したのは、南アフリカにおけるニューカマーとして知られるドイツ系移民であっ\r
++#た。彼らは１９３２年に没したヒューストン・スチュアート・チェンバレンや１９３１年に\r
++#不可解な死を遂げたベルンハルト・フェルスターらに影響を受けた強固な反ユダヤ主義・ア\r
++#ーリア人至上主義を掲げる集団であり、現状の南アフリカ政府による黒人融和政策や白人系\r
++#内部の経済格差に反感を示しており、純正国民党との連立を視野に入れて政治活動を開始す\r
++#るようになったのである。この政党の名称は『新ゲルマニア党』であり、彼らは困窮する白\r
++#人労働者と合流し、一大勢力として数えられるようになった。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+ 	id = 4668005\r
+ 	random = no\r
+-	country = ENG\r
+-	\r
++	country = SAF\r
++	trigger = { event = 4668004 }\r
+ 	name = "EVT_4668005_NAME"\r
+ 	desc = "EVT_4668005_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
++	date = { day = 0 month = 0 year = 1936 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 0 year = 1964 }\r
+ \r
+ 	action = { # なんたることだ！\r
+ 	name = "ACTIONNAME4668005A"\r
+-	command = { type = dissent value = 10 }\r
+-	command = { type = secedeprovince which = SAF value = 869 when = 1 }\r
+-	command = { type = secedeprovince which = SAF value = 870 when = 1 }\r
+-	command = { type = secedeprovince which = SAF value = 871 when = 1 }\r
+-	command = { type = secedeprovince which = SAF value = 874 when = 1 }\r
+-	command = { type = secedeprovince which = SAF value = 877 when = 1 }\r
+-	command = { type = relation which = SAF value = -150 }\r
+-	command = { trigger = { NOT = { exists = RHO } } type = independence which = RHO value = 1 when = 0 }\r
+-	command = { trigger = { exists = RHO } type = end_mastery which = RHO }\r
+-	command = { trigger = { access = { country = ENG country = RHO } } type = end_access which = RHO }\r
+-	command = { trigger = { non_aggression = { country = ENG country = RHO } } type = end_non_aggression which = ENG where = SAF }\r
+-	command = { trigger = { guarantee = { country = ENG country = RHO } } type = end_guarantee which = ENG where = RHO }\r
+-	command = { trigger = { guarantee = { country = RHO country = ENG } } type = end_guarantee which = RHO where = ENG }\r
+-	command = { type = secedearea which = RHO value = "North Rhodesia" when = 1 }\r
+-	command = { type = secedearea which = RHO value = "South Rhodesia" when = 1 }\r
+-	command = { type = event which = 4668006 where = SAF when = 0 }\r
++	command = {  }\r
+ 	}\r
+ }\r
+ \r
++\r
++##########################################################################\r
++#  南アフリカによるポルトガル領アフリカ占領\r
++# スペイン内戦の激化はポルトガルの参戦により決定的なものとなった。\r
++# 南アフリカ政府はポルトガルがアフリカに持つ港の接収を目的として、\r
++# ポルトガル領アフリカに進駐した。\r
++# ポルトガルにこれに抗する力はなく、複数の国家が非難声明と実行力に欠ける経済制裁を打ち出したが、\r
++# ポルトガル領アフリカが南アフリカに編入されることそれ自体を制止することはできなかった。\r
++##########################################################################\r
++\r
+ event = {\r
+ 	id = 4668006\r
+ 	random = no\r
+ 	country = SAF\r
+-	\r
++	trigger = { \r
++	OR = {\r
++	exists = MOZ\r
++	exists = ANG\r
++	}\r
++	}\r
+ 	name = "EVT_4668006_NAME"\r
+-	desc = "EVT_4668005_DESC"\r
++	desc = "EVT_4668006_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
++	date = { day = 0 month = 0 year = 1934 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 0 year = 1964 }\r
+ \r
+-	action = { # 素晴らしい！\r
+-	name = "ACTION_NAME_GREAT"\r
++	action = { # これはあくまで『保護』である\r
++	name = "ACTIONNAME4668006A"\r
++	command = { type = change_policy which = defense_lobby value = 2 }\r
++	command = { type = change_policy which = interventionism value = 2 }\r
+ 	command = { type = dissent value = -5 }\r
+-	command = { type = relation which = RHO value = 50 }\r
+-	command = { type = alliance which = RHO }\r
+-	command = { type = make_puppet which = RHO }\r
+-	command = { type = guarantee which = SAF where = RHO }\r
+-	command = { type = addcore which = 869 }\r
+-	command = { type = addcore which = 870 }\r
+-	command = { type = addcore which = 871 }\r
+-	command = { type = event which = 4668007 where = RHO when = 0 }\r
++	command = { type = add_core_region which = "South Africa" }\r
++	command = { type = add_core_region which = "Southwest Africa" }\r
++	command = { type = add_core_area which = "Mocambique" }\r
++	command = { type = add_core_area which = "Niassa" }\r
++	command = { type = inherit which = MOZ }\r
++	command = { type = inherit which = ANG }\r
+ 	}\r
+ }\r
+ \r
++##########################################################################\r
++#  英国による内政干渉\r
++# 南アフリカにおいて純正国民党と新ゲルマニア党が誕生し、両党は盛んに南アフリカの英連邦からの\r
++# 離脱を叫んでいた。というのも、第一次世界大戦におけるヤン・スマッツ将軍率いる南アフリカ義勇軍\r
++# は確かに勇敢に戦い、その功績は英国政府のみならずフランスからも称賛の声が相次ぐほどの活躍を見\r
++# せたが、第一次世界大戦における消耗戦は南アフリカ義勇軍に夥しい数の犠牲者を生み出すことにも繋\r
++# がった。また、第一次世界大戦後もオスマン帝国で起きた内戦に投入されたという経緯もあり、南アフ\r
++# リカ国内では先の義勇軍への扱いもあって英国に対する反感が強まりつつあった。欧州では現在、フラ\r
++# ンス革命政府を筆頭に政治的動向が危ぶまれている国家が多数存在しており、現状の英連邦に所属して\r
++# いたままでは全くの選択の余地なしに第二次世界大戦へ突入してしまうという危惧もあり、英連邦離脱\r
++# 派が力をつけつつあった。こうした現状を憂いた英国政府は、複数の南アフリカに対する優遇政策と同\r
++# 時に南アフリカ政局への言及を強めたが、そうした英国政府の対応策が内部流出によって南アフリカ国\r
++# 民に知れ渡ると、純正国民党や新ゲルマニア党を筆頭に野党からの格好の標的となってしまった。彼ら\r
++# は英国政府のそれらの対応策を『内政干渉』と断じ、より強く南アフリカの英連邦離脱を叫ぶように\r
++# なった……。\r
++##########################################################################\r
++\r
+ event = {\r
+ 	id = 4668007\r
+ 	random = no\r
+-	country = RHO\r
++	country = SAF\r
+ 	\r
+-	name = "EVT_4668006_NAME"\r
+-	desc = "EVT_4668005_DESC"\r
++	trigger = { event = 4668005 }\r
++	name = "EVT_4668007_NAME"\r
++	desc = "EVT_4668007_DESC"\r
+ 	style = 2\r
+ 	picture = "negotiaton"\r
++	date = { day = 0 month = 0 year = 1934 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 0 year = 1964 }\r
+ \r
+-	action = { # 素晴らしい！\r
+-	name = "ACTION_NAME_GREAT"\r
+-	command = { type = dissent value = -5 }\r
+-	command = { type = relation which = SAF value = 100 }\r
+-	command = { type = set_domestic which = democratic value = 2 }\r
+-	command = { type = set_domestic which = political_left value = 2 }\r
+-	command = { type = headofstate which = 745101 }\r
+-	command = { type = headofgovernment which = 745102 }\r
+-	command = { type = foreignminister which = 745103 }\r
+-	command = { type = armamentminister which = 7451014 }\r
+-	command = { type = ministerofsecurity which = 745105 }\r
+-	command = { type = ministerofintelligence which = 4745106 }\r
+-	command = { type = chiefofstaff which = 745107 }\r
+-	command = { type = chiefofarmy which = 745108 }\r
+-	command = { type = chiefofnavy which = 745109 }\r
+-	command = { type = chiefofair which = 745110 }\r
+-	command = { type = add_division value = infantry when = 8 }\r
+-	command = { type = add_division value = infantry when = 8 }\r
+-	command = { type = add_division value = infantry when = 8 }\r
+-	command = { type = add_division value = militia when = 4 }\r
+-	command = { type = add_division value = militia when = 4 }\r
++	action = { # 雲行きが怪しくなってきたな……。\r
++	name = "ACTIONNAME4668007A"\r
++	command = { type = change_policy which = democratic value = -2 }\r
++	command = { type = change_policy which = political_left value = -2 }\r
++	command = { type = dissent value = 3 }\r
+ 	}\r
+ }\r
+ \r
+ ##########################################################################\r
+-#  ポルトガル植民地の分解 ―  モザンビーク併合\r
+-# ポルトガルは本土を戦争で失ったことで、各地にあった植民地は周辺国に奪われるか、独立してしまった。\r
+-# モザンビークも例外ではなく、ポルトガルの植民地崩壊の際にローデシアが併合した。\r
+-# 悲願の海への道を獲得したことを国民は大きく歓迎している！\r
++#  1939年総選挙 ―中間報告―\r
++# 1939年、フランスとドイツとの国境紛争は第二次世界大戦の始まりの合図として知られるようになる。\r
++# 英国は現状において中立であるが、このような大戦争に発展した以上、どこかの段階で参戦することは間違いない。\r
++# そうした情勢を鑑みて南アフリカでは総選挙が開始されることとなる。\r
++# 主な争点は人種政策と英連邦離脱の有無であり、英領アフリカの利益代弁者となったヤン・スマッツは既に大戦への対応で\r
++# 南アフリカ本土への干渉が行えない状態にあり、また純正国民党と新ゲルマニア党の勢いは止まることを知らず、\r
++# 画期的な多数の宣伝手法も相まって、南アフリカの有権者たちから絶大な支持を受けるようになる。\r
+ ###########################################################################\r
+ \r
+ event = {\r
+ 	id = 4668008\r
+ 	random = no\r
+-	country = RHO\r
+-	\r
++	country = SAF\r
++	trigger = { NOT = { ispuppet = yes } }\r
+ 	name = "EVT_4668008_NAME"\r
+ 	desc = "EVT_4668008_DESC"\r
+ 	style = 2\r
+-	picture = "Danzig_coup"\r
++	picture = "election_time"\r
+ \r
+-	action = { # 素晴らしい！\r
+-	name = "ACTION_NAME_GREAT"\r
+-	command = { type = dissent value = -3 }\r
+-	command = { type = add_core_area which = "Niassa" }\r
+-	command = { type = add_core_area which = "Mocambique" }\r
++	date = { day = 0 month = 3 year = 1939 }\r
++	offset = 4\r
++	deathdate = { day = 29 month = 0 year = 1964 }\r
++	action = { # 何ということだ！　このままでは……。\r
++	name = "ACTIONNAME4668008A"\r
++	command = { type = dissent value = 1 }\r
++	command = { type = event which = 4668009 where = SAF when = 30 }\r
++	}\r
++}\r
++##########################################################################\r
++#  1939年総選挙 ―結果―\r
++# 1939年における南アフリカの総選挙は、統一党の与党勢力と、純正国民党及び新ゲルマニア党連立の野党勢力の\r
++# 一大対決となった。最初期において党勢は野党連立の側にあるかと思われていたが、南アフリカの現状を憂いたヤ\r
++# ン・スマッツ将軍の活動によって与党勢力は盛り返すことに成功。票は割れ、国内には分断の兆候が見え始めた。\r
++# しかし、国民党党首として統一党と合流したはずのジェームズ・バリー・ミューニック・ヘルツォークが、第二次\r
++# 世界大戦における南アフリカの中立を支持することを言明すると、これを『事実上の統一党分解』と捉えた野党勢\r
++# 力の批判キャンペーンにより……純正国民党・新ゲルマニア党連立が選挙に勝利した！\r
++###########################################################################\r
++\r
++event = {\r
++	id = 4668009\r
++	random = no\r
++	country = SAF\r
++	\r
++	name = "EVT_4668009_NAME"\r
++	desc = "EVT_4668009_DESC"\r
++	style = 2\r
++	picture = "election_time"\r
++\r
++	action = { # 新政府は直ちに内閣を組閣し、数日後には英連邦離脱を決定した\r
++	name = "ACTIONNAME4668009A"\r
++	command = { type = domestic which = democratic value = -5 }\r
++	command = { type = flag_ext where = SAF which = "_IF" }\r
++	command = { type = domestic which = political_left value = -5 }\r
++	command = { trigger = { alliance = { country = ENG } } type = leave_alliance }\r
++	command = { type = wakeminister which = 425207 }\r
++	command = { type = wakeminister which = 425208 }\r
++	command = { type = wakeminister which = 425209 }\r
++	command = { type = wakeminister which = 425210 }\r
++	command = { type = headofstate which = 425201 }\r
++	command = { type = headofgovernment which = 425207 }\r
++	command = { type = foreignminister which = 425210 }\r
++	command = { type = ministerofintelligence which = 425206 }\r
++	command = { type = ministerofsecurity which = 425209 }\r
++	command = { type = armamentminister which = 425208 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = GER country = ENG } } type = peace which = GER value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = UB8 country = ENG } } type = peace which = UB8 value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = UTC country = ENG } } type = peace which = UTC value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = UER country = ENG } } type = peace which = UER value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = RUS country = ENG } } type = peace which = RUS value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = SOV country = ENG } } type = peace which = SOV value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = SCA country = ENG } } type = peace which = SCA value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = FIN country = ENG } } type = peace which = FIN value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = AST country = ENG } } type = peace which = AST value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = AUS country = ENG } } type = peace which = AUS value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = FRA country = ENG } } type = peace which = FRA value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = POR country = ENG } } type = peace which = POR value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = SPR country = ENG } } type = peace which = SPR value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = SPA country = ENG } } type = peace which = SPA value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = U14 country = ENG } } type = peace which = U14 value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = ITA country = ENG } } type = peace which = ITA value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = CHI country = ENG } } type = peace which = CHI value = 1 }\r
++command = { trigger = { alliance = { country = ENG } war = { country = JAP country = ENG } } type = peace which = JAP value = 1 }\r
++	}\r
++}\r
++\r
++\r
++\r
++\r
++#########################################################################\r
++#  アフリカ戦争への介入\r
++# \r
++#########################################################################\r
++\r
++event = {\r
++	id = 4668010\r
++	random = no\r
++	country = SAF\r
++	decision = { \r
++	war = { country = CON country = GLD }\r
++	war = { country = GER country = GLD }\r
++	}\r
++	decision_trigger = { \r
++	war = { country = CON country = GLD }\r
++	war = { country = GER country = GLD }\r
++	}\r
++	trigger = { \r
++	war = { country = CON country = GLD }\r
++	war = { country = GER country = GLD }\r
++	}\r
++	name = "EVT_4668009_NAME"\r
++	desc = "EVT_4668009_DESC"\r
++	style = 2\r
++	picture = "negotiaton"\r
++	decision_picture = "decision_negotiaton"\r
++\r
++	date = { day = 0 month = 3 year = 1933 }\r
++	offset = 30\r
++	deathdate = { day = 29 month = 11 year = 1960 }\r
++\r
++	action = { # 参戦する\r
++	name = "ACTIONNAME2919006"\r
++	command = { type = war which = GLD }\r
++	command = { type = war which = ENG }\r
++	command = { type = alliance which = GER }\r
++	ai_chance = 100\r
+ 	}\r
+ }
+\ No newline at end of file

@@ -1,0 +1,242 @@
+--- A/db/events/AI/AI_CHI.txt [ascii]
++++ B/db/events/AI/AI_CHI.txt [ascii]
+@@ -48,8 +48,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Japan.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Japan.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 		command = { type = dissent value = -50 }\r
+ 	}\r
+ }\r
+@@ -78,8 +78,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Backoff.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Backoff.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -108,8 +108,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_WAR_Warlords.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_WAR_Warlords.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -145,8 +145,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_WAR_Japan.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Naval.ai" }\r
++		command = { type = ai which = "switch/CHI_WAR_Japan.ai" }\r
++		command = { type = ai which = "Air_Naval.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -182,8 +182,8 @@ event = {
+ 	deathdate = { day = 29 month = december year = 1963 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Isolationist.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Isolationist.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -207,7 +207,7 @@ event = {
+ 	deathdate = { day = 29 month = march year = 1937 }\r
+ \r
+ 	action_a = {\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_ChangeFrontRatio.ai" }\r
++		command = { type = ai which = "switch/CHI_ChangeFrontRatio.ai" }\r
+ 	}\r
+ }\r
+ \r
+@@ -238,7 +238,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = ChinaBackoff }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Backoff.ai" }\r
++		command = { type = ai which = "switch/CHI_Backoff.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -321,7 +321,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_setflag which = ChinaBackoff }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Backoff_Remove.ai" }\r
++		command = { type = ai which = "switch/CHI_Backoff_Remove.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -404,7 +404,7 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = local_clrflag which = ChinaBackoff }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Backoff.ai" }\r
++		command = { type = ai which = "switch/CHI_Backoff.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -944,7 +944,7 @@ event = {
+ \r
+        action = {   \r
+           trigger = { flag = ChinaFeeder1 NOT = { local_flag = minorChinaFeeder1 } }\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_EXP_Feeder_1.ai" }\r
++          command = { type = ai which = "switch/Minor_EXP_Feeder_1.ai" }\r
+           command = { type = local_setflag which = minorChinaFeeder1 }\r
+           command = { type = local_clrflag which = minorChinaFeeder2 }\r
+           command = { type = local_clrflag which = minorChinaFeeder3 }\r
+@@ -956,7 +956,7 @@ event = {
+ \r
+        action = {   \r
+           trigger = { flag = ChinaFeeder2 NOT = { local_flag = minorChinaFeeder2 } }\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_EXP_Feeder_2.ai" }\r
++          command = { type = ai which = "switch/Minor_EXP_Feeder_2.ai" }\r
+           command = { type = local_clrflag which = minorChinaFeeder1 }\r
+           command = { type = local_setflag which = minorChinaFeeder2 }\r
+           command = { type = local_clrflag which = minorChinaFeeder3 }\r
+@@ -968,7 +968,7 @@ event = {
+ \r
+        action = {   \r
+           trigger = { flag = ChinaFeeder3 NOT = { local_flag = minorChinaFeeder3 } }\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_EXP_Feeder_3.ai" }\r
++          command = { type = ai which = "switch/Minor_EXP_Feeder_3.ai" }\r
+           command = { type = local_clrflag which = minorChinaFeeder1 }\r
+           command = { type = local_clrflag which = minorChinaFeeder2 }\r
+           command = { type = local_setflag which = minorChinaFeeder3 }\r
+@@ -980,7 +980,7 @@ event = {
+ \r
+        action = {   \r
+           trigger = { flag = ChinaFeeder4 NOT = { local_flag = minorChinaFeeder4 } }\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_EXP_Feeder_4.ai" }\r
++          command = { type = ai which = "switch/Minor_EXP_Feeder_4.ai" }\r
+           command = { type = local_clrflag which = minorChinaFeeder1 }\r
+           command = { type = local_clrflag which = minorChinaFeeder2 }\r
+           command = { type = local_clrflag which = minorChinaFeeder3 }\r
+@@ -992,7 +992,7 @@ event = {
+ \r
+        action = {   \r
+           trigger = { flag = ChinaFeeder5 NOT = { local_flag = minorChinaFeeder5 } }\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_EXP_Feeder_5.ai" }\r
++          command = { type = ai which = "switch/Minor_EXP_Feeder_5.ai" }\r
+           command = { type = local_clrflag which = minorChinaFeeder1 }\r
+           command = { type = local_clrflag which = minorChinaFeeder2 }\r
+           command = { type = local_clrflag which = minorChinaFeeder3 }\r
+@@ -1004,7 +1004,7 @@ event = {
+ \r
+        action = {   \r
+           trigger = { flag = ChinaFeeder6 NOT = { local_flag = minorChinaFeeder6 } }\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_EXP_Feeder_6.ai" }\r
++          command = { type = ai which = "switch/Minor_EXP_Feeder_6.ai" }\r
+           command = { type = local_clrflag which = minorChinaFeeder1 }\r
+           command = { type = local_clrflag which = minorChinaFeeder2 }\r
+           command = { type = local_clrflag which = minorChinaFeeder3 }\r
+@@ -1016,7 +1016,7 @@ event = {
+ \r
+        action = {   \r
+           trigger = { flag = ChinaFeeder7 NOT = { local_flag = minorChinaFeeder7 } }\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_EXP_Feeder_7.ai" }\r
++          command = { type = ai which = "switch/Minor_EXP_Feeder_7.ai" }\r
+           command = { type = local_clrflag which = minorChinaFeeder1 }\r
+           command = { type = local_clrflag which = minorChinaFeeder2 }\r
+           command = { type = local_clrflag which = minorChinaFeeder3 }\r
+@@ -1056,7 +1056,7 @@ event = {
+        style = 0\r
+ \r
+        action_a = {\r
+-          command = { trigger = { ai = yes } type = ai which = "switch/Minor_Feeder_Retrack.ai" }\r
++          command = { type = ai which = "switch/Minor_Feeder_Retrack.ai" }\r
+           command = { type = local_clrflag which = minorChinaFeeder1 }\r
+           command = { type = local_clrflag which = minorChinaFeeder2 }\r
+           command = { type = local_clrflag which = minorChinaFeeder3 }\r
+@@ -1102,8 +1102,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = setflag which = CHI_Aggresion_Asia }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1136,8 +1136,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = setflag which = CHI_Aggresion_Asia }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 		command = { type = end_puppet }\r
+ 		command = { type = leave_alliance when = 0 }\r
+ 	}\r
+@@ -1172,8 +1172,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = setflag which = CHI_Aggresion_Asia }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1206,8 +1206,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = setflag which = CHI_Aggresion_Asia }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1236,8 +1236,8 @@ event = {
+ \r
+ 	# action_a = {\r
+ 		# command = { type = setflag which = CHI_Aggresion_Asia }\r
+-		# command = { trigger = { ai = yes } type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
+-		# command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		# command = { type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
++		# command = { type = ai which = "Air_Ground.ai" }\r
+ 	# }\r
+ # }\r
+ ################\r
+@@ -1270,8 +1270,8 @@ event = {
+ \r
+ 	action_a = {\r
+ 		command = { type = setflag which = CHI_Aggresion_Asia }\r
+-		command = { trigger = { ai = yes } type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
+-		command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		command = { type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
++		command = { type = ai which = "Air_Ground.ai" }\r
+ 	}\r
+ }\r
+ ################\r
+@@ -1297,8 +1297,8 @@ event = {
+ \r
+ 	# action_a = {\r
+ 		# command = { type = setflag which = CHI_Aggresion_Asia }\r
+-		# command = { trigger = { ai = yes } type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
+-		# command = { trigger = { ai = yes } type = ai which = "Air_Ground.ai" }\r
++		# command = { type = ai which = "switch/CHI_Aggression_Warlords.ai" }\r
++		# command = { type = ai which = "Air_Ground.ai" }\r
+ 		# command = { type = sleepevent which = 2011022 }\r
+ 	# }\r
+ # }\r

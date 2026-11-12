@@ -1,0 +1,156 @@
+--- A/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
++++ B/db/events/AdditionalEvents_if_Japan/if_Japan_events.txt [cp932]
+@@ -572,7 +572,7 @@ event = {
+ \r
+ 	action = { # 空母の建造を推し進めよう\r
+ 	name = "ACTIONNAME2991008A"\r
+-	ai_chance = 35\r
++	ai_chance = 0\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -3000 }\r
+ 	command = { type = domestic which = defense_lobby value = 2 }\r
+@@ -615,7 +615,7 @@ event = {
+ \r
+ 	action = { # 水中艦隊にこそ活路がある\r
+ 	name = "ACTIONNAME2991008B"\r
+-	ai_chance = 30\r
++	ai_chance = 100\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -649,7 +649,7 @@ event = {
+ \r
+ 	action = { # 戦艦・重巡の強化が必要だろう\r
+ 	name = "ACTIONNAME2991008C"\r
+-	ai_chance = 35\r
++	ai_chance = 0\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { trigger = { ai = no } type = supplies value = -5000 }\r
+ 	command = { type = domestic which = defense_lobby value = 1 }\r
+@@ -718,7 +718,7 @@ event = {
+ 	decision_trigger = {\r
+ 	OR = {\r
+ 	headofstate = 50011\r
+-	headofstate = 50568\r
++	headofstate = 50601\r
+ 	headofstate = 50569\r
+ 	}\r
+ 	event = { id = 2260006 days = 180 }\r
+@@ -730,7 +730,7 @@ event = {
+ 	trigger = {\r
+ 	OR = {\r
+ 	headofstate = 50011\r
+-	headofstate = 50568\r
++	headofstate = 50601\r
+ 	headofstate = 50569\r
+ 	}\r
+ 	event = { id = 2260006 days = 180 }\r
+@@ -1050,7 +1050,7 @@ event = {
+ # 諸君はもはや議会と資本家を守る軍隊になってしまったんだよ。\r
+ # 日本を守るとはなんだ。日本を守るとは、天皇を中心とする歴史と文化の伝統を守ることではないのか！\r
+ # もはや日本の大本を正すには決起以外に取り得る手段はないのである！\r
+-# 諸君、聞け！　聞け！　男一匹が命をかけて諸君らに訴えているのだぞ！！」\r
++# 諸君、聞け！ 聞け！ 男一匹が命をかけて諸君らに訴えているのだぞ！！」\r
+ # この蓮田善明と彼を支持する幾人かの兵士によって起こされた決起は、陸軍による同調者の出現を危険視した政治家らの判断により、\r
+ # 海軍陸戦隊の戦力をもって鎮圧され、蓮田善明以下五名は逮捕、勾留されることとなった。\r
+ #########################################################################\r
+@@ -1911,7 +1911,7 @@ event = {
+ \r
+ 	trigger = {\r
+ 	OR = {\r
+-	headofstate = 50568\r
++	headofstate = 50601\r
+ 	headofstate = 50569\r
+ 	}\r
+ 	event = 2991015\r
+@@ -2356,6 +2356,8 @@ event = {
+ \r
+ 	action = { # 諸君！反撃の時はきた！\r
+ 	name = "ACTIONNAME2991036A"\r
++ 	command = { type = task_efficiency which = amphibious_assault value = 0.5 }\r
++      	command = { type = max_amphib_mod value = 20 when = 1 }\r
+ 	command = { trigger = { ai = no } type = chiefofarmy which = 50945 }\r
+ 	command = { type = ground_def_eff value = 0.3 when = 1 }\r
+       	command = { type = surprise which = land value = 30 }\r
+@@ -2363,6 +2365,7 @@ event = {
+       	command = { type = surprise which = air value = 30 }\r
+ 	command = { type = max_organization which = land value = 20 }\r
+ 	command = { type = morale which = land value = 20 }\r
++	command = { type = shore_attack which = land value = 67 }\r
+ 	command = { trigger = { ai = yes } type = morale which = land value = 20 }\r
+ 	command = { type = morale which = naval value = 20 }\r
+ 	command = { type = morale which = air value = 20 }\r
+@@ -2397,7 +2400,10 @@ event = {
+ \r
+ 	action = {\r
+ 	name = ACTION_NAME_OK\r
++ 	command = { type = task_efficiency which = amphibious_assault value = -0.5 }\r
++      	command = { type = max_amphib_mod value = -20 when = 1 }\r
+ 	command = { type = ground_def_eff value = -0.3 when = 1 }\r
++	command = { type = shore_attack which = land value = -67 }\r
+       	command = { type = surprise which = land value = -30 }\r
+       	command = { type = surprise which = naval value = -30 }\r
+       	command = { type = surprise which = air value = -30 }\r
+@@ -2962,6 +2968,21 @@ event = {
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
+ 	command = { trigger = { ai = yes } type = add_division value = transport when = 2 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
++	command = { trigger = { ai = yes NOT = { infantry = { country = JAP value = 15 when = now } } } type = add_division value = infantry when = 10 }\r
+ 	}\r
+ }\r
+ \r
+@@ -3901,7 +3922,7 @@ event = {
+ 	not = { ispuppet = JAP }\r
+ 	OR = {\r
+ 	headofstate = 50011\r
+-	headofstate = 50568\r
++	headofstate = 50601\r
+ 	}\r
+ 	}\r
+ \r
+@@ -4544,7 +4565,6 @@ event = {
+ 	war = { country = JAP country = CHI }\r
+ 	NOT = { war = { country = UER country = JAP } }\r
+ 	event = { id = 1891018 days = 90 }\r
+-	random = 60\r
+ 	}\r
+ \r
+ 	name = "EVT_2991087_NAME"\r
+@@ -4596,12 +4616,14 @@ event = {
+ 	command = { type = add_division value = interceptor when = 7 }\r
+ 	command = { type = add_division value = tactical_bomber when = 5 where = escort }\r
+ 	command = { type = setflag which = UER_JAP_lend_lease }\r
++	ai_chance = 100\r
+ 	}\r
+ \r
+ 	action = { # 必要ない！\r
+ 	name = "ACTIONNAME2991088B"\r
+ 	command = { type = dissent value = 5 }\r
+ 	command = { type = relation which = UER value = -10 }\r
++	ai_chance = 0\r
+ 	}\r
+ }\r
+ \r
+@@ -5396,7 +5418,7 @@ event = {
+ 	deathdate = { day = 29 month = 11 year = 1963 }\r
+ \r
+ 	action = { # 伝説は本当だった！！\r
+-	name = "ACTIONNAME2991104A"\r
++	name = "ACTIONNAME2991103A"\r
+ 	command = { type = dissent value = -2 }\r
+ 	command = { type = money value = 5000 }\r
+ 	command = { type = sleepevent which = 2991101 }\r

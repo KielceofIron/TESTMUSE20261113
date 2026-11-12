@@ -1,0 +1,939 @@
+--- A/db/revolt.txt [cp932]
++++ B/db/revolt.txt [utf-8]
+@@ -40,18 +40,18 @@
+ # New (optional) parameters for Darkest Hour #\r
+ ##############################################\r
+ #\r
+-# country = { TAG1 TAG2 ・TAGx }	# Only countries in that list can release the country\r
+-# no = { TAG1 TAG2 ・TAGx }			# Countries in that list cannot release the country\r
+-# not = { TAG1 TAG2 ・TAGx }		# The country cannot be released if any of those countries exist at the moment\r
+-# claims = { PROV_ID ・ 			# List of provinces (by IDs) that are claimed by this country. These are not required for release and are considered as Claimed provinces.\r
++# country = { TAG1 TAG2  ETAGx }	# Only countries in that list can release the country\r
++# no = { TAG1 TAG2  ETAGx }			# Countries in that list cannot release the country\r
++# not = { TAG1 TAG2  ETAGx }		# The country cannot be released if any of those countries exist at the moment\r
++# claims = { PROV_ID  E 			# List of provinces (by IDs) that are claimed by this country. These are not required for release and are considered as Claimed provinces.\r
+ # min = X  							# Allows release if at least X provinces of minimum list are controlled by releaser country. By default (no min entry or min = -1) it is equal to provinces in minimum list. \r
+ # min_extra = X 					# Allows release if at least X provinces of extra list are controlled by releaser country. By default (no min_ extra entry) it is 0. \r
+ #\r
+-# coup = { TAG1 TAG2 ・TAGx }		# Used only when "Used change TAG on coup logic." modifier in misc.txt is set to 1! \r
++# coup = { TAG1 TAG2  ETAGx }		# Used only when "Used change TAG on coup logic." modifier in misc.txt is set to 1! \r
+ #	On coup country that have such list defined can change its TAG to countries from that list only \r
+ #	 (the TAG of country that can be created AND has the closest intrinsic_gov_type to the country that initiated the coup will be used for the switch).\r
+ #\r
+-# value = X.X (0.0 ・1.25) 			# Used by the old release model only (when no min or min_extra are defined). \r
++# value = X.X (0.0  E1.25) 			# Used by the old release model only (when no min or min_extra are defined). \r
+ #	When 'score' is above that value the country will be available for release (see below for details). By default (no value) it is 0.51.\r
+ #	A country will be available for liberation if it has at least 0.51 final score (can be changed - see above). \r
+ #	Capital province gives 0.25 and (available minimum provinces / total minimum) provinces gives the rest. \r
+@@ -59,8 +59,8 @@
+ #	If minimum list is empty, but extra is not, then extra list will be used in place of the minimum. Otherwise extra list is not used.\r
+ #\r
+ ##############################################\r
+-# FullKai変更点\r
+-# U01 = { # Free France # アフリカを中核州に、フランス本土をパリ以外中核州に\r
++# FullKai ύX _\r
++# U01 = { # Free France #  A t   J 𒆊j B ɁA t     X { y  p   ȊO   j B  \r
+ ##############################################\r
+ \r
+  ETH = { # Abyssinia\r
+@@ -90,7 +90,7 @@
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 359 360 361 362 } \r
+  \r
+- extra = { 329 334 } \r
++ extra = { 328 329 333 334 } \r
+  capital = 359 \r
+  } \r
+  \r
+@@ -858,7 +858,7 @@
+  } \r
+ \r
+  \r
+- U01 = { # Free France # アフリカを中核州に、フランス本土をパリ以外中核州に\r
++ U01 = { # Free France #  A t   J 𒆊j B ɁA t     X { y  p   ȊO   j B  \r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { \r
+@@ -884,7 +884,7 @@
+                             1581 1582 1583 1584 1585 1586 1730 1740 1743 1744 #French Pacific Island\r
+                             2135 #Saint Pierre island near Newfoundland\r
+ \r
+- 55 # パリ\r
++ 55 #  p  \r
+ \r
+  # 85 86 89 81 82 80 70 84 79 67 40 77 71 68 \r
+  # 75 69 62 65 66 54 63 100 59 50 99 45 55 48 52 \r
+@@ -895,7 +895,7 @@
+  # 51 49 87 90 94 907 917 76 92 98 41 46 53 56 101 102 103 132 \r
+  } \r
+ \r
+- claims = { # 追加\r
++ claims = { #  ǉ \r
+  85 86 89 81 82 80 70 84 79 67 40 77 71 68 \r
+  75 69 62 65 66 54 63 100 59 50 99 45 55 48 52 \r
+  60 61 37 38 39 57 58 42 43 44 47 72 73 93 78 74 \r
+@@ -1026,7 +1026,7 @@ GER = { # Germany
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1989 1990 1988 1995 1996 1991 1987 2040 2042 2007  2009 1756 1994 1985 1992 1993 1986 } \r
+  extra = { 2078 889 1998 2077 2008 2010 2033 2041 } \r
+- capital = 1991 #Santa Fe de Bogot・\r
++ capital = 1991 #Santa Fe de Bogot E\r
+  revolt = no \r
+  } \r
+  \r
+@@ -1702,7 +1702,7 @@ GER = { # Germany
+  1018 1019 # Lebanon \r
+   #Cyprus \r
+  1071  1054 1015 1013 1023 \r
+-  #追加\r
++  # ǉ \r
+  1046 2806 2807\r
+  } \r
+  capital = 409 #Istanbul \r
+@@ -1860,7 +1860,7 @@ GER = { # Germany
+  #1568 1114 \r
+  1126 1127 1128 1069 1070 1170 1171 1161 \r
+  2792 2793\r
+- 711 712 713 714 2819 2820 2821 # 追加\r
++ 711 712 713 714 2819 2820 2821 #  ǉ \r
+  } \r
+  \r
+  claims = { 517 519 530 531 532 } # Claims on disputed with FIN provinces to ensure that these will go to RUS if it is released while FIN already lost those in previous events\r
+@@ -1935,7 +1935,7 @@ GER = { # Germany
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 338 330 342 } \r
+- extra = { 329 336 341 340 327 337 339 331 } # \r
++ extra = { 327 328 329 331 333 334 336 337 339 340 341 } # \r
+  capital = 338 \r
+  }  \r
+  \r
+@@ -2439,7 +2439,7 @@ SIB = { # Siberia
+  extra = { \r
+  1259 1263 1283 1266 1277 1272 1285 1284 1264 1270 1255 1260 1269 1271 \r
+  1268 1256 \r
+- 1261 1262 1267 # 追加\r
++ 1261 1262 1267 #  ǉ \r
+  } \r
+  capital = 1265\r
+  regular_id = UCH\r
+@@ -2462,7 +2462,7 @@ SIB = { # Siberia
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 338 332 349 352 355 } \r
+  min = 2\r
+- extra = { 346 345 344 353 350 354 356 343 330 342 329 341 336 333 328 331 334 347 357 358 351 335 340 327 337 339 } \r
++ extra = { 346 345 344 353 350 354 356 343 330 342 329 341 336 333 328 331 334 347 357 358 351 335 340 327 337 339 403 406 } \r
+  revolt = no \r
+  capital = 338 \r
+  no = { GER }\r
+@@ -3388,11 +3388,11 @@ U74 = { # East Hebei/Imperial China
+ \r
+ \r
+ ###########################################\r
+-#####    Fullkai 追加revolt data        ###\r
++#####    Fullkai  ǉ revolt data        ###\r
+ ###########################################\r
+ \r
+  # MEX = { # Mexico\r
+- U58 = { # メキシコ(ビリャ派)\r
++ U58 = { #    L V R( r     h)\r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1973\r
+@@ -3436,7 +3436,7 @@ extra = {
+  capital = 825\r
+  }\r
+ \r
+-UBO = { # カリブ共同体\r
++UBO = { #  J   u      \r
+ date = { day = 1 month = january year = 1914 } \r
+ expirydate = { day = 29 month = december year = 1999 }\r
+  minimum = { 1758 }\r
+@@ -3450,7 +3450,7 @@ expirydate = { day = 29 month = december year = 1999 }
+    capital = 1758\r
+  }\r
+ \r
+- UTL = { # トルキスタン\r
++ UTL = { #  g   L X ^  \r
+ date = { day = 1 month = january year = 1914 } \r
+ expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 498 499 500 501 502 503 504 505 506 507 1108 1109 1110 1111 1112 1113 1114 1115 1116 1117 1118 } #Kazakhstan\r
+@@ -3465,20 +3465,20 @@ extra = {
+     no = { GER SOV }\r
+  }\r
+ \r
+- UCS = { # ザカフカース\r
++ UCS = { #  U J t J [ X\r
+ date = { day = 1 month = january year = 1914 } \r
+ expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 713 } # Azerbaijan\r
+  extra = { \r
+  711 712 714 # Armenia\r
+  707 708 709 710 # Georgia\r
+- 2819 2820 2821 # 追加\r
++ 2819 2820 2821 #  ǉ \r
+   } \r
+  capital = 713\r
+     no = { GER SOV }\r
+  }\r
+  \r
+- URO = { # バルト\r
++ URO = { #  o   g\r
+ date = { day = 1 month = january year = 1914 } \r
+ expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 264 265 266 267 269 268  }#Latvia\r
+@@ -3490,7 +3490,7 @@ expirydate = { day = 29 month = december year = 1999 }
+      no = { GER SOV }\r
+  }\r
+  \r
+-  UES = { # 南米諸国連合\r
++  UES = { #   ď    A  \r
+ date = { day = 1 month = january year = 1914 } \r
+ expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 2040 2041 2042 2007 }# Ecuador\r
+@@ -3509,7 +3509,7 @@ expirydate = { day = 29 month = december year = 1999 }
+   capital = 2042\r
+  }\r
+  \r
+-  UTO = { # バルカン連邦\r
++  UTO = { #  o   J   A M\r
+ date = { day = 1 month = january year = 1914 } \r
+ expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 338 352 355  }# Yugoslavia\r
+@@ -3524,7 +3524,7 @@ expirydate = { day = 29 month = december year = 1999 }
+    no = { GER SOV }\r
+  }\r
+  \r
+-   UIC = { # ベネルクス\r
++   UIC = { #  x l   N X\r
+    date = { day = 1 month = january year = 1914 } \r
+ expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 108 110 111 112 113 114 115 116 117 } # Belgium\r
+@@ -3536,7 +3536,7 @@ expirydate = { day = 29 month = december year = 1999 }
+    no = { GER SOV }\r
+  }\r
+  \r
+- UIR = { # ミクロネシア\r
++ UIR = { #  ~ N   l V A\r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1665 } \r
+@@ -3550,7 +3550,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1665 \r
+  } \r
+ \r
+- UPR = { # メラネシア\r
++ UPR = { #      l V A\r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1593 } \r
+@@ -3564,7 +3564,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1593 \r
+  } \r
+ \r
+- UPS = { # オーストララシア\r
++ UPS = { #  I [ X g     V A\r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1695 1696 1697 1688 1689 1690 1691 1692 1693 1694 1698 1699\r
+@@ -3574,7 +3574,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  } \r
+ \r
+ \r
+- U07 = { # 両シチリア\r
++ U07 = { #    V `   A\r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { \r
+@@ -3585,7 +3585,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no \r
+  } \r
+ \r
+- UE3 = { # 教皇領\r
++ UE3 = { #    c  \r
+ 	date = { day = 0 month = january year = 1933 }\r
+ 	expirydate = { day = 29 month = december year = 1967 }\r
+ 	minimum = {\r
+@@ -3597,7 +3597,7 @@ expirydate = { day = 29 month = december year = 1999 }
+ \r
+  }\r
+ \r
+- UE8 = { # ハワイ\r
++ UE8 = { #  n   C\r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1734 1735 1736 1737 } # Hawai\r
+@@ -3613,7 +3613,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1736 \r
+  } \r
+ \r
+- UE9 = { # ベンガル\r
++ UE9 = { #  x   K  \r
+ 	date = { day = 0 month = january year = 1933 }\r
+ 	expirydate = { day = 29 month = december year = 1967 }\r
+ 	minimum = {\r
+@@ -3631,7 +3631,7 @@ expirydate = { day = 29 month = december year = 1999 }
+ 	# intrinsic_gov_type = leninist\r
+  }\r
+ \r
+- UF1 = { # 台湾\r
++ UF1 = { #   p\r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+  minimum = { 1362 } \r
+@@ -3639,7 +3639,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1362\r
+  } \r
+ \r
+- UF2 = { # EAF 条約都市\r
++ UF2 = { # EAF    s s\r
+  date = { day = 1 month = january year = 1914 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  liberate = no\r
+@@ -3651,7 +3651,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1338 #shanghai\r
+  }\r
+ \r
+- UF3 = { # GLD  ガリツィア＝ロドメリア\r
++ UF3 = { # GLD   K   c B A     h     A\r
+  	date = { day = 1 month = january year = 1914 }\r
+ 	expirydate = { day = 29 month = december year = 1999 }\r
+ 	minimum = {\r
+@@ -3661,7 +3661,7 @@ expirydate = { day = 29 month = december year = 1999 }
+ 	capital = 242\r
+ }\r
+ \r
+- UF4 = { # パタゴニア\r
++ UF4 = { #  p ^ S j A\r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 2028 2034 2035 2036 2037 2038 2039 } \r
+@@ -3671,7 +3671,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  } \r
+ \r
+ \r
+-# UF5 = { # インカ\r
++# UF5 = { #  C   J\r
+ # date = { day = 1 month = january year = 1930 } \r
+ # expirydate = { day = 29 month = december year = 1999 } \r
+ # minimum = { 2019 2020 2021 2063 2064 # Bolivia\r
+@@ -3683,7 +3683,7 @@ expirydate = { day = 29 month = december year = 1999 }
+ # } \r
+ \r
+ \r
+- UF5 = { # ニューメキシコ\r
++ UF5 = { #  j   [   L V R\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1906 } \r
+@@ -3692,7 +3692,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  } \r
+ \r
+ \r
+- UF6 = { # ペルー・ボリビア連合\r
++ UF6 = { #  y   [ E {   r A A  \r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 2019 2020 2021 2063 2064 # Bolivia\r
+@@ -3702,14 +3702,14 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital =  2016\r
+  } \r
+ \r
+-  UF7 = { # ポーランド・リトアニア\r
++  UF7 = { #  | [     h E   g A j A\r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 #poland\r
+ 		259 260 261 262 263 # lithuania\r
+  } \r
+  extra = {168 185 203 614 618 \r
+-	  268 269 267 266 #南部エストニア\r
++	  268 269 267 266 # 암 G X g j A\r
+ 	  564 593 573 589 575 577 590 592 591 599 600 586 587 601\r
+ 	  595 594 596 597 598 607 608 610 629 632 627 628 615 613 617\r
+ 	  609 616 611 612 622\r
+@@ -3734,7 +3734,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  intrinsic_gov_type = leninist \r
+  }  \r
+ \r
+- UF9 = { # ナザリック\r
++ UF9 = { #  i U   b N\r
+  date = { day = 0 month = january year = 1999 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 390 } \r
+@@ -3745,7 +3745,7 @@ expirydate = { day = 29 month = december year = 1999 }
+ \r
+ \r
+ \r
+- UF0 = { # ねこうさぎ党？？？？？？？？？？\r
++ UF0 = { #  ˂        } H H H H H H H H H H\r
+  date = { day = 0 month = january year = 1999 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { \r
+@@ -3763,10 +3763,10 @@ expirydate = { day = 29 month = december year = 1999 }
+  } \r
+ \r
+ ################################################## \r
+-##### 新規国家\r
++#####  V K    \r
+ ################################################## \r
+ \r
+- ALS = { # ブリュンヒルド公国\r
++ ALS = { #  u       q   h    \r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1964 } \r
+  minimum = { 285 } \r
+@@ -3776,7 +3776,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
+- AXI = { # 西本州\r
++ AXI = { #    { B\r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1964 } \r
+  minimum = { 1553 1558 }\r
+@@ -3785,22 +3785,22 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
+- ALI = { # エイリアン\r
++ ALI = { #  G C   A  \r
+  date = { day = 0 month = january year = 1910 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = {\r
+- 26 # ドーバー（小説『宇宙戦争』において火星人の降下地点がロンドン南西ウォキング区であるため）\r
+- 93 # アヴィニョン（世界的にも珍しいUFO進入禁止条例がある地区）\r
+- 171 # エアフルト（ナチスの秘密兵器製造拠点。UFO兵器開発もあったらしい…）\r
+- 190 # グラーツ（2017年6月、大量のUFO目撃情報アリ）\r
+- 1132 # チェリャビンスク（2013年隕石落下）\r
+- 407 # ミラノ（2014年7月、UFO目撃情報）\r
+- 1279 # カシュガル（アニメ『マブラヴ』におけるエイリアン降下地点）\r
+- 2762 # 埼玉（海外創作で登場多数）\r
+- 1905 # ロズウェル（有名なエイリアンの町）\r
++ 26 #  h [ o [ i    w F   푈 x ɂ    ĉΐ  l ̍~   n _       h   쐼 E H L   O  ł  邽 ߁j\r
++ 93 #  A   B j     i   E I ɂ      UFO i   ֎~  Ⴊ    n  j\r
++ 171 #  G A t   g i i ` X ̔閧   퐻     _ BUFO    J          炵   c j\r
++ 190 #  O   [ c i2017 N6   A  ʂ UFO ڌ    A   j\r
++ 1132 #  ` F     r   X N i2013 N覐Η    j\r
++ 407 #  ~   m i2014 N7   AUFO ڌ    j\r
++ 1279 #  J V   K   i A j   w } u     x ɂ     G C   A   ~   n _ j\r
++ 2762 #   ʁi C O n  œo ꑽ   j\r
++ 1905 #    Y E F   i L   ȃG C   A   ̒  j\r
+  }\r
+  min = 1\r
+- capital = 26 # ドーバー\r
++ capital = 26 #  h [ o [\r
+  revolt = no\r
+  liberate = no\r
+  }\r
+@@ -3848,7 +3848,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  intrinsic_gov_type = leninist \r
+  } \r
+ \r
+- U38 = { # カナダ社会主義共和国\r
++ U38 = { #  J i _ Љ  `   a  \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1967 }\r
+  minimum = { 2110 2129 2113 2114 2148 2149 2112 2127 2130 2108 2111 2109 }\r
+@@ -3858,16 +3858,16 @@ expirydate = { day = 29 month = december year = 1999 }
+  regular_ID = CAN\r
+  }\r
+ \r
+- U54 = { # デザレット\r
++ U54 = { #  f U   b g\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1896 } \r
+  extra = { 1893 1894 1895 1896 1897 1898 1899 1900 1901 1902 1904 } \r
+- capital = 1896 #ソルトレイクシティ\r
++ capital = 1896 # \   g   C N V e B\r
+  revolt = no\r
+  }\r
+ \r
+- U55 = { # 山岳共和国\r
++ U55 = { #  R x   a  \r
+  date = { day = 1 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+  minimum = { 702  } \r
+@@ -3876,7 +3876,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 702\r
+  } \r
+ \r
+- U56 = { # 東本州\r
++ U56 = { #    { B\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  revolt = no\r
+@@ -3886,7 +3886,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1552\r
+  }\r
+ \r
+- U61 = { # ドン全大軍\r
++ U61 = { #  h   S  R\r
+  date = { day = 1 month = january year = 1914 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  minimum = { 691 }\r
+@@ -3895,7 +3895,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital =  691\r
+  }\r
+ \r
+- U64 = { # 北海道\r
++ U64 = { #  k C  \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  revolt = no\r
+@@ -3904,7 +3904,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1545\r
+  }\r
+ \r
+- U65 = { # クリミア人民共和国\r
++ U65 = { #  N   ~ A l     a  \r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 641 } \r
+@@ -3913,7 +3913,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  }\r
+ \r
+- U66 = { # 沖縄\r
++ U66 = { #     \r
+  date = { day = 0 month = january year = 1933 }\r
+  expirydate = { day = 30 month = december year = 1970 }\r
+  minimum = { 1563 1564 }\r
+@@ -3921,7 +3921,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1563\r
+  }\r
+ \r
+- U68 = { # 九州\r
++ U68 = { #   B\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1560 1561 }\r
+@@ -3930,7 +3930,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1560\r
+  }\r
+ \r
+- U69 = { # 四国\r
++ U69 = { #  l  \r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1559 }\r
+@@ -3938,7 +3938,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1559\r
+  } \r
+ \r
+- UA0 = { # アラスカ\r
++ UA0 = { #  A   X J\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 2142 } \r
+@@ -3947,7 +3947,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  }\r
+ \r
+- UA1 = { # ニューイングランド\r
++ UA1 = { #  j   [ C   O     h\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  minimum = { 1789 }\r
+@@ -3956,7 +3956,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  }\r
+ \r
+- UA2 = { # 五大湖連邦\r
++ UA2 = { #  ܑ ΘA M\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1832 } \r
+@@ -3972,7 +3972,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  }\r
+ \r
+- UA3 = { # 中部大西洋共和国\r
++ UA3 = { #      吼 m   a  \r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1805 } \r
+@@ -3982,7 +3982,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  liberate = yes\r
+  }\r
+ \r
+- UA4 = { # ロッキー山脈連邦\r
++ UA4 = { #    b L [ R   A M\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1858 1866 1898 } \r
+@@ -3993,7 +3993,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  liberate = yes\r
+  }\r
+ \r
+- UA5 = { # フロリダ\r
++ UA5 = { #  t     _\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1953 }\r
+@@ -4002,7 +4002,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes \r
+  }\r
+ \r
+- UA6 = { # ニューアフリカ\r
++ UA6 = { #  j   [ A t   J\r
+  date = { day = 0 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  minimum = { 1929 1930 1931 1932 1934 }\r
+@@ -4017,7 +4017,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  } \r
+ \r
+- UA7 = { # アメリカ先住民連合\r
++ UA7 = { #  A     J  Z   A  \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  minimum = { 1857 1913 }\r
+@@ -4027,7 +4027,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  }\r
+ \r
+- UA8 = { # リオグランデ共和国\r
++ UA8 = { #    I O     f   a  \r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1926 } \r
+@@ -4036,7 +4036,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes \r
+  }\r
+ \r
+- UA9 = { # カスカディア\r
++ UA9 = { #  J X J f B A\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1878 } \r
+@@ -4045,7 +4045,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  }\r
+ \r
+- UB0 = { # オクシタニア\r
++ UB0 = { #  I N V ^ j A\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1990 }\r
+  revolt = no\r
+@@ -4054,7 +4054,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital =  77\r
+  }\r
+ \r
+- UB1 = { # ノルマンディー\r
++ UB1 = { #  m   }   f B [\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  revolt = no\r
+@@ -4063,7 +4063,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 44\r
+  }\r
+ \r
+- UB2 = { # ブルターニュ\r
++ UB2 = { #  u   ^ [ j  \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  revolt = no\r
+@@ -4072,7 +4072,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 38\r
+  }\r
+ \r
+- UB3 = { # バイエルン\r
++ UB3 = { #  o C G    \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1967 }\r
+  minimum = { 179 }\r
+@@ -4081,7 +4081,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
+- UB4 = { # ライン共和国\r
++ UB4 = { #    C     a  \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1967 }\r
+  minimum = { 131 142 145 }\r
+@@ -4091,7 +4091,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
+- UB5 = { # 北ドイツ連邦\r
++ UB5 = { #  k h C c A M\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1967 }\r
+  minimum = { 154 }\r
+@@ -4100,7 +4100,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
+- UB6 = { # プロイセン\r
++ UB6 = { #  v   C Z  \r
+  date = { day = 0 month = january year = 1919 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 163 }\r
+@@ -4109,7 +4109,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  } \r
+ \r
+- UB7 = { # エルゼス＝ロートリンゲ\r
++ UB7 = { #  G   [ X     [ g     Q\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 104 105 107 } \r
+@@ -4118,7 +4118,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = yes\r
+  }\r
+ \r
+- UB8 = { # ドナウ連邦\r
++ UB8 = { #  h i E A M\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 276 277 278 279 280 281 282 283 284 189 190 191 192 195 194 186 187 193 188 208 211 212 214 210 209 }\r
+@@ -4131,7 +4131,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  not = { AUS }\r
+  }\r
+ \r
+- UB9 = { # チロル\r
++ UB9 = { #  `    \r
+  date = { day = 0 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  minimum = { 402 189 }\r
+@@ -4139,7 +4139,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 189 #imsbruck\r
+  }\r
+ \r
+- UC0 = { # タタールスタン\r
++ UC0 = { #  ^ ^ [   X ^  \r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 672 } \r
+@@ -4149,7 +4149,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  } \r
+ \r
+- UC1 = { # ヴォルガ\r
++ UC1 = { #    H   K\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 656 668 670 671 672 673 674 675 680 683 684 }\r
+@@ -4158,7 +4158,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 680\r
+  }\r
+ \r
+- UC2 = { # マドラス\r
++ UC2 = { #  } h   X\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 1499 1500 1506 }\r
+@@ -4166,7 +4166,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1500\r
+  }\r
+ \r
+- UC3 = { # ヴェネツィア\r
++ UC3 = { #    F l c B A\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  revolt = no	\r
+@@ -4176,7 +4176,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
+- UC4 = { # パダーニャ\r
++ UC4 = { #  p _ [ j  \r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 407 } \r
+@@ -4185,21 +4185,21 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  }\r
+ \r
+- UC5 = { # コルシカ\r
++ UC5 = { #  R   V J\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  minimum = { 94 }\r
+  capital = 94\r
+  }\r
+ \r
+- UC6 = { # サルディーニャ\r
++ UC6 = { #  T   f B [ j  \r
+  date = { day = 1 month = january year = 1930 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  minimum = { 434 435 }\r
+  capital = 434\r
+  }\r
+ \r
+- UC7 = { # トランシルヴァニア\r
++ UC7 = { #  g     V     @ j A\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  revolt = no\r
+@@ -4208,7 +4208,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 291\r
+  }\r
+ \r
+- UC8 = { # モルドヴァ\r
++ UC8 = { #      h   @\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1964 }\r
+  revolt = no\r
+@@ -4217,7 +4217,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 304\r
+  }\r
+ \r
+- UC9 = { # 西オーストラリア\r
++ UC9 = { #    I [ X g     A\r
+  date = { day = 1 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+  minimum = { 1690 } \r
+@@ -4225,7 +4225,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1690\r
+  }\r
+ \r
+- UD0 = { # バングラデシュ\r
++ UD0 = { #  o   O   f V  \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  revolt = no\r
+@@ -4234,7 +4234,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1447\r
+  }\r
+ \r
+- UD1 = { # アマゾニア\r
++ UD1 = { #  A } ] j A\r
+  date = { day = 1 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+  minimum = { 2005 } \r
+@@ -4242,7 +4242,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 2005\r
+  }\r
+ \r
+- UD2 = { # イラン・ソビエト社会主義共和国\r
++ UD2 = { #  C     E \ r G g Љ  `   a  \r
+  date = { day = 0 month = january year = 1914 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { \r
+@@ -4257,7 +4257,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  intrinsic_gov_type = leninist \r
+  }\r
+ \r
+- UD3 = { # スワジランド\r
++ UD3 = { #  X   W     h\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 877 } \r
+@@ -4266,7 +4266,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  liberate = yes\r
+  }\r
+ \r
+- UD4 = { # ベリーズ\r
++ UD4 = { #  x   [ Y\r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 2086 } \r
+@@ -4274,7 +4274,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  revolt = no\r
+  } \r
+ \r
+- UD5 = { # 西カナダ\r
++ UD5 = { #    J i _\r
+  date = { day = 1 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+  minimum = { 2089 } \r
+@@ -4282,17 +4282,17 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 2089\r
+  }\r
+ \r
+- UD6 = { # ブルゴーニュ騎士団国\r
++ UD6 = { #  u   S [ j   R m c  \r
+  date = { day = 1 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+- minimum = { 104 105 106 107 } # アルザス・ロレーヌ\r
++ minimum = { 104 105 106 107 } #  A   U X E     [ k\r
+  min = 1\r
+  extra = {\r
+- 108 109 110 111 112 113 # フランドル\r
+- 114 115 116 117 # ワロニア\r
+- 49 50 51 52 53 # パ・ド・カレー\r
+- 56 # パリ地域\r
+- 96 99 100 101 102 103 # ブルゴーニュ\r
++ 108 109 110 111 112 113 #  t     h  \r
++ 114 115 116 117 #      j A\r
++ 49 50 51 52 53 #  p E h E J   [\r
++ 56 #  p   n  \r
++ 96 99 100 101 102 103 #  u   S [ j  \r
+  }\r
+  capital = 106\r
+  country = { GER } \r
+@@ -4300,7 +4300,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  intrinsic_gov_type = nazi\r
+  }\r
+ \r
+- UD7 = { # マイソール\r
++ UD7 = { #  } C \ [  \r
+  date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1963 } \r
+  minimum = { 1507 1502  } \r
+@@ -4308,7 +4308,7 @@ expirydate = { day = 29 month = december year = 1999 }
+  capital = 1507\r
+  }\r
+ \r
+-UD8 = { # アザワド\r
++UD8 = { #  A U   h\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1967 }\r
+  minimum = { 737 738 739 }\r
+@@ -4317,7 +4317,7 @@ UD8 = { # 
+ }\r
+ \r
+ \r
+- UD9 = { # シチリア\r
++ UD9 = { #  V `   A\r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  revolt = yes\r
+@@ -4326,7 +4326,7 @@ UD8 = { # 
+  capital = 430\r
+  }\r
+ \r
+- UE0 = { # アメリカ都市連合\r
++ UE0 = { #  A     J s s A  \r
+  date = { day = 1 month = january year = 1933 }\r
+  expirydate = { day = 29 month = december year = 1999 }\r
+  revolt = yes\r
+@@ -4363,20 +4363,14 @@ UD8 = { # 
+  capital = 1545\r
+  }\r
+ \r
+- UE5 = { # UFCO\r
+- date = { day = 0 month = january year = 1936 } \r
++ UE5 = { # Celtic Federation\r
++ date = { day = 0 month = january year = 1933 } \r
+  expirydate = { day = 29 month = december year = 1999 } \r
+- minimum = { 1758 1991 2079 } \r
+- extra = { \r
+- 2080 2082 2081 2083 2087 2088 2079 2084 2085 2086 889 # 中央アメリカ \r
+- 1770 1763 1764 1769 1758 1782 1759 1755 1761 1772 1752 1760 1753 1754 1757 1766 1767 1768 1774 1765 1762 1771 # 西インド諸島\r
+- 1989 1990 1988 1995 1996 1991 1987 2040 2042 2007  2009 1756 1994 1985 1992 1993 1986 2078 889 1998 2077 2008 2010 2033 2041 # 大コロンビア\r
+- 1775 1776 1777 1778 1779 # キューバ\r
+- 1780 1781 # ハイチ・ドミニカ \r
+- } \r
+- capital = 2079 #San Salvador \r
++ minimum = { 4 5 6 7 8 10 11 12 30 31 32 33 34 }\r
++ extra = { 9 35 36 }\r
++ capital = 34\r
+  revolt = no\r
+- min = 1\r
++ not = { IRE SCO }\r
+  }\r
+ \r
+  UE6 = { # Puerto Rico\r
+@@ -4391,7 +4385,7 @@ UD8 = { # 
+  expirydate = { day = 29 month = december year = 1999 } \r
+  minimum = { 702 } \r
+  extra = { 700 704 } \r
+- capital = 702 #グロズヌイ\r
++ capital = 702 # O   Y k C\r
+  revolt = no\r
+  }\r
+ \r
